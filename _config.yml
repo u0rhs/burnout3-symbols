@@ -115,3 +115,10 @@ footer_content: "Unofficial fan documentation. Burnout 3: Takedown is a trademar
 
 exclude:
   - tools/__pycache__
+
+# Only the curated list above goes in the sidebar; no page is added to it automatically.
+defaults:
+  - scope:
+      path: ""
+    values:
+      nav_exclude: true
