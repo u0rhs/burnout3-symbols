@@ -6,6 +6,8 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-18
 
+- Related resources: added the Xbox ports (xboxrecomp, sp00nznet/burnout3, Takedawn, burnout3-sw) and
+  which of their findings map to which system here.
 - Text only: no disc files except the two text link maps (`data/*/originals/`), no byte dumps.
 - Executable headers kept as text (`data/*/disc/*.headers.txt`); the memory layout page is built from them.
 - Repository layout for a Git host: `README.md` home page, `docs/`, `data/`, `tools/`, navigation line

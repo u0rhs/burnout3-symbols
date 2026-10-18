@@ -2,27 +2,58 @@
 
 # Related resources
 
-Outside resources that use or complement this data.
+Outside projects and resources that use or complement this data, and how each relates to it.
 
 ## Names and research
 
-| Resource | What |
-|---|---|
-| [Nahelam's PS2-Game-Mods](https://github.com/Nahelam/PS2-Game-Mods/tree/main/Burnout%203%20Takedown/Research) | Function names for the PAL retail release (`SLES_525.85.txt`) and the prototype (`DNAT_200.45.txt`), made from the same prototype map plus Burnout Revenge prototype symbols. The author notes there may be mistakes. A useful cross-check for names carried to retail |
-| [Burnout MOD wiki (Japanese)](https://wikiwiki.jp/burnout/B3/MOD) | Mod tools and texture extraction for the PS2 version |
+| Resource | What | Relevance |
+|---|---|---|
+| [Nahelam's PS2-Game-Mods](https://github.com/Nahelam/PS2-Game-Mods/tree/main/Burnout%203%20Takedown/Research) | Function names for the PAL retail release (`SLES_525.85.txt`) and the prototype (`DNAT_200.45.txt`), made from the same prototype map plus Burnout Revenge prototype symbols; also PCSX2 patches (e.g. 60 fps crashes) | A cross-check for names carried to retail. The author notes there may be mistakes |
+| [Burnout MOD wiki (Japanese)](https://wikiwiki.jp/burnout/B3/MOD) | Mod tools and texture extraction for the PS2 version | Asset tooling for the PS2 data |
 
-## Ports and tooling
+## PS2 ports and tooling
 
-| Resource | What |
+| Resource | What | Relevance |
+|---|---|---|
+| [burnout3-pc](https://github.com/danielgomesvieira2000/burnout3-pc) | A static recompilation of the NTSC-U retail release (SLUS-21050) to C++, with a Vulkan renderer and a PC settings menu. Functions are tracked as lifted, reconstructed or verified (differential-tested) | The same executable this data is meant to name. Its `games/burnout3/config/functions.csv` lists 9,277 functions and `games/burnout3/config/names.csv` takes names as `address,name,source`, with only about 127 named: a natural destination for names carried to retail. Its `games/burnout3/docs/FINDINGS.md` analyses the stripped retail binary |
+| [PS2Recomp](https://github.com/ran-j/PS2Recomp) | A general PS2 static recompiler and runtime (MIPS R5900 → C++), with an IOP emulator (GPL) | Tooling for native PS2 ports; takes per-game configuration and symbol names |
+| [splat](https://github.com/ethteck/splat) | Splits a binary for a matching decompilation | Reads a `symbol_addrs.txt`, which this data could produce |
+| [decomp.me](https://decomp.me) | Online matching-decompilation tool | Check its compiler list for MWCC PS2 2.4.1.01, the compiler of all three executables |
+
+## Xbox ports
+
+The original Xbox release of Burnout 3 (NTSC-U, `default.xbe`, built 29 July 2004 with XDK 5849) is
+the same Criterion codebase compiled with Microsoft's compiler for x86. Its code doesn't match the PS2
+build byte for byte, but its behaviour, classes and data do, and the projects below document it using
+the PS2 names from Nahelam's list. Their findings can be located in the PS2 code through those names.
+
+| Resource | What | Relevance |
+|---|---|---|
+| [xboxrecomp](https://github.com/sp00nznet/xboxrecomp) | Static recompiler and Xbox runtime (kernel, NV2A GPU, MCPX audio, USB) shared by several Xbox titles | The toolkit the Xbox ports below are built on |
+| [sp00nznet/burnout3](https://github.com/sp00nznet/burnout3) | The first static recompilation of the Xbox version: boots through the real entry point and runs every game mode on a software NV2A | `docs/boot.md` records what booting the game required, fix by fix; `config/seed_functions.json` lists functions found by indirect calls |
+| [Takedawn](https://github.com/xenophobentx/takedawn) | A static recompilation of the Xbox version for macOS, Windows, Linux, Steam Deck and Android, with GPU renderers and many options (widescreen, ultrawide, 60 fps crash cameras, split-screen 60 fps and music, custom soundtracks) | Its research is the most detailed behavioural documentation of Burnout 3 so far, with PS2 names throughout: `docs/research/` (XBE analysis, RenderWare notes, asset formats: `bgv`, `global-txd`, `prgdata`, `static-dat`, `streamed-dat`), and `docs/crash60.md`, `split-screen.md`, `race-clock.md`, `draw-distance.md`, `effects.md`, `widescreen-hud.md`, `ultrawide.md`, `custom-music.md`. `config/patches.json` explains each patched decision point (frame-rate choice, LOD distances, bloom and blur, music in split screen) with the PS2 function names. MIT licence |
+| [burnout3-sw](https://github.com/antoxa2584x/burnout3-sw) | The Xbox recompilation for Nintendo Switch and Linux, with Vulkan and OpenGL renderers | Notes on the game's reflection cube, its off-screen bloom/blur composite, and running races in real time at any frame rate |
+
+### Topics these projects document, by system
+
+| System here | Documented there |
 |---|---|
-| [burnout3-pc](https://github.com/danielgomesvieira2000/burnout3-pc) | A static recompilation of the NTSC-U retail release (SLUS-21050) to C++. Its `config/functions.csv` lists 9,277 functions and `config/names.csv` takes names as `address,name,source`: a natural destination for names carried to retail |
-| [PS2Recomp](https://github.com/ran-j/PS2Recomp) | A general PS2 static recompiler and runtime (GPL) |
-| [splat](https://github.com/ethteck/splat) | Splits a binary for a matching decompilation; reads a `symbol_addrs.txt` |
-| [decomp.me](https://decomp.me) | Online matching-decompilation tool; check its compiler list for MWCC PS2 2.4.1.01 |
+| [Game flow](systems/game-flow.md) | The simulation stepper and its two modes (fixed step vs. wall clock), and when the race switches between them (Takedawn `race-clock.md`) |
+| [Cameras and replays](systems/cameras-replay.md), [crashes](systems/crash-scoring.md) | Why crash and takedown cameras run at 30 fps, and where `CB3Game::UpdatePreSimulation` decides it (Takedawn `crash60.md`; Nahelam's PS2 patch at SLUS-21050 `0x1320D8`) |
+| [Audio](systems/audio.md) | EA Trax muted in split screen, and where the player count is checked (Takedawn `split-screen.md`); custom soundtrack handling on Xbox (`custom-music.md`) |
+| [Rendering](systems/rendering.md) | Bloom and the two motion blurs (`CB3DirectionalBlur::Render`) and their on/off conditions (Takedawn `effects.md`); vehicle and scenery LOD distances, draw distance in the track files (`draw-distance.md`); car reflections (burnout3-sw) |
+| [HUD](systems/hud.md) | The 640×480 HUD layout and widescreen correction (Takedawn `widescreen-hud.md`, after ThirteenAG's PS2 widescreen fix) |
+| [Tracks and streaming](systems/tracks-streaming.md) | `static.dat`, `streamed.dat`, `bgv`, global TXD and `prgdata` formats (Takedawn `docs/research/formats/`, Xbox versions) |
+
+## Widescreen and patches
+
+| Resource | What | Relevance |
+|---|---|---|
+| [ThirteenAG WidescreenFixesPack](https://github.com/ThirteenAG/WidescreenFixesPack) | Includes a PCSX2 widescreen fix for Burnout 3 (`Burnout3.PCSX2F.WidescreenFix`) | The PS2 patch sites and the arithmetic for the HUD and field of view |
 
 ## Preservation
 
-| Resource | What |
-|---|---|
-| [Hidden Palace](https://hiddenpalace.org) | The main prototype archive. Compare its hashes with [reference/hashes.md](reference/hashes.md) |
-| [The Cutting Room Floor](https://tcrf.net) | Unused and cut content; see [unlinked code](reference/unlinked-code.md) and the [demo-disc code](systems/demo-builds.md) |
+| Resource | What | Relevance |
+|---|---|---|
+| [Hidden Palace](https://hiddenpalace.org) | The main prototype archive | Compare its hashes with [reference/hashes.md](reference/hashes.md) |
+| [The Cutting Room Floor](https://tcrf.net) | Unused and cut content | See [unlinked code](reference/unlinked-code.md) and the [demo-disc code](systems/demo-builds.md) |
