@@ -1,0 +1,117 @@
+# GitHub Pages site for this repository: the same Markdown, served as a searchable wiki with the
+# B3 icon as the browser-tab icon. https://u0rhs.github.io/burnout3-symbols/
+title: Burnout 3 Symbols
+description: Burnout 3 Takedown symbols, link maps and documentation from the prototype discs (text only)
+remote_theme: just-the-docs/just-the-docs@v0.10.1
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+  - jekyll-readme-index
+  - jekyll-optional-front-matter
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
+
+color_scheme: dark
+logo: "/assets/burnout3-takedown-logo-small.png"
+favicon_ico: "/favicon.ico"
+
+relative_links:
+  enabled: true
+  collections: false
+titles_from_headings:
+  enabled: true
+  strip_title: false
+
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 2
+  button: true
+
+heading_anchors: true
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# The sidebar: the main sections (pages carry no front matter, so they are listed here)
+nav_external_links:
+  - title: Home
+    url: /burnout3-symbols/
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Builds
+    url: /burnout3-symbols/docs/builds.html
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Finding things
+    url: /burnout3-symbols/docs/data-guide.html
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Glossary
+    url: /burnout3-symbols/docs/glossary.html
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Game systems
+    url: /burnout3-symbols/docs/systems/
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Classes
+    url: /burnout3-symbols/docs/classes/
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Renderer overview
+    url: /burnout3-symbols/docs/renderer-overview.html
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Retail memory map
+    url: /burnout3-symbols/docs/reference/retail-memory-map.html
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Disc contents
+    url: /burnout3-symbols/docs/discs.html
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Reference
+    url: /burnout3-symbols/docs/reference/
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Uses
+    url: /burnout3-symbols/docs/avenues/
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Formats
+    url: /burnout3-symbols/docs/formats/
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Tools
+    url: /burnout3-symbols/docs/tools.html
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Data
+    url: /burnout3-symbols/data/
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Related resources
+    url: /burnout3-symbols/docs/related-projects.html
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Open questions
+    url: /burnout3-symbols/docs/open-questions.html
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: Changelog
+    url: /burnout3-symbols/docs/changelog.html
+    hide_icon: true
+    opens_in_new_tab: false
+  - title: GitHub repository
+    url: https://github.com/u0rhs/burnout3-symbols
+    hide_icon: false
+    opens_in_new_tab: true
+
+aux_links:
+  "GitHub":
+    - "https://github.com/u0rhs/burnout3-symbols"
+
+footer_content: "Unofficial fan documentation. Burnout 3: Takedown is a trademark of Electronic Arts. No game code or assets are included."
+
+exclude:
+  - tools/__pycache__

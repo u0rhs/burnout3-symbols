@@ -6,6 +6,8 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-18
 
+- Logo on the home page; the B3 icon as the site's favicon; GitHub Pages configuration (`_config.yml`,
+  `_includes/`) to publish the documentation as a searchable site.
 - Retail memory map from cheat codes (GameHacking.org: Codejunkies, Code Master, MadCatz) and
   AeroWidescreen's PCSX2 patches (widescreen, button mapping; included under MIT): save profile, race
   state, tuning, display and HUD layout, controls, code locations, vehicle IDs, event medals.

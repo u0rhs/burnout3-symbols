@@ -1,4 +1,16 @@
-# Burnout 3: Takedown symbols and documentation
+<p align="center">
+  <img src="assets/burnout3-takedown-logo.png" alt="Burnout 3: Takedown" width="520">
+</p>
+
+<h1 align="center">Symbols and documentation</h1>
+
+<p align="center">
+  <a href="#start-here">Start here</a> ·
+  <a href="docs/systems/README.md">Game systems</a> ·
+  <a href="docs/classes/README.md">Classes</a> ·
+  <a href="docs/reference/README.md">Reference</a> ·
+  <a href="docs/tools.md">Tools</a>
+</p>
 
 Everything the Burnout 3 prototype discs reveal about the game's code, turned into readable data and
 documentation, with Burnout 2's debug information where it helps explain Burnout 3. Made for work on a
@@ -61,6 +73,7 @@ Burnout 3 remaster, decompilation or remake.
 
 ```
 README.md          this page
+assets/            logo and icons
 docs/              the documentation (hand-written pages + generated systems/, classes/, reference/)
 data/              the exported data, as text
 tools/             the scripts that make data/ and the generated pages (tools/rebuild.sh)
@@ -68,4 +81,7 @@ tools/             the scripts that make data/ and the generated pages (tools/re
 
 Generated pages say so at the top; their **Notes** sections are kept when they are regenerated.
 Every page starts with a `Home › Section` line for navigation. The pages are plain Markdown with
-relative links, so they work in a Git host's web view, in an editor, or as an Obsidian vault.
+relative links, so they work in a Git host's web view, in an editor, or as an Obsidian vault. The same
+pages are also published as a searchable site with GitHub Pages
+([u0rhs.github.io/burnout3-symbols](https://u0rhs.github.io/burnout3-symbols/)); `_config.yml` and
+`_includes/` configure it.
