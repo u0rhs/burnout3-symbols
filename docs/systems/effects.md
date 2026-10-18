@@ -153,6 +153,25 @@ Each class with its method count, its probable Burnout 2 counterpart (same name 
 
 </details>
 
+### Classes without a known source file
+
+Classes named only in the unoptimised build's binary map, which lost their source file. They are placed here by their names (nested classes with their outer class, templates with their type).
+
+- [`B3EmitterArray`](../classes/B3EmitterArray.md): 6 methods
+- [`B3ScrapeEmitterArray`](../classes/B3ScrapeEmitterArray.md): 6 methods
+- [`CB3EffectsManager::CLighting`](../classes/CB3EffectsManager_CLighting.md): 1 method
+- [`CB3FlameParams`](../classes/CB3FlameParams.md): 1 method
+- [`CB3ScrapeEmitterData`](../classes/CB3ScrapeEmitterData.md): 1 method
+- [`CB3ScrapeParams`](../classes/CB3ScrapeParams.md): 1 method
+- [`CB3ScrapeParamsDMA`](../classes/CB3ScrapeParamsDMA.md): 1 method
+- [`CB3ScrapeSegment`](../classes/CB3ScrapeSegment.md): 1 method
+- [`CB3ScrapeSegmentCollection`](../classes/CB3ScrapeSegmentCollection.md): 2 methods
+- [`CB3TrailSegmentCollection`](../classes/CB3TrailSegmentCollection.md): 6 methods
+- [`CB3TrailSegmentCollection::CPackedTangent`](../classes/CB3TrailSegmentCollection_CPackedTangent.md): 1 method
+- [`CB3WheelEffects`](../classes/CB3WheelEffects.md): 2 methods
+- [`CGtStack<CB3ScrapeEmitter*>`](../classes/CGtStack_CB3ScrapeEmitter.md): 6 methods
+- [`CGtStack<CB3TrailEmitter*>`](../classes/CGtStack_CB3TrailEmitter.md): 6 methods
+
 ## Burnout 2 counterparts
 
 No matching Burnout 2 source files (new in Burnout 3, or named differently).

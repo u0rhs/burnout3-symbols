@@ -648,6 +648,17 @@ Each class with its method count, its probable Burnout 2 counterpart (same name 
 
 </details>
 
+### Classes without a known source file
+
+Classes named only in the unoptimised build's binary map, which lost their source file. They are placed here by their names (nested classes with their outer class, templates with their type).
+
+- [`CB3ChallengeDataStruct`](../classes/CB3ChallengeDataStruct.md): 1 method
+- [`CB3CrashRecordTables`](../classes/CB3CrashRecordTables.md): 3 methods
+- [`CB3CrashStartInfo`](../classes/CB3CrashStartInfo.md): 1 method
+- [`CB3ExplosionManager::CExplosionTrail`](../classes/CB3ExplosionManager_CExplosionTrail.md): 2 methods
+- [`CB3ExplosionManager::CFireEmitter`](../classes/CB3ExplosionManager_CFireEmitter.md): 2 methods
+- [`CB3ScoreCategory`](../classes/CB3ScoreCategory.md): 4 methods
+
 ## Burnout 2 counterparts
 
 Source outlines of the Burnout 2 prototype in the same area (types, functions, parameters, locals, lines):
@@ -658,6 +669,7 @@ Source outlines of the Burnout 2 prototype in the same area (types, functions, p
 - [GameShared/GameClasses/MemoryCard/ps2/GTMemoryDevicePS2.cpp](../../data/burnout2-prototype/SLUS_204.97/source_outline/GameShared/GameClasses/MemoryCard/ps2/GTMemoryDevicePS2.cpp)
 - [GameShared/GameClasses/Mpeg/ps2/GtMpegPs2.cpp](../../data/burnout2-prototype/SLUS_204.97/source_outline/GameShared/GameClasses/Mpeg/ps2/GtMpegPs2.cpp)
 - [GameShared/GameClasses/Mpeg/ps2/vibuf.c](../../data/burnout2-prototype/SLUS_204.97/source_outline/GameShared/GameClasses/Mpeg/ps2/vibuf.c)
+- [README.md](../../data/burnout2-prototype/SLUS_204.97/source_outline/README.md)
 - [dev/rwaudio/source/core/src/rwafreelist.c](../../data/burnout2-prototype/SLUS_204.97/source_outline/dev/rwaudio/source/core/src/rwafreelist.c)
 - [dev/rwaudio/source/core/src/rwaheap.c](../../data/burnout2-prototype/SLUS_204.97/source_outline/dev/rwaudio/source/core/src/rwaheap.c)
 - [dev/rwaudio/source/core/src/rwallist.c](../../data/burnout2-prototype/SLUS_204.97/source_outline/dev/rwaudio/source/core/src/rwallist.c)
@@ -821,6 +833,7 @@ Source outlines of the Burnout 2 prototype in the same area (types, functions, p
 - [gamesource/Render/PS2InstancedPrelit2/InstancedPrelit2.cpp](../../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Render/PS2InstancedPrelit2/InstancedPrelit2.cpp)
 - [gamesource/Render/PS2ParametricParticle/PS2PParticle.cpp](../../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Render/PS2ParametricParticle/PS2PParticle.cpp)
 - [gamesource/Render/PS2PrelitWorld2/PrelitWorld2.cpp](../../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Render/PS2PrelitWorld2/PrelitWorld2.cpp)
+- [gamesource/Render/README.md](../../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Render/README.md)
 - [gamesource/Sound/CMusic.cpp](../../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Sound/CMusic.cpp)
 - [gamesource/Sound/GameSound.cpp](../../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Sound/GameSound.cpp)
 - [gamesource/Sound/HUDSound.cpp](../../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Sound/HUDSound.cpp)

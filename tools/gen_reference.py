@@ -111,6 +111,10 @@ def load_b2_functions():
 ALT = {}     # B3 class -> (B2 class, shared method names), found by method overlap
 
 
+CLASS_RULES = G.CLASS_RULES
+class_system = G.class_system
+
+
 def b3_to_b2_class(c):
     out = [n for n in G.b2_name(c)]
     if c in ALT:
@@ -263,7 +267,7 @@ def main():
     for c in class_list:
         ms = methods[c]
         h = home.get(c, '')
-        s = sys_of.get(h, 'libraries' if h and objs.get(h) else '')
+        s = class_system(c, home, sys_of, objs)
         fname = safe_name(c) + '.md'
         index[s].append((c, fname, len(ms)))
         p = os.path.join(CLS, fname)

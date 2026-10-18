@@ -769,6 +769,44 @@ Each class with its method count, its probable Burnout 2 counterpart (same name 
 
 </details>
 
+### Classes without a known source file
+
+Classes named only in the unoptimised build's binary map, which lost their source file. They are placed here by their names (nested classes with their outer class, templates with their type).
+
+- [`CB3CollidingPair`](../classes/CB3CollidingPair.md): 1 method
+- [`CB3CollisionTag`](../classes/CB3CollisionTag.md): 18 methods
+- [`CB3ConvexHullCollideEdgeHit`](../classes/CB3ConvexHullCollideEdgeHit.md): 1 method
+- [`CB3ConvexHullCollideHit`](../classes/CB3ConvexHullCollideHit.md): 1 method
+- [`CB3ConvexHullCollideInfo`](../classes/CB3ConvexHullCollideInfo.md): 2 methods
+- [`CB3ConvexHullEdge`](../classes/CB3ConvexHullEdge.md): 2 methods
+- [`CB3ConvexHullPlane`](../classes/CB3ConvexHullPlane.md): 1 method
+- [`CB3DeformData`](../classes/CB3DeformData.md): 1 method
+- [`CB3HullCollideHullParams`](../classes/CB3HullCollideHullParams.md): 1 method
+- [`CB3HullCollideParams`](../classes/CB3HullCollideParams.md): 1 method
+- [`CB3HullWorldTriCollideParams`](../classes/CB3HullWorldTriCollideParams.md): 1 method
+- [`CB3Interval`](../classes/CB3Interval.md): 1 method
+- [`CB3PhysicsManagerDebugHullPlaneEntry`](../classes/CB3PhysicsManagerDebugHullPlaneEntry.md): 1 method
+- [`CB3Prop`](../classes/CB3Prop.md): 1 method
+- [`CB3PropWorldTriangleCache`](../classes/CB3PropWorldTriangleCache.md): 2 methods
+- [`CB3RaceCarPhysics::WindResistancePoint$37842B3RaceCarPhysics_cpp`](../classes/CB3RaceCarPhysics_WindResistancePoint%2437842B3RaceCarPhysics_cpp.md): 1 method
+- [`CB3RaceCarPhysicsAttribTable`](../classes/CB3RaceCarPhysicsAttribTable.md): 4 methods
+- [`CB3Tensor`](../classes/CB3Tensor.md): 5 methods
+- [`CB3VehicleEssentialParams`](../classes/CB3VehicleEssentialParams.md): 2 methods
+- [`CB3VehicleParams`](../classes/CB3VehicleParams.md): 2 methods
+- [`CB3VehicleWorldTriangleCache`](../classes/CB3VehicleWorldTriangleCache.md): 2 methods
+- [`CB3Wheel`](../classes/CB3Wheel.md): 6 methods
+- [`CB3WorldCollisionInfo`](../classes/CB3WorldCollisionInfo.md): 3 methods
+- [`CCacheFriendlyTriangle`](../classes/CCacheFriendlyTriangle.md): 2 methods
+- [`CGtAxisAlignedBox`](../classes/CGtAxisAlignedBox.md): 2 methods
+- [`CGtLine`](../classes/CGtLine.md): 2 methods
+- [`CGtOrientedBox`](../classes/CGtOrientedBox.md): 2 methods
+- [`CGtOrthogonalBox`](../classes/CGtOrthogonalBox.md): 2 methods
+- [`CGtPolygonIntersectionResult`](../classes/CGtPolygonIntersectionResult.md): 2 methods
+- [`CGtPolygonSoupVertex`](../classes/CGtPolygonSoupVertex.md): 1 method
+- [`CGtPolygonSoupVertex16`](../classes/CGtPolygonSoupVertex16.md): 1 method
+- [`CSphereVertex`](../classes/CSphereVertex.md): 1 method
+- [`GtIntersection::CGtIntersectSphereConstants`](../classes/GtIntersection_CGtIntersectSphereConstants.md): 1 method
+
 ## Burnout 2 counterparts
 
 Source outlines of the Burnout 2 prototype in the same area (types, functions, parameters, locals, lines):

@@ -522,6 +522,40 @@ Each class with its method count, its probable Burnout 2 counterpart (same name 
 
 </details>
 
+### Classes without a known source file
+
+Classes named only in the unoptimised build's binary map, which lost their source file. They are placed here by their names (nested classes with their outer class, templates with their type).
+
+- [`CB3AssertManager`](../classes/CB3AssertManager.md): 1 method
+- [`CGtAssertMgr`](../classes/CGtAssertMgr.md): 1 method
+- [`CGtExceptionHandler`](../classes/CGtExceptionHandler.md): 2 methods
+- [`CGtInputDeviceKeyboard`](../classes/CGtInputDeviceKeyboard.md): 6 methods
+- [`CGtInputDevicePS2Pad2`](../classes/CGtInputDevicePS2Pad2.md): 2 methods
+- [`CGtPerfMonHelper`](../classes/CGtPerfMonHelper.md): 2 methods
+- [`CGtQueue<unsigned char>`](../classes/CGtQueue_unsigned_char.md): 5 methods
+- [`CGtRandom`](../classes/CGtRandom.md): 4 methods
+- [`CGtState`](../classes/CGtState.md): 2 methods
+- [`CGtStrStream`](../classes/CGtStrStream.md): 11 methods
+- [`CGtTimeCounter`](../classes/CGtTimeCounter.md): 10 methods
+- [`CGtUnicodeBuffer`](../classes/CGtUnicodeBuffer.md): 4 methods
+- [`CGtUnpickStack`](../classes/CGtUnpickStack.md): 3 methods
+- [`DbColoursTag`](../classes/DbColoursTag.md): 2 methods
+- [`GtColour`](../classes/GtColour.md): 1 method
+- [`GtComms::CGtRwStreamBuffer`](../classes/GtComms_CGtRwStreamBuffer.md): 1 method
+- [`GtDbInitParamsTag`](../classes/GtDbInitParamsTag.md): 1 method
+- [`GtMath`](../classes/GtMath.md): 37 methods
+- [`GtMath::USplitBits`](../classes/GtMath_USplitBits.md): 1 method
+- [`GtMathPs2`](../classes/GtMathPs2.md): 120 methods
+- [`GtMathPs2::CGtMatrix3x4`](../classes/GtMathPs2_CGtMatrix3x4.md): 14 methods
+- [`GtMathPs2::CGtPlane`](../classes/GtMathPs2_CGtPlane.md): 9 methods
+- [`GtMathPs2::CGtQuatPos`](../classes/GtMathPs2_CGtQuatPos.md): 4 methods
+- [`GtMathPs2::CGtSphere`](../classes/GtMathPs2_CGtSphere.md): 7 methods
+- [`GtMathPs2::CGtV3dPlus`](../classes/GtMathPs2_CGtV3dPlus.md): 10 methods
+- [`GtMathPs2::WAxisType`](../classes/GtMathPs2_WAxisType.md): 2 methods
+- [`GtMathPs2::XAxisType`](../classes/GtMathPs2_XAxisType.md): 5 methods
+- [`GtMathPs2::YAxisType`](../classes/GtMathPs2_YAxisType.md): 2 methods
+- [`GtMathPs2::ZAxisType`](../classes/GtMathPs2_ZAxisType.md): 2 methods
+
 ## Burnout 2 counterparts
 
 No matching Burnout 2 source files (new in Burnout 3, or named differently).

@@ -562,6 +562,23 @@ Each class with its method count, its probable Burnout 2 counterpart (same name 
 
 </details>
 
+### Classes without a known source file
+
+Classes named only in the unoptimised build's binary map, which lost their source file. They are placed here by their names (nested classes with their outer class, templates with their type).
+
+- [`CB3StylisedText2dObject::CB3StylisedText2dObjectData`](../classes/CB3StylisedText2dObject_CB3StylisedText2dObjectData.md): 1 method
+- [`CGt2dFontChar`](../classes/CGt2dFontChar.md): 1 method
+- [`CGt2dLayer`](../classes/CGt2dLayer.md): 6 methods
+- [`CGt2dObject::CGt2dObjectSpace`](../classes/CGt2dObject_CGt2dObjectSpace.md): 2 methods
+- [`CGt2dObjectBoxRenderData`](../classes/CGt2dObjectBoxRenderData.md): 1 method
+- [`CGt2dObjectImageRenderData`](../classes/CGt2dObjectImageRenderData.md): 1 method
+- [`CGt2dObjectParagraphRenderData`](../classes/CGt2dObjectParagraphRenderData.md): 1 method
+- [`CGt2dObjectTableData`](../classes/CGt2dObjectTableData.md): 1 method
+- [`CGt2dObjectText::CGt2dObjectTextDropOrOutline`](../classes/CGt2dObjectText_CGt2dObjectTextDropOrOutline.md): 1 method
+- [`CGtB3TableConnectionRenderData`](../classes/CGtB3TableConnectionRenderData.md): 1 method
+- [`CGtB3TableTextAndImageRenderData`](../classes/CGtB3TableTextAndImageRenderData.md): 1 method
+- [`CGtStaticParagraphSettings`](../classes/CGtStaticParagraphSettings.md): 1 method
+
 ## Burnout 2 counterparts
 
 Source outlines of the Burnout 2 prototype in the same area (types, functions, parameters, locals, lines):

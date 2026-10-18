@@ -103,6 +103,63 @@ RETAIL_MAP_SECTIONS = {
 }
 
 
+# Area for classes whose source file is unknown (mostly names only in the unoptimised build's binary map,
+# which lost their object file): first the outer class of a nested class, then the type argument of a
+# template, then these name rules, tried in order.
+CLASS_RULES = [
+    (r'^(Rw|sce|_?lg|mallinfo$)', 'libraries'),
+    (r'Lobby|Online|NAT|Nat[A-Z]|NetMessage|NetworkControls|Insock|Buddies', 'network-online'),
+    (r'Sound|Voice', 'audio'),
+    (r'HUD', 'hud'),
+    (r'Menu|OnScreenKeyboard|SelectComponent|Globe2d|Carousel|Backdrop|CarIcon|ResultsData', 'frontend'),
+    (r'Gt2d|2dObject|Paragraph|GtB3Table|Font', 'ui-2d'),
+    (r'Replay|KeyFrame|TrackSide|Camera', 'cameras-replay'),
+    (r'Scrape|Trail|Explosion|Flame|Emitter|WheelEffects', 'effects'),
+    (r'ScreenGrabber|Render|Particle|Popcorn|Spark|Debris|SkyDome|TrackMesh|VehicleMesh|VehicleObject|'
+     r'Instance(Data|Manager|Mesh)|Irradiance|TextureDictionary|Frustum|Viewport|Vu0Code|RadialBlur|Lighting|'
+     r'SPRCache|Palette', 'rendering'),
+    (r'AILane|AISegment|^CB3AI', 'ai'),
+    (r'Traffic', 'traffic'),
+    (r'CrashRecord|CrashStart|ScoreCategory|Challenge|Ch[a]?mpionship', 'crash-scoring'),
+    (r'SaveGame|RecordTables|SeriesData|StageData|DataStruct$', 'progression-saves'),
+    (r'StreamedTrack|PendingFileRequest|GTFile|FilePS2|FileSystem|EnvironmentInfo', 'tracks-streaming'),
+    (r'GameModes|RoundsWon|WorldCallback', 'game-flow'),
+    (r'ConvexHull|Hull|Colli|Wheel|Tensor|Deform|TriangleCache|CacheFriendlyTriangle|VehicleParams|'
+     r'VehicleEssentialParams|RaceCarPhysics|WorldCollision|Prop|Interval|PolygonSoup|PolygonIntersection|'
+     r'OrientedBox|OrthogonalBox|AxisAlignedBox|Intersect|^CGtLine$|SphereVertex', 'vehicles-physics'),
+    (r'Assert|Exception|PerfMon|Random|Queue|Stack|StrStream|TimeCounter|Unicode|Unpick|State$|InputDevice|'
+     r'Kbd|^GtMath|^GtColour|^DbColours|^GtDb|GtComms|^CGtRandom', 'core-platform'),
+]
+
+
+def class_system(c, home, sys_of, objs, depth=0):
+    h = home.get(c, '')
+    if h:
+        return sys_of.get(h, 'libraries' if objs.get(h) else '')
+    if depth > 3:
+        return ''
+    if '<' in c:
+        arg = c[c.index('<') + 1:c.rindex('>')].strip().split(',')[0].strip(' *&')
+        r = class_system(arg, home, sys_of, objs, depth + 1)
+        if r:
+            return r
+    if '::' in c:
+        outer = c.split('::')[0]
+        r = class_system(outer, home, sys_of, objs, depth + 1)
+        if r:
+            return r
+    base = c.split('<')[0]
+    for pat, slug in CLASS_RULES:
+        if re.search(pat, base):
+            return slug
+    return ''
+
+
+def _safe(c):
+    s = re.sub(r'[<>:*?"/\\| ,&]', '_', c)
+    return re.sub(r'_+', '_', s).strip('_')
+
+
 def link(path, frm):
     rel = os.path.relpath(path, frm)
     return urllib.parse.quote(rel.replace(os.sep, '/'))
@@ -205,6 +262,8 @@ def main():
         files = sorted([o for o in objs if sys_of.get(o) == slug], key=lambda o: first[o])
         classes = sorted([c for c in methods if home.get(c) in files],
                          key=lambda c: (files.index(home[c]), c.lower()))
+        loose = sorted([c for c in methods if not home.get(c)
+                        and class_system(c, home, sys_of, lib_of) == slug], key=str.lower)
         nfunc = sum(objs[o] for o in files)
         nbytes = sum(size[o] for o in files)
         index_rows.append((slug, title, len(files), len(classes), nfunc, nbytes))
@@ -245,6 +304,15 @@ def main():
                 only = '' if a is not None else '  (not in DNAT_200; in %s)' % ', '.join(ms[name])
                 L.append('- `%s` %s%s' % ('0x%08X' % a if a is not None else '----------', name.replace('|', '\\|'), only))
             L += ['', '</details>', '']
+        if loose:
+            L += ['### Classes without a known source file', '',
+                  'Classes named only in the unoptimised build\'s binary map, which lost their source file. They are '
+                  'placed here by their names (nested classes with their outer class, templates with their type).', '']
+            for c in loose:
+                ms = methods[c]
+                L.append('- [`%s`](../classes/%s.md): %d method%s' % (c, urllib.parse.quote(_safe(c)), len(ms),
+                                                                    '' if len(ms) == 1 else 's'))
+            L.append('')
         b2match = sorted(f for f in b2_files if any(re.search(bp, f.replace(os.sep, '/')) for bp in b2pats))
         L += ['## Burnout 2 counterparts', '']
         if b2match:

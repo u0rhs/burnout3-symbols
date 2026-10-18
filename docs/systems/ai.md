@@ -334,6 +334,13 @@ Each class with its method count, its probable Burnout 2 counterpart (same name 
 
 </details>
 
+### Classes without a known source file
+
+Classes named only in the unoptimised build's binary map, which lost their source file. They are placed here by their names (nested classes with their outer class, templates with their type).
+
+- [`CB3AILaneStruct`](../classes/CB3AILaneStruct.md): 1 method
+- [`CB3AISegmentStruct`](../classes/CB3AISegmentStruct.md): 2 methods
+
 ## Burnout 2 counterparts
 
 Source outlines of the Burnout 2 prototype in the same area (types, functions, parameters, locals, lines):

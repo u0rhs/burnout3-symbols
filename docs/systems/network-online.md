@@ -2042,6 +2042,20 @@ Each class with its method count, its probable Burnout 2 counterpart (same name 
 
 </details>
 
+### Classes without a known source file
+
+Classes named only in the unoptimised build's binary map, which lost their source file. They are placed here by their names (nested classes with their outer class, templates with their type).
+
+- [`CB3LobbyCreateGameParams`](../classes/CB3LobbyCreateGameParams.md): 27 methods
+- [`CB3OnlineJoinGameData`](../classes/CB3OnlineJoinGameData.md): 1 method
+- [`CB3OnlineOptimatchData`](../classes/CB3OnlineOptimatchData.md): 1 method
+- [`CGtLobby`](../classes/CGtLobby.md): 1 method
+- [`CGtLobbyDirtySockCachedGameParams`](../classes/CGtLobbyDirtySockCachedGameParams.md): 3 methods
+- [`CGtNATData`](../classes/CGtNATData.md): 1 method
+- [`CGtNatDataEntry`](../classes/CGtNatDataEntry.md): 2 methods
+- [`CGtNetMessageData`](../classes/CGtNetMessageData.md): 3 methods
+- [`CNetworkControls`](../classes/CNetworkControls.md): 13 methods
+
 ## Burnout 2 counterparts
 
 No matching Burnout 2 source files (new in Burnout 3, or named differently).

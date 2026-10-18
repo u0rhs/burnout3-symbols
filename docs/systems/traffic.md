@@ -258,6 +258,15 @@ Each class with its method count, its probable Burnout 2 counterpart (same name 
 
 </details>
 
+### Classes without a known source file
+
+Classes named only in the unoptimised build's binary map, which lost their source file. They are placed here by their names (nested classes with their outer class, templates with their type).
+
+- [`CB3TrafficLaneStruct`](../classes/CB3TrafficLaneStruct.md): 1 method
+- [`CB3TrafficParamPositions`](../classes/CB3TrafficParamPositions.md): 1 method
+- [`CCrashingTrafficData`](../classes/CCrashingTrafficData.md): 2 methods
+- [`CSortedTrafficVehicle`](../classes/CSortedTrafficVehicle.md): 1 method
+
 ## Burnout 2 counterparts
 
 Source outlines of the Burnout 2 prototype in the same area (types, functions, parameters, locals, lines):

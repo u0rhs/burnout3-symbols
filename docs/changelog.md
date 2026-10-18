@@ -6,6 +6,8 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-18
 
+- Every class now sorted into an area: classes without a known source file go with their outer class,
+  their template argument, or by name; system pages list them too.
 - 1,146 retail function names (863 verified) from Nahelam's PAL list, shifted to SLUS-21050
   (`tools/map_pal_names.py`); Nahelam's prototype list independently confirms the map's address drift.
 - Nahelam's mods and research documented: development menu, debug views, Car Viewer, the ELF code cave

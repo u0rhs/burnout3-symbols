@@ -422,6 +422,17 @@ Each class with its method count, its probable Burnout 2 counterpart (same name 
 
 </details>
 
+### Classes without a known source file
+
+Classes named only in the unoptimised build's binary map, which lost their source file. They are placed here by their names (nested classes with their outer class, templates with their type).
+
+- [`CB3ChamionshipDataStruct`](../classes/CB3ChamionshipDataStruct.md): 1 method
+- [`CB3SaveGameDataBase`](../classes/CB3SaveGameDataBase.md): 1 method
+- [`CB3SaveGameDataPlatform`](../classes/CB3SaveGameDataPlatform.md): 1 method
+- [`CB3SeriesDataStruct`](../classes/CB3SeriesDataStruct.md): 1 method
+- [`CB3StageDataStruct`](../classes/CB3StageDataStruct.md): 1 method
+- [`CB3TrackRecordTables`](../classes/CB3TrackRecordTables.md): 4 methods
+
 ## Burnout 2 counterparts
 
 Source outlines of the Burnout 2 prototype in the same area (types, functions, parameters, locals, lines):

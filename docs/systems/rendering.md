@@ -711,6 +711,47 @@ Each class with its method count, its probable Burnout 2 counterpart (same name 
 
 </details>
 
+### Classes without a known source file
+
+Classes named only in the unoptimised build's binary map, which lost their source file. They are placed here by their names (nested classes with their outer class, templates with their type).
+
+- [`B3ScreenGrabberAccumulation`](../classes/B3ScreenGrabberAccumulation.md): 5 methods
+- [`B3ScreenGrabberAccumulation2x`](../classes/B3ScreenGrabberAccumulation2x.md): 5 methods
+- [`B3ScreenGrabberInterleaved`](../classes/B3ScreenGrabberInterleaved.md): 5 methods
+- [`CB3DebrisArray::CDebrisGeometryData`](../classes/CB3DebrisArray_CDebrisGeometryData.md): 1 method
+- [`CB3DebrisRenderer::CDebrisBatchBuffer`](../classes/CB3DebrisRenderer_CDebrisBatchBuffer.md): 1 method
+- [`CB3FrustumCallbackData`](../classes/CB3FrustumCallbackData.md): 1 method
+- [`CB3InstanceData`](../classes/CB3InstanceData.md): 1 method
+- [`CB3InstanceManager`](../classes/CB3InstanceManager.md): 1 method
+- [`CB3InstanceMesh`](../classes/CB3InstanceMesh.md): 1 method
+- [`CB3ParticleArray::CB3ParticleArrayVUData`](../classes/CB3ParticleArray_CB3ParticleArrayVUData.md): 1 method
+- [`CB3ParticleArray::CB3ParticleClusterA`](../classes/CB3ParticleArray_CB3ParticleClusterA.md): 1 method
+- [`CB3ParticleArray::CB3ParticleClusterB`](../classes/CB3ParticleArray_CB3ParticleClusterB.md): 1 method
+- [`CB3ParticleArray::CB3ParticleClusterC`](../classes/CB3ParticleArray_CB3ParticleClusterC.md): 1 method
+- [`CB3ParticleArrayBase`](../classes/CB3ParticleArrayBase.md): 1 method
+- [`CB3PopcornArrayBase`](../classes/CB3PopcornArrayBase.md): 1 method
+- [`CB3RadialBlurBase`](../classes/CB3RadialBlurBase.md): 2 methods
+- [`CB3RadialBlurParams`](../classes/CB3RadialBlurParams.md): 1 method
+- [`CB3SkyDomeRenderer::CB3SkyDomeCameraParams`](../classes/CB3SkyDomeRenderer_CB3SkyDomeCameraParams.md): 2 methods
+- [`CB3SparkArrayBase`](../classes/CB3SparkArrayBase.md): 1 method
+- [`CB3SparkSpawnParams`](../classes/CB3SparkSpawnParams.md): 1 method
+- [`CB3TrackMesh`](../classes/CB3TrackMesh.md): 2 methods
+- [`CB3TrackRenderObject`](../classes/CB3TrackRenderObject.md): 1 method
+- [`CB3VehicleMesh`](../classes/CB3VehicleMesh.md): 3 methods
+- [`CB3VehicleObject`](../classes/CB3VehicleObject.md): 2 methods
+- [`CB3VehicleRendererBase`](../classes/CB3VehicleRendererBase.md): 2 methods
+- [`CB3VehicleRendererSPRCache`](../classes/CB3VehicleRendererSPRCache.md): 1 method
+- [`CB3ViewportParams`](../classes/CB3ViewportParams.md): 3 methods
+- [`CGtFrustum`](../classes/CGtFrustum.md): 2 methods
+- [`CGtIrradianceMap`](../classes/CGtIrradianceMap.md): 1 method
+- [`CGtIrradianceMapCompressed`](../classes/CGtIrradianceMapCompressed.md): 1 method
+- [`CGtScreenGrabber`](../classes/CGtScreenGrabber.md): 7 methods
+- [`CGtScreenGrabberAccumulation`](../classes/CGtScreenGrabberAccumulation.md): 4 methods
+- [`CGtScreenGrabberAccumulation2x`](../classes/CGtScreenGrabberAccumulation2x.md): 4 methods
+- [`CGtScreenGrabberInterleaved`](../classes/CGtScreenGrabberInterleaved.md): 4 methods
+- [`CGtTextureDictionary`](../classes/CGtTextureDictionary.md): 2 methods
+- [`CGtVu0CodeManager`](../classes/CGtVu0CodeManager.md): 3 methods
+
 ## Burnout 2 counterparts
 
 Source outlines of the Burnout 2 prototype in the same area (types, functions, parameters, locals, lines):
@@ -730,6 +771,7 @@ Source outlines of the Burnout 2 prototype in the same area (types, functions, p
 - [gamesource/Render/PS2InstancedPrelit2/InstancedPrelit2.cpp](../../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Render/PS2InstancedPrelit2/InstancedPrelit2.cpp)
 - [gamesource/Render/PS2ParametricParticle/PS2PParticle.cpp](../../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Render/PS2ParametricParticle/PS2PParticle.cpp)
 - [gamesource/Render/PS2PrelitWorld2/PrelitWorld2.cpp](../../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Render/PS2PrelitWorld2/PrelitWorld2.cpp)
+- [gamesource/Render/README.md](../../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Render/README.md)
 
 ## Notes
 
