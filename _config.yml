@@ -11,7 +11,7 @@ plugins:
   - jekyll-default-layout
   - jekyll-titles-from-headings
 
-color_scheme: dark
+color_scheme: burnout
 logo: "/assets/burnout3-takedown-logo-small.png"
 favicon_ico: "/favicon.ico"
 
