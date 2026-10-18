@@ -1,0 +1,121 @@
+// SLUS_204.97: file names and paths (119)
+
+0x002B9350  tracks\forward\ctys\
+0x002B9390  tracks\forward\ctyl\
+0x002B93D0  tracks\forward\apts\
+0x002B9410  tracks\forward\aptl\
+0x002B9450  tracks\forward\dsts\
+0x002B9490  tracks\forward\dstl\
+0x002B94D0  tracks\forward\fwys\
+0x002B9510  tracks\forward\fwyl\
+0x002B9550  tracks\forward\csts\
+0x002B9590  tracks\forward\cstl\
+0x002B95D0  tracks\forward\mnts\
+0x002B9610  tracks\forward\mntl\
+0x002B9650  tracks\forward\p2p1\
+0x002B9690  tracks\forward\p2p2\
+0x002B96D0  tracks\forward\p2p3\
+0x002B9710  tracks\reverse\ctys\
+0x002B9750  tracks\reverse\ctyl\
+0x002B9790  tracks\reverse\apts\
+0x002B97D0  tracks\reverse\aptl\
+0x002B9810  tracks\reverse\dsts\
+0x002B9850  tracks\reverse\dstl\
+0x002B9890  tracks\reverse\fwys\
+0x002B98D0  tracks\reverse\fwyl\
+0x002B9910  tracks\reverse\csts\
+0x002B9950  tracks\reverse\cstl\
+0x002B9990  tracks\reverse\mnts\
+0x002B99D0  tracks\reverse\mntl\
+0x002B9A10  tracks\reverse\p2p1\
+0x002B9A50  tracks\reverse\p2p2\
+0x002B9A90  tracks\reverse\p2p3\
+0x002B9AD0  audio\fe_menu.ivs
+0x002B9B10  frontend\fmv.ivs
+0x002BC818  Unsupported profile/level
+0x002BDA10  [libpad.a = %d.%d, padman.irx = %d.%d]
+0x002BDB10  libmc: too old release of mcserv.irx
+0x002BDB38  libmc: too old release of mcman.irx
+0x002BDB90  cdrom0:\IOP\IOPRP254.IMG;1
+0x002BDBB0  cdrom0:\IOP\SIO2MAN.IRX;1
+0x002BDBD0  cdrom0:\IOP\PADMAN.IRX;1
+0x002BDBF0  cdrom0:\IOP\MCMAN.IRX;1
+0x002BDC10  cdrom0:\IOP\MCSERV.IRX;1
+0x002BDC30  cdrom0:\IOP\LIBSD.IRX;1
+0x002BDC50  cdrom0:\IOP\USBD.IRX;1
+0x002BDC70  cdrom0:\IOP\LGDEV.IRX;1
+0x002BDC90  cdrom0:\IOP\RWA.IRX;1
+0x002BDCB0  cdrom0:\IOP\B2DIST.IRX;1
+0x002BDCD0  cdrom0:\IOP\GTFSDVD.IRX;1
+0x002BDCF0  cdrom0:\IOP\B2STREAM.IRX;1
+0x002BDD20  %siop/libsd.irx
+0x002BDD30  %siop/lgdev.irx
+0x002BDD40  %siop/rwa.irx
+0x002BDD50  %siop/b2dist.irx
+0x002BDD70  %siop/gtfsdvd.irx
+0x002BDD90  %siop/b2stream.irx
+0x002BDF68  Load/Save
+0x002BE298  Race %d/%d
+0x002C39C0  frontend/global.dic
+0x002C3A20  view.ico
+0x002C3A50  icon.sys
+0x002C3A60  frontend/view.ico
+0x002C58A0  frontend/frontend.ps2
+0x002D19F0  audio\carext.rws
+0x002D1A10  audio\traffic.rws
+0x002D1A30  audio\crash.rws
+0x002D1A40  audio\fe_menu.rws
+0x002D1A60  audio\in_menu.rws
+0x002D1A80  audio\weather\dry.rws
+0x002D1AA0  audio\modes\pursuit.rws
+0x002D20B0  audio\racecars\%s\%sa
+0x002D20D0  audio\racecars\%s\%se
+0x002D5930  Current seg %d/%d
+0x002D5C30  frontend/check.dff
+0x002D5C50  frontend/start.dff
+0x002D5C70  frontend/finish.dff
+0x002D5C90  frontend/kojack.dff
+0x002D5EFF  C%sL%dReplay.dat
+0x002D5F10  %sReplay.dat
+0x002D6430  tracks\forward\ctys\
+0x002D6450  tracks\forward\ctyl\
+0x002D6470  tracks\forward\apts\
+0x002D6490  tracks\forward\aptl\
+0x002D64B0  tracks\forward\dsts\
+0x002D64D0  tracks\forward\dstl\
+0x002D64F0  tracks\forward\fwys\
+0x002D6510  tracks\forward\fwyl\
+0x002D6530  tracks\forward\csts\
+0x002D6550  tracks\forward\cstl\
+0x002D6570  tracks\forward\mnts\
+0x002D6590  tracks\forward\mntl\
+0x002D65B0  tracks\forward\p2p1\
+0x002D65D0  tracks\forward\p2p2\
+0x002D65F0  tracks\forward\p2p3\
+0x002D6610  tracks\reverse\ctys\
+0x002D6630  tracks\reverse\ctyl\
+0x002D6650  tracks\reverse\apts\
+0x002D6670  tracks\reverse\aptl\
+0x002D6690  tracks\reverse\dsts\
+0x002D66B0  tracks\reverse\dstl\
+0x002D66D0  tracks\reverse\fwys\
+0x002D66F0  tracks\reverse\fwyl\
+0x002D6710  tracks\reverse\csts\
+0x002D6730  tracks\reverse\cstl\
+0x002D6750  tracks\reverse\mnts\
+0x002D6770  tracks\reverse\mntl\
+0x002D6790  tracks\reverse\p2p1\
+0x002D67B0  tracks\reverse\p2p2\
+0x002D67D0  tracks\reverse\p2p3\
+0x002D6990  traffic\traffic.tra
+0x002DA280  %s - RWA.IRX  - WARNING OVERFLOWED CMD BUFFER! - COMMANDS LOST!
+0x002DA2F0  RwaRPC_Init : ERROR! RWA.IRX did not respond (did you load it?)
+0x002DA340  RwaRPC_Init : ERROR! RWA.IRX version does not match current EE Library (lib=V%04X irx=V%04X!)
+0x002DA3A0  RwaRPC_Init : ERROR! RWA.IRX did not respond.  IOP may have crashed?
+0x002DBEAF  ?frontend/testat30.m2v
+0x002DD020  w1Stephen Root/Steve Emney
+0x002DD060  w1Greg Bone/Lee Pomeroy
+0x002DD0C0  r1Dolby Digital 5.1/Dolby Pro Logic Mixing
+0x002DD0F0  r1Dolby Digital 5.1/Dolby Pro Logic Mastering
+0x002DD160  r1Foley/Field Recordings
+0x002DD180  w1Ben Minto/Stephen Root/Soundkids

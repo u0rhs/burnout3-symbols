@@ -1,0 +1,55 @@
+# macOS and editors
+.DS_Store
+.obsidian/workspace*.json
+.vscode/
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+
+# Text only. Never commit game code, executables, modules, byte dumps or assets.
+*.elf
+*.ELF
+*.irx
+*.IRX
+*.bin
+*.BIN
+*.img
+*.IMG
+*.AST
+*.ast
+*.OLD
+*.iso
+*.ISO
+*.txd
+*.TXD
+*.dff
+*.DFF
+*.rws
+*.RWS
+*.awd
+*.AWD
+*.m2v
+*.M2V
+*.dat
+*.DAT
+*.bgv
+*.BGV
+*.btv
+*.BTV
+*.bgd
+*.BGD
+*.hwd
+*.HWD
+*.lwd
+*.LWD
+*.kfs
+*.KFS
+VDB.XML
+# The main executables have no extension of their own, so they are listed by name. The Burnout 2
+# export folder shares one of the names, so it is re-included on the last line.
+SLUS_204.97
+DNAT_200.45
+SLUS_210.50
+!data/burnout2-prototype/SLUS_204.97/

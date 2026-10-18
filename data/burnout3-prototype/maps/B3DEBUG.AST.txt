@@ -1,0 +1,3575 @@
+// B3DEBUG.AST: the assert expressions of the debug build, with their offset in the file.
+// They name fields and the rules the code checks.
+
+0x000000  lnValue != RwInt32MINVAL
+0x000020  lrMin <= lrMax
+0x000030  lnMin <= lnMax
+0x000040  lrUserEpsilon > 0.0f
+0x000060  !IsEffectivelyZero(lrModulus)
+0x000080  false == IsEffectivelyZero( lrValue )
+0x0000B0  lrValue >= 0.0f
+0x0000C0  lrValue > krMinimumReciprocal
+0x0000E0  lrValue >= -1.0f
+0x000100  lrValue <= 1.0f
+0x000110  lrValue >= -1.0f
+0x000130  lrValue <= 1.0f
+0x000140  !IsEffectivelyZero()
+0x000160  !IsEffectivelyZero()
+0x000180  !IsEffectivelyZero()
+0x0001A0  lnNumPoints > 0
+0x0001B0  GtMath::Abs(lLookAt.GetLength()-1.0f) <= GtMath::krUnitVectorTolerance
+0x000200  GtMath::Abs(lLookUp.GetLength()-1.0f) <= GtMath::krUnitVectorTolerance
+0x000250  DotProduct(lReturnMatrix.mUp, lReturnMatrix.mAt) <= GtMath::krDotProductEquivTolerance
+0x0002B0  GtMath::Abs(lLookUp.GetLength()-1.0f) <= GtMath::krUnitVectorTolerance
+0x000300  GtMath::Abs(lLookAt.GetLength()-1.0f) <= GtMath::krUnitVectorTolerance
+0x000350  DotProduct(lReturnMatrix.mUp, lReturnMatrix.mAt) <= GtMath::krDotProductEquivTolerance
+0x0003B0  GtMath::Abs(lLookRight.GetLength()-1.0f) <= GtMath::krUnitVectorTolerance
+0x000400  GtMath::Abs(lLookUp.GetLength()-1.0f) <= GtMath::krUnitVectorTolerance
+0x000450  DotProduct(lReturnMatrix.mRight, lReturnMatrix.mUp) <= GtMath::krDotProductEquivTolerance
+0x0004B0  lMatrix.IsNormal()
+0x0004D0  lMatrix.IsOrthogonal()
+0x0004E8  IsUnit()
+0x0004F8  lQuat.IsUnit()
+0x000508  lnRow < 512
+0x000520  lnE <= GtMath::knQuatCompressMaxE
+0x000550  lpOutput != NULL
+0x000570  ((RwUInt32)lpOutput & 3) == 0
+0x000590  lnButtonID < eNumButtons
+0x0005B0  ln8Port >= 0
+0x0005C0  ln8Port < kn8MaxPorts
+0x0005D8  ln8Player >= 0
+0x0005F0  ln8Player < kn8MaxPlayers
+0x000610  ln8Port >= 0
+0x000620  ln8Port < kn8MaxPorts
+0x000640  leFrontendImage <= eB3FrontendImage_Num
+0x000670  leGlobalImage <= eB3GlobalImage_Num
+0x0006A0  leMenuImageUV <= eB3MenuImageUVNum
+0x0006D0  lnPlaneIndex >= 0
+0x0006F0  lnPlaneIndex < knGtOrientedBoxMaxPlanes
+0x000720  lnVertex < mu8VertexCount
+0x000740  mpParent
+0x000750  mrBindingDistanceSq >= 0
+0x000770  false
+0x000780  ( lnBehaviour >= 0 ) && ( lnBehaviour < eBehaviourNumber )
+0x0007C0  mrMaxBoost > 1.0f
+0x0007E0  lrMultiplier >= 0.0f
+0x000800  lrMultiplier < 10.0f
+0x000820  (RwUInt32)leSurface <= (RwUInt32)eCS_NumSurfaces
+0x000860  meBoundingShape == eBoundingConvexHull
+0x000890  lForce.IsValid()
+0x0008B0  lImpulse.IsValid()
+0x0008D0  lTorque.IsValid()
+0x0008F0  lPoint.IsValid()
+0x000910  lForce.IsValid()
+0x000930  lPoint.IsValid()
+0x000950  lImpulse.IsValid()
+0x000970  lTranslation.IsValid()
+0x000990  mTotalTranslation.GetLength() < 20.0f
+0x0009C0  lTemp.IsValid()
+0x0009D0  lVelocity.IsValid()
+0x0009E8  FALSE
+0x0009F0  FALSE
+0x000A00  lnNumItems == 4
+0x000A10  strlen(macMyLocalIPAddress) > 0
+0x000A30  lu16FrameA != (RwUInt16)-1
+0x000A50  lu16FrameB != (RwUInt16)-1
+0x000A70  luFrameA != (RwUInt32)-1
+0x000A90  luFrameB != (RwUInt32)-1
+0x000AB0  lu16A != (RwUInt16)-1
+0x000AD0  lu16B != (RwUInt16)-1
+0x000AF0  luA != (RwUInt32)-1
+0x000B10  luB != (RwUInt32)-1
+0x000B28  lnType < 127
+0x000B40  lu16Frame != (RwUInt16)-1
+0x000B60  !MessageIsValid()
+0x000B80  lnType == mn8Type
+0x000BA0  IsEncrypted() || mnSendingPlayerID > 0
+0x000BD0  IsEncrypted() || mnRecvingPlayerID >0
+0x000BF8  !IsEncrypted()
+0x000C10  mu8GameID != (RwUInt8)-1
+0x000C30  maSendMessageData[i].mpMsg
+0x000C50  GetMyPlayerIndex() != -1
+0x000C70  mpNetworkAdapter
+0x000C90  lnIndex < mnCurrentSize
+0x000CB0  Element not found in array
+0x000CD0  mnCurrentSize < mnMaxSize
+0x000CF0  mgnTextureExtPluginOffset > 0
+0x000D10  ( lnPaletteIndex >= 0 ) && ( lnPaletteIndex < (RwInt32)lpTexExt->mu8NumPalettes )
+0x000D70  ( ( lpRasExt->msb & ( 0x3fff << ( 37 - 32 ) ) ) + luCBPOffset ) <= ( 0x3fff << ( 37 - 32 ) )
+0x000DD0  mgnTextureExtPluginOffset > 0
+0x000DF0  mgnTextureExtPluginOffset > 0
+0x000E10  mgnTextureExtPluginOffset > 0
+0x000E30  mgnTextureExtPluginOffset > 0
+0x000E50  lnIndex < mnCurrentSize
+0x000E70  Element not found in array
+0x000E90  mnCurrentSize < mnMaxSize
+0x000EB0  mnUsedSegments < knMaxScrapeSize
+0x000EE0  lnRaceCarIndex < 128
+0x000F00  lnRaceCarIndex >= -128
+0x000F20  lnCarColour >= 0
+0x000F40  lnCarColour < 8
+0x000F50  mbFishtailing
+0x000F60  lrAcc >= 0.0f
+0x000F70  lrAcc <= 1.0f
+0x000F80  lu8Acc < 32
+0x000F90  lrBrake >= 0.0f
+0x000FA0  lrBrake <= 1.0f
+0x000FB0  lrSteer >= -1.0f
+0x000FD0  lrSteer <= 1.0f
+0x000FE0  lnGear >= -1
+0x000FF0  lnGear < 8
+0x001000  (lxGearFlags & kx8ControlGearBits) == lxGearFlags
+0x001040  lpNetworkPlayer
+0x001050  mpNetworkPlayer
+0x001060  lpScore->mnCrashMultiplier > -127
+0x001090  lpScore->mnCrashMultiplier < 127
+0x0010B8  lnHostID >= 0
+0x0010D0  lrStartTime >= 0.0f
+0x0010F0  !mbReceivedStartCountdown || ABecomesHostBeforeB(mnStartCountdownHostID, lnHostID)
+0x001150  lanRoundsWon[i] >= 0
+0x001170  lanRoundsWon[i] >= 0
+0x001190  lanRoundsWon[i] == 0
+0x0011B0  Failed to find a space to add new win total
+
+0x0011E0  mu8NumStages < knB3MaxOfflineCrashPartyPlayers
+0x001210  lnPlayerIndex < mu8NumPlayers
+0x001230  lnPlayerIndex < mu8NumPlayers
+0x001250  lnGroup < kun32MaxGroups
+0x001270  lpData
+0x001278  lpFrame
+0x001280  mpfRender
+0x001290  ( lnCurrentLayer >= 0 ) && ( lnCurrentLayer < mnNumLayers )
+0x0012D0  ( lnNewLayer >= 0 ) && ( lnNewLayer < mnNumLayers )
+0x001310  ( lnLayer >= 0 ) && ( lnLayer < mnNumLayers )
+0x001340  ( lnLayer >= 0 ) && ( lnLayer < mnNumLayers )
+0x001370  ( lxProperties >= 0 ) && ( lxProperties < (RwInt32)CGt2dLayer::kxPropertyInvalid )
+0x0013D0  layer can't be both additive and subtractive!
+0x001400  ( lnLayer >= 0 ) && ( lnLayer < mnNumLayers )
+0x001430  ( mePrepareState == eGtPSConstructed ) || ( mePrepareState == eGtPSPreparedFully ) || ( mePrepareState == eGtPSReleased )
+0x0014B0  leHUDType <= eHUDTypeCount
+0x0014D0  lCharacter != 0
+0x0014E0  NULL != mpHUDManager
+0x001500  ( lnFrame >= 0 ) && ( lnFrame < knB3HUDBoostFireCoreNumFrames )
+0x001540  ( lnFrame >= 0 ) && ( lnFrame < knB3HUDBoostFireEdgeNumFrames )
+0x001580  ( lnFrame >= 0 ) && ( lnFrame < knB3HUDBoostFireOverNumFrames )
+0x0015C0  leIconTexture < eIconTextureNum
+0x0015E0  lu8SourceDataIndex < knB3MaxTrafficCars
+0x001610  meType == eABT_Traffic
+0x001628  HasPhysics()
+0x001638  HasPhysics()
+0x001650  maBodies[lnIndex].IsRaceCar()
+0x001670  mrRiskScale >= 0.0f && mrRiskScale <= 1.0f
+0x0016A0  mpRwCamera != NULL
+0x0016C0  mpRwCamera != NULL
+0x0016E0  mpRwCamera != NULL
+0x001700  mpRwCamera != NULL
+0x001720  ( lnPlayer == 0 ) || ( lnPlayer == 1 )
+0x001750  mpCurrentViewport == NULL
+0x001770  ( lnIndex >= 0 ) && ( lnIndex < mnNumRaceCars )
+0x0017A0  ( lnIndex >= 0 ) && ( lnIndex < mnNumPlayerCars )
+0x0017E0  ( lnIndex >= 0 ) && ( lnIndex < mnNumAICars )
+0x001810  ( lnIndex >= 0 ) && ( lnIndex < knB3MaxNetworkCars )
+0x001850  mnRequestResume == -1
+0x001870  mnGamePausedByPlayer == -1
+0x001890  ( lnPlayerIndex == 0 ) || ( lnPlayerIndex == 1 )
+0x0018D0  mnRequestPause == -1
+0x0018F0  mnGamePausedByPlayer != -1
+0x001910  ( lnPlayerIndex == 0 ) || ( lnPlayerIndex == 1 )
+0x001950  meRequestedUpdateState == eGameUpdateStateSimulationUpdate
+0x001990  meRequestedUpdateState != leUpdateState
+0x0019C0  Stack overflow detected!
+0x0019E0  luPort < eGtNum_Of_PS2_Ports
+0x001A00  maMonitors[lnMonitorID].mbActive == false
+0x001A30  maMonitors[lnMonitorID].mbActive == true
+0x001A60  ( lrWeatherIntensity >= 0.0f ) && ( lrWeatherIntensity <= 1.0f )
+0x001AB0  mnRenderPlayer != -1
+0x001AD0  mnRenderPlayer != -1
+0x001AF0  ((RwUInt32)lnNumItems) <= 0xFF
+0x001B10  ((RwUInt32)lnCurrentItem) < (RwUInt32)lnNumItems
+0x001B50  lpTextData->mu8Effect == (RwUInt8)eEffect_Rotate
+0x001B90  lpTextData->mu8Effect == (RwUInt8)eEffect_Distort
+0x001BD0  lpTextData->mu8Effect == (RwUInt8)eEffect_Disintegrate
+0x001C10  ( lrWhiteness >= 0.0f ) && ( lrWhiteness <= 1.0f )
+0x001C50  meSelectedRegion < eB3TrackRegionCount
+0x001C80  mMostRecentlyUpdatedTrackID != 0
+0x001CA8  lnResult != 0
+0x001CC0  mePrepareState == eGtPSPreparedFully
+0x001CF0  lnIndex>=0 && lnIndex < mnNumEntries
+0x001D20  leArrayID < eParticleArray_Max
+0x001D40  leArrayID < eSparkArray_Max
+0x001D60  mVehicleList.mnVehicleCount <= knB3GameMaxVehicles
+0x001DA0  mVehicleList.mnVersionNumber == knB3VehicleListVersionNumber
+0x001DE0  mTrackList.mnTrackCount <= knB3GameMaxTracks
+0x001E10  mTrackList.mnVersionNumber == knB3TrackListVersionNumber
+0x001E50  mpProgressionData->mu32VersionNumber == kuB3ProgressionDataVersionNumber
+0x001EA0  mpRequestedGameMode
+0x001EC0  mpCurrentGameMode
+0x001EE0  mpCurrentGameMode
+0x001F00  mpCurrentGameMode->StartReplay()
+0x001F30  luFreeFifoSpace > 0
+0x001F50  Game Update has been called out of sequence
+0x001F80  ( mnRequestPause == 0 ) || ( mnRequestPause == 1 )
+0x001FC0  ( mnRequestResume == 0 ) || ( mnRequestResume == 1 )
+0x002000  New Game mode requested outside of update
+0x002030  lpRaceCar
+0x002040  false
+0x002050  lVehicleID != kGTID_NULL
+0x002070  lTrackID != kGTID_NULL
+0x002090  lnIndex != knB3HardCodedDataSearchFail
+0x0020C0  lnTrackIndex != knB3HardCodedDataSearchFail
+0x0020F0  lnIndex != knB3HardCodedDataSearchFail
+0x002120  gCalculatedData.mnLongestOncomingTrackIndex < knB3NumHardCodedTracks
+0x002170  mStoredData.mnLongestOncomingVehicleIndex != -1
+0x0021A0  mStoredData.mnLongestOncomingVehicleIndex < knB3NumHardCodedRaceVehicles
+0x0021F0  lnTrackIndex != knB3HardCodedDataSearchFail
+0x002220  lnIndex != knB3HardCodedDataSearchFail
+0x002250  gCalculatedData.mnLongestDriftTrackIndex != -1
+0x002280  gCalculatedData.mnLongestDriftTrackIndex < knB3NumHardCodedTracks
+0x0022D0  mStoredData.mnLongestDriftVehicleIndex != -1
+0x002300  mStoredData.mnLongestDriftVehicleIndex < knB3NumHardCodedRaceVehicles
+0x002350  lnEventIndex >= 0
+0x002370  lnEventIndex < knB3NumHardCodedRaceChallenges
+0x0023A0  lnEventIndex < knB3NumHardCodedCrashStages
+0x0023D0  mStoredData.mnPendingChallengeIndex < knB3NumHardCodedRaceChallenges
+0x002420  mStoredData.mnPendingChallengeIndex < knB3NumHardCodedCrashStages
+0x002470  lnEventIndex >= 0
+0x002490  lnEventIndex < knB3NumHardCodedRaceChallenges
+0x0024C0  lnEventIndex < knB3NumHardCodedCrashStages
+0x0024F0  lnEventIndex >= 0
+0x002510  lnEventIndex < knB3NumHardCodedRaceChallenges
+0x002540  lnEventIndex < knB3NumHardCodedCrashStages
+0x002570  lnTakeDownIndex < knB3NumHardCodedTakedowns
+0x0025A0  lnTakeDownIndex >= 0
+0x0025C0  lnSpecialEventIndex < knB3NumHardCodedSpecialEvents
+0x002600  lnSpecialEventIndex >= 0
+0x002620  lnHeadlineIndex < knB3NumHardCodedHeadlines
+0x002650  lnHeadlineIndex >= 0
+0x002670  lnCheatIndex < knB3NumHardCodedCheats
+0x0026A0  lnCheatIndex >= 0
+0x0026C0  lnTrophyIndex < knB3NumHardCodedTrophys
+0x0026F0  lnTrophyIndex >= 0
+0x002708  false
+0x002710  false
+0x002718  false
+0x002720  false
+0x002728  false
+0x002730  lpPlayerCar
+0x002740  lpGameMode
+0x002750  false
+0x002758  false
+0x002760  0
+0x002764  0
+0x002770  leNewMedal < eEventMedalNumber
+0x002790  lpProfile
+0x0027A0  lpProfile
+0x0027B0  lpProfile
+0x0027C0  ln64Size <= maRequests[munHead].munReadLen
+0x0027F0  eGTF_STATUS_ERROR != leStatus
+0x002810  eGTF_STATUS_CLOSED != leStatus
+0x002830  Cannot read into NULL memory
+0x002850  Async load manager got too many requests
+0x002880  lpcName != NULL
+0x002890  strlen(lpcName) < knMaxFilenameLength
+0x0028C0  maRequests[munTail].munId != 0
+0x0028E0  mpCar
+0x0028E8  lpCar
+0x0028F0  lu8NewLaneIndex < gWorld.mnAILaneCount
+0x002920  lu16NewSegIndex < gWorld.maAILanes[lu8NewLaneIndex].mpData->mu16SegmentCount
+0x002970  lu8NewLaneIndex < gWorld.mnAILaneCount
+0x0029A0  lu16NewSegIndex < gWorld.maAILanes[lu8NewLaneIndex].mpData->mu16SegmentCount
+0x0029F0  false
+0x002A00  lu8NewLaneIndex < gWorld.mnAILaneCount
+0x002A30  lu16NewSegIndex < gWorld.maAILanes[lu8NewLaneIndex].mpData->mu16SegmentCount
+0x002A80  lu8NewLaneIndex < gWorld.mnAILaneCount
+0x002AB0  lu16NewSegIndex < gWorld.maAILanes[lu8NewLaneIndex].mpData->mu16SegmentCount
+0x002B00  lu8NewLaneIndex < gWorld.mnAILaneCount
+0x002B30  lu16NewSegIndex < gWorld.maAILanes[lu8NewLaneIndex].mpData->mu16SegmentCount
+0x002B80  lu8NewLane < gWorld.mnAILaneCount
+0x002BB0  lu16SegIndex < lpLane->mpData->mu16SegmentCount
+0x002BE0  lu8NewLane < gWorld.mnAILaneCount
+0x002C10  lu16SegIndex < lpLane->mpData->mu16SegmentCount
+0x002C40  lu16SegIndex < lpLane->mpData->mu16SegmentCount
+0x002C70  lpCollCar
+0x002C80  lpTrafficPhysics
+0x002CA0  lu16SegIndex < lpLane->mpData->mu16SegmentCount
+0x002CD0  0
+0x002CE0  mrNearHaloSize != 0.0f
+0x002D00  lnChannel < knAvoidMaxChannel
+0x002D20  lnChannel >= 0
+0x002D30  mu8CarWidthChannels != 0
+0x002D50  (mu8CarRightChannel + mu8CarLeftChannel)/2 >= lnChannel
+0x002D90  (mu8CarRightChannel + mu8CarLeftChannel)/2 <= lnChannel
+0x002DD0  gGame.GetCurrentGameMode()
+0x002DF0  meAIPrepareState == eGtPSPreparedFully
+0x002E20  mpAILane == NULL || mu16AILaneSegmentIndex < mpAILane->mpData->mu16SegmentCount
+0x002E70  lpPlayerCar && lpPlayerCar->GetRaceCarType() == eRaceCarTypePlayer
+0x002EC0  leState != eAIInRangeCount
+0x002EE0  lrValue >= 0.0f && lrValue <= 1.0f
+0x002F08  lpOther
+0x002F10  lpOther
+0x002F18  false
+0x002F20  NO CHECKPOINTS!
+0x002F30  lnValue >= 0 && lnValue < knDriverSplitRangeValues
+0x002F70  mArbitrator.mpSpeedMatchTarget
+0x002F90  lu8LaneIndex < gWorld.mnAILaneCount
+0x002FC0  lu16StartSegIndex < gWorld.maAILanes[lu8LaneIndex].mpData->mu16SegmentCount
+0x003010  lpLaneData
+0x003020  lu16StartSegIndex < lpLaneData->mu16SegmentCount
+0x003058  lppResultLane
+0x003070  lpu16ResultSegmentIndex
+0x003090  lpn8ResultSector
+0x0030B0  ln8CurrentSector >= -1
+0x0030D0  ln8CurrentSector <= 3
+0x0030F0  i < lpLane->mpData->mu16SegmentCount
+0x003118  *lppResultLane
+0x003130  *lpu16ResultSegmentIndex != knInvalidSegmentIndex
+0x003170  lu16SegmentIndex < mpData->mu16SegmentCount
+0x0031A0  lrClearanceWanted != 0.0f
+0x0031C0  lu16SegmentIndex < mpData->mu16SegmentCount
+0x0031F0  lu16SegmentIndex < mpData->mu16SegmentCount
+0x003220  lu16SegmentNodeIndex <= mpData->mu16SegmentCount
+0x003260  lnDelta == 0 || lnDelta == 1
+0x003280  lpResultVector
+0x003290  lu16SegmentNumber <= mpData->mu16SegmentCount
+0x0032C0  lu16SegmentNumber <= mpData->mu16SegmentCount
+0x0032F0  lpResultVector
+0x003300  lu16SegmentNumber < mpData->mu16SegmentCount
+0x003330  lpResultVector
+0x003340  lu16SegmentNumber < mpData->mu16SegmentCount
+0x003370  lpResultVector
+0x003380  lu16SegmentNumber < mpData->mu16SegmentCount
+0x0033B0  lpResultVector
+0x0033C0  lu16SegmentNumber < mpData->mu16SegmentCount
+0x0033F0  lpResultVector
+0x003400  lu16SegmentNumber < mpData->mu16SegmentCount
+0x003430  lu16SegmentNodeIndex <= mpData->mu16SegmentCount
+0x003468  lppResultLane
+0x003480  lpu16ResultSegmentIndex
+0x0034A0  lpn8ResultSector
+0x0034B8  false
+0x0034C0  (lnDiff < 0) && (lnDiff < -lnHalfTrack)
+0x0034F0  lu16EndSegmentIndex <= mpData->mu16SegmentCount
+0x003520  mpData->mu8Looped
+0x003540  lu16SegmentIndex < mpData->mu16SegmentCount
+0x003570  lppResultLane
+0x003580  lpu16ResultSegmentIndex
+0x0035A0  lpn8ResultSector
+0x0035C0  ln8CurrentSector >= -1
+0x0035E0  ln8CurrentSector <= 3
+0x003600  i < lpLane->mpData->mu16SegmentCount
+0x003628  *lppResultLane
+0x003640  *lpu16ResultSegmentIndex != knInvalidSegmentIndex
+0x003680  ln8Delta == 1 || ln8Delta == -1
+0x0036A0  ln8Delta == 1 || ln8Delta == -1
+0x0036C0  lu16SegIndex < mpData->mu16SegmentCount
+0x0036F0  leSideWanted == eAISegmentLinkTypeLeft || leSideWanted == eAISegmentLinkTypeRight
+0x003750  lpu8ResultLaneIndex
+0x003770  lpu16ResultSegIndex
+0x003790  lu8NewLaneIndex < gWorld.mnAILaneCount
+0x0037C0  lu16NewSegmentIndex < gWorld.maAILanes[lu8NewLaneIndex].mpData->mu16SegmentCount
+0x003820  lu16SegIndex < mpData->mu16SegmentCount
+0x003850  leSideWanted == eAISegmentLinkTypeLeft || leSideWanted == eAISegmentLinkTypeRight
+0x0038B0  lpu8ResultLaneIndex
+0x0038D0  lpu16ResultSegIndex
+0x0038F0  mpData->mpSegmentsArray[ lunSegmentIndex16 ].GetSegmentType() == eAISegmentTypeHardNoGo
+0x003950  lunSegmentIndex16 < lpNewLane->mpData->mu16SegmentCount
+0x003990  lpNewLane->mpData->mpSegmentsArray[ *lpu16ResultSegIndex ].GetSegmentType() == eAISegmentTypeHardNoGo || lpNewLane->mpData->mpSegmentsArray[ *lpu16ResultSegIndex ].GetSegmentType() == eAISegmentTypeSoftNoGo
+0x003A60  lxSideWanted == kxLaneDirectionRight
+0x003A90  lu8NewLaneIndex < gWorld.mnAILaneCount
+0x003AC0  lunNewSegIndex16 < gWorld.maAILanes[lu8NewLaneIndex].mpData->mu16SegmentCount
+0x003B10  lxSideWanted == kxLaneDirectionRight
+0x003B38  false
+0x003B40  false
+0x003B50  lu16Segment < mpData->mu16SegmentCount
+0x003B78  mpCar
+0x003B80  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x003BD0  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x003C20  lu8LaneIndex < gWorld.mnAILaneCount
+0x003C50  lu16TmpSegIndex < gWorld.maAILanes[lu8LaneIndex].mpData->mu16SegmentCount
+0x003CA0  lu8LaneIndex < gWorld.mnAILaneCount
+0x003CD0  lu16TmpSegIndex < gWorld.maAILanes[lu8LaneIndex].mpData->mu16SegmentCount
+0x003D20  lu8LaneIndex < gWorld.mnAILaneCount
+0x003D50  lu16SegIndex < gWorld.maAILanes[lu8LaneIndex].mpData->mu16SegmentCount
+0x003DA0  lu8LaneIndex < gWorld.mnAILaneCount
+0x003DD0  lu16SegIndex < gWorld.maAILanes[lu8LaneIndex].mpData->mu16SegmentCount
+0x003E18  false
+0x003E20  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x003E70  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x003EB8  false
+0x003EC0  false
+0x003ED0  !lbLHSOK && !lbRHSOK
+0x003EF0  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x003F40  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x003F90  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x003FE0  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x004030  lu8NewLane < gWorld.mnAILaneCount
+0x004060  mu16CurrentSegmentIndex < mpLane->mpData->mu16SegmentCount
+0x0040A0  lu8NewLane < gWorld.mnAILaneCount
+0x0040D0  mu16CurrentSegmentIndex < mpLane->mpData->mu16SegmentCount
+0x004110  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x004160  lu8NewLane < gWorld.mnAILaneCount
+0x004190  mu16CurrentSegmentIndex < mpLane->mpData->mu16SegmentCount
+0x0041D0  lu8NewLane < gWorld.mnAILaneCount
+0x004200  mu16CurrentSegmentIndex < mpLane->mpData->mu16SegmentCount
+0x004240  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x004290  mu16EndSegIndex != knInvalidSegmentIndex
+0x0042C0  !mCornerExitDirection.IsEffectivelyZero()
+0x0042F0  false
+0x004300  mpLane->mpData->mu8Looped || (mu16TargetSegmentIndex < mpLane->mpData->mu16SegmentCount)
+0x004360  mpLane->mpData->mu8Looped || (mu16TargetSegmentIndex < mpLane->mpData->mu16SegmentCount)
+0x0043C0  mpLane->mpData->mu8Looped || (mu16TargetSegmentIndex < mpLane->mpData->mu16SegmentCount)
+0x004420  false
+0x004430  mpLane->SegmentAIsInfrontOfSegmentB(mu16TargetSegmentIndex, mu16CurrentSegmentIndex)
+0x004488  false
+0x004490  mpLane->SegmentAIsInfrontOfSegmentB(mu16TargetSegmentIndex, mu16CurrentSegmentIndex)
+0x0044F0  mpLane->SegmentAIsInfrontOfSegmentB(mu16TargetSegmentIndex, mu16CurrentSegmentIndex)
+0x004550  mpLane->SegmentAIsInfrontOfSegmentB(lnTurnEndSegmentIndex, mu16CurrentSegmentIndex)
+0x0045B0  mpLane->SegmentAIsInfrontOfSegmentB(mu16TargetSegmentIndex, mu16CurrentSegmentIndex)
+0x004610  mpLane->mpData->mu8Looped || (mu16TargetSegmentIndex < mpLane->mpData->mu16SegmentCount)
+0x004670  meCornerDirection == eAITargetTurnHardRight
+0x0046A0  false
+0x0046B0  meCornerState == eAITargetCornerStateUnknown
+0x0046E0  (RwInt32)lu8NewLaneIndex < gWorld.mnAILaneCount
+0x004710  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x004760  mu16CurrentSegmentIndex < mpLane->mpData->mu16SegmentCount
+0x0047A0  (RwInt32)lu8NewLaneIndex < gWorld.mnAILaneCount
+0x0047D0  mu16CurrentSegmentIndex < mpLane->mpData->mu16SegmentCount
+0x004810  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x004860  CB3AILane::LaneIsDriveable(mpLane->mpData, mu16CurrentSegmentIndex, 1)
+0x0048B0  meCornerDirection == eAITargetTurnHardRight
+0x0048E0  mpLane->SegmentAIsInfrontOfSegmentB(mu16TargetSegmentIndex, mu16CurrentSegmentIndex)
+0x004940  mpLane->mpData->mu8Looped || (mu16TargetSegmentIndex < mpLane->mpData->mu16SegmentCount)
+0x0049A0  mpLane->SegmentAIsInfrontOfSegmentB(mu16TargetSegmentIndex, mu16CurrentSegmentIndex)
+0x004A00  mpLane->mpData->mu8Looped || (mu16TargetSegmentIndex < mpLane->mpData->mu16SegmentCount)
+0x004A60  mpLane->SegmentAIsInfrontOfSegmentB(mu16TargetSegmentIndex, mu16CurrentSegmentIndex)
+0x004AC0  mpLane->mpData->mu8Looped || (mu16TargetSegmentIndex < mpLane->mpData->mu16SegmentCount)
+0x004B20  gWorld.mnAICornerCount > 0
+0x004B40  lnSegsFromHereToApex >= 0
+0x004B60  (gWorld.mpAICornersArray[j].mx8CornerDirection & kxCornerDirectionMask) == knCornerDirectionRight
+0x004BD0  (gWorld.mpAICornersArray[j].mx8CornerDirection&kxCornerDirectionMask) == knCornerDirectionRight
+0x004C30  lxSideWanted == kxLaneDirectionRight
+0x004C60  lu16NewSegment < lpNewLane->mpData->mu16SegmentCount
+0x004C98  lpResultVector
+0x004CB0  lpu8ResultLaneIndex
+0x004CD0  lpu16ResultSegIndex
+0x004CF0  lxSideWanted == kxLaneDirectionRight
+0x004D20  lu8NewLaneIndex < gWorld.mnAILaneCount
+0x004D50  lu16NewSegIndexB < gWorld.maAILanes[lu8NewLaneIndex].mpData->mu16SegmentCount
+0x004DA0  lu8NewLaneIndex < gWorld.mnAILaneCount
+0x004DD0  lu16NewSegIndexB < gWorld.maAILanes[lu8NewLaneIndex].mpData->mu16SegmentCount
+0x004E20  (RwInt32)lu8NewLaneIndex < gWorld.mnAILaneCount
+0x004E50  (RwInt32)lu8NewLaneIndex < gWorld.mnAILaneCount
+0x004E80  (RwInt32)lu8NewLaneIndex < gWorld.mnAILaneCount
+0x004EB0  lxSideWanted == kxLaneDirectionRight
+0x004EE0  lrLeftFrac > 0.39f
+0x004F00  lrLeftFrac < 0.61f
+0x004F20  mrEndFrac < 1.0f
+0x004F40  mrEndFrac > 0.0f
+0x004F60  lunRHSIndex16 >= 0
+0x004F80  lunRHSIndex16 < 50000
+0x004FA0  lunLHSIndex16 >= 0
+0x004FC0  lunLHSIndex16 < 50000
+0x004FE0  lu16StartSegmentIndex < lpLane->mpData->mu16SegmentCount
+0x005020  lpLane->mpData->mu8Looped
+0x005040  lu16StartSegmentIndex < lpLane->mpData->mu16SegmentCount
+0x005080  gWorld.maAILanes[lu8LaneIndex].mpData->mu8Looped
+0x0050C0  lnSegsToCheck >= 0
+0x0050D8  lpLaneA
+0x0050E0  lpLaneB
+0x0050F0  lu16StartIndexA < lpLaneA->mpData->mu16SegmentCount
+0x005130  lu8LaneIndex < gWorld.mnAILaneCount
+0x005160  lu16SegIndex < gWorld.maAILanes[lu8LaneIndex].mpData->mu16SegmentCount
+0x0051B0  lu8LaneIndex < gWorld.mnAILaneCount
+0x0051E0  lu16SegIndex < gWorld.maAILanes[lu8LaneIndex].mpData->mu16SegmentCount
+0x005228  false
+0x005230  lpCar
+0x005240  mpCar->mDriver.mArbitrator.mTarget.mu16EndSegIndex != knInvalidSegmentIndex
+0x005290  !mpCar->mDriver.mArbitrator.mTarget.mCornerExitDirection.IsZero()
+0x0052E0  lu16SegmentIndex < lpLane->mpData->mu16SegmentCount
+0x005318  lpLane
+0x005320  lu16SegIndex < lpLane->mpData->mu16SegmentCount
+0x005350  lpResultVector
+0x005360  (RwInt32)lu8NewLaneIndex < gWorld.mnAILaneCount
+0x005390  (RwInt32)lu8NewLaneIndex < gWorld.mnAILaneCount
+0x0053C0  lanIndex[0] >= 0 && lanIndex[0] < lnLength
+0x0053F0  lanIndex[1] >= 0 && lanIndex[1] < lnLength
+0x005420  lanIndex[2] >= 0 && lanIndex[2] < lnLength
+0x005450  lanIndex[3] >= 0 && lanIndex[3] < lnLength
+0x005480  lanIndex[4] >= 0 && lanIndex[4] < lnLength
+0x0054B0  lanIndex[5] >= 0 && lanIndex[5] < lnLength
+0x0054E0  !GtMath::IsEffectivelyZero(lrTotalDistStartToApex)
+0x005520  !GtMath::IsEffectivelyZero(lrTotalDistApexToEnd)
+0x005560  mBoostEffectParams.Prepare( this )
+0x005590  lnNumSegments >= 0 && lnNumSegments <= knB3MaxExtraBoostBarSegments
+0x0055E0  &lpRaceCar->mScore.mBurn == this
+0x005610  mpInStream != NULL
+0x005630  mpGameDataStruct->muVersionNumber == kuB3GameDataVersionNumber
+0x005670  mpTrackDataStruct->muVersionNumber == kuB3TrackDataVersionNumber
+0x0056C0  gWorld.mTrafficSystem.mpTrafficData->mu32VersionNumber == kuB3TrafficDataVersionNumber
+0x005720  mpAILanesData->mnLaneDataVersion == knLaneDataVersion
+0x005760  gGame.GetCurrentGameMode()
+0x005780  lpStageLogic
+0x005790  !( lbCrashBattle && lbCoopCrash )
+0x0057C0  mapPickupTextures[lnIndex]
+0x0057E0  mpRampTexture
+0x0057F0  strlen(lpacGameDataFileName) < knGameDataMaxFilePath
+0x005828  muLoadId != 0
+0x005840  mEssentialParams.mpStreamedData->mxVersionNumber == kxVehicleCurrentVersion
+0x005890  gVehicleRenderer.FixUpVehicleData(mEssentialParams.mpStreamedData)
+0x0058D8  mpAILane
+0x0058E8  lpPhysics
+0x005900  lpRaceCarPhysics
+0x005920  Loaded data does not exist! Why?
+0x005950  NULL != lpViewport
+0x005970  NULL != lpCamera
+0x005988  !mbCrashing
+0x005998  mbCrashing
+0x0059B0  gWorld.mReplaySystem.mbReplayPlaying || mFinishedScore.meFinishState == eScoreFinishStateNotFinished
+0x005A20  gGame.GetCurrentGameMode()
+0x005A40  gGame.GetCurrentGameMode()->GetStageLogic()
+0x005A70  lpNearLane->mpData->mpSegmentsArray[lnNearLaneSegmentIndex].mau8ChangeLaneIndices[leWrongSearchDirection] == knInvalidLaneIndex
+0x005AF0  lbFound
+0x005B00  Trying to reset car in found segment with reset none
+0x005B40  Trying to reset car in unknown segment with reset none
+0x005B80  strlen( macRaceCarPath ) < knMaxPathLength
+0x005BB0  GetRaceCarType() != eRaceCarTypeNetwork
+0x005BE0  GetRaceCarType() != eRaceCarTypePlayer
+0x005C08  lpPhysics
+0x005C18  lpGameMode
+0x005C28  lpStageLogic
+0x005C40  lpOtherRaceCar->mScore.mnRacePosition != lpRaceCar->mScore.mnRacePosition
+0x005C90  lnRacePosition < 6
+0x005CB0  lpTrafficPhysics
+0x005CD0  lnRaceCarIndex == -1
+0x005CF0  lpRaceCar == NULL
+0x005D10  lpPlayerCar == NULL
+0x005D30  lnRaceCarIndex >= 0
+0x005D50  lnRaceCarIndex < knB3MaxRaceCars
+0x005D78  lpRaceCar
+0x005D88  lpPlayerCar
+0x005D98  false
+0x005DA0  lrAlpha <= 1.0f
+0x005DB0  lrAlpha >= 0.0f
+0x005DC0  lrAlpha <= 1.0f
+0x005DD0  lrAlpha >= 0.0f
+0x005DE0  Trying to use online markers on a non-network car
+
+0x005E20  lnTempValue > -128
+0x005E40  lnTempValue < 128
+0x005E60  lnTempValue >= 0
+0x005E80  lnTempValue < 8
+0x005E90  lnTempValue >= 0
+0x005EB0  lnTempValue < 32
+0x005ED0  lnTempValue > -128
+0x005EF0  lnTempValue < 128
+0x005F08  mpReplayBuffer
+0x005F18  0
+0x005F1C  0
+0x005F20  Replay type not supported
+0x005F40  Replay type not supported
+0x005F60  gMenuChoices.meOnlineChoice == eB3MenuChoiceOnline_CrashParty
+0x005FA0  mpReplayBuffer
+0x005FB0  Invalid Scoring Data
+0x005FD0  Invalid Scoring Data
+0x005FF0  Invalid Scoring Data
+0x006010  Invalid Scoring Data
+0x006030  Invalid Scoring Data
+0x006050  Invalid Scoring Data
+0x006070  Invalid Scoring Data
+0x006090  Invalid Scoring Data
+0x0060B0  Invalid Scoring Data
+0x0060D0  Invalid Scoring Data
+0x0060F0  Invalid Scoring Data
+0x006110  Invalid Scoring Data
+0x006130  Invalid Scoring Data
+0x006150  Invalid Scoring Data
+0x006170  Invalid Scoring Data
+0x006190  Invalid Scoring Data
+0x0061B0  Invalid Scoring Data
+0x0061D0  Invalid Scoring Data
+0x0061F0  Invalid Scoring Data
+0x006210  Invalid Scoring Data
+0x006230  Invalid Scoring Data
+0x006250  Invalid Scoring Data
+0x006270  Invalid Scoring Data
+0x006290  Invalid Scoring Data
+0x0062B0  Invalid Scoring Data
+0x0062D0  Invalid Scoring Data
+0x0062F0  Invalid Scoring Data
+0x006310  Invalid Scoring Data
+0x006330  Invalid Scoring Data
+0x006350  Invalid Scoring Data
+0x006370  Invalid Scoring Data
+0x006390  lnCategory < mn8MaxCategory
+0x0063B0  lpScore
+0x0063B8  lpScore
+0x0063C0  lnSplitTimeCheckpoint <= mnNumSplitTimeCheckpoints
+0x0063F8  lpStageLogic
+0x006408  !mbRager
+0x006418  lpStageLogic
+0x006430  mpLastContactRaceCar == NULL
+0x006450  mpLastContactRaceCar != NULL
+0x006470  mpGraphic != NULL
+0x006490  mpFinishGraphic != NULL
+0x0064B0  mxVersionNumber == kxTrackDataVersion
+0x0064E0  lpOwnerVehicle->mpTrafficParam
+0x006500  lPosition.Y() < 10000.0f
+0x006520  lPosition.Y() > -10000.0f
+0x006540  lPolyUp.Y() > 0.3f
+0x006560  lnPrevValveSegmentIndex < mpData->mnNumSegments && lnPrevValveSegmentIndex >= 0
+0x0065B0  lnNextValveSegmentIndex < mpData->mnNumSegments
+0x0065E0  lpNextTrafficParam->mu8LaneIndex == mu8LaneIndex
+0x006620  lpForwardTrafficParam->mu8LaneIndex == mu8LaneIndex
+0x006660  !lpTrafficVehicle->HasCrashed()
+0x006680  mu8LaneIndex == lpNextParam->mu8LaneIndex
+0x0066B0  lrParamAlong >= 0.0f
+0x0066C8  lpLane
+0x0066D0  lpLane->mpData
+0x0066E0  lnLastNode < lpLane->mpData->mnNumSegments
+0x006710  mu8NextTrafficParam == ku8NullParamIndex
+0x006740  mu8PrevTrafficParam == ku8NullParamIndex
+0x006770  mu8LaneIndex == lpNextTrafficParam->mu8LaneIndex
+0x0067B0  mu8LaneIndex == lpPrevTrafficParam->mu8LaneIndex
+0x0067F0  mrParamAlong > lpPrevTrafficParam->mrParamAlong
+0x006820  lpPrevTrafficParam->mu8NextTrafficParam != lpPrevTrafficParam->mu8ParamIndex
+0x006870  mu8NextTrafficParam != mu8ParamIndex
+0x0068A0  mu8LaneIndex == lpNextTrafficParam->mu8LaneIndex
+0x0068E0  mu8LaneIndex == lpPrevTrafficParam->mu8LaneIndex
+0x006920  mrParamAlong > lpPrevTrafficParam->mrParamAlong
+0x006950  lpPrevTrafficParam->mu8NextTrafficParam != lpPrevTrafficParam->mu8ParamIndex
+0x0069A0  mu8NextTrafficParam != mu8ParamIndex
+0x0069D0  mu8LaneIndex == lpPrevTrafficParam->mu8LaneIndex
+0x006A10  mrParamAlong > lpPrevTrafficParam->mrParamAlong
+0x006A40  lpPrevTrafficParam->mu8NextTrafficParam != lpPrevTrafficParam->mu8ParamIndex
+0x006A90  mrParamAlong <= M_GET_PARAM( mu8NextTrafficParam )->mrParamAlong
+0x006AE0  mrParamAlong >= M_GET_PARAM( mu8PrevTrafficParam )->mrParamAlong
+0x006B30  M_GET_PARAM( lpLane->mu8LastTrafficParam )->mu8NextTrafficParam == ku8NullParamIndex
+0x006B90  lpPrevTrafficParam->mu8LaneIndex == mu8LaneIndex
+0x006BD0  lpPrevTrafficParam->mu8NextTrafficParam != lpPrevTrafficParam->mu8ParamIndex
+0x006C20  lpNextTrafficParam->mu8LaneIndex == mu8LaneIndex
+0x006C60  lpLane->mu8LastTrafficParam != mu8ParamIndex
+0x006C90  lnSegmentIndex >= 0
+0x006CB0  lnSegmentIndex < lpCurrentLane->mpData->mnNumSegments
+0x006CF0  (RwInt32)lu16ChangeSegmentIndex < lpChangeLane->mpData->mnNumSegments
+0x006D40  (RwInt32)lu16ChangeSegmentIndex < lpChangeLane->mpData->mnNumSegments
+0x006D90  lnSegmentIndex >= ( lu16ThisSegment + 1 )
+0x006DC0  mu8BehaviourIndex < mpCurrentBehaviour->mnNumBehaviours
+0x006E00  mn8NumSources <= knB3MaxTrafficCars
+0x006E30  gGame.GetCurrentGameMode()
+0x006E50  gGame.GetCurrentGameMode()->GetStageLogic()
+0x006E80  gNetworkManager.IsOnline()
+0x006EA0  gGame.GetCurrentGameMode()
+0x006EC0  gGame.GetCurrentGameMode()->GetStageLogic()
+0x006EF0  !gGame.IsCrashMode()
+0x006F10  !gNetworkManager.IsOnline()
+0x006F30  mu8NumStopJunctions < knMaxStopJunctions
+0x006F60  mu8NumValves < knMaxValves
+0x006F80  lpCurrentLane->mu8NumValves <= knMaxValvesPerLane
+0x006FC0  lnSegmentIndex < lpCurrentLane->mpData->mnNumSegments
+0x007000  mu8NumSplitters < knMaxSplitters
+0x007030  mu8NumTrafficLights < knMaxTrafficLights
+0x007060  lpTrafficLight->mpPositionData->mu8NumCoronas <= knMaxCoronasPerTrafficLight
+0x0070B0  lu8VehicleIndex != (RwUInt8)-1
+0x0070D0  lpTrafficVehicle->mx8OtherFlags & kTRAFFIC_OTHERFLAGS_ISALIVE
+0x007110  mpTrafficData->mnNumTrafficHulls > 0
+0x007140  leNewVehicleClass != eVehicleCategoryNull
+0x007170  lnVehicleIDIndex < knB3MaxTrafficCars
+0x0071A0  lpNewVehicle->mu8PayloadIndex < lpNewVehicle->mEssentialParams.mpStreamedData->mn8NumPayloadSets || lpNewVehicle->mEssentialParams.mpStreamedData->mn8NumPayloadSets == 0
+0x00724C  0
+0x007250  0
+0x007260  lnVehicleIDIndex < mn8NumSources
+0x007290  lpNewTrailerVehicle->mu8PayloadIndex < lpNewTrailerVehicle->mEssentialParams.mpStreamedData->mn8NumPayloadSets || lpNewTrailerVehicle->mEssentialParams.mpStreamedData->mn8NumPayloadSets == 0
+0x007350  lpPrevValve != NULL
+0x007370  lpNextValve != NULL
+0x007390  lu8Index != ku8NullVehicleIndex
+0x0073B0  mau8FillersRemaining[lnPlayerIndex] <= lpCurrentHull->mu8NumTrafficFillers
+0x007400  lu16ValidIndex < ku8MaxValidTraffic
+0x007430  !( max32ValidTraffic[lu16ValidIndex] & lx32Flag )
+0x007470  mpDeadTraffic != lpTrafficVehicle
+0x0074A0  lu16ValidIndex < ku8MaxValidTraffic
+0x0074C8  mpDeadTraffic
+0x0074E0  lu16ValidIndex < ku8MaxValidParam
+0x007510  lu16ValidIndex < ku8MaxValidParam
+0x007534  0
+0x007540  mu8NextTriggerIndex <= mpTrafficData->mnNumTriggers
+0x007580  lu16SegmentIndex < knMaxSegments
+0x0075B0  lu8LockShift < 8
+0x0075D0  lu16SegmentIndex < knMaxSegments
+0x007600  !( mx8OtherFlags & kTRAFFIC_OTHERFLAGS_HASCRASHED )
+0x007640  gGame.IsCrashMode()
+0x007660  mx8OtherFlags & kTRAFFIC_OTHERFLAGS_ISALIVE
+0x007690  mrLanePosSpeed != 0.0f
+0x0076A8  mpCabVehicle
+0x0076B8  mpTrafficParam
+0x0076D0  mapRaceCars[ mnNumRaceCarsPrepared ] != NULL
+0x007700  lpRaceCar
+0x007710  lpNetCar->GetNetworkPlayer()
+0x007730  FALSE
+0x007740  gEffectsManager.Prepare()
+0x007760  lnNumPlayerCars <= knB3MaxPlayerCars
+0x007790  lnNumAICars <= knB3MaxAICars
+0x0077B0  lnNumNetworkCars <= knB3MaxNetworkCars
+0x0077E0  lnNumPlayerCars == 1
+0x007800  mnNumRaceCars == (lnNumNetworkCars + lnNumPlayerCars)
+0x007840  mnNumNetworkCars == lnNumNetworkCars
+0x007868  0
+0x007870  ( mePrepareState == eGtPSConstructed ) || ( mePrepareState == eGtPSReleased )
+0x0078C0  NULL != lpViewport
+0x0078E0  NULL != lpCamera
+0x007900  (mnNumRenderVerts + 4) <= knMaxWrongWayWallVertices
+0x007940  (mnNumTriangles + 2) <= knMaxWrongWayWallTriangles
+0x007980  mAvoidance.mxDecision == kxLaneDirectionMax
+0x0079B0  mRadialBlur.Prepare()
+0x0079D0  mBloom.Prepare()
+0x0079F0  mDirectionalBlur.Prepare()
+0x007A10  lpFontTexture
+0x007A20  lpFontTexture
+0x007A30  mMainViewport.Prepare()
+0x007A50  maPlayerViewports[0].Prepare()
+0x007A70  maPlayerViewports[1].Prepare()
+0x007A90  gVehicleRenderer.Prepare()
+0x007AB0  mePrepareState == eGtPSPreparedFully
+0x007AD8  0
+0x007ADC  0
+0x007AE0  mpCurrentViewport != NULL
+0x007AFC  0
+0x007B00  gGame.mpGlobalTextureDictionary != NULL
+0x007B30  strlen( lacTextureName ) < knB3HUDBoostFireTextureStrlen
+0x007B70  mapBoostFireCoreTextures[i]
+0x007B90  strlen( lacTextureName ) < knB3HUDBoostFireTextureStrlen
+0x007BD0  mapBoostFireEdgeTextures[i]
+0x007BF0  strlen( lacTextureName ) < knB3HUDBoostFireTextureStrlen
+0x007C30  mapBoostFireOverTextures[i]
+0x007C50  mpBoostBitsTexture
+0x007C70  mpBoostBlueFlameTexture
+0x007C90  mapIconTextures[i] != NULL
+0x007CB0  mpHUDTexture != NULL
+0x007CD0  mpBoostFlareTexture != NULL
+0x007CF0  mpHealthBarTexture != NULL
+0x007D10  mpHUDAftertouchTexture!= NULL
+0x007D30  mpHUDBackgroundTexture!= NULL
+0x007D50  mpBoostStarsTexture != NULL
+0x007D70  NULL != lpHUDManager
+0x007D90  NULL != mpHUDManager
+0x007DA8  lxFlags != 0
+0x007DC0  lrInterp >= 0.0f && lrInterp <= 1.0f
+0x007DF0  mePrepareState != eGtPSNone
+0x007E10  false
+0x007E20  mnNumPlayers <= knB3MaxPlayerCars
+0x007E50  mePrepareState == eGtPSPreparedFully
+0x007E80  mePrepareState == eGtPSPreparedFully
+0x007EB0  eGtPSPreparedFully == mePrepareState
+0x007EE0  lnViewportWidth > 0
+0x007F00  lnViewportHeight > 0
+0x007F20  ( mePrepareState == eGtPSConstructed ) || ( mePrepareState == eGtPSPreparedFully ) || ( mePrepareState == eGtPSReleased )
+0x007FA0  lnNumPlayers > 0
+0x007FC0  lnNumPlayers <= knB3MaxPlayerCars
+0x007FF0  mnNumPlayers == 2
+0x008010  gHUDManager.mePrepareState == eGtPSPreparedFully
+0x008050  NULL != lpComponent
+0x008070  NULL == lpComponent->mpNext
+0x008090  lnPlayer >= 0 && lnPlayer < knB3MaxPlayerCars
+0x0080C0  lpHUD->mnLayerCount <= knNumLayers
+0x0080F0  lpHUD->mnChildFrameCount <= knMaxChildFrames
+0x008120  lrCheckpointTime > 0.0f
+0x008140  gGame.GetCurrentGameMode()->GetStageLogic()
+0x008170  lpMessageString != NULL
+0x008188  false
+0x008190  false
+0x0081A0  leScoreEvent < eScoreEventNum
+0x0081C0  ( lnScore >= 0 ) && ( lnScore < 10000 )
+0x0081F0  NULL != mpPlayerCarPhysics
+0x008210  lpObjectData
+0x008220  lnMultiplier <= 4
+0x008238  lrWidth > 0.0f
+0x008248  lrWidth > 0.0f
+0x008260  lnCount < knB3HUDGlowNumPointsX
+0x008280  lnNumParticles > 0
+0x008294  0
+0x0082A0  lnSpriteCount < kuMaxTextSprites
+0x0082D0  lnSpriteCount > 0
+0x0082F0  lpHeadingComponent
+0x008310  leMessageType < eMessageNum
+0x008330  ln8NumStars >= lpBoostMessage->mn8NumStars
+0x008360  !lbShow
+0x008370  mrTakedownAnimTime >= 0.0f
+0x008390  FALSE
+0x0083A0  !MessageIsValid()
+0x0083C0  !MessageIsValid()
+0x0083E0  gCPUMonitors.mNet.mnSinCosFast >= 0
+0x008410  mpCollisionCache != NULL
+0x008430  GetMatrix()->IsValid()
+0x008450  mTotalForce.IsValid()
+0x008470  mTotalTorque.IsValid()
+0x008490  mTotalImpulse.IsValid()
+0x0084B0  mTotalImpulseAngular.IsValid()
+0x0084D0  lDisplacement.IsValid()
+0x0084F0  mTotalTranslation.IsValid()
+0x008510  GetMatrix()->IsValid()
+0x008530  lnCrashIndex >= 0
+0x008550  lnCrashIndex < knB3MaxRaceCars
+0x008570  lpPhysics1 != lpPhysics2
+0x008590  lnBestTraffic < lnNumCrashingVehicles
+0x0085C0  lnBestTraffic >= 0
+0x0085E0  lnBestRaceCar < gWorld.GetNumRaceCars()
+0x008610  lnBestRaceCar >= 0
+0x008628  lpPhysics
+0x008638  lpRaceCar
+0x008650  lnCrashIndex < knB3MaxRaceCars
+0x008670  lpStageLogic
+0x008680  lpRaceCar->GetRaceCarIndex() == lnCrashIndex
+0x0086B0  ( lExplosionPos - lpVehiclePhysics->GetMatrix()->mPos ).GetLength() < 10.0f
+0x008700  gWorld.mTrafficSystem.GetTrafficGtID( ( (CB3TrafficPhysics *)lpVehiclePhysics )->GetSourceIndex() ) == kCAD_ExplosionTankerID
+0x008780  ( (CB3TrafficPhysics *)lpVehiclePhysics )->meClass == eVehicleCategoryArticulatedTrailer
+0x0087E0  lpPair->mpBodyA->IsVehicle()
+0x008800  lpPair->mpBodyB->IsVehicle()
+0x008820  lpVehiclePhysicsA->IsCrashing()
+0x008840  lpVehiclePhysicsB->IsCrashing()
+0x008860  lpHeavyVehicle->meClass == eVehicleCategoryArticulatedTrailer
+0x0088A0  GtMath::Abs( DotProduct( lRaceCarDirection, lRaceCarDirection ) - 1.0f ) < 0.01f
+0x008900  lpVehiclePhysics->IsCrashing()
+0x008920  lpVehiclePhysics->mrCrashPositionY < 9999.0
+0x008950  No free entries in the race car physics attrib table
+0x008988  FALSE
+0x008990  lpBodyB
+0x008998  lpBodyB
+0x0089A0  kaaPhysicsType[lBodyAType][lBodyBType] < ePhysicsInteractMax
+0x0089E0  lpNetworkPlayer
+0x0089F0  lnActiveCount <= knPMMaxCollidingPairs
+0x008A20  (lnIndex == 0) || (lnIndex < lnActiveCount)
+0x008A50  Unknown race car type
+0x008A68  0
+0x008A6C  0
+0x008A70  lpRaceCar->mpStartPoint
+0x008A90  lpRaceCar->mpStartPoint->mpStartPositionStruct
+0x008AC0  mnNumBodies < knPMMaxActiveBodies
+0x008AF0  mnNumBodies < knPMMaxActiveBodies
+0x008B20  mnNumBodies < knPMMaxActiveBodies
+0x008B50  lpVehicle->HasCrashed() == false
+0x008B80  lpVehicle->HasCrashed() == false
+0x008BB0  lnBodyIndex < mnNumBodies
+0x008BD0  &maBodies[lnBodyIndex] == lpVehicle->mpTrafficBody
+0x008C10  lpTrafficVehicle->mpTrafficBody == &maBodies[mnNumBodies]
+0x008C50  gWorld.mTrafficSystem.maTraffic[lpTrafficPhysics->mu8TrafficID].mpTrafficBody == &maBodies[mnNumBodies]
+0x008CC0  gGame.IsCrashMode()
+0x008CE0  lpCrashingVehicle == (CB3CollidingBody*)lpCrashingVehicle
+0x008D20  lpTrafficBody!=NULL
+0x008D40  lpCrashingBody!=NULL
+0x008D60  lpCrashingVehicle->mnCrashIndex != -1
+0x008D90  lBody.meType != eABT_Traffic
+0x008DB0  lnMapIndex < mnNumTrafficBodies
+0x008DD0  &maPropBodies[lBody.mu8Index] == lpProp
+0x008E00  lnProp < knMaxActiveDynamicProps
+0x008E30  lpTrafficVehicle->mpTrafficBody == &maBodies[mnNumBodies]
+0x008E70  gWorld.mTrafficSystem.maTraffic[lpTrafficPhysics->mu8TrafficID].mpTrafficBody == &maBodies[mnNumBodies]
+0x008EE0  maPropBodies[lnIndex].mpProp != NULL
+0x008F10  maPropBodies[lnIndex].mpProp == NULL
+0x008F38  0
+0x008F3C  0
+0x008F40  !lpTraffic->HasCrashed()
+0x008F60  !lpTraffic->HasCrashed()
+0x008F80  lpVehiclePhysics1->mrMass > 0.0f
+0x008FB0  lpVehiclePhysics2->mrMass > 0.0f
+0x008FE0  lpRaceCarA->IsCrashing() == false
+0x009010  lpRaceCarB->IsCrashing() == false
+0x009038  lpStageLogic
+0x009050  lpPair->mpBodyA->IsVehicle()
+0x009070  lpPair->mpBodyB->meType == eABT_Traffic
+0x009098  lpStageLogic
+0x0090B0  lpPair->mpBodyA->meType != eABT_CrashingTraffic
+0x0090E0  lpVehicle->mnCrashIndex != -1
+0x009100  lpPair->mpBodyA->HasPhysics()
+0x009120  lpPair->mpBodyB->meType == eABT_Traffic
+0x009150  lpBodyA->mnCrashIndex != -1
+0x009170  lpPair->mpBodyA->HasPhysics()
+0x009190  lpPair->mpBodyB->meType == eABT_StaticProp
+0x0091C0  lpPair->mpBodyA->HasPhysics()
+0x0091E0  lpPair->mpBodyB->HasPhysics()
+0x009200  leInteractionA < ePhysicsInteractMax
+0x009230  leInteractionB < ePhysicsInteractMax
+0x009260  ! (leInteractionA == ePhysicsInteractAsWorld && leInteractionB == ePhysicsInteractAsWorld)
+0x0092C0  lpTrafficB->mpArticLinkedVehicle == lpTrafficA
+0x0092F0  lpBody->mMin.X() <= lpBody->mMax.X()
+0x009320  lpBody->mMin.Y() <= lpBody->mMax.Y()
+0x009350  lpBody->mMin.Z() <= lpBody->mMax.Z()
+0x009380  lpPropBody->meType == eABT_StaticProp
+0x0093B0  maPropBodies[lnIndex].mpProp != lpProp
+0x0093E0  lnBody < mnNumBodies
+0x009400  mnNumTrafficBodies < knPMMaxTraffic
+0x009430  lnCrashIndex != -1
+0x009450  lnIndex < knPMMaxTraffic
+0x009470  mapCrashingTraffic[lnTest] != &maTrafficBodies[lnIndex]
+0x0094B0  lnIndex < mnNumBodies
+0x0094D0  lnCrashIndex != -1
+0x0094F0  lnIndex < mnNumBodies
+0x009510  lnCrashIndex != -1
+0x009530  lnCrashIndex >= 0
+0x009548  lpStageLogic
+0x009560  gWorld.GetPlayerCar(1) == mpPlayerCar
+0x009590  GetMatrix()->IsValid()
+0x0095B0  GetMatrix()->IsValid()
+0x0095C8  lpStageLogic
+0x0095E0  gGame.GetCurrentGameMode()
+0x009600  gGame.GetCurrentGameMode()->GetStageLogic()
+0x009630  mpRaceCar->GetRaceCarType() == eRaceCarTypePlayer
+0x009668  mpProp == NULL
+0x009680  GetMatrix()->IsValid()
+0x0096A0  GetMatrix()->IsValid()
+0x0096C0  GetMatrix()->IsValid()
+0x0096E0  Could not allocate race car attributes
+0x009708  0
+0x009710  lpStageLogic
+0x009720  mWorldCollisionInfo.mPoint.GetLength() < 1.0e30f
+0x009760  mWorldCollisionInfo.mPoint.GetLength() < 1.0e30f
+0x0097A0  GetMatrix()->IsValid()
+0x0097C0  GetMatrix()->IsValid()
+0x0097E0  GetMatrix()->IsValid()
+0x009800  GetMatrix()->IsValid()
+0x009820  !GtMath::IsNaN( maWheels[3].mrAngularVelocity )
+0x009850  !GtMath::IsNaN( maWheels[3].mrAngularVelocity )
+0x009880  !GtMath::IsNaN( maWheels[3].mrAngularVelocity )
+0x0098B0  !GtMath::IsNaN( maWheels[3].mrAngularVelocity )
+0x0098E0  !GtMath::IsNaN( maWheels[lnWheel].mrAngularVelocity )
+0x009920  !GtMath::IsNaN( maWheels[lnWheel].mrAngularVelocity )
+0x009960  !GtMath::IsNaN( maWheels[lnWheel].mrAngularVelocity )
+0x0099A0  !GtMath::IsNaN( maWheels[lnWheel].mrAngularVelocity )
+0x0099E0  !GtMath::IsNaN( maWheels[lnWheel].mrAngularVelocity )
+0x009A20  !GtMath::IsNaN( maWheels[lnWheel].mrAngularVelocity )
+0x009A60  GetType() != eCRB_NETWORKCAR
+0x009A80  !lbRollingStart || (meType != eCRB_NETWORKCAR)
+0x009AB0  lpSpeedMatchCar != this
+0x009AD0  mnCurrentWorldUnit != -1
+0x009AF0  lnCrashIndex >= 0
+0x009B10  lnCrashIndex < knB3MaxRaceCars
+0x009B30  !GtMath::IsNaN( maWheels[lnWheel].mrAngularVelocity )
+0x009B70  !GtMath::IsNaN( maWheels[lnWheel].mrAngularVelocity )
+0x009BB0  mpRaceCar->GetRaceCarType() != eRaceCarTypePlayer
+0x009BF0  mpRaceCar->GetRaceCarType() != eRaceCarTypeNetwork
+0x009C28  IsCrashing()
+0x009C40  GetMatrix()->IsValid()
+0x009C60  GetMatrix()->IsValid()
+0x009C80  lScale.GetLength() < 10.0f
+0x009CA0  lnCrashIndex >= 0
+0x009CC0  lnCrashIndex < knB3MaxRaceCars
+0x009CE0  !GtMath::IsNaN( maWheels[lnWheel].mrAngularVelocity )
+0x009D20  !GtMath::IsNaN( maWheels[lnWheel].mrAngularVelocity )
+0x009D60  !GtMath::IsNaN( maWheels[lnWheel].mrAngularVelocity )
+0x009DA0  !GtMath::IsNaN( maWheels[lnWheel].mrAngularVelocity )
+0x009DE0  lPart.mpMatrix->IsNormal()
+0x009E00  lPart.mpMatrix->IsNormal()
+0x009E20  false
+0x009E28  false
+0x009E30  false
+0x009E38  false
+0x009E40  false
+0x009E48  false
+0x009E50  lPart.mpMatrix->IsNormal()
+0x009E70  lPart.mpMatrix->IsNormal()
+0x009E90  GetMatrix()->IsValid()
+0x009EB0  GetMatrix()->IsValid()
+0x009EC8  false
+0x009ED0  incorrectly aligned buffer
+0x009EF0  incorrectly aligned buffer
+0x009F10  Cannot read into negative or NULL memory
+0x009F40  Cannot read into non-existant memory
+0x009F70  Cannot async read 0 bytes!
+0x009F90  Async reads must be in multiples of 2048b (sector sized amounts)
+0x009FE0  Cannot async read into memory that's not 16b aligned
+0x00A020  ( lnBaseFrameRate == 50 ) || ( lnBaseFrameRate == 60 ) || ( lnBaseFrameRate == 25 ) || ( lnBaseFrameRate == 30 )
+0x00A0A0  mnFramesRunningSlowMo == 0
+0x00A0C0  lnSlowMoMultiplier > 0
+0x00A0E0  lnSlowMoMultiplier < 100
+0x00A0FC  0
+0x00A100  0
+0x00A104  0
+0x00A108  0
+0x00A110  lnRC == SCE_OK
+0x00A120  frame hierarchy couldn't allocate frame
+0x00A150  lpNewFrame->mpHierarchy == mpHierarchy
+0x00A180  can't destruct the root frame
+0x00A1A0  lpMemoryBlock
+0x00A1B0  luMemoryBlockSize >= _GetRequiredMemory( lnMaxChildren )
+0x00A1F0  ( ( (RwUInt32)lpMemoryBlock ) & ( CGt2dFrame::knAlignment - 1 ) ) == 0
+0x00A240  luThisSize == sizeof( CGt2dObject )
+0x00A270  luDataSize <= kuDataBlockByteSize
+0x00A298  lpfRender
+0x00A2A8  lpTexture
+0x00A2B8  lpTexture
+0x00A2C8  lpFont
+0x00A2D0  lpString
+0x00A2E0  leTextType >= eTextPlain
+0x00A300  leTextType < eTextNum
+0x00A320  lnSpriteCount < kuMaxTextSprites
+0x00A350  leVignetteType >= eVignetteHorizontal
+0x00A380  leVignetteType < eVignetteNum
+0x00A3A0  lpMemoryBlock
+0x00A3B0  luMemoryBlockSize >= _GetRequiredMemory( lnNumLayers, lnMaxObjects, lnMaxChildFrames )
+0x00A410  lnNumLayers >= 1
+0x00A430  ( lnLayer >= 0 ) && ( lnLayer < mnNumLayers )
+0x00A460  lpFrame != NULL
+0x00A470  out of objects
+0x00A480  lpObject != NULL
+0x00A4A0  ( lnLayer >= 0 ) && ( lnLayer < mnNumLayers )
+0x00A4D0  lpTexture
+0x00A4E0  muVersionID == kuCurrentFontVersionID
+0x00A508  lpString
+0x00A518  lppOutStart
+0x00A528  lppOutEnd
+0x00A540  lppOutStart != lppOutEnd
+0x00A560  No GtCamera set in viewport
+0x00A580  Failed to create a RW Camera
+0x00A5A0  Failed to create a camera RW Frame
+0x00A5D0  mpRaster != NULL
+0x00A5F0  mpZRaster != NULL
+0x00A610  lpParentViewport
+0x00A630  lnTargetLength>0
+0x00A650  !(lnChar >= knGtUnicode_Sur_High_Start && lnChar <= knGtUnicode_Sur_High_End)
+0x00A6A0  !(lnChar >= knGtUnicode_Sur_Low_Start && lnChar <= knGtUnicode_Sur_Low_End)
+0x00A6F0  Invalid Character
+0x00A710  lnExtraBytesToRead<=3
+0x00A730  lnDestChar <= knGtUnicode_Max_BMP
+0x00A760  lnExtraBytesToRead<=(knGtUnicodeMaxUTF8Bytes-1)
+0x00A790  lnTargetLength > 0
+0x00A7B0  lnTargetLength > 0
+0x00A7D0  lpTargetString < lpLastChar
+0x00A7F0  lnPrecision <= knGtUnicodeMaxPrintPrecision
+0x00A820  ( lnPrecision >= 0 ) && ( lnPrecision <= knGtUnicodeMaxPrintPrecision )
+0x00A870  lrValue - (RwReal)lnIntegerPart >= 0.0f
+0x00A898  FALSE
+0x00A8A0  FALSE
+0x00A8A8  FALSE
+0x00A8B0  FALSE
+0x00A8B8  FALSE
+0x00A8C0  lbValidPort
+0x00A8D0  lbValidPort
+0x00A8E0  lbValidPort
+0x00A8F0  lbValidPad
+0x00A900  lbValidPort
+0x00A910  lbEmptyPort
+0x00A920  lbValidPad
+0x00A930  lbValidPort
+0x00A940  lbValidControl
+0x00A950  lbValidControl
+0x00A960  mbIsConnected
+0x00A970  mbIsConnected
+0x00A980  lbValidManager
+0x00A990  lbValidPort
+0x00A9A0  mpOwner && mpOffsetTable
+0x00A9C0  _gpu64Current != NULL
+0x00A9E0  _gpu64Current < (RwUInt64 *)&_gau128Buffer[knBufferSizeQW - 1]
+0x00AA20  _gpu64Current < (RwUInt64 *)&_gau128Buffer[knBufferSizeQW - 3]
+0x00AA60  _gpu64Current != NULL
+0x00AA80  ( ((RwUInt32)_gpu64Current) & 0xf ) == 0
+0x00AAB0  _gpu64Current < (RwUInt64 *)&_gau128Buffer[knBufferSizeQW]
+0x00AAF0  _gpu64Current != NULL
+0x00AB10  _gpu64Current < (RwUInt64 *)&_gau128Buffer[knBufferSizeQW]
+0x00AB50  _gpu64Current != NULL
+0x00AB70  ( ((RwUInt32)_gpu64Current) & 0xf ) == 0
+0x00ABA0  _gpu64Current < (RwUInt64 *)&_gau128Buffer[knBufferSizeQW]
+0x00ABE0  _gpu64Current + lnOff >= (RwUInt64 *)_gau128Buffer
+0x00AC20  _gpu64Current != NULL
+0x00AC40  _gpu64Current < (RwUInt64 *)&_gau128Buffer[knBufferSizeQW]
+0x00AC80  _gpu64Current + lnOff >= (RwUInt64 *)_gau128Buffer
+0x00ACC0  _gpuNLoops != NULL
+0x00ACE0  ( (RwInt32)lpQW ) == ( ( ( (RwInt32)_gpu64Current ) + 15 ) & ~15 )
+0x00AD30  _gpu64Current != NULL
+0x00AD50  _gpu64Current < (RwUInt64 *)&_gau128Buffer[knBufferSizeQW - 3]
+0x00AD90  RwCameraGetCurrentCamera() != NULL
+0x00ADC0  _geState == eStateNone
+0x00ADE0  _geState == eStateRendering
+0x00AE00  lpRasEx->mpCacheEntry != NULL
+0x00AE20  RwCameraGetCurrentCamera() != NULL
+0x00AE50  _geState == eStateRendering
+0x00AE70  lpRasEx->mpCacheEntry != NULL
+0x00AE90  RwCameraGetCurrentCamera() != NULL
+0x00AEC0  RwCameraGetCurrentCamera() != NULL
+0x00AEF0  _gpCurrentCamera == RwCameraGetCurrentCamera()
+0x00AF20  _geState == eStateSuspended
+0x00AF40  _geState == eStateRendering
+0x00AF60  lpTexture != NULL
+0x00AF78  lnPalette >= 0
+0x00AF90  _geState == eStateRendering
+0x00AFB0  lnNumSprites > 0
+0x00AFD0  _geState == eStateRendering
+0x00AFF0  lnNumSprites > 0
+0x00B010  _geState == eStateRendering
+0x00B030  lnNumTriangles > 0
+0x00B050  _geState == eStateRendering
+0x00B070  lnNumVerts > 2
+0x00B080  _geState == eStateRendering
+0x00B0A0  lnNumVerts > 2
+0x00B0B0  _geState == eStateRendering
+0x00B0D0  lnNumVerts > 2
+0x00B0E0  _geState == eStateRendering
+0x00B100  lnNumVerts > 2
+0x00B110  _geState == eStateRendering
+0x00B130  ( leBlendMode >= 0 ) && ( leBlendMode < eBlendNum )
+0x00B170  _geState == eStateRendering
+0x00B190  ( leFilterMode >= 0 ) && ( leFilterMode < eFilterNum )
+0x00B1C8  0
+0x00B1D0  _geState == eStateRendering
+0x00B1F0  ( leTexAddressMode >= 0 ) && ( leTexAddressMode < eTexAddressNum )
+0x00B240  _geState == eStateRendering
+0x00B260  RwCameraGetCurrentCamera() != NULL
+0x00B290  _geState == eStateRendering
+0x00B2B0  RwCameraGetCurrentCamera() != NULL
+0x00B2E0  _geState == eStateRendering
+0x00B300  _geState == eStateRendering
+0x00B320  Trying to update an unprepared camera
+0x00B350  Trying to change camera behaviours without releasing old behaviours
+0x00B3A0  mpToolBase == NULL
+0x00B3B8  lpcXMLFileName
+0x00B3D0  lpCSVFileSystem
+0x00B3E0  Value Database has outgrown its buffer
+0x00B410  Comms database is full
+0x00B430  lnArraySize <= 255
+0x00B450  lnArraySize <= 255
+0x00B470  lnArraySize <= 255
+0x00B488  lpcName
+0x00B490  lpcPath
+0x00B498  lpcFileName
+0x00B4B0  ((RwUInt32)lpPVSSource & 0xf) == 0
+0x00B4E0  mpDataBuffer != NULL
+0x00B500  mpDataBuffer != NULL
+0x00B520  mpDataBuffer->mpaMaterials[ln16MaterialID].meShaderID != eTS_Specular
+0x00B570  mpDataBuffer->mpaMaterials[ln16MaterialID].meShaderID != eTS_LineList
+0x00B5C0  leComponent < eComponentMax
+0x00B5E0  ( muNumStripsAround & 3 ) == 0
+0x00B600  muNumSegmentsPerStrip <= skyMaxSegmentsPerStrip
+0x00B630  lpParams->muNumStripsAround > 0
+0x00B650  lpParams->muNumSegmentsPerStrip > 0
+0x00B680  lpParams->muNumSegmentsPerStrip <= skyMaxSegmentsPerStrip
+0x00B6C0  CGtVu0CodeManager::GetCurrentVu0CodePointer() == (void *) gacVehicleVU0Code
+0x00B710  CGtVu0CodeManager::GetCurrentVu0CodePointer() == (void *) gacVehicleVU0Code
+0x00B760  lpLODData
+0x00B770  lrShininessScale >= 0.0f
+0x00B790  lnPayloadIndex < lpVehicleData->mn8NumPayloadObjects
+0x00B7D0  lnPayloadIndex < lpVehicleData->mn8NumPayloadObjects
+0x00B810  lpVehicleBuffer->mpaPayloadSets
+0x00B830  lpVehicleBuffer->mn8NumPayloads > 0
+0x00B860  lpVehicleBuffer->mpaPayloads
+0x00B880  lpVehicleBuffer->mn8NumPayloadSets > 0
+0x00B8B0  lnNumRastersPerBuffer > 0
+0x00B8D0  lnNumRastersPerBuffer <= knMaxRastersInEachBuffer
+0x00B910  Cache is locked as work area!
+0x00B930  lpRasExt->flags & 1
+0x00B950  _rwDMAAsyncPktPtr
+0x00B970  mnNumAsyncQWAdded <= (knWorstCaseQWRequired * mnMaxRastersInEachBuffer)
+0x00B9C0  mnNumAsyncQWAdded <= (knWorstCaseQWRequired * mnMaxRastersInEachBuffer)
+0x00BA10  mnNumAsyncQWAdded <= (knWorstCaseQWRequired * mnMaxRastersInEachBuffer)
+0x00BA60  mnNumAsyncQWAdded <= (knWorstCaseQWRequired * mnMaxRastersInEachBuffer)
+0x00BAB0  mnNumAsyncQWAdded <= (knWorstCaseQWRequired * mnMaxRastersInEachBuffer)
+0x00BB00  mnNumAsyncQWAdded <= (knWorstCaseQWRequired * mnMaxRastersInEachBuffer)
+0x00BB50  mnNumAsyncQWAdded <= (knWorstCaseQWRequired * mnMaxRastersInEachBuffer)
+0x00BBA0  0 <= lpRasExt->dmaRefCount
+0x00BBC0  mnNumDeferredRegisters < knMaxDeferredRegisters
+0x00BBF0  mnNumDeferredRegisters < knMaxDeferredRegisters
+0x00BC20  mnNumDeferredRegisters < knMaxDeferredRegisters
+0x00BC50  mnNumDeferredRegisters < knMaxDeferredRegisters
+0x00BC80  mnNumDeferredRegisters < knMaxDeferredRegisters
+0x00BCB0  mnNumDeferredRegisters < knMaxDeferredRegisters
+0x00BCE0  mnNumDeferredRegisters < knMaxDeferredRegisters
+0x00BD10  GtTextureCachePS2: We cannot have RW fail here
+0x00BD40  Cache is locked as work area!
+0x00BD60  Cache is locked as work area!
+0x00BD80  _gpWholeMemoryBlock == NULL
+0x00BDA0  (lnNumQW + 1) <= knBlitBufferSizeQW
+0x00BDC8  lpVertices
+0x00BDE0  lnStripSize <= lnFreeVertsInSPR
+0x00BE00  (lnNumVerts % 2) == 0
+0x00BE20  _gapSpheremapDMAPackets[lnEnvmapCount] != NULL
+0x00BE50  PreBuildSpheremapWarpData()
+0x00BE6C  0
+0x00BE70  0
+0x00BE74  0
+0x00BE78  mpDMABuffer
+0x00BE90  Renderware didn't start for some reason
+0x00BEB8  0
+0x00BEC0  ( muBuffer1Address & 2047 ) == 0
+0x00BEF0  ( muBuffer2Address & 2047 ) == 0
+0x00BF20  ( muBuffer3Address & 2047 ) == 0
+0x00BF50  ( muBuffer4Address & 2047 ) == 0
+0x00BF80  ( luTexCacheStartAddress & 2047 ) == 0
+0x00BFB0  mpUndersideTexture->GetWidth() == 128
+0x00BFE0  mpUndersideTexture->GetHeight() == 64
+0x00C010  mpUndersideTexture->GetDepth() == 8
+0x00C040  mpGlassUnbrokenTexture->GetWidth() == 16
+0x00C070  mpGlassUnbrokenTexture->GetHeight() == 16
+0x00C0A0  mpGlassUnbrokenTexture->GetDepth() != 4
+0x00C0D0  mpGlassUnbrokenTexture->GetDepth() != 8
+0x00C100  mpGlassCrackTexture->GetWidth() <= 128
+0x00C130  mpGlassCrackTexture->GetHeight() <= 128
+0x00C160  mpGlassCrackTexture->GetDepth() == 4
+0x00C190  mpGlassSmashTexture->GetWidth() <= 128
+0x00C1C0  mpGlassSmashTexture->GetHeight() <= 128
+0x00C1F0  mpGlassSmashTexture->GetDepth() == 4
+0x00C220  mpCurrentViewport == NULL
+0x00C23C  0
+0x00C240  mpCurrentViewport == NULL
+0x00C260  lpTexture
+0x00C270  lpTexture->GetDepth() == 8
+0x00C290  ( luStride * 64 ) >= lpTexture->GetWidth()
+0x00C2C0  luStride <= 0x3f
+0x00C2E0  _rwDMAOpenVIFPkt( RWDMA_FIXUP, ( 1 + knGenerateClutNumRenderstes ) + ( 1 + knGenerateClutNumVerts8 ) + ( 1 + knRenderTextureNumRegs ) + ( 1 + knCopyClutNumRegs ) )
+0x00C388  lpTexture
+0x00C3A0  lpTexture->GetDepth() == 4
+0x00C3C0  ( luStride * 64 ) >= lpTexture->GetWidth()
+0x00C3F0  luStride <= 0x3f
+0x00C410  _rwDMAOpenVIFPkt( RWDMA_FIXUP, ( 1 + knGenerateClutNumRenderstes ) + ( 1 + knGenerateClutNumVerts4 ) + ( 1 + knRenderTextureNumRegs ) + ( 1 + knCopyClutNumRegs ) )
+0x00C4B8  lpTexture
+0x00C4D0  ( luStride * 64 ) >= lpTexture->GetWidth()
+0x00C500  luStride <= 0x3f
+0x00C520  _rwDMAOpenVIFPkt( RWDMA_FIXUP, 1 + knNumRegs )
+0x00C550  0 != zInWid.nInt
+0x00C570  Invalid buffer to clear
+0x00C590  luNumStrips > 0
+0x00C5A0  lpOutBottomRightUV
+0x00C5B8  ln8Player >= 0
+0x00C5D0  ln8Player < kn8MaxPlayers
+0x00C5F0  ln8Port >= 0
+0x00C600  ln8Port < kn8MaxPorts
+0x00C618  ln8Player >= 0
+0x00C630  ln8Player < kn8MaxPlayers
+0x00C650  ln8Player < kn8MaxPlayers
+0x00C670  man8PlayerPorts[ln8Player] >= 0
+0x00C690  man8PlayerPorts[ln8Player] < kn8MaxPorts
+0x00C6C0  man8PlayerPorts[ ln8OtherPlayerIndex ] >= 0
+0x00C6F0  man8PlayerPorts[ ln8OtherPlayerIndex ] < kn8MaxPorts
+0x00C728  IsEncrypted()
+0x00C738  !IsEncrypted()
+0x00C750  _gpEncryptMessageContentsFunction != NULL
+0x00C780  _gbEncryptionKeyValid
+0x00C7A0  lnIndex < knKeyBufferLength
+0x00C7C0  lpArgs
+0x00C7D0  lpThreadParam->mpPS2LibNet
+0x00C7F0  lpArgs
+0x00C800  lpThreadParam->mpPS2LibNet
+0x00C820  lpArgs
+0x00C830  lpThreadParam->mpPS2LibNet
+0x00C850  lpArgs
+0x00C860  lpThreadParam->mpPS2LibNet
+0x00C880  mnSendThreadBusySema >= 0
+0x00C8A0  _gnSendMsgMonitor >= 0
+0x00C8C0  _gnRecvMsgMonitor >= 0
+0x00C8D8  FALSE
+0x00C8E0  mpBuffer
+0x00C8F0  FALSE
+0x00C8F8  FALSE
+0x00C900  FALSE
+0x00C908  FALSE
+0x00C910  lnNetworkConfigIndex >= 0
+0x00C930  lnNetworkConfigIndex <= knMaxNetworkConfigs
+0x00C960  meOperation == eNetworkOperationSelectConfig
+0x00C990  meStatus == eNetworkStatusReady
+0x00C9B0  lpData
+0x00C9B8  lnLength > 0
+0x00C9D0  lnLength <= mnMaxMessageSize
+0x00C9F0  mSockAddrIn.sin_family == AF_INET
+0x00CA20  (RwUInt32)lpData % 4 == 0
+0x00CA40  Send buffer is full
+
+0x00CA60  mnSendMsgBufFillIndex != mnSendMsgBufEmptyIndex-1
+0x00CA98  lppData
+0x00CAA0  lpnIPAddress
+0x00CAB0  lpnPort
+0x00CAC0  maBufferedRecvMessageData[mnRecvArrayEmpty].mpData != NULL
+0x00CB00  lnBytesRecvd <= mnMaxMessageSize
+0x00CB30  (RwUInt32)*lppData % 4 == 0
+0x00CB50  maBufferedRecvMessageData[mnRecvArrayEmpty].mpData == NULL || maBufferedRecvMessageData[mnRecvArrayEmpty].mpData == mpRecvBufferEmptyPtr
+0x00CBE0  mnSuspendCount >= 0
+0x00CBF8  lnErr >= 0
+0x00CC08  lnErr >= 0
+0x00CC18  mnSock >= 0
+0x00CC28  FALSE
+0x00CC30  mnSuspendCount >= 0
+0x00CC48  mnSock == -1
+0x00CC58  lnErr >= 0
+0x00CC68  lnErr >= 0
+0x00CC80  mTCPThreadHandle == -1
+0x00CCA0  meTCPThreadState == eTCPThreadStateIdle
+0x00CCC8  lnErr >= 0
+0x00CCE0  mTCPThreadHandle >= 0
+0x00CD00  mnTCPSock == -1
+0x00CD10  FALSE
+0x00CD18  FALSE
+0x00CD20  FALSE
+0x00CD30  mTCPThreadHandle >= 0
+0x00CD48  mnTCPSock >= 0
+0x00CD58  FALSE
+0x00CD60  FALSE
+0x00CD68  FALSE
+0x00CD70  mnSock >= 0
+0x00CD80  lnErr >= 0
+0x00CD90  lnErr >= 0
+0x00CDA0  FALSE
+0x00CDA8  lnErr >= 0
+0x00CDB8  lnErr >= 0
+0x00CDD0  mSendThreadHandle >= 0
+0x00CDF0  GetThreadId() != mSendThreadHandle
+0x00CE18  lnErr >= 0
+0x00CE28  lnErr >= 0
+0x00CE40  meOperation == eNetworkOperationSelectConfig
+0x00CE70  lpMsgData->mpData
+0x00CE90  lpMsgData->mnLength > 0
+0x00CEB0  lpMsg->IsEncrypted()
+0x00CEC8  FALSE
+0x00CED0  lnErr >= 0
+0x00CEE0  lnErr >= 0
+0x00CEF0  (RwUInt32)mpRecvBufferFillPtr % 4 == 0
+0x00CF18  FALSE
+0x00CF20  lunSizeSockAddrIn == sizeof(maBufferedRecvMessageData[mnRecvArrayFill].mSockAddrIn)
+0x00CF80  mpRecvBufferFillPtr < lpEndRecvBuffer
+0x00CFA8  FALSE
+0x00CFB0  FALSE
+0x00CFB8  FALSE
+0x00CFC0  mnNetworkConfigIndex == -1
+0x00CFE0  FALSE
+0x00CFF0  strlen(macNetDBLocation) > 0
+0x00D010  lnRC == 0
+0x00D020  mnNetCnfIfMc2Thread >= 0
+0x00D040  FALSE
+0x00D050  mnNetCnfIfMc2Thread != -1
+0x00D070  lnRC == 0
+0x00D080  mnNetCnfIfMc2Thread != -1
+0x00D0A0  lnRC == 0
+0x00D0B0  lnRC == 0
+0x00D0C0  knLibnetBufferSize >= sceLIBNET_PAD( mnMaxMessageSize + sceLIBNET_CTRL_DATA_SIZE )
+0x00D118  FALSE
+0x00D120  (RwUInt32)_gacLibnetBuffer % 64 == 0
+0x00D148  FALSE
+0x00D150  FALSE
+0x00D158  lnErr == 0
+0x00D168  lnErr == 0
+0x00D178  FALSE
+0x00D180  lnErr == 1
+0x00D190  FALSE
+0x00D198  FALSE
+0x00D1A0  FALSE
+0x00D1A8  FALSE
+0x00D1B0  lnErr == 1
+0x00D1C0  FALSE
+0x00D1C8  FALSE
+0x00D1D0  FALSE
+0x00D1D8  FALSE
+0x00D1E0  lnErr == sceLIBNETE_OK
+0x00D200  lnErr == sceLIBNETE_OK
+0x00D218  FALSE
+0x00D220  FALSE
+0x00D228  mnSock >= 0
+0x00D238  FALSE
+0x00D240  mnSendMsgBufEmptyIndex == knMaxSendMessagesToBuffer-1
+0x00D280  mnSendMsgBufEmptyIndex < knMaxSendMessagesToBuffer
+0x00D2C0  mnSendMsgBufFillIndex == knMaxSendMessagesToBuffer-1
+0x00D300  mnSendMsgBufFillIndex < knMaxSendMessagesToBuffer
+0x00D340  mnSendMsgBufFillIndex != mnSendMsgBufEmptyIndex
+0x00D370  lnPtrIncrement % 4 == 0
+0x00D390  mnRecvArrayEmpty == knMaxRecvMessagesToBuffer-1
+0x00D3C0  mnRecvArrayEmpty < knMaxRecvMessagesToBuffer
+0x00D3F0  lnPtrIncrement % 4 == 0
+0x00D410  (RwUInt32)mpRecvBufferFillPtr % 4 == 0
+0x00D440  mnRecvArrayFill == knMaxRecvMessagesToBuffer-1
+0x00D470  mnRecvArrayFill < knMaxRecvMessagesToBuffer
+0x00D4A0  lpEndMessageInRecvBuffer <= lpEndRecvBuffer
+0x00D4D0  lnLength > 0
+0x00D4E0  lnType >= 0
+0x00D4F0  mnNumberMessagesRegistered < knMaxMessageTypes
+0x00D520  lpfMsgArrivedCallback || lpRecvMsg
+0x00D550  !(lpfMsgArrivedCallback && lpRecvMsg)
+0x00D580  maSendMessageData[i].mnType != lnType
+0x00D5A8  lnType >= 0
+0x00D5C0  maRecvMessageData[i].mnType == lnType
+0x00D5E8  i == 0
+0x00D5F0  maRecvMessageData[i].mnType == lnType
+0x00D620  lpcString <= lpcEndString
+0x00D640  lpcStartAddress
+0x00D650  lpcEndAddress <= lpcEndMessage
+0x00D670  lnAddressLength > 0
+0x00D690  lnAddressLength < 16
+0x00D6A8  lpcEndAddress
+0x00D6B8  lbSuccess
+0x00D6C8  lpcLocationEnd
+0x00D6D8  lpcPageName
+0x00D6F0  lnNameLength > 0
+0x00D710  leTCPThreadState == eTCPThreadStateSuccess
+0x00D740  lnBufferSpaceLeft > 0
+0x00D760  mnReplyOffset < sizeof(_gacPortMapReply)
+0x00D790  leTCPThreadState == eTCPThreadStateSuccess
+0x00D7C0  leTCPThreadState == eTCPThreadStateSuccess
+0x00D7F0  lpcErrorCode < lpcEndOfMessage
+0x00D810  lpcErrorDescriptionEnd < lpcEndOfMessage
+0x00D840  lnErrorStringLength < knErrorStringLength
+0x00D870  lnErrorStringLength > 0
+0x00D890  lbFoundDeviceType
+0x00D8A8  lpcDeviceType
+0x00D8C0  lpcEndDeviceType
+0x00D8D8  lpcServiceType
+0x00D8F0  lnStringLength < knGatewayServiceTypeStringLength
+0x00D928  lbSuccess
+0x00D938  lpcControlURL
+0x00D950  lpcEndControlURL
+0x00D968  lbSuccess
+0x00D980  lnControlURLLength > 0
+0x00D9A0  lnControlURLLength < knGatewayControlURLStringLength
+0x00D9E0  lnControlURLLength > 0
+0x00DA00  lnControlURLLength < knGatewayControlURLStringLength
+0x00DA40  mnServiceIndex < knNumServices
+0x00DA60  FALSE
+0x00DA70  leTCPThreadState == eTCPThreadStateSuccess
+0x00DAA0  lnBufferSpaceLeft > 0
+0x00DAC0  lnTotalPacketLength > 0
+0x00DAE0  lnBufferSpaceLeft > 0
+0x00DB00  mnReplyOffset < sizeof(_gacPortMapReply)
+0x00DB30  leTCPThreadState == eTCPThreadStateSuccess
+0x00DB60  lpcErrorCode < lpcEndOfMessage
+0x00DB80  lpcErrorDescriptionEnd < lpcEndOfMessage
+0x00DBB0  lnErrorStringLength < knErrorStringLength
+0x00DBE0  lnErrorStringLength > 0
+0x00DC00  mnServiceIndex < knNumServices
+0x00DC20  strlen(maacGatewayServiceType[mnServiceIndex]) > 0
+0x00DC58  FALSE
+0x00DC60  leTCPThreadState == eTCPThreadStateSuccess
+0x00DC90  lnBufferSpaceLeft > 0
+0x00DCB0  lnTotalPacketLength > 0
+0x00DCD0  lnBufferSpaceLeft > 0
+0x00DCE8  FALSE
+0x00DCF0  mnReplyOffset < sizeof(_gacPortMapReply)
+0x00DD20  leTCPThreadState == eTCPThreadStateSuccess
+0x00DD50  lpcErrorCode < lpcEndOfMessage
+0x00DD70  lpcErrorDescriptionEnd < lpcEndOfMessage
+0x00DDA0  lnErrorStringLength < knErrorStringLength
+0x00DDD0  lnErrorStringLength > 0
+0x00DDF0  stristr(_gacPortMapReply, lpcEndOfMessage,"GetSpecificPortMappingEntryResponse")
+0x00DE48  lbSuccess
+0x00DE58  lbSuccess
+0x00DE68  lbSuccess
+0x00DE78  lbSuccess
+0x00DE88  FALSE
+0x00DE90  leTCPThreadState == eTCPThreadStateSuccess
+0x00DEC0  lnBufferSpaceLeft > 0
+0x00DEE0  lnTotalPacketLength > 0
+0x00DF00  lnBufferSpaceLeft > 0
+0x00DF18  FALSE
+0x00DF20  mnReplyOffset < sizeof(_gacPortMapReply)
+0x00DF50  leTCPThreadState == eTCPThreadStateSuccess
+0x00DF80  lpcErrorCode < lpcEndOfMessage
+0x00DFA0  lpcErrorDescriptionEnd < lpcEndOfMessage
+0x00DFD0  lnErrorStringLength < knErrorStringLength
+0x00E000  lnErrorStringLength > 0
+0x00E020  stristr(_gacPortMapReply, lpcEndOfMessage,"AddPortMappingResponse")
+0x00E068  FALSE
+0x00E070  leTCPThreadState == eTCPThreadStateSuccess
+0x00E0A0  lnBufferSpaceLeft > 0
+0x00E0C0  lnTotalPacketLength > 0
+0x00E0E0  lnBufferSpaceLeft > 0
+0x00E0F8  FALSE
+0x00E100  mnReplyOffset < sizeof(_gacPortMapReply)
+0x00E130  leTCPThreadState == eTCPThreadStateSuccess
+0x00E160  lpcErrorCode < lpcEndOfMessage
+0x00E180  lpcEndErrorString < lpcEndOfMessage
+0x00E1B0  lnErrorStringLength < 64
+0x00E1D0  lnErrorStringLength > 0
+0x00E1F0  stristr(_gacPortMapReply, lpcEndOfMessage,"DeletePortMappingResponse")
+0x00E238  FALSE
+0x00E240  lpUserData
+0x00E250  lpMessage
+0x00E260  lpDataEntry
+0x00E270  lpUserData
+0x00E280  lpAck
+0x00E288  lpDataEntry
+0x00E298  lpNatEntry
+0x00E2B0  lpNatEntry->meFinaliseNATDataStage == eFinaliseNATDataStageProtoMangleCheckConnection
+0x00E308  lpUserData
+0x00E318  lpMessage
+0x00E328  lpDataEntry
+0x00E338  lpUserData
+0x00E348  lpAck
+0x00E350  lpDataEntry
+0x00E360  lpNatEntry
+0x00E370  lpNatEntry->meFinaliseNATDataStage == eFinaliseNATDataStageCheckConnection
+0x00E3C0  lpPlayer
+0x00E3D0  lpDataEntry
+0x00E3E0  NULL
+0x00E3E8  NULL
+0x00E3F0  NULL
+0x00E400  mpNetworkAdapter
+0x00E418  lbEnabled
+0x00E430  mnPS2Port == -1
+0x00E440  FALSE
+0x00E448  FALSE
+0x00E450  mnNumActivePlayers == 0
+0x00E470  mnNumInActivePlayers
+0x00E490  !mapActivePlayers[lnPlayerIndex]
+0x00E4C0  lnPlayerIndex >= 0
+0x00E4E0  lnPlayerIndex < mnNumActivePlayers
+0x00E504  0
+0x00E510  lThread.stackSize
+0x00E530  (lThread.stackSize & 0xf)==0
+0x00E550  lnThreadID>=0
+0x00E560  _gVBlankWakeInterruptHandler==-1
+0x00E590  _gVBlankWakeInterruptHandler!=-1
+0x00E5C0  _gVBlankWakeInterruptHandler!=-1
+0x00E5F0  lnWakeupSlot<knGtThreadMgrMaxThreads
+0x00E620  Failed to wake thread
+0x00E640  Failed to set alarm
+0x00E660  M_CHECK_MATRIX(lStartMatrix, krTrafficCarMatrixTestTolerance)
+0x00E6A0  lStartMatrix.IsNormal()
+0x00E6C0  lStartMatrix.IsOrthogonal()
+0x00E6E0  lEndMatrix.IsNormal()
+0x00E700  lEndMatrix.IsOrthogonal()
+0x00E720  IsEffectivelyEqual(lTmpMatrix, lEndMatrix, krDebugDiffThreshold)
+0x00E770  IsEffectivelyEqual(lTmpMatrix, lEndMatrix, krDebugDiffThreshold)
+0x00E7C0  !mReplayHeaderMessageSend.MessageIsValid()
+0x00E7F0  !mReplayBodyMessageSend.MessageIsValid()
+0x00E820  mnSendReplayCurrentSection < lnNumSections
+0x00E850  FALSE
+0x00E860  lpReplayHeaderBuffer
+0x00E880  mpNetworkPlayerManager->GetMyPlayerID() != -1
+0x00E8B0  lpPlayerManager->GetHostPlayerID() >= 0
+0x00E8D8  lpHostPlayer
+0x00E8F0  Framebuffer must be 32-bit!
+0x00E910  ZBuffer must be 24-bit!
+0x00E930  lnTop + lnHeight < 992
+0x00E950  ( lnOffY + lnHeight ) < 512
+0x00E970  _rwDMAOpenVIFPkt( RWDMA_FIXUP, knB3FogGenerateClutNumQW )
+0x00E9B0  lnNumStrips > 0
+0x00E9C0  _rwDMAOpenVIFPkt( RWDMA_FIXUP, 1 + knNumRenderstates + 1 + ( lnNumStrips * 2 ) )
+0x00EA18  lpBlobTexture
+0x00EA30  lpCoronaTexture
+0x00EA40  lpCoronaTexture->GetSizeInMemory() <= gMemoryManager.GetBlockSize(eMB_SunCorona)
+0x00EAA0  lpCoronaTextureCopy
+0x00EAB8  lpBlobTexture
+0x00EAD0  lpBlobTexture->GetWidth() == knBlobTextureWidth
+0x00EB00  lpBlobTexture->GetHeight() == knBlobTextureHeight
+0x00EB40  mpEnvmapCoronaTexture
+0x00EB60  Incorrect downsample - check values of knFirstDownsampleSize and knNumDownsamples
+0x00EBC0  clut doesn't fall at the top of a texture page
+0x00EBF0  lpEssentialParams
+0x00EC10  lpVehicleParams
+0x00EC20  trying to transmit unknown type
+0x00EC40  0
+0x00EC50  Value Database is out of sync, rebuild it
+0x00EC80  GetMatrix()->IsValid()
+0x00ECA0  mpArticLinkedVehicle != NULL
+0x00ECC0  mpArticLinkedVehicle->mEssentialParams.mpStreamedData->mauTagPointCounts[eVT_RearArticulationPoint] == 1
+0x00ED30  GetMatrix()->IsValid()
+0x00ED50  mTotalForce.IsEffectivelyZero()
+0x00ED70  mTotalTorque.IsEffectivelyZero()
+0x00EDA0  mTotalImpulse.IsEffectivelyZero()
+0x00EDD0  mTotalImpulseAngular.IsEffectivelyZero()
+0x00EE00  mTotalTranslation.IsEffectivelyZero()
+0x00EE30  incorrect alignment
+0x00EE50  mgnTextureExtPluginOffset == 0
+0x00EE70  GtSkyRasterExt plugin offset has changed!
+0x00EEA0  GtTextureExt plugin offset has changed!
+0x00EED0  M_IS16BYTEALIGNED( (*lpuRefData) )
+0x00EF00  M_IS16BYTEALIGNED( lpRwRaster->parent )
+0x00EF30  M_IS16BYTEALIGNED( lpRwRaster->cpPixels )
+0x00EF60  M_IS16BYTEALIGNED( lpRwRaster->palette )
+0x00EF90  M_IS16BYTEALIGNED( lpRwRaster->originalPixels )
+0x00EFC0  M_IS16BYTEALIGNED( lpExt->palUploadPkt )
+0x00EFF0  M_IS16BYTEALIGNED( lpExt->mipUploadPkts[luCount] )
+0x00F030  M_IS16BYTEALIGNED( (*lpuRefData) )
+0x00F060  lnDestStringSize >= 24
+0x00F078  lpacDestString
+0x00F090  lnVehicleIndex >= 0
+0x00F0B0  lnVehicleIndex < mnVehicleCount
+0x00F0D0  0
+0x00F0D4  0
+0x00F0D8  0
+0x00F0E0  false
+0x00F0E8  lnCar >= 0
+0x00F100  lnDestStringSize >= 20
+0x00F118  lpacDestString
+0x00F130  lnTrackIndex >= 0
+0x00F150  lnTrackIndex < mnTrackCount
+0x00F16C  0
+0x00F170  lnIndex >= 0
+0x00F180  Unknown track region
+0x00F1A0  mAttribs.mrMass > 0.0f
+0x00F1C0  mAttribs.mrFrontSpringLength > 0.0f
+0x00F1F0  mAttribs.mrRearSpringLength > 0.0f
+0x00F220  mAttribs.mrMass > 0.0f
+0x00F240  mAttribs.mrFrontSpringLength > 0.0f
+0x00F270  mAttribs.mrRearSpringLength > 0.0f
+0x00F2A0  mAttribs.mrPeakTorqueRevs > 0.0f
+0x00F2D0  mAttribs.mrChangeDownRPMValue < mAttribs.mrChangeUpRPMValue
+0x00F310  Tried to copy over physics attributes to a NULL object!
+0x00F350  ( ( (RwUInt32)lpBatchAddrA ) & 0xf ) == 0
+0x00F380  ( ( (RwUInt32)lpBatchAddrB ) & 0xf ) == 0
+0x00F3B0  ( ( (RwUInt32)lpBatchAddrC ) & 0xf ) == 0
+0x00F3E0  ( luThisBatchSize & ptclITOPCountMask ) == luThisBatchSize
+0x00F41C  0
+0x00F420  mpTexture
+0x00F430  mpStandardParams->mbRotation
+0x00F450  mpStandardParams->mbRotation
+0x00F470  0
+0x00F474  0
+0x00F478  mpTexture
+0x00F488  !mbUpdating
+0x00F498  mbUpdating
+0x00F4A8  mbUpdating
+0x00F4C0  ( lrRotationalVelocity >= 0.0f ) || ( lrRotationalVelocity * mrMaxLifeTime > -63.0f )
+0x00F520  lrAmbientIntensity >= 0.0f
+0x00F540  lrDirectionalIntensity >= 0.0f
+0x00F560  ( lrAmbientIntensity + lrDirectionalIntensity ) <= 1.0f
+0x00F5A0  lrSizeScale <= 1.0f
+0x00F5C0  ( lrAlpha <= 1.0f ) && ( lrAlpha > 0.0f )
+0x00F5F0  lpBank->mpDMADataFirst
+0x00F610  GtMath::Abs( (RwInt32)lrRotationalVelocity ) <= RwInt16MAXVAL
+0x00F650  !mbRendering
+0x00F660  mbRendering
+0x00F670  mbRendering
+0x00F680  lpTexture
+0x00F690  lpTexture->GetSkyRasterExt()->mpCacheEntry
+0x00F6BC  0
+0x00F6C0  0
+0x00F6D0  _gnEffectsMemoryAllocation >= 0
+0x00F6F0  lAlignment <= KN_EFFECTS_BUFFER_ALIGNMENT
+0x00F720  ( ( lAlignment | ( lAlignment - 1 ) ) + 1 ) == ( lAlignment << 1 )
+0x00F770  _gnEffectsMemoryAllocation <= knEffectsBufferSize
+0x00F7B0  _gaSurfaceEffects[lnCount].meCollisionSurface == (RwUInt8)lnCount
+0x00F7F8  !mbUpdating
+0x00F810  maCoronas[lnCount].Prepare()
+0x00F830  mapCoronaTextures[lnCount]
+0x00F850  maDebris[lnCount].Prepare()
+0x00F870  maParticles[lnCount].Prepare()
+0x00F890  maPopcorn[lnCount].Prepare()
+0x00F8B0  CB3SparkRenderer::Prepare()
+0x00F8D0  maSparks[lnCount].Prepare()
+0x00F8F0  mTrailSystem.Prepare()
+0x00F910  mScrapeSystem.Prepare()
+0x00F930  gExplosionManager.Prepare()
+0x00F950  !mbUpdating
+0x00F960  mrTimestep > 0.0f
+0x00F978  mbUpdating
+0x00F988  lpRaceCar
+0x00F9A0  !lpRaceCar->mbCrashing
+0x00F9B8  lpTraffic
+0x00F9D0  lrCrashBreakerTime >= 0.0f
+0x00F9F0  mbUpdating
+0x00FA00  ( lpRaceCarPhysics->mnNumWheels & 1 ) == 0
+0x00FA30  lpRaceCarPhysics->mpRaceCar
+0x00FA50  mbUpdating
+0x00FA60  ( lpVehiclePhysics->mnNumWheels & 1 ) == 0
+0x00FA90  leSurface < eCS_NumSurfaces
+0x00FAAC  0
+0x00FAB0  lu8Count <= knMaxVehicleSteamPoints
+0x00FAE0  lu8Count <= knMaxVehicleFirePoints
+0x00FB10  lrLength >= 0.0f
+0x00FB30  lrSpawnRateScalar > 0.0f
+0x00FB50  lpu8Accumulator
+0x00FB60  lpVelocityC
+0x00FB70  lpCollidingPair->mpBodyA
+0x00FB90  lpCollidingPair->mpBodyB
+0x00FBB0  false
+0x00FBB8  false
+0x00FBC0  false
+0x00FBC8  false
+0x00FBD0  false
+0x00FBE0  lpCollidingPair
+0x00FBF0  lpCollidingPair
+0x00FC00  lpTrafficBody->meType == eABT_CrashingTraffic
+0x00FC30  lpTrafficBodyB->meType == eABT_CrashingTraffic
+0x00FC60  false
+0x00FC70  lpPickup->mn8RaceCarIndex >= (RwInt8)0
+0x00FCA0  lpRaceCarPhysics
+0x00FCB4  0
+0x00FCC0  NULL != lpViewport
+0x00FCE0  NULL != lpCamera
+0x00FD00  lpCollidingBody
+0x00FD10  lpSpawnParams
+0x00FD20  lbCrashBank
+0x00FD30  maSubArrays[0].mnNumSparks > 0
+0x00FD50  maSubArrays[1].mnNumSparks > 0
+0x00FD70  maSubArrays[2].mnNumSparks > 0
+0x00FD90  maSubArrays[3].mnNumSparks > 0
+0x00FDB0  (RwUInt32)&maSubArrays[0].mpaSparks[lnNumSparks / 4] <= lnAllocSize + (RwUInt32)mpDMAData
+0x00FE10  lnBatchSize > 0
+0x00FE20  ( lnBatchSize & sparkITOPMask ) == lnBatchSize
+0x00FE50  ( (RwUInt8)lpDMAPtr ) - ( (RwUInt8)mpDMAData ) <= lnAllocSize
+0x00FE90  lpSpark4
+0x00FEA0  mpTexture
+0x00FEB0  lpBank->mpDMAData
+0x00FEC8  !mbRendering
+0x00FED8  mbRendering
+0x00FEF0  mnNumRenderableArrays < knSparkRendererMaxRenderableArrays
+0x00FF30  mbRendering
+0x00FF40  lpArray->mCrashBank.mpDMAData
+0x00FF60  ( luOffX & 63 ) == 0
+0x00FF80  ( luSizeX & 63 ) == 0
+0x00FFA0  ( luOffY & 7 ) == 0
+0x00FFC0  ( luSizeY & 7 ) == 0
+0x00FFE0  _rwDMAOpenVIFPkt( RWDMA_FIXUP, lnPacketSize )
+0x010010  luScale1 >= 128
+0x010020  luScale2 >= 128
+0x010030  luScale3 >= 128
+0x010040  0
+0x010050  leVehicleAtHeadOfQueue < eVehicleCategorySpecialHelicopter
+0x010090  Trying to push onto full queue
+0x0100B0  Trying to pop element from empty queue
+0x0100D8  0
+0x0100E0  lnNumWeights > 0
+0x0100F4  0
+0x0100F8  0
+0x0100FC  0
+0x010100  mpPositionData->mpnSegments[lnValveLaneIndex] <= lnStartSegment
+0x010140  lnValveLaneIndex < mpPositionData->mnNumLanes
+0x010170  leVehicleGenerationClass != eVehicleCategoryNull
+0x0101B0  lrTotalLaneFlow > 0.0f
+0x0101C8  0
+0x0101D0  lnTargetValveLaneIndex >= 0
+0x0101F0  lnTargetValveLaneIndex < mpPositionData->mnNumLanes
+0x010230  lnTargetValveLaneIndex >= 0
+0x010250  lnTargetValveLaneIndex < mpPositionData->mnNumLanes
+0x010290  *lpu8BehaviourIndex < mapFormationData[lnTargetValveLaneIndex]->mnNumBehaviours
+0x0102E0  lpSequence
+0x0102F0  lpNetPlayer
+0x010300  lpPlayerCar
+0x010310  mpNetworkCar->mbDiffMatrix
+0x010330  lpCurrentMatrix
+0x010340  M_CHECK_MATRIX(*mpMatrix, krPlayerCarMatrixTestTolerance)
+0x010380  GetMatrix()->IsValid()
+0x0103A0  M_CHECK_MATRIX(*mpMatrix, krPlayerCarMatrixTestTolerance)
+0x0103E0  !mbIsHiddenUnderRoad
+0x0103F8  !IsCrashing()
+0x010410  !mpNetworkCar->mbCrashing
+0x010430  mpNetworkCar->mbCrashing
+0x010450  IsCrashing()
+0x010460  M_CHECK_MATRIX(*mpMatrix, krPlayerCarMatrixTestTolerance)
+0x0104A0  M_CHECK_MATRIX(*mpMatrix, krPlayerCarMatrixTestTolerance)
+0x0104E0  mpMatrix->IsNormal()
+0x010500  mpMatrix->IsOrthogonal()
+0x010520  GetMatrix()->IsValid()
+0x010540  mpRaceCar->GetRaceCarType() == eRaceCarTypeNetwork
+0x010580  mTotalForce.IsEffectivelyZero()
+0x0105A0  mTotalTorque.IsEffectivelyZero()
+0x0105D0  mTotalImpulse.IsEffectivelyZero()
+0x010600  mTotalImpulseAngular.IsEffectivelyZero()
+0x010630  mTotalTranslation.IsEffectivelyZero()
+0x010660  lnNumQW <= lnNumQWFree
+0x010680  _gpMeshCache->mnNumBatchedCameraQW < knMaxBatchedCameraQW
+0x0106C0  _gpMeshCache->mnNumBatchedCameraQW < knMaxBatchedCameraQW
+0x010700  _gpMeshCache->mnNumBatchedCameraQW < knMaxBatchedCameraQW
+0x010740  _gpMeshCache->mnNumBatchedCameraQW < knMaxBatchedCameraQW
+0x010780  _gpMeshCache->mnNumBatchedCameraQW < knMaxBatchedCameraQW
+0x0107C0  _gpMeshCache->mnNumBatchedCameraQW < knMaxBatchedCameraQW
+0x010800  _gpMeshCache->mnNumBatchedCameraQW < knMaxBatchedCameraQW
+0x010840  _gpMeshCache->mnNumBatchedCameraQW < knMaxBatchedCameraQW
+0x010880  mbReadyToRender == true
+0x010898  lnNumQW > 0
+0x0108B0  mbReadyToRender == true
+0x0108D0  _gpMeshCache != NULL
+0x0108F0  leCullMode != eTCM_Outside
+0x010910  mpInstance
+0x010920  CGtVu0CodeManager::GetCurrentVu0CodePointer() == (void *) gacB3InstanceVU0Code
+0x010970  mn8InstanceNumCameras <= knMaxInstanceCameras
+0x0109A0  CGtVu0CodeManager::GetCurrentVu0CodePointer() == (void *) gacB3InstanceVU0Code
+0x0109F0  mn8InstanceNumCameras > 0
+0x010A10  CGtVu0CodeManager::GetCurrentVu0CodePointer() == (void *) gacB3InstanceVU0Code
+0x010A60  CGtVu0CodeManager::GetCurrentVu0CodePointer() == (void *) gacB3InstanceVU0Code
+0x010AB0  lrCurrentTurningProbability > 0.0f
+0x010AE0  lnMaxMessageSize == knMaxMessageSize
+0x010B10  lnCurrentHostID >= 0
+0x010B30  lnIndex2<knB3MaxCrashPlayers
+0x010B50  lacIPAddress[0]
+0x010B60  eLobbyIdle == leStatus
+0x010B80  lpRaceFinishedMessage
+0x010BA0  lpNetworkManager
+0x010BB8  lpNewRecord
+0x010BC8  lpNetPlayer
+0x010BD8  lbSuccess
+0x010BF0  Missed start of countdown
+0x010C10  lnPlayerIndex<knB3MaxCrashPlayers
+0x010C38  lpMessage
+0x010C48  lpUserData
+0x010C60  lpReplayHeaderBuffer
+0x010C78  lbSuccess
+0x010C88  lpMessage
+0x010C98  lpUserData
+0x010CB0  lnOffset + lpReplayBodyMessage->mnDataLength <= gMemoryManager.GetBlockSize(eMB_Replay)
+0x010D08  lbSuccess
+0x010D18  lpAck
+0x010D20  lpUserData
+0x010D30  lpAck
+0x010D38  lpUserData
+0x010D48  lpUserData
+0x010D58  lpMessage
+0x010D68  lpUserData
+0x010D78  lpAck
+0x010D80  lpUserData
+0x010D90  FALSE
+0x010DA0  lnPlayerID >= 0
+0x010DB0  mnNumPlayerRecords < knB3MaxCrashPlayers
+0x010DE0  _gnQuickSortHostPlayerID >= 0
+0x010E00  FALSE
+0x010E10  NULL != lpcStringsArrayMemory
+0x010E30  NULL != lpcEnumValidationGuid
+0x010E50  0 <= lnGuidEntry
+0x010E70  Your excutable doesn't match your strings file!
+0x010EA0  lnMinNumStrings <= mpStringsArray->GetNumEntries()
+0x010EE0  NULL != mpStringsArray
+0x010F00  lnIndex>=0 && lnIndex < mnNumEntries
+0x010F28  FALSE
+0x010F30  !MessageIsValid()
+0x010F50  !MessageIsValid()
+0x010F70  lpPolygonIntersectionOut
+0x010F90  lPolygonSoup.GetPolygonCount() > 0
+0x010FC0  lfpCollisionCallback
+0x010FE0  lLineRecip.X() != 0.0f
+0x011000  lLineRecip.Y() != 0.0f
+0x011020  lLineRecip.Z() != 0.0f
+0x011040  lfpCollisionCallback
+0x011060  lpPolygonIntersectionOut
+0x011080  lPolygonSoup.GetPolygonCount() > 0
+0x0110B0  lfpCollisionCallback
+0x0110D0  lfpCollisionCallback
+0x0110E8  lpWindow
+0x0110F8  lpUserWindow
+0x011110  strlen(lpUserWindow->macText) < knMaxCallbackString
+0x011148  lpUserWindow
+0x011160  strlen(lpUserWindow->macText) < knMaxCallbackString
+0x011198  lpUserWindow
+0x0111A8  lpMenuItemTemp
+0x0111B8  lpMenuItemTemp
+0x0111C8  lpWindow
+0x0111D8  lpVariable
+0x0111F0  lpVariable->mVariable.meType == eVARTYPE_PTR_REAL
+0x011228  lpVariable
+0x011240  lpVariable->mVariable.meType == eVARTYPE_PTR_INT32
+0x011278  lpVariable
+0x011290  lpVariable->mVariable.meType == eVARTYPE_PTR_UINT32
+0x0112C8  lpVariable
+0x0112E0  lpVariable->mVariable.meType == eVARTYPE_PTR_BOOL
+0x011318  lpVariable
+0x011330  lpVariable->mVariable.meType == eVARTYPE_PTR_REAL
+0x011368  lpVariable
+0x011380  lpVariable->mVariable.meType == eVARTYPE_PTR_INT32
+0x0113B8  lpVariable
+0x0113D0  lpVariable->mVariable.meType == eVARTYPE_PTR_UINT32
+0x011408  lpVariable
+0x011420  lpVariable->mVariable.meType == eVARTYPE_PTR_BOOL
+0x011458  lnSize
+0x011460  lpMemory
+0x011470  lpParams->mnMaxMenuItems >= lpParams->mnMaxVariables + lpParams->mnMaxFunctions + lpParams->mnMaxMenus
+0x0114E0  _gParams.mnMaxWatchHistory
+0x011500  lnTotalMemory < _gParams.mnBufferSize
+0x011530  _gpErrorWindow == lpWindow
+0x011550  _gpMessageBoxWindow == lpWindow
+0x011570  lu16LeftSegment < lpLeftLane->mu16SegmentCount
+0x0115A0  lpAILaneData
+0x0115B0  lu16SegmentIndex < lpAILaneData->mu16SegmentCount
+0x0115F0  GetRaceCar(lnIndex)
+0x011610  GetRaceCar(lnIndex)
+0x011630  _rwDMAOpenVIFPkt( RWDMA_FIXUP, 2 )
+0x011660  gGame.GetCurrentGameMode()
+0x011680  RWA already open!
+0x0116A0  RwaCoreOpen() Failed!
+0x0116C0  RwaCoreRegisterDefaultObjects() Failed!
+0x0116F0  RwaOsObjectsRegisterUsingInterface() Failed!
+0x011720  RwaSPU2OutputCreate() Failed!
+0x011740  lParams.mpWave
+0x011750  lpCarPhysics
+0x011760  Voice ID changed (Special Vehicle engine)
+0x011790  Voice ID changed (Special Vehicle engine)
+0x0117C0  ILLEGAL VEHICLE ID LESS THAN 0!
+0x0117E0  mpRoadWave
+0x0117F0  mpEngineWave
+0x011800  mpRoadWave
+0x011810  mpRoadWave
+0x011820  mpEngineWave
+0x011830  mpRoadWave
+0x011840  mpRoadWave
+0x011850  LTrain missing engine wave! (out of date data?)
+0x011880  mpRoadWave
+0x011890  mpRoadWave
+0x0118A0  Vehicle system does not support HELICOPTERS, please see Adam
+0x0118E0  Unknown vehicle type! please see Adam
+0x011908  mpRoadWave
+0x011920  meType != eVehicleCategoryCar
+0x011940  meType != eVehicleCategoryVan
+0x011960  mpEngineWave
+0x011970  mpHornWave
+0x011980  Road noise is NULL!
+
+0x0119A0  Voice ID changed (Road noise)
+0x0119C0  lpListener
+0x0119D0  lpWave
+0x0119D8  lpWave
+0x0119E0  lpListener
+0x0119F0  mpEngineWave
+0x011A00  Engine NULL!
+
+0x011A10  meType != eVehicleCategoryCar
+0x011A30  meType != eVehicleCategoryVan
+0x011A50  Voice ID changed (Engine noise)
+0x011A70  (_grVolGainRange + _grVolMinGain) <= 1.0f
+0x011AA0  No Impact world wave
+0x011AC0  No Impact nudge wave
+0x011AD8  lParams.mpWave
+0x011AF0  Can't find glass sides wave
+0x011B10  Can't find wind screen wave
+0x011B30  Error - Invalid prop type tried to play an impact sound
+0x011B70  can't find car part large deform wave
+0x011BA0  can't find car part medium deform wave
+0x011BD0  can't find world impact wave
+0x011BF0  can't find fatal impact wave
+0x011C10  can't find impact nudge wave
+0x011C30  can't find fatal impact wave
+0x011C50  can't find fatal impact wave
+0x011C70  can't find fatal impact wave
+0x011C90  can't find car part large wave
+0x011CB0  can't find car part medium remove wave
+0x011CE0  can't find car part large prop wave
+0x011D10  can't find car part medium prop wave
+0x011D38  mpGlassWave
+0x011D50  Voice ID changed (Glass)!
+
+0x011D70  !(*lppVirtualVoice)
+0x011D88  lpWave
+0x011D90  lpVirtualVoice
+0x011DA0  *lppVirtualVoice
+0x011DC0  can't find kerb bounce wave
+0x011DE0  lpacDestString
+0x011DF0  Can't find air ram wave
+0x011E10  Can't find large explosion wave
+0x011E30  Can't find small explosion wave
+0x011E50  DEAD HORN VOICE WAS LOST!
+0x011E70  STEAM VOICE WAS LOST!
+0x011E90  FIRE VOICE WAS LOST!
+0x011EB0  No car alarm wave
+0x011EC8  mpLoWave
+0x011ED8  mpHiWave
+0x011EE8  lpWave
+0x011EF0  mpScrapeVoice[lnWhich]
+0x011F10  Voice ID changed (Scrape)
+
+0x011F30  Can't find shunt wave
+0x011F50  Can't find slam wave
+0x011F70  Buffer too small to read ESM
+0x011F90  Couldn't place ESM in asynch load queue!
+0x011FC0  Incorrect ESM version!
+0x011FE0  Low detail ESM with a DSP partial!
+0x012010  !"Invalid ESM prepare state"
+0x012030  Not Fully Prepared!
+0x012050  No data?! Weird!?
+0x012070  No Race Car!? Hmm..
+0x012090  Couldn't allocate real voice!
+0x0120B0  Turbo voice already allocated. This is bad!
+0x0120E0  Couldn't allocate virtual voice!
+0x012110  Shouldn't get here!
+0x012130  Should never get here mofo!
+0x012150  Should never get here mofo!
+0x012170  Start issued when we're not fully prepared!
+0x0121A0  Invalid DSP index
+0x0121C0  Too many DSP partials!
+0x0121E0  Shouldn't get here!
+0x012200  Stop issued when we're not fully prepared!
+0x012230  lpListener
+0x012240  maVirtualVoices[ i ]
+0x012260  Start issued when we're not fully prepared!
+0x012290  Stop issued when we're not fully prepared!
+0x0122C0  gSoundManager.GetBankManager()->FindWave( M_MAKE_GTID( t,a,k,e,00,00,00,00,00,00,00,00 ) )
+0x012320  false
+0x012330  mePrepareState == eGtPSPreparedFully
+0x012360  lrPercentile<=1.0f
+0x012378  lrTime < 2.0f
+0x012388  lpStageLogic
+0x0123A0  mpSoundStreamMediaBuffer
+0x0123C0  mpWaveObjectBuffer
+0x0123E0  mpWaveObjectBuffer
+0x0123F8  mpBassWave
+0x012410  mpBassWaveFlange
+0x012430  Should always get an ESM! Did you not Release your objects?
+0x012470  mpAttribs
+0x012480  mpAttribs
+0x012490  AI CAR BASS VOICES ALREADY PLAYING!
+0x0124C0  Bass wave is NULL!
+0x0124E0  Bass wave flange is NULL!
+0x012500  AI CAR BASS VOICES NOT PLAYING!
+0x012520  AI CAR BASS FLANGE VOICES NOT PLAYING!
+0x012550  AI CAR BASS VOICE WAS STOLEN!
+
+0x012570  AI CAR  BASS FLANGE VOICE WAS STOLEN!
+
+0x0125A0  lpNonConstRaceCar->GetRaceCarType() == eRaceCarTypeNetwork
+0x0125E0  Should always get an ESM! Did you not Release your objects?
+0x012620  mpGearChangeWave
+0x012640  Gear change wave not found
+0x012660  mpAttribs
+0x012670  mpAttribs
+0x012680  lpRaceCar
+0x012690  lpPhysics
+0x0126A0  lpRaceCar
+0x0126B0  Vehicle has less than two wheels?!
+0x0126E0  lnSFXSurface < eSurface_SFX_NTypes
+0x012710  BOOSTLOOP WAVE MISSING!
+
+0x012730  BOOSTIN WAVE MISSING!
+
+0x012750  BOOSTOUT WAVE MISSING!
+
+0x012768  false
+0x012770  mpBoostLoopWave
+0x012780  mpBoostInWave
+0x012790  mpBoostOutWave
+0x0127A0  BOOST LOOP LOST VOICE!
+0x0127C0  Couldn't allocated a virtual voice!
+0x0127F0  Couldn't find wave in bank!
+0x012810  Null RaceCar Instance!
+0x012830  Null RaceCarPhysics Instance!
+0x012850  Vehicle has less than two wheels?!
+0x012878  !mpBank
+0x012880  Couldn't find dump valve wave in either global or vehicle esm banks!
+0x0128D0  Null RaceCar instance on update
+0x0128F0  Null Attribs instance
+0x012910  Null RaceCar Physics instance
+0x012930  mpDumpWave
+0x012940  mpBassWave
+0x012950  BASS SKID VOICES ALREADY PLAYING!
+0x012978  mpBassWave
+0x012990  CRASHING TRAFFIC BASS VOICES NOT PLAYING!
+0x0129C0  CRASHING TRAFFIC BASS FLANGE VOICES NOT PLAYING!
+0x012A00  CRASHING TRAFFIC BASS VOICE WAS STOLEN!
+
+0x012A30  CRASHING TRAFFIC BASS FLANGE VOICE WAS STOLEN!
+
+0x012A60  CRASHING TRAFFIC SKID VOICES ALREADY PLAYING!
+0x012A90  mpSkidBigWave
+0x012AA0  mpSkidSmallWave1
+0x012AC0  mpSkidSmallWave2
+0x012AE0  CRASHING TRAFFIC SKID VOICES NOT PLAYING!
+0x012B10  CRASHING TRAFFIC SKID VOICE WAS STOLEN!
+
+0x012B3C  0
+0x012B40  lpTrafficParam != NULL
+0x012B60  lpTrafficParam != NULL
+0x012B80  mnMaxMonitor < knGtPerfMonMaxMonitors
+0x012BB0  lpacString != NULL
+0x012BD0  strlen(lpacString) <= (knMaxStringLength-1)
+0x012C00  strcmp(maMonitors[lnCount].macName, lpacString) != 0
+0x012C38  this
+0x012C40  mpList
+0x012C48  mpList->mpPool
+0x012C60  mpList->mpPool->mpLinksWorking
+0x012C80  link not in valid pool space
+0x012CA0  lpMemoryBlock != NULL
+0x012CC0  luMemoryBlockSize >= _GetRequiredMemory( luNumLinks, luDataSize, luAlignment )
+0x012D10  luDataSize > 0
+0x012D20  Alignment must be a power of 2
+0x012D40  luDataSize > 0
+0x012D50  Alignment must be a power of 2
+0x012D70  (RwUInt32)lpLink < ((RwUInt32)mpLinksWorking) + muNumLinks * muLinkSize
+0x012DB8  lpPool
+0x012DC0  mpPool
+0x012DD0  !lpNewLink->mpList
+0x012DE8  lpLink
+0x012DF0  lpSrcList
+0x012E00  mpPool
+0x012E10  lists use different pools
+0x012E30  link doesn't exist in current list pool space
+0x012E60  link doesn't exist in source list
+0x012E88  lpLink != NULL
+0x012E98  mpPool != NULL
+0x012EB0  mpPool->mpLinksWorking != NULL
+0x012ED0  link doesn't exist in current list pool space
+0x012F00  link doesn't belong to list
+0x012F20  mpPool
+0x012F30  mpPool->mpLinksWorking
+0x012F50  !lpFirst->mpPrev
+0x012F70  lpFirst->mpList == this
+0x012F90  muNumLinks == 0
+0x012FA0  muVersionNumber == GetCurrentVersionNumber()
+0x012FD0  lpStaticData->mn16NumProps < 255
+0x013000  mnNumDynamicProps < knMaxActiveDynamicProps
+0x013030  lnIndex < mnNumDynamicProps
+0x013050  mnNumDynamicProps>=0
+0x013070  lnNumPoints > 0
+0x013080  lnNumPoints > 0
+0x013090  lrPenetration >= -krEpsilon
+0x0130B0  lpColInfo->mpHullAInf->mCollisionPoint.GetLength() < 1.0e30f
+0x0130F0  lMinPoint.X() < 1000.0f
+0x013110  lMinPoint.Y() < 1000.0f
+0x013130  lMinPoint.Z() < 1000.0f
+0x013150  lMaxPoint.X() > -1000.0f
+0x013170  lMaxPoint.Y() > -1000.0f
+0x013190  lMaxPoint.Z() > -1000.0f
+0x0131B0  *lpnLastPlane>=0
+0x0131D0  lrPenetration < 100.0f
+0x0131F0  *lpnLastPlane>=0
+0x013210  lrPenetration < 100.0f
+0x013230  luNumClippedPoints <= (knB3ConvexHull_MaxNumEdges*2)
+0x013270  luNumUniquePoints <= (RwUInt32) lnNumEntriesInClippedPointBuffer
+0x0132C0  luNumDestPoints<=luNumPointsIn
+0x0132E0  (luNumDestPoints%2) == 0
+0x013300  mu8NumPlanes == 2 * (mu8NumVerts - 2)
+0x013330  mu8NumEdges == 3 * (mu8NumVerts - 2)
+0x013360  CB3SunRenderer::Prepare( gGame.mpGlobalTextureDictionary->Find("sunblob" ), mStreamedData.mpSunMoonTexture, mStreamedData.mpCloudTexture )
+0x0133F0  mnRenderPlayer == -1
+0x013410  ( lnPlayerIndex == 0 ) || ( lnPlayerIndex == 1 )
+0x013450  mnRenderPlayer != -1
+0x013470  mnRenderPlayer != -1
+0x013490  mnRenderPlayer != -1
+0x0134B0  mnRenderPlayer != -1
+0x0134D0  mnRenderPlayer != -1
+0x0134F0  ( lrLapPos >= 0.0f ) && ( lrLapPos <= 1.0f )
+0x013520  lSunPos.Y() < 0.99999f
+0x013540  lSunPos.Y() > -0.99999f
+0x013560  Trying to push onto full stack
+0x013580  Trying to pop element from empty stack
+0x0135B0  lpTrailEmitter->mn8NumWriteSegments < knMaxTrailSize
+0x0135F0  mn8NumWriteSegments == mn8NumReadSegments || (mx8Flags & (kxTrailEmitterUpdated|kxTrailEmitterContinuance))
+0x013660  mn8NumWriteSegments < knMaxTrailSize
+0x013690  lConvexHull.mnNumPlanes > 0
+0x0136B0  lnNumVerts < knGtMaxClippedPoints
+0x0136E0  lnNumVerts < knGtMaxClippedPoints
+0x013708  lpHeadset
+0x013720  lpOverallMessageSend
+0x013740  lpOverallMessageRecv
+0x013760  mnSpeakingPlayerID == -1
+0x013780  mnClientIDRequestingTalk == -1
+0x0137A0  FALSE
+0x0137B0  mnOutCurrentSegmentNumber == -1
+0x0137D0  mnSpeakingPlayerID == -1
+0x0137F0  mnClientIDRequestingTalk == -1
+0x013810  manClientIDsWhoHaveAcceptedOurRequest[i] != -1
+0x013840  FALSE
+0x013848  FALSE
+0x013850  FALSE
+0x013858  FALSE
+0x013860  mnSpeakingPlayerID == -1
+0x013880  mnClientIDRequestingTalk != -1
+0x0138A0  mnOutCurrentSegmentNumber == -1
+0x0138C0  lnNetPlayerID == mnClientIDRequestingTalk
+0x0138F0  FALSE
+0x013900  mnSpeakingPlayerID != -1
+0x013920  mnClientIDRequestingTalk == -1
+0x013940  FALSE
+0x013948  FALSE
+0x013950  FALSE
+0x013958  FALSE
+0x013960  lnMyPlayerID >= 0
+0x013980  lu16TalkTimeLeft <= mrMaximumTalkTime
+0x0139B0  To many control messages in buffer
+0x0139E0  knGtRawDataBufferSize >= lnInBufferSize
+0x013A10  knGtRawDataBufferSize >= lnOutBufferSize
+0x013A40  knGtRawDataBufferSize > lnBytesDecoded
+0x013A70  leType == eBehaviourOffsetBumper || leType == eBehaviourOffsetLookBack
+0x013AC0  leType == eBehaviourOffsetMatrix || leType == eBehaviourOffsetPosition || leType == eBehaviourOffsetDrop
+0x013B30  lpPhysics
+0x013B40  sizeof(CB3CameraBuffer) <= gMemoryManager.GetBlockSize(eMB_Cameras)
+0x013B90  ( lnBehaviour >= 0 ) && ( lnBehaviour < eBehaviourNumber )
+0x013BD0  Did not prepare instantaneously
+0x013BF0  ( lnBehaviour >= 0 ) && ( lnBehaviour < eBehaviourNumber )
+0x013C30  Should never get here!
+0x013C48  lpAttribs
+0x013C58  lpPhysics
+0x013C70  lpPlayerCar->GetPlayerIndex() < kun32SoundMaxPlayerCars
+0x013CB0  lnSegmentIndex < (RwInt32)lpAILane->mpData->mu16SegmentCount
+0x013CF0  lnNumPoints <= lnDestCount
+0x013D10  lnNumPoints<=knMaxClippedBoxPoints
+0x013D40  !(lNormal.X() == 0.0f && lNormal.Y() == 0.0f && lNormal.Z() == 0.0f)
+0x013D90  _rwDMAOpenVIFPkt( 0, 1 + 1 + vu1CameraSize + 1 + 1 + 1 + 3 + 2 )
+0x013DE0  lpCameraData->GetVU1Data()
+0x013E00  lpTexture
+0x013E10  luVertexCount <= dbrsGeometryMaxVerts
+0x013E40  lpGeometry->mpau8Indices[lnCount] < lpGeometry->mnNumVertices
+0x013E80  ( (RwUInt32)lpuPtr ) == ( ( (RwUInt32)lpGeometryData ) + luAllocSize )
+0x013ED0  ( leGeometryType >= 0 ) && ( leGeometryType < eDebrisGeometry_Max )
+0x013F20  lpParams->mnNumParticles > 0
+0x013F40  mBatchBuffer.mnSize == 0
+0x013F60  mBatchBuffer.mnSize == 0
+0x013F80  ( mBatchBuffer.mnSize >= 0 ) && ( mBatchBuffer.mnSize <= knDebrisMaxBatchSize )
+0x013FD0  mBatchBuffer.mnSize > 0
+0x013FF0  _rwDMAOpenVIFPkt( 0, lnNumQW )
+0x014010  ( lPack.manInts[2] == 0 ) || ( lPack.manInts[2] == 1 )
+0x014048  0
+0x01404C  0
+0x014050  0
+0x014054  0
+0x014058  0
+0x01405C  0
+0x014060  0
+0x014064  0
+0x014068  0
+0x01406C  0
+0x014070  0
+0x014074  0
+0x014078  0
+0x01407C  0
+0x014080  0
+0x014084  0
+0x014088  0
+0x01408C  0
+0x014090  0
+0x014094  0
+0x014098  0
+0x0140A0  gpFramesArray
+0x0140B0  gpFramesArray
+0x0140C0  Attemping to Register Attribs - without unregistering
+0x014100  Attemping to Unregister Attribs - without Registering
+0x014140  strlen( macCarPath ) < knMaxPathLength
+0x014170  strlen( macCameraPath ) < knMaxPathLength
+0x0141A0  lpString
+0x0141B0  lpSettings
+0x0141C0  lpSettings->mpFont
+0x0141E0  lxFlags & kxAlignMask
+0x014200  leTextType >= eTextPlain
+0x014220  leTextType < eTextNum
+0x014240  lnSpriteCount < kuMaxTextSprites
+0x014268  FALSE
+0x014270  !MessageIsValid()
+0x014290  !MessageIsValid()
+0x0142A8  FALSE
+0x0142B0  !MessageIsValid()
+0x0142D0  !MessageIsValid()
+0x0142E8  mpAlloc==NULL
+0x014300  mbCreated==false
+0x014318  lpBuffer
+0x014330  IsRWAllocator()
+0x014340  lnAlignment > 0
+0x014350  ( ( ( lnAlignment - 1 ) | lnAlignment ) + 1 ) == ( lnAlignment * 2 )
+0x014398  mbCreated
+0x0143A8  mpMaskTexture
+0x0143C0  Framebuffer must be 32-bit!
+0x0143E0  lnFocusX > 2
+0x0143F0  lnFocusY > 2
+0x014400  _rwDMAOpenVIFPkt( RWDMA_FIXUP, lnPacketSize )
+0x014430  luNumStrips > 0
+0x014440  lnFocusX >= 1
+0x014450  ( lnSizeX - lnFocusX ) >= 1
+0x014470  ( luStripCountL + luStripCountR ) == M_BLUR_OUT_NUM_STRIPS( lnFocusX, lnSizeX, lrUScale )
+0x0144D0  ESM not locked! WTF?
+0x0144F0  Too many partials!
+0x014510  Not enough points in ESM graph!
+0x014530  Volume out of range?! You got your data right?!
+0x014560  Null Hardware Voice! Oops!
+0x014580  Null RaceCar! Doh!
+0x0145A0  Null RaceCar Physics Object!
+0x0145C0  Null virtual Voice! Oops!
+0x0145E0  Null RaceCar! Doh!
+0x014600  Null RaceCar Physics Object!
+0x014620  lnParam >= 0
+0x014630  lnParam < eDSP_NUserParams
+0x014650  Distortion sample rate cann't be zero!
+0x014680  High shelf filter unstable
+0x0146A0  High shelf filter unstable
+0x0146C0  (mpNextCommand + lnNumParams + 1) < (manRpcBuffer + (sizeof(manRpcBuffer)/sizeof(RwInt32)))
+0x014720  !lpListenerMat->mRight.IsZero()
+0x014740  mbDistortionActive
+0x014760  munDistortedCarIndex != kunInvalidCarIndex
+0x014790  lpListener
+0x0147A0  leType == eBehaviourTrackSideStatic || leType == eBehaviourTrackSidePan || leType == eBehaviourTrackSideRig || leType == eBehaviourTrackSideLeadIn
+0x014838  lpRaceCar
+0x014848  mpLane
+0x014850  lpFSM
+0x014858  lpCut
+0x014860  false
+0x014868  false
+0x014870  lpFSM
+0x014878  lpCut
+0x014880  false
+0x014890  gWorld.mStaticTrack.mpDataBuffer->mn16HullCount >= knStreamedTrackNumActiveUnitsLODAndCollision
+0x0148F0  You're in a state that you can't cope with
+0x014920  gWorld.mStreamManager.mpInStream != NULL
+0x014950  gWorld.manStreamStartHull[0] >= 0
+0x014980  gWorld.manStreamStartHull[0] < lnNumHulls
+0x0149B0  manOriginalWorldUnit[eTT_LODAndCollision] >= 0
+0x0149E0  manOriginalWorldUnit[eTT_LODAndCollision] < lnNumHulls
+0x014A20  manOriginalWorldUnit[eTT_HighDetail] >= 0
+0x014A50  manOriginalWorldUnit[eTT_HighDetail] < lnNumHulls
+0x014A90  mapUnitsLODCol[ manStreamCircularUnit[eTT_LODAndCollision] ]->GetLoadedState() == CB3StreamedTrackData::eLS_Loaded
+0x014B10  CB3StreamedTrack: SHOULD NEVER BE HERE!
+0x014B40  mapUnitsHiRes[ manStreamCircularUnit[eTT_HighDetail] ]->GetLoadedState() == CB3StreamedTrackData::eLS_Loaded
+0x014BB0  CB3StreamedTrack: SHOULD NEVER BE HERE!
+0x014BE0  gGame.mpFileSystem != NULL
+0x014C00  gWorld.mStreamManager.mpInStream != NULL
+0x014C30  CB3StreamedTrack::UpdateFSM - Unknown stream state
+0x014C70  mpCurrentUnitHiRes != NULL
+0x014C90  lpUnit
+0x014CA0  Too many allowable keyboards specified
+0x014CD0  lnNumCoronas > 0
+0x014CF0  ( lnPlayer >= 0 ) && ( lnPlayer < knMaxPlayers )
+0x014D30  mn8CurrentPlayer == -1
+0x014D48  mpNextCorona
+0x014D58  mpNextCorona
+0x014D70  mnNumPackets == 0
+0x014D90  ( lnPlayer >= 0 ) && ( lnPlayer < CB3CoronaDynamicArray::knMaxPlayers )
+0x014DE0  mnNumPackets < knCoronaMaxPackets
+0x014E08  lpArray
+0x014E10  lpTexture
+0x014E20  lpArray->mpNextCorona == NULL
+0x014E40  _rwDMAOpenVIFPkt( 0, lnPacketSize )
+0x014E70  mpaSourceData[mn8CurrentNumSources]->mxVersionNumber == kxVehicleCurrentVersion
+0x014EC0  gVehicleRenderer.FixUpVehicleData(mpaSourceData[mn8CurrentNumSources])
+0x014F10  B3TrafficSystemLoadAndRender is in a bad state
+0x014F40  NULL != lpViewport
+0x014F60  NULL != lpCamera
+0x014F78  lpPhysics
+0x014F90  max32AssignedCoronas[lnCoronaIndex / ku8AssignedCoronasWordSize] & lx32Flag
+0x014FE0  strlen( macCarPath ) < knMaxVehiclePathLength
+0x015010  lpBurn
+0x015020  lpViewportParams
+0x015040  lpRequestedGameMode
+0x015058  lpProfile
+0x015070  lnClassCount > 0
+0x015088  lReturnID != 0
+0x015098  lpStage
+0x0150A0  Championship game mode not supported
+0x0150D0  One player game mode not supported
+0x015100  Two player game mode not supported
+0x015130  mnNumNetworkPlayers == 2
+0x015150  mnNumNetworkPlayers == 2
+0x015170  FALSE
+0x015178  lpGameMode
+0x015190  lpGameMode->GetStageLogic()
+0x0151B0  Periodical race not supported
+0x0151D0  mePrepareState != eGtPSNone
+0x0151F0  false
+0x015200  NULL != mpCurrentPage
+0x015220  mePrepareState == eGtPSPreparedFully
+0x015250  mePrepareState == eGtPSPreparedFully
+0x015280  _rwDMAOpenVIFPkt( RWDMA_FIXUP, 2 )
+0x0152B0  _rwDMAOpenVIFPkt( RWDMA_FIXUP, 2 )
+0x0152E0  NULL != lpComponent
+0x015300  mnLayerCount <= knNumLayers
+0x015320  mePrepareState == eGtPSPreparedFully
+0x015350  NULL == mpCurrentPage
+0x015370  mePrepareState == eGtPSPreparedFully
+0x0153A0  NULL != mpCurrentPage
+0x0153C0  mePrepareState == eGtPSPreparedFully
+0x0153F0  NULL != mpCurrentPage
+0x015410  mePrepareState == eGtPSPreparedFully
+0x015440  NULL != mpCurrentPage
+0x015460  gMenuPages.mRegionSelect.meSelectedRegion < eB3TrackRegionCount
+0x0154A0  Main Choice not supported
+0x0154C0  gMenuChoices.maePlayerCarClasses[gMenuChoices.mnNumCarsSelected] < eB3MenuCarClassNumber
+0x015520  Option not supported yet!
+0x015540  gMenuPages.mCarSelect.mSelectedCarID != 0
+0x015570  ( gMenuPages.mTrackSelect.mnSelectedTrack >= 0 ) && ( gMenuPages.mTrackSelect.mnSelectedTrack < gGame.mTrackList.mnTrackCount )
+0x0155F0  false
+0x015600  Failed to leave lobby
+0x015618  false
+0x015620  false
+0x015628  false
+0x015630  false
+0x015640  meSelection < eVSelectNumEntries
+0x015670  !mabEntryDisable[meSelection]
+0x015690  meSelection < eVSelectNumEntries
+0x0156C0  meSelectedClass <= eB3MenuCarClassNumber
+0x0156F0  lCarID == mCarID
+0x015708  mbActive
+0x015718  false
+0x015720  mpNewString != NULL
+0x015740  mpHeadingBarObject != NULL
+0x015760  lpString != NULL
+0x015780  ( lnVertexCount + 5 ) <= kuMaxVertices
+0x0157B0  ( lnVertexCount + 1 ) <= kuMaxVertices
+0x0157E0  NULL != lpSelectionData
+0x015800  NULL != lpEntryDataList
+0x015820  ( lnVertexCount + 5 ) <= kuMaxVertices
+0x015850  ( lnVertexCount + 1 ) <= kuMaxVertices
+0x015880  mapBorderObjects[eBorderObjectFullScreen] == NULL
+0x0158C0  mpForegroundObject == NULL
+0x0158E0  false
+0x0158E8  false
+0x0158F0  false
+0x0158F8  false
+0x015900  false
+0x015908  false
+0x015910  false
+0x015920  NULL != lpSelectionData
+0x015940  NULL != lpEntryDataList
+0x015960  mpSelectionData->GetNumItems() <= knMaxItems
+0x015990  false
+0x015998  lpProfile
+0x0159B0  meSelection < eVSelectNumEntries
+0x0159D8  lpProfile
+0x0159F0  gNetworkManager.IsOnline()
+0x015A10  gNetworkManager.IsOnline()
+0x015A30  Invalid selection
+0x015A48  lnGameID >= 0
+0x015A60  NULL != lpLinearMalloc
+0x015A80  mnNumTilesX < 0
+0x015A90  mnNumTilesY < 0
+0x015AA0  knPS2OptimalDMAAlignment == lpLinearMalloc->GetAlignment()
+0x015AE0  NULL != mpDecodeBuffer
+0x015AF8  mpDecodeBuffer
+0x015B10  ( lnX >= 0 ) && ( lnX < mnNumTilesX )
+0x015B40  ( lnY >= 0 ) && ( lnY < mnNumTilesY )
+0x015B68  mpMpegStream
+0x015B80  mpMpegStream->GetStatus()==eGTF_STATUS_READY
+0x015BB0  NULL != lpLinearMalloc
+0x015BD0  NULL != lpcFileName
+0x015BF0  ( lnMaxVideoWidth % knGtMPEGMacroBlockSizeX ) == 0
+0x015C30  ( lnMaxVideoHeight % knGtMPEGMacroBlockSizeY ) == 0
+0x015C68  mnGSMemAddr!=0
+0x015C80  NULL != mpu128StreamBuffer
+0x015CA0  NULL != mpu8DecodeWorkArea
+0x015CC0  NULL != mpu128RingBufferTags
+0x015CE0  false
+0x015CF0  eGtPSPreparedFully == mePrepareState
+0x015D20  mpMpegStream->GetStatus()==eGTF_STATUS_READY
+0x015D50  eGtPSPreparedFully == mePrepareState
+0x015D80  CGtVideoDecoderBase::kxPlaybackFlagUseExternalSync & mxPlaybackFlags
+0x015DD0  eGtPSPreparedFully == mePrepareState
+0x015E00  eGtPSPreparedFully == mePrepareState
+0x015E30  eGtPSPreparedFully == mePrepareState
+0x015E58  lpVideoDecoder
+0x015E70  lpJoinGamePage->maGameData[lpJoinGamePage->mnNumberOfGames].mTrackID != 0
+0x015EC0  lpJoinGamePage->mnNumberOfGames<=knOnlineNumberOfGamesListPerPage
+0x015F10  gMenuPages.mOnlineJoinGame.mSelectedTrackID != 0
+0x015F48  lpCar
+0x015F50  mpCarTarget
+0x015F60  mpCarTarget
+0x015F70  mpCarTarget
+0x015F80  mpCar->mDriver.mrAggression >= 0.0f && mpCar->mDriver.mrAggression <= 1.0f
+0x015FD0  lrWaitTime >= 0.0f
+0x015FF0  leState != eAIAggressionStateWait || lrTimeout != -1.0f
+0x016030  lnCornerIndex < gWorld.mnAICornerCount
+0x016060  Invalid chat display orientation
+0x016084  0
+0x016090  mpDataBuffer != NULL
+0x0160A8  0
+0x0160AC  0
+0x0160B0  gWorld.mPhysicsManager.maBodies[lnIndex].mbRemove
+0x0160F0  GetMatrix()->IsValid()
+0x016110  GetMatrix()->IsValid()
+0x016130  GetMatrix()->IsValid()
+0x016150  mWorldCollisionInfo.mPoint.GetLength() < 1.0e30f
+0x016188  FALSE
+0x016190  !MessageIsValid()
+0x0161B0  !MessageIsValid()
+0x0161D0  gNetworkManager.IsOnline()
+0x0161F0  gNetworkManager.IsOnline()
+0x01620C  0
+0x016210  false
+0x016220  Game parameters too big for string!
+0x016250  Player params string too long!
+0x016270  lpMemory
+0x016280  lpMemory
+0x016290  Failed to allocate lobby interface
+0x0162C0  Failed to create room list
+0x0162E0  Failed to create game list
+0x016300  Failed to create found game list
+0x016330  Failed to create users in lobby list
+0x016358  lpBuffer
+0x016368  mpCurrentGame
+0x016380  !mbCurrentGameIsValid
+0x016398  mpCurrentGame
+0x0163B0  attempt to register account whilst lobby busy
+0x0163E0  Failed to retrieve persona log in
+0x016408  FALSE
+0x016410  Failed to retrieve persona log in
+0x016440  attempt to select Persona whilst busy
+0x016470  attempt to select Persona whilst busy
+0x0164A0  attempt to select Persona whilst busy
+0x0164D0  Attempt to log in whilst lobby busy
+0x016500  Attempt to log in when already logged in
+0x016530  !mbRequestActive
+0x016550  lpLobby->mnGameID >= 0
+0x016570  Attempt to create a game whilst lobby busy
+0x0165A0  Attempt to join a game whilst lobby busy
+0x0165D0  Attempt to leave a game whilst lobby busy
+0x016600  Attempt to search for games whilst lobby busy
+0x016630  Failed to create found game list
+0x016660  Trying to call ForAllPlayers when not in a game
+0x016690  mbIsInGame
+0x0166A0  AmIHost()
+0x0166B0  mbIsInGame
+0x0166C0  mbIsInGame
+0x0166D0  AmIHost()
+0x0166E0  lnSize <= knLobbyArbitaryMessageSize
+0x016708  lnSuccess >= 0
+0x016718  lnSuccess >= 0
+0x016728  lnSuccess >= 0
+0x016738  FALSE
+0x016740  lnSuccess >= 0
+0x016750  lnSuccess >= 0
+0x016760  lnSuccess >= 0
+0x016770  Failed to find host player
+0x016790  Failed to find host player
+0x0167B0  attempt to get lost account whilst lobby busy
+0x0167E0  lnSuccess >= 0
+0x0167F0  lnSuccess >= 0
+0x016800  attempt to get lost password whilst lobby busy
+0x016830  lnSuccess >= 0
+0x016840  lnSuccess >= 0
+0x016850  lnSuccess >= 0
+0x016860  lnSuccess >= 0
+0x016870  this->mbRequestActive == false
+0x016890  Couldn't find our lobby
+0x0168B0  attempt to register account whilst lobby busy
+0x0168E0  lnSuccess >= 0
+0x0168F0  lnIndex>=0 && lnIndex<knGtDirtySockAltPersMax
+0x016920  mbIsInGame
+0x016930  lpParameters->mnGameID == GetGameID()
+0x016960  !stricmp(lpParameters->mpName,macGameName)
+0x016990  Attempt to update player parameters whilst lobby busy
+0x0169C8  AmIHost()
+0x0169E0  Attempt to create a game whilst lobby busy
+0x016A10  mbIsInGame
+0x016A20  mpCurrentGame
+0x016A30  lpOpponent
+0x016A40  mbIsInGame
+0x016A50  mbIsInGame
+0x016A60  mpCurrentGame
+0x016A70  lnSuccess >= 0
+0x016A80  lnSuccess >= 0
+0x016A90  lnSuccess >= 0
+0x016AA0  attempt to prepare rankings whilst busy
+0x016AD0  attempt to get a ranking list whilst busy
+0x016B00  attempt to get a user ranking list whilst busy
+0x016B30  attempt to get user's country whilst lobby busy
+0x016B60  attempt to get user's stats whilst lobby busy
+0x016B90  Attempt to LeaveGameImmediately whilst lobby busy
+0x016BC8  lpFont
+0x016BD0  lpString
+0x016BE0  leTextType >= eTextPlain
+0x016C00  leTextType < eTextNum
+0x016C20  ( lnVertexCount + 5 ) <= kuMaxVertices
+0x016C50  ( lnVertexCount + 1 ) <= kuMaxVertices
+0x016C78  FALSE
+0x016C80  !MessageIsValid()
+0x016CA0  !MessageIsValid()
+0x016CB8  false
+0x016CC0  false
+0x016CC8  false
+0x016CD0  gGame.GetCurrentGameMode()
+0x016CF0  lpStageLogic
+0x016D00  !gNetworkManager.IsOnline()
+0x016D20  lpRaceCar
+0x016D30  gGame.GetCurrentGameMode()
+0x016D50  lpStageLogic
+0x016D60  lpGameMode
+0x016D70  lpGameMode->mConfig.mTrackID != 0
+0x016D98  FALSE
+0x016DA0  lpChallenge
+0x016DB0  gGame.GetCurrentGameMode()
+0x016DD0  lpStageLogic
+0x016DE0  lpChallenge
+0x016DF0  gGame.GetCurrentGameMode()
+0x016E10  lpStageLogic
+0x016E20  lpPlayer
+0x016E30  lpPlayer
+0x016E40  lpPlayer
+0x016E50  mnNumStats < knMaxNumRows
+0x016E70  lpStageLogic
+0x016E80  lpProfile
+0x016E90  mnNumStats < ( knMaxNumRows - 1 )
+0x016EC0  Events coming through on dummy state
+0x016EF0  Prepare EA login failure.
+
+0x016F10  Invalid return state from mNetworkAdapter.Prepare
+
+0x016F48  FALSE
+0x016F50  FALSE
+0x016F58  FALSE
+0x016F60  false
+0x016F70  !(lbUseStylisedText && lbUseParagraphText)
+0x016FA0  NULL != lpSelectionData
+0x016FC0  lnNumSamplesX>0
+0x016FD0  lnNumSamplesY>0
+0x016FE0  lnNumSamplesX<=4
+0x017000  lnNumSamplesY<=4
+0x017018  lpPixelBuffer
+0x017030  RwRasterLock(lpCameraRaster, 0, rwRASTERLOCKREAD)
+0x017070  (lpImage->width % 16) == 0
+0x017090  ((RwUInt32)lpImagePixels % 16) == 0
+0x0170C0  lnNumAccumulationFrames > 0
+0x0170E0  lnNumSamplesX>0
+0x0170F0  lnNumSamplesY>0
+0x017100  lnNumSamplesX<=4
+0x017120  lnNumSamplesY<=4
+0x017140  mpPixelBuffer==NULL
+0x017158  mpPixelBuffer
+0x017170  (lnRasterWidth % 4) == 0
+0x017190  (lnRasterWidth % 4) == 0
+0x0171B0  false
+0x0171C0  lpCollidingPair->mpBodyA
+0x0171E0  lpCollidingPair->mpBodyB
+0x017200  leRigType == eRigStatic
+0x017220  leRigType == eRigOffset
+0x017240  leRigType == eRigRotate || leRigType == eRigRotateLocked || leRigType == eRigRotateNoUpdate
+0x0172A0  lnTreeDepth>0
+0x0172B0  lnNumParentSpheres>lnTreeDepth
+0x0172D0  lpaParentSpherePool
+0x0172F0  lrParentSphereOverSize>0.0f
+0x017310  lnTreeDepth < mnTreeDepth
+0x017330  lpSphere
+0x017340  lpSphere->mnChildCount==0
+0x017360  lnCurrentTreeDepth>0
+0x017380  lpSphere->mnChildCount>0
+0x0173A0  mnNumFreeParentSpheres>0
+0x0173C0  rwLinkListGetFirstLLLink(&mFreeList)!=rwLinkListGetTerminator(&mFreeList)
+0x017410  lpNewSphere->mpParent == NULL
+0x017430  lpNewSphere->mnChildCount == 0
+0x017450  lpSphere->mpParent==NULL
+0x017470  lpSphere->mnChildCount==0
+0x017490  lpNewChild->mpParent==NULL
+0x0174B0  lpParent
+0x0174C0  lpCallback
+0x0174D0  gWorld.mStaticTrack.mpDataBuffer
+0x017500  gWorld.mStaticTrack.mpDataBuffer->mpapTextures
+0x017530  mpClient
+0x017540  Wrong operation in find buddy callback
+0x017570  Wrong operation in ban buddy callback
+0x0175A0  Wrong operation in remove buddy callback
+0x0175D0  Wrong operation in buddy invite callback
+0x017600  lpMemory
+0x017610  Not yet handled
+0x017620  mpCarPhysics
+0x017630  lnCrashIndex != -1
+0x017650  leType != eComboEntryTypeNone
+0x017670  leType != eComboEntryTypeNone
+0x017690  Call GetFirstItem() first
+0x0176B0  mpNewComboItem && mpNewComboItem->meType == leSkidType
+0x0176F0  mpNewComboItem && mpNewComboItem->meType == eComboEntryAir
+0x017730  mbLandedThisFrame
+0x017748  false
+0x017750  false
+0x017760  _gbConstructed == true
+0x017780  _gbIsReady == true
+0x0177A0  _gbIsReady == true
+0x0177C0  _gbIsReady == true
+0x0177E0  _gbIsReady == true
+0x017800  _gbIsReady == true
+0x017820  _gbIsReady == true
+0x017840  _gbIsReady == true
+0x017860  lrThreshold >= 0.0f
+0x017880  lrThreshold <= 1.0f
+0x0178A0  _gbIsReady == true
+0x0178C0  _gbLineAA == false
+0x0178E0  lnNumVertices > 0
+0x017900  lnNumVertices <= GtIm3dVu1TSVertexCount
+0x017930  _gbIsReady == true
+0x017950  _gbLineAA == false
+0x017970  lnNumVertices > 0
+0x017990  lnNumVertices <= GtIm3dVu1TSVertexCount
+0x0179C0  _gbIsReady == true
+0x0179E0  _gbLineAA == false
+0x017A00  lnNumVertices > 0
+0x017A20  lnNumVertices <= GtIm3dVu1TSVertexCount
+0x017A50  (lnNumVertices % 3) == 0
+0x017A70  _gbIsReady == true
+0x017A90  lnNumVertices > 0
+0x017AB0  lnNumVertices <= GtIm3dVu1TSVertexCount
+0x017AE0  (lnNumVertices % 2) == 0
+0x017B00  ( mnNumPopcorn & 3 ) == 0
+0x017B20  mpDMAData
+0x017B30  (RwUInt32)&mpaPopcorns[lnArraySize] <= lnAllocSize + (RwUInt32)mpDMAData
+0x017B80  mpTexture
+0x017B90  lpCamera
+0x017BA0  mpTexture
+0x017BB0  mnNumRenderableArrays < ePopcornArray_Max
+0x017BE0  lpProfile
+0x017BF0  mnNumStages < knMaxNumStages
+0x017C10  strlen( lacText ) < knStageDescLength
+0x017C40  gMenuChoices.mnNumCrashZonesSelected <= gMenuChoices.mnNumCrashPartyZones
+0x017C90  meTrophyAction != eTrophyActionNumber
+0x017CC0  lpCategory->mn8Category >= -1 && lpCategory->mn8Category < eScoreBonusCategoryCount
+0x017D20  lpCategory->mn8Category >= -1 && lpCategory->mn8Category < eScoreBonusCategoryCount
+0x017D80  lpCategory->mn8Category >= -1 && lpCategory->mn8Category < eScoreBonusCategoryCount
+0x017DD8  lnHull >= 0
+0x017DF0  lnCrashIndex != -1
+0x017E10  leEvaluation < eCrashComboEvaluationCount
+0x017E40  lnAttackLevelCount > 0
+0x017E60  lnAttackLevelCount <= knScoreBonusMaxRepeats
+0x017E90  meAttackLevel < eScoreBonusAttackLevelCount
+0x017EC0  lnAttackLevelCount > 0
+0x017EE0  lnAttackLevelCount <= knScoreBonusMaxRepeats
+0x017F10  meAttackLevel < eScoreBonusAttackLevelCount
+0x017F40  lnSlamIndex < knMaxAttackStrength
+0x017F70  Unknown selection in online rankings menu page
+0x017FA0  gMenuPages.mRegionSelect.meSelectedRegion < eB3TrackRegionCount
+0x017FE0  Ranking FSM fallen into a bizzare state
+0x018010  gMenuPages.mOnlineOptimatchPage.mSelectedTrackID != 0
+0x018050  Trying to remove a buddy who isn't ignore, temporary, or permanent. Shouldn't be in list!
+0x0180B0  mapFrontendImages[lnTexture] != NULL
+0x0180E0  mapGlobalImages[lnTexture] != NULL
+0x018110  lrTimeScale <= 1.0f
+0x018130  lrTimeScale <= 1.0f
+0x018148  lrWidth > 0.0f
+0x018160  lrGapOffsetX >= 0.0f
+0x018180  lrGapOffsetX < lrWidth
+0x018198  No buffer
+0x0181B0  Invalid buffer size
+0x0181D0  Attempt to seek outside buffer
+0x0181F0  mpCurrent
+0x018200  lpMemory
+0x018210  lnSize > 0
+0x018220  mpCurrent
+0x018230  lpMemory
+0x018240  lnSize > 0
+0x018250  lnGameID >= 0
+0x018260  gMenuPages.mOnlineJoinGame.mSelectedTrackID != 0
+0x0182A0  gGame.GetCurrentGameMode()
+0x0182C0  gGame.GetCurrentGameMode()->GetStageLogic()
+0x0182F0  mTableData.mNumberRows <= knResultsTableMaxNumRows
+0x018330  leNewMedal < eEventMedalNumber
+0x018350  lpProfile
+0x018360  mpaKeyFrame
+0x018370  lpUserData
+0x018380  gmnLastVsyncCount > 0
+0x018398  FALSE
+0x0183A0  !MessageIsValid()
+0x0183C0  !MessageIsValid()
+0x0183E0  lnDataLength <= knMaxReplayDataPerPacket
+0x018410  !MessageIsValid()
+0x018428  FALSE
+0x018430  mnDataLength <= knMaxReplayDataPerPacket
+0x018460  !MessageIsValid()
+0x018480  !MessageIsValid()
+0x0184A0  Trying to push onto full stack
+0x0184C0  Trying to pop element from empty stack
+0x0184F0  mgaDefaultParams[lnIndex].mpTexture
+0x018520  lnNumSimulationStepsRequired <= lnMaxSimulationSteps
+0x018558  false
+0x018560  false
+0x018568  false
+0x018570  false
+0x018578  false
+0x018580  false
+0x018588  false
+0x018590  lpTexture
+0x0185A0  mnNumTextures < knTextureCollectionMaxUniqueTextures
+0x0185E0  gTextureCache.GetCurrentBufferFreeSpace() >= mnTotalSizeInTextureCache
+0x018630  gTextureCache.GetCurrentBufferNumFreeTextures() >= mnNumTextures
+0x018680  lOptimatchData.mTrackID != 0
+0x0186A0  lpOptimatchPage->mnNumberOfGames<=knOptimatchNumberOfGamesListPerPage
+0x0186E8  false
+0x0186F0  false
+0x0186F8  false
+0x018700  false
+0x018710  leButton < eButtonNum
+0x018730  lpWaveDictLoader->loadStatus == rwaASYNCLOADSTATUS_IDLE
+0x018770  mpWaveObjectBuffer
+0x018790  !"Not enough sound RAM to load dictionary"
+0x0187C0  !"Wave object memory exceeded"
+0x0187E0  !"Async bank load error"
+0x018800  Null wave, didn't seem to want to load
+
+0x018830  Bizzar.. trying to return an incorrect wave!
+0x018860  Wave variant indexes start at 1 not 0! 
+0x018890  lnMaxLoadedBanks
+0x0188B0  lpWaveObjectBufferData
+0x0188D0  mau8BankPoolData
+0x0188E8  lpLink
+0x0188F0  mpWaveDictLoader
+0x018910  mpWaveObjectBuffer
+0x018930  Object buffer size is zero!
+
+0x018950  strlen(lpcPath) < knMaxBankPathLength
+0x018978  lpSoundBank
+0x018990  lpWaveObjectBuffer
+0x0189B0  lpWaveObjectBuffer
+0x0189C8  lnBufferSize
+0x0189E0  !"Run out of wave object buffers or unsupported size requested"
+0x018A20  !"Unable to return wave object buffer"
+0x018A50  RwaVirtualListenerCreate() Failed!
+0x018A78  mpListener
+0x018A88  mpListener
+0x018A98  mpListener
+0x018AA8  mpListener
+0x018AB8  mpListener
+0x018AD0  RwaListenerCreate() Failed!
+0x018AF0  (lunNumPlayers == 1 || lunNumPlayers == 2)
+0x018B20  mapListeners[lunCount]
+0x018B40  mapListeners[lunCount]
+0x018B60  ListenerID has to be >=0
+0x018B80  ListenerID has to be <knNumListeners
+0x018BA8  mbRwaOpen
+0x018BC0  lpParams->mpWave
+0x018BD8  lrFreq > 0.f
+0x018BF0  Null wave assignment!
+0x018C08  false
+0x018C10  Should never get here!
+0x018C30  Should never get here!
+0x018C48  mpStream
+0x018C60  mpReadBufferPos
+0x018C70  mpStream
+0x018C80  mpMediaBuffer
+0x018C90  mpStream
+0x018CA0  mpMediaBuffer
+0x018CB0  Invalid Stream Status!
+0x018CD0  Couldn't find stream file!
+0x018CF0  mpStream->state.container.state.format->subStreams->streamBlockSize == 8192
+0x018D40  No Stream to Play!
+0x018D60  Stream not prepared!
+0x018D80  No Stream to Stop!
+0x018DA0  Too many substreams!
+0x018DB8  lpLink
+0x018DC0  maMediaBuffers
+0x018DD0  lpMediaBufferBlock
+0x018DF0  lnBlockOffset <= lnMediaBufferBlockSize
+0x018E20  mpSingleStream == NULL
+0x018E38  lpLink
+0x018E40  Not all media buffers available
+0x018E60  lpDataBuffer
+0x018E70  !"Exhausted media buffers"
+0x018E90  maMediaBuffers[ lnIndex ].mbInUse
+0x018EC0  !"Invalid buffer address"
+0x018EE0  mpSingleStream == lpStream
+0x018F00  false
+0x018F10  Couldn't create virtual voice!
+0x018F30  VOICE HAS ALREADY BEEN UPDATED THIS FRAME!
+0x018F60  WARNING, VIRTUAL VOICE FAILED TO GET WAVE
+
+0x018F90  WARNING, VIRTUAL VOICE WITH NO WAVE
+
+0x018FC0  LOOPING VOICE REPORTING NOT PLAYING!
+
+0x018FF0  WARNING, VIRTUAL VOICE FAILED TO GET WAVE
+
+0x019020  WARNING, VIRTUAL VOICE WITH NO WAVE
+
+0x019050  RWA SAYS VOICE IS ALREADY PLAYING!
+
+0x019080  ATTEMPTING TO RESTART A LOOPING VOICE!
+
+0x0190B0  VOICE IS ALREADY PLAYING!
+
+0x0190D0  Starting a voice with a NULL wave!
+0x019100  mrUserFrequency * CGtSoundVoice::_GetMasterPitch() * lrGroupPitch > 0.f
+0x019150  Null wave assignment!
+0x019168  false
+0x019170  Should never get here!
+0x019190  Should never get here!
+0x0191A8  mpVirtualVoice
+0x0191B8  mpVirtualVoice
+0x0191C8  mpOutput
+0x0191E0  mpListenerManager
+0x019200  Couldn't create a RWA voice!
+0x019220  Voice is not available! Voice cache corrupt! Check your allocs!
+0x019260  Null voice deallocation
+0x019280  Freeing a voice that wasn't already allocated!
+0x0192B0  Null voice deallocation
+0x0192D0  Freeing a voice that wasn't already allocated!
+0x019300  Null Voice Params!
+0x019320  No wave to trigger!
+0x019340  mpListenerManager->GetNearestListener( lWavePosition )
+0x019380  Null voice in available list?!
+0x0193A0  Null Voice Params!
+0x0193C0  No wave to trigger!
+0x0193E0  mpListenerManager->GetNearestListener( lWavePosition )
+0x019420  Null voice in available list?!
+0x019440  lnGroup < CGtSoundVoice::kun32MaxGroups
+0x019468  lpWave
+0x019470  lpRaceCar->mScore.mnMaxLaps == (gWorld.GetNumRaceCars()-1)
+0x0194B0  lpLastCar
+0x0194C0  lpCar
+0x0194C8  lpCar
+0x0194D0  Invalid medal thresh
+0x0194F0  Invalid medal thresh
+0x019508  lpPlayerCar
+0x019518  lpScore
+0x019520  lpnScore
+0x019530  lpnRoundsWon
+0x019540  gGame.GetCurrentGameMode()
+0x019560  lnTotalNumPlayers == 2
+0x019580  gNetworkManager.AmIHost()
+0x0195A0  lnTotalNumPlayers == 2
+0x0195C0  GetNumRoundsPlayed() < gGame.GetCurrentGameMode()->GetNumLaps()
+0x019600  FALSE
+0x019610  lpNetPlayerRecord
+0x019630  lpNetPlayerRecord->mResultsData.mbIsValid
+0x019660  lnPlayerID >= 0
+0x019670  lpPlayerCarPhysics
+0x019690  lpNetCarPhysics
+0x0196A0  !gNetworkManager.AmIHost()
+0x0196C0  FALSE
+0x0196C8  lpScore
+0x0196D0  lpnScore
+0x0196E0  lpnRoundsWon
+0x0196F0  lpRaceCar
+0x019700  lnTotalNumPlayers == 2
+0x019718  FALSE
+0x019720  lpPlayerCarPhysics
+0x019740  lpNetCarPhysics
+0x019750  ln8Status == kxHostPressedRetry
+0x019770  lpScore
+0x019778  lpnScore
+0x019788  lpnRoundsWon
+0x019798  lpRaceCar
+0x0197A8  lpRaceCar
+0x0197B8  lpRaceCar
+0x0197D0  lpNetCar->GetNetworkPlayer()
+0x0197F0  !lpPlayerCar->mScore.mbRager
+0x019810  !lpNetworkCar->mScore.mbRager
+0x019830  lpScore
+0x019838  lpnScore
+0x019848  lpnRoundsWon
+0x019860  knB3MaxRaceCars-mnNumRagerStartPositionsAssigned-1 >= 0
+0x0198A0  knB3MaxRaceCars-mnNumRagerStartPositionsAssigned-1 < knB3MaxRaceCars
+0x0198F0  mnNumRacerStartPositionsAssigned >= 0
+0x019920  mnNumRacerStartPositionsAssigned < knB3MaxRaceCars
+0x019960  lnStartPosIndex >= 0
+0x019980  lnStartPosIndex < knB3MaxRaceCars
+0x0199B0  gWorld.WeArePausedForNetworkSync()
+0x0199E0  gWorld.WeArePausedForNetworkSync()
+0x019A10  gWorld.WeArePausedForNetworkSync()
+0x019A38  lbSuccess
+0x019A50  !gWorld.IsReplaying()
+0x019A70  gGame.GetCurrentGameMode()
+0x019A90  gGame.GetCurrentGameMode()->GetStageLogic()
+0x019AC0  lpPlayerRecord->mbNewData
+0x019AE0  lpPlayerCar
+0x019AF0  lrWinningCrashScore >= 0.0f
+0x019B10  mnPlayerSendingReplayID >= 0
+0x019B30  lbSuccess
+0x019B40  lbSuccess
+0x019B50  lpCurrentGameMode
+0x019B70  lpCurrentGameMode->GetStageLogic()
+0x019BA0  lpCurrentGameMode->GetStageLogic()->GetOnlineGameModeType() == eNormalOnlineGameModePartyCrash
+0x019C00  lnNumAICars == 0
+0x019C20  mpReplayHeaderBuffer
+0x019C38  mpReplayBuffer
+0x019C50  gMemoryManager.GetBlockSize(eMB_RaceCar) >= gMemoryManager.GetBlockSize(eMB_Replay)
+0x019CB0  !gNetworkManager.AmIHost()
+0x019CD0  GetNumRoundsPlayed() < gGame.GetCurrentGameMode()->GetNumLaps()
+0x019D10  mbDealtWithFirstContinue
+0x019D30  lbSuccess
+0x019D40  FALSE
+0x019D50  ln8Status == kx8HostPressedContinue
+0x019D78  lpScore
+0x019D80  lpnScore
+0x019D90  lpnRoundsWon
+0x019DA0  lpRaceCar
+0x019DB0  lpScore
+0x019DB8  lpnScore
+0x019DC8  lpnRoundsWon
+0x019DE0  lePotentialMedal != eScoreMedalNone
+0x019E08  lpPhysics
+0x019E18  lpGameMode
+0x019E28  lpChallenge
+0x019E40  !gNetworkManager.IsOnline()
+0x019E60  lpRaceCar
+0x019E70  lpRaceCar
+0x019E80  lpScore
+0x019E88  lpnScore
+0x019E98  lpnRoundsWon
+0x019EA8  lpGameMode
+0x019EB8  FALSE
+0x019EC0  Invalid selection
+0x019ED8  lpTrailToUse
+0x019EF0  NULL != lpSelectionData
+0x019F10  NULL != lpEntryDataList
+0x019F28  false
+0x019F30  mn8NumOnscreenItems <= knMaxOnscreenItems
+0x019F60  mn8NumOnscreenItems & 1
+0x019F78  false
+0x019F80  lpScore->mpnTakedownsForMedalArray != NULL
+0x019FB0  lpScore->mprLapTimesForMedalArray != NULL
+0x019FE0  mpHeadingObject == NULL
+0x01A000  maSummaryEntries[0].mpMedalImage == NULL
+0x01A030  mpText1Object == NULL
+0x01A050  mpText2Object == NULL
+0x01A070  mpText3Object == NULL
+0x01A088  lpStringBuffer
+0x01A0A0  lpc16WaitingForPlayersString
+0x01A0C0  0
+0x01A0D0  Invalid game mode
+0x01A0F0  Invalid game mode
+0x01A110  Invalid game mode
+0x01A128  FALSE
+0x01A130  FALSE
+0x01A138  FALSE
+0x01A140  Invalid game mode
+0x01A160  Invalid game mode
+0x01A180  Invalid game mode
+0x01A1A0  lnTrackCount > 0
+0x01A1B8  lpProfile
+0x01A1D0  gGame.GetCurrentGameMode()
+0x01A1F0  lpStageLogic
+0x01A200  !( lbIsCrashBattle && lbIsCoopCrash )
+0x01A230  lnNumRaceCars <= 2
+0x01A250  mpBreakerButtonTexture
+0x01A270  lunMenuItemNumber < knMaxTabbedMenuItems
+0x01A2A0  lnNumCols <= knMaxContentCols
+0x01A2C0  lnNumNonHeadingRows <= knMaxContentPanelRows - 1
+0x01A300  lnItem < knMaxPanelEntries
+0x01A320  lpProfile
+0x01A330  lnItem <= 9
+0x01A340  CB3HardCodedCrashStageList::GetNumUnlockedVariantsOnThisJunction( gMenuComponents.mSatNav.meTrackRegion, gMenuComponents.mSatNav.mnNewSelectedCircuit, gMenuComponents.mSatNav.mnSelectedCrashJunction ) > 0
+0x01A410  CB3HardCodedCrashStageList::GetNumVariantsOnThisJunction( gMenuComponents.mSatNav.meTrackRegion, gMenuComponents.mSatNav.mnNewSelectedCircuit, gMenuComponents.mSatNav.mnSelectedCrashJunction ) > lnItem
+0x01A4E0  lnItem <= 9
+0x01A4F0  lpProfile
+0x01A500  lnCircuitIndex < CB3HardCodedTrackRegionList::GetNumTrackIconPos( leTrackRegion )
+0x01A558  lpProfile
+0x01A568  lpProfile
+0x01A580  mnNewSelectedCircuit != -1
+0x01A5A0  lpProfile
+0x01A5B0  lpProfile
+0x01A5C0  lpProfile
+0x01A5D0  mpPanelFrame == NULL
+0x01A5F0  mpPanelFrame != NULL
+0x01A608  Uknown region
+0x01A620  mpPanelFrame != NULL
+0x01A638  0
+0x01A640  lpPopupBox->mpPanelObject == NULL
+0x01A670  lpPopupBox->mpHeadingObject == NULL
+0x01A6A0  lpPopupBox->mpTextObject == NULL
+0x01A6D0  mpMapFrame != NULL
+0x01A6E8  lpProfile
+0x01A6F8  lpProfile
+0x01A710  gmpStaticGlobeData == NULL
+0x01A730  sizeof(CB3Globe2dStaticData) <= gMemoryManager.GetBlockSize(eMB_FrontEndGlobeData)
+0x01A790  lnNumVertices <= 80
+0x01A7B0  lnNumVertices <= 80
+0x01A7D0  lnNumVertices <= 80
+0x01A7F0  lnNumVertices <= 80
+0x01A810  lnNumVertices <= 80
+0x01A830  lnNumVertices <= 80
+0x01A850  lnNumVertices <= 80
+0x01A870  lnNumVertices <= 80
+0x01A890  lnNumVertices <= 80
+0x01A8B0  lnNumVertices <= 80
+0x01A8D0  lnNumVertices <= 80
+0x01A8F0  lnNumVertices <= 80
+0x01A910  lnNumVertices <= 80
+0x01A930  lnNumVertices <= 80
+0x01A950  lnNumVertices <= 80
+0x01A970  lnNumVertices <= 80
+0x01A990  _rwDMAOpenVIFPkt( RWDMA_FIXUP, 2 )
+0x01A9B8  lpViewport
+0x01A9C8  lpViewport
+0x01A9E0  lrSphereFactor >= 0.0f
+0x01AA00  lrSphereFactor <= 1.0f
+0x01AA20  GetState() == eGlobeStateStateUpdate
+0x01AA50  GetState() == eGlobeStateStateUpdate
+0x01AA80  gWorld.GetPlayerCar(lnPlayerIndex)
+0x01AAB0  Out of menu string buffer space
+0x01AAD0  (mpFreeSpace+knMaxMinutesAndSecondsString) <= (maStringBuffer+knB3MenuStringBufferSize)
+0x01AB28  false
+0x01AB30  false
+0x01AB40  lpResultsData1->mbRager == lpResultsData2->mbRager
+0x01AB80  mTableData.mNumberRows <= knResultsTableMaxNumRows
+0x01ABC0  lnStage >= 0 && lnStage < mpChampionshipChallenge->mnNumStages
+0x01AC00  lpCurrentGameMode
+0x01AC18  lpRaceCar
+0x01AC30  lnFinishPosition >= 1 && lnFinishPosition <= knB3MaxRaceCars
+0x01AC70  lnMallocSema >= 0
+0x01AC88  lnErr >= 0
+0x01AC98  lnErr >= 0
+0x01ACB0  ((char*)p) >= min_address
+0x01ACD0  ((char*)p + sz) <= ((char*)(av->top))
+0x01AD00  (unsigned int)(sz) >= (unsigned int)((((sizeof(struct malloc_chunk))+(16 - 1)) & ~(16 - 1)))
+0x01AD60  ((p)->size & 0x1)
+0x01AD80  !((p)->size & 0x2)
+0x01ADA0  !((((mchunkptr)(((char*)(p))+((p)->size & ~0x1)))->size) & 0x1)
+0x01ADE0  !((p)->size & 0x2)
+0x01AE00  (sz & (16 - 1)) == 0
+0x01AE20  (((unsigned int)((((void*)((char*)(p) + 2*(sizeof(size_t)))))) & ((16 - 1))) == 0)
+0x01AE80  next->prev_size == sz
+0x01AEA0  ((p)->size & 0x1)
+0x01AEC0  next == av->top || ((((mchunkptr)(((char*)(next))+((next)->size & ~0x1)))->size) & 0x1)
+0x01AF18  p->fd->bk == p
+0x01AF28  p->bk->fd == p
+0x01AF40  sz == (sizeof(size_t))
+0x01AF60  ((((mchunkptr)(((char*)(p))+((p)->size & ~0x1)))->size) & 0x1)
+0x01AFA0  ((mchunkptr)( ((char*)(prv)) + ((prv)->size & ~0x1) )) == p
+0x01AFE0  ((next)->size & 0x1)
+0x01B000  ((next)->size & ~((0x1|0x2))) >= (unsigned int)((((sizeof(struct malloc_chunk))+(16 - 1)) & ~(16 - 1)))
+0x01B070  (sz & (16 - 1)) == 0
+0x01B090  (unsigned int)(sz) >= (unsigned int)((((sizeof(struct malloc_chunk))+(16 - 1)) & ~(16 - 1)))
+0x01B0F0  (((unsigned int)((((void*)((char*)(p) + 2*(sizeof(size_t)))))) & ((16 - 1))) == 0)
+0x01B150  (long)(sz) - (long)(s) >= 0
+0x01B170  (long)(sz) - (long)(s + (unsigned int)((((sizeof(struct malloc_chunk))+(16 - 1)) & ~(16 - 1)))) < 0
+0x01B1E0  ((p)->size & 0x1)
+0x01B200  (av->pagesize & (av->pagesize-1)) == 0
+0x01B230  ((av)->max_fast & ~((2U) | (1U))) <= (((80) + (sizeof(size_t)) + (16 - 1) < (unsigned int)((((sizeof(struct malloc_chunk))+(16 - 1)) & ~(16 - 1)))) ? (unsigned int)((((sizeof(struct malloc_chunk))+(16 - 1)) & ~(16 - 1))) : ((80) + (sizeof(size_t)) + (16 - 1)) & ~(16 - 1))
+0x01B348  p == 0
+0x01B350  ((((unsigned int)(((p)->size & ~((0x1|0x2))))) >> 3) - 2) == i
+0x01B390  (((av)->max_fast & (2U)))
+0x01B3B0  total == 0
+0x01B3C0  empty
+0x01B3C8  binbit
+0x01B3D0  idx == i
+0x01B3E0  p->bk == b || (unsigned int)((p->bk)->size & ~((0x1|0x2))) >= (unsigned int)((p)->size & ~((0x1|0x2)))
+0x01B450  total <= (unsigned int)(av->max_total_mem)
+0x01B480  av->n_mmaps >= 0
+0x01B4A0  av->n_mmaps <= av->max_n_mmaps
+0x01B4C0  (unsigned int)(av->sbrked_mem) <= (unsigned int)(av->max_sbrked_mem)
+0x01B510  (unsigned int)(av->mmapped_mem) <= (unsigned int)(av->max_mmapped_mem)
+0x01B560  (unsigned int)(av->max_total_mem) >= (unsigned int)(av->mmapped_mem) + (unsigned int)(av->sbrked_mem)
+0x01B5D0  ((unsigned int)(nb) < (unsigned int)256)
+0x01B600  (old_top == ((((mbinptr)((char*)&((av)->bins[(1)<<1]) - ((sizeof(size_t))<<1))))) && old_size == 0) || ((unsigned int) (old_size) >= (unsigned int)((((sizeof(struct malloc_chunk))+(16 - 1)) & ~(16 - 1))) && ((old_top)->size & 0x1))
+0x01B6F0  (unsigned int)(old_size) < (unsigned int)(nb + (unsigned int)((((sizeof(struct malloc_chunk))+(16 - 1)) & ~(16 - 1))))
+0x01B770  !(((av)->max_fast & (2U)))
+0x01B790  correction >= 0
+0x01B7A0  (((unsigned int)((((void*)((char*)(brk) + 2*(sizeof(size_t)))))) & ((16 - 1))) == 0)
+0x01B7F8  bit != 0
+0x01B810  (unsigned int)(size) >= (unsigned int)(nb)
+0x01B840  NULL != lpSelectionData
+0x01B860  NULL != lpEntryDataList
+0x01B880  mpSelectionData->GetNumItems() <= knMaxItems
+0x01B8B0  Don't call this function for this type of option box
+
+0x01B8F0  Don't call this function for this type of option box
+
+0x01B930  Not a list item
+
+0x01B950  Not a list item
+
+0x01B970  gWorld.GetNumPlayerCars() == 2
+0x01B990  labDestroyed[0] != labDestroyed[1]
+0x01B9C0  mu16NumPolygonSoups < 255
+0x01B9E0  lu16PolygonSoupIndex < mu16NumPolygonSoups
+0x01BA10  lpfCollisionCallback
+0x01BA30  mu16NumPolygonSoups < 255
+0x01BA50  lu16PolygonSoupIndex < mu16NumPolygonSoups
+0x01BA80  lpfCollisionCallback
+0x01BAA0  mu16NumPolygonSoups < 255
+0x01BAC0  lu16PolygonSoupIndex < mu16NumPolygonSoups
+0x01BAF0  lpac16HeadingString
+0x01BB10  gGame.GetCurrentGameMode()
+0x01BB30  gGame.GetCurrentGameMode()->GetStageLogic()
+0x01BB60  gGame.GetCurrentGameMode()
+0x01BB80  gGame.GetCurrentGameMode()->GetStageLogic()
+0x01BBB0  gGame.GetCurrentGameMode()
+0x01BBD0  lpStageLogic
+0x01BBE0  mTableData.mNumberRows < knResultsTableMaxNumRows
+0x01BC20  No free slots found. Adding too many race times
+0x01BC50  i<gWorld.GetNumRaceCars()
+0x01BC70  lnNumAccumulationFrames > 0
+0x01BC90  lnNumSamplesX>0
+0x01BCA0  lnNumSamplesY>0
+0x01BCB0  lnNumSamplesX<=4
+0x01BCD0  lnNumSamplesY<=4
+0x01BCF0  mpPixelBuffer==NULL
+0x01BD08  mpPixelBuffer
+0x01BD20  (lnRasterWidth % 4) == 0
+0x01BD40  (lnRasterWidth % 4) == 0
+0x01BD60  mu8CurrentStage < mu8NumStages
+0x01BD80  lpCurrentGameMode
+0x01BDA0  mpInStream != NULL
+0x01BDC0  B3StreamManager::Prepare: You're in a state that you can't cope with
+0x01BE08  false
+0x01BE10  false
+0x01BE18  false
+0x01BE20  lpProfile
+0x01BE30  lpProfile
+0x01BE40  lnNumEntries < knMaxEntries
+0x01BE60  false
+0x01BE70  ( gGame.GetCurrentGameMode()->GetChallenge() == &gGame.mChampionshipChallenge ) && ( gGame.mChampionshipChallenge.GetChallengeType() == keMainChallenge_GrandPrix )
+0x01BF20  ( gGame.GetCurrentGameMode()->GetChallenge() == &gGame.mTurnBasedCrashChallenge )
+0x01BF80  Crash Records not yet handled
+0x01BFA0  gGame.GetCurrentGameMode()
+0x01BFC0  gGame.GetCurrentGameMode()->GetStageLogic()
+0x01BFF0  leMenuAwardType < eB3MenuAwardTypeNum
+0x01C018  false
+0x01C020  false
+0x01C028  false
+0x01C030  lbFound
+0x01C040  lpGameStageData
+0x01C050  lpGameMode
+0x01C060  lpStageLogic
+0x01C070  lpGameMode
+0x01C080  false
+0x01C090  mnSelectionIndex < mnNumEntries
+0x01C0B0  mnSelectionIndex < mnNumEntries
+0x01C0D0  gWorld.GetNumRaceCars() >= 2
+0x01C0F0  lnNumObjectsRequired <= knMaxObjects
+0x01C118  mbPrepared
+0x01C128  lpPlayerCar
+0x01C138  lpRaceCar
+0x01C150  mapIcons[lnOffsetIndex] == NULL
+0x01C170  mapIcons[lnOffsetIndex]
+0x01C190  mapObjects[knNumObjectsPerRaceCar*lnOffsetIndex+1] == NULL
+0x01C1D0  mapObjects[knNumObjectsPerRaceCar*lnOffsetIndex+1]
+0x01C208  FALSE
+0x01C210  FALSE
+0x01C220  meVSelection < eVSelectNumEntries
+0x01C248  lpProfile
+0x01C260  lnNumValidStages > 0
+0x01C278  false
+0x01C280  false
+0x01C288  FALSE
+0x01C290  !MessageIsValid()
+0x01C2B0  !MessageIsValid()
+0x01C2D0  mu8NumCrashingCars < knMaxCrashModeCrashingVehicles
+0x01C310  lnCrashIndex < knB3NumCrashBattlePlayers
+0x01C340  mu8NumCrashingCars < knMaxCrashModeCrashingVehicles
+0x01C380  mbIsCrashBattle
+0x01C390  mbCrashBattleScoring
+0x01C3B0  leCrashModePickup == eCrashModePickupScoreSmall || leCrashModePickup == eCrashModePickupScoreMedium || leCrashModePickup == eCrashModePickupScoreLarge
+0x01C450  leCrashModePickup == eCrashModePickupNegativeMultiplier || leCrashModePickup == eCrashModePickupMultiplierSmall || leCrashModePickup == eCrashModePickupMultiplierLarge
+0x01C500  lnVehicle1Index != -1 && lnVehicle2Index != -1
+0x01C530  mu8NextFreeScoreSlot >= 0
+0x01C550  mu8NextFreeScoreSlot < knMaxDisplayedCrashScores
+0x01C590  mapCurrentCrashCars[lnWreckIndex] != NULL
+0x01C5C0  lpOutputChar - lpOutputBuffer < lnOutputBufferSize - 1
+0x01C600  lpOutputChar - lpOutputBuffer < lnOutputBufferSize
+0x01C638  lpFont
+0x01C640  lpString
+0x01C650  lnNumVerts > 0
+0x01C660  leStyle != eStyle_MetallicGold
+0x01C680  leStyle != eStyle_MetallicSilver
+0x01C6B0  leStyle != eStyle_MetallicBronze
+0x01C6E0  leStyle != eStyle_MetallicGold
+0x01C700  leStyle != eStyle_MetallicSilver
+0x01C730  leStyle != eStyle_MetallicBronze
+0x01C754  0
+0x01C760  lTextData.mu8Style != (RwUInt8)eStyle_MetallicGold
+0x01C7A0  lTextData.mu8Style != (RwUInt8)eStyle_MetallicSilver
+0x01C7E0  lTextData.mu8Style != (RwUInt8)eStyle_MetallicBronze
+0x01C820  lTextData.mu8Style != (RwUInt8)eStyle_MetallicGold
+0x01C860  lTextData.mu8Style != (RwUInt8)eStyle_MetallicSilver
+0x01C8A0  lTextData.mu8Style != (RwUInt8)eStyle_MetallicBronze
+0x01C8D8  0
+0x01C8DC  0
+0x01C8E0  0
+0x01C8E8  lnNumVerts > 0
+0x01C900  ( lnNumChars * 6 ) - 2 <= lnNumVerts
+0x01C928  0
+0x01C92C  0
+0x01C930  0
+0x01C938  lnNumVerts > 0
+0x01C948  0
+0x01C950  lrInterpTop >= 0.0f
+0x01C970  lrInterpBottom > lrInterpTop
+0x01C990  lrInterpBottom <= 1.0f
+0x01C9B0  lTextData.mu8Width < (RwUInt8)eWidth_Max
+0x01C9E0  ( lnStyle >= 0 ) && ( lnStyle <= 3 )
+0x01CA10  *lpString != (GtUTF16)'\\'
+0x01CA30  *lpString != (GtUTF16)'\0'
+0x01CA50  lnVertexCount <= kuMaxVertices - 2
+0x01CA80  lnVertexCount <= kuMaxVertices - 4
+0x01CAB0  ( lnStyle >= 0 ) && ( lnStyle <= 3 )
+0x01CAE0  *lpString != (GtUTF16)'\\'
+0x01CB00  *lpString != (GtUTF16)'\0'
+0x01CB20  lpCurrentGameMode
+0x01CB40  lnIndex != knB3HardCodedDataSearchFail
+0x01CB70  lnIndex != knB3HardCodedDataSearchFail
+0x01CBA0  lpViewportParams
+0x01CBC0  ( lrTime >= 0.0f ) & ( lrTime <= 1.0f )
+0x01CBE8  lpTexture
+0x01CC00  ( lnNumStars >= 0 ) && ( lnNumStars <= knMaxStars )
+0x01CC40  leType < eMessageType_Max
+0x01CC60  lpIconTexture
+0x01CC70  0
+0x01CC74  0
+0x01CC78  0
+0x01CC7C  0
+0x01CC80  lpDigit - maScoreString < knPrimaryMessageScoreMaxDigits
+0x01CCC0  mpScoreObject == NULL
+0x01CCE0  mpTextObject != NULL
+0x01CCF8  lpTextObject
+0x01CD10  ( lnVertexCount + 5 ) <= kuMaxVertices
+0x01CD40  ( lnVertexCount + 1 ) <= kuMaxVertices
+0x01CD68  lpBox != NULL
+0x01CD78  lpEvent
+0x01CD80  mbPrepared
+0x01CD90  lpLeadRacer
+0x01CDA0  !GtMath::IsEffectivelyZero(lrDiffZ)
+0x01CDD0  mpHull->mu8NumPlanes == 20
+0x01CDF0  lnVert0 >= 0
+0x01CE00  lnVert1 >= 0
+0x01CE10  lnVert2 >= 0
+0x01CE20  lnVert0 < knMaxConvexHullVertices
+0x01CE50  lnVert1 < knMaxConvexHullVertices
+0x01CE80  lnVert2 < knMaxConvexHullVertices
+0x01CEB0  mpHull->mu8NumEdges == lnEdge
+0x01CED0  Invalid parameter to GetVirtualBoneMatrix
+0x01CF00  Invalid parameter to GetVirtualBoneMatrix
+0x01CF30  lrTotal > 0.0f
+0x01CF40  lrDefaultRange > 0.0f
+0x01CF60  !lAt.IsEffectivelyZero()
+0x01CF80  Trying to deform a door, but flying object enum value is not a door!
+0x01CFD0  lnFlyingObject >= 0
+0x01CFF0  lnFlyingObject < knMaxVehicleFlyingObjects
+0x01D020  lu8NumPoints <= knMaxVehicleSteamPoints
+0x01D050  lBoxFrontLeft.mSup.Z() > lBoxFrontLeft.mInf.Z()
+0x01D080  lBoxFrontRight.mSup.Z() > lBoxFrontRight.mInf.Z()
+0x01D0C0  lBoxBackLeft.mSup.Z() > lBoxBackLeft.mInf.Z()
+0x01D0F0  lBoxBackRight.mSup.Z() > lBoxBackRight.mInf.Z()
+0x01D120  lBoxRoof.mSup.Y() > lBoxRoof.mInf.Y()
+0x01D150  lrDefaultDistanceToWindscreen > 0.0f
+0x01D178  false
+0x01D180  larCornerHeights[0] > 0.0f
+0x01D1A0  larCornerHeights[1] > 0.0f
+0x01D1C0  larCornerHeights[2] > 0.0f
+0x01D1E0  larCornerHeights[3] > 0.0f
+0x01D200  lpEssentialParams
+0x01D220  lpEssentialParams->mpStreamedData
+0x01D250  lpVehicleParams
+0x01D260  lrLength > 0.0f
+0x01D270  lEdgeLeft.GetLength() > 0.01f
+0x01D290  lEdgeRight.GetLength() > 0.01f
+0x01D2B0  Trying to acquire a block when in different memory layout
+0x01D2F0  Trying to release a block when in different memory layout
+0x01D330  Trying to use a block when in different memory layout
+0x01D370  Trying to access a block when in different memory layout
+0x01D3B0  meCurrentMemoryLayout == eB3MemoryLayout_Common
+0x01D3E0  lnBlockIndex < 2
+0x01D400  ESM index out of range!
+0x01D420  Missing block from CB3MemoryManager::AquireBlock case statement
+0x01D460  In invalid code path in CB3MemoryManager::AquireBlock
+0x01D4A0  lnBlockIndex < 2
+0x01D4C0  ESM index out of range!
+0x01D4E0  Missing block from CB3MemoryManager::ReleaseBlock case statement
+0x01D530  Missing block from CB3MemoryManager::QueryBlock case statement
+0x01D570  In invalid code path in CB3MemoryManager::QueryBlock
+0x01D5B0  Missing block from CB3MemoryManager::GetBlockSize case statement
+0x01D600  In invalid code path in CB3MemoryManager::GetBlockSize
+0x01D640  lnCrashStageIndex >= 0
+0x01D660  lnCrashStageIndex != knB3HardCodedDataSearchFail
+0x01D6A0  lnCrashStageIndex < knB3NumHardCodedCrashStages
+0x01D6D0  lnStageIndex < knB3NumHardCodedCrashStages
+0x01D700  unknow region
+0x01D710  false
+0x01D718  false
+0x01D720  lpSeries->mpChallenges[lnGlobalChallengeIndex].mnNumStages == 1
+0x01D760  Unknown region
+0x01D770  Unknown region
+0x01D780  lnRaceChallengeIndex >= 0
+0x01D7A0  lnRaceChallengeIndex != knB3HardCodedDataSearchFail
+0x01D7E0  lnRaceChallengeIndex < knB3NumHardCodedRaceChallenges
+0x01D820  lnLocalStageIndex < kanGPChallengeStageNumber[lChallengeID]
+0x01D860  lnLocalStageIndex == 0
+0x01D880  lnRaceChallengeIndex >= 0
+0x01D8A0  lnRaceChallengeIndex != knB3HardCodedDataSearchFail
+0x01D8E0  lnRaceChallengeIndex < knB3NumHardCodedRaceChallenges
+0x01D920  lnTrackIndex != knB3HardCodedDataSearchFail
+0x01D950  Unknown region
+0x01D960  0
+0x01D964  0
+0x01D968  0
+0x01D970  lnTrackIndex != knB3HardCodedDataSearchFail
+0x01D9A0  lnTrackIndex < knB3NumHardCodedTracks
+0x01D9D0  lnTrackIndex < knB3NumHardCodedTracks
+0x01DA00  lnTrackIndex != knB3HardCodedDataSearchFail
+0x01DA30  lnTrackIndex < knB3NumHardCodedTracks
+0x01DA60  Unknown track region
+0x01DA80  lnTrackIndex != knB3HardCodedDataSearchFail
+0x01DAB0  lnRaceVehicleIndex != knB3HardCodedDataSearchFail
+0x01DAF0  lnRaceVehicleIndex < knB3NumHardCodedRaceVehicles
+0x01DB30  lnRaceVehicleIndex != knB3HardCodedDataSearchFail
+0x01DB70  lnRaceVehicleIndex < knB3NumHardCodedRaceVehicles
+0x01DBB0  lnRaceVehicleIndex >= 0
+0x01DBD0  lnRaceVehicleIndex != knB3HardCodedDataSearchFail
+0x01DC10  lnRaceVehicleIndex < knB3NumHardCodedRaceVehicles
+0x01DC50  lnRaceVehicleIndex >= 0
+0x01DC70  lnRaceVehicleIndex != knB3HardCodedDataSearchFail
+0x01DCB0  lnRaceVehicleIndex < knB3NumHardCodedRaceVehicles
+0x01DCF0  lnRaceVehicleIndex >= 0
+0x01DD10  lnRaceVehicleIndex < knB3NumHardCodedRaceVehicles
+0x01DD50  lnTrafficVehicleIndex < knB3NumHardCodedTrafficVehicles
+0x01DD88  false
+0x01DD90  false
+0x01DD98  false
+0x01DDA0  meSelection < eVSelectNumEntries
+0x01DDD0  meSelection < eVSelectNumEntries
+0x01DE00  lunProfileNumber < knMemCardNumPlayerProfiles
+0x01DE30  meSelection < eVSelectNumEntries
+0x01DE60  meSelection < eVSelectNumEntries
+0x01DE90  meSelection < eVSelectNumEntries
+0x01DEB8  lpProfile
+0x01DEC8  lpProfile
+0x01DEE0  Crash Records not yet handled
+0x01DF00  lpProfile
+0x01DF10  lpProfile
+0x01DF20  meSelection < eVSelectNumEntries
+0x01DF48  lpProfile
+0x01DF60  meSelection < eVSelectNumEntries
+0x01DF88  false
+0x01DF90  false
+0x01DF98  false
+0x01DFA0  meSelection < eVSelectNumEntries
+0x01DFD0  meSelection < eVSelectNumEntries
+0x01E000  mnProfileToOverwrite >= 0
+0x01E020  mnProfileToOverwrite < knMemCardNumPlayerProfiles
+0x01E060  meSelection < eVSelectNumEntries
+0x01E090  Track Region does not exist
+0x01E0B0  Track Region does not exist
+0x01E0D0  lnTrackIconIndex >= 0
+0x01E0F0  lnTrackIconIndex < knNumIconsTotal
+0x01E118  false
+0x01E120  lnTrackIconIndex >= 0
+0x01E140  lnTrackIconIndex < knNumIconsTotal
+0x01E168  false
+0x01E170  lnTrackIconIndex >= 0
+0x01E190  lnTrackIconIndex < knNumIconsTotal
+0x01E1B8  false
+0x01E1C0  lnTrackIconIndex >= 0
+0x01E1E0  lnTrackIconIndex < knNumIconsTotal
+0x01E208  false
+0x01E210  lnSatMapTileIndex >= 0
+0x01E230  lnSatMapTileIndex < 6
+0x01E250  lnZoomIndex >= 0
+0x01E270  lnZoomIndex < knSatMapNumZoomLevels
+0x01E2A0  lnFakeMipIndex >= 0
+0x01E2C0  lnFakeMipIndex < knSatMapNumFakeMipLevels
+0x01E2F0  Unknown region
+0x01E300  Unknown region
+0x01E310  Unknown region
+0x01E320  meSelection < eVSelectNumEntries
+0x01E350  meSelection < eVSelectNumEntries
+0x01E380  lnCheatIndex != knB3HardCodedDataSearchFail
+0x01E3B0  lnCheatIndex < knB3NumHardCodedCheats
+0x01E3E0  lnCheatIndex >= 0
+0x01E400  lnCheatIndex != knB3HardCodedDataSearchFail
+0x01E430  lnCheatIndex < knB3NumHardCodedCheats
+0x01E460  lnCheatIndex >= 0
+0x01E480  lnHeadlineIndex != knB3HardCodedDataSearchFail
+0x01E4B0  lnHeadlineIndex < knB3NumHardCodedHeadlines
+0x01E4E0  lnHeadlineIndex >= 0
+0x01E500  lnHeadlineIndex != knB3HardCodedDataSearchFail
+0x01E530  lnHeadlineIndex < knB3NumHardCodedHeadlines
+0x01E560  lnHeadlineIndex >= 0
+0x01E580  lnHeadlineIndex != knB3HardCodedDataSearchFail
+0x01E5B0  lnHeadlineIndex < knB3NumHardCodedHeadlines
+0x01E5E0  lnHeadlineIndex >= 0
+0x01E600  lnSpecialEventIndex != knB3HardCodedDataSearchFail
+0x01E640  lnSpecialEventIndex < knB3NumHardCodedSpecialEvents
+0x01E680  lnSpecialEventIndex >= 0
+0x01E6A0  lnSpecialEventIndex != knB3HardCodedDataSearchFail
+0x01E6E0  lnSpecialEventIndex < knB3NumHardCodedSpecialEvents
+0x01E720  lnSpecialEventIndex >= 0
+0x01E740  lnTakedownIndex != knB3HardCodedDataSearchFail
+0x01E770  lnTakedownIndex < knB3NumHardCodedTakedowns
+0x01E7A0  lnTakedownIndex >= 0
+0x01E7C0  lnTakedownIndex != knB3HardCodedDataSearchFail
+0x01E7F0  lnTakedownIndex < knB3NumHardCodedTakedowns
+0x01E820  lnTakedownIndex >= 0
+0x01E840  lnTakedownIndex != knB3HardCodedDataSearchFail
+0x01E870  lnTakedownIndex < knB3NumHardCodedTakedowns
+0x01E8A0  lnTakedownIndex >= 0
+0x01E8C0  lnTrophyIndex != knB3HardCodedDataSearchFail
+0x01E8F0  lnTrophyIndex < knB3NumHardCodedTrophys
+0x01E920  lnTrophyIndex >= 0
+0x01E940  lnTrophyIndex != knB3HardCodedDataSearchFail
+0x01E970  lnTrophyIndex < knB3NumHardCodedTrophys
+0x01E9A0  lnTrophyIndex >= 0
+0x01E9C0  lnTrophyIndex != knB3HardCodedDataSearchFail
+0x01E9F0  lnTrophyIndex < knB3NumHardCodedTrophys
+0x01EA20  lnTrophyIndex >= 0
+0x01EA40  lnTrophyIndex != knB3HardCodedDataSearchFail
+0x01EA70  lnTrophyIndex < knB3NumHardCodedTrophys
+0x01EAA0  lnTrophyIndex >= 0
+0x01EAC0  lnTrophyIndex != knB3HardCodedDataSearchFail
+0x01EAF0  lnTrophyIndex < knB3NumHardCodedTrophys
+0x01EB20  lnTrophyIndex >= 0
+0x01EB40  lnTrophyIndex != knB3HardCodedDataSearchFail
+0x01EB70  lnTrophyIndex < knB3NumHardCodedTrophys
+0x01EBA0  lnTrophyIndex >= 0
+0x01EBC0  lnTrophyIndex != knB3HardCodedDataSearchFail
+0x01EBF0  lnTrophyIndex < knB3NumHardCodedTrophys
+0x01EC20  lnTrophyIndex >= 0
+0x01EC40  lnTrophyIndex != knB3HardCodedDataSearchFail
+0x01EC70  lnTrophyIndex < knB3NumHardCodedTrophys
+0x01ECA0  lnTrophyIndex >= 0
+0x01ECB8  FALSE
+0x01ECC0  FALSE
+0x01ECD0  0 <= lnRewardIndex && lnRewardIndex < lnNumRewards
+0x01ED10  gGame.GetCurrentGameMode()
+0x01ED30  lpStageLogic
+0x01ED40  gNetworkManager.IsOnline()
+0x01ED60  lpRaceCar
+0x01ED70  gGame.GetCurrentGameMode()
+0x01ED90  lpStageLogic
+0x01EDA0  FALSE
+0x01EDB0  gGame.GetCurrentGameMode()
+0x01EDD0  lpStageLogic
+0x01EDE0  FALSE
+0x01EDE8  lpGameMode
+0x01EDF8  lpStageLogic
+0x01EE08  FALSE
+0x01EE10  gGame.GetCurrentGameMode()
+0x01EE30  lpStageLogic
+0x01EE40  FALSE
+0x01EE50  gGame.GetCurrentGameMode()
+0x01EE70  lpStageLogic
+0x01EE80  lpStageLogic->GetOnlineGameModeType() == eNormalOnlineGameModePartyCrash
+0x01EED0  meEndOfRaceState == eSecondResultsPage
+0x01EF00  gGame.GetCurrentGameMode()
+0x01EF20  gGame.GetCurrentGameMode()->GetStageLogic()
+0x01EF50  FALSE
+0x01EF60  gGame.GetCurrentGameMode()
+0x01EF80  gGame.GetCurrentGameMode()->GetStageLogic()
+0x01EFB0  gGame.GetCurrentGameMode()
+0x01EFD0  lpStageLogic
+0x01EFE0  gGame.GetCurrentGameMode()
+0x01F000  lpStageLogic
+0x01F010  gGame.GetCurrentGameMode()
+0x01F030  lpStageLogic
+0x01F040  FALSE
+0x01F050  gGame.GetCurrentGameMode()
+0x01F070  lpStageLogic
+0x01F080  lpStageLogic->GetOnlineGameModeType() == eNormalOnlineGameModePartyCrash
+0x01F0D0  meEndOfRaceState == eWinningReplayPage
+0x01F0F8  lpPlayerRecord
+0x01F110  gGame.GetCurrentGameMode()
+0x01F130  gGame.GetCurrentGameMode()->GetStageLogic()
+0x01F160  mResultsData[0].mpcUnicodePlayerName != NULL
+0x01F190  mTableData.mNumberRows <= knResultsTableMaxNumRows
+0x01F1C8  FALSE
+0x01F1D0  mResultsData[lnPlayerIndex].mpcUnicodePlayerName != NULL
+0x01F210  FALSE
+0x01F218  FALSE
+0x01F220  lnNumPoints >= 2
+0x01F238  lpPointList
+0x01F248  lpVertsOut
+0x01F258  lpUVsOut
+0x01F270  lunProfile < knMemCardNumPlayerProfiles
+0x01F2A0  lunProfile < knMemCardNumPlayerProfiles
+0x01F2C8  mgpacDirName
+0x01F2D8  mpacFileName
+0x01F2F0  lunProfileNumber < knMemCardNumPlayerProfiles
+0x01F320  lunProfileNumber < knMemCardNumPlayerProfiles
+0x01F350  0
+0x01F360  meSelection < eMBDevVSelectNumEntries
+0x01F388  lpViewport
+0x01F3A0  lrCrashBreakerTime >= 0.0f
+0x01F3C0  Framebuffer must be 32-bit!
+0x01F3E0  _rwDMAOpenVIFPkt( RWDMA_FIXUP, lnPacketSize )
+0x01F410  luNumStrips > 0
+0x01F420  ( lUVScale.X() <= 1.0f ) && ( lUVScale.Y() <= 1.0f )
+0x01F460  ( luStripCountL + luStripCountR ) == M_BLUR_OUT_NUM_STRIPS( lnFocusX, lnSizeX, lrUScale )
+0x01F4C0  ( lUVScale.X() >= 1.0f ) && ( lUVScale.Y() >= 1.0f )
+0x01F500  ( luStripCountL + luStripCountR ) == M_BLUR_OUT_NUM_STRIPS( lnFocusX, lnSizeX, lrUScale )
+0x01F560  lnEntry < knMaxEntries
+0x01F578  false
+0x01F580  false
+0x01F588  false
+0x01F590  leOptionsDisplayType < eOptionsDisplayTypeNum
+0x01F5C0  false
+0x01F5C8  false
+0x01F5D0  leImageType != eB3RewardImage_CarSelect
+0x01F600  CB3CarViewComponent::UpdateLoadState, in invalid state
+0x01F640  CB3CarViewComponent::UpdateEffectState, in invalid state
+0x01F680  unknown vehicle class
+0x01F6A0  (mnCurrentEntry == 0) || (( mnCurrentEntry > 0 ) && (mnCurrentEntry < mnEntryCount))
+0x01F700  lrSmoothScrollAmount >= 0.0f
+0x01F720  lrSmoothScrollAmount <= 1.0f
+0x01F740  mnCurrentEntry >= 0
+0x01F760  mnCurrentEntry < mnEntryCount
+0x01F780  mnCurrentEntry >= 0
+0x01F7A0  mnCurrentEntry < mnEntryCount
+0x01F7C0  meCurrentClass >= 0
+0x01F7E0  meCurrentClass < eB3MenuCarClassTraffic
+0x01F810  meCurrentClass >= 0
+0x01F830  meCurrentClass < eB3MenuCarClassTraffic
+0x01F860  meImageType == eB3RewardImage_CarSelect
+0x01F888  false
+0x01F890  mbIsChampionship
+0x01F8B0  mbIsChampionship
+0x01F8D0  !lpFinishedScore->mbRager
+0x01F8F0  false
+0x01F900  mbIsChampionship
+0x01F920  lpStageLogic != NULL
+0x01F938  false
+0x01F940  lpn8CurrentAwardType != NULL
+0x01F960  lpn8CurrentAwardIndex != NULL
+0x01F980  false
+0x01F988  mpMusicManager
+0x01F998  mpSoundtrack
+0x01F9B0  (lun8SongFlags & kxPlayAll) == 0
+0x01F9D8  mpMusicManager
+0x01F9E8  mpSoundtrack
+0x01FA00  !"Write custom soundtrack support"
+0x01FA28  FALSE
+0x01FA30  lnTrackCount > 0
+0x01FA48  lpProfile
+0x01FA58  FALSE
+0x01FA60  lnTrackCount > 0
+0x01FA78  lpProfile

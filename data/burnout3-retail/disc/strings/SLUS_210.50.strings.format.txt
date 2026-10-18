@@ -1,0 +1,157 @@
+// SLUS_210.50: printf-style format strings (messages, logs) (155)
+
+0x002417BD  clq%XH
+0x004B16D0  sceGsDefDispEnv:Not support displaymode for 0x%x!!
+0x004B1778  D1_TADR=%08x:
+0x004B1788  D1_MADR=%08x:
+0x004B17B8  D2_TADR=%08x:
+0x004B17C8  D2_MADR=%08x:
+0x004B17E8  	<VIF1_STAT=%08x:
+0x004B1800  GIF_STAT=%08x>
+0x004B1B10  Invalid modion type -- ignored(%d)
+0x004B1B38  (a) invalid motion_type(%d)-0
+0x004B1B58  (b) invalid motion_type(%d)-1
+0x004B1B78  (c) invalid motion_type(%d)-2
+0x004B1BD0  Invalid macroblock_address_increment code(0x%08x)
+0x004B1C28  slice_start_code(0x%08x) out of range
+0x004B1DA8  Too small buffer size for %dx%d picture
+0x004B1E38  image buffer needs to be aligned to 64byte boundary(0x%08x)
+0x004B1F18  [MPEG ERROR]%s
+0x004B20B8  TTY: send err %d
+0x004B20D0  TTY: err ti->wlen=%08x
+0x004B22E0  too long parameter '%s'
+0x004B2300  # TLB spad=0 kernel=1:%d default=%d:%d extended=%d:%d
+0x004B3248  sceCdCbfunc= %d sceCdCbfunc_num= %d
+0x004B3290  ee call cmd search %s
+0x004B32A8  search name %s
+0x004B32B8  search size %d
+0x004B32C8  search loc lbn %d
+0x004B32E0  Ncmd fail sema cur_cmd:%d keep_cmd:%d
+0x004B3340  Scmd fail sema cur_cmd:%d keep_cmd:%d
+0x004B3380  Libcdvd bind err %d CD_Init %d
+0x004B42B0  cdrom0:\%s;1
+0x004B5D80  World Time %.5f
+0x004B7420  boostfirecore%02d
+0x004B7440  boostfireedge%02d
+0x004B7460  boostfireover%02d
+0x004B7F58  language=%d
+0x004B7F70  Failed to poweroff dev9 %d
+0x004B7FF0  maxstream=%d
+0x004B96B0  Heap resized from %d to %d bytes
+0x004B98C0  libpad2: buffer addr is not 64 byte align. %08x
+0x004B9988  libdbc: SifDmaAddr %08x
+0x004B9AD0  libdbc: SendData2 data length too long [%d]
+0x004B9C90  GtCommVa%04d
+0x004BAF88  Host: %s
+0x004BAFA0  Content-Length: %d
+0x004BB0F8  Host: %s:%d
+0x004BB1F8  %s: send buffer addr is not 64 byte align. %08x=n
+0x004BB240  %s: receive buffer addr is not 64 byte align. %08x=n
+0x004BB500  libmc2: Fatal Error [%08x]
+0x004BB5B8  [fatal error] c_sema in netcnfif(type=%d)
+0x004BE378  bstpss0%i
+0x004BE388  bstpsl0%i
+0x004BE4D0  cartar0%i
+0x004BEDC0  Got worldcrash of %f vol %f
+0x004BEDF0  Got worldnudge of %f
+0x004C1E50  ERROR: bytes provided = %d. Need=%d
+0x004C1EA8  ERROR: lgCodecUlawEncode: need %d bytes. have %d bytes. clipping
+0x004C2218  Fatal error: %s
+0x004C2230  warning: %s
+0x004C2240  warning: %s %d
+0x004C2E88  lgAudInit:  liblgaud.a is version %d.%02d.%03d
+0x004C2FE0  lgAudInit: unable to allocate %d bytes!
+0x004C3038  %s\nlgAudInit: max streaming data size: %d
+0x004C4718  driver version = %d.%02d.%03d
+0x004C48E0  LgKbM library version %d.%02d.%03d (built on May 18 2004 at 17:58:15)\n	* reader thread priority %d
+0x004C54D0  ErrMessage : %s %d %s
+0x004C5940  NAME%d
+0x004C5948  TEAM%d
+0x004C5950  WEIGHT%d
+0x004C5B30  unknown%d
+0x004C6680  User authentication error with ISP\n%s
+0x004C66D0  Modem cannot connect: %s
+0x004C66F0  Invalid dial-in number: %s
+0x004C6720  Modem error: %s
+0x004C6800  Line disconnected: %s
+0x004C6818  Dialing %s
+0x004C6828  Line speed %s
+0x004C6840  Disconnecting line: %s
+0x004C69C0  no match for %d
+0x004C6B60  %s module not found
+0x004C6BC0  returned %d
+0x004C6BF0  DMA address 0x%x not %d-byte aligned
+0x004C6C50  invalid Combination number (%d)
+0x004C6CC0  %s module not found
+0x004C6D18  returned %d
+0x004C6D50  DMA address 0x%x not %d-byte aligned
+0x004C6E30  size %d padded to %d
+0x004CA6B8  (fno=%d, ssize=%d, rsize=%d, buffer=%d)
+0x004CECD0  _RpcCall: output buffer size of %d is not a multiple of 16; resizing to %d bytes
+0x004CED28  _RpcCall: outbuf alignment error: %08x
+0x004CED80  rpc-e: transaction buffer has cleared in %d cycles
+0x004CEE58  rpc-e: dma to iop succeeded after %d tries
+0x004CEF80  rpc-e: allocating %d bytes on iop
+0x004CF140  Network startup returned error %d
+0x004CF3B8  _LobbyApiGlobalCallback: Invalid callback type %d
+0x004CF3F0  _LobbyApiCancelOneShotCB: Invalid callback type %d
+0x004CF4B0  lobbyapi: created aries ref=0x%08x
+0x004CF4D8  lobbyapi: created pingmanager ref=0x%08x
+0x004CF6D8  connecting to redir @ %s:%d
+0x004CF6F8  lobbyapi: timing out due to %d ms '%c%c%c%c' transaction delay
+0x004CF748  connecting to slave @ %u.%u.%u.%u:%hu
+0x004CF7A0  OPPART%d
+0x004CF7B0  OPPARAM%d
+0x004CF7C0  OPFLAG%d
+0x004CF7D0  PARTSIZE%d
+0x004CF7E0  PARTPARAMS%d
+0x004CF800  CheatCalcResponse: Range to check: [%08X:%08X]
+0x004CF830  CheatCalcReponse: WARNING, invalid range [0x%08x, 0x%08x) rejected.
+0x004CF878  l%ds%dslll
+0x004CF898  TROPHY%d
+0x004CFB10  _LobbyRankSnapCb: incorrectly triggered in state %d
+0x004CFB48  _LobbyRankSnapCb: mismatched uids, %d != %d
+0x004CFB78  COLNAME%d
+0x004CFB88  COLDESC%d
+0x004CFB98  COLPARAM%d
+0x004CFBA8  COLWIDTH%d
+0x004CFBE8  _LobbyStatbookViewCb: incorrectly triggered in state %d
+0x004CFC28  _LobbyStatbookViewCb: unexpected error %x
+0x004CFC88  _LobbyStatbookViewCb: expected %d found %d
+0x004CFCB8  _LobbyStatbookRowCb: incorrectly triggered in state %d
+0x004CFCF0  _LobbyStatbookRowCb: unexpected error %x
+0x004CFD20  _LobbyStatbookRowCb: expected slot %u got %u
+0x004CFD50  _LobbyStatbookRowCb: expected %u stats found %u
+0x004CFD88  _LobbyStatbookCreate: uSlots %u is out of range
+0x004D0638  STATE TX, ticks %d,  Old State, %s NEW State :%s 
+0x004D0670  PRES: buddy=%s, show=%d, prod=%s, pres=%s, lang=%s, exFlags=%d
+0x004D06B0  Reconnecting, timer is %d  
+0x004D06D0  connecting to %s:%d
+0x004D0718  Transaction eCB: %d timed out...
+0x004D07C0  LL dude missing HLB ptr %s
+0x004D07E0  HL bud, has ptr but not to LL bud %s
+0x004D0808  Op State is now  %d 
+0x004D0850  ConnectionCallback - Unknown iKind %d
+0x004D0898  Received unknown response '%c%c%c%c'
+0x004D08C0  ***Connect Callback -- connect state now %d
+0x004D0990  *****\n***Got Response msgType:%d, last opState is now %d 
+0x004D0A28  ERROR: msg, but bud or msg list is null:%s: 
+0x004D0A58  Msg, added=%d, cnt=%d, text=%d
+0x004D0A78  Changing buddy %s type=%d 
+0x004D0AC8  Warning: Unknown message type '%c%c%c%c' received.
+0x004D14B0  DNAS err : %u
+0x004D2378  lgDevInit:  liblgdev.a is version %d.%02d.%03d
+0x004D2710  lgDevReadMulti: devicecount out of range (%d)
+0x004D2970  lgDevStartForceEffectMulti: numeffects is out of range (%d)
+0x004D2A38  lgDevStopForceEffectMulti: numeffects is out of range (%d)
+0x004D2BA8  lgDevAReadMulti: devicecount out of range (%d)
+0x004D2E00  lgDevAStartForceEffectMulti: numeffects is out of range (%d)
+0x004D2F08  lgDevAStopForceEffectMulti: numeffects is out of range (%d)
+0x004D2FA0  Frame %d is set to Interpolate. But the next frame is not setup.
+0x004D2FF0  Frame %d is set to Interpolate. But the time difference is %f (negative).
+0x004E2148  ~%dms
+0x004E2208  OPID%d
+0x004E2210  OPPO%d
+0x004E2218  ADDR%d
+0x004E2220  LADDR%d
+0x004E2228  MADDR%d

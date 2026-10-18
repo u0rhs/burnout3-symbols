@@ -1,0 +1,900 @@
+// Every file on the disc folder, with size, date and detected format. No file contents are copied.
+
+
+./
+  SLUS_204.97                   19,063,292  2002-07-29 13:56  ELF executable/module
+  SYSTEM.CNF                            57  2002-07-26 18:43  text
+
+AUDIO/
+  CAREXT.RWS                        64,856  2002-07-26 18:44  binary
+  CRASH.RWS                        570,432  2002-07-26 18:44  binary
+  FE_MENU.IVS                    1,944,512  2002-07-26 18:44  binary
+  FE_MENU.RWS                      150,564  2002-07-26 18:44  binary
+  IN_MENU.RWS                      143,144  2002-07-26 18:44  binary
+  TRAFFIC.RWS                      244,428  2002-07-26 18:44  binary
+
+AUDIO/MODES/
+  PURSUIT.RWS                       81,040  2002-07-26 18:44  binary
+
+AUDIO/RACECARS/CLASSIC/
+  CLASSICA.BSM                       1,844  2002-07-02 14:01  binary
+  CLASSICA.RWS                      90,888  2002-07-02 14:01  binary
+  CLASSICE.BSM                       5,748  2002-07-26 17:21  binary
+  CLASSICE.RWS                     263,372  2002-07-18 16:40  binary
+
+AUDIO/RACECARS/COMP/
+  COMPA.BSM                          1,828  2002-07-10 19:15  binary
+  COMPA.RWS                         98,504  2002-07-10 19:15  binary
+  COMPE.BSM                          5,748  2002-07-18 16:39  binary
+  COMPE.RWS                        267,948  2002-07-02 14:01  binary
+
+AUDIO/RACECARS/COMPCS/
+  COMPCSA.BSM                        1,844  2002-07-10 19:15  binary
+  COMPCSA.RWS                       90,888  2002-07-02 14:01  binary
+  COMPCSE.BSM                        5,748  2002-07-02 14:01  binary
+  COMPCSE.RWS                      267,948  2002-07-02 14:01  binary
+
+AUDIO/RACECARS/COPCAR/
+  COPCARA.BSM                        1,828  2002-07-26 17:21  binary
+  COPCARA.RWS                      101,724  2002-07-26 17:21  binary
+  COPCARE.BSM                        5,748  2002-07-22 17:51  binary
+  COPCARE.RWS                      267,776  2002-07-22 17:51  binary
+
+AUDIO/RACECARS/COUPE/
+  COUPEA.BSM                         1,828  2002-07-19 16:14  binary
+  COUPEA.RWS                       103,224  2002-07-19 16:14  binary
+  COUPEE.BSM                         5,748  2002-07-02 14:01  binary
+  COUPEE.RWS                       258,012  2002-07-02 14:01  binary
+
+AUDIO/RACECARS/COUPECS/
+  COUPECSA.BSM                       1,828  2002-07-19 16:14  binary
+  COUPECSA.RWS                      95,496  2002-07-19 16:14  binary
+  COUPECSE.BSM                       5,748  2002-07-08 12:40  binary
+  COUPECSE.RWS                     258,012  2002-07-02 14:01  binary
+
+AUDIO/RACECARS/DRIVEED/
+  DRIVEEDA.BSM                       1,828  2002-07-10 19:15  binary
+  DRIVEEDA.RWS                      77,672  2002-07-10 19:15  binary
+  DRIVEEDE.BSM                       6,900  2002-07-02 14:01  binary
+  DRIVEEDE.RWS                     267,948  2002-07-02 14:01  binary
+
+AUDIO/RACECARS/GANGSTA/
+  GANGSTAA.BSM                       1,844  2002-07-02 14:01  binary
+  GANGSTAA.RWS                      90,888  2002-07-02 14:01  binary
+  GANGSTAE.BSM                       5,748  2002-07-18 16:40  binary
+  GANGSTAE.RWS                     252,892  2002-07-18 16:40  binary
+
+AUDIO/RACECARS/HOTROD/
+  HOTRODA.BSM                        1,828  2002-07-26 18:43  binary
+  HOTRODA.RWS                       99,608  2002-07-26 18:43  binary
+  HOTRODE.BSM                        5,748  2002-07-17 17:29  binary
+  HOTRODE.RWS                      248,924  2002-07-17 17:29  binary
+
+AUDIO/RACECARS/JMUS/
+  JMUSA.BSM                          1,828  2002-07-26 17:21  binary
+  JMUSA.RWS                        101,672  2002-07-26 17:21  binary
+  JMUSE.BSM                          5,748  2002-07-18 16:41  binary
+  JMUSE.RWS                        267,100  2002-07-18 16:41  binary
+
+AUDIO/RACECARS/PICK/
+  PICKA.BSM                          1,828  2002-07-26 17:21  binary
+  PICKA.RWS                        100,984  2002-07-26 17:21  binary
+  PICKE.BSM                          5,748  2002-07-26 17:21  binary
+  PICKE.RWS                        256,844  2002-07-12 17:01  binary
+
+AUDIO/RACECARS/PICKCS/
+  PICKCSA.BSM                        1,828  2002-07-26 17:21  binary
+  PICKCSA.RWS                      100,984  2002-07-26 17:21  binary
+  PICKCSE.BSM                        5,748  2002-07-22 17:51  binary
+  PICKCSE.RWS                      256,828  2002-07-12 17:01  binary
+
+AUDIO/RACECARS/ROAD/
+  ROADA.BSM                          1,828  2002-07-11 20:43  binary
+  ROADA.RWS                        103,160  2002-07-11 20:43  binary
+  ROADE.BSM                          4,532  2002-07-10 13:02  binary
+  ROADE.RWS                        234,404  2002-07-02 14:01  binary
+
+AUDIO/RACECARS/ROADCS/
+  ROADCSA.BSM                        1,828  2002-07-19 18:14  binary
+  ROADCSA.RWS                       94,456  2002-07-19 18:14  binary
+  ROADCSE.BSM                        5,140  2002-07-02 14:01  binary
+  ROADCSE.RWS                      270,856  2002-07-02 14:01  binary
+
+AUDIO/RACECARS/SPORT/
+  SPORTA.BSM                         1,828  2002-07-19 16:14  binary
+  SPORTA.RWS                        96,856  2002-07-19 16:14  binary
+  SPORTE.BSM                         5,748  2002-07-12 17:01  binary
+  SPORTE.RWS                       257,308  2002-07-11 20:43  binary
+
+AUDIO/RACECARS/SPORTCS/
+  SPORTCSA.BSM                       1,828  2002-07-19 16:15  binary
+  SPORTCSA.RWS                      98,232  2002-07-19 16:15  binary
+  SPORTCSE.BSM                       5,748  2002-07-12 17:01  binary
+  SPORTCSE.RWS                     265,212  2002-07-02 14:01  binary
+
+AUDIO/RACECARS/STOCK/
+  STOCKA.BSM                         1,828  2002-07-19 19:17  binary
+  STOCKA.RWS                        98,056  2002-07-19 19:17  binary
+  STOCKE.BSM                         5,748  2002-07-19 19:17  binary
+  STOCKE.RWS                       270,716  2002-07-02 14:01  binary
+
+AUDIO/RACECARS/SUPER/
+  SUPERA.BSM                         1,828  2002-07-26 17:21  binary
+  SUPERA.RWS                       101,480  2002-07-26 17:21  binary
+  SUPERE.BSM                         5,748  2002-07-12 17:01  binary
+  SUPERE.RWS                       265,068  2002-07-03 11:52  binary
+
+AUDIO/RACECARS/SUV/
+  SUVA.BSM                           1,828  2002-07-26 17:21  binary
+  SUVA.RWS                          96,856  2002-07-26 17:21  binary
+  SUVE.BSM                           5,748  2002-07-11 20:43  binary
+  SUVE.RWS                         256,844  2002-07-11 20:43  binary
+
+AUDIO/RACECARS/SUVCS/
+  SUVCSA.BSM                         1,828  2002-07-26 17:21  binary
+  SUVCSA.RWS                        96,856  2002-07-26 17:21  binary
+  SUVCSE.BSM                         5,748  2002-07-11 20:43  binary
+  SUVCSE.RWS                       269,372  2002-07-11 20:43  binary
+
+AUDIO/RACECARS/USMUS/
+  USMUSA.BSM                         1,828  2002-07-12 17:01  binary
+  USMUSA.RWS                       102,344  2002-07-12 17:01  binary
+  USMUSE.BSM                         5,748  2002-07-02 14:01  binary
+  USMUSE.RWS                       264,460  2002-07-02 14:01  binary
+
+AUDIO/RACECARS/USMUSCS/
+  USMUSCSA.BSM                       1,828  2002-07-10 19:33  binary
+  USMUSCSA.RWS                     100,280  2002-07-10 19:33  binary
+  USMUSCSE.BSM                       5,748  2002-07-02 14:01  binary
+  USMUSCSE.RWS                     264,460  2002-07-02 14:01  binary
+
+AUDIO/TRACKS/FORWARD/
+  APTL.RWS                          83,604  2002-07-26 19:09  binary
+  APTS.RWS                          83,604  2002-07-26 17:29  binary
+  CSTL.RWS                          83,604  2002-07-26 19:11  binary
+  CSTS.RWS                          83,604  2002-07-26 17:34  binary
+  CTYL.RWS                          83,604  2002-07-26 19:12  binary
+  CTYS.RWS                          83,604  2002-07-26 17:36  binary
+  DSTL.RWS                          83,604  2002-07-26 17:37  binary
+  DSTS.RWS                          83,604  2002-07-26 17:38  binary
+  FWYL.RWS                          83,604  2002-07-26 17:41  binary
+  FWYS.RWS                          83,604  2002-07-26 17:43  binary
+  MNTL.RWS                          83,604  2002-07-26 17:44  binary
+  MNTS.RWS                          83,604  2002-07-26 17:45  binary
+  P2P1.RWS                          83,604  2002-07-26 17:47  binary
+  P2P2.RWS                          83,604  2002-07-26 17:49  binary
+  P2P3.RWS                          83,604  2002-07-26 17:51  binary
+  P2P4.RWS                          83,604  2002-07-12 17:23  binary
+
+AUDIO/TRACKS/REVERSE/
+  APTL.RWS                          83,604  2002-07-26 17:53  binary
+  APTS.RWS                          83,604  2002-07-26 17:54  binary
+  CSTL.RWS                          83,604  2002-07-26 17:55  binary
+  CSTS.RWS                          83,604  2002-07-26 17:56  binary
+  CTYL.RWS                          83,604  2002-07-26 17:58  binary
+  CTYS.RWS                          83,604  2002-07-26 17:59  binary
+  DSTL.RWS                          83,604  2002-07-26 18:00  binary
+  DSTS.RWS                          83,604  2002-07-26 18:01  binary
+  FWYL.RWS                          83,604  2002-07-26 18:04  binary
+  FWYS.RWS                          83,604  2002-07-26 18:05  binary
+  MNTL.RWS                          83,604  2002-07-26 18:06  binary
+  MNTS.RWS                          83,604  2002-07-26 18:07  binary
+  P2P1.RWS                          83,604  2002-07-26 18:09  binary
+  P2P2.RWS                          83,604  2002-07-26 18:11  binary
+  P2P3.RWS                          83,604  2002-07-26 18:13  binary
+  P2P4.RWS                          83,604  2002-07-12 17:44  binary
+
+AUDIO/WEATHER/
+  DRY.RWS                           76,616  2002-07-26 18:44  binary
+  SNOW.RWS                          83,604  2002-07-26 18:44  binary
+  WET.RWS                           83,604  2002-07-26 18:44  binary
+
+FRONTEND/
+  CHECK.DFF                          1,488  2002-07-26 18:44  binary
+  CVIEW.ICO                         44,632  2002-07-26 18:44  PS2 save icon model
+  FINISH.DFF                         1,488  2002-07-26 18:44  binary
+  FMV.IVS                        2,337,984  2002-07-25 11:20  binary
+  FRONTEND.DIC                   2,736,844  2002-07-26 18:44  binary
+  FRONTEND.PS2                   2,764,800  2002-07-26 18:44  binary
+  GLOBAL.DIC                     1,052,944  2002-07-26 18:44  binary
+  KOJACK.DFF                         4,500  2002-07-24 20:48  RenderWare Clump chunk, RW 3.1.0.1 build 0xFFFF (whole file)
+  SHADOWR.DFF                        2,552  2002-07-26 18:44  binary
+  SPLASHJ.M2V                    4,131,605  2002-06-20 11:53  MPEG-2 video
+  START.DFF                          1,488  2002-07-26 18:44  binary
+  TESTAT25.M2V                  27,184,157  2002-07-25 10:35  MPEG-2 video
+  TESTAT30.M2V                  27,237,317  2002-07-25 10:21  MPEG-2 video
+  VIEW.ICO                          48,088  2002-07-26 18:44  PS2 save icon model
+
+IOP/
+  B2DIST.IRX                        29,856  2002-07-26 18:44  ELF executable/module
+  B2ILINK.IRX                       12,592  2002-07-26 18:44  ELF executable/module
+  B2STREAM.ELF                      40,856  2002-07-26 20:54  ELF executable/module
+  B2STREAM.IRX                      40,848  2002-07-26 20:54  ELF executable/module
+  B2STRE~1.OLD                      39,216  2002-07-26 18:44  ELF executable/module
+  B2STRE~1.XMA                       6,485  2002-07-26 20:54  text
+  GTFSB2.IRX                        39,216  2002-07-26 18:44  ELF executable/module
+  GTFSDVD.ELF                       46,248  2002-07-16 11:16  ELF executable/module
+  GTFSDVD.IRX                       46,240  2002-07-26 18:44  ELF executable/module
+  GTFSDVDJ.IRX                      12,000  2002-07-26 18:44  ELF executable/module
+  GTFSDV~1.XMA                       6,648  2002-07-16 11:16  text
+  GTFSHOST.ELF                      38,808  2002-07-16 11:16  ELF executable/module
+  GTFSHOST.IRX                      38,800  2002-07-26 18:44  ELF executable/module
+  GTFSHO~1.XMA                       5,882  2002-07-16 11:16  text
+  IOPRP252.IMG                     265,233  2002-07-26 18:44  binary, magic "RESE"
+  IOPRP254.IMG                     264,449  2002-07-26 18:44  binary, magic "RESE"
+  LGDEV.IRX                         52,885  2002-07-26 18:44  ELF executable/module
+  LIBSD.IRX                         28,573  2002-07-26 18:44  ELF executable/module
+  LOADING.PNG                        3,955  2002-07-26 18:44  binary
+  MCMAN.IRX                         90,805  2002-07-26 18:44  ELF executable/module
+  MCSERV.IRX                         7,353  2002-07-26 18:44  ELF executable/module
+  PADMAN.IRX                        44,917  2002-07-26 18:44  ELF executable/module
+  RWA.IRX                           74,288  2002-07-26 18:44  ELF executable/module
+  SIO2MAN.IRX                        6,553  2002-07-26 18:44  ELF executable/module
+  USBD.IRX                          34,969  2002-07-26 18:44  ELF executable/module
+
+RACECARS/CLASSIC/
+  CLASSIC.RCF                      552,960  2002-07-26 17:21  binary
+  CLASSIC.RCX                      387,072  2002-07-26 17:21  binary
+
+RACECARS/COMP/
+  COMP.RCF                         626,688  2002-07-26 17:20  binary
+  COMP.RCX                         348,160  2002-07-26 17:20  binary
+
+RACECARS/COMPCS/
+  COMPCS.RCF                       569,344  2002-07-26 17:21  binary
+  COMPCS.RCX                       360,448  2002-07-26 17:21  binary
+
+RACECARS/COPCAR/
+  COPCAR.RCF                       538,624  2002-07-26 17:21  binary
+  COPCAR.RCX                       354,304  2002-07-26 17:21  binary
+
+RACECARS/COUPE/
+  COUPE.RCF                        546,816  2002-07-26 17:20  binary
+  COUPE.RCX                        370,688  2002-07-26 17:20  binary
+
+RACECARS/COUPECS/
+  COUPECS.RCF                      813,056  2002-07-26 17:21  binary
+  COUPECS.RCX                      360,448  2002-07-26 17:21  binary
+
+RACECARS/DRIVEED/
+  DRIVEED.RCF                      628,736  2002-07-26 17:21  binary
+  DRIVEED.RCX                      352,256  2002-07-26 17:21  binary
+
+RACECARS/GANGSTA/
+  GANGSTA.RCF                      382,976  2002-07-26 17:21  binary
+  GANGSTA.RCX                      344,064  2002-07-26 17:21  binary
+
+RACECARS/HOTROD/
+  HOTROD.RCF                       417,792  2002-07-26 18:43  binary
+  HOTROD.RCX                       356,352  2002-07-26 18:43  binary
+
+RACECARS/JMUS/
+  JMUS.RCF                         679,936  2002-07-26 17:21  binary
+  JMUS.RCX                         378,880  2002-07-26 17:21  binary
+
+RACECARS/PICK/
+  PICK.RCF                         460,800  2002-07-26 17:21  binary
+  PICK.RCX                         350,208  2002-07-26 17:21  binary
+
+RACECARS/PICKCS/
+  PICKCS.RCF                       421,888  2002-07-26 17:21  binary
+  PICKCS.RCX                       362,496  2002-07-26 17:21  binary
+
+RACECARS/ROAD/
+  ROAD.RCF                         677,888  2002-07-26 17:21  binary
+  ROAD.RCX                         362,496  2002-07-26 17:21  binary
+
+RACECARS/ROADCS/
+  ROADCS.RCF                       661,504  2002-07-26 17:21  binary
+  ROADCS.RCX                       366,592  2002-07-26 17:21  binary
+
+RACECARS/SPORT/
+  SPORT.RCF                        567,296  2002-07-26 17:20  binary
+  SPORT.RCX                        376,832  2002-07-26 17:20  binary
+
+RACECARS/SPORTCS/
+  SPORTCS.RCF                      522,240  2002-07-26 17:21  binary
+  SPORTCS.RCX                      378,880  2002-07-26 17:21  binary
+
+RACECARS/STOCK/
+  STOCK.RCF                        520,192  2002-07-26 17:21  binary
+  STOCK.RCX                        362,496  2002-07-26 17:21  binary
+
+RACECARS/SUPER/
+  SUPER.RCF                        428,032  2002-07-26 17:21  binary
+  SUPER.RCX                        378,880  2002-07-26 17:21  binary
+
+RACECARS/SUV/
+  SUV.RCF                          569,344  2002-07-26 17:21  binary
+  SUV.RCX                          372,736  2002-07-26 17:21  binary
+
+RACECARS/SUVCS/
+  SUVCS.RCF                        509,952  2002-07-26 17:21  binary
+  SUVCS.RCX                        368,640  2002-07-26 17:21  binary
+
+RACECARS/USMUS/
+  USMUS.RCF                        509,952  2002-07-26 17:20  binary
+  USMUS.RCX                        358,400  2002-07-26 17:20  binary
+
+RACECARS/USMUSCS/
+  USMUSCS.RCF                      491,520  2002-07-26 17:21  binary
+  USMUSCS.RCX                      364,544  2002-07-26 17:21  binary
+
+TRACKS/FORWARD/APTL/
+  APTL.P2W                      11,483,136  2002-07-26 19:09  binary
+  APTL.PSS                       5,191,680  2002-07-26 19:09  binary
+  APTL.PSW                      11,483,136  2002-07-26 19:09  binary
+  APTL1.BGD                        634,904  2002-07-27 18:19  binary, magic "B2St"
+  APTL1_01.BGD                     814,624  2002-07-27 18:19  binary
+  APTL2_01.BGD                     814,624  2002-07-27 18:19  binary
+  APTL3_01.BGD                     814,624  2002-07-27 18:19  binary
+  APTL4_01.BGD                     814,896  2002-07-27 18:19  binary
+  APTL5_05.BGD                     803,112  2002-07-27 18:19  binary
+  APTL_0.BCD                        99,688  2002-07-26 17:24  binary, magic "B2RI"
+  APTL_1.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  APTL_2.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  APTL_3.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  INTRO.IVS                      1,376,000  2002-07-26 19:09  binary
+  MUSIC.IVS                     16,206,528  2002-07-26 19:09  binary
+  REPLAY.IVS                     9,826,336  2002-07-26 19:09  binary
+
+TRACKS/FORWARD/APTS/
+  APTS.P2W                       5,801,984  2002-07-26 18:45  binary
+  APTS.PSS                       3,821,568  2002-07-26 18:45  binary
+  APTS.PSW                       5,801,984  2002-07-26 18:45  binary
+  APTS1.BGD                        542,412  2002-07-27 18:19  binary, magic "B2St"
+  APTS1_01.BGD                     640,020  2002-07-27 18:19  binary
+  APTS2_01.BGD                     640,020  2002-07-27 18:19  binary
+  APTS3_01.BGD                     640,020  2002-07-27 18:19  binary
+  APTS4_01.BGD                     640,020  2002-07-27 18:19  binary
+  APTS5_02.BGD                     630,452  2002-07-27 18:19  binary
+  APTS6_02.BGD                     532,352  2002-07-27 18:19  binary
+  APTS6_05.BGD                     529,652  2002-07-27 18:19  binary
+  APTS_0.BCD                        66,000  2002-07-26 11:08  binary, magic "B2RI"
+  APTS_1.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  APTS_2.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  APTS_3.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  INTRO.IVS                      1,376,000  2002-07-26 17:29  binary
+  MUSIC.IVS                     16,206,528  2002-07-26 17:29  binary
+  REPLAY.IVS                     9,826,336  2002-07-26 17:29  binary
+
+TRACKS/FORWARD/CSTL/
+  CSTL.P2W                       6,572,032  2002-07-26 19:11  binary
+  CSTL.PSS                       6,273,024  2002-07-26 19:11  binary
+  CSTL.PSW                       6,572,032  2002-07-26 19:11  binary
+  CSTL1.BGD                        799,752  2002-07-27 18:19  binary, magic "B2St"
+  CSTL1_01.BGD                     924,968  2002-07-27 18:19  binary
+  CSTL2_01.BGD                     924,968  2002-07-27 18:19  binary
+  CSTL3_01.BGD                     924,968  2002-07-27 18:19  binary
+  CSTL4_01.BGD                     924,968  2002-07-27 18:19  binary
+  CSTL5_01.BGD                     809,204  2002-07-27 18:19  binary, magic "B2St"
+  CSTL5_0B.BGD                     805,348  2002-07-27 18:19  binary
+  CSTL_0.BCD                        93,560  2002-07-26 11:08  binary, magic "B2RI"
+  CSTL_1.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  CSTL_2.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  CSTL_3.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  INTRO.IVS                      1,640,512  2002-07-26 19:11  binary
+  MUSIC.IVS                     20,541,824  2002-07-26 19:11  binary
+  REPLAY.IVS                    10,271,936  2002-07-26 19:11  binary
+
+TRACKS/FORWARD/CSTS/
+  CSTS.P2W                       4,884,480  2002-07-26 18:46  binary
+  CSTS.PSS                       5,781,504  2002-07-26 18:46  binary
+  CSTS.PSW                       4,884,480  2002-07-26 18:46  binary
+  CSTS1.BGD                        706,356  2002-07-27 18:19  binary, magic "B2St"
+  CSTS1_01.BGD                     800,344  2002-07-27 18:19  binary
+  CSTS2_01.BGD                     800,344  2002-07-27 18:19  binary
+  CSTS3_01.BGD                     800,344  2002-07-27 18:19  binary
+  CSTS4_01.BGD                     800,344  2002-07-27 18:19  binary
+  CSTS5_08.BGD                     703,432  2002-07-27 18:19  binary
+  CSTS6_05.BGD                     714,456  2002-07-27 18:19  binary, magic "B2St"
+  CSTS_0.BCD                        69,604  2002-07-26 17:24  binary, magic "B2RI"
+  CSTS_1.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  CSTS_2.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  CSTS_3.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  INTRO.IVS                      1,640,512  2002-07-26 17:34  binary
+  MUSIC.IVS                     20,541,824  2002-07-26 17:34  binary
+  REPLAY.IVS                    10,271,936  2002-07-26 17:34  binary
+
+TRACKS/FORWARD/CTYL/
+  CTYL.P2W                       7,186,432  2002-07-26 19:11  binary
+  CTYL.PSS                       4,108,288  2002-07-26 19:11  binary
+  CTYL.PSW                       7,186,432  2002-07-26 19:11  binary
+  CTYL1.BGD                      1,315,364  2002-07-27 18:19  binary, magic "B2St"
+  CTYL1_01.BGD                   1,436,628  2002-07-27 18:19  binary
+  CTYL2_01.BGD                   1,436,628  2002-07-27 18:19  binary
+  CTYL3_01.BGD                   1,436,628  2002-07-27 18:19  binary
+  CTYL4_01.BGD                   1,436,628  2002-07-27 18:19  binary
+  CTYL5_01.BGD                   1,311,508  2002-07-27 18:19  binary
+  CTYL6_01.BGD                   1,315,632  2002-07-27 18:19  binary, magic "B2St"
+  CTYL6_04.BGD                   1,315,632  2002-07-27 18:19  binary, magic "B2St"
+  CTYL_0.BCD                        27,668  2002-07-26 11:08  binary, magic "B2RI"
+  CTYL_1.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  CTYL_2.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  CTYL_3.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  INTRO.IVS                      1,523,456  2002-07-26 19:12  binary
+  MUSIC.IVS                     18,811,456  2002-07-26 19:11  binary
+  REPLAY.IVS                    10,159,168  2002-07-26 19:11  binary
+
+TRACKS/FORWARD/CTYS/
+  CTYS.P2W                       5,099,520  2002-07-26 18:47  binary
+  CTYS.PSS                       2,975,744  2002-07-26 18:47  binary
+  CTYS.PSW                       5,099,520  2002-07-26 18:47  binary
+  CTYS1.BGD                      1,181,292  2002-07-27 18:19  binary, magic "B2St"
+  CTYS1_01.BGD                   1,311,280  2002-07-27 18:19  binary
+  CTYS2_01.BGD                   1,311,280  2002-07-27 18:19  binary
+  CTYS3_01.BGD                   1,311,280  2002-07-27 18:19  binary
+  CTYS4_01.BGD                   1,311,280  2002-07-27 18:19  binary
+  CTYS5_04.BGD                   1,273,576  2002-07-27 18:19  binary
+  CTYS6_01.BGD                   1,189,296  2002-07-27 18:19  binary, magic "B2St"
+  CTYS6_04.BGD                   1,193,008  2002-07-27 18:19  binary, magic "B2St"
+  CTYS_0.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  CTYS_1.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  CTYS_2.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  CTYS_3.BCD                            80  2002-07-26 11:08  binary, magic "B2RI"
+  INTRO.IVS                      1,523,456  2002-07-26 17:36  binary
+  MUSIC.IVS                     18,811,456  2002-07-26 17:36  binary
+  REPLAY.IVS                    10,159,168  2002-07-26 17:36  binary
+
+TRACKS/FORWARD/DSTL/
+  DSTL.P2W                       6,049,792  2002-07-26 18:47  binary
+  DSTL.PSS                       5,957,632  2002-07-26 18:47  binary
+  DSTL.PSW                       6,049,792  2002-07-26 18:47  binary
+  DSTL1.BGD                        809,116  2002-07-27 18:19  binary, magic "B2St"
+  DSTL1_01.BGD                     932,344  2002-07-27 18:19  binary
+  DSTL2_01.BGD                     932,344  2002-07-27 18:19  binary
+  DSTL3_01.BGD                     932,344  2002-07-27 18:19  binary
+  DSTL4_01.BGD                     932,344  2002-07-27 18:19  binary
+  DSTL5_06.BGD                     919,460  2002-07-27 18:19  binary
+  DSTL_0.BCD                        87,052  2002-07-26 11:09  binary, magic "B2RI"
+  DSTL_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  DSTL_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  DSTL_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                      1,266,016  2002-07-26 17:37  binary
+  MUSIC.IVS                     21,649,536  2002-07-26 17:37  binary
+  REPLAY.IVS                    10,824,896  2002-07-26 17:37  binary
+
+TRACKS/FORWARD/DSTS/
+  DSTS.P2W                       4,407,296  2002-07-26 18:47  binary
+  DSTS.PSS                       5,046,272  2002-07-26 18:47  binary
+  DSTS.PSW                       4,407,296  2002-07-26 18:47  binary
+  DSTS1.BGD                        731,384  2002-07-27 18:19  binary, magic "B2St"
+  DSTS1_01.BGD                     810,512  2002-07-27 18:19  binary
+  DSTS2_01.BGD                     810,512  2002-07-27 18:19  binary
+  DSTS3_01.BGD                     810,512  2002-07-27 18:19  binary
+  DSTS4_01.BGD                     810,512  2002-07-27 18:19  binary
+  DSTS5_03.BGD                     802,052  2002-07-27 18:19  binary
+  DSTS6_03.BGD                     745,332  2002-07-27 18:19  binary, magic "B2St"
+  DSTS_0.BCD                        64,776  2002-07-26 11:09  binary, magic "B2RI"
+  DSTS_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  DSTS_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  DSTS_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                      1,266,016  2002-07-26 17:38  binary
+  MUSIC.IVS                     21,649,536  2002-07-26 17:38  binary
+  REPLAY.IVS                    10,824,896  2002-07-26 17:38  binary
+
+TRACKS/FORWARD/FWYL/
+  FWYL.P2W                      13,463,552  2002-07-26 18:47  binary
+  FWYL.PSS                       4,995,072  2002-07-26 18:47  binary
+  FWYL.PSW                      13,463,552  2002-07-26 18:47  binary
+  FWYL1.BGD                      1,135,720  2002-07-27 18:20  binary, magic "B2St"
+  FWYL1_01.BGD                   1,367,936  2002-07-27 18:20  binary
+  FWYL2_01.BGD                   1,367,936  2002-07-27 18:20  binary
+  FWYL3_01.BGD                   1,367,936  2002-07-27 18:20  binary
+  FWYL4_01.BGD                   1,367,936  2002-07-27 18:20  binary
+  FWYL5_0A.BGD                   1,367,660  2002-07-27 18:20  binary
+  FWYL6_01.BGD                   1,362,196  2002-07-27 18:20  binary
+  FWYL6_02.BGD                   1,362,868  2002-07-27 18:20  binary
+  FWYL6_03.BGD                   1,361,524  2002-07-27 18:20  binary
+  FWYL6_04.BGD                   1,362,196  2002-07-27 18:20  binary
+  FWYL6_05.BGD                   1,362,872  2002-07-27 18:20  binary
+  FWYL6_06.BGD                   1,365,860  2002-07-27 18:20  binary
+  FWYL_0.BCD                        88,732  2002-07-26 11:09  binary, magic "B2RI"
+  FWYL_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  FWYL_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  FWYL_3.BCD                        66,220  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                        934,720  2002-07-26 17:41  binary
+  L0REPLAY.DAT                       9,524  2002-07-27 17:44  binary
+  L1REPLAY.DAT                       9,542  2002-07-27 17:44  binary
+  L2REPLAY.DAT                      11,108  2002-07-27 17:44  binary
+  L4REPLAY.DAT                       8,426  2002-07-27 17:44  binary
+  L5REPLAY.DAT                      15,392  2002-07-27 17:44  binary
+  MUSIC.IVS                     20,844,096  2002-07-26 17:41  binary
+  REPLAY.IVS                    10,423,072  2002-07-26 17:41  binary
+
+TRACKS/FORWARD/FWYS/
+  FWYS.P2W                       5,765,120  2002-07-26 18:47  binary
+  FWYS.PSS                       3,807,232  2002-07-26 18:47  binary
+  FWYS.PSW                       5,765,120  2002-07-26 18:47  binary
+  FWYS1.BGD                        937,448  2002-07-27 18:20  binary, magic "B2St"
+  FWYS1_01.BGD                   1,033,400  2002-07-27 18:20  binary
+  FWYS2_01.BGD                   1,033,400  2002-07-27 18:20  binary
+  FWYS3_01.BGD                   1,033,400  2002-07-27 18:20  binary
+  FWYS4_01.BGD                   1,033,400  2002-07-27 18:20  binary
+  FWYS5_07.BGD                     943,620  2002-07-27 18:20  binary
+  FWYS6_06.BGD                     943,064  2002-07-27 18:20  binary, magic "B2St"
+  FWYS_0.BCD                        66,484  2002-07-26 11:09  binary, magic "B2RI"
+  FWYS_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  FWYS_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  FWYS_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                        934,720  2002-07-26 17:43  binary
+  MUSIC.IVS                     20,844,096  2002-07-26 17:43  binary
+  REPLAY.IVS                    10,423,072  2002-07-26 17:43  binary
+
+TRACKS/FORWARD/MNTL/
+  INTRO.IVS                      1,287,072  2002-07-26 17:44  binary
+  MNTL.P2W                       6,754,304  2002-07-26 19:13  binary
+  MNTL.PSS                       4,405,248  2002-07-26 19:13  binary
+  MNTL.PSW                       6,754,304  2002-07-26 19:13  binary
+  MNTL1.BGD                        839,120  2002-07-27 18:20  binary, magic "B2St"
+  MNTL1_01.BGD                   1,016,256  2002-07-27 18:20  binary
+  MNTL2_01.BGD                   1,016,256  2002-07-27 18:20  binary
+  MNTL3_01.BGD                   1,016,256  2002-07-27 18:20  binary
+  MNTL4_01.BGD                   1,016,256  2002-07-27 18:20  binary
+  MNTL5_0C.BGD                     861,132  2002-07-27 18:20  binary
+  MNTL_0.BCD                       100,740  2002-07-26 11:09  binary, magic "B2RI"
+  MNTL_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  MNTL_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  MNTL_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  MUSIC.IVS                     18,999,552  2002-07-26 17:44  binary
+  REPLAY.IVS                    11,005,600  2002-07-26 17:44  binary
+
+TRACKS/FORWARD/MNTS/
+  INTRO.IVS                      1,287,072  2002-07-26 17:45  binary
+  MNTS.P2W                       3,155,968  2002-07-26 19:13  binary
+  MNTS.PSS                       3,317,760  2002-07-26 19:13  binary
+  MNTS.PSW                       3,155,968  2002-07-26 19:13  binary
+  MNTS1.BGD                        610,500  2002-07-27 18:20  binary, magic "B2St"
+  MNTS1_01.BGD                     685,472  2002-07-27 18:20  binary
+  MNTS2_01.BGD                     685,472  2002-07-27 18:20  binary
+  MNTS3_01.BGD                     685,472  2002-07-27 18:20  binary
+  MNTS4_01.BGD                     685,472  2002-07-27 18:20  binary
+  MNTS5_09.BGD                     624,736  2002-07-27 18:20  binary
+  MNTS6_06.BGD                     616,104  2002-07-27 18:20  binary, magic "B2St"
+  MNTS_0.BCD                        54,652  2002-07-26 11:09  binary, magic "B2RI"
+  MNTS_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  MNTS_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  MNTS_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  MUSIC.IVS                     18,999,552  2002-07-26 17:45  binary
+  REPLAY.IVS                    11,005,600  2002-07-26 17:45  binary
+
+TRACKS/FORWARD/P2P1/
+  INTRO.IVS                      1,443,904  2002-07-26 17:47  binary
+  MUSIC.IVS                     20,231,552  2002-07-26 17:47  binary
+  P2P1.P2W                       9,170,944  2002-07-27 17:41  binary
+  P2P1.PSS                       7,426,048  2002-07-27 17:41  binary
+  P2P1.PSW                       9,170,944  2002-07-27 17:41  binary
+  P2P11_01.BGD                   1,349,664  2002-07-27 18:20  binary
+  P2P12_01.BGD                   1,349,664  2002-07-27 18:20  binary
+  P2P13_01.BGD                   1,349,664  2002-07-27 18:20  binary
+  P2P14_01.BGD                   1,349,664  2002-07-27 18:20  binary
+  P2P1_0.BCD                        83,032  2002-07-26 17:24  binary, magic "B2RI"
+  P2P1_1.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  P2P1_2.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  P2P1_3.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  REPLAY.IVS                    10,116,800  2002-07-26 17:47  binary
+
+TRACKS/FORWARD/P2P2/
+  INTRO.IVS                      1,460,288  2002-07-26 17:49  binary
+  MUSIC.IVS                     18,344,640  2002-07-26 17:48  binary
+  P2P2.P2W                       8,384,512  2002-07-27 18:03  binary
+  P2P2.PSS                       5,376,000  2002-07-27 18:03  binary
+  P2P2.PSW                       8,384,512  2002-07-27 18:03  binary
+  P2P21_01.BGD                   1,020,108  2002-07-27 18:20  binary
+  P2P22_01.BGD                   1,020,108  2002-07-27 18:20  binary
+  P2P23_01.BGD                   1,020,108  2002-07-27 18:20  binary
+  P2P24_01.BGD                   1,020,108  2002-07-27 18:20  binary
+  P2P2_0.BCD                        54,748  2002-07-26 17:24  binary, magic "B2RI"
+  P2P2_1.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  P2P2_2.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  P2P2_3.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  REPLAY.IVS                     9,173,376  2002-07-26 17:49  binary
+
+TRACKS/FORWARD/P2P3/
+  INTRO.IVS                      1,408,768  2002-07-26 17:51  binary
+  MUSIC.IVS                     21,068,480  2002-07-26 17:51  binary
+  P2P3.P2W                      10,315,776  2002-07-26 19:14  binary
+  P2P3.PSS                       6,625,280  2002-07-26 19:14  binary
+  P2P3.PSW                      10,315,776  2002-07-26 19:14  binary
+  P2P31_01.BGD                   1,849,728  2002-07-27 18:20  binary
+  P2P32_01.BGD                   1,849,728  2002-07-27 18:20  binary
+  P2P33_01.BGD                   1,849,728  2002-07-27 18:20  binary
+  P2P34_01.BGD                   1,849,728  2002-07-27 18:20  binary
+  P2P3_0.BCD                        54,380  2002-07-26 18:45  binary, magic "B2RI"
+  P2P3_1.BCD                            80  2002-07-26 18:45  binary, magic "B2RI"
+  P2P3_2.BCD                            80  2002-07-26 18:45  binary, magic "B2RI"
+  P2P3_3.BCD                            80  2002-07-26 18:45  binary, magic "B2RI"
+  REPLAY.IVS                    11,643,808  2002-07-26 17:51  binary
+
+TRACKS/FORWARD/P2P4/
+  INTRO.IVS                      1,368,992  2002-07-19 19:43  binary
+  MUSIC.IVS                     22,598,656  2002-07-12 17:23  binary
+  P2P4.P2W                      12,601,344  2002-07-18 16:47  binary
+  P2P4.PSS                       6,903,808  2002-07-18 16:47  binary
+  P2P4.PSW                      12,601,344  2002-07-18 16:47  binary
+  P2P41_01.BGD                   1,719,320  2002-07-24 10:58  binary, magic "B2St"
+  P2P42_01.BGD                   1,719,320  2002-07-24 10:58  binary, magic "B2St"
+  P2P43_01.BGD                   1,719,320  2002-07-24 10:58  binary, magic "B2St"
+  P2P44_01.BGD                   1,719,320  2002-07-24 10:58  binary, magic "B2St"
+  P2P4_0.BCD                            80  2002-07-11 20:45  binary, magic "B2RI"
+  P2P4_1.BCD                            80  2002-07-11 20:45  binary, magic "B2RI"
+  P2P4_2.BCD                            80  2002-07-11 20:45  binary, magic "B2RI"
+  P2P4_3.BCD                            80  2002-07-11 20:45  binary, magic "B2RI"
+  REPLAY.IVS                    11,300,320  2002-07-12 17:23  binary
+
+TRACKS/REVERSE/APTL/
+  APTL.P2W                      11,591,680  2002-07-26 18:50  binary
+  APTL.PSS                       5,206,016  2002-07-26 18:50  binary
+  APTL.PSW                      11,591,680  2002-07-26 18:50  binary
+  APTL1.BGD                        624,804  2002-07-27 18:20  binary, magic "B2SG"
+  APTL1_01.BGD                     808,916  2002-07-27 18:20  binary
+  APTL2_01.BGD                     808,916  2002-07-27 18:20  binary
+  APTL3_01.BGD                     808,916  2002-07-27 18:20  binary
+  APTL4_01.BGD                     808,916  2002-07-27 18:20  binary
+  APTL_0.BCD                        99,932  2002-07-26 11:09  binary, magic "B2RI"
+  APTL_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  APTL_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  APTL_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                      1,376,000  2002-07-26 17:53  binary
+  MUSIC.IVS                     16,206,528  2002-07-26 17:53  binary
+  REPLAY.IVS                     9,826,336  2002-07-26 17:53  binary
+
+TRACKS/REVERSE/APTS/
+  APTS.P2W                       5,804,032  2002-07-26 18:50  binary
+  APTS.PSS                       3,821,568  2002-07-26 18:50  binary
+  APTS.PSW                       5,804,032  2002-07-26 18:50  binary
+  APTS1.BGD                        545,056  2002-07-27 18:20  binary, magic "B2SG"
+  APTS1_01.BGD                     629,484  2002-07-27 18:20  binary
+  APTS2_01.BGD                     629,484  2002-07-27 18:20  binary
+  APTS3_01.BGD                     629,484  2002-07-27 18:20  binary
+  APTS4_01.BGD                     629,484  2002-07-27 18:20  binary
+  APTS5_0E.BGD                     601,588  2002-07-27 18:20  binary
+  APTS_0.BCD                        69,832  2002-07-26 11:09  binary, magic "B2RI"
+  APTS_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  APTS_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  APTS_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                      1,376,000  2002-07-26 17:54  binary
+  MUSIC.IVS                     16,206,528  2002-07-26 17:54  binary
+  REPLAY.IVS                     9,826,336  2002-07-26 17:54  binary
+
+TRACKS/REVERSE/CSTL/
+  CSTL.P2W                       6,547,456  2002-07-26 18:50  binary
+  CSTL.PSS                       6,266,880  2002-07-26 18:50  binary
+  CSTL.PSW                       6,547,456  2002-07-26 18:50  binary
+  CSTL1.BGD                        784,652  2002-07-27 18:20  binary, magic "B2St"
+  CSTL1_01.BGD                     916,144  2002-07-27 18:20  binary
+  CSTL2_01.BGD                     916,144  2002-07-27 18:20  binary
+  CSTL3_01.BGD                     916,144  2002-07-27 18:20  binary
+  CSTL4_01.BGD                     916,144  2002-07-27 18:20  binary
+  CSTL_0.BCD                        73,316  2002-07-26 11:09  binary, magic "B2RI"
+  CSTL_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  CSTL_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  CSTL_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                      1,640,512  2002-07-26 17:55  binary
+  MUSIC.IVS                     20,541,824  2002-07-26 17:55  binary
+  REPLAY.IVS                    10,271,936  2002-07-26 17:55  binary
+
+TRACKS/REVERSE/CSTS/
+  CSTS.P2W                       4,872,192  2002-07-26 18:50  binary
+  CSTS.PSS                       5,707,776  2002-07-26 18:50  binary
+  CSTS.PSW                       4,872,192  2002-07-26 18:50  binary
+  CSTS1.BGD                        688,568  2002-07-27 18:20  binary, magic "B2St"
+  CSTS1_01.BGD                     786,776  2002-07-27 18:20  binary
+  CSTS2_01.BGD                     786,776  2002-07-27 18:20  binary
+  CSTS3_01.BGD                     786,776  2002-07-27 18:20  binary
+  CSTS4_01.BGD                     786,776  2002-07-27 18:20  binary
+  CSTS_0.BCD                        71,088  2002-07-26 11:09  binary, magic "B2RI"
+  CSTS_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  CSTS_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  CSTS_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                      1,640,512  2002-07-26 17:56  binary
+  L3REPLAY.DAT                       8,822  2002-07-27 17:27  binary
+  MUSIC.IVS                     20,541,824  2002-07-26 17:56  binary
+  REPLAY.IVS                    10,271,936  2002-07-26 17:56  binary
+
+TRACKS/REVERSE/CTYL/
+  CTYL.P2W                       7,200,768  2002-07-26 18:51  binary
+  CTYL.PSS                       4,073,472  2002-07-26 18:51  binary
+  CTYL.PSW                       7,200,768  2002-07-26 18:51  binary
+  CTYL1.BGD                      1,249,864  2002-07-27 18:20  binary, magic "B2St"
+  CTYL1_01.BGD                   1,406,008  2002-07-27 18:20  binary
+  CTYL2_01.BGD                   1,406,008  2002-07-27 18:20  binary
+  CTYL3_01.BGD                   1,406,008  2002-07-27 18:20  binary
+  CTYL4_01.BGD                   1,406,008  2002-07-27 18:20  binary
+  CTYL_0.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  CTYL_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  CTYL_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  CTYL_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                      1,523,456  2002-07-26 17:58  binary
+  MUSIC.IVS                     18,811,456  2002-07-26 17:58  binary
+  REPLAY.IVS                    10,159,168  2002-07-26 17:58  binary
+
+TRACKS/REVERSE/CTYS/
+  CTYS.P2W                       5,097,472  2002-07-26 18:51  binary
+  CTYS.PSS                       2,975,744  2002-07-26 18:51  binary
+  CTYS.PSW                       5,097,472  2002-07-26 18:51  binary
+  CTYS1.BGD                      1,151,952  2002-07-27 18:20  binary, magic "B2St"
+  CTYS1_01.BGD                   1,284,844  2002-07-27 18:20  binary
+  CTYS2_01.BGD                   1,284,844  2002-07-27 18:20  binary
+  CTYS3_01.BGD                   1,284,844  2002-07-27 18:20  binary
+  CTYS4_01.BGD                   1,284,844  2002-07-27 18:20  binary
+  CTYS5_0D.BGD                   1,192,564  2002-07-27 18:20  binary
+  CTYS_0.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  CTYS_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  CTYS_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  CTYS_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                      1,523,456  2002-07-26 17:59  binary
+  MUSIC.IVS                     18,811,456  2002-07-26 17:59  binary
+  REPLAY.IVS                    10,159,168  2002-07-26 17:59  binary
+
+TRACKS/REVERSE/DSTL/
+  DSTL.P2W                       6,055,936  2002-07-26 18:51  binary
+  DSTL.PSS                       5,965,824  2002-07-26 18:51  binary
+  DSTL.PSW                       6,055,936  2002-07-26 18:51  binary
+  DSTL1.BGD                        248,880  2002-07-27 18:20  binary, magic "B2SG"
+  DSTL1_01.BGD                     932,736  2002-07-27 18:20  binary
+  DSTL2_01.BGD                     932,736  2002-07-27 18:20  binary
+  DSTL3_01.BGD                     932,736  2002-07-27 18:20  binary
+  DSTL4_01.BGD                     932,736  2002-07-27 18:20  binary
+  DSTL_0.BCD                        89,452  2002-07-26 11:09  binary, magic "B2RI"
+  DSTL_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  DSTL_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  DSTL_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                      1,266,016  2002-07-26 18:00  binary
+  MUSIC.IVS                     21,649,536  2002-07-26 18:00  binary
+  REPLAY.IVS                    10,824,896  2002-07-26 18:00  binary
+
+TRACKS/REVERSE/DSTS/
+  DSTS.P2W                       4,395,008  2002-07-26 18:51  binary
+  DSTS.PSS                       5,044,224  2002-07-26 18:51  binary
+  DSTS.PSW                       4,395,008  2002-07-26 18:51  binary
+  DSTS1.BGD                        162,268  2002-07-27 18:20  binary, magic "B2SG"
+  DSTS1_01.BGD                     814,296  2002-07-27 18:20  binary
+  DSTS2_01.BGD                     814,296  2002-07-27 18:20  binary
+  DSTS3_01.BGD                     814,296  2002-07-27 18:20  binary
+  DSTS4_01.BGD                     814,296  2002-07-27 18:20  binary
+  DSTS5_0F.BGD                     814,296  2002-07-27 18:20  binary
+  DSTS_0.BCD                        70,340  2002-07-26 11:09  binary, magic "B2RI"
+  DSTS_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  DSTS_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  DSTS_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                      1,266,016  2002-07-26 18:01  binary
+  MUSIC.IVS                     21,649,536  2002-07-26 18:01  binary
+  REPLAY.IVS                    10,824,896  2002-07-26 18:01  binary
+
+TRACKS/REVERSE/FWYL/
+  FWYL.P2W                      13,232,128  2002-07-27 17:22  binary
+  FWYL.PSS                       4,671,488  2002-07-27 17:22  binary
+  FWYL.PSW                      13,232,128  2002-07-27 17:22  binary
+  FWYL1.BGD                        791,440  2002-07-27 18:20  binary, magic "B2SG"
+  FWYL1_01.BGD                   1,367,900  2002-07-27 18:20  binary
+  FWYL2_01.BGD                   1,367,900  2002-07-27 18:20  binary
+  FWYL3_01.BGD                   1,367,900  2002-07-27 18:20  binary
+  FWYL4_01.BGD                   1,367,900  2002-07-27 18:20  binary
+  FWYL6_04.BGD                     943,676  2002-07-27 18:20  binary
+  FWYL_0.BCD                        81,784  2002-07-26 17:24  binary, magic "B2RI"
+  FWYL_1.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  FWYL_2.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  FWYL_3.BCD                        66,220  2002-07-26 17:24  binary, magic "B2RI"
+  INTRO.IVS                        934,720  2002-07-26 18:04  binary
+  L3REPLAY.DAT                       8,318  2002-07-27 17:44  binary
+  MUSIC.IVS                     20,844,096  2002-07-26 18:04  binary
+  REPLAY.IVS                    10,423,072  2002-07-26 18:04  binary
+
+TRACKS/REVERSE/FWYS/
+  FWYS.P2W                       5,801,984  2002-07-26 18:52  binary
+  FWYS.PSS                       3,813,376  2002-07-26 18:52  binary
+  FWYS.PSW                       5,801,984  2002-07-26 18:52  binary
+  FWYS1.BGD                        945,544  2002-07-27 18:20  binary, magic "B2SG"
+  FWYS1_01.BGD                   1,033,416  2002-07-27 18:20  binary
+  FWYS2_01.BGD                   1,033,416  2002-07-27 18:20  binary
+  FWYS3_01.BGD                   1,033,416  2002-07-27 18:20  binary
+  FWYS4_01.BGD                   1,033,416  2002-07-27 18:20  binary
+  FWYS_0.BCD                        55,660  2002-07-26 11:09  binary, magic "B2RI"
+  FWYS_1.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  FWYS_2.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  FWYS_3.BCD                            80  2002-07-26 11:09  binary, magic "B2RI"
+  INTRO.IVS                        934,720  2002-07-26 18:05  binary
+  MUSIC.IVS                     20,844,096  2002-07-26 18:05  binary
+  REPLAY.IVS                    10,423,072  2002-07-26 18:05  binary
+
+TRACKS/REVERSE/MNTL/
+  INTRO.IVS                      1,287,072  2002-07-26 18:06  binary
+  MNTL.P2W                       6,572,032  2002-07-26 19:15  binary
+  MNTL.PSS                       4,259,840  2002-07-26 19:15  binary
+  MNTL.PSW                       6,572,032  2002-07-26 19:15  binary
+  MNTL1.BGD                        815,144  2002-07-27 18:20  binary, magic "B2St"
+  MNTL1_01.BGD                     997,880  2002-07-27 18:20  binary
+  MNTL2_01.BGD                     997,880  2002-07-27 18:20  binary
+  MNTL3_01.BGD                     997,880  2002-07-27 18:20  binary
+  MNTL4_01.BGD                     997,880  2002-07-27 18:20  binary
+  MNTL_0.BCD                        95,448  2002-07-26 11:10  binary, magic "B2RI"
+  MNTL_1.BCD                            80  2002-07-26 11:10  binary, magic "B2RI"
+  MNTL_2.BCD                            80  2002-07-26 11:10  binary, magic "B2RI"
+  MNTL_3.BCD                            80  2002-07-26 11:10  binary, magic "B2RI"
+  MUSIC.IVS                     18,999,552  2002-07-26 18:06  binary
+  REPLAY.IVS                    11,005,600  2002-07-26 18:06  binary
+
+TRACKS/REVERSE/MNTS/
+  INTRO.IVS                      1,287,072  2002-07-26 18:07  binary
+  MNTS.P2W                       3,186,688  2002-07-26 19:15  binary
+  MNTS.PSS                       3,342,336  2002-07-26 19:15  binary
+  MNTS.PSW                       3,186,688  2002-07-26 19:15  binary
+  MNTS1.BGD                        594,664  2002-07-27 18:20  binary, magic "B2St"
+  MNTS1_01.BGD                     670,632  2002-07-27 18:20  binary
+  MNTS2_01.BGD                     670,632  2002-07-27 18:20  binary
+  MNTS3_01.BGD                     670,632  2002-07-27 18:20  binary
+  MNTS4_01.BGD                     670,632  2002-07-27 18:20  binary
+  MNTS_0.BCD                        54,652  2002-07-26 11:10  binary, magic "B2RI"
+  MNTS_1.BCD                            80  2002-07-26 11:10  binary, magic "B2RI"
+  MNTS_2.BCD                            80  2002-07-26 11:10  binary, magic "B2RI"
+  MNTS_3.BCD                            80  2002-07-26 11:10  binary, magic "B2RI"
+  MUSIC.IVS                     18,999,552  2002-07-26 18:07  binary
+  REPLAY.IVS                    11,005,600  2002-07-26 18:07  binary
+
+TRACKS/REVERSE/P2P1/
+  INTRO.IVS                      1,443,904  2002-07-26 18:09  binary
+  MUSIC.IVS                     20,231,552  2002-07-26 18:09  binary
+  P2P1.P2W                       9,254,912  2002-07-26 18:53  binary
+  P2P1.PSS                       7,432,192  2002-07-26 18:53  binary
+  P2P1.PSW                       9,254,912  2002-07-26 18:53  binary
+  P2P11_01.BGD                   1,281,720  2002-07-27 18:20  binary
+  P2P12_01.BGD                   1,281,720  2002-07-27 18:20  binary
+  P2P13_01.BGD                   1,281,720  2002-07-27 18:20  binary
+  P2P14_01.BGD                   1,281,720  2002-07-27 18:20  binary
+  P2P1_0.BCD                        59,820  2002-07-26 17:24  binary, magic "B2RI"
+  P2P1_1.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  P2P1_2.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  P2P1_3.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  REPLAY.IVS                    10,116,800  2002-07-26 18:09  binary
+
+TRACKS/REVERSE/P2P2/
+  INTRO.IVS                      1,460,288  2002-07-26 18:11  binary
+  MUSIC.IVS                     18,344,640  2002-07-26 18:11  binary
+  P2P2.P2W                       8,056,832  2002-07-26 18:53  binary
+  P2P2.PSS                       5,421,056  2002-07-26 18:53  binary
+  P2P2.PSW                       8,056,832  2002-07-26 18:53  binary
+  P2P21_01.BGD                   1,020,636  2002-07-27 18:20  binary
+  P2P22_01.BGD                   1,020,636  2002-07-27 18:20  binary
+  P2P23_01.BGD                   1,020,636  2002-07-27 18:20  binary
+  P2P24_01.BGD                   1,020,636  2002-07-27 18:20  binary
+  P2P2_0.BCD                        54,748  2002-07-26 17:24  binary, magic "B2RI"
+  P2P2_1.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  P2P2_2.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  P2P2_3.BCD                            80  2002-07-26 17:24  binary, magic "B2RI"
+  REPLAY.IVS                     9,173,376  2002-07-26 18:11  binary
+
+TRACKS/REVERSE/P2P3/
+  INTRO.IVS                      1,408,768  2002-07-26 18:13  binary
+  MUSIC.IVS                     21,068,480  2002-07-26 18:13  binary
+  P2P3.P2W                      10,321,920  2002-07-26 19:16  binary
+  P2P3.PSS                       6,608,896  2002-07-26 19:16  binary
+  P2P3.PSW                      10,321,920  2002-07-26 19:16  binary
+  P2P31_01.BGD                   1,611,568  2002-07-27 18:20  binary
+  P2P32_01.BGD                   1,611,568  2002-07-27 18:20  binary
+  P2P33_01.BGD                   1,611,568  2002-07-27 18:20  binary
+  P2P34_01.BGD                   1,611,568  2002-07-27 18:20  binary
+  P2P3_0.BCD                        49,188  2002-07-26 18:45  binary, magic "B2RI"
+  P2P3_1.BCD                            80  2002-07-26 18:45  binary, magic "B2RI"
+  P2P3_2.BCD                            80  2002-07-26 18:45  binary, magic "B2RI"
+  P2P3_3.BCD                            80  2002-07-26 18:45  binary, magic "B2RI"
+  REPLAY.IVS                    11,643,808  2002-07-26 18:13  binary
+
+TRACKS/REVERSE/P2P4/
+  INTRO.IVS                      1,368,992  2002-07-19 19:45  binary
+  MUSIC.IVS                     22,598,656  2002-07-12 17:44  binary
+  P2P4.P2W                      11,378,688  2002-07-18 16:50  binary
+  P2P4.PSS                       6,713,344  2002-07-18 16:50  binary
+  P2P4.PSW                      11,378,688  2002-07-18 16:50  binary
+  P2P41_01.BGD                   1,719,440  2002-07-24 10:59  binary, magic "B2St"
+  P2P42_01.BGD                   1,719,440  2002-07-24 10:59  binary, magic "B2St"
+  P2P43_01.BGD                   1,719,440  2002-07-24 10:59  binary, magic "B2St"
+  P2P44_01.BGD                   1,719,440  2002-07-24 10:59  binary, magic "B2St"
+  P2P4_0.BCD                            80  2002-07-11 20:45  binary, magic "B2RI"
+  P2P4_1.BCD                            80  2002-07-11 20:45  binary, magic "B2RI"
+  P2P4_2.BCD                            80  2002-07-11 20:45  binary, magic "B2RI"
+  P2P4_3.BCD                            80  2002-07-11 20:45  binary, magic "B2RI"
+  REPLAY.IVS                    11,300,320  2002-07-12 17:44  binary
+
+TRAFFIC/
+  TRAFFIC.TRA                    4,567,040  2002-07-26 18:43  binary

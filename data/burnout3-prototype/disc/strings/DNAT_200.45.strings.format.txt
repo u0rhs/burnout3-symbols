@@ -1,0 +1,164 @@
+// DNAT_200.45: printf-style format strings (messages, logs) (162)
+
+0x0015E4C6  %%dcf
+0x001F892D  clq%XH
+0x0040E4D0  sceGsDefDispEnv:Not support displaymode for 0x%x!!
+0x0040E578  D1_TADR=%08x:
+0x0040E588  D1_MADR=%08x:
+0x0040E5B8  D2_TADR=%08x:
+0x0040E5C8  D2_MADR=%08x:
+0x0040E5E8  	<VIF1_STAT=%08x:
+0x0040E600  GIF_STAT=%08x>
+0x0040E910  Invalid modion type -- ignored(%d)
+0x0040E938  (a) invalid motion_type(%d)-0
+0x0040E958  (b) invalid motion_type(%d)-1
+0x0040E978  (c) invalid motion_type(%d)-2
+0x0040E9D0  Invalid macroblock_address_increment code(0x%08x)
+0x0040EA28  slice_start_code(0x%08x) out of range
+0x0040EBA8  Too small buffer size for %dx%d picture
+0x0040EC38  image buffer needs to be aligned to 64byte boundary(0x%08x)
+0x0040ED18  [MPEG ERROR]%s
+0x0040EEB8  TTY: send err %d
+0x0040EED0  TTY: err ti->wlen=%08x
+0x0040F0E0  too long parameter '%s'
+0x0040F100  # TLB spad=0 kernel=1:%d default=%d:%d extended=%d:%d
+0x00410048  sceCdCbfunc= %d sceCdCbfunc_num= %d
+0x00410090  ee call cmd search %s
+0x004100A8  search name %s
+0x004100B8  search size %d
+0x004100C8  search loc lbn %d
+0x004100E0  Ncmd fail sema cur_cmd:%d keep_cmd:%d
+0x00410140  Scmd fail sema cur_cmd:%d keep_cmd:%d
+0x00410180  Libcdvd bind err %d CD_Init %d
+0x004110B0  cdrom0:\%s;1
+0x00411430  World Time %.5f
+0x00412888  Player %d
+0x00412898  AI Car %d
+0x00412A60  boostfirecore%02d
+0x00412A80  boostfireedge%02d
+0x00412AA0  boostfireover%02d
+0x00413798  maxstream=%d
+0x00413810  Can't load module %s, return code %d
+0x00414E00  Heap resized from %d to %d bytes
+0x00415010  libpad2: buffer addr is not 64 byte align. %08x
+0x004150D8  libdbc: SifDmaAddr %08x
+0x00415220  libdbc: SendData2 data length too long [%d]
+0x004153D0  GtCommVa%04d
+0x00416580  Host: %s
+0x00416590  Content-Length: %d
+0x004166E8  Host: %s:%d
+0x004167E8  %s: send buffer addr is not 64 byte align. %08x=n
+0x00416830  %s: receive buffer addr is not 64 byte align. %08x=n
+0x00416A70  libmc2: Fatal Error [%08x]
+0x00416AF0  [fatal error] c_sema in netcnfif(type=%d)
+0x00419748  bstpss0%i
+0x00419758  bstpsl0%i
+0x004198A0  cartar0%i
+0x00419FCF  }Got worldcrash of %f vol %f
+0x0041A000  Got worldnudge of %f
+0x0041CC70  ERROR: bytes provided = %d. Need=%d
+0x0041CCC8  ERROR: lgCodecUlawEncode: need %d bytes. have %d bytes. clipping
+0x0041D038  Fatal error: %s
+0x0041D050  warning: %s
+0x0041D060  warning: %s %d
+0x0041DCA8  lgAudInit:  liblgaud.a is version %d.%02d.%03d
+0x0041DE00  lgAudInit: unable to allocate %d bytes!
+0x0041DE58  %s\nlgAudInit: max streaming data size: %d
+0x0041F148  driver version = %d.%02d.%03d
+0x0041F310  LgKbM library version %d.%02d.%03d (built on May 18 2004 at 17:58:15)\n	* reader thread priority %d
+0x0041FD90  in game %s
+0x004203C0  Favourite Car: %s
+0x004203E0  Burnout Points: %d
+0x00420400  Crash Damage: %d
+0x00420418  TakeDowns: %d
+0x00420428  USA Events: %d
+0x00420440  Europe Events: %d
+0x00420460  Asia Events: %d
+0x004204D0  ErrMessage : %s %d %s
+0x00420540  in game %s
+0x00420AC0  unknown%d
+0x00420E30  User authentication error with ISP\n%s
+0x00420E80  Modem cannot connect: %s
+0x00420EA0  Invalid dial-in number: %s
+0x00420ED0  Modem error: %s
+0x00420FB0  Line disconnected: %s
+0x00420FC8  Dialing %s
+0x00420FD8  Line speed %s
+0x00420FF0  Disconnecting line: %s
+0x00421170  no match for %d
+0x00421310  %s module not found
+0x00421370  returned %d
+0x004213A0  DMA address 0x%x not %d-byte aligned
+0x00421400  invalid Combination number (%d)
+0x00421450  invalid default Combination number (%d)
+0x004214C0  %s module not found
+0x00421518  returned %d
+0x00421550  DMA address 0x%x not %d-byte aligned
+0x00421630  size %d padded to %d
+0x00422058  Into %s
+0x00422060  Double %s
+0x00422070  Triple %s
+0x004220A0  %dft %s
+0x00422530  %d Invalid %s - %s
+0x00422550  %d Invalid %s in GP
+0x004242F0  Frame %d is set to Interpolate. But the next frame is not setup.
+0x00424340  Frame %d is set to Interpolate. But the time difference is %f (negative).
+0x00426260  (fno=%d, ssize=%d, rsize=%d, buffer=%d)
+0x00428BE0  %s Medals - USA %d, Euro %d, Asia %d
+0x00428C28  Car Count: %d
+0x00428C40  %d %s (Used %d)
+0x00428C70  Cheat Count: %d
+0x00428C98  Cheat %d: %s
+0x00428D10  %d Burnout Points: %d
+0x00428D30  %d Crash Damage: %d
+0x00428D50  %d Takedown - Offline: %d
+0x00428D70  %d Takedown - Online: %d
+0x00428D90  %d Slam - Offline: %d
+0x00428DB0  %d Slam - Online: %d
+0x00428DD0  %d Slam:Takedown - Offline: %d%%
+0x00428E00  %d Slam:Takedown - Online: %d%%
+0x00428E20  %d Race Count - Offline: %d
+0x00428E40  %d Race Count - Online: %d
+0x00428E60  %d Crash Count - Offline: %d
+0x00428E80  %d Crash Count - Online: %d
+0x00428EA0  %d Challenges unlocked: %d
+0x00428EC0  %d Events completed: %d
+0x00428EE0  %d Gold Medals: %d
+0x00428F00  %d Gold Medals (special events): %d
+0x00428F30  %d Medals (Total): %d
+0x00428F50  %d Medals (USA): %d
+0x00428F70  %d Medals (Euro): %d
+0x00428F90  %d Medals (Asia): %d
+0x00428FB0  %d Longest Oncoming: %.02f
+0x00428FD0  %d Longest Oncoming car: %s
+0x00428FF0  %d Longest Drift: %.02f
+0x00429010  %d Longest Drift car: %s
+0x00429030  %d Car Count: %d
+0x00429050  %d Signature Takedown Count: %d
+0x00429070  %d Headline Count: %d
+0x00429090  %d Cheat Count: %d
+0x004290B0  %d Trophy Count: %d
+0x004290D0  %d Game Complete: %d%%
+0x004290F0  %d Takedowns on %s: %d
+0x00429110  %d Favourite Vehicle: %s
+0x00429130  %d Longest Oncoming track: %s
+0x00429150  %d Oncoming on %s: %.2f
+0x00429170  %d Longest Drift track: %s
+0x00429190  %d Car Unlocked: %s (Used %d)
+0x004291B0  %d Signature Takedown on %s
+0x004291D0  %d Headline %d
+0x004291E0  %d Cheat %d
+0x004291F0  %d Trophy %d
+0x00429DD0  OPPART%d
+0x00429DE0  OPPARAM%d
+0x00429DF0  OPFLAG%d
+0x00429E00  PARTSIZE%d
+0x00429E10  PARTPARAMS%d
+0x00429E20  l%ds%dslll
+0x00429E40  TROPHY%d
+0x0042A880  Received unknown response '%c%c%c%c'
+0x004363E0  ~%dms
+0x004364A0  OPID%d
+0x004364A8  OPPO%d
+0x004364B0  ADDR%d
+0x004364B8  MADDR%d

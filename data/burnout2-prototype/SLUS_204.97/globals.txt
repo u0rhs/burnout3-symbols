@@ -1,0 +1,3659 @@
+// Global and file-static variables with an address in SLUS_204.97
+// Burnout 2 prototype, 29 July 2002
+
+0x0014B610  void *_rwColorOpen(void *, int, int);
+      badevice.c
+0x0014B630  void *_rwColorClose(void *, int, int);
+      badevice.c
+0x0014B650  void *_rwErrorOpen(void *, int, int);
+      badevice.c
+0x0014B690  void *_rwErrorClose(void *, int, int);
+      badevice.c
+0x0014B770  int rwfexist(char *);
+      bafsys.c
+0x0014B960  void MatrixMultiply(RwMatrixTag *, RwMatrixTag *, RwMatrixTag *);
+      bamatrix.c
+0x0014BF70  void *_rwMatrixClose(void *, int, int);
+      badevice.c
+0x0014BFF0  void *_rwMatrixOpen(void *, int, int);
+      badevice.c
+0x0014CE70  void *FakeCalloc(unsigned int, unsigned int);
+      bamemory.c
+0x0014D110  RwFreeList *_rwFreeListFreeReal(RwFreeList *, void *);
+      badevice.c
+0x0014D130  void *_rwFreeListAllocReal(RwFreeList *);
+      badevice.c (+1 more files)
+0x0014D560  void *_rwResourcesOpen(void *, int, int);
+      badevice.c
+0x0014D5D0  void *_rwResourcesClose(void *, int, int);
+      badevice.c
+0x0014DCB0  void *_rwStreamModuleOpen(void *, int, int);
+      badevice.c
+0x0014DD30  void *_rwStreamModuleClose(void *, int, int);
+      badevice.c
+0x0014EB70  void rwDestroyEntry(void *, void *);
+      batkreg.c
+0x0014ED00  void *PluginDefaultConstructor(void *, int, int);
+      batkreg.c
+0x0014ED10  void *PluginDefaultDestructor(void *, int, int);
+      batkreg.c
+0x0014ED20  void *PluginDefaultCopy(void *, void *, int, int);
+      batkreg.c
+0x0014F1B0  RwV3d *VectorMultPoint(RwV3d *, RwV3d *, int, RwMatrixTag *);
+      bavector.c
+0x0014F270  RwV3d *VectorMultVector(RwV3d *, RwV3d *, int, RwMatrixTag *);
+      bavector.c
+0x0014F510  void *_rwVectorClose(void *, int, int);
+      badevice.c
+0x0014F530  void *_rwVectorOpen(void *, int, int);
+      badevice.c
+0x0014F840  int StrICmp(char *, char *);
+      rwstring.c
+0x0014F900  char *StrUpr(char *);
+      rwstring.c
+0x0014F950  char *StrLwr(char *);
+      rwstring.c
+0x0014F9A0  char *StrChr(char *, int);
+      rwstring.c
+0x0014F9E0  char *StrRChr(char *, int);
+      rwstring.c
+0x00150A60  RwTexture *destroyTexture(RwTexture *, void *);
+      babintex.c
+0x00151F40  RwObjectHasFrame *CameraSync(RwObjectHasFrame *);
+      bacamera.c
+0x00151FB0  RwCamera *CameraEndUpdate(RwCamera *);
+      bacamera.c
+0x00152010  RwCamera *CameraBeginUpdate(RwCamera *);
+      bacamera.c
+0x00152080  void *_rwCameraClose(void *, int, int);
+      badevice.c
+0x00152100  void *_rwCameraOpen(void *, int, int);
+      badevice.c
+0x00152740  void *MallocWrapper(RwFreeList *);
+      badevice.c
+0x00152760  RwFreeList *FreeWrapper(RwFreeList *, void *);
+      badevice.c
+0x00152E80  void *_rwFrameOpen(void *, int, int);
+      badevice.c
+0x00152F10  void *_rwFrameClose(void *, int, int);
+      badevice.c
+0x00153A00  void *_rwImageOpen(void *, int, int);
+      badevice.c
+0x00153C20  void *_rwImageClose(void *, int, int);
+      badevice.c
+0x001547B0  char *ImageAttempRead(char *, void *);
+      baimage.c
+0x00154980  char *ImageDetermineExtender(char *, void *);
+      baimage.c
+0x00155BC0  void *_rwRasterClose(void *, int, int);
+      badevice.c
+0x00155C40  void *_rwRasterOpen(void *, int, int);
+      badevice.c
+0x001568F0  RwObject *SyncObject(RwObject *, void *);
+      basync.c
+0x00156E60  int TextureDefaultMipmapName(char *, char *, unsigned char, int);
+      batextur.c
+0x00157E40  RwTexture *TextureDefaultRead(char *, char *);
+      batextur.c
+0x00157E90  RwRaster *TextureRasterDefaultBuildMipmaps(RwRaster *, RwImage *);
+      batextur.c
+0x00158610  int RwTextureDestroy(RwTexture *);
+      batextur.c
+0x00158BB0  void *_rwTextureClose(void *, int, int);
+      badevice.c
+0x00158D50  void *_rwTextureOpen(void *, int, int);
+      badevice.c
+0x0015B930  int rwDMAHandler(int);
+      badma.c
+0x0015BF50  int rwDMAVSYNCHandler(int);
+      badma.c
+0x0015F760  RwStream *skyReadTexCB(RwStream *, int, void *, int, int);
+      basky.c
+0x0015F7E0  RwStream *skyWriteTexCB(RwStream *, int, void *, int, int);
+      basky.c
+0x0015F840  int skyGetSizeTexCB(void *, int, int);
+      basky.c
+0x00166D50  int SkyNoStandard(void *, void *, int);
+      basky.c
+0x00168BE0  void matrixASMMult(RwMatrixTag *, RwMatrixTag *, RwMatrixTag *);
+      basky.c
+0x00168C60  RwV3d *vectorASMMultPoint(RwV3d *, RwV3d *, int, RwMatrixTag *);
+      basky.c
+0x00168CF0  RwV3d *vectorASMMultVector(RwV3d *, RwV3d *, int, RwMatrixTag *);
+      basky.c
+0x0016E880  int SkyIm2DRenderLine(RwSky2DVertex *, int, int, int);
+      skyinst.c
+0x0016EB20  int SkyIm2DRenderTriangle(RwSky2DVertex *, int, int, int, int);
+      skyinst.c
+0x0016F990  int SkyIm2DRenderPrimitive(RwPrimitiveType, RwSky2DVertex *, int);
+      skyinst.c
+0x001708F0  int SkyIm2DRenderIndexedPrimitive(RwPrimitiveType, RwSky2DVertex *, int, unsigned short *, int);
+      skyinst.c
+0x001718C0  void _skyTexCacheNullUploadRaster(RwRaster *, int);
+      texcache.c
+0x00172120  void _skyTexCacheUploadRaster(RwRaster *, int);
+      texcache.c
+0x00174410  void *_rwIm3DClose(void *, int, int);
+      badevice.c
+0x00174560  void *_rwIm3DOpen(void *, int, int);
+      badevice.c
+0x00174750  void *_rwRenderPipelineOpen(void *, int, int);
+      badevice.c
+0x00174780  void *_rwRenderPipelineClose(void *, int, int);
+      badevice.c
+0x0017AF20  int _rwForAllEdgesWithRxInterpolant(RxCluster *, RxCluster *, RxCluster *, unsigned short *, int *, int *, int, float (*)(RxCamSpace3DVertex *, RxCamSpace3DVertex *, RxCamSpace3DVertex *, RwSky2DVertex *, RwSky2DVertex *, RwSky2DVertex *));
+      p2clpcom.c
+0x0017B1B0  int _rwForAllEdgesWithoutRxInterpolant(RxCluster *, RxCluster *, RxCluster *, unsigned short *, int *, int *, int, float (*)(RxCamSpace3DVertex *, RxCamSpace3DVertex *, RxCamSpace3DVertex *, RwSky2DVertex *, RwSky2DVertex *, RwSky2DVertex *));
+      p2clpcom.c
+0x001809D0  void _MyEnumPipelineClustersCallBack(RxClusterDefinition *, unsigned int, void *);
+      p2dep.c
+0x00182290  void *RandomClose(void *, int, int);
+      rprandom.c
+0x00182300  void *RandomOpen(void *, int, int);
+      rprandom.c
+0x001826B0  RwStream *_rpReadWorldRights(RwStream *, int, void *, int, int);
+      baworobj.c
+0x00182730  RwStream *_rpWriteWorldRights(RwStream *, int, void *, int, int);
+      baworobj.c
+0x001827A0  int _rpSizeWorldRights(void *, int, int);
+      baworobj.c
+0x001827D0  RwStream *_rpReadSectRights(RwStream *, int, void *, int, int);
+      baworobj.c
+0x00182850  RwStream *_rpWriteSectRights(RwStream *, int, void *, int, int);
+      baworobj.c
+0x001828C0  int _rpSizeSectRights(void *, int, int);
+      baworobj.c
+0x001828F0  void *_rpBinaryWorldClose(void *, int, int);
+      baworld.c
+0x00182910  void *_rpBinaryWorldOpen(void *, int, int);
+      baworld.c
+0x00182930  void ClumpTidyDestroyClump(void *, void *);
+      baclump.c
+0x00182940  void ClumpTidyDestroyAtomic(void *, void *);
+      baclump.c
+0x00182950  RwStream *_rpReadAtomicRights(RwStream *, int, void *, int, int);
+      baworobj.c
+0x001829D0  RwStream *_rpWriteAtomicRights(RwStream *, int, void *, int, int);
+      baworobj.c
+0x00182A40  int _rpSizeAtomicRights(void *, int, int);
+      baworobj.c
+0x00182A70  RwObjectHasFrame *AtomicSync(RwObjectHasFrame *);
+      baclump.c
+0x00182AC0  RpAtomic *AtomicDefaultRenderCallBack(RpAtomic *);
+      baclump.c
+0x00182D00  void *ClumpInitCameraExt(void *, int, int);
+      baclump.c
+0x00182D20  void *ClumpDeInitCameraExt(void *, int, int);
+      baclump.c
+0x00182D30  void *ClumpInitLightExt(void *, int, int);
+      baclump.c
+0x00182D50  void *ClumpDeInitLightExt(void *, int, int);
+      baclump.c
+0x00182D60  RpLight *DestroyClumpLight(RpLight *, void *);
+      baclump.c
+0x00182DA0  RwCamera *DestroyClumpCamera(RwCamera *, void *);
+      baclump.c
+0x00182DE0  RpClump *ClumpCallBack(RpClump *, void *);
+      baclump.c
+0x00182DF0  RpAtomic *DestroyClumpAtomic(RpAtomic *, void *);
+      baclump.c
+0x00183640  void *_rpClumpClose(void *, int, int);
+      baworld.c
+0x00183700  void *_rpClumpOpen(void *, int, int);
+      baworld.c
+0x00184CA0  void *_rpGeometryOpen(void *, int, int);
+      baworld.c
+0x00184CC0  void *_rpGeometryClose(void *, int, int);
+      baworld.c
+0x001860D0  void LightTidyDestroyLight(void *, void *);
+      balight.c
+0x001860E0  RwObjectHasFrame *LightSync(RwObjectHasFrame *);
+      balight.c
+0x001864B0  void *_rpLightClose(void *, int, int);
+      baworld.c
+0x00186540  void *_rpLightOpen(void *, int, int);
+      baworld.c
+0x00186620  void *_rpMaterialOpen(void *, int, int);
+      baworld.c
+0x001866B0  void *_rpMaterialClose(void *, int, int);
+      baworld.c
+0x001874B0  void *_rpMeshClose(void *, int, int);
+      baworld.c
+0x00187510  void *_rpMeshOpen(void *, int, int);
+      baworld.c
+0x00187FF0  int SortPolygons(void *, void *);
+      bameshop.c
+0x001881D0  RpMesh *SortPolygonsInTriListMesh(RpMesh *, RpMeshHeader *, void *);
+      bameshop.c
+0x0018A720  RpMeshHeader *RpBuildMeshGenerateDefaultTriStrip(RpBuildMesh *, void *);
+      bameshop.c
+0x0018A770  RpMeshHeader *_rpTriListMeshGenerate(RpBuildMesh *, void *);
+      bameshop.c
+0x0018AAE0  void *_rpSectorOpen(void *, int, int);
+      baworld.c
+0x0018AB00  void *_rpSectorClose(void *, int, int);
+      baworld.c
+0x0018ABA0  RpWorldSector *WorldFindSector(RpWorldSector *, void *);
+      baworld.c
+0x0018ABC0  void *WorldClose(void *, int, int);
+      baworld.c
+0x0018AC40  void *WorldOpen(void *, int, int);
+      baworld.c
+0x0018B170  void *WorldObjectOpen(void *, int, int);
+      baworobj.c
+0x0018B250  void *WorldObjectClose(void *, int, int);
+      baworobj.c
+0x0018B2F0  RwCamera *WorldCameraBeginUpdate(RwCamera *);
+      baworobj.c
+0x0018B320  RwCamera *WorldCameraEndUpdate(RwCamera *);
+      baworobj.c
+0x0018B340  RwObjectHasFrame *WorldCameraSync(RwObjectHasFrame *);
+      baworobj.c
+0x0018B3E0  void *WorldInitCameraExt(void *, int, int);
+      baworobj.c
+0x0018B440  void *WorldCopyCameraExt(void *, void *, int, int);
+      baworobj.c
+0x0018B490  void *WorldDeInitCameraExt(void *, int, int);
+      baworobj.c
+0x0018B740  RwObjectHasFrame *WorldAtomicSync(RwObjectHasFrame *);
+      baworobj.c
+0x0018B840  void *WorldInitAtomicExt(void *, int, int);
+      baworobj.c
+0x0018B880  void *WorldCopyAtomicExt(void *, void *, int, int);
+      baworobj.c
+0x0018B890  void *WorldDeInitAtomicExt(void *, int, int);
+      baworobj.c
+0x0018B960  void *WorldInitClumpExt(void *, int, int);
+      baworobj.c
+0x0018B980  void *WorldCopyClumpExt(void *, void *, int, int);
+      baworobj.c
+0x0018B9C0  void *WorldDeInitClumpExt(void *, int, int);
+      baworobj.c
+0x0018B9D0  RwObjectHasFrame *WorldLightSync(RwObjectHasFrame *);
+      baworobj.c
+0x0018BCB0  void *WorldInitLightExt(void *, int, int);
+      baworobj.c
+0x0018BCE0  void *WorldCopyLightExt(void *, void *, int, int);
+      baworobj.c
+0x0018BD20  void *WorldDeInitLightExt(void *, int, int);
+      baworobj.c
+0x0018C150  RpAtomic *WorldAddClumpAtomic(RpAtomic *, void *);
+      baworobj.c
+0x0018C180  RpLight *WorldAddClumpLight(RpLight *, void *);
+      baworobj.c
+0x0018C1B0  RwCamera *WorldAddClumpCamera(RwCamera *, void *);
+      baworobj.c
+0x0018C1E0  RwStream *writeGeometryMesh(RwStream *, int, void *, int, int);
+      baworobj.c
+0x0018C200  RwStream *readGeometryMesh(RwStream *, int, void *, int, int);
+      baworobj.c
+0x0018C250  int sizeGeometryMesh(void *, int, int);
+      baworobj.c
+0x0018C260  RwStream *writeGeometryNative(RwStream *, int, void *, int, int);
+      baworobj.c
+0x0018C270  RwStream *readGeometryNative(RwStream *, int, void *, int, int);
+      baworobj.c
+0x0018C2A0  int sizeGeometryNative(void *, int, int);
+      baworobj.c
+0x0018C2B0  RwStream *writeWorldSectorNative(RwStream *, int, void *, int, int);
+      baworobj.c
+0x0018C2C0  RwStream *readWorldSectorNative(RwStream *, int, void *, int, int);
+      baworobj.c
+0x0018C2F0  int sizeWorldSectorNative(void *, int, int);
+      baworobj.c
+0x0018C300  RwStream *writeSectorMesh(RwStream *, int, void *, int, int);
+      baworobj.c
+0x0018C350  RwStream *readSectorMesh(RwStream *, int, void *, int, int);
+      baworobj.c
+0x0018C3B0  int sizeSectorMesh(void *, int, int);
+      baworobj.c
+0x0018CEB0  RpLight *AtomicGlobalLightsCB(RpLight *, void *);
+      nodeAtomicEnumerateLights.c
+0x0018CF30  RpLight *AtomicLocalLightsCB(RpLight *, void *);
+      nodeAtomicEnumerateLights.c
+0x00190060  RpLight *WorldLightsCB(RpLight *, void *);
+      nodeWorldSectorEnumerateLights.c
+0x00191720  void reDestroyCallBack(RwResEntry *);
+      nodeps2all.c
+0x00196D60  void reDestroyCallback(RwResEntry *);
+      native.c (+1 more files)
+0x0019CAB0  RpLight *_sectorDoApplyLight(RpLight *, void *);
+      nodeps2objallinone.c
+0x0019CB00  RpLight *_atomicDoApplyLight(RpLight *, void *);
+      nodeps2objallinone.c
+0x0019CB40  RpLight *_atomicDoApplyLightFrame(RpLight *, void *);
+      nodeps2objallinone.c
+0x0019D660  void _rxWorldLightingDefaultCallback(int, void *);
+      nodeps2objallinone.c
+0x0019E1D0  int RpAtomicPS2AllObjectSetupCallBack(RxPS2AllPipeData *, RwMatrixTag **);
+      wrldpipe.c
+0x0019E400  int RpMeshPS2AllMeshInstanceTestCallBack(RxPS2AllPipeData *);
+      wrldpipe.c
+0x0019E4C0  RwResEntry *RpMeshPS2AllResEntryAllocCallBack(RxPS2AllPipeData *, RwResEntry **, unsigned int, void (*)(RwResEntry *));
+      wrldpipe.c
+0x0019E590  int RpMeshPS2AllInstanceCallBack(RxPS2AllPipeData *, void **, unsigned int);
+      wrldpipe.c
+0x0019E5D0  int RpMeshPS2AllBridgeCallBack(RxPS2AllPipeData *);
+      wrldpipe.c
+0x0019ED20  RpLight *_rpAtomicPS2AllDoApplyLight(RpLight *, void *);
+      ps2allatomic.c
+0x0019ED70  RpLight *_rpAtomicPS2AllDoApplyLightFrame(RpLight *, void *);
+      ps2allatomic.c
+0x0019FD30  int RwIm3DPS2AllObjectSetupCallBack(RxPS2AllPipeData *, RwMatrixTag **);
+      fastim3d.c
+0x0019FEA0  RwResEntry *RwIm3DPS2AllResEntryAllocCallBack(RxPS2AllPipeData *, RwResEntry **, unsigned int, void (*)(RwResEntry *));
+      fastim3d.c
+0x0019FF50  int RwIm3DPS2AllInstanceCallBack(RxPS2AllPipeData *, void **, unsigned int);
+      fastim3d.c
+0x0019FF60  int RwIm3DPS2AllBridgeCallBack(RxPS2AllPipeData *);
+      fastim3d.c
+0x001A15A0  int RpWorldSectorPS2AllObjectSetupCallBack(RxPS2AllPipeData *, RwMatrixTag **);
+      wrldpipe.c
+0x001A1800  RpLight *_rpWorldSectorPS2AllDoApplyLight(RpLight *, void *);
+      ps2allsector.c
+0x001A2100  void *_pluginObjectCreate(void *, int, int);
+      wrldpipe.c
+0x001A2110  void *_pluginObjectDestroy(void *, int, int);
+      wrldpipe.c
+0x001A2150  void *_pluginGeometryCopy(void *, void *, int, int);
+      wrldpipe.c
+0x001A21D0  void *_pluginAtomicCopy(void *, void *, int, int);
+      wrldpipe.c
+0x001A2260  void *_pluginSectorCopy(void *, void *, int, int);
+      wrldpipe.c
+0x001A22E0  int _initAtomicMeshCache(void *, int, int);
+      wrldpipe.c
+0x001A23A0  int _initSectorMeshCache(void *, int, int);
+      wrldpipe.c
+0x001AF2B0  void RenderNull(B22dObjectAnimatablesTag *);
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp (+8 more files)
+0x001AF2C0  void RenderCarIcon(B22dObjectAnimatablesTag *);
+      gamesource\Menu\CMenuGfxComponentCarousel.cpp (+1 more files)
+0x001AF450  void RenderTextSoftDropShadow(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentCrashScore.cpp (+1 more files)
+0x001B0330  void RenderTextItalicOutline(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentMessage.cpp (+1 more files)
+0x001B07A0  void RenderTextOutline(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentCountdown.cpp (+20 more files)
+0x001B0A40  void RenderText(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentCrashValue.cpp (+4 more files)
+0x001B0C10  void RenderImageGlow(B22dObjectAnimatablesTag *);
+      gamesource\Menu\CMenuGfxComponentTrackMap.cpp
+0x001B0D60  void RenderImage(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentCrashDamageScore.cpp (+13 more files)
+0x001B0E30  void RenderVignetteH(B22dObjectAnimatablesTag *);
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp (+2 more files)
+0x001B0F70  void RenderBox(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentSeparator.cpp (+9 more files)
+0x001BAB40  int fclose(__sFILE *);
+      bafsys.c
+0x001BAC40  int feof(__sFILE *);
+      bafsys.c
+0x001BAC50  int fflush(__sFILE *);
+      bafsys.c
+0x001BAD68  char *fgets(char *, int, __sFILE *);
+      bafsys.c
+0x001BB2D8  __sFILE *fopen(char *, char *);
+      bafsys.c
+0x001BB300  int fputs(char *, __sFILE *);
+      bafsys.c
+0x001BB350  unsigned int fread(void *, unsigned int, unsigned int, __sFILE *);
+      bafsys.c
+0x001BB8D8  int fseek(__sFILE *, long, int);
+      bafsys.c
+0x001BBDE8  long ftell(__sFILE *);
+      bafsys.c
+0x001BC368  unsigned int fwrite(void *, unsigned int, unsigned int, __sFILE *);
+      bafsys.c
+0x001BC690  void *malloc(unsigned int);
+      bamemory.c
+0x001BC6E8  void free(void *);
+      bamemory.c
+0x001BF140  void *realloc(void *, unsigned int);
+      bamemory.c
+0x001BFE78  int sprintf(char *, char *);
+      rwstring.c
+0x001BFF10  int sscanf(char *, char *);
+      rwstring.c
+0x001C0128  char *strcat(char *, char *);
+      rwstring.c
+0x001C0258  int strcmp(char *, char *);
+      rwstring.c
+0x001C03A0  char *strcpy(char *, char *);
+      rwstring.c
+0x001C04B8  unsigned int strlen(char *);
+      rwstring.c
+0x001C06C8  char *strncat(char *, char *, unsigned int);
+      rwstring.c
+0x001C0878  char *strncpy(char *, char *, unsigned int);
+      rwstring.c
+0x001C0A38  char *strstr(char *, char *);
+      rwstring.c
+0x001C1A28  char *strtok(char *, char *);
+      rwstring.c
+0x001C4A60  int vsprintf(char *, char *, char *);
+      rwstring.c
+0x001C4F80  void *LinearCalloc(unsigned int, unsigned int);
+      gamesource\Toolkits\linearmalloc.cpp
+0x001C5010  void *LinearRealloc(void *, unsigned int);
+      gamesource\Toolkits\linearmalloc.cpp
+0x001C5130  void LinearFree(void *);
+      gamesource\Toolkits\linearmalloc.cpp
+0x001C51C0  void *LinearMalloc(unsigned int);
+      gamesource\Toolkits\linearmalloc.cpp
+0x001C5FA0  int _PW2MatSetupCodeGlass(int, int, void *);
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x001C6030  int _PW2MatSetupCodeWater(int, int, void *);
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x001C60C0  int _PW2MatSetupCodeSpecular(int, int, void *);
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x001C6150  int _PW2MatSetupCodeDefault(int, int, void *);
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x001C61D0  int _PW2InstanceCodeLineList(RpGeometry *, RpMesh *, GsPS2RenderObject *);
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x001C67C0  int _PW2InstanceCodeGlass(RpGeometry *, RpMesh *, GsPS2RenderObject *);
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x001C70D0  int _PW2InstanceCodeWater(RpGeometry *, RpMesh *, GsPS2RenderObject *);
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x001C7B10  int _PW2InstanceCodeNormals(RpGeometry *, RpMesh *, GsPS2RenderObject *);
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x001C8580  int _PW2InstanceCode(RpGeometry *, RpMesh *, GsPS2RenderObject *);
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x001C9190  int _IP2DispatchCode(int, int, int, void *);
+      gamesource\Render\PS2InstancedPrelit2\InstancedPrelit2.cpp
+0x001C94F0  int _IP2UpdateCode(int, int, int, int, int, void *);
+      gamesource\Render\PS2InstancedPrelit2\InstancedPrelit2.cpp
+0x001C9580  int _IP2InstanceCode(RpGeometry *, RpMesh *, GsPS2RenderObject *);
+      gamesource\Render\PS2InstancedPrelit2\InstancedPrelit2.cpp
+0x001CD170  void _RenderTrackMap(B22dObjectAnimatablesTag *);
+      gamesource\Menu\CMenuGfxComponentTrackMap.cpp
+0x001D31D0  void CarObjectRender(B22dObjectAnimatablesTag *);
+      gamesource\Menu\CMenuGfxComponentCar.cpp
+0x001D6BB0  void _RenderNTextOutline(B22dObjectAnimatablesTag *);
+      gamesource\Menu\CMenuGfxComponentResultsTable.cpp
+0x001DB470  void _RenderSpeedoMini(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentSpeedo.cpp
+0x001DC4C0  void _RenderSpeedoCS(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentSpeedo.cpp
+0x001DD5F0  void _RenderSpeedoStandard(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentSpeedo.cpp
+0x001DED90  void _RenderLapHistory(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentLapHistory.cpp
+0x001DF530  int _CarShadowSetupCode(int, int, void *);
+      gamesource\Render\PS2CarRenderer\PS2CarRenderer.cpp
+0x001DF6A0  int _CarMatSetupCode(int, int, void *);
+      gamesource\Render\PS2CarRenderer\PS2CarRenderer.cpp
+0x001DFA10  int _RaceCarShadowInstanceCode(RpGeometry *, RpMesh *, GsPS2RenderObject *);
+      gamesource\Render\PS2CarRenderer\PS2CarRenderer.cpp
+0x001DFF70  int _RaceCarInstanceCode(RpGeometry *, RpMesh *, GsPS2RenderObject *);
+      gamesource\Render\PS2CarRenderer\PS2CarRenderer.cpp
+0x001E3240  void _RenderCountdown(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentCountdown.cpp
+0x001E3A80  void _RenderBurn(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentBurn.cpp
+0x001E4FD0  void _RenderStat(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentBonus.cpp
+0x001E5B70  void _RenderSplitTime(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x001E6B30  int _IL2ShadowDispatchCode(int, int, int, void *);
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x001E6DB0  int _IL2ShadowUpdateCode(int, int, int, int, int, void *);
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x001E6E40  int _IL2DispatchCode(int, int, int, void *);
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x001E70F0  int _IL2UpdateCode(int, int, int, int, int, void *);
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x001E74C0  int _IL2ShadowInstanceCode(RpGeometry *, RpMesh *, GsPS2RenderObject *);
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x001E7AA0  int _IL2InstanceCode(RpGeometry *, RpMesh *, GsPS2RenderObject *);
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x001E8E20  void _RenderFlamingText(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentMessage.cpp
+0x001E9660  void _RenderNameEntryObject(B22dObjectAnimatablesTag *);
+      gamesource\Menu\CMenuGfxComponentNameEntryText.cpp
+0x001EA350  void _RenderScore(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentScore.cpp
+0x001FB010  int _PParticleInstanceCode(RpGeometry *, RpMesh *, GsPS2RenderObject *);
+      gamesource\Render\PS2ParametricParticle\PS2PParticle.cpp
+0x001FB330  int FExist(char *);
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x001FB380  int FFlush(void *);
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x001FB390  int FSeek(void *, long, int);
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x001FB420  int FEof(void *);
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x001FB440  int FPuts(char *, void *);
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x001FB450  char *FGets(char *, int, void *);
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x001FB460  unsigned int FWrite(void *, unsigned int, unsigned int, void *);
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x001FB4B0  unsigned int FRead(void *, unsigned int, unsigned int, void *);
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x001FB500  int FClose(void *);
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x001FB530  void *FOpen(char *, char *);
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x001FBAC0  void CmdErrorHandler(void *, void *);
+      I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp
+0x001FBB20  void CmdReadCompleteHandler(void *, void *);
+      I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp
+0x00202110  void _RenderLapTimes(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentLapTimes.cpp
+0x00208DE0  int _cameraIntersectionCallback(SRCCollSphere *, SRCCollisionTriangle *, void *);
+      gamesource\Render\CInGameCamera.cpp
+0x0020CA10  void *RpADCDataCopy(void *, void *, int, int);
+      I:\GameShared\Archive\RpADC\rpAdc.c
+0x0020CA20  void *RpADCDataDestructor(void *, int, int);
+      I:\GameShared\Archive\RpADC\rpAdc.c
+0x0020CAA0  void *RpADCDataConstructor(void *, int, int);
+      I:\GameShared\Archive\RpADC\rpAdc.c
+0x0020CAD0  void *RpADCDataClose(void *, int, int);
+      I:\GameShared\Archive\RpADC\rpAdc.c
+0x0020CAE0  void *RpADCDataOpen(void *, int, int);
+      I:\GameShared\Archive\RpADC\rpAdc.c
+0x00210CB0  RtQuat *QuatFromXDiagDomMatrix(RtQuat *, RwMatrixTag *);
+      rtquat.c
+0x00210D30  RtQuat *QuatFromYDiagDomMatrix(RtQuat *, RwMatrixTag *);
+      rtquat.c
+0x00210DB0  RtQuat *QuatFromZDiagDomMatrix(RtQuat *, RwMatrixTag *);
+      rtquat.c
+0x0022A070  int _blobbyShadowCollisionCallback(SRCCollLine *, SRCCollisionTriangle *, void *);
+      gamesource\Race\CBlobbyShadow.cpp
+0x0023B360  int _raceCarHeightAboveGroundCallback(SRCCollLine *, SRCCollisionTriangle *, void *);
+      gamesource\Race\CRaceCar.cpp
+0x00248410  int _SRCSphereCollisionCallback(int, int, void *);
+      gamesource\Race\CStreamedWorld.cpp
+0x0024A710  int _intersectionCallback(SRCCollLine *, SRCCollisionTriangle *, void *);
+      gamesource\Race\CTrack.cpp
+0x002517F0  int _trafficShadowCollisionCallback(SRCCollLine *, SRCCollisionTriangle *, void *);
+      gamesource\Race\CTrafficSystemDraw.cpp
+0x002614D0  void _RenderCarStatBarObject(B22dObjectAnimatablesTag *);
+      gamesource\Menu\CMenuGfxComponentPanel.cpp
+0x00262660  void _RenderHealth(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentHealth.cpp
+0x00262910  void RenderTextDropShadow(B22dObjectAnimatablesTag *);
+      gamesource\Hud\CHudComponentTotalTime.cpp
+0x00267480  void RenderFlagObject(B22dObjectAnimatablesTag *);
+      gamesource\Menu\CMenuGfxComponentFlag.cpp
+0x0026C9D0  int _rwaObjFindByObjDefCallback(RwaObj *, void *);
+      C:\dev\rwaudio\source\objects\src\rwasoftoutputobj.c
+0x00270BE0  RwaObj *_RwaListenerCreate(RwaObj *, RwaObj *, void *, void *(*)(RwaObjDef *, void *, void *, unsigned int), void *);
+      C:\dev\rwaudio\source\objects\src\rwalistenerobj.c
+0x002752B0  int _RwaWaveDefFindByUUIDCallback(RwaObjDef *, RwaObjDef *, void *);
+      C:\dev\rwaudio\source\core\src\rwawavedef.c
+0x00275700  int _RwaWaveDefDestroyCallback(RwaObjDef *, RwaObjDef *, void *);
+      C:\dev\rwaudio\source\core\src\rwawavedef.c
+0x002758B0  RwaWave *_RwaSoftWaveDownload(RwaWave *, RwaWaveFormat *, unsigned int, void *);
+      C:\dev\rwaudio\source\waves\src\rwasoftwave.c
+0x002758F0  RwaWave *_RwaSoftWaveUpload(RwaWave *, unsigned int, void *, unsigned int);
+      C:\dev\rwaudio\source\waves\src\rwasoftwave.c
+0x002759A0  void _RwaSoftWaveDestroy(RwaWave *);
+      C:\dev\rwaudio\source\waves\src\rwasoftwave.c
+0x002759B0  RwaWave *_RwaSoftWaveCreate(RwaWave *, RwaObj *);
+      C:\dev\rwaudio\source\waves\src\rwasoftwave.c
+0x00275B00  RwaWave *_RwaNULLWaveDownload(RwaWave *, RwaWaveFormat *, unsigned int, void *);
+      C:\dev\rwaudio\source\waves\src\rwanullwave.c
+0x00275B40  RwaWave *_RwaNULLWaveUpload(RwaWave *, unsigned int, void *, unsigned int);
+      C:\dev\rwaudio\source\waves\src\rwanullwave.c
+0x00275B80  void _RwaNULLWaveDestroy(RwaWave *);
+      C:\dev\rwaudio\source\waves\src\rwanullwave.c
+0x00275BB0  RwaWave *_RwaNULLWaveCreate(RwaWave *, RwaObj *);
+      C:\dev\rwaudio\source\waves\src\rwanullwave.c
+0x00276670  unsigned int RwaRPC_UpdateThread();
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00276740  void RwaRPC_SIFIntHandler(void *, void *);
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00276FD0  RwaWave *_RwaSPU2WaveDownload(RwaWave *, RwaWaveFormat *, unsigned int, void *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c
+0x00276FE0  int _RwaSPU2WaveUploadBusy();
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c
+0x00276FF0  RwaWave *_RwaSPU2WaveUpload(RwaWave *, unsigned int, void *, unsigned int);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c
+0x002771F0  void _RwaSPU2WaveDestroy(RwaWave *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c
+0x002772C0  RwaWave *_RwaSPU2WaveCreate(RwaWave *, RwaObj *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c
+0x00277B00  RwaObj *_RwaSPU2VoiceGetParams(RwaObj *, void *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c
+0x00277B10  RwaObj *_RwaSPU2VoiceFinishExecute(RwaObj *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c
+0x00277EF0  RwaObj *_RwaSPU2VoiceStartExecute(RwaObj *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c
+0x00277F60  void _RwaSPU2VoiceDestroy(RwaObj *, void (*)(RwaObj *, void *), void *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c
+0x00277F70  RwaObj *_RwaSPU2VoiceCreate(RwaObj *, RwaObj *, void *, void *(*)(RwaObjDef *, void *, void *, unsigned int), void *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c
+0x00278820  RwaObj *_RwaSPU2OutputGetParams(RwaObj *, void *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x00278840  RwaObj *_RwaSPU2OutputFinishExecute(RwaObj *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x00278970  RwaObj *_RwaSPU2OutputStartExecute(RwaObj *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x002789A0  void _RwaSPU2OutputDestroy(RwaObj *, void (*)(RwaObj *, void *), void *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x00278A40  RwaObj *_RwaSPU2OutputCreate(RwaObj *, RwaObj *, void *, void *(*)(RwaObjDef *, void *, void *, unsigned int), void *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x00278EB0  void RwaSPU2OutputCmdHandler(unsigned int, unsigned int, unsigned int, unsigned int, void (*)(unsigned int, unsigned int));
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x002792D0  RwaObj *_RwaSPU2StreamFinishExecute(RwaObj *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2stream.c
+0x002793D0  void _RwaSPU2StreamDestroy(RwaObj *, void (*)(RwaObj *, void *), void *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2stream.c
+0x00279420  RwaObj *_RwaSPU2StreamCreate(RwaObj *, RwaObj *, void *, void *(*)(RwaObjDef *, void *, void *, unsigned int), void *);
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2stream.c
+0x0027D110  int NodataCallback(sceMpeg *, sceMpegCbData *, void *);
+      I:\GameShared\GameClasses\Mpeg\ps2\GtMpegPs2.cpp
+0x0027D580  int RestartDMA(sceMpeg *, sceMpegCbData *, void *);
+      I:\GameShared\GameClasses\Mpeg\ps2\GtMpegPs2.cpp
+0x0027D5B0  int StopDMA(sceMpeg *, sceMpegCbData *, void *);
+      I:\GameShared\GameClasses\Mpeg\ps2\GtMpegPs2.cpp
+0x002854F0  long G3_BFC_ADC_S;
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x00287600  long G3_Gen_ADC;
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x00288EF0  long G3_Gen_ADC_S;
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x0028AB60  long G3_Gen_ADC_Water;
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x0028C8D0  long G3_BFC_ADC;
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x0028E650  long ipxform2;
+      gamesource\Render\PS2InstancedPrelit2\InstancedPrelit2.cpp
+0x0028F120  long G3_BFC_ADC_G;
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x00291400  long G3_Gen_ADC_G;
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x00293230  long carRenderer;
+      gamesource\Render\PS2CarRenderer\PS2CarRenderer.cpp
+0x002949E0  long irxformParallel2;
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x00294D30  long ilxform2;
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x00295880  long carShadowRenderer;
+      gamesource\Render\PS2CarRenderer\PS2CarRenderer.cpp
+0x00295AC0  long pparticlerender;
+      gamesource\Render\PS2ParametricParticle\PS2PParticle.cpp
+0x00296BE0  long coronarender;
+      gamesource\Render\CCoronas.cpp
+0x002974A0  long snowrender;
+      gamesource\Render\CSnow.cpp
+0x00297DE0  long rainrender;
+      gamesource\Render\CRain.cpp
+0x002986A0  long coronareflectionsrender;
+      gamesource\Render\CCoronas.cpp
+0x00298EE0  long sparkrender;
+      gamesource\Render\CSparks.cpp
+0x002994D0  long G3_Gen_Line;
+      gamesource\Render\PS2PrelitWorld2\PrelitWorld2.cpp
+0x0029DDD0  CChampionshipStage CChampionshipProgression::_maChampionshipStages[22];
+      gamesource\Menu\CMenuGfxComponentGrandPrixSummary.cpp (+5 more files)
+0x0029EB90  CGameMode *gapGameModes[21];
+      gamesource\Menu\CMenuPageCrashGroupSelect.cpp (+1 more files)
+0x002A2A20  RwPluginRegistry cameraTKList;
+      babincam.c (+1 more files)
+0x002A2A70  static RwPluginRegistry engineTKList;
+      badevice.c
+0x002A2A90  signed char _rwMsbBit[256];
+      badevice.c
+0x002A2A90  signed char _rwMsbBit[];
+      C:\dev\rwaudio\source\objects\src\rwalistenerobj.c (+5 more files)
+0x002A2BB0  RwPluginRegistry frameTKList;
+      babinfrm.c (+1 more files)
+0x002A2BD0  static RwPluginRegistry imageTKList;
+      baimage.c
+0x002A2BF0  static RwPluginRegistry rasterTKList;
+      baraster.c
+0x002A2C10  RwPluginRegistry textureTKList;
+      babintex.c (+1 more files)
+0x002A2C30  RwPluginRegistry texDictTKList;
+      babintex.c (+1 more files)
+0x002A2C50  static RwVideoMode videoModes[89];
+      basky.c
+0x002A31E0  static int skyBlendStates[6][6];
+      basky.c
+0x002A3270  static RwStandard saGStandards[28];
+      basky.c
+0x002A3390  u_long128 nullLightBlock[2];
+      gamesource\Render\PS2CarRenderer\PS2CarRenderer.cpp (+2 more files)
+0x002A3400  void *skyVU1Transforms[32];
+      nodeps2matbridge.c (+2 more files)
+0x002A3480  static _SkyTexCache skyTexCache;
+      texcache.c
+0x002A34C0  unsigned char G3_BFCullingISO[11952];
+      core_dt.c
+0x002A6370  unsigned char G3_GenericISO[10848];
+      core_dt.c
+0x002A8DD0  unsigned char G3_GenericPER[10992];
+      core_dt.c
+0x002AB8C0  unsigned char G3_BFCullingPER[14784];
+      core_dt.c
+0x002AF280  unsigned char G3_GenLineISO[6800];
+      core_dt.c
+0x002B0D10  unsigned char G3_GenLinePER[7504];
+      core_dt.c
+0x002B3540  static char _RxObjSpace3DVertices_csl[25];
+      p2stdcls.c
+0x002B3560  RxClusterDefinition RxClObjSpace3DVertices;
+      p2stdcls.c
+0x002B3570  static char _RxCamSpace3DVertices_csl[25];
+      p2stdcls.c
+0x002B3590  RxClusterDefinition RxClCamSpace3DVertices;
+      p2stdcls.c
+0x002B35A0  static char _RxScrSpace2DVertices_csl[25];
+      p2stdcls.c
+0x002B35C0  RxClusterDefinition RxClScrSpace2DVertices;
+      p2stdcls.c
+0x002B35D0  static char _RxInterpolants_csl[19];
+      p2stdcls.c
+0x002B35F0  RxClusterDefinition RxClInterpolants;
+      p2stdcls.c
+0x002B3600  static char _MeshState_csl[14];
+      p2stdcls.c
+0x002B3610  RxClusterDefinition RxClMeshState;
+      p2stdcls.c
+0x002B3620  static char _RenderState_csl[16];
+      p2stdcls.c
+0x002B3630  RxClusterDefinition RxClRenderState;
+      p2stdcls.c
+0x002B3640  static char _Indices_csl[12];
+      p2stdcls.c
+0x002B3650  RxClusterDefinition RxClIndices;
+      p2stdcls.c
+0x002B3660  static char _RxVSteps_csl[13];
+      p2stdcls.c
+0x002B3670  RxClusterDefinition RxClVSteps;
+      p2stdcls.c
+0x002B3680  static RwPluginRegistry atomicTKList;
+      baclump.c
+0x002B36A0  static RwPluginRegistry clumpTKList;
+      baclump.c
+0x002B36C0  static RwPluginRegistry geometryTKList;
+      bageomet.c
+0x002B36E0  static RwPluginRegistry lightTKList;
+      balight.c
+0x002B3700  static RwPluginRegistry materialTKList;
+      bamateri.c
+0x002B3718  static RwSurfaceProperties defaultSurfaceProperties;
+      bamateri.c
+0x002B3730  static RpMeshopStatic MeshopStatic;
+      bameshop.c
+0x002B3750  RwPluginRegistry sectorTKList;
+      babinwor.c (+2 more files)
+0x002B3770  RwPluginRegistry worldTKList;
+      babinwor.c (+1 more files)
+0x002B3CA0  static char _Lights_csl[11];
+      p2stdclsw.c
+0x002B3CB0  RxClusterDefinition RxClLights;
+      p2stdclsw.c
+0x002B3EF0  static RxClusterRef nodeClusters[2];
+      nodeps2matbridge.c
+0x002B3F70  static RxClusterRef nodeClusters[2];
+      nodeps2matinstance.c
+0x002B45C0  RpMeshHeader gIm3DMeshHeader[2];
+      ps2allim3d.c
+0x002B4920  static char _PS2DMASessionRecord_csl[24];
+      wrldpipe.c
+0x002B4938  static char _PS2Mesh_csl[12];
+      wrldpipe.c
+0x002B4948  static char _PS2xyz_csl[11];
+      wrldpipe.c
+0x002B4958  static char _PS2uv_csl[10];
+      wrldpipe.c
+0x002B4968  static char _PS2rgba_csl[12];
+      wrldpipe.c
+0x002B4978  static char _PS2normal_csl[14];
+      wrldpipe.c
+0x002B4988  static char _PS2user1_csl[13];
+      wrldpipe.c
+0x002B4998  static char _PS2user2_csl[13];
+      wrldpipe.c
+0x002B49B0  RxClusterDefinition RxClPS2DMASessionRecord;
+      wrldpipe.c
+0x002B49C0  RxClusterDefinition RxClPS2Mesh;
+      wrldpipe.c
+0x002B49D0  RxClusterDefinition RxClPS2xyz;
+      fastim3d.c (+1 more files)
+0x002B49E0  RxClusterDefinition RxClPS2uv;
+      fastim3d.c (+1 more files)
+0x002B49F0  RxClusterDefinition RxClPS2rgba;
+      fastim3d.c (+1 more files)
+0x002B4A00  RxClusterDefinition RxClPS2normal;
+      fastim3d.c (+1 more files)
+0x002B4A10  RxClusterDefinition RxClPS2user1;
+      wrldpipe.c
+0x002B4A20  RxClusterDefinition RxClPS2user2;
+      wrldpipe.c
+0x002B4DC0  B22dFrameAnimatablesTag C2dFrame::mgIdentityAnimatables;
+      gamesource\Hud\CHudComponentIndicator.cpp (+8 more files)
+0x002B4F00  C2dFont CMenuGfx::maFonts[3];
+      gamesource\Hud\CHud.cpp (+37 more files)
+0x002B8B80  static B2MenuGfxTrackMapInfoTag _gaTrackMapInfo[30];
+      gamesource\Menu\CMenuGfxComponentTrackMap.cpp
+0x002B8EF0  static int _ganStageIDToCarouselEntry[22];
+      gamesource\Menu\CMenuPageChampionshipSelect.cpp
+0x002B8F90  static unsigned int kaxDrivingLessonHUDFlags[6];
+      gamesource\Hud\CHud.cpp
+0x002B8FD0  static char *kapcDefaultRecordNames[26];
+      gamesource\Game\CRecords.cpp
+0x002B9040  ELessonObjective CDrivingLessonProgression::_maeLessonObjectives[6];
+      gamesource\Game\CDrivingLessonProgression.cpp
+0x002B9060  CDrivingLesson CDrivingLessonProgression::_maDrivingLessons[6];
+      gamesource\Game\CDrivingLessonProgression.cpp
+0x002B90F0  char *kacLessonNumbers[6];
+      gamesource\Menu\CMenuPageDrivingLessonSelect.cpp
+0x002B9110  float CCrashForCashData::marZoneThresholds[15][3];
+      gamesource\Game\CCrashForCashData.cpp
+0x002B91E0  char *g_BankNames[6];
+      gamesource\Sound\GameSound.cpp
+0x002B9200  char *g_ModeBanks[22];
+      gamesource\Sound\GameSound.cpp
+0x002B9280  static char *sRaceCarNames[22];
+      gamesource\Sound\SoundCar.cpp
+0x002B9350  char gFilenames[32][64];
+      gamesource\Sound\CMusic.cpp
+0x002B9B80  static unsigned short _ganVolumes16[7];
+      gamesource\Sound\CMusic.cpp
+0x002B9B90  static B2CoronaTypeParamsTag _gaCoronaTypeParams[5];
+      gamesource\Render\CCoronas.cpp
+0x002B9C50  RwV3d origin;
+      gamesource\Sound\SoundCrash.cpp
+0x002B9CB0  unsigned char *gpBuffers[4];
+      gamesource\Race\CRaceCar.cpp
+0x002B9CC0  float CScore::marPlayerCarValues[22];
+      gamesource\Race\CScore.cpp
+0x002B9D20  float CScore::marTrafficCarValues[26];
+      gamesource\Race\CScore.cpp
+0x002B9F00  static RwRGBA _trafficColours[16];
+      gamesource\Race\CTrafficSystemDraw.cpp
+0x002B9F40  static int _gnNumTrafficVehicles[3];
+      gamesource\Race\CTrafficSystemDraw.cpp
+0x002B9F60  static TrafficBeepPatternData _gaTrafficBeepPatterns[8];
+      gamesource\Race\CTrafficVehicle.cpp
+0x002BA090  static EStringID gaeIntroStrings[30];
+      gamesource\Menu\CMenuPageIntro.cpp
+0x002BA110  static RwRGBAReal kWhite;
+      gamesource\Menu\CMenuGfxComponentIntroMessage.cpp
+0x002BACB0  static RwaObjInterfaceDefParam _rwaListenerIntInputs[8];
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002BAD50  static RwaObjInterfaceDefParam _rwaListenerIntOutputs[9];
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002BAE10  static RwaInputParamDef _listenerInputParams[8];
+      C:\dev\rwaudio\source\objects\src\rwalistenerobj.c
+0x002BAED0  static RwaOutputParamDef _listenerOutputParams[9];
+      C:\dev\rwaudio\source\objects\src\rwalistenerobj.c
+0x002BAFC0  short _rwaFastSqrtTable[256];
+      C:\dev\rwaudio\source\core\src\rwamath.c
+0x002BAFC0  short _rwaFastSqrtTable[];
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c
+0x002BB1C0  float _rwaFastCosTable[256];
+      C:\dev\rwaudio\source\core\src\rwamath.c
+0x002BB1C0  float _rwaFastCosTable[];
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c
+0x002BB5C0  static float _rwaVAGEncodeCoeff[5][2];
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002BB5F0  static int _rwaVAGDecodeCoeff[5][2];
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002BB620  static RwaWaveConversion _supportedFormats[34];
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002BB840  RwaUUID *_rwaGwaveFormats[8];
+      C:\dev\rwaudio\source\core\src\rwawavedef.c
+0x002BB860  static RwaObjInterfaceDefParam _rwaStreamIntInputs[6];
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002BB8E0  static RwaObjInterfaceDefParam _rwaStreamIntOutputs[6];
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002BB960  static RwaWaveDefFormat *_supportedFormats[5];
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c
+0x002BB978  static RwaSPU2MemoryFunctions _memoryFuncs;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c
+0x002BB9C0  static CSplashScreenData _gaSplashScreenData[5];
+      gamesource\Menu\CMenuPageSplashScreens.cpp
+0x002BBA10  static char *kapcCreditText[163];
+      gamesource\Menu\CMenuPageCredits.cpp
+0x002BBD00  long gs_set_up;
+      basky.c
+0x002C1720  int kanDefaultColourIndices[22][4];
+      gamesource\Game\CRecords.cpp (+2 more files)
+0x002C1A40  CTrackData CMenuManager::maTracks[30];
+      gamesource\Menu\CMenuPageRecords.cpp (+1 more files)
+0x002C3B18  static char nullString[1];
+      babintex.c
+0x002C3ED0  static int swapPalIndexBits[4];
+      skyconv.c
+0x002C3EE0  static _skyImDispatchModel dispatchModel2DNoFog;
+      skyinst.c
+0x002C3EF0  static _skyImDispatchModel dispatchModel2DFog;
+      skyinst.c
+0x002C4DD0  RwRGBAReal kColourWhite;
+      gamesource\Hud\CHudComponentBurn.cpp (+33 more files)
+0x002C4DE0  RwRGBAReal kColourWhiteTransparent;
+      gamesource\Menu\CMenuGfxComponentHeading.cpp
+0x002C4DF0  RwRGBAReal kColourBlack;
+      gamesource\Hud\CHudComponentMessage.cpp (+5 more files)
+0x002C4E00  RwRGBAReal kColourRed;
+      gamesource\Hud\CHudComponentEscapeDistance.cpp (+6 more files)
+0x002C4E10  RwRGBAReal kColourBlue;
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp (+8 more files)
+0x002C4E20  RwRGBAReal kColourYellow;
+      gamesource\Hud\CHudComponentBonus.cpp (+8 more files)
+0x002C4E30  RwRGBAReal kColourGreen;
+      gamesource\Hud\CHudComponentCrashValue.cpp (+1 more files)
+0x002C4E40  RwRGBAReal kColourGlow;
+      gamesource\Menu\CMenuGfxComponentTrackMap.cpp
+0x002C7990  char _ctype_[];
+      osintf.c
+0x002C83C0  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentHeading.cpp
+0x002C86F0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentHeading.cpp
+0x002C8A20  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentHeading.cpp
+0x002C8A50  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp
+0x002C8D80  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp
+0x002C90B0  static B22dBoxTag kMenuPanelStandardBox;
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp
+0x002C90C0  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp
+0x002C90D0  static RwRGBAReal kColourWhiteTrans;
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp
+0x002C90E0  static RwRGBAReal kColourBlackTrans;
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp
+0x002C90F0  static RwRGBAReal kColourGrey;
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp
+0x002C9100  static RwRGBAReal kFrameColourGrey;
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp
+0x002C9110  static RwRGBAReal kFrameColourWhite;
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp
+0x002C9120  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuPagePause.cpp
+0x002C9450  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuPagePause.cpp
+0x002C9780  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuPagePause.cpp
+0x002C97E0  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentTrackMap.cpp
+0x002C9B10  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentTrackMap.cpp
+0x002C9E40  static B22dTexAreaTag kFullImageTexArea;
+      gamesource\Menu\CMenuGfxComponentTrackMap.cpp
+0x002C9E50  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentTrackMap.cpp
+0x002C9E60  static B22dTexAreaTag kTexArea0011;
+      gamesource\Menu\CMenuGfxComponentTrackMap.cpp
+0x002C9E70  static RwV3d kZeroVector;
+      gamesource\Physics\CVehiclePhysics.cpp
+0x002C9EB0  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentButtons.cpp
+0x002CA1E0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentButtons.cpp
+0x002CA510  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentButtons.cpp
+0x002CA520  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuPageChampionshipSelect.cpp
+0x002CA850  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuPageChampionshipSelect.cpp
+0x002CAB80  static B22dBoxTag kMenuPanelStandardBox;
+      gamesource\Menu\CMenuPageChampionshipSelect.cpp
+0x002CAB90  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuPageChampionshipSelect.cpp
+0x002CABA0  CChampSelectStageData CMenuPageChampionshipSelect::maChampSelectStageData[22];
+      gamesource\Menu\CMenuPageChampionshipSelect.cpp
+0x002CAD00  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentGrandPrixSummary.cpp
+0x002CB030  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentGrandPrixSummary.cpp
+0x002CB360  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentGrandPrixSummary.cpp
+0x002CB370  static RwV3d kZeroVector;
+      gamesource\Physics\CPropPhysics.cpp
+0x002CB380  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentCar.cpp
+0x002CB6B0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentCar.cpp
+0x002CB9E0  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentCar.cpp
+0x002CB9F0  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentCarousel.cpp
+0x002CBD20  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentCarousel.cpp
+0x002CC050  static B22dTexAreaTag kFullImageTexArea;
+      gamesource\Menu\CMenuGfxComponentCarousel.cpp
+0x002CC060  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentCarousel.cpp
+0x002CC070  static RwRGBAReal kColourBlackTrans;
+      gamesource\Menu\CMenuGfxComponentCarousel.cpp
+0x002CC080  static RwRGBAReal kColourRedTrans;
+      gamesource\Menu\CMenuGfxComponentCarousel.cpp
+0x002CC090  static B22dTexAreaTag kSwatchTexArea;
+      gamesource\Menu\CMenuGfxComponentCarousel.cpp
+0x002CC0B8  static EMenuResultsScreenID kaeDefaultScreenIDs[1];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC0C0  static EMenuResultsScreenID kaeGPOnePlayerScreenIDs[7];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC0E0  static EMenuResultsScreenID kaeSingleRaceOnePlayerScreenIDs[6];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC100  static EMenuResultsScreenID kaeSingleRaceTwoPlayerScreenIDs[8];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC120  static EMenuResultsScreenID kaeTimeAttackScreenIDs[5];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC140  static EMenuResultsScreenID kaeOnePlayerCrashScreenIDs[5];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC160  static EMenuResultsScreenID kaeCrashMPPlayingTurnsScreenIDs[5];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC180  static EMenuResultsScreenID kaeCrashMPEndOfTurnsScreenIDs[7];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC1A0  static EMenuResultsScreenID kaeCrashMPEndOfGameScreenIDs[7];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC1C0  static EMenuResultsScreenID kaeDrivingLessonScreenIDs[4];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC1D0  static EMenuResultsScreenID kaeChampionshipPursuitScreenIDs[4];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC1E0  static EMenuResultsScreenID kaeOnePlayerPursuitScreenIDs[4];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC1F0  static EMenuResultsScreenID kaeTwoPlayerPursuitScreenIDs[3];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC200  static EMenuResultsScreenID kaeChampionshipFaceOffScreenIDs[6];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC220  static EMenuResultsScreenID kaeOnePlayerFaceOffScreenIDs[6];
+      gamesource\Menu\CMenuPageResults.cpp
+0x002CC330  static B22dTexAreaTag kTexAreaMiniSpeedoEmpty;
+      gamesource\Hud\CHudComponentSpeedo.cpp
+0x002CC340  static B22dTexAreaTag kTexAreaMiniSpeedoFull;
+      gamesource\Hud\CHudComponentSpeedo.cpp
+0x002CC480  static CDefaultTrackRecord kaDefaultChampTrackRecords[30];
+      gamesource\Game\CRecords.cpp
+0x002CCA20  static CDefaultRecordsTable kaDefaultTimeAttackRecords[30];
+      gamesource\Game\CRecords.cpp
+0x002CCB10  static CDefaultRecordsTable kaDefaultCrashTop5Records[15];
+      gamesource\Game\CRecords.cpp
+0x002CCBA0  static B22dTexAreaTag kTexAreaBurnBar;
+      gamesource\Hud\CHudComponentBurn.cpp
+0x002CCBB0  static B22dTexAreaTag kTexAreaBurnMask;
+      gamesource\Hud\CHudComponentBurn.cpp
+0x002CCBC0  static RwRGBAReal kColourBurnLeft;
+      gamesource\Hud\CHudComponentBurn.cpp
+0x002CCBD0  static RwRGBAReal kColourBurnMid;
+      gamesource\Hud\CHudComponentBurn.cpp
+0x002CCBE0  static RwRGBAReal kColourBurnRight;
+      gamesource\Hud\CHudComponentBurn.cpp
+0x002CCC00  static float krSplitTimeColourBehindRed;
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x002CCC08  static float krSplitTimeColourBehindGreen;
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x002CCC10  static float krSplitTimeColourBehindBlue;
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x002CCC18  static float krSplitTimeColourAheadRed;
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x002CCC20  static float krSplitTimeColourAheadGreen;
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x002CCC28  static float krSplitTimeColourAheadBlue;
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x002CCC30  static unsigned char kapcSplitTimePositions[4][4];
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x002CCC40  static unsigned char kapcSplitTimePlayerLabelsLeft[4][4];
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x002CCC50  static unsigned char kapcSplitTimePlayerLabelsRight[4][4];
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x002CCC60  static unsigned char kacCurrentLapLabel[4];
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x002CCC68  static unsigned char kacBestLapLabel[4];
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x002CCC70  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentNameEntryText.cpp
+0x002CCFA0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentNameEntryText.cpp
+0x002CD2D0  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentNameEntryText.cpp
+0x002CD2E0  static RwRGBAReal kColourBlackTrans;
+      gamesource\Menu\CMenuGfxComponentNameEntryText.cpp
+0x002CD310  static char kacNameEntryChars[74];
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CD360  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CD690  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CD9C0  static B22dBoxTag kMenuPanelStandardBox;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CD9D0  static B22dBoxTag kMenuPanelStandardInGameBox;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CD9E0  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CD9F0  static float krResultCrashMPDamageWidth;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CD9F8  static float krResultCrashMPMultiplierWidth;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA00  static float krResultCrashMPSumWidth;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA08  static RwV2d kLessonResultsTextPos;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA10  static RwV2d kLastSingleTextPos;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA18  static RwV2d kNextRaceGPPos;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA20  static RwV2d kNextRaceAwardsGPPos;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA28  static RwV2d kLastCrashPos;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA30  static B22dBoxTag kStandingsGPStandingsPanelBox;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA40  static B22dBoxTag kStandingsCrashMPStandingsPanelBox;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA50  static B22dBoxTag kTrackRecordsTimesPanelBox;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA60  static B22dBoxTag kTrackRecordsScoresPanelBox;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA70  static B22dBoxTag kRecordsTableRecordsPanelBox;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA80  static RwV2d kTimeAttackLastTextPos;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDA88  static RwV2d kNameEntryTextPos;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x002CDC00  static unsigned int gValueTableLESSONGoldMedal[6];
+      gamesource\Game\CDrivingLessonProgression.cpp
+0x002CDC20  static unsigned int gValueTableLESSONSilverMedal[6];
+      gamesource\Game\CDrivingLessonProgression.cpp
+0x002CDC40  static unsigned int gValueTableLESSONBronzeMedal[6];
+      gamesource\Game\CDrivingLessonProgression.cpp
+0x002CDC60  static unsigned int gValueTableLESSONInitialBurn[6];
+      gamesource\Game\CDrivingLessonProgression.cpp
+0x002CDCA0  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuPageDrivingLessonSelect.cpp
+0x002CDFD0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuPageDrivingLessonSelect.cpp
+0x002CE300  static B22dBoxTag kMenuPanelStandardBox;
+      gamesource\Menu\CMenuPageDrivingLessonSelect.cpp
+0x002CE310  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuPageDrivingLessonSelect.cpp
+0x002CE350  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuPageRecords.cpp
+0x002CE680  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuPageRecords.cpp
+0x002CE9B0  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuPageRecords.cpp
+0x002CEA40  static char *kapacNumberStrings[16];
+      gamesource\Menu\CMenuPageRecords.cpp
+0x002CEA80  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuPageCrashGroupSelect.cpp
+0x002CEDB0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuPageCrashGroupSelect.cpp
+0x002CF0E0  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuPageCrashGroupSelect.cpp
+0x002CF170  static char *kapacNumberStrings[16];
+      gamesource\Menu\CMenuPageCrashGroupSelect.cpp
+0x002CF1B0  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuPageOnePlayerCrashZoneSelect.cpp
+0x002CF4E0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuPageOnePlayerCrashZoneSelect.cpp
+0x002CF810  static B22dBoxTag kMenuPanelStandardBox;
+      gamesource\Menu\CMenuPageOnePlayerCrashZoneSelect.cpp
+0x002CF820  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuPageOnePlayerCrashZoneSelect.cpp
+0x002CF8B0  static char *kapacNumberStrings[16];
+      gamesource\Menu\CMenuPageOnePlayerCrashZoneSelect.cpp
+0x002CF8F0  static RwV2d kCrashGameHeadSummaryPos;
+      gamesource\Menu\CMenuPageOnePlayerCrashZoneSelect.cpp
+0x002CF8F8  static RwV2d kCrashGameSubSummaryPos;
+      gamesource\Menu\CMenuPageOnePlayerCrashZoneSelect.cpp
+0x002CF960  static RwRGBAReal kColourGold;
+      gamesource\Hud\CHudComponentLessonInfo.cpp
+0x002CF970  static RwRGBAReal kColourSilver;
+      gamesource\Hud\CHudComponentLessonInfo.cpp
+0x002CF980  static RwRGBAReal kColourBronze;
+      gamesource\Hud\CHudComponentLessonInfo.cpp
+0x002CFA50  static unsigned int gValueTableCRASHGoldMedal[15];
+      gamesource\Game\CCrashForCashData.cpp
+0x002CFA90  static unsigned int gValueTableCRASHSilverMedal[15];
+      gamesource\Game\CCrashForCashData.cpp
+0x002CFAD0  static unsigned int gValueTableCRASHBronzeMedal[15];
+      gamesource\Game\CCrashForCashData.cpp
+0x002CFB10  static ETrackID kaeTrackData[15];
+      gamesource\Game\CCrashForCashData.cpp
+0x002CFBA0  static B2ParticleBatchParamsTag _gaBatchParams[14];
+      gamesource\Render\CParticles.cpp
+0x002D0380  static B2ParticleTypeParamsTag _gaTypeParams[12];
+      gamesource\Render\CParticles.cpp
+0x002D05F0  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentSubHeading.cpp
+0x002D0920  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentSubHeading.cpp
+0x002D0C50  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentSubHeading.cpp
+0x002D0C60  static RwRGBAReal kColourBlackTrans;
+      gamesource\Menu\CMenuGfxComponentSubHeading.cpp
+0x002D0C70  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentLessonInfo.cpp
+0x002D0FA0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentLessonInfo.cpp
+0x002D12D0  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentLessonInfo.cpp
+0x002D12E0  EStringID CMenuGfxComponentLessonInfo::maeLessonStrings[6][3];
+      gamesource\Menu\CMenuGfxComponentLessonInfo.cpp
+0x002D1330  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuPageDrivingLessonSummary.cpp
+0x002D1660  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuPageDrivingLessonSummary.cpp
+0x002D1990  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuPageDrivingLessonSummary.cpp
+0x002D1D20  static SWave g_Skids[3];
+      gamesource\Sound\SoundCar.cpp
+0x002D1DC0  static SWave g_Horns[8];
+      gamesource\Sound\SoundCar.cpp
+0x002D1EB0  static SWave g_Waves[15];
+      gamesource\Sound\SoundCar.cpp
+0x002D1F30  static SPopParams g_Pops[22];
+      gamesource\Sound\SoundCar.cpp
+0x002D2130  static B2CoronaDescriptionTag kCoronaDescRaceCarHeadlight;
+      gamesource\Render\CCoronas.cpp
+0x002D2170  static B2CoronaDescriptionTag kCoronaDescRaceCarRearLight;
+      gamesource\Render\CCoronas.cpp
+0x002D21B0  static B2CoronaDescriptionTag kCoronaDescRaceCarBrakeLight;
+      gamesource\Render\CCoronas.cpp
+0x002D21F0  static B2CoronaDescriptionTag kCoronaDescRaceCarReverseLight;
+      gamesource\Render\CCoronas.cpp
+0x002D2230  static B2CoronaDescriptionTag kCoronaDescRaceCarIndicator;
+      gamesource\Render\CCoronas.cpp
+0x002D2270  static B2CoronaDescriptionTag kCoronaDescRaceCarRunningLight;
+      gamesource\Render\CCoronas.cpp
+0x002D22B0  static B2CoronaDescriptionTag kCoronaDescRaceCarBluesAndTwosRed;
+      gamesource\Render\CCoronas.cpp
+0x002D22F0  static B2CoronaDescriptionTag kCoronaDescRaceCarBluesAndTwosBlue;
+      gamesource\Render\CCoronas.cpp
+0x002D2330  static B2CoronaDescriptionTag kCoronaDescRaceCarStrobe;
+      gamesource\Render\CCoronas.cpp
+0x002D2370  static B2CoronaDescriptionTag kCoronaDescRaceCarKojakLight;
+      gamesource\Render\CCoronas.cpp
+0x002D23B0  static B2CoronaDescriptionTag kCoronaDescTrafficCarHeadlight;
+      gamesource\Render\CCoronas.cpp
+0x002D23F0  static B2CoronaDescriptionTag kCoronaDescTrafficCarHeadlightFullBeam;
+      gamesource\Render\CCoronas.cpp
+0x002D2430  static B2CoronaDescriptionTag kCoronaDescTrafficCarRearLight;
+      gamesource\Render\CCoronas.cpp
+0x002D2470  static B2CoronaDescriptionTag kCoronaDescTrafficCarBrakeLight;
+      gamesource\Render\CCoronas.cpp
+0x002D24B0  static B2CoronaDescriptionTag kCoronaDescTrafficCarIndicator;
+      gamesource\Render\CCoronas.cpp
+0x002D24F0  static B2CoronaDescriptionTag kCoronaDescTrafficCarRunningLight;
+      gamesource\Render\CCoronas.cpp
+0x002D2580  static RwV3d kXAxis;
+      gamesource\Render\CInGameCamera.cpp
+0x002D2590  static RwV3d kYAxis;
+      gamesource\Render\CInGameCamera.cpp
+0x002D25A0  static RwV3d kZAxis;
+      gamesource\Render\CInGameCamera.cpp
+0x002D25B0  static RwV3d kZeroVector;
+      gamesource\Render\CInGameCamera.cpp
+0x002D25C0  static unsigned int gValueTableCAMERABumperOffsetY[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2620  static unsigned int gValueTableCAMERABumperOffsetZ[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2680  static unsigned int gValueTableCAMERABumperFOV[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D26E0  static unsigned int gValueTableCAMERABumperOffsetYBurn[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2740  static unsigned int gValueTableCAMERABumperOffsetZBurn[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D27A0  static unsigned int gValueTableCAMERABumperFOVBurn[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2800  static unsigned int gValueTableCAMERAFollowOffsetY[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2860  static unsigned int gValueTableCAMERAFollowOffsetZ[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D28C0  static unsigned int gValueTableCAMERAFollowLookAtY[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2920  static unsigned int gValueTableCAMERAFollowLookAtZ[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2980  static unsigned int gValueTableCAMERAFollowSpringY[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D29E0  static unsigned int gValueTableCAMERAFollowSpringX[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2A40  static unsigned int gValueTableCAMERAFollowDownAngle[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2AA0  static unsigned int gValueTableCAMERAFollowFOV[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2B00  static unsigned int gValueTableCAMERAFollowOffsetYBurn[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2B60  static unsigned int gValueTableCAMERAFollowOffsetZBurn[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2BC0  static unsigned int gValueTableCAMERAFollowFOVBurn[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2C20  static unsigned int gValueTableCAMERALookBackOffsetY[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2C80  static unsigned int gValueTableCAMERALookBackOffsetZ[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2CE0  static unsigned int gValueTableCAMERALookBackFOV[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2D40  static unsigned int gValueTableCAMERAELBOffsetY[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2DA0  static unsigned int gValueTableCAMERAELBOffsetZ[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2E00  static unsigned int gValueTableCAMERAELBLookAtY[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2E60  static unsigned int gValueTableCAMERAELBLookAtZ[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2EC0  static unsigned int gValueTableCAMERAELBSpringY[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2F20  static unsigned int gValueTableCAMERAELBSpringX[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2F80  static unsigned int gValueTableCAMERAELBDownAngle[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D2FE0  static unsigned int gValueTableCAMERAELBFOV[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D3040  static unsigned int gValueTableCAMERAELBOffsetYBurn[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D30A0  static unsigned int gValueTableCAMERAELBOffsetZBurn[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D3100  static unsigned int gValueTableCAMERAELBFOVBurn[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D3160  static unsigned int gValueTableCAMERADebugTopdownOffsetY[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D31C0  static unsigned int gValueTableCAMERADebugTopdownOffsetZ[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D3220  static unsigned int gValueTableCAMERADebugTopdownFOV[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D3280  static unsigned int gValueTableCAMERADebugTopdownOffsetYBurn[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D32E0  static unsigned int gValueTableCAMERADebugTopdownOffsetZBurn[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D3340  static unsigned int gValueTableCAMERADebugTopdownFOVBurn[22];
+      gamesource\Render\CInGameCamera.cpp
+0x002D3398  static unsigned int gValueTableCAMERADebugTopdownLowerOffsetY[1];
+      gamesource\Render\CInGameCamera.cpp
+0x002D33A0  static unsigned int gValueTableCAMERADebugTopdownLowerOffsetZ[1];
+      gamesource\Render\CInGameCamera.cpp
+0x002D33A8  static unsigned int gValueTableCAMERADebugTopdownLowerFOV[1];
+      gamesource\Render\CInGameCamera.cpp
+0x002D33B0  static unsigned int gValueTableCAMERADebugTopdownLowerOffYBurn[1];
+      gamesource\Render\CInGameCamera.cpp
+0x002D33B8  static unsigned int gValueTableCAMERADebugTopdownLowerOffZBurn[1];
+      gamesource\Render\CInGameCamera.cpp
+0x002D33C0  static unsigned int gValueTableCAMERADebugTopdownLowerFOVBurn[1];
+      gamesource\Render\CInGameCamera.cpp
+0x002D33C8  static RwV3d kYAxis;
+      gamesource\Render\CCrashReplayCamera.cpp
+0x002D33E0  static unsigned int gValueTableCRASHOffsetX[32];
+      gamesource\Render\CCrashReplayCamera.cpp
+0x002D3460  static unsigned int gValueTableCRASHOffsetY[32];
+      gamesource\Render\CCrashReplayCamera.cpp
+0x002D34E0  static unsigned int gValueTableCRASHOffsetZ[32];
+      gamesource\Render\CCrashReplayCamera.cpp
+0x002D3560  static unsigned int gValueTableCRASHFOV[32];
+      gamesource\Render\CCrashReplayCamera.cpp
+0x002D3650  static char kacNameEntryChars[74];
+      gamesource\Menu\CMenuPageMemoryCard.cpp
+0x002D36A0  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuPageMemoryCard.cpp
+0x002D39D0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuPageMemoryCard.cpp
+0x002D3D00  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuPageMemoryCard.cpp
+0x002D3D90  static char *kapacNumberStrings[16];
+      gamesource\Menu\CMenuPageMemoryCard.cpp
+0x002D3F08  static RwV3d kYAxis;
+      gamesource\Render\CRaceReplayCamera.cpp
+0x002D4130  static FESWave m_FEWaves[26];
+      gamesource\Sound\SoundFrontEnd.cpp
+0x002D4500  static sCrashWave m_CrashWaves[58];
+      gamesource\Sound\SoundCrash.cpp
+0x002D45E8  static RwV3d kZeroVector;
+      gamesource\Race\CAIArbitrator.cpp
+0x002D45F8  static RwV3d kYAxis;
+      gamesource\Race\CAIAvoidance.cpp
+0x002D4608  static RwV3d kZeroVector;
+      gamesource\Race\CAIAvoidance.cpp
+0x002D4680  static float kSplinePosMatrix[4][4];
+      gamesource\Race\CAIAvoidance.cpp
+0x002D4700  static float kSplineDirMatrix[4][4];
+      gamesource\Race\CAIAvoidance.cpp
+0x002D4788  static RwV3d kYAxis;
+      gamesource\Race\CAICar.cpp
+0x002D4798  static RwV3d kZeroVector;
+      gamesource\Race\CAICar.cpp
+0x002D47B0  static unsigned int gValueTableAIAggression[22];
+      gamesource\Race\CAICar.cpp
+0x002D4810  static unsigned int gValueTableAIAltRoute[22];
+      gamesource\Race\CAICar.cpp
+0x002D4870  static unsigned int gValueTableAIDifficulty[22];
+      gamesource\Race\CAICar.cpp
+0x002D48D0  static unsigned int gValueTableAIDriftUsage[22];
+      gamesource\Race\CAICar.cpp
+0x002D4930  static unsigned int gValueTableAIOncomingUsage[22];
+      gamesource\Race\CAICar.cpp
+0x002D4990  static unsigned int gValueTableAIPursuitDifficulty[22];
+      gamesource\Race\CAICar.cpp
+0x002D49F0  static unsigned int gValueTableGPkrDesiredDirectionScaleFactor[22];
+      gamesource\Race\CAICar.cpp
+0x002D4A50  static unsigned int gValueTableCHAMPPlayerPoints[22];
+      gamesource\Race\CAICar.cpp
+0x002D4AB0  static unsigned int gValueTableCHAMPAI1Points[22];
+      gamesource\Race\CAICar.cpp
+0x002D4B10  static unsigned int gValueTableCHAMPAI2Points[22];
+      gamesource\Race\CAICar.cpp
+0x002D4B70  static unsigned int gValueTableCHAMPAI3Points[22];
+      gamesource\Race\CAICar.cpp
+0x002D4BD0  static unsigned int gValueTableCHAMPAI1BoostStartRace3[22];
+      gamesource\Race\CAICar.cpp
+0x002D4C30  static unsigned int gValueTableCHAMPAI2BoostStartRace3[22];
+      gamesource\Race\CAICar.cpp
+0x002D4C90  static unsigned int gValueTableCHAMPAI3BoostStartRace3[22];
+      gamesource\Race\CAICar.cpp
+0x002D4CF0  static unsigned int gValueTableCHAMPAI1BoostStartRace2[22];
+      gamesource\Race\CAICar.cpp
+0x002D4D50  static unsigned int gValueTableCHAMPAI2BoostStartRace2[22];
+      gamesource\Race\CAICar.cpp
+0x002D4DB0  static unsigned int gValueTableCHAMPAI3BoostStartRace2[22];
+      gamesource\Race\CAICar.cpp
+0x002D4E10  static unsigned int gValueTableCHAMPAI1BoostStartRace1[22];
+      gamesource\Race\CAICar.cpp
+0x002D4E70  static unsigned int gValueTableCHAMPAI2BoostStartRace1[22];
+      gamesource\Race\CAICar.cpp
+0x002D4ED0  static unsigned int gValueTableCHAMPAI3BoostStartRace1[22];
+      gamesource\Race\CAICar.cpp
+0x002D4F30  static unsigned int gValueTableCHAMPAI1BoostStartRace4[22];
+      gamesource\Race\CAICar.cpp
+0x002D4F90  static unsigned int gValueTableCHAMPAI2BoostStartRace4[22];
+      gamesource\Race\CAICar.cpp
+0x002D4FF0  static unsigned int gValueTableCHAMPAI3BoostStartRace4[22];
+      gamesource\Race\CAICar.cpp
+0x002D5050  static unsigned int gValueTableCHAMPAI1BoostStartRace6[22];
+      gamesource\Race\CAICar.cpp
+0x002D50B0  static unsigned int gValueTableCHAMPAI2BoostStartRace6[22];
+      gamesource\Race\CAICar.cpp
+0x002D5110  static unsigned int gValueTableCHAMPAI3BoostStartRace6[22];
+      gamesource\Race\CAICar.cpp
+0x002D5170  static unsigned int gValueTableCHAMPAI1BoostStartRace5[22];
+      gamesource\Race\CAICar.cpp
+0x002D51D0  static unsigned int gValueTableCHAMPAI2BoostStartRace5[22];
+      gamesource\Race\CAICar.cpp
+0x002D5230  static unsigned int gValueTableCHAMPAI3BoostStartRace5[22];
+      gamesource\Race\CAICar.cpp
+0x002D5290  static unsigned int gValueTableCHAMPAI1BoostStartRace7[22];
+      gamesource\Race\CAICar.cpp
+0x002D52F0  static unsigned int gValueTableCHAMPAI2BoostStartRace7[22];
+      gamesource\Race\CAICar.cpp
+0x002D5350  static unsigned int gValueTableCHAMPAI3BoostStartRace7[22];
+      gamesource\Race\CAICar.cpp
+0x002D53A8  static RwV3d kUpVector;
+      gamesource\Race\CAICar.cpp
+0x002D53C0  static RwRGBAReal white;
+      gamesource\Race\CAICar.cpp
+0x002D53D0  static RwRGBAReal shadow;
+      gamesource\Race\CAICar.cpp
+0x002D5540  static unsigned int gValueTableGPkrMaxMoreSteerAngleDelta[30];
+      gamesource\Race\CAIDriver.cpp
+0x002D55C0  static unsigned int gValueTableGPkrMaxLessSteerAngleDelta[30];
+      gamesource\Race\CAIDriver.cpp
+0x002D5640  static unsigned int gValueTableGPkrDriftSteerSpeedIncFactor[30];
+      gamesource\Race\CAIDriver.cpp
+0x002D56B8  static RwV3d kYAxis;
+      gamesource\Race\CAIDriver.cpp
+0x002D56C8  static RwV3d kZeroVector;
+      gamesource\Race\CAIDriver.cpp
+0x002D57B8  static RwV3d kZeroVector;
+      gamesource\Race\CAITarget.cpp
+0x002D57D0  static unsigned int gValueTableGPkrRadiusToSpeedFactor[30];
+      gamesource\Race\CAITarget.cpp
+0x002D5850  static unsigned int gValueTableGPkrDriftRadiusToSpeedFactor[30];
+      gamesource\Race\CAITarget.cpp
+0x002D5B00  static char kacGameDataStartVersion[32];
+      gamesource\Race\CGameData.cpp
+0x002D5B38  static RwV3d kYAxis;
+      gamesource\Race\CLane.cpp
+0x002D5B50  static ECarID kaeNormalAICarSet[7];
+      gamesource\Race\CRace.cpp
+0x002D5B70  static ECarID kaeCSAICarSet[13];
+      gamesource\Race\CRace.cpp
+0x002D5BB0  static ECarID kaeSpecialAICarSet[20];
+      gamesource\Race\CRace.cpp
+0x002D5CA8  static RwV3d kXAxis;
+      gamesource\Race\CRaceCar.cpp
+0x002D5CB8  static RwV3d kZAxis;
+      gamesource\Race\CRaceCar.cpp
+0x002D5CC8  static RwV3d kZeroVector;
+      gamesource\Race\CRaceCar.cpp
+0x002D5E80  static float _gaarPosMtx[4][4];
+      gamesource\Race\CRaceIntroManager.cpp
+0x002D5EC0  static RwRGBAReal kColourPursuitTargetHealthy;
+      gamesource\Race\CRacePosition.cpp
+0x002D5ED0  static RwRGBAReal kColourPursuitTargetMid;
+      gamesource\Race\CRacePosition.cpp
+0x002D5EE0  static RwRGBAReal kColourPursuitTargetCritical;
+      gamesource\Race\CRacePosition.cpp
+0x002D5EF0  static RwRGBAReal kColourPursuitTargetFlash;
+      gamesource\Race\CRacePosition.cpp
+0x002D5F20  static char kacReplayTriggerDataVersion[12];
+      gamesource\Race\CReplayCameraData.cpp
+0x002D5F30  static char kacRaceIntroDataVersion[12];
+      gamesource\Race\CReplayCameraData.cpp
+0x002D5F80  static float _gaarPosMtx[4][4];
+      gamesource\Race\CReplayTriggerManager.cpp
+0x002D5FC0  static RwV3d kYAxis;
+      gamesource\Race\CStaticWorld.cpp
+0x002D5FD0  static RwV3d kZAxis;
+      gamesource\Race\CStaticWorld.cpp
+0x002D5FF0  static TrackWeatherParamsTag _gaWeatherParams[30];
+      gamesource\Race\CTrack.cpp
+0x002D6880  float gaarTargetParamPosMtx[4][4];
+      gamesource\Race\CAIAvoidance.cpp (+3 more files)
+0x002D6900  float gaarTargetParamVelMtx[4][4];
+      gamesource\Race\CAIAvoidance.cpp (+3 more files)
+0x002D69B0  float gTrafficSuspensionStrengthPitch[26];
+      gamesource\Race\CTrafficVehicle.cpp
+0x002D6A20  float gTrafficSuspensionStrengthRoll[26];
+      gamesource\Race\CTrafficVehicle.cpp
+0x002D6A90  float gTrafficSuspensionTravel[26];
+      gamesource\Race\CTrafficVehicle.cpp
+0x002D6B00  static float _gTrafficOncomingSwerveSpeed[26];
+      gamesource\Race\CTrafficVehicle.cpp
+0x002D6B70  float garCabPivotDistance[26];
+      gamesource\Race\CHotspot.cpp (+1 more files)
+0x002D6BE0  float garTrailerPivotDistance[26];
+      gamesource\Race\CHotspot.cpp (+1 more files)
+0x002D6CB0  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentSettingsList.cpp
+0x002D6FE0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentSettingsList.cpp
+0x002D7310  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentSettingsList.cpp
+0x002D7320  static RwRGBAReal kColourWhiteTrans;
+      gamesource\Menu\CMenuGfxComponentSettingsList.cpp
+0x002D7330  static RwRGBAReal kColourBlackTrans;
+      gamesource\Menu\CMenuGfxComponentSettingsList.cpp
+0x002D7350  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentPanel.cpp
+0x002D7680  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentPanel.cpp
+0x002D79B0  static B22dTexAreaTag kFullImageTexArea;
+      gamesource\Menu\CMenuGfxComponentPanel.cpp
+0x002D79C0  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentPanel.cpp
+0x002D79D0  static RwRGBAReal kColourMedalTrans;
+      gamesource\Menu\CMenuGfxComponentPanel.cpp
+0x002D79E0  static RwRGBAReal kFrameColourGrey;
+      gamesource\Menu\CMenuGfxComponentPanel.cpp
+0x002D79F0  static RwRGBAReal kFrameColourWhite;
+      gamesource\Menu\CMenuGfxComponentPanel.cpp
+0x002D7A80  static char *kapacNumberStrings[16];
+      gamesource\Menu\CMenuGfxComponentPanel.cpp
+0x002D7B80  static RwV2d kImageOffsetPos;
+      gamesource\Hud\CHudComponentCrashDamageScore.cpp
+0x002D7B88  static RwV2d kImageSize;
+      gamesource\Hud\CHudComponentCrashDamageScore.cpp
+0x002D7BC0  static CMenuImageData kaImageData[51];
+      gamesource\Hud\CHudComponentHealth.cpp
+0x002D7EF0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Hud\CHudComponentHealth.cpp
+0x002D8220  static RwRGBAReal kColourBlueTrans;
+      gamesource\Hud\CHudComponentHealth.cpp
+0x002D8260  static unsigned int gValueTableGPkr_Audio_Cars_DumpValveDelay[22];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D82C0  static unsigned int gValueTableGPkr_Audio_Cars_DumpValveVolMax[22];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8320  static unsigned int gValueTableGPkr_Audio_Cars_DumpValveRpmMin[22];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8380  static unsigned int gValueTableGPkr_Audio_Cars_DumpValveRpmMax[22];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D83E0  static unsigned int gValueTableGPkr_Audio_Cars_PopVolMin[22];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8440  static unsigned int gValueTableGPkr_Audio_Cars_PopVolMax[22];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D84A0  static unsigned int gValueTableGPkr_Audio_Cars_PopRpmMin[22];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8500  static unsigned int gValueTableGPkr_Audio_Cars_PopRpmMax[22];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8560  static unsigned int gValueTableGPkr_Audio_Cars_NormalVol[22];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D85C0  static unsigned int gValueTableGPkr_Audio_Cars_BoostVol[22];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8620  static unsigned int gValueTableGPkr_Audio_Cars_DumpValveSound[22];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8680  static unsigned int gValueTableGPkr_RNMaxV[5];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D86A0  static unsigned int gValueTableGPkr_RNMinF[5];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D86C0  static unsigned int gValueTableGPkr_RNMaxF[5];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D86E0  static unsigned int gValueTableGPkr_RNMaxS[5];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8700  static unsigned int gValueTableGPkr_EMinV[5];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8720  static unsigned int gValueTableGPkr_EMaxV[5];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8740  static unsigned int gValueTableGPkr_EMinF[5];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8760  static unsigned int gValueTableGPkr_EMaxF[5];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8780  static unsigned int gValueTableGPkr_EMaxS[5];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D87A0  static unsigned int gValueTableGPkr_Audio_Crash_MinDist[11];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D87D0  static unsigned int gValueTableGPkr_Audio_Crash_MaxDist[11];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8800  static unsigned int gValueTableGPkr_Audio_Crash_FreqVar[11];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8830  static unsigned int gValueTableGPkr_Audio_Crash_MinImpulse[11];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8860  static unsigned int gValueTableGPkr_Audio_Crash_MaxImpulse[11];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D8890  static unsigned int gValueTableGPkr_Audio_Crash_MinVol[11];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D88C0  static unsigned int gValueTableGPkr_Audio_Crash_MaxVol[11];
+      gamesource\Sound\SoundValueDB.cpp
+0x002D89E0  static STWave g_Waves[21];
+      gamesource\Sound\SoundTraffic.cpp
+0x002D8A90  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D8DC0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D90F0  static RwRGBAReal kBorderPauseColour;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9100  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9110  static RwV2d kCrosslineOnePlayerHeadlinePos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9118  static RwV2d kCrosslineOnePlayerHeadline2Pos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9120  static RwV2d kCrosslineVerticalPlayer1HeadlinePos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9128  static RwV2d kCrosslineVerticalPlayer2HeadlinePos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9130  static RwV2d kCrosslineHorizontalPlayer1HeadlinePos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9138  static RwV2d kCrosslineHorizontalPlayer2HeadlinePos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9140  static RwV2d kCrosslineHorizontalPlayer1FillImagePos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9148  static RwV2d kCrosslineHorizontalPlayer1TopImagePos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9150  static RwV2d kCrosslineHorizontalPlayer2FillImagePos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9158  static RwV2d kCrosslineHorizontalPlayer2TopImagePos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9160  static RwV2d kCrosslineHorizontalBorderFillImageSize;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9168  static RwV2d kCrosslineHorizontalBorderTopImageSize;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9170  static RwV2d kCrosslineCrashSummaryHeadlinePos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9178  static RwV2d kCrosslineCrashSummaryBodyPos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9180  static RwV2d kCrosslineCrashMedalImagePos;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D9188  static RwV2d kCrosslineCrashMedalImageSize;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x002D91D0  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentFlag.cpp
+0x002D9500  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentFlag.cpp
+0x002D9830  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentFlag.cpp
+0x002D99C0  static HUDSWave m_HUDWaves[17];
+      gamesource\Sound\HUDSound.cpp
+0x002D9DD0  RwaUUID rwaSOFTOUTPUTID;
+      C:\dev\rwaudio\source\objects\src\rwasoftoutputobj.c (+1 more files)
+0x002D9DE0  RwaUUID rwaLISTENERINTERFACEID;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9DF0  RwaUUID rwaLISTENERIDI_POSITION;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9E00  RwaUUID rwaLISTENERIDO_POSITION;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9E10  RwaUUID rwaLISTENERIDI_VELOCITY;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9E20  RwaUUID rwaLISTENERIDO_VELOCITY;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9E30  RwaUUID rwaLISTENERIDI_ORIENTATION;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9E40  RwaUUID rwaLISTENERIDO_ORIENTATION;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9E50  RwaUUID rwaLISTENERIDI_UP;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9E60  RwaUUID rwaLISTENERIDO_UP;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9E70  RwaUUID rwaLISTENERIDI_AT;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9E80  RwaUUID rwaLISTENERIDO_AT;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9E90  RwaUUID rwaLISTENERIDO_RIGHT;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9EA0  RwaUUID rwaLISTENERIDI_DOPPLERSCALE;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9EB0  RwaUUID rwaLISTENERIDO_DOPPLERSCALE;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9EC0  RwaUUID rwaLISTENERIDI_DISTANCEFACTOR;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9ED0  RwaUUID rwaLISTENERIDO_DISTANCEFACTOR;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9EE0  RwaUUID rwaLISTENERIDI_ROLLOFFFACTOR;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9EF0  RwaUUID rwaLISTENERIDO_ROLLOFFFACTOR;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x002D9F00  RwaUUID rwaLISTENERID;
+      C:\dev\rwaudio\source\objects\src\rwalistenerobj.c
+0x002D9F10  RwaWaveDefFormat _rwapcm8um;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002D9F30  RwaWaveDefFormat _rwapcm8sm;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002D9F50  RwaWaveDefFormat _rwapcm8us;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002D9F70  RwaWaveDefFormat _rwapcm8ss;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002D9F90  RwaWaveDefFormat _rwapcm16um;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002D9FB0  RwaWaveDefFormat _rwapcm16sm;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002D9FD0  RwaWaveDefFormat _rwapcm16us;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002D9FF0  RwaWaveDefFormat _rwapcm16ss;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002DA010  RwaWaveDefFormat _rwapcmfm;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002DA030  RwaWaveDefFormat _rwavagm;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c (+1 more files)
+0x002DA050  RwaWaveDefFormat _rwavags;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002DA070  RwaWaveDefFormat _rwaac3;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c
+0x002DA090  RwaUUID rwaWAVEDICT_WORK;
+      C:\dev\rwaudio\source\core\src\rwawavedict.c
+0x002DA0B0  RwaUUID rwaWAVEFORMAT_VAG;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c (+4 more files)
+0x002DA0C0  RwaUUID rwaWAVEFORMAT_PCM;
+      C:\dev\rwaudio\source\core\src\rwawaveconv.c (+3 more files)
+0x002DA0D0  RwaUUID rwaWAVEFORMAT_FLOAT;
+      C:\dev\rwaudio\source\core\src\rwawavedef.c
+0x002DA0E0  RwaUUID rwaWAVEFORMAT_GCNADPCM;
+      C:\dev\rwaudio\source\core\src\rwawavedef.c
+0x002DA0F0  RwaUUID rwaWAVEFORMAT_XADPCM;
+      C:\dev\rwaudio\source\core\src\rwawavedef.c
+0x002DA100  RwaUUID rwaWAVEFORMAT_WMA;
+      C:\dev\rwaudio\source\core\src\rwawavedef.c
+0x002DA110  RwaUUID rwaWAVEFORMAT_MP3;
+      C:\dev\rwaudio\source\core\src\rwawavedef.c
+0x002DA120  RwaUUID rwaWAVEFORMAT_AC3;
+      C:\dev\rwaudio\source\core\src\rwawavedef.c
+0x002DA130  RwaUUID rwaSOFTWAVEID;
+      C:\dev\rwaudio\source\waves\src\rwasoftwave.c
+0x002DA140  RwaUUID rwaNULLWAVEID;
+      C:\dev\rwaudio\source\waves\src\rwanullwave.c
+0x002DA150  RwaUUID rwaSTREAMINTERFACEID;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA160  RwaUUID rwaSTREAMIDI_STREAMPOS;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA170  RwaUUID rwaSTREAMIDO_STREAMPOS;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA180  RwaUUID rwaSTREAMIDI_LOOPSEGMENT;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA190  RwaUUID rwaSTREAMIDI_MEDIA;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA1A0  RwaUUID rwaSTREAMIDI_PLAYSTATE;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA1B0  RwaUUID rwaSTREAMIDO_STATUS;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA1C0  RwaUUID rwaSTREAMIDO_MEDIASTATUS;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA1D0  RwaUUID rwaSTREAMIDO_RENDERSTATUS;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA1E0  RwaUUID rwaSTREAMIDI_STREAMGAIN;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA1F0  RwaUUID rwaSTREAMIDO_STREAMGAIN;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA200  RwaUUID rwaSTREAMIDI_PITCH;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA210  RwaUUID rwaSTREAMIDO_PITCH;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x002DA3F0  RwaUUID rwaSPU2WAVEID;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c
+0x002DA400  RwaUUID rwaSPU2VOICEID;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c
+0x002DA410  RwaUUID rwaSPU2OUTPUTID;
+      C:\dev\rwaudio\source\objects\src\rwasoftoutputobj.c (+4 more files)
+0x002DA420  RwaUUID rwaSPU2STREAMID;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2stream.c
+0x002DA430  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentScreenAdjust.cpp
+0x002DA760  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentScreenAdjust.cpp
+0x002DAA90  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentScreenAdjust.cpp
+0x002DAAA0  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentLoading.cpp
+0x002DADD0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentLoading.cpp
+0x002DB100  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentLoading.cpp
+0x002DB110  static RwRGBAReal kColourWhiteTrans;
+      gamesource\Menu\CMenuGfxComponentLoading.cpp
+0x002DB120  static RwRGBAReal kColourBlackTrans;
+      gamesource\Menu\CMenuGfxComponentLoading.cpp
+0x002DB130  static RwRGBAReal kColourGreyTrans;
+      gamesource\Menu\CMenuGfxComponentLoading.cpp
+0x002DB140  static RwV3d kYAxis;
+      gamesource\Race\CInterestOMeter.cpp
+0x002DB1C0  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentReplayR.cpp
+0x002DB4F0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentReplayR.cpp
+0x002DB820  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentReplayR.cpp
+0x002DB830  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentSplashScreen.cpp
+0x002DBB60  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentSplashScreen.cpp
+0x002DBE90  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentSplashScreen.cpp
+0x002DBEA0  static B22dTexAreaTag kTexArea;
+      gamesource\Menu\CMenuGfxComponentSplashScreen.cpp
+0x002DBF10  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentMpeg.cpp
+0x002DC240  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentMpeg.cpp
+0x002DC570  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentMpeg.cpp
+0x002DC580  static B22dTexAreaTag kTexArea;
+      gamesource\Menu\CMenuGfxComponentMpeg.cpp
+0x002DC590  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentPressStart.cpp
+0x002DC8C0  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentPressStart.cpp
+0x002DCBF0  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentPressStart.cpp
+0x002DCC00  static B22dTexAreaTag kTexArea;
+      gamesource\Menu\CMenuGfxComponentPressStart.cpp
+0x002DCC20  static RwRGBAReal kColourRed2;
+      gamesource\Menu\CMenuPageCredits.cpp
+0x002DCC30  static RwV2d kCreditPos;
+      gamesource\Menu\CMenuPageCredits.cpp
+0x002DD720  static CMenuImageData kaImageData[51];
+      gamesource\Menu\CMenuGfxComponentProfileView.cpp
+0x002DDA50  static B22dTexAreaTag kaImageTexArea[51];
+      gamesource\Menu\CMenuGfxComponentProfileView.cpp
+0x002DDD80  static RwRGBAReal kColourBlueTrans;
+      gamesource\Menu\CMenuGfxComponentProfileView.cpp
+0x0030EA58  /* vtable */ void *CTriggerTarget::__vtable[];
+      gamesource\Race\CGameData.cpp
+0x0030F0C0  /* vtable */ void *CMenuGfxComponent::__vtable[];
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp (+23 more files)
+0x0030F1A0  /* vtable */ void *CMenuGfxComponentHeading::__vtable[];
+      gamesource\Menu\CMenuGfxComponentHeading.cpp
+0x0030F1C0  /* vtable */ void *CMenuGfxComponentButtonList::__vtable[];
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp
+0x0030F1E0  /* vtable */ void *CMenuPagePause::__vtable[];
+      gamesource\Menu\CMenuPagePause.cpp
+0x0030F200  /* vtable */ void *CMenuGfxComponentTrackMap::__vtable[];
+      gamesource\Menu\CMenuGfxComponentTrackMap.cpp
+0x0030F220  /* vtable */ void *CVehiclePhysics::__vtable[];
+      gamesource\Physics\CVehiclePhysics.cpp
+0x0030F280  /* vtable */ void *CMenuGfxComponentButtons::__vtable[];
+      gamesource\Menu\CMenuGfxComponentButtons.cpp
+0x0030F2A0  /* vtable */ void *CMenuPageChampionshipSelect::__vtable[];
+      gamesource\Menu\CMenuPageChampionshipSelect.cpp
+0x0030F2C0  /* vtable */ void *CMenuGfxComponentGrandPrixSummary::__vtable[];
+      gamesource\Menu\CMenuGfxComponentGrandPrixSummary.cpp
+0x0030F2E0  /* vtable */ void *CPropPhysics::__vtable[];
+      gamesource\Physics\CPropPhysics.cpp
+0x0030F340  /* vtable */ void *CMenuGfxComponentCar::__vtable[];
+      gamesource\Menu\CMenuGfxComponentCar.cpp
+0x0030F360  /* vtable */ void *CMenuGfxComponentCarousel::__vtable[];
+      gamesource\Menu\CMenuGfxComponentCarousel.cpp
+0x0030F380  /* vtable */ void *CMenuPageResults::__vtable[];
+      gamesource\Menu\CMenuPageResults.cpp
+0x0030F3A0  /* vtable */ void *CMenuGfxComponentResultsTable::__vtable[];
+      gamesource\Menu\CMenuGfxComponentResultsTable.cpp
+0x0030F3C0  /* vtable */ void *CHudComponent::__vtable[];
+      gamesource\Hud\CHud.cpp
+0x0030F3E0  /* vtable */ void *CHudComponentSpeedo::__vtable[];
+      gamesource\Hud\CHudComponentSpeedo.cpp
+0x0030F400  /* vtable */ void *CHudComponentLapHistory::__vtable[];
+      gamesource\Hud\CHudComponentLapHistory.cpp
+0x0030F420  /* vtable */ void *CHudComponentCountdown::__vtable[];
+      gamesource\Hud\CHudComponentCountdown.cpp
+0x0030F440  /* vtable */ void *CHudComponentBurn::__vtable[];
+      gamesource\Hud\CHudComponentBurn.cpp
+0x0030F460  /* vtable */ void *CHudComponentBonus::__vtable[];
+      gamesource\Hud\CHudComponentBonus.cpp
+0x0030F480  /* vtable */ void *CHudComponentSplitTimes::__vtable[];
+      gamesource\Hud\CHudComponentSplitTimes.cpp
+0x0030F4A0  /* vtable */ void *CMenuPageCrashPlayersSelect::__vtable[];
+      gamesource\Menu\CMenuPageCrashPlayersSelect.cpp
+0x0030F4C0  /* vtable */ void *CHudComponentMessage::__vtable[];
+      gamesource\Hud\CHudComponentMessage.cpp
+0x0030F4E0  /* vtable */ void *CMenuGfxComponentNameEntryText::__vtable[];
+      gamesource\Menu\CMenuGfxComponentNameEntryText.cpp
+0x0030F500  /* vtable */ void *CHudComponentPos::__vtable[];
+      gamesource\Hud\CHudComponentPos.cpp
+0x0030F520  /* vtable */ void *CHudComponentScore::__vtable[];
+      gamesource\Hud\CHudComponentScore.cpp
+0x0030F540  /* vtable */ void *CHudComponentCrashValue::__vtable[];
+      gamesource\Hud\CHudComponentCrashValue.cpp
+0x0030F560  /* vtable */ void *CMenuPageDrivingLessonSelect::__vtable[];
+      gamesource\Menu\CMenuPageDrivingLessonSelect.cpp
+0x0030F580  /* vtable */ void *CLessonLogic::__vtable[];
+      gamesource\Game\CLessonLogic.cpp
+0x0030F5B0  /* vtable */ void *CMenuPageRecords::__vtable[];
+      gamesource\Menu\CMenuPageRecords.cpp
+0x0030F5D0  /* vtable */ void *CMenuPageCrashGroupSelect::__vtable[];
+      gamesource\Menu\CMenuPageCrashGroupSelect.cpp
+0x0030F5F0  /* vtable */ void *CMenuPageOnePlayerCrashZoneSelect::__vtable[];
+      gamesource\Menu\CMenuPageOnePlayerCrashZoneSelect.cpp
+0x0030F610  /* vtable */ void *CHudComponentLessonInfo::__vtable[];
+      gamesource\Hud\CHudComponentLessonInfo.cpp
+0x0030F630  /* vtable */ void *CMenuGfxComponentSubHeading::__vtable[];
+      gamesource\Menu\CMenuGfxComponentSubHeading.cpp
+0x0030F650  /* vtable */ void *CMenuGfxComponentLessonInfo::__vtable[];
+      gamesource\Menu\CMenuGfxComponentLessonInfo.cpp
+0x0030F670  /* vtable */ void *CMenuGfxComponentSummary::__vtable[];
+      gamesource\Menu\CMenuGfxComponentSummary.cpp
+0x0030F690  /* vtable */ void *CHudComponentIndicator::__vtable[];
+      gamesource\Hud\CHudComponentIndicator.cpp
+0x0030F6B0  /* vtable */ void *CMenuPageDrivingLessonSummary::__vtable[];
+      gamesource\Menu\CMenuPageDrivingLessonSummary.cpp
+0x0030F6D0  /* vtable */ void *CCrashForCashLogic::__vtable[];
+      gamesource\Game\CCrashForCashLogic.cpp
+0x0030F700  /* vtable */ void *CGTFileSystemPS2DVD::__vtable[];
+      I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp
+0x0030F720  /* vtable */ void *CGTFilePS2DVD::__vtable[];
+      I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp
+0x0030F750  /* vtable */ void *CHudComponentCrashScore::__vtable[];
+      gamesource\Hud\CHudComponentCrashScore.cpp
+0x0030F770  /* vtable */ void *CTimeAttackLogic::__vtable[];
+      gamesource\Game\CTimeAttackLogic.cpp
+0x0030F7A0  /* vtable */ void *CHudComponentLapTimes::__vtable[];
+      gamesource\Hud\CHudComponentLapTimes.cpp
+0x0030F7C0  /* vtable */ void *CTwoPlayerSSGameMode::__vtable[];
+      gamesource\Game\CTwoPlayerSSGameMode.cpp
+0x0030F800  /* vtable */ void *CMenuPageMemoryCard::__vtable[];
+      gamesource\Menu\CMenuPageMemoryCard.cpp
+0x0030F820  /* vtable */ void *CMenuPageGetReady::__vtable[];
+      gamesource\Menu\CMenuPageGetReady.cpp
+0x0030F840  /* vtable */ void *CAICar::__vtable[];
+      gamesource\Race\CAICar.cpp
+0x0030F880  /* vtable */ void *CCheckPoint::__vtable[];
+      gamesource\Race\CGameData.cpp
+0x0030F890  /* vtable */ void *CAICheckPoint::__vtable[];
+      gamesource\Race\CGameData.cpp
+0x0030F8A0  /* vtable */ void *CHotspot::__vtable[];
+      gamesource\Race\CHotspot.cpp
+0x0030F8B0  /* vtable */ void *CPlayerCar::__vtable[];
+      gamesource\Race\CPlayerCar.cpp
+0x0030F8F0  /* vtable */ void *CRaceCar::__vtable[];
+      gamesource\Race\CRaceCar.cpp
+0x0030F918  /* vtable */ void *CTrafficLightGroup::__vtable[];
+      gamesource\Race\CTrafficLightGroup.cpp
+0x0030F930  /* vtable */ void *CTrigger::__vtable[];
+      gamesource\Race\CTrigger.cpp
+0x0030F940  /* vtable */ void *CTriggerGroup::__vtable[];
+      gamesource\Race\CTriggerGroup.cpp
+0x0030F950  /* vtable */ void *CTrigWarning::__vtable[];
+      gamesource\Race\CTrigWarning.cpp
+0x0030F960  /* vtable */ void *CMenuPageSettings::__vtable[];
+      gamesource\Menu\CMenuPageSettings.cpp
+0x0030F980  /* vtable */ void *CMenuGfxComponentSettingsList::__vtable[];
+      gamesource\Menu\CMenuGfxComponentSettingsList.cpp
+0x0030F9A0  /* vtable */ void *CMenuGfxComponentPanel::__vtable[];
+      gamesource\Menu\CMenuGfxComponentPanel.cpp
+0x0030F9C0  /* vtable */ void *CHudComponentCrashDamageScore::__vtable[];
+      gamesource\Hud\CHudComponentCrashDamageScore.cpp
+0x0030F9E0  /* vtable */ void *CHudComponentHealth::__vtable[];
+      gamesource\Hud\CHudComponentHealth.cpp
+0x0030FA00  /* vtable */ void *CHudComponentTotalTime::__vtable[];
+      gamesource\Hud\CHudComponentTotalTime.cpp
+0x0030FA20  /* vtable */ void *CHudComponentEscapeDistance::__vtable[];
+      gamesource\Hud\CHudComponentEscapeDistance.cpp
+0x0030FA40  /* vtable */ void *CMenuGfxComponentSummaryText::__vtable[];
+      gamesource\Menu\CMenuGfxComponentSummaryText.cpp (+3 more files)
+0x0030FA50  /* vtable */ void *CMenuPageOutro::__vtable[];
+      gamesource\Menu\CMenuPageOutro.cpp
+0x0030FA70  /* vtable */ void *CMenuGfxComponentFlag::__vtable[];
+      gamesource\Menu\CMenuGfxComponentFlag.cpp
+0x0030FA90  /* vtable */ void *CHudComponentText::__vtable[];
+      gamesource\Hud\CHudComponentText.cpp
+0x0030FAB0  /* vtable */ void *CMenuPageIntro::__vtable[];
+      gamesource\Menu\CMenuPageIntro.cpp
+0x0030FAD0  /* vtable */ void *CMenuGfxComponentIntroMessage::__vtable[];
+      gamesource\Menu\CMenuGfxComponentIntroMessage.cpp
+0x0030FAE8  /* vtable */ void *CMenuGfxComponentSummaryItem::__vtable[];
+      gamesource\Menu\CMenuGfxComponentSummaryItem.cpp (+3 more files)
+0x0030FAF8  /* vtable */ void *CMenuGfxComponentSummaryImage::__vtable[];
+      gamesource\Menu\CMenuGfxComponentSummaryImage.cpp (+1 more files)
+0x0030FB10  /* vtable */ void *CMenuGfxComponentSummaryItalicText::__vtable[];
+      gamesource\Menu\CMenuGfxComponentSummaryItalicText.cpp (+1 more files)
+0x0030FB20  /* vtable */ void *CMenuGfxComponentLessonIntroMessage::__vtable[];
+      gamesource\Menu\CMenuGfxComponentLessonIntroMessage.cpp
+0x0030FB40  /* vtable */ void *CMenuGfxComponentScreenAdjust::__vtable[];
+      gamesource\Menu\CMenuGfxComponentScreenAdjust.cpp
+0x0030FB60  /* vtable */ void *CMenuGfxComponentLoading::__vtable[];
+      gamesource\Menu\CMenuGfxComponentLoading.cpp
+0x0030FB80  /* vtable */ void *CHudComponentSeparator::__vtable[];
+      gamesource\Hud\CHudComponentSeparator.cpp
+0x0030FBA0  /* vtable */ void *CMenuPageLoading::__vtable[];
+      gamesource\Menu\CMenuPageLoading.cpp
+0x0030FBC0  /* vtable */ void *CMenuGfxComponentReplayR::__vtable[];
+      gamesource\Menu\CMenuGfxComponentReplayR.cpp
+0x0030FBE0  /* vtable */ void *CMenuGfxComponentSplashScreen::__vtable[];
+      gamesource\Menu\CMenuGfxComponentSplashScreen.cpp
+0x0030FC00  /* vtable */ void *CMenuPageSplashScreens::__vtable[];
+      gamesource\Menu\CMenuPageSplashScreens.cpp
+0x0030FC20  /* vtable */ void *CMenuGfxComponentMpeg::__vtable[];
+      gamesource\Menu\CMenuGfxComponentMpeg.cpp
+0x0030FC40  /* vtable */ void *CMenuGfxComponentPressStart::__vtable[];
+      gamesource\Menu\CMenuGfxComponentPressStart.cpp
+0x0030FC60  /* vtable */ void *CMenuPageCredits::__vtable[];
+      gamesource\Menu\CMenuPageCredits.cpp
+0x0030FC80  /* vtable */ void *CMenuPageProfileView::__vtable[];
+      gamesource\Menu\CMenuPageProfileView.cpp
+0x0030FCA0  /* vtable */ void *CMenuGfxComponentProfileView::__vtable[];
+      gamesource\Menu\CMenuGfxComponentProfileView.cpp
+0x00310300  ECheat CChampionshipProgression::_meActiveCheat;
+      gamesource\Game\CProfile.cpp (+5 more files)
+0x00310398  static unsigned short rwDMAPURefSize;
+      badma.c
+0x0031039C  static int rwVSYNCHandlerHid;
+      badma.c
+0x003103A0  static int rwDMAHandlerVIF1Hid;
+      badma.c
+0x003103A4  static int rwDMAHandlerGIFHid;
+      badma.c
+0x003103A8  int needCache;
+      basky.c
+0x003103B0  long skyPrim_State;
+      gamesource\Race\CStaticWorld.cpp (+6 more files)
+0x003103B8  static int skySrcBlend;
+      basky.c
+0x003103BC  static int skyDestBlend;
+      basky.c
+0x003103C0  int skyMaxMipLevels;
+      basky.c
+0x003103C4  static unsigned int skyDefaultMipmapKL;
+      basky.c
+0x003103C8  static unsigned int zBufferDepth;
+      basky.c
+0x003103D8  int skyTLClipperMode;
+      basky.c (+5 more files)
+0x003103DC  unsigned int skyGNumTexMemBlocks;
+      texcache.c
+0x00310430  int _rxHeapInitialSize;
+      p2core.c
+0x00310434  int _rxPipelineMaxNodes;
+      p2core.c
+0x00310438  static P2MemoryLimits gMemoryLimits;
+      p2define.c
+0x00310444  static RpMeshStatic MeshStatic;
+      bamesh.c
+0x003104E8  RwMeshCache gIm3DMeshCache;
+      ps2allim3d.c
+0x00310530  char RxPS2AttributeSet[];
+      nodeps2matinstance.c (+1 more files)
+0x00310530  char RxPS2AttributeSet[4];
+      wrldpipe.c
+0x00310538  C2dFX **C2dFXPipeline::_mpapCurrentFXList;
+      gamesource\Hud\CHudComponentBonus.cpp (+14 more files)
+0x0031057C  CMenuGfxComponent *gpMenuGfxComponentHeading;
+      gamesource\Menu\CMenuGfxComponentHeading.cpp
+0x00310580  CMenuGfxComponent *gpMenuGfxComponentButtonList;
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp
+0x00310584  CMenuPage *gpMenuPagePause;
+      gamesource\Menu\CMenuPagePause.cpp
+0x00310588  CMenuGfxComponent *gpMenuGfxComponentTrackMap;
+      gamesource\Menu\CMenuGfxComponentTrackMap.cpp
+0x0031058C  static float krAngularAirResistance;
+      gamesource\Physics\CVehiclePhysics.cpp
+0x00310590  static float krAirResistance;
+      gamesource\Physics\CVehiclePhysics.cpp
+0x00310594  CMenuGfxComponent *gpMenuGfxComponentButtons;
+      gamesource\Menu\CMenuGfxComponentButtons.cpp
+0x00310598  CMenuPage *gpMenuPageChampionshipSelect;
+      gamesource\Menu\CMenuPageChampionshipSelect.cpp
+0x0031059C  CMenuGfxComponent *gpMenuGfxComponentGrandPrixSummary;
+      gamesource\Menu\CMenuGfxComponentGrandPrixSummary.cpp
+0x003105A0  static float krAngularAirResistance;
+      gamesource\Physics\CPropPhysics.cpp
+0x003105A4  static float krAirResistance;
+      gamesource\Physics\CPropPhysics.cpp
+0x003105A8  CMenuGfxComponent *gpMenuGfxComponentCar;
+      gamesource\Menu\CMenuGfxComponentCar.cpp
+0x003105B0  CMenuGfxComponent *gpMenuGfxComponentCarousel;
+      gamesource\Menu\CMenuGfxComponentCarousel.cpp
+0x003105B4  CMenuPage *gpMenuPageResults;
+      gamesource\Menu\CMenuPageResults.cpp
+0x003105B8  CMenuGfxComponent *gpMenuGfxComponentResultsTable;
+      gamesource\Menu\CMenuGfxComponentResultsTable.cpp
+0x003105C8  static float krMiniSpeedoMPHTextY;
+      gamesource\Hud\CHudComponentSpeedo.cpp
+0x003105CC  static float krMiniSpeedoMPHDigitsY;
+      gamesource\Hud\CHudComponentSpeedo.cpp
+0x003105D0  CMenuPage *gpMenuPageCrashPlayersSelect;
+      gamesource\Menu\CMenuPageCrashPlayersSelect.cpp
+0x003105D4  CMenuGfxComponent *gpMenuGfxComponentNameEntryText;
+      gamesource\Menu\CMenuGfxComponentNameEntryText.cpp
+0x003105D8  static char *kpacBulletString;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x003105DC  CMenuPage *gpMenuPageDrivingLessonSelect;
+      gamesource\Menu\CMenuPageDrivingLessonSelect.cpp
+0x003105EC  CMenuPage *gpMenuPageRecords;
+      gamesource\Menu\CMenuPageRecords.cpp
+0x003105F0  CMenuPage *gpMenuPageCrashGroupSelect;
+      gamesource\Menu\CMenuPageCrashGroupSelect.cpp
+0x003105F4  CMenuPage *gpMenuPageOnePlayerCrashZoneSelect;
+      gamesource\Menu\CMenuPageOnePlayerCrashZoneSelect.cpp
+0x003105F8  CMenuGfxComponent *gpMenuGfxComponentSubHeading;
+      gamesource\Menu\CMenuGfxComponentSubHeading.cpp
+0x003105FC  CMenuGfxComponent *gpMenuGfxComponentLessonInfo;
+      gamesource\Menu\CMenuGfxComponentLessonInfo.cpp
+0x00310600  CMenuGfxComponent *gpMenuGfxComponentSummary;
+      gamesource\Menu\CMenuGfxComponentSummary.cpp
+0x00310604  CMenuPage *gpMenuPageDrivingLessonSummary;
+      gamesource\Menu\CMenuPageDrivingLessonSummary.cpp
+0x00310610  unsigned int CTwoPlayerSSGameMode::_maunPlayerPoints[2];
+      gamesource\Game\CTwoPlayerSSGameMode.cpp
+0x00310618  unsigned int CTwoPlayerSSGameMode::_maunPrevPlayerPoints[2];
+      gamesource\Game\CTwoPlayerSSGameMode.cpp
+0x00310624  CMenuPage *gpMenuPageMemoryCard;
+      gamesource\Menu\CMenuPageMemoryCard.cpp
+0x00310628  static unsigned int kxCameraBehaviourMask;
+      gamesource\Render\CRaceReplayCamera.cpp
+0x0031062C  static unsigned int kxCameraTypeMask;
+      gamesource\Render\CRaceReplayCamera.cpp
+0x00310630  CMenuPage *gpMenuPageGetReady;
+      gamesource\Menu\CMenuPageGetReady.cpp
+0x00310640  static int AIDebugMask;
+      gamesource\Race\CAICar.cpp
+0x00310644  static int kbUseSectorData;
+      gamesource\Race\CLane.cpp
+0x00310658  ReplayFrame *_gpReplayBuffer;
+      gamesource\Race\CReplay.cpp
+0x00310660  static char kacCameraExt[5];
+      gamesource\Race\CReplayCameraData.cpp
+0x00310668  static unsigned int kxCameraTypeMask;
+      gamesource\Race\CReplayTriggerManager.cpp
+0x0031066C  static unsigned int kxReplayTriggerTypeMask;
+      gamesource\Race\CReplayTriggerManager.cpp
+0x00310680  CMenuPage *gpMenuPageSettings;
+      gamesource\Menu\CMenuPageSettings.cpp
+0x00310684  CMenuGfxComponent *gpMenuGfxComponentSettingsList;
+      gamesource\Menu\CMenuGfxComponentSettingsList.cpp
+0x00310688  CMenuGfxComponent *gpMenuGfxComponentPanel;
+      gamesource\Menu\CMenuGfxComponentPanel.cpp
+0x00310698  CMenuPage *gpMenuPageOutro;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x0031069C  CMenuGfxComponent *gpMenuGfxComponentFlag;
+      gamesource\Menu\CMenuGfxComponentFlag.cpp
+0x003106A0  CMenuPage *gpMenuPageIntro;
+      gamesource\Menu\CMenuPageIntro.cpp
+0x003106B0  CMenuGfxComponent *gpMenuGfxComponentIntroMessage;
+      gamesource\Menu\CMenuGfxComponentIntroMessage.cpp
+0x003106F4  static RwaWaveDefFormat *_supportedFormats[1];
+      C:\dev\rwaudio\source\waves\src\rwasoftwave.c
+0x003106F8  unsigned int _rwaSPU2OutputReverbCores;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c (+1 more files)
+0x003106FC  static int _rwaSPU2_IOPMemFree;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x00310700  static int _rwaSPU2_IOPMemUsed;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x0031070C  CMenuGfxComponent *gpMenuGfxComponentLessonIntroMessage;
+      gamesource\Menu\CMenuGfxComponentLessonIntroMessage.cpp
+0x00310710  CMenuGfxComponent *gpMenuGfxComponentScreenAdjust;
+      gamesource\Menu\CMenuGfxComponentScreenAdjust.cpp
+0x00310714  CMenuGfxComponent *gpMenuGfxComponentLoading;
+      gamesource\Menu\CMenuGfxComponentLoading.cpp
+0x00310718  CMenuPage *gpMenuPageLoading;
+      gamesource\Menu\CMenuPageLoading.cpp
+0x0031071C  CMenuGfxComponent *gpMenuGfxComponentReplayR;
+      gamesource\Menu\CMenuGfxComponentReplayR.cpp
+0x00310720  CMenuGfxComponent *gpMenuGfxComponentSplashScreen;
+      gamesource\Menu\CMenuGfxComponentSplashScreen.cpp
+0x00310724  CMenuPage *gpMenuPageSplashScreens;
+      gamesource\Menu\CMenuPageSplashScreens.cpp
+0x00310728  CMenuGfxComponent *gpMenuGfxComponentMpeg;
+      gamesource\Menu\CMenuGfxComponentMpeg.cpp
+0x0031072C  CMenuGfxComponent *gpMenuGfxComponentPressStart;
+      gamesource\Menu\CMenuGfxComponentPressStart.cpp
+0x00310730  CMenuPage *gpMenuPageCredits;
+      gamesource\Menu\CMenuPageCredits.cpp
+0x00310734  CMenuPage *gpMenuPageProfileView;
+      gamesource\Menu\CMenuPageProfileView.cpp
+0x00310738  CMenuGfxComponent *gpMenuGfxComponentProfileView;
+      gamesource\Menu\CMenuGfxComponentProfileView.cpp
+0x00310784  signed char CChampionshipProgression::_manPrevPointsOrder[4];
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x003107B0  CLessonLogic gLessonLogic;
+      gamesource\Menu\CMenuPageDrivingLessonSelect.cpp (+1 more files)
+0x003107C0  CGTFileSystem *gpGTFileSystem;
+      gamesource\Menu\CMenuPageSplashScreens.cpp (+5 more files)
+0x003107D8  float krSteeringFactor;
+      gamesource\Race\CAIDriver.cpp
+0x00310830  CInGameCamera CCamera::mInGameCamera;
+      gamesource\Game\CLessonLogic.cpp
+0x0031086C  int gnFrameCount;
+      gamesource\Race\CRace.cpp
+0x00310894  unsigned int CTimer::mnFrames;
+      gamesource\Hud\CHudComponentEscapeDistance.cpp (+1 more files)
+0x00310898  float CTimer::mrGameTimestepSeconds;
+      gamesource\Game\CLessonLogic.cpp (+23 more files)
+0x003108A0  int CTimer::mbSloMo;
+      gamesource\Race\CRace.cpp (+1 more files)
+0x003108A8  RwModuleInfo colorModule;
+      bacolor.c
+0x003108B0  RwModuleInfo errorModule;
+      baerr.c
+0x003108B8  RwModuleInfo matrixModule;
+      bamatrix.c
+0x003108C0  RwLinkList llGAllFreeLists;
+      bamemory.c
+0x003108C8  RwModuleInfo resourcesModule;
+      baresour.c (+4 more files)
+0x003108D0  RwModuleInfo streamModule;
+      bastream.c
+0x003108D8  static RwPluginRegistry **toolkitNonFLRegList;
+      batkreg.c
+0x003108DC  static unsigned int numRegToolkits;
+      batkreg.c
+0x003108E0  RwFreeList *toolkitRegEntries;
+      batkreg.c
+0x003108E8  RwModuleInfo vectorModule;
+      bavector.c
+0x003108F0  RwModuleInfo cameraModule;
+      bacamera.c
+0x003108F8  static unsigned int engineInstancesOpened;
+      badevice.c
+0x00310900  RwModuleInfo frameModule;
+      baframe.c
+0x00310908  RwModuleInfo imageModule;
+      baimage.c
+0x00310910  RwModuleInfo rasterModule;
+      baraster.c
+0x00310918  static RwTexDictionary *dummyTexDict;
+      batextur.c
+0x00310920  RwModuleInfo textureModule;
+      batextur.c
+0x00310928  static u_long128 *rwDMAVIFGate;
+      badma.c
+0x0031092C  static u_long128 *rwDMAbuf;
+      badma.c
+0x00310930  static unsigned int rwDMAbufSize;
+      badma.c
+0x00310934  static unsigned char rwDMAOwnVSYNC;
+      badma.c
+0x00310938  static unsigned char rwDMAOwnVIF1;
+      badma.c
+0x0031093C  static unsigned char rwDMAOwnGIF;
+      badma.c
+0x00310940  unsigned int rwDMASavedGP;
+      badma.c
+0x00310944  unsigned short rwDMAPURefEnd;
+      badma.c
+0x00310948  unsigned short rwDMAPURefStart;
+      badma.c
+0x0031094C  int **rwDMAPURefList;
+      badma.c
+0x00310950  unsigned char rwDMASawFlip;
+      badma.c
+0x00310954  unsigned char rwDMAWaited;
+      badma.c
+0x00310958  unsigned char _rwDMANumFlipsInQueue;
+      badma.c (+2 more files)
+0x0031095C  unsigned char _rwDMACurrentHalfOffset;
+      badma.c (+2 more files)
+0x00310960  unsigned char _rwDMAUseHalfOffset;
+      gamesource\Game\CTwoPlayerSSGameMode.cpp (+3 more files)
+0x00310964  rwDMA_pktTag *rwDMADispatchEnd;
+      badma.c
+0x00310968  rwDMA_pktTag *rwDMADispatchPtr;
+      badma.c
+0x0031096C  void *rwDMAFlipSt;
+      badma.c
+0x00310970  unsigned char rwDMAFlipId;
+      badma.c
+0x00310974  unsigned char _rwDMAFlipPending;
+      badma.c (+2 more files)
+0x00310978  unsigned char rwDMADispatching;
+      badma.c
+0x0031097C  unsigned int rwDMAPktType;
+      badma.c
+0x00310980  u_long128 *_rwDMAGateSlot;
+      badma.c
+0x00310984  u_long128 *rwDMAPktBase;
+      badma.c
+0x00310988  u_long128 *rwDMAAsyncPktRealBase;
+      badma.c
+0x0031098C  u_long128 *rwDMAPktRealBase;
+      badma.c
+0x00310990  rwDMA_pktTag *rwDMABufCtrlPtr;
+      badma.c
+0x00310994  rwDMA_pktTag *rwDMABufCtrlTopPtr;
+      badma.c
+0x00310998  u_long128 *rwDMABufTopPtr;
+      badma.c
+0x0031099C  u_long128 *rwDMABufDataPtr;
+      badma.c
+0x003109A0  u_long128 *rwDMABufAsyncTopPtr;
+      badma.c
+0x003109A4  u_long128 *rwDMABufDataTopPtr;
+      badma.c
+0x003109A8  unsigned char rwDMACurrentBuf;
+      badma.c
+0x003109AC  unsigned int rwDMADmaBufSize;
+      badma.c
+0x003109B0  u_long128 *rwDMADmaBufs[2];
+      badma.c
+0x003109B8  u_long128 *_rwDMAAsyncPktPtr;
+      badma.c (+1 more files)
+0x003109BC  u_long128 *_rwDMAPktPtr;
+      gamesource\Menu\CMenuGfxComponentCar.cpp (+23 more files)
+0x003109C0  rwDMA_pktTag *rwPendingCtrlPtr;
+      badma.c
+0x003109C4  unsigned int rwPendingType;
+      badma.c
+0x003109C8  u_long128 *rwPendingAsyncBase;
+      badma.c
+0x003109CC  u_long128 *rwPendingBase;
+      badma.c
+0x003109D0  u_long128 *rwSPRBaseInMem;
+      badma.c
+0x003109D4  u_long128 *rwSPRBasePtr;
+      badma.c
+0x003109D8  RwVideoMode *skyVideoMode;
+      basky.c (+2 more files)
+0x003109DC  int cacheOpened;
+      basky.c
+0x003109E0  static int skyNoNewStyleRasters;
+      basky.c
+0x003109E8  static long skyRenderTime;
+      basky.c
+0x003109F0  static int skyRenderTimeInProgress;
+      basky.c
+0x003109F4  int skySuspended;
+      basky.c
+0x003109F8  long skyZbuf_1;
+      gamesource\Menu\CMenuGfxComponentCar.cpp (+10 more files)
+0x00310A00  long skyFrame_1;
+      gamesource\Menu\CMenuGfxComponentCar.cpp (+11 more files)
+0x00310A08  long skyTest_1;
+      gamesource\Render\CCoronas.cpp (+11 more files)
+0x00310A10  long skyXyoffset_1;
+      gamesource\Menu\CMenuGfxComponentCar.cpp (+3 more files)
+0x00310A18  long skyFogcol;
+      basky.c
+0x00310A20  long skyClamp_1;
+      gamesource\Render\CSparks.cpp (+4 more files)
+0x00310A28  long skyTex1_1;
+      gamesource\Race\CStaticWorld.cpp (+8 more files)
+0x00310A30  long skyAlpha_1;
+      gamesource\Render\CCoronas.cpp (+7 more files)
+0x00310A38  RwRaster *skyDisplayRaster;
+      basky.c
+0x00310A3C  RwRaster *skyDrawRaster;
+      basky.c
+0x00310A40  int skyFrameBit;
+      gamesource\Render\CSun.cpp (+3 more files)
+0x00310A44  static int skyBufferAlphaPolys;
+      basky.c
+0x00310A48  long skyXOff;
+      basky.c
+0x00310A50  long skyYOff;
+      basky.c
+0x00310A58  unsigned int skyFSAA0VisibleWidth;
+      basky.c
+0x00310A5C  unsigned int skyFSAA0RenderWidth;
+      basky.c
+0x00310A60  unsigned int skyFSAA0RenderHeight;
+      basky.c
+0x00310A64  static int skyTexCacheRestoreRequired;
+      basky.c
+0x00310A68  unsigned int textureBankStart;
+      basky.c
+0x00310A6C  int skyTextureExt;
+      basky.c
+0x00310A70  int skyCameraExt;
+      gamesource\Race\CRaceCar.cpp (+6 more files)
+0x00310A74  int skyRasterExt;
+      gamesource\Race\CRaceCar.cpp (+4 more files)
+0x00310A78  RwCullMode gSkyCullState;
+      basky.c (+4 more files)
+0x00310A7C  unsigned int skyDitherState;
+      basky.c
+0x00310A80  int skyVertexAlpha;
+      basky.c (+4 more files)
+0x00310A84  int skyAlphaTex;
+      basky.c (+4 more files)
+0x00310A88  RwRaster *skyTextureRaster;
+      gamesource\Menu\CMenuGfxComponentCar.cpp (+13 more files)
+0x00310A90  RwRwDeviceGlobals dgGGlobals;
+      basky.c
+0x00310A98  int engineStarted;
+      basky.c
+0x00310A9C  int currentCameraFormat;
+      basky.c
+0x00310AA0  int currentMode;
+      basky.c
+0x00310AA4  u_long128 *fogTable;
+      basky.c
+0x00310AA8  unsigned long oldSkyTex1_1;
+      skyblit.c
+0x00310AB0  unsigned int rasterNum;
+      skyblit.c
+0x00310AB8  RwRaster *blitRaster[2];
+      skyblit.c
+0x00310AC0  RwRaster *skyCurRas;
+      skyblit.c
+0x00310AC4  unsigned char skyTransType;
+      gamesource\Race\CStaticWorld.cpp (+7 more files)
+0x00310AC8  void *skyUploadedCode;
+      gamesource\Race\CRaceCar.cpp (+11 more files)
+0x00310ACC  unsigned int skyUserSwitch1;
+      matbridge.c (+4 more files)
+0x00310AD0  unsigned int skyUserSwitch2;
+      matbridge.c (+4 more files)
+0x00310AD4  int skyTSClipperMode;
+      basky.c (+5 more files)
+0x00310AD8  static unsigned int maxCopyLinePacketSize;
+      skyinst.c
+0x00310ADC  static unsigned int maxCopyTriPacketSize;
+      skyinst.c
+0x00310AE0  float farFogPlane;
+      basky.c (+1 more files)
+0x00310AE4  int useFarClip;
+      basky.c (+1 more files)
+0x00310AE8  static int skyTexCacheLastWasSpec;
+      texcache.c
+0x00310AEC  rwImmediGlobals *_rwIm3DGlobals;
+      baim3d.c
+0x00310AF0  RwModuleInfo _rwIm3DModule;
+      baim3d.c (+1 more files)
+0x00310AF8  int _rxPipelineGlobalsOffset;
+      baclump.c (+17 more files)
+0x00310AFC  int RxPipelineInstanced;
+      p2core.c
+0x00310B00  RxHeap *_rxHeapGlobal;
+      p2altmdl.c (+1 more files)
+0x00310B04  static int GlobalOffset;
+      rprandom.c
+0x00310B08  unsigned int lastSeenSectExtraData;
+      babinwor.c
+0x00310B0C  unsigned int lastSeenSectRightsPluginId;
+      babinwor.c
+0x00310B10  unsigned int lastSeenWorldExtraData;
+      babinwor.c
+0x00310B14  unsigned int lastSeenWorldRightsPluginId;
+      babinwor.c
+0x00310B18  RwModuleInfo binWorldModule;
+      babinwor.c
+0x00310B20  static int _rpClumpCameraExtOffset;
+      baclump.c
+0x00310B24  static int _rpClumpLightExtOffset;
+      baclump.c
+0x00310B28  unsigned int lastSeenExtraData;
+      baclump.c
+0x00310B2C  unsigned int lastSeenRightsPluginId;
+      baclump.c
+0x00310B30  RwModuleInfo clumpModule;
+      baclump.c
+0x00310B38  RwModuleInfo geometryModule;
+      bageomet.c
+0x00310B40  RwModuleInfo lightModule;
+      balight.c
+0x00310B48  RwModuleInfo materialModule;
+      bamateri.c
+0x00310B50  RwModuleInfo meshModule;
+      bamesh.c (+3 more files)
+0x00310B58  RwModuleInfo sectorModule;
+      basector.c
+0x00310B60  RwModuleInfo worldModule;
+      baworld.c
+0x00310B68  static int cameraExtOffset;
+      baworobj.c
+0x00310B6C  static int atomicExtOffset;
+      baworobj.c
+0x00310B70  static int clumpExtOffset;
+      baworobj.c
+0x00310B74  static int lightExtOffset;
+      baworobj.c
+0x00310B78  RwModuleInfo worldObjModule;
+      baworobj.c
+0x00310B80  unsigned int _skyLightQWordsWritten;
+      gamesource\Render\PS2CarRenderer\PS2CarRenderer.cpp (+4 more files)
+0x00310B84  float *_skyLightFillPos;
+      gamesource\Render\PS2CarRenderer\PS2CarRenderer.cpp (+4 more files)
+0x00310B88  int rwPip2WorldSectorOffset;
+      native.c (+4 more files)
+0x00310B8C  int rwPip2AtomicOffset;
+      nodeps2manager.c (+3 more files)
+0x00310B90  int rwPip2GeometryOffset;
+      native.c (+4 more files)
+0x00310BC0  static char *_gpMemory;
+      gamesource\Toolkits\linearmalloc.cpp
+0x00310BC4  static char *_gpFreeMemory;
+      gamesource\Toolkits\linearmalloc.cpp
+0x00310BC8  static int _gLastAllocSize;
+      gamesource\Toolkits\linearmalloc.cpp
+0x00310BCC  static void *_gpLastAllocatedBlock;
+      gamesource\Toolkits\linearmalloc.cpp
+0x00310BD0  static int _gArenaSize;
+      gamesource\Toolkits\linearmalloc.cpp
+0x00310BD4  static int _gTotalAllocated;
+      gamesource\Toolkits\linearmalloc.cpp
+0x00310BD8  static int _gTotalAllocations;
+      gamesource\Toolkits\linearmalloc.cpp
+0x00310BDC  static int _gTotalFrees;
+      gamesource\Toolkits\linearmalloc.cpp
+0x00310BE0  static int bOldMemSaved;
+      gamesource\Toolkits\linearmalloc.cpp
+0x00310BE4  static int _gCurrentMatrixIndex;
+      gamesource\Render\PS2InstancedPrelit2\InstancedPrelit2.cpp
+0x00310C00  static unsigned int _gunCurrentName;
+      gamesource\Game\CRecords.cpp
+0x00310C04  static unsigned int _gunCurrentCar;
+      gamesource\Game\CRecords.cpp
+0x00310C08  static int _gIL2CurrentMatrixIndex;
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x00310C18  static CMenuPageDrivingLessonSummary gMenuPageDrivingLessonSummary;
+      gamesource\Menu\CMenuPageDrivingLessonSummary.cpp
+0x00310C1C  unsigned int CGTFileSystem::mnNumFilesystems;
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x00310C20  int CGTFileSystem::mbInstalledToRW;
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x00310C24  CGTFileSystem *CGTFileSystem::mpDefaultFilesystem;
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x00310C28  CGTFileSystem *CGTFileSystem::mpaFilesystems[2];
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x00310C30  int CGTFilePS2DVD::mnRPCSemaphore;
+      I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp
+0x00310C34  int CGTFilePS2DVD::mCmdHandle;
+      I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp
+0x00310C40  int update_count;
+      gamesource\Sound\GameSound.cpp
+0x00310C50  unsigned int CSoundCar::m_AICarCounter;
+      gamesource\Sound\SoundCar.cpp
+0x00310C54  int *g_NumCommands;
+      gamesource\Sound\b2dist.cpp
+0x00310C58  int *g_NextCommand;
+      gamesource\Sound\b2dist.cpp
+0x00310C5C  int g_ChannelMask;
+      gamesource\Sound\b2dist.cpp
+0x00310C60  unsigned int _rwaG_rwaSPU2WaveRamLog2BlockSize;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c (+1 more files)
+0x00310C64  unsigned int _rwaG_rwaSPU2WaveRamLog2NumEntries;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c (+1 more files)
+0x00310C68  unsigned int _rwaG_rwaSPU2WaveRamAddressMask;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c (+1 more files)
+0x00310C6C  float CMusic::mrMusicInGameVolumeValue;
+      gamesource\Sound\CMusic.cpp
+0x00310C70  float CMusic::mrMusicBoostingVolumeValue;
+      gamesource\Sound\CMusic.cpp
+0x00310C74  float CMusic::mrMusicReplayVolumeValue;
+      gamesource\Sound\CMusic.cpp
+0x00310C80  float CInGameCamera::_mrDebugTopdownLowerOffsetYValue;
+      gamesource\Render\CInGameCamera.cpp
+0x00310C84  float CInGameCamera::_mrDebugTopdownLowerOffsetZValue;
+      gamesource\Render\CInGameCamera.cpp
+0x00310C88  float CInGameCamera::_mrDebugTopdownLowerFOVValue;
+      gamesource\Render\CInGameCamera.cpp
+0x00310C8C  float CInGameCamera::_mrDebugTopdownLowerOffsetYBurnValue;
+      gamesource\Render\CInGameCamera.cpp
+0x00310C90  float CInGameCamera::_mrDebugTopdownLowerOffsetZBurnValue;
+      gamesource\Render\CInGameCamera.cpp
+0x00310C94  float CInGameCamera::_mrDebugTopdownLowerFOVBurnValue;
+      gamesource\Render\CInGameCamera.cpp
+0x00310C98  int CInGameCamera::_mbValuesRegistered;
+      gamesource\Render\CInGameCamera.cpp
+0x00310C9C  int CCrashReplayCamera::_mbValuesRegistered;
+      gamesource\Render\CCrashReplayCamera.cpp
+0x00310CA0  static int _rpADCDataOffset;
+      I:\GameShared\Archive\RpADC\rpAdc.c
+0x00310CA4  static int (*_meshCallback)(RpMesh *);
+      I:\GameShared\Archive\RpADC\rpAdc.c
+0x00310CA8  static int knPort;
+      I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp
+0x00310CAC  static int knSlot;
+      I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp
+0x00310CB0  int CScreenSettings::_mnBaseScreenOffsetX;
+      gamesource\Game\CSettings.cpp
+0x00310CB4  int CScreenSettings::_mnBaseScreenOffsetY;
+      gamesource\Game\CSettings.cpp
+0x00310CB8  int CSettings::_mbIsMetric;
+      gamesource\Game\CSettings.cpp (+3 more files)
+0x00310CBC  EReplayCameraBehaviourFlag leBehaviours;
+      gamesource\Render\CRaceReplayCamera.cpp
+0x00310CD0  static float krRiskThreshold;
+      gamesource\Race\CAIArbitrator.cpp
+0x00310CD4  static float krTotalRiskThreshold;
+      gamesource\Race\CAIArbitrator.cpp
+0x00310CD8  static float krCurrentRiskThreshold;
+      gamesource\Race\CAIArbitrator.cpp
+0x00310CDC  static float krCornerRiskThreshold;
+      gamesource\Race\CAIArbitrator.cpp
+0x00310CE0  static float krCornerTotalRiskThreshold;
+      gamesource\Race\CAIArbitrator.cpp
+0x00310CE4  static float krCornerCurrentRiskThreshold;
+      gamesource\Race\CAIArbitrator.cpp
+0x00310CE8  static float krOutOfRangeTrafficVehiclesBehind;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310CEC  static float krOutOfRangeTrafficVehiclesInFront;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310CF0  static float krAvoidRaceCarLookAheadDist;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310CF4  static float krMaxAIAvoidTargetDistFwd;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310CF8  static float krSoftNoGoTime;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310CFC  static float krSoftNoGoDistance;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D00  static float krHardNoGoTime;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D04  static float krHardNoGoDistance;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D08  static float krDistToDiscardFatallyCollidingRacecar;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D0C  static float krVertDistDiscard;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D10  static float krMaxAvoidTime;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D14  static float krAvoidTimeGap;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D18  static float kAvoid10mDesiredSpeed;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D1C  static float kAvoid20mDesiredSpeed;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D20  static float kAvoid30mDesiredSpeed;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D24  static float kAvoidVBigRiskDesiredSpeed;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D28  static float kAvoidBigRiskDesiredSpeed;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D2C  static float krAvoidSteeringFactor;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D30  static float krVelocityScaleFactor;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D34  static float krSoftNoGoDistMultiplier;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D38  static float krSoftNoGoTimeMultiplier;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D3C  static float krHardNoGoDistMultiplier;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D40  static float krHardNoGoTimeMultiplier;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D44  static float krAggressionTimeFactor;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D48  static float krAggressionDistFactor;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D4C  static float krAggressionTimeOffset;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D50  static float krAggressionDistOffset;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D54  static float krAvoidOutputOORTraffic;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D58  static float krAvoidOutputSplinePositions;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D5C  static float krAvoidOutputEffectivePos;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D60  static float krAvoidOutputDesPos;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D64  static float krAvoidOutputSplineFwd;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D68  static float krAvoidOutputSplineLeft;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D6C  static float krAvoidOutputApexSplineFwd2;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D70  static float krAvoidOutputApexSplineLeft2;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D74  static float krAvoidOutputAvgForwards;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D78  static float krAvoidOutputAvgLeftwards;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D7C  static float krAvoidOutputAvgRightwards;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D80  static float krAvoidOutputTrafficNos;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D84  static float krAvoidOutputDesDir;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D88  static float krAvoidPrintTrafDensity;
+      gamesource\Race\CAIAvoidance.cpp
+0x00310D8C  static float krMaxOutRangeDecreaseSpeed;
+      gamesource\Race\CAICar.cpp
+0x00310D90  static float krProfileToTime;
+      gamesource\Race\CAICar.cpp
+0x00310D94  float krMinDriftRadius;
+      gamesource\Race\CAICar.cpp (+1 more files)
+0x00310D98  float krMaxDriftRadius;
+      gamesource\Race\CAICar.cpp (+1 more files)
+0x00310D9C  static float krOORSmallGapCrippleMaxSpeedFactor;
+      gamesource\Race\CAICar.cpp
+0x00310DA0  static float krOORLargeGapCrippleMaxSpeedFactor;
+      gamesource\Race\CAICar.cpp
+0x00310DA4  static float krMinResetSpeed;
+      gamesource\Race\CAICar.cpp
+0x00310DA8  static float krMaxDiffAngleDesDir;
+      gamesource\Race\CAICar.cpp
+0x00310DAC  static float krCarSpacing;
+      gamesource\Race\CAICar.cpp
+0x00310DB0  static float krPursuitOORCrippleMaxSpdFac;
+      gamesource\Race\CAICar.cpp
+0x00310DB4  static float krPursuitBehindSpeedBoost;
+      gamesource\Race\CAICar.cpp
+0x00310DB8  static float krPursuitMaxVulnerableDistBehind;
+      gamesource\Race\CAICar.cpp
+0x00310DBC  static float krMaxVulnerableDist;
+      gamesource\Race\CAICar.cpp
+0x00310DC0  static float krPursuitMaxPlayerCarDistCollide;
+      gamesource\Race\CAICar.cpp
+0x00310DC4  static float krPursuitMaxOutRangeIncreaseSpeed;
+      gamesource\Race\CAICar.cpp
+0x00310DC8  static float krCarAheadSpacing;
+      gamesource\Race\CAICar.cpp
+0x00310DCC  static float krMaxPlayerCarDistCollide;
+      gamesource\Race\CAICar.cpp
+0x00310DD0  static float krMinPlayerCarDistCollide;
+      gamesource\Race\CAICar.cpp
+0x00310DD4  float krMinCollideImpactCutOff;
+      gamesource\Race\CAICar.cpp (+1 more files)
+0x00310DD8  float krMaxCollideImpactCutOff;
+      gamesource\Race\CAICar.cpp (+1 more files)
+0x00310DDC  static float krPursuitResetBehindDistance;
+      gamesource\Race\CAICar.cpp
+0x00310DE0  static float krSequenceChangePeriod;
+      gamesource\Race\CAICar.cpp
+0x00310DE4  static float krTotalFlashSequenceLength;
+      gamesource\Race\CAICar.cpp
+0x00310DE8  static float krPursuitCatchupAheadDistance;
+      gamesource\Race\CAICar.cpp
+0x00310DEC  static float krPursuitCatchupAheadDistanceRange;
+      gamesource\Race\CAICar.cpp
+0x00310DF0  static float krPursuitDistanceAheadToSlowSuspect;
+      gamesource\Race\CAICar.cpp
+0x00310DF4  static float krPursuitDistanceAheadToSlowSuspectRange;
+      gamesource\Race\CAICar.cpp
+0x00310DF8  static float krPursuitRamSpeedupDuration;
+      gamesource\Race\CAICar.cpp
+0x00310DFC  static float krPursuitRamSpeedupDurationRange;
+      gamesource\Race\CAICar.cpp
+0x00310E00  static float krPursuitMinDistToSlowCarAhead;
+      gamesource\Race\CAICar.cpp
+0x00310E04  static float krPursuitMaxDistToSlowCarAhead;
+      gamesource\Race\CAICar.cpp
+0x00310E08  static float krPursuitSpeedDiffToSlowCarAhead;
+      gamesource\Race\CAICar.cpp
+0x00310E0C  static float krPursuitSpeedDiffToSlowCarAheadRange;
+      gamesource\Race\CAICar.cpp
+0x00310E10  static float krPursuitSlightDecreaseMaxSpd;
+      gamesource\Race\CAICar.cpp
+0x00310E14  static float krPursuitAggression;
+      gamesource\Race\CAICar.cpp
+0x00310E18  static float krPrintDesiredPosition;
+      gamesource\Race\CAICar.cpp
+0x00310E1C  static float krOutputDesiredDirection;
+      gamesource\Race\CAICar.cpp
+0x00310E20  static float krOutputLastDesiredDirection;
+      gamesource\Race\CAICar.cpp
+0x00310E24  static float krPrintTrafficImpact;
+      gamesource\Race\CAICar.cpp
+0x00310E28  int CAICar::_mbValuesRegistered;
+      gamesource\Race\CAICar.cpp
+0x00310E2C  static float krSpeedSteerAngleCutOff;
+      gamesource\Race\CAIDriver.cpp
+0x00310E30  static float krCarAtFrac;
+      gamesource\Race\CAIDriver.cpp
+0x00310E34  static float krLeavingCornerCarAtFrac;
+      gamesource\Race\CAIDriver.cpp
+0x00310E38  static float krDriftStartSteerAngle;
+      gamesource\Race\CAIDriver.cpp
+0x00310E3C  static float krFramesToDriftMultiplier;
+      gamesource\Race\CAIDriver.cpp
+0x00310E40  static float krDriverOutputDesiredDir;
+      gamesource\Race\CAIDriver.cpp
+0x00310E44  static float krDriverOutputCarAt;
+      gamesource\Race\CAIDriver.cpp
+0x00310E48  static float krDriverOutputSteerAngle;
+      gamesource\Race\CAIDriver.cpp
+0x00310E4C  static float krDriverOutputVelocityDir;
+      gamesource\Race\CAIDriver.cpp
+0x00310E50  static float krDriverOutputDesPos;
+      gamesource\Race\CAIDriver.cpp
+0x00310E54  static float krDriverPrintDataSource;
+      gamesource\Race\CAIDriver.cpp
+0x00310E58  static float krDriverPrintDriftStatus;
+      gamesource\Race\CAIDriver.cpp
+0x00310E5C  static float krDriverPrintSpeedSelection;
+      gamesource\Race\CAIDriver.cpp
+0x00310E60  static float krDriverPrintSpeed;
+      gamesource\Race\CAIDriver.cpp
+0x00310E64  static float krDriverPrintSteerAngle;
+      gamesource\Race\CAIDriver.cpp
+0x00310E68  float CAIDriver::_mrMaxSpeed;
+      gamesource\Race\CAICar.cpp (+1 more files)
+0x00310E6C  float CAIDriver::_mrMinSpeed;
+      gamesource\Race\CAIAvoidance.cpp (+2 more files)
+0x00310E70  static float krDistToBrakeSpeedFactor;
+      gamesource\Race\CAITarget.cpp
+0x00310E74  static float krMinDistToTargetPos;
+      gamesource\Race\CAITarget.cpp
+0x00310E78  static float krMinDpToTargetPos;
+      gamesource\Race\CAITarget.cpp
+0x00310E7C  static float krMinDriftSpeed;
+      gamesource\Race\CAITarget.cpp
+0x00310E80  static float krMaxCornerRacingLineRadius;
+      gamesource\Race\CAITarget.cpp
+0x00310E84  static float krSquareCornerThresholdFrac;
+      gamesource\Race\CAITarget.cpp
+0x00310E88  static float krDistToCarToStopAfterPursuit;
+      gamesource\Race\CAITarget.cpp
+0x00310E8C  static float krSpeedToPullAlongsideSuspect;
+      gamesource\Race\CAITarget.cpp
+0x00310E90  static float krSpeedToApproachSuspect;
+      gamesource\Race\CAITarget.cpp
+0x00310E94  static float krTargetOutputCurSeg;
+      gamesource\Race\CAITarget.cpp
+0x00310E98  static float krTargetOutputCurAISeg;
+      gamesource\Race\CAITarget.cpp
+0x00310E9C  static float krTargetOutputTargetPosition;
+      gamesource\Race\CAITarget.cpp
+0x00310EA0  static float krTargetOutputCornerSegs;
+      gamesource\Race\CAITarget.cpp
+0x00310EA4  static float krTargetOutputTargetPositions;
+      gamesource\Race\CAITarget.cpp
+0x00310EA8  static float krTargetPrintCurrentSegment;
+      gamesource\Race\CAITarget.cpp
+0x00310EAC  static float krTargetOutputPosition;
+      gamesource\Race\CAITarget.cpp
+0x00310EB0  static float krTargetPrintDriftStatus;
+      gamesource\Race\CAITarget.cpp
+0x00310EB4  static float krTargetPrintSpeed;
+      gamesource\Race\CAITarget.cpp
+0x00310EB8  static float krTargetDrawXAxis;
+      gamesource\Race\CAITarget.cpp
+0x00310EBC  static float krTargetDrawZAxis;
+      gamesource\Race\CAITarget.cpp
+0x00310EC0  static float krTargetPrintCornerDir;
+      gamesource\Race\CAITarget.cpp
+0x00310EC4  static float krTargetPrintDriftRadius;
+      gamesource\Race\CAITarget.cpp
+0x00310EC8  static float krPrintSquareCornerStatus;
+      gamesource\Race\CAITarget.cpp
+0x00310ECC  float _gMinLineLength;
+      gamesource\Race\CBlobbyShadow.cpp
+0x00310ED0  float CBurn::_mrFadeTimeValue;
+      gamesource\Race\CBurn.cpp
+0x00310ED4  float CBurn::_mrMinimumThresholdValue;
+      gamesource\Race\CBurn.cpp
+0x00310ED8  float CBurn::_mrBurnRateValue;
+      gamesource\Race\CBurn.cpp
+0x00310EDC  static int _gbValuesRegistered;
+      gamesource\Race\CBurn.cpp
+0x00310EE0  StartData *gpStartData;
+      gamesource\Race\CGameData.cpp
+0x00310EE4  static int _gnRandomColour;
+      gamesource\Race\CHotspot.cpp
+0x00310EE8  static float krPursuitStealBoostDuration;
+      gamesource\Race\CPlayerCar.cpp
+0x00310EEC  static float krMaxRollingStartSpeed;
+      gamesource\Race\CPlayerCar.cpp
+0x00310EF0  static float krMinRollingStartSpeed;
+      gamesource\Race\CPlayerCar.cpp
+0x00310F08  static GsPS2Pipeline *lpCarPipeline;
+      gamesource\Race\CRaceCar.cpp
+0x00310F0C  static GsPS2Pipeline *lpCarShadowPipeline;
+      gamesource\Race\CRaceCar.cpp
+0x00310F10  static GsPS2Pipeline *lpWheelPipeline;
+      gamesource\Race\CRaceCar.cpp
+0x00310F14  static GsPS2Pipeline *lpWheelShadowPipeline;
+      gamesource\Race\CRaceCar.cpp
+0x00310F18  static float krMinPoliceCrashTime;
+      gamesource\Race\CRaceCar.cpp
+0x00310F1C  static float krMaxPoliceCrashTime;
+      gamesource\Race\CRaceCar.cpp
+0x00310F20  static float krMinSuspectCrashTime;
+      gamesource\Race\CRaceCar.cpp
+0x00310F24  static float krMaxSuspectCrashTime;
+      gamesource\Race\CRaceCar.cpp
+0x00310F28  float kr2PSuspectMinDistAhead;
+      gamesource\Race\CPlayerCar.cpp (+1 more files)
+0x00310F2C  float kr2PSuspectMaxDistAhead;
+      gamesource\Race\CPlayerCar.cpp (+1 more files)
+0x00310F30  float kr2PPoliceMinDistBehind;
+      gamesource\Race\CPlayerCar.cpp (+1 more files)
+0x00310F34  float kr2PPoliceMaxDistBehind;
+      gamesource\Race\CPlayerCar.cpp (+1 more files)
+0x00310F38  ReplayFrame *_gpReplayBufferUCA;
+      gamesource\Race\CReplay.cpp
+0x00310F3C  static char *_gReplayPlayingPrint;
+      gamesource\Race\CReplay.cpp
+0x00310F40  static char *_gReplayRecordingPrint;
+      gamesource\Race\CReplay.cpp
+0x00310F44  unsigned int gCRBHash;
+      gamesource\Race\CReplay.cpp
+0x00310F48  static float krMinDamageImpulse;
+      gamesource\Race\CScore.cpp
+0x00310F4C  float CScore::mrNearMissChainTimeValue;
+      gamesource\Race\CScore.cpp
+0x00310F50  float CScore::mrNearMissChainSpeedValue;
+      gamesource\Race\CScore.cpp
+0x00310F54  float CScore::mrAirMinimumDistanceValue;
+      gamesource\Race\CScore.cpp
+0x00310F58  float CScore::mrDriftMinimumDistanceValue;
+      gamesource\Race\CScore.cpp
+0x00310F5C  float CScore::mrOncomingMinimumDistanceValue;
+      gamesource\Race\CScore.cpp
+0x00310F60  float CScore::mrTopSpeedMinimumDistanceValue;
+      gamesource\Race\CScore.cpp
+0x00310F64  float CScore::mrNearMissScoreValue;
+      gamesource\Race\CScore.cpp
+0x00310F68  float CScore::mrNearMissChainBonusValue;
+      gamesource\Race\CScore.cpp
+0x00310F6C  float CScore::mrAirDistancePerBurnValue;
+      gamesource\Race\CScore.cpp
+0x00310F70  float CScore::mrDriftDistancePerBurnValue;
+      gamesource\Race\CScore.cpp
+0x00310F74  float CScore::mrOncomingDistancePerBurnValue;
+      gamesource\Race\CScore.cpp
+0x00310F78  float CScore::mrTopSpeedDistancePerBurnValue;
+      gamesource\Race\CScore.cpp
+0x00310F7C  float CScore::mrOncomingMinimumSpeedValue;
+      gamesource\Race\CScore.cpp
+0x00310F80  float CScore::mrDriftMinimumSpeedValue;
+      gamesource\Race\CScore.cpp
+0x00310F84  float CScore::mrNearMissMinimumSpeedValue;
+      gamesource\Race\CScore.cpp
+0x00310F88  float CScore::mrBurnToPointsRatioValue;
+      gamesource\Race\CScore.cpp
+0x00310F8C  float CScore::mrBurnLostInCrashValue;
+      gamesource\Race\CScore.cpp
+0x00310F90  float CScore::mrPursuitDamageValue;
+      gamesource\Race\CScore.cpp
+0x00310F94  float CScore::mrPursuitDamageThreshold;
+      gamesource\Race\CScore.cpp
+0x00310F98  float CScore::mrPursuitDamageMaxPerHit;
+      gamesource\Race\CScore.cpp
+0x00310F9C  float CScore::mrPursuitReleaseDistance;
+      gamesource\Race\CScore.cpp
+0x00310FA0  int _gbValuesRegistered;
+      gamesource\Race\CScore.cpp
+0x00310FD4  static unsigned int _gStreamedWorldDiskSemaphore;
+      gamesource\Race\CStreamedWorld.cpp
+0x00310FD8  static int _gnStack;
+      gamesource\Race\CStreamedWorld.cpp
+0x00310FEC  static int _gnRandomColour;
+      gamesource\Race\CTrafficManager.cpp
+0x00310FF0  static GsPS2Pipeline *_gpCarPipeline;
+      gamesource\Race\CTrafficSystemDraw.cpp
+0x00310FF4  static GsPS2Pipeline *_gpWheelPipeline;
+      gamesource\Race\CTrafficSystemDraw.cpp
+0x003110A8  static CMenuPageIntro gMenuPageIntro;
+      gamesource\Menu\CMenuPageIntro.cpp
+0x003110E4  unsigned int _rwaGblockAlign;
+      C:\dev\rwaudio\source\core\src\rwawavedict.c
+0x003111AC  RwaObjDef *_rwaGnullObjDef;
+      C:\dev\rwaudio\source\core\src\rwawavedef.c (+3 more files)
+0x003111B8  static RwaObjDefAliasInfo _listenerAliasInfo;
+      C:\dev\rwaudio\source\objects\src\rwalistenerobj.c
+0x003111C0  static int _freeListModuleOpen;
+      C:\dev\rwaudio\source\core\src\rwafreelist.c
+0x003111C4  static RwaFreeList *_masterFreeListPtr;
+      C:\dev\rwaudio\source\core\src\rwafreelist.c
+0x003111C8  static RwLinkList _freeListList;
+      C:\dev\rwaudio\source\core\src\rwafreelist.c
+0x003111D0  static int _linkListOpen;
+      C:\dev\rwaudio\source\core\src\rwallist.c
+0x003111D4  unsigned char *_rwaGwaveStreamBuf;
+      C:\dev\rwaudio\source\core\src\rwawavedict.c
+0x003111D8  unsigned int _rwaGwaveIOBufferSize;
+      C:\dev\rwaudio\source\core\src\rwawavedict.c
+0x003111DC  static int _moduleOpen;
+      C:\dev\rwaudio\source\core\src\rwawavedict.c
+0x003111E0  static int _moduleClosing;
+      C:\dev\rwaudio\source\core\src\rwawavedict.c
+0x003111E4  static RwaWaveDict *_workingDict;
+      C:\dev\rwaudio\source\core\src\rwawavedict.c
+0x003111E8  static RwaWaveDict *_currentDict;
+      C:\dev\rwaudio\source\core\src\rwawavedict.c
+0x003111F0  static RwLinkList _waveDictList;
+      C:\dev\rwaudio\source\core\src\rwawavedict.c
+0x003111F8  static int _moduleOpen;
+      C:\dev\rwaudio\source\core\src\rwawavedef.c
+0x003111FC  static int _moduleOpen;
+      C:\dev\rwaudio\source\core\src\rwaheap.c
+0x00311200  static RwLinkList _heapList;
+      C:\dev\rwaudio\source\core\src\rwaheap.c
+0x00311208  static int RwaRPC_Initialized;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x0031120C  static void (*RwaRPC_CmdHandler)(unsigned int, unsigned int, unsigned int, unsigned int, void (*)(unsigned int, unsigned int));
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00311210  static int RwaRPC_ThreadID;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00311214  static int RwaRPC_IRQSema;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00311218  static int RwaRPC_TransferSema;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x0031121C  static int RwaRPC_IOPRAMBusy;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00311220  static unsigned int RwaRPC_UserData;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00311224  unsigned int RwaRPC_DMAWorkArea;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00311228  static unsigned int RwaRPC_Version;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x0031122C  static int RwaRPC_ReceivedCurrent;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00311230  static int RwaRPC_ReceivedLast;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00311234  static unsigned int RwaRPC_SentCurrent;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00311238  static unsigned int RwaRPC_QueueCurrent;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x0031123C  static unsigned int RwaRPC_QueueLast;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00311240  static unsigned int lastSifCmdId;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00311244  unsigned char _rwaG_rwaSPU2InputAreaMemoryBitmap;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c
+0x00311248  static int _rwaSPU2_IOPInitialized;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x0031124C  static int _rwaSPU2AutoDMAActive;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x00311280  static RwaSPU2OutputState *_rwaSPU2OutputState;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x00311284  static int _rwaSPU2IOPCoreIsOpen;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x00311288  static CMenuPageLoading gMenuPageLoading;
+      gamesource\Menu\CMenuPageLoading.cpp
+0x00311298  static CMenuPageProfileView gMenuPageProfileView;
+      gamesource\Menu\CMenuPageProfileView.cpp
+0x0031129C  static int nGPads;
+      gamesource\Toolkits\gtpadPS2.c
+0x003112A0  static int nGNumWheels;
+      gamesource\Toolkits\gtpadPS2.c
+0x003112A4  static int nGSupportedPadTypes;
+      gamesource\Toolkits\gtpadPS2.c
+0x003112A8  static int nGStride;
+      gamesource\Toolkits\gtpadPS2.c
+0x003112AC  int nGHint;
+      gamesource\Toolkits\gtpadPS2.c
+0x003112B0  static unsigned char nGActuatorAlign[6];
+      gamesource\Toolkits\gtpadPS2.c
+0x003112B8  static void *pGData;
+      gamesource\Toolkits\gtpadPS2.c
+0x00317CF0  void *_gp;
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x003186E0  CGame gGame;
+      gamesource\Game\CCrashForCashLogic.cpp (+71 more files)
+0x0031D4B0  CRace gRace;
+      gamesource\Game\CGrandPrixTable.cpp (+67 more files)
+0x0031F280  CTrack gTrack;
+      gamesource\Game\CProfile.cpp (+45 more files)
+0x0034AD80  CPlayerCar gaPlayerCars[4];
+      gamesource\Game\CProfile.cpp (+12 more files)
+0x00362A80  CAICar gaAICars[4];
+      gamesource\Menu\CMenuResultsScreens.cpp (+2 more files)
+0x00375C80  CGhostCar gGhostCar;
+      gamesource\Game\CTimeAttackLogic.cpp (+2 more files)
+0x00376630  CCollidingTrafficPhysics gaCrashingTraffic[32];
+      gamesource\Race\CRace.cpp
+0x00390630  CPropPhysics gaCollidingProps[64];
+      gamesource\Race\CRace.cpp
+0x003A7630  CFrontEnd gFrontEnd;
+      gamesource\Race\CAICar.cpp (+1 more files)
+0x003A7840  COnePlayerCRASH gOnePlayerCRASH;
+      gamesource\Menu\CMenuGfxComponentPanel.cpp (+2 more files)
+0x003A9440  CTurnBasedCRASH gTurnBasedCRASH;
+      gamesource\Race\CRaceCar.cpp
+0x003B0E00  CChaseLogic gChaseLogic;
+      gamesource\Race\CAICar.cpp (+2 more files)
+0x003B0E30  CTimeAttackLogic gTimeAttackLogic;
+      gamesource\Game\CRecords.cpp (+3 more files)
+0x003B0E60  CMenuManager gMenuManager;
+      gamesource\Game\CLessonLogic.cpp (+55 more files)
+0x003B2D30  CDebugManager gDebugManager;
+      gamesource\Physics\CVehiclePhysics.cpp (+2 more files)
+0x00434440  CRenderer gRenderer;
+      gamesource\Game\CLessonLogic.cpp (+46 more files)
+0x004391D0  CGameSound gSound;
+      gamesource\Hud\CHudComponentBonus.cpp (+28 more files)
+0x004392A0  CMusic gMusic;
+      gamesource\Menu\CMenuPageSplashScreens.cpp (+1 more files)
+0x00439330  CAsyncLoadManager gAsyncLoadManager;
+      gamesource\Race\CGameData.cpp (+6 more files)
+0x00439880  CInput gInput;
+      gamesource\Game\CTwoPlayerSSGameMode.cpp (+7 more files)
+0x0043AC40  CMemoryCard gMemoryCard;
+      gamesource\Menu\CMenuPageMemoryCard.cpp (+1 more files)
+0x0043B180  CText gText;
+      gamesource\Hud\CHudComponentMessage.cpp (+1 more files)
+0x0043B1C0  CCollidingBodyWorldTriangleData gWorldTriangles;
+      gamesource\Physics\CVehiclePhysics.cpp
+0x0043C720  RaceCarPhysicsAttributes gaCRaceCarPhysicsAttribs[22];
+      gamesource\Race\CAICar.cpp
+0x0043DCA0  CRaceReplayCamera CCamera::mRaceReplayCamera;
+      gamesource\Menu\CMenuPageDrivingLessonSummary.cpp (+2 more files)
+0x0043DE60  CRaceIntroCamera CCamera::mRaceIntroCamera;
+      gamesource\Menu\CMenuPageIntro.cpp (+2 more files)
+0x004486D0  unsigned int ourGlobals[4096];
+      C:\dev\rwaudio\source\core\src\rwawavedict.c (+88 more files)
+0x0044C6D0  unsigned long splice[256];
+      palquant.c
+0x0044CED0  rwDMA_flipDataTag _rwDMAFlipData;
+      gamesource\Render\CSun.cpp (+4 more files)
+0x0044D230  u_long128 rwDMAANull;
+      badma.c
+0x0044D240  u_long128 rwDMAFlushAGateFlush;
+      badma.c
+0x0044D250  u_long128 rwDMAAFlush;
+      badma.c
+0x0044D260  u_long128 rwDMAFlushAGate;
+      badma.c
+0x0044D500  struct @anon14 skySis;
+      basky.c
+0x0044D570  unsigned char skyUserFog[256];
+      basky.c
+0x0044D670  u_long128 skyMungedUserFog[14];
+      basky.c
+0x0044D750  u_long128 skyExp2Fog[14];
+      basky.c
+0x0044D830  u_long128 skyExpFog[14];
+      basky.c
+0x0044D910  u_long128 skyLinearFog[14];
+      basky.c
+0x0044D9F0  _SkyMemBlock skyFakeCacheFrameBuffer1;
+      basky.c
+0x0044DA00  _SkyMemBlock skyFakeCacheFrameBuffer0;
+      basky.c
+0x0044DA10  _clearPkt skyInitialClear;
+      basky.c
+0x0044DAE0  RwRect destClipRect;
+      skyblit.c
+0x0044DAF0  u_long128 contCmd128;
+      skyinst.c
+0x0044DB00  u_long128 dma10Header128;
+      skyinst.c
+0x0044DB10  u_long128 dma1End128;
+      skyinst.c
+0x0044DB20  u_long128 dma1Header128;
+      skyinst.c
+0x0044DB30  u_long128 dma1Ret128;
+      skyinst.c
+0x0044DB40  u_long128 gifTag128;
+      matbridge.c (+3 more files)
+0x0044DB50  u_long128 gifTagPrim128;
+      gamesource\Race\CStaticWorld.cpp (+2 more files)
+0x0044DB60  u_long128 maskCmd128;
+      skyinst.c
+0x0044DB70  u_long128 runCmd128;
+      skyinst.c
+0x0044DB80  u_long128 unmaskCmd128;
+      skyinst.c
+0x0044DB90  u_long128 zero128;
+      skyinst.c
+0x0044DBA0  u_long128 skyClipVect1;
+      gamesource\Race\CStaticWorld.cpp (+5 more files)
+0x0044DBB0  u_long128 skyClipVect2;
+      gamesource\Race\CStaticWorld.cpp (+5 more files)
+0x0044DBC0  u_long128 skyCClipVect1;
+      gamesource\Race\CStaticWorld.cpp (+5 more files)
+0x0044DBD0  u_long128 skyCClipVect2;
+      gamesource\Race\CStaticWorld.cpp (+5 more files)
+0x0044DBE0  u_long128 vu1DataNearClip;
+      skyinst.c
+0x0044DBF0  u_long128 vu1DataFarClip;
+      skyinst.c
+0x0044DC00  u_long128 xMaxYMax128;
+      gamesource\Race\CStaticWorld.cpp (+1 more files)
+0x0044DC10  u_long128 vu1DataXYZScale;
+      gamesource\Render\CCoronas.cpp (+4 more files)
+0x0044DC20  u_long128 vu1DataXYZShift;
+      gamesource\Render\CCoronas.cpp (+4 more files)
+0x0044DC30  u_long128 vu1DataOffset3D;
+      gamesource\Render\CCoronas.cpp (+4 more files)
+0x0044DC40  static u_long128 baseOffsetCmd128;
+      skyinst.c
+0x0044DC50  static u_long128 flushCmd128;
+      skyinst.c
+0x0044DC60  static u_long128 dmaEnd128;
+      skyinst.c
+0x0044DC70  static u_long128 colScaleNoTexCmd128;
+      skyinst.c
+0x0044DC80  static u_long128 colScaleTexCmd128;
+      skyinst.c
+0x0044DC90  static u_long128 prologHeader2D128;
+      skyinst.c
+0x0044DCA0  static u_long128 prologHeader3D128;
+      skyinst.c
+0x0044DCB0  static u_long128 vu1DataOffset2D;
+      skyinst.c
+0x0044DCC0  TexCacheState state;
+      texcache.c
+0x0044DD00  RxExecutionContext _rxExecCtxGlobal;
+      nodeAtomicEnumerateLights.c (+22 more files)
+0x0044DD20  RwClipInfo _rwClipInfoGlobal;
+      nodeClipLine.c (+3 more files)
+0x0044DD50  u_long128 lightBuffer[];
+      nodeps2all.c
+0x0044DD50  u_long128 lightBuffer[129];
+      nodeps2objallinone.c
+0x004515A0  static CMenuGfxComponentHeading gMenuGfxComponentHeading;
+      gamesource\Menu\CMenuGfxComponentHeading.cpp
+0x004515D0  static RwMemoryFunctions _gOldMemFuncs;
+      gamesource\Toolkits\linearmalloc.cpp
+0x004515E0  static CMenuGfxComponentButtonList gMenuGfxComponentButtonList;
+      gamesource\Menu\CMenuGfxComponentButtonList.cpp
+0x00451690  static RwMatrixTag _gEmbeddedMatrixArray[48];
+      gamesource\Render\PS2InstancedPrelit2\InstancedPrelit2.cpp
+0x00452290  static int _gIP2Flags[4];
+      gamesource\Render\PS2InstancedPrelit2\InstancedPrelit2.cpp
+0x004522A0  static RwV4d _gIP2FadeFlags;
+      gamesource\Render\PS2InstancedPrelit2\InstancedPrelit2.cpp
+0x004522B0  static CMenuPagePause gMenuPagePause;
+      gamesource\Menu\CMenuPagePause.cpp
+0x004524C0  static CMenuGfxComponentTrackMap gMenuGfxComponentTrackMap;
+      gamesource\Menu\CMenuGfxComponentTrackMap.cpp
+0x004525A0  static CMenuGfxComponentButtons gMenuGfxComponentButtons;
+      gamesource\Menu\CMenuGfxComponentButtons.cpp
+0x00452610  static CMenuPageChampionshipSelect gMenuPageChampionshipSelect;
+      gamesource\Menu\CMenuPageChampionshipSelect.cpp
+0x004528C0  static CMenuGfxComponentGrandPrixSummary gMenuGfxComponentGrandPrixSummary;
+      gamesource\Menu\CMenuGfxComponentGrandPrixSummary.cpp
+0x004529B0  static CMenuGfxComponentCar gMenuGfxComponentCar;
+      gamesource\Menu\CMenuGfxComponentCar.cpp
+0x00452A70  static CMenuGfxComponentCarousel gMenuGfxComponentCarousel;
+      gamesource\Menu\CMenuGfxComponentCarousel.cpp
+0x00452DF0  static CMenuPageResults gMenuPageResults;
+      gamesource\Menu\CMenuPageResults.cpp
+0x00452E00  static CMenuGfxComponentResultsTable gMenuGfxComponentResultsTable;
+      gamesource\Menu\CMenuGfxComponentResultsTable.cpp
+0x00453130  static CHudComponentSpeedo gComponentSpeedoP1;
+      gamesource\Hud\CHud.cpp
+0x00453160  static CHudComponentScore gComponentScoreP1;
+      gamesource\Hud\CHud.cpp
+0x00453180  static CHudComponentPos gComponentPosP1;
+      gamesource\Hud\CHud.cpp
+0x004531A0  static CHudComponentCountdown gComponentCountdownP1;
+      gamesource\Hud\CHud.cpp
+0x004531E0  static CHudComponentMessage gComponentMessageP1;
+      gamesource\Hud\CHud.cpp
+0x00453240  static CHudComponentSplitTimes gComponentSplitTimesP1;
+      gamesource\Hud\CHud.cpp
+0x00453280  static CHudComponentBurn gComponentBurnP1;
+      gamesource\Hud\CHud.cpp
+0x004532A0  static CHudComponentBonus gComponentBonusP1;
+      gamesource\Hud\CHud.cpp
+0x00453330  static CHudComponentLapHistory gComponentLapHistoryP1;
+      gamesource\Hud\CHud.cpp
+0x00453350  static CHudComponentIndicator gComponentIndicatorP1;
+      gamesource\Hud\CHud.cpp
+0x00453380  static CHudComponentSpeedo gComponentSpeedoP2;
+      gamesource\Hud\CHud.cpp
+0x004533B0  static CHudComponentScore gComponentScoreP2;
+      gamesource\Hud\CHud.cpp
+0x004533D0  static CHudComponentPos gComponentPosP2;
+      gamesource\Hud\CHud.cpp
+0x004533F0  static CHudComponentCountdown gComponentCountdownP2;
+      gamesource\Hud\CHud.cpp
+0x00453430  static CHudComponentMessage gComponentMessageP2;
+      gamesource\Hud\CHud.cpp
+0x00453490  static CHudComponentSplitTimes gComponentSplitTimesP2;
+      gamesource\Hud\CHud.cpp
+0x004534D0  static CHudComponentBurn gComponentBurnP2;
+      gamesource\Hud\CHud.cpp
+0x004534F0  static CHudComponentBonus gComponentBonusP2;
+      gamesource\Hud\CHud.cpp
+0x00453580  static CHudComponentLapHistory gComponentLapHistoryP2;
+      gamesource\Hud\CHud.cpp
+0x004535A0  static CHudComponentIndicator gComponentIndicatorP2;
+      gamesource\Hud\CHud.cpp
+0x004535D0  static CHudComponentText gComponentText;
+      gamesource\Hud\CHud.cpp
+0x004535F0  static CHudComponentSeparator gComponentSeparator;
+      gamesource\Hud\CHud.cpp
+0x00453600  static CHudComponentCrashDamageScore gComponentCrashDamageScore;
+      gamesource\Hud\CHud.cpp
+0x00453D60  static CHudComponentCrashScore gComponentCrashScore;
+      gamesource\Hud\CHud.cpp
+0x00453E80  static CHudComponentCrashValue gComponentCrashValue;
+      gamesource\Hud\CHud.cpp
+0x00453ED0  static CHudComponentLessonInfo gComponentLessonInfo;
+      gamesource\Hud\CHud.cpp
+0x00453F30  static CHudComponentLapTimes gComponentLapTimes;
+      gamesource\Hud\CHud.cpp
+0x00453F50  static CHudComponentEscapeDistance gComponentEscapeDistanceP1;
+      gamesource\Hud\CHud.cpp
+0x00454090  static CHudComponentEscapeDistance gComponentEscapeDistanceP2;
+      gamesource\Hud\CHud.cpp
+0x004541D0  static CHudComponentHealth gComponentTargetHealthP1;
+      gamesource\Hud\CHud.cpp
+0x004541F0  static CHudComponentHealth gComponentTargetHealthP2;
+      gamesource\Hud\CHud.cpp
+0x00454210  static CHudComponentTotalTime gComponentTotalTimeP1;
+      gamesource\Hud\CHud.cpp
+0x00454330  static CHudComponentTotalTime gComponentTotalTimeP2;
+      gamesource\Hud\CHud.cpp
+0x00454450  static u_long128 _CarLightBuffer[8];
+      gamesource\Render\PS2CarRenderer\PS2CarRenderer.cpp
+0x00454650  static CMenuPageCrashPlayersSelect gMenuPageCrashPlayersSelect;
+      gamesource\Menu\CMenuPageCrashPlayersSelect.cpp
+0x004546C0  static RwMatrixTag _gIL2EmbeddedMatrixArray[16];
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x00454AC0  static RwV4d _gIL2EmbeddedLightArray[16];
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x00454BC0  static unsigned int _gaunShadCol[4];
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x00454BD0  static int _gIL2Flags[4];
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x00454BE0  static RwV4d _gIL2FadeFlags;
+      gamesource\Render\PS2InstancedLit2\InstancedLit2.cpp
+0x00454BF0  static CMenuGfxComponentNameEntryText gMenuGfxComponentNameEntryText;
+      gamesource\Menu\CMenuGfxComponentNameEntryText.cpp
+0x00454C50  CMenuPanel _gPanel;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x00454C70  CMenuPanel _gPanel2;
+      gamesource\Menu\CMenuResultsScreens.cpp
+0x00454C90  static CMenuPageDrivingLessonSelect gMenuPageDrivingLessonSelect;
+      gamesource\Menu\CMenuPageDrivingLessonSelect.cpp
+0x00454D40  static CMenuPageRecords gMenuPageRecords;
+      gamesource\Menu\CMenuPageRecords.cpp
+0x00455150  static CMenuPageCrashGroupSelect gMenuPageCrashGroupSelect;
+      gamesource\Menu\CMenuPageCrashGroupSelect.cpp
+0x00455280  static CMenuPageOnePlayerCrashZoneSelect gMenuPageOnePlayerCrashZoneSelect;
+      gamesource\Menu\CMenuPageOnePlayerCrashZoneSelect.cpp
+0x00455400  static CMenuGfxComponentSubHeading gMenuGfxComponentSubHeading;
+      gamesource\Menu\CMenuGfxComponentSubHeading.cpp
+0x00455420  static CMenuGfxComponentLessonInfo gMenuGfxComponentLessonInfo;
+      gamesource\Menu\CMenuGfxComponentLessonInfo.cpp
+0x00455440  static CMenuGfxComponentSummary gMenuGfxComponentSummary;
+      gamesource\Menu\CMenuGfxComponentSummary.cpp
+0x00455CA0  RwFileFunctions CGTFileSystem::mStdRwFileInterface;
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x00455CD0  char CGTFileSystem::msaFSNames[2][5];
+      I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp
+0x00455D00  GtsIOPFuncsTag CGTFileSystemPS2DVD::mIOPFileFuncs;
+      I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp
+0x00455D40  int CGTFilePS2DVD::mRPCArguments[16];
+      I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp
+0x00455D80  int CGTFilePS2DVD::mRPCResults[16];
+      I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp
+0x00455DC0  sceSifCmdHdr CGTFilePS2DVD::mCmdHdr;
+      I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp
+0x00455DD0  _sif_client_data CGTFilePS2DVD::mRPCData;
+      I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp
+0x00455E00  CVoiceManager gVoiceManager;
+      gamesource\Sound\GameSound.cpp
+0x00456520  CSoundFrontEnd gSoundFrontend;
+      gamesource\Sound\GameSound.cpp
+0x004565A0  cSoundCrash gSoundCrash;
+      gamesource\Sound\GameSound.cpp
+0x004566E0  CSoundValueDatabase gSoundValueDB;
+      gamesource\Sound\GameSound.cpp
+0x00456D50  CSoundTraffic gSoundTraffic;
+      gamesource\Sound\GameSound.cpp
+0x00457090  CHudSound gHudSound;
+      gamesource\Sound\GameSound.cpp
+0x00457140  int g_RpcBuffer[256];
+      gamesource\Sound\b2dist.cpp
+0x00457540  _sif_client_data g_SifClientData;
+      gamesource\Sound\b2dist.cpp
+0x00457580  char gFilename[64];
+      gamesource\Sound\CMusic.cpp
+0x004575C0  static unsigned int sbuf[16];
+      gamesource\Sound\CMusic.cpp
+0x00457600  static _sif_client_data cd;
+      gamesource\Sound\CMusic.cpp
+0x00457640  static B2StreamInitParams _gInitParams;
+      gamesource\Sound\CMusic.cpp
+0x00457650  float CInGameCamera::_marBumperOffsetYValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x004576B0  float CInGameCamera::_marBumperOffsetZValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457710  float CInGameCamera::_marBumperFOVValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457770  float CInGameCamera::_marBumperOffsetYBurnValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x004577D0  float CInGameCamera::_marBumperOffsetZBurnValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457830  float CInGameCamera::_marBumperFOVBurnValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457890  float CInGameCamera::_marFollowOffsetYValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x004578F0  float CInGameCamera::_marFollowOffsetZValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457950  float CInGameCamera::_marFollowLookAtYValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x004579B0  float CInGameCamera::_marFollowLookAtZValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457A10  float CInGameCamera::_marFollowSpringYValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457A70  float CInGameCamera::_marFollowSpringXValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457AD0  float CInGameCamera::_marFollowDownAngleValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457B30  float CInGameCamera::_marFollowFOVValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457B90  float CInGameCamera::_marFollowOffsetYBurnValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457BF0  float CInGameCamera::_marFollowOffsetZBurnValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457C50  float CInGameCamera::_marFollowFOVBurnValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457CB0  float CInGameCamera::_marLookBackExtOffsetYValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457D10  float CInGameCamera::_marLookBackExtOffsetZValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457D70  float CInGameCamera::_marLookBackExtLookAtYValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457DD0  float CInGameCamera::_marLookBackExtLookAtZValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457E30  float CInGameCamera::_marLookBackExtSpringYValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457E90  float CInGameCamera::_marLookBackExtSpringXValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457EF0  float CInGameCamera::_marLookBackExtDownAngleValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457F50  float CInGameCamera::_marLookBackExtFOVValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00457FB0  float CInGameCamera::_marLookBackExtOffsetYBurnValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00458010  float CInGameCamera::_marLookBackExtOffsetZBurnValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00458070  float CInGameCamera::_marLookBackExtFOVBurnValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x004580D0  float CInGameCamera::_marLookBackOffsetYValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00458130  float CInGameCamera::_marLookBackOffsetZValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00458190  float CInGameCamera::_marLookBackFOVValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x004581F0  float CInGameCamera::_marDebugTopdownOffsetYValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00458250  float CInGameCamera::_marDebugTopdownOffsetZValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x004582B0  float CInGameCamera::_marDebugTopdownFOVValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00458310  float CInGameCamera::_marDebugTopdownOffsetYBurnValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00458370  float CInGameCamera::_marDebugTopdownOffsetZBurnValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x004583D0  float CInGameCamera::_marDebugTopdownFOVBurnValues[22];
+      gamesource\Render\CInGameCamera.cpp
+0x00458460  float CCrashReplayCamera::_marOffsetXValues[32];
+      gamesource\Render\CCrashReplayCamera.cpp
+0x004584E0  float CCrashReplayCamera::_marOffsetYValues[32];
+      gamesource\Render\CCrashReplayCamera.cpp
+0x00458560  float CCrashReplayCamera::_marOffsetZValues[32];
+      gamesource\Render\CCrashReplayCamera.cpp
+0x004585E0  float CCrashReplayCamera::_marFOVValues[32];
+      gamesource\Render\CCrashReplayCamera.cpp
+0x00458660  static CMenuPageMemoryCard gMenuPageMemoryCard;
+      gamesource\Menu\CMenuPageMemoryCard.cpp
+0x00458C70  static CMenuPageGetReady gMenuPageGetReady;
+      gamesource\Menu\CMenuPageGetReady.cpp
+0x00458C80  CAIProfile CAICar::_mAIProfile[22];
+      gamesource\Race\CAICar.cpp (+2 more files)
+0x00458EF0  float karMaxMoreSteerAngleDelta[30];
+      gamesource\Race\CAIDriver.cpp
+0x00458F70  float karMaxLessSteerAngleDelta[30];
+      gamesource\Race\CAIDriver.cpp
+0x00458FF0  static float karDriftSteerSpeedIncFactor[30];
+      gamesource\Race\CAIDriver.cpp
+0x00459070  static float karRadiusToSpeedFactor[30];
+      gamesource\Race\CAITarget.cpp
+0x004590F0  static float karDriftRadiusToSpeedFactor[30];
+      gamesource\Race\CAITarget.cpp
+0x00459170  CTrigger gTriggerBuffer[256];
+      gamesource\Race\CGameData.cpp
+0x0045A970  CTriggerGroup gTriggerGroupBuffer[128];
+      gamesource\Race\CGameData.cpp
+0x0045B770  CCheckPoint gCheckPointBuffer[20];
+      gamesource\Race\CGameData.cpp
+0x0045B9A0  CHotspot gHotspotBuffer[128];
+      gamesource\Race\CGameData.cpp
+0x004617A0  CTrafficLight gTrafficLightBuffer[256];
+      gamesource\Race\CGameData.cpp
+0x004657A0  CTrafficLightGroup gTrafficLightGroupBuffer[128];
+      gamesource\Race\CGameData.cpp
+0x004661A0  CAICheckPoint gAICheckPointBuffer[32];
+      gamesource\Race\CGameData.cpp
+0x004664A0  CTrafficGenerator gTrafficGeneratorBuffer[2048];
+      gamesource\Race\CGameData.cpp
+0x004744A0  CLane gaRacingLaneBuffer[1];
+      gamesource\Race\CGameData.cpp
+0x004744B0  CLane gaAILaneBuffer[32];
+      gamesource\Race\CGameData.cpp
+0x004746B0  CLane gaTrafficLaneBuffer[320];
+      gamesource\Race\CGameData.cpp
+0x00475AB0  CTrafficParam *gapNextTrafficParam[16000];
+      gamesource\Race\CGameData.cpp (+4 more files)
+0x004854B0  CSpatiallySortedBodySet gBodies;
+      gamesource\Race\CRace.cpp (+1 more files)
+0x004866C0  static unsigned int _gaunMaterialFlags[4];
+      gamesource\Race\CRaceCar.cpp
+0x004866D0  float kaarTotalChampionshipPointsWanted[][4];
+      gamesource\Race\CAICar.cpp
+0x004866D0  float kaarTotalChampionshipPointsWanted[22][4];
+      gamesource\Race\CRaceCar.cpp
+0x00486830  float kaarBoostStart[][7][4];
+      gamesource\Race\CAICar.cpp (+1 more files)
+0x00486830  float kaarBoostStart[22][7][4];
+      gamesource\Race\CRaceCar.cpp
+0x004871E0  signed char CScore::maanCheckpointLapCounts[20][9];
+      gamesource\Race\CScore.cpp
+0x004872A0  RwMatrixTag _gViewMatrix;
+      gamesource\Race\CStaticWorld.cpp
+0x00487300  static ColStack _gDataStack[33];
+      gamesource\Race\CStreamedWorld.cpp
+0x00487720  static ColStack _gCurrStack;
+      gamesource\Race\CStreamedWorld.cpp
+0x00487740  unsigned char gauTrafficSegmentLock8[16000];
+      gamesource\Race\CTrafficGenerator.cpp (+1 more files)
+0x0048B5C0  static PerCarStruct _gaCarStruct[64];
+      gamesource\Race\CTrafficSystemDraw.cpp
+0x0048C1C0  static unsigned int _gaunMaterialFlags[4];
+      gamesource\Race\CTrafficSystemDraw.cpp
+0x0048C200  static ShadowStructure _gShadStruct;
+      gamesource\Race\CTrafficSystemDraw.cpp
+0x0048C280  static RwMatrixTag _gWheelMatrices[8][64];
+      gamesource\Race\CTrafficSystemDraw.cpp
+0x00494280  static u_long128 _gWheelTextures[8];
+      gamesource\Race\CTrafficSystemDraw.cpp
+0x00494300  static int _gWheelCounters[8];
+      gamesource\Race\CTrafficSystemDraw.cpp
+0x00494350  static CMenuPageSettings gMenuPageSettings;
+      gamesource\Menu\CMenuPageSettings.cpp
+0x004945B0  static CMenuGfxComponentSettingsList gMenuGfxComponentSettingsList;
+      gamesource\Menu\CMenuGfxComponentSettingsList.cpp
+0x004947D0  static CMenuGfxComponentPanel gMenuGfxComponentPanel;
+      gamesource\Menu\CMenuGfxComponentPanel.cpp
+0x004949A0  static CMenuPageOutro gMenuPageOutro;
+      gamesource\Menu\CMenuPageOutro.cpp
+0x00494EF0  static CMenuGfxComponentFlag gMenuGfxComponentFlag;
+      gamesource\Menu\CMenuGfxComponentFlag.cpp
+0x00494F10  static CMenuGfxComponentIntroMessage gMenuGfxComponentIntroMessage;
+      gamesource\Menu\CMenuGfxComponentIntroMessage.cpp
+0x00495720  static RwaObjInterfaceDef _rwaListenerIntDef;
+      C:\dev\rwaudio\source\interfaces\src\rwalistener.c
+0x00495760  static RwaObjDefInterfaceInfo _listenerInterfaceInfo;
+      C:\dev\rwaudio\source\objects\src\rwalistenerobj.c
+0x00495780  static RwaObjDef _listenerDef;
+      C:\dev\rwaudio\source\objects\src\rwalistenerobj.c
+0x004957E0  static RwaFreeList _masterFreeList;
+      C:\dev\rwaudio\source\core\src\rwafreelist.c
+0x00495810  RwaFreeList _rwaGfreeListLLNodes;
+      C:\dev\rwaudio\source\core\src\rwallist.c
+0x00495870  static RwaFreeList _waveDictFreeList;
+      C:\dev\rwaudio\source\core\src\rwawavedict.c
+0x004958A0  static RwaFreeList _waveDefFreeList;
+      C:\dev\rwaudio\source\core\src\rwawavedef.c
+0x004958D0  static RwaWaveDef _waveDef;
+      C:\dev\rwaudio\source\waves\src\rwasoftwave.c
+0x00495920  static RwaWaveDef _nullWaveDef;
+      C:\dev\rwaudio\source\waves\src\rwanullwave.c
+0x00495970  static RwaFreeList _heapFreeList;
+      C:\dev\rwaudio\source\core\src\rwaheap.c
+0x004959A0  static RwaObjInterfaceDef _rwaStreamIntDef;
+      C:\dev\rwaudio\source\interfaces\src\rwastreamint.c
+0x00496240  static struct @anon1 RwaRPC_QueueCmd[128];
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00498240  static struct @anon0 RwaRPC_SentCmd[128];
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x00499A40  static struct @anon0 RwaRPC_ReceivedCmd[128];
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x0049B240  static struct @anon3 RwaRPC_CmdBuffer[128];
+      C:\dev\rwaudio\source\ps2\spu2\common\rwarpc.c
+0x0049B640  static unsigned char _rwaSPU2WaveMemoryBitmap[2048];
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c
+0x0049BE40  static RwaWaveDef _waveDef;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c
+0x0049BE90  static RwaObjInterfaceDef _rwaSPU2OutputIntDef;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2outint.c
+0x0049BED0  static RwaObjDef _spu2voiceDef;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c
+0x0049BF30  static RwaObjInterfaceDef _rwaSPU2VoiceIntDef;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voiceint.c
+0x0049BF60  static RwaObjDef _spu2outputDef;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x0049BFC0  static RwaSPU2PCMRendererAllocData _rwaSPU2PCMOutputAllocData;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x0049C000  static RwaSPU2VAGRendererAllocData _rwaSPU2OutputAllocData;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x0049C040  RwaObj *_rwaSPU2Voice[48];
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c
+0x0049C100  static RwaObjDef _spu2streamDef;
+      C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2stream.c
+0x0049C160  static CManagedVoice sManagedVoices[256];
+      gamesource\Sound\VoiceManager.cpp
+0x004A3970  static CMenuGfxComponentLessonIntroMessage gMenuGfxComponentLessonIntroMessage;
+      gamesource\Menu\CMenuGfxComponentLessonIntroMessage.cpp
+0x004A3980  static CMenuGfxComponentScreenAdjust gMenuGfxComponentScreenAdjust;
+      gamesource\Menu\CMenuGfxComponentScreenAdjust.cpp
+0x004A39A0  static CMenuGfxComponentLoading gMenuGfxComponentLoading;
+      gamesource\Menu\CMenuGfxComponentLoading.cpp
+0x004A3A40  static CMenuGfxComponentReplayR gMenuGfxComponentReplayR;
+      gamesource\Menu\CMenuGfxComponentReplayR.cpp
+0x004A3A60  static CMenuGfxComponentSplashScreen gMenuGfxComponentSplashScreen;
+      gamesource\Menu\CMenuGfxComponentSplashScreen.cpp
+0x004A3A90  static CMenuPageSplashScreens gMenuPageSplashScreens;
+      gamesource\Menu\CMenuPageSplashScreens.cpp
+0x004A3AB0  static CMenuGfxComponentMpeg gMenuGfxComponentMpeg;
+      gamesource\Menu\CMenuGfxComponentMpeg.cpp
+0x004A3B70  static CMenuGfxComponentPressStart gMenuGfxComponentPressStart;
+      gamesource\Menu\CMenuGfxComponentPressStart.cpp
+0x004A3BA0  static CMenuPageCredits gMenuPageCredits;
+      gamesource\Menu\CMenuPageCredits.cpp
+0x004A41A0  static CMenuGfxComponentProfileView gMenuGfxComponentProfileView;
+      gamesource\Menu\CMenuGfxComponentProfileView.cpp
+0x004A44D0  static int nGSlots[4];
+      gamesource\Toolkits\gtpadPS2.c
+0x004A44E0  static unsigned char nGActuatorDirect[2][6];
+      gamesource\Toolkits\gtpadPS2.c
+0x00840000  char gCameraBuffer[262144];
+      gamesource\Race\CReplayCameraData.cpp
+0x00980000  PSSStaticWorld gB2PSSBuffer;
+      gamesource\Race\CStaticWorld.cpp
+0x01100000  char gB2PSWBuffer[];
+      gamesource\Sound\GameSound.cpp
+0x01100000  unsigned char gB2PSWBuffer[];
+      gamesource\Race\CStreamedWorld.cpp
+0x01400000  unsigned char gB2PSWBuffer2[];
+      gamesource\Race\CStreamedWorld.cpp
+0x01700000  char gRaceCarBuffer[];
+      gamesource\Race\CGhostCar.cpp
+0x0189A000  char gReplayBuffer[];
+      gamesource\Sound\GameSound.cpp
+0x01900000  unsigned char gTrafficBuffer[];
+      gamesource\Race\CTrafficSystemDraw.cpp
+0x01E00000  char gGDBuffer[2097152];
+      gamesource\Race\CTrack.cpp

@@ -1,0 +1,21 @@
+// DNAT_200: symbols defined by the linker command file (section bounds, _gp, sizes).
+
+0xFFFFFFFF  _heap_size
+0x00000080  _align_segment
+0x01FF0000  _stack
+0x00010000  _stack_size
+0x003ED700  __data_start
+0x0043F8C0  __static_init
+0x0043FAEC  __static_init_end
+0x004422D0  __exception_table_start__
+0x004422D0  __exception_table_end__
+0x004422D0  _overlay_group_addreses
+0x004422D4  __data_end
+0x00054BD4  __data_size
+0x0044A2F0  _gp
+0x00443B00  _fbss
+0x00444317  __bss_start
+0x01DFA800  __bss_end
+0x019B64E9  __bss_size
+0x01DFA800  end
+0x01DFA800  _end

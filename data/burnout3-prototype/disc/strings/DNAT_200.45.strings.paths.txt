@@ -1,0 +1,200 @@
+// DNAT_200.45: file names and paths (198)
+
+0x003EF7C4  bs/syq
+0x0040ED68  Unsupported profile/level
+0x004110E0  Data\EA_Games.m2v
+0x00411100  Data\CrtGames.m2v
+0x00411120  Data\RNDRWARE.M2V
+0x00411140  Data\FEMain.m2v
+0x00411150  Data\DMarktg.m2v
+0x00411170  Data\crshpvis.m2vData\EA_Games.m2v
+0x004111A0  Data\Rw_ntsc.m2v
+0x004111F0  sound\streams\ea.rws
+0x00411210  sound\streams\crshpvis.rws
+0x004112C0  Data/Frontend.txd
+0x004112E0  Data/stagehed.bin
+0x00411340  Data/Global.txd
+0x00411350  Data/EALogin.ico
+0x00411370  ValueDB/vdb.xml
+0x00411380  Data/GlobalE.bin
+0x004113D0  Vehicles/vlist.bin
+0x004113F0  Tracks/tlist.bin
+0x00411410  Data/PrgDatae.bin
+0x00411650  ../Export/ValueDB/Score.cfg
+0x00411940  ../Export/ValueDB/Score.cfg
+0x004119A0  Score/Boost/Air
+0x00411A00  Score/Boost/Oncoming
+0x00411AA0  Score/Boost/Drift
+0x00411B30  Score/Boost/Near Miss
+0x00411C10  Score/Boost/Crash Escape
+0x00411D30  Score/Boost/Aggressive
+0x00411E10  Score/Boost/Boost Start
+0x00411E60  Score/Boost/Takedowns
+0x00412030  Score/Boost/Props
+0x004120B0  Score/Boost/Lap
+0x00412110  Score/Boost/Crashing
+0x00412140  Score/Burnout Points
+0x00412490  Score/BP Categories
+0x004125F0  Score/Tailgating
+0x00412710  Score/Grinding
+0x00412750  Score/Distance Travelled
+0x00413330  ../Export/ValueDB/Physics/cad.cfg
+0x00413620  cdrom0:\IOP\SIO2MAN.IRX;1
+0x00413640  cdrom0:\IOP\SIO2D.IRX;1
+0x00413660  cdrom0:\IOP\DBCMAN.IRX;1
+0x00413680  cdrom0:\IOP\DS2O.IRX;1
+0x004136A0  cdrom0:\IOP\MC2_S1.IRX;1
+0x004136C0  cdrom0:\IOP\LIBSD.IRX;1
+0x004136E0  cdrom0:\IOP\RWA.IRX;1
+0x00413700  cdrom0:\IOP\B3ROUTE.IRX;1
+0x00413720  cdrom0:\IOP\GTFSCDVD.IRX;1
+0x00413780  cdrom0:\IOP\USBD.IRX;1
+0x004137B0  cdrom0:\IOP\LGAUD.IRX;1
+0x004137F0  cdrom0:\IOP\LGKBM.IRX;1
+0x00413840  cdrom0:\IOP\DNAS280.IMG;1
+0x00413890  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/plcore/babinary.c#1 $
+0x00413948  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/plcore/bamatrix.c#1 $
+0x004139C0  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/bacamera.c#2 $
+0x00413A30  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/badevice.c#1 $
+0x00413AD8  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/batextur.c#2 $
+0x00413B30  @@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/basky.c#1 $
+0x004146B0  @@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/skyblit.c#1 $
+0x00414940  @@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/skyconv.c#1 $
+0x00414B78  @@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/skyinst.c#1 $
+0x00414BE0  @@@@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/texcache.c#1 $
+0x00414CD0  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/pipe/p2/baim3d.c#1 $
+0x00414DB8  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/pipe/p2/p2heap.c#1 $
+0x004150B0  [libdbc.a = %d.%d, dbcman.irx = %d.%d]
+0x004156B0  M-SEARCH * HTTP/1.1\nHost:239.255.255.250:1900\nST:urn:schemas-upnp-org:device:WANConnectionDevice:1\nMan:"ssdp:discover"\nMX:3
+0x00415740   HTTP/1.1\nAccept: text/xml, application/xml\nUser-Agent: PS2
+0x004157B0   HTTP/1.1\nContent-Type: text/xml; charset="utf-8"\nSOAPAction: "
+0x00415CE0   HTTP/1.1\nContent-Type: text/xml; charset="utf-8"\nSOAPAction: "
+0x00416000   HTTP/1.1\nContent-Type: text/xml; charset="utf-8"\nSOAPAction: "
+0x00416310   HTTP/1.1\nContent-Type: text/xml; charset="utf-8"\nSOAPAction: "
+0x00416D10  ../Export/ValueDB/VehiclePhysics/%s.cfg
+0x00416D40  Physics/Vehicle
+0x00416D60  Physics/Suspension/Front
+0x00416DC0  Physics/Suspension/Rear
+0x00416DE0  ../Export/ValueDB/VehiclePhysics/%s.cfg
+0x00416E10  Physics/Vehicle
+0x00416E30  Physics/Suspension/Front
+0x00416E90  Physics/Suspension/Rear
+0x00416EB0  Physics/Race Car/Body Roll
+0x00416F50  Physics/Race Car/LSDM
+0x00416FB0  Physics/Race Car/Misc
+0x004170C0  Physics/Transmission/Engine
+0x00417160  Physics/Transmission/Gear Ratios
+0x00417210  Physics/Transmission/Boost Kick
+0x00417260  Physics/Steering
+0x004172E8  Physics/Drift
+0x004173D0  Physics/Aggressive Driving Reaction
+0x004181F0  cdrom0:\NETGUI\NTGUI_EU.ELF;1
+0x00418210  cdrom0:\NETGUI\NTGUI_UC.ELF;1
+0x00418230  AI/Arbitrator
+0x00418240  AI/Avoidance
+0x00418250  AI/Target
+0x00418260  AI/Car
+0x00418268  AI/Driver
+0x00418280  AI/Aggressive Driving
+0x004182A0  AI/Aggressive Driving/Slam
+0x004182C0  AI/Aggressive Driving/Reactions
+0x004182E0  ../Export/ValueDB/AI/defaults.cfg
+0x00419100  ../export/ValueDB/Sound/Traffic.cfg
+0x00419128  Sound/Traffic
+0x00419140  Sound/CrashingTraffic/Skids/Large
+0x00419170  Sound/CrashingTraffic/Skids/Small
+0x004191A0  ../export/ValueDB/Sound/Boost.cfg
+0x004191C8  Sound/Boost
+0x004191D8  Sound/Doppler
+0x00419778  Sound/L Train/
+0x00419790  ../export/ValueDB/Sound/LTrain.cfg
+0x00419A80  ../export/ValueDB/Sound/Payload.cfg
+0x00419AB0  Sound/Prop/Cone/
+0x00419AD0  Sound/Prop/Card Box/
+0x00419AF0  Sound/Prop/Metal Box/
+0x00419B10  Sound/Prop/Woodbox/
+0x00419B30  Sound/Prop/Signpost/
+0x00419B50  Sound/Prop/Barrier/
+0x00419B70  Sound/Prop/Metal Barrier/
+0x00419B90  Sound/Prop/Barrel/
+0x00419BB0  Sound/Prop/Crate/
+0x00419BD0  Sound/Prop/Boat/
+0x00419BF0  Sound/Prop/Hay Bale/
+0x00419C10  Sound/Prop/Hay Drum/
+0x00419C30  Sound/Prop/Cable Drum/
+0x00419C50  Sound/Prop/Container/
+0x00419C70  Sound/Prop/Log/
+0x00419C80  crash3.rws
+0x00419F58  crash%d.rws
+0x00419F70  sound\streams\crash%d.rws
+0x0041A220  ../export/ValueDB/Sound/Tracks/%s.cfg
+0x0041A290  sound\crashmod.awd
+0x0041A2E0  ../export/ValueDB/Sound/HUD.cfg
+0x0041A300  Sound/Hud/Aggressive Driving
+0x0041A320  Sound/Hud/General
+0x0041A338  sound\fe.awd
+0x0041A510  ../export/ValueDB/Sound/Esm.cfg
+0x0041A530  Sound/Esm
+0x0041A5E0  sound\single.awd
+0x0041A600  sound\roadrage.awd
+0x0041A620  sound\crash.awd
+0x0041A650  %ssound.awd
+0x0041A660  sound\generic.awd
+0x0041A680  ../export/ValueDB/Sound/Voice.cfg
+0x0041A6A8  Sound/Voice
+0x0041A6E0  ../Export/ValueDB/VehicleAudioAI/%s.cfg
+0x0041A730  sound\generic.awd
+0x0041A760  ../export/ValueDB/Sound/Misc.cfg
+0x0041A788  Sound/Misc
+0x0041A8E0  ../Export/ValueDB/VehicleAudio/%s.cfg
+0x0041A950  VehicleAudio/Turbo
+0x0041AA80  ../export/ValueDB/Sound/Misc.cfg
+0x0041AAA8  Sound/Misc
+0x0041AAB8  Sound/Boost
+0x0041AC20  ../export/ValueDB/Sound/Skids.cfg
+0x0041AC48  Sound/Skids
+0x0041AC60  Sound/Skids/Sample1
+0x0041AC80  Sound/Skids/Sample1/Variant1
+0x0041ACA0  Sound/Skids/Sample2
+0x0041ACC0  Sound/Skids/Sample2/Variant1
+0x0041ACE0  Sound/Skids/Sample3
+0x0041AD00  Sound/Skids/Sample3/Variant1
+0x0041AD20  sound\generic.awd
+0x0041B870  sound\generic.awd
+0x0041CAD8  enviro.dat
+0x0041DCD8  lgAudInit:  lgaud.irx is version %d.%02d.%03d
+0x0041DD78  lgAudInit: wrong version of lgaud.irx!
+0x0041DDA0  lgAudInit: warning: version mismatch between lgdev.irx and liblgdev.a 
+0x0041E6A0  ../export/ValueDB/Sound/Misc.cfg
+0x0041E6D0  Sound/Misc/Vehicle Volume Tailoff
+0x0041E700  ../export/ValueDB/Sound/Surface.cfg
+0x0041EB40  ../Export/ValueDB/Camera/
+0x0041EBE0  Crash/HandyCam/
+0x0041EC20  InGame/Effect/Burnout/Position/
+0x0041EC50  InGame/Effect/Burnout/Angular/
+0x0041EC70  InGame/Effect/Shunt/Position/
+0x0041EC90  InGame/Effect/Shunt/Angular/
+0x0041ECB0  InGame/Effect/Shunted/Position/
+0x0041ECD0  InGame/Effect/Shunted/Angular/
+0x0041ECF0  InGame/Effect/Slam/Position/
+0x0041ED10  InGame/Effect/Slam/Angular/
+0x0041ED30  InGame/Effect/Shake/Position/
+0x0041ED50  InGame/Effect/Shake/Angular/
+0x0041EE30  Camera/Bumper/
+0x0041EE40  Camera/Look Back/
+0x0041EE58  Camera/Follow/
+0x0041EEB0  Replay/Set Piece 1/Static
+0x0041F410  ../export/ValueDB/VehicleMaterial/
+0x0041F570  Gamedata.bgd
+0x004207A0  ../export/ValueDB/TrackBloom/
+0x00420808  static.dat
+0x00422FC0  view.ico
+0x004233B8  view.ico
+0x004233C8  icon.sys
+0x004242C8  Data\Intro.kfs
+0x004242E0  Data\Replay.kfs
+0x00425DB8  streamed.dat
+0x00428A90  Autosave On/Off
+0x00429230  Vibration On/Off
+0x00429C40  view.ico
+0x00429C68  icon.sys

@@ -1,0 +1,891 @@
+// Every file on the disc folder, with size, date and detected format. No file contents are copied.
+
+
+./
+  SLUS_210.50                    4,073,816  2004-07-29 20:22  ELF executable/module
+  SYSTEM.CNF                            57  2004-07-23 23:15  text
+
+CNF/
+  ICON.SYS                             964  2004-07-23 23:15  binary, magic "PS2D"
+  SYS_NET.ICO                       33,688  2004-07-23 23:15  PS2 save icon model
+
+DATA/
+  AFTER.KFS                        205,040  2004-07-23 23:17  binary
+  EALOGIN.ICO                       10,606  2004-07-23 23:15  PS2 save icon model
+  FRONTEND.TXD                   8,517,568  2004-07-25 19:38  binary
+  GLOBAL.TXD                     1,146,112  2004-07-25 19:38  binary
+  GLOBALUS.BIN                     214,850  2004-07-29 19:35  binary
+  HEADUS.BIN                           336  2004-07-29 19:35  binary
+  INTRO.KFS                        205,136  2004-07-23 23:17  binary
+  INTRO2.M2V                     1,968,128  2004-07-23 23:15  binary
+  LOADSCRN.BIN                   5,326,656  2004-07-23 23:15  binary
+  PRGDATA.BIN                       18,432  2004-07-27 20:08  binary
+  SAVEICON.ICN                      15,234  2004-07-23 23:15  binary
+  STAGEHED.BIN                     374,784  2004-07-24 19:00  binary
+  VDB.XML                           70,648  2004-07-25 00:34  binary
+
+IOP/
+  ATTYMON.IRX                        9,917  2004-07-23 23:15  ELF executable/module
+  B3ROUTE.IRX                        8,520  2004-07-23 23:15  ELF executable/module
+  DBCMAN.IRX                        15,477  2004-07-23 23:15  ELF executable/module
+  DNAS280.IMG                      272,705  2004-07-23 23:15  binary, magic "RESE"
+  DS2O.IRX                          10,933  2004-07-23 23:15  ELF executable/module
+  GTFSATMN.IRX                      10,304  2004-07-23 23:15  ELF executable/module
+  GTFSCDVD.IRX                      13,056  2004-07-23 23:15  ELF executable/module
+  GTFSHOST.IRX                      10,544  2004-07-23 23:15  ELF executable/module
+  ICON.SYS                             964  2004-07-23 23:15  binary, magic "PS2D"
+  IOPRP280.IMG                     269,889  2004-07-23 23:15  binary, magic "RESE"
+  LGAUD.IRX                         49,693  2004-07-23 23:15  ELF executable/module
+  LGDEVW.IRX                        47,629  2004-07-23 23:15  ELF executable/module
+  LGKBM.IRX                         11,860  2004-07-23 23:15  ELF executable/module
+  LIBSD.IRX                         28,605  2004-07-23 23:15  ELF executable/module
+  MC2_S1.IRX                        20,389  2004-07-23 23:15  ELF executable/module
+  MCMAN.IRX                         95,909  2004-07-23 23:15  ELF executable/module
+  MCSERV.IRX                         7,417  2004-07-23 23:15  ELF executable/module
+  RWA.IRX                           64,588  2004-07-23 23:15  ELF executable/module
+  SIO2D.IRX                         11,297  2004-07-23 23:15  ELF executable/module
+  SIO2MAN.IRX                        6,641  2004-07-23 23:15  ELF executable/module
+  SYS_NET.ICO                       33,688  2004-07-23 23:15  PS2 save icon model
+  USBD.IRX                          34,969  2004-07-23 23:15  ELF executable/module
+
+IOP/NETWORK/
+  DEV9.IRX                          13,757  2004-07-23 23:15  ELF executable/module
+  DRTYSCKF.IRX                     114,616  2004-07-23 23:15  ELF executable/module
+  EZNETCNF.IRX                       7,909  2004-07-23 23:15  ELF executable/module
+  EZNETCTL.IRX                      12,221  2004-07-23 23:15  ELF executable/module
+  IFCONFIG.IRX                      18,037  2004-07-23 23:15  ELF executable/module
+  INET.IRX                         141,413  2004-07-23 23:15  ELF executable/module
+  INETCTL.IRX                       24,797  2004-07-23 23:15  ELF executable/module
+  LIBNET.IRX                         6,709  2004-07-23 23:15  ELF executable/module
+  MSIFRPC.IRX                        8,121  2004-07-23 23:15  ELF executable/module
+  NETCNF.IRX                        65,805  2004-07-23 23:15  ELF executable/module
+  NETCNFIF.IRX                      19,941  2004-07-23 23:15  ELF executable/module
+  PPP.IRX                          102,285  2004-07-23 23:15  ELF executable/module
+  PPPOE.IRX                         17,121  2004-07-23 23:15  ELF executable/module
+  SMAP.IRX                          17,105  2004-07-23 23:15  ELF executable/module
+
+NETGUI/
+  BG.RGB                           860,160  2004-07-23 23:15  binary
+  BG2.RGB                        1,146,880  2004-07-23 23:15  binary
+  BG_PAL.RGB                       983,040  2004-07-23 23:15  binary
+  EFF.BD                           127,536  2004-07-23 23:15  binary
+  EFF.HD                               560  2004-07-23 23:15  binary, magic "IECS"
+  EUROPEAN.PF                      637,456  2004-07-23 23:15  binary
+  JIS2UCS.BIN                      131,072  2004-07-23 23:15  binary
+  NTGUI_UC.ELF                   4,193,516  2004-07-23 23:15  ELF executable/module
+  UCS2JIS.BIN                      131,072  2004-07-23 23:15  binary
+
+NETGUI/MODULES/
+  DEV9.IRX                          13,197  2004-07-23 23:15  ELF executable/module
+  EZMIDI.IRX                        11,609  2004-07-23 23:15  ELF executable/module
+  INET.IRX                         141,485  2004-07-23 23:15  ELF executable/module
+  INETCTL.IRX                       24,765  2004-07-23 23:15  ELF executable/module
+  IOPRP271.IMG                     266,817  2004-07-23 23:15  binary, magic "RESE"
+  LIBSD.IRX                         28,605  2004-07-23 23:15  ELF executable/module
+  MCMAN.IRX                         95,877  2004-07-23 23:15  ELF executable/module
+  MCSERV.IRX                         7,417  2004-07-23 23:15  ELF executable/module
+  MODHSYN.IRX                       59,669  2004-07-23 23:15  ELF executable/module
+  MODMIDI.IRX                       21,965  2004-07-23 23:15  ELF executable/module
+  NETCNF.IRX                        65,805  2004-07-23 23:15  ELF executable/module
+  NTGUI2.IRX                        31,029  2004-07-23 23:15  ELF executable/module
+  PADMAN.IRX                        43,813  2004-07-23 23:15  ELF executable/module
+  PPP.IRX                          102,333  2004-07-23 23:15  ELF executable/module
+  PPPOE.IRX                         17,121  2004-07-23 23:15  ELF executable/module
+  SDRDRV.IRX                         8,065  2004-07-23 23:15  ELF executable/module
+  SIO2MAN.IRX                        6,641  2004-07-23 23:15  ELF executable/module
+  SMAP.IRX                          17,105  2004-07-23 23:15  ELF executable/module
+  USBD.IRX                          34,969  2004-07-23 23:15  ELF executable/module
+  USBINIT.IRX                        1,217  2004-07-23 23:15  ELF executable/module
+  USBKB.IRX                         12,853  2004-07-23 23:15  ELF executable/module
+
+NFSUNDER/
+  IOPRP280.IMG                     269,889  2004-07-23 23:15  binary, magic "RESE"
+  IRX281A.BUN                       50,856  2004-07-23 23:15  binary
+  IRX281B.BUN                      120,016  2004-07-23 23:15  binary
+  NFSUNDER.ELF                   3,564,516  2004-07-23 23:15  ELF executable/module
+  ZDIR.BIN                           8,088  2004-07-23 23:15  binary
+  ZZDATA0.BIN                   74,217,472  2004-07-23 23:15  binary, magic "MOIR"
+  ZZDATA1.BIN                   65,773,568  2004-07-23 23:15  binary, magic "JDLZ"
+  ZZDATA2.BIN                   10,782,720  2004-07-23 23:15  binary, magic "SCHl"
+  ZZDATA3.BIN                  148,883,456  2004-07-23 23:15  binary
+
+OVID/
+  COMPLOCK.M2V                  13,069,718  2004-07-23 23:10  MPEG-2 video
+  COUNLOCK.M2V                  12,581,288  2004-07-23 23:10  MPEG-2 video
+  CREDITS.M2V                   37,434,742  2004-07-23 23:10  MPEG-2 video
+  CRI_RW30.M2V                   1,096,279  2004-07-23 23:11  MPEG-2 video
+  CRSHHD01.M2V                   6,430,095  2004-07-23 23:10  MPEG-2 video
+  CRSHHD02.M2V                   6,356,527  2004-07-23 23:10  MPEG-2 video
+  CRSHHD03.M2V                   6,449,973  2004-07-23 23:10  MPEG-2 video
+  CRSHHD04.M2V                   7,192,752  2004-07-23 23:10  MPEG-2 video
+  CRSHHD05.M2V                   7,009,766  2004-07-23 23:10  MPEG-2 video
+  CRSHHD06.M2V                   6,965,576  2004-07-23 23:10  MPEG-2 video
+  CRSHHD07.M2V                   6,462,890  2004-07-23 23:10  MPEG-2 video
+  CRSHHD08.M2V                   7,152,533  2004-07-23 23:10  MPEG-2 video
+  CRSHHD09.M2V                   6,278,956  2004-07-23 23:10  MPEG-2 video
+  CRSHHD10.M2V                   7,409,509  2004-07-23 23:10  MPEG-2 video
+  ENDCRSH.M2V                    4,630,742  2004-07-23 23:10  MPEG-2 video
+  ENDRACE.M2V                    4,977,811  2004-07-23 23:10  MPEG-2 video
+  ENGLIS30.M2V                     961,363  2004-07-23 23:11  MPEG-2 video
+  MOVIE.RWS                     56,643,584  2004-07-23 23:11  binary
+  MUUNLOCK.M2V                  11,470,668  2004-07-23 23:10  MPEG-2 video
+  SIGTKD01.M2V                   7,670,107  2004-07-23 23:10  MPEG-2 video
+  SIGTKD02.M2V                   7,840,535  2004-07-23 23:10  MPEG-2 video
+  SIGTKD03.M2V                   7,493,325  2004-07-23 23:10  MPEG-2 video
+  SIGTKD04.M2V                   7,472,490  2004-07-23 23:10  MPEG-2 video
+  SIGTKD05.M2V                   7,811,926  2004-07-23 23:10  MPEG-2 video
+  SIGTKD06.M2V                   7,833,520  2004-07-23 23:10  MPEG-2 video
+  SIGTKD07.M2V                   8,507,312  2004-07-23 23:10  MPEG-2 video
+  SIGTKD08.M2V                   8,482,836  2004-07-23 23:10  MPEG-2 video
+  SIGTKD09.M2V                   8,302,758  2004-07-23 23:10  MPEG-2 video
+  SIGTKD10.M2V                   8,370,123  2004-07-23 23:10  MPEG-2 video
+  SIGTKD11.M2V                   8,432,711  2004-07-23 23:10  MPEG-2 video
+  SIGTKD12.M2V                   8,369,410  2004-07-23 23:10  MPEG-2 video
+  SIGTKD13.M2V                   7,744,040  2004-07-23 23:10  MPEG-2 video
+  SIGTKD14.M2V                   8,373,191  2004-07-23 23:10  MPEG-2 video
+  SIGTKD15.M2V                   8,697,094  2004-07-23 23:10  MPEG-2 video
+  SIGTKD16.M2V                   8,501,074  2004-07-23 23:10  MPEG-2 video
+  SIGTKD17.M2V                   7,749,964  2004-07-23 23:10  MPEG-2 video
+  SIGTKD18.M2V                   7,752,007  2004-07-23 23:10  MPEG-2 video
+  SIGTKD19.M2V                   8,763,730  2004-07-23 23:10  MPEG-2 video
+  SIGTKD20.M2V                   8,416,871  2004-07-23 23:10  MPEG-2 video
+  SPCINV01.M2V                   6,312,454  2004-07-23 23:10  MPEG-2 video
+  SPCINV02.M2V                   6,194,326  2004-07-23 23:10  MPEG-2 video
+  SPCINV03.M2V                   6,400,019  2004-07-23 23:10  MPEG-2 video
+  SPCPST01.M2V                   7,256,857  2004-07-23 23:10  MPEG-2 video
+  SPCPST02.M2V                   6,940,604  2004-07-23 23:10  MPEG-2 video
+  SPCPST03.M2V                   6,632,248  2004-07-23 23:10  MPEG-2 video
+  SPCPST04.M2V                   6,553,166  2004-07-23 23:10  MPEG-2 video
+  SPCPST05.M2V                   7,400,552  2004-07-23 23:10  MPEG-2 video
+  SPCPST06.M2V                   7,306,099  2004-07-23 23:10  MPEG-2 video
+  SPCPST07.M2V                   5,177,653  2004-07-23 23:10  MPEG-2 video
+  SPCPST08.M2V                   5,908,167  2004-07-23 23:10  MPEG-2 video
+  SPCPST09.M2V                   6,419,801  2004-07-23 23:10  MPEG-2 video
+  SPCPST10.M2V                   6,792,989  2004-07-23 23:10  MPEG-2 video
+  SPUNLOCK.M2V                  12,683,582  2004-07-23 23:10  MPEG-2 video
+  SUUNLOCK.M2V                  12,341,367  2004-07-23 23:10  MPEG-2 video
+  TITLES25.M2V                  42,690,609  2004-07-23 23:10  MPEG-2 video
+  TITLES30.M2V                  43,150,338  2004-07-23 23:10  MPEG-2 video
+  TKDTRP01.M2V                   4,251,623  2004-07-23 23:10  MPEG-2 video
+  TKDTRP02.M2V                   5,803,256  2004-07-23 23:10  MPEG-2 video
+  TKDTRP03.M2V                   5,530,993  2004-07-23 23:10  MPEG-2 video
+  TKDTRP04.M2V                   4,458,269  2004-07-23 23:10  MPEG-2 video
+  TRC_ENG.M2V                   55,703,433  2004-07-23 23:10  MPEG-2 video
+  TRD_ENG.M2V                   73,545,110  2004-07-23 23:11  MPEG-2 video
+
+PVEH/
+  VLIST.BIN                          4,096  2004-07-23 23:20  binary
+
+PVEH/COMP/
+  CAR1.BGV                         436,224  2004-07-23 23:17  binary
+  CAR1.HWD                         186,368  2004-07-23 23:17  binary
+  CAR1.LWD                          43,008  2004-07-23 23:17  binary
+  CAR10.BGV                        393,216  2004-07-23 23:17  binary
+  CAR10.HWD                        221,184  2004-07-23 23:17  binary
+  CAR10.LWD                         38,912  2004-07-23 23:17  binary
+  CAR11.BTV                        235,520  2004-07-23 23:17  binary
+  CAR12.BTV                        247,808  2004-07-23 23:17  binary
+  CAR13.BTV                        233,472  2004-07-23 23:17  binary
+  CAR14.BTV                        221,184  2004-07-23 23:17  binary
+  CAR15.BTV                        221,184  2004-07-24 23:06  binary
+  CAR16.BTV                        221,184  2004-07-24 23:06  binary
+  CAR17.BTV                        221,184  2004-07-24 23:06  binary
+  CAR18.BTV                        223,232  2004-07-23 23:17  binary
+  CAR19.BTV                        235,520  2004-07-23 23:17  binary
+  CAR2.BGV                         440,320  2004-07-23 23:17  binary
+  CAR2.HWD                         161,792  2004-07-23 23:17  binary
+  CAR2.LWD                          43,008  2004-07-23 23:17  binary
+  CAR3.BGV                         456,704  2004-07-23 23:17  binary
+  CAR3.HWD                         210,944  2004-07-23 23:17  binary
+  CAR3.LWD                          77,824  2004-07-23 23:17  binary
+  CAR4.BGV                         434,176  2004-07-23 23:17  binary
+  CAR4.HWD                         143,360  2004-07-23 23:17  binary
+  CAR4.LWD                          36,864  2004-07-23 23:17  binary
+  CAR5.BGV                         397,312  2004-07-23 23:17  binary
+  CAR5.HWD                         182,272  2004-07-23 23:17  binary
+  CAR5.LWD                          38,912  2004-07-23 23:17  binary
+  CAR6.BGV                         432,128  2004-07-23 23:17  binary
+  CAR6.HWD                         229,376  2004-07-23 23:17  binary
+  CAR6.LWD                          43,008  2004-07-23 23:17  binary
+  CAR7.BGV                         450,560  2004-07-23 23:18  binary
+  CAR7.HWD                         204,800  2004-07-23 23:17  binary
+  CAR7.LWD                          43,008  2004-07-23 23:17  binary
+  CAR8.BGV                         462,848  2004-07-23 23:18  binary
+  CAR8.HWD                         253,952  2004-07-23 23:18  binary
+  CAR8.LWD                          77,824  2004-07-23 23:18  binary
+  CAR9.BGV                         448,512  2004-07-23 23:18  binary
+  CAR9.HWD                         192,512  2004-07-23 23:18  binary
+  CAR9.LWD                          36,864  2004-07-23 23:18  binary
+
+PVEH/CUPE/
+  CAR1.BGV                         438,272  2004-07-23 23:18  binary
+  CAR1.HWD                         178,176  2004-07-23 23:18  binary
+  CAR1.LWD                          40,960  2004-07-23 23:18  binary
+  CAR10.BGV                        423,936  2004-07-23 23:18  binary
+  CAR10.HWD                        219,136  2004-07-23 23:18  binary
+  CAR10.LWD                         43,008  2004-07-23 23:18  binary
+  CAR2.BGV                         423,936  2004-07-23 23:18  binary
+  CAR2.HWD                         178,176  2004-07-23 23:18  binary
+  CAR2.LWD                          40,960  2004-07-23 23:18  binary
+  CAR3.BGV                         442,368  2004-07-23 23:18  binary
+  CAR3.HWD                         184,320  2004-07-23 23:18  binary
+  CAR3.LWD                          40,960  2004-07-23 23:18  binary
+  CAR4.BGV                         460,800  2004-07-23 23:18  binary
+  CAR4.HWD                         163,840  2004-07-23 23:18  binary
+  CAR4.LWD                          34,816  2004-07-23 23:18  binary
+  CAR5.BGV                         432,128  2004-07-23 23:18  binary
+  CAR5.HWD                         182,272  2004-07-23 23:18  binary
+  CAR5.LWD                          43,008  2004-07-23 23:18  binary
+  CAR6.BGV                         436,224  2004-07-23 23:18  binary
+  CAR6.HWD                         219,136  2004-07-23 23:18  binary
+  CAR6.LWD                          45,056  2004-07-23 23:18  binary
+  CAR7.BGV                         409,600  2004-07-23 23:18  binary
+  CAR7.HWD                         221,184  2004-07-23 23:18  binary
+  CAR7.LWD                          40,960  2004-07-23 23:18  binary
+  CAR8.BGV                         458,752  2004-07-23 23:18  binary
+  CAR8.HWD                         225,280  2004-07-23 23:18  binary
+  CAR8.LWD                          40,960  2004-07-23 23:18  binary
+  CAR9.BGV                         466,944  2004-07-23 23:18  binary
+  CAR9.HWD                         210,944  2004-07-23 23:18  binary
+  CAR9.LWD                          34,816  2004-07-23 23:18  binary
+
+PVEH/HEVY/
+  CAR1.BGV                         428,032  2004-07-23 23:19  binary
+  CAR1.HWD                         202,752  2004-07-23 23:19  binary
+  CAR1.LWD                          38,912  2004-07-23 23:19  binary
+  CAR10.BGV                        395,264  2004-07-23 23:19  binary
+  CAR10.HWD                        165,888  2004-07-23 23:19  binary
+  CAR10.LWD                         43,008  2004-07-23 23:19  binary
+  CAR11.BTV                        241,664  2004-07-23 23:19  binary
+  CAR12.BTV                        237,568  2004-07-23 23:19  binary
+  CAR13.BTV                        235,520  2004-07-23 23:19  binary
+  CAR14.BTV                        243,712  2004-07-23 23:19  binary
+  CAR15.BTV                        239,616  2004-07-23 23:19  binary
+  CAR16.BTV                        241,664  2004-07-23 23:19  binary
+  CAR17.BTV                        235,520  2004-07-23 23:19  binary
+  CAR18.BTV                        227,328  2004-07-23 23:19  binary
+  CAR19.BTV                        223,232  2004-07-24 23:06  binary
+  CAR2.BGV                         430,080  2004-07-23 23:19  binary
+  CAR2.HWD                         202,752  2004-07-23 23:19  binary
+  CAR2.LWD                          38,912  2004-07-23 23:19  binary
+  CAR20.BTV                        208,896  2004-07-23 23:19  binary
+  CAR21.BTV                        210,944  2004-07-23 23:19  binary
+  CAR22.BTV                        225,280  2004-07-23 23:19  binary
+  CAR23.BTV                        237,568  2004-07-23 23:19  binary
+  CAR24.BTV                        182,272  2004-07-23 23:19  binary
+  CAR25.BTV                        182,272  2004-07-23 23:19  binary
+  CAR26.BTV                        180,224  2004-07-23 23:19  binary
+  CAR27.BTV                        260,096  2004-07-23 23:19  binary
+  CAR28.BTV                        233,472  2004-07-23 23:19  binary
+  CAR29.BTV                        198,656  2004-07-23 23:19  binary
+  CAR3.BGV                         442,368  2004-07-23 23:19  binary
+  CAR3.HWD                         202,752  2004-07-23 23:19  binary
+  CAR3.LWD                          38,912  2004-07-23 23:19  binary
+  CAR30.BTV                        212,992  2004-07-23 23:19  binary
+  CAR31.BTV                        235,520  2004-07-23 23:20  binary
+  CAR32.BTV                        223,232  2004-07-23 23:20  binary
+  CAR33.BTV                        231,424  2004-07-23 23:20  binary
+  CAR34.BTV                        194,560  2004-07-23 23:20  binary
+  CAR35.BTV                        227,328  2004-07-23 23:20  binary
+  CAR36.BGV                        428,032  2004-07-23 23:20  binary
+  CAR36.HWD                        165,888  2004-07-23 23:20  binary
+  CAR36.LWD                         43,008  2004-07-23 23:20  binary
+  CAR4.BGV                         442,368  2004-07-23 23:20  binary
+  CAR4.HWD                         190,464  2004-07-23 23:20  binary
+  CAR4.LWD                          38,912  2004-07-23 23:20  binary
+  CAR5.BGV                         438,272  2004-07-23 23:20  binary
+  CAR5.HWD                         190,464  2004-07-23 23:20  binary
+  CAR5.LWD                          38,912  2004-07-23 23:20  binary
+  CAR6.BGV                         446,464  2004-07-23 23:20  binary
+  CAR6.HWD                         190,464  2004-07-23 23:20  binary
+  CAR6.LWD                          38,912  2004-07-23 23:20  binary
+  CAR7.BGV                         374,784  2004-07-23 23:20  binary
+  CAR7.HWD                         165,888  2004-07-23 23:20  binary
+  CAR7.LWD                          43,008  2004-07-23 23:20  binary
+  CAR8.BGV                         370,688  2004-07-23 23:20  binary
+  CAR8.HWD                         165,888  2004-07-23 23:20  binary
+  CAR8.LWD                          43,008  2004-07-23 23:20  binary
+  CAR9.BGV                         380,928  2004-07-24 23:07  binary
+  CAR9.HWD                         165,888  2004-07-23 23:20  binary
+  CAR9.LWD                          43,008  2004-07-23 23:20  binary
+
+PVEH/HSPC/
+  CAR20.BGV                        464,896  2004-07-23 23:20  binary
+  CAR20.HWD                        196,608  2004-07-23 23:20  binary
+  CAR20.LWD                         45,056  2004-07-23 23:20  binary
+  CAR21.BGV                        428,032  2004-07-23 23:20  binary
+  CAR21.HWD                        202,752  2004-07-23 23:20  binary
+  CAR21.LWD                         43,008  2004-07-23 23:20  binary
+  CAR22.BGV                        403,456  2004-07-23 23:20  binary
+  CAR22.HWD                        169,984  2004-07-23 23:20  binary
+  CAR22.LWD                         45,056  2004-07-23 23:20  binary
+  CAR23.BGV                        391,168  2004-07-24 23:07  binary
+  CAR23.HWD                        176,128  2004-07-23 23:20  binary
+  CAR23.LWD                         45,056  2004-07-23 23:20  binary
+  CAR24.BGV                        421,888  2004-07-23 23:20  binary
+  CAR24.HWD                        157,696  2004-07-23 23:20  binary
+  CAR24.LWD                         45,056  2004-07-23 23:20  binary
+  CAR25.BGV                        430,080  2004-07-23 23:20  binary
+  CAR25.HWD                        157,696  2004-07-23 23:20  binary
+  CAR25.LWD                         45,056  2004-07-23 23:20  binary
+
+PVEH/MSCL/
+  CAR1.BGV                         434,176  2004-07-23 23:18  binary
+  CAR1.HWD                         184,320  2004-07-23 23:18  binary
+  CAR1.LWD                          40,960  2004-07-23 23:18  binary
+  CAR10.BGV                        417,792  2004-07-23 23:18  binary
+  CAR10.HWD                        212,992  2004-07-23 23:18  binary
+  CAR10.LWD                         40,960  2004-07-23 23:18  binary
+  CAR2.BGV                         460,800  2004-07-23 23:18  binary
+  CAR2.HWD                         145,408  2004-07-23 23:18  binary
+  CAR2.LWD                          38,912  2004-07-23 23:18  binary
+  CAR3.BGV                         423,936  2004-07-23 23:18  binary
+  CAR3.HWD                         180,224  2004-07-23 23:18  binary
+  CAR3.LWD                          45,056  2004-07-23 23:18  binary
+  CAR4.BGV                         454,656  2004-07-23 23:18  binary
+  CAR4.HWD                         188,416  2004-07-23 23:18  binary
+  CAR4.LWD                          40,960  2004-07-23 23:18  binary
+  CAR5.BGV                         430,080  2004-07-23 23:18  binary
+  CAR5.HWD                         176,128  2004-07-23 23:18  binary
+  CAR5.LWD                          40,960  2004-07-23 23:18  binary
+  CAR6.BGV                         393,216  2004-07-23 23:18  binary
+  CAR6.HWD                         200,704  2004-07-23 23:18  binary
+  CAR6.LWD                          43,008  2004-07-23 23:18  binary
+  CAR7.BGV                         460,800  2004-07-23 23:18  binary
+  CAR7.HWD                         190,464  2004-07-23 23:18  binary
+  CAR7.LWD                          38,912  2004-07-23 23:18  binary
+  CAR8.BGV                         421,888  2004-07-23 23:18  binary
+  CAR8.HWD                         223,232  2004-07-23 23:18  binary
+  CAR8.LWD                          45,056  2004-07-23 23:18  binary
+  CAR9.BGV                         458,752  2004-07-23 23:19  binary
+  CAR9.HWD                         235,520  2004-07-23 23:18  binary
+  CAR9.LWD                          40,960  2004-07-23 23:18  binary
+
+PVEH/SPRT/
+  CAR1.BGV                         444,416  2004-07-23 23:18  binary
+  CAR1.HWD                         174,080  2004-07-23 23:18  binary
+  CAR1.LWD                          36,864  2004-07-23 23:18  binary
+  CAR10.BGV                        409,600  2004-07-23 23:18  binary
+  CAR10.HWD                        233,472  2004-07-23 23:18  binary
+  CAR10.LWD                         40,960  2004-07-23 23:18  binary
+  CAR2.BGV                         399,360  2004-07-23 23:18  binary
+  CAR2.HWD                         147,456  2004-07-23 23:18  binary
+  CAR2.LWD                          40,960  2004-07-23 23:18  binary
+  CAR3.BGV                         442,368  2004-07-23 23:18  binary
+  CAR3.HWD                         194,560  2004-07-23 23:18  binary
+  CAR3.LWD                          40,960  2004-07-23 23:18  binary
+  CAR4.BGV                         434,176  2004-07-23 23:18  binary
+  CAR4.HWD                         186,368  2004-07-23 23:18  binary
+  CAR4.LWD                          43,008  2004-07-23 23:18  binary
+  CAR5.BGV                         432,128  2004-07-23 23:18  binary
+  CAR5.HWD                         196,608  2004-07-23 23:18  binary
+  CAR5.LWD                          40,960  2004-07-23 23:18  binary
+  CAR6.BGV                         448,512  2004-07-23 23:18  binary
+  CAR6.HWD                         219,136  2004-07-23 23:18  binary
+  CAR6.LWD                          36,864  2004-07-23 23:18  binary
+  CAR7.BGV                         401,408  2004-07-23 23:18  binary
+  CAR7.HWD                         190,464  2004-07-23 23:18  binary
+  CAR7.LWD                          40,960  2004-07-23 23:18  binary
+  CAR8.BGV                         442,368  2004-07-23 23:18  binary
+  CAR8.HWD                         237,568  2004-07-23 23:18  binary
+  CAR8.LWD                          40,960  2004-07-23 23:18  binary
+  CAR9.BGV                         438,272  2004-07-23 23:18  binary
+  CAR9.HWD                         235,520  2004-07-23 23:18  binary
+  CAR9.LWD                          43,008  2004-07-23 23:18  binary
+
+PVEH/SUPR/
+  CAR1.BGV                         393,216  2004-07-23 23:19  binary
+  CAR1.HWD                         186,368  2004-07-23 23:19  binary
+  CAR1.LWD                          43,008  2004-07-23 23:19  binary
+  CAR10.BGV                        409,600  2004-07-23 23:19  binary
+  CAR10.HWD                        194,560  2004-07-23 23:19  binary
+  CAR10.LWD                         40,960  2004-07-23 23:19  binary
+  CAR2.BGV                         458,752  2004-07-23 23:19  binary
+  CAR2.HWD                         159,744  2004-07-23 23:19  binary
+  CAR2.LWD                          40,960  2004-07-23 23:19  binary
+  CAR3.BGV                         407,552  2004-07-23 23:19  binary
+  CAR3.HWD                         186,368  2004-07-23 23:19  binary
+  CAR3.LWD                          43,008  2004-07-23 23:19  binary
+  CAR4.BGV                         430,080  2004-07-23 23:19  binary
+  CAR4.HWD                         178,176  2004-07-23 23:19  binary
+  CAR4.LWD                          45,056  2004-07-23 23:19  binary
+  CAR5.BGV                         440,320  2004-07-23 23:19  binary
+  CAR5.HWD                         157,696  2004-07-23 23:19  binary
+  CAR5.LWD                          40,960  2004-07-23 23:19  binary
+  CAR6.BGV                         397,312  2004-07-23 23:19  binary
+  CAR6.HWD                         229,376  2004-07-23 23:19  binary
+  CAR6.LWD                          43,008  2004-07-23 23:19  binary
+  CAR7.BGV                         460,800  2004-07-23 23:19  binary
+  CAR7.HWD                         204,800  2004-07-23 23:19  binary
+  CAR7.LWD                          40,960  2004-07-23 23:19  binary
+  CAR8.BGV                         409,600  2004-07-23 23:19  binary
+  CAR8.HWD                         229,376  2004-07-23 23:19  binary
+  CAR8.LWD                          43,008  2004-07-23 23:19  binary
+  CAR9.BGV                         421,888  2004-07-23 23:19  binary
+  CAR9.HWD                         225,280  2004-07-23 23:19  binary
+  CAR9.LWD                          45,056  2004-07-23 23:19  binary
+
+PVEH/TSPC/
+  CAR1.BTV                          92,160  2004-07-23 23:20  binary
+  CAR2.BTV                         104,448  2004-07-23 23:20  binary
+  CAR3.BTV                         165,888  2004-07-23 23:20  binary
+  CAR4.BTV                         172,032  2004-07-23 23:20  binary
+  CAR5.BTV                         147,456  2004-07-23 23:20  binary
+  CAR6.BTV                          92,160  2004-07-23 23:20  binary
+
+SOUND/
+  CRASH.AWD                        186,368  2004-07-23 23:17  binary
+  CRASHMOD.AWD                     641,024  2004-07-23 23:17  binary
+  ELIM.AWD                         208,896  2004-07-23 23:17  binary
+  FE.AWD                           917,504  2004-07-23 23:17  binary
+  GENERIC.AWD                      487,424  2004-07-23 23:17  binary
+  G_CRSH04.AWD                     489,472  2004-07-23 23:17  binary
+  G_CRSH14.AWD                     487,424  2004-07-23 23:17  binary
+  G_CRSH24.AWD                     485,376  2004-07-23 23:17  binary
+  G_CRSH34.AWD                     483,328  2004-07-23 23:17  binary
+  G_CRSH44.AWD                     483,328  2004-07-23 23:17  binary
+  IDENT0.AWD                        18,432  2004-07-23 23:17  binary
+  IDENT1.AWD                        18,432  2004-07-23 23:17  binary
+  IDENT2.AWD                        18,432  2004-07-23 23:17  binary
+  IDENT3.AWD                        18,432  2004-07-23 23:17  binary
+  IDENT4.AWD                        18,432  2004-07-23 23:17  binary
+  IDENT5.AWD                        18,432  2004-07-23 23:17  binary
+  IDENT6.AWD                        18,432  2004-07-23 23:17  binary
+  IDENT7.AWD                        18,432  2004-07-23 23:17  binary
+  IDENT8.AWD                        18,432  2004-07-23 23:17  binary
+  IDENT9.AWD                        18,432  2004-07-23 23:17  binary
+  ROADRAGE.AWD                     208,896  2004-07-23 23:17  binary
+  SINGLE.AWD                       206,848  2004-07-23 23:17  binary
+
+TRACKS/
+  ALPINE1.M2V                    2,495,080  2004-07-23 23:11  MPEG-2 video
+  ALPINE2.M2V                    1,975,542  2004-07-23 23:11  MPEG-2 video
+  ALPINE3.M2V                    1,841,492  2004-07-23 23:11  MPEG-2 video
+  ALPINE4.M2V                    1,681,983  2004-07-23 23:11  MPEG-2 video
+  CRASH1.RWS                     2,197,504  2004-07-23 23:17  binary
+  CRASH10.RWS                    2,197,504  2004-07-23 23:17  binary
+  CRASH11.RWS                    2,197,504  2004-07-23 23:17  binary
+  CRASH12.RWS                    2,197,504  2004-07-23 23:17  binary
+  CRASH13.RWS                    2,197,504  2004-07-23 23:17  binary
+  CRASH14.RWS                    2,197,504  2004-07-23 23:17  binary
+  CRASH15.RWS                    2,197,504  2004-07-23 23:17  binary
+  CRASH16.RWS                    2,197,504  2004-07-23 23:17  binary
+  CRASH17.RWS                    2,197,504  2004-07-23 23:17  binary
+  CRASH18.RWS                    2,197,504  2004-07-23 23:17  binary
+  CRASH19.RWS                    2,197,504  2004-07-23 23:17  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:17  binary
+  CRASH20.RWS                    2,197,504  2004-07-23 23:17  binary
+  CRASH3.RWS                     2,197,504  2004-07-23 23:17  binary
+  CRASH4.RWS                     2,197,504  2004-07-23 23:17  binary
+  CRASH5.RWS                     2,197,504  2004-07-23 23:17  binary
+  CRASH6.RWS                     2,197,504  2004-07-23 23:17  binary
+  CRASH7.RWS                     2,197,504  2004-07-23 23:17  binary
+  CRASH8.RWS                     2,197,504  2004-07-23 23:17  binary
+  CRASH9.RWS                     2,197,504  2004-07-23 23:17  binary
+  DOCKSID1.M2V                   1,643,216  2004-07-23 23:11  MPEG-2 video
+  DOCKSID2.M2V                   1,394,163  2004-07-23 23:11  MPEG-2 video
+  DOCKSID3.M2V                   1,606,275  2004-07-23 23:11  MPEG-2 video
+  DOCKSID4.M2V                   1,560,044  2004-07-23 23:11  MPEG-2 video
+  DOCKSID5.M2V                   1,703,181  2004-07-23 23:11  MPEG-2 video
+  DOWNTOW1.M2V                   2,107,666  2004-07-23 23:11  MPEG-2 video
+  DOWNTOW2.M2V                   2,066,906  2004-07-23 23:11  MPEG-2 video
+  DOWNTOW3.M2V                   1,914,734  2004-07-23 23:11  MPEG-2 video
+  E_DJAS.RWS                     9,930,752  2004-07-24 03:33  binary
+  E_DJEU.RWS                     9,545,728  2004-07-24 03:33  binary
+  E_DJGEN.RWS                    2,779,136  2004-07-24 03:33  binary
+  E_DJMBL.RWS                      878,592  2004-07-24 03:33  binary
+  E_DJMCR.RWS                    1,345,536  2004-07-24 03:33  binary
+  E_DJMEL.RWS                    1,107,968  2004-07-24 03:33  binary
+  E_DJMFO.RWS                    1,017,856  2004-07-24 03:33  binary
+  E_DJMGP.RWS                    1,247,232  2004-07-24 03:33  binary
+  E_DJMRA.RWS                    1,320,960  2004-07-24 03:33  binary
+  E_DJMRR.RWS                    1,812,480  2004-07-24 03:33  binary
+  E_DJUS.RWS                     9,316,352  2004-07-24 03:33  binary
+  E_DJWWW.RWS                    1,599,488  2004-07-24 03:33  binary
+  GOLDENC1.M2V                   1,729,153  2004-07-23 23:11  MPEG-2 video
+  GOLDENC2.M2V                   1,835,816  2004-07-23 23:11  MPEG-2 video
+  GOLDENC3.M2V                   1,857,338  2004-07-23 23:11  MPEG-2 video
+  GOLDENC4.M2V                   1,530,872  2004-07-23 23:11  MPEG-2 video
+  GOLDENC5.M2V                   1,808,236  2004-07-23 23:11  MPEG-2 video
+  GOLDENC6.M2V                   1,804,947  2004-07-23 23:11  MPEG-2 video
+  ISLANDP1.M2V                   1,483,667  2004-07-23 23:11  MPEG-2 video
+  ISLANDP2.M2V                   1,742,271  2004-07-23 23:11  MPEG-2 video
+  ISLANDP3.M2V                   1,824,421  2004-07-23 23:11  MPEG-2 video
+  ISLANDP4.M2V                   1,452,071  2004-07-23 23:11  MPEG-2 video
+  RIVIERA1.M2V                   1,316,387  2004-07-23 23:11  MPEG-2 video
+  RIVIERA2.M2V                   1,533,318  2004-07-23 23:11  MPEG-2 video
+  RIVIERA3.M2V                   1,427,625  2004-07-23 23:11  MPEG-2 video
+  RIVIERA4.M2V                   1,536,195  2004-07-23 23:11  MPEG-2 video
+  RIVIERA5.M2V                   1,336,861  2004-07-23 23:11  MPEG-2 video
+  SILVERL1.M2V                   2,098,942  2004-07-23 23:11  MPEG-2 video
+  SILVERL2.M2V                   1,707,962  2004-07-23 23:11  MPEG-2 video
+  SILVERL3.M2V                   1,866,327  2004-07-23 23:11  MPEG-2 video
+  SILVERL4.M2V                   1,754,383  2004-07-23 23:11  MPEG-2 video
+  STATIC.M2V                       985,496  2004-07-23 23:11  MPEG-2 video
+  TLIST.BIN                          4,096  2004-07-24 00:11  binary
+  VINEYAR1.M2V                   1,463,685  2004-07-23 23:11  MPEG-2 video
+  VINEYAR2.M2V                   1,654,617  2004-07-23 23:11  MPEG-2 video
+  VINEYAR3.M2V                   2,073,046  2004-07-23 23:11  MPEG-2 video
+  VINEYAR4.M2V                   1,781,343  2004-07-23 23:11  MPEG-2 video
+  VINEYAR5.M2V                   1,787,868  2004-07-23 23:11  MPEG-2 video
+  WATERFR1.M2V                   2,098,899  2004-07-23 23:11  MPEG-2 video
+  WATERFR2.M2V                   1,934,302  2004-07-23 23:11  MPEG-2 video
+  WATERFR3.M2V                   1,908,541  2004-07-23 23:11  MPEG-2 video
+  WATERFR4.M2V                   1,867,413  2004-07-23 23:11  MPEG-2 video
+  WINTERC1.M2V                   2,099,278  2004-07-23 23:11  MPEG-2 video
+  WINTERC2.M2V                   1,845,905  2004-07-23 23:11  MPEG-2 video
+  WINTERC3.M2V                   1,660,794  2004-07-23 23:11  MPEG-2 video
+  WINTERC4.M2V                   2,299,768  2004-07-23 23:11  MPEG-2 video
+  WINTERC5.M2V                   1,684,859  2004-07-23 23:11  MPEG-2 video
+  WINTERC6.M2V                   1,732,503  2004-07-23 23:11  MPEG-2 video
+  _EATRAX0.RWS                 156,403,712  2004-07-24 03:33  binary
+  _EATRAX1.RWS                 157,263,872  2004-07-24 03:33  binary
+  _FEMAIN.M2V                   21,682,736  2004-07-23 23:11  MPEG-2 video
+  _FEMAIN.RWS                    1,615,872  2004-07-23 23:17  binary
+
+TRACKS/AS/C1_V1/
+  CRASH1.RWS                     2,197,504  2004-07-24 00:03  binary
+  CRASH2.RWS                     2,197,504  2004-07-24 00:03  binary
+  CRASH3.RWS                     4,040,704  2004-07-24 00:03  binary
+  ENVIRO.DAT                       327,680  2004-07-25 19:41  binary
+  E_DJRACE.RWS                  16,281,600  2004-07-24 03:34  binary
+  GAMEDATA.BGD                   1,931,264  2004-07-24 18:59  binary
+  MUSIC.RWS                            124  2004-07-24 00:03  binary
+  SOUND.AWD                        169,984  2004-07-24 00:03  binary
+  STATIC.DAT                     5,537,792  2004-07-25 19:41  binary
+  STREAMED.DAT                   9,273,344  2004-07-25 19:41  binary
+
+TRACKS/AS/C1_V2/
+  ENVIRO.DAT                       327,680  2004-07-25 19:41  binary
+  GAMEDATA.BGD                   1,908,736  2004-07-24 18:59  binary
+  MUSIC.RWS                            124  2004-07-24 00:03  binary
+  STATIC.DAT                     5,537,792  2004-07-25 19:41  binary
+  STREAMED.DAT                   9,273,344  2004-07-25 19:41  binary
+
+TRACKS/AS/C2_V1/
+  CRASH1.RWS                     2,197,504  2004-07-24 00:05  binary
+  CRASH2.RWS                     2,197,504  2004-07-24 00:05  binary
+  CRASH3.RWS                     4,286,464  2004-07-24 00:05  binary
+  ENVIRO.DAT                       327,680  2004-07-25 19:41  binary
+  E_DJRACE.RWS                  14,249,984  2004-07-24 03:34  binary
+  GAMEDATA.BGD                     995,328  2004-07-25 19:41  binary
+  MUSIC.RWS                            124  2004-07-24 00:05  binary
+  SOUND.AWD                        163,840  2004-07-24 00:05  binary
+  STATIC.DAT                     4,751,360  2004-07-25 19:41  binary
+  STREAMED.DAT                   9,601,024  2004-07-25 19:41  binary
+
+TRACKS/AS/C2_V2/
+  ENVIRO.DAT                       327,680  2004-07-25 19:41  binary
+  GAMEDATA.BGD                     985,088  2004-07-25 19:41  binary
+  MUSIC.RWS                            124  2004-07-24 00:05  binary
+  STATIC.DAT                     4,751,360  2004-07-25 19:41  binary
+  STREAMED.DAT                   9,601,024  2004-07-25 19:41  binary
+
+TRACKS/AS/C3_V1/
+  CRASH1.RWS                     2,197,504  2004-07-24 00:07  binary
+  CRASH2.RWS                     2,197,504  2004-07-24 00:07  binary
+  CRASH3.RWS                     4,630,528  2004-07-24 00:07  binary
+  ENVIRO.DAT                       327,680  2004-07-24 18:59  binary
+  E_DJRACE.RWS                  13,004,800  2004-07-24 03:35  binary
+  GAMEDATA.BGD                   1,245,184  2004-07-24 18:59  binary
+  MUSIC.RWS                            124  2004-07-24 00:07  binary
+  SOUND.AWD                        169,984  2004-07-24 00:07  binary
+  STATIC.DAT                     4,784,128  2004-07-24 18:59  binary
+  STREAMED.DAT                   8,224,768  2004-07-24 18:59  binary
+
+TRACKS/AS/C3_V2/
+  ENVIRO.DAT                       327,680  2004-07-24 18:59  binary
+  GAMEDATA.BGD                   1,239,040  2004-07-24 18:59  binary
+  MUSIC.RWS                            124  2004-07-24 00:07  binary
+  STATIC.DAT                     4,751,360  2004-07-24 18:59  binary
+  STREAMED.DAT                   8,224,768  2004-07-24 18:59  binary
+
+TRACKS/AS/M1_V1/
+  CRASH1.RWS                     2,197,504  2004-07-24 00:11  binary
+  CRASH2.RWS                     2,197,504  2004-07-24 00:11  binary
+  CRASH3.RWS                     4,048,896  2004-07-24 00:11  binary
+  ENVIRO.DAT                       327,680  2004-07-24 23:09  binary
+  E_DJRACE.RWS                  16,863,232  2004-07-24 03:35  binary
+  GAMEDATA.BGD                   2,789,376  2004-07-24 23:09  binary
+  MUSIC.RWS                            124  2004-07-24 00:11  binary
+  SOUND.AWD                        157,696  2004-07-24 00:11  binary
+  STATIC.DAT                     7,569,408  2004-07-24 23:09  binary
+  STREAMED.DAT                  29,556,736  2004-07-24 23:09  binary
+
+TRACKS/AS/M1_V2/
+  ENVIRO.DAT                       327,680  2004-07-24 23:09  binary
+  GAMEDATA.BGD                   2,789,376  2004-07-24 23:09  binary
+  MUSIC.RWS                            124  2004-07-24 00:11  binary
+  STATIC.DAT                     7,569,408  2004-07-24 23:09  binary
+  STREAMED.DAT                  29,556,736  2004-07-24 23:09  binary
+
+TRACKS/EU/C1_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:36  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:36  binary
+  CRASH3.RWS                     4,450,304  2004-07-23 23:36  binary
+  ENVIRO.DAT                       327,680  2004-07-25 19:39  binary
+  E_DJRACE.RWS                  13,471,744  2004-07-24 03:34  binary
+  GAMEDATA.BGD                   2,015,232  2004-07-25 19:40  binary
+  MUSIC.RWS                            124  2004-07-23 23:36  binary
+  SOUND.AWD                        169,984  2004-07-23 23:36  binary
+  STATIC.DAT                     4,882,432  2004-07-25 19:40  binary
+  STREAMED.DAT                   8,192,000  2004-07-25 19:40  binary
+
+TRACKS/EU/C1_V2/
+  ENVIRO.DAT                       327,680  2004-07-25 19:40  binary
+  GAMEDATA.BGD                   1,990,656  2004-07-25 19:40  binary
+  MUSIC.RWS                            124  2004-07-23 23:37  binary
+  STATIC.DAT                     4,882,432  2004-07-25 19:40  binary
+  STREAMED.DAT                   8,224,768  2004-07-25 19:40  binary
+
+TRACKS/EU/C2_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:39  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:39  binary
+  CRASH3.RWS                     4,515,840  2004-07-23 23:39  binary
+  ENVIRO.DAT                       327,680  2004-07-23 23:39  binary
+  E_DJRACE.RWS                  14,766,080  2004-07-24 03:34  binary
+  GAMEDATA.BGD                   2,070,528  2004-07-25 19:40  binary
+  MUSIC.RWS                            124  2004-07-23 23:39  binary
+  SOUND.AWD                        165,888  2004-07-23 23:39  binary
+  STATIC.DAT                     5,111,808  2004-07-23 23:39  binary
+  STREAMED.DAT                  13,533,184  2004-07-23 23:39  binary
+
+TRACKS/EU/C2_V2/
+  ENVIRO.DAT                       327,680  2004-07-23 23:39  binary
+  GAMEDATA.BGD                   2,066,432  2004-07-25 19:40  binary
+  MUSIC.RWS                            124  2004-07-23 23:39  binary
+  STATIC.DAT                     5,111,808  2004-07-23 23:39  binary
+  STREAMED.DAT                  13,533,184  2004-07-23 23:39  binary
+
+TRACKS/EU/C3_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:41  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:41  binary
+  CRASH3.RWS                     4,188,160  2004-07-23 23:41  binary
+  ENVIRO.DAT                       327,680  2004-07-24 18:57  binary
+  E_DJRACE.RWS                  15,421,440  2004-07-24 03:34  binary
+  GAMEDATA.BGD                     929,792  2004-07-24 18:57  binary
+  MUSIC.RWS                            124  2004-07-23 23:41  binary
+  SOUND.AWD                        157,696  2004-07-23 23:41  binary
+  STATIC.DAT                     5,636,096  2004-07-24 18:57  binary
+  STREAMED.DAT                   7,766,016  2004-07-24 18:57  binary
+
+TRACKS/EU/C3_V2/
+  ENVIRO.DAT                       327,680  2004-07-24 18:57  binary
+  GAMEDATA.BGD                     913,408  2004-07-24 18:57  binary
+  MUSIC.RWS                            124  2004-07-23 23:41  binary
+  STATIC.DAT                     5,636,096  2004-07-24 18:57  binary
+  STREAMED.DAT                   7,766,016  2004-07-24 18:57  binary
+
+TRACKS/EU/C4_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:43  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:43  binary
+  CRASH3.RWS                     5,351,424  2004-07-23 23:43  binary
+  ENVIRO.DAT                       327,680  2004-07-25 23:34  binary
+  E_DJRACE.RWS                  14,643,200  2004-07-24 03:34  binary
+  GAMEDATA.BGD                   1,275,904  2004-07-24 18:57  binary
+  MUSIC.RWS                            124  2004-07-23 23:43  binary
+  SOUND.AWD                        137,216  2004-07-23 23:43  binary
+  STATIC.DAT                     4,194,304  2004-07-25 23:34  binary
+  STREAMED.DAT                   8,650,752  2004-07-25 23:34  binary
+
+TRACKS/EU/C4_V2/
+  ENVIRO.DAT                       327,680  2004-07-25 23:34  binary
+  GAMEDATA.BGD                   1,275,904  2004-07-24 18:57  binary
+  MUSIC.RWS                            124  2004-07-23 23:43  binary
+  STATIC.DAT                     4,194,304  2004-07-25 23:34  binary
+  STREAMED.DAT                   8,585,216  2004-07-25 23:34  binary
+
+TRACKS/EU/M1_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:48  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:48  binary
+  CRASH3.RWS                     4,196,352  2004-07-23 23:48  binary
+  ENVIRO.DAT                       327,680  2004-07-23 23:47  binary
+  E_DJRACE.RWS                  12,890,112  2004-07-24 03:34  binary
+  GAMEDATA.BGD                   2,631,680  2004-07-24 23:08  binary
+  MUSIC.RWS                            124  2004-07-23 23:48  binary
+  SOUND.AWD                        167,936  2004-07-23 23:48  binary
+  STATIC.DAT                     7,733,248  2004-07-25 19:40  binary
+  STREAMED.DAT                  24,379,392  2004-07-25 19:40  binary
+
+TRACKS/EU/M1_V2/
+  ENVIRO.DAT                       327,680  2004-07-23 23:48  binary
+  GAMEDATA.BGD                   2,629,632  2004-07-24 23:08  binary
+  MUSIC.RWS                            124  2004-07-23 23:48  binary
+  STATIC.DAT                     7,766,016  2004-07-25 19:40  binary
+  STREAMED.DAT                  24,444,928  2004-07-25 19:40  binary
+
+TRACKS/EU/M2_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:51  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:51  binary
+  CRASH3.RWS                     4,548,608  2004-07-23 23:51  binary
+  ENVIRO.DAT                       327,680  2004-07-25 23:34  binary
+  E_DJRACE.RWS                  15,101,952  2004-07-24 03:34  binary
+  GAMEDATA.BGD                   1,585,152  2004-07-24 18:58  binary
+  MUSIC.RWS                            124  2004-07-23 23:51  binary
+  SOUND.AWD                         96,256  2004-07-23 23:51  binary
+  STATIC.DAT                     7,634,944  2004-07-25 23:35  binary
+  STREAMED.DAT                  17,924,096  2004-07-25 23:35  binary
+
+TRACKS/EU/M2_V2/
+  ENVIRO.DAT                       327,680  2004-07-25 23:35  binary
+  GAMEDATA.BGD                   1,583,104  2004-07-24 18:58  binary
+  MUSIC.RWS                            124  2004-07-23 23:51  binary
+  STATIC.DAT                     7,634,944  2004-07-25 23:35  binary
+  STREAMED.DAT                  17,924,096  2004-07-25 23:35  binary
+
+TRACKS/EU/P1_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:56  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:56  binary
+  CRASH3.RWS                     4,458,496  2004-07-23 23:56  binary
+  ENVIRO.DAT                       327,680  2004-07-24 18:58  binary
+  E_DJRACE.RWS                  14,077,952  2004-07-24 03:34  binary
+  GAMEDATA.BGD                   2,408,448  2004-07-24 18:58  binary
+  MUSIC.RWS                            124  2004-07-23 23:56  binary
+  SOUND.AWD                        167,936  2004-07-23 23:56  binary
+  STATIC.DAT                     7,864,320  2004-07-25 19:40  binary
+  STREAMED.DAT                  20,905,984  2004-07-25 19:40  binary
+
+TRACKS/EU/P1_V2/
+  ENVIRO.DAT                       327,680  2004-07-24 18:58  binary
+  GAMEDATA.BGD                   2,406,400  2004-07-24 18:58  binary
+  MUSIC.RWS                            124  2004-07-23 23:57  binary
+  STATIC.DAT                     7,831,552  2004-07-25 19:41  binary
+  STREAMED.DAT                  20,873,216  2004-07-25 19:41  binary
+
+TRACKS/EU/P2_V1/
+  CRASH1.RWS                     2,197,504  2004-07-24 00:01  binary
+  CRASH2.RWS                     2,197,504  2004-07-24 00:01  binary
+  CRASH3.RWS                     4,638,720  2004-07-24 00:01  binary
+  ENVIRO.DAT                       327,680  2004-07-24 18:58  binary
+  E_DJRACE.RWS                  14,987,264  2004-07-24 03:34  binary
+  GAMEDATA.BGD                   1,828,864  2004-07-24 18:58  binary
+  MUSIC.RWS                            124  2004-07-24 00:01  binary
+  SOUND.AWD                        124,928  2004-07-24 00:01  binary
+  STATIC.DAT                     7,536,640  2004-07-24 18:58  binary
+  STREAMED.DAT                  16,089,088  2004-07-24 18:58  binary
+
+TRACKS/EU/P2_V2/
+  ENVIRO.DAT                       327,680  2004-07-24 18:58  binary
+  GAMEDATA.BGD                   1,839,104  2004-07-24 18:59  binary
+  MUSIC.RWS                            124  2004-07-24 00:01  binary
+  STATIC.DAT                     7,536,640  2004-07-24 18:59  binary
+  STREAMED.DAT                  16,056,320  2004-07-24 18:59  binary
+
+TRACKS/US/C1_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:23  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:23  binary
+  CRASH3.RWS                     4,294,656  2004-07-23 23:23  binary
+  ENVIRO.DAT                       196,608  2004-07-23 23:22  binary
+  E_DJRACE.RWS                  13,733,888  2004-07-24 03:33  binary
+  GAMEDATA.BGD                   1,845,248  2004-07-25 19:39  binary
+  MUSIC.RWS                            124  2004-07-23 23:23  binary
+  SOUND.AWD                        169,984  2004-07-23 23:23  binary
+  STATIC.DAT                     5,341,184  2004-07-23 23:23  binary
+  STREAMED.DAT                  12,124,160  2004-07-23 23:23  binary
+
+TRACKS/US/C1_V2/
+  ENVIRO.DAT                       196,608  2004-07-23 23:23  binary
+  GAMEDATA.BGD                   1,847,296  2004-07-25 19:39  binary
+  MUSIC.RWS                            124  2004-07-23 23:23  binary
+  STATIC.DAT                     5,341,184  2004-07-23 23:23  binary
+  STREAMED.DAT                  12,222,464  2004-07-23 23:23  binary
+
+TRACKS/US/C2_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:24  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:24  binary
+  CRASH3.RWS                     4,614,144  2004-07-23 23:24  binary
+  ENVIRO.DAT                       327,680  2004-07-25 19:39  binary
+  E_DJRACE.RWS                  12,906,496  2004-07-24 03:33  binary
+  GAMEDATA.BGD                   1,794,048  2004-07-25 19:39  binary
+  MUSIC.RWS                            124  2004-07-23 23:24  binary
+  SOUND.AWD                        163,840  2004-07-23 23:24  binary
+  STATIC.DAT                     5,210,112  2004-07-25 19:39  binary
+  STREAMED.DAT                   8,716,288  2004-07-25 19:39  binary
+
+TRACKS/US/C2_V2/
+  ENVIRO.DAT                       327,680  2004-07-25 19:39  binary
+  GAMEDATA.BGD                   1,775,616  2004-07-25 19:39  binary
+  MUSIC.RWS                            124  2004-07-23 23:25  binary
+  STATIC.DAT                     5,210,112  2004-07-25 19:39  binary
+  STREAMED.DAT                   8,650,752  2004-07-25 19:39  binary
+
+TRACKS/US/C3_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:26  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:26  binary
+  CRASH3.RWS                     5,015,552  2004-07-23 23:26  binary
+  ENVIRO.DAT                       327,680  2004-07-23 23:26  binary
+  E_DJRACE.RWS                  17,002,496  2004-07-24 03:33  binary
+  GAMEDATA.BGD                     980,992  2004-07-25 19:39  binary
+  MUSIC.RWS                            124  2004-07-23 23:26  binary
+  SOUND.AWD                        155,648  2004-07-23 23:26  binary
+  STATIC.DAT                     4,718,592  2004-07-23 23:26  binary
+  STREAMED.DAT                   6,946,816  2004-07-23 23:26  binary
+
+TRACKS/US/C3_V2/
+  ENVIRO.DAT                       327,680  2004-07-23 23:26  binary
+  GAMEDATA.BGD                     976,896  2004-07-25 19:39  binary
+  MUSIC.RWS                            124  2004-07-23 23:26  binary
+  STATIC.DAT                     4,718,592  2004-07-23 23:26  binary
+  STREAMED.DAT                   6,946,816  2004-07-23 23:26  binary
+
+TRACKS/US/C5_V1/
+  ENVIRO.DAT                       196,608  2004-07-24 00:11  binary
+  STATIC.DAT                       753,664  2004-07-24 00:11  binary
+  STREAMED.DAT                           0  2004-07-24 00:11  binary
+
+TRACKS/US/M1_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:30  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:30  binary
+  CRASH3.RWS                     5,023,744  2004-07-23 23:30  binary
+  ENVIRO.DAT                       327,680  2004-07-24 23:07  binary
+  E_DJRACE.RWS                  14,315,520  2004-07-24 03:33  binary
+  GAMEDATA.BGD                   2,789,376  2004-07-24 18:56  binary
+  MUSIC.RWS                            124  2004-07-23 23:30  binary
+  SOUND.AWD                        129,024  2004-07-23 23:30  binary
+  STATIC.DAT                     6,946,816  2004-07-24 23:07  binary
+  STREAMED.DAT                  23,855,104  2004-07-24 23:07  binary
+
+TRACKS/US/M1_V2/
+  ENVIRO.DAT                       327,680  2004-07-24 23:07  binary
+  GAMEDATA.BGD                   2,789,376  2004-07-24 18:57  binary
+  MUSIC.RWS                            124  2004-07-23 23:30  binary
+  STATIC.DAT                     6,946,816  2004-07-24 23:07  binary
+  STREAMED.DAT                  23,625,728  2004-07-24 23:07  binary
+
+TRACKS/US/P1_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:33  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:33  binary
+  CRASH3.RWS                     4,302,848  2004-07-23 23:33  binary
+  ENVIRO.DAT                       196,608  2004-07-24 23:07  binary
+  E_DJRACE.RWS                  14,061,568  2004-07-24 03:33  binary
+  GAMEDATA.BGD                   1,873,920  2004-07-24 23:08  binary
+  MUSIC.RWS                            124  2004-07-23 23:33  binary
+  SOUND.AWD                        161,792  2004-07-23 23:33  binary
+  STATIC.DAT                     7,831,552  2004-07-24 23:08  binary
+  STREAMED.DAT                  15,892,480  2004-07-24 23:08  binary
+
+TRACKS/US/P1_V2/
+  ENVIRO.DAT                       196,608  2004-07-24 23:08  binary
+  GAMEDATA.BGD                   1,869,824  2004-07-24 23:08  binary
+  MUSIC.RWS                            124  2004-07-23 23:33  binary
+  STATIC.DAT                     7,831,552  2004-07-24 23:08  binary
+  STREAMED.DAT                  15,892,480  2004-07-24 23:08  binary
+
+TRACKS/US/P2_V1/
+  CRASH1.RWS                     2,197,504  2004-07-23 23:34  binary
+  CRASH2.RWS                     2,197,504  2004-07-23 23:34  binary
+  CRASH3.RWS                     4,622,336  2004-07-23 23:34  binary
+  ENVIRO.DAT                       327,680  2004-07-24 23:08  binary
+  E_DJRACE.RWS                  14,266,368  2004-07-24 03:33  binary
+  GAMEDATA.BGD                   2,340,864  2004-07-24 18:57  binary
+  MUSIC.RWS                            124  2004-07-23 23:34  binary
+  SOUND.AWD                        167,936  2004-07-23 23:34  binary
+  STATIC.DAT                     7,634,944  2004-07-24 23:08  binary
+  STREAMED.DAT                  18,546,688  2004-07-24 23:08  binary
+
+TRACKS/US/P2_V2/
+  ENVIRO.DAT                       327,680  2004-07-24 23:08  binary
+  GAMEDATA.BGD                   2,338,816  2004-07-24 18:57  binary
+  MUSIC.RWS                            124  2004-07-23 23:34  binary
+  STATIC.DAT                     7,667,712  2004-07-24 23:08  binary
+  STREAMED.DAT                  18,612,224  2004-07-24 23:08  binary

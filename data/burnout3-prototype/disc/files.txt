@@ -1,0 +1,488 @@
+// Every file on the disc folder, with size, date and detected format. No file contents are copied.
+
+
+./
+  B3DEBUG.AST                      129,666  2004-06-09 01:43  binary, magic "lnVa"
+  B3DEBUG.MAP                    2,504,840  2004-06-09 01:44  binary
+  B3INTERN.AST                     134,610  2004-06-02 20:51  binary, magic "lnVa"
+  B3INTERN.MAP                   2,544,704  2004-06-02 20:51  binary
+  B3O0PCH.MAP                    3,218,960  2004-06-09 03:56  binary
+  DNAT_200.45                    3,369,560  2004-06-09 04:20  ELF executable/module
+  DNAT_200.MAP                   2,727,087  2004-06-04 05:51  text
+  MESSAGE.TXT                          119  2004-05-30 00:35  text
+  SYSTEM.CNF                            57  2004-05-30 00:35  text
+
+CNF/
+  DIAL_SPD.CNF                         776  2004-05-30 00:35  text
+  ICON.SYS                             964  2004-05-30 00:35  binary, magic "PS2D"
+  SYS_NET.ICO                       33,688  2004-05-30 00:35  PS2 save icon model
+
+DATA/
+  CRTGAMES.M2V                     807,266  2004-05-30 00:35  MPEG-2 video
+  DMARKTG.M2V                    6,536,724  2004-05-30 00:35  MPEG-2 video
+  EALOGIN.ICO                       10,606  2004-05-30 00:36  PS2 save icon model
+  EA_GAMES.M2V                     917,755  2004-05-30 00:35  MPEG-2 video
+  FEMAIN.M2V                    21,682,736  2004-05-30 00:35  MPEG-2 video
+  FRONTEND.TXD                   8,307,264  2004-06-04 20:30  binary
+  GLOBAL.TXD                     1,298,048  2004-06-03 11:38  binary
+  GLOBALE.BIN                      121,192  2004-06-09 02:15  binary
+  INTRO.KFS                        217,328  2004-06-09 02:22  binary
+  PRGDATAE.BIN                      18,432  2004-06-09 03:33  binary
+  REPLAY.KFS                             8  2004-05-30 00:36  binary
+  RNDRWARE.M2V                   2,380,874  2004-05-11 13:57  MPEG-2 video
+  RW_NTSC.M2V                      549,407  2004-05-30 00:35  MPEG-2 video
+  RW_PAL.M2V                       500,164  2004-05-30 00:35  MPEG-2 video
+  STAGEHED.BIN                     100,352  2004-06-06 01:25  binary
+  TRACKE.BIN                           944  2004-06-04 04:32  binary
+  VEHICLEE.BIN                      19,032  2004-06-09 03:34  binary
+
+IOP/
+  AN986.IRX                         19,529  2004-05-30 00:35  ELF executable/module
+  ATTYMON.IRX                        9,917  2004-05-30 00:35  ELF executable/module
+  B3ROUTE.IRX                       18,800  2004-05-30 00:35  ELF executable/module
+  DBCMAN.IRX                        15,477  2004-05-30 00:35  ELF executable/module
+  DNAS280.IMG                      272,705  2004-05-30 00:35  binary, magic "RESE"
+  DS2O.IRX                          10,933  2004-05-30 00:35  ELF executable/module
+  GTFSATMN.IRX                      12,800  2004-05-30 00:35  ELF executable/module
+  GTFSCDVD.IRX                      16,048  2004-05-30 00:35  ELF executable/module
+  GTFSHOST.IRX                      12,992  2004-05-30 00:35  ELF executable/module
+  ICON.SYS                             964  2004-05-30 00:35  binary, magic "PS2D"
+  IOPRP280.IMG                     269,889  2004-05-30 00:35  binary, magic "RESE"
+  LGAUD.IRX                         49,693  2004-05-30 00:35  ELF executable/module
+  LGDEVW.IRX                        46,721  2004-05-30 00:35  ELF executable/module
+  LGKBM.IRX                         23,060  2004-05-30 00:35  ELF executable/module
+  LIBSD.IRX                         28,605  2004-05-30 00:35  ELF executable/module
+  MC2_S1.IRX                        20,957  2004-05-30 00:35  ELF executable/module
+  MCMAN.IRX                         95,909  2004-05-30 00:35  ELF executable/module
+  MCSERV.IRX                         7,417  2004-05-30 00:35  ELF executable/module
+  RWA.IRX                           78,672  2004-06-02 22:28  ELF executable/module
+  RWSCOMMS.IRX                      16,768  2004-05-30 00:35  ELF executable/module
+  SIO2D.IRX                         11,297  2004-05-30 00:35  ELF executable/module
+  SIO2MAN.IRX                        6,641  2004-05-30 00:35  ELF executable/module
+  SYS_NET.ICO                       33,688  2004-05-30 00:35  PS2 save icon model
+  USBD.IRX                          34,969  2004-05-30 00:35  ELF executable/module
+
+IOP/DEBUG/
+  SULPHAC.IRX                       63,605  2004-05-30 00:36  ELF executable/module
+  SULPHAS.IRX                       28,573  2004-05-30 00:36  ELF executable/module
+
+IOP/NETWORK/
+  DEV9.IRX                          13,757  2004-05-30 00:35  ELF executable/module
+  DRTYSCKD.IRX                     142,808  2004-05-30 00:35  ELF executable/module
+  DRTYSCKF.IRX                     122,456  2004-05-30 00:35  ELF executable/module
+  EENETCTL.IRX                      21,645  2004-05-30 00:35  ELF executable/module
+  ENT_DEVM.IRX                      13,445  2004-05-30 00:35  ELF executable/module
+  ENT_PPP.IRX                       59,717  2004-05-30 00:35  ELF executable/module
+  ENT_SMAP.IRX                      31,173  2004-05-30 00:35  ELF executable/module
+  EZENTCTL.IRX                       9,109  2004-05-30 00:35  ELF executable/module
+  EZNETCNF.IRX                       7,909  2004-05-30 00:35  ELF executable/module
+  EZNETCTL.IRX                      12,221  2004-05-30 00:35  ELF executable/module
+  IFCONFIG.IRX                      18,037  2004-05-30 00:35  ELF executable/module
+  INET.IRX                         141,413  2004-05-30 00:35  ELF executable/module
+  INETCTL.IRX                       24,797  2004-05-30 00:35  ELF executable/module
+  LIBNET.IRX                         6,709  2004-05-30 00:35  ELF executable/module
+  MSIFRPC.IRX                        8,121  2004-05-30 00:35  ELF executable/module
+  NETCNF.IRX                        65,805  2004-05-30 00:35  ELF executable/module
+  NETCNFIF.IRX                      19,941  2004-05-30 00:35  ELF executable/module
+  PPP.IRX                          102,285  2004-05-30 00:35  ELF executable/module
+  PPPOE.IRX                         17,121  2004-05-30 00:35  ELF executable/module
+  SMAP.IRX                          17,105  2004-05-30 00:35  ELF executable/module
+
+NETGUI/
+  BG.RGB                           860,160  2004-05-30 00:35  binary
+  BG2.RGB                        1,146,880  2004-05-30 00:35  binary
+  BG_PAL.RGB                       983,040  2004-05-30 00:35  binary
+  EFF.BD                           127,536  2004-05-30 00:35  binary
+  EFF.HD                               560  2004-05-30 00:35  binary, magic "IECS"
+  EUROPEAN.PF                      637,456  2004-05-30 00:35  binary
+  JAPANESE.PF                    2,607,568  2004-05-30 00:35  binary
+  JIS2UCS.BIN                      131,072  2004-05-30 00:35  binary
+  KOREAN.PF                      4,251,264  2004-05-30 00:35  binary
+  NTGUI_EU.ELF                   4,193,644  2004-05-30 00:35  ELF executable/module
+  NTGUI_UC.ELF                   4,193,516  2004-05-30 00:36  ELF executable/module
+  UCS2JIS.BIN                      131,072  2004-05-30 00:36  binary
+
+NETGUI/MODULES/
+  DEV9.IRX                          13,197  2004-05-30 00:35  ELF executable/module
+  EZMIDI.IRX                        60,804  2004-05-30 00:35  ELF executable/module
+  INET.IRX                         141,485  2004-05-30 00:35  ELF executable/module
+  INETCTL.IRX                       24,765  2004-05-30 00:35  ELF executable/module
+  IOPRP271.IMG                     266,817  2004-05-30 00:35  binary, magic "RESE"
+  LIBSD.IRX                         28,605  2004-05-30 00:35  ELF executable/module
+  MCMAN.IRX                         95,877  2004-05-30 00:35  ELF executable/module
+  MCSERV.IRX                         7,417  2004-05-30 00:35  ELF executable/module
+  MODHSYN.IRX                       59,669  2004-05-30 00:35  ELF executable/module
+  MODMIDI.IRX                       21,965  2004-05-30 00:35  ELF executable/module
+  NETCNF.IRX                        65,805  2004-05-30 00:35  ELF executable/module
+  NTGUI2.IRX                        31,029  2004-05-30 00:35  ELF executable/module
+  PADMAN.IRX                        43,813  2004-05-30 00:35  ELF executable/module
+  PPP.IRX                          102,333  2004-05-30 00:35  ELF executable/module
+  PPPOE.IRX                         17,121  2004-05-30 00:35  ELF executable/module
+  SDRDRV.IRX                         8,065  2004-05-30 00:35  ELF executable/module
+  SIO2MAN.IRX                        6,641  2004-05-30 00:35  ELF executable/module
+  SMAP.IRX                          17,017  2004-05-30 00:35  ELF executable/module
+  SPDUART.IRX                       18,537  2004-05-30 00:35  ELF executable/module
+  USBD.IRX                          34,969  2004-05-30 00:35  ELF executable/module
+  USBINIT.IRX                        3,123  2004-05-30 00:35  ELF executable/module
+  USBKB.IRX                         12,853  2004-05-30 00:35  ELF executable/module
+
+NETWORK/
+  AUTH_ENG.DAT                      65,536  2004-05-30 00:35  binary
+  AUTH_FRE.DAT                      65,536  2004-05-30 00:35  binary
+  AUTH_US.DAT                       65,536  2004-05-30 00:35  binary
+  DEV000.CNF                           602  2004-05-30 00:35  text
+  DEV001.CNF                           121  2004-05-30 00:35  text
+  DEV002.CNF                           119  2004-05-30 00:35  text
+  DEV003.CNF                            97  2004-05-30 00:35  text
+  DNAS_EU.ELF                    1,715,596  2004-05-30 00:35  ELF executable/module
+  DNAS_US.ELF                    1,715,596  2004-05-30 00:35  ELF executable/module
+  IFC000.CNF                           587  2004-05-30 00:35  text
+  IFC001.CNF                            56  2004-05-30 00:35  text
+  IFC002.CNF                           216  2004-05-30 00:35  text
+  IFC003.CNF                            76  2004-05-30 00:35  text
+  IFC004.CNF                           273  2004-05-30 00:35  text
+  IFC005.CNF                            76  2004-05-30 00:35  text
+  IFC006.CNF                           152  2004-05-30 00:35  text
+  NET.DB                               713  2004-05-30 00:35  text
+  NET000.CNF                           289  2004-05-30 00:35  text
+  NET001.CNF                           103  2004-05-30 00:35  text
+  NET002.CNF                           103  2004-05-30 00:35  text
+  NET003.CNF                           103  2004-05-30 00:35  text
+  NET004.CNF                           103  2004-05-30 00:35  text
+  NET005.CNF                           103  2004-05-30 00:35  text
+  NET006.CNF                           103  2004-05-30 00:35  text
+  NET007.CNF                           103  2004-05-30 00:35  text
+
+SOUND/
+  CRASH.AWD                        137,216  2004-05-30 00:36  binary
+  CRASHMOD.AWD                     636,928  2004-05-30 00:36  binary
+  FE.AWD                           415,744  2004-05-30 00:36  binary
+  GENERIC.AWD                      503,808  2004-05-30 00:36  binary
+  G_CRSH04.AWD                     489,472  2004-05-30 00:36  binary
+  G_CRSH14.AWD                     487,424  2004-05-30 00:36  binary
+  G_CRSH24.AWD                     485,376  2004-05-30 00:36  binary
+  G_CRSH34.AWD                     483,328  2004-05-30 00:36  binary
+  G_CRSH44.AWD                     483,328  2004-05-30 00:36  binary
+  IDENT0.AWD                        49,152  2004-05-30 00:36  binary
+  IDENT1.AWD                        49,152  2004-05-30 00:36  binary
+  IDENT2.AWD                        63,488  2004-05-30 00:36  binary
+  ROADRAGE.AWD                     208,896  2004-05-30 00:36  binary
+  SINGLE.AWD                       188,416  2004-05-30 00:36  binary
+
+SOUND/STREAMS/
+  CRASH1.RWS                     2,197,504  2004-05-30 00:36  binary
+  CRASH10.RWS                    2,197,504  2004-05-30 00:36  binary
+  CRASH11.RWS                    2,197,504  2004-05-30 00:36  binary
+  CRASH12.RWS                    2,197,504  2004-05-30 00:36  binary
+  CRASH13.RWS                    2,197,504  2004-05-30 00:36  binary
+  CRASH14.RWS                    2,197,504  2004-05-30 00:36  binary
+  CRASH15.RWS                    2,197,504  2004-05-30 00:36  binary
+  CRASH16.RWS                    2,197,504  2004-05-30 00:36  binary
+  CRASH17.RWS                    2,197,504  2004-05-30 00:36  binary
+  CRASH18.RWS                    2,197,504  2004-05-30 00:36  binary
+  CRASH19.RWS                    2,197,504  2004-05-30 00:36  binary
+  CRASH2.RWS                     2,197,504  2004-05-30 00:36  binary
+  CRASH20.RWS                    2,197,504  2004-05-30 00:36  binary
+  CRASH3.RWS                     2,197,504  2004-05-30 00:36  binary
+  CRASH4.RWS                     2,197,504  2004-05-30 00:36  binary
+  CRASH5.RWS                     2,197,504  2004-05-30 00:36  binary
+  CRASH6.RWS                     2,197,504  2004-05-30 00:36  binary
+  CRASH7.RWS                     2,197,504  2004-05-30 00:36  binary
+  CRASH8.RWS                     2,197,504  2004-05-30 00:36  binary
+  CRASH9.RWS                     2,197,504  2004-05-30 00:36  binary
+  DJAS.RWS                       1,640,448  2004-06-02 22:30  binary
+  DJEU.RWS                       9,521,152  2004-06-02 22:30  binary
+  DJMBL.RWS                        411,648  2004-06-02 22:30  binary
+  DJMCR.RWS                        411,648  2004-06-02 22:30  binary
+  DJMEL.RWS                        411,648  2004-06-02 22:30  binary
+  DJMFO.RWS                        411,648  2004-06-02 22:30  binary
+  DJMGP.RWS                        411,648  2004-06-02 22:30  binary
+  DJMRA.RWS                        411,648  2004-06-02 22:30  binary
+  DJMRR.RWS                        411,648  2004-06-02 22:30  binary
+  DJUS.RWS                       9,283,584  2004-06-02 22:30  binary
+  DJWWW.RWS                      1,583,104  2004-06-02 22:30  binary
+  EA.RWS                           165,888  2004-05-30 00:36  binary
+
+TRACKS/
+  TLIST.BIN                          4,096  2004-06-04 04:32  binary
+
+TRACKS/US/C1_V1/
+  CRASH1.RWS                     2,197,504  2004-05-30 00:42  binary
+  CRASH2.RWS                     2,197,504  2004-05-30 00:42  binary
+  CRASH3.RWS                     4,302,848  2004-05-30 00:42  binary
+  DJRACE.RWS                     3,551,232  2004-06-02 22:33  binary
+  ENVIRO.DAT                       196,608  2004-06-03 04:22  binary
+  GAMEDATA.BGD                   1,738,752  2004-06-06 02:09  binary
+  MUSIC.RWS                            124  2004-05-30 00:42  binary
+  SOUND.AWD                        169,984  2004-05-30 00:42  binary
+  STATIC.DAT                     5,079,040  2004-06-06 02:09  binary
+  STREAMED.DAT                  12,713,984  2004-06-06 02:09  binary
+
+TRACKS/US/C1_V2/
+  ENVIRO.DAT                       196,608  2004-06-05 04:56  binary
+  GAMEDATA.BGD                   1,736,704  2004-06-06 02:09  binary
+  MUSIC.RWS                            124  2004-05-30 00:42  binary
+  STATIC.DAT                     5,079,040  2004-06-06 02:09  binary
+  STREAMED.DAT                  12,713,984  2004-06-06 02:09  binary
+
+TRACKS/US/C2_V1/
+  CRASH1.RWS                     2,197,504  2004-05-31 00:35  binary
+  CRASH2.RWS                     2,197,504  2004-05-31 00:35  binary
+  CRASH3.RWS                     4,622,336  2004-05-31 00:35  binary
+  DJRACE.RWS                    11,939,840  2004-06-02 22:34  binary
+  ENVIRO.DAT                       327,680  2004-06-05 01:41  binary
+  GAMEDATA.BGD                   1,447,936  2004-06-08 04:06  binary
+  MUSIC.RWS                            124  2004-05-31 00:35  binary
+  SOUND.AWD                        163,840  2004-05-31 00:35  binary
+  STATIC.DAT                     5,210,112  2004-06-08 04:06  binary
+  STREAMED.DAT                   8,617,984  2004-06-08 04:06  binary
+
+TRACKS/US/C2_V2/
+  ENVIRO.DAT                       327,680  2004-06-05 01:44  binary
+  GAMEDATA.BGD                   1,425,408  2004-06-08 04:06  binary
+  MUSIC.RWS                            124  2004-05-31 00:36  binary
+  STATIC.DAT                     5,210,112  2004-06-08 04:06  binary
+  STREAMED.DAT                   8,617,984  2004-06-08 04:06  binary
+
+TRACKS/US/C3_V1/
+  CRASH1.RWS                     2,197,504  2004-05-31 00:37  binary
+  CRASH2.RWS                     2,197,504  2004-05-31 00:37  binary
+  CRASH3.RWS                     5,023,744  2004-05-31 00:37  binary
+  DJRACE.RWS                     4,460,544  2004-06-02 22:34  binary
+  ENVIRO.DAT                       327,680  2004-06-05 01:44  binary
+  GAMEDATA.BGD                     952,320  2004-06-04 22:03  binary
+  MUSIC.RWS                            124  2004-05-31 00:37  binary
+  SOUND.AWD                        155,648  2004-05-31 00:37  binary
+  STATIC.DAT                     4,653,056  2004-06-05 01:56  binary
+  STREAMED.DAT                   6,914,048  2004-06-05 01:56  binary
+
+TRACKS/US/C3_V2/
+  ENVIRO.DAT                       327,680  2004-06-05 01:56  binary
+  GAMEDATA.BGD                     950,272  2004-06-04 22:03  binary
+  MUSIC.RWS                            124  2004-05-31 00:37  binary
+  STATIC.DAT                     4,653,056  2004-06-05 01:56  binary
+  STREAMED.DAT                   6,914,048  2004-06-05 01:56  binary
+
+TRACKS/US/C4_V1/
+  CRASH1.RWS                     2,197,504  2004-05-31 00:37  binary
+  CRASH2.RWS                     2,197,504  2004-05-31 00:37  binary
+  CRASH3.RWS                     2,197,504  2004-05-31 00:37  binary
+  DJRACE.RWS                    18,804,736  2004-05-31 14:18  binary
+  ENVIRO.DAT                       327,680  2004-05-31 00:37  binary
+  GAMEDATA.BGD                     458,752  2004-06-01 14:27  binary
+  MUSIC.RWS                            124  2004-05-31 00:37  binary
+  SOUND.AWD                         16,384  2004-05-31 00:37  binary
+  STATIC.DAT                       196,608  2004-06-01 14:27  binary
+  STREAMED.DAT                   2,228,224  2004-06-01 14:27  binary
+
+TRACKS/US/C5_V1/
+  ENVIRO.DAT                       196,608  2004-06-03 04:45  binary
+  STATIC.DAT                       655,360  2004-06-03 11:53  binary
+  STREAMED.DAT                           0  2004-06-03 11:53  binary
+
+TRACKS/US/P1_V1/
+  CRASH1.RWS                     2,197,504  2004-05-31 01:09  binary
+  CRASH2.RWS                     2,197,504  2004-05-31 01:09  binary
+  CRASH3.RWS                     2,197,504  2004-05-31 01:09  binary
+  DJRACE.RWS                     6,205,440  2004-06-03 04:27  binary
+  ENVIRO.DAT                       196,608  2004-06-04 20:35  binary
+  GAMEDATA.BGD                   1,703,936  2004-06-04 22:03  binary
+  MUSIC.RWS                            124  2004-05-31 01:09  binary
+  SOUND.AWD                        169,984  2004-05-31 01:09  binary
+  STATIC.DAT                     7,208,960  2004-06-04 22:04  binary
+  STREAMED.DAT                  15,859,712  2004-06-04 22:04  binary
+
+TRACKS/US/P1_V2/
+  ENVIRO.DAT                       196,608  2004-06-06 01:54  binary
+  GAMEDATA.BGD                   1,697,792  2004-06-06 01:54  binary
+  MUSIC.RWS                            124  2004-06-06 01:54  binary
+  STATIC.DAT                     7,143,424  2004-06-06 01:54  binary
+  STREAMED.DAT                  15,859,712  2004-06-06 01:54  binary
+
+VALUEDB/
+  VDB.XML                           29,352  2004-06-09 03:33  binary
+
+VEHICLES/
+  VLIST.BIN                          4,096  2004-06-09 03:34  binary
+
+VEHICLES/COMP/
+  CAR1.BGV                         458,752  2004-06-09 03:33  binary
+  CAR1.BTV                         262,144  2004-06-09 03:33  binary
+  CAR1.HSM                           6,792  2004-06-09 03:33  binary
+  CAR1.HWD                         180,224  2004-06-09 03:33  binary
+  CAR1.LSM                           6,792  2004-06-09 03:33  binary
+  CAR1.LWD                          43,008  2004-06-09 03:33  binary
+  CAR11.BGV                        327,680  2004-06-09 03:33  binary
+  CAR11.BTV                        262,144  2004-06-09 03:33  binary
+  CAR12.BGV                        360,448  2004-06-09 03:33  binary
+  CAR12.BTV                        262,144  2004-06-09 03:33  binary
+  CAR13.BGV                        327,680  2004-06-09 03:33  binary
+  CAR13.BTV                        262,144  2004-06-09 03:33  binary
+  CAR14.BGV                        327,680  2004-06-09 03:33  binary
+  CAR14.BTV                        229,376  2004-06-09 03:33  binary
+  CAR15.BGV                        327,680  2004-06-09 03:33  binary
+  CAR15.BTV                        229,376  2004-06-09 03:33  binary
+  CAR16.BGV                        327,680  2004-06-09 03:33  binary
+  CAR16.BTV                        229,376  2004-06-09 03:33  binary
+  CAR17.BGV                        327,680  2004-06-09 03:33  binary
+  CAR17.BTV                        229,376  2004-06-09 03:33  binary
+  CAR18.BGV                        327,680  2004-06-09 03:33  binary
+  CAR18.BTV                        229,376  2004-06-09 03:33  binary
+  CAR19.BGV                        360,448  2004-06-09 03:33  binary
+  CAR19.BTV                        262,144  2004-06-09 03:33  binary
+  CAR2.BGV                         458,752  2004-06-09 03:33  binary
+  CAR2.BTV                         262,144  2004-06-09 03:33  binary
+  CAR2.HSM                           6,792  2004-06-09 03:33  binary
+  CAR2.HWD                         155,648  2004-06-09 03:33  binary
+  CAR2.LSM                           6,792  2004-06-09 03:33  binary
+  CAR2.LWD                          43,008  2004-06-09 03:33  binary
+  CAR3.BGV                         458,752  2004-06-09 03:33  binary
+  CAR3.BTV                         262,144  2004-06-09 03:33  binary
+  CAR3.HSM                           6,792  2004-06-09 03:33  binary
+  CAR3.HWD                         204,800  2004-06-09 03:33  binary
+  CAR3.LSM                           6,792  2004-06-09 03:33  binary
+  CAR3.LWD                          77,824  2004-06-09 03:33  binary
+  CAR7.BGV                         458,752  2004-06-09 03:33  binary
+  CAR7.BTV                         262,144  2004-06-09 03:33  binary
+  CAR7.HSM                           6,792  2004-06-09 03:33  binary
+  CAR7.HWD                         155,648  2004-06-09 03:33  binary
+  CAR7.LSM                           6,792  2004-06-09 03:33  binary
+  CAR7.LWD                          43,008  2004-06-09 03:33  binary
+  CAR8.BGV                         458,752  2004-06-09 03:33  binary
+  CAR8.BTV                         262,144  2004-06-09 03:33  binary
+  CAR8.HSM                           6,792  2004-06-09 03:33  binary
+  CAR8.HWD                         204,800  2004-06-09 03:33  binary
+  CAR8.LSM                           6,792  2004-06-09 03:33  binary
+  CAR8.LWD                          77,824  2004-06-09 03:33  binary
+  CAR9.BGV                         458,752  2004-06-09 03:33  binary
+  CAR9.BTV                         262,144  2004-06-09 03:33  binary
+  CAR9.HSM                           6,792  2004-06-09 03:33  binary
+  CAR9.HWD                         137,216  2004-06-09 03:33  binary
+  CAR9.LSM                           6,792  2004-06-09 03:33  binary
+  CAR9.LWD                          36,864  2004-06-09 03:33  binary
+
+VEHICLES/HEVY/
+  CAR11.BGV                        360,448  2004-06-09 03:33  binary
+  CAR11.BTV                        262,144  2004-06-09 03:33  binary
+  CAR12.BGV                        360,448  2004-06-09 03:33  binary
+  CAR12.BTV                        262,144  2004-06-09 03:33  binary
+  CAR13.BGV                        327,680  2004-06-09 03:33  binary
+  CAR13.BTV                        262,144  2004-06-09 03:33  binary
+  CAR14.BGV                        360,448  2004-06-09 03:33  binary
+  CAR14.BTV                        262,144  2004-06-09 03:33  binary
+  CAR15.BGV                        360,448  2004-06-09 03:33  binary
+  CAR15.BTV                        262,144  2004-06-09 03:33  binary
+  CAR16.BGV                        458,752  2004-06-09 03:33  binary
+  CAR16.BTV                        262,144  2004-06-09 03:33  binary
+  CAR17.BGV                        327,680  2004-06-09 03:33  binary
+  CAR17.BTV                        262,144  2004-06-09 03:33  binary
+  CAR18.BGV                        327,680  2004-06-09 03:33  binary
+  CAR18.BTV                        229,376  2004-06-09 03:33  binary
+  CAR19.BGV                        327,680  2004-06-09 03:33  binary
+  CAR19.BTV                        229,376  2004-06-09 03:33  binary
+  CAR20.BGV                        294,912  2004-06-09 03:33  binary
+  CAR20.BTV                        229,376  2004-06-09 03:33  binary
+  CAR21.BGV                        294,912  2004-06-09 03:33  binary
+  CAR21.BTV                        229,376  2004-06-09 03:33  binary
+  CAR22.BGV                        327,680  2004-06-09 03:33  binary
+  CAR22.BTV                        229,376  2004-06-09 03:33  binary
+  CAR23.BGV                        327,680  2004-06-09 03:34  binary
+  CAR23.BTV                        262,144  2004-06-09 03:34  binary
+  CAR24.BGV                        262,144  2004-06-09 03:34  binary
+  CAR24.BTV                        196,608  2004-06-09 03:34  binary
+  CAR25.BGV                        262,144  2004-06-09 03:34  binary
+  CAR25.BTV                        196,608  2004-06-09 03:34  binary
+  CAR26.BGV                        262,144  2004-06-09 03:34  binary
+  CAR26.BTV                        196,608  2004-06-09 03:34  binary
+  CAR27.BGV                        327,680  2004-06-09 03:34  binary
+  CAR27.BTV                        262,144  2004-06-09 03:34  binary
+  CAR28.BGV                        294,912  2004-06-09 03:34  binary
+  CAR28.BTV                        262,144  2004-06-09 03:34  binary
+  CAR29.BGV                        294,912  2004-06-09 03:34  binary
+  CAR29.BTV                        229,376  2004-06-09 03:34  binary
+  CAR30.BGV                        294,912  2004-06-09 03:34  binary
+  CAR30.BTV                        229,376  2004-06-09 03:34  binary
+  CAR31.BGV                        327,680  2004-06-09 03:34  binary
+  CAR31.BTV                        262,144  2004-06-09 03:34  binary
+  CAR32.BGV                        327,680  2004-06-09 03:34  binary
+  CAR32.BTV                        229,376  2004-06-09 03:34  binary
+  CAR33.BGV                        327,680  2004-06-09 03:34  binary
+  CAR33.BTV                        262,144  2004-06-09 03:34  binary
+  CAR34.BGV                        262,144  2004-06-09 03:34  binary
+  CAR34.BTV                        196,608  2004-06-09 03:34  binary
+  CAR35.BGV                        294,912  2004-06-09 03:34  binary
+  CAR35.BTV                        229,376  2004-06-09 03:34  binary
+
+VEHICLES/MSCL/
+  CAR1.BGV                         425,984  2004-06-09 03:33  binary
+  CAR1.BTV                         262,144  2004-06-09 03:33  binary
+  CAR1.HSM                           6,792  2004-06-09 03:33  binary
+  CAR1.HWD                         178,176  2004-06-09 03:33  binary
+  CAR1.LSM                           6,792  2004-06-09 03:33  binary
+  CAR1.LWD                          40,960  2004-06-09 03:33  binary
+  CAR2.BGV                         458,752  2004-06-09 03:33  binary
+  CAR2.BTV                         262,144  2004-06-09 03:33  binary
+  CAR2.HSM                           6,792  2004-06-09 03:33  binary
+  CAR2.HWD                         139,264  2004-06-09 03:33  binary
+  CAR2.LSM                           6,792  2004-06-09 03:33  binary
+  CAR2.LWD                          38,912  2004-06-09 03:33  binary
+  CAR3.BGV                         425,984  2004-06-09 03:33  binary
+  CAR3.BTV                         262,144  2004-06-09 03:33  binary
+  CAR3.HSM                           6,792  2004-06-09 03:33  binary
+  CAR3.HWD                         174,080  2004-06-09 03:33  binary
+  CAR3.LSM                           6,792  2004-06-09 03:33  binary
+  CAR3.LWD                          45,056  2004-06-09 03:33  binary
+
+VEHICLES/SPRT/
+  CAR1.BGV                         458,752  2004-06-09 03:33  binary
+  CAR1.BTV                         262,144  2004-06-09 03:33  binary
+  CAR1.HSM                           6,792  2004-06-09 03:33  binary
+  CAR1.HWD                         186,368  2004-06-09 03:33  binary
+  CAR1.LSM                           6,792  2004-06-09 03:33  binary
+  CAR1.LWD                          40,960  2004-06-09 03:33  binary
+  CAR2.BGV                         393,216  2004-06-09 03:33  binary
+  CAR2.BTV                         229,376  2004-06-09 03:33  binary
+  CAR2.HSM                           6,792  2004-06-09 03:33  binary
+  CAR2.HWD                         180,224  2004-06-09 03:33  binary
+  CAR2.LSM                           6,792  2004-06-09 03:33  binary
+  CAR2.LWD                          43,008  2004-06-09 03:33  binary
+  CAR3.BGV                         425,984  2004-06-09 03:33  binary
+  CAR3.BTV                         262,144  2004-06-09 03:33  binary
+  CAR3.HSM                           6,792  2004-06-09 03:33  binary
+  CAR3.HWD                         186,368  2004-06-09 03:33  binary
+  CAR3.LSM                           6,792  2004-06-09 03:33  binary
+  CAR3.LWD                          40,960  2004-06-09 03:33  binary
+
+VEHICLES/SUPR/
+  CAR1.BGV                         393,216  2004-06-09 03:33  binary
+  CAR1.BTV                         229,376  2004-06-09 03:33  binary
+  CAR1.HSM                           6,792  2004-06-09 03:33  binary
+  CAR1.HWD                         180,224  2004-06-09 03:33  binary
+  CAR1.LSM                           6,792  2004-06-09 03:33  binary
+  CAR1.LWD                          43,008  2004-06-09 03:33  binary
+  CAR2.BGV                         458,752  2004-06-09 03:33  binary
+  CAR2.BTV                         262,144  2004-06-09 03:33  binary
+  CAR2.HSM                           6,792  2004-06-09 03:33  binary
+  CAR2.HWD                         180,224  2004-06-09 03:33  binary
+  CAR2.LSM                           6,792  2004-06-09 03:33  binary
+  CAR2.LWD                          43,008  2004-06-09 03:33  binary
+  CAR3.BGV                         393,216  2004-06-09 03:33  binary
+  CAR3.BTV                         229,376  2004-06-09 03:33  binary
+  CAR3.HSM                           6,792  2004-06-09 03:33  binary
+  CAR3.HWD                         180,224  2004-06-09 03:33  binary
+  CAR3.LSM                           6,792  2004-06-09 03:33  binary
+  CAR3.LWD                          43,008  2004-06-09 03:33  binary
+
+VEHICLES/TSPC/
+  CAR1.BGV                          98,304  2004-06-09 03:34  binary
+  CAR1.BTV                          98,304  2004-06-09 03:34  binary
+  CAR2.BGV                         131,072  2004-06-09 03:34  binary
+  CAR2.BTV                         131,072  2004-06-09 03:34  binary
+  CAR3.BGV                         229,376  2004-06-09 03:34  binary
+  CAR3.BTV                         163,840  2004-06-09 03:34  binary
+  CAR4.BGV                         229,376  2004-06-09 03:34  binary
+  CAR4.BTV                         196,608  2004-06-09 03:34  binary
+  CAR5.BGV                         196,608  2004-06-09 03:34  binary
+  CAR5.BTV                         163,840  2004-06-09 03:34  binary
+  CAR6.BGV                          98,304  2004-06-09 03:34  binary
+  CAR6.BTV                          98,304  2004-06-09 03:34  binary

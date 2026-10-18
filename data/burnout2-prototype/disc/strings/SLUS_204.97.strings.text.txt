@@ -1,0 +1,805 @@
+// SLUS_204.97: other text (803)
+
+0x00105AB5  QYqvP\np
+0x00105DF9  QIqvP\np
+0x00105FB9  QIqvP\np
+0x00106155  QYqvP\np
+0x0010616D  QIqvP\np
+0x00141356  C|0Mcz
+0x0020035F  <Dqc$
+0x00207520  Pyc$8
+0x002087BB  <Pvc$!
+0x002215FB  <fff4
+0x00239D04  @Dc$pMbx
+0x002523B5  Sjq!H,
+0x002526B5  Sjq!p
+0x0026380F  <ffc44
+0x00297199  X\nPex
+0x0029A960  PsIIlibdma  2500
+0x0029AAC0  PsIIlibipu  2500
+0x0029AB3F  9PsIIlibkernl2540
+0x0029C200  PsIIlibcdvd 2530
+0x0029DC70  PsIIlibpad  2500
+0x0029DCB8  PsIIlibmc   2540
+0x002A2097  ?fff?
+0x002A20A2  L?fff?
+0x002A20B2  L?fff?33s?
+0x002A20E2  L?fff?
+0x002A2107  ?fff?fff?fff?fff?fff?fff?fff?fff?fff?fff?33s?33s?33s?33s?33s?33s?
+0x002A217F  ?fff?fff?fff?fff?fff?fff?fff?fff?fff?fff?33s?33s?33s?33s?33s?33s?
+0x002A21FF  ?fff?
+0x002A220A  L?fff?
+0x002A221A  L?fff?33s?
+0x002A224A  L?fff?
+0x002A2A00  Invalid combination type
+0x002A2A40  Invalid projection type specified
+0x002A2B90  Only rendering sub system
+0x002B2A60  ImmRenderSetup.csl
+0x002B2A80  ImmMangleTriangleIndices.csl
+0x002B2AC0  ImmMangleLineIndices.csl
+0x002B2BA8  ClipLine.csl
+0x002B2CE0  ClipTriangle.csl
+0x002B2DF0  CullTriangle.csl
+0x002B2EC0  ImmInstance.csl
+0x002B2F60  ImmMangleLineIndices.csl
+0x002B3010  ImmMangleTriangleIndices.csl
+0x002B3180  ImmRenderSetup.csl
+0x002B3238  ImmStash.csl
+0x002B3300  SubmitLine.csl
+0x002B33C0  SubmitTriangle.csl
+0x002B34B8  Transform.csl
+0x002B3540  RxObjSpace3DVertices.csl
+0x002B3570  RxCamSpace3DVertices.csl
+0x002B35A0  RxScrSpace2DVertices.csl
+0x002B35D0  RxInterpolants.csl
+0x002B3600  MeshState.csl
+0x002B3620  RenderState.csl
+0x002B3640  Indices.csl
+0x002B3660  RxVSteps.csl
+0x002B37C0  AtomicEnumerateLights.csl
+0x002B38A0  AtomicInstance.csl
+0x002B3988  Light.csl
+0x002B3A40  MaterialScatter.csl
+0x002B3B00  PostLight.csl
+0x002B3B80  WorldSectorEnumerateLights.csl
+0x002B3C40  WorldSectorInstance.csl
+0x002B3CA0  Lights.csl
+0x002B3CC0  PS2Im3DFastTransform.csl
+0x002B3D78  PS2All.csl
+0x002B3DD0  PS2ManagerIm3D.csl
+0x002B3E30  PS2ManagerWorldSector.csl
+0x002B3E90  PS2ManagerAtomic.csl
+0x002B3F10  PS2MatBridge.csl
+0x002B4220  _rwPS2MatInstancePipelineNodeInit; user clusters must have attributes set to CL_ATTRIB_PLACEHOLDER or CL_ATTRIB_WRITE or they will have no effect!
+0x002B42C0  _rwPS2MatInstancePipelineNodeInit; non-user clusters with CL_ATTRIB_DONTFILL attributes must also have either CL_ATTRIB_PLACEHOLDER or CL_ATTRIB_WRITE attributes, or uninitialised junk will be uploaded to VU1
+0x002B4398  !UNKNOWN!
+0x002B4420  PS2MatInstance.csl
+0x002B44D0  PS2ObjWorldSectorAllInOne.csl
+0x002B4560  PS2ObjAtomicAllInOne.csl
+0x002B4710  PS2AllMatProcessInitData; user clusters must have attributes set to CL_ATTRIB_PLACEHOLDER or CL_ATTRIB_WRITE or they will have no effect!
+0x002B47A0  PS2AllMatProcessInitData; non-user clusters with CL_ATTRIB_DONTFILL attributes must also have either CL_ATTRIB_PLACEHOLDER or CL_ATTRIB_WRITE attributes, or uninitialised junk will be uploaded to VU1
+0x002B4868  !UNKNOWN!
+0x002B48C8  PS2AllMat.csl
+0x002B4920  PS2DMASessionRecord.csl
+0x002B4938  PS2Mesh.csl
+0x002B4948  PS2xyz.csl
+0x002B4958  PS2uv.csl
+0x002B4968  PS2rgba.csl
+0x002B4978  PS2normal.csl
+0x002B4988  PS2user1.csl
+0x002B4998  PS2user2.csl
+0x002B4B30  PS2 material pipes
+0x002B4B50  PS2 sector pipes
+0x002B4B70  PS2 stomic pipes
+0x002B501F  <fff;
+0x002B5036  L;fff;
+0x002B505F  ;fff;
+0x002B509B  ;fff;
+0x002B50D7  ;fff;
+0x002B510E  0=fff;
+0x002B5853  <fff;
+0x002B5867  <fff;
+0x002B61BB  <fff;
+0x002B61D2  L;fff;
+0x002B61FB  ;fff;
+0x002B6237  ;fff;
+0x002B6273  ;fff;
+0x002B62AA  0=fff;
+0x002B69EF  <fff;
+0x002B6A03  <fff;
+0x002B8B50  PsIIlibscf  2500
+0x002B8CE6  L=fff?
+0x002B8E8A  L=fff?
+0x002BB28A  s?yxs?
+0x002BB2EA  e?g)e?dtd?
+0x002BBE70  !std::bad_exception!!
+0x002BBE90  !std::exception!!std::bad_exception!!
+0x002BC020  sceGsPutDrawEnv: DMA Ch.2 does not terminate
+0x002BC050  sceGsSyncPath: DMA Ch.1 does not terminate
+0x002BC130  sceGsSyncPath: DMA Ch.2 does not terminate
+0x002BC160  sceGsSyncPath: VIF1 does not terminate
+0x002BC190  sceGsSyncPath: VU1 does not terminate
+0x002BC1B8  sceGsSyncPath: GIF does not terminate
+0x002BC1E0  sceGsExecStoreImage: DMA Ch.1 does not terminate
+0x002BC218  sceGsExecStoreImage: GS does not terminate
+0x002BC248  sceGsExecStoreImage: DMA Ch.1 (GS->MEM) does not terminate
+0x002BC288  sceGsExecStoreImage: Enough data does not reach VIF1
+0x002BC3B0  libdma: sync timeout
+0x002BC518  = Skip to the next picture =
+0x002BC560  _sliceA0(): error happens
+0x002BC580  Too many macroblocks in picture
+0x002BC5A0  skiped macroblock in I picure is not allowed
+0x002BC5D0  Invalid macroblock_type code: 0
+0x002BC678  odd number of field pictures
+0x002BC698  unknown picture sutructure
+0x002BC6E8  CSC handler error
+0x002BC700  The size of work area is too small
+0x002BC728  work area size is too small
+0x002BC7A8  the second field is missing
+0x002BC7D8  vertical size > 2800
+0x002BC7F0  _chroma_format needs to be 1: 420
+0x002BC838  _sequenceScalableExtension() is not implemented
+0x002BC868  Unknown Extension
+0x002BC880  _pictureSpatialScalableExtension is not supported
+0x002BC8B8  _pictureTemporalScalableExtension is not supported
+0x002BC8F0  ## internel error in libkernl.a!
+0x002BC918  TTY: packet size larger than expect
+0x002BC940  TTY: receive error
+0x002BCB70  rom0:UDNL 
+0x002BCBD8  # TLB over flow (1)
+0x002BCBF0  # TLB over flow (2)
+0x002BCC08  # TLB over flow (3)
+0x002BCCB7  ?>UUUUU
+0x002BCDF0  >UUUUU
+0x002BD7D8  Libcdvd bind err CdSearchFile
+0x002BD870  Libcdvd bind err N CMD
+0x002BD888  N cmd wait
+0x002BD898  S cmd wait
+0x002BD8D0  Libcdvd bind err S cmd
+0x002BD908  Libcdvd Exit
+0x002BD918  DiskReady 0
+0x002BD928  Libcdvd bind err CdDiskReady
+0x002BD948  DiskReady ended
+0x002BD960  Libcdvd call Clock read 1
+0x002BD980  Libcdvd call Clock read 2
+0x002BD9A0  libpad: sceSifSetDma faild
+0x002BD9C0  libpad: tPadDma Structure Invalid
+0x002BD9E8  libpad: Module version mismatch 
+0x002BDAF8  bind error libmc 
+0x002BDB60  sceMcUdCheckNewCard RPC faild
+0x002BDE50  Single Player
+0x002BDE60  Multi Player
+0x002BDEA0  Custom Series Championship
+0x002BDEC0  Single Race
+0x002BDED0  Time Attack
+0x002BDEE0  Offensive Driving 101
+0x002BDF08  Free Run
+0x002BDF18  Face Off
+0x002BDF28  Car viewer
+0x002BDF50  Music Player
+0x002BDF88  View Profile
+0x002BDF98  Trophy Cabinet
+0x002BDFA8  Track Records
+0x002BDFC0  Time Attack Records
+0x002BDFD8  Crash Records
+0x002BDFE8  Lap Times
+0x002BDFF8  Total Times
+0x002BE008  Score Records
+0x002BE018  Skill Records
+0x002BE028  SELECT CAR
+0x002BE040  PLAYER 1 SELECT CAR
+0x002BE060  PLAYER 2 SELECT CAR
+0x002BE080  SELECT PURSUIT CAR
+0x002BE0A0  SELECT TARGET CAR
+0x002BE0C0  PLAYER 1 SELECT PURSUIT CAR
+0x002BE0E0  PLAYER 2 SELECT TARGET CAR
+0x002BE100  SELECT YOUR CAR
+0x002BE110  SELECT RIVAL CAR
+0x002BE168  Top Speed
+0x002BE188  Select Track
+0x002BE1A8  Track Record
+0x002BE1B8  Fastest Lap
+0x002BE1C8  Number of Laps
+0x002BE1D8  Course Length
+0x002BE248  Medal Targets
+0x002BE270  Select Stage
+0x002BE288  Win Car!
+0x002BE2A8  UNAVAILABLE!
+0x002BE2B8  Gold Medals
+0x002BE2C8  Silver Medals
+0x002BE2D8  Bronze Medals
+0x002BE2E8  Select Players
+0x002BE2F8  One Player
+0x002BE308  Two Player
+0x002BE318  Three Player
+0x002BE328  Four Player
+0x002BE340  CRASH - SELECT GROUP
+0x002BE358  Crash Group 1
+0x002BE368  Crash Group 2
+0x002BE378  Crash Group 3
+0x002BE388  Crash Group 4
+0x002BE398  Crash Group 5
+0x002BE3A8  First Group
+0x002BE3B8  Second Group
+0x002BE3C8  Third Group
+0x002BE3D8  Fourth Group
+0x002BE3E8  Fifth Group
+0x002BE400  the bigger you crash, the bigger you score!
+0x002BE430  CRASH FOR CASH
+0x002BE440  Crash Score
+0x002BE450  Race Results
+0x002BE460  Total Time
+0x002BE470  Insurance Damage
+0x002BE498  1st Place
+0x002BE4A8  2nd Place
+0x002BE4B8  3rd Place
+0x002BE4C8  4th Place
+0x002BE4F0  Failed To Finish
+0x002BE520  Failed To Crash
+0x002BE530  You Win
+0x002BE538  You Lose
+0x002BE550  You have won the trophy
+0x002BE570  Unlucky! You placed 2nd
+0x002BE590  Unlucky! You placed 3rd
+0x002BE5B0  Unlucky! You placed last
+0x002BE5E0  Grand Prix Won
+0x002BE5F0  Grand Prix Completed
+0x002BE610  Grand Prix Failed
+0x002BE628  Stage Won
+0x002BE640  Stage Completed
+0x002BE650  Stage Failed
+0x002BE660  No Trophy Awarded!
+0x002BE678  Sorry!
+0x002BE680  You have failed to complete
+0x002BE6A0  All items unlocked
+0x002BE6C0  1 item remains locked
+0x002BE730  GP Position
+0x002BE740  GP Total
+0x002BE790  New Record
+0x002BE7A0  Congratulations!
+0x002BE7C0  You have a new record
+0x002BE7E0  Player 1 you have a new record
+0x002BE800  Player 2 you have a new record
+0x002BE820  Player 3 you have a new record
+0x002BE840  Player 4 you have a new record
+0x002BE860  Enter name:
+0x002BE870  New Car Unlocked!
+0x002BE890  New Cars Unlocked!
+0x002BE8B0  New Cheat Unlocked!
+0x002BE8D0  New Cheats Unlocked!
+0x002BE8F0  New Stage Unlocked!
+0x002BE910  New Stages Unlocked!
+0x002BE930  New Track Unlocked!
+0x002BE950  New Tracks Unlocked!
+0x002BE970  New Game Mode Unlocked!
+0x002BE990  New Game Modes Unlocked!
+0x002BE9B0  New Crash Zone Unlocked!
+0x002BE9D0  New Crash Zones Unlocked!
+0x002BEA00  Session Best
+0x002BEA10  Best Lap Times
+0x002BEA20  Best Total Times
+0x002BEA38  Best Score
+0x002BEA48  Best Skill
+0x002BEA58  High Score
+0x002BEA68  Burnout Total
+0x002BEA78  Big Air
+0x002BEA98  Big Combo
+0x002BEAA8  Big Crash
+0x002BEAC0  Race Crash Total
+0x002BEAE0  You stopped them!
+0x002BEAF8  They got away!
+0x002BEB08  You escaped!
+0x002BEB20  You were caught!
+0x002BEB38  Timed Out
+0x002BEB50  Session Finished
+0x002BEB68  Race Finished
+0x002BEB80  Controller 1
+0x002BEB90  Controller 2
+0x002BEBC0  Vibration P1
+0x002BEBD0  Vibration P2
+0x002BEBE0  Force Feedback
+0x002BEBF0  Force Feedback P1
+0x002BEC10  Force Feedback P2
+0x002BEC30  Buttons P1
+0x002BEC40  Buttons P2
+0x002BEC68  Dolby Surround
+0x002BEC78  Dolby Digital
+0x002BEC88  Effects Volume
+0x002BEC98  Music Volume
+0x002BECB0  Tuning Attitude
+0x002BECC0  Get A Grip
+0x002BECD0  Point of Impact
+0x002BECF0  Vapour Trail
+0x002BED00  Traffic Violation
+0x002BED20  Boostin The Blood
+0x002BED38  Losing Control
+0x002BED50  Mad Metal Monster
+0x002BED68  Nitrous Shift
+0x002BED88  Video Output
+0x002BEDA8  Aspect Ratio
+0x002BEDC8  Adjust Screen
+0x002BEDE8  Date of Save
+0x002BEDF8  Profile Name
+0x002BEE08  Trophies Won
+0x002BEE20  Gold Medals Won
+0x002BEE30  Races Finished
+0x002BEE40  1st Percentage
+0x002BEE50  2nd Percentage
+0x002BEE60  3rd Percentage
+0x002BEE70  4th Percentage
+0x002BEE80  Favourite Vehicle
+0x002BEEA0  Favourite Track
+0x002BEEB0  Distance Driven
+0x002BEEC0  Playing Time
+0x002BEED0  Biggest Burnout Chain
+0x002BEEF0  Biggest Crash Damage
+0x002BEF10  Most Cars In Crash
+0x002BEF28  Biggest Combo
+0x002BEF40  Biggest Oncomming
+0x002BEF58  Biggest Air
+0x002BEF68  Biggest Drift
+0x002BEF78  Total Burnouts
+0x002BEF88  Total Distance
+0x002BEFA0  Total Oncomming
+0x002BEFB0  Total Air
+0x002BEFC0  Total Drift
+0x002BEFD0  Total Near Misses
+0x002BEFE8  Total Crashes
+0x002BF000  Total Crash Damage
+0x002BF030  Don't Save
+0x002BF080  Enter a name for your profile:
+0x002BF0A0  No memory card (PS2) in MEMORY CARD slot 1.
+0x002BF0D0  No Burnout2 save data present on memory card (PS2) in MEMORY CARD slot 1.
+0x002BF120  Memory card (PS2) in MEMORY CARD slot 1 is unformatted.
+0x002BF160  Memory card (PS2) in MEMORY CARD slot 1 is unformatted. Format memory card (PS2)?
+0x002BF1C0  Formatting memory card (PS2) in MEMORY CARD slot 1. Do not remove memory card (PS2), reset, or switch off the console.
+0x002BF240  Format failed! Please check memory card (PS2) in MEMORY CARD slot 1 and try again.
+0x002BF298  Cancel format?
+0x002BF330  Saving data. Do not remove memory card (PS2) in MEMORY CARD slot 1, reset, or switch off the console.
+0x002BF3A0  Save failed! Check memory card (PS2) in MEMORY CARD slot 1 and please try again.
+0x002BF400  Save successful.
+0x002BF420  Profile already exists. Overwrite previous profile?
+0x002BF460  Load failed! Check memory card (PS2) in MEMORY CARD slot 1 and please try again.
+0x002BF4C0  Load successful.
+0x002BF4E0  Checking memory card (PS2) in MEMORY CARD slot 1. Do not remove memory card (PS2), reset, or switch off the console.
+0x002BF560  Memory card (PS2) error! Data may be corrupt. Please delete corrupt data using the console's browser.
+0x002BF5D0  If your progress has not been saved then it will be lost. Continue anyway?
+0x002BF630  Autosaving data. Do not remove memory card (PS2) in MEMORY CARD slot 1, reset, or switch off the console.
+0x002BF6A0  Autosave successful.
+0x002BF6C0  Autosave failed! Check memory card (PS2) in MEMORY CARD slot 1 and please try again. Retry?
+0x002BF720  The original memory card (PS2) is not inserted in MEMORY CARD slot 1! Insert original memory card (PS2) and please try again. Retry?
+0x002BF7B0  Autosave will be disabled. Are you sure?
+0x002BF820  test output
+0x002BF850  Change Car
+0x002BF860  Change Cars
+0x002BF870  Next Race
+0x002BF880  Next Lesson
+0x002BF890  End Session
+0x002BF8A0  Lesson Select
+0x002BF8B0  Next Zone
+0x002BF8C0  New Game
+0x002BF8D8  Main Menu
+0x002BF900  Are you sure you want to quit?
+0x002BF920  Are you sure you want to restart?
+0x002BF950  Are you sure you want to end the current session?
+0x002BF990  Are you sure you want to retire?
+0x002BF9C0  This will end the current race, are you want to change car?
+0x002BFA00  This will end the current lesson, are you want to go to lession select menu?
+0x002BFA50  This will start this Grand Prix again from the beginning. Are you sure you want to start again?
+0x002BFAB0  Get Bronze Medals in all Offensive Driving 101 Lessons to unlock more Single Player Game Modes
+0x002BFB10  Get Bronze Medals in all Offensive Driving 101 Lessons to unlock Multi Player Game Modes
+0x002BFB80  Please Wait
+0x002BFB90  Loading - please wait
+0x002BFBF8  Near Miss
+0x002BFC10  Get Ready
+0x002BFC38  Perfect Lap
+0x002BFC48  Final Lap
+0x002BFC58  Wrong Way
+0x002BFC68  Boost OK!
+0x002BFC78  Burnout!
+0x002BFC88  Burnout 
+0x002BFCA0  Palm Bay Heights
+0x002BFCC0  Palm Bay Marina
+0x002BFCD0  PIA Terminal 1
+0x002BFCE0  PIA Terminal 2 & 3
+0x002BFD00  Sunrise Valley Village
+0x002BFD20  Sunrise Valley Downtown
+0x002BFD40  I88 Interchange
+0x002BFD50  I88 Loop
+0x002BFD60  Big Surf Grove
+0x002BFD70  Big Surf Shores
+0x002BFD80  Crystal Summit Peak
+0x002BFDA0  Crystal Summit Vista
+0x002BFDC0  Point To Point 1
+0x002BFDE0  Point To Point 2
+0x002BFE00  Point To Point 3
+0x002BFFF0  Finish 1st
+0x002C0000  Finish 2nd
+0x002C0010  Finish 3rd
+0x002C0020  Finish 4th
+0x002C0030  Grand Prix 1
+0x002C0040  Face Off 1
+0x002C0050  Pursuit 1
+0x002C0060  Grand Prix 2
+0x002C0070  Face Off 2
+0x002C0080  Pursuit 2
+0x002C0090  Grand Prix 3
+0x002C00A0  Face Off 3
+0x002C00B0  Pursuit 3
+0x002C00C0  Grand Prix 4
+0x002C00D0  Face Off 4
+0x002C00E0  Face Off 5
+0x002C00F0  Custom Series 1
+0x002C0100  Pursuit 4
+0x002C0110  Custom Series 2
+0x002C0120  Pursuit 5
+0x002C0130  Custom Series 3
+0x002C0140  Pursuit 6
+0x002C0150  Custom Series 4
+0x002C0168  face off 1
+0x002C0180  pursuit 1
+0x002C0198  face off 2
+0x002C01B0  pursuit 2
+0x002C01C8  face off 3
+0x002C01E0  pursuit 3
+0x002C01F8  face off 4
+0x002C0208  face off 5
+0x002C0218  pursuit 4
+0x002C0228  pursuit 5
+0x002C0238  pursuit 6
+0x002C0278  US Muscle
+0x002C0290  Custom Compact
+0x002C02A0  Custom Coupe
+0x002C02B0  Custom Sport
+0x002C02C0  Custom Roadster
+0x002C02D0  Custom Pickup
+0x002C02E0  Custom US Muscle
+0x002C02F8  Custom SUV
+0x002C0308  Cop Car
+0x002C0310  Hot Rod
+0x002C0318  Oval Racer
+0x002C0330  Japanese Muscle
+0x002C0360  Driver's Ed
+0x002C0380  People Carrier
+0x002C0390  US TAXI
+0x002C03A0  Softdrink Van
+0x002C03B0  Bus Town
+0x002C03C8  Bus Airport
+0x002C03D8  Truck 1
+0x002C03E0  Truck 2
+0x002C03E8  Payload Cable
+0x002C0400  Payload Container
+0x002C0418  Payload Flat
+0x002C0428  Payload Pipes
+0x002C0438  Payload Tanker
+0x002C0448  Payload Tarp
+0x002C0460  Downhill Demolition
+0x002C0478  Pacific Smash
+0x002C0488  Cactus Crusher
+0x002C0498  Palm Panic
+0x002C04A8  Tower Tumble
+0x002C04C0  Rattlesnake Row
+0x002C04D0  Freeway Fury
+0x002C04E0  Hairpin Havoc
+0x002C04F0  Ridge Riot
+0x002C0500  Dip Disaster
+0x002C0510  Coastal Impact
+0x002C0520  Dam Buster
+0x002C0530  Heights Horror
+0x002C0540  Late Arrival
+0x002C0550  Calamity Canyon
+0x002C0560  Zone 1
+0x002C0568  Zone 2
+0x002C0570  Zone 3
+0x002C0578  Zone 4
+0x002C0580  Zone 5
+0x002C0588  Zone 6
+0x002C0590  Zone 7
+0x002C0598  Zone 8
+0x002C05A0  Zone 9
+0x002C05A8  Zone 10
+0x002C05B0  Zone 11
+0x002C05B8  Zone 12
+0x002C05C0  Zone 13
+0x002C05C8  Zone 14
+0x002C05D0  Zone 15
+0x002C05D8  ZONE CLEARED
+0x002C05F0  Targets\n\nGold:\n\nSilver:\n\nBronze
+0x002C0618  Bronze Medal
+0x002C0628  Silver Medal
+0x002C0638  Gold Medal
+0x002C0648  No Medal
+0x002C0660  FAILED TO CRASH
+0x002C0678  CRASH RESULTS
+0x002C0688  PLAYER 1
+0x002C0698  PLAYER 2
+0x002C06A8  PLAYER 3
+0x002C06B8  PLAYER 4
+0x002C06E8  TOTAL DAMAGE
+0x002C0700  CRASH STANDINGS
+0x002C0710  Bronze Awarded
+0x002C0720  Silver Awarded
+0x002C0730  Gold Awarded
+0x002C0740  No Award
+0x002C0758  ZONE COMPLETED
+0x002C0778  Player 1 Wins!
+0x002C0788  Player 2 Wins!
+0x002C0798  Player 3 Wins!
+0x002C07A8  Player 4 Wins!
+0x002C07C0  No Player Wins!
+0x002C07D0  MULTIPLAYER CRASH FINISHED
+0x002C0820  Overall Standings
+0x002C0840  Player Standings
+0x002C0878  Select Lesson
+0x002C0890  Oncoming Traffic
+0x002C08A8  Near Misses
+0x002C08C8  Getting air
+0x002C08D8  Boost Meter
+0x002C08E8  Use the Boost
+0x002C0900  Oncoming Distance Travelled
+0x002C0920  Near Misses Achieved
+0x002C0940  Drift Distance Achieved
+0x002C0960  Air Distance Achieved
+0x002C0980  Boost Bar Filled In
+0x002C0998  Time taken
+0x002C09B0  DRIVE ON THE WRONG SIDE OF THE ROAD!
+0x002C09E0  PASS CLOSE TO OTHER CARS AT SPEED!
+0x002C0A10  TAP BRAKE TO DRIFT ROUND CORNERS!
+0x002C0A40  DRIVE FAST OVER BUMPS TO GET AIR!
+0x002C0A70  FILL THE BOOST BAR!
+0x002C0A90  HOLD R1 BUTTON TO USE BOOST WHILE DRIVING!
+0x002C0AC0  Driving FAST on the wrong side of the road earns you boost!
+0x002C0B00  The longer you drive there, the more boost you get!
+0x002C0B40  See if you can fill your boost bar!
+0x002C0B70  Near misses earn you boost!
+0x002C0B90  Pass close to other cars at speed without touching them!
+0x002C0BD0  The clock is ticking, and do mind the paintwork!
+0x002C0C10  Drifting around corners earns you boost!
+0x002C0C40  You can take a tight corner real fast if you learn to control the drift!
+0x002C0C90  Try braking then going back on the gas as you turn the corner!
+0x002C0CD0  Getting air earns you boost!
+0x002C0CF0  Drive FAST to get air off the bumps in the road!
+0x002C0D30  More distance means more boost. Happy Landings!
+0x002C0D60  Fill up your Boost Meter!
+0x002C0D80  Use what you have learned to drive dangerously!
+0x002C0DB0  Driving dangerously earns you boost!
+0x002C0DE0  Boost makes you go faster!
+0x002C0E00  Press and hold the R1 button to boost while driving!
+0x002C0E40  You've got a full boost bar, let's see how fast you can go!
+0x002C0E80  Lesson Passed
+0x002C0E90  Lesson Failed
+0x002C0EE0  Congratulations! You've won a Gold Medal!
+0x002C0F10  You've won a Silver Medal. Keep trying for Gold!
+0x002C0F50  You've won a Bronze medal. Keep trying for Silver!
+0x002C0F90  You need to try this lesson again!
+0x002C0FD8   misses
+0x002C0FE0   Burnout
+0x002C0FF0   Burnouts
+0x002C1000  Get Ready Player 1
+0x002C1020  Get Ready Player 2
+0x002C1040  Get Ready Player 3
+0x002C1060  Get Ready Player 4
+0x002C1090  DISTANCE TO TARGET
+0x002C10B0  ESCAPE DISTANCE
+0x002C10D0  TARGET HEALTH
+0x002C10F0  Unlucky!
+0x002C1100  You must cross the line without crashing to complete the lesson
+0x002C1140  LESSON FAILED - YOU CRASHED!
+0x002C1160  You have failed to gain a Medal!
+0x002C1190  You have won a new car!
+0x002C11A8  SESSION BEST
+0x002C11D0  You have won a Bronze Medal
+0x002C11F0  You have won a Silver Medal
+0x002C1210  You have won a Gold Medal
+0x002C1230  You have won no medal
+0x002C1250  FAILED TO CRASH!
+0x002C1270  You must crash to score!
+0x002C12A0  YOU LOSE!
+0x002C12E0  Welcome to Palm Bay Heights
+0x002C1300  Welcome to Palm Bay Marina
+0x002C1320  Welcome to PIA Terminal 1
+0x002C1340  Welcome to PIA Terminal 2 & 3
+0x002C1360  Welcome to Sunrise Valley Village
+0x002C1390  Welcome to Sunrise Valley Downtown
+0x002C13C0  Welcome to I88 Interchange
+0x002C13E0  Welcome to I88 Loop
+0x002C1400  Welcome to Big Surf Grove
+0x002C1420  Welcome to Big Surf Shores
+0x002C1440  Welcome to Crystal Summit Peak
+0x002C1460  Welcome to Crystal Summit Vista
+0x002C1480  Welcome to Point To Point 1
+0x002C14A0  Welcome to Point To Point 2
+0x002C14C0  Welcome to Point To Point 3
+0x002C188F  ?fff?
+0x002C2566  L?fff?
+0x002C27DF  ?fff?
+0x002C2A67  @fff@
+0x002C2EC0  fff?fff?fff?
+0x002C2ECE  L?fff?
+0x002C2ED6  Q?fff?fff?fff?fff?
+0x002C2EEA  L?fff?fff?fff?fff?
+0x002C2EFE  k?fff?fff?fff?fff?fff?fff?
+0x002C2F9A  >BdfBB
+0x002C3087  @bfnA
+0x002C3386  :AffVA
+0x002C3990  Loading...  please wait
+0x002C3A10  BASLUS-20497
+0x002C4208  lgDevInit: rpc binding error
+0x002C4240  ERROR - not implemented!
+0x002C42C8  lgDevEnumerate: rpc call failed
+0x002C4318  lgDevOpen: rpc call failed
+0x002C4338  lgDevClose: rpc call failed
+0x002C4390  lgDevGetDeviceProperty: rpc call failed
+0x002C43C0  lgDevSetDeviceProperty: rpc call failed
+0x002C4420  lgDevRead: rpc call failed
+0x002C44B0  lgDevSetForceEffect: rpc call failed
+0x002C44D8  lgDevStartForceEffect: rpc call failed
+0x002C4500  lgDevStopForceEffect: rpc call failed
+0x002C4528  lgDevDestroyForceEffect: rpc call failed
+0x002C4558  lgDevAEnumHint: error: another async call is in progress...
+0x002C45C8  lgDevARead: error: another async call is in progress...
+0x002C4608  lgDevASetForceEffect: invalid parameter (effectid).
+0x002C4640  lgDevASetForceEffect: error: another async call is in progress...
+0x002C4688  lgDevAStartForceEffect: error: another async call is in progress...
+0x002C46D0  lgDevAStopForceEffect: error: another async call is in progress...
+0x002C7DA8  bug in vfprintf: bad base
+0x002C8A2F  BLinear malloc failed
+0x002C97A0  Can't open rom0:ROMVER
+0x002C97B8  Can't read rom error
+0x002C9E80  WARNING! DRIVING ON WALL-TAGGED SURFACE!
+0x002CC2B0  ALPHA VERSION
+0x002CC3A8  ALEX F
+0x002CC3B0  ALEX W
+0x002CC3D0  CHRIS R
+0x002CC3D8  CHRIS W
+0x002CC460  STEVE R
+0x002CC468  STEVE U
+0x002CCB90  Get Ready!
+0x002CF8FF  CCrash for cash before time runs out:
+0x002CF930  the bigger you crash, the bigger you score!
+0x002CF98F  CBronze Target
+0x002CF9C0  Silver Target
+0x002CF9D0  Gold Target
+0x002CFA10  Your Score
+0x002D01F3  ?fff?
+0x002D199F  BBad particle count!
+0x002D2100  replay.ivs
+0x002D2110  intro.ivs
+0x002D2120  music.ivs
+0x002D262B  ?fff?
+0x002D2633  ?fff?
+0x002D264F  ?fff?
+0x002D2673  ?fff?
+0x002D2712  @?fff?
+0x002D2837  ?wff?
+0x002D2B03  ?fff?ff&?
+0x002D2B37  ?wff?
+0x002D4740  Square corner spline
+0x002D4758  Other spline
+0x002D53DE  4CAIMAIN: 
+0x002D53F0  AITARGET: 
+0x002D5400  AIAVOIDANCE: 
+0x002D5410  AIARBITRATOR: 
+0x002D5500  CAICar::Init: Failed to find which car we are!!!
+0x002D56F0  Driver: Want to drift
+0x002D5710  Driver: Force drifting to start
+0x002D5730  Driver: Target speed
+0x002D5750  Driver: Avoid speed
+0x002D5770  Driver: Steer speed
+0x002D58D0  TARGET: Turn left
+0x002D58F0  TARGET: Turn right
+0x002D5910  TARGET: Turn none
+0x002D5950  TARGET: Want to drift YES
+0x002D5970  TARGET: Drifting YES
+0x002D59D0  --- Square Corner ---
+0x002D5B00  B2 Start Info version 3
+0x002D5DF8  racecars/
+0x002D5F20  B2RTDV 1
+0x002D5F30  B2RIDV 0
+0x002D67E8  tracks\
+0x002D847E  L?fff?
+0x002D86A0  fff?fff?
+0x002D9A08  How To Play
+0x002DA220  EE  RwaRPC_Transfer : ERROR! DMA command queue FULL! Discarding oldest command!
+0x002DBEE8  vibuf.c
+0x002DBEF0  DMA ADD not active
+0x002DCC0F  ?Press START
+0x002DCC50  r1Designed and Developed
+0x002DCC70  w1by Criterion Games
+0x002DCC90  r1Head of Criterion Games
+0x002DCCB0  w1Fiona Sperry
+0x002DCCC0  r1Creative Managers
+0x002DCCD8  w1Alex Ward
+0x002DCCE8  w1Paul Glancey
+0x002DCD00  r1Concept Designer
+0x002DCD18  r1Lead Artist
+0x002DCD30  w1Michael Williamson
+0x002DCD50  r1Lead Programmer
+0x002DCD68  w1Richard Parr
+0x002DCD80  r1Course Design and Modelling
+0x002DCDA0  w1Chris Walley
+0x002DCDB0  w1Omar Mohammed
+0x002DCDC0  w1Steve Uphill
+0x002DCDD0  w1Trevor Moore
+0x002DCDE0  w1Yonsok Ko
+0x002DCDF0  r1Vehicle Design and Modelling
+0x002DCE10  w1Mark Rendle
+0x002DCE20  w1James Hans
+0x002DCE40  w1Alex Fry
+0x002DCE50  w1Amy Phillips
+0x002DCE60  w1Dominic Parrott
+0x002DCE78  w1Hamish Young
+0x002DCE90  w1Larry Docherty
+0x002DCEA8  w1Olly Read
+0x002DCEB8  w1Rodney Quaye
+0x002DCED0  r1Additional Programming
+0x002DCEF0  w1Garry Ferguson
+0x002DCF10  w1Jean-Christophe Leprevost
+0x002DCF30  w1Mark Jennings
+0x002DCF40  w1Rabin Ezra
+0x002DCF50  w1The RenderWare Team
+0x002DCF70  r1Game Designers
+0x002DCF90  w1Chris Roberts
+0x002DCFA0  w1Paul Cross
+0x002DCFC0  r1Head of Audio
+0x002DCFD0  w1Stephen Root
+0x002DCFF0  r1Composition, Production and Mastering
+0x002DD040  r1Live Bass and Guitar
+0x002DD078  r1Live Drums
+0x002DD088  w1Steve Emney
+0x002DD0A0  r1Live Keyboards
+0x002DD120  r1Sound Effects
+0x002DD130  r1Sound Designer
+0x002DD148  w1Ben Minto
+0x002DD1B0  r1Audio Programming
+0x002DD1D0  r2Lead Audio Programmer
+0x002DD1F0  w1Alistair Milne
+0x002DD210  r2Team Audio Programmer
+0x002DD228  w1Rich Parr
+0x002DD240  r2Additional Programming
+0x002DD260  w1Adam Sawkins
+0x002DD270  w1Max Little
+0x002DD280  w1Peter Bishop
+0x002DD290  w1Spencey Cathey
+0x002DD2B0  w1Stewart Miles
+0x002DD2C0  r1The Audio Team would like to
+0x002DD2E0  r1thank the following people...
+0x002DD300  w1Martin@Musictrack, Liz at Digidesign
+0x002DD330  r1All those people who let us loose
+0x002DD360  r1recording their cars...
+0x002DD380  w1Paul Robe & Davey Nicholas
+0x002DD3A0  w1Paul S. Lacy
+0x002DD3B0  w1Tony Gillam & Mark
+0x002DD3D0  w1Phil & Sam Sayer
+0x002DD3F0  w1Lea Westwood
+0x002DD400  w1The Impala Guys
+0x002DD420  r2Criterion Games Quality
+0x002DD450  r1QA Manager
+0x002DD460  w1Simon Crawford
+0x002DD488  r1Lead Tester
+0x002DD498  w1Gavin Parker
+0x002DD4C0  w1Gareth Harding
+0x002DD4D8  w1Duncan Pratt
+0x002DD4F0  w1Oliver Read-Smith
+0x002DD508  w1Bill Carter
+0x002DD520  r1Senior Producer
+0x002DD540  w1Jonathan 'Joe' Bonar
+0x002DD560  r1Assistant Producer
+0x002DD580  w1Rupert Brooker
+0x002DD5A0  r1The Burnout team would like to 
+0x002DD5D0  w1Rod Cousens and everyone at Acclaim
+0x002DD610  w1Nigel Gordon-Stewart
+0x002DD628  w1Cathy Campos
+0x002DD640  w1Leah and Jacob
+0x002DD660  w1Everyone at Criterion Software
+0x002DD690  w1With very special thanks to all our
+0x002DD6C0  w1families for putting up with us 
+0x002DD6F0  w1working late nights and weekends
+0x002DDE20  Re-enumerating Logitech devices
+0x002DDE50  Found a device
+0x002DDE60  ignoring hub connection
+0x002DDE80  And opened it
+0x002DDEF0  Opening logitech lib
+0x0030FD77  >fff?gff?
+0x0030FF6B  Bff6?
+0x0030FFCE  3?DDD?gff

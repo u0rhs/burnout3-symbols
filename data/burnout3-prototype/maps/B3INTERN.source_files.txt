@@ -1,0 +1,1046 @@
+// B3INTERN: internal build (2 June 2004), executable not on the disc
+// Every object file with code, in address order: first function, functions, code bytes.
+
+0x00100008     3      544  crt0.s
+0x00100230     2       44  mwUtils_PS2.c
+0x00100270     1      292  arraycondes.o   [MSLGCC_PS2.LIB]
+0x001003A0     1       84  delop.o   [MSLGCC_PS2.LIB]
+0x00100400     1       76  mwrtti.o   [MSLGCC_PS2.LIB]
+0x00100450   377   145256  (object unknown)
+0x00100460     5      764  nmwexception.o   [MSLGCC_PS2.LIB]
+0x00100790     3      212  staticinitializ   [MSLGCC_PS2.LIB]
+0x00100870     2      320  compressednumbe   [MSLGCC_PS2.LIB]
+0x001009B0    15     6524  exceptionhandle   [MSLGCC_PS2.LIB]
+0x00102380     2      412  graph001.o   [LIBGRAPH.A]
+0x00102520     1      104  graph002.o   [LIBGRAPH.A]
+0x00102588     3     1060  graph003.o   [LIBGRAPH.A]
+0x001029B0     1      188  graph004.o   [LIBGRAPH.A]
+0x00102A70     1      200  graph005.o   [LIBGRAPH.A]
+0x00102B38     1      484  graph006.o   [LIBGRAPH.A]
+0x00102D20     1      260  graph007.o   [LIBGRAPH.A]
+0x00102E28     1      232  graph008.o   [LIBGRAPH.A]
+0x00102F10     1      664  graph009.o   [LIBGRAPH.A]
+0x001031A8     1       92  graph010.o   [LIBGRAPH.A]
+0x00103208     1      148  graph011.o   [LIBGRAPH.A]
+0x001032A0     1      788  graph012.o   [LIBGRAPH.A]
+0x001035B8     1       92  graph014.o   [LIBGRAPH.A]
+0x00103618     1      320  graph016.o   [LIBGRAPH.A]
+0x00103758     1     1676  graph018.o   [LIBGRAPH.A]
+0x00103DE8     1      136  graph021.o   [LIBGRAPH.A]
+0x00103E70     1      480  graph022.o   [LIBGRAPH.A]
+0x00104050     1       92  graph028.o   [LIBGRAPH.A]
+0x001040B0    19     2084  libdma.o   [LIBDMA.A]
+0x001048F8    33     6292  devfont.o   [LIBDEV.A]
+0x001061D0     1       16  gifpk000.o   [LIBPKT.A]
+0x001061E0     1       16  gifpk001.o   [LIBPKT.A]
+0x001061F0     1       88  gifpk002.o   [LIBPKT.A]
+0x00106248     1      116  gifpk005.o   [LIBPKT.A]
+0x001062C0     1      116  gifpk011.o   [LIBPKT.A]
+0x00106338     1      164  gifpk014.o   [LIBPKT.A]
+0x001063E0     1       40  gifpk015.o   [LIBPKT.A]
+0x00106408     1       16  vifpk025.o   [LIBPKT.A]
+0x00106418     1       16  vifpk026.o   [LIBPKT.A]
+0x00106428     1       88  vifpk027.o   [LIBPKT.A]
+0x00106480     1       88  vifpk030.o   [LIBPKT.A]
+0x001064D8     1       88  vifpk036.o   [LIBPKT.A]
+0x00106530     1       88  vifpk039.o   [LIBPKT.A]
+0x00106588     1       44  vifpk040.o   [LIBPKT.A]
+0x001065B8     1       24  vifpk041.o   [LIBPKT.A]
+0x001065D0     1      164  vifpk042.o   [LIBPKT.A]
+0x00106678     1       20  vifpk043.o   [LIBPKT.A]
+0x00106690     1      124  vifpk044.o   [LIBPKT.A]
+0x00106710    65    20404  mpc.o   [LIBMPEG.A]
+0x0010B768     5     1932  csc.o   [LIBMPEG.A]
+0x0010BEF8    36     3060  mpeg.o   [LIBMPEG.A]
+0x0010CB40    19     2784  init.o   [LIBMPEG.A]
+0x0010D648     2       72  defhandler.o   [LIBMPEG.A]
+0x0010D698     5      900  libipu.o   [LIBIPU.A]
+0x0010DA28     2      684  ipuinit.o   [LIBIPU.A]
+0x0010DCD8     2      148  libpc.o   [LIBPC.A]
+0x0010DD80   138     2208  klib.o   [Libkernl.a]
+0x0010E620    16      952  glue.o   [Libkernl.a]
+0x0010E9F0     6      616  cache.o   [Libkernl.a]
+0x0010EC70     9      560  intr.o   [Libkernl.a]
+0x0010EEA0     7     1092  thread.o   [Libkernl.a]
+0x0010F2F0    12      532  deci2.o   [Libkernl.a]
+0x0010F528     7     1328  tty.o   [Libkernl.a]
+0x0010FA70     8     2472  kprintf.o   [Libkernl.a]
+0x00110428    16     1972  sifcmd.o   [Libkernl.a]
+0x00110C00    24     4192  sifrpc.o   [Libkernl.a]
+0x00111C90    40    14004  filestub.o   [Libkernl.a]
+0x001153A8    11     1348  iopheap.o   [Libkernl.a]
+0x001158F8    18     3388  eeloadfile.o   [Libkernl.a]
+0x00116658     4      732  iopreset.o   [Libkernl.a]
+0x00116938    19     1284  tlbfunc.o   [Libkernl.a]
+0x00116E80     3      812  tlbtrap.o   [Libkernl.a]
+0x001171E0     2      108  diei.o   [Libkernl.a]
+0x00117250    10      640  initsys.o   [Libkernl.a]
+0x001174E0     6      380  libosd.o   [Libkernl.a]
+0x00117660     9      668  exit.o   [Libkernl.a]
+0x00117900     5      316  alarm.o   [Libkernl.a]
+0x00117A40    36     4888  timer.o   [Libkernl.a]
+0x00118DA8     6      996  timeralarm.o   [Libkernl.a]
+0x00119198     5      596  iopnotify.o   [Libkernl.a]
+0x001193F8     1     1828  e_acos.o   [LIBM.A]
+0x00119B20     1     1180  e_exp.o   [LIBM.A]
+0x00119FC0     1     1544  e_log.o   [LIBM.A]
+0x0011A5C8     1      432  e_log10.o   [LIBM.A]
+0x0011A778     1     3916  e_pow.o   [LIBM.A]
+0x0011B6C8     1     1464  e_rem_pio2.o   [LIBM.A]
+0x0011BC80     1      796  e_sqrt.o   [LIBM.A]
+0x0011BFA0     1     1060  ef_acos.o   [LIBM.A]
+0x0011C3C8     1      928  ef_asin.o   [LIBM.A]
+0x0011C768     1      480  ef_atan2.o   [LIBM.A]
+0x0011C948     1      736  ef_log.o   [LIBM.A]
+0x0011CC28     1     2016  ef_pow.o   [LIBM.A]
+0x0011D408     1      944  ef_rem_pio2.o   [LIBM.A]
+0x0011D7B8     1      204  ef_sqrt.o   [LIBM.A]
+0x0011D888     1      724  k_cos.o   [LIBM.A]
+0x0011DB60     1     2892  k_rem_pio2.o   [LIBM.A]
+0x0011E6B0     1      568  k_sin.o   [LIBM.A]
+0x0011E8E8     1      336  kf_cos.o   [LIBM.A]
+0x0011EA38     1     2148  kf_rem_pio2.o   [LIBM.A]
+0x0011F2A0     1      260  kf_sin.o   [LIBM.A]
+0x0011F3A8     1      644  kf_tan.o   [LIBM.A]
+0x0011F630     1      524  s_ceil.o   [LIBM.A]
+0x0011F840     1       68  s_copysign.o   [LIBM.A]
+0x0011F888     1      292  s_cos.o   [LIBM.A]
+0x0011F9B0     1       52  s_fabs.o   [LIBM.A]
+0x0011F9E8     1      532  s_floor.o   [LIBM.A]
+0x0011FC00     1       72  s_isinf.o   [LIBM.A]
+0x0011FC48     1       60  s_isnan.o   [LIBM.A]
+0x0011FC88     1      484  s_scalbn.o   [LIBM.A]
+0x0011FE70     1      652  sf_atan.o   [LIBM.A]
+0x00120100     1      216  sf_ceil.o   [LIBM.A]
+0x001201D8     1       60  sf_copysign.o   [LIBM.A]
+0x00120218     1      212  sf_cos.o   [LIBM.A]
+0x001202F0     1       40  sf_fabs.o   [LIBM.A]
+0x00120318     1      216  sf_floor.o   [LIBM.A]
+0x001203F0     1      200  sf_scalbn.o   [LIBM.A]
+0x001204B8     1      232  sf_sin.o   [LIBM.A]
+0x001205A0     1      120  sf_tan.o   [LIBM.A]
+0x00120618     1       20  w_acos.o   [LIBM.A]
+0x00120630     1       20  w_exp.o   [LIBM.A]
+0x00120648     1       20  w_log.o   [LIBM.A]
+0x00120660     1       20  w_log10.o   [LIBM.A]
+0x00120678     1       20  w_pow.o   [LIBM.A]
+0x00120690     1       20  w_sqrt.o   [LIBM.A]
+0x001206A8     1       20  wf_acos.o   [LIBM.A]
+0x001206C0     1       20  wf_asin.o   [LIBM.A]
+0x001206D8     1       20  wf_atan2.o   [LIBM.A]
+0x001206F0     1       20  wf_log.o   [LIBM.A]
+0x00120708     1       20  wf_pow.o   [LIBM.A]
+0x00120720    21     5440  cdvd000.o   [libcdvd.a]
+0x00121C78     1      152  cdvd014.o   [libcdvd.a]
+0x00121D10     1      180  cdvd035.o   [libcdvd.a]
+0x00121DC8     1      208  cdvd036.o   [libcdvd.a]
+0x00121E98     1      248  cdvd039.o   [libcdvd.a]
+0x00121F90     1       24  abort.o   [libg.a]
+0x00121FA8     1       24  atof.o   [libg.a]
+0x00121FC0     1       40  atoi.o   [libg.a]
+0x00121FE8     1       28  atol.o   [libg.a]
+0x00122008     1       32  bcopy.o   [libg.a]
+0x00122028     1      100  calloc.o   [libg.a]
+0x00122090     1      180  callocr.o   [libg.a]
+0x00122148     1       88  closer.o   [libg.a]
+0x001221A0     2     5264  dtoa.o   [libg.a]
+0x00123638     1       12  errno.o   [libg.a]
+0x00123648     1      172  exit.o   [libg.a]
+0x001236F8     1      256  fclose.o   [libg.a]
+0x001237F8     1       16  feof.o   [libg.a]
+0x00123808     1      276  fflush.o   [libg.a]
+0x00123920     1      312  fgets.o   [libg.a]
+0x00123A58     6      656  findfp.o   [libg.a]
+0x00123CF8     1      184  flags.o   [libg.a]
+0x00123DB0     2      256  fopen.o   [libg.a]
+0x00123EB8     1       84  fprintf.o   [libg.a]
+0x00123F10     1      152  fputc.o   [libg.a]
+0x00123FA8     1       76  fputs.o   [libg.a]
+0x00123FF8     1      284  fread.o   [libg.a]
+0x00124118     2     1120  freer.o   [libg.a]
+0x00124580     1     1196  fseek.o   [libg.a]
+0x00124A30     1       92  fstatr.o   [libg.a]
+0x00124A90     1      260  ftell.o   [libg.a]
+0x00124B98     1      992  fvwrite.o   [libg.a]
+0x00124F78     1      148  fwalk.o   [libg.a]
+0x00125010     1      132  fwrite.o   [libg.a]
+0x00125098     4      216  locale.o   [libg.a]
+0x00125180     1       96  lseekr.o   [libg.a]
+0x001251E0     1      340  makebuf.o   [libg.a]
+0x00125338     1      100  malign.o   [libg.a]
+0x001253A0     1      456  malignr.o   [libg.a]
+0x00125568     2      156  malloc.o   [libg.a]
+0x00125608     2     2432  mallocr.o   [libg.a]
+0x00125F88     1       52  mbtowc_r.o   [libg.a]
+0x00125FC0     1      224  memchr.o   [libg.a]
+0x001260A0     1      148  memcmp.o   [libg.a]
+0x00126138     1      176  memcpy.o   [libg.a]
+0x001261E8     1      260  memmove.o   [libg.a]
+0x001262F0     1      192  memset.o   [libg.a]
+0x001263B0     2      200  mlock.o   [libg.a]
+0x00126480    17     4092  mprec.o   [libg.a]
+0x00127498     1       96  openr.o   [libg.a]
+0x001274F8     2      204  printf.o   [libg.a]
+0x001275C8     1     2540  qsort.o   [libg.a]
+0x00127FB8     2      124  rand.o   [libg.a]
+0x00128038     1       96  readr.o   [libg.a]
+0x00128098     1      100  realloc.o   [libg.a]
+0x00128100     1     1440  reallocr.o   [libg.a]
+0x001286A0     2      432  refill.o   [libg.a]
+0x00128858     1       88  sbrkr.o   [libg.a]
+0x001288B0     8      736  signal.o   [libg.a]
+0x00128B98     2      112  signalr.o   [libg.a]
+0x00128C10     2      308  snprintf.o   [libg.a]
+0x00128D48     2      280  sprintf.o   [libg.a]
+0x00128E60     2      176  sscanf.o   [libg.a]
+0x00128F10     4      356  stdio.o   [libg.a]
+0x00129080     1      216  strcasecmp.o   [libg.a]
+0x00129158     1      300  strcat.o   [libg.a]
+0x00129288     1      400  strchr.o   [libg.a]
+0x00129418     1      324  strcmp.o   [libg.a]
+0x00129560     1      276  strcpy.o   [libg.a]
+0x00129678     1      312  strlen.o   [libg.a]
+0x001297B0     1      216  strncasecmp.o   [libg.a]
+0x00129888     1      428  strncat.o   [libg.a]
+0x00129A38     1      440  strncmp.o   [libg.a]
+0x00129BF0     1      444  strncpy.o   [libg.a]
+0x00129DB0     1      132  strpbrk.o   [libg.a]
+0x00129E38     1       80  strrchr.o   [libg.a]
+0x00129E88     1      132  strstr.o   [libg.a]
+0x00129F10     3     3936  strtod.o   [libg.a]
+0x0012AE78     1       32  strtok.o   [libg.a]
+0x0012AE98     1      200  strtok_r.o   [libg.a]
+0x0012AF60     2      612  strtol.o   [libg.a]
+0x0012B1C8     2      600  strtoul.o   [libg.a]
+0x0012B428     2      624  ungetc.o   [libg.a]
+0x0012B698     6     6780  vfprintf.o   [libg.a]
+0x0012D120     2     3468  vfscanf.o   [libg.a]
+0x0012DEB0     2      168  vsprintf.o   [libg.a]
+0x0012DF60     1      272  wbuf.o   [libg.a]
+0x0012E070     1       96  writer.o   [libg.a]
+0x0012E0D0     1      268  wsetup.o   [libg.a]
+0x0012E1E0     1      116  _muldi3.o   [LIBGCC.A]
+0x0012E258     1     1684  _divdi3.o   [LIBGCC.A]
+0x0012E8F0     1     1680  _moddi3.o   [LIBGCC.A]
+0x0012EF80     1     1404  _udivdi3.o   [LIBGCC.A]
+0x0012F500     1     1384  _umoddi3.o   [LIBGCC.A]
+0x0012FA68     1      168  _floatdidf.o   [LIBGCC.A]
+0x0012FB10     1      232  _floatdisf.o   [LIBGCC.A]
+0x0012FBF8     1      280  _fixunsdfdi.o   [LIBGCC.A]
+0x0012FD10     1      120  _fixdfdi.o   [LIBGCC.A]
+0x0012FD88     1      296  _fixunssfdi.o   [LIBGCC.A]
+0x0012FEB0     1       60  _fixsfdi.o   [LIBGCC.A]
+0x0012FEF0     1      180  _pack_sf.o   [LIBGCC.A]
+0x0012FFA8     1       92  _unpack_sf.o   [LIBGCC.A]
+0x00130008     1       44  _make_sf.o   [LIBGCC.A]
+0x00130038     1       60  _sf_to_df.o   [LIBGCC.A]
+0x00130078     1      128  _sf_to_usi.o   [LIBGCC.A]
+0x001300F8     1      216  _pack_df.o   [LIBGCC.A]
+0x001301D0     1      188  _unpack_df.o   [LIBGCC.A]
+0x00130290     3      792  _addsub_df.o   [LIBGCC.A]
+0x001305B0     1      644  _mul_df.o   [LIBGCC.A]
+0x00130838     1      320  _div_df.o   [LIBGCC.A]
+0x00130978     1      288  /19   [LIBGCC.A]
+0x00130A98     1       76  _compare_df.o   [LIBGCC.A]
+0x00130AE8     1      184  _si_to_df.o   [LIBGCC.A]
+0x00130BA0     1      156  _df_to_si.o   [LIBGCC.A]
+0x00130C40     1       44  _make_df.o   [LIBGCC.A]
+0x00130C70     1       84  _df_to_sf.o   [LIBGCC.A]
+0x00130CC8     1      160  _df_to_usi.o   [LIBGCC.A]
+0x00130D70     1      616  B3MainPS2.cpp
+0x00130FE0    20     3392  B3ControllerMappingPS2.cpp
+0x00131DB0    14     7544  B3DebugManager.cpp
+0x00133CA0    12     4004  B3FrontEnd.cpp
+0x00134C80    45    14648  B3Game.cpp
+0x001386E0     7     1724  B3GameMode.cpp
+0x00138DD0    10     3092  B3OnePlayerStage.cpp
+0x00139AA0     8     2544  B3OnlineStage.cpp
+0x0013A660     4      600  B3Player.cpp
+0x0013A8C0    76    22308  B3Profile.cpp
+0x00140590     3       24  B3ProgressionManager.cpp
+0x001405C0     8     1400  B3TwoPlayerSplitScreenStage.cpp
+0x00140C00     5     2264  B3AsyncDataLoader.cpp
+0x00141500    17    17892  B3AIAvoidance.cpp
+0x001461E0    17    13196  B3AICar.cpp
+0x001495D0     1      128  B3AIControlData.cpp
+0x00149650    14     9132  B3AIDriver.cpp
+0x0014BE80    17     9940  B3AILane.cpp
+0x001507D0    17    21404  B3AITarget.cpp
+0x00157260    16     2660  B3Burn.cpp
+0x00157D10     2       16  B3CrashPresentationDirector.cpp
+0x00157D30    13     6076  B3GameData.cpp
+0x00159530     5      460  B3NetworkCar.cpp
+0x00159720     8     1048  B3PlayerCar.cpp
+0x00159B70    19    12776  B3RaceCar.cpp
+0x0015CDB0    10     7708  B3RacePosition.cpp
+0x0015EC10     4     1020  B3ReplayFrame.cpp
+0x0015F020     6     1472  B3ReplaySystem.cpp
+0x0015F600    55    44068  B3Score.cpp
+0x0016A480     6     1128  B3SplitTimeCheckpoint.cpp
+0x0016A910     5      568  B3StartFinishLine.cpp
+0x0016AB60     4       36  B3StartPoint.cpp
+0x0016ABA0     1     2088  B3StaticTrackData.cpp
+0x0016B3D0     2      416  B3StreamedTrackData.cpp
+0x0016B570     7     2356  B3TrafficAxle.cpp
+0x0016BED0     9     2936  B3TrafficLane.cpp
+0x0016CA80    16    13692  B3TrafficParam.cpp
+0x00170050    16    21276  B3TrafficSystem.cpp
+0x001753D0    18    21116  B3TrafficVehicle.cpp
+0x0017A6D0    15    10968  B3World.cpp
+0x0017D210     7     5100  B3WrongWayWall.cpp
+0x0017E620     6     3900  B3AIArbitrator.cpp
+0x0017F590    11     4972  B3GraphicsManager.cpp
+0x00180A50    12     5428  B3HUDComponent.cpp
+0x00181FD0    15     7068  B3HUDManager.cpp
+0x00183BC0     9     9456  B3HUDScore.cpp
+0x001860E0     2      916  B3HUDSpeedo.cpp
+0x00186480    10    14420  B3HUDBoostBar.cpp
+0x0018A340     2      328  B3NetworkMessage.cpp
+0x0018A8F0     1        8  B3NetworkPlayerStartCountdownMessage.cpp
+0x0018AC40    11    15692  B3NetworkRaceUpdateMessage.cpp
+0x0018E9D0    16    14704  B3CollidingBody.cpp
+0x00192390    18    20744  B3CrashActionDirector.cpp
+0x00197510    30    58580  B3PhysicsManager.cpp
+0x001A5E60    13    15168  B3PlayerCarPhysics.cpp
+0x001A99E0     6     4308  B3PropPhysics.cpp
+0x001AAAE0    28    52376  B3RaceCarPhysics.cpp
+0x001B7830     3     2532  B3Transmission.cpp
+0x001B8230    25    52804  B3VehiclePhysics.cpp
+0x001C5140    12     7920  B3AICarPhysics.cpp
+0x001C7070    14     3072  GtFileSystemPS2DVD.cpp
+0x001C7CD0     8     1052  GtTimer.cpp
+0x001C8110     6     2260  B3GamePS2.cpp
+0x001C8A10    12     5860  Gt2dFrameHierarchy.cpp
+0x001CA340     2      264  Gt2dObjectBox.cpp
+0x001CA450     2      472  Gt2dObjectImage.cpp
+0x001CA630     9     4144  Gt2dObjectText.cpp
+0x001CB6A0     3     1940  Gt2dObjectVignette.cpp
+0x001CBE40     5     1840  Gt2dScene.cpp
+0x001CC580     2      488  Gt2dFont.cpp
+0x001CD048    11     1824  babinary.obj   [librwcore.a]
+0x001CD770     2       40  bacolor.obj   [librwcore.a]
+0x001CD7A0     5      288  baerr.obj   [librwcore.a]
+0x001CD8D0     4      256  bafsys.obj   [librwcore.a]
+0x001CD9D8    29     8236  bamatrix.obj   [librwcore.a]
+0x001CFA48    19     5988  bamemory.obj   [librwcore.a]
+0x001D11D8     9     1856  baresour.obj   [librwcore.a]
+0x001D1928     9     2568  bastream.obj   [librwcore.a]
+0x001D2340     8     1268  batkbin.obj   [librwcore.a]
+0x001D2850    13     1828  batkreg.obj   [librwcore.a]
+0x001D2F80    16     2284  bavector.obj   [librwcore.a]
+0x001D3890     7     1716  resmem.obj   [librwcore.a]
+0x001D3F50    11      956  rwgrp.obj   [librwcore.a]
+0x001D4328    11     1892  rwstring.obj   [librwcore.a]
+0x001D4AA0     2       80  osintf.obj   [librwcore.a]
+0x001D4AF0     4      588  babbox.obj   [librwcore.a]
+0x001D4D40    15     3028  babintex.obj   [librwcore.a]
+0x001D5930    26     7100  bacamera.obj   [librwcore.a]
+0x001D7520    26     3532  badevice.obj   [librwcore.a]
+0x001D8328    36     4376  baframe.obj   [librwcore.a]
+0x001D9488    38    10396  baimage.obj   [librwcore.a]
+0x001DBD68     6     1140  baimras.obj   [librwcore.a]
+0x001DC1F0    24     2028  baraster.obj   [librwcore.a]
+0x001DCA08     4     2516  baresamp.obj   [librwcore.a]
+0x001DD3E8     6     1244  basync.obj   [librwcore.a]
+0x001DD8D0    49     9876  batextur.obj   [librwcore.a]
+0x001DFFD0     2      156  batypehf.obj   [librwcore.a]
+0x001E0070    19    13980  imrascnv.obj   [librwcore.a]
+0x001E3718    20    11792  palquant.obj   [librwcore.a]
+0x001E6560    23    11876  badma.obj   [librwcore.a]
+0x001E93E8     1      100  baevent.obj   [librwcore.a]
+0x001E9450    71    46864  basky.obj   [librwcore.a]
+0x001F4C00     5      572  baskytran.obj   [librwcore.a]
+0x001F4E48    14    24040  skyblit.obj   [librwcore.a]
+0x001FAC50     8     8872  skyconv.obj   [librwcore.a]
+0x001FCF08    24    12924  skyinst.obj   [librwcore.a]
+0x002001B8    39    12496  texcache.obj   [librwcore.a]
+0x002032D0    13     2868  baim3d.obj   [librwcore.a]
+0x00203E28     4      104  bapipe.obj   [librwcore.a]
+0x00203E90     3     1856  p2altmdl.obj   [librwcore.a]
+0x002045D0    25     3656  p2core.obj   [librwcore.a]
+0x00205440     9     4188  p2heap.obj   [librwcore.a]
+0x002064B8     5     1332  /0   [librwcore.a]
+0x002069F8     4       32  im3dpipe.obj   [librwcore.a]
+0x00206A20     8     2448  GtViewport.cpp
+0x002073D0    18     2048  GtFileSystem.cpp
+0x00207D10    13     3900  GtUnicode.cpp
+0x00208CA0     5      644  B3InputManagerPS2.cpp
+0x00208F50    10     2192  GtInputManagerPS2Pad2.cpp
+0x00209820     2     2444  GtInputDevicePS2DualShock2.cpp
+0x0020A1B0    15     2204  libpad2.o   [libpad2.a]
+0x0020AA68    18     3840  libdbc.o   [libdbc.a]
+0x0020B990    13     1756  GtInputDevicePS2DualShock.cpp
+0x0020C0B0     2      364  libvib.o   [libvib.a]
+0x0020C220     7      604  GtFSM.cpp
+0x0020C4A0    22    22816  Gt2dRendererPS2.cpp
+0x00211E50     4     1208  B3MenuInput.cpp
+0x00212330     1       72  GtDictionary.cpp
+0x00212380     5     1156  GtID.cpp
+0x00212830     1        8  GtCameraBehaviour.cpp
+0x00212840     6     2148  GtCamera.cpp
+0x002130C0     2       64  B3Settings.cpp
+0x00213270     3      136  GtCommsToolBase.cpp
+0x00213310     7     1252  GtCommsDatabase.cpp
+0x00213B90     1      112  GtHash.cpp
+0x00213C00     5     4672  B3StreamedTrackPS2.cpp
+0x002150B0     2      588  B3StaticTrackPS2.cpp
+0x00215520    12     3164  B3SkyDomeRendererPS2.cpp
+0x002161B0    14     5532  B3VehicleRendererRuntimePS2.cpp
+0x002177A0     4     6816  B3VehicleRendererRuntime.cpp
+0x00219260     4      912  GtScreenCentre.cpp
+0x00219600    13     4272  GtTextureCachePS2.cpp
+0x0021A790     5     1884  B3MemoryManagerPS2.cpp
+0x0021AF00    25    27012  B3GraphicsManagerPS2.cpp
+0x00221EA0    27     3804  B3InputManager.cpp
+0x00222E60     4      440  GtNetworkAdapter.cpp
+0x00223060    11     4684  GtNetworkMessage.cpp
+0x00224650    31    22812  GtPS2LibNet.cpp
+0x0022AA50    15    11200  GtNetworkPlayer.cpp
+0x0022D870    27    36352  GtNATDataManager.cpp
+0x00236700    24    21776  GtNetworkPlayerManager.cpp
+0x0023C9A0     6      776  GtThreadMgrPS2.cpp
+0x0023CE08     3      992  inet_addr.o   [libinsck.a]
+0x0023D1F0    51    12204  socket.o   [libinsck.a]
+0x00240210    10     2164  msifrpc.o   [libmrpc.a]
+0x00240AC0    29    47460  B3NetworkPlayer.cpp
+0x0024CD60     5     1500  GtSyncTimeClient.cpp
+0x0024D360     4      640  GtSyncTimeHost.cpp
+0x0024D600     5      524  GtSyncTime.cpp
+0x0024D810     1       44  GtSyncTimeMessage.cpp
+0x0024D840     7     3508  B3FogPS2.cpp
+0x0024E628    40     5772  libmc2.o   [libmc2.a]
+0x0024FD08    37    17988  fat.o   [libmc2.a]
+0x002543A0    15     2704  physical.o   [libmc2.a]
+0x00254E50    25     4272  core.o   [libmc2.a]
+0x00255F30     8      744  userdef.o   [netifmc2.a]
+0x00256218    25     3356  netcnfif.o   [netcnfif.a]
+0x00256F68     4      592  callback.o   [netcnfif.a]
+0x002571C0     5      488  rpc.o   [netcnfif.a]
+0x002573B8    21     1740  libscf.o   [libscf.a]
+0x00257AB0    13     9100  B3SunRendererPS2.cpp
+0x00259E80     7    14280  B3CarViewerGameMode.cpp
+0x0025D660     6     1024  GtCommsDatabaseGame.cpp
+0x0025DA80     7     6396  B3TrafficPhysics.cpp
+0x0025F3B0     3       24  GtNetworkConditions.cpp
+0x0025F3E0     4     1304  GtTexturePS2.cpp
+0x0025FA00     1      184  B3StreamedTrackCollisionPS2.cpp
+0x0025FAC0     2      104  B3Viewport.cpp
+0x0025FB30    16     2444  B3DataLists.cpp
+0x00260610     5     1392  B3VehiclePhysicsAttribs.cpp
+0x00260B90     8     7952  B3RaceCarPhysicsAttribs.cpp
+0x00262AC0    16     7800  B3ParticleRendererPS2.cpp
+0x002649A0    47    79832  B3EffectsManager.cpp
+0x002782A0    18     6768  B3SparkRendererPS2.cpp
+0x00279DA0    10     5184  B3BloomPS2.cpp
+0x0027B210     4     1580  B3TrafficLight.cpp
+0x0027B860    16    10456  B3TrafficValve.cpp
+0x0027E6C0     9     9064  B3NetworkCarPhysics.cpp
+0x00280C10     1      344  B3TriggerStruct.cpp
+0x00280D70     1       52  B3TrafficLightStruct.cpp
+0x00280DB0     2       68  B3TrafficValveStruct.cpp
+0x00280E00     1      132  B3TrafficLaneStruct.cpp
+0x00280E90     1      444  B3TrafficDataStruct.cpp
+0x00281050     2       96  B3TrackMaterialPS2.cpp
+0x002810B0    15     8056  B3TrackRendererRuntimePS2.cpp
+0x00283070     2       20  B3NetworkRaceReadyMessage.cpp
+0x00283090     2      412  B3TrafficSplitter.cpp
+0x00283230    48    32744  B3NetworkManager.cpp
+0x0028B350     1      132  B3AILaneStruct.cpp
+0x0028B3E0     1       80  GtArray.cpp
+0x0028B430     5      440  B3Strings.cpp
+0x0028B610     1     4016  B3AIAttribs.cpp
+0x0028C5C0     5      368  B3SpatialTrigger.cpp
+0x0028C750     3     1372  B3NetworkPlayerFinishedRaceMessage.cpp
+0x0028D900     8     7784  GtIntersectionPS2.cpp
+0x00291140     5     2344  B3PlayerCameraStatePlayer.cpp
+0x00291460    49    72900  B3SoundCrashManager.cpp
+0x00297690     5       40  B3AIDebug.cpp
+0x002978E0     4     8020  B3WorldPS2.cpp
+0x00299840     2      304  B3SoundManagerPS2.cpp
+0x00299980     8     5440  B3SoundTrafficManager.cpp
+0x0029AEF0     5     2432  B3SoundTrafficPass.cpp
+0x0029B8A0    12    10252  B3SoundTrafficVehicle.cpp
+0x0029F500    10    22708  B3BehaviourFlyAround.cpp
+0x002B0260     7     1712  B3SoundScrape.cpp
+0x002B0920    40     4912  B3SoundHUDManager.cpp
+0x002B1D40    13     5620  B3SoundESM.cpp
+0x002B3550    12     5648  B3SoundGameModeManager.cpp
+0x002B4BA0     3     2224  B3SoundListener.cpp
+0x002B5460    11     1232  B3SoundManager.cpp
+0x002B5970     9     2976  B3SoundAICar.cpp
+0x002B6540     8     3500  B3SoundPlayerCar.cpp
+0x002B7310    13     4196  B3SoundRaceCar.cpp
+0x002B84B0     6     6472  B3SoundSkidModel.cpp
+0x002B9E20     5     1544  B3SoundTurboModel.cpp
+0x002BA440     9     3200  B3SoundCrashedTraffic.cpp
+0x002BB2B0    11     1296  rwabase.o   [librwacore.a]
+0x002BB800    10     2480  rwawave.o   [librwacore.a]
+0x002BC1F0     7      452  rwasymboltable.   [librwacore.a]
+0x002BC3E0     7     2596  rwaparam.o   [librwacore.a]
+0x002BCE30    14     3132  rwaobj.o   [librwacore.a]
+0x002BDAD0    10      356  rwamemory.o   [librwacore.a]
+0x002BDC70     1       92  rwafile.o   [librwacore.a]
+0x002BDCD0     4       56  ostimer.o   [librwacore.a]
+0x002BDD20    11     1152  rwauuid.o   [librwacore.a]
+0x002BE200    12     2752  rwaobjinterface   [librwacore.a]
+0x002BECF0     1      112  rwavoice.o   [librwacore.a]
+0x002BED60     1       68  rwaobjdefalias.   [librwacore.a]
+0x002BEDB0    12     1740  rwaintf.o   [librwacore.a]
+0x002BF4D0     1      112  rwaoutput.o   [librwacore.a]
+0x002BF540    47     4196  rwavirtualvoice   [librwacore.a]
+0x002BF5C0    10     3620  rwavoicemanager   [librwacore.a]
+0x002C0410    23     4600  rwaobjdef.o   [librwacore.a]
+0x002C27A0     1      112  rwavoice3d.o   [librwacore.a]
+0x002C2810     1      112  rwalistener.o   [librwacore.a]
+0x002C2880    21     3208  rwalistenerobj.   [librwacore.a]
+0x002C3540     6     1928  rwafreelist.o   [librwacore.a]
+0x002C3CF0     4      620  rwamath.o   [librwacore.a]
+0x002C3F70     9      760  rwallist.o   [librwacore.a]
+0x002C42A0    26    19380  rwawaveconv.o   [librwacore.a]
+0x002C8ED0    15     3184  rwawavedict.o   [librwacore.a]
+0x002C9B80    23     4600  rwawavedef.o   [librwacore.a]
+0x002CAE00     5      404  rwanullwave.o   [librwacore.a]
+0x002CAFC0     7     1692  rwaheap.o   [librwacore.a]
+0x002CB680     1       60  oswave.o   [librwacore.a]
+0x002CB6C0    15     3068  rwstream.o   [librwacore.a]
+0x002CC340     5      792  rwastreamfilequ   [librwacore.a]
+0x002CC670     2      124  rwastreamint.o   [librwacore.a]
+0x002CC6F0     8      872  osmultithread.o   [librwacore.a]
+0x002CCA90    35     4664  rwastream.o   [librwacore.a]
+0x002CDDA0    33    12244  rwastreamcontai   [librwacore.a]
+0x002D0E50    15     2856  rwastreamfanout   [librwacore.a]
+0x002D19D0    41    15724  rwastreamsource   [librwacore.a]
+0x002D5790    42     7916  rwawaverenderer   [librwacore.a]
+0x002D77E0     2      124  rwastreamrender   [librwacore.a]
+0x002D7860    25     1424  rwastreamnodety   [librwacore.a]
+0x002D7E90     2      124  rwastreamnodein   [librwacore.a]
+0x002D7F10     1     1264  rwastreamcreate   [librwacore.a]
+0x002D8400    11     1432  rwawavedictcomm   [librwacore.a]
+0x002D89F0     7      904  rwalistenermana   [librwacore.a]
+0x002D8DA0    18     2060  rwavirtualliste   [librwacore.a]
+0x002D95E0     8     2628  rwarpc.o   [librwaspu2.a]
+0x002DA050    24     3232  rwaspu2wave.o   [librwaspu2.a]
+0x002DAD80     1      172  rwaspu2.o   [librwaspu2.a]
+0x002DAE30     2      124  rwaspu2outint.o   [librwaspu2.a]
+0x002DAEB0    45     6440  rwaspu2voice.o   [librwaspu2.a]
+0x002DC870     2      124  rwaspu2voiceint   [librwaspu2.a]
+0x002DC8F0    31     7816  rwaspu2out.o   [librwaspu2.a]
+0x002DE810    11     1752  rwaallocbitmap.   [librwaspu2.a]
+0x002DEF30     1      244  osstreamcontain   [librwaspu2.a]
+0x002DF030    11     1824  rwaspu2remoteio   [librwaspu2.a]
+0x002DF790     4      340  rwaspu2waveuplo   [librwaspu2.a]
+0x002DF900     7     7016  B3StopJunction.cpp
+0x002E17A0     1       56  GtPerfMon.cpp
+0x002E19A0     7     1940  GtFreeList.cpp
+0x002E2170     6     2352  B3NetworkPingMessage.cpp
+0x002E2AD0     1      204  B3EnvironmentData.cpp
+0x002E2BA0     7     2004  B3PropManager.cpp
+0x002E33B0     9    10140  B3ConvexHullCollide.cpp
+0x002E5B70    11     4524  B3ConvexHull.cpp
+0x002E74F0    16     5740  B3EnvironmentManager.cpp
+0x002E8BC0     8     3584  B3TrailSystem.cpp
+0x002E9F30    11     6304  B3PhysicsManagerDebug.cpp
+0x002EC490     7     2504  GtIntersection.cpp
+0x002ECE90     2       56  GtPolygonSoup.cpp
+0x002ECED0    28    14136  GtNetworkHeadset.cpp
+0x002F0AC0     4      504  GtHeadsetMessage.cpp
+0x002F0CE0     2       16  GtHeadset.cpp
+0x002F0D00    14     2120  GtLogitechHeadset.cpp
+0x002F15B0     8     2956  liblgcodec.o   [liblgcodec.a]
+0x002F2148     2       32  utils.o   [liblgcodec.a]
+0x002F2168     4      240  lggsm.o   [liblgcodec.a]
+0x002F2268     4      216  lglpc10.o   [liblgcodec.a]
+0x002F2348     2      500  lgulaw.o   [liblgcodec.a]
+0x002F2540     4      216  lgG723.o   [liblgcodec.a]
+0x002F2620     4      484  lgSpeex.o   [liblgcodec.a]
+0x002F2810     1       76  gsm_create.o   [liblgcodec.a]
+0x002F2860     2     2736  gsm_decode.o   [liblgcodec.a]
+0x002F3318     1       36  gsm_destroy.o   [liblgcodec.a]
+0x002F3340     3     3092  gsm_encode.o   [liblgcodec.a]
+0x002F3F60     4     2804  gsm_lpc.o   [liblgcodec.a]
+0x002F4A60     1      216  gsm_norm.o   [liblgcodec.a]
+0x002F4B38     1       44  gsm_option.o   [liblgcodec.a]
+0x002F4B68     4     2908  gsm_rpe.o   [liblgcodec.a]
+0x002F56D0     5     3948  long_term.o   [liblgcodec.a]
+0x002F6648     5     4748  short_term.o   [liblgcodec.a]
+0x002F78E0     7     6156  analys.o   [liblgcodec.a]
+0x002F90F8     3      800  chanwr.o   [liblgcodec.a]
+0x002F9420     6     3972  lpcdec.o   [liblgcodec.a]
+0x002FA3B0     4     1988  lpcenc.o   [liblgcodec.a]
+0x002FAB80     6     1052  lpcini.o   [liblgcodec.a]
+0x002FAFA0     1     2744  pitsyn.o   [liblgcodec.a]
+0x002FBA58     1     1388  placea.o   [liblgcodec.a]
+0x002FBFC8     1      956  placev.o   [liblgcodec.a]
+0x002FC388     1     1712  tbdm.o   [liblgcodec.a]
+0x002FCA38     2     3460  voicin.o   [liblgcodec.a]
+0x002FD7C0     6      608  g711.o   [liblgcodec.a]
+0x002FDA30     2      224  u-law.o   [liblgcodec.a]
+0x002FDB10     2      864  g723_24.o   [liblgcodec.a]
+0x002FDE78     2      996  g723_frm.o   [liblgcodec.a]
+0x002FE260    10     3356  g72x.o   [liblgcodec.a]
+0x002FEF88    17     2300  bits.o   [liblgcodec.a]
+0x002FF8A8     4     4420  cb_search.o   [liblgcodec.a]
+0x003009F0    10     3548  filters.o   [liblgcodec.a]
+0x003017E0     2      572  lpc.o   [liblgcodec.a]
+0x00301A20     3     2168  lsp.o   [liblgcodec.a]
+0x00302298     6     5908  ltp.o   [liblgcodec.a]
+0x003039B8    15      824  misc.o   [liblgcodec.a]
+0x00303D10    11      540  modes.o   [liblgcodec.a]
+0x00303F48     9    19520  nb_celp.o   [liblgcodec.a]
+0x00308B98     6     6252  quant_lsp.o   [liblgcodec.a]
+0x0030A408     9    15736  sb_celp.o   [liblgcodec.a]
+0x0030E190     9      696  /187   [liblgcodec.a]
+0x0030E450     3     3288  vbr.o   [liblgcodec.a]
+0x0030F128     3     1016  vq.o   [liblgcodec.a]
+0x0030F528    25     7648  liblgaud.o   [liblgaud.a]
+0x003113F0     7     4476  B3BehaviourOffset.cpp
+0x003125A0     6    13868  B3BehaviourRaceCarFollow.cpp
+0x00315C00     7     6924  B3BehaviourRotate.cpp
+0x00317730    17     5116  B3PlayerCameraManager.cpp
+0x00318BB0     1      376  B3PlayerCameraStateDebug.cpp
+0x00318D30     1      332  B3PlayerCameraStateInactive.cpp
+0x00318E80     1     1816  B3PlayerCameraStateInGame.cpp
+0x003195A0     1      900  B3PlayerCameraStateIntro.cpp
+0x0031F210     7     9032  B3SoundRaceCarManager.cpp
+0x00321580     7     5004  B3TrafficDebug.cpp
+0x00322B50     2      140  B3CPUMonitors.cpp
+0x00322BF0     5    17768  B3BoundingBox.cpp
+0x00327180     4     1564  B3TrailRenderPS2.cpp
+0x003277B0    13     4612  B3DebrisRendererPS2.cpp
+0x00328AB0     8      976  B3SoundDoppler.cpp
+0x00328EB0    14    10200  B3CameraUtils.cpp
+0x0032B6E0     5     6156  B3CameraAttribs.cpp
+0x0032D5A0     5     3256  Gt2dObjectParagraph.cpp
+0x0032E270     1        8  B3NetworkNewHostMessage.cpp
+0x0032E280     1        8  B3NetworkHostKeepAliveMessage.cpp
+0x0032E290     1      632  B3PropManagerPS2.cpp
+0x0032E510     6      936  GtLinearMalloc.cpp
+0x0032E8D0     9     4612  B3RadialBlurPS2.cpp
+0x0032FB10     6      344  B3SoundESMManager.cpp
+0x0032FC80     3      896  B3SoundESMStruct.cpp
+0x003308D0     8     2520  B3SoundDSPBlock.cpp
+0x003312D0    10     4656  B3SoundDistPS2.cpp
+0x00332720    11    27384  B3BehaviourTrackSide.cpp
+0x00339260     1     1152  B3PlayerCameraStateCrash.cpp
+0x003396E0     2     2256  B3PlayerCameraStateReplay.cpp
+0x0033A070    15     9008  B3StreamedTrack.cpp
+0x0033C9A0     3     2124  B3Shadows.cpp
+0x0033D200     5     1412  B3ShadowRendererPS2.cpp
+0x0033D7A0     3      372  GtInputManagerPS2Keyboard.cpp
+0x0033D930     5     1472  GtInputDevicePS2Keyboard.cpp
+0x0033DF00    19     5112  lgkbminput.o   [liblgkbm.a]
+0x0033F310    26     5236  lgkbmlib.o   [liblgkbm.a]
+0x003407A8     3      184  timer.o   [liblgkbm.a]
+0x00340868     3     1048  translate.o   [liblgkbm.a]
+0x00340C80    15     3664  B3CoronaRendererPS2.cpp
+0x00341B30     9     8064  B3TrafficSystemLoadAndRender.cpp
+0x00343AD0     2      580  B3VehicleReflectivityData.cpp
+0x00343D20    16     4492  GTMemoryDevicePS2_MC2.cpp
+0x00344F60     5     1340  B3BoostEffectParams.cpp
+0x00345FF0     1      308  B3MenuComponents.cpp
+0x00346130    14     8072  B3MenuChoices.cpp
+0x00348100    11     4760  B3MenuPageManager.cpp
+0x003493D0     1      984  B3RegionSelectState.cpp
+0x003497B0     1     2428  B3ClassSelectState.cpp
+0x0034A130     2     1816  B3MainMenuState.cpp
+0x0034A850     6     1316  B3MenuFlowFSM.cpp
+0x0034ADA0     4     4260  B3OnlineLobbyState.cpp
+0x0034C3A0     1     1384  B3CarSelectState.cpp
+0x0034C910     1      572  B3TrackSelectState.cpp
+0x0034CB50    34    24936  B3OnlineLobbyPage.cpp
+0x00352D90     3      928  B3ClassSelectPage.cpp
+0x00353140     3     1228  B3MainMenuPage.cpp
+0x00353620     1       48  B3MenuPageBase.cpp
+0x00353650     3     1160  B3CarSelectPage.cpp
+0x00353AF0     3      496  B3RegionSelectPage.cpp
+0x00353CF0     3      932  B3TrackSelectPage.cpp
+0x003540B0     7      268  B3MenuComponentBase.cpp
+0x003541D0    11     5488  B3HeadingComponent.cpp
+0x00355790    12     4376  B3HelpBarComponent.cpp
+0x003568F0     4      548  B3HSelectComponent.cpp
+0x00356B30    11     7364  B3BackgroundComponent.cpp
+0x00358840     7     3684  B3PromptsComponent.cpp
+0x003596C0     9     4676  B3VSelectComponent.cpp
+0x0035A930     3      584  B3LoadingScreenPage.cpp
+0x0035AB90     5     1796  B3MyBurnoutPage.cpp
+0x0035B2B0     1     1492  B3MyBurnoutState.cpp
+0x0035B890     1     1136  B3GameState.cpp
+0x0035BD00     3      816  B3OnlineMenuPage.cpp
+0x0035C040     2     2460  B3OnlineMenuState.cpp
+0x0035C9F0     2     2924  B3OnlineGameCreateState.cpp
+0x0035D570    12     3620  GtVideoDecoderPS2.cpp
+0x0035E730     9     2868  vibuf.c
+0x0035F2A0     2     1008  Gt2dObjectVideoImage.cpp
+0x0035F690     3     1260  B3OnlineGameCreatePage.cpp
+0x0035FB90    11    11368  B3OnlineJoinGamePage.cpp
+0x00362830     1      864  B3OnlineJoinGameState.cpp
+0x00362B90     3      176  B3VListComponent.cpp
+0x00362C50     5     1528  B3MessageBoxComponent.cpp
+0x00363260     6     7136  B3BehaviourEffect.cpp
+0x00364E70     1       40  B3TrafficHullStruct.cpp
+0x00364EA0    12    15424  B3AIAggressionBehaviour.cpp
+0x00368FF0     8     2884  B3ChatDisplayComponent.cpp
+0x00369B90     3     1072  B3DemoMenuPage.cpp
+0x00369FD0     1      752  B3DemoSelectState.cpp
+0x0036A2C0     6     2156  B3StaticTrack.cpp
+0x0036AB50     9     9384  B3BodyPartPhysics.cpp
+0x0036D020     1      504  GtCameraFrustumBase.cpp
+0x0036D220     2     1740  GtCameraFrustumPS2.cpp
+0x0036D900     3     1312  B3NetworkAllNATDataFinalisedMessage.cpp
+0x0036DE30     2     1792  B3HUDLap.cpp
+0x0036E540     3     1336  B3HUDPos.cpp
+0x0036EA80     1      660  B3DemoGameState.cpp
+0x0036ED20     3      476  B3DemoRaceInfoPage.cpp
+0x0036EF10     1      276  B3DemoRaceInfoState.cpp
+0x0036F030     3     1068  B3DemoPausePage.cpp
+0x0036F460     1      796  B3DemoPauseState.cpp
+0x0036F780     9     5840  B3DemoRaceResultsPage.cpp
+0x00370EA0     1     2924  B3SplashScreenState.cpp
+0x00371A10     3      200  B3DemoTitleScreenPage.cpp
+0x00371AF0     1      248  B3DemoTitleScreenState.cpp
+0x00371BF0    95    32140  GtLobbyDirtySock.cpp
+0x0037B020     9     4680  Gt2dObjectItalicText.cpp
+0x0037C620    13     5668  Gt2dObjectTable.cpp
+0x0037DCA0    13     3104  B3TableComponent.cpp
+0x0037E930     6     5312  B3OnlineSelectPersonaPage.cpp
+0x0037FE10     3     1112  B3NetworkHasHeadsetMessage.cpp
+0x00380280     4     1672  B3PausePage.cpp
+0x00380920     1     1036  B3PauseState.cpp
+0x00380D30     4       68  B3TipComponent.cpp
+0x00380D90     4     1576  B3TitleScreenComponent.cpp
+0x003815E0     4     3568  B3EndOfRaceState.cpp
+0x003824D0     8     5460  B3RaceFinishedPage.cpp
+0x00383A50     2       16  B3RumbleAttribs.cpp
+0x00383A70     6      880  i18n.o   [ezNetCnf_release.lib]
+0x00383E00     1      696  i18n_inet.o   [ezNetCnf_release.lib]
+0x003840C0     6     1200  libezcnf.o   [ezNetCnf_release.lib]
+0x00384590     8     1628  libezctl.o   [ezNetCnf_release.lib]
+0x00384C30     5     3252  B3OnlineOpenConnectionState.cpp
+0x00385900     3     2044  B3OnlineSelNetConfigPage.cpp
+0x00386110     5     1776  B3OnlineConnectingPage.cpp
+0x00386830    13     5840  B3OnlineSelectLoginPage.cpp
+0x00387F40     1     1128  GtFrustumBuilder.cpp
+0x003883B0     3     1640  B3OnlineRetrieveConfigsPage.cpp
+0x00388A20     8     8244  B3OnlineLoginToLobbyState.cpp
+0x0038AA60     4     2248  B3OnlineLoginToLobbyPage.cpp
+0x0038B350    34    17460  B3OnScreenKeyboardComponent.cpp
+0x0038F850     6     1076  B3TextComponent.cpp
+0x0038FCC0     3      400  B3ErrorPage.cpp
+0x0038FE60     4      540  B3TableSelectComponent.cpp
+0x00390090     3     1496  B3ConnectionAnimationComponent.cpp
+0x00390680     2     1576  B32dObjectGradient.cpp
+0x00390CB0     3      772  B3DNASPage.cpp
+0x00391150     1      272  GtExceptionHandler.cpp
+0x003912C0    23     6252  B3CrashAnalyser.cpp
+0x00392BE0    11     7496  B3CrashCameraDirector.cpp
+0x00394960     1     1136  B3PlayerCameraStateCrashMode.cpp
+0x00394DD0    13    20424  B3BehaviourCluster.cpp
+0x00399DF0    13    15212  GtSphereTree.cpp
+0x0039E120     1       16  B3CrashTrafficGenerationStruct.cpp
+0x0039E590     3      388  B3DebugMipMaps.cpp
+0x0039E720     3      224  GtUnicodeUtils.cpp
+0x0039E810     2      224  GtBuddies.cpp
+0x0039E8F0    26     3744  GtBuddiesPS2DirtySock.cpp
+0x0039FE70     2      116  B3SharedLoginExtPS2.cpp
+0x0039FEF0    25     2804  B3SFIOCallbacksPS2.cpp
+0x003A0A80    21    13580  B3CrashCombo.cpp
+0x003A4000    13     4944  B3Im3DPS2.cpp
+0x003A5380     9     3360  B3PopcornRendererPS2.cpp
+0x003A60D0    10     6164  B3BuddyDisplayComponent.cpp
+0x003A7900     1      208  B3ProgressionDataStruct.cpp
+0x003A79D0     4     2424  B3StageSelectPage.cpp
+0x003A8360     1     2288  B3StageSelectState.cpp
+0x003A8C50    25     5820  B3ScoreBonus.cpp
+0x003AA3C0     1      264  B3OnlineNewsState.cpp
+0x003AA4D0     3     2112  B3OnlineRankingsState.cpp
+0x003AAD20     1     2040  B3OnlineBuddiesState.cpp
+0x003AB520     1      844  B3OnlineOptimatchState.cpp
+0x003AB870    29    16480  B3OnlineBuddiesMenuPage.cpp
+0x003AF980     3      620  B3OnlineRankingsMenuPage.cpp
+0x003AFC00     2      844  B3BurningText2dObject.cpp
+0x003AFF58     1      760  /0   [libSharedLogin.a]
+0x003B0250    52     5864  /21   [libSharedLogin.a]
+0x003B1990    41     6252  TagFile.c.obj   [libTagFile.a]
+0x003B3250    10      712  /0   [libChecksum.a]
+0x003B3530     8      616  CryptXOR.c.obj   [libCrypt.a]
+0x003B37B0    48     9124  /0   [libSharedFileIO.a]
+0x003B5BA0    11     4464  /20   [libSharedFileIO.a]
+0x003B6D20     3      860  B3MenuImages.cpp
+0x003B7090     4     1444  B3FlashText2dObject.cpp
+0x003B7650     2     1204  B3SelectionBar2dObject.cpp
+0x003B7B10     4     1544  B3BuddyReadMailComponent.cpp
+0x003B8130     7     1616  B3OnlineReadMailMenuPage.cpp
+0x003B87A0     9     3056  B3OnlineBuddiesSearchMenuPage.cpp
+0x003B93C0     3     1872  B3MyStatsPage.cpp
+0x003B9B20     1      264  B3MyStatsState.cpp
+0x003B9C30    11     3044  B3BehaviourInterpolate.cpp
+0x003BA850     1       40  B3CameraBehaviour.cpp
+0x003BA880     4      960  GtByteStream.cpp
+0x003BACA0     1     1000  B3DemoOnlineGameCreateState.cpp
+0x003BB090     1     1032  B3DemoOnlineJoinGameState.cpp
+0x003BB4A0     4     2316  B3DemoRaceFinishedPage.cpp
+0x003BBDC0     1     1144  B3DemoRaceFinishedState.cpp
+0x003BC240     3      372  B3DemoShowTipsPage.cpp
+0x003BC3C0     1      272  B3DemoShowTipsState.cpp
+0x003BC4D0     6     4132  B3CrashResultsPage.cpp
+0x003BD540    14     2368  B3CameraEditor.cpp
+0x003BDED0     1      344  B3PlayerCameraStateEditor.cpp
+0x003BE820     6     4520  B3BehaviourKeyFrame.cpp
+0x003BF9F0     6      436  GtHiResSystemTimerPS2.cpp
+0x003BFBD0     6     2652  B3NetworkReplayMessage.cpp
+0x003C0650     8     3464  B3ScrapeSystem.cpp
+0x003C1410     5     1180  B3ScrapeRenderPS2.cpp
+0x003C18E0     3      520  B3OnlineTrackRecordsMenuPage.cpp
+0x003C1AF0     4     1008  GtFramerateManager.cpp
+0x003C1EF0    14    10108  B3OnlineRecordsDisplayMenuPage.cpp
+0x003C4860     3      616  B3TextureCollectionPS2.cpp
+0x003C4AE0     3      496  B3OnlineCrashRecordsMenuPage.cpp
+0x003C4CE0    10     1804  B3PageTextComponent.cpp
+0x003C5420     4     2100  B3OnlineNewsMenuPage.cpp
+0x003C5C70    15    10288  B3OnlineOptimatchMenuPage.cpp
+0x003C84F0     3     5060  B3CreateAccount2MenuPage.cpp
+0x003C98D0     3     1456  B3CreateAccountDupNameMenuPage.cpp
+0x003C9E90     3     1956  B3CreateAccountSaveMenuPage.cpp
+0x003CA640     6     5788  B3CreateAccount1MenuPage.cpp
+0x003CBD10     1      916  B3OnlineCreateAccountState.cpp
+0x003CC0B0     3     2028  B3Panel2dObject.cpp
+0x003CC8B0     2     1420  B3DPad2dObject.cpp
+0x003CCE40     2      936  B3GradientText2dObject.cpp
+0x003CD1F0     3     1456  B3Button2dObject.cpp
+0x003CD7C0     4     2572  B3OnlineLobbySelectPage.cpp
+0x003CE3D0     9      888  GtSoundBank.cpp
+0x003CE800     6     1832  GtSoundBankManager.cpp
+0x003CF180     8     1064  GtSoundListener.cpp
+0x003CF710     6      960  GtSoundListenerManager.cpp
+0x003CFAF0    10      760  GtSoundManager.cpp
+0x003CFE20     9     3320  GtSoundRealVoice.cpp
+0x003D0C60    15     2792  GtSoundStream.cpp
+0x003D1A30     9     1784  GtSoundStreamManager.cpp
+0x003D2140     5      964  GtSoundUtils.cpp
+0x003D2520    11     6576  GtSoundVirtualVoice.cpp
+0x003D3F10     1       92  GtSoundVoice.cpp
+0x003D3F70    12     3408  GtSoundVoiceManager.cpp
+0x003D4DF0     2      112  GtSoundWave.cpp
+0x003D4E70     2      772  GtFixedPoint.cpp
+0x003D5180    22     1980  B3OfflineSingleRaceLogic.cpp
+0x003D59B0    20     1516  B3OnlineSingleRaceLogic.cpp
+0x003D6030     4      780  B3PromptBarComponent.cpp
+0x003D6360    25     1824  B3OfflineBurningLapLogic.cpp
+0x003D6B10     9     1268  B3OfflineLapEliminatorLogic.cpp
+0x003D7040    20     5300  B3OfflineRoadRageLogic.cpp
+0x003D8590    28     5264  B3OnlineCompCrashLogic.cpp
+0x003D9D20    25     2392  B3OnlineCoOpCrashLogic.cpp
+0x003DA720    27     4728  B3OnlineRoadRageRaceLogic.cpp
+0x003DBA70    31    10152  B3OnlineStageLogic.cpp
+0x003DE2C0    28     4592  B3OnlineTurnBasedCrashLogic.cpp
+0x003DF560    22     2808  B3OfflineSingleCrashLogic.cpp
+0x003E0100     3     2768  B3HUDLapTimer.cpp
+0x003E0BE0    12     4628  B3OfflineStageLogic.cpp
+0x003E1E30    13     4440  B3StageLogic.cpp
+0x003E2FE0    21     8432  B3OnlineOpenLobbyPage.cpp
+0x003E5140     9     4112  B3OnlineGameCreateOptionsPage.cpp
+0x003E61A0     2     1588  B3OnlineOpenLobbyState.cpp
+0x003E67E0    11     8584  B3ExplosionManager.cpp
+0x003E89C0     6     4232  B3ScrollVSelectComponent.cpp
+0x003E9A70     6     3704  B3EventSummaryComponent.cpp
+0x003EA900     3      896  B3DemoGameModePage.cpp
+0x003EACA0     1      912  B3DemoGameModeState.cpp
+0x003EB030     7     7052  B3OnlineGameOptionsPage.cpp
+0x003ECF20     3      352  B3DemoRaceIntroPage.cpp
+0x003ED090     1     1108  B3DemoRaceIntroState.cpp
+0x003ED4F0     6     3220  B3CrashPickup.cpp
+0x003EE1C0     6     2516  B3CrashRamp.cpp
+0x003EEBC0     1       28  B3TrackDataStruct.cpp
+0x003EEBE0     1      136  B3LoadingState.cpp
+0x003EEC70     1      308  B3DemoStageSelectState.cpp
+0x003EEDB0     3      672  B3DemoStageSelectPage.cpp
+0x003EF060     3     2100  B3HUDTakedowns.cpp
+0x003EF8B0     1      576  B3DemoRestartState.cpp
+0x003EFAF0     3      548  B3DemoRestartPage.cpp
+0x003EFD20     2      364  B3OnlineVehicleSelectPage.cpp
+0x003EFEA0     2       28  B3OnlineWaitPage.cpp
+0x003F03B8     2       24  mipsstack.s
+0x003F03D0     2     2408  B3RoundedPanel2dObject.cpp
+0x003F0D40     2     2180  B3HUDCrashStyle.cpp
+0x003F15D0    12     5176  B3TabbedDisplayComponent.cpp
+0x003F2A40     4     1008  B3ReplaySymbolComponent.cpp
+0x003F2E50     2      472  B3ImageVignette2dObject.cpp
+0x003F3030    35    30700  B3SatNavComponent.cpp
+0x003FA990    12    20320  B3Globe2dObject.cpp
+0x003FF940     8     3916  B3GlobeComponent.cpp
+0x004008C0     3     1452  B3HUDCrashTimer.cpp
+0x00400E80     3      460  B3MenuStringBuffer.cpp
+0x00401060     8     4520  B3PostEventComponent.cpp
+0x00402230     5     1144  B3EventFinishedComponent.cpp
+0x004026D0    10     5368  B3RoadRageResultsPage.cpp
+0x00403C00     8      572  B3Challenge.cpp
+0x00403E70     9     1152  B3ChampionshipChallenge.cpp
+0x00404550     6       80  B3SingleChallenge.cpp
+0x004045D0     9     9240  GtMalloc.cpp
+0x00406F70    13     8268  B3VOptionsSelectComponent.cpp
+0x00409020     2       48  B3Offline2PRaceLogic.cpp
+0x00409060     5     1068  B3Offline2PRoadRageLogic.cpp
+0x00409670     1      224  GtCollisionKDTree.cpp
+0x0040AF40     2      472  B3OptionArrow2dObject.cpp
+0x0040B120     7     3884  B3CrashStandingsPage.cpp
+0x0040C080     6     2028  B3ResultsPage.cpp
+0x0040C890     3     1844  B3HUDTimer.cpp
+0x0040D1F0     8      940  B3TurnBasedCrashChallenge.cpp
+0x0040D5D0     6      336  B3OfflineTeamCrashLogic.cpp
+0x0040D750     8     1320  B3StreamManager.cpp
+0x0040DCA0     4     4040  B3CrashNavPage.cpp
+0x0040EC80     3      340  B3EventFinishedPage.cpp
+0x0040EDF0     6     1956  B3PostEventPage.cpp
+0x0040F5C0     3      428  B3PostEventRecordsPage.cpp
+0x0040F780     3      344  B3PostEventRewardsPage.cpp
+0x0040F8F0     3      436  B3ReplayPage.cpp
+0x0040FAC0     5     2388  B3AwardPresentationPage.cpp
+0x00410420     1      496  B3ReplayState.cpp
+0x00410610     1     2728  B3CrashNavState.cpp
+0x004110C0     1      696  B3EventFinishedState.cpp
+0x00411380     1      240  B3EventState.cpp
+0x00411470     1      308  B3PostEventRecordsState.cpp
+0x004115B0     1       76  B3PostEventRewardsState.cpp
+0x00411600     2     2504  B3PostEventState.cpp
+0x00411FD0     2     1424  B3AwardPresentationState.cpp
+0x00412570     2     1284  B3OnePlayerModeSelectState.cpp
+0x00412A80     4      776  B3GenericVSelectPage.cpp
+0x00412D90     1     1308  B3TwoPlayerModeSelectState.cpp
+0x004132B0     6     1484  B3ControllerRemovedComponent.cpp
+0x004138A0     4     2680  B3HUDScoreList.cpp
+0x00414340     3      596  B3DemoOnlineModeSelectPage.cpp
+0x004145A0     3      808  B3DemoOnlineTrackSelectPage.cpp
+0x004148E0     4     2668  B3PartyCrashSetupPage.cpp
+0x00415370     2     1452  B3PartyCrashSetupState.cpp
+0x00415930     3      436  B3MSDemoGameModePage.cpp
+0x00415B00     1      396  B3DemoNFSU2VidState.cpp
+0x00415C90     1      132  B3DemoMarketingVidState.cpp
+0x00415D20     1      104  B3OPMDemoTitleScreenState.cpp
+0x00415D90    10     5728  B3BehaviourAftermath.cpp
+0x00417440     3     1108  B3NetworkGameModeStatusMessage.cpp
+0x004178B0    20     4668  B3CrashScore.cpp
+0x00418B70     2     1308  B3HUDBackground2dObject.cpp
+0x004190A0     6       48  B3OfflineCrashBattleLogic.cpp
+0x00419100     9    14208  B3StylisedText2dObject.cpp
+0x0041C9F0    11     4976  B3Records.cpp
+0x0041DD90     3      296  B3OnlineWaitingForPlayersPage.cpp
+0x0041DED0     3     1836  B3HUDHeading.cpp
+0x0041E610     4      412  B3RadialBlur2dObject.cpp
+0x0041E7C8    44     5356  libnet.o   [libnet.a]
+0x0041FD10    15     8588  B3HUDPrimaryMessageHandler.cpp
+0x00421F10     2     1316  B3HUDImpactTime.cpp
+0x00422440     2      664  B3HUDDPad2dObject.cpp
+0x004226E0     5     2980  B3HUDCrashCombo.cpp
+0x00423290     2     1060  B3PromptBarPanel2dObject.cpp
+0x004236C0     3      940  B3CarIcon2dObject.cpp
+0x00423CE0     7     2332  B3HUDPrimaryMessage.cpp
+0x00424630     4     1224  B3HUDEscapeDistance.cpp
+0x00424B20     4     5084  B3ConvexHullMaker.cpp
+0x00425F20    43    63644  B3VehicleDeform.cpp
+0x004360E0     9     8776  B3MemoryManager.cpp
+0x00438380    12     2328  B3HardCodedCrashStageList.cpp
+0x00438CE0    15     3376  B3HardCodedRaceStageList.cpp
+0x00439A70     5      840  B3HardCodedTrackList.cpp
+0x00439DD0     8     1192  B3HardCodedVehicleList.cpp
+0x0043A2B0     1      912  B3MyBurnoutProfileLoadState.cpp
+0x0043A640     1      260  B3MyBurnoutProfileRenameState.cpp
+0x0043A750     1     1052  B3MyBurnoutProfileSaveState.cpp
+0x0043AB70     1     1008  B3MyBurnoutProfileState.cpp
+0x0043AF60     1      264  B3MyBurnoutProgressState.cpp
+0x0043B070     1      404  B3MyBurnoutRecordsState.cpp
+0x0043B210     1      536  B3MyBurnoutRewardsState.cpp
+0x0043B430     1      296  B3MyBurnoutSettingsAudioState.cpp
+0x0043B560     1      272  B3MyBurnoutSettingsControllerState.cpp
+0x0043B670     1      400  B3MyBurnoutSettingsState.cpp
+0x0043B800     1      384  B3MyBurnoutSettingsVideoState.cpp
+0x0043B980     1     1132  B3MyBurnoutProfileCreateNewState.cpp
+0x0043BDF0     7     4596  B3MyBurnoutProfileLoadPage.cpp
+0x0043D010     4      808  B3MyBurnoutProfilePage.cpp
+0x0043D360     3      292  B3MyBurnoutProfileRenamePage.cpp
+0x0043D490     9     6520  B3MyBurnoutProfileSavePage.cpp
+0x0043EE40     4     2508  B3MyBurnoutProgressPage.cpp
+0x0043F830     3      396  B3MyBurnoutRecordsPage.cpp
+0x0043F9D0     4      976  B3MyBurnoutRewardsCarPage.cpp
+0x0043FDC0     3      836  B3MyBurnoutRewardsCheatsPage.cpp
+0x00440120     3      988  B3MyBurnoutRewardsHeadlinesPage.cpp
+0x00440510     4      796  B3MyBurnoutRewardsPage.cpp
+0x00440840     4     7440  B3MyBurnoutRewardsStatsPage.cpp
+0x00442570     3      724  B3MyBurnoutRewardsTrophiesPage.cpp
+0x00442860     4      712  B3MyBurnoutSettingsAudioPage.cpp
+0x00442B50     4      420  B3MyBurnoutSettingsControllerPage.cpp
+0x00442D00     3     1520  B3MyBurnoutSettingsPage.cpp
+0x00443310     2      136  B3MyBurnoutSettingsPlayListEditPage.cpp
+0x004433A0     3      292  B3MyBurnoutSettingsScreenPosPage.cpp
+0x004434D0     4      736  B3MyBurnoutSettingsVideoPage.cpp
+0x004437D0     9     7532  B3MyBurnoutProfileCreateNewPage.cpp
+0x00445570    13     2564  B3HardCodedTrackRegionList.cpp
+0x00445FB0     2      288  B3CrashDemoMainMenuPage.cpp
+0x004460E0     2       80  B3CrashDemoRaceIntroPage.cpp
+0x00446140     4     2172  B3InGameSettingsPage.cpp
+0x004469E0     1      448  B3InGameSettingsState.cpp
+0x00446BA0     2      352  B3HardCodedCheatList.cpp
+0x00446D00     2      352  B3HardCodedHeadlineList.cpp
+0x00446F10     2      352  B3HardCodedSpecialEventList.cpp
+0x00447070     3      524  B3HardCodedTakedownList.cpp
+0x00447280     8     1540  B3HardCodedTrophyList.cpp
+0x00447890     5      948  B3RewardImageComponent.cpp
+0x00447D40     7     6904  B3OnlineEndOfRaceState.cpp
+0x00449F20     9     2180  B3SoundRadio.cpp
+0x0044C090     8     2092  B3SoundMusicManager.cpp
+0x0044D590     8     5312  B3OnlineCrashResultsPage.cpp
+0x0044EA90     2      604  B3MemoryCardControllerPS2.cpp
+0x0044ED00     6     6372  B3MemoryCardFSMPS2.cpp
+0x004505F0    11     1440  dirtynet.o   [libdirtysock.a]
+0x00450B98     2      156  dirtylibps2.o   [libdirtysock.a]
+0x00450C38     2      196  dirtyaddr.o   [libdirtysock.a]
+0x00450D00    15     4324  rpc-e.o   [libdirtysock.a]
+0x00451DF8    12     2292  netconn.o   [libdirtysock.a]
+0x00452700    15     3152  protoaries-e.o   [libdirtysock.a]
+0x00453378     6      844  /34   [libdirtysock.a]
+0x004536D0     7     1172  protoping-e.o   [libdirtysock.a]
+0x00453B70     5      688  protoname-e.o   [libdirtysock.a]
+0x00453E28    54    20212  lobbyapi.o   [libdirtysock.a]
+0x00458D78     3      436  lobbycheat.o   [libdirtysock.a]
+0x00458F30     5      724  lobbycommon.o   [libdirtysock.a]
+0x00459210    20     1892  /51   [libdirtysock.a]
+0x004599A0    19     2300  lobbyhasher.o   [libdirtysock.a]
+0x0045A2B0     2      392  lobbylib.o   [libdirtysock.a]
+0x0045A438     2      328  lobbynames.o   [libdirtysock.a]
+0x0045A580    12     1916  /68   [libdirtysock.a]
+0x0045AD10     1     1004  lobbysort.o   [libdirtysock.a]
+0x0045B100    48    13804  /105   [libdirtysock.a]
+0x0045E748    11     1608  lobbyutf8.o   [libdirtysock.a]
+0x0045EDB0    62    14976  buddyapi.o   [libdirtysock.a]
+0x004628A0   118    13180  hlbudapi.o   [libdirtysock.a]
+0x00465D30     4     4428  cryptmd5.o   [libdirtysock.a]
+0x00466E80     4     1200  cryptssc2.o   [libdirtysock.a]
+0x00467330     6      692  dirtydnas.o   [libdirtydnas.a]
+0x004675F0    16     2352  dirtyelf.o   [libdirtyelf.a]
+0x00467F40     3      556  B3OnlineUploadResultsPage.cpp
+0x00468180     3     2600  B3SoundStaticPassManager.cpp
+0x00468BB0     1      636  GtWideLine.cpp
+0x00468E30     6     2436  Gt2dBezierCurve.cpp
+0x004697C0     1      696  B3ServerDisconnectState.cpp
+0x00469A80    14      332  B3NetworkVoIPManagerPS2.cpp
+0x00469C30     4     1660  B3ScrollBarComponent.cpp
+0x0046A2C0     1      864  B3AutoSaveState.cpp
+0x0046ACA0     3      916  B3AutoSavePage.cpp
+0x0046B050    16     6232  B3MemoryCardController.cpp
+0x0046C910     7     4604  B3MemoryCardFSMSlavePS2.cpp
+0x0046DB30     3      252  B3CrashAftermathPage.cpp
+0x0046DC40     3      656  B3PlayVideoPage.cpp
+0x0046DEE0     4      856  B3MyBurnoutDevelopmentPage.cpp
+0x0046E250     1      640  B3MyBurnoutDevelopmentState.cpp
+0x0046E4D0     3     2492  B3DirectionalBlur.cpp
+0x0046EEA0     8     5028  B3DirectionalBlurPS2.cpp
+0x00470270     8      972  B3OptionsDisplayComponent.cpp
+0x00470790     5     3200  B3ImageReward2dObject.cpp
+0x00471430     2      320  B32dObjectOffscreenImage.cpp
+0x00471570     6     4420  B3CarViewComponent.cpp
+0x00472840     2       16  B3SoundCustomSoundTrackPS2.cpp
+0x004728D0    23     6140  B3CarouselComponent.cpp
+0x00474150     1      732  B3BootMemoryCardState.cpp
+0x00474430     5     1524  B3BootMemoryCardPage.cpp
+0x00474A40    10     4796  B3MenuFinishedEvent.cpp
+0x00475EC0     4     2240  B3MyBurnoutSettingsEATraxPage.cpp
+0x004767A0     9     5796  B3SingleEventGameOptionsPage.cpp

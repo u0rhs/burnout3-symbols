@@ -1,0 +1,58 @@
+// SLUS_204.97: printf-style format strings (messages, logs) (56)
+
+0x002B3510  Heap resized from %d to %d bytes
+0x002B3F90  _rwPS2MatInstancePipelineNodeInit; cluster %s has both CL_ATTRIB_REQUIRED and CL_ATTRIB_PLACEHOLDER set in its attributes - illegal!
+0x002B4020  _rwPS2MatInstancePipelineNodeInit; cluster %s has both (CL_ATTRIB_READ or CL_ATTRIB_WRITE) and CL_ATTRIB_OPAQUE set, these are mutually incompatible
+0x002B40C0  _rwPS2MatInstancePipelineNodeInit; could not locate cluster %s in node definition clusters of interest
+0x002B4130  Cluster %s not present (subsequent nodes don't require it). You should not be requiring this cluster to be visible (CL_ATTRIB_READ or CL_ATTRIB_WRITE) in its creation attributes [read during the call to RxPS2MatInstanceGenerateCluster()]
+0x002B43B0  _rwPS2MatInstancePipelineNodeInit; %s cluster has unrecognised attributes
+0x002B4600  PS2AllMatProcessInitData; cluster %s has both CL_ATTRIB_REQUIRED and CL_ATTRIB_PLACEHOLDER set in its attributes - illegal!
+0x002B4680  PS2AllMatProcessInitData; cluster %s has both (CL_ATTRIB_READ or CL_ATTRIB_WRITE) and CL_ATTRIB_OPAQUE set, these are mutually incompatible
+0x002B4880  PS2AllMatProcessInitData; %s cluster has unrecognised attributes
+0x002BBFE8  sceGsDefDispEnv:Not support displaymode for 0x%x!!
+0x002BC090  D1_TADR=%08x:
+0x002BC0A0  D1_MADR=%08x:
+0x002BC0D0  D2_TADR=%08x:
+0x002BC0E0  D2_MADR=%08x:
+0x002BC100  	<VIF1_STAT=%08x:
+0x002BC118  GIF_STAT=%08x>
+0x002BC420  Invalid modion type -- ignored(%d)
+0x002BC448  (a) invalid motion_type(%d)-0
+0x002BC468  (b) invalid motion_type(%d)-1
+0x002BC488  (c) invalid motion_type(%d)-2
+0x002BC4E0  Invalid macroblock_address_increment code(0x%08x)
+0x002BC538  slice_start_code(0x%08x) out of range
+0x002BC6B8  Too small buffer size for %dx%d picture
+0x002BC748  image buffer needs to be aligned to 64byte boundary(0x%08x)
+0x002BC7C8  [MPEG ERROR]%s
+0x002BC958  TTY: send err %d
+0x002BC970  TTY: err ti->wlen=%08x
+0x002BCB80  too long parameter '%s'
+0x002BCBA0  # TLB spad=0 kernel=1:%d default=%d:%d extended=%d:%d
+0x002BD7B0  sceCdCbfunc= %d sceCdCbfunc_num= %d
+0x002BD7F8  ee call cmd search %s
+0x002BD810  search name %s
+0x002BD820  search size %d
+0x002BD830  search loc lbn %d
+0x002BD848  Ncmd fail sema cur_cmd:%d keep_cmd:%d
+0x002BD8A8  Scmd fail sema cur_cmd:%d keep_cmd:%d
+0x002BD8E8  Libcdvd bind err %d CD_Init %d
+0x002BDA38  libpad: buffer addr is not 64 byte align. %08x
+0x002BDA68  libpad: pad port is already open [%d][%d]
+0x002BE508  Damage %d
+0x002BE6E0  %u items remain locked
+0x002BF2B0  Insufficient space on memory card (PS2) in MEMORY CARD slot 1. Burnout2 requires %uKB of free space to save data.
+0x002C11B8  DAMAGE %s
+0x002D4770  Traf density %.2f
+0x002D5420  DesiredPos %d, actual pos %d
+0x002D5440  Traffic Impact %f
+0x002D5790  Driver Speed %.2f(%.2f)
+0x002D57A8  Steer angle %f
+0x002D5990  Target Speed %f(%f)
+0x002D59B0  Drift Radius %f(%f:%f)
+0x002D7AD8  %.1f miles
+0x002DBED0  ErrMessage : %s %d %s
+0x002DDDA0  GTPAD_PS2SET_WHEEL_DEF_SPRING %d : %08x
+0x002DDDD0  GTPAD_PS2SET_WHEEL_FORCE_GAIN %d : %08x
+0x002DDE90  It's class A in USB port %d
+0x002DDEB0  It's class B in USB port %d

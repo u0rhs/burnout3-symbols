@@ -1,0 +1,705 @@
+b3_name,dnat_200_address,b2_signature,b2_address,b2_source_file,match
+CB3AIAvoidance::GenerateTarget(),0x0013D750,void CAIAvoidance::GenerateTarget(),0x0021B7F0,I:\Burnout 2 Code\gamesource\Race\CAIAvoidance.cpp,same signature
+CB3AIAvoidance::Update(),0x0013E540,void CAIAvoidance::Update(int lbForceUpdate),0x0021A590,I:\Burnout 2 Code\gamesource\Race\CAIAvoidance.cpp,"same name, different parameters"
+CB3AICar::UpdateOutOfRange(),0x0013ECE0,void CAICar::UpdateOutOfRange(),0x00221CE0,I:\Burnout 2 Code\gamesource\Race\CAICar.cpp,same signature
+CB3AICar::SetAIInRange(),0x00140200,void CAICar::SetAIInRange(),0x00222DB0,I:\Burnout 2 Code\gamesource\Race\CAICar.cpp,same signature
+CB3AICar::SetAIOutOfRange(),0x00140290,void CAICar::SetAIOutOfRange(),0x00222E10,I:\Burnout 2 Code\gamesource\Race\CAICar.cpp,same signature
+CB3AICar::UpdateAttributes(),0x001404D0,void CAICar::UpdateAttributes(),0x00223200,I:\Burnout 2 Code\gamesource\Race\CAICar.cpp,same signature
+CB3AICar::Update(),0x001408E0,void CAICar::Update(),0x00222E50,I:\Burnout 2 Code\gamesource\Race\CAICar.cpp,same signature
+CB3AIDriver::CalculateDesiredSpeed(),0x00141B80,void CAIDriver::CalculateDesiredSpeed(),0x002246B0,I:\Burnout 2 Code\gamesource\Race\CAIDriver.cpp,same signature
+CB3AIDriver::CalculateSteerAngle(),0x00141D50,void CAIDriver::CalculateSteerAngle(),0x002248B0,I:\Burnout 2 Code\gamesource\Race\CAIDriver.cpp,same signature
+CB3AIDriver::CheckForDrift(),0x00142390,void CAIDriver::CheckForDrift(),0x00224CA0,I:\Burnout 2 Code\gamesource\Race\CAIDriver.cpp,same signature
+CB3AIDriver::Update(),0x001426A0,void CAIDriver::Update(),0x00224F10,I:\Burnout 2 Code\gamesource\Race\CAIDriver.cpp,same signature
+"CB3AILane::FindClosestAILaneSegment(CB3AILane**,unsigned short*,signed char*,GtMathPs2::CGtV3d,signed char)",0x00143E60,"void CLane::FindClosestAILaneSegment(CLane **lppResultLane, int *lpnResultSegmentIndex, int *lpnResultSector, RwV3d *lpPosition, int lnCurrentSector)",0x00232C90,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetSignedForwardDistBetweenParams(float,float)",0x00143FE0,"float CLane::GetSignedForwardDistBetweenParams(float lrParamAlong1, float lrParamAlong2)",0x00230CD0,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,same signature
+"CB3AILane::GetDistFromStartOfSegment(GtMathPs2::CGtV3d,unsigned short) const",0x00144240,"float CLane::GetDistFromStartOfSegment(RwV3d *lpPosition, int lnSegmentIndex) const",0x00230FA0,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetDistanceBetweenSegments(unsigned short,unsigned short) const",0x001443A0,"float CLane::GetDistanceBetweenSegments(int lnStartSegmentIndex, int lnEndSegmentIndex) const",0x00230EF0,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::SegmentAIsInfrontOfSegmentB(unsigned short,unsigned short) const",0x00144440,"int CLane::SegmentAIsInfrontOfSegmentB(int lnSegmentAIndex, int lnSegmentBIndex) const",0x00230E60,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::UpdateCurrentAILaneSegment(CB3AILane**,unsigned short*,signed char*,float*,GtMathPs2::CGtV3d,bool)",0x001444D0,"int CLane::UpdateCurrentAILaneSegment(CLane **lppResultLane, int *lpnResultSegmentIndex, int *lpnResultSector, RwV3d *lpPosition)",0x00232490,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+CB3AILane::GetWidth(unsigned short) const,0x00144790,float CLane::GetWidth(int lnSegmentNodeIndex) const,0x00231400,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetAvgRightwardsVector(unsigned short,GtMathPs2::CGtV3d*) const",0x00144830,"void CLane::GetAvgRightwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x00231540,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetAvgForwardsVector(unsigned short,GtMathPs2::CGtV3d*) const",0x00144880,"void CLane::GetAvgForwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x00231870,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetAvgLeftwardsVector(unsigned short,GtMathPs2::CGtV3d*) const",0x00144A10,"void CLane::GetAvgLeftwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x00231680,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetRightwardsVector(unsigned short,GtMathPs2::CGtV3d*) const",0x00144A60,"void CLane::GetRightwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x002315D0,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetLeftwardsVector(unsigned short,GtMathPs2::CGtV3d*) const",0x00144AD0,"void CLane::GetLeftwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x00231710,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetForwardsVector(unsigned short,GtMathPs2::CGtV3d*) const",0x00144B40,"void CLane::GetForwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x00231AA0,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetTotalWidth(unsigned short,unsigned short) const",0x00144BC0,"float CLane::GetTotalWidth(int lnSegmentIndex, int lnSegmentNodeIndex) const",0x002310D0,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::FindClosestDriveableAILaneSegment(CB3AILane**,unsigned short*,signed char*,GtMathPs2::CGtV3d,signed char)",0x00145490,"void CLane::FindClosestDriveableAILaneSegment(CLane **lppResultLane, int *lpnResultSegmentIndex, int *lpnResultSector, RwV3d *lpPosition, int lnCurrentSector)",0x00232A40,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AITargetSpline::CalculateSpline(int*,CB3AILane*,float*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::C",0x00145D90,"void CAIAvoidance::CalculateSpline(int *lanIndices, CLane *lpLane, float *larFrac, RwV3d *lpFwd0, RwV3d *lpFwd1, RwV3d *lpFwd2, RwV3d *lpPos)",0x002182F0,I:\Burnout 2 Code\gamesource\Race\CAIAvoidance.cpp,"same name, different parameters"
+CB3AITargetSpline::CalculateSplineVectors(),0x001461F0,void CAIAvoidance::CalculateSplineVectors(),0x00218960,I:\Burnout 2 Code\gamesource\Race\CAIAvoidance.cpp,same signature
+"CB3AITargetSpline::ClampToWithinDesiredLanes(GtMathPs2::CGtV3d,const CB3AILane*,unsigned short,GtMathPs2::CGtV3d*) const",0x001468A0,"void CAIAvoidance::ClampToWithinDesiredLanes(RwV3d *lpInputVector, CLane *lpLane, unsigned short lunSegIndex16, RwV3d *lpResultVector) const",0x00219EF0,I:\Burnout 2 Code\gamesource\Race\CAIAvoidance.cpp,"same name, different parameters"
+"CB3AITarget::LanesAreSideBySide(const CB3AILane*,const CB3AILane*,unsigned short,unsigned short) const",0x00146E90,"int CAITarget::LanesAreSideBySide(CLane *lpLaneA, CLane *lpLaneB, int lnStartIndexA, int lnNumSegsToCheck) const",0x00225CB0,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,"same name, different parameters"
+CB3AITarget::GetCurrentFwdFrac() const,0x00147520,float CAITarget::GetCurrentFwdFrac() const,0x00226610,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,same signature
+"CB3AITarget::CalculateEdgePosition(unsigned short,unsigned short,int,GtMathPs2::CGtV3d*,unsigned char*,unsigned short*)",0x00147560,"void CAITarget::CalculateEdgePosition(int lnSegmentIndex, int lnCurrentSegmentIndex, ELaneDirection leSideWanted, RwV3d *lpResultVector, short *lpnResultLaneIndex16, short *lpnResultSegIndex16)",0x00226B00,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,"same name, different parameters"
+"CB3AITarget::CalculateNearEdgePosition(unsigned short,unsigned short,int,GtMathPs2::CGtV3d*,unsigned char*,unsigned short*)",0x00147BE0,"void CAITarget::CalculateNearEdgePosition(int lnSegmentIndex, int lnCurrentSegmentIndex, ELaneDirection leSideWanted, RwV3d *lpResultVector, short *lpnResultLaneIndex16, short *lpnResultSegIndex16)",0x00227170,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,"same name, different parameters"
+"CB3AITarget::FindNextCorner(const CB3AILane*,unsigned short,unsigned short*,unsigned short*,unsigned short*,float*,float*,float",0x00148060,"int CAITarget::FindNextCorner(CLane *lpLane, int lnCurrentSegmentIndex, int *lpnTurnStartSegmentIndex, int *lpnTurnApexSegmentIndex, int *lpnTurnEndSegmentIndex, float *lprCornerRacingLineRadius, float *lprCornerRadius, float *lprCornerAngle, EAITargetTurnType *lpeCornerDirection, EAITargetCornerState *lpeCornerState, int *lpbWillWantToDrift, int *lpbSquareCorner)",0x00227730,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,"same name, different parameters"
+CB3AITarget::CalculateNextTargetPosition(),0x00148730,void CAITarget::CalculateNextTargetPosition(),0x00227EA0,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,same signature
+CB3AITarget::FillInTargetPosition(),0x00149190,void CAITarget::FillInTargetPosition(),0x002288A0,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,same signature
+CB3AITarget::UpdateCurrentSegment(),0x001495C0,int CAITarget::UpdateCurrentSegment(),0x00228B50,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,same signature
+CB3AITarget::ResetCornerStatus(),0x00149DE0,void CAITarget::ResetCornerStatus(),0x00229D60,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,same signature
+CB3AITarget::Update(),0x00149E80,void CAITarget::Update(),0x00229200,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,same signature
+CB3Burn::AddBurn(float),0x0014AD40,void CBurn::AddBurn(float lrPoints),0x0022AF90,I:\Burnout 2 Code\gamesource\Race\CBurn.cpp,same signature
+CB3Burn::Update(CB3RaceCar*),0x0014ADE0,void CBurn::Update(CRaceCar *pRaceCar),0x0022ADB0,I:\Burnout 2 Code\gamesource\Race\CBurn.cpp,"same name, different parameters"
+CB3PlayerCar::Update(),0x0014CDD0,void CPlayerCar::Update(),0x00232F20,I:\Burnout 2 Code\gamesource\Race\CPlayerCar.cpp,same signature
+CB3RaceCar::SetFinished(EB3ScoreFinishState),0x0014DEA0,void CRaceCar::SetFinished(),0x00238AC0,I:\Burnout 2 Code\gamesource\Race\CRaceCar.cpp,"same name, different parameters"
+CB3RaceCar::Draw(),0x0014E0B0,int CRaceCar::Draw(),0x002393F0,I:\Burnout 2 Code\gamesource\Race\CRaceCar.cpp,same signature
+CB3RaceCar::Update(),0x0014ECD0,void CRaceCar::Update(),0x0023B3A0,I:\Burnout 2 Code\gamesource\Race\CRaceCar.cpp,same signature
+CB3RacePosition::Draw(int),0x00150670,void CRacePosition::Draw(int camIndex),0x0023E8A0,I:\Burnout 2 Code\gamesource\Race\CRacePosition.cpp,same signature
+CB3RacePosition::Update(),0x001509E0,void CRacePosition::Update(),0x0023ED30,I:\Burnout 2 Code\gamesource\Race\CRacePosition.cpp,same signature
+CB3Score::HandleCrashReset(),0x00152D20,void CScore::HandleCrashReset(),0x00241F40,I:\Burnout 2 Code\gamesource\Race\CScore.cpp,same signature
+CB3AICar::ResetVarsFromProfile(),,void CAICar::ResetVarsFromProfile(),0x002212C0,I:\Burnout 2 Code\gamesource\Race\CAICar.cpp,same signature
+CB3AICar::UpdateProfileVars(),,void CAICar::UpdateProfileVars(),0x00221070,I:\Burnout 2 Code\gamesource\Race\CAICar.cpp,same signature
+CB3Score::Update(),0x00156660,void CScore::Update(),0x00242300,I:\Burnout 2 Code\gamesource\Race\CScore.cpp,same signature
+"CB3AILane::GetTotalWidth(unsigned short,unsigned short)",,"float CLane::GetTotalWidth(int lnSegmentIndex, int lnSegmentNodeIndex) const",0x002310D0,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetForwardsVector(unsigned short,GtMathPs2::CGtV3d*)",,"void CLane::GetForwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x00231AA0,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetBackwardsVector(unsigned short,GtMathPs2::CGtV3d*)",,"void CLane::GetBackwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x002317C0,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetLeftwardsVector(unsigned short,GtMathPs2::CGtV3d*)",,"void CLane::GetLeftwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x00231710,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetRightwardsVector(unsigned short,GtMathPs2::CGtV3d*)",,"void CLane::GetRightwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x002315D0,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetAvgLeftwardsVector(unsigned short,GtMathPs2::CGtV3d*)",,"void CLane::GetAvgLeftwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x00231680,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetAvgForwardsVector(unsigned short,GtMathPs2::CGtV3d*)",,"void CLane::GetAvgForwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x00231870,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetAvgRightwardsVector(unsigned short,GtMathPs2::CGtV3d*)",,"void CLane::GetAvgRightwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const",0x00231540,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+CB3AILane::GetWidth(unsigned short),,float CLane::GetWidth(int lnSegmentNodeIndex) const,0x00231400,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::SegmentAIsInfrontOfSegmentB(unsigned short,unsigned short)",,"int CLane::SegmentAIsInfrontOfSegmentB(int lnSegmentAIndex, int lnSegmentBIndex) const",0x00230E60,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetDistanceBetweenSegments(unsigned short,unsigned short)",,"float CLane::GetDistanceBetweenSegments(int lnStartSegmentIndex, int lnEndSegmentIndex) const",0x00230EF0,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+"CB3AILane::GetDistFromStartOfSegment(GtMathPs2::CGtV3d,unsigned short)",,"float CLane::GetDistFromStartOfSegment(RwV3d *lpPosition, int lnSegmentIndex) const",0x00230FA0,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,"same name, different parameters"
+CB3AILane::GetDistFromParam(float),,float CLane::GetDistFromParam(float lrParamAlong),0x00230E00,I:\Burnout 2 Code\gamesource\Race\CLane.cpp,same signature
+"CB3TrafficAxle::AdjustAxleHeight(CB3TrafficLane*,int)",0x0015A640,"int CTrafficAxle::AdjustAxleHeight(CLane *lpMergeLane, int lnMergeSegment)",0x00264CD0,I:\Burnout 2 Code\gamesource\Race\CTrafficAxle.cpp,"same name, different parameters"
+CB3TrafficParam::RemoveFromTrafficLights(),0x0015C0C0,int CTrafficParam::RemoveFromTrafficLights(),0x0024D2B0,I:\Burnout 2 Code\gamesource\Race\CTrafficParam.cpp,same signature
+CB3TrafficParam::Remove(),0x0015C150,int CTrafficParam::Remove(),0x0024D350,I:\Burnout 2 Code\gamesource\Race\CTrafficParam.cpp,same signature
+"CB3TrafficParam::Insert(CB3TrafficLane*,float,float,ETrafficParamState)",0x0015C330,"int CTrafficParam::Insert(CLane *lpLane, float lrParamAlong, float lrParamAcross, float lrSpeedModifier, ETrafficParamState leInitialState)",0x0024D500,I:\Burnout 2 Code\gamesource\Race\CTrafficParam.cpp,"same name, different parameters"
+CB3TrafficParam::CalculateTargetParamMatrix(),0x0015CB70,void CTrafficParam::CalculateTargetParamMatrix(),0x0024DD10,I:\Burnout 2 Code\gamesource\Race\CTrafficParam.cpp,same signature
+"CB3TrafficParam::CalcSpeed(int,bool,bool)",0x0015CBA0,int CTrafficParam::CalcSpeed(),0x0024E080,I:\Burnout 2 Code\gamesource\Race\CTrafficParam.cpp,"same name, different parameters"
+CB3TrafficParam::UpdateNodes(),0x0015DC60,int CTrafficParam::UpdateNodes(),0x0024DD20,I:\Burnout 2 Code\gamesource\Race\CTrafficParam.cpp,same signature
+CB3TrafficParam::Update(bool),0x0015DEE0,int CTrafficParam::Update(),0x0024DF60,I:\Burnout 2 Code\gamesource\Race\CTrafficParam.cpp,"same name, different parameters"
+CB3TrafficSystem::AddToDeadTrafficParamList(CB3TrafficParam*),0x0015EDA0,void CTrafficSystem::AddToDeadTrafficParamList(CTrafficParam *lpTrafficParam),0x0024F000,I:\Burnout 2 Code\gamesource\Race\CTrafficSystem.cpp,"same name, different parameters"
+"CB3TrafficSystem::AddToDeadTrafficList(CB3TrafficVehicle*,bool)",0x0015EE60,void CTrafficSystem::AddToDeadTrafficList(CTrafficVehicle *lpTrafficVehicle),0x0024F0B0,I:\Burnout 2 Code\gamesource\Race\CTrafficSystem.cpp,"same name, different parameters"
+"CB3TrafficSystem::Generate(ETrafficVehicleCategories,unsigned long,ETrafficVehicleCategories,unsigned long,CB3TrafficLane*,floa",0x0015F950,"CTrafficVehicle *CTrafficSystem::Generate(EB2VehicleType leNewVehicleType, EB2VehicleType leNewTrailerVehicleType, CLane *lpLane, float lrParamAlong, float lrSpeedModifier, int lbHotspotGenerated)",0x0024F160,I:\Burnout 2 Code\gamesource\Race\CTrafficSystem.cpp,"same name, different parameters"
+CB3AITarget::FindNextCorner(),,"int CAITarget::FindNextCorner(CLane *lpLane, int lnCurrentSegmentIndex, int *lpnTurnStartSegmentIndex, int *lpnTurnApexSegmentIndex, int *lpnTurnEndSegmentIndex, float *lprCornerRacingLineRadius, float *lprCornerRadius, float *lprCornerAngle, EAITargetTurnType *lpeCornerDirection, EAITargetCornerState *lpeCornerState, int *lpbWillWantToDrift, int *lpbSquareCorner)",0x00227730,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,"same name, different parameters"
+CB3TrafficSystem::Update(),0x00161610,void CTrafficSystem::Update(),0x00250490,I:\Burnout 2 Code\gamesource\Race\CTrafficSystem.cpp,same signature
+"CB3AITarget::CalculateFractionTargetPosition(unsigned short,float,GtMathPs2::CGtV3d*)",,"void CAITarget::CalculateFractionTargetPosition(int lnSegmentIndex, float lrOffset, RwV3d *lpResultVector) const",0x002269B0,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,"same name, different parameters"
+CB3AITarget::GetCurrentLeftFrac(),,float CAITarget::GetCurrentLeftFrac() const,0x00226850,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,"same name, different parameters"
+CB3AITarget::GetCurrentFwdFrac(),,float CAITarget::GetCurrentFwdFrac() const,0x00226610,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,"same name, different parameters"
+"CB3AITarget::LanesAreSideBySide(const CB3AILane*,const CB3AILane*,unsigned short,unsigned short)",,"int CAITarget::LanesAreSideBySide(CLane *lpLaneA, CLane *lpLaneB, int lnStartIndexA, int lnNumSegsToCheck) const",0x00225CB0,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,"same name, different parameters"
+CB3AITarget::TestForDrift(),,void CAITarget::TestForDrift(),0x00225C10,I:\Burnout 2 Code\gamesource\Race\CAITarget.cpp,same signature
+CB3AITargetSpline::Update(),,void CAIAvoidance::Update(int lbForceUpdate),0x0021A590,I:\Burnout 2 Code\gamesource\Race\CAIAvoidance.cpp,"same name, different parameters"
+"CB3AITargetSpline::CalculateInterpolatedPosition(const CB3AILane*,unsigned short,float,GtMathPs2::CGtV3d*)",,"void CAIAvoidance::CalculateInterpolatedPosition(CLane *lpLane, int lnSegmentIndex, float lrOffset, RwV3d *lpResultVector) const",0x0021A290,I:\Burnout 2 Code\gamesource\Race\CAIAvoidance.cpp,"same name, different parameters"
+"CB3AITargetSpline::ClampToWithinDesiredLanes(GtMathPs2::CGtV3d,const CB3AILane*,unsigned short,GtMathPs2::CGtV3d*)",,"void CAIAvoidance::ClampToWithinDesiredLanes(RwV3d *lpInputVector, CLane *lpLane, unsigned short lunSegIndex16, RwV3d *lpResultVector) const",0x00219EF0,I:\Burnout 2 Code\gamesource\Race\CAIAvoidance.cpp,"same name, different parameters"
+"CB3TrafficVehicle::ApplyNiceOncomingBehaviour(CB3TrafficRaceCarInfo*,int,float)",0x00163240,"int CTrafficVehicle::ApplyNiceOncomingBehaviour(CRaceCar *lpRaceCar, float lrDist)",0x00254600,I:\Burnout 2 Code\gamesource\Race\CTrafficVehicle.cpp,"same name, different parameters"
+"CB3TrafficVehicle::ApplyNiceSameWayBehaviour(CB3TrafficRaceCarInfo*,int,float)",0x001635F0,"int CTrafficVehicle::ApplyNiceSameWayBehaviour(CRaceCar *lpRaceCar, float lrDist)",0x00254C40,I:\Burnout 2 Code\gamesource\Race\CTrafficVehicle.cpp,"same name, different parameters"
+"CB3TrafficVehicle::DoTrafficBehaviour(CB3TrafficRaceCarInfo*,int)",0x00163920,void CTrafficVehicle::DoTrafficBehaviour(),0x00255000,I:\Burnout 2 Code\gamesource\Race\CTrafficVehicle.cpp,"same name, different parameters"
+"CB3TrafficVehicle::ChangeLane(CB3TrafficLane*,float)",0x00163B40,"void CTrafficVehicle::ChangeLane(CLane *lpMergeLane, float lrMergeParamAlong)",0x00255270,I:\Burnout 2 Code\gamesource\Race\CTrafficVehicle.cpp,"same name, different parameters"
+CB3TrafficVehicle::CheckForChangeLane(),0x00163CE0,void CTrafficVehicle::CheckForChangeLane(),0x002553B0,I:\Burnout 2 Code\gamesource\Race\CTrafficVehicle.cpp,same signature
+CB3TrafficVehicle::RemoveFromLanes(),0x00164140,void CTrafficVehicle::RemoveFromLanes(),0x00255540,I:\Burnout 2 Code\gamesource\Race\CTrafficVehicle.cpp,same signature
+CB3TrafficVehicle::UpdateTrailerPosition(),0x001641B0,void CTrafficVehicle::UpdateTrailerPosition(),0x002555B0,I:\Burnout 2 Code\gamesource\Race\CTrafficVehicle.cpp,same signature
+CB3TrafficVehicle::InitaliseTrailerPosition(),0x001649A0,void CTrafficVehicle::InitaliseTrailerPosition(),0x00255EB0,I:\Burnout 2 Code\gamesource\Race\CTrafficVehicle.cpp,same signature
+CB3TrafficVehicle::UpdatePosition(),0x00164F80,void CTrafficVehicle::UpdatePosition(),0x00256500,I:\Burnout 2 Code\gamesource\Race\CTrafficVehicle.cpp,same signature
+CB3TrafficVehicle::InitalisePosition(),0x00165A70,void CTrafficVehicle::InitalisePosition(),0x00257000,I:\Burnout 2 Code\gamesource\Race\CTrafficVehicle.cpp,same signature
+"CB3TrafficVehicle::Create(ETrafficVehicleCategories,unsigned char)",0x00166340,"int CTrafficVehicle::Create(EB2VehicleType leNewVehicleType, int lbHotspotGenerated)",0x00258570,I:\Burnout 2 Code\gamesource\Race\CTrafficVehicle.cpp,"same name, different parameters"
+"CB3TrafficVehicle::Update(CB3TrafficRaceCarInfo*,int)",0x00166680,void CTrafficVehicle::Update(TrafficRaceCarInfo *lpTrafficRaceCarInfo),0x00257570,I:\Burnout 2 Code\gamesource\Race\CTrafficVehicle.cpp,"same name, different parameters"
+CB3AIArbitrator::Update(bool),0x0016A590,void CAIArbitrator::Update(int lbForceTarget),0x00216F20,I:\Burnout 2 Code\gamesource\Race\CAIArbitrator.cpp,"same name, different parameters"
+CB3PropPhysics::Update(float),0x00186AD0,void CPropPhysics::Update(float lrTimeStep),0x001D22F0,I:\Burnout 2 Code\gamesource\Physics\CPropPhysics.cpp,same signature
+CB3VehiclePhysics::UpdateSuspension(float),0x00194BC0,void CVehiclePhysics::UpdateSuspension(float lrTimeStep),0x001CDDA0,I:\Burnout 2 Code\gamesource\Physics\CVehiclePhysics.cpp,same signature
+CB3VehiclePhysics::CollideWheels(),0x00195EB0,void CVehiclePhysics::CollideWheels(),0x001CEBD0,I:\Burnout 2 Code\gamesource\Physics\CVehiclePhysics.cpp,same signature
+CB3VehiclePhysics::Update(float),0x00196760,void CVehiclePhysics::Update(float lrTimeStep),0x001CF260,I:\Burnout 2 Code\gamesource\Physics\CVehiclePhysics.cpp,same signature
+"CGtFileSystemPS2DVD::CmdErrorHandler(void*,void*)",0x00199360,"void CGTFileSystemPS2DVD::CmdErrorHandler(void *pCmdHeader, void *pData)",0x001FBAC0,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,same signature
+"CGtFileSystemPS2DVD::CmdReadCompleteHandler(void*,void*)",0x001993C0,"void CGTFileSystemPS2DVD::CmdReadCompleteHandler(void *pCmdHeader, void *pData)",0x001FBB20,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,same signature
+CGtFileSystemPS2DVD::GetStatus(),0x001993F0,EFileSystemStatus CGTFileSystemPS2DVD::GetStatus(),0x001FBB50,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,same signature
+CGtFileSystemPS2DVD::FileExists(const char*),0x00199400,int CGTFileSystemPS2DVD::FileExists(),0x001FBB60,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,same signature
+CGtFilePS2DVD::Abort(),0x00199410,int CGTFilePS2DVD::Abort(),0x001FBB70,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,same signature
+CGtFilePS2DVD::Sync(int),0x001994C0,EFileStatus CGTFilePS2DVD::Sync(int lbBlock),0x001FBC30,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,same signature
+"CGtFilePS2DVD::SetPosition(long,EFileMoveMethod)",0x00199520,"long long CGTFilePS2DVD::SetPosition(long long lnOffset, EFileMoveMethod ePosition)",0x001FBC90,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,"same name, different parameters"
+"CGtFilePS2DVD::Write(const void*,unsigned int)",0x001996E0,unsigned int CGTFilePS2DVD::Write(),0x001FBE30,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,same signature
+"CGtFilePS2DVD::Read(void*,unsigned int)",0x001996F0,"unsigned int CGTFilePS2DVD::Read(void *pBuffer, unsigned int lnBytesToRead)",0x001FBE40,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,same signature
+CGtFilePS2DVD::Close(),0x00199AD0,void CGTFilePS2DVD::Close(),0x001FC1D0,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,same signature
+"CGtFilePS2DVD::Open(CGTFileSystem*,const char*,unsigned int)",0x00199B40,"EFileSystemError CGTFilePS2DVD::Open(CGTFileSystem *pFileSystem, char *lpFilename, unsigned int nOpenFlags)",0x001FC250,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,same signature
+CGtFilePS2DVD::GetStatus(),0x00199C80,EFileStatus CGTFilePS2DVD::GetStatus(),0x001FC390,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,same signature
+CGtFileSystemPS2DVD::GetFileObject(unsigned int),0x00199C90,CGTFile *CGTFileSystemPS2DVD::GetFileObject(unsigned int nIndex),0x001FC3A0,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,same signature
+"CGtFileSystemPS2DVD::Init(unsigned int,CGtFilePS2DVD*,CGtFileBufferPS2DVD*,const char*,int,int,int,char*)",0x00199CB0,"int CGTFileSystemPS2DVD::Init(unsigned int nMaxOpenFiles, CGTFilePS2DVD *pFileArray, CGTFileBufferPS2DVD *pBufferArray, char *sRWName, GtsConfigTag *lpConfig)",0x001FC3C0,I:\GameShared\GameClasses\FileSystem\ps2\GTFileSystemPS2DVD.cpp,"same name, different parameters"
+ChunkIsComplex,0x0019E3A0,static int ChunkIsComplex(RwChunkHeaderInfo *chunkHeaderInfo),0x0014AF50,babinary.c,same C function name
+RwStreamFindChunk,0x0019E3E8,"int RwStreamFindChunk(RwStream *stream, unsigned int type, unsigned int *lengthOut, unsigned int *versionOut)",0x0014B270,babinary.c,same C function name
+RwStreamReadChunkHeaderInfo,0x0019E5F8,"RwStream *RwStreamReadChunkHeaderInfo(RwStream *stream, RwChunkHeaderInfo *chunkHeaderInfo)",0x0014B590,babinary.c,same C function name
+_rwStreamWriteVersionedChunkHeader,0x0019E770,"RwStream *_rwStreamWriteVersionedChunkHeader(RwStream *stream, int type, int size, unsigned int version, unsigned int buildNum)",0x0014B1F0,babinary.c,same C function name
+RwStreamWriteInt32,0x0019E860,"RwStream *RwStreamWriteInt32(RwStream *stream, int *ints, unsigned int numBytes)",0x0014B460,babinary.c,same C function name
+RwStreamReadReal,0x0019E8B0,"RwStream *RwStreamReadReal(RwStream *stream, float *reals, unsigned int numBytes)",0x0014B490,babinary.c,same C function name
+RwStreamReadInt32,0x0019E900,"RwStream *RwStreamReadInt32(RwStream *stream, int *ints, unsigned int numBytes)",0x0014B530,babinary.c,same C function name
+_rwStreamReadChunkHeader,0x0019E9A0,"int _rwStreamReadChunkHeader(RwStream *stream, unsigned int *type, unsigned int *length, unsigned int *version, unsigned int *buildNum)",0x0014B0D0,babinary.c,same C function name
+_rwColorOpen,0x0019EAC8,void *_rwColorOpen(void *instance),0x0014B610,bacolor.c,same C function name
+_rwColorClose,0x0019EAE0,void *_rwColorClose(void *instance),0x0014B630,bacolor.c,same C function name
+_rwerror,0x0019EAF8,int _rwerror(int code),0x0014B720,baerr.c,same C function name
+_rwErrorOpen,0x0019EB38,"void *_rwErrorOpen(void *object, int offset)",0x0014B650,baerr.c,same C function name
+_rwErrorClose,0x0019EB68,void *_rwErrorClose(void *object),0x0014B690,baerr.c,same C function name
+RwErrorSet,0x0019EBC0,RwError *RwErrorSet(RwError *code),0x0014B6B0,baerr.c,same C function name
+_rwFileSystemOpen,0x0019EC28,int _rwFileSystemOpen(),0x0014B7D0,bafsys.c,same C function name
+_rwFileSystemClose,0x0019ECC0,void _rwFileSystemClose(),0x0014B870,bafsys.c,same C function name
+RwOsGetFileInterface,0x0019ECC8,RwFileFunctions *RwOsGetFileInterface(),0x0014B760,bafsys.c,same C function name
+rwfexist,0x0019ECD8,static int rwfexist(char *name),0x0014B770,bafsys.c,same C function name
+MatrixMultiply,0x0019ED30,"static void MatrixMultiply(RwMatrixTag *dstMat, RwMatrixTag *matA, RwMatrixTag *matB)",0x0014B960,bamatrix.c,same C function name
+MatrixInvertGeneric,0x0019F450,"static RwMatrixTag *MatrixInvertGeneric(RwMatrixTag *dst, RwMatrixTag *src)",0x0014BB90,bamatrix.c,same C function name
+RwMatrixOptimize,0x0019FAD0,"RwMatrixTag *RwMatrixOptimize(RwMatrixTag *matrix, RwMatrixTolerance *tolerance)",0x0014C0E0,bamatrix.c,same C function name
+RwMatrixRotateOneMinusCosineSine,0x0019FCF0,"RwMatrixTag *RwMatrixRotateOneMinusCosineSine(RwMatrixTag *matrix, RwV3d *unitAxis, float oneMinusCosine, float sine, RwOpCombineType combineOp)",0x0014C3B0,bamatrix.c,same C function name
+RwMatrixInvert,0x0019FF78,"RwMatrixTag *RwMatrixInvert(RwMatrixTag *dst, RwMatrixTag *src)",0x0014C6E0,bamatrix.c,same C function name
+RwMatrixScale,0x001A00F0,"RwMatrixTag *RwMatrixScale(RwMatrixTag *matrix, RwV3d *scale, RwOpCombineType combineOp)",0x0014C860,bamatrix.c,same C function name
+RwMatrixTranslate,0x001A0330,"RwMatrixTag *RwMatrixTranslate(RwMatrixTag *matrix, RwV3d *translation, RwOpCombineType combineOp)",0x0014CA90,bamatrix.c,same C function name
+RwEngineSetMatrixTolerances,0x001A0520,int RwEngineSetMatrixTolerances(RwMatrixTolerance *tolerance),0x0014C0B0,bamatrix.c,same C function name
+RwMatrixDestroy,0x001A0560,int RwMatrixDestroy(RwMatrixTag *matrix),0x0014CDA0,bamatrix.c,same C function name
+RwMatrixCreate,0x001A0598,RwMatrixTag *RwMatrixCreate(),0x0014CDE0,bamatrix.c,same C function name
+RwMatrixMultiply,0x001A0628,"RwMatrixTag *RwMatrixMultiply(RwMatrixTag *dst, RwMatrixTag *src1, RwMatrixTag *src2)",0x0014C330,bamatrix.c,same C function name
+RwMatrixTransform,0x001A06A8,"RwMatrixTag *RwMatrixTransform(RwMatrixTag *matrix, RwMatrixTag *transform, RwOpCombineType combineOp)",0x0014CC40,bamatrix.c,same C function name
+RwMatrixRotate,0x001A0888,"RwMatrixTag *RwMatrixRotate(RwMatrixTag *matrix, RwV3d *axis, float angle, RwOpCombineType combineOp)",0x0014C5F0,bamatrix.c,same C function name
+RwMatrixUpdate,0x001A09A0,RwMatrixTag *RwMatrixUpdate(RwMatrixTag *matrix),0x0014C310,bamatrix.c,same C function name
+_rwMatrixDeterminant,0x001A09C0,float _rwMatrixDeterminant(RwMatrixTag *matrix),0x0014BE20,bamatrix.c,same C function name
+_rwMatrixNormalError,0x001A0A40,float _rwMatrixNormalError(RwMatrixTag *matrix),0x0014BEF0,bamatrix.c,same C function name
+_rwMatrixOrthogonalError,0x001A0AE8,float _rwMatrixOrthogonalError(RwMatrixTag *matrix),0x0014BE80,bamatrix.c,same C function name
+_rwMatrixSetMultFn,0x001A0C50,"int _rwMatrixSetMultFn(void (*multMat)(RwMatrixTag *, RwMatrixTag *, RwMatrixTag *))",0x0014BDF0,bamatrix.c,same C function name
+_rwMatrixOpen,0x001A0C80,"void *_rwMatrixOpen(void *instance, int offset)",0x0014BFF0,bamatrix.c,same C function name
+_rwMatrixClose,0x001A0D38,void *_rwMatrixClose(void *instance),0x0014BF70,bamatrix.c,same C function name
+RwFreeListCreate,0x001A0DA0,"RwFreeList *RwFreeListCreate(int entrySize, int blockEntries, int alignment)",0x0014D100,bamemory.c,same C function name
+_rwFreeListAllocReal,0x001A1478,void *_rwFreeListAllocReal(RwFreeList *freelist),0x0014D130,bamemory.c,same C function name
+RwOsGetMemoryInterface,0x001A18D8,RwMemoryFunctions *RwOsGetMemoryInterface(),0x0014CEC0,bamemory.c,same C function name
+RwFreeListDestroy,0x001A18E8,int RwFreeListDestroy(RwFreeList *freelist),0x0014CED0,bamemory.c,same C function name
+_rwFreeListFreeReal,0x001A19E8,"RwFreeList *_rwFreeListFreeReal(RwFreeList *freelist, void *pBlock)",0x0014D110,bamemory.c,same C function name
+RwFreeListForAllUsed,0x001A1CF8,"RwFreeList *RwFreeListForAllUsed(RwFreeList *freelist, void (*fpCallBack)(void *, void *), void *pData)",0x0014D2E0,bamemory.c,same C function name
+_rwMemoryClose,0x001A1F48,void _rwMemoryClose(),0x0014D3D0,bamemory.c,same C function name
+_rwMemoryOpen,0x001A1F98,int _rwMemoryOpen(RwMemoryFunctions *memFuncs),0x0014D3E0,bamemory.c,same C function name
+FreeListCreate,0x001A2160,"static RwFreeList *FreeListCreate(int entrySize, int blockEntries, int alignment)",0x0014CF80,bamemory.c,same C function name
+_rwResourcesOpen,0x001A2530,"void *_rwResourcesOpen(void *instance, int offset)",0x0014D560,baresour.c,same C function name
+RwResourcesAllocateResEntry,0x001A2668,"RwResEntry *RwResourcesAllocateResEntry(void *owner, RwResEntry **ownerRef, int size, void (*destroyNotify)(RwResEntry *))",0x0014D7A0,baresour.c,same C function name
+RwResourcesSetArenaSize,0x001A2850,int RwResourcesSetArenaSize(unsigned int size),0x0014DA40,baresour.c,same C function name
+RwResourcesEmptyArena,0x001A2958,int RwResourcesEmptyArena(),0x0014DB60,baresour.c,same C function name
+RwResourcesFreeResEntry,0x001A2AE0,int RwResourcesFreeResEntry(RwResEntry *entry),0x0014D650,baresour.c,same C function name
+_rwResourcesPurge,0x001A2B80,void _rwResourcesPurge(),0x0014D700,baresour.c,same C function name
+_rwResourcesClose,0x001A2C08,void *_rwResourcesClose(void *instance),0x0014D5D0,baresour.c,same C function name
+_rwStreamInitialize,0x001A2C80,"RwStream *_rwStreamInitialize(RwStream *stream, int rwOwned, RwStreamType type, RwStreamAccessType accessType, void *pData)",0x0014DF60,bastream.c,same C function name
+RwStreamRead,0x001A2F08,"unsigned int RwStreamRead(RwStream *stream, void *buffer, unsigned int length)",0x0014E070,bastream.c,same C function name
+RwStreamWrite,0x001A30A8,"RwStream *RwStreamWrite(RwStream *stream, void *buffer, unsigned int length)",0x0014E200,bastream.c,same C function name
+RwStreamSkip,0x001A32A8,"RwStream *RwStreamSkip(RwStream *stream, unsigned int offset)",0x0014E430,bastream.c,same C function name
+RwStreamOpen,0x001A3400,"RwStream *RwStreamOpen(RwStreamType type, RwStreamAccessType accessType, void *pData)",0x0014E6C0,bastream.c,same C function name
+RwStreamClose,0x001A34B0,"int RwStreamClose(RwStream *stream, void *pData)",0x0014E590,bastream.c,same C function name
+_rwStreamModuleOpen,0x001A35C8,"void *_rwStreamModuleOpen(void *instance, int offset)",0x0014DCB0,bastream.c,same C function name
+_rwStreamModuleClose,0x001A3640,void *_rwStreamModuleClose(void *instance),0x0014DD30,bastream.c,same C function name
+_rwPluginRegistryReadDataChunks,0x001A3698,"RwPluginRegistry *_rwPluginRegistryReadDataChunks(RwPluginRegistry *reg, RwStream *stream, void *object)",0x0014E810,batkbin.c,same C function name
+_rwPluginRegistryAddPluginStream,0x001A3828,"int _rwPluginRegistryAddPluginStream(RwPluginRegistry *reg, unsigned int pluginID, RwStream *(*readCB)(RwStream *, int, void *, int, int), RwStream *(*writeCB)(RwStream *, int, void *, int, int), int (*getSizeCB)(void *, int, int))",0x0014E770,batkbin.c,same C function name
+_rwPluginRegistryAddPlgnStrmlwysCB,0x001A3868,"int _rwPluginRegistryAddPlgnStrmlwysCB(RwPluginRegistry *reg, unsigned int pluginID, int (*alwaysCB)(void *, int, int))",0x0014E7C0,batkbin.c,same C function name
+_rwPluginRegistrySkipDataChunks,0x001A3A18,"RwPluginRegistry *_rwPluginRegistrySkipDataChunks(RwPluginRegistry *reg, RwStream *stream)",0x0014EA60,batkbin.c,same C function name
+_rwPluginRegistryInvokeRights,0x001A3B38,"RwPluginRegistry *_rwPluginRegistryInvokeRights(RwPluginRegistry *reg, unsigned int id, void *obj, unsigned int extraData)",0x0014E9E0,batkbin.c,same C function name
+_rwPluginRegistryClose,0x001A3BA8,int _rwPluginRegistryClose(),0x0014EBC0,batkreg.c,same C function name
+_rwPluginRegistryAddPlugin,0x001A3CD8,"int _rwPluginRegistryAddPlugin(RwPluginRegistry *reg, int size, unsigned int pluginID, void *(*constructCB)(void *, int, int), void *(*destructCB)(void *, int, int), void *(*copyCB)(void *, void *, int, int))",0x0014ED80,batkreg.c,same C function name
+_rwPluginRegistryOpen,0x001A4038,int _rwPluginRegistryOpen(),0x0014EB20,batkreg.c,same C function name
+_rwPluginRegistrySetStaticPluginsSize,0x001A4098,"int _rwPluginRegistrySetStaticPluginsSize(RwPluginRegistry *reg, int size)",0x0014ED30,batkreg.c,same C function name
+_rwPluginRegistryInitObject,0x001A4110,"RwPluginRegistry *_rwPluginRegistryInitObject(RwPluginRegistry *reg, void *object)",0x0014F090,batkreg.c,same C function name
+_rwPluginRegistryDeInitObject,0x001A41A8,"RwPluginRegistry *_rwPluginRegistryDeInitObject(RwPluginRegistry *reg, void *object)",0x0014F140,batkreg.c,same C function name
+rwDestroyEntry,0x001A4278,"static void rwDestroyEntry(void *object, void *freelist)",0x0014EB70,batkreg.c,same C function name
+PluginDefaultConstructor,0x001A42C0,static void *PluginDefaultConstructor(void *object),0x0014ED00,batkreg.c,same C function name
+PluginDefaultDestructor,0x001A42C8,static void *PluginDefaultDestructor(void *object),0x0014ED10,batkreg.c,same C function name
+PluginDefaultCopy,0x001A42D0,static void *PluginDefaultCopy(void *dstObject),0x0014ED20,batkreg.c,same C function name
+RwV3dNormalize,0x001A42D8,"float RwV3dNormalize(RwV3d *out, RwV3d *in)",0x0014F3E0,bavector.c,same C function name
+RwV3dLength,0x001A43A0,float RwV3dLength(RwV3d *in),0x0014F4A0,bavector.c,same C function name
+RwV3dTransformPoints,0x001A44E0,"RwV3d *RwV3dTransformPoints(RwV3d *pointsOut, RwV3d *pointsIn, int numPoints, RwMatrixTag *matrix)",0x0014F4D0,bavector.c,same C function name
+RwV3dTransformVectors,0x001A4560,"RwV3d *RwV3dTransformVectors(RwV3d *vectorsOut, RwV3d *vectorsIn, int numPoints, RwMatrixTag *matrix)",0x0014F4F0,bavector.c,same C function name
+_rwV3dNormalize,0x001A45A0,"float _rwV3dNormalize(RwV3d *out, RwV3d *in)",0x0014F360,bavector.c,same C function name
+_rwVectorOpen,0x001A4620,"void *_rwVectorOpen(void *instance, int offset)",0x0014F530,bavector.c,same C function name
+_rwVectorClose,0x001A4678,void *_rwVectorClose(void *instance),0x0014F510,bavector.c,same C function name
+_rwVectorSetMultFn,0x001A4690,"int _rwVectorSetMultFn(RwV3d *(*multPoint)(RwV3d *, RwV3d *, int, RwMatrixTag *), RwV3d *(*multVector)(RwV3d *, RwV3d *, int, RwMatrixTag *))",0x0014F310,bavector.c,same C function name
+VectorMultPoint,0x001A4900,"static RwV3d *VectorMultPoint(RwV3d *pointsOut, RwV3d *pointsIn, int numPoints, RwMatrixTag *matrix)",0x0014F1B0,bavector.c,same C function name
+VectorMultVector,0x001A4B68,"static RwV3d *VectorMultVector(RwV3d *pointsOut, RwV3d *pointsIn, int numPoints, RwMatrixTag *matrix)",0x0014F270,bavector.c,same C function name
+_rwResHeapAlloc,0x001A4BE8,"void *_rwResHeapAlloc(void *resHeap, unsigned int size)",0x0014F740,resmem.c,same C function name
+_rwResHeapInit,0x001A5080,"int _rwResHeapInit(void *resHeap, unsigned int size)",0x0014F610,resmem.c,same C function name
+_rwResHeapClose,0x001A50D8,int _rwResHeapClose(),0x0014F670,resmem.c,same C function name
+_rwResHeapFree,0x001A5130,void _rwResHeapFree(void *memory),0x0014F680,resmem.c,same C function name
+_rwStringOpen,0x001A5680,int _rwStringOpen(),0x0014FA20,rwstring.c,same C function name
+_rwStringStreamFindAndRead,0x001A5788,"char *_rwStringStreamFindAndRead(char *string, RwStream *stream)",0x001506A0,babintex.c,same C function name
+_rwStringClose,0x001A5B80,void _rwStringClose(),0x0014FAF0,rwstring.c,same C function name
+_rwStringStreamGetSize,0x001A5BB0,unsigned int _rwStringStreamGetSize(char *string),0x00150240,babintex.c,same C function name
+_rwStringStreamWrite,0x001A5BE8,"char *_rwStringStreamWrite(char *string, RwStream *stream)",0x00150280,babintex.c,same C function name
+StrICmp,0x001A5C88,"static int StrICmp(char *s1, char *s2)",0x0014F840,rwstring.c,same C function name
+StrUpr,0x001A5CF8,static char *StrUpr(char *s),0x0014F900,rwstring.c,same C function name
+StrLwr,0x001A5D40,static char *StrLwr(char *s),0x0014F950,rwstring.c,same C function name
+StrChr,0x001A5D88,"static char *StrChr(char *s, int c)",0x0014F9A0,rwstring.c,same C function name
+StrRChr,0x001A5DC0,"static char *StrRChr(char *s, int c)",0x0014F9E0,rwstring.c,same C function name
+_rwpathisabsolute,0x001A5DF8,int _rwpathisabsolute(char *path),0x0014FB00,osintf.c,same C function name
+RwBBoxCalculate,0x001A5E48,"RwBBox *RwBBoxCalculate(RwBBox *boundBox, RwV3d *verts, int numVerts)",0x0014FB60,babbox.c,same C function name
+RwTextureStreamRead,0x001A61E0,RwTexture *RwTextureStreamRead(RwStream *stream),0x001507F0,babintex.c,same C function name
+RwTexDictionaryStreamRead,0x001A6588,RwTexDictionary *RwTexDictionaryStreamRead(RwStream *stream),0x00150A90,babintex.c,same C function name
+RwTextureRegisterPluginStream,0x001A6870,"int RwTextureRegisterPluginStream(unsigned int pluginID, RwStream *(*readCB)(RwStream *, int, void *, int, int), RwStream *(*writeCB)(RwStream *, int, void *, int, int), int (*getSizeCB)(void *, int, int))",0x001507C0,babintex.c,same C function name
+destroyTexture,0x001A6C60,static RwTexture *destroyTexture(RwTexture *texture),0x00150A60,babintex.c,same C function name
+CameraBuildPerspClipPlanes,0x001A6C88,static void CameraBuildPerspClipPlanes(RwCamera *camera),0x00150E10,bacamera.c,same C function name
+CameraBuildPerspViewMatrix,0x001A7550,static RwCamera *CameraBuildPerspViewMatrix(RwCamera *camera),0x001516C0,bacamera.c,same C function name
+CameraBuildParallelClipPlanes,0x001A7728,static void CameraBuildParallelClipPlanes(RwCamera *camera),0x00151860,bacamera.c,same C function name
+CameraBuildParallelViewMatrix,0x001A7C68,static RwCamera *CameraBuildParallelViewMatrix(RwCamera *camera),0x00151DB0,bacamera.c,same C function name
+RwCameraCreate,0x001A7E40,RwCamera *RwCameraCreate(),0x00152480,bacamera.c,same C function name
+RwCameraBeginUpdate,0x001A80F0,RwCamera *RwCameraBeginUpdate(RwCamera *camera),0x001521A0,bacamera.c,same C function name
+RwCameraEndUpdate,0x001A8110,RwCamera *RwCameraEndUpdate(RwCamera *camera),0x00152190,bacamera.c,same C function name
+RwCameraClear,0x001A8130,"RwCamera *RwCameraClear(RwCamera *camera, RwRGBA *color, int clearMode)",0x00152280,bacamera.c,same C function name
+RwCameraShowRaster,0x001A8168,"RwCamera *RwCameraShowRaster(RwCamera *camera, void *dev, unsigned int flags)",0x001522C0,bacamera.c,same C function name
+RwCameraDestroy,0x001A81A8,int RwCameraDestroy(RwCamera *camera),0x00152420,bacamera.c,same C function name
+RwCameraSetViewOffset,0x001A8208,"RwCamera *RwCameraSetViewOffset(RwCamera *camera, RwV2d *offset)",0x001521B0,bacamera.c,same C function name
+RwCameraSetViewWindow,0x001A8250,"RwCamera *RwCameraSetViewWindow(RwCamera *camera, RwV2d *viewWindow)",0x00152380,bacamera.c,same C function name
+RwCameraSetProjection,0x001A82B8,"RwCamera *RwCameraSetProjection(RwCamera *camera, RwCameraProjection projection)",0x001522F0,bacamera.c,same C function name
+RwCameraSetNearClipPlane,0x001A83C8,"RwCamera *RwCameraSetNearClipPlane(RwCamera *camera, float nearClip)",0x00152200,bacamera.c,same C function name
+RwCameraSetFarClipPlane,0x001A8498,"RwCamera *RwCameraSetFarClipPlane(RwCamera *camera, float farClip)",0x00152240,bacamera.c,same C function name
+RwCameraRegisterPlugin,0x001A8568,"int RwCameraRegisterPlugin(int size, unsigned int pluginID, void *(*constructCB)(void *, int, int), void *(*destructCB)(void *, int, int), void *(*copyCB)(void *, void *, int, int))",0x001523F0,bacamera.c,same C function name
+_rwCameraClose,0x001A8668,void *_rwCameraClose(void *instance),0x00152080,bacamera.c,same C function name
+_rwCameraOpen,0x001A86D0,"void *_rwCameraOpen(void *instance, int offset)",0x00152100,bacamera.c,same C function name
+CameraSync,0x001A8750,static RwObjectHasFrame *CameraSync(RwObjectHasFrame *type),0x00151F40,bacamera.c,same C function name
+CameraEndUpdate,0x001A87C0,static RwCamera *CameraEndUpdate(RwCamera *camera),0x00151FB0,bacamera.c,same C function name
+CameraBeginUpdate,0x001A8818,static RwCamera *CameraBeginUpdate(RwCamera *camera),0x00152010,bacamera.c,same C function name
+CorePluginAttach,0x001A8878,static int CorePluginAttach(),0x00152570,badevice.c,same C function name
+RwEngineGetNumVideoModes,0x001A8AF8,int RwEngineGetNumVideoModes(),0x001528F0,badevice.c,same C function name
+RwEngineGetCurrentVideoMode,0x001A8B68,int RwEngineGetCurrentVideoMode(),0x00152990,badevice.c,same C function name
+RwEngineSetVideoMode,0x001A8BD8,int RwEngineSetVideoMode(int modeIndex),0x001529E0,badevice.c,same C function name
+RwEngineStop,0x001A8D88,int RwEngineStop(),0x00152A20,badevice.c,same C function name
+RwEngineStart,0x001A8E50,int RwEngineStart(),0x00152AA0,badevice.c,same C function name
+RwEngineClose,0x001A8F60,int RwEngineClose(),0x00152B50,badevice.c,same C function name
+RwEngineOpen,0x001A8FE8,int RwEngineOpen(RwEngineOpenParams *initParams),0x00152BB0,badevice.c,same C function name
+RwEngineInit,0x001A9138,"int RwEngineInit(RwMemoryFunctions *memFuncs, unsigned int openFlags, unsigned int resArenaSize)",0x00152D50,badevice.c,same C function name
+RwEngineRegisterPlugin,0x001A9290,"int RwEngineRegisterPlugin(int size, unsigned int pluginID, void *(*initCB)(void *, int, int), void *(*termCB)(void *, int, int))",0x001528C0,badevice.c,same C function name
+RwEngineTerm,0x001A92F8,int RwEngineTerm(),0x00152CF0,badevice.c,same C function name
+RwEngineGetVideoModeInfo,0x001A9488,"RwVideoMode *RwEngineGetVideoModeInfo(RwVideoMode *modeinfo, int modeIndex)",0x00152940,badevice.c,same C function name
+_rwDeviceSystemRequest,0x001A9510,"int _rwDeviceSystemRequest(RwDevice *device, int requestID, void *pOut, void *pInOut, int numIn)",0x001527A0,badevice.c,same C function name
+_rwGetNumEngineInstances,0x001A9618,unsigned int _rwGetNumEngineInstances(),0x001528B0,badevice.c,same C function name
+MallocWrapper,0x001A9620,static void *MallocWrapper(RwFreeList *fl),0x00152740,badevice.c,same C function name
+FreeWrapper,0x001A9648,"static RwFreeList *FreeWrapper(RwFreeList *fl, void *pData)",0x00152760,badevice.c,same C function name
+_rwFrameInit,0x001A97D0,void _rwFrameInit(RwFrame *frame),0x00153050,baframe.c,same C function name
+RwFrameForAllObjects,0x001A98A8,"RwFrame *RwFrameForAllObjects(RwFrame *frame, RwObject *(*callBack)(RwObject *, void *), void *data)",0x00153950,baframe.c,same C function name
+RwFrameTranslate,0x001A9920,"RwFrame *RwFrameTranslate(RwFrame *frame, RwV3d *translation, RwOpCombineType combineOp)",0x00153780,baframe.c,same C function name
+RwFrameRotate,0x001A99A0,"RwFrame *RwFrameRotate(RwFrame *frame, RwV3d *axis, float angle, RwOpCombineType combineOp)",0x00153810,baframe.c,same C function name
+RwFrameSetIdentity,0x001A9BA0,RwFrame *RwFrameSetIdentity(RwFrame *frame),0x001538A0,baframe.c,same C function name
+RwFrameDestroyHierarchy,0x001A9D20,int RwFrameDestroyHierarchy(RwFrame *frame),0x00153370,baframe.c,same C function name
+RwFrameRemoveChild,0x001A9E38,RwFrame *RwFrameRemoveChild(RwFrame *child),0x00153640,baframe.c,same C function name
+RwFrameAddChild,0x001A9F30,"RwFrame *RwFrameAddChild(RwFrame *parent, RwFrame *child)",0x001534E0,baframe.c,same C function name
+RwFrameGetLTM,0x001AA0D0,RwMatrixTag *RwFrameGetLTM(RwFrame *frame),0x001534A0,baframe.c,same C function name
+RwFrameUpdateObjects,0x001AA110,RwFrame *RwFrameUpdateObjects(RwFrame *frame),0x00153430,baframe.c,same C function name
+RwFrameCreate,0x001AA180,RwFrame *RwFrameCreate(),0x00153120,baframe.c,same C function name
+RwFrameDestroy,0x001AA2B0,int RwFrameDestroy(RwFrame *frame),0x00153180,baframe.c,same C function name
+RwFrameDirty,0x001AA410,int RwFrameDirty(RwFrame *frame),0x00153040,baframe.c,same C function name
+RwFrameSetStaticPluginsSize,0x001AA470,int RwFrameSetStaticPluginsSize(int size),0x001539E0,baframe.c,same C function name
+_rwFrameClose,0x001AA5F0,void *_rwFrameClose(void *instance),0x00152F10,baframe.c,same C function name
+_rwFrameOpen,0x001AA658,"void *_rwFrameOpen(void *instance, int offset)",0x00152E80,baframe.c,same C function name
+rwSetHierarchyRoot,0x001AA6E0,"static void rwSetHierarchyRoot(RwFrame *frame, RwFrame *root)",0x00152F90,baframe.c,same C function name
+rwFrameDestroyRecurse,0x001AA738,static void rwFrameDestroyRecurse(RwFrame *frame),0x00153240,baframe.c,same C function name
+_rwImageOpen,0x001AA7E0,"void *_rwImageOpen(void *instance, int offset)",0x00153A00,baimage.c,same C function name
+_rwImageClose,0x001AA980,void *_rwImageClose(void *instance),0x00153C20,baimage.c,same C function name
+RwImageMakeMask,0x001AAD60,RwImage *RwImageMakeMask(RwImage *image),0x00153FE0,baimage.c,same C function name
+RwImageApplyMask,0x001AAF88,"RwImage *RwImageApplyMask(RwImage *image, RwImage *mask)",0x00154110,baimage.c,same C function name
+ImagePathForAllFullNames,0x001AB460,"static char *ImagePathForAllFullNames(char *filename, int extraBytes, char *(*callBack)(char *, void *), void *data)",0x001544B0,baimage.c,same C function name
+RwImageRead,0x001AB768,RwImage *RwImageRead(char *imageName),0x00154820,baimage.c,same C function name
+RwImageReadMaskedImage,0x001ABA20,"RwImage *RwImageReadMaskedImage(char *imageName, char *maskName)",0x00154AB0,baimage.c,same C function name
+ImageConvertDepth,0x001ABBE0,"static int ImageConvertDepth(RwImage *ipDestin, RwImage *ipSource)",0x00154DF0,baimage.c,same C function name
+RwImageGammaCorrect,0x001AC208,RwImage *RwImageGammaCorrect(RwImage *image),0x00155280,baimage.c,same C function name
+RwImageCreate,0x001AC430,"RwImage *RwImageCreate(int width, int height, int depth)",0x00153D60,baimage.c,same C function name
+RwImageDestroy,0x001AC4D0,int RwImageDestroy(RwImage *image),0x00153E00,baimage.c,same C function name
+RwImageAllocatePixels,0x001AC540,RwImage *RwImageAllocatePixels(RwImage *image),0x00153E70,baimage.c,same C function name
+RwImageFreePixels,0x001AC650,RwImage *RwImageFreePixels(RwImage *image),0x00153F90,baimage.c,same C function name
+RwImageCopy,0x001AC6A0,"RwImage *RwImageCopy(RwImage *destImage, RwImage *sourceImage)",0x00155160,baimage.c,same C function name
+RwImageSetGamma,0x001ACA38,int RwImageSetGamma(float gammaValue),0x00155480,baimage.c,same C function name
+RwImageFindFileType,0x001ACD10,char *RwImageFindFileType(char *imageName),0x00154A80,baimage.c,same C function name
+ImageAttempRead,0x001ACF78,"static char *ImageAttempRead(char *pathname, void *data)",0x001547B0,baimage.c,same C function name
+ImageDetermineExtender,0x001ACFD8,"static char *ImageDetermineExtender(char *pathname, void *data)",0x00154980,baimage.c,same C function name
+RwImageSetFromRaster,0x001AD210,"RwImage *RwImageSetFromRaster(RwImage *image, RwRaster *raster)",0x001555C0,baimras.c,same C function name
+RwRasterSetFromImage,0x001AD278,"RwRaster *RwRasterSetFromImage(RwRaster *raster, RwImage *image)",0x00155640,baimras.c,same C function name
+RwImageFindRasterFormat,0x001AD4A0,"RwImage *RwImageFindRasterFormat(RwImage *ipImage, int nRasterType, int *npWidth, int *npHeight, int *npDepth, int *npFormat)",0x001556C0,baimras.c,same C function name
+_rwRasterOpen,0x001AD548,"void *_rwRasterOpen(void *instance, int offset)",0x00155C40,baraster.c,same C function name
+RwRasterCreate,0x001AD630,"RwRaster *RwRasterCreate(int width, int height, int depth, int flags)",0x00155A60,baraster.c,same C function name
+RwRasterDestroy,0x001AD730,int RwRasterDestroy(RwRaster *raster),0x00155800,baraster.c,same C function name
+RwRasterGetNumLevels,0x001AD7B8,int RwRasterGetNumLevels(RwRaster *raster),0x001558F0,baraster.c,same C function name
+RwRasterSubRaster,0x001AD808,"RwRaster *RwRasterSubRaster(RwRaster *subRaster, RwRaster *raster, RwRect *rect)",0x001559C0,baraster.c,same C function name
+RwRasterShowRaster,0x001ADB18,"RwRaster *RwRasterShowRaster(RwRaster *raster, void *dev, unsigned int flags)",0x00155950,baraster.c,same C function name
+RwRasterLock,0x001ADB80,"unsigned char *RwRasterLock(RwRaster *raster, unsigned char level, int lockMode)",0x00155B70,baraster.c,same C function name
+RwRasterUnlock,0x001ADBC0,RwRaster *RwRasterUnlock(RwRaster *raster),0x00155770,baraster.c,same C function name
+RwRasterLockPalette,0x001ADC00,"unsigned char *RwRasterLockPalette(RwRaster *raster, int lockMode)",0x001558A0,baraster.c,same C function name
+RwRasterUnlockPalette,0x001ADC38,RwRaster *RwRasterUnlockPalette(RwRaster *raster),0x001557B0,baraster.c,same C function name
+RwRasterRegisterPlugin,0x001ADC80,"int RwRasterRegisterPlugin(int size, unsigned int pluginID, void *(*constructCB)(void *, int, int), void *(*destructCB)(void *, int, int), void *(*copyCB)(void *, void *, int, int))",0x00155870,baraster.c,same C function name
+_rwRasterClose,0x001ADCF8,void *_rwRasterClose(void *instance),0x00155BC0,baraster.c,same C function name
+ImageResampleGetSpan,0x001ADD60,"static void ImageResampleGetSpan(RwImage *_image, int _nStartX, int _nEndX, int _nY, RwRGBAReal *_rrpCol)",0x00155D60,baresamp.c,same C function name
+ImageResampleGetAvgPixel,0x001AE060,"static void ImageResampleGetAvgPixel(RwImage *_image, int _nXStart, int _nXEnd, int _nYStart, int __nYEnd, RwRGBAReal *_rrpCol)",0x00156340,baresamp.c,same C function name
+RwImageResample,0x001AE2E0,"RwImage *RwImageResample(RwImage *dstImage, RwImage *srcImage)",0x001565A0,baresamp.c,same C function name
+RwImageCreateResample,0x001AE628,"RwImage *RwImageCreateResample(RwImage *srcImage, int width, int height)",0x00156780,baresamp.c,same C function name
+_rwFrameSyncDirty,0x001AE920,int _rwFrameSyncDirty(),0x00156B30,basync.c,same C function name
+_rwFrameSyncHierarchyLTM,0x001AE988,void _rwFrameSyncHierarchyLTM(RwFrame *frame),0x00156D70,basync.c,same C function name
+FrameSyncHierarchyRecurse,0x001AEA50,"static void FrameSyncHierarchyRecurse(RwFrame *frame, int flags)",0x00156920,basync.c,same C function name
+FrameSyncHierarchyRecurseNoLTM,0x001AEB18,static void FrameSyncHierarchyRecurseNoLTM(RwFrame *frame),0x00156A60,basync.c,same C function name
+FrameSyncHierarchyLTMRecurse,0x001AEBA0,"static void FrameSyncHierarchyLTMRecurse(RwFrame *frame, int flags)",0x00156C70,basync.c,same C function name
+PalettizeMipmaps,0x001AEC28,"static int PalettizeMipmaps(RwRGBA *MipPalette, RwImage *sourceImage, RwImage **mipArray, int totalMipLevels, int logpalsize)",0x00157020,batextur.c,same C function name
+TextureImageReadAndSize,0x001AEFB8,"static RwImage *TextureImageReadAndSize(char *name, char *maskName, int format, int *rasterWidth, int *rasterHeight, int *rasterDepth, int *rasterFlags)",0x00157260,batextur.c,same C function name
+TextureDefaultNormalRead,0x001AF3F8,"static RwTexture *TextureDefaultNormalRead(char *name, char *maskName)",0x001575D0,batextur.c,same C function name
+TextureDefaultMipmapRead,0x001AF670,"static RwTexture *TextureDefaultMipmapRead(char *name, char *maskName)",0x00157860,batextur.c,same C function name
+TextureRasterDefaultBuildMipmaps,0x001AFD50,"static RwRaster *TextureRasterDefaultBuildMipmaps(RwRaster *raster, RwImage *sourceImage)",0x00157E90,batextur.c,same C function name
+RwTextureRead,0x001B0310,"RwTexture *RwTextureRead(char *name, char *maskName)",0x00158950,batextur.c,same C function name
+_rwTextureClose,0x001B0458,void *_rwTextureClose(void *instance),0x00158BB0,batextur.c,same C function name
+_rwTextureOpen,0x001B05F0,"void *_rwTextureOpen(void *instance, int offset)",0x00158D50,batextur.c,same C function name
+RwTextureSetMipmapping,0x001B07F0,int RwTextureSetMipmapping(int enable),0x001582D0,batextur.c,same C function name
+RwTextureGetMipmapping,0x001B0810,int RwTextureGetMipmapping(),0x001582F0,batextur.c,same C function name
+RwTextureSetAutoMipmapping,0x001B0828,int RwTextureSetAutoMipmapping(int enable),0x00158310,batextur.c,same C function name
+RwTextureGetAutoMipmapping,0x001B0848,int RwTextureGetAutoMipmapping(),0x00158330,batextur.c,same C function name
+RwTextureGenerateMipmapName,0x001B08D0,"int RwTextureGenerateMipmapName(char *name, char *maskName, unsigned char mipLevel, int format)",0x00158900,batextur.c,same C function name
+RwTextureRasterGenerateMipmaps,0x001B0910,"int RwTextureRasterGenerateMipmaps(RwRaster *raster, RwImage *image)",0x00158B70,batextur.c,same C function name
+RwTextureSetName,0x001B09F0,"RwTexture *RwTextureSetName(RwTexture *texture, char *name)",0x001586D0,batextur.c,same C function name
+RwTextureSetMaskName,0x001B0A90,"RwTexture *RwTextureSetMaskName(RwTexture *texture, char *maskName)",0x00158770,batextur.c,same C function name
+RwTexDictionaryCreate,0x001B0B40,RwTexDictionary *RwTexDictionaryCreate(),0x00158350,batextur.c,same C function name
+RwTexDictionaryDestroy,0x001B0BF8,int RwTexDictionaryDestroy(RwTexDictionary *dict),0x00158430,batextur.c,same C function name
+RwTextureCreate,0x001B0CA8,RwTexture *RwTextureCreate(RwRaster *raster),0x00158560,batextur.c,same C function name
+RwTextureDestroy,0x001B0D30,int RwTextureDestroy(RwTexture *texture),0x00158610,batextur.c,same C function name
+RwTexDictionaryAddTexture,0x001B0E30,"RwTexture *RwTexDictionaryAddTexture(RwTexDictionary *dict, RwTexture *texture)",0x00158810,batextur.c,same C function name
+RwTexDictionaryFindNamedTexture,0x001B0EB8,"RwTexture *RwTexDictionaryFindNamedTexture(RwTexDictionary *dict, char *name)",0x00158860,batextur.c,same C function name
+RwTexDictionaryGetCurrent,0x001B0FA8,RwTexDictionary *RwTexDictionaryGetCurrent(),0x001588E0,batextur.c,same C function name
+RwTexDictionarySetCurrent,0x001B0FC0,RwTexDictionary *RwTexDictionarySetCurrent(RwTexDictionary *dict),0x001588C0,batextur.c,same C function name
+RwTexDictionaryForAllTextures,0x001B0FE0,"RwTexDictionary *RwTexDictionaryForAllTextures(RwTexDictionary *dict, RwTexture *(*fpCallBack)(RwTexture *, void *), void *pData)",0x001584E0,batextur.c,same C function name
+RwTextureRegisterPlugin,0x001B10C8,"int RwTextureRegisterPlugin(int size, unsigned int pluginID, void *(*constructCB)(void *, int, int), void *(*destructCB)(void *, int, int), void *(*copyCB)(void *, void *, int, int))",0x00158B40,batextur.c,same C function name
+TextureDefaultMipmapName,0x001B11B8,"static int TextureDefaultMipmapName(char *name, char *maskName, unsigned char mipLevel)",0x00156E60,batextur.c,same C function name
+TextureDefaultRead,0x001B1258,"static RwTexture *TextureDefaultRead(char *name, char *maskName)",0x00157E40,batextur.c,same C function name
+_rwObjectHasFrameSetFrame,0x001B1328,"void _rwObjectHasFrameSetFrame(void *object, RwFrame *frame)",0x00158FA0,batypehf.c,same C function name
+_rwObjectHasFrameReleaseFrame,0x001B1398,void _rwObjectHasFrameReleaseFrame(void *object),0x00159010,batypehf.c,same C function name
+_rwImageFindAlphaType,0x001B13C8,rwImageAlphaType _rwImageFindAlphaType(RwImage *image),0x00159040,imrascnv.c,same C function name
+assignindex,0x001B5500,"static void assignindex(OctNode *root, RwRGBA *origin, int depth, box *region, int palIndex)",0x001599A0,palquant.c,same C function name
+addvolume,0x001B5740,"static void addvolume(OctNode *root, RwRGBA *origin, int depth, box *region, LeafNode *volume)",0x00159BB0,palquant.c,same C function name
+nCut,0x001B59F0,"static int nCut(OctNode *root, box *set1, box *set2)",0x0015A430,palquant.c,same C function name
+CountLeafs,0x001B7508,"static int CountLeafs(OctNode *root, int depth)",0x0015A6A0,palquant.c,same C function name
+ExtractNodes,0x001B7608,"static int ExtractNodes(OctNode *root, RwRGBA *palette, int nodeIndex, int depth)",0x0015A7A0,palquant.c,same C function name
+GetIndex,0x001B7750,"static unsigned char GetIndex(OctNode *root, unsigned long Octs, int depth)",0x0015ADE0,palquant.c,same C function name
+DeleteOctTree,0x001B7798,"static void DeleteOctTree(rwPalQuant *pq, OctNode *root, int depth)",0x0015B690,palquant.c,same C function name
+rwDMAHandler,0x001B78B8,static int rwDMAHandler(int ch),0x0015B930,badma.c,same C function name
+rwDMAVSYNCHandler,0x001B7E28,static int rwDMAVSYNCHandler(int ca),0x0015BF50,badma.c,same C function name
+_rwDMAClosePkt,0x001B8090,void _rwDMAClosePkt(),0x0015C130,badma.c,same C function name
+_rwDMAForceBufferSwap,0x001B8548,void _rwDMAForceBufferSwap(),0x0015C440,badma.c,same C function name
+_rwDMAAddPkt,0x001B8760,"void _rwDMAAddPkt(void *addr, unsigned int type)",0x0015C630,badma.c,same C function name
+_rwDMAReqFlip,0x001B8AA0,"void _rwDMAReqFlip(void *addr, unsigned char id)",0x0015C8B0,badma.c,same C function name
+_rwDMAOpenGIFPkt,0x001B8C38,int _rwDMAOpenGIFPkt(unsigned int size),0x0015CAD0,badma.c,same C function name
+_rwDMAOpenVIFPkt,0x001B91C0,"int _rwDMAOpenVIFPkt(unsigned int type, unsigned int size)",0x0015CFE0,badma.c,same C function name
+_rwDMADMAPktAllocHigh,0x001B98A8,"u_long128 *_rwDMADMAPktAllocHigh(unsigned int size, int sprFlush)",0x0015D4F0,badma.c,same C function name
+_rwDMAAddImageUpload,0x001B9B50,"int _rwDMAAddImageUpload(int parallel, unsigned int size)",0x0015D760,badma.c,same C function name
+_rwDMAHook,0x001B9D48,int _rwDMAHook(),0x0015D9A0,badma.c,same C function name
+_rwDMAUnhook,0x001B9E78,void _rwDMAUnhook(),0x0015DAD0,badma.c,same C function name
+_rwDMADmaOpen,0x001BA0D8,int _rwDMADmaOpen(),0x0015DC90,badma.c,same C function name
+_rwDMAAddPURef,0x001BA450,void _rwDMAAddPURef(int *ptr),0x0015C7F0,badma.c,same C function name
+_rwDMAWaitQueue,0x001BA4F0,void _rwDMAWaitQueue(),0x0015C9E0,badma.c,same C function name
+_rwDMADmaClose,0x001BA6B8,void _rwDMADmaClose(),0x0015E010,badma.c,same C function name
+_rwDMAPreAlloc,0x001BA700,"int _rwDMAPreAlloc(unsigned int size, unsigned short puRefSize, u_long128 *optionalBuf)",0x0015E060,badma.c,same C function name
+_rwSkyInitConfigSystem,0x001BA740,void _rwSkyInitConfigSystem(),0x0015E0C0,baevent.c,same C function name
+_rwSkySetRenderState,0x001BA7A8,"int _rwSkySetRenderState(RwRenderState nState, void *pParam)",0x0015E150,basky.c,same C function name
+SkyGetRenderState,0x001BB240,"static int SkyGetRenderState(RwRenderState nState, void *pParam)",0x0015EDA0,basky.c,same C function name
+RpSkyRenderStateSet,0x001BB650,"int RpSkyRenderStateSet(RpSkyRenderState nState, void *pParam)",0x0015F280,basky.c,same C function name
+SkyCameraBeginUpdate,0x001BB848,static int SkyCameraBeginUpdate(void *pCam),0x0015F850,basky.c,same C function name
+SkyCameraClear,0x001BC248,"static int SkyCameraClear(void *pCam, void *pCol, int nClearWhich)",0x001604C0,basky.c,same C function name
+SkyGetRasterFormat,0x001BC6C8,"static int SkyGetRasterFormat(void *pRaster, int flags)",0x00160AD0,basky.c,same C function name
+calcOffsets,0x001BCC48,"static void calcOffsets(unsigned int width, unsigned int height, int format, unsigned long *offsets, unsigned long *bufwidth, unsigned int *xyoff, unsigned int *texMemSize, unsigned int *paletteOffset)",0x001610A0,basky.c,same C function name
+SkyRasterCreate,0x001BDF48,"static int SkyRasterCreate(void *pInOut, void *pRaster, int flags)",0x00162730,basky.c,same C function name
+SkyRasterSubRaster,0x001BFF00,"static int SkyRasterSubRaster(void *pRas, void *pIn)",0x00164220,basky.c,same C function name
+SkyRasterDestroy,0x001C02A8,static int SkyRasterDestroy(void *pRaster),0x00164620,basky.c,same C function name
+SkyRasterLock_32to8,0x001C04C0,static void SkyRasterLock_32to8(RwRaster *rpRas),0x001647A0,basky.c,same C function name
+SkyRasterLock_16to4,0x001C07A8,static void SkyRasterLock_16to4(RwRaster *rpRas),0x001649D0,basky.c,same C function name
+SkyRasterUnlock_8to32,0x001C0B60,static void SkyRasterUnlock_8to32(RwRaster *rpRas),0x00164D70,basky.c,same C function name
+SkyRasterUnlock_4to16,0x001C0E40,static void SkyRasterUnlock_4to16(RwRaster *rpRas),0x00164FA0,basky.c,same C function name
+SkyRasterLock,0x001C11F0,"static int SkyRasterLock(void *pPixels, void *pRaster, int flags)",0x001652B0,basky.c,same C function name
+SkyRasterUnlock,0x001C1AA0,static int SkyRasterUnlock(void *pRaster),0x00165E60,basky.c,same C function name
+writeTEXToStream,0x001C1CB0,"static RwRaster *writeTEXToStream(RwStream *stream, RwRaster *raster)",0x00166250,basky.c,same C function name
+readTEXFromStream,0x001C1F98,static RwRaster *readTEXFromStream(RwStream *stream),0x001664B0,basky.c,same C function name
+SkyNativeTextureWrite,0x001C22E0,"static int SkyNativeTextureWrite(void *pStream, void *pTex)",0x00166920,basky.c,same C function name
+SkyNativeTextureRead,0x001C23D0,"static int SkyNativeTextureRead(void *pStream, void *ppTex)",0x00166A80,basky.c,same C function name
+setInitialRenderState,0x001C2600,static void setInitialRenderState(),0x00166E40,basky.c,same C function name
+SkyOpen,0x001C2778,static int SkyOpen(),0x00167120,basky.c,same C function name
+setUpFSAA0,0x001C2B58,static void setUpFSAA0(rwDMA_flipDataTag *fd),0x001674A0,basky.c,same C function name
+SkyStart,0x001C35D0,static int SkyStart(),0x00167780,basky.c,same C function name
+SkySystem,0x001C42E0,"static int SkySystem(int nRequest, void *pOut, void *pInOut, int nIn)",0x001684F0,basky.c,same C function name
+_rpSkyFrameBufferRastersUpdate,0x001C47B8,void _rpSkyFrameBufferRastersUpdate(),0x00168770,basky.c,same C function name
+SkyCreateFBRaster,0x001C48E8,static RwRaster *SkyCreateFBRaster(),0x00168930,basky.c,same C function name
+_rpSkyCreateFrameBufferRasters,0x001C4CB8,int _rpSkyCreateFrameBufferRasters(),0x00168B50,basky.c,same C function name
+_rwDeviceGetHandle,0x001C54A0,RwDevice *_rwDeviceGetHandle(),0x00168760,basky.c,same C function name
+_rpSkyDestroyFrameBufferRasters,0x001C54B0,int _rpSkyDestroyFrameBufferRasters(),0x001688B0,basky.c,same C function name
+_rwSkyFindMSB,0x001C5518,int _rwSkyFindMSB(unsigned int nInt),0x0015E120,basky.c,same C function name
+RpSkyTextureSetMipmapK,0x001C5768,"RwTexture *RpSkyTextureSetMipmapK(RwTexture *tex, float val)",0x0015F660,basky.c,same C function name
+RpSkyTextureGetMipmapK,0x001C5820,float RpSkyTextureGetMipmapK(RwTexture *tex),0x0015F700,basky.c,same C function name
+RpSkySelectTrueTSClipper,0x001C58A8,int RpSkySelectTrueTSClipper(int val),0x0015F650,basky.c,same C function name
+RpSkyRenderStateGet,0x001C58D8,"int RpSkyRenderStateGet(RpSkyRenderState nState, void *pParam)",0x0015F550,basky.c,same C function name
+RpSkyGetDisplayBufferRaster,0x001C5988,RwRaster *RpSkyGetDisplayBufferRaster(),0x00168BC0,basky.c,same C function name
+RpSkyGetDrawBufferRaster,0x001C5990,RwRaster *RpSkyGetDrawBufferRaster(),0x00168BD0,basky.c,same C function name
+skyReadTexCB,0x001C5A50,"static RwStream *skyReadTexCB(RwStream *stream, int len, void *obj)",0x0015F760,basky.c,same C function name
+skyWriteTexCB,0x001C5AC8,"static RwStream *skyWriteTexCB(RwStream *stream, void *obj)",0x0015F7E0,basky.c,same C function name
+skyGetSizeTexCB,0x001C5B20,static int skyGetSizeTexCB(),0x0015F840,basky.c,same C function name
+SkyCameraEndUpdate,0x001C5B40,static int SkyCameraEndUpdate(void *pCam),0x00160420,basky.c,same C function name
+SkyRasterShowRaster,0x001C5BF8,static int SkyRasterShowRaster(),0x00160A40,basky.c,same C function name
+SkyTextureSetRaster,0x001C5C90,"static int SkyTextureSetRaster(void *pTex, void *pRas)",0x00160AC0,basky.c,same C function name
+SkyRasterLockPalette,0x001C5CA0,"static int SkyRasterLockPalette(void *pPalette, void *pRaster, int flags)",0x00166080,basky.c,same C function name
+SkyRasterUnlockPalette,0x001C5D58,static int SkyRasterUnlockPalette(void *pRaster),0x00166120,basky.c,same C function name
+SkyRasterGetMipLevels,0x001C5E58,"static int SkyRasterGetMipLevels(void *pOut, void *pInOut)",0x001661F0,basky.c,same C function name
+SkyNativeTextureGetSize,0x001C5EB8,"static int SkyNativeTextureGetSize(void *pSize, void *pTex)",0x00166870,basky.c,same C function name
+SkyHintRenderFront2Back,0x001C5F48,static int SkyHintRenderFront2Back(),0x00166D40,basky.c,same C function name
+SkyNoStandard,0x001C5F50,static int SkyNoStandard(),0x00166D50,basky.c,same C function name
+matrixASMMult,0x001C5F58,"void matrixASMMult(RwMatrixTag *dstMat, RwMatrixTag *matA, RwMatrixTag *matB)",0x00168BE0,baskytran.c,same C function name
+spriteSetup,0x001C61A0,static void spriteSetup(RwRasterType type),0x00168E60,skyblit.c,same C function name
+spriteUV,0x001C63F8,"static void spriteUV(int tlX, int tlY, int brX, int brY, int tlU, int tlV, int brU, int brV, int alphaBlend)",0x001692B0,skyblit.c,same C function name
+spriteUnsetup,0x001C6570,static void spriteUnsetup(),0x00169480,skyblit.c,same C function name
+_rwSkyRasterClearRect,0x001C66B8,"int _rwSkyRasterClearRect(void *pRect, int nValue)",0x00169610,skyblit.c,same C function name
+unScaledSpriteClip,0x001C6AD8,"static int unScaledSpriteClip(RwRect *srcRect, RwRect *dstRect)",0x001698A0,skyblit.c,same C function name
+scaledSpriteClip,0x001C6C18,"static int scaledSpriteClip(RwRect *srcRect, RwRect *dstRect)",0x00169A00,skyblit.c,same C function name
+skyRasterSetupForUpload,0x001C6E00,static void skyRasterSetupForUpload(RwRaster *raster),0x00169C50,skyblit.c,same C function name
+_rwSkyRasterRender,0x001C7248,"int _rwSkyRasterRender(void *pRas, void *pLoc)",0x0016A0F0,skyblit.c,same C function name
+_rwSkyRasterRenderScaled,0x001C8E00,"int _rwSkyRasterRenderScaled(void *pRas, void *pRect)",0x0016A680,skyblit.c,same C function name
+_rwSkyRasterRenderFast,0x001CA460,"int _rwSkyRasterRenderFast(void *pRas, void *pLoc)",0x0016ACF0,skyblit.c,same C function name
+_rwSkyRasterFinaliseStart,0x001CBE78,int _rwSkyRasterFinaliseStart(),0x00168D80,skyblit.c,same C function name
+_rwSkyRasterInitiateStop,0x001CBEE8,void _rwSkyRasterInitiateStop(),0x00168E10,skyblit.c,same C function name
+_rwSkyRasterClear,0x001CBF28,int _rwSkyRasterClear(int nValue),0x00169C00,skyblit.c,same C function name
+_rwSkyRasterSetContext,0x001CBF70,int _rwSkyRasterSetContext(void *pRas),0x0016B0E0,skyblit.c,same C function name
+_rwSkyImageFindRasterFormat,0x001CBFA8,"int _rwSkyImageFindRasterFormat(void *pRaster, void *pImage, int flags)",0x0016B310,skyconv.c,same C function name
+_rwSkyImageGetRaster,0x001CC130,"int _rwSkyImageGetRaster(void *pImage, void *pRaster)",0x0016B4E0,skyconv.c,same C function name
+copyRGBAPalette,0x001CD068,"static void copyRGBAPalette(RwRaster *raster, RwRGBA *palette)",0x0016C6D0,skyconv.c,same C function name
+SkyRasterSetImageNormalPalettised,0x001CD4E0,"static int SkyRasterSetImageNormalPalettised(RwRaster *raster, RwImage *image)",0x0016D3A0,skyconv.c,same C function name
+SkyRasterSetImageNormal,0x001CD878,"static int SkyRasterSetImageNormal(RwRaster *raster, RwImage *image)",0x0016D610,skyconv.c,same C function name
+_rwSkyRGBToPixel,0x001CDF70,"int _rwSkyRGBToPixel(void *pPixel, void *pCol, int nFormat)",0x0016B120,skyconv.c,same C function name
+_rwSkyPixelToRGB,0x001CE068,"int _rwSkyPixelToRGB(void *pRGB, void *pPixel, int nFormat)",0x0016B220,skyconv.c,same C function name
+_rwSkyRasterSetImage,0x001CE150,"int _rwSkyRasterSetImage(void *pRaster, void *pImage)",0x0016DA80,skyconv.c,same C function name
+open2DVU1Pkt,0x001CE260,"static int open2DVU1Pkt(unsigned int batchCost, unsigned int primCost, unsigned int numPrims, unsigned int primCode, void *code)",0x0016DBC0,skyinst.c,same C function name
+openVU1SetupPkt,0x001CE410,"int openVU1SetupPkt(unsigned int primCode, void *code, RwMatrixTag *matrix, u_long128 *lightPkt, unsigned int lightPktLen)",0x0016DDC0,skyinst.c,same C function name
+openVU1SetupPktNew,0x001CE798,"int openVU1SetupPktNew(RwMatrixTag *matrix, u_long128 *lightPkt, unsigned int lightPktLen)",0x0016E050,skyinst.c,same C function name
+closeAndDispatchVU1Packet,0x001CEA88,static void closeAndDispatchVU1Packet(),0x0016E260,skyinst.c,same C function name
+initVu1DispatchStuff,0x001CEAF0,static void initVu1DispatchStuff(),0x0016E3C0,skyinst.c,same C function name
+addCopyVU1Line,0x001CEE88,"static void addCopyVU1Line(_skyImDispatchModel *dispatchModel, RwMatrixTag *matrix, RwSky2DVertex *vert1, RwSky2DVertex *vert2)",0x0016E6B0,skyinst.c,same C function name
+addCopyVU1Triangle,0x001CEFF0,"static void addCopyVU1Triangle(_skyImDispatchModel *dispatchModel, RwMatrixTag *matrix, RwSky2DVertex *vert1, RwSky2DVertex *vert2, RwSky2DVertex *vert3)",0x0016E8E0,skyinst.c,same C function name
+addCopyVU1PrimLineList,0x001CF1A0,"static void addCopyVU1PrimLineList(_skyImDispatchModel *dispatchModel, RwMatrixTag *matrix, RwSky2DVertex *verts, unsigned int numVerts)",0x0016EB80,skyinst.c,same C function name
+addCopyVU1PrimPolyLine,0x001CF530,"static void addCopyVU1PrimPolyLine(_skyImDispatchModel *dispatchModel, RwMatrixTag *matrix, RwSky2DVertex *verts, unsigned int numVerts)",0x0016EE00,skyinst.c,same C function name
+addCopyVU1PrimTriList,0x001CF8C8,"static void addCopyVU1PrimTriList(_skyImDispatchModel *dispatchModel, RwMatrixTag *matrix, RwSky2DVertex *verts, unsigned int numVerts)",0x0016F080,skyinst.c,same C function name
+addCopyVU1PrimTriStrip,0x001CFB50,"static void addCopyVU1PrimTriStrip(_skyImDispatchModel *dispatchModel, RwMatrixTag *matrix, RwSky2DVertex *verts, unsigned int numVerts)",0x0016F370,skyinst.c,same C function name
+addCopyVU1PrimTriFan,0x001CFE00,"static void addCopyVU1PrimTriFan(_skyImDispatchModel *dispatchModel, RwMatrixTag *matrix, RwSky2DVertex *verts, unsigned int numVerts)",0x0016F690,skyinst.c,same C function name
+addCopyVU1IndPrimLineList,0x001D0088,"static void addCopyVU1IndPrimLineList(_skyImDispatchModel *dispatchModel, RwMatrixTag *matrix, RwSky2DVertex *verts, unsigned short *indices, unsigned int numIndices)",0x0016FA00,skyinst.c,same C function name
+addCopyVU1IndPrimPolyLine,0x001D0438,"static void addCopyVU1IndPrimPolyLine(_skyImDispatchModel *dispatchModel, RwMatrixTag *matrix, RwSky2DVertex *verts, unsigned short *indices, unsigned int numIndices)",0x0016FCA0,skyinst.c,same C function name
+addCopyVU1IndPrimTriList,0x001D07E8,"static void addCopyVU1IndPrimTriList(_skyImDispatchModel *dispatchModel, RwMatrixTag *matrix, RwSky2DVertex *verts, unsigned short *indices, unsigned int numIndices)",0x0016FF40,skyinst.c,same C function name
+addCopyVU1IndPrimTriStrip,0x001D0AA8,"static void addCopyVU1IndPrimTriStrip(_skyImDispatchModel *dispatchModel, RwMatrixTag *matrix, RwSky2DVertex *verts, unsigned short *indices, unsigned int numIndices)",0x00170270,skyinst.c,same C function name
+addCopyVU1IndPrimTriFan,0x001D0D78,"static void addCopyVU1IndPrimTriFan(_skyImDispatchModel *dispatchModel, RwMatrixTag *matrix, RwSky2DVertex *verts, unsigned short *indices, unsigned int numIndices)",0x001705C0,skyinst.c,same C function name
+_rwSkyPipeSetupForCamera,0x001D1030,void _rwSkyPipeSetupForCamera(RwCamera *camera),0x001709B0,skyinst.c,same C function name
+_rwSkyOverloadPipelines,0x001D1328,void _rwSkyOverloadPipelines(),0x00170960,skyinst.c,same C function name
+CB3VehiclePhysics::DetachWheel(int),,CPropPhysics *CVehiclePhysics::DetachWheel(int lnWheelIndex),0x001CD840,I:\Burnout 2 Code\gamesource\Physics\CVehiclePhysics.cpp,same signature
+_rwSkyUnOverloadPipelines,0x001D1378,void _rwSkyUnOverloadPipelines(),0x001709A0,skyinst.c,same C function name
+SkyIm2DRenderLine,0x001D1380,"static int SkyIm2DRenderLine(RwSky2DVertex *verts, int v1, int v2)",0x0016E880,skyinst.c,same C function name
+SkyIm2DRenderTriangle,0x001D13D8,"static int SkyIm2DRenderTriangle(RwSky2DVertex *verts, int v1, int v2, int v3)",0x0016EB20,skyinst.c,same C function name
+SkyIm2DRenderPrimitive,0x001D1438,"static int SkyIm2DRenderPrimitive(RwPrimitiveType primType, RwSky2DVertex *verts, int numVerts)",0x0016F990,skyinst.c,same C function name
+SkyIm2DRenderIndexedPrimitive,0x001D14A8,"static int SkyIm2DRenderIndexedPrimitive(RwPrimitiveType primType, RwSky2DVertex *verts, unsigned short *indices, int numIndices)",0x001708F0,skyinst.c,same C function name
+skyPrepareUploadRaster,0x001D1788,void skyPrepareUploadRaster(RwRaster *raster),0x00170F80,texcache.c,same C function name
+_SkyDdispatchUpLoadAlignedContiguousRectangle,0x001D1980,"static void _SkyDdispatchUpLoadAlignedContiguousRectangle(unsigned int pixelWidth, unsigned int pixelHeight, unsigned int dstAddress, unsigned int dstWidthBy64, unsigned int pixelFormat, u_long128 *pkt, unsigned char cachedPacket)",0x001712D0,texcache.c,same C function name
+_SkyUpLoadAlignedRectangle,0x001D1BB8,"static void _SkyUpLoadAlignedRectangle(unsigned int pixelWidth, unsigned int pixelHeight, unsigned char *srcAddress, unsigned int dstAddress, unsigned int dstWidthBy64, unsigned int bitsPerPixel, unsigned int pixelFormat, unsigned int srcStride)",0x001715B0,texcache.c,same C function name
+skyTexCacheMemRasterToGs,0x001D1F18,"static void skyTexCacheMemRasterToGs(RwRaster *raster, unsigned int address, int speculative)",0x001718D0,texcache.c,same C function name
+_skyTexCacheUploadRaster,0x001D2828,"static void _skyTexCacheUploadRaster(RwRaster *raster, int speculative)",0x00172120,texcache.c,same C function name
+skyTexCacheOpenCache,0x001D2D48,"int skyTexCacheOpenCache(int start, int size)",0x00172700,texcache.c,same C function name
+skyTexCacheCloseCache,0x001D2E48,int skyTexCacheCloseCache(),0x00172810,texcache.c,same C function name
+RpSkyTexCacheAccessRaster,0x001D3328,"int RpSkyTexCacheAccessRaster(RwRaster *raster, int useContext2)",0x00172A20,texcache.c,same C function name
+RpSkyTexCacheReleaseRaster,0x001D3728,void RpSkyTexCacheReleaseRaster(RwRaster *raster),0x00172EB0,texcache.c,same C function name
+RpSkyTexCacheRasterLock,0x001D3928,"int RpSkyTexCacheRasterLock(RwRaster *raster, int lock)",0x00173040,texcache.c,same C function name
+RpSkyTexCacheRestore,0x001D3C00,void RpSkyTexCacheRestore(),0x00173410,texcache.c,same C function name
+RpSkyTexCacheSetStartAddress,0x001D3E48,int RpSkyTexCacheSetStartAddress(int start),0x00173740,texcache.c,same C function name
+RpSkyTexCacheAccessSpeculate,0x001D3F80,void RpSkyTexCacheAccessSpeculate(RwRaster *raster),0x00172950,texcache.c,same C function name
+RpSkyTexCacheFlush,0x001D40F0,void RpSkyTexCacheFlush(),0x00173350,texcache.c,same C function name
+RpSkyTexGetTex0,0x001D4250,"RwRaster *RpSkyTexGetTex0(RwRaster *raster, unsigned int *msb, unsigned int *lsb)",0x00173710,texcache.c,same C function name
+RpSkyTexCacheGetStartAddress,0x001D4450,int RpSkyTexCacheGetStartAddress(),0x00173730,texcache.c,same C function name
+skyTexCacheEndFrame,0x001D4460,void skyTexCacheEndFrame(),0x00172940,texcache.c,same C function name
+skyFillInPktForUpLoadAlignedContiguousRectangle,0x001D4468,"u_long128 *skyFillInPktForUpLoadAlignedContiguousRectangle(u_long128 *pkt, unsigned char *src, unsigned long bytesInRectangle, unsigned char cachedPacket)",0x00170DE0,texcache.c,same C function name
+_skyTexCacheNullUploadRaster,0x001D4620,static void _skyTexCacheNullUploadRaster(),0x001718C0,texcache.c,same C function name
+RwIm3DRenderIndexedPrimitive,0x001D4628,"int RwIm3DRenderIndexedPrimitive(RwPrimitiveType primType, unsigned short *indices, int numIndices)",0x00173950,baim3d.c,same C function name
+RwIm3DRenderPrimitive,0x001D47B8,int RwIm3DRenderPrimitive(RwPrimitiveType primType),0x00173AC0,baim3d.c,same C function name
+RwIm3DSetRenderPipeline,0x001D4940,"RxPipeline *RwIm3DSetRenderPipeline(RxPipeline *pipeline, RwPrimitiveType primType)",0x00173CB0,baim3d.c,same C function name
+_rwIm3DOpen,0x001D4BD8,"void *_rwIm3DOpen(void *instance, int offset)",0x00174560,baim3d.c,same C function name
+_rwIm3DClose,0x001D4C98,void *_rwIm3DClose(void *instance),0x00174410,baim3d.c,same C function name
+RwIm3DTransform,0x001D4D10,"void *RwIm3DTransform(RxObjSpace3DVertex *pVerts, unsigned int numVerts, RwMatrixTag *ltm, unsigned int flags)",0x00173820,baim3d.c,same C function name
+RwIm3DEnd,0x001D4DB8,int RwIm3DEnd(),0x00173900,baim3d.c,same C function name
+RwIm3DSetTransformPipeline,0x001D5130,RxPipeline *RwIm3DSetTransformPipeline(RxPipeline *pipeline),0x00173C40,baim3d.c,same C function name
+_rwRenderPipelineOpen,0x001D5180,"void *_rwRenderPipelineOpen(void *instance, int offset)",0x00174750,bapipe.c,same C function name
+_rwRenderPipelineClose,0x001D51B0,void *_rwRenderPipelineClose(void *instance),0x00174780,bapipe.c,same C function name
+_rwPipeAttach,0x001D51D8,int _rwPipeAttach(),0x001747B0,bapipe.c,same C function name
+_rwPipeInitForCamera,0x001D51E0,void _rwPipeInitForCamera(),0x001747C0,bapipe.c,same C function name
+_rxEmbeddedPacketBetweenPipelines,0x001D51E8,"void _rxEmbeddedPacketBetweenPipelines(RxPipeline *fromPipeline, RxPipeline *toPipeline)",0x0017AC70,p2altmdl.c,same C function name
+_rxEmbeddedPacketBetweenNodes,0x001D5390,"RxPipelineNode *_rxEmbeddedPacketBetweenNodes(RxPipeline *pipeline, RxPipelineNode *nodeFrom, unsigned int whichOutput)",0x0017ACF0,p2altmdl.c,same C function name
+_rxPacketDestroy,0x001D5638,void _rxPacketDestroy(RxPacket *packet),0x0017AE80,p2altmdl.c,same C function name
+_rxPipelineOpen,0x001D5928,int _rxPipelineOpen(),0x0017CDB0,p2core.c,same C function name
+PipelineNodeDestroy,0x001D59E0,"RxPipelineNode *PipelineNodeDestroy(RxPipelineNode *node, RxPipeline *pipeline)",0x0017CEA0,p2core.c,same C function name
+RxClusterLockWrite,0x001D5DF8,"RxCluster *RxClusterLockWrite(RxPacket *packet, unsigned int clusterIndex)",0x0017D4C0,p2core.c,same C function name
+_rxPipelineClose,0x001D5F40,int _rxPipelineClose(),0x0017CD30,p2core.c,same C function name
+RxPipelineCreate,0x001D5FA0,RxPipeline *RxPipelineCreate(),0x0017D700,p2core.c,same C function name
+_rxPipelineDestroy,0x001D6030,void _rxPipelineDestroy(RxPipeline *Pipeline),0x0017D790,p2core.c,same C function name
+RxHeapGetGlobalHeap,0x001D6170,RxHeap *RxHeapGetGlobalHeap(),0x0017D210,p2core.c,same C function name
+RxPipelineExecute,0x001D6178,"RxPipeline *RxPipelineExecute(RxPipeline *pipeline, void *data, int heapReset)",0x0017D630,p2core.c,same C function name
+RxPacketCreate,0x001D6248,RxPacket *RxPacketCreate(RxPipelineNode *self),0x0017D220,p2core.c,same C function name
+RxClusterSetExternalData,0x001D6290,"RxCluster *RxClusterSetExternalData(RxCluster *cluster, void *data, int stride, int numElements)",0x0017D260,p2core.c,same C function name
+RxClusterSetData,0x001D6328,"RxCluster *RxClusterSetData(RxCluster *cluster, void *data, int stride, int numElements)",0x0017D300,p2core.c,same C function name
+RxClusterInitializeData,0x001D63C0,"RxCluster *RxClusterInitializeData(RxCluster *cluster, unsigned int numElements, unsigned short stride)",0x0017D3A0,p2core.c,same C function name
+RxClusterResizeData,0x001D6458,"RxCluster *RxClusterResizeData(RxCluster *cluster, unsigned int numElements)",0x0017D440,p2core.c,same C function name
+HeapSuperBlockReset,0x001D6798,"static int HeapSuperBlockReset(rxHeapSuperBlockDescriptor *superBlock, rxHeapSuperBlockDescriptor *attach2SuperBlock, RxHeap *heap)",0x00180F20,p2heap.c,same C function name
+HeapReallocLarger,0x001D69F0,"static void *HeapReallocLarger(RxHeap *heap, void *block, unsigned int newSize, rxHeapBlockHeader *blockHdr, int delta)",0x00181200,p2heap.c,same C function name
+RxHeapFree,0x001D6DD0,"void RxHeapFree(RxHeap *heap, void *block)",0x00181470,p2heap.c,same C function name
+RxHeapAlloc,0x001D70C0,"void *RxHeapAlloc(RxHeap *heap, unsigned int size)",0x00181650,p2heap.c,same C function name
+RxHeapCreate,0x001D7508,RxHeap *RxHeapCreate(unsigned int size),0x001818F0,p2heap.c,same C function name
+RxHeapDestroy,0x001D76A0,void RxHeapDestroy(RxHeap *heap),0x00181850,p2heap.c,same C function name
+_rxHeapReset,0x001D7740,int _rxHeapReset(RxHeap *heap),0x00181780,p2heap.c,same C function name
+RxHeapRealloc,0x001D77F0,"void *RxHeapRealloc(RxHeap *heap, void *block, unsigned int newSize)",0x00181730,p2heap.c,same C function name
+RxRenderStateVectorSetDefaultRenderStateVector,0x001D7810,RxRenderStateVector *RxRenderStateVectorSetDefaultRenderStateVector(RxRenderStateVector *rsvp),0x00181A20,p2renderstate.c,same C function name
+RxRenderStateVectorLoadDriverState,0x001D7978,RxRenderStateVector *RxRenderStateVectorLoadDriverState(RxRenderStateVector *rsvp),0x00181D60,p2renderstate.c,same C function name
+RxRenderStateVectorCreate,0x001D7BC0,RxRenderStateVector *RxRenderStateVectorCreate(int current),0x00181BB0,p2renderstate.c,same C function name
+RxRenderStateVectorDestroy,0x001D7D00,void RxRenderStateVectorDestroy(RxRenderStateVector *rsvp),0x00181D00,p2renderstate.c,same C function name
+_rwIm3DCreatePlatformTransformPipeline,0x001D7D50,int _rwIm3DCreatePlatformTransformPipeline(),0x00182260,im3dpipe.c,same C function name
+_rwIm3DCreatePlatformRenderPipelines,0x001D7D58,int _rwIm3DCreatePlatformRenderPipelines(),0x00182280,im3dpipe.c,same C function name
+_rwIm3DDestroyPlatformTransformPipeline,0x001D7D60,void _rwIm3DDestroyPlatformTransformPipeline(),0x00182250,im3dpipe.c,same C function name
+_rwIm3DDestroyPlatformRenderPipelines,0x001D7D68,void _rwIm3DDestroyPlatformRenderPipelines(),0x00182270,im3dpipe.c,same C function name
+CGTFileSystem::FExist(const char*),0x001D85D0,int CGTFileSystem::FExist(char *name),0x001FB330,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+CGTFileSystem::FFlush(void*),0x001D8620,int CGTFileSystem::FFlush(),0x001FB380,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+"CGTFileSystem::FSeek(void*,long,int)",0x001D8630,"int CGTFileSystem::FSeek(void *fptr, long offset, int origin)",0x001FB390,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+CGTFileSystem::FEof(void*),0x001D86B0,int CGTFileSystem::FEof(void *fptr),0x001FB420,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+"CGTFileSystem::FPuts(const char*,void*)",0x001D86D0,int CGTFileSystem::FPuts(),0x001FB440,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+"CGTFileSystem::FGets(char*,int,void*)",0x001D8720,char *CGTFileSystem::FGets(),0x001FB450,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+"CGTFileSystem::FWrite(const void*,unsigned int,unsigned int,void*)",0x001D8730,"unsigned int CGTFileSystem::FWrite(void *addr, unsigned int size, unsigned int count, void *fptr)",0x001FB460,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+"CGTFileSystem::FRead(void*,unsigned int,unsigned int,void*)",0x001D8780,"unsigned int CGTFileSystem::FRead(void *addr, unsigned int size, unsigned int count, void *fptr)",0x001FB4B0,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+CGTFileSystem::FClose(void*),0x001D87D0,int CGTFileSystem::FClose(void *fptr),0x001FB500,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+"CGTFileSystem::FOpen(const char*,const char*)",0x001D8800,"void *CGTFileSystem::FOpen(char *name, char *access)",0x001FB530,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+"CGTFileSystem::Open(const char*,unsigned int)",0x001D88E0,"CGTFile *CGTFileSystem::Open(char *sFilename, unsigned int nOpenFlags)",0x001FB5F0,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+"CGTFileSystem::Init(unsigned int,const char*)",0x001D89E0,"int CGTFileSystem::Init(unsigned int nMaxOpenFiles, char *sRWName)",0x001FB6E0,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+CGTFileSystem::SetAsDefaultFilesystem(),0x001D8AB0,void CGTFileSystem::SetAsDefaultFilesystem(),0x001FB7B0,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+"CGTFileSystem::BuildFileName(char*,int,const char*,const char*,char)",0x001D8AC0,"char *CGTFileSystem::BuildFileName(char *lpBuffer, int nBufferLength, char *lpDriveName, char *lpFilePath, char cSeparator)",0x001FB7C0,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+CGTFileSystem::GetFileNameFromDeviceName(const char*),0x001D8BB0,char *CGTFileSystem::GetFileNameFromDeviceName(char *spName),0x001FB8A0,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+CGTFileSystem::GetFileSystemFromFileName(const char*),0x001D8C00,CGTFileSystem *CGTFileSystem::GetFileSystemFromFileName(char *spName),0x001FB8E0,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+CGTFileSystem::InstallToRenderWare(),0x001D8CD0,int CGTFileSystem::InstallToRenderWare(),0x001FB9A0,I:\GameShared\GameClasses\FileSystem\GTFileSystem.cpp,same signature
+CB3TrafficLight::StopCars(),0x00227A50,void CTrafficLight::StopCars(),0x0024B7D0,I:\Burnout 2 Code\gamesource\Race\CTrafficLight.cpp,same signature
+CB3TrafficLight::Update(float),0x00227DC0,void CTrafficLight::Update(),0x0024BA10,I:\Burnout 2 Code\gamesource\Race\CTrafficLight.cpp,"same name, different parameters"
+RwaListenerInterfaceRegister,0x00259190,RwaObjInterfaceDef *RwaListenerInterfaceRegister(),0x00270580,C:\dev\rwaudio\source\interfaces\src\rwalistener.c,same C function name
+_RwaListenerGetRolloffFactor,0x00259200,"static RwaObj *_RwaListenerGetRolloffFactor(RwaObj *obj, void *data)",0x002705F0,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerSetRolloffFactor,0x00259210,"static RwaObj *_RwaListenerSetRolloffFactor(RwaObj *obj, void *data)",0x00270600,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerGetDistanceFactor,0x00259230,"static RwaObj *_RwaListenerGetDistanceFactor(RwaObj *obj, void *data)",0x00270610,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerSetDistanceFactor,0x00259240,"static RwaObj *_RwaListenerSetDistanceFactor(RwaObj *obj, void *data)",0x00270620,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerGetDopplerScale,0x00259260,"static RwaObj *_RwaListenerGetDopplerScale(RwaObj *obj, void *data)",0x00270630,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerSetDopplerScale,0x00259270,"static RwaObj *_RwaListenerSetDopplerScale(RwaObj *obj, void *data)",0x00270640,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerGetRight,0x00259290,"static RwaObj *_RwaListenerGetRight(RwaObj *obj, void *data)",0x00270650,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerGetAt,0x002592B0,"static RwaObj *_RwaListenerGetAt(RwaObj *obj, void *data)",0x00270670,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerSetAt,0x002592D0,"static RwaObj *_RwaListenerSetAt(RwaObj *obj, void *data)",0x00270690,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerGetUp,0x00259350,"static RwaObj *_RwaListenerGetUp(RwaObj *obj, void *data)",0x00270710,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerSetUp,0x00259370,"static RwaObj *_RwaListenerSetUp(RwaObj *obj, void *data)",0x00270730,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerGetOrientation,0x002593F0,"static RwaObj *_RwaListenerGetOrientation(RwaObj *obj, void *data)",0x002707B0,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerSetOrientation,0x00259440,"static RwaObj *_RwaListenerSetOrientation(RwaObj *obj, void *data)",0x002707F0,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerGetVelocity,0x002594A0,"static RwaObj *_RwaListenerGetVelocity(RwaObj *obj, void *data)",0x00270830,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerSetVelocity,0x002594C0,"static RwaObj *_RwaListenerSetVelocity(RwaObj *obj, void *data)",0x00270850,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerGetPosition,0x002594F0,"static RwaObj *_RwaListenerGetPosition(RwaObj *obj, void *data)",0x00270870,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerSetPosition,0x00259510,"static RwaObj *_RwaListenerSetPosition(RwaObj *obj, void *data)",0x00270890,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+_RwaListenerCreate,0x00259A00,static RwaObj *_RwaListenerCreate(RwaObj *obj),0x00270BE0,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+RwaListenerRegisterUsingInterface,0x00259B40,RwaObjDef *RwaListenerRegisterUsingInterface(),0x00270C90,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+RwaListenerCreate,0x00259EA0,"RwaListener *RwaListenerCreate(unsigned int creationFlags, void *(*creationCallback)(RwaObjDef *, void *, void *, unsigned int), void *callbackData)",0x00270DB0,C:\dev\rwaudio\source\objects\src\rwalistenerobj.c,same C function name
+RwaFreeListFree,0x00259EC0,"void RwaFreeListFree(RwaFreeList *freeList, void *entry)",0x00270DD0,C:\dev\rwaudio\source\core\src\rwafreelist.c,same C function name
+RwaFreeListAlloc,0x0025A020,void *RwaFreeListAlloc(RwaFreeList *freeList),0x00270F30,C:\dev\rwaudio\source\core\src\rwafreelist.c,same C function name
+RwaFreeListDestroy,0x0025A1D0,void RwaFreeListDestroy(RwaFreeList *freeList),0x002710E0,C:\dev\rwaudio\source\core\src\rwafreelist.c,same C function name
+RwaFreeListCreate,0x0025A280,"RwaFreeList *RwaFreeListCreate(unsigned int entrySize, unsigned int entriesPerBlock, unsigned int alignment, unsigned int blocks, RwaFreeList *freeList)",0x00271230,C:\dev\rwaudio\source\core\src\rwafreelist.c,same C function name
+_rwaFreeListModuleClose,0x0025A480,void _rwaFreeListModuleClose(),0x00271420,C:\dev\rwaudio\source\core\src\rwafreelist.c,same C function name
+_rwaFreeListModuleOpen,0x0025A5F0,int _rwaFreeListModuleOpen(),0x002714B0,C:\dev\rwaudio\source\core\src\rwafreelist.c,same C function name
+RwaLListEmpty,0x0025A920,void RwaLListEmpty(RwaLLNode *head),0x00271590,C:\dev\rwaudio\source\core\src\rwallist.c,same C function name
+RwaLListFindDataIndex,0x0025AA60,"unsigned int RwaLListFindDataIndex(RwaLLNode *head, void *data)",0x002715F0,C:\dev\rwaudio\source\core\src\rwallist.c,same C function name
+RwaLListRemoveData,0x0025AAA0,"RwaLLNode *RwaLListRemoveData(RwaLLNode *head, void *data)",0x00271630,C:\dev\rwaudio\source\core\src\rwallist.c,same C function name
+RwaLListAddData,0x0025AB30,"RwaLLNode *RwaLListAddData(RwaLLNode *head, void *data)",0x002716B0,C:\dev\rwaudio\source\core\src\rwallist.c,same C function name
+_rwaLListModuleClose,0x0025ABA0,void _rwaLListModuleClose(),0x00271720,C:\dev\rwaudio\source\core\src\rwallist.c,same C function name
+_rwaLListModuleOpen,0x0025ABD0,int _rwaLListModuleOpen(),0x00271750,C:\dev\rwaudio\source\core\src\rwallist.c,same C function name
+_RwaWaveConvVAGDecode,0x0025B5E0,"void _RwaWaveConvVAGDecode(unsigned char *source, short *dest, short numframes)",0x002717A0,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_RwaWaveConvVAGEncode,0x0025B6A0,"static int _RwaWaveConvVAGEncode(short *in, int inlen, unsigned char *out, signed char numchannels, signed char channel, int lastByte)",0x00271880,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_RwaWaveConvVAGEncodeBlock,0x0025B800,"static void _RwaWaveConvVAGEncodeBlock(short *psrc, unsigned char *pdst, int *s1, int *s2, float *d1, float *d2)",0x002719F0,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_RwaWaveConvVAG,0x0025BBA0,"static unsigned int _RwaWaveConvVAG(RwaWaveFormat *sourceFormat, void *sourceBuf, unsigned int sourceOffset, RwaWaveFormat *targetFormat, void *targetBuf, unsigned int *targetOffset)",0x00271D90,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_RwaWaveConvPCM,0x0025CEA0,"static unsigned int _RwaWaveConvPCM(RwaWaveFormat *sourceFormat, void *sourceBuf, unsigned int sourceOffset, RwaWaveFormat *targetFormat, void *targetBuf, unsigned int *targetOffset)",0x002720B0,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_RwaWaveConvPCMFloat,0x0025D250,"static unsigned int _RwaWaveConvPCMFloat(RwaWaveFormat *sourceFormat, void *sourceBuf, unsigned int sourceOffset, void *targetBuf, unsigned int *targetOffset)",0x002723F0,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_RwaWaveConvBitDepthPCM,0x0025D3C0,"static unsigned int _RwaWaveConvBitDepthPCM(RwaWaveFormat *sourceFormat, void *sourceBuf, unsigned int sourceOffset, RwaWaveFormat *targetFormat, void *targetBuf, unsigned int *targetOffset)",0x00272550,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_RwaWaveConvResamplePCM,0x0025DDE0,"static unsigned int _RwaWaveConvResamplePCM(RwaWaveFormat *sourceFormat, void *sourceBuf, unsigned int sourceOffset, RwaWaveFormat *targetFormat, void *targetBuf, unsigned int *targetOffset)",0x00272F30,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_RwaWaveConvChannelPCM,0x0025E6F0,"static unsigned int _RwaWaveConvChannelPCM(RwaWaveFormat *sourceFormat, void *sourceBuf, unsigned int sourceOffset, RwaWaveFormat *targetFormat, void *targetBuf, unsigned int *targetOffset)",0x00273820,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_rwaWaveConv,0x0025EE20,"unsigned int _rwaWaveConv(RwaWaveFormat *sourceFormat, void *sourceBuf, unsigned int sourceOffset, RwaWaveFormat *targetFormat, void *targetBuf)",0x00273F30,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_rwaWaveConvGetTargetSize,0x0025F210,"unsigned int _rwaWaveConvGetTargetSize(RwaWaveFormat *sourceFormat, void *sourceBuf, RwaWaveFormat *targetFormat)",0x00274260,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_rwaWaveConvGetTargetOffset,0x0025F220,"unsigned int _rwaWaveConvGetTargetOffset(RwaWaveFormat *sourceFormat, void *sourceBuf, unsigned int sourceOffset, RwaWaveFormat *targetFormat)",0x00274270,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_RwaWaveConvFindPath,0x0025F480,"static unsigned int _RwaWaveConvFindPath(RwaWaveDefFormat *source, unsigned int sourceRate, RwaWaveDefFormat *target, unsigned int targetRate, RwaWaveConversion **path, RwaWaveConversion **tempPath, unsigned int arraySize, unsigned int pathDepth, unsigned int minDepth)",0x002744A0,C:\dev\rwaudio\source\core\src\rwawaveconv.c,same C function name
+_rwaWaveFormatSerialize,0x00260A60,"RwaWaveFormat *_rwaWaveFormatSerialize(RwaWaveFormat *waveFormat, void *block, int save)",0x00274FB0,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+_rwaWaveFormatGetSize,0x00260D90,unsigned int _rwaWaveFormatGetSize(RwaWaveFormat *waveFormat),0x002750D0,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+RwaWaveDefAssignSupportedFormats,0x00260DC0,"void RwaWaveDefAssignSupportedFormats(RwaWaveDef *waveDef, RwaWaveDefFormat **formats, unsigned int noSupportedFormats)",0x00275100,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+RwaWaveDefFormatWaveFormatCompare,0x00260E40,"int RwaWaveDefFormatWaveFormatCompare(RwaWaveDefFormat *waveDefFormat, RwaWaveFormat *waveFormat)",0x00275180,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+_RwaWaveDefFindByUUIDCallback,0x00260FA0,"static int _RwaWaveDefFindByUUIDCallback(RwaObjDef *objDef, void *userData)",0x002752B0,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+RwaWaveDefFindByUUID,0x00261020,RwaWaveDef *RwaWaveDefFindByUUID(RwaUUID *uuid),0x00275330,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+RwaWaveDefDestroy,0x00261070,int RwaWaveDefDestroy(RwaWaveDef *waveDef),0x00275380,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+RwaWaveDefCreate,0x00261140,"RwaWaveDef *RwaWaveDefCreate(RwaObjDef *objDef, RwaWaveDef *waveDef)",0x00275440,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+RwaWaveDefAssignID,0x00261260,"RwaWaveDef *RwaWaveDefAssignID(RwaWaveDef *waveDef, RwaUUID *uuid, char *name)",0x00275550,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+RwaWaveFormatCompare,0x00261470,"int RwaWaveFormatCompare(RwaWaveFormat *waveFormat1, RwaWaveFormat *waveFormat2)",0x00275600,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+_RwaWaveDefDestroyCallback,0x002615F0,static int _RwaWaveDefDestroyCallback(RwaObjDef *objDef),0x00275700,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+_rwaWaveDefCloseModule,0x002616E0,void _rwaWaveDefCloseModule(),0x002757F0,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+_rwaWaveDefOpenModule,0x00261720,int _rwaWaveDefOpenModule(),0x00275830,C:\dev\rwaudio\source\core\src\rwawavedef.c,same C function name
+_RwaNULLWaveDownload,0x00261780,"RwaWave *_RwaNULLWaveDownload(RwaWave *wave, RwaWaveFormat *downloadFormat, unsigned int offset, void *block)",0x00275B00,C:\dev\rwaudio\source\waves\src\rwanullwave.c,same C function name
+_RwaNULLWaveUpload,0x002617C0,"static RwaWave *_RwaNULLWaveUpload(RwaWave *wave, unsigned int offset, void *block, unsigned int blockLength)",0x00275B40,C:\dev\rwaudio\source\waves\src\rwanullwave.c,same C function name
+_RwaNULLWaveDestroy,0x00261800,static void _RwaNULLWaveDestroy(RwaWave *wave),0x00275B80,C:\dev\rwaudio\source\waves\src\rwanullwave.c,same C function name
+_RwaNULLWaveCreate,0x00261830,static RwaWave *_RwaNULLWaveCreate(RwaWave *wave),0x00275BB0,C:\dev\rwaudio\source\waves\src\rwanullwave.c,same C function name
+_rwaNULLWaveRegister,0x002618B0,RwaWaveDef *_rwaNULLWaveRegister(),0x00275C20,C:\dev\rwaudio\source\waves\src\rwanullwave.c,same C function name
+RwaHeapBlockAlloc,0x00261940,"void *RwaHeapBlockAlloc(RwaHeapBlock *heap, unsigned int size, unsigned int alignment)",0x00275CB0,C:\dev\rwaudio\source\core\src\rwaheap.c,same C function name
+RwaHeapFree,0x00261A20,"void RwaHeapFree(RwaHeap *heap, void *block)",0x00275D70,C:\dev\rwaudio\source\core\src\rwaheap.c,same C function name
+RwaHeapAlloc,0x00261B40,"void *RwaHeapAlloc(RwaHeap *heap, unsigned int size)",0x00275E90,C:\dev\rwaudio\source\core\src\rwaheap.c,same C function name
+RwaHeapDestroy,0x00261C60,void RwaHeapDestroy(RwaHeap *heap),0x00275FA0,C:\dev\rwaudio\source\core\src\rwaheap.c,same C function name
+RwaHeapCreate,0x00261D00,"RwaHeap *RwaHeapCreate(unsigned int averageEntrySize, unsigned int averageNumEntries, unsigned int alignment, unsigned int noBlocks, RwaHeap *heap)",0x00276030,C:\dev\rwaudio\source\core\src\rwaheap.c,same C function name
+_rwaHeapModuleClose,0x00261EE0,void _rwaHeapModuleClose(),0x00276200,C:\dev\rwaudio\source\core\src\rwaheap.c,same C function name
+_rwaHeapModuleOpen,0x00261FA0,int _rwaHeapModuleOpen(),0x002762C0,C:\dev\rwaudio\source\core\src\rwaheap.c,same C function name
+RwaStreamInterfaceRegister,0x00263000,RwaObjInterfaceDef *RwaStreamInterfaceRegister(),0x00276320,C:\dev\rwaudio\source\interfaces\src\rwastreamint.c,same C function name
+_rwaStreamContainerCommandInitialize,0x00267710,void _rwaStreamContainerCommandInitialize(RwaStreamContainerCommands *cmdState),0x00279650,C:\dev\rwaudio\source\ps2\spu2\common\rwastreamcontainer.c,same C function name
+_rwaWaveDictRemoveAllWave,0x0026ECF0,void _rwaWaveDictRemoveAllWave(RwaWave *wave),0x00274670,C:\dev\rwaudio\source\core\src\rwawavedict.c,same C function name
+RwaWaveDictGetCurrent,0x0026ED50,RwaWaveDict *RwaWaveDictGetCurrent(),0x00274AA0,C:\dev\rwaudio\source\core\src\rwawavedict.c,same C function name
+RwaWaveDictAddWave,0x0026ED60,"RwaWaveDict *RwaWaveDictAddWave(RwaWaveDict *waveDict, RwaWave *wave)",0x00274AB0,C:\dev\rwaudio\source\core\src\rwawavedict.c,same C function name
+RwaWaveDictUsingAllWaveDef,0x0026EE00,RwaWaveDef *RwaWaveDictUsingAllWaveDef(RwaWaveDef *waveDef),0x00274BB0,C:\dev\rwaudio\source\core\src\rwawavedict.c,same C function name
+RwaWaveDictDestroy,0x0026EEC0,void RwaWaveDictDestroy(RwaWaveDict *waveDict),0x00274C90,C:\dev\rwaudio\source\core\src\rwawavedict.c,same C function name
+_rwaWaveDictCloseModule,0x0026F170,void _rwaWaveDictCloseModule(),0x00274DF0,C:\dev\rwaudio\source\core\src\rwawavedict.c,same C function name
+_rwaWaveDictOpenModule,0x0026F210,int _rwaWaveDictOpenModule(),0x00274E70,C:\dev\rwaudio\source\core\src\rwawavedict.c,same C function name
+_rwaSPU2InputAreaRAMFreeBlocks,0x00270940,unsigned int _rwaSPU2InputAreaRAMFreeBlocks(unsigned int mask),0x00276C30,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+_rwaSPU2InputAreaRAMReserveBlocks,0x00270990,unsigned int _rwaSPU2InputAreaRAMReserveBlocks(unsigned int mask),0x00276C60,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+_rwaSPU2WaveRAMGetAddress,0x00270AE0,unsigned int _rwaSPU2WaveRAMGetAddress(unsigned int handle),0x00276C90,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+_rwaSPU2WaveRAMFree,0x00270B80,void _rwaSPU2WaveRAMFree(unsigned int handle),0x00276CD0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+_rwaSPU2WaveRAMAlloc,0x00270BE0,unsigned int _rwaSPU2WaveRAMAlloc(unsigned int size),0x00276D60,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+_RwaSPU2WaveDownload,0x00271040,static RwaWave *_RwaSPU2WaveDownload(RwaWave *wave),0x00276FD0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+_RwaSPU2WaveUploadBusy,0x00271050,static int _RwaSPU2WaveUploadBusy(),0x00276FE0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+_RwaSPU2WaveUpload,0x00271060,"static RwaWave *_RwaSPU2WaveUpload(RwaWave *wave, unsigned int offset, void *block, unsigned int blockLength)",0x00276FF0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+_RwaSPU2WaveDestroy,0x00271290,static void _RwaSPU2WaveDestroy(RwaWave *wave),0x002771F0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+_RwaSPU2WaveCreate,0x00271330,static RwaWave *_RwaSPU2WaveCreate(RwaWave *wave),0x002772C0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+RwaSPU2WaveUnregister,0x002714E0,int RwaSPU2WaveUnregister(),0x00277420,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+RwaSPU2WaveRegister,0x00271510,RwaWaveDef *RwaSPU2WaveRegister(),0x00277450,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+RwaSPU2WaveCreate,0x00271640,"RwaSPU2Wave *RwaSPU2WaveCreate(RwaSPU2Output *obj, RwaWaveFormat *srcFormat, RwaWaveFormat *targetFormat, int is3D, RwaSPU2Wave *wave)",0x002775C0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2wave.c,same C function name
+RwaSPU2OutputInterfaceUnregister,0x00271720,int RwaSPU2OutputInterfaceUnregister(),0x00277670,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2outint.c,same C function name
+_RwaSPU2VoiceSetLRVol,0x00271BD0,static void _RwaSPU2VoiceSetLRVol(RwaObj *object),0x00277760,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c,same C function name
+_rwaSPU2VoiceSetPan,0x00271E40,"void _rwaSPU2VoiceSetPan(RwaSPU2Voice *obj, float value)",0x00277A40,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c,same C function name
+_rwaSPU2VoiceSetWave,0x00271E70,"void _rwaSPU2VoiceSetWave(RwaSPU2Voice *obj, RwaSPU2Wave *data)",0x002779F0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c,same C function name
+_rwaSPU2VoiceSetLoop,0x00271EC0,"void _rwaSPU2VoiceSetLoop(RwaSPU2Voice *obj, int value)",0x00277A80,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c,same C function name
+_RwaSPU2VoiceGetParams,0x00271F00,"static RwaObj *_RwaSPU2VoiceGetParams(RwaObj *obj, void *creationParams)",0x00277B00,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c,same C function name
+_RwaSPU2VoiceFinishExecute,0x00271F20,static RwaObj *_RwaSPU2VoiceFinishExecute(RwaObj *obj),0x00277B10,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c,same C function name
+_RwaSPU2VoiceDestroy,0x00272B20,static void _RwaSPU2VoiceDestroy(RwaObj *obj),0x00277F60,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c,same C function name
+_RwaSPU2VoiceCreate,0x00272B30,"static RwaObj *_RwaSPU2VoiceCreate(RwaObj *obj, RwaObj *createObj, void *creationParams)",0x00277F70,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c,same C function name
+RwaSPU2VoiceUnregister,0x00272D20,int RwaSPU2VoiceUnregister(),0x002780D0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c,same C function name
+RwaSPU2VoiceCreate,0x00273130,"RwaSPU2Voice *RwaSPU2VoiceCreate(RwaSPU2Output *createObj, RwaSPU2VoiceCreationParams *creationParams, unsigned int creationFlags, void *(*creationCallback)(RwaObjDef *, void *, void *, unsigned int), void *callbackData)",0x00278220,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voice.c,same C function name
+RwaSPU2VoiceInterfaceUnregister,0x00273160,int RwaSPU2VoiceInterfaceUnregister(),0x00278250,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2voiceint.c,same C function name
+_rwaSPU2OutputSetMixerCallback,0x002734C0,"void _rwaSPU2OutputSetMixerCallback(RwaSPU2Output *obj, RwaOutputMixerInfo *data)",0x00278260,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+_RwaSPU2OutputFreeHWVoice,0x00273610,RwaObj *_RwaSPU2OutputFreeHWVoice(RwaObj *voice),0x00278380,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+_RwaSPU2OutputAllocateHWVoiceNumber,0x00273820,"void _RwaSPU2OutputAllocateHWVoiceNumber(unsigned int mode, unsigned int channels, unsigned int *channelBitMap)",0x002783E0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+_RwaSPU2OutputAllocateHWVoice,0x00273AC0,RwaObj *_RwaSPU2OutputAllocateHWVoice(RwaObj *voice),0x002784F0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+_rwaSPU2OutputSetEnvironment,0x00273DA0,"void _rwaSPU2OutputSetEnvironment(RwaSPU2Output *obj, RwaEnvironment *data)",0x002785E0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+_RwaSPU2OutputGetParams,0x00274010,"static RwaObj *_RwaSPU2OutputGetParams(RwaObj *obj, void *creationParams)",0x00278820,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+_RwaSPU2OutputFinishExecute,0x00274030,static RwaObj *_RwaSPU2OutputFinishExecute(RwaObj *obj),0x00278840,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+_RwaSPU2OutputDestroy,0x00274170,static void _RwaSPU2OutputDestroy(RwaObj *obj),0x002789A0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+_RwaSPU2OutputCreate,0x00274290,"static RwaObj *_RwaSPU2OutputCreate(RwaObj *obj, void *creationParams)",0x00278A40,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+RwaSPU2OutputUnregister,0x00274550,int RwaSPU2OutputUnregister(),0x00278C60,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+RwaSPU2OutputCreate,0x00274950,"RwaSPU2Output *RwaSPU2OutputCreate(RwaSPU2OutputCreationParams *creationParams, unsigned int creationFlags, void *(*creationCallback)(RwaObjDef *, void *, void *, unsigned int), void *callbackData)",0x00278DA0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+RwaSPU2OutputTickUpdate,0x00274970,"static void RwaSPU2OutputTickUpdate(RwaSPU2OutputState *state, unsigned int iopdest, unsigned int length)",0x00278DC0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+RwaSPU2OutputCmdHandler,0x00274A70,"static void RwaSPU2OutputCmdHandler(unsigned int rpcparam, unsigned int cmd, unsigned int param1, unsigned int param2, void (*callback)(unsigned int, unsigned int))",0x00278EB0,C:\dev\rwaudio\source\ps2\spu2\ee\src\rwaspu2out.c,same C function name
+CB3TrafficSystem::Draw(int),0x002C8750,int CTrafficSystem::Draw(int PlayerIndex),0x00252D00,I:\Burnout 2 Code\gamesource\Race\CTrafficSystemDraw.cpp,same signature
+"CMemoryDevicePS2::GetFinishStatus(int,int,int*)",0x002CA4C0,"EMemDevStatus CMemoryDevicePS2::GetFinishStatus(int lnSyncCmd, int lnSyncResult, int *lpnSyncInfo)",0x0020CAF0,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+CMemoryDevicePS2::FinishedGetInfo(int),0x002CAC40,EMemDevStatus CMemoryDevicePS2::FinishedGetInfo(int lnSyncResult),0x0020D0C0,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+CMemoryDevicePS2::GetRunStatus(int),0x002CADE0,EMemDevStatus CMemoryDevicePS2::GetRunStatus(int lnSyncCmd),0x0020D1F0,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+"CMemoryDevicePS2::Sync(EMemDevPollOrWait,int*)",0x002CAED0,"EMemDevStatus CMemoryDevicePS2::Sync(EMemDevPollOrWait lePollOrWait, int *lpnSyncInfo)",0x0020D2C0,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+CMemoryDevicePS2::MkDir(const char*),0x002CB070,int CMemoryDevicePS2::MkDir(char *lpacDirname),0x0020D430,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+CMemoryDevicePS2::Format(),0x002CB0E0,int CMemoryDevicePS2::Format(),0x0020D4A0,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+"CMemoryDevicePS2::Write(const char*,unsigned int,unsigned int)",0x002CB180,"int CMemoryDevicePS2::Write(char *lpacBuffer, unsigned int lunLengthInBytes, unsigned int lunOffsetInBytes)",0x0020D530,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+"CMemoryDevicePS2::Read(char*,unsigned int,unsigned int)",0x002CB230,"int CMemoryDevicePS2::Read(char *lpacBuffer, unsigned int lunLengthInBytes, unsigned int lunOffsetInBytes)",0x0020D5F0,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+CMemoryDevicePS2::CloseFile(),0x002CB2E0,int CMemoryDevicePS2::CloseFile(),0x0020D6B0,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+"CMemoryDevicePS2::OpenFile(const char*,unsigned int,unsigned int)",0x002CB340,"int CMemoryDevicePS2::OpenFile(char *lpacFilename, unsigned int lunMode)",0x0020D740,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,"same name, different parameters"
+CMemoryDevicePS2::GetFreeSpace(),0x002CB500,int CMemoryDevicePS2::GetFreeSpace(),0x0020D830,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+CMemoryDevicePS2::GetFileSize(const char*),0x002CB520,int CMemoryDevicePS2::GetFileSize(char *lpacFilename),0x0020D850,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+CMemoryDevicePS2::GetError(),0x002CB610,EMemDevError CMemoryDevicePS2::GetError(),0x0020D8C0,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+CMemoryDevicePS2::Init(),0x002CB620,int CMemoryDevicePS2::Init(),0x0020D8D0,I:\GameShared\GameClasses\MemoryCard\ps2\GTMemoryDevicePS2.cpp,same signature
+CGtVideoDecoder::Update(),0x002E0D60,int CGTMpegDecoder::Update(),0x0027C6A0,I:\GameShared\GameClasses\Mpeg\ps2\GtMpegPs2.cpp,same signature
+"CGtVideoDecoder::NodataCallback(sceMpeg*,sceMpegCbData*,void*)",0x002E16E0,int CGTMpegDecoder::NodataCallback(void *lpData),0x0027D110,I:\GameShared\GameClasses\Mpeg\ps2\GtMpegPs2.cpp,same signature
+"CGtVideoDecoder::RestartDMA(sceMpeg*,sceMpegCbData*,void*)",0x002E1890,int CGTMpegDecoder::RestartDMA(void *lpDecoder),0x0027D580,I:\GameShared\GameClasses\Mpeg\ps2\GtMpegPs2.cpp,same signature
+"CGtVideoDecoder::StopDMA(sceMpeg*,sceMpegCbData*,void*)",0x002E18B0,int CGTMpegDecoder::StopDMA(void *lpDecoder),0x0027D5B0,I:\GameShared\GameClasses\Mpeg\ps2\GtMpegPs2.cpp,same signature
+viBufCount,0x002E1AC0,int viBufCount(ViBuf *f),0x0027D5E0,I:\GameShared\GameClasses\Mpeg\ps2\vibuf.c,"same name, different parameters"
+viBufDelete,0x002E1B10,int viBufDelete(ViBuf *f),0x0027D630,I:\GameShared\GameClasses\Mpeg\ps2\vibuf.c,"same name, different parameters"
+viBufRestartDMA,0x002E1B90,int viBufRestartDMA(ViBuf *f),0x0027D6C0,I:\GameShared\GameClasses\Mpeg\ps2\vibuf.c,"same name, different parameters"
+viBufStopDMA,0x002E1F10,int viBufStopDMA(ViBuf *f),0x0027DAA0,I:\GameShared\GameClasses\Mpeg\ps2\vibuf.c,"same name, different parameters"
+viBufAddDMA,0x002E2030,int viBufAddDMA(ViBuf *f),0x0027DC00,I:\GameShared\GameClasses\Mpeg\ps2\vibuf.c,"same name, different parameters"
+viBufEndPut,0x002E22F0,"void viBufEndPut(ViBuf *f, int size)",0x0027DF20,I:\GameShared\GameClasses\Mpeg\ps2\vibuf.c,"same name, different parameters"
+viBufBeginPut,0x002E2350,"void viBufBeginPut(ViBuf *f, unsigned char **ptr0, int *len0, unsigned char **ptr1, int *len1)",0x0027DF80,I:\GameShared\GameClasses\Mpeg\ps2\vibuf.c,"same name, different parameters"
+viBufReset,0x002E2450,int viBufReset(ViBuf *f),0x0027E090,I:\GameShared\GameClasses\Mpeg\ps2\vibuf.c,"same name, different parameters"
+viBufCreate,0x002E25B0,"int viBufCreate(ViBuf *f, u_long128 *data, u_long128 *tag, int size, TimeStamp *ts, int n_ts)",0x0027E220,I:\GameShared\GameClasses\Mpeg\ps2\vibuf.c,"same name, different parameters"
+CB3Records::Update(),0x00382580,void CRecords::Update(unsigned int lunPlayer),0x001E1840,I:\Burnout 2 Code\gamesource\Game\CRecords.cpp,"same name, different parameters"
+"CB3Record::Init(int,const unsigned short*)",,void CRecord::Init(),0x001E2A10,I:\Burnout 2 Code\gamesource\Game\CRecords.cpp,"same name, different parameters"
+"CB3Record::Init(float,const unsigned short*)",,void CRecord::Init(),0x001E2A10,I:\Burnout 2 Code\gamesource\Game\CRecords.cpp,"same name, different parameters"
