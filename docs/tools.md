@@ -46,6 +46,7 @@ python3 tools/gen_docs.py && python3 tools/gen_reference.py && python3 tools/wik
 | `gen_reference.py` | The [class pages](classes/README.md) and the other reference pages | `docs/classes/`, `docs/reference/` |
 | `folder_index.py` | A `README.md` index in each data folder the docs link to, so the links work on the website too | `data/**/README.md` |
 | `gen_files_page.py` | The [symbols and maps](files.md) page: every data file with size and link | `docs/files.md` |
+| `gen_nav.py` | The website's sidebar, the home page's Contents map and `docs/README.md`, from one map (`NAV`); add new pages there | `_includes/components/site_nav.html`, `README.md`, `docs/README.md` |
 | `wiki_nav.py` | The `Home › Section` line at the top of every page | all pages |
 
 Libraries used by the scripts:

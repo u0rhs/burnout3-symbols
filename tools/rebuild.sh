@@ -79,4 +79,5 @@ python3 -I tools/gen_docs.py
 python3 -I tools/gen_reference.py
 python3 -I tools/folder_index.py
 python3 -I tools/gen_files_page.py
+python3 -I tools/gen_nav.py
 python3 -I tools/wiki_nav.py

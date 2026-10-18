@@ -12,8 +12,10 @@
 <p align="center">
   <a href="https://u0rhs.github.io/burnout3-symbols/"><b>Website</b></a> ·
   <a href="docs/files.md"><b>Symbols and maps</b></a> ·
+  <a href="#contents"><b>Contents</b></a> ·
   <a href="docs/systems/README.md">Game systems</a> ·
   <a href="docs/classes/README.md">Classes</a> ·
+  <a href="docs/reference/retail-function-names.md">Retail game</a> ·
   <a href="docs/reference/README.md">Reference</a> ·
   <a href="https://github.com/u0rhs/burnout3-symbols/archive/refs/heads/main.zip">Download ZIP</a>
 </p>
@@ -63,30 +65,33 @@ The most-used files, one click away. **All of them, with sizes: [Symbols and map
 - **Formats documented from scratch.** CodeWarrior's DWARF 1, its binary link maps and its name
   mangling ([formats](docs/formats/README.md)), with Python tools that read them ([tools](docs/tools.md)).
 
-## Start here
+## Contents
 
-| Page | For |
-|---|---|
-| [Builds](docs/builds.md) | The Burnout 3 prototype, Burnout 3 retail and Burnout 2 prototype: what each provides and how they relate |
-| [Finding things](docs/data-guide.md) | Recipes: a class, an address, a source file, a function's parameters, one function across builds |
-| [Glossary](docs/glossary.md) | Criterion's naming conventions (`CB3`, `CGt`, `mr`, `lp` …), PS2 and RenderWare terms |
+Every part of the documentation, in the same groups as the website's sidebar.
 
-## Browse
-
-| Page | Contents |
-|---|---|
-| [Symbols and maps](docs/files.md) | Every data file, with sizes and direct links |
-| [Game systems](docs/systems/README.md) | The code by area: source files, classes, methods, Burnout 2 counterparts |
-| [Classes](docs/classes/README.md) | A page per class (890) |
-| [Renderer overview](docs/renderer-overview.md) | VU microcode programs and the code that drives them |
-| [Retail function names](docs/reference/retail-function-names.md) | 1,146 named functions in the retail executable |
-| [Nahelam's mods](docs/reference/nahelam-mods.md) | Dev menu, debug views, Car Viewer, code cave, online, B3Mod: what each shows about the code |
-| [Retail memory map](docs/reference/retail-memory-map.md) | Named addresses in the retail executable |
-| [Disc contents](docs/discs.md) | Every folder and file type on the discs, and the file names the executables use |
-| [Reference](docs/reference/README.md) | Globals, build comparison, memory layout, debug features, unlinked code, asserts, IOP modules, value database, Burnout 2 lineage |
-| Using it | [Remaster](docs/avenues/remaster.md) · [Decompilation](docs/avenues/decompilation.md) · [Remake](docs/avenues/remake.md) |
-| Formats and tools | [Formats](docs/formats/README.md) · [Tools](docs/tools.md) · [Data](data/README.md) |
-| More | [Related resources](docs/related-projects.md) · [Open questions](docs/open-questions.md) · [Changelog](docs/changelog.md) |
+<!-- contents:start -->
+- **[Symbols and maps](docs/files.md)**
+- **[Getting started](docs/README.md)**
+  [Builds](docs/builds.md) · [Finding things](docs/data-guide.md) · [Glossary](docs/glossary.md)
+- **[Game systems](docs/systems/README.md)**
+  [AI drivers](docs/systems/ai.md) · [Audio and music](docs/systems/audio.md) · [Cameras and replays](docs/systems/cameras-replay.md) · [Core, memory, input and platform](docs/systems/core-platform.md) · [Crashes, takedowns and scoring](docs/systems/crash-scoring.md) · [Demo-disc code](docs/systems/demo-builds.md) · [Effects](docs/systems/effects.md) · [Frontend and menus](docs/systems/frontend.md) · [Game flow, modes and race logic](docs/systems/game-flow.md) · [HUD](docs/systems/hud.md) · [Libraries linked into Burnout 3](docs/systems/libraries.md) · [Network and online](docs/systems/network-online.md) · [Progression, profiles and saves](docs/systems/progression-saves.md) · [Rendering](docs/systems/rendering.md) · [Tracks, world and streaming](docs/systems/tracks-streaming.md) · [Traffic](docs/systems/traffic.md) · [2D graphics and UI toolkit](docs/systems/ui-2d.md) · [Vehicles, physics and collision](docs/systems/vehicles-physics.md)
+- **[Classes](docs/classes/README.md)**
+- **[Renderer overview](docs/renderer-overview.md)**
+- **[Retail game](docs/reference/retail-function-names.md)**
+  [Retail function names (SLUS-21050)](docs/reference/retail-function-names.md) · [Retail memory map (from cheat codes and patches)](docs/reference/retail-memory-map.md) · [Nahelam's Burnout 3 mods and research](docs/reference/nahelam-mods.md) · [Disc contents](docs/discs.md)
+- **[Reference: Burnout 3](docs/reference/README.md)**
+  [Assert expressions](docs/reference/asserts.md) · [Burnout 3 global data](docs/reference/b3-globals.md) · [Burnout 3 prototype builds compared](docs/reference/build-comparison.md) · [Debug and development features](docs/reference/debug-features.md) · [File hashes](docs/reference/hashes.md) · [IOP modules with symbols](docs/reference/iop-modules.md) · [Memory layout](docs/reference/memory-layout.md) · [Code that was written but not linked](docs/reference/unlinked-code.md) · [The value database (VDB.XML)](docs/reference/value-database.md) · [VU microcode programs](docs/reference/vu-programs.md)
+- **[Reference: Burnout 2 lineage](docs/reference/class-ancestors.md)**
+  [Burnout 3 classes and their Burnout 2 ancestors](docs/reference/class-ancestors.md) · [Burnout 2 → Burnout 3 class lineage](docs/reference/class-lineage.md) · [Burnout 2 → Burnout 3 function lineage](docs/reference/function-lineage.md) · [Burnout 2 → Burnout 3 source files](docs/reference/source-file-lineage.md) · [Burnout 2 classes and structs](docs/reference/b2-classes.md) · [Class hierarchy (Burnout 2)](docs/reference/class-hierarchy.md) · [Enums (Burnout 2)](docs/reference/enums.md) · [RenderWare and library functions](docs/reference/renderware-api.md)
+- **[Uses](docs/avenues/README.md)**
+  [Using this data for a decompilation](docs/avenues/decompilation.md) · [Using this data for a remake](docs/avenues/remake.md) · [Using this data for a remaster](docs/avenues/remaster.md)
+- **[Formats](docs/formats/README.md)**
+  [CodeWarrior C++ name mangling](docs/formats/codewarrior-demangling.md) · [CodeWarrior PS2 DWARF 1](docs/formats/codewarrior-dwarf1.md) · [CodeWarrior link maps and assert files](docs/formats/codewarrior-maps.md)
+- **[Data and tools](data/README.md)**
+  [Burnout 3 prototype data](data/burnout3-prototype/README.md) · [Burnout 3 retail data](data/burnout3-retail/README.md) · [Burnout 2 prototype data](data/burnout2-prototype/README.md) · [Burnout 2 source outlines](data/burnout2-prototype/SLUS_204.97/source_outline/README.md) · [Reference tables (CSV)](docs/reference/data/README.md) · [Tools](docs/tools.md)
+- **[Project](docs/related-projects.md)**
+  [Related resources](docs/related-projects.md) · [Open questions](docs/open-questions.md) · [Changelog](docs/changelog.md) · [GitHub repository](https://github.com/u0rhs/burnout3-symbols)
+<!-- contents:end -->
 
 ## In numbers
 
