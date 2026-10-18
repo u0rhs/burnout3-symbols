@@ -22,6 +22,12 @@ FOLDERS = {
         'Exports from the Burnout 2 prototype: the executable\'s symbols and DWARF 1 debug information '
         '(`SLUS_204.97/`), modules with symbols (`modules/`), the disc listing and strings (`disc/`), and the '
         'original IOP link maps (`originals/`). Described in [data](../README.md).'),
+    'data/burnout3-review-us-2004-07-20': ('Burnout 3 US review build (20 July 2004, 11:11)',
+        'Exports from the US review disc ("Print Reviews Only Alpha 1 07-18-2004"): the disc listing, strings and headers '
+        'of the stripped `SLUS_210.50`, and the value database (`disc/`). Described on [builds](../../docs/builds.md).'),
+    'data/burnout3-review-pal-2004-07-20': ('Burnout 3 PAL review build (20 July 2004, 11:14)',
+        'Exports from the PAL review disc ("Reviewable 105263 PAL1EXT"): the disc listing, strings and headers of the '
+        'stripped `SLES_525.84`, and the value database (`disc/`). Described on [builds](../../docs/builds.md).'),
     'data/burnout3-prototype/originals': ('Burnout 3 prototype: original files',
         'The prototype executable\'s text link map, unchanged. Its export is in `../maps/`.'),
     'data/burnout2-prototype/originals': ('Burnout 2 prototype: original files',

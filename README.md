@@ -88,7 +88,7 @@ Every part of the documentation, in the same groups as the website's sidebar.
 - **[Formats](docs/formats/README.md)**
   [CodeWarrior C++ name mangling](docs/formats/codewarrior-demangling.md) · [CodeWarrior PS2 DWARF 1](docs/formats/codewarrior-dwarf1.md) · [CodeWarrior link maps and assert files](docs/formats/codewarrior-maps.md)
 - **[Data and tools](data/README.md)**
-  [Burnout 3 prototype data](data/burnout3-prototype/README.md) · [Burnout 3 retail data](data/burnout3-retail/README.md) · [Burnout 2 prototype data](data/burnout2-prototype/README.md) · [Burnout 2 source outlines](data/burnout2-prototype/SLUS_204.97/source_outline/README.md) · [Reference tables (CSV)](docs/reference/data/README.md) · [Tools](docs/tools.md)
+  [Burnout 3 prototype data](data/burnout3-prototype/README.md) · [Burnout 3 retail data](data/burnout3-retail/README.md) · [Burnout 3 US review build data](data/burnout3-review-us-2004-07-20/README.md) · [Burnout 3 PAL review build data](data/burnout3-review-pal-2004-07-20/README.md) · [Burnout 2 prototype data](data/burnout2-prototype/README.md) · [Burnout 2 source outlines](data/burnout2-prototype/SLUS_204.97/source_outline/README.md) · [Reference tables (CSV)](docs/reference/data/README.md) · [Tools](docs/tools.md)
 - **[Project](docs/related-projects.md)**
   [Related resources](docs/related-projects.md) · [Open questions](docs/open-questions.md) · [Changelog](docs/changelog.md) · [GitHub repository](https://github.com/u0rhs/burnout3-symbols)
 <!-- contents:end -->
@@ -99,6 +99,7 @@ Every part of the documentation, in the same groups as the website's sidebar.
 |---|---|
 | Burnout 3 prototype | 4 link maps (one text, three binary) · 8,301 functions in the DNAT_200 build, 11,020 in the unoptimised build · 890 classes · 312 vtables · 595 game source files · 3,383 named variables · 22 VU microcode programs · 2,243 assert expressions · 3,056 unlinked symbols |
 | Burnout 3 retail | 1,146 named functions (851 verified) · 1,480 addresses from Nahelam's mods · 775 files listed · 2,255 strings with addresses · 7,525 tuning values (1,949 changed since the prototype) · about 150 named memory addresses, 67 vehicle IDs, 139 event medal bytes |
+| Burnout 3 review builds (20 July 2004) | US and PAL review discs: stripped like retail; 34 tuning values changed before release |
 | Burnout 2 prototype | 12,023 symbols · 2,309 functions with full debug info · 969 types · 168 enums · 288 source files · 76,449 line entries |
 | Burnout 2 → 3 | 62 class ancestors · 704 function counterparts · 25 source-file counterparts |
 | Compiler, all three executables | Metrowerks CodeWarrior for PS2, MW MIPS C Compiler 2.4.1.01 |

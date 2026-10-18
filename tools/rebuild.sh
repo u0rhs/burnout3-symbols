@@ -11,7 +11,9 @@
 #
 # Point these at local copies of the extracted discs if they don't sit next to the repository:
 #   B2_DISC   the Burnout 2 prototype (Hidden Palace: Jul 29, 2002 prototype)
-#   B3_PROTO  the Burnout 3 prototype (Hidden Palace: Jun 8, 2004 prototype)
+#   B3_PROTO  the Burnout 3 prototype (Hidden Palace: Jun 8, 2004 prototype), extracted; the default
+#             folder name below is a local one and holds the Jun 8 build
+#   B3_REVIEW_US, B3_REVIEW_PAL  disc images of the Jul 20, 2004 11.11 and 11.14 review builds
 #   B3_RETAIL the Burnout 3 NTSC-U retail disc (SLUS-21050)
 set -e
 cd "$(dirname "$0")/.."
@@ -19,6 +21,9 @@ cd "$(dirname "$0")/.."
 B2_DISC="${B2_DISC:-../Burnout 2 Prototype July 29 2002}"
 B3_PROTO="${B3_PROTO:-../Burnout 3 Prototype Jul 20 2004 11.11}"
 B3_RETAIL="${B3_RETAIL:-../Burnout 3}"
+# Disc images of the two July 20, 2004 review builds (read without extracting)
+B3_REVIEW_US="${B3_REVIEW_US:-../Burnout 3 - Takedown (Jul 20, 2004 11.11 prototype)/PS2 - Burnout 3 Takedown Print Reviews Only Alpha 1 07-18-2004.iso}"
+B3_REVIEW_PAL="${B3_REVIEW_PAL:-../Burnout 3 - Takedown (Jul 20, 2004 11.14 prototype)/Burnout 3 Takedown Review 20.07.2004.iso}"
 export B2_DISC B3_PROTO B3_RETAIL
 
 B2="data/burnout2-prototype"
@@ -65,8 +70,16 @@ if have "$B3_RETAIL"; then
 else
     echo "Burnout 3 retail disc not found at $B3_RETAIL: keeping $R/disc"
 fi
+if [ -f "$B3_REVIEW_US" ]; then
+    rm -rf data/burnout3-review-us-2004-07-20/disc
+    python3 -I tools/export_iso.py "$B3_REVIEW_US" data/burnout3-review-us-2004-07-20/disc "Burnout 3 US review build, 20 July 2004 11:11"
+fi
+if [ -f "$B3_REVIEW_PAL" ]; then
+    rm -rf data/burnout3-review-pal-2004-07-20/disc
+    python3 -I tools/export_iso.py "$B3_REVIEW_PAL" data/burnout3-review-pal-2004-07-20/disc "Burnout 3 PAL review build, 20 July 2004 11:14"
+fi
 if have "$B2_DISC" && have "$B3_PROTO" && have "$B3_RETAIL"; then
-    python3 -I tools/hash_sources.py > data/hashes.tsv
+    python3 -I tools/hash_sources.py
 fi
 
 # --- Retail function names from Nahelam's PAL list (not in the repository; set NAHELAM_PAL_NAMES to its path)

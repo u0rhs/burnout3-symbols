@@ -4,6 +4,14 @@
 
 Changes to the data and documentation. Newest first.
 
+## 2026-10-19
+
+- Added the two July 20, 2004 review builds (US 11.11, PAL 11.14): disc listings, strings, headers and value
+  databases (`tools/export_iso.py` reads disc images directly). Neither executable has symbols. Their
+  tuning is identical to each other; 34 values changed before retail.
+- Provenance: the Jun 8 disc image is verified against Hidden Palace's SHA-1, and its executable, maps,
+  assert files and value database are byte-identical to the files the exports were made from.
+
 ## 2026-10-18
 
 - Retail names: fixed the function-start check (it also accepted a `jr $ra` delay slot); now 851 verified,

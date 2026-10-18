@@ -55,6 +55,19 @@ SECTIONS = [
          (R + '/third-party/AeroWidescreen-PCSX2-Cheats/SLUS-21050_BEBF8793_widescreen.pnach', 'Aero_\'s 16:9 widescreen patch (MIT)'),
          (R + '/third-party/AeroWidescreen-PCSX2-Cheats/SLUS-21050_BEBF8793_buttons.pnach', 'Ookami & Aero_\'s button mapping patch (MIT)'),
      ]),
+    ('Burnout 3 review builds (20 July 2004)',
+     'Two review discs nine days before the final US build: US `SLUS_210.50` (11:11) and PAL `SLES_525.84` (11:14). '
+     'Their executables are stripped like retail; exported here are the disc listings, strings, headers and value '
+     'databases. See [builds](builds.md#burnout-3-review-builds-20-july-2004).',
+     [
+         ('data/burnout3-review-us-2004-07-20/disc/strings/SLUS_210.50.strings.txt', 'US review: every string in the executable, with its address'),
+         ('data/burnout3-review-us-2004-07-20/disc/SLUS_210.50.headers.txt', 'US review: ELF and program headers'),
+         ('data/burnout3-review-us-2004-07-20/disc/vdb/VDB.section1.csv', 'US review: the value database decoded'),
+         ('data/burnout3-review-us-2004-07-20/disc/files.csv', 'US review: every file on the disc'),
+         ('data/burnout3-review-pal-2004-07-20/disc/strings/SLES_525.84.strings.txt', 'PAL review: every string in the executable, with its address'),
+         ('data/burnout3-review-pal-2004-07-20/disc/SLES_525.84.headers.txt', 'PAL review: ELF and program headers'),
+         ('data/burnout3-review-pal-2004-07-20/disc/files.csv', 'PAL review: every file on the disc'),
+     ]),
     ('Burnout 2 prototype: symbols and debug information',
      'The Burnout 2 prototype (29 July 2002) kept its symbols and full DWARF 1 debug information: types, '
      'signatures with parameter names, locals and line numbers. Most useful as the ancestor of Burnout 3\'s '
@@ -76,7 +89,8 @@ SECTIONS = [
          ('docs/reference/data/b3-functions-by-build.csv', 'Every Burnout 3 function with address and size in all four builds'),
          ('docs/reference/data/b3-globals.csv', 'Every named variable in the prototype'),
          ('docs/reference/data/function-lineage.csv', 'Burnout 3 functions with their Burnout 2 counterpart'),
-         ('docs/reference/data/vdb-changes.csv', 'Tuning values changed between the prototype and retail'),
+         ('docs/reference/data/vdb-changes-prototype-to-retail.csv', 'Tuning values changed between the prototype and retail'),
+         ('docs/reference/data/vdb-changes-US-review-to-retail.csv', 'The 34 tuning values changed in the last nine days (July review build to retail)'),
          ('data/hashes.tsv', 'Size, CRC32, MD5 and SHA-1 of every source file'),
      ]),
 ]

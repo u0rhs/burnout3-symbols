@@ -2,7 +2,7 @@
 
 # Builds
 
-The three builds this documentation is made from, and what each one provides. File hashes:
+The builds this documentation is made from, and what each one provides. File hashes:
 [reference/hashes.md](reference/hashes.md).
 
 ## At a glance
@@ -55,6 +55,32 @@ decompilation needs exactly that compiler.
   (its own file is `Sound\IOP\b3distrouter\`). `RWSCOMMS.IRX` is RenderWare Studio's console comms
   server (`RWStudio\console\…\commsserver\psx`).
 
+## Burnout 3 review builds (20 July 2004)
+
+Two review discs from nine days before the final US build. Both are documented here, but **neither has
+symbols**: their executables are stripped exactly like retail (an empty symbol table, no debug sections,
+and no class or function names anywhere in the binary), and they carry no link maps or assert files. The
+only symbol table on either disc belongs to Sony's DNAS module (`NETWORK/DNAS_*.ELF`), not to the game.
+
+| | US review (11:11) | PAL review (11:14) |
+|---|---|---|
+| Hidden Palace | [Jul 20, 2004 11.11 prototype](https://hiddenpalace.org/Burnout_3:_Takedown_(Jul_20,_2004_11.11_prototype)) | [Jul 20, 2004 11.14 prototype](https://hiddenpalace.org/Burnout_3:_Takedown_(Jul_20,_2004_11.14_prototype)) |
+| Disc label | *Burnout 3 Takedown Print Reviews Only Alpha 1 07-18-2004* | *Reviewable 105263 PAL1EXT UK-0000000105263-089* |
+| Executable | `SLUS_210.50`, 3,873,880 bytes, stripped | `SLES_525.84`, 3,873,624 bytes, stripped |
+| Files | 791, dated up to 21 July 2004 | 831 |
+| Compiler | MW MIPS C Compiler 2.4.1.01 | the same |
+| Exports | [data/burnout3-review-us-2004-07-20](../data/burnout3-review-us-2004-07-20/README.md) | [data/burnout3-review-pal-2004-07-20](../data/burnout3-review-pal-2004-07-20/README.md) |
+
+What they add:
+
+- **The last nine days of tuning.** Their value databases are identical to each other, and **34 values
+  changed between them and retail** ([value database](reference/value-database.md#across-the-builds)).
+- **A stepping stone between prototype and retail.** The US review executable is the same program as
+  retail, 200 KB smaller. Retail names do not carry over to it with the simple shift used for PAL
+  (only about 180 of 851 check out), so naming it needs real function matching
+  ([open questions](open-questions.md)).
+- Strings with addresses and executable headers, like the other discs ([disc contents](discs.md)).
+
 ## Burnout 3 retail (NTSC-U, SLUS-21050)
 
 - Fully stripped: no symbols, and a single program segment with no section headers separating code
@@ -71,28 +97,31 @@ decompilation needs exactly that compiler.
 
 ## Provenance
 
-Both prototypes are from [Hidden Palace](https://hiddenpalace.org).
+All the prototypes are from [Hidden Palace](https://hiddenpalace.org).
 
-| | Burnout 3 prototype | Burnout 2 prototype |
-|---|---|---|
-| Hidden Palace page | [Burnout 3: Takedown (Jun 8, 2004 prototype)](https://hiddenpalace.org/Burnout_3:_Takedown_(Jun_8,_2004_prototype)) | [Burnout 2: Point of Impact (Jul 29, 2002 prototype)](https://hiddenpalace.org/Burnout_2:_Point_of_Impact_(Jul_29,_2002_prototype)) |
-| Build | 8 June 2004, 18:20:40, "Preview" | 29 July 2002, "Preview" |
-| Disc label | *Burnout 3 Takedown For Preview Only Pre-Alpha 1 6-07-2004* | *Burnout 2 For Preview Only 29-7-02* |
-| Released | 20 March 2021, part of the Project Deluge lot (research by Nex, made possible by an anonymous donor) | 22 December 2023, by Daniel B |
-| Media | CD-R, dumped with CloneCD | DVD-R |
-| Image SHA-1 (Hidden Palace) | `.iso` `308f9dbd37e881be3c7a5cab5fc722a6c1ace6e0` | not listed |
+| | Burnout 3 prototype | Burnout 3 US review | Burnout 3 PAL review | Burnout 2 prototype |
+|---|---|---|---|---|
+| Hidden Palace page | [Jun 8, 2004 prototype](https://hiddenpalace.org/Burnout_3:_Takedown_(Jun_8,_2004_prototype)) | [Jul 20, 2004 11.11 prototype](https://hiddenpalace.org/Burnout_3:_Takedown_(Jul_20,_2004_11.11_prototype)) | [Jul 20, 2004 11.14 prototype](https://hiddenpalace.org/Burnout_3:_Takedown_(Jul_20,_2004_11.14_prototype)) | [Jul 29, 2002 prototype](https://hiddenpalace.org/Burnout_2:_Point_of_Impact_(Jul_29,_2002_prototype)) |
+| Build | 8 June 2004, 18:20:40, "Preview" | 20 July 2004, 11:11:00, "Review" | 20 July 2004, 11:14:24, "Alpha 1" | 29 July 2002, "Preview" |
+| Disc label | *For Preview Only Pre-Alpha 1 6-07-2004* | *Print Reviews Only Alpha 1 07-18-2004* | *Reviewable 105263 PAL1EXT* | *Burnout 2 For Preview Only 29-7-02* |
+| Released | 20 March 2021, Project Deluge (research by Nex; anonymous donor) | 20 March 2021, Project Deluge (research by ehw and Zoda-Y13; anonymous donor) | 15 August 2020, by Daniel B | 22 December 2023, by Daniel B |
+| Media | CD-R (CloneCD) | DVD-R (CloneCD) | DVD-R | DVD-R |
+| Image SHA-1 | `308f9dbd37e881be3c7a5cab5fc722a6c1ace6e0` | `ef7a1a5352af4fee365efe239528aa74e1ef0e0d` | `d2a00949c411ace54b673fae12abdefed7fe8aeb` | not hashed |
+| Matches Hidden Palace | yes | yes | Hidden Palace lists no hash | — |
+| Used for | **all the Burnout 3 symbols**: the four link maps and two assert files | disc listing, strings, value database | disc listing, strings, value database | symbols and debug information |
 
-Hidden Palace's own notes on the Burnout 3 build describe the map file and "leftovers from removed .elf
-files from internal and debug builds", the binary maps and assert files documented here. Their notes on
-the Burnout 2 build: "Executable contains Symbols." The hashes of the extracted files used here are in
-[reference/hashes.md](reference/hashes.md); the Burnout 3 image hash above is of the whole disc image,
-which this repository did not hash.
+**Verified:** the Jun 8 disc image's SHA-1 matches Hidden Palace's, and its `DNAT_200.45`, all four maps,
+both assert files, `SYSTEM.CNF` and `VALUEDB/VDB.XML` are byte-identical to the files this repository's
+exports were made from. Hidden Palace's own notes on that build describe the map file and "leftovers from
+removed .elf files from internal and debug builds". Their notes on the Burnout 2 build: "Executable
+contains Symbols." All hashes: [reference/hashes.md](reference/hashes.md).
 
 ## How they relate
 
 ```
 Burnout 2 prototype ──(types, layouts, parameter names, source structure)──▶ hints for Burnout 3 classes
 Burnout 3 prototype ──(names and addresses from four maps)──▶ carried over to ──▶ Burnout 3 retail
+Burnout 3 review builds (20 July) ──(no symbols; 34 tuning values from final)──▶ Burnout 3 retail
 ```
 
 - **Burnout 2 → 3:** 62 Burnout 3 classes have a likely Burnout 2 ancestor

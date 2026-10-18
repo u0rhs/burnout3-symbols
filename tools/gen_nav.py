@@ -65,6 +65,8 @@ NAV = [
     ('Data and tools', 'data/README.md', [
         ('Burnout 3 prototype data', 'data/burnout3-prototype/README.md'),
         ('Burnout 3 retail data', 'data/burnout3-retail/README.md'),
+        ('Burnout 3 US review build data', 'data/burnout3-review-us-2004-07-20/README.md'),
+        ('Burnout 3 PAL review build data', 'data/burnout3-review-pal-2004-07-20/README.md'),
         ('Burnout 2 prototype data', 'data/burnout2-prototype/README.md'),
         ('Burnout 2 source outlines', 'data/burnout2-prototype/SLUS_204.97/source_outline/README.md'),
         ('Reference tables (CSV)', 'docs/reference/data/README.md'),

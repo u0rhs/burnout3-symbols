@@ -25,7 +25,8 @@ What the data doesn't answer yet, and work that would add to it.
 
 ## Work that would extend this documentation
 
-- [ ] Verify the 283 unverified retail names; name the functions between named ones
+- [ ] Name the July 20 review executables by matching functions against retail (the simple shift does not work: the US review build is 200 KB smaller)
+- [ ] Verify the 295 unverified retail names; name the functions between named ones
 - [ ] Carry the prototype names to the retail executable ([decompilation](avenues/decompilation.md)).
 - [ ] Turn `types.h` into compilable headers.
 - [ ] Ghidra / IDA import scripts for the names and types.

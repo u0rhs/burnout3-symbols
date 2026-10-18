@@ -14,6 +14,8 @@ The `originals/` folders keep the two text link maps from the discs, for referen
 |---|---|
 | [`burnout3-prototype/`](burnout3-prototype/README.md) | The Burnout 3 prototype (link maps of four builds, assert files, modules, disc) |
 | [`burnout3-retail/`](burnout3-retail/README.md) | The Burnout 3 NTSC-U retail disc, SLUS-21050 (disc listing, strings, value database, memory map from cheat codes and patches) |
+| [`burnout3-review-us-2004-07-20/`](burnout3-review-us-2004-07-20/README.md) | The US review build of 20 July 2004 (disc listing, strings, headers, value database; no symbols) |
+| [`burnout3-review-pal-2004-07-20/`](burnout3-review-pal-2004-07-20/README.md) | The PAL review build of 20 July 2004 (the same) |
 | [`burnout2-prototype/`](burnout2-prototype/README.md) | The Burnout 2 prototype of 29 July 2002 (symbols and DWARF 1 debug info) |
 | `*/originals/` | The original text link maps (see below) |
 | [`hashes.tsv`](hashes.tsv) | Size, CRC32, MD5 and SHA-1 of every source file ([as a table](../docs/reference/hashes.md)) |

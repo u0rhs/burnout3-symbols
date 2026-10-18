@@ -1,0 +1,118 @@
+// SLUS_210.50: printf-style format strings (messages, logs) (116)
+
+0x002132AD  clq%XH
+0x00482650  sceGsDefDispEnv:Not support displaymode for 0x%x!!
+0x004826F8  D1_TADR=%08x:
+0x00482708  D1_MADR=%08x:
+0x00482738  D2_TADR=%08x:
+0x00482748  D2_MADR=%08x:
+0x00482768  	<VIF1_STAT=%08x:
+0x00482780  GIF_STAT=%08x>
+0x00482A90  Invalid modion type -- ignored(%d)
+0x00482AB8  (a) invalid motion_type(%d)-0
+0x00482AD8  (b) invalid motion_type(%d)-1
+0x00482AF8  (c) invalid motion_type(%d)-2
+0x00482B50  Invalid macroblock_address_increment code(0x%08x)
+0x00482BA8  slice_start_code(0x%08x) out of range
+0x00482D28  Too small buffer size for %dx%d picture
+0x00482DB8  image buffer needs to be aligned to 64byte boundary(0x%08x)
+0x00482E98  [MPEG ERROR]%s
+0x00483038  TTY: send err %d
+0x00483050  TTY: err ti->wlen=%08x
+0x00483260  too long parameter '%s'
+0x00483280  # TLB spad=0 kernel=1:%d default=%d:%d extended=%d:%d
+0x004841C8  sceCdCbfunc= %d sceCdCbfunc_num= %d
+0x00484210  ee call cmd search %s
+0x00484228  search name %s
+0x00484238  search size %d
+0x00484248  search loc lbn %d
+0x00484260  Ncmd fail sema cur_cmd:%d keep_cmd:%d
+0x004842C0  Scmd fail sema cur_cmd:%d keep_cmd:%d
+0x00484300  Libcdvd bind err %d CD_Init %d
+0x00485230  cdrom0:\%s;1
+0x00486CE0  World Time %.5f
+0x00488350  boostfirecore%02d
+0x00488370  boostfireedge%02d
+0x00488390  boostfireover%02d
+0x00488E68  language=%d
+0x00488E80  Failed to poweroff dev9 %d
+0x00488F00  maxstream=%d
+0x0048A5C0  Heap resized from %d to %d bytes
+0x0048A7D0  libpad2: buffer addr is not 64 byte align. %08x
+0x0048A898  libdbc: SifDmaAddr %08x
+0x0048A9E0  libdbc: SendData2 data length too long [%d]
+0x0048ABA0  GtCommVa%04d
+0x0048BE98  Host: %s
+0x0048BEB0  Content-Length: %d
+0x0048C008  Host: %s:%d
+0x0048C108  %s: send buffer addr is not 64 byte align. %08x=n
+0x0048C150  %s: receive buffer addr is not 64 byte align. %08x=n
+0x0048C410  libmc2: Fatal Error [%08x]
+0x0048C4C8  [fatal error] c_sema in netcnfif(type=%d)
+0x0048F1D8  bstpss0%i
+0x0048F1E8  bstpsl0%i
+0x0048F330  cartar0%i
+0x0048FC20  Got worldcrash of %f vol %f
+0x0048FC50  Got worldnudge of %f
+0x00492BD0  ERROR: bytes provided = %d. Need=%d
+0x00492C28  ERROR: lgCodecUlawEncode: need %d bytes. have %d bytes. clipping
+0x00492F98  Fatal error: %s
+0x00492FB0  warning: %s
+0x00492FC0  warning: %s %d
+0x00493C08  lgAudInit:  liblgaud.a is version %d.%02d.%03d
+0x00493D60  lgAudInit: unable to allocate %d bytes!
+0x00493DB8  %s\nlgAudInit: max streaming data size: %d
+0x00495448  driver version = %d.%02d.%03d
+0x00495610  LgKbM library version %d.%02d.%03d (built on May 18 2004 at 17:58:15)\n	* reader thread priority %d
+0x00496240  ErrMessage : %s %d %s
+0x00496668  NAME%d
+0x00496670  TEAM%d
+0x00496678  ROOM%d
+0x00496680  WEIGHT%d
+0x00496868  unknown%d
+0x00497390  User authentication error with ISP\n%s
+0x004973E0  Modem cannot connect: %s
+0x00497400  Invalid dial-in number: %s
+0x00497430  Modem error: %s
+0x00497510  Line disconnected: %s
+0x00497528  Dialing %s
+0x00497538  Line speed %s
+0x00497550  Disconnecting line: %s
+0x004976D0  no match for %d
+0x00497870  %s module not found
+0x004978D0  returned %d
+0x00497900  DMA address 0x%x not %d-byte aligned
+0x00497960  invalid Combination number (%d)
+0x004979D0  %s module not found
+0x00497A28  returned %d
+0x00497A60  DMA address 0x%x not %d-byte aligned
+0x00497B40  size %d padded to %d
+0x0049B860  (fno=%d, ssize=%d, rsize=%d, buffer=%d)
+0x0049FD30  OPPART%d
+0x0049FD40  OPPARAM%d
+0x0049FD50  OPFLAG%d
+0x0049FD60  PARTSIZE%d
+0x0049FD70  PARTPARAMS%d
+0x0049FD90  l%ds%dslll
+0x0049FDB0  TROPHY%d
+0x0049FFE0  COLNAME%d
+0x0049FFF0  COLDESC%d
+0x004A0000  COLPARAM%d
+0x004A0010  COLWIDTH%d
+0x004A0880  Received unknown response '%c%c%c%c'
+0x004A11B0  DNAS err : %u
+0x004A2008  lgDevInit:  liblgdev.a is version %d.%02d.%03d
+0x004A23A0  lgDevReadMulti: devicecount out of range (%d)
+0x004A2600  lgDevStartForceEffectMulti: numeffects is out of range (%d)
+0x004A26C8  lgDevStopForceEffectMulti: numeffects is out of range (%d)
+0x004A2838  lgDevAReadMulti: devicecount out of range (%d)
+0x004A2A90  lgDevAStartForceEffectMulti: numeffects is out of range (%d)
+0x004A2B98  lgDevAStopForceEffectMulti: numeffects is out of range (%d)
+0x004A2C30  Frame %d is set to Interpolate. But the next frame is not setup.
+0x004A2C80  Frame %d is set to Interpolate. But the time difference is %f (negative).
+0x004B1418  ~%dms
+0x004B14D8  OPID%d
+0x004B14E0  OPPO%d
+0x004B14E8  ADDR%d
+0x004B14F0  LADDR%d
+0x004B14F8  MADDR%d

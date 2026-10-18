@@ -45,4 +45,4 @@ except the retail memory map, which is written from outside sources; larger tabl
 | [b3-functions-by-build.csv](data/b3-functions-by-build.csv) | Every Burnout 3 function with address and size in each of the four builds |
 | [b3-globals.csv](data/b3-globals.csv) | Every named variable in the prototype map |
 | [function-lineage.csv](data/function-lineage.csv) | Burnout 3 → Burnout 2 function pairs |
-| [vdb-changes.csv](data/vdb-changes.csv) | Tuning values that changed between prototype and retail |
+| [vdb-changes-prototype-to-retail.csv](data/vdb-changes-prototype-to-retail.csv) | Tuning values that changed between prototype and retail (also prototype → July review, July review → retail, US → PAL review) |

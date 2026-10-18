@@ -23,3 +23,6 @@ The exact files everything here was made from. Compare against these before trus
 | `Burnout 3 retail/SLUS_210.50` | 4,073,816 | `CE3DDD46` | `87ac212abedd3c3379c616765f81b013` | `332be40d6081b8b5055a6ea01194ad6ff662a863` |
 | `Burnout 3 retail/SYSTEM.CNF` | 57 | `A98109F2` | `d57936a993c58692487e34eab80ee826` | `96754946c7cac95d474a4277100b85639c6bbb35` |
 | `Burnout 3 retail/DATA/VDB.XML` | 70,648 | `A23E9F68` | `513e1233e4e5ffc215f36a0ece93de65` | `d6511a2f363bd23b546cb6ce41770f4eb34251fe` |
+| `Burnout 3 prototype Jun 8 2004 disc image (Hidden Palace)` | 430,583,808 | `1E3C16C4` | `fb310a5d71286e230fdb84d0dd2da1c4` | `308f9dbd37e881be3c7a5cab5fc722a6c1ace6e0` |
+| `Burnout 3 US review Jul 20 2004 11.11 disc image (Hidden Palace)` | 2,862,323,712 | `B162917B` | `def906d673b637460192f2adccebc4d1` | `ef7a1a5352af4fee365efe239528aa74e1ef0e0d` |
+| `Burnout 3 PAL review Jul 20 2004 11.14 disc image (Hidden Palace)` | 3,601,897,472 | `77498968` | `a19c53a6f19f76987ff433dc1f3e7b50` | `d2a00949c411ace54b673fae12abdefed7fe8aeb` |

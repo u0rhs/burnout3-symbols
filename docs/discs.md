@@ -44,6 +44,46 @@ What is on each disc, which files the executables refer to by name, and what was
 
 **Strings of `DNAT_200.45`:** [all](../data/burnout3-prototype/disc/strings/DNAT_200.45.strings.txt) · [paths](../data/burnout3-prototype/disc/strings/DNAT_200.45.strings.paths.txt) 198 · [format](../data/burnout3-prototype/disc/strings/DNAT_200.45.strings.format.txt) 162 · [identifiers](../data/burnout3-prototype/disc/strings/DNAT_200.45.strings.identifiers.txt) 542 · [expressions](../data/burnout3-prototype/disc/strings/DNAT_200.45.strings.expressions.txt) 171 · [text](../data/burnout3-prototype/disc/strings/DNAT_200.45.strings.text.txt) 951
 
+## Burnout 3 US review build (20 July 2004)
+
+791 files, 2,860,732,550 bytes. Full list: [files.txt](../data/burnout3-review-us-2004-07-20/disc/files.txt).
+
+| Folder | Files | Bytes | Types |
+|---|---:|---:|---|
+| `(root)` | 2 | 3,873,937 | 50 1, CNF 1 |
+| `CNF` | 2 | 34,652 | SYS 1, ICO 1 |
+| `DATA` | 29 | 19,187,510 | BIN 21, KFS 2, TXD 2, ICO 1, M2V 1, ICN 1, XML 1 |
+| `IOP` | 36 | 1,604,831 | IRX 32, IMG 2, SYS 1, ICO 1 |
+| `NETGUI` | 30 | 9,223,649 | IRX 20, RGB 3, BIN 2, BD 1, HD 1, PF 1, ELF 1, IMG 1 |
+| `NETWORK` | 1 | 1,703,648 | ELF 1 |
+| `NFSUNDER` | 9 | 303,670,581 | BIN 5, BUN 2, IMG 1, ELF 1 |
+| `OVID` | 62 | 742,698,287 | M2V 61, RWS 1 |
+| `PVEH` | 242 | 53,288,960 | BGV 67, HWD 67, LWD 67, BTV 40, BIN 1 |
+| `SOUND` | 22 | 5,523,456 | AWD 22 |
+| `TRACKS` | 356 | 1,719,923,039 | RWS 142, DAT 111, M2V 48, BGD 36, AWD 18, BIN 1 |
+
+**Strings of `SLUS_210.50`:** [all](../data/burnout3-review-us-2004-07-20/disc/strings/SLUS_210.50.strings.txt) · [paths](../data/burnout3-review-us-2004-07-20/disc/strings/SLUS_210.50.strings.paths.txt) 371 · [format](../data/burnout3-review-us-2004-07-20/disc/strings/SLUS_210.50.strings.format.txt) 116 · [identifiers](../data/burnout3-review-us-2004-07-20/disc/strings/SLUS_210.50.strings.identifiers.txt) 557 · [expressions](../data/burnout3-review-us-2004-07-20/disc/strings/SLUS_210.50.strings.expressions.txt) 237 · [text](../data/burnout3-review-us-2004-07-20/disc/strings/SLUS_210.50.strings.text.txt) 847
+
+## Burnout 3 PAL review build (20 July 2004)
+
+831 files, 3,600,599,684 bytes. Full list: [files.txt](../data/burnout3-review-pal-2004-07-20/disc/files.txt).
+
+| Folder | Files | Bytes | Types |
+|---|---:|---:|---|
+| `(root)` | 2 | 3,873,680 | 84 1, CNF 1 |
+| `CNF` | 2 | 34,652 | SYS 1, ICO 1 |
+| `DATA` | 29 | 19,187,510 | BIN 21, KFS 2, TXD 2, ICO 1, M2V 1, ICN 1, XML 1 |
+| `IOP` | 36 | 1,604,831 | IRX 32, IMG 2, SYS 1, ICO 1 |
+| `NETGUI` | 31 | 13,417,293 | IRX 20, RGB 3, BIN 2, ELF 2, BD 1, HD 1, PF 1, IMG 1 |
+| `NETWORK` | 1 | 1,703,648 | ELF 1 |
+| `NFSUNDER` | 9 | 303,670,581 | BIN 5, BUN 2, IMG 1, ELF 1 |
+| `OVID` | 71 | 1,128,770,242 | M2V 70, RWS 1 |
+| `PVEH` | 242 | 53,288,960 | BGV 67, HWD 67, LWD 67, BTV 40, BIN 1 |
+| `SOUND` | 22 | 5,523,456 | AWD 22 |
+| `TRACKS` | 386 | 2,069,524,831 | RWS 172, DAT 111, M2V 48, BGD 36, AWD 18, BIN 1 |
+
+**Strings of `SLES_525.84`:** [all](../data/burnout3-review-pal-2004-07-20/disc/strings/SLES_525.84.strings.txt) · [paths](../data/burnout3-review-pal-2004-07-20/disc/strings/SLES_525.84.strings.paths.txt) 371 · [format](../data/burnout3-review-pal-2004-07-20/disc/strings/SLES_525.84.strings.format.txt) 116 · [identifiers](../data/burnout3-review-pal-2004-07-20/disc/strings/SLES_525.84.strings.identifiers.txt) 557 · [expressions](../data/burnout3-review-pal-2004-07-20/disc/strings/SLES_525.84.strings.expressions.txt) 237 · [text](../data/burnout3-review-pal-2004-07-20/disc/strings/SLES_525.84.strings.text.txt) 848
+
 ## Burnout 2 prototype (29 July 2002)
 
 728 files, 1,975,357,055 bytes. Full list: [files.txt](../data/burnout2-prototype/disc/files.txt).
@@ -64,57 +104,58 @@ What is on each disc, which files the executables refer to by name, and what was
 
 Counts per disc. What each type is: from file headers where they are standard, otherwise from the names the executables use; marked unknown where neither says.
 
-| Type | Retail | Prototype | B2 prototype | What it is |
-|---|---:|---:|---:|---|
-| `RWS` | 144 | 61 | 85 | RenderWare Audio stream: music, crash and speech streams (`tracks\crash%d.rws`, `ovid\movie.rws`) |
-| `BGD` | 36 | 9 | 185 | Track game data (`Gamedata.bgd`) |
-| `DAT` | 111 | 33 | 7 | Track data: `static.dat`, `streamed.dat`, `enviro.dat` per track folder |
-| `IRX` | 52 | 63 | 15 | IOP module ([IOP modules](reference/iop-modules.md)) |
-| `BCD` |  |  | 128 |  |
-| `BGV` | 67 | 55 |  | Vehicle data, one per car in the vehicle folders (`CAR1.BGV` …); meaning of the name unknown |
-| `M2V` | 110 | 7 | 3 | MPEG-2 video (header confirms); intros, attract loop, tutorials (`ovid\`) |
-| `IVS` |  |  | 98 |  |
-| `BTV` | 40 | 55 |  | Per-vehicle data next to `.BGV`; meaning unknown |
-| `HWD` | 67 | 15 |  | Per-vehicle, paired with `.LWD`; possibly high/low detail or wave data (unknown) |
-| `LWD` | 67 | 15 |  | Per-vehicle, paired with `.HWD`; unknown |
-| `AWD` | 40 | 19 |  | RenderWare Audio wave dictionary: sound effects per mode (`sound\generic.awd`, `sound\crash.awd` …) |
-| `BSM` |  |  | 44 |  |
-| `P2W` |  |  | 32 |  |
-| `PSS` |  |  | 32 |  |
-| `PSW` |  |  | 32 |  |
-| `CNF` | 1 | 21 | 1 | Text configuration: `SYSTEM.CNF` (boot), network settings |
-| `BIN` | 14 | 9 |  | Various tables: `PrgData.bin`, `stagehed.bin`, `Global<lang>.bin`, `Head<lang>.bin`, `LoadScrn.bin`, `pveh/vlist.bin`, `Tracks/tlist.bin` |
-| `RCF` |  |  | 22 |  |
-| `RCX` |  |  | 22 |  |
-| `HSM` |  | 15 |  | Prototype only, paired with `.LSM`; unknown |
-| `LSM` |  | 15 |  | Prototype only, paired with `.HSM`; unknown |
-| `IMG` | 4 | 3 | 2 | IOP replacement image (`IOPRP*.IMG`) or DNAS image |
-| `ELF` | 2 | 4 | 3 | EE or IOP executable |
-| `ICO` | 3 | 3 | 2 | PS2 memory-card icon model |
-| `RGB` | 3 | 3 |  |  |
-| `DFF` |  |  | 5 |  |
-| `SYS` | 2 | 2 |  | PS2 memory-card `icon.sys` |
-| `KFS` | 2 | 2 |  | Keyframe sequences? (`Data\Intro.kfs`, `Data\After.kfs`, `Data\Replay.kfs`) |
-| `TXD` | 2 | 2 |  | Texture dictionary (`Data/Global.txd`, `Data/Frontend.txd`); Criterion's own layout, not a standard RenderWare stream |
-| `PF` | 1 | 3 |  |  |
-| `MAP` |  | 4 |  | Link map ([formats](formats/codewarrior-maps.md)) |
-| `XMA` |  |  | 3 |  |
-| `XML` | 1 | 1 |  | `VDB.XML`, the binary value database ([value database](reference/value-database.md)) |
-| `BD` | 1 | 1 |  |  |
-| `HD` | 1 | 1 |  |  |
-| `BUN` | 2 |  |  |  |
-| `AST` |  | 2 |  | Assert strings ([asserts](reference/asserts.md)) |
-| `DIC` |  |  | 2 |  |
-| `50` | 1 |  |  |  |
-| `ICN` | 1 |  |  | PS2 memory-card icon (`saveicon.icn`) |
-| `45` |  | 1 |  |  |
-| `TXT` |  | 1 |  |  |
-| `DB` |  | 1 |  |  |
-| `97` |  |  | 1 |  |
-| `PS2` |  |  | 1 |  |
-| `OLD` |  |  | 1 |  |
-| `PNG` |  |  | 1 |  |
-| `TRA` |  |  | 1 |  |
+| Type | Retail | Prototype | US review | PAL review | B2 prototype | What it is |
+|---|---:|---:|---:|---:|---:|---|
+| `RWS` | 144 | 61 | 143 | 173 | 85 | RenderWare Audio stream: music, crash and speech streams (`tracks\crash%d.rws`, `ovid\movie.rws`) |
+| `DAT` | 111 | 33 | 111 | 111 | 7 | Track data: `static.dat`, `streamed.dat`, `enviro.dat` per track folder |
+| `M2V` | 110 | 7 | 110 | 119 | 3 | MPEG-2 video (header confirms); intros, attract loop, tutorials (`ovid\`) |
+| `BGD` | 36 | 9 | 36 | 36 | 185 | Track game data (`Gamedata.bgd`) |
+| `BGV` | 67 | 55 | 67 | 67 |  | Vehicle data, one per car in the vehicle folders (`CAR1.BGV` …); meaning of the name unknown |
+| `IRX` | 52 | 63 | 52 | 52 | 15 | IOP module ([IOP modules](reference/iop-modules.md)) |
+| `HWD` | 67 | 15 | 67 | 67 |  | Per-vehicle, paired with `.LWD`; possibly high/low detail or wave data (unknown) |
+| `LWD` | 67 | 15 | 67 | 67 |  | Per-vehicle, paired with `.HWD`; unknown |
+| `BTV` | 40 | 55 | 40 | 40 |  | Per-vehicle data next to `.BGV`; meaning unknown |
+| `AWD` | 40 | 19 | 40 | 40 |  | RenderWare Audio wave dictionary: sound effects per mode (`sound\generic.awd`, `sound\crash.awd` …) |
+| `BCD` |  |  |  |  | 128 |  |
+| `IVS` |  |  |  |  | 98 |  |
+| `BIN` | 14 | 9 | 30 | 30 |  | Various tables: `PrgData.bin`, `stagehed.bin`, `Global<lang>.bin`, `Head<lang>.bin`, `LoadScrn.bin`, `pveh/vlist.bin`, `Tracks/tlist.bin` |
+| `BSM` |  |  |  |  | 44 |  |
+| `P2W` |  |  |  |  | 32 |  |
+| `PSS` |  |  |  |  | 32 |  |
+| `PSW` |  |  |  |  | 32 |  |
+| `CNF` | 1 | 21 | 1 | 1 | 1 | Text configuration: `SYSTEM.CNF` (boot), network settings |
+| `RCF` |  |  |  |  | 22 |  |
+| `RCX` |  |  |  |  | 22 |  |
+| `IMG` | 4 | 3 | 4 | 4 | 2 | IOP replacement image (`IOPRP*.IMG`) or DNAS image |
+| `ELF` | 2 | 4 | 3 | 4 | 3 | EE or IOP executable |
+| `HSM` |  | 15 |  |  |  | Prototype only, paired with `.LSM`; unknown |
+| `LSM` |  | 15 |  |  |  | Prototype only, paired with `.HSM`; unknown |
+| `ICO` | 3 | 3 | 3 | 3 | 2 | PS2 memory-card icon model |
+| `RGB` | 3 | 3 | 3 | 3 |  |  |
+| `SYS` | 2 | 2 | 2 | 2 |  | PS2 memory-card `icon.sys` |
+| `KFS` | 2 | 2 | 2 | 2 |  | Keyframe sequences? (`Data\Intro.kfs`, `Data\After.kfs`, `Data\Replay.kfs`) |
+| `TXD` | 2 | 2 | 2 | 2 |  | Texture dictionary (`Data/Global.txd`, `Data/Frontend.txd`); Criterion's own layout, not a standard RenderWare stream |
+| `PF` | 1 | 3 | 1 | 1 |  |  |
+| `BUN` | 2 |  | 2 | 2 |  |  |
+| `DFF` |  |  |  |  | 5 |  |
+| `XML` | 1 | 1 | 1 | 1 |  | `VDB.XML`, the binary value database ([value database](reference/value-database.md)) |
+| `BD` | 1 | 1 | 1 | 1 |  |  |
+| `HD` | 1 | 1 | 1 | 1 |  |  |
+| `MAP` |  | 4 |  |  |  | Link map ([formats](formats/codewarrior-maps.md)) |
+| `ICN` | 1 |  | 1 | 1 |  | PS2 memory-card icon (`saveicon.icn`) |
+| `XMA` |  |  |  |  | 3 |  |
+| `50` | 1 |  | 1 |  |  |  |
+| `AST` |  | 2 |  |  |  | Assert strings ([asserts](reference/asserts.md)) |
+| `DIC` |  |  |  |  | 2 |  |
+| `45` |  | 1 |  |  |  |  |
+| `TXT` |  | 1 |  |  |  |  |
+| `DB` |  | 1 |  |  |  |  |
+| `84` |  |  |  | 1 |  |  |
+| `97` |  |  |  |  | 1 |  |
+| `PS2` |  |  |  |  | 1 |  |
+| `OLD` |  |  |  |  | 1 |  |
+| `PNG` |  |  |  |  | 1 |  |
+| `TRA` |  |  |  |  | 1 |  |
 
 ## Files the executables name
 
@@ -408,6 +449,452 @@ File names found in the strings of each executable, with the string's address. T
 | `0x00425DB8` | `streamed.dat` |
 | `0x00429C40` | `view.ico` |
 | `0x00429C68` | `icon.sys` |
+
+### Burnout 3 US review build (20 July 2004): `SLUS_210.50`
+
+| Address | String |
+|---|---|
+| `0x00485260` | `ovid\Titles%d.m2v` |
+| `0x00485280` | `ovid\dutch%d.m2v` |
+| `0x004852A0` | `ovid\englis%d.m2v` |
+| `0x004852C0` | `ovid\french%d.m2v` |
+| `0x004852E0` | `ovid\german%d.m2v` |
+| `0x00485300` | `ovid\italia%d.m2v` |
+| `0x00485320` | `ovid\japan%d.m2v` |
+| `0x00485340` | `ovid\spanis%d.m2v` |
+| `0x00485360` | `ovid\swedis%d.m2v` |
+| `0x00485380` | `ovid\cri_rw%d.m2v` |
+| `0x004853A0` | `ovid\TrC_DUT.m2v` |
+| `0x004853C0` | `ovid\TrC_ENG.m2v` |
+| `0x004853E0` | `ovid\TrC_FRA.m2v` |
+| `0x00485400` | `ovid\TrC_GER.m2v` |
+| `0x00485420` | `ovid\TrC_ITA.m2v` |
+| `0x00485440` | `ovid\TrC_JAP.m2v` |
+| `0x00485460` | `ovid\TrC_SPA.m2v` |
+| `0x00485480` | `ovid\TrC_SWE.m2v` |
+| `0x004854A0` | `ovid\TrD_DUT.m2v` |
+| `0x004854C0` | `ovid\TrD_ENG.m2v` |
+| `0x004854E0` | `ovid\TrD_FRA.m2v` |
+| `0x00485500` | `ovid\TrD_GER.m2v` |
+| `0x00485520` | `ovid\TrD_ITA.m2v` |
+| `0x00485540` | `ovid\TrD_JAP.m2v` |
+| `0x00485560` | `ovid\TrD_SPA.m2v` |
+| `0x00485580` | `ovid\TrD_SWE.m2v` |
+| `0x004855A0` | `tracks\_FEMain.m2v` |
+| `0x004855C0` | `ovid\complock.m2v` |
+| `0x004855E0` | `ovid\muunlock.m2v` |
+| `0x00485600` | `ovid\counlock.m2v` |
+| `0x00485620` | `ovid\spunlock.m2v` |
+| `0x00485640` | `ovid\suunlock.m2v` |
+| `0x00485660` | `ovid\EndCrsh.m2v` |
+| `0x00485680` | `ovid\EndRace.m2v` |
+| `0x004856A0` | `ovid\credits.m2v` |
+| `0x004856C0` | `ovid\SpcInv01.m2v` |
+| `0x004856E0` | `ovid\SpcInv02.m2v` |
+| `0x00485700` | `ovid\SpcInv03.m2v` |
+| `0x00485720` | `ovid\SpcPst01.m2v` |
+| `0x00485740` | `ovid\SpcPst02.m2v` |
+| `0x00485760` | `ovid\SpcPst03.m2v` |
+| `0x00485780` | `ovid\SpcPst04.m2v` |
+| `0x004857A0` | `ovid\SpcPst05.m2v` |
+| `0x004857C0` | `ovid\SpcPst06.m2v` |
+| `0x004857E0` | `ovid\SpcPst07.m2v` |
+| `0x00485800` | `ovid\SpcPst08.m2v` |
+| `0x00485820` | `ovid\SpcPst09.m2v` |
+| `0x00485840` | `ovid\SpcPst10.m2v` |
+| `0x00485860` | `ovid\SigTkd01.m2v` |
+| `0x00485880` | `ovid\SigTkd02.m2v` |
+| `0x004858A0` | `ovid\SigTkd03.m2v` |
+| `0x004858C0` | `ovid\SigTkd04.m2v` |
+| `0x004858E0` | `ovid\SigTkd05.m2v` |
+| `0x00485900` | `ovid\SigTkd06.m2v` |
+| `0x00485920` | `ovid\SigTkd07.m2v` |
+| `0x00485940` | `ovid\SigTkd08.m2v` |
+| `0x00485960` | `ovid\SigTkd09.m2v` |
+| `0x00485980` | `ovid\SigTkd10.m2v` |
+| `0x004859A0` | `ovid\SigTkd11.m2v` |
+| `0x004859C0` | `ovid\SigTkd12.m2v` |
+| `0x004859E0` | `ovid\SigTkd13.m2v` |
+| `0x00485A00` | `ovid\SigTkd14.m2v` |
+| `0x00485A20` | `ovid\SigTkd15.m2v` |
+| `0x00485A40` | `ovid\SigTkd16.m2v` |
+| `0x00485A60` | `ovid\SigTkd17.m2v` |
+| `0x00485A80` | `ovid\SigTkd18.m2v` |
+| `0x00485AA0` | `ovid\SigTkd19.m2v` |
+| `0x00485AC0` | `ovid\SigTkd20.m2v` |
+| `0x00485AE0` | `ovid\TkdTrp01.m2v` |
+| `0x00485B00` | `ovid\TkdTrp02.m2v` |
+| `0x00485B20` | `ovid\TkdTrp03.m2v` |
+| `0x00485B40` | `ovid\TkdTrp04.m2v` |
+| `0x00485B60` | `ovid\CrshHd01.m2v` |
+| `0x00485B80` | `ovid\CrshHd02.m2v` |
+| `0x00485BA0` | `ovid\CrshHd03.m2v` |
+| `0x00485BC0` | `ovid\CrshHd04.m2v` |
+| `0x00485BE0` | `ovid\CrshHd05.m2v` |
+| `0x00485C00` | `ovid\CrshHd06.m2v` |
+| `0x00485C20` | `ovid\CrshHd07.m2v` |
+| `0x00485C40` | `ovid\CrshHd08.m2v` |
+| `0x00485C60` | `ovid\CrshHd09.m2v` |
+| `0x00485C80` | `ovid\CrshHd10.m2v` |
+| `0x00485CA0` | `tracks\Alpine1.m2v` |
+| `0x00485CC0` | `tracks\Alpine2.m2v` |
+| `0x00485CE0` | `tracks\Alpine3.m2v` |
+| `0x00485D00` | `tracks\Alpine4.m2v` |
+| `0x00485D20` | `tracks\Riviera1.m2v` |
+| `0x00485D40` | `tracks\Riviera2.m2v` |
+| `0x00485D60` | `tracks\Riviera3.m2v` |
+| `0x00485D80` | `tracks\Riviera4.m2v` |
+| `0x00485DA0` | `tracks\Riviera5.m2v` |
+| `0x00485DC0` | `tracks\Vineyar1.m2v` |
+| `0x00485DE0` | `tracks\Vineyar2.m2v` |
+| `0x00485E00` | `tracks\Vineyar3.m2v` |
+| `0x00485E20` | `tracks\Vineyar4.m2v` |
+| `0x00485E40` | `tracks\Vineyar5.m2v` |
+| `0x00485E60` | `tracks\WinterC1.m2v` |
+| `0x00485E80` | `tracks\WinterC2.m2v` |
+| `0x00485EA0` | `tracks\WinterC3.m2v` |
+| `0x00485EC0` | `tracks\WinterC4.m2v` |
+| `0x00485EE0` | `tracks\WinterC5.m2v` |
+| `0x00485F00` | `tracks\WinterC6.m2v` |
+| `0x00485F20` | `tracks\Docksid1.m2v` |
+| `0x00485F40` | `tracks\Docksid2.m2v` |
+| `0x00485F60` | `tracks\Docksid3.m2v` |
+| `0x00485F80` | `tracks\Docksid4.m2v` |
+| `0x00485FA0` | `tracks\Docksid5.m2v` |
+| `0x00485FC0` | `tracks\GoldenC1.m2v` |
+| `0x00485FE0` | `tracks\GoldenC2.m2v` |
+| `0x00486000` | `tracks\GoldenC3.m2v` |
+| `0x00486020` | `tracks\GoldenC4.m2v` |
+| `0x00486040` | `tracks\GoldenC5.m2v` |
+| `0x00486060` | `tracks\GoldenC6.m2v` |
+| `0x00486080` | `tracks\IslandP1.m2v` |
+| `0x004860A0` | `tracks\IslandP2.m2v` |
+| `0x004860C0` | `tracks\IslandP3.m2v` |
+| `0x004860E0` | `tracks\IslandP4.m2v` |
+| `0x00486100` | `tracks\Downtow1.m2v` |
+| `0x00486120` | `tracks\Downtow2.m2v` |
+| `0x00486140` | `tracks\Downtow3.m2v` |
+| `0x00486160` | `tracks\SilverL1.m2v` |
+| `0x00486180` | `tracks\SilverL2.m2v` |
+| `0x004861A0` | `tracks\SilverL3.m2v` |
+| `0x004861C0` | `tracks\SilverL4.m2v` |
+| `0x004861E0` | `tracks\Waterfr1.m2v` |
+| `0x00486200` | `tracks\Waterfr2.m2v` |
+| `0x00486220` | `tracks\Waterfr3.m2v` |
+| `0x00486240` | `tracks\Waterfr4.m2v` |
+| `0x00486260` | `tracks\Static.m2v` |
+| `0x00486488` | `ovid\movie.rws` |
+| `0x00486A50` | `Data/Frontend.txd` |
+| `0x00486A70` | `Data/stagehed.bin` |
+| `0x00486A90` | `Data/GlobalEn.bin` |
+| `0x00486AB0` | `Data/GlobalDu.bin` |
+| `0x00486AD0` | `Data/GlobalSp.bin` |
+| `0x00486AF0` | `Data/GlobalUs.bin` |
+| `0x00486B10` | `Data/HeadEn.bin` |
+| `0x00486B30` | `Data/HeadDu.bin` |
+| `0x00486B50` | `Data/HeadSp.bin` |
+| `0x00486B70` | `Data/HeadUs.bin` |
+| `0x00486BD0` | `Data/Global.txd` |
+| `0x00486C38` | `pveh/vlist.bin` |
+| `0x00486C50` | `Data/EALogin.ico` |
+| `0x00486C70` | `Data/saveicon.icn` |
+| `0x00486C88` | `Data/vdb.xml` |
+| `0x00486CA0` | `Tracks/tlist.bin` |
+| `0x00486CC0` | `Data/PrgData.bin` |
+| `0x00488D00` | `cdrom0:\IOP\SIO2MAN.IRX;1` |
+| `0x00488D20` | `cdrom0:\IOP\SIO2D.IRX;1` |
+| `0x00488D40` | `cdrom0:\IOP\DBCMAN.IRX;1` |
+| `0x00488D60` | `cdrom0:\IOP\DS2O.IRX;1` |
+| `0x00488D80` | `cdrom0:\IOP\MC2_S1.IRX;1` |
+| `0x00488DA0` | `cdrom0:\IOP\LIBSD.IRX;1` |
+| `0x00488DC0` | `cdrom0:\IOP\RWA.IRX;1` |
+| `0x00488DE0` | `cdrom0:\IOP\B3ROUTE.IRX;1` |
+| `0x00488E00` | `cdrom0:\IOP\GTFSCDVD.IRX;1` |
+| `0x00488E20` | `cdrom0:\NFSUNDER\NFSUNDER.ELF;1` |
+| `0x00488EE0` | `cdrom0:\IOP\USBD.IRX;1` |
+| `0x00488F10` | `cdrom0:\IOP\LGAUD.IRX;1` |
+| `0x00488F30` | `cdrom0:\IOP\LGDEVW.IRX;1` |
+| `0x00488FA0` | `cdrom0:\IOP\NETWORK\DRTYSCKF.IRX;1` |
+| `0x00488FE8` | `SMAP.IRX` |
+| `0x00489000` | `cdrom0:\IOP\DNAS280.IMG;1` |
+| `0x0048A870` | `[libdbc.a = %d.%d, dbcman.irx = %d.%d]` |
+| `0x0048AD30` | `INET.IRX` |
+| `0x0048AD40` | `NETCNF.IRX` |
+| `0x0048AD50` | `INETCTL.IRX` |
+| `0x0048AD60` | `MSIFRPC.IRX` |
+| `0x0048AD70` | `LIBNET.IRX` |
+| `0x0048AD80` | `NETCNFIF.IRX` |
+| `0x0048AD90` | `IFCONFIG.IRX` |
+| `0x0048ADA0` | `EZNETCNF.IRX` |
+| `0x0048ADB0` | `EZNETCTL.IRX` |
+| `0x0048ADD0` | `SMAP.IRX` |
+| `0x0048ADE8` | `PPPOE.IRX` |
+| `0x0048AE10` | `icon=host0:iop\sys_net.ico` |
+| `0x0048AE2B` | `iconsys=host0:iop\icon.sys` |
+| `0x0048AE70` | `icon=cdrom0:\IOP\SYS_NET.ICO` |
+| `0x0048AE8D` | `iconsys=cdrom0:\IOP\ICON.SYS` |
+| `0x0048D930` | `Data/Intro2.m2v` |
+| `0x0048D940` | `Network/dnas_us.elf` |
+| `0x0048DC80` | `cdrom0:\NETGUI\NTGUI_EU.ELF;1` |
+| `0x0048DCA0` | `cdrom0:\NETGUI\NTGUI_UC.ELF;1` |
+| `0x0048F710` | `crash3.rws` |
+| `0x0048FBA8` | `crash%d.rws` |
+| `0x0048FBC0` | `tracks\crash%d.rws` |
+| `0x0048FFC0` | `sound\crashmod.awd` |
+| `0x00490068` | `sound\fe.awd` |
+| `0x004904E0` | `sound\single.awd` |
+| `0x00490500` | `sound\roadrage.awd` |
+| `0x00490520` | `sound\crash.awd` |
+| `0x00490530` | `sound\elim.awd` |
+| `0x00490560` | `%ssound.awd` |
+| `0x00490570` | `sound\generic.awd` |
+| `0x00490640` | `sound\generic.awd` |
+| `0x00490C00` | `sound\generic.awd` |
+| `0x00491750` | `sound\generic.awd` |
+| `0x00492A2F` | `Aenviro.dat` |
+| `0x00493C38` | `lgAudInit:  lgaud.irx is version %d.%02d.%03d` |
+| `0x00493CD8` | `lgAudInit: wrong version of lgaud.irx!` |
+| `0x00493D00` | `lgAudInit: warning: version mismatch between lgdev.irx and liblgdev.a ` |
+| `0x004957D8` | `Gamedata.bgd` |
+| `0x00496508` | `static.dat` |
+| `0x00498EF8` | `view.ico` |
+| `0x004992F8` | `view.ico` |
+| `0x00499308` | `icon.sys` |
+| `0x00499400` | `Data\LoadScrn.bin` |
+| `0x0049A190` | `Data\After.kfs` |
+| `0x0049A1A0` | `Data\Replay.kfs` |
+| `0x0049A1B0` | `Data\Intro.kfs` |
+| `0x0049B508` | `streamed.dat` |
+| `0x0049FA0F` | `|%s%s%d.awd` |
+| `0x0049FB80` | `view.ico` |
+| `0x0049FBA8` | `icon.sys` |
+| `0x004A2038` | `lgDevInit:  lgdev.irx is version %d.%02d.%03d` |
+| `0x004A20E0` | `lgDevInit: wrong version of lgDev.irx!` |
+| `0x004A2108` | `lgDevInit: warning: version mismatch between lgdev.irx and liblgdev.a ` |
+| `0x004A2FC0` | `ovid\movie.rws` |
+
+### Burnout 3 PAL review build (20 July 2004): `SLES_525.84`
+
+| Address | String |
+|---|---|
+| `0x00485160` | `ovid\Titles%d.m2v` |
+| `0x00485180` | `ovid\dutch%d.m2v` |
+| `0x004851A0` | `ovid\englis%d.m2v` |
+| `0x004851C0` | `ovid\french%d.m2v` |
+| `0x004851E0` | `ovid\german%d.m2v` |
+| `0x00485200` | `ovid\italia%d.m2v` |
+| `0x00485220` | `ovid\japan%d.m2v` |
+| `0x00485240` | `ovid\spanis%d.m2v` |
+| `0x00485260` | `ovid\swedis%d.m2v` |
+| `0x00485280` | `ovid\cri_rw%d.m2v` |
+| `0x004852A0` | `ovid\TrC_DUT.m2v` |
+| `0x004852C0` | `ovid\TrC_ENG.m2v` |
+| `0x004852E0` | `ovid\TrC_FRA.m2v` |
+| `0x00485300` | `ovid\TrC_GER.m2v` |
+| `0x00485320` | `ovid\TrC_ITA.m2v` |
+| `0x00485340` | `ovid\TrC_JAP.m2v` |
+| `0x00485360` | `ovid\TrC_SPA.m2v` |
+| `0x00485380` | `ovid\TrC_SWE.m2v` |
+| `0x004853A0` | `ovid\TrD_DUT.m2v` |
+| `0x004853C0` | `ovid\TrD_ENG.m2v` |
+| `0x004853E0` | `ovid\TrD_FRA.m2v` |
+| `0x00485400` | `ovid\TrD_GER.m2v` |
+| `0x00485420` | `ovid\TrD_ITA.m2v` |
+| `0x00485440` | `ovid\TrD_JAP.m2v` |
+| `0x00485460` | `ovid\TrD_SPA.m2v` |
+| `0x00485480` | `ovid\TrD_SWE.m2v` |
+| `0x004854A0` | `tracks\_FEMain.m2v` |
+| `0x004854C0` | `ovid\complock.m2v` |
+| `0x004854E0` | `ovid\muunlock.m2v` |
+| `0x00485500` | `ovid\counlock.m2v` |
+| `0x00485520` | `ovid\spunlock.m2v` |
+| `0x00485540` | `ovid\suunlock.m2v` |
+| `0x00485560` | `ovid\EndCrsh.m2v` |
+| `0x00485580` | `ovid\EndRace.m2v` |
+| `0x004855A0` | `ovid\credits.m2v` |
+| `0x004855C0` | `ovid\SpcInv01.m2v` |
+| `0x004855E0` | `ovid\SpcInv02.m2v` |
+| `0x00485600` | `ovid\SpcInv03.m2v` |
+| `0x00485620` | `ovid\SpcPst01.m2v` |
+| `0x00485640` | `ovid\SpcPst02.m2v` |
+| `0x00485660` | `ovid\SpcPst03.m2v` |
+| `0x00485680` | `ovid\SpcPst04.m2v` |
+| `0x004856A0` | `ovid\SpcPst05.m2v` |
+| `0x004856C0` | `ovid\SpcPst06.m2v` |
+| `0x004856E0` | `ovid\SpcPst07.m2v` |
+| `0x00485700` | `ovid\SpcPst08.m2v` |
+| `0x00485720` | `ovid\SpcPst09.m2v` |
+| `0x00485740` | `ovid\SpcPst10.m2v` |
+| `0x00485760` | `ovid\SigTkd01.m2v` |
+| `0x00485780` | `ovid\SigTkd02.m2v` |
+| `0x004857A0` | `ovid\SigTkd03.m2v` |
+| `0x004857C0` | `ovid\SigTkd04.m2v` |
+| `0x004857E0` | `ovid\SigTkd05.m2v` |
+| `0x00485800` | `ovid\SigTkd06.m2v` |
+| `0x00485820` | `ovid\SigTkd07.m2v` |
+| `0x00485840` | `ovid\SigTkd08.m2v` |
+| `0x00485860` | `ovid\SigTkd09.m2v` |
+| `0x00485880` | `ovid\SigTkd10.m2v` |
+| `0x004858A0` | `ovid\SigTkd11.m2v` |
+| `0x004858C0` | `ovid\SigTkd12.m2v` |
+| `0x004858E0` | `ovid\SigTkd13.m2v` |
+| `0x00485900` | `ovid\SigTkd14.m2v` |
+| `0x00485920` | `ovid\SigTkd15.m2v` |
+| `0x00485940` | `ovid\SigTkd16.m2v` |
+| `0x00485960` | `ovid\SigTkd17.m2v` |
+| `0x00485980` | `ovid\SigTkd18.m2v` |
+| `0x004859A0` | `ovid\SigTkd19.m2v` |
+| `0x004859C0` | `ovid\SigTkd20.m2v` |
+| `0x004859E0` | `ovid\TkdTrp01.m2v` |
+| `0x00485A00` | `ovid\TkdTrp02.m2v` |
+| `0x00485A20` | `ovid\TkdTrp03.m2v` |
+| `0x00485A40` | `ovid\TkdTrp04.m2v` |
+| `0x00485A60` | `ovid\CrshHd01.m2v` |
+| `0x00485A80` | `ovid\CrshHd02.m2v` |
+| `0x00485AA0` | `ovid\CrshHd03.m2v` |
+| `0x00485AC0` | `ovid\CrshHd04.m2v` |
+| `0x00485AE0` | `ovid\CrshHd05.m2v` |
+| `0x00485B00` | `ovid\CrshHd06.m2v` |
+| `0x00485B20` | `ovid\CrshHd07.m2v` |
+| `0x00485B40` | `ovid\CrshHd08.m2v` |
+| `0x00485B60` | `ovid\CrshHd09.m2v` |
+| `0x00485B80` | `ovid\CrshHd10.m2v` |
+| `0x00485BA0` | `tracks\Alpine1.m2v` |
+| `0x00485BC0` | `tracks\Alpine2.m2v` |
+| `0x00485BE0` | `tracks\Alpine3.m2v` |
+| `0x00485C00` | `tracks\Alpine4.m2v` |
+| `0x00485C20` | `tracks\Riviera1.m2v` |
+| `0x00485C40` | `tracks\Riviera2.m2v` |
+| `0x00485C60` | `tracks\Riviera3.m2v` |
+| `0x00485C80` | `tracks\Riviera4.m2v` |
+| `0x00485CA0` | `tracks\Riviera5.m2v` |
+| `0x00485CC0` | `tracks\Vineyar1.m2v` |
+| `0x00485CE0` | `tracks\Vineyar2.m2v` |
+| `0x00485D00` | `tracks\Vineyar3.m2v` |
+| `0x00485D20` | `tracks\Vineyar4.m2v` |
+| `0x00485D40` | `tracks\Vineyar5.m2v` |
+| `0x00485D60` | `tracks\WinterC1.m2v` |
+| `0x00485D80` | `tracks\WinterC2.m2v` |
+| `0x00485DA0` | `tracks\WinterC3.m2v` |
+| `0x00485DC0` | `tracks\WinterC4.m2v` |
+| `0x00485DE0` | `tracks\WinterC5.m2v` |
+| `0x00485E00` | `tracks\WinterC6.m2v` |
+| `0x00485E20` | `tracks\Docksid1.m2v` |
+| `0x00485E40` | `tracks\Docksid2.m2v` |
+| `0x00485E60` | `tracks\Docksid3.m2v` |
+| `0x00485E80` | `tracks\Docksid4.m2v` |
+| `0x00485EA0` | `tracks\Docksid5.m2v` |
+| `0x00485EC0` | `tracks\GoldenC1.m2v` |
+| `0x00485EE0` | `tracks\GoldenC2.m2v` |
+| `0x00485F00` | `tracks\GoldenC3.m2v` |
+| `0x00485F20` | `tracks\GoldenC4.m2v` |
+| `0x00485F40` | `tracks\GoldenC5.m2v` |
+| `0x00485F60` | `tracks\GoldenC6.m2v` |
+| `0x00485F80` | `tracks\IslandP1.m2v` |
+| `0x00485FA0` | `tracks\IslandP2.m2v` |
+| `0x00485FC0` | `tracks\IslandP3.m2v` |
+| `0x00485FE0` | `tracks\IslandP4.m2v` |
+| `0x00486000` | `tracks\Downtow1.m2v` |
+| `0x00486020` | `tracks\Downtow2.m2v` |
+| `0x00486040` | `tracks\Downtow3.m2v` |
+| `0x00486060` | `tracks\SilverL1.m2v` |
+| `0x00486080` | `tracks\SilverL2.m2v` |
+| `0x004860A0` | `tracks\SilverL3.m2v` |
+| `0x004860C0` | `tracks\SilverL4.m2v` |
+| `0x004860E0` | `tracks\Waterfr1.m2v` |
+| `0x00486100` | `tracks\Waterfr2.m2v` |
+| `0x00486120` | `tracks\Waterfr3.m2v` |
+| `0x00486140` | `tracks\Waterfr4.m2v` |
+| `0x00486160` | `tracks\Static.m2v` |
+| `0x00486388` | `ovid\movie.rws` |
+| `0x00486950` | `Data/Frontend.txd` |
+| `0x00486970` | `Data/stagehed.bin` |
+| `0x00486990` | `Data/GlobalEn.bin` |
+| `0x004869B0` | `Data/GlobalDu.bin` |
+| `0x004869D0` | `Data/GlobalSp.bin` |
+| `0x004869F0` | `Data/GlobalSw.bin` |
+| `0x00486A10` | `Data/HeadEn.bin` |
+| `0x00486A30` | `Data/HeadDu.bin` |
+| `0x00486A50` | `Data/HeadSp.bin` |
+| `0x00486A70` | `Data/HeadSw.bin` |
+| `0x00486AD0` | `Data/Global.txd` |
+| `0x00486B38` | `pveh/vlist.bin` |
+| `0x00486B50` | `Data/EALogin.ico` |
+| `0x00486B70` | `Data/saveicon.icn` |
+| `0x00486B88` | `Data/vdb.xml` |
+| `0x00486BA0` | `Tracks/tlist.bin` |
+| `0x00486BC0` | `Data/PrgData.bin` |
+| `0x00488C00` | `cdrom0:\IOP\SIO2MAN.IRX;1` |
+| `0x00488C20` | `cdrom0:\IOP\SIO2D.IRX;1` |
+| `0x00488C40` | `cdrom0:\IOP\DBCMAN.IRX;1` |
+| `0x00488C60` | `cdrom0:\IOP\DS2O.IRX;1` |
+| `0x00488C80` | `cdrom0:\IOP\MC2_S1.IRX;1` |
+| `0x00488CA0` | `cdrom0:\IOP\LIBSD.IRX;1` |
+| `0x00488CC0` | `cdrom0:\IOP\RWA.IRX;1` |
+| `0x00488CE0` | `cdrom0:\IOP\B3ROUTE.IRX;1` |
+| `0x00488D00` | `cdrom0:\IOP\GTFSCDVD.IRX;1` |
+| `0x00488D20` | `cdrom0:\NFSUNDER\NFSUNDER.ELF;1` |
+| `0x00488DE0` | `cdrom0:\IOP\USBD.IRX;1` |
+| `0x00488E10` | `cdrom0:\IOP\LGAUD.IRX;1` |
+| `0x00488E30` | `cdrom0:\IOP\LGDEVW.IRX;1` |
+| `0x00488EA0` | `cdrom0:\IOP\NETWORK\DRTYSCKF.IRX;1` |
+| `0x00488EE8` | `SMAP.IRX` |
+| `0x00488F00` | `cdrom0:\IOP\DNAS280.IMG;1` |
+| `0x0048A770` | `[libdbc.a = %d.%d, dbcman.irx = %d.%d]` |
+| `0x0048AC30` | `INET.IRX` |
+| `0x0048AC40` | `NETCNF.IRX` |
+| `0x0048AC50` | `INETCTL.IRX` |
+| `0x0048AC60` | `MSIFRPC.IRX` |
+| `0x0048AC70` | `LIBNET.IRX` |
+| `0x0048AC80` | `NETCNFIF.IRX` |
+| `0x0048AC90` | `IFCONFIG.IRX` |
+| `0x0048ACA0` | `EZNETCNF.IRX` |
+| `0x0048ACB0` | `EZNETCTL.IRX` |
+| `0x0048ACD0` | `SMAP.IRX` |
+| `0x0048ACE8` | `PPPOE.IRX` |
+| `0x0048AD10` | `icon=host0:iop\sys_net.ico` |
+| `0x0048AD2B` | `iconsys=host0:iop\icon.sys` |
+| `0x0048AD70` | `icon=cdrom0:\IOP\SYS_NET.ICO` |
+| `0x0048AD8D` | `iconsys=cdrom0:\IOP\ICON.SYS` |
+| `0x0048D860` | `Data/Intro2.m2v` |
+| `0x0048D870` | `Network/dnas_eu.elf` |
+| `0x0048DBB0` | `cdrom0:\NETGUI\NTGUI_EU.ELF;1` |
+| `0x0048DBD0` | `cdrom0:\NETGUI\NTGUI_UC.ELF;1` |
+| `0x0048F640` | `crash3.rws` |
+| `0x0048FAD8` | `crash%d.rws` |
+| `0x0048FAF0` | `tracks\crash%d.rws` |
+| `0x0048FEF0` | `sound\crashmod.awd` |
+| `0x0048FF98` | `sound\fe.awd` |
+| `0x00490410` | `sound\single.awd` |
+| `0x00490430` | `sound\roadrage.awd` |
+| `0x00490450` | `sound\crash.awd` |
+| `0x00490460` | `sound\elim.awd` |
+| `0x00490490` | `%ssound.awd` |
+| `0x004904A0` | `sound\generic.awd` |
+| `0x00490570` | `sound\generic.awd` |
+| `0x00490B30` | `sound\generic.awd` |
+| `0x00491680` | `sound\generic.awd` |
+| `0x0049295F` | `Aenviro.dat` |
+| `0x00493B68` | `lgAudInit:  lgaud.irx is version %d.%02d.%03d` |
+| `0x00493C08` | `lgAudInit: wrong version of lgaud.irx!` |
+| `0x00493C30` | `lgAudInit: warning: version mismatch between lgdev.irx and liblgdev.a ` |
+| `0x00495708` | `Gamedata.bgd` |
+| `0x00496438` | `static.dat` |
+| `0x00498E28` | `view.ico` |
+| `0x00499228` | `view.ico` |
+| `0x00499238` | `icon.sys` |
+| `0x00499330` | `Data\LoadScrn.bin` |
+| `0x0049A0C0` | `Data\After.kfs` |
+| `0x0049A0D0` | `Data\Replay.kfs` |
+| `0x0049A0E0` | `Data\Intro.kfs` |
+| `0x0049B438` | `streamed.dat` |
+| `0x0049F93F` | `|%s%s%d.awd` |
+| `0x0049FAB0` | `view.ico` |
+| `0x0049FAD8` | `icon.sys` |
+| `0x004A1F68` | `lgDevInit:  lgdev.irx is version %d.%02d.%03d` |
+| `0x004A2010` | `lgDevInit: wrong version of lgDev.irx!` |
+| `0x004A2038` | `lgDevInit: warning: version mismatch between lgdev.irx and liblgdev.a ` |
+| `0x004A2EF0` | `ovid\movie.rws` |
 
 ### Burnout 2 prototype (29 July 2002): `SLUS_204.97`
 

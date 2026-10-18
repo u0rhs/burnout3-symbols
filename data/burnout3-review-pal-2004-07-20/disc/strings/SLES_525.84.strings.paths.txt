@@ -1,0 +1,373 @@
+// SLES_525.84: file names and paths (371)
+
+0x00482DE8  Unsupported profile/level
+0x00485160  ovid\Titles%d.m2v
+0x00485180  ovid\dutch%d.m2v
+0x004851A0  ovid\englis%d.m2v
+0x004851C0  ovid\french%d.m2v
+0x004851E0  ovid\german%d.m2v
+0x00485200  ovid\italia%d.m2v
+0x00485220  ovid\japan%d.m2v
+0x00485240  ovid\spanis%d.m2v
+0x00485260  ovid\swedis%d.m2v
+0x00485280  ovid\cri_rw%d.m2v
+0x004852A0  ovid\TrC_DUT.m2v
+0x004852C0  ovid\TrC_ENG.m2v
+0x004852E0  ovid\TrC_FRA.m2v
+0x00485300  ovid\TrC_GER.m2v
+0x00485320  ovid\TrC_ITA.m2v
+0x00485340  ovid\TrC_JAP.m2v
+0x00485360  ovid\TrC_SPA.m2v
+0x00485380  ovid\TrC_SWE.m2v
+0x004853A0  ovid\TrD_DUT.m2v
+0x004853C0  ovid\TrD_ENG.m2v
+0x004853E0  ovid\TrD_FRA.m2v
+0x00485400  ovid\TrD_GER.m2v
+0x00485420  ovid\TrD_ITA.m2v
+0x00485440  ovid\TrD_JAP.m2v
+0x00485460  ovid\TrD_SPA.m2v
+0x00485480  ovid\TrD_SWE.m2v
+0x004854A0  tracks\_FEMain.m2v
+0x004854C0  ovid\complock.m2v
+0x004854E0  ovid\muunlock.m2v
+0x00485500  ovid\counlock.m2v
+0x00485520  ovid\spunlock.m2v
+0x00485540  ovid\suunlock.m2v
+0x00485560  ovid\EndCrsh.m2v
+0x00485580  ovid\EndRace.m2v
+0x004855A0  ovid\credits.m2v
+0x004855C0  ovid\SpcInv01.m2v
+0x004855E0  ovid\SpcInv02.m2v
+0x00485600  ovid\SpcInv03.m2v
+0x00485620  ovid\SpcPst01.m2v
+0x00485640  ovid\SpcPst02.m2v
+0x00485660  ovid\SpcPst03.m2v
+0x00485680  ovid\SpcPst04.m2v
+0x004856A0  ovid\SpcPst05.m2v
+0x004856C0  ovid\SpcPst06.m2v
+0x004856E0  ovid\SpcPst07.m2v
+0x00485700  ovid\SpcPst08.m2v
+0x00485720  ovid\SpcPst09.m2v
+0x00485740  ovid\SpcPst10.m2v
+0x00485760  ovid\SigTkd01.m2v
+0x00485780  ovid\SigTkd02.m2v
+0x004857A0  ovid\SigTkd03.m2v
+0x004857C0  ovid\SigTkd04.m2v
+0x004857E0  ovid\SigTkd05.m2v
+0x00485800  ovid\SigTkd06.m2v
+0x00485820  ovid\SigTkd07.m2v
+0x00485840  ovid\SigTkd08.m2v
+0x00485860  ovid\SigTkd09.m2v
+0x00485880  ovid\SigTkd10.m2v
+0x004858A0  ovid\SigTkd11.m2v
+0x004858C0  ovid\SigTkd12.m2v
+0x004858E0  ovid\SigTkd13.m2v
+0x00485900  ovid\SigTkd14.m2v
+0x00485920  ovid\SigTkd15.m2v
+0x00485940  ovid\SigTkd16.m2v
+0x00485960  ovid\SigTkd17.m2v
+0x00485980  ovid\SigTkd18.m2v
+0x004859A0  ovid\SigTkd19.m2v
+0x004859C0  ovid\SigTkd20.m2v
+0x004859E0  ovid\TkdTrp01.m2v
+0x00485A00  ovid\TkdTrp02.m2v
+0x00485A20  ovid\TkdTrp03.m2v
+0x00485A40  ovid\TkdTrp04.m2v
+0x00485A60  ovid\CrshHd01.m2v
+0x00485A80  ovid\CrshHd02.m2v
+0x00485AA0  ovid\CrshHd03.m2v
+0x00485AC0  ovid\CrshHd04.m2v
+0x00485AE0  ovid\CrshHd05.m2v
+0x00485B00  ovid\CrshHd06.m2v
+0x00485B20  ovid\CrshHd07.m2v
+0x00485B40  ovid\CrshHd08.m2v
+0x00485B60  ovid\CrshHd09.m2v
+0x00485B80  ovid\CrshHd10.m2v
+0x00485BA0  tracks\Alpine1.m2v
+0x00485BC0  tracks\Alpine2.m2v
+0x00485BE0  tracks\Alpine3.m2v
+0x00485C00  tracks\Alpine4.m2v
+0x00485C20  tracks\Riviera1.m2v
+0x00485C40  tracks\Riviera2.m2v
+0x00485C60  tracks\Riviera3.m2v
+0x00485C80  tracks\Riviera4.m2v
+0x00485CA0  tracks\Riviera5.m2v
+0x00485CC0  tracks\Vineyar1.m2v
+0x00485CE0  tracks\Vineyar2.m2v
+0x00485D00  tracks\Vineyar3.m2v
+0x00485D20  tracks\Vineyar4.m2v
+0x00485D40  tracks\Vineyar5.m2v
+0x00485D60  tracks\WinterC1.m2v
+0x00485D80  tracks\WinterC2.m2v
+0x00485DA0  tracks\WinterC3.m2v
+0x00485DC0  tracks\WinterC4.m2v
+0x00485DE0  tracks\WinterC5.m2v
+0x00485E00  tracks\WinterC6.m2v
+0x00485E20  tracks\Docksid1.m2v
+0x00485E40  tracks\Docksid2.m2v
+0x00485E60  tracks\Docksid3.m2v
+0x00485E80  tracks\Docksid4.m2v
+0x00485EA0  tracks\Docksid5.m2v
+0x00485EC0  tracks\GoldenC1.m2v
+0x00485EE0  tracks\GoldenC2.m2v
+0x00485F00  tracks\GoldenC3.m2v
+0x00485F20  tracks\GoldenC4.m2v
+0x00485F40  tracks\GoldenC5.m2v
+0x00485F60  tracks\GoldenC6.m2v
+0x00485F80  tracks\IslandP1.m2v
+0x00485FA0  tracks\IslandP2.m2v
+0x00485FC0  tracks\IslandP3.m2v
+0x00485FE0  tracks\IslandP4.m2v
+0x00486000  tracks\Downtow1.m2v
+0x00486020  tracks\Downtow2.m2v
+0x00486040  tracks\Downtow3.m2v
+0x00486060  tracks\SilverL1.m2v
+0x00486080  tracks\SilverL2.m2v
+0x004860A0  tracks\SilverL3.m2v
+0x004860C0  tracks\SilverL4.m2v
+0x004860E0  tracks\Waterfr1.m2v
+0x00486100  tracks\Waterfr2.m2v
+0x00486120  tracks\Waterfr3.m2v
+0x00486140  tracks\Waterfr4.m2v
+0x00486160  tracks\Static.m2v
+0x00486388  ovid\movie.rws
+0x00486910  ../export/ValueDB/Sound/Movie.cfg
+0x00486940  Sound/Front End
+0x00486950  Data/Frontend.txd
+0x00486970  Data/stagehed.bin
+0x00486990  Data/GlobalEn.bin
+0x004869B0  Data/GlobalDu.bin
+0x004869D0  Data/GlobalSp.bin
+0x004869F0  Data/GlobalSw.bin
+0x00486A10  Data/HeadEn.bin
+0x00486A30  Data/HeadDu.bin
+0x00486A50  Data/HeadSp.bin
+0x00486A70  Data/HeadSw.bin
+0x00486AD0  Data/Global.txd
+0x00486B38  pveh/vlist.bin
+0x00486B50  Data/EALogin.ico
+0x00486B70  Data/saveicon.icn
+0x00486B88  Data/vdb.xml
+0x00486BA0  Tracks/tlist.bin
+0x00486BC0  Data/PrgData.bin
+0x00486D50  ../Export/ValueDB/Score.cfg
+0x00487100  ../Export/ValueDB/Score.cfg
+0x004871A0  Score/Boost/Air
+0x00487200  Score/Boost/Oncoming
+0x004872A0  Score/Boost/Drift
+0x00487330  Score/Boost/Near Miss
+0x00487410  Score/Boost/Crash Escape
+0x00487530  Score/Boost/Aggressive
+0x00487610  Score/Boost/Boost Start
+0x00487660  Score/Boost/Takedowns
+0x00487830  Score/Boost/Props
+0x004878B0  Score/Boost/Lap
+0x00487910  Score/Boost/Crashing
+0x00487940  Score/Burnout Points
+0x00487C90  Score/BP Categories
+0x00487DF0  Score/Tailgating
+0x00487F10  Score/Grinding
+0x00487F50  Score/Distance Travelled
+0x004888B0  ../Export/ValueDB/Physics/cad.cfg
+0x00488C00  cdrom0:\IOP\SIO2MAN.IRX;1
+0x00488C20  cdrom0:\IOP\SIO2D.IRX;1
+0x00488C40  cdrom0:\IOP\DBCMAN.IRX;1
+0x00488C60  cdrom0:\IOP\DS2O.IRX;1
+0x00488C80  cdrom0:\IOP\MC2_S1.IRX;1
+0x00488CA0  cdrom0:\IOP\LIBSD.IRX;1
+0x00488CC0  cdrom0:\IOP\RWA.IRX;1
+0x00488CE0  cdrom0:\IOP\B3ROUTE.IRX;1
+0x00488D00  cdrom0:\IOP\GTFSCDVD.IRX;1
+0x00488D20  cdrom0:\NFSUNDER\NFSUNDER.ELF;1
+0x00488DE0  cdrom0:\IOP\USBD.IRX;1
+0x00488E10  cdrom0:\IOP\LGAUD.IRX;1
+0x00488E30  cdrom0:\IOP\LGDEVW.IRX;1
+0x00488E60  %sIOP\NETWORK\%s%s
+0x00488EA0  cdrom0:\IOP\NETWORK\DRTYSCKF.IRX;1
+0x00488EE8  SMAP.IRX
+0x00488F00  cdrom0:\IOP\DNAS280.IMG;1
+0x00488F50  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/plcore/babinary.c#1 $
+0x00489008  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/plcore/bamatrix.c#1 $
+0x00489080  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/bacamera.c#2 $
+0x004890F0  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/badevice.c#1 $
+0x00489198  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/batextur.c#2 $
+0x004891F0  @@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/basky.c#1 $
+0x00489D70  @@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/skyblit.c#1 $
+0x0048A000  @@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/skyconv.c#1 $
+0x0048A238  @@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/skyinst.c#1 $
+0x0048A2A0  @@@@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/texcache.c#1 $
+0x0048A390  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/pipe/p2/baim3d.c#1 $
+0x0048A478  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/pipe/p2/p2heap.c#1 $
+0x0048A770  [libdbc.a = %d.%d, dbcman.irx = %d.%d]
+0x0048AC30  INET.IRX
+0x0048AC40  NETCNF.IRX
+0x0048AC50  INETCTL.IRX
+0x0048AC60  MSIFRPC.IRX
+0x0048AC70  LIBNET.IRX
+0x0048AC80  NETCNFIF.IRX
+0x0048AC90  IFCONFIG.IRX
+0x0048ACA0  EZNETCNF.IRX
+0x0048ACB0  EZNETCTL.IRX
+0x0048ACD0  SMAP.IRX
+0x0048ACE8  PPPOE.IRX
+0x0048AD10  icon=host0:iop\sys_net.ico
+0x0048AD2B  iconsys=host0:iop\icon.sys
+0x0048AD70  icon=cdrom0:\IOP\SYS_NET.ICO
+0x0048AD8D  iconsys=cdrom0:\IOP\ICON.SYS
+0x0048AE80  M-SEARCH * HTTP/1.1\nHost:239.255.255.250:1900\nST:urn:schemas-upnp-org:device:WANConnectionDevice:1\nMan:"ssdp:discover"\nMX:3
+0x0048AF10   HTTP/1.1\nAccept: text/xml, application/xml\nUser-Agent: PS2
+0x0048AF80   HTTP/1.1\nContent-Type: text/xml; charset="utf-8"\nSOAPAction: "
+0x0048B4B0   HTTP/1.1\nContent-Type: text/xml; charset="utf-8"\nSOAPAction: "
+0x0048B7D0   HTTP/1.1\nContent-Type: text/xml; charset="utf-8"\nSOAPAction: "
+0x0048BAE0   HTTP/1.1\nContent-Type: text/xml; charset="utf-8"\nSOAPAction: "
+0x0048C5E0  ../Export/ValueDB/VehiclePhysics/%s.cfg
+0x0048C610  Physics/Vehicle
+0x0048C630  Physics/Suspension/Front
+0x0048C690  Physics/Suspension/Rear
+0x0048C6B0  ../Export/ValueDB/VehiclePhysics/%s.cfg
+0x0048C6E0  Physics/Vehicle
+0x0048C700  Physics/Suspension/Front
+0x0048C760  Physics/Suspension/Rear
+0x0048C780  Physics/Race Car/Body Roll
+0x0048C820  Physics/Race Car/LSDM
+0x0048C880  Physics/Race Car/Misc
+0x0048C990  Physics/Transmission/Engine
+0x0048CA30  Physics/Transmission/Gear Ratios
+0x0048CAE0  Physics/Transmission/Boost Kick
+0x0048CB30  Physics/Steering
+0x0048CBB8  Physics/Drift
+0x0048CCA0  Physics/Aggressive Driving Reaction
+0x0048D860  Data/Intro2.m2v
+0x0048D870  Network/dnas_eu.elf
+0x0048DBB0  cdrom0:\NETGUI\NTGUI_EU.ELF;1
+0x0048DBD0  cdrom0:\NETGUI\NTGUI_UC.ELF;1
+0x0048DBF0  AI/Arbitrator
+0x0048DC00  AI/Avoidance
+0x0048DC10  AI/Target
+0x0048DC20  AI/Car
+0x0048DC28  AI/Driver
+0x0048DC40  AI/Aggressive Driving
+0x0048DC60  AI/Aggressive Driving/Slam
+0x0048DC80  AI/Aggressive Driving/Reactions
+0x0048DCA0  ../Export/ValueDB/AI/defaults.cfg
+0x0048EAC0  ../export/ValueDB/Sound/Traffic.cfg
+0x0048EAE8  Sound/Traffic
+0x0048EB00  Sound/CrashingTraffic/Skids/Large
+0x0048EB30  Sound/CrashingTraffic/Skids/Small
+0x0048EB60  ../export/ValueDB/Sound/Boost.cfg
+0x0048EB88  Sound/Boost
+0x0048EB98  Sound/Doppler
+0x0048F138  Sound/L Train/
+0x0048F150  ../export/ValueDB/Sound/LTrain.cfg
+0x0048F440  ../export/ValueDB/Sound/Payload.cfg
+0x0048F470  Sound/Prop/Cone/
+0x0048F490  Sound/Prop/Card Box/
+0x0048F4B0  Sound/Prop/Metal Box/
+0x0048F4D0  Sound/Prop/Woodbox/
+0x0048F4F0  Sound/Prop/Signpost/
+0x0048F510  Sound/Prop/Barrier/
+0x0048F530  Sound/Prop/Metal Barrier/
+0x0048F550  Sound/Prop/Barrel/
+0x0048F570  Sound/Prop/Crate/
+0x0048F590  Sound/Prop/Boat/
+0x0048F5B0  Sound/Prop/Hay Bale/
+0x0048F5D0  Sound/Prop/Hay Drum/
+0x0048F5F0  Sound/Prop/Cable Drum/
+0x0048F610  Sound/Prop/Container/
+0x0048F630  Sound/Prop/Log/
+0x0048F640  crash3.rws
+0x0048FAD8  crash%d.rws
+0x0048FAF0  tracks\crash%d.rws
+0x0048FE80  ../export/ValueDB/Sound/Tracks/%s.cfg
+0x0048FEF0  sound\crashmod.awd
+0x0048FF40  ../export/ValueDB/Sound/HUD.cfg
+0x0048FF60  Sound/Hud/Aggressive Driving
+0x0048FF80  Sound/Hud/General
+0x0048FF98  sound\fe.awd
+0x004901D0  ../export/ValueDB/Sound/Esm.cfg
+0x004901F0  Sound/Esm
+0x00490410  sound\single.awd
+0x00490430  sound\roadrage.awd
+0x00490450  sound\crash.awd
+0x00490460  sound\elim.awd
+0x00490490  %ssound.awd
+0x004904A0  sound\generic.awd
+0x004904C0  ../export/ValueDB/Sound/Voice.cfg
+0x004904E8  Sound/Voice
+0x00490520  ../Export/ValueDB/VehicleAudioAI/%s.cfg
+0x00490570  sound\generic.awd
+0x004906E0  ../Export/ValueDB/VehicleAudio/%s.cfg
+0x00490750  VehicleAudio/Turbo
+0x0049088F  q../export/ValueDB/Sound/Misc.cfg
+0x004908B8  Sound/Misc
+0x004908C8  Sound/Boost
+0x00490A30  ../export/ValueDB/Sound/Skids.cfg
+0x00490A58  Sound/Skids
+0x00490A70  Sound/Skids/Sample1
+0x00490A90  Sound/Skids/Sample1/Variant1
+0x00490AB0  Sound/Skids/Sample2
+0x00490AD0  Sound/Skids/Sample2/Variant1
+0x00490AF0  Sound/Skids/Sample3
+0x00490B10  Sound/Skids/Sample3/Variant1
+0x00490B30  sound\generic.awd
+0x00491680  sound\generic.awd
+0x0049295F  Aenviro.dat
+0x00493B68  lgAudInit:  lgaud.irx is version %d.%02d.%03d
+0x00493C08  lgAudInit: wrong version of lgaud.irx!
+0x00493C30  lgAudInit: warning: version mismatch between lgdev.irx and liblgdev.a 
+0x004949F0  ../export/ValueDB/Sound/Misc.cfg
+0x00494A20  Sound/Misc/Vehicle Volume Tailoff
+0x00494A50  ../export/ValueDB/Sound/Surface.cfg
+0x00494F30  ../Export/ValueDB/Camera/
+0x00494F70  Crash/HandyCam/
+0x00494FB0  InGame/Effect/Burnout/Position/
+0x00494FE0  InGame/Effect/Burnout/Angular/
+0x00495000  InGame/Effect/Shunt/Position/
+0x00495020  InGame/Effect/Shunt/Angular/
+0x00495040  InGame/Effect/Shunted/Position/
+0x00495060  InGame/Effect/Shunted/Angular/
+0x00495080  InGame/Effect/Slam/Position/
+0x004950A0  InGame/Effect/Slam/Angular/
+0x004950C0  InGame/Effect/Shake/Position/
+0x004950E0  InGame/Effect/Shake/Angular/
+0x00495118  Camera/Bumper/
+0x00495130  Camera/Look Back/
+0x00495148  Camera/Follow/
+0x00495640  ../export/ValueDB/VehicleMaterial/
+0x00495708  Gamedata.bgd
+0x004963D0  ../export/ValueDB/TrackBloom/
+0x00496438  static.dat
+0x004969D0  Rumble/Car/Boost
+0x004969F0  Rumble/Car/BoostStart
+0x00496A10  Rumble/Car/Chain
+0x00496A30  Rumble/Car/Kerb
+0x00496A40  Rumble/Car/Surface
+0x00496A58  Rumble/Car/Air
+0x00496A70  Rumble/Collision/Crash
+0x00496A90  Rumble/Collision/CarVCar
+0x00496AB0  Rumble/Collision/CarVTraffic
+0x00496AD0  Rumble/Collision/CarVWorld
+0x00496AF0  Rumble/Menu
+0x00496B00  ../Export/ValueDB/Input/rumble.cfg
+0x00498E28  view.ico
+0x00499228  view.ico
+0x00499238  icon.sys
+0x00499330  Data\LoadScrn.bin
+0x0049A0C0  Data\After.kfs
+0x0049A0D0  Data\Replay.kfs
+0x0049A0E0  Data\Intro.kfs
+0x0049A250  http://msgconn.beta.ea.com/easo/cso05/pub/TOSAC.txt
+0x0049B438  streamed.dat
+0x0049F93F  |%s%s%d.awd
+0x0049FAB0  view.ico
+0x0049FAD8  icon.sys
+0x004A1230  ../Export/ValueDB/VehiclePhysics/%s.cfg
+0x004A1270  Physics/Vehicle
+0x004A12A0  Physics/Race Car/Misc
+0x004A1F68  lgDevInit:  lgdev.irx is version %d.%02d.%03d
+0x004A2010  lgDevInit: wrong version of lgDev.irx!
+0x004A2038  lgDevInit: warning: version mismatch between lgdev.irx and liblgdev.a 
+0x004A2EF0  ovid\movie.rws
+0x004A2F00  ../export/ValueDB/Sound/Movie.cfg
+0x004A2F30  Sound/Front End
+0x004A34B0  http://msgconn.beta.ea.com/easo/cso05/pub/TOSAC.txt

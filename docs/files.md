@@ -51,6 +51,20 @@ The retail executable is stripped. These are the named addresses known so far, a
 | [`SLUS-21050_BEBF8793_widescreen.pnach`](../data/burnout3-retail/third-party/AeroWidescreen-PCSX2-Cheats/SLUS-21050_BEBF8793_widescreen.pnach) | Aero_'s 16:9 widescreen patch (MIT) | 8.4 KB |  |
 | [`SLUS-21050_BEBF8793_buttons.pnach`](../data/burnout3-retail/third-party/AeroWidescreen-PCSX2-Cheats/SLUS-21050_BEBF8793_buttons.pnach) | Ookami & Aero_'s button mapping patch (MIT) | 1.3 KB |  |
 
+## Burnout 3 review builds (20 July 2004)
+
+Two review discs nine days before the final US build: US `SLUS_210.50` (11:11) and PAL `SLES_525.84` (11:14). Their executables are stripped like retail; exported here are the disc listings, strings, headers and value databases. See [builds](builds.md#burnout-3-review-builds-20-july-2004).
+
+| File | Contents | Size | Lines / rows |
+|---|---|---:|---:|
+| [`SLUS_210.50.strings.txt`](../data/burnout3-review-us-2004-07-20/disc/strings/SLUS_210.50.strings.txt) | US review: every string in the executable, with its address | 70.2 KB | 2,157 |
+| [`SLUS_210.50.headers.txt`](../data/burnout3-review-us-2004-07-20/disc/SLUS_210.50.headers.txt) | US review: ELF and program headers | 781 bytes | 21 |
+| [`VDB.section1.csv`](../data/burnout3-review-us-2004-07-20/disc/vdb/VDB.section1.csv) | US review: the value database decoded | 212.6 KB | 7,525 |
+| [`files.csv`](../data/burnout3-review-us-2004-07-20/disc/files.csv) | US review: every file on the disc | 38.8 KB | 791 |
+| [`SLES_525.84.strings.txt`](../data/burnout3-review-pal-2004-07-20/disc/strings/SLES_525.84.strings.txt) | PAL review: every string in the executable, with its address | 70.2 KB | 2,158 |
+| [`SLES_525.84.headers.txt`](../data/burnout3-review-pal-2004-07-20/disc/SLES_525.84.headers.txt) | PAL review: ELF and program headers | 782 bytes | 21 |
+| [`files.csv`](../data/burnout3-review-pal-2004-07-20/disc/files.csv) | PAL review: every file on the disc | 40.9 KB | 831 |
+
 ## Burnout 2 prototype: symbols and debug information
 
 The Burnout 2 prototype (29 July 2002) kept its symbols and full DWARF 1 debug information: types, signatures with parameter names, locals and line numbers. Most useful as the ancestor of Burnout 3's code ([class ancestors](reference/class-ancestors.md)). Format: [DWARF 1](formats/codewarrior-dwarf1.md).
@@ -76,8 +90,9 @@ Built from all of the above. The pages behind them are in [reference](reference/
 | [`b3-functions-by-build.csv`](reference/data/b3-functions-by-build.csv) | Every Burnout 3 function with address and size in all four builds | 999.4 KB | 11,617 |
 | [`b3-globals.csv`](reference/data/b3-globals.csv) | Every named variable in the prototype | 213.9 KB | 3,383 |
 | [`function-lineage.csv`](reference/data/function-lineage.csv) | Burnout 3 functions with their Burnout 2 counterpart | 113.7 KB | 704 |
-| [`vdb-changes.csv`](reference/data/vdb-changes.csv) | Tuning values changed between the prototype and retail | 83.7 KB | 1,949 |
-| [`hashes.tsv`](../data/hashes.tsv) | Size, CRC32, MD5 and SHA-1 of every source file | 1.8 KB | 15 |
+| [`vdb-changes-prototype-to-retail.csv`](reference/data/vdb-changes-prototype-to-retail.csv) | Tuning values changed between the prototype and retail | 83.7 KB | 1,949 |
+| [`vdb-changes-US-review-to-retail.csv`](reference/data/vdb-changes-US-review-to-retail.csv) | The 34 tuning values changed in the last nine days (July review build to retail) | 1.5 KB | 34 |
+| [`hashes.tsv`](../data/hashes.tsv) | Size, CRC32, MD5 and SHA-1 of every source file | 2.2 KB | 18 |
 
 ## Modules (IOP drivers and network)
 

@@ -24,6 +24,6 @@ Every page of the documentation, by section.
 - **[Formats](formats/README.md)**
   [CodeWarrior C++ name mangling](formats/codewarrior-demangling.md) · [CodeWarrior PS2 DWARF 1](formats/codewarrior-dwarf1.md) · [CodeWarrior link maps and assert files](formats/codewarrior-maps.md)
 - **[Data and tools](../data/README.md)**
-  [Burnout 3 prototype data](../data/burnout3-prototype/README.md) · [Burnout 3 retail data](../data/burnout3-retail/README.md) · [Burnout 2 prototype data](../data/burnout2-prototype/README.md) · [Burnout 2 source outlines](../data/burnout2-prototype/SLUS_204.97/source_outline/README.md) · [Reference tables (CSV)](reference/data/README.md) · [Tools](tools.md)
+  [Burnout 3 prototype data](../data/burnout3-prototype/README.md) · [Burnout 3 retail data](../data/burnout3-retail/README.md) · [Burnout 3 US review build data](../data/burnout3-review-us-2004-07-20/README.md) · [Burnout 3 PAL review build data](../data/burnout3-review-pal-2004-07-20/README.md) · [Burnout 2 prototype data](../data/burnout2-prototype/README.md) · [Burnout 2 source outlines](../data/burnout2-prototype/SLUS_204.97/source_outline/README.md) · [Reference tables (CSV)](reference/data/README.md) · [Tools](tools.md)
 - **[Project](related-projects.md)**
   [Related resources](related-projects.md) · [Open questions](open-questions.md) · [Changelog](changelog.md) · [GitHub repository](https://github.com/u0rhs/burnout3-symbols)

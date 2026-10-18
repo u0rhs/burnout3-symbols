@@ -11,4 +11,7 @@ The larger reference tables as CSV, generated with the [reference pages](../READ
 - [b3-functions-by-build.csv](b3-functions-by-build.csv) (1,023,382 bytes)
 - [b3-globals.csv](b3-globals.csv) (218,993 bytes)
 - [function-lineage.csv](function-lineage.csv) (116,459 bytes)
-- [vdb-changes.csv](vdb-changes.csv) (85,699 bytes)
+- [vdb-changes-prototype-to-retail.csv](vdb-changes-prototype-to-retail.csv) (85,699 bytes)
+- [vdb-changes-prototype-to-US-review.csv](vdb-changes-prototype-to-US-review.csv) (85,662 bytes)
+- [vdb-changes-US-review-to-PAL-review.csv](vdb-changes-US-review-to-PAL-review.csv) (72 bytes)
+- [vdb-changes-US-review-to-retail.csv](vdb-changes-US-review-to-retail.csv) (1,518 bytes)

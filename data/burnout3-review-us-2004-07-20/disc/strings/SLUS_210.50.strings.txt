@@ -1,0 +1,2131 @@
+// Printable strings in SLUS_210.50 (Burnout 3 US review build, 20 July 2004 11:11), at their load addresses, in address order.
+// Sorted lists by kind are in the files next to this one.
+
+0x00105755  QYqvP\np
+0x00105A99  QIqvP\np
+0x00105C59  QIqvP\np
+0x00105DF5  QYqvP\np
+0x00105E0D  QIqvP\np
+0x001101C4  hdq$@
+0x001381F8  pmc$!
+0x0013FE7B  HFHHJX
+0x0014070B  HFHHJX
+0x001F0129  SKqzI
+0x001F59CF  KBHDJ
+0x001F5E4B  KBHDJ
+0x00211DEB  KBHDJ
+0x002132AD  clq%XH
+0x0021EAF5  Cip%8
+0x0023E01D  Sgp-(
+0x002B8CEF  KBHDJ
+0x002B9027  KBHDJ
+0x002B94CB  KBHDJ
+0x002B981F  KBHDJ
+0x002BA1CB  KBHDJ
+0x002BA683  KBHDJ
+0x002BA9CF  KBHDJ
+0x002BEBE3  KBHDJ
+0x002BF207  KBHDJ
+0x002BF5DF  KBHDJ
+0x002C088B  KBHDJ
+0x002C1013  KBHDJ
+0x002D42B8  FQFJB
+0x002D49A7  KBHDJ
+0x002D72F7  KBHDJ
+0x002D7987  KBHDJ
+0x002E297B  $PWcx
+0x002E2997  $@Wcx
+0x00304B73  KBHDJ
+0x0030D923  <nwc4?
+0x0030D933  <rac49
+0x0030D943  <pic43
+0x0030D953  <koc4-
+0x0030D973  <mec4!
+0x0030D993  <wic4
+0x0030D9A3  <cnc4
+0x0030D9B3  <ysc4	
+0x0030D9D3  <tmc4
+0x0030D9E3  <atc4
+0x0030D9F3  <thc4
+0x0030DA23  <tsc4
+0x0030DA33  <vec4
+0x0030DA4F  <atc4
+0x0030DA6F  <mac4
+0x0030DA7F  <tsc4
+0x0030DA8F  <dnc4
+0x0030DAAF  <ioc4
+0x0030DABF  <nic4
+0x0030DACF  <nrc4
+0x0030DADF  <nec4
+0x0030DB17  <yoc5
+0x0030DB47  <rdc4p
+0x0030DB67  <noc4d
+0x0030DB9F  <mac4N
+0x0030DBAF  <dnc4H
+0x0030DBCF  <lac4<
+0x0030DBEB  <kac41
+0x0030DBFB  <kic4+
+0x0030DC1B  <nlc4
+0x0030DC2B  <cdc4
+0x0030DC3B  <rec4
+0x0030DC4B  <emc4
+0x0030DC5B  <noc4
+0x0030DC6B  <tic4
+0x0030DC87  <hkr4
+0x0030DDDC  kcc4q
+0x0030DDEB  <ete4k
+0x0030DE84  pfc4/
+0x0030DE9F  <lpc4$
+0x0030DEBB  <ssc4
+0x0030DECB  <rec4
+0x0030DEF3  <tsc4
+0x00311A77  <tic4
+0x003131B3  <swc4#
+0x00319B94  hjk%B
+0x0032F60F  KBHDJ
+0x00330D2B  KBHDJ
+0x00335FB3  <tac4,
+0x00365033  <hlc$
+0x0038CDA4  XPAJl
+0x0038CDC3  FXPAJ
+0x0038CDDF  DXPAJ
+0x0038CDFA  DXPAJ
+0x003B8FDF  KBHFJ
+0x003B929C  FQFJB
+0x003B9D33  KBXFJ
+0x003B9D48  FYFJB
+0x003B9FDC  FYFJB
+0x003D1D5B  <Xdc$
+0x003D1FCB  <Xdc$
+0x003D36B3  <Xdc$
+0x003D3C03  <Xdc$
+0x003DCF68  Pwb&@
+0x003DE17F  <trc4
+0x003E08E3  $evc4
+0x003E0FA4  tic4-
+0x003E2258  gnc4!
+0x003E24EB  <csc4nwB4
+0x003E261F  <yec4
+0x003E26BF  <elB4nnc4
+0x003E3FC7  <tac4
+0x003E9083  <rec4
+0x003E9307  <rec4
+0x003EDC0C  tac4- 
+0x003F16F7  $vnc4
+0x003F2DF7  <udc4 
+0x0040413F  KBHFJ
+0x00404887  KBHFJ
+0x004108BC  Dzc$!
+0x0044A0B9  X\nPex
+0x00455B10  PsIIlibgraph2800
+0x00455B60  PsIIlibdma  2800
+0x00455CC0  PsIIlibipu  2800
+0x00455D3F  9PsIIlibkernl2800
+0x00457440  PsIIlibcdvd 2800
+0x0045B668  GlobalFont
+0x00463FE8  HeadFont
+0x00469A68  SmallFont
+0x0046CCC0  PsIIlibpad2 2800
+0x0046CCF0  PsIIlibdbc  2800
+0x0046CE51  Qkkbal
+0x0046D278  PsIIlibinsck2800
+0x0046D2C0  PsIIlibmrpc 2800
+0x0046D2D8  PsIIlibmc2  2811
+0x0046D610  PsIIlibscf  2800
+0x0046D640  OffSgRcF
+0x0046D649  OffSgRcR
+0x0046D652  OffLpElF
+0x0046D65B  OffLpElR
+0x0046D664  OffBtRcF
+0x0046D66D  OffBtRcR
+0x0046D676  OffRRgeF
+0x0046D67F  OffRRgeR
+0x0046D688  OffBrLpF
+0x0046D691  OffBrLpR
+0x0046D69A  OffSrvlF
+0x0046D6A3  OffSrvlR
+0x0046D6AC  OffCrshF
+0x0046D6B5  OffCrshR
+0x0046D7A3  ?fff?
+0x0046D857  ?fff?
+0x0046D8DB  ?fff?
+0x0046D9BF  ?fff?
+0x0046DA73  ?fff?
+0x0046DB03  ?fff?
+0x0046DBDB  ?fff?
+0x0046DC5F  ?fff?
+0x0046DC8F  ?fff?
+0x0046E8B2  HBfff?
+0x0046E99B  =fff?
+0x0046EA32  HBfff?
+0x0046EAB2  HBfff?
+0x0046EB37  @fff?
+0x0046EBB2  HBfff?
+0x0047014A  s?yxs?
+0x004701AA  e?g)e?dtd?
+0x00471A84  unused
+0x00471AF4  unused
+0x00471BF0  fxskid
+0x00471C3F  >fxskid
+0x00471C8E  pAfxskid
+0x00471CDE  pAfxskid
+0x00473474  !"#$%&'()*+,.0123456789:;<=>@ABCDEFGHIJKLMNOQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+0x004734E8    !!""##$%&'()*+,-./001123456789:;<=>?@@ABCDEFGHIJKLMNOOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+0x00474F93  BZHUDJ4
+0x00474FB4  ;;IA,(GHRSbXY<
+0x00475033  $8Laioa
+0x0047505A  .HTeu{{j
+0x00475070  RGVPUJ
+0x00475173  '23ERab
+0x0047519A  ;[iieWT>
+0x004777A0  uddauleddnesresu
+0x004779C6  	DfxwC
+0x00477CEF  CUqpCj
+0x00477DD7  Cry#CRY
+0x00478117  Ctb'?
+0x00478873  Dpz-D
+0x00478883  Dpz-Do
+0x0047938E  DpzS?
+0x0047959A  w?Poz?
+0x004795BF  DPoz?
+0x00479D17  CPUU?
+0x00479F0F  DurVC
+0x0047A28B  Dpz-D
+0x0047A29B  Dpz-Do
+0x0047A8DF  CUUMD
+0x0047A9B7  DUUDD
+0x0047A9C7  >UUDD
+0x0047A9FF  DSUBD
+0x0047B3BF  DSUZC
+0x0047B3CF  >SUZC
+0x0047B74F  CSUWC
+0x0047B793  DXUHC
+0x0047BC0B  DXUHC
+0x0047C2CB  DXUHC
+0x0047C2DB  DXUHC
+0x0047C8EA  Y>fff>
+0x0047C90E  Dfff>33s>
+0x0047C956  	DUUDD
+0x0047C967  >UUDD
+0x0047CA3F  CUUMD
+0x0047CD07  CSUWC
+0x0047CE5F  Cff&?
+0x0047CF27  Dff6?
+0x0047CFEF  DffF?
+0x0047D087  DSUZC
+0x0047D08F  D33S?VfV?SUZC
+0x0047D157  D"3c?Vff?
+0x0047D17F  DVff?
+0x0047D21D  @	D"3s?Vfv?SU
+0x0047D246  	DVfv?
+0x0047D497  DSUZC
+0x0047D9D6  DSUBD
+0x0047DA0E  	DUUDD
+0x0047DA1E  #?UUDD
+0x0047DB21  jNDVU
+0x0047DD33  DXUHCy
+0x0047DD43  DXUHC
+0x0047E3A7  Dwh,?
+0x0047EBF3  DzfYD*
+0x0047EC03  DzfYD8k
+0x0047ECB3  DIIKD
+0x0047F165  "IDou
+0x0048007B  D@aWCPU
+0x00480656  1Dzk\nD%
+0x00480D1F  CfxvC
+0x00480F8F  DSUZC
+0x00480F9F  >SUZC
+0x00481147  CUUMD
+0x00481597  CPUU?
+0x00481FA6  0DPUU?
+0x00482480  std::exception
+0x00482498  exception
+0x004824F0  !std::bad_exception!!
+0x00482510  !std::exception!!std::bad_exception!!
+0x00482600  std::bad_exception
+0x00482630  bad_exception
+0x00482640  rom0:ROMVER
+0x00482650  sceGsDefDispEnv:Not support displaymode for 0x%x!!
+0x00482688  sceGsPutDrawEnv: DMA Ch.2 does not terminate
+0x004826B8  sceGsSyncPath: DMA Ch.1 does not terminate
+0x004826F8  D1_TADR=%08x:
+0x00482708  D1_MADR=%08x:
+0x00482738  D2_TADR=%08x:
+0x00482748  D2_MADR=%08x:
+0x00482768  	<VIF1_STAT=%08x:
+0x00482780  GIF_STAT=%08x>
+0x00482798  sceGsSyncPath: DMA Ch.2 does not terminate
+0x004827C8  sceGsSyncPath: VIF1 does not terminate
+0x004827F8  sceGsSyncPath: VU1 does not terminate
+0x00482820  sceGsSyncPath: GIF does not terminate
+0x00482850  sceGsExecStoreImage: DMA Ch.1 does not terminate
+0x00482888  sceGsExecStoreImage: GS does not terminate
+0x004828B8  sceGsExecStoreImage: DMA Ch.1 (GS->MEM) does not terminate
+0x004828F8  sceGsExecStoreImage: Enough data does not reach VIF1
+0x00482A20  libdma: sync timeout
+0x00482A90  Invalid modion type -- ignored(%d)
+0x00482AB8  (a) invalid motion_type(%d)-0
+0x00482AD8  (b) invalid motion_type(%d)-1
+0x00482AF8  (c) invalid motion_type(%d)-2
+0x00482B18  intra && skip MB
+0x00482B30  Error code detected(BDEC)
+0x00482B50  Invalid macroblock_address_increment code(0x%08x)
+0x00482B88  = Skip to the next picture =
+0x00482BA8  slice_start_code(0x%08x) out of range
+0x00482BD0  _sliceA0(): error happens
+0x00482BF0  Too many macroblocks in picture
+0x00482C10  skiped macroblock in I picure is not allowed
+0x00482C40  Invalid macroblock_type code: 0
+0x00482C90  load_chroma_intra_quantizer_matrix == 1
+0x00482CB8  load_chroma_non_intra_quantizer_matrix == 1
+0x00482CE8  odd number of field pictures
+0x00482D08  unknown picture sutructure
+0x00482D28  Too small buffer size for %dx%d picture
+0x00482D58  CSC handler error
+0x00482D70  The size of work area is too small
+0x00482D98  work area size is too small
+0x00482DB8  image buffer needs to be aligned to 64byte boundary(0x%08x)
+0x00482DF8  Need to re-setup libipu since sceMpegGetPicture was aborted
+0x00482E38  sceMpegGetPicture is aborted
+0x00482E78  the second field is missing
+0x00482E98  [MPEG ERROR]%s
+0x00482EA8  vertical size > 2800
+0x00482EC0  _chroma_format needs to be 1: 420
+0x00482EE8  Unsupported profile/level
+0x00482F08  _sequenceScalableExtension() is not implemented
+0x00482F38  Unknown Extension
+0x00482F50  _pictureSpatialScalableExtension is not supported
+0x00482F88  _pictureTemporalScalableExtension is not supported
+0x00482FC0  ## internel error in libkernl.a!
+0x00482FE8  DelayThread
+0x00482FF8  TTY: packet size larger than expect
+0x00483020  TTY: receive error
+0x00483038  TTY: send err %d
+0x00483050  TTY: err ti->wlen=%08x
+0x00483250  rom0:UDNL 
+0x00483260  too long parameter '%s'
+0x00483280  # TLB spad=0 kernel=1:%d default=%d:%d extended=%d:%d
+0x004832B8  # TLB over flow (1)
+0x004832D0  # TLB over flow (2)
+0x004832E8  # TLB over flow (3)
+0x00483327  <UUUUUU
+0x004833B0  UUUUUU
+0x00483410  UUUUUU
+0x00483470  UUUUUU
+0x004834F7  ?>UUUUU
+0x00483570  >UUUUU
+0x00483591  UUUUU
+0x004835E7  =UUUUUU
+0x00483631  UUUUU
+0x0048372F  ?>UUUUU
+0x004837C0  UUUUUU
+0x00483868  >UUUUU
+0x00483F3F  ?LUUUUU
+0x00483F98  LUUUUU
+0x00484017  ?IUUUUU
+0x0048406F  ?IUUUUU
+0x00484078  IUUUUU
+0x004841C8  sceCdCbfunc= %d sceCdCbfunc_num= %d
+0x004841F0  Libcdvd bind err CdSearchFile
+0x00484210  ee call cmd search %s
+0x00484228  search name %s
+0x00484238  search size %d
+0x00484248  search loc lbn %d
+0x00484260  Ncmd fail sema cur_cmd:%d keep_cmd:%d
+0x00484288  Libcdvd bind err N CMD
+0x004842A0  N cmd wait
+0x004842B0  S cmd wait
+0x004842C0  Scmd fail sema cur_cmd:%d keep_cmd:%d
+0x004842E8  Libcdvd bind err S cmd
+0x00484300  Libcdvd bind err %d CD_Init %d
+0x00484320  Libcdvd Exit
+0x00484330  OLD DiskReady Call
+0x00484348  Libcdvd bind err CdDiskReady
+0x00484368  DiskReady ended
+0x00484380  NEW DiskReady Call
+0x00484398  Libcdvd call Clock read 1
+0x004843B8  Libcdvd call Clock read 2
+0x0048441A  AAAAAA
+0x0048443A  BBBBBB
+0x004844E0  Infinity
+0x004847C8  (null)
+0x004847E8  bug in vfprintf: bad base
+0x00485220  cdrom0:
+0x00485228  CDROM0:
+0x00485230  cdrom0:\%s;1
+0x00485260  ovid\Titles%d.m2v
+0x00485280  ovid\dutch%d.m2v
+0x004852A0  ovid\englis%d.m2v
+0x004852C0  ovid\french%d.m2v
+0x004852E0  ovid\german%d.m2v
+0x00485300  ovid\italia%d.m2v
+0x00485320  ovid\japan%d.m2v
+0x00485340  ovid\spanis%d.m2v
+0x00485360  ovid\swedis%d.m2v
+0x00485380  ovid\cri_rw%d.m2v
+0x004853A0  ovid\TrC_DUT.m2v
+0x004853C0  ovid\TrC_ENG.m2v
+0x004853E0  ovid\TrC_FRA.m2v
+0x00485400  ovid\TrC_GER.m2v
+0x00485420  ovid\TrC_ITA.m2v
+0x00485440  ovid\TrC_JAP.m2v
+0x00485460  ovid\TrC_SPA.m2v
+0x00485480  ovid\TrC_SWE.m2v
+0x004854A0  ovid\TrD_DUT.m2v
+0x004854C0  ovid\TrD_ENG.m2v
+0x004854E0  ovid\TrD_FRA.m2v
+0x00485500  ovid\TrD_GER.m2v
+0x00485520  ovid\TrD_ITA.m2v
+0x00485540  ovid\TrD_JAP.m2v
+0x00485560  ovid\TrD_SPA.m2v
+0x00485580  ovid\TrD_SWE.m2v
+0x004855A0  tracks\_FEMain.m2v
+0x004855C0  ovid\complock.m2v
+0x004855E0  ovid\muunlock.m2v
+0x00485600  ovid\counlock.m2v
+0x00485620  ovid\spunlock.m2v
+0x00485640  ovid\suunlock.m2v
+0x00485660  ovid\EndCrsh.m2v
+0x00485680  ovid\EndRace.m2v
+0x004856A0  ovid\credits.m2v
+0x004856C0  ovid\SpcInv01.m2v
+0x004856E0  ovid\SpcInv02.m2v
+0x00485700  ovid\SpcInv03.m2v
+0x00485720  ovid\SpcPst01.m2v
+0x00485740  ovid\SpcPst02.m2v
+0x00485760  ovid\SpcPst03.m2v
+0x00485780  ovid\SpcPst04.m2v
+0x004857A0  ovid\SpcPst05.m2v
+0x004857C0  ovid\SpcPst06.m2v
+0x004857E0  ovid\SpcPst07.m2v
+0x00485800  ovid\SpcPst08.m2v
+0x00485820  ovid\SpcPst09.m2v
+0x00485840  ovid\SpcPst10.m2v
+0x00485860  ovid\SigTkd01.m2v
+0x00485880  ovid\SigTkd02.m2v
+0x004858A0  ovid\SigTkd03.m2v
+0x004858C0  ovid\SigTkd04.m2v
+0x004858E0  ovid\SigTkd05.m2v
+0x00485900  ovid\SigTkd06.m2v
+0x00485920  ovid\SigTkd07.m2v
+0x00485940  ovid\SigTkd08.m2v
+0x00485960  ovid\SigTkd09.m2v
+0x00485980  ovid\SigTkd10.m2v
+0x004859A0  ovid\SigTkd11.m2v
+0x004859C0  ovid\SigTkd12.m2v
+0x004859E0  ovid\SigTkd13.m2v
+0x00485A00  ovid\SigTkd14.m2v
+0x00485A20  ovid\SigTkd15.m2v
+0x00485A40  ovid\SigTkd16.m2v
+0x00485A60  ovid\SigTkd17.m2v
+0x00485A80  ovid\SigTkd18.m2v
+0x00485AA0  ovid\SigTkd19.m2v
+0x00485AC0  ovid\SigTkd20.m2v
+0x00485AE0  ovid\TkdTrp01.m2v
+0x00485B00  ovid\TkdTrp02.m2v
+0x00485B20  ovid\TkdTrp03.m2v
+0x00485B40  ovid\TkdTrp04.m2v
+0x00485B60  ovid\CrshHd01.m2v
+0x00485B80  ovid\CrshHd02.m2v
+0x00485BA0  ovid\CrshHd03.m2v
+0x00485BC0  ovid\CrshHd04.m2v
+0x00485BE0  ovid\CrshHd05.m2v
+0x00485C00  ovid\CrshHd06.m2v
+0x00485C20  ovid\CrshHd07.m2v
+0x00485C40  ovid\CrshHd08.m2v
+0x00485C60  ovid\CrshHd09.m2v
+0x00485C80  ovid\CrshHd10.m2v
+0x00485CA0  tracks\Alpine1.m2v
+0x00485CC0  tracks\Alpine2.m2v
+0x00485CE0  tracks\Alpine3.m2v
+0x00485D00  tracks\Alpine4.m2v
+0x00485D20  tracks\Riviera1.m2v
+0x00485D40  tracks\Riviera2.m2v
+0x00485D60  tracks\Riviera3.m2v
+0x00485D80  tracks\Riviera4.m2v
+0x00485DA0  tracks\Riviera5.m2v
+0x00485DC0  tracks\Vineyar1.m2v
+0x00485DE0  tracks\Vineyar2.m2v
+0x00485E00  tracks\Vineyar3.m2v
+0x00485E20  tracks\Vineyar4.m2v
+0x00485E40  tracks\Vineyar5.m2v
+0x00485E60  tracks\WinterC1.m2v
+0x00485E80  tracks\WinterC2.m2v
+0x00485EA0  tracks\WinterC3.m2v
+0x00485EC0  tracks\WinterC4.m2v
+0x00485EE0  tracks\WinterC5.m2v
+0x00485F00  tracks\WinterC6.m2v
+0x00485F20  tracks\Docksid1.m2v
+0x00485F40  tracks\Docksid2.m2v
+0x00485F60  tracks\Docksid3.m2v
+0x00485F80  tracks\Docksid4.m2v
+0x00485FA0  tracks\Docksid5.m2v
+0x00485FC0  tracks\GoldenC1.m2v
+0x00485FE0  tracks\GoldenC2.m2v
+0x00486000  tracks\GoldenC3.m2v
+0x00486020  tracks\GoldenC4.m2v
+0x00486040  tracks\GoldenC5.m2v
+0x00486060  tracks\GoldenC6.m2v
+0x00486080  tracks\IslandP1.m2v
+0x004860A0  tracks\IslandP2.m2v
+0x004860C0  tracks\IslandP3.m2v
+0x004860E0  tracks\IslandP4.m2v
+0x00486100  tracks\Downtow1.m2v
+0x00486120  tracks\Downtow2.m2v
+0x00486140  tracks\Downtow3.m2v
+0x00486160  tracks\SilverL1.m2v
+0x00486180  tracks\SilverL2.m2v
+0x004861A0  tracks\SilverL3.m2v
+0x004861C0  tracks\SilverL4.m2v
+0x004861E0  tracks\Waterfr1.m2v
+0x00486200  tracks\Waterfr2.m2v
+0x00486220  tracks\Waterfr3.m2v
+0x00486240  tracks\Waterfr4.m2v
+0x00486260  tracks\Static.m2v
+0x00486488  ovid\movie.rws
+0x00486A10  ../export/ValueDB/Sound/Movie.cfg
+0x00486A40  Sound/Front End
+0x00486A50  Data/Frontend.txd
+0x00486A70  Data/stagehed.bin
+0x00486A90  Data/GlobalEn.bin
+0x00486AB0  Data/GlobalDu.bin
+0x00486AD0  Data/GlobalSp.bin
+0x00486AF0  Data/GlobalUs.bin
+0x00486B10  Data/HeadEn.bin
+0x00486B30  Data/HeadDu.bin
+0x00486B50  Data/HeadSp.bin
+0x00486B70  Data/HeadUs.bin
+0x00486BD0  Data/Global.txd
+0x00486C38  pveh/vlist.bin
+0x00486C50  Data/EALogin.ico
+0x00486C70  Data/saveicon.icn
+0x00486C88  Data/vdb.xml
+0x00486CA0  Tracks/tlist.bin
+0x00486CC0  Data/PrgData.bin
+0x00486CE0  World Time %.5f
+0x00486E50  ../Export/ValueDB/Score.cfg
+0x00486E90  Minimum Boost Time (seconds)
+0x00486EB0  Boost Bar
+0x00486EC0  Minimum Boost Recovery Time (seconds)
+0x00486EF0  Boost Bar sizes (Boost Units)
+0x00486F10  Boost Earning Multiplier
+0x00486F30  Boost Rate (Boost Units per Second)
+0x00486F58  pickup_boost
+0x00486F68  pickup_score01
+0x00486F78  pickup_score02
+0x00486F88  pickup_score03
+0x00486FA0  pickup_multiplier_skull
+0x00486FC0  pickup_multiplierx2
+0x00486FE0  pickup_multiplierx4
+0x00487000  pickup_gamebreaker
+0x00487018  pickup_stealer
+0x00487110  Reflectivity
+0x00487120  Material Properties
+0x00487138  Glossiness
+0x00487148  Specularity
+0x00487160  GlossinessGlass
+0x00487170  SpecularityGlass
+0x00487200  ../Export/ValueDB/Score.cfg
+0x00487280  Minimum Air Distance (Metres)
+0x004872A0  Score/Boost/Air
+0x004872B0  Boost value per Air metre (Boost units)
+0x004872E0  Minimum Oncoming Speed (MPH)
+0x00487300  Score/Boost/Oncoming
+0x00487320  Minimum Oncoming Distance (Metres)
+0x00487350  Boost value per Oncoming metre (Boost units)
+0x00487380  Minimum Drift Speed (MPH)
+0x004873A0  Score/Boost/Drift
+0x004873C0  Minimum Drift Distance (Metres)
+0x004873E0  Boost value per Drift metre (Boost units)
+0x00487410  Near Miss Distance (Metres)
+0x00487430  Score/Boost/Near Miss
+0x00487450  Minimum Near Miss Speed (MPH)
+0x00487470  Minimum Near Miss Chain Speed (MPH)
+0x004874A0  Boost value per Near Miss (Boost units)
+0x004874D0  Near Miss Chain Time (Seconds)
+0x004874F0  Crash Escape Radius
+0x00487510  Score/Boost/Crash Escape
+0x00487530  Time Between Crashing Near Misses (Seconds)
+0x00487560  Minimum Time Clear After Crash Escape
+0x00487590  Minimum Crash Escape Speed (MPH)
+0x004875C0  Boost value per Crash Escape (Boost units)
+0x004875F0  Boost value lost or gained per Slam (Boost units)
+0x00487630  Score/Boost/Aggressive
+0x00487650  Boost value for rubbing (Boost units)
+0x00487680  Min Contact Time For Rubbing (Seconds)
+0x004876B0  Trading Paint Boost value (Boost units)
+0x004876E0  Boost Start Boost value (Boost units)
+0x00487710  Score/Boost/Boost Start
+0x00487730  Takedown Boost value (Boost units)
+0x00487760  Score/Boost/Takedowns
+0x00487780  Maximum Crash Wait Time (Seconds)
+0x004877B0  Maximum Crash Wait Time - No Slam (Seconds)
+0x004877E0  Minimum Collide Time to enable Takedown - No Slam (Seconds)
+0x00487820  Race Car Clear Wait Time (Seconds)
+0x00487850  Time window for getting a double takedown(Seconds)
+0x00487890  Time window for getting a takedown spree (Seconds)
+0x004878D0  Time window for getting a double revenge takedown (Seconds)
+0x00487910  Prop Hit Chain time (Seconds)
+0x00487930  Score/Boost/Props
+0x00487950  Prop Hit Boost value (Boost units)
+0x00487980  Perfect Lap Boost value (Boost units)
+0x004879B0  Score/Boost/Lap
+0x004879C0  Burnout Lap Boost value (Boost units)
+0x004879F0  Ratio of Boost Lost After Crash
+0x00487A10  Score/Boost/Crashing
+0x00487A28  Prop Hit BP
+0x00487A40  Score/Burnout Points
+0x00487A58  Rubbing BP
+0x00487A70  Tradin' Paint BP
+0x00487A88  Boost Start BP
+0x00487AA0  Crash Escape BP
+0x00487AB0  Burning Slam Extra BP
+0x00487AC8  Perfect Lap BP
+0x00487AD8  Takedown BP
+0x00487AF0  Revenge Takedown Bonus BP
+0x00487B10  Psyche Out BP
+0x00487B20  Aftertouch Takedown BP
+0x00487B38  No Mercy BP
+0x00487B50  Denied (You Were Lucky) BP
+0x00487B70  Denied (Takedown Denied) BP
+0x00487B90  Burnout Lap BP
+0x00487BA0  Near Miss BP
+0x00487BB0  Leading Race At End Of Lap BP
+0x00487BD0  Air Category BP
+0x00487BE0  Slam Type BP
+0x00487BF0  Super Slam Type BP
+0x00487C10  Oncoming Category BP
+0x00487C30  Drift Category BP
+0x00487C50  Tailgate Category BP
+0x00487C70  Rubbing Category BP
+0x00487C90  Grinding Category BP
+0x00487CB0  Near Miss Category BP
+0x00487CD0  Take Race Position BP
+0x00487CF0  Double Takedown BP
+0x00487D10  Takedown Spree BP
+0x00487D30  Double Revenge BP
+0x00487D50  Road Rage Takedown BP
+0x00487D70  Air Category Minima (Metres)
+0x00487D90  Score/BP Categories
+0x00487DB0  Oncoming Category Minima (Metres)
+0x00487DE0  Drift Category Minima (Metres)
+0x00487E00  Tailgate Category Minima (Seconds)
+0x00487E30  Rubbing Category Minima (Seconds)
+0x00487E60  Grinding Category Minima (Seconds)
+0x00487E90  Near Miss Category Minima (Counts)
+0x00487EC0  Max distance behind for tailgating (Metres)
+0x00487EF0  Score/Tailgating
+0x00487F10  Min distance behind for psyche-out when tailgating (Metres)
+0x00487F50  Cone angle behind for tailgating (Degrees)
+0x00487F80  Extra boost per second
+0x00487FA0  Minimum tailgating time to count as tailgating (Seconds)
+0x00487FE0  Minimum time to grind before scoring (Seconds)
+0x00488010  Score/Grinding
+0x00488020  Distance Travelled Medals (Miles)
+0x00488050  Score/Distance Travelled
+0x00488070  check
+0x00488078  finish
+0x00488188  Ghost car
+0x00488228  GlobalFont
+0x00488238  HeadFont
+0x00488260  UnbrokenGlass
+0x00488270  CrackedGlass
+0x00488280  SmashedGlass
+0x00488290  VehicleUnderside
+0x004882A8  SmallFont
+0x004882C8  boostflare
+0x004882E0  health_bar
+0x004882F8  hud_element01
+0x00488310  Aftertouch
+0x00488330  hud_boost_stars
+0x00488350  boostfirecore%02d
+0x00488370  boostfireedge%02d
+0x00488390  boostfireover%02d
+0x004883B0  boostbits
+0x004883C8  boostearnflame
+0x004883E0  hud_sign_flame
+0x004883F0  hud_sign_skull
+0x00488400  hud_award_star
+0x00488410  hud_signs_td
+0x00488420  MedalGold
+0x00488430  MedalSilver
+0x00488440  MedalBronze
+0x00488450  HUD_crash_boost
+0x00488460  HUD_crash_score01
+0x00488480  HUD_crash_score02
+0x004884A0  HUD_crash_score03
+0x004884B8  HUD_crash_x2
+0x004884C8  HUD_crash_x4
+0x004884E0  HUD_crash_breaker
+0x00488500  HUD_crash_skull
+0x00488510  HUD_crash_stealer
+0x004888C2  L>fff?)\
+0x004889B0  ../Export/ValueDB/Physics/cad.cfg
+0x00488A00  Air Ram Front Corner
+0x00488A18  CAD Properties
+0x00488A30  Air Ram Back Corner
+0x00488A48  Air Ram Side
+0x00488A58  Air Ram Front
+0x00488A68  Air Ram Back
+0x00488A78  Air Ram World
+0x00488A90  Air Ram Low Speed Multiplier
+0x00488C58  HEVYCAR5
+0x00488C68  HEVYCAR6
+0x00488D00  cdrom0:\IOP\SIO2MAN.IRX;1
+0x00488D20  cdrom0:\IOP\SIO2D.IRX;1
+0x00488D40  cdrom0:\IOP\DBCMAN.IRX;1
+0x00488D60  cdrom0:\IOP\DS2O.IRX;1
+0x00488D80  cdrom0:\IOP\MC2_S1.IRX;1
+0x00488DA0  cdrom0:\IOP\LIBSD.IRX;1
+0x00488DC0  cdrom0:\IOP\RWA.IRX;1
+0x00488DE0  cdrom0:\IOP\B3ROUTE.IRX;1
+0x00488E00  cdrom0:\IOP\GTFSCDVD.IRX;1
+0x00488E20  cdrom0:\NFSUNDER\NFSUNDER.ELF;1
+0x00488E40  exe=cdrom0:\SLUS_210.50;1
+0x00488E60  dev9x:
+0x00488E68  language=%d
+0x00488E80  Failed to poweroff dev9 %d
+0x00488EA0  conf=384
+0x00488EA9  hub=1
+0x00488EAF  dev=3
+0x00488EBA  gtd=8
+0x00488EC0  itd=8
+0x00488EC6  ioreq=8
+0x00488EE0  cdrom0:\IOP\USBD.IRX;1
+0x00488F00  maxstream=%d
+0x00488F10  cdrom0:\IOP\LGAUD.IRX;1
+0x00488F30  cdrom0:\IOP\LGDEVW.IRX;1
+0x00488F50  devs=1
+0x00488F57  effs=4
+0x00488F60  %sIOP\NETWORK\%s%s
+0x00488F78  cdrom0:\
+0x00488F90  stack=9999
+0x00488FA0  cdrom0:\IOP\NETWORK\DRTYSCKF.IRX;1
+0x00488FD0  stack=9999
+0x00488FDB  reset=1
+0x00488FE8  SMAP.IRX
+0x00489000  cdrom0:\IOP\DNAS280.IMG;1
+0x00489050  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/plcore/babinary.c#1 $
+0x00489108  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/plcore/bamatrix.c#1 $
+0x00489160  Invalid combination type
+0x00489180  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/bacamera.c#2 $
+0x004891C0  Invalid projection type specified
+0x004891F0  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/badevice.c#1 $
+0x00489258  Only rendering sub system
+0x00489298  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/batextur.c#2 $
+0x004892F0  @@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/basky.c#1 $
+0x00489E70  @@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/skyblit.c#1 $
+0x0048A100  @@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/skyconv.c#1 $
+0x0048A338  @@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/skyinst.c#1 $
+0x0048A3A0  @@@@(#)$Id: //RenderWare/RW36Active/rwsdk/driver/sky2/texcache.c#1 $
+0x0048A490  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/pipe/p2/baim3d.c#1 $
+0x0048A578  @@(#)$Id: //RenderWare/RW36Active/rwsdk/src/pipe/p2/p2heap.c#1 $
+0x0048A5C0  Heap resized from %d to %d bytes
+0x0048A7D0  libpad2: buffer addr is not 64 byte align. %08x
+0x0048A808  ERROR
+0x0048A810  EXECCMD
+0x0048A818  STABLE
+0x0048A820  NOLINK
+0x0048A830  libdbc: bind failed
+0x0048A848  libdbc: Module version mismatch 
+0x0048A870  [libdbc.a = %d.%d, dbcman.irx = %d.%d]
+0x0048A898  libdbc: SifDmaAddr %08x
+0x0048A8B8  sceDbcSetWorkAddr: rpc error
+0x0048A8D8  sceDbcCreateSocket: rpc error
+0x0048A8F8  sceDbcDeleteSocket: rpc error
+0x0048A918  sceDbcGetDepNumber: rpc error
+0x0048A938  sceDbcInitSocket: rpc error
+0x0048A958  sceDbcResetSocket: rpc error
+0x0048A978  sceDbcGetDeviceStatus: rpc error
+0x0048A9A0  sceDbcSRData: rpc error
+0x0048A9C0  sceDbcSendData: rpc error
+0x0048A9E0  libdbc: SendData2 data length too long [%d]
+0x0048AA10  dbcman : SendData2 BUSY
+0x0048AA30  sceDbcSendData2: rpc error
+0x0048AA50  libdbc: SendData3 data length too long
+0x0048AA78  dbcman : SendData3 BUSY
+0x0048AA98  sceDbcReceiveData: rpc error
+0x0048ABA0  GtCommVa%04d
+0x0048AD30  INET.IRX
+0x0048AD40  NETCNF.IRX
+0x0048AD50  INETCTL.IRX
+0x0048AD60  MSIFRPC.IRX
+0x0048AD70  LIBNET.IRX
+0x0048AD80  NETCNFIF.IRX
+0x0048AD90  IFCONFIG.IRX
+0x0048ADA0  EZNETCNF.IRX
+0x0048ADB0  EZNETCTL.IRX
+0x0048ADD0  SMAP.IRX
+0x0048ADE8  PPPOE.IRX
+0x0048AE00  mem=64KB
+0x0048AE10  icon=host0:iop\sys_net.ico
+0x0048AE2B  iconsys=host0:iop\icon.sys
+0x0048AE50  -no_auto
+0x0048AE59  -no_decode
+0x0048AE64  -verbose
+0x0048AE70  icon=cdrom0:\IOP\SYS_NET.ICO
+0x0048AE8D  iconsys=cdrom0:\IOP\ICON.SYS
+0x0048AF40  burnout3-ps2-2004
+0x0048AF80  M-SEARCH * HTTP/1.1\nHost:239.255.255.250:1900\nST:urn:schemas-upnp-org:device:WANConnectionDevice:1\nMan:"ssdp:discover"\nMX:3
+0x0048B010   HTTP/1.1\nAccept: text/xml, application/xml\nUser-Agent: PS2
+0x0048B050  Connection: Keep-Alive
+0x0048B080   HTTP/1.1\nContent-Type: text/xml; charset="utf-8"\nSOAPAction: "
+0x0048B0D0  #AddPortMapping"\nUser-Agent: PS2
+0x0048B100  Connection: Keep-Alive\nCache-Control: no-cache
+0x0048B140  <?xml version="1.0"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:AddPortMapping xmlns:m="
+0x0048B220  "><NewRemoteHost xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="string">
+0x0048B270  </NewRemoteHost><NewExternalPort xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="ui2">
+0x0048B2D0  </NewExternalPort><NewProtocol xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="string">UDP</NewProtocol><NewInternalPort xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="ui2">
+0x0048B390  </NewInternalPort><NewInternalClient xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="string">
+0x0048B400  </NewInternalClient><NewEnabled xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="boolean">1</NewEnabled><NewPortMappingDescription xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="string">Criterion Games port mapping</NewPortMappingDescription><NewLeaseDuration xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="ui4">0</NewLeaseDuration></m:AddPortMapping></SOAP-ENV:Body></SOAP-ENV:Envelope>
+0x0048B5B0   HTTP/1.1\nContent-Type: text/xml; charset="utf-8"\nSOAPAction: "
+0x0048B600  #GetSpecificPortMappingEntry"\nUser-Agent: PS2
+0x0048B640  Connection: Keep-Alive\nCache-Control: no-cache
+0x0048B680  <?xml version="1.0"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:GetSpecificPortMappingEntry xmlns:m="
+0x0048B760  "><NewRemoteHost xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="string">
+0x0048B7B0  </NewRemoteHost><NewExternalPort xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="ui2">
+0x0048B810  </NewExternalPort><NewProtocol xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="string">UDP</NewProtocol></m:GetSpecificPortMappingEntry></SOAP-ENV:Body></SOAP-ENV:Envelope>
+0x0048B8D0   HTTP/1.1\nContent-Type: text/xml; charset="utf-8"\nSOAPAction: "
+0x0048B920  #DeletePortMapping"\nUser-Agent: PS2
+0x0048B950  Connection: Keep-Alive\nCache-Control: no-cache
+0x0048B990  <?xml version="1.0"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:DeletePortMapping xmlns:m="
+0x0048BA70  "><NewRemoteHost xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="string">
+0x0048BAC0  </NewRemoteHost><NewExternalPort xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="ui2">
+0x0048BB20  </NewExternalPort><NewProtocol xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="string">UDP</NewProtocol></m:DeletePortMapping></SOAP-ENV:Body></SOAP-ENV:Envelope>
+0x0048BBE0   HTTP/1.1\nContent-Type: text/xml; charset="utf-8"\nSOAPAction: "
+0x0048BC30  #GetExternalIPAddress"\nUser-Agent: PS2
+0x0048BC60  Connection: Keep-Alive\nCache-Control: no-cache
+0x0048BCA0  <?xml version="1.0"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:GetExternalIPAddress xmlns:m="
+0x0048BD80  "/></SOAP-ENV:Body></SOAP-ENV:Envelope>
+0x0048BDB0  urn:schemas-upnp-org:device:wanconnectiondevice
+0x0048BDE0  </root>
+0x0048BE20  demangler.ea.com
+0x0048BE68  CONTENT-LENGTH
+0x0048BE98  Host: %s
+0x0048BEB0  Content-Length: %d
+0x0048BEC8  <errorCode
+0x0048BEE0  <errorDescription
+0x0048BEF8  content-length
+0x0048BF08  errorCode
+0x0048BF20  errorDescription
+0x0048BF50  newInternalPort
+0x0048BF60  newInternalClient
+0x0048BF78  newEnabled
+0x0048BF90  NewLeaseDuration
+0x0048BFB0  GetExternalIPAddressResponse
+0x0048BFD0  newExternalIPAddress
+0x0048BFE8  location:
+0x0048C008  Host: %s:%d
+0x0048C018  <device>
+0x0048C028  </device>
+0x0048C038  serviceType
+0x0048C048  Connection
+0x0048C058  controlurl
+0x0048C070  deviceType
+0x0048C080  WANConnectionDevice
+0x0048C0E0  mode must be 0 in this version.
+0x0048C108  %s: send buffer addr is not 64 byte align. %08x=n
+0x0048C140  sceSifMCallRpc
+0x0048C150  %s: receive buffer addr is not 64 byte align. %08x=n
+0x0048C210  libmc2: TerminateTread faild
+0x0048C3E0  Sony PS2 Memory Card Format
+0x0048C410  libmc2: Fatal Error [%08x]
+0x0048C438  ** PANIC!
+0x0048C448  SendDataHoge
+0x0048C458  libmc2: Invalid data length (over 8192)
+0x0048C490  SceNetcnfifCallbackThread
+0x0048C4B0  SceNetcnfifCreateSema
+0x0048C4C8  [fatal error] c_sema in netcnfif(type=%d)
+0x0048C4F8  rom0:ROMVER
+0x0048C640  envmapsun
+0x0048C670  tracks/
+0x0048C6D0  pveh/
+0x0048C6E0  ../Export/ValueDB/VehiclePhysics/%s.cfg
+0x0048C710  Physics/Vehicle
+0x0048C720  Mass (Kg)
+0x0048C730  Physics/Suspension/Front
+0x0048C750  Attatch Height
+0x0048C760  Spring Length
+0x0048C770  Spring Force
+0x0048C780  Spring Damping
+0x0048C790  Physics/Suspension/Rear
+0x0048C7B0  ../Export/ValueDB/VehiclePhysics/%s.cfg
+0x0048C7E0  Physics/Vehicle
+0x0048C7F0  Mass (Kg)
+0x0048C800  Physics/Suspension/Front
+0x0048C820  Attatch Height
+0x0048C830  Spring Length
+0x0048C840  Spring Force
+0x0048C850  Spring Damping
+0x0048C860  Physics/Suspension/Rear
+0x0048C880  Physics/Race Car/Body Roll
+0x0048C8A0  Brake Force Height
+0x0048C8C0  Accel Force Height
+0x0048C8E0  Steer Force Height
+0x0048C900  Drift Force Height
+0x0048C920  Physics/Race Car/LSDM
+0x0048C938  Speed Limit
+0x0048C948  Steering Angle
+0x0048C958  Torque 1
+0x0048C968  Torque 2
+0x0048C980  Physics/Race Car/Misc
+0x0048C998  Drag Coef
+0x0048C9A8  Downforce Coef
+0x0048C9C0  Wall Collsion Penalty
+0x0048C9E0  Accel Multiplier
+0x0048C9F8  Braking Factor
+0x0048CA10  Engine Braking Factor
+0x0048CA30  Max Speed In Boost
+0x0048CA50  Min Drift Angle In Air
+0x0048CA70  In Air Corkscrew Damping
+0x0048CA90  Physics/Transmission/Engine
+0x0048CAB0  Torque
+0x0048CAC0  Peak Torque Revs
+0x0048CAE0  Fall Off Torque Revs
+0x0048CAF8  Idle RPM
+0x0048CB08  Max RPM
+0x0048CB10  Change Down RPM
+0x0048CB20  Change Up RPM
+0x0048CB30  Physics/Transmission/Gear Ratios
+0x0048CB58  Reverse
+0x0048CB60  Neutral
+0x0048CB68  1st Gear
+0x0048CB78  2nd Gear
+0x0048CB88  3rd Gear
+0x0048CB98  4th Gear
+0x0048CBA8  5th Gear
+0x0048CBB8  6th Gear
+0x0048CBC8  Final Gear
+0x0048CBE0  Physics/Transmission/Boost Kick
+0x0048CC00  Boost Kick Torque
+0x0048CC20  Boost Kick Time
+0x0048CC30  Physics/Steering
+0x0048CC50  Min Angle (degrees)
+0x0048CC70  Max Angle (degrees)
+0x0048CC88  Min Velocity
+0x0048CC98  Max Velocity
+0x0048CCA8  Response
+0x0048CCB8  Physics/Drift
+0x0048CCC8  Slide Max
+0x0048CCD8  Slide Min
+0x0048CCF0  Turn Momentum Slow
+0x0048CD10  Turn Momentum Fast
+0x0048CD30  Auto Drift Delay
+0x0048CD48  Turn Rate
+0x0048CD60  Min Drift Speed
+0x0048CD70  Max Speed Pressure
+0x0048CD90  Max Drift Angle
+0x0048CDA0  Physics/Aggressive Driving Reaction
+0x0048CDD0  Steer Away Time (s)
+0x0048CDF0  Total Out-Of-Control Time (s)
+0x0048CE10  Steering Max Angle (degrees)
+0x0048CE30  Steering Max Velocity
+0x0048CE50  Steering Drag Coef
+0x0048D00E  #=fff?
+0x0048D087  ?fff?
+0x0048D0BF  ?fff?
+0x0048D0F7  ?fff?
+0x0048D12F  ?fff?
+0x0048D167  ?fff?
+0x0048D19F  ?fff?
+0x0048D31E  #<fff?
+0x0048D356  L=fff?
+0x0048D397  ?fff?
+0x0048D3CF  ?fff?
+0x0048D407  ?fff?
+0x0048D43F  ?fff?
+0x0048D477  ?fff?
+0x0048D4AF  ?fff?
+0x0048D79F  'coronaglow
+0x0048D7B0  coronaboost
+0x0048D7C0  coronaboostred
+0x0048D918  Burnout 3
+0x0048D930  Data/Intro2.m2v
+0x0048D940  Network/dnas_us.elf
+0x0048DC80  cdrom0:\NETGUI\NTGUI_EU.ELF;1
+0x0048DCA0  cdrom0:\NETGUI\NTGUI_UC.ELF;1
+0x0048DCC0  AI/Arbitrator
+0x0048DCD0  AI/Avoidance
+0x0048DCE0  AI/Target
+0x0048DCF0  AI/Car
+0x0048DCF8  AI/Driver
+0x0048DD10  AI/Aggressive Driving
+0x0048DD30  AI/Aggressive Driving/Slam
+0x0048DD50  AI/Aggressive Driving/Reactions
+0x0048DD70  ../Export/ValueDB/AI/defaults.cfg
+0x0048DDA0  Out of range speed decrease rate
+0x0048DDD0  Max desDir angle change OOR
+0x0048DDF0  Angle you want min spd at
+0x0048DE10  Top speed mps
+0x0048DE20  Min speed mps
+0x0048DE30  How much carAt affects steering
+0x0048DE50  Angle at which drift is started
+0x0048DE70  Max lock at 180 x degrees
+0x0048DE90  Drift Max lock at 180 x degrees
+0x0048DEB0  Risk threshold
+0x0048DEC0  Total risk threshold
+0x0048DEE0  Current risk threshold
+0x0048DF00  Corner Risk threshold
+0x0048DF20  Total corner risk threshold
+0x0048DF40  Current corner risk threshold
+0x0048DF60  AVOID: LookAhead dist racecars
+0x0048DF80  AVOID: Soft No Go offset time
+0x0048DFA0  AVOID: Soft No Go offset distance
+0x0048DFD0  Extra softNoGo offset dist for future
+0x0048E000  Extra softNoGo offset time for future
+0x0048E030  Hard No Go offset time
+0x0048E050  Hard No Go offset distance
+0x0048E070  Distance to discard fatally colliding racecar
+0x0048E0A0  Vert dist to discard traffic and racecars
+0x0048E0D0  dt between start and end vehicle
+0x0048E100  Speed when car is <10m away
+0x0048E120  Speed when car is <20m away
+0x0048E140  Speed when car is <30m away
+0x0048E160  Speed when risk is >0.95
+0x0048E180  Speed when risk is >0.9
+0x0048E1A0  Steering factor big=>extreme
+0x0048E1C0  Aggression time variation factor
+0x0048E1F0  Aggression dist variation factor
+0x0048E220  Aggression time variation offset
+0x0048E250  Aggression dist variation offset
+0x0048E280  Dist to brake speed factor big=>fast
+0x0048E2B0  Drift speed threshold
+0x0048E2D0  Dist to update target pos
+0x0048E2F0  Perp dist to update target pos
+0x0048E310  Corner radius to give max offset pos
+0x0048E340  Time until we hit the apex at which to start drifting (seconds)
+0x0048E380  Number of segments to extend the start of any corner
+0x0048E3C0  Max. number of extra segments to extend the corner based on your speed
+0x0048E410  Number of segments to extend the start of any corner (when drifting)
+0x0048E460  Max. number of extra segments to extend the corner based on your speed (when drifting)
+0x0048E4C0  How far away from the true apex to move the apex point of a corner when drifting (meters)
+0x0048E520  How close the target car must be to start proper speed matching (meters)
+0x0048E570  Maximum distance from player to start doing sticky speed matching (metres)
+0x0048E5C0  Maximum diffence in speeds for sticky speed matching (MPH)
+0x0048E600  Min. aggression before we start attacking
+0x0048E630  Min. time to wait between attacks (seconds)
+0x0048E660  Max. time to wait between attacks (seconds)
+0x0048E690  Max. distance apart to begin attacking when ahead of target (meters)
+0x0048E6E0  Max. distance apart to begin attacking when behind of target (meters)
+0x0048E730  Min. target speed to consider attacking (mph)
+0x0048E760  How much slower than the player to drive while speed matching to attack position
+0x0048E7C0  How far in front to boost when speed matching the player
+0x0048E800  Extra distance in front to boost relative to aggression (meters)
+0x0048E850  How long to wait at the start of the race before doing aggressive driving (seconds)
+0x0048E8B0  How long after hitting something to disable immunity (seconds)
+0x0048E8F0  Min time to try and block you for (seconds)
+0x0048E920  Max time to try and block you for (seconds)
+0x0048E950  Max distance ahead to start blocking you (meters)
+0x0048E990  Preferred car separation when getting into slam position (meters)
+0x0048E9E0  Max. time to try and get into slamming position (seconds)
+0x0048EA20  Max. distance between cars, when ahead (meters)
+0x0048EA50  Max. difference in speeds (MPH)
+0x0048EA70  Steer out distance (meters)
+0x0048EA90  Steer out time (seconds)
+0x0048EAB0  Slam time (seconds)
+0x0048EAD0  Max. cos angle off lane to stop attack
+0x0048EB00  How soon after starting to slam is the AI car committed and can't stop
+0x0048EB50  How long a rubbed AI car goes blind for (seconds)
+0x0048EB90  ../export/ValueDB/Sound/Traffic.cfg
+0x0048EBB8  Sound/Traffic
+0x0048EBD0  Sound/CrashingTraffic/Skids/Large
+0x0048EC00  Sound/CrashingTraffic/Skids/Small
+0x0048EC30  ../export/ValueDB/Sound/Boost.cfg
+0x0048EC58  Sound/Boost
+0x0048EC68  Sound/Doppler
+0x0048EC78  Bus volume
+0x0048EC88  Lorry volume
+0x0048EC98  Van volume
+0x0048ECA8  Car volume
+0x0048ECB8  Bus Pitch
+0x0048ECC8  Lorry Pitch
+0x0048ECD8  Van Pitch
+0x0048ECE8  Car Pitch
+0x0048ED00  Bus Engine Pitch
+0x0048ED20  Bus Engine Volume
+0x0048ED40  Lorry Engine Pitch
+0x0048ED60  Lorry Engine Volume
+0x0048ED78  Min Speed
+0x0048ED88  Max Speed
+0x0048ED98  Min Pitch
+0x0048EDA8  Max Pitch
+0x0048EDC0  Sample Midpoint
+0x0048EDD0  Car Length
+0x0048EDE0  DampTime
+0x0048EDF0  Min Volume
+0x0048EE00  Max Volume
+0x0048EE10  Plane Width
+0x0048EE20  Centre Pitch
+0x0048EE30  Edge Pitch
+0x0048EE40  Little Pass Scalar
+0x0048EE60  Big Pass Scalar
+0x0048EE70  Horn Min On Time
+0x0048EE90  Horn Min Off Time
+0x0048EEB0  Horn Max On Time
+0x0048EED0  Horn Max Off Time
+0x0048EEF0  Horn Speed of Sound
+0x0048EF10  Horn Max Distance
+0x0048EF30  Horn Pitch Variance
+0x0048EF50  Truck Horn Volume
+0x0048EF70  Car Horn Volume
+0x0048EF80  Horn Linear Scalar
+0x0048EFA0  Large Crashing Traffic Min Speed
+0x0048EFD0  Large Crashing Traffic Max Speed
+0x0048F000  Large Crashing Traffic Min Vol
+0x0048F020  Large Crashing Traffic Max Vol
+0x0048F040  Large Crashing Traffic Min Pitch
+0x0048F070  Large Crashing Traffic Max Pitch
+0x0048F0A0  Small Crashing Traffic Min Speed
+0x0048F0D0  Small Crashing Traffic Max Speed
+0x0048F100  Small Crashing Traffic Min Vol
+0x0048F120  Small Crashing Traffic Max Vol
+0x0048F140  Small Crashing Traffic Min Pitch
+0x0048F170  Small Crashing Traffic Max Pitch
+0x0048F1A0  Point Distances
+0x0048F1B0  Point Scalar
+0x0048F1C0  Base Pitch
+0x0048F1D0  cardry1
+0x0048F1D8  bstpss0%i
+0x0048F1E8  bstpsl0%i
+0x0048F1F8  bstpss01
+0x0048F208  Sound/L Train/
+0x0048F220  ../export/ValueDB/Sound/LTrain.cfg
+0x0048F330  cartar0%i
+0x0048F340  buseng01
+0x0048F350  trkeng01
+0x0048F390  Max distance
+0x0048F3A0  Min distance
+0x0048F3B0  Max pitch gain
+0x0048F3C0  Min pitch gain
+0x0048F3D0  Pitch gain step
+0x0048F3E0  Squeak base pitch
+0x0048F400  Squeak pitch range
+0x0048F420  Length of squeak (frames)
+0x0048F440  Frames between squeaks
+0x0048F460  Squeak duration variation (frames)
+0x0048F490  Time between squeaks variation (frames)
+0x0048F4B8  Rails volume
+0x0048F4D0  Squeak base volume
+0x0048F4F0  Squeak volume range
+0x0048F510  ../export/ValueDB/Sound/Payload.cfg
+0x0048F540  Sound/Prop/Cone/
+0x0048F560  Sound/Prop/Card Box/
+0x0048F580  Sound/Prop/Metal Box/
+0x0048F5A0  Sound/Prop/Woodbox/
+0x0048F5C0  Sound/Prop/Signpost/
+0x0048F5E0  Sound/Prop/Barrier/
+0x0048F600  Sound/Prop/Metal Barrier/
+0x0048F620  Sound/Prop/Barrel/
+0x0048F640  Sound/Prop/Crate/
+0x0048F660  Sound/Prop/Boat/
+0x0048F680  Sound/Prop/Hay Bale/
+0x0048F6A0  Sound/Prop/Hay Drum/
+0x0048F6C0  Sound/Prop/Cable Drum/
+0x0048F6E0  Sound/Prop/Container/
+0x0048F700  Sound/Prop/Log/
+0x0048F710  crash3.rws
+0x0048FB87  Ntracks\
+0x0048FBA8  crash%d.rws
+0x0048FBC0  tracks\crash%d.rws
+0x0048FC20  Got worldcrash of %f vol %f
+0x0048FC50  Got worldnudge of %f
+0x0048FCF6  #rus_c1_v1
+0x0048FF50  ../export/ValueDB/Sound/Tracks/%s.cfg
+0x0048FF78  Max Impulse
+0x0048FF88  Min Impulse
+0x0048FF98  Max Volume
+0x0048FFA8  Min Volume
+0x0048FFC0  sound\crashmod.awd
+0x0048FFD8  sound\
+0x0048FFE0  g_crsh04
+0x00490010  ../export/ValueDB/Sound/HUD.cfg
+0x00490030  Sound/Hud/Aggressive Driving
+0x00490050  Sound/Hud/General
+0x00490068  sound\fe.awd
+0x004900F0  Popup Message Volume
+0x00490110  Position Message Volume
+0x00490130  Lap Message Volume
+0x00490150  Touch Message Volume
+0x00490170  Slam Message Volume
+0x00490190  Slammed Message Volume
+0x004901B0  Taken down Message Volume
+0x004901D0  Taken out Message Volume
+0x004901F0  Crash Escape Message Volume
+0x00490210  Crash Bonus Message Volume
+0x00490230  Lost Boost Segment Gain
+0x00490250  Gained Boost Segment Gain
+0x00490270  3d Shunt Vol
+0x00490280  3d Slam Vol
+0x004902A0  ../export/ValueDB/Sound/Esm.cfg
+0x004902C0  Sound/Esm
+0x004902F0  Rpm Modulation Max Amplitude
+0x00490310  Oscillator period
+0x00490330  Total Modulation Time (seconds)
+0x00490350  Time Till Full Air Saturation
+0x00490370  Full Air Saturation Scalar
+0x00490390  Time to modulate on landing
+0x004903B0  Time Till Full Offroad Saturation
+0x004903E0  Offroad Oscillator period
+0x00490400  Offroad Max Amplitude
+0x00490420  Offroad Modulation Start Speed (percent of top)
+0x00490450  Offroad Modulation End Speed (percent of top)
+0x00490480  Offroad Modulation Period Min
+0x004904A0  Offroad Modulation Period Max
+0x004904C0  Offroad Lerp time
+0x004904E0  sound\single.awd
+0x00490500  sound\roadrage.awd
+0x00490520  sound\crash.awd
+0x00490530  sound\elim.awd
+0x00490540  tracks\
+0x00490560  %ssound.awd
+0x00490570  sound\generic.awd
+0x00490590  ../export/ValueDB/Sound/Voice.cfg
+0x004905B8  Sound/Voice
+0x004905D0  Master Sfx Volume
+0x004905F0  ../Export/ValueDB/VehicleAudioAI/%s.cfg
+0x00490618  Car Volume
+0x00490628  VehicleAudioAI
+0x00490640  sound\generic.awd
+0x00490658  crashescap
+0x004907B0  ../Export/ValueDB/VehicleAudio/%s.cfg
+0x004907D8  Car Volume
+0x004907E8  VehicleAudio
+0x00490800  Wave Attack Offset
+0x00490820  VehicleAudio/Turbo
+0x00490840  Rpm to Turbo Falloff Lag
+0x00490860  Rpm to Turbo Rising Lag
+0x00490880  Rpm to Turbo Min Rpm
+0x004908A0  Rpm to Turbo Max Rpm Volume
+0x004908C0  Dump Valve Kick-in Min Falloff
+0x004908E0  Dump Valve Kick-in Max Falloff
+0x00490900  Dump Valve Volume Min
+0x00490920  Dump Valve Volume Max
+0x00490940  Gear Change Volume
+0x0049095F  q../export/ValueDB/Sound/Misc.cfg
+0x00490988  Sound/Misc
+0x00490998  Sound/Boost
+0x004909A8  BoostSml
+0x004909B8  BoostBig
+0x004909D0  BoostLoop
+0x004909E8  BoostIn
+0x004909F0  BoostOut
+0x00490A00  Boost Volume
+0x00490A10  Boost Ready Volume
+0x00490A30  Boost In Volume
+0x00490A40  Boost Out Volume
+0x00490A60  Boost Chain Volume
+0x00490A80  Boost Loop Volume
+0x00490AA0  AI Boost In Volume
+0x00490AC0  AI Boost Out Volume
+0x00490AE0  AI Boost Loop Volume
+0x00490B00  ../export/ValueDB/Sound/Skids.cfg
+0x00490B28  Sound/Skids
+0x00490B40  Sound/Skids/Sample1
+0x00490B60  Sound/Skids/Sample1/Variant1
+0x00490B80  Sound/Skids/Sample2
+0x00490BA0  Sound/Skids/Sample2/Variant1
+0x00490BC0  Sound/Skids/Sample3
+0x00490BE0  Sound/Skids/Sample3/Variant1
+0x00490C00  sound\generic.awd
+0x00490C18  Maximum Slip
+0x00490C28  Maximum Spin
+0x00490C40  Emitter Distance AT
+0x00490C60  Emitter Distance RIGHT
+0x00490C80  SlipSpin Lag Min
+0x00490CA0  SlipSpin Lag Max
+0x00490CC0  Wheel Mode 'Driving' Multipler
+0x00490CE0  Wheel Mode 'StartLine' Multipler
+0x00490D10  Wheel Mode 'Donuts' Multipler
+0x00490D30  Wheel Mode 'Drift' Multipler
+0x00490D50  Wheel Mode 'Skid' Multipler
+0x00490D70  Wheel Mode 'LockUp' Multipler
+0x00490D90  Wheel Mode 'OutOfControl' Multipler
+0x00490DC0  Left Pitch Offset
+0x00490DE0  Right Pitch Offset
+0x00490E00  Crash Volume Multipler
+0x00490E20  Slip Speed Multipler
+0x00490E40  Sample 1 Slip Volume Input Point  0 (X)
+0x00490E70  Sample 1 Slip Volume Output Point 0 (Y)
+0x00490EA0  Sample 1 Slip Volume Input Point  1 (X)
+0x00490ED0  Sample 1 Slip Volume Output Point 1 (Y)
+0x00490F00  Sample 1 Slip Frequency Input Point  0 (X)
+0x00490F30  Sample 1 Slip Frequency Output Point 0 (Y)
+0x00490F60  Sample 1 Slip Frequency Input Point  1 (X)
+0x00490F90  Sample 1 Slip Frequency Output Point 1 (Y)
+0x00490FC0  Sample 1 Spin Volume Input Point  0 (X)
+0x00490FF0  Sample 1 Spin Volume Output Point 0 (Y)
+0x00491020  Sample 1 Spin Volume Input Point  1 (X)
+0x00491050  Sample 1 Spin Volume Output Point 1 (Y)
+0x00491080  Sample 1 Spin Frequency Input Point  0 (X)
+0x004910B0  Sample 1 Spin Frequency Output Point 0 (Y)
+0x004910E0  Sample 1 Spin Frequency Input Point  1 (X)
+0x00491110  Sample 1 Spin Frequency Output Point 1 (Y)
+0x00491140  Sample 2 Slip Volume Input Point  0 (X)
+0x00491170  Sample 2 Slip Volume Output Point 0 (Y)
+0x004911A0  Sample 2 Slip Volume Input Point  1 (X)
+0x004911D0  Sample 2 Slip Volume Output Point 1 (Y)
+0x00491200  Sample 2 Slip Frequency Input Point  0 (X)
+0x00491230  Sample 2 Slip Frequency Output Point 0 (Y)
+0x00491260  Sample 2 Slip Frequency Input Point  1 (X)
+0x00491290  Sample 2 Slip Frequency Output Point 1 (Y)
+0x004912C0  Sample 2 Spin Volume Input Point  0 (X)
+0x004912F0  Sample 2 Spin Volume Output Point 0 (Y)
+0x00491320  Sample 2 Spin Volume Input Point  1 (X)
+0x00491350  Sample 2 Spin Volume Output Point 1 (Y)
+0x00491380  Sample 2 Spin Frequency Input Point  0 (X)
+0x004913B0  Sample 2 Spin Frequency Output Point 0 (Y)
+0x004913E0  Sample 2 Spin Frequency Input Point  1 (X)
+0x00491410  Sample 2 Spin Frequency Output Point 1 (Y)
+0x00491440  Sample 3 Slip Volume Input Point  0 (X)
+0x00491470  Sample 3 Slip Volume Output Point 0 (Y)
+0x004914A0  Sample 3 Slip Volume Input Point  1 (X)
+0x004914D0  Sample 3 Slip Volume Output Point 1 (Y)
+0x00491500  Sample 3 Slip Frequency Input Point  0 (X)
+0x00491530  Sample 3 Slip Frequency Output Point 0 (Y)
+0x00491560  Sample 3 Slip Frequency Input Point  1 (X)
+0x00491590  Sample 3 Slip Frequency Output Point 1 (Y)
+0x004915C0  Sample 3 Spin Volume Input Point  0 (X)
+0x004915F0  Sample 3 Spin Volume Output Point 0 (Y)
+0x00491620  Sample 3 Spin Volume Input Point  1 (X)
+0x00491650  Sample 3 Spin Volume Output Point 1 (Y)
+0x00491680  Sample 3 Spin Frequency Input Point  0 (X)
+0x004916B0  Sample 3 Spin Frequency Output Point 0 (Y)
+0x004916E0  Sample 3 Spin Frequency Input Point  1 (X)
+0x00491710  Sample 3 Spin Frequency Output Point 1 (Y)
+0x00491750  sound\generic.awd
+0x00491768  crashescap
+0x00491778  smltrafskd12
+0x00491788  smltrafskd22
+0x00491798  lrgtrafskd
+0x004917A8  fxdebris1
+0x004917B8  fxdebris2
+0x004917C8  fxgravel
+0x004917D8  fxsnow
+0x004917E0  fxglass
+0x004917E8  fxsmoke
+0x004917F0  fxexplosionsmoke
+0x00491808  fxfire
+0x00491810  fxexplosionfire
+0x00491820  fxexplosionflash
+0x00491D61  OgWim3C
+0x004925C0  rws;1
+0x004925D0  RWA ERROR!: No RwaStreamFormatBlocksLeft
+0x00492600  RWA ERROR!: _RwaStreamFormatAlloc request too big
+0x00492650  RWA ERROR! Incorrect stream packet size
+0x004928AE  ?dEE  RwaRPCTransfer : ERROR! DMA command queue FULL! Discarding oldest command!
+0x00492A2F  Aenviro.dat
+0x00492A40  sunblob
+0x00492BA0  SPEEX
+0x00492BD0  ERROR: bytes provided = %d. Need=%d
+0x00492BF8  error 1
+0x00492C08  error 2
+0x00492C18  error 3
+0x00492C28  ERROR: lgCodecUlawEncode: need %d bytes. have %d bytes. clipping
+0x00492DC0  ERROR: bit field must be less than bit structure!
+0x00492E20  Packet if larger than allocated buffer: 
+0x00492E50  Could not resize input buffer: truncating input
+0x00492E80  Do not own input buffer: truncating input
+0x00492EB0  Buffer too small to pack bits
+0x00492ED0  Could not resize input buffer: not packing
+0x00492F00  Do not own input buffer: not packing
+0x00492F67  ?ffffff
+0x00492F98  Fatal error: %s
+0x00492FB0  warning: %s
+0x00492FC0  warning: %s %d
+0x00492FD0  narrowband
+0x00492FE0  wideband (sub-band CELP)
+0x00493000  ultra-wideband (sub-band CELP)
+0x00493020  Unknown nb_mode_query request: 
+0x00493040  Unknown wb_mode_query request: 
+0x0049309D  !	@No pitch prediction, what's wrong
+0x004930C8  No fixed codebook
+0x004930E7  ?UUUUUU
+0x00493117  ?ffffff
+0x00493160  ffffff
+0x00493167  ?Invalid wideband mode encountered. Corrupted stream?
+0x004931A0  Invalid wideband mode encountered: corrupted stream?
+0x004931D8  More than to wideband layers found: corrupted stream?
+0x00493210  Invalid mode encountered: corrupted stream?
+0x0049327F  ?ffffff
+0x00493297  ?Unknown nb_ctl request: 
+0x004936E8  ffffff
+0x00493737  ?Invalid mode encountered: corrupted stream?
+0x0049377F  ?Unknown nb_ctl request: 
+0x00493B47  ?ffffff
+0x00493B57  ?ffffff
+0x00493B67  ?ffffff
+0x00493BC7  @liblgaud version 1.10.001, built on Mar 23 2004 at 19:26:08
+0x00493C08  lgAudInit:  liblgaud.a is version %d.%02d.%03d
+0x00493C38  lgAudInit:  lgaud.irx is version %d.%02d.%03d
+0x00493C68  LGTGliblgaud
+0x00493C80  lgAudInit: rpc binding error
+0x00493CA0  lgAudInit: system halted.
+0x00493CC0  lgAudInit: rpc error
+0x00493CD8  lgAudInit: wrong version of lgaud.irx!
+0x00493D00  lgAudInit: warning: version mismatch between lgdev.irx and liblgdev.a 
+0x00493D48  lgAudInit: continuing.
+0x00493D60  lgAudInit: unable to allocate %d bytes!
+0x00493D90  lgAudInit: unable to create semaphore!
+0x00493DB8  %s\nlgAudInit: max streaming data size: %d
+0x00493DE8  lgAudEnumHint: invalid parameter (hint)
+0x00493E18  lgAudEnumerate: invalid parameter (description)
+0x00493E50  lgAudEnumerate: rpc call failed
+0x00493E78  lgAudOpen: invalid parameter (device)
+0x00493EA0  lgAudOpen: invalid parameter (openparam)
+0x00493ED0  lgAudOpen: invalid parameter (openparam->Mode)
+0x00493F00  lgAudOpen: rpc call failed
+0x00493F20  lgAudClose: rpc call failed
+0x00493F40  lgAudRead: invalid parameter (dest)
+0x00493F68  lgAudRead: invalid parameter (size too big)
+0x00493F98  lgAudRead: rpc call failed
+0x00493FB8  lgAudWrite: invalid parameter (src)
+0x00493FE0  lgAudWrite: invalid parameter (size too big)
+0x00494010  lgAudWrite: rpc call failed
+0x00494030  lgAudWriteVag: invalid parameter (src)
+0x00494058  lgAudWriteVag: invalid parameter (size too big)
+0x00494090  lgAudWriteVag: rpc call failed
+0x004940B0  lgAudGetMixer: invalid parameter (mr)
+0x004940D8  lgAudGetMixer: rpc call failed
+0x004940F8  lgAudSetMixer: invalid parameter (mr)
+0x00494120  lgAudGetRemainingPlaybackBytes: rpc call failed
+0x00494158  lgAudGetAvailableRecordingBytes: rpc call failed
+0x00494190  lgAudStartRecording: rpc call failed
+0x004941B8  lgAudStartPlayback: rpc call failed
+0x004941E0  lgAudStopPlayback: rpc call failed
+0x00494208  lgAudResumePlayback: rpc call failed
+0x00494230  lgAudPrepareForReboot: error: an async call is in progress...
+0x00494270  lgAudPrepareForReboot: rpc call failed
+0x00494298  lgAudARead: invalid parameter (dest)
+0x004942C0  lgAudARead: invalid parameter (*size too big)
+0x004942F0  lgAudARead: error: another async call is in progress...
+0x00494330  lgAudARead: rpc call failed
+0x00494350  lgAudAWrite: invalid parameter (src)
+0x00494378  lgAudAWrite: invalid parameter (*size too big)
+0x004943A8  lgAudAWrite: error: another async call is in progress...
+0x004943E8  lgAudAWrite: rpc call failed
+0x00494408  lgAudAWriteVag: invalid parameter (src)
+0x00494438  lgAudAWriteVag: invalid parameter (*size too big)
+0x00494470  lgAudAWriteVag: error: another async call is in progress...
+0x004944B0  lgAudAWriteVag: rpc call failed
+0x00494A98  Player 1
+0x00494AA8  Player 2
+0x00494AC0  ../export/ValueDB/Sound/Misc.cfg
+0x00494AF0  Sound/Misc/Vehicle Volume Tailoff
+0x00494B20  ../export/ValueDB/Sound/Surface.cfg
+0x00494B50  Tarmac
+0x00494B58  Offline Tarmac
+0x00494B68  Gravel
+0x00494B70  Pavement
+0x00494B88  Offline Gravel
+0x00494B98  Metal
+0x00494BA8  Concrete
+0x00494BC0  Start Speed (Percent of MaxSpeed)
+0x00494BF0  End Speed (Percent of MaxSpeed)
+0x00494C10  End Volume
+0x00494C20  Race Car Master Gain
+0x00494C40  High Detail ESM 2 player gain
+0x00494C60  Low Detail ESM 2 player gain
+0x00494C80  Tarmac Min Speed
+0x00494CA0  Tarmac Max Speed
+0x00494CB8  Tarmac Min Vol
+0x00494CC8  Tarmac Max Vol
+0x00494CE0  Tarmac Min Pitch
+0x00494D00  Tarmac Max Pitch
+0x00494D18  Min Speed
+0x00494D28  Max Speed
+0x00494D38  Min Vol
+0x00494D40  Max Vol
+0x00494D48  Min Pitch
+0x00494D58  Max Pitch
+0x00495000  ../Export/ValueDB/Camera/
+0x00495020  Camera.cfg
+0x00495030  Spring Coeff
+0x00495040  Crash/HandyCam/
+0x00495050  Damping
+0x00495058  Safe FOV Horiz
+0x00495068  Safe FOV Vert
+0x00495080  InGame/Effect/Burnout/Position/
+0x004950A0  Force
+0x004950B0  InGame/Effect/Burnout/Angular/
+0x004950D0  InGame/Effect/Shunt/Position/
+0x004950F0  InGame/Effect/Shunt/Angular/
+0x00495110  InGame/Effect/Shunted/Position/
+0x00495130  InGame/Effect/Shunted/Angular/
+0x00495150  InGame/Effect/Slam/Position/
+0x00495170  InGame/Effect/Slam/Angular/
+0x00495190  InGame/Effect/Shake/Position/
+0x004951B0  InGame/Effect/Shake/Angular/
+0x004951D8  Camera Offset
+0x004951E8  Camera/Bumper/
+0x00495200  Camera/Look Back/
+0x00495218  Camera/Follow/
+0x00495228  Focus Offset
+0x00495238  Down Angle
+0x00495270  radialblurmask
+0x00495280  blobbyshadow
+0x00495448  driver version = %d.%02d.%03d
+0x00495468  Fatal Error Library version and driver version mismatch
+0x004954A8  Error!!! Library build number  and driver build number mismatch. But I will still continue
+0x00495508  lgkbmlib::CreateSema Error creating rpc_sema
+0x00495538  LGTGliblgkbm
+0x00495550  lgkbmlib::CreateSema Error creating device_sema
+0x00495588  Lgkbm
+0x00495590  Error stopping Module
+0x004955A8  Error Unloading the module
+0x004955C8  lgKbMInit:: Error!!! Init already done. Returning without any action
+0x00495610  LgKbM library version %d.%02d.%03d (built on May 18 2004 at 17:58:15)\n	* reader thread priority %d
+0x00495710  ../export/ValueDB/VehicleMaterial/
+0x004957D8  Gamedata.bgd
+0x00496240  ErrMessage : %s %d %s
+0x00496258  vibuf.c
+0x00496260  DMA ADD not active
+0x004962A0  password
+0x004964A0  ../export/ValueDB/TrackBloom/
+0x004964C8  Threshold
+0x004964E0  Bloom Parameters
+0x004964F8  Intensity
+0x00496508  static.dat
+0x004965A0  honest
+0x004965A8  goodsession
+0x004965B8  badname
+0x004965C0  language
+0x004965D0  cheating
+0x004965E0  screaming
+0x004965F0  harassment
+0x00496638  FORCE
+0x00496660  VENUE
+0x00496668  NAME%d
+0x00496670  TEAM%d
+0x00496678  ROOM%d
+0x00496680  WEIGHT%d
+0x004966E0  MAXSIZE
+0x004966E8  MINSIZE
+0x004966F0  PARAMS
+0x004966F8  USERPARAMS
+0x00496708  NEWS_URL
+0x00496718  IDENT
+0x00496738  SYSFLAGS
+0x00496750  COUNT
+0x00496758  START
+0x00496760  ASYNC
+0x00496768  FORCE_LOCK
+0x00496780  MYGAME=1 ROOMS=1 USERS=1 MESGS=1 STATS=1 RANKS=0
+0x004967C8  PERSONAS
+0x004967E0  BUDDY_SERVER
+0x004967F0  BUDDY_PORT
+0x00496800  TOSAC_URL
+0x00496840  PMAIL
+0x00496860  DEFPER
+0x00496868  unknown%d
+0x004968A0  $USE-EXISTING$
+0x004968C8  FLAME
+0x004968D8  SLUS-FLAME
+0x00496908  BUDDY_URL
+0x00496918  REASON
+0x00496970  COMPCAR1
+0x00496980  CarArrow
+0x00496A70  loading_bars
+0x00496AA0  Rumble/Car/Boost
+0x00496AC0  Rumble/Car/BoostStart
+0x00496AE0  Rumble/Car/Chain
+0x00496B00  Rumble/Car/Kerb
+0x00496B10  Rumble/Car/Surface
+0x00496B28  Rumble/Car/Air
+0x00496B40  Rumble/Collision/Crash
+0x00496B60  Rumble/Collision/CarVCar
+0x00496B80  Rumble/Collision/CarVTraffic
+0x00496BA0  Rumble/Collision/CarVWorld
+0x00496BC0  Rumble/Menu
+0x00496BD0  ../Export/ValueDB/Input/rumble.cfg
+0x00496C00  Boost jolt type (0=samll,1=large)
+0x00496C30  Boost Jolt Amount (0.0 to 1.0)
+0x00496C50  Boost Jolt time (s)
+0x00496C70  Boost Fade time (s)
+0x00496C90  Boost start Accelerator Rumble (0.0 to 1.0)
+0x00496CC0  Boost start Brakes Released Rumble (0.0 to 1.0)
+0x00496CF0  Chain Boost jolt type (0=samll,1=large)
+0x00496D20  Chain Jolt Amount (0.0 to 1.0)
+0x00496D40  Chain Jolt time (s)
+0x00496D60  Chain Fade time (s)
+0x00496D80  Kerb jolt type (0=samll,1=large)
+0x00496DB0  Kerb Jolt Amount (0.0 to 1.0)
+0x00496DD0  Kerb Jolt time (s)
+0x00496DF0  Kerb Fade time (s)
+0x00496E10  Wheel Skid rumble (0.0 to 1.0)
+0x00496E30  Wheel Drift rumble (0.0 to 1.0)
+0x00496E50  Racing Line Dirt rumble (0.0 to 1.0)
+0x00496E80  Off-line Dirt rumble (0.0 to 1.0)
+0x00496EB0  Big Air jolt type (0=samll,1=large)
+0x00496EE0  Big Air Base Jolt Amount (0.0 to 1.0)
+0x00496F10  Big Air Jolt time (s)
+0x00496F30  Big Air Fade time (s)
+0x00496F50  Crash jolt type (0=samll,1=large)
+0x00496F80  Crash Jolt Amount (0.0 to 1.0)
+0x00496FA0  Crash Jolt time (s)
+0x00496FC0  Crash Fade time (s)
+0x00496FE0  Car v. Car jolt type (0=samll,1=large)
+0x00497010  Car v. Car Jolt Amount (0.0 to 1.0)
+0x00497040  Car v. Car Jolt time (s)
+0x00497060  Car v. Car Fade time (s)
+0x00497080  Car v. Traffic jolt type (0=samll,1=large)
+0x004970B0  Car v. Traffic Jolt Amount (0.0 to 1.0)
+0x004970E0  Car v. Traffic Jolt time (s)
+0x00497100  Car v. Traffic Fade time (s)
+0x00497120  Crashing Car v. Car jolt type (0=samll,1=large)
+0x00497150  Crashing Car v. Car Jolt Amount (0.0 to 1.0)
+0x00497180  Crashing Car v. Car Jolt time (s)
+0x004971B0  Crashing Car v. Car Fade time (s)
+0x004971E0  Car v. World jolt type (0=samll,1=large)
+0x00497210  Car v. World Jolt Amount (0.0 to 1.0)
+0x00497240  Car v. World Jolt time (s)
+0x00497260  Car v. World Fade time (s)
+0x00497280  Crashing Car v. World jolt type (0=samll,1=large)
+0x004972C0  Crashing Car v. World Jolt Amount (0.0 to 1.0)
+0x004972F0  Crashing Car v. World Jolt time (s)
+0x00497320  Crashing Car v. World Fade time (s)
+0x00497350  Menu test Jolt time (s)
+0x00497370  DHCP configuration error
+0x00497390  User authentication error with ISP\n%s
+0x004973C0  Connection error with ISP
+0x004973E0  Modem cannot connect: %s
+0x00497400  Invalid dial-in number: %s
+0x00497420  Line busy
+0x00497430  Modem error: %s
+0x00497440  PPPoE session terminated by ISP
+0x00497460  PPPoE session error with ISP
+0x00497480  DHCP configuration successful
+0x004974A0  Requesting DHCP configuration
+0x004974C0  Connection dead
+0x004974D0  Connection established with ISP
+0x004974F0  Establishing connection to ISP
+0x00497510  Line disconnected: %s
+0x00497528  Dialing %s
+0x00497538  Line speed %s
+0x00497550  Disconnecting line: %s
+0x00497570  Initializing modem
+0x00497590  PPPoE session established
+0x004975B0  Establishing PPPoE session
+0x004975D0  Network hardware is detached
+0x004975F0  Connecting to network
+0x00497610  Waiting to retry
+0x00497630  Connected to network
+0x00497650  Disconnecting from network
+0x00497670  Disconnected from network
+0x00497690  Network hardware is detaching
+0x004976B0  getMsgEntry
+0x004976D0  no match for %d
+0x004976E8  ABORT
+0x004976F0  Starting
+0x00497700  Dialing
+0x00497708  Login
+0x00497730  Terminate
+0x004977C8  ABORT
+0x004977D0  AUTH Failed
+0x004977E8  LINE IN USE
+0x004977F8  NO DIALTONE
+0x00497808  NO ANSWER
+0x00497818  NO CARRIER
+0x00497828  PHASE
+0x00497830  DISCONNECT
+0x00497840  TIMEOUT
+0x00497848  ezNetCnfInit
+0x00497858  eznetcnf
+0x00497870  %s module not found
+0x00497890  sceSifBindRpc failed, retrying
+0x004978B0  RPC service not running
+0x004978D0  returned %d
+0x004978E0  ezNetCnfGetCombinationList
+0x00497900  DMA address 0x%x not %d-byte aligned
+0x00497930  ezNetCnfGetCombination
+0x00497950  pList is empty
+0x00497960  invalid Combination number (%d)
+0x00497990  ezNetCnfGetProperties
+0x004979A8  ezNetCtlInit
+0x004979B8  eznetctl_inet
+0x004979D0  %s module not found
+0x004979F0  sceSifBindRpc failed, retrying
+0x00497A10  ezNetCtlSetProperties
+0x00497A28  returned %d
+0x00497A40  RPC service not running
+0x00497A60  DMA address 0x%x not %d-byte aligned
+0x00497A90  eCtlGetPropertiesAddress failed
+0x00497AC0  ezNetCtlUpInterface
+0x00497AE0  ezNetCtlDownInterface
+0x00497B00  ezNetCtlGetStatus
+0x00497B20  ezNetCtlWaitEventTO
+0x00497B38  dmaIOP
+0x00497B40  size %d padded to %d
+0x00497B80  ps2lobby02.beta.ea.com
+0x00497E10  smllL1L2
+0x00497E19  smllR1R2
+0x00497E22  smllL1L2
+0x00497E2B  smllR1R2
+0x00497F60  Not Present
+0x00497FB8  UNGAG
+0x00497FC8  Offline
+0x00497FD0  Connecting
+0x00498028  BURNOUT3
+0x00498048  Burnout3
+0x00498378  fxspark
+0x00498572  L>fff?)\
+0x00498666  `?fxpopcornspark
+0x00498680  fxpopcorndebris
+0x004986EC  efffgh
+0x004986FC  ikmnop
+0x00498730  EFGHUVWX]^_`MNOPIJKLYZ[\abcdQRST
+0x00498EE8  EA Login
+0x00498EF8  view.ico
+0x00498F10  Copyright Electronic Arts
+0x00498F68  slogin
+0x004991D0  TAG SENTINELTAG SENTINELTAG SENTINEL
+0x00499271  nOQeobpP
+0x004992B0  BEPSCD-20001
+0x004992C8  BIPSCD-00004
+0x004992E0  BKPSCD-30001
+0x004992F8  view.ico
+0x00499308  icon.sys
+0x00499400  Data\LoadScrn.bin
+0x00499418  alpine-st1
+0x00499428  alpine-st2
+0x00499438  dockside-st1
+0x00499448  dockside-st2
+0x00499458  downtown-st1
+0x00499468  downtown-st2
+0x00499478  goldencity-st1
+0x00499488  goldencity-st2
+0x004994A0  islandparadise-st1
+0x004994C0  islandparadise-st2
+0x004994D8  riviera-st1
+0x004994E8  riviera-st2
+0x004994F8  silverlake-ST1
+0x00499508  silverlake-ST2
+0x00499518  vineyard-st1
+0x00499528  vineyard-st2
+0x00499538  waterfront-st1
+0x00499548  waterfront-st2
+0x00499558  wintercity-st1
+0x00499568  wintercity-st2
+0x00499578  shadow
+0x00499580  HDWaterfront
+0x00499590  HDDowntown
+0x004995A0  HDSilverLake
+0x004995B0  HDWinterCity
+0x004995C0  HDAlpine
+0x004995D0  HDRiviera
+0x004995E0  HDVineyard
+0x004995F0  HDGoldenCity
+0x00499600  HDDockside
+0x00499610  HDIslandParadise
+0x00499628  SilverCup
+0x00499640  advanced
+0x00499650  expert
+0x00499658  champion
+0x00499668  driving-skills
+0x00499678  PCWinterCity
+0x00499688  PCAlpine
+0x00499698  PCVineyard
+0x004996A8  PCDockside
+0x004996C0  PCIslandParadise
+0x004996D8  PCGoldenCity
+0x004996E8  PCus-p2p2a
+0x004996F8  PCeu-p2p2
+0x00499708  PCSilverLake
+0x00499718  PCSpecialGP1
+0x00499728  RaceIcon
+0x00499738  RacePulse
+0x00499748  RaceHollow
+0x00499758  CrashIcon
+0x00499768  CrashPulse
+0x00499778  CrashHollow
+0x00499788  GPIcon
+0x00499790  GPPulse
+0x00499798  StartFlag
+0x004997B0  Tick_MedalEmpty
+0x004997C0  Tick_MedalB
+0x004997D0  Tick_MedalS
+0x004997E0  Tick_MedalG
+0x004997F0  Car_Medalgold
+0x00499800  Car_MedalEmpty
+0x00499810  Padlock
+0x00499818  WinCar_icon
+0x00499828  Traffic_Cam
+0x00499838  Takedown
+0x00499850  US_LSat
+0x00499858  SatMapU_L1
+0x00499868  SatMapU_L2
+0x00499878  SatMapU_L3
+0x00499888  SatMapU_L4
+0x00499898  SatMapU1_1
+0x004998A8  SatMapU2_1
+0x004998B8  SatMapU3_1
+0x004998C8  SatMapU1_2
+0x004998D8  SatMapU2_2
+0x004998E8  SatMapU3_2
+0x004998F8  Europe1
+0x00499900  EU_LSat
+0x00499908  SatMapE_L1
+0x00499918  SatMapE_L2
+0x00499928  SatMapE_L3
+0x00499938  SatMapE_L4
+0x00499948  SatMapE1_1
+0x00499958  SatMapE2_1
+0x00499968  SatMapE3_1
+0x00499978  SatMapE1_2
+0x00499988  SatMapE2_2
+0x00499998  SatMapE3_2
+0x004999A8  ASIA1
+0x004999B0  AU_LSat
+0x004999B8  SatMapA_L1
+0x004999C8  SatMapA_L2
+0x004999D8  SatMapA_L3
+0x004999E8  SatMapA_L4
+0x004999F8  SatMapA1_1
+0x00499A08  SatMapA2_1
+0x00499A18  SatMapA3_1
+0x00499A28  SatMapA1_2
+0x00499A38  SatMapA2_2
+0x00499A48  SatMapA3_2
+0x00499A58  World_Map
+0x00499A70  Alaska
+0x00499A78  FarEast
+0x00499A80  Europe
+0x00499A90  Completion_icons
+0x00499AA8  FE_element03
+0x00499AC0  titlescreen_logo
+0x00499AD8  dnas_logo
+0x00499AE8  Circuit_glow
+0x00499AF8  Circuit_line
+0x00499B10  Dutch
+0x00499B18  Spanish
+0x00499B20  Swedish
+0x00499B28  France
+0x00499B30  Germany
+0x00499B38  Italian
+0x00499B40  Japanese
+0x00499B50  ProgDots
+0x00499B60  ProgMap
+0x00499B68  CarArrow
+0x00499B78  Blocked
+0x00499B80  Gotfriendrequest
+0x00499B98  Invitation
+0x00499BB0  Sentfriendrequest
+0x00499BC8  Voiceenabled
+0x00499BD8  Friendonline
+0x00499BE8  GotInvitation
+0x00499BF8  Memory_Card
+0x00499C08  Toolbox
+0x00499C10  TrainingCar
+0x00499C20  DD_Icons
+0x00499C30  Globe
+0x00499C38  Trophy
+0x00499C48  Polariods
+0x00499C58  Letter
+0x00499C60  Newspaper
+0x00499C70  points_globe
+0x00499ED0  b3logo
+0x00499EE0  small_curve
+0x00499EF0  big_curve
+0x00499F00  box_curve
+0x00499F10  16_curve
+0x00499F20  box_curveb
+0x00499F30  16_curveb
+0x00499F40  circle
+0x00499F48  shutter
+0x00499F50  buttons
+0x00499F60  MedalGold
+0x00499F70  MedalSilver
+0x00499F80  MedalBronze
+0x00499F98  lobby
+0x00499FA0  hud_sign_exclam
+0x00499FB0  HUD_Sign_Flame
+0x00499FC0  HUD_Signs_TD
+0x00499FD0  HUD_Sign_Crash
+0x00499FE0  sign_tip
+0x00499FF0  cross
+0x0049A000  LOADCAR2
+0x0049A010  LOADCAR1
+0x0049A020  FE_Element01
+0x0049A030  Arrow
+0x0049A038  l1button
+0x0049A048  l2button
+0x0049A128  Unknown
+0x0049A130  Message is empty
+0x0049A190  Data\After.kfs
+0x0049A1A0  Data\Replay.kfs
+0x0049A1B0  Data\Intro.kfs
+0x0049A1E8  fxscrape
+0x0049A320  http://msgconn.beta.ea.com/easo/cso05/pub/TOSAC.txt
+0x0049AEA0   AWARDED AT 
+0x0049AFB0  R2Button
+0x0049AFC0  HUD_crash_breaker
+0x0049B0F0  COMPCAR1
+0x0049B2A8  CarArrow
+0x0049B460  Out of memory.
+0x0049B4D0  volumebar
+0x0049B4E8  Pending
+0x0049B508  streamed.dat
+0x0049B828  [fatal error] insufficient buffer size in Libnet
+0x0049B860  (fno=%d, ssize=%d, rsize=%d, buffer=%d)
+0x0049B9A8  HUD_Strikeout
+0x0049B9E8  R1Button
+0x0049F918  sound\
+0x0049F920  ident
+0x0049F928  tracks\
+0x0049F930  djwww
+0x0049F938  djgen
+0x0049F940  djrace
+0x0049F9A8  djmgp
+0x0049F9B0  djmra
+0x0049F9B8  djmel
+0x0049F9C0  djmrr
+0x0049F9C8  djmbl
+0x0049F9D0  djmcr
+0x0049F9D8  djmfo
+0x0049FA0F  |%s%s%d.awd
+0x0049FAA0  tracks\
+0x0049FAA8  _EATrax
+0x0049FAB0  EATraxD
+0x0049FB00  EATrax
+0x0049FB70  BASLUS-21050
+0x0049FB80  view.ico
+0x0049FB90  Burnout 3
+0x0049FBA8  icon.sys
+0x0049FCC0  0123456789abcdef$USE-EXISTING$
+0x0049FD00  Public Key
+0x0049FD10  CUSTFLAGS
+0x0049FD20  SYSFLAGS
+0x0049FD30  OPPART%d
+0x0049FD40  OPPARAM%d
+0x0049FD50  OPFLAG%d
+0x0049FD60  PARTSIZE%d
+0x0049FD70  PARTPARAMS%d
+0x0049FD90  l%ds%dslll
+0x0049FDA0  TROPHY_COUNT
+0x0049FDB0  TROPHY%d
+0x0049FDE1  !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`ABCDEFGHIJKLMNOPQRSTUVWXYZ{|}~
+0x0049FEE1  !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`ABCDEFGHIJKLMNOPQRSTUVWXYZ{|}~
+0x0049FFE0  COLNAME%d
+0x0049FFF0  COLDESC%d
+0x004A0000  COLPARAM%d
+0x004A0010  COLWIDTH%d
+0x004A0468   !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`ABCDEFGHIJKLMNOPQRSTUVWXYZ{|}~
+0x004A0589  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0x004A05A9  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0x004A0648  @ABCDEFGHIJKLMNOPQRSTUVWXYZ0123
+0x004A07E0  reconnect wait
+0x004A07F0  disconnected
+0x004A0800  misc connection fail
+0x004A0818  server timeout
+0x004A0828  name lookup fail
+0x004A0840  connecting
+0x004A0860  Server Missing Title
+0x004A0880  Received unknown response '%c%c%c%c'
+0x004A08D0  Not Present
+0x004A0A39  Qkkbal
+0x004A0CF7  -hello world
+0x004A0D08  ru paranoid?
+0x004A0D18  _dnasimports
+0x004A0D28  _dnasexports
+0x004A0D38  .text
+0x004A0D40  .symtab
+0x004A0D48  .strtab
+0x004A0D50  .rel.text
+0x004A0D60  .data
+0x004A0D68  .rel.data
+0x004A0D78  .rodata
+0x004A0D80  .rel.rodata
+0x004A0D90  DirtyElf: Error - attempt to call relocatable function when not loaded!
+0x004A0E10  BURNOUT3
+0x004A0E20  POINTS
+0x004A0E28  CRASHDAMAGE
+0x004A0E38  FAVVEH
+0x004A0E40  ONLINETAKEDOWNS
+0x004A0E50  ONCOMING
+0x004A0E60  ONCOMINGTRACK
+0x004A0E70  DRIFT
+0x004A0E78  DRIFTCAR
+0x004A0E88  ONLINERACES
+0x004A0E98  ONLINECRASHES
+0x004A0EA8  RACEEVENTSCOM
+0x004A0EB8  CRASHEVENTSCOM
+0x004A0EC8  GOLDS
+0x004A0ED0  SIGTDCOM
+0x004A0EE0  TROPHIES
+0x004A0EF0  COMPLETEN
+0x004A0F00  COMPLETED
+0x004A0F20  CTRACK
+0x004A0F30  CDVEH
+0x004A0F40  DCDP1VEH
+0x004A0F50  DCDP2VEH
+0x004A0F60  DCDP2NAME
+0x004A0F70  CRASHEXTRA
+0x004A0F80  RTRACK
+0x004A0F88  RLAPTIME
+0x004A0F98  RLAPVEH
+0x004A0FA0  RSURVDIST
+0x004A0FB0  RSURVDISTVEH
+0x004A0FC0  RACEEXTRA
+0x004A11B0  DNAS err : %u
+0x004A11E0  Unlock All
+0x004A11F0  Lock All
+0x004A1200  Show All Race Awards
+0x004A1220  Show All Crash Awards
+0x004A1300  ../Export/ValueDB/VehiclePhysics/%s.cfg
+0x004A1328  Mass (Kg)
+0x004A1340  Physics/Vehicle
+0x004A1350  Max Speed In Boost
+0x004A1370  Physics/Race Car/Misc
+0x004A1388  Camchange
+0x004A1398  Camchange2
+0x004A13A8  Camchange3
+0x004A13B8  Camchange4
+0x004A13C8  Camchange5
+0x004A1468  CarArrow
+0x004A17E0  CarArrow
+0x004A1810  L2Button
+0x004A1950  EATrax
+0x004A1A80  HUD_crash_score01
+0x004A1AA0  HUD_crash_score02
+0x004A1AC0  HUD_crash_score03
+0x004A1AE0  HUD_crash_breaker
+0x004A1AF8  HUD_crash_x2
+0x004A1B08  HUD_crash_x4
+0x004A1B20  HUD_crash_skull
+0x004A1B30  HUD_crash_stealer
+0x004A1EE0  FORCE COMPLETION
+0x004A1EF8  FIN. POSITION
+0x004A1F08  FIN. SCORE
+0x004A1F18  FIN. CASH
+0x004A1F28  FIN. TAKEDOWNS
+0x004A1F38  FIN. TIME
+0x004A1F50  R.RAGE INVINCIBLE
+0x004A1F68  SHOW POSITION
+0x004A1F78  LT. MESSAGES
+0x004A1F88  LT. CRASH
+0x004A1FC8  liblgdev version 1.11.027, built on May 10 2004 at 10:50:07
+0x004A2008  lgDevInit:  liblgdev.a is version %d.%02d.%03d
+0x004A2038  lgDevInit:  lgdev.irx is version %d.%02d.%03d
+0x004A2068  LGTGliblgdev
+0x004A2088  lgDevInit: rpc binding error.
+0x004A20A8  lgDevInit: rpc error
+0x004A20C0  lgDevInit: system halted.
+0x004A20E0  lgDevInit: wrong version of lgDev.irx!
+0x004A2108  lgDevInit: warning: version mismatch between lgdev.irx and liblgdev.a 
+0x004A2150  lgDevInit: continuing.
+0x004A2168  lgDevInit: unable to create semaphore!
+0x004A2190  lgDevInit: skipping semaphore re-creation!
+0x004A21C0  lgDevEnumHint: invalid parameter (hint)
+0x004A21F0  lgDevEnumerate: invalid parameter (description)
+0x004A2228  lgDevEnumerate: rpc call failed
+0x004A2250  lgDevOpen: invalid parameter (device)
+0x004A2278  lgDevOpen: rpc call failed
+0x004A2298  lgDevClose: rpc call failed
+0x004A22B8  lgDevGetDeviceProperty: invalid parameter (value)
+0x004A22F0  lgDevGetDeviceProperty: rpc call failed
+0x004A2320  lgDevSetDeviceProperty: rpc call failed
+0x004A2350  lgDevRead: invalid parameter (position)
+0x004A2380  lgDevRead: rpc call failed
+0x004A23A0  lgDevReadMulti: devicecount out of range (%d)
+0x004A23D0  lgDevReadMulti: invalid parameter (devices)
+0x004A2400  lgDevReadMulti: invalid parameter (readmodes)
+0x004A2430  lgDevReadMulti: invalid parameter (positions)
+0x004A2460  lgDevReadMulti: rpc call failed
+0x004A2488  lgDevDownloadForceEffect: invalid parameter (effectid)
+0x004A24C0  lgDevDownloadForceEffect: invalid parameter (forceeffect)
+0x004A2500  lgDevDownloadForceEffect: rpc call failed
+0x004A2530  lgDevUpdateForceEffect: invalid parameter (effectid)
+0x004A2568  lgDevUpdateForceEffect: invalid parameter (forceeffect)
+0x004A25A8  lgDevUpdateForceEffect: rpc call failed
+0x004A25D8  lgDevStartForceEffect: rpc call failed
+0x004A2600  lgDevStartForceEffectMulti: numeffects is out of range (%d)
+0x004A2640  lgDevStartForceEffectMulti: effectids is NULL
+0x004A2670  lgDevStartForceEffectMulti: rpc call failed
+0x004A26A0  lgDevStopForceEffect: rpc call failed
+0x004A26C8  lgDevStopForceEffectMulti: numeffects is out of range (%d)
+0x004A2708  lgDevStopForceEffectMulti: effectids is NULL
+0x004A2738  lgDevStopForceEffectMulti: rpc call failed
+0x004A2768  lgDevDestroyForceEffect: rpc call failed
+0x004A2798  lgDevPrepareForIOPReboot: rpc call failed
+0x004A27C8  lgDevARead: invalid parameter (position)
+0x004A27F8  lgDevARead: error: another async call is in progress...
+0x004A2838  lgDevAReadMulti: devicecount out of range (%d)
+0x004A2868  lgDevAReadMulti: invalid parameter (devices)
+0x004A2898  lgDevAReadMulti: invalid parameter (readmodes)
+0x004A28C8  lgDevAReadMulti: invalid parameter (positions)
+0x004A28F8  lgDevAReadMulti: error: another async call is in progress...
+0x004A2938  lgDevAUpdateForceEffect: invalid parameter (effectid).
+0x004A2970  lgDevAUpdateForceEffect: invalid parameter (forceeffect)
+0x004A29B0  lgDevAUpdateForceEffect: error: another async call is in progress...
+0x004A29F8  lgDevAStartForceEffect: error: another async call is in progress...
+0x004A2A40  lgDevAStartForceEffectMulti: error: another async call is in progress...
+0x004A2A90  lgDevAStartForceEffectMulti: numeffects is out of range (%d)
+0x004A2AD0  lgDevAStartForceEffectMulti: effectids is NULL
+0x004A2B00  lgDevAStopForceEffect: error: another async call is in progress...
+0x004A2B48  lgDevAStopForceEffectMulti: error: another async call is in progress...
+0x004A2B98  lgDevAStopForceEffectMulti: numeffects is out of range (%d)
+0x004A2BD8  lgDevAStopForceEffectMulti: effectids is NULL
+0x004A2C30  Frame %d is set to Interpolate. But the next frame is not setup.
+0x004A2C80  Frame %d is set to Interpolate. But the time difference is %f (negative).
+0x004A2FC0  ovid\movie.rws
+0x004A2FD0  ../export/ValueDB/Sound/Movie.cfg
+0x004A3000  Sound/Front End
+0x004A3010  Intro Gain
+0x004A3020  Movie Gain
+0x004A31A0  HUD_Strikeout
+0x004A31F0  has signed in
+0x004A3200  has signed out
+0x004A3268  HWFLAG
+0x004A3270  HWMASK
+0x004A3298  tourney
+0x004A32B0  FRIENDS 
+0x004A3580  http://msgconn.beta.ea.com/easo/cso05/pub/TOSAC.txt
+0x004A3678  CarArrow
+0x004AFA23  ?fff?
+0x004AFBD3  @UUU@433?gff?
+0x004AFD5F  >gff@333>UU
+0x004AFF3E  PAffFAr
+0x004B00D3  @fff?Pw
+0x004B00F7  >fff?
+0x004B0166  L>fff?
+0x004B018A  2Bfff
+0x004B0223  ?fff?ii
+0x004B02D5  	DBUUU@
+0x004B045B  ?UUU?fff>
+0x004B0482  E?fff?
+0x004B0AA0  (null)
+0x004B0CB7  ?fff?
+0x004B1280  dev9x:
+0x004B1290  -coop
+0x004B1340  IDENT
+0x004B1348  bogus
+0x004B1360  DIRECT
+0x004B1388  NAME=7
+0x004B1398  SLOTS
+0x004B13A0  STATS
+0x004B1418  ~%dms
+0x004B1468  LIDENT
+0x004B1470  LCOUNT
+0x004B1478  COUNT
+0x004B1480  FLAGS
+0x004B1498  PARAMS
+0x004B14A8  MINSIZE
+0x004B14B0  MAXSIZE
+0x004B14B8  NUMPART
+0x004B14D8  OPID%d
+0x004B14E0  OPPO%d
+0x004B14E8  ADDR%d
+0x004B14F0  LADDR%d
+0x004B14F8  MADDR%d
+0x004B15C0  RANGE
+0x004B1610  BUDDIES
+0x004B1618  START
+0x004B1630  NAMES
+0x004B1638  DESCS
+0x004B1640  PARAMS
+0x004B1648  WIDTHS
+0x004B1660  STATS
+0x004B1708  online
+0x004B1720  send: 
+0x004B1828  recv: 
+0x004B1848  NOREPLY
+0x004B1858  unknown

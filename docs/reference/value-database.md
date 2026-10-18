@@ -17,11 +17,15 @@ section 2 and 3: records containing the Microsoft debug-heap fills 0xFDFDFDFD an
                i.e. structures dumped from memory by a Windows tool
 ```
 
-| | Prototype (`VALUEDB/VDB.XML`) | Retail (`DATA/VDB.XML`) |
-|---|---:|---:|
-| Section 1 pairs | 3096 | 7525 |
-| Keys in both | 3045 | 3045 |
-| Values changed between them | 1949 | |
-| Keys only in this one | 51 | 4480 |
+## Across the builds
 
-Decoded pairs: [prototype](../../data/burnout3-prototype/disc/vdb/VDB.section1.csv), [retail](../../data/burnout3-retail/disc/vdb/VDB.section1.csv). Changed values: [data/vdb-changes.csv](data/vdb-changes.csv) — this is the tuning done between June and release.
+Tuning values in section 1 of each build, and what changed between them. The July review builds are the US and PAL discs from 20 July 2004, nine days before the final US build; their databases are identical to each other.
+
+| From → to | Pairs (from / to) | Keys in both | Values changed | Keys removed | Keys added | Changes |
+|---|---|---:|---:|---:|---:|---|
+| prototype → retail | 3096 / 7525 | 3045 | 1949 | 51 | 4480 | [vdb-changes-prototype-to-retail.csv](data/vdb-changes-prototype-to-retail.csv) (all tuning from June to release) |
+| prototype → US review | 3096 / 7525 | 3045 | 1948 | 51 | 4480 | [vdb-changes-prototype-to-US-review.csv](data/vdb-changes-prototype-to-US-review.csv) |
+| US review → retail | 7525 / 7525 | 7525 | 34 | 0 | 0 | [vdb-changes-US-review-to-retail.csv](data/vdb-changes-US-review-to-retail.csv) (the last nine days) |
+| US review → PAL review | 7525 / 7525 | 7525 | 0 | 0 | 0 | [vdb-changes-US-review-to-PAL-review.csv](data/vdb-changes-US-review-to-PAL-review.csv) |
+
+Decoded pairs: [prototype](../../data/burnout3-prototype/disc/vdb/VDB.section1.csv), [US review](../../data/burnout3-review-us-2004-07-20/disc/vdb/VDB.section1.csv), [PAL review](../../data/burnout3-review-pal-2004-07-20/disc/vdb/VDB.section1.csv), [retail](../../data/burnout3-retail/disc/vdb/VDB.section1.csv).
