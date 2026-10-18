@@ -10,7 +10,8 @@ The three builds this documentation is made from, and what each one provides. Fi
 | | Burnout 2 prototype | Burnout 3 prototype | Burnout 3 retail |
 |---|---|---|---|
 | Executable | `SLUS_204.97` (19.1 MB) | `DNAT_200.45` (3.4 MB) | `SLUS_210.50` (4.1 MB) |
-| Date | 29 July 2002 | linked June 2004; disc dated 20 July 2004 | files dated up to 29 July 2004 |
+| Date | 29 July 2002 | 8 June 2004 (map linked 3 June) | final build 29 July 2004 |
+| Source | [Hidden Palace](https://hiddenpalace.org/Burnout_2:_Point_of_Impact_(Jul_29,_2002_prototype)) | [Hidden Palace](https://hiddenpalace.org/Burnout_3:_Takedown_(Jun_8,_2004_prototype)) | retail disc |
 | Compiler | MW MIPS C Compiler 2.4.1.01 | the same | the same |
 | Symbols | **full symbol table** (12,023) | stripped; **four link maps** | stripped |
 | Debug info | **DWARF 1**: types, parameters, locals, lines | assert strings of two debug builds | none |
@@ -36,7 +37,7 @@ decompilation needs exactly that compiler.
   [function lineage](reference/function-lineage.md)), and RenderWare's types and signatures
   ([RenderWare API](reference/renderware-api.md)).
 
-## Burnout 3 prototype (June 2004)
+## Burnout 3 prototype (8 June 2004)
 
 - Boots `DNAT_200.45` (`SYSTEM.CNF`) and shows a language menu (`MESSAGE.TXT`: Japanese, English,
   French, Italian, Spanish, German, Portuguese, Dutch, Korean). Contains demo-disc code, the online
@@ -65,6 +66,25 @@ decompilation needs exactly that compiler.
   ([retail memory map](reference/retail-memory-map.md)).
   Nahelam's list covers the PAL release, SLES-52585 ([related resources](related-projects.md)).
 - Exported here: the file list, strings with addresses, and the decoded value database.
+
+## Provenance
+
+Both prototypes are from [Hidden Palace](https://hiddenpalace.org).
+
+| | Burnout 3 prototype | Burnout 2 prototype |
+|---|---|---|
+| Hidden Palace page | [Burnout 3: Takedown (Jun 8, 2004 prototype)](https://hiddenpalace.org/Burnout_3:_Takedown_(Jun_8,_2004_prototype)) | [Burnout 2: Point of Impact (Jul 29, 2002 prototype)](https://hiddenpalace.org/Burnout_2:_Point_of_Impact_(Jul_29,_2002_prototype)) |
+| Build | 8 June 2004, 18:20:40, "Preview" | 29 July 2002, "Preview" |
+| Disc label | *Burnout 3 Takedown For Preview Only Pre-Alpha 1 6-07-2004* | *Burnout 2 For Preview Only 29-7-02* |
+| Released | 20 March 2021, part of the Project Deluge lot (research by Nex, made possible by an anonymous donor) | 22 December 2023, by Daniel B |
+| Media | CD-R, dumped with CloneCD | DVD-R |
+| Image SHA-1 (Hidden Palace) | `.iso` `308f9dbd37e881be3c7a5cab5fc722a6c1ace6e0` | not listed |
+
+Hidden Palace's own notes on the Burnout 3 build describe the map file and "leftovers from removed .elf
+files from internal and debug builds", the binary maps and assert files documented here. Their notes on
+the Burnout 2 build: "Executable contains Symbols." The hashes of the extracted files used here are in
+[reference/hashes.md](reference/hashes.md); the Burnout 3 image hash above is of the whole disc image,
+which this repository did not hash.
 
 ## How they relate
 

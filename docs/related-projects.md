@@ -57,5 +57,5 @@ the PS2 names from Nahelam's list. Their findings can be located in the PS2 code
 
 | Resource | What | Relevance |
 |---|---|---|
-| [Hidden Palace](https://hiddenpalace.org) | The main prototype archive | Compare its hashes with [reference/hashes.md](reference/hashes.md) |
+| [Hidden Palace](https://hiddenpalace.org) | The main prototype archive | The source of both prototypes: [Burnout 3: Takedown (Jun 8, 2004 prototype)](https://hiddenpalace.org/Burnout_3:_Takedown_(Jun_8,_2004_prototype)) and [Burnout 2: Point of Impact (Jul 29, 2002 prototype)](https://hiddenpalace.org/Burnout_2:_Point_of_Impact_(Jul_29,_2002_prototype)). See [provenance](builds.md#provenance) |
 | [The Cutting Room Floor](https://tcrf.net) | Unused and cut content | See [unlinked code](reference/unlinked-code.md) and the [demo-disc code](systems/demo-builds.md) |

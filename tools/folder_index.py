@@ -10,7 +10,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 FOLDERS = {
     'data/burnout3-prototype': ('Burnout 3 prototype',
-        'Exports from the Burnout 3 prototype disc (June 2004): the four link maps and assert files as text '
+        'Exports from the Burnout 3 prototype disc (8 June 2004): the four link maps and assert files as text '
         '(`maps/`), modules with symbols (`modules/`), the disc listing, strings, executable headers and value '
         'database (`disc/`), and the original text link map (`originals/`). Described in [data](../README.md).'),
     'data/burnout3-retail': ('Burnout 3 retail (SLUS-21050)',

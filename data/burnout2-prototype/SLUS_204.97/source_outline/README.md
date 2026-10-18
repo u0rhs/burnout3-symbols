@@ -172,6 +172,7 @@ One file per Burnout 2 source file, at Criterion's paths: every function's signa
   - [Render/CSnow.cpp](gamesource/Render/CSnow.cpp)
   - [Render/CSparks.cpp](gamesource/Render/CSparks.cpp)
   - [Render/CSun.cpp](gamesource/Render/CSun.cpp)
+  - [Render/README.md](gamesource/Render/README.md)
   - [Render/2d/C2dObject.h](gamesource/Render/2d/C2dObject.h)
   - [Render/PS2CarRenderer/PS2CarRenderer.cpp](gamesource/Render/PS2CarRenderer/PS2CarRenderer.cpp)
   - [Render/PS2InstancedLit2/InstancedLit2.cpp](gamesource/Render/PS2InstancedLit2/InstancedLit2.cpp)

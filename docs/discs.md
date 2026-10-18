@@ -25,7 +25,7 @@ What is on each disc, which files the executables refer to by name, and what was
 
 **Strings of `SLUS_210.50`:** [all](../data/burnout3-retail/disc/strings/SLUS_210.50.strings.txt) · [paths](../data/burnout3-retail/disc/strings/SLUS_210.50.strings.paths.txt) 378 · [format](../data/burnout3-retail/disc/strings/SLUS_210.50.strings.format.txt) 155 · [identifiers](../data/burnout3-retail/disc/strings/SLUS_210.50.strings.identifiers.txt) 557 · [expressions](../data/burnout3-retail/disc/strings/SLUS_210.50.strings.expressions.txt) 237 · [text](../data/burnout3-retail/disc/strings/SLUS_210.50.strings.text.txt) 928
 
-## Burnout 3 prototype (June 2004)
+## Burnout 3 prototype (8 June 2004)
 
 426 files, 429,122,431 bytes. Full list: [files.txt](../data/burnout3-prototype/disc/files.txt).
 
@@ -343,7 +343,7 @@ File names found in the strings of each executable, with the string's address. T
 | `0x004D3AF8` | `view.ico` |
 | `0x004D3B08` | `icon.sys` |
 
-### Burnout 3 prototype (June 2004): `DNAT_200.45`
+### Burnout 3 prototype (8 June 2004): `DNAT_200.45`
 
 | Address | String |
 |---|---|

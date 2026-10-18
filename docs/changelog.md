@@ -6,6 +6,8 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-18
 
+- Provenance: both prototypes are from Hidden Palace; the Burnout 3 prototype is dated 8 June 2004
+  (previously given as July). Links and credits in [builds](builds.md#provenance).
 - [Symbols and maps](files.md): every data file in one place with direct links; "Get the files" and
   highlights on the home page; the files page second in the site sidebar.
 - Module exports renamed (`IOP_B3ROUTE_IRX/` …) so they are no longer hidden by the `.irx` rule in

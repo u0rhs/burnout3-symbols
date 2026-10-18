@@ -15,7 +15,7 @@ B2 = 'data/burnout2-prototype'
 
 SECTIONS = [
     ('Burnout 3 prototype: link maps and symbols',
-     'From the four link maps on the prototype disc (June 2004). `DNAT_200` is the build on the disc; the other '
+     'From the four link maps on the prototype disc (8 June 2004, from [Hidden Palace](https://hiddenpalace.org/Burnout_3:_Takedown_(Jun_8,_2004_prototype))). `DNAT_200` is the build on the disc; the other '
      'three are a debug, an internal and an unoptimised (`-O0`) build whose executables are not on the disc. '
      'Each map comes as a CSV (address, size, section, name, library, object) and as text grouped by source file. '
      'Format: [link maps](formats/codewarrior-maps.md).',

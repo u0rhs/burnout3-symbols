@@ -18,7 +18,9 @@
   <a href="https://github.com/u0rhs/burnout3-symbols/archive/refs/heads/main.zip">Download ZIP</a>
 </p>
 
-Everything the Burnout 3 prototype discs reveal about the game's code, turned into readable data and
+Everything the Burnout 3 prototype discs ([Burnout 3, 8 June 2004](https://hiddenpalace.org/Burnout_3:_Takedown_(Jun_8,_2004_prototype))
+and [Burnout 2, 29 July 2002](https://hiddenpalace.org/Burnout_2:_Point_of_Impact_(Jul_29,_2002_prototype)), both
+preserved by Hidden Palace) reveal about the game's code, turned into readable data and
 documentation, with Burnout 2's debug information where it helps explain Burnout 3. For anyone working on
 a Burnout 3 remaster, decompilation, remake, mod or patch.
 

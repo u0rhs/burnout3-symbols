@@ -10,8 +10,8 @@
 #    reference; the other maps exist only as their exports.)
 #
 # Point these at local copies of the extracted discs if they don't sit next to the repository:
-#   B2_DISC   the Burnout 2 prototype (29 July 2002)
-#   B3_PROTO  the Burnout 3 prototype (disc dated 20 July 2004)
+#   B2_DISC   the Burnout 2 prototype (Hidden Palace: Jul 29, 2002 prototype)
+#   B3_PROTO  the Burnout 3 prototype (Hidden Palace: Jun 8, 2004 prototype)
 #   B3_RETAIL the Burnout 3 NTSC-U retail disc (SLUS-21050)
 set -e
 cd "$(dirname "$0")/.."
