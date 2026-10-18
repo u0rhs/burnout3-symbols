@@ -628,7 +628,9 @@ def main():
                  'Code whose names point to debugging, editing or testing, in any of the four maps. Useful for '
                  'finding hidden tools (camera editor, AI and traffic debug views, performance monitors, cheats) '
                  'that may still be in the shipped code. Selected by name, so some false positives (`CPU` cars, '
-                 'player `Stats`) are included.\n\n')
+                 'player `Stats`) are included.\n\n'
+                 '**In the retail game:** a hidden development menu, the physics and traffic debug views and the Car '
+                 'Viewer are confirmed to still work in SLUS-21050; see [Nahelam\'s mods](nahelam-mods.md).\n\n')
         dcls = [c for c in class_list if dbg_rx.search(c)]
         fh.write('## Classes\n\n')
         for c in dcls:

@@ -89,6 +89,8 @@ CodeWarrior did not record `const`, typedefs or member-function declarations; `b
 
 | File | Contents |
 |---|---|
+| `function-names.csv` | 1,146 retail function names carried from Nahelam's PAL list (`tools/map_pal_names.py`), with a verification column ([page](../docs/reference/retail-function-names.md)) |
+| `nahelam-mods.csv` | Every US address Nahelam's mods change, with the mod and the nearest named function ([page](../docs/reference/nahelam-mods.md)) |
 | `memory-map.csv` | Retail addresses with width, meaning, values seen and source ([page](../docs/reference/retail-memory-map.md)) |
 | `vehicle-ids.csv` | The 67 vehicles' IDs (the two words at `0x0064ED10`/`0x0064ED14`) |
 | `event-medals.csv` | The medal byte of each World Tour event in the save profile |

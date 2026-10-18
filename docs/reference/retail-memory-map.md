@@ -175,25 +175,27 @@ Button numbers: 0 Triangle, 1 Square, 2 Cross, 3 Circle, 4–7 D-pad up/down/lef
 Places the codes patch in the executable. They are anchor points for naming retail functions: each one
 sits in a function whose behaviour the code describes.
 
-| Address | Patched to | Effect | Probably in |
+| Address | Patched to | Effect | In or after ([names](retail-function-names.md)) |
 |---|---|---|---|
-| `0x00134B08`, `0x00134C44` | `nop` | Shows the world time on screen | A debug display left in the HUD or game code |
-| `0x0014E07C` | `li v1,3` | Crashing fills the boost meter ×4 | Boost (`CB3Burn`) handling of a crash |
-| `0x0014E084` | `nop` | Extra max boost isn't lost when crashing | the same |
-| `0x0015BB80` | `li v0,0` | Crash Breaker always available | Crash mode logic (`CB3OfflineSingleCrashLogic` or `CB3CrashScore`) |
-| `0x0015BB88` | `nop` | Crash Breaker right after wrecking | the same |
-| `0x001A4940` | `j 0x000C2020` | Hook for a max-boost routine | Boost update |
-| `0x001B7220` | `jr ra; nop` | Vehicles pass through each other | **Start of a vehicle–vehicle collision function** |
-| `0x001B7378` | `nop` | the same, another way | the same function |
-| `0x001D3D2C` | `nop` (original `sw v1,-0x5F34($gp)`) | Stops the race timer | Race timer update; the timer is a `$gp`-relative global |
+| `0x00134B08`, `0x00134C44` | `nop` | Shows the world time on screen | `CB3OnePlayerStage::Render` |
+| `0x0014E07C` | `li v1,3` | Crashing fills the boost meter ×4 | `CB3Burn::SetNumExtraBoostBarSegments` |
+| `0x0014E084` | `nop` | Extra max boost isn't lost when crashing | `CB3Burn::SetNumExtraBoostBarSegments` |
+| `0x0015BB80` | `li v0,0` | Crash Breaker always available | `CB3Score::Update` |
+| `0x0015BB88` | `nop` | Crash Breaker right after wrecking | `CB3Score::Update` |
+| `0x001A4940` | `j 0x000C2020` | Hook for a max-boost routine | `CB3HUDBoostBar::BarUpdate` |
+| `0x001B7220` | `jr ra; nop` | Vehicles pass through each other | **Start of `CB3PhysicsManager::CollideAndRespondPair`** (the collision response) |
+| `0x001B7378` | `nop` | the same, another way | `CB3PhysicsManager::CollideAndRespondPair` |
+| `0x001D3D2C` | `nop` (original `sw v1,-0x5F34($gp)`) | Stops the race timer | End of `CGtTimer::Construct`; the timer is a `$gp`-relative global |
 | `0x0027CF26` | upper half `0x1000` | "Infinite time to play" | A time-limit check |
 | `0x002147A8` | `jal` to a code cave | Hook used by the MadCatz master code | |
 | `0x0030B284` | `j 0x000C2000` | Hook for an infinite-boost routine | Boost update |
 | `0x000C2000`–`0x000C2030` | — | Free low memory the MadCatz codes put their routines in | |
 | `0x00129B50`, `0x0034BEE4` | — | Code Breaker hook points ("enable codes") | |
 
-Matching these functions to the prototype names (see [decompilation](../avenues/decompilation.md))
-would turn each into a named, documented retail function.
+The function names come from [retail function names](retail-function-names.md) (Nahelam's PAL names,
+shifted to the US executable). Every code address in [`memory-map.csv`](../../data/burnout3-retail/memory-map.csv)
+names the nearest function before it. Nahelam's own patches add many more locations:
+[Nahelam's mods](nahelam-mods.md).
 
 ## Where this connects
 

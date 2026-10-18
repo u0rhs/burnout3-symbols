@@ -6,6 +6,8 @@
 
 Code whose names point to debugging, editing or testing, in any of the four maps. Useful for finding hidden tools (camera editor, AI and traffic debug views, performance monitors, cheats) that may still be in the shipped code. Selected by name, so some false positives (`CPU` cars, player `Stats`) are included.
 
+**In the retail game:** a hidden development menu, the physics and traffic debug views and the Car Viewer are confirmed to still work in SLUS-21050; see [Nahelam's mods](nahelam-mods.md).
+
 ## Classes
 
 - [CB3AIDebug](../classes/CB3AIDebug.md): 14 methods, B3AIDebug.cpp

@@ -40,6 +40,7 @@ python3 tools/gen_docs.py && python3 tools/gen_reference.py && python3 tools/wik
 | `export_modules.py <disc> <out> "<label>"` | Runs `export_elf.py` on every module with symbols on a disc; skips duplicates | `modules/<path>/` |
 | `export_b3maps.py <disc> <out>` | The B3 prototype's four maps and two assert files | `maps/` |
 | `export_disc.py <disc> <out> "<label>"` | File list, strings and headers of the executable, value database | `disc/` |
+| `map_pal_names.py <SLES_525.85.txt> <SLUS_210.50> <out>` | Carries Nahelam's PAL function names to the US executable with per-range shifts and a function-start check | `function-names.csv` |
 | `hash_sources.py` | Size, CRC32, MD5, SHA-1 of the source files | `data/hashes.tsv` |
 | `gen_docs.py` | The [game systems](systems/README.md) pages, class lineage, hashes page | `docs/systems/`, `docs/reference/` |
 | `gen_reference.py` | The [class pages](classes/README.md) and the other reference pages | `docs/classes/`, `docs/reference/` |

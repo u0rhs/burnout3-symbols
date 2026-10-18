@@ -69,6 +69,11 @@ if have "$B2_DISC" && have "$B3_PROTO" && have "$B3_RETAIL"; then
     python3 -I tools/hash_sources.py > data/hashes.tsv
 fi
 
+# --- Retail function names from Nahelam's PAL list (not in the repository; set NAHELAM_PAL_NAMES to its path)
+if [ -n "${NAHELAM_PAL_NAMES:-}" ] && [ -f "$NAHELAM_PAL_NAMES" ] && have "$B3_RETAIL"; then
+    python3 -I tools/map_pal_names.py "$NAHELAM_PAL_NAMES" "$B3_RETAIL/SLUS_210.50" "$R/function-names.csv"
+fi
+
 # --- Generated documentation, then the navigation line on every page ----------------------------------
 python3 -I tools/gen_docs.py
 python3 -I tools/gen_reference.py

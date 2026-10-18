@@ -6,6 +6,10 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-18
 
+- 1,146 retail function names (863 verified) from Nahelam's PAL list, shifted to SLUS-21050
+  (`tools/map_pal_names.py`); Nahelam's prototype list independently confirms the map's address drift.
+- Nahelam's mods and research documented: development menu, debug views, Car Viewer, the ELF code cave
+  and the compiler's runaway inlining, PADFIX, Burnout Online, B3Mod; 1,480 US addresses with functions.
 - Provenance: both prototypes are from Hidden Palace; the Burnout 3 prototype is dated 8 June 2004
   (previously given as July). Links and credits in [builds](builds.md#provenance).
 - [Symbols and maps](files.md): every data file in one place with direct links; "Get the files" and

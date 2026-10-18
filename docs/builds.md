@@ -61,6 +61,8 @@ decompilation needs exactly that compiler.
   from data.
 - PCSX2 identifies the executable by CRC `BEBF8793`.
 - Names have to be carried over from the prototype ([decompilation](avenues/decompilation.md)).
+- **1,146 retail functions are named** (863 verified), from Nahelam's PAL names: the PAL and US
+  executables share their code layout with small shifts ([retail function names](reference/retail-function-names.md)).
 - About 150 retail addresses are already known from cheat codes and PCSX2 patches: the save profile,
   race state, tuning values, display and HUD layout, controls and several code locations
   ([retail memory map](reference/retail-memory-map.md)).
