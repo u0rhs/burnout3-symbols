@@ -35,71 +35,71 @@ back_to_top_text: "Back to top"
 # The sidebar: the main sections (pages carry no front matter, so they are listed here)
 nav_external_links:
   - title: Home
-    url: /burnout3-symbols/
+    url: /
     hide_icon: true
     opens_in_new_tab: false
   - title: Builds
-    url: /burnout3-symbols/docs/builds.html
+    url: /docs/builds.html
     hide_icon: true
     opens_in_new_tab: false
   - title: Finding things
-    url: /burnout3-symbols/docs/data-guide.html
+    url: /docs/data-guide.html
     hide_icon: true
     opens_in_new_tab: false
   - title: Glossary
-    url: /burnout3-symbols/docs/glossary.html
+    url: /docs/glossary.html
     hide_icon: true
     opens_in_new_tab: false
   - title: Game systems
-    url: /burnout3-symbols/docs/systems/
+    url: /docs/systems/
     hide_icon: true
     opens_in_new_tab: false
   - title: Classes
-    url: /burnout3-symbols/docs/classes/
+    url: /docs/classes/
     hide_icon: true
     opens_in_new_tab: false
   - title: Renderer overview
-    url: /burnout3-symbols/docs/renderer-overview.html
+    url: /docs/renderer-overview.html
     hide_icon: true
     opens_in_new_tab: false
   - title: Retail memory map
-    url: /burnout3-symbols/docs/reference/retail-memory-map.html
+    url: /docs/reference/retail-memory-map.html
     hide_icon: true
     opens_in_new_tab: false
   - title: Disc contents
-    url: /burnout3-symbols/docs/discs.html
+    url: /docs/discs.html
     hide_icon: true
     opens_in_new_tab: false
   - title: Reference
-    url: /burnout3-symbols/docs/reference/
+    url: /docs/reference/
     hide_icon: true
     opens_in_new_tab: false
   - title: Uses
-    url: /burnout3-symbols/docs/avenues/
+    url: /docs/avenues/
     hide_icon: true
     opens_in_new_tab: false
   - title: Formats
-    url: /burnout3-symbols/docs/formats/
+    url: /docs/formats/
     hide_icon: true
     opens_in_new_tab: false
   - title: Tools
-    url: /burnout3-symbols/docs/tools.html
+    url: /docs/tools.html
     hide_icon: true
     opens_in_new_tab: false
   - title: Data
-    url: /burnout3-symbols/data/
+    url: /data/
     hide_icon: true
     opens_in_new_tab: false
   - title: Related resources
-    url: /burnout3-symbols/docs/related-projects.html
+    url: /docs/related-projects.html
     hide_icon: true
     opens_in_new_tab: false
   - title: Open questions
-    url: /burnout3-symbols/docs/open-questions.html
+    url: /docs/open-questions.html
     hide_icon: true
     opens_in_new_tab: false
   - title: Changelog
-    url: /burnout3-symbols/docs/changelog.html
+    url: /docs/changelog.html
     hide_icon: true
     opens_in_new_tab: false
   - title: GitHub repository
