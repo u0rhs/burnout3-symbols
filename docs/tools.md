@@ -2,7 +2,7 @@
 
 # Tools
 
-Everything in [`tools/`](../tools) is plain Python 3 (standard library only) plus one shell script.
+Everything in [`tools/`](../tools/README.md) is plain Python 3 (standard library only) plus one shell script.
 Commands run from the repository root.
 
 ## Rebuild everything
@@ -43,6 +43,7 @@ python3 tools/gen_docs.py && python3 tools/gen_reference.py && python3 tools/wik
 | `hash_sources.py` | Size, CRC32, MD5, SHA-1 of the source files | `data/hashes.tsv` |
 | `gen_docs.py` | The [game systems](systems/README.md) pages, class lineage, hashes page | `docs/systems/`, `docs/reference/` |
 | `gen_reference.py` | The [class pages](classes/README.md) and the other reference pages | `docs/classes/`, `docs/reference/` |
+| `folder_index.py` | A `README.md` index in each data folder the docs link to, so the links work on the website too | `data/**/README.md` |
 | `wiki_nav.py` | The `Home › Section` line at the top of every page | all pages |
 
 Libraries used by the scripts:

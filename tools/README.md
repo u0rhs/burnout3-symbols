@@ -2,8 +2,8 @@
 
 # Tools
 
-Python 3 scripts (standard library only) that build everything in [`data/`](../data) and the generated
-pages in [`docs/`](../docs). Run from the repository root:
+Python 3 scripts (standard library only) that build everything in [`data/`](../data/README.md) and the generated
+pages in [`docs/`](../docs/README.md). Run from the repository root:
 
 ```bash
 tools/rebuild.sh

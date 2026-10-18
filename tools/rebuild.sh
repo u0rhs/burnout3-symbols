@@ -72,4 +72,5 @@ fi
 # --- Generated documentation, then the navigation line on every page ----------------------------------
 python3 -I tools/gen_docs.py
 python3 -I tools/gen_reference.py
+python3 -I tools/folder_index.py
 python3 -I tools/wiki_nav.py

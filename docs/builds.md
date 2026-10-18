@@ -16,7 +16,7 @@ The three builds this documentation is made from, and what each one provides. Fi
 | Debug info | **DWARF 1**: types, parameters, locals, lines | assert strings of two debug builds | none |
 | Code and data loaded | 2.1 MB | 3.4 MB | 4.1 MB |
 | Region | NTSC-U (`SLUS-20497`) | NTSC, nine-language menu | NTSC-U (`SLUS-21050`) |
-| Exports | [data/burnout2-prototype](../data/burnout2-prototype) | [data/burnout3-prototype](../data/burnout3-prototype) | [data/burnout3-retail](../data/burnout3-retail) |
+| Exports | [data/burnout2-prototype](../data/burnout2-prototype/README.md) | [data/burnout3-prototype](../data/burnout3-prototype/README.md) | [data/burnout3-retail](../data/burnout3-retail/README.md) |
 
 All three were built with the same compiler. Shared code (RenderWare, Criterion's libraries) therefore
 compiles to nearly identical bytes, which helps match functions across builds; and a matching

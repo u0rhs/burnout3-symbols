@@ -58,7 +58,7 @@ vertex starts a new triangle).
 Burnout 2's renderer folders in its outlines: `gamesource/Render/PS2PrelitWorld2`,
 `PS2InstancedPrelit2`, `PS2InstancedLit2`, `PS2CarRenderer`. They are the ancestors of the `G3_*` and
 `vehicleRenderer` programs, with types and parameters. See the
-[Burnout 2 outlines](../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Render).
+[Burnout 2 outlines](../data/burnout2-prototype/SLUS_204.97/source_outline/gamesource/Render/README.md).
 
 ## What each avenue needs from this
 

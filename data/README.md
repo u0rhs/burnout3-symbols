@@ -12,9 +12,9 @@ The `originals/` folders keep the two text link maps from the discs, for referen
 
 | Folder | From |
 |---|---|
-| [`burnout3-prototype/`](burnout3-prototype) | The Burnout 3 prototype (link maps of four builds, assert files, modules, disc) |
-| [`burnout3-retail/`](burnout3-retail) | The Burnout 3 NTSC-U retail disc, SLUS-21050 (disc listing, strings, value database, memory map from cheat codes and patches) |
-| [`burnout2-prototype/`](burnout2-prototype) | The Burnout 2 prototype of 29 July 2002 (symbols and DWARF 1 debug info) |
+| [`burnout3-prototype/`](burnout3-prototype/README.md) | The Burnout 3 prototype (link maps of four builds, assert files, modules, disc) |
+| [`burnout3-retail/`](burnout3-retail/README.md) | The Burnout 3 NTSC-U retail disc, SLUS-21050 (disc listing, strings, value database, memory map from cheat codes and patches) |
+| [`burnout2-prototype/`](burnout2-prototype/README.md) | The Burnout 2 prototype of 29 July 2002 (symbols and DWARF 1 debug info) |
 | `*/originals/` | The original text link maps (see below) |
 | [`hashes.tsv`](hashes.tsv) | Size, CRC32, MD5 and SHA-1 of every source file ([as a table](../docs/reference/hashes.md)) |
 
@@ -24,8 +24,8 @@ The documentation built on this data starts at the [Home](../README.md) page.
 
 | Folder | Files |
 |---|---|
-| [`burnout3-prototype/originals/`](burnout3-prototype/originals) | `DNAT_200.MAP`, the text link map of the prototype executable |
-| [`burnout2-prototype/originals/`](burnout2-prototype/originals) | `IOP/B2STRE~1.XMA`, `IOP/GTFSDV~1.XMA`, `IOP/GTFSHO~1.XMA`: text link maps of three IOP modules |
+| [`burnout3-prototype/originals/`](burnout3-prototype/originals/README.md) | `DNAT_200.MAP`, the text link map of the prototype executable |
+| [`burnout2-prototype/originals/`](burnout2-prototype/originals/README.md) | `IOP/B2STRE~1.XMA`, `IOP/GTFSDV~1.XMA`, `IOP/GTFSHO~1.XMA`: text link maps of three IOP modules |
 
 The binary maps (`B3DEBUG.MAP`, `B3INTERN.MAP`, `B3O0PCH.MAP`) and the assert files (`.AST`) are kept only
 as their full text exports in `maps/`. Executables, IOP modules and other disc files are not kept.

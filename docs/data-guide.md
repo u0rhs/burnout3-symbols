@@ -22,14 +22,14 @@ text.
 | B3 prototype (map) | [`maps/DNAT_200.symbols.txt`](../data/burnout3-prototype/maps/DNAT_200.symbols.txt), by address. The executable is six days newer: game-code addresses drift by up to −0xCE40 |
 | B3 debug / internal / -O0 | `maps/B3DEBUG.symbols.txt` and the others |
 | B3 prototype, data | [b3-globals](reference/b3-globals.md) |
-| B3 retail | The [retail memory map](reference/retail-memory-map.md) (from cheat codes and patches); strings with addresses in [`disc/strings/`](../data/burnout3-retail/disc/strings). Functions are not named yet |
+| B3 retail | The [retail memory map](reference/retail-memory-map.md) (from cheat codes and patches); strings with addresses in [`disc/strings/`](../data/burnout3-retail/disc/strings/README.md). Functions are not named yet |
 | B2 prototype | [`symbols.txt`](../data/burnout2-prototype/SLUS_204.97/symbols.txt), or [`functions.txt`](../data/burnout2-prototype/SLUS_204.97/functions.txt) with signatures and lines |
 
 ## A source file
 
 - **Burnout 3:** search `maps/DNAT_200.symbols.txt` for `==== B3File.cpp`; `*.source_files.txt` lists all
   files with sizes; the [system pages](systems/README.md) list each area's files.
-- **Burnout 2:** [`source_outline/`](../data/burnout2-prototype/SLUS_204.97/source_outline) mirrors
+- **Burnout 2:** [`source_outline/`](../data/burnout2-prototype/SLUS_204.97/source_outline/README.md) mirrors
   Criterion's tree; each file lists its functions with parameters, locals, scopes and lines.
 - **Burnout 3 file ↔ Burnout 2 file:** [source-file lineage](reference/source-file-lineage.md).
 
