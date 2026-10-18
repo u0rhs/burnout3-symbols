@@ -58,7 +58,11 @@ decompilation needs exactly that compiler.
 
 - Fully stripped: no symbols, and a single program segment with no section headers separating code
   from data.
+- PCSX2 identifies the executable by CRC `BEBF8793`.
 - Names have to be carried over from the prototype ([decompilation](avenues/decompilation.md)).
+- About 150 retail addresses are already known from cheat codes and PCSX2 patches: the save profile,
+  race state, tuning values, display and HUD layout, controls and several code locations
+  ([retail memory map](reference/retail-memory-map.md)).
   Nahelam's list covers the PAL release, SLES-52585 ([related resources](related-projects.md)).
 - Exported here: the file list, strings with addresses, and the decoded value database.
 

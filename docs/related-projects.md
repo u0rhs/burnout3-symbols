@@ -10,6 +10,8 @@ Outside projects and resources that use or complement this data, and how each re
 |---|---|---|
 | [Nahelam's PS2-Game-Mods](https://github.com/Nahelam/PS2-Game-Mods/tree/main/Burnout%203%20Takedown/Research) | Function names for the PAL retail release (`SLES_525.85.txt`) and the prototype (`DNAT_200.45.txt`), made from the same prototype map plus Burnout Revenge prototype symbols; also PCSX2 patches (e.g. 60 fps crashes) | A cross-check for names carried to retail. The author notes there may be mistakes |
 | [Burnout MOD wiki (Japanese)](https://wikiwiki.jp/burnout/B3/MOD) | Mod tools and texture extraction for the PS2 version | Asset tooling for the PS2 data |
+| [AeroWidescreen/PCSX2-Cheats](https://github.com/AeroWidescreen/PCSX2-Cheats/tree/main/Burnout%203%20Takedown/SLUS-21050) | PCSX2 patches for SLUS-21050: a full 16:9 fix (Aero_) and gameplay button mapping (Ookami & Aero_), MIT | Locates the widescreen flag, field of view, every HUD and menu layout value, the button mapping code and free space in the retail image. Included unchanged in `data/burnout3-retail/third-party/`; described in the [retail memory map](reference/retail-memory-map.md) |
+| [GameHacking.org](https://gamehacking.org) cheat codes ([copy on Scribd](https://www.scribd.com/document/876925846/Burnout-3-Takedown-NTSC-U-SLUS-21050-pnach)) | About 360 cheat codes for SLUS-21050 by Codejunkies, Code Master and MadCatz, as a PCSX2 `.pnach` | Locates the save profile (medals, trophies, takedowns, headlines, garage, unlocks), race state, boost, crash tuning, the simulation time step, pad input, vehicle IDs and several code locations. Rewritten as the [retail memory map](reference/retail-memory-map.md) (the codes themselves are not reproduced) |
 
 ## PS2 ports and tooling
 

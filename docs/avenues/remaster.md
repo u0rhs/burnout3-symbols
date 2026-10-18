@@ -18,6 +18,8 @@ of it step by step.
 | Audio and music | The music manager, radio and custom soundtrack code | [Audio](../systems/audio.md): `B3SoundMusicManager`, `B3SoundRadio`, `B3SoundCustomSoundTrackPS2`, `B3MyBurnoutSettingsEATraxPage` |
 | Frame rate and timing | The frame-rate manager, timers and the simulation step | [Core](../systems/core-platform.md): `GtFramerateManager`, `GtTimer`; [game flow](../systems/game-flow.md): `CB3Game` |
 | Tuning | Physics, AI and camera values | [Value database](../reference/value-database.md), the `…Attribs` classes |
+| Widescreen and HUD layout | The game's own 16:9 flag, field of view, and every 2D layout value | [Retail memory map: display and HUD](../reference/retail-memory-map.md#display-and-hud-layout-widescreen-patch) |
+| Rebindable controls | The default button mapping code | [Retail memory map: controls](../reference/retail-memory-map.md#controls-button-mapping-patch), `CB3ControllerMappingPS2` |
 | Online | The lobby and network messages | [Network and online](../systems/network-online.md) |
 | Debug tools | Cameras, editors and monitors left in the code | [Debug features](../reference/debug-features.md) |
 

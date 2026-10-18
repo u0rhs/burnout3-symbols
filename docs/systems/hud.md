@@ -6,6 +6,8 @@
 
 Everything drawn over the race: speedometer, boost bar, position, lap and timers, takedown counter, crash score and combo, messages.
 
+**Retail addresses:** the [retail memory map](../reference/retail-memory-map.md) has HUD position, width and corners, the HUD render code.
+
 **In the B3 prototype (DNAT_200 build):** 21 source files, 31 classes with methods, 126 functions, 67,740 bytes of code.
 
 ## Source files

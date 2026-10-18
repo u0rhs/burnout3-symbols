@@ -6,6 +6,8 @@
 
 The PS2-side drawing: track, vehicle, sky, sun, coronas, particles, sparks, debris, shadows, trails and scrapes; bloom, blur and fog; textures and the texture cache. Most of these hand work to the VU1 microcode listed in the renderer overview.
 
+**Retail addresses:** the [retail memory map](../reference/retail-memory-map.md) has field of view and aspect ratio, the widescreen flag.
+
 **In the B3 prototype (DNAT_200 build):** 36 source files, 48 classes with methods, 303 functions, 125,040 bytes of code.
 
 ## Source files

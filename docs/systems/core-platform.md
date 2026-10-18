@@ -6,6 +6,8 @@
 
 Startup, memory managers, input devices and controller mapping, timers, threads, containers, hashing, debugging and performance monitors, and the PS2 runtime glue.
 
+**Retail addresses:** the [retail memory map](../reference/retail-memory-map.md) has pad 1 buttons and the button mapping code.
+
 **In the B3 prototype (DNAT_200 build):** 34 source files, 31 classes with methods, 245 functions, 45,384 bytes of code.
 
 ## Source files

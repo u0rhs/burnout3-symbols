@@ -6,6 +6,8 @@
 
 The menu screens and their flow: each screen is a Page (what is drawn) plus a State (the logic), driven by a menu state machine. Car, track and event select, My Burnout, settings, rewards, results.
 
+**Retail addresses:** the [retail memory map](../reference/retail-memory-map.md) has menu layout, borders, loading screen, car select overlay.
+
 **In the B3 prototype (DNAT_200 build):** 139 source files, 155 classes with methods, 695 functions, 297,856 bytes of code.
 
 ## Source files

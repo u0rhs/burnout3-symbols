@@ -6,6 +6,8 @@
 
 Loading and streaming the tracks around the car, static and streamed track data and collision, environments (weather, time of day), props, the DVD file system and video playback.
 
+**Retail addresses:** the [retail memory map](../reference/retail-memory-map.md) has the frontend globe.
+
 **In the B3 prototype (DNAT_200 build):** 19 source files, 19 classes with methods, 146 functions, 39,152 bytes of code.
 
 ## Source files

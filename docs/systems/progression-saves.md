@@ -6,6 +6,8 @@
 
 The World Tour, unlocks and rewards, records, the profile and memory card saving, and the hard-coded lists of tracks, events, vehicles, cheats, trophies and headlines.
 
+**Retail addresses:** the [retail memory map](../reference/retail-memory-map.md) has the save profile: medals, trophies, signature takedowns, headlines, garage, unlocks.
+
 **In the B3 prototype (DNAT_200 build):** 15 source files, 33 classes with methods, 171 functions, 44,040 bytes of code.
 
 ## Source files

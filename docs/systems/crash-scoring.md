@@ -6,6 +6,8 @@
 
 Crash mode (pickups, ramps, the crash camera and presentation directors, crash analysis), takedowns, boost (Burn), scores, bonuses and challenges.
 
+**Retail addresses:** the [retail memory map](../reference/retail-memory-map.md) has crash tuning values, Crash Breaker code, score.
+
 **In the B3 prototype (DNAT_200 build):** 23 source files, 30 classes with methods, 315 functions, 111,196 bytes of code.
 
 ## Source files

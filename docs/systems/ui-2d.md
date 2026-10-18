@@ -6,6 +6,8 @@
 
 Criterion's 2D scene system that menus and the HUD are built from: fonts, text, images, panels, boxes, tables, vignettes, video images.
 
+**Retail addresses:** the [retail memory map](../reference/retail-memory-map.md) has the 2D layout values the widescreen patch changes.
+
 **In the B3 prototype (DNAT_200 build):** 32 source files, 37 classes with methods, 185 functions, 93,840 bytes of code.
 
 ## Source files

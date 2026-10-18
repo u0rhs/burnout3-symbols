@@ -25,6 +25,7 @@ Burnout 3 remaster, decompilation or remake.
 | [Game systems](docs/systems/README.md) | The code by area (physics, AI, traffic, crashes, cameras, HUD, menus, audio, rendering, network …): source files, classes, methods, Burnout 2 counterparts |
 | [Classes](docs/classes/README.md) | A page per class (890): methods in every build, vtable, static data, Burnout 2 ancestor's layout, related asserts |
 | [Renderer overview](docs/renderer-overview.md) | How the game draws: VU microcode programs and the code that drives them |
+| [Retail memory map](docs/reference/retail-memory-map.md) | Named addresses in the retail executable from cheat codes and PCSX2 patches: save profile, race state, tuning, widescreen and HUD layout, controls, code locations |
 | [Disc contents](docs/discs.md) | Every folder and file type on the discs, and the file names the executables use |
 | [Reference](docs/reference/README.md) | Globals, build comparison, memory layout, debug features, unlinked code, asserts, IOP modules, value database, Burnout 2 lineage tables |
 
@@ -51,7 +52,7 @@ Burnout 3 remaster, decompilation or remake.
 | | |
 |---|---|
 | Burnout 3 prototype | 4 link maps (one text, three binary) · 8,301 functions in the DNAT_200 build, 11,020 in the unoptimised build · 890 classes · 312 vtables · 595 game source files · 3,383 named variables · 22 VU microcode programs · 2,243 assert expressions · 3,056 unlinked symbols |
-| Burnout 3 retail | 775 files listed · 2,255 strings with addresses · 7,525 tuning values (1,949 changed since the prototype) |
+| Burnout 3 retail | 775 files listed · 2,255 strings with addresses · 7,525 tuning values (1,949 changed since the prototype) · about 150 named memory addresses, 67 vehicle IDs, 139 event medal bytes |
 | Burnout 2 prototype | 12,023 symbols · 2,309 functions with full debug info · 969 types · 168 enums · 288 source files · 76,449 line entries |
 | Burnout 2 → 3 | 62 class ancestors · 704 function counterparts · 25 source-file counterparts |
 | Compiler, all three executables | Metrowerks CodeWarrior for PS2, MW MIPS C Compiler 2.4.1.01 |

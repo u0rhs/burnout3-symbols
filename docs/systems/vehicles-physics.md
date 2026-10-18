@@ -6,6 +6,8 @@
 
 Car handling, suspension, wheels, transmission, deformation and parts coming off, collision shapes and world collision, props.
 
+**Retail addresses:** the [retail memory map](../reference/retail-memory-map.md) has the selected vehicle ID, collision code, boost values.
+
 **In the B3 prototype (DNAT_200 build):** 28 source files, 34 classes with methods, 327 functions, 284,944 bytes of code.
 
 ## Source files

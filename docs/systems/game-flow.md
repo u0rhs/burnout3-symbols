@@ -6,6 +6,8 @@
 
 How a session runs: the game object, its modes and stages (one player, split screen, online), the logic class for each event type (race, Road Rage, Burning Lap, Eliminator, Crash), race positions, checkpoints and the world.
 
+**Retail addresses:** the [retail memory map](../reference/retail-memory-map.md) has the simulation time step, lap, score.
+
 **In the B3 prototype (DNAT_200 build):** 26 source files, 29 classes with methods, 287 functions, 74,604 bytes of code.
 
 ## Source files

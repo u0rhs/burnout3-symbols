@@ -6,6 +6,8 @@
 
 The player cameras (in-game, intro, crash, replay, debug) and the behaviours that move them, and the replay system.
 
+**Retail addresses:** the [retail memory map](../reference/retail-memory-map.md) has the chase camera distance, crash camera border, replay bars.
+
 **In the B3 prototype (DNAT_200 build):** 28 source files, 33 classes with methods, 175 functions, 119,704 bytes of code.
 
 ## Source files

@@ -6,6 +6,9 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-18
 
+- Retail memory map from cheat codes (GameHacking.org: Codejunkies, Code Master, MadCatz) and
+  AeroWidescreen's PCSX2 patches (widescreen, button mapping; included under MIT): save profile, race
+  state, tuning, display and HUD layout, controls, code locations, vehicle IDs, event medals.
 - Related resources: added the Xbox ports (xboxrecomp, sp00nznet/burnout3, Takedawn, burnout3-sw) and
   which of their findings map to which system here.
 - Text only: no disc files except the two text link maps (`data/*/originals/`), no byte dumps.

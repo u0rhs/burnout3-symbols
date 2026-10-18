@@ -13,7 +13,7 @@ The `originals/` folders keep the two text link maps from the discs, for referen
 | Folder | From |
 |---|---|
 | [`burnout3-prototype/`](burnout3-prototype) | The Burnout 3 prototype (link maps of four builds, assert files, modules, disc) |
-| [`burnout3-retail/`](burnout3-retail) | The Burnout 3 NTSC-U retail disc, SLUS-21050 (disc listing, strings, value database) |
+| [`burnout3-retail/`](burnout3-retail) | The Burnout 3 NTSC-U retail disc, SLUS-21050 (disc listing, strings, value database, memory map from cheat codes and patches) |
 | [`burnout2-prototype/`](burnout2-prototype) | The Burnout 2 prototype of 29 July 2002 (symbols and DWARF 1 debug info) |
 | `*/originals/` | The original text link maps (see below) |
 | [`hashes.tsv`](hashes.tsv) | Size, CRC32, MD5 and SHA-1 of every source file ([as a table](../docs/reference/hashes.md)) |
@@ -83,6 +83,17 @@ The Burnout 2 executable kept its symbol table and its **DWARF 1** debug informa
 
 CodeWarrior did not record `const`, typedefs or member-function declarations; `bool` appears as
 `int` or `unsigned char`; `u_long128` is the EE's 128-bit integer.
+
+## burnout3-retail/: memory map and third-party patches
+
+| File | Contents |
+|---|---|
+| `memory-map.csv` | Retail addresses with width, meaning, values seen and source ([page](../docs/reference/retail-memory-map.md)) |
+| `vehicle-ids.csv` | The 67 vehicles' IDs (the two words at `0x0064ED10`/`0x0064ED14`) |
+| `event-medals.csv` | The medal byte of each World Tour event in the save profile |
+| `third-party/AeroWidescreen-PCSX2-Cheats/` | Aero_'s widescreen patch and Ookami & Aero_'s button mapping patch, unchanged, with their MIT licence |
+
+These are written by hand from the sources named on the page, not by `tools/rebuild.sh`.
 
 ## */disc/
 

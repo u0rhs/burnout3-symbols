@@ -22,7 +22,7 @@ text.
 | B3 prototype (map) | [`maps/DNAT_200.symbols.txt`](../data/burnout3-prototype/maps/DNAT_200.symbols.txt), by address. The executable is six days newer: game-code addresses drift by up to −0xCE40 |
 | B3 debug / internal / -O0 | `maps/B3DEBUG.symbols.txt` and the others |
 | B3 prototype, data | [b3-globals](reference/b3-globals.md) |
-| B3 retail | Not named yet. Strings with addresses: [`disc/strings/`](../data/burnout3-retail/disc/strings) |
+| B3 retail | The [retail memory map](reference/retail-memory-map.md) (from cheat codes and patches); strings with addresses in [`disc/strings/`](../data/burnout3-retail/disc/strings). Functions are not named yet |
 | B2 prototype | [`symbols.txt`](../data/burnout2-prototype/SLUS_204.97/symbols.txt), or [`functions.txt`](../data/burnout2-prototype/SLUS_204.97/functions.txt) with signatures and lines |
 
 ## A source file

@@ -26,11 +26,15 @@ of a build six weeks older. Ways to carry the names over:
    positions match too. This also catches small functions that are ambiguous on their own.
 3. **Vtables.** DNAT_200 has 312, all named (`Class::__vt`). One vtable found in retail names all its
    slots. Sizes are on the [class pages](../classes/README.md).
-4. **Strings.** Functions that use the same literals in both builds. String lists with addresses:
+4. **Known retail locations.** The [retail memory map](../reference/retail-memory-map.md) lists code
+   addresses that cheat codes and patches change (a vehicle collision function, the race timer, Crash
+   Breaker checks, boost on crashing, the HUD render and menu layout code, the button mapping). Each sits
+   in a function whose behaviour is known, which narrows down its prototype name.
+5. **Strings.** Functions that use the same literals in both builds. String lists with addresses:
    [disc contents](../discs.md).
-5. **Burnout 2.** RenderWare and Criterion's toolkit carried over with few changes
+6. **Burnout 2. RenderWare and Criterion's toolkit carried over with few changes
    ([function lineage](../reference/function-lineage.md)).
-6. **The other three maps.** They name functions DNAT_200 doesn't have: statics, and inlines in the
+7. **The other three maps. They name functions DNAT_200 doesn't have: statics, and inlines in the
    `-O0` build ([build comparison](../reference/build-comparison.md)).
 
 Each name should record how it was found and how certain it is. Function sizes across the four
