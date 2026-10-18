@@ -6,8 +6,8 @@ The PAL and US executables have the same code layout with small piecewise shifts
 -0x10 around 0x131000-0x162000, -0x80 from about 0x265000, growing to about -0x424 in the menus and online
 code). For each name the shift is taken from its neighbourhood: the shift, within +-0x600, that puts the
 most of the 40 surrounding names on a function start in the US executable. The name is then checked on its
-own: 'function start' when the US address begins a function (a stack-frame `addiu $sp` or follows a
-`jr $ra`), 'not verified' otherwise (small leaf functions and data often fail the check without being
+own: 'function start' when the US address begins a function (a stack-frame `addiu $sp`, or comes after a
+`jr $ra` and its delay slot), 'not verified' otherwise (small leaf functions and data often fail the check without being
 wrong).
 
 Nahelam's list itself is not part of this repository (it has no licence); get it from
@@ -39,7 +39,9 @@ def main():
 
     def is_start(a):
         x = word(a)
-        return x is not None and ((x >> 16) == 0x27BD or word(a - 8) == 0x03E00008 or word(a - 4) == 0x03E00008)
+        # a function starts with a stack-frame addiu, or right after the delay slot of a jr $ra (a - 8);
+        # the delay slot itself (a - 4) is not a start
+        return x is not None and ((x >> 16) == 0x27BD or word(a - 8) == 0x03E00008)
 
     starts = set(a for a in range(lo + 8, hi - 4, 4) if is_start(a))
     rows = []

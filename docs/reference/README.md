@@ -13,7 +13,7 @@ except the retail memory map, which is written from outside sources; larger tabl
 | [Classes](../classes/README.md) | One page per class (890) |
 | [Global data](b3-globals.md) | Every named variable, static member and function-local static in the prototype map (3,383) |
 | [Build comparison](build-comparison.md) | The four prototype builds: which functions each has, what changed between them |
-| [Retail function names](retail-function-names.md) | 1,146 named functions in the retail executable (863 verified), carried over from Nahelam's PAL names |
+| [Retail function names](retail-function-names.md) | 1,146 named functions in the retail executable (851 verified), carried over from Nahelam's PAL names |
 | [Nahelam's mods](nahelam-mods.md) | Nahelam's Burnout 3 research and mods: dev menu, debug views, Car Viewer, the code cave, online revival, B3Mod; every US address they change |
 | [Retail memory map](retail-memory-map.md) | Named addresses in the retail executable from cheat codes and PCSX2 patches: save profile, race state, tuning, display and HUD layout, controls, code locations; vehicle IDs and event medals |
 | [Memory layout](memory-layout.md) | Program headers of all three executables, the prototype's sections and linker symbols |

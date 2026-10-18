@@ -38,7 +38,7 @@ of a build six weeks older. Ways to carry the names over:
    `-O0` build ([build comparison](../reference/build-comparison.md)).
 
 **Retail names already available:** [1,146 retail functions](../reference/retail-function-names.md)
-are named from Nahelam's PAL list (863 verified). They are anchors for everything above: functions
+are named from Nahelam's PAL list (851 verified). They are anchors for everything above: functions
 between two named ones can be matched by order and size against the prototype.
 
 Each name should record how it was found and how certain it is. Function sizes across the four

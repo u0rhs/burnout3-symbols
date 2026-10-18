@@ -17,7 +17,7 @@ with their mod and function: [`nahelam-mods.csv`](../../data/burnout3-retail/nah
 | File | What | Used here |
 |---|---|---|
 | [`DNAT_200.45.txt`](https://github.com/Nahelam/PS2-Game-Mods/tree/main/Burnout%203%20Takedown/Research/DNAT_200.45.txt) | 982 function names for the prototype executable | Matches 921 names in the prototype map, with the same address drift, confirming both ([details](retail-function-names.md#confirmations)) |
-| [`SLES_525.85.txt`](https://github.com/Nahelam/PS2-Game-Mods/tree/main/Burnout%203%20Takedown/Research/SLES_525.85.txt) | 1,214 function names for the PAL retail executable | Shifted to the US executable: [1,146 US names, 863 verified](retail-function-names.md) |
+| [`SLES_525.85.txt`](https://github.com/Nahelam/PS2-Game-Mods/tree/main/Burnout%203%20Takedown/Research/SLES_525.85.txt) | 1,214 function names for the PAL retail executable | Shifted to the US executable: [1,146 US names, 851 verified](retail-function-names.md) |
 | [`b3stuff.txt`](https://github.com/Nahelam/PS2-Game-Mods/tree/main/Burnout%203%20Takedown/Research/b3stuff.txt) | Working notes: patch sites with the instructions around them | Background for the patches below |
 
 Both lists were built from the Burnout 3 prototype map and the Burnout Revenge prototype's debug symbols.
@@ -83,6 +83,7 @@ SLES-52585 and SLUS-21050.
 unnamed function after it. "Words of new code" are instructions the patch adds in free memory
 (mostly `0x000B3000`–`0x000B4FFF`).
 
+<!-- mods-table:start -->
 ### Development and debug
 
 | Mod | What it does | US addresses changed |
@@ -163,6 +164,8 @@ unnamed function after it. "Words of new code" are instructions the patch adds i
 | [Single Event DJ](https://github.com/Nahelam/PS2-Game-Mods/blob/main/Burnout%203%20Takedown/Various/SLUS-21050/SLUS-21050_BEBF8793_single_event_dj.pnach) | Enables the DJ in Single Event menus, intros and races | `0x003FA044`<br>`0x003F9A38`<br>`0x003F8CAC` |
 | [No vehicle sounds](https://github.com/Nahelam/PS2-Game-Mods/blob/main/Burnout%203%20Takedown/Various/SLUS-21050/BEBF8793_disable_vehicle_sounds.pnach) | Silences vehicles (for drivable-traffic mods on hardware) | `0x002EEFF2` (after `CB3SoundRaceCarManager::RequestRaceCar`) |
 | [Online](https://github.com/Nahelam/PS2-Game-Mods/blob/main/Burnout%203%20Takedown/Online/PCSX2/SLUS-21050_BEBF8793_online.pnach) | Burnout Online revival: server URL, DNAS bypass, SSL, UPnP, lobby and buddies options | `0x004BAEE8`<br>`0x00406E88`<br>`0x00406E8C`<br>`0x004C6E60`<br>+27 more |
+
+<!-- mods-table:end -->
 
 ## Other folders
 

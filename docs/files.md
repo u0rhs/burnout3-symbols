@@ -38,7 +38,7 @@ The retail executable is stripped. These are the named addresses known so far, a
 
 | File | Contents | Size | Lines / rows |
 |---|---|---:|---:|
-| [`function-names.csv`](../data/burnout3-retail/function-names.csv) | 1,146 named functions in the retail executable (863 verified) | 149.9 KB | 1,214 |
+| [`function-names.csv`](../data/burnout3-retail/function-names.csv) | 1,146 named functions in the retail executable (851 verified) | 149.9 KB | 1,214 |
 | [`nahelam-mods.csv`](../data/burnout3-retail/nahelam-mods.csv) | Every address Nahelam's mods change, with the nearest named function | 378.5 KB | 1,480 |
 | [`memory-map.csv`](../data/burnout3-retail/memory-map.csv) | Named retail addresses: save profile, race state, tuning, display, controls, code | 13.2 KB | 95 |
 | [`vehicle-ids.csv`](../data/burnout3-retail/vehicle-ids.csv) | The 67 vehicles and their IDs | 4.3 KB | 67 |

@@ -6,9 +6,11 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-18
 
+- Retail names: fixed the function-start check (it also accepted a `jr $ra` delay slot); now 851 verified,
+  835 of them on burnout3-pc's own function starts. Derived columns refreshed by `tools/annotate_retail.py`.
 - Every class now sorted into an area: classes without a known source file go with their outer class,
   their template argument, or by name; system pages list them too.
-- 1,146 retail function names (863 verified) from Nahelam's PAL list, shifted to SLUS-21050
+- 1,146 retail function names (851 verified) from Nahelam's PAL list, shifted to SLUS-21050
   (`tools/map_pal_names.py`); Nahelam's prototype list independently confirms the map's address drift.
 - Nahelam's mods and research documented: development menu, debug views, Car Viewer, the ELF code cave
   and the compiler's runaway inlining, PADFIX, Burnout Online, B3Mod; 1,480 US addresses with functions.

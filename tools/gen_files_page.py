@@ -42,7 +42,7 @@ SECTIONS = [
      'The retail executable is stripped. These are the named addresses known so far, and text pulled from the disc. '
      'Explained on the [retail memory map](reference/retail-memory-map.md) page.',
      [
-         (R + '/function-names.csv', '1,146 named functions in the retail executable (863 verified)'),
+         (R + '/function-names.csv', '1,146 named functions in the retail executable (851 verified)'),
          (R + '/nahelam-mods.csv', 'Every address Nahelam\'s mods change, with the nearest named function'),
          (R + '/memory-map.csv', 'Named retail addresses: save profile, race state, tuning, display, controls, code'),
          (R + '/vehicle-ids.csv', 'The 67 vehicles and their IDs'),

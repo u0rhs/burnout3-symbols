@@ -2,7 +2,7 @@
 
 # Retail function names (SLUS-21050)
 
-**1,146 named functions in the NTSC-U retail executable**, 863 of them checked against the executable's
+**1,146 named functions in the NTSC-U retail executable**, 851 of them checked against the executable's
 code. These are the first function names for the stripped retail game. Table:
 [`function-names.csv`](../../data/burnout3-retail/function-names.csv).
 
@@ -29,11 +29,14 @@ The PAL and US executables turn out to have the same code layout, shifted in a f
 For each name, the tool takes the shift that puts the most of its 40 neighbours on function starts in
 the US executable, then checks the name itself:
 
+<!-- counts:start -->
 | Check | Names | Meaning |
 |---|---:|---|
-| function start | 863 | The US address begins a function (a stack-frame `addiu $sp,…` or the instruction after a `jr $ra`) |
-| not verified | 283 | Named and shifted, but the address didn't pass the check; small leaf functions often fail it without being wrong |
+| function start | 851 | The US address begins a function: a stack-frame `addiu $sp,…`, or the first instruction after a `jr $ra` and its delay slot |
+| not verified | 295 | Named and shifted, but the address didn't pass the check; small leaf functions often fail it without being wrong |
 | outside the US image | 68 | Data or BSS names beyond the executable's code |
+| **total** | **1214** | |
+<!-- counts:end -->
 
 ## Confirmations
 
@@ -43,6 +46,9 @@ the US executable, then checks the name itself:
 - **The cheat codes:** the "drive through cars" code returns from `0x001B7220` straight away. That address
   is the start of **`CB3PhysicsManager::CollideAndRespondPair`**: the vehicle collision response. The race
   timer store at `0x001D3D2C` sits in `CGtTimer::Construct`.
+- **burnout3-pc's own function list:** 835 of the 851 verified names land exactly on a function start that
+  [burnout3-pc](https://github.com/danielgomesvieira2000/burnout3-pc) found with its own analysis of
+  SLUS-21050 (`games/burnout3/config/functions.csv`), and 1,030 of all 1,146.
 - **The prototype:** Nahelam's list for the prototype executable (`DNAT_200.45.txt`, 982 names) matches
   921 names in the prototype map, with exactly the same address drift as measured from the map
   ([link map formats](../formats/codewarrior-maps.md)), which supports both lists.
