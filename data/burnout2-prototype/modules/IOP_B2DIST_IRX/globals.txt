@@ -1,0 +1,51 @@
+// Global and file-static variables with an address in B2DIST.IRX
+// Burnout 2 prototype, 29 July 2002
+
+0x000002BC  int TimerFunc(void *);
+      C:\dev\b2dist\iop\msgloop.c
+0x000002E0  int distort_rpc_thread();
+      C:\dev\b2dist\iop\main.c
+0x0000036C  void *msg_handler(unsigned int, void *, int);
+      C:\dev\b2dist\iop\msgloop.c
+0x00000928  int distort_service_loop();
+      C:\dev\b2dist\iop\msgloop.c
+0x00000A7C  int spu_irq(int, void *);
+      C:\dev\b2dist\iop\msgloop.c
+0x00001470  int BASE_priority;
+      C:\dev\b2dist\iop\main.c (+1 more files)
+0x00001484  _moduleinfo Module;
+      C:\dev\b2dist\iop\main.c
+0x000014D0  int g_Thid;
+      C:\dev\b2dist\iop\msgloop.c
+0x000014D4  int poo_channel;
+      C:\dev\b2dist\iop\msgloop.c
+0x000014D8  int t_sleep;
+      C:\dev\b2dist\iop\msgloop.c
+0x000014DC  int t_irq;
+      C:\dev\b2dist\iop\msgloop.c
+0x000014E0  DistortFXIntState g_Distort;
+      C:\dev\b2dist\iop\msgloop.c
+0x000015E8  int (*g_StoredTransIntrHandler)(int, void *);
+      C:\dev\b2dist\iop\msgloop.c
+0x000015EC  int (*g_RwaInterruptHandler)(int, void *);
+      C:\dev\b2dist\iop\msgloop.c
+0x000015F0  int g_Enabled;
+      C:\dev\b2dist\iop\msgloop.c
+0x000015F4  int g_NextIrq;
+      C:\dev\b2dist\iop\msgloop.c
+0x000015F8  int g_HalfDownloading;
+      C:\dev\b2dist\iop\msgloop.c
+0x000015FC  int g_HScanCount;
+      C:\dev\b2dist\iop\msgloop.c
+0x00001600  int g_TimerCount;
+      C:\dev\b2dist\iop\msgloop.c
+0x00001604  short *g_Fuzzy;
+      C:\dev\b2dist\iop\msgloop.c
+0x00001608  short *g_Clean;
+      C:\dev\b2dist\iop\msgloop.c
+0x0000160C  short g_FuzzyBuf[1600];
+      C:\dev\b2dist\iop\msgloop.c
+0x0000228C  short g_CleanBuf[1600];
+      C:\dev\b2dist\iop\msgloop.c
+0x00002F0C  int rpc_arg[256];
+      C:\dev\b2dist\iop\msgloop.c

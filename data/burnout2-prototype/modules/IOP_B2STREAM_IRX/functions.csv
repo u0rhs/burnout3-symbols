@@ -1,0 +1,27 @@
+start,end,size,signature,mangled,source_file,first_line,last_line
+0x00000000,0x0000002C,44,void B2StreamSdInit(),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,124,134
+0x0000002C,0x00000410,996,int B2StreamInit(struct @anon1 *lpInitParams),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,139,254
+0x00000410,0x00000440,48,void B2StreamQuit(),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,259,270
+0x00000440,0x0000057C,316,int B2StreamOpen(char *lpacFilename),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,276,321
+0x0000057C,0x000005F0,116,void B2StreamClose(int lnFileID),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,326,333
+0x000005F0,0x00000664,116,void B2StreamResume(),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,343,353
+0x00000664,0x000006D4,112,void B2StreamPause(),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,358,366
+0x000006D4,0x00000768,148,void B2StreamStart(int lnFileID),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,370,381
+0x00000768,0x00000804,156,void B2StreamStop(int lnFileID),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,386,398
+0x00000804,0x00000988,388,"void B2StreamSeek(int lnFileID, int lnSecondsFromEnd)",,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,402,433
+0x00000988,0x00000990,8,void B2StreamSetVoice(),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,450,450
+0x00000990,0x000009AC,28,unsigned int B2StreamGetStatus(int lnFileID),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,458,459
+0x000009AC,0x000009D0,36,static int _B2StreamVSYNCHandler(void *common),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,488,491
+0x000009D0,0x00000C3C,620,void B2StreamSetVolumes(short *lpVolumes),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,500,520
+0x00000C3C,0x00000CA4,104,void B2StreamSetMasterVolume(unsigned int vol),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,528,534
+0x00000CA4,0x00000EC4,544,void B2StreamFillBuffers(),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,541,606
+0x00000EC4,0x0000103C,376,int _B2StreamPlay(),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,613,670
+0x0000103C,0x0000121C,480,"static void *dispatch(unsigned int command, void *data_)",,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,689,732
+0x0000121C,0x00001288,108,int sce_adpcm_loop(),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,741,755
+0x00001288,0x00001310,136,int start(),,I:\Burnout 2 Code\gamesource\IOP\b2stream\b2stream.c,776,800
+0x000014A4,0x0000155C,184,void IVSInit(),,I:\Burnout 2 Code\gamesource\IOP\b2stream\streambuffer.c,64,92
+0x0000155C,0x00001774,536,int IVSStreamReadThread(),,I:\Burnout 2 Code\gamesource\IOP\b2stream\streambuffer.c,97,205
+0x00001774,0x0000196C,504,struct @anon0 *IVSOpen(char *lpacFilename),,I:\Burnout 2 Code\gamesource\IOP\b2stream\streambuffer.c,211,278
+0x0000196C,0x000019D8,108,void IVSClose(struct @anon0 *lpStream),,I:\Burnout 2 Code\gamesource\IOP\b2stream\streambuffer.c,282,293
+0x000019D8,0x00001B60,392,"int IVSRead(struct @anon0 *lpStream, int lnNumBytes, void *lpBuffer)",,I:\Burnout 2 Code\gamesource\IOP\b2stream\streambuffer.c,297,346
+0x00001B60,0x00001B68,8,"int IVSSetPosition(struct @anon0 *lpStream, int lnPosition)",,I:\Burnout 2 Code\gamesource\IOP\b2stream\streambuffer.c,352,352

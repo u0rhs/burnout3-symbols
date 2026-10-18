@@ -1,0 +1,69 @@
+// Global and file-static variables with an address in B2STREAM.IRX
+// Burnout 2 prototype, 29 July 2002
+
+0x000009AC  int _B2StreamVSYNCHandler(void *);
+      gamesource\IOP\b2stream\b2stream.c
+0x00000EC4  int _B2StreamPlay(int);
+      gamesource\IOP\b2stream\b2stream.c
+0x0000103C  void *dispatch(unsigned int, void *, int);
+      gamesource\IOP\b2stream\b2stream.c
+0x0000121C  int sce_adpcm_loop();
+      gamesource\IOP\b2stream\b2stream.c
+0x0000155C  int IVSStreamReadThread(int);
+      gamesource\IOP\b2stream\streambuffer.c
+0x00001B84  _moduleinfo Module;
+      gamesource\IOP\b2stream\b2stream.c
+0x00001B8C  int gB2StreamCore;
+      gamesource\IOP\b2stream\b2stream.c
+0x00001B90  int gnSPU2RAMAddress;
+      gamesource\IOP\b2stream\b2stream.c
+0x00001CCC  struct @anon0 gaIVSStreams[2];
+      gamesource\IOP\b2stream\streambuffer.c
+0x00002DC0  int gThid;
+      gamesource\IOP\b2stream\b2stream.c
+0x00002DC4  int gSem;
+      gamesource\IOP\b2stream\b2stream.c
+0x00002DC8  int ret;
+      gamesource\IOP\b2stream\b2stream.c
+0x00002DCC  int rpc_arg[16];
+      gamesource\IOP\b2stream\b2stream.c
+0x00002E0C  int gnVoice;
+      gamesource\IOP\b2stream\b2stream.c
+0x00002E40  char gacVoiceBuffer[21504];
+      gamesource\IOP\b2stream\b2stream.c
+0x00008240  char gacInterleavedData[10752];
+      gamesource\IOP\b2stream\b2stream.c
+0x0000AC40  int gnNumStreamsOpen;
+      gamesource\IOP\b2stream\b2stream.c
+0x0000AC44  int gnBuffer;
+      gamesource\IOP\b2stream\b2stream.c
+0x0000AC48  int gnTrigAddress;
+      gamesource\IOP\b2stream\b2stream.c
+0x0000AC4C  int gbFilled;
+      gamesource\IOP\b2stream\b2stream.c
+0x0000AC50  int gbTransferring;
+      gamesource\IOP\b2stream\b2stream.c
+0x0000AC54  int ganStreamPositions[2];
+      gamesource\IOP\b2stream\b2stream.c
+0x0000AC5C  int ganStreamNumChannels[2];
+      gamesource\IOP\b2stream\b2stream.c
+0x0000AC64  int ganStreamChannelVoices[7];
+      gamesource\IOP\b2stream\b2stream.c
+0x0000AC80  int ganStreamSPUBuffers[7];
+      gamesource\IOP\b2stream\b2stream.c
+0x0000AC9C  int ganStreamLengths[2];
+      gamesource\IOP\b2stream\b2stream.c
+0x0000ACA4  int gabStreamPlaying[2];
+      gamesource\IOP\b2stream\b2stream.c
+0x0000ACAC  struct @anon2 *gapStreams[2];
+      gamesource\IOP\b2stream\b2stream.c
+0x0000ACB4  int _gnNumChannelsOpened;
+      gamesource\IOP\b2stream\streambuffer.c
+0x0000ACB8  int _gnNumStreamsOpened;
+      gamesource\IOP\b2stream\streambuffer.c
+0x0000ACBC  int gReadThreadID;
+      gamesource\IOP\b2stream\streambuffer.c
+0x0000ACC0  int gnReadSemaphore;
+      gamesource\IOP\b2stream\b2stream.c (+1 more files)
+0x0000ACC4  char _gacBufferSpace[491520];
+      gamesource\IOP\b2stream\streambuffer.c

@@ -1,0 +1,33 @@
+// Global and file-static variables with an address in GTFSHOST.IRX
+// Burnout 2 prototype, 29 July 2002
+
+0x000002D0  int GtsMainRPCThread();
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x000004B8  void *GTSHandleRPC(unsigned int, void *, int);
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x000005AC  void GTSCmdHandler(void *, void *);
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x000009B8  int GTSEETransferThread();
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00000E48  int GTSReadThread();
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001644  int GTSOpenIOP(char *);
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001714  void GTSCloseIOP(int);
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001770  unsigned int GTSReadIOP(int, unsigned int, void *);
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x000018FC  int GTSSeekIOP(int, int, int);
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001A5C  _libhead gtfsdvd_entry;
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001AA8  _moduleinfo Module;
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001BD0  GtsIOPGlobalsTag gGlobals;
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001C40  struct @anon0 cmdNotifyHdr;
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001C50  int gRpcRet[4];
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001C60  int gRpcArg[32];
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c

@@ -1,0 +1,27 @@
+// Global and file-static variables with an address in B3ROUTE.IRX
+// Burnout 3 prototype, June 2004
+
+0x00000170  int B3DistIntHandler(int, void *);
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c
+0x000002C0  void B3DIST_CmdHandler(int, void *, int);
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c
+0x0000045C  void B3RouteSetup();
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c
+0x00000E70  static int (*gp_PreviousHandler)(int, void *);
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c
+0x00000E74  unsigned int g_EECleanBuffer;
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c (+1 more files)
+0x00000E80  short g_IF[1024];
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c (+1 more files)
+0x00001680  short g_IC1[768];
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c (+1 more files)
+0x00001C80  short g_IC0[768];
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c (+1 more files)
+0x00002280  int g_rpc_arg[256];
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c
+0x00002680  int g_ThreadID;
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c
+0x00002684  void *gp_PreviousHandlerParams;
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c
+0x000026C0  struct @anon1 g_PacketData;
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\memint.c

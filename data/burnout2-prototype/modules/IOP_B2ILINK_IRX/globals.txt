@@ -1,0 +1,9 @@
+// Global and file-static variables with an address in B2ILINK.IRX
+// Burnout 2 prototype, 29 July 2002
+
+0x00000530  _moduleinfo Module;
+      gamesource\IOP\b2ilink\b2ilink\main.c
+0x000005A8  struct @anon0 th_id[1];
+      gamesource\IOP\b2ilink\b2ilink\main.c
+0x00000688  unsigned int buf_Init[4];
+      gamesource\IOP\b2ilink\b2ilink\main.c

@@ -10,5 +10,5 @@ Exports from the Burnout 2 prototype: the executable's symbols and DWARF 1 debug
 
 - `disc/`
 - `modules/`
-- `originals/`
+- [originals/](originals/README.md)
 - `SLUS_204.97/`

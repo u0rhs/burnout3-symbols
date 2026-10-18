@@ -5,22 +5,57 @@
 <h1 align="center">Symbols and documentation</h1>
 
 <p align="center">
-  <a href="#start-here">Start here</a> ·
+  <b>The code of Burnout 3: Takedown (PS2), mapped out.</b><br>
+  Link maps, symbols, class layouts and a wiki of the game's systems, from the prototype discs.
+</p>
+
+<p align="center">
+  <a href="https://u0rhs.github.io/burnout3-symbols/"><b>Website</b></a> ·
+  <a href="docs/files.md"><b>Symbols and maps</b></a> ·
   <a href="docs/systems/README.md">Game systems</a> ·
   <a href="docs/classes/README.md">Classes</a> ·
   <a href="docs/reference/README.md">Reference</a> ·
-  <a href="docs/tools.md">Tools</a>
+  <a href="https://github.com/u0rhs/burnout3-symbols/archive/refs/heads/main.zip">Download ZIP</a>
 </p>
 
 Everything the Burnout 3 prototype discs reveal about the game's code, turned into readable data and
-documentation, with Burnout 2's debug information where it helps explain Burnout 3. Made for work on a
-Burnout 3 remaster, decompilation or remake.
+documentation, with Burnout 2's debug information where it helps explain Burnout 3. For anyone working on
+a Burnout 3 remaster, decompilation, remake, mod or patch.
 
-> No game code, executables, modules or assets are included: no `.elf`, `.irx` or `.bin` files, no
-> byte dumps, no audio or textures. The repository holds text only: symbol tables, link maps, debug
-> information rewritten as C declarations, strings, file listings, decoded tables, Python tools and
-> Markdown. The only original files are two kinds of text link map (`data/*/originals/`). Regenerating
-> the data needs the discs ([tools](docs/tools.md)).
+> Text only: no game code, executables, modules or assets (no `.elf`, `.irx` or `.bin` files, no byte
+> dumps, no audio or textures). The repository holds symbol tables, link maps, debug information rewritten
+> as C declarations, strings, file listings, decoded tables, Python tools and Markdown.
+
+## Get the files
+
+The most-used files, one click away. **All of them, with sizes: [Symbols and maps](docs/files.md).**
+
+| File | What it is |
+|---|---|
+| [`DNAT_200.symbols.csv`](data/burnout3-prototype/maps/DNAT_200.symbols.csv) | Every symbol of the Burnout 3 prototype (17,819), demangled, with address, size, section and source file |
+| [`classes.txt`](data/burnout3-prototype/maps/classes.txt) | All 890 Burnout 3 classes and their methods, with addresses in four builds |
+| [`B3O0PCH.symbols.csv`](data/burnout3-prototype/maps/B3O0PCH.symbols.csv) | The unoptimised build's symbols: 11,020 functions, including the small inline ones |
+| [`DNAT_200.MAP`](data/burnout3-prototype/originals/DNAT_200.MAP) | The original text link map of the prototype executable |
+| [`memory-map.csv`](data/burnout3-retail/memory-map.csv) | Named addresses in the retail game (SLUS-21050): save data, race state, tuning, display, controls |
+| [`types.h`](data/burnout2-prototype/SLUS_204.97/types.h) | 969 Burnout 2 types with member offsets: the ancestors of many Burnout 3 classes |
+| [`functions.csv`](data/burnout2-prototype/SLUS_204.97/functions.csv) | 2,309 Burnout 2 functions with parameter names, source files and lines |
+| [`b3-functions-by-build.csv`](docs/reference/data/b3-functions-by-build.csv) | Every Burnout 3 function's address and size in each of the four prototype builds |
+
+## Highlights
+
+- **A page for every class.** 890 Burnout 3 classes, each with its methods in four builds, its vtable,
+  static data, and the layout of its Burnout 2 ancestor. Example: [`CB3VehiclePhysics`](docs/classes/CB3VehiclePhysics.md).
+- **The game by system.** Physics, AI, traffic, crashes, cameras, HUD, menus, audio, rendering, network,
+  progression: every source file and class, sorted ([game systems](docs/systems/README.md)).
+- **The retail game, located.** About 150 addresses in the shipping executable: the save profile, boost,
+  the 1/60 s simulation step, the game's own widescreen flag, every HUD layout value, the button mapping
+  ([retail memory map](docs/reference/retail-memory-map.md)).
+- **Burnout 2's source structure.** Criterion's original file tree, with every function's parameters,
+  locals and line numbers ([source outlines](data/burnout2-prototype/SLUS_204.97/source_outline/README.md)).
+- **How it draws.** The 22 VU microcode programs behind the cars, world, glass, water, sky and effects
+  ([renderer overview](docs/renderer-overview.md)).
+- **Formats documented from scratch.** CodeWarrior's DWARF 1, its binary link maps and its name
+  mangling ([formats](docs/formats/README.md)), with Python tools that read them ([tools](docs/tools.md)).
 
 ## Start here
 
@@ -30,34 +65,20 @@ Burnout 3 remaster, decompilation or remake.
 | [Finding things](docs/data-guide.md) | Recipes: a class, an address, a source file, a function's parameters, one function across builds |
 | [Glossary](docs/glossary.md) | Criterion's naming conventions (`CB3`, `CGt`, `mr`, `lp` …), PS2 and RenderWare terms |
 
-## Burnout 3's code
+## Browse
 
 | Page | Contents |
 |---|---|
-| [Game systems](docs/systems/README.md) | The code by area (physics, AI, traffic, crashes, cameras, HUD, menus, audio, rendering, network …): source files, classes, methods, Burnout 2 counterparts |
-| [Classes](docs/classes/README.md) | A page per class (890): methods in every build, vtable, static data, Burnout 2 ancestor's layout, related asserts |
-| [Renderer overview](docs/renderer-overview.md) | How the game draws: VU microcode programs and the code that drives them |
-| [Retail memory map](docs/reference/retail-memory-map.md) | Named addresses in the retail executable from cheat codes and PCSX2 patches: save profile, race state, tuning, widescreen and HUD layout, controls, code locations |
+| [Symbols and maps](docs/files.md) | Every data file, with sizes and direct links |
+| [Game systems](docs/systems/README.md) | The code by area: source files, classes, methods, Burnout 2 counterparts |
+| [Classes](docs/classes/README.md) | A page per class (890) |
+| [Renderer overview](docs/renderer-overview.md) | VU microcode programs and the code that drives them |
+| [Retail memory map](docs/reference/retail-memory-map.md) | Named addresses in the retail executable |
 | [Disc contents](docs/discs.md) | Every folder and file type on the discs, and the file names the executables use |
-| [Reference](docs/reference/README.md) | Globals, build comparison, memory layout, debug features, unlinked code, asserts, IOP modules, value database, Burnout 2 lineage tables |
-
-## Using it
-
-- [Remaster](docs/avenues/remaster.md): where each part of the game lives, for rebuilding its presentation
-- [Decompilation](docs/avenues/decompilation.md): carrying names to retail, recovering types, matching vs functional
-- [Remake](docs/avenues/remake.md): the data as a design reference
-
-## Formats and tools
-
-- [Formats](docs/formats/README.md): CodeWarrior's DWARF 1, link maps, binary maps, assert files, name mangling
-- [Tools](docs/tools.md): the scripts, and how to regenerate everything
-- [Data](data/README.md): what each exported file contains
-
-## Other pages
-
-- [Related resources](docs/related-projects.md)
-- [Open questions](docs/open-questions.md)
-- [Changelog](docs/changelog.md)
+| [Reference](docs/reference/README.md) | Globals, build comparison, memory layout, debug features, unlinked code, asserts, IOP modules, value database, Burnout 2 lineage |
+| Using it | [Remaster](docs/avenues/remaster.md) · [Decompilation](docs/avenues/decompilation.md) · [Remake](docs/avenues/remake.md) |
+| Formats and tools | [Formats](docs/formats/README.md) · [Tools](docs/tools.md) · [Data](data/README.md) |
+| More | [Related resources](docs/related-projects.md) · [Open questions](docs/open-questions.md) · [Changelog](docs/changelog.md) |
 
 ## In numbers
 
@@ -73,15 +94,16 @@ Burnout 3 remaster, decompilation or remake.
 
 ```
 README.md          this page
-assets/            logo and icons
 docs/              the documentation (hand-written pages + generated systems/, classes/, reference/)
 data/              the exported data, as text
 tools/             the scripts that make data/ and the generated pages (tools/rebuild.sh)
+assets/            logo and icons
 ```
 
-Generated pages say so at the top; their **Notes** sections are kept when they are regenerated.
-Every page starts with a `Home › Section` line for navigation. The pages are plain Markdown with
-relative links, so they work in a Git host's web view, in an editor, or as an Obsidian vault. The same
-pages are also published as a searchable site with GitHub Pages
-([u0rhs.github.io/burnout3-symbols](https://u0rhs.github.io/burnout3-symbols/)); `_config.yml` and
-`_includes/` configure it.
+Generated pages say so at the top; their **Notes** sections are kept when they are regenerated. Every
+page starts with a `Home › Section` line. The pages are plain Markdown with relative links, so they work
+on GitHub, in an editor, or as an Obsidian vault, and are also published as a searchable website with
+GitHub Pages ([u0rhs.github.io/burnout3-symbols](https://u0rhs.github.io/burnout3-symbols/)), configured by
+`_config.yml` and `_includes/`.
+
+Burnout 3: Takedown is a trademark of Electronic Arts. This is an unofficial fan project.

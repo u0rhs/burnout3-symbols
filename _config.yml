@@ -38,6 +38,10 @@ nav_external_links:
     url: /
     hide_icon: true
     opens_in_new_tab: false
+  - title: Symbols and maps (files)
+    url: /docs/files.html
+    hide_icon: true
+    opens_in_new_tab: false
   - title: Builds
     url: /docs/builds.html
     hide_icon: true

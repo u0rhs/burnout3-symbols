@@ -6,6 +6,10 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-18
 
+- [Symbols and maps](files.md): every data file in one place with direct links; "Get the files" and
+  highlights on the home page; the files page second in the site sidebar.
+- Module exports renamed (`IOP_B3ROUTE_IRX/` …) so they are no longer hidden by the `.irx` rule in
+  `.gitignore`; they are now in the repository.
 - Logo on the home page; the B3 icon as the site's favicon; GitHub Pages configuration (`_config.yml`,
   `_includes/`) to publish the documentation as a searchable site.
 - Retail memory map from cheat codes (GameHacking.org: Codejunkies, Code Master, MadCatz) and

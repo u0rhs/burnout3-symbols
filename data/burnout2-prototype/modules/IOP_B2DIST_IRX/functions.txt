@@ -1,0 +1,45 @@
+// Every function with debug information in B2DIST.IRX, by address
+// Burnout 2 prototype, 29 July 2002
+
+0x00000218-0x000002BC    164  int start()
+      C:\dev\b2dist\iop\main.c : lines 12-43
+0x000002BC-0x000002E0     36  int TimerFunc()
+      C:\dev\b2dist\iop\msgloop.c : lines 89-92
+0x000002E0-0x0000036C    140  int distort_rpc_thread()
+      C:\dev\b2dist\iop\msgloop.c : lines 97-112
+0x0000036C-0x00000434    200  static void *msg_handler(void *data)
+      C:\dev\b2dist\iop\msgloop.c : lines 116-139
+0x00000434-0x000006C4    656  static int RPC_Init()
+      C:\dev\b2dist\iop\msgloop.c : lines 144-221
+0x000006C4-0x00000768    164  static int RPC_SetChannels(int *params)
+      C:\dev\b2dist\iop\msgloop.c : lines 227-244
+0x00000768-0x000008AC    324  static int RPC_Update(int *params)
+      C:\dev\b2dist\iop\msgloop.c : lines 248-275
+0x000008AC-0x00000928    124  static int RPC_Enable(int *params)
+      C:\dev\b2dist\iop\msgloop.c : lines 279-291
+0x00000928-0x00000A7C    340  static int distort_service_loop()
+      C:\dev\b2dist\iop\msgloop.c : lines 299-342
+0x00000A7C-0x00000C38    444  int spu_irq(int core_bit, void *data)
+      C:\dev\b2dist\iop\msgloop.c : lines 349-430
+0x00000C38-0x00000D2C    244  void DistortFXIntReset(DistortFXIntState *fx)
+      C:\dev\b2dist\iop\distortfxint.c : lines 178-199
+0x00000D2C-0x00000D34      8  void DistortFXIntSetSampleRate(DistortFXIntState *fx, int samplerate)
+      C:\dev\b2dist\iop\distortfxint.c : lines 206-206
+0x00000D34-0x00000D3C      8  void DistortFXIntSetFrameSize(DistortFXIntState *fx, int samples)
+      C:\dev\b2dist\iop\distortfxint.c : lines 213-213
+0x00000D3C-0x00000DB4    120  void DistortFXIntSetFrequency(DistortFXIntState *fx, int band, int centrefreq)
+      C:\dev\b2dist\iop\distortfxint.c : lines 218-223
+0x00000DB4-0x00000DE8     52  int DIV1616(int x, int y)
+      C:\dev\b2dist\iop\distortfxint.c : lines 44-60
+0x00000DE8-0x00000E1C     52  int MULT1616(int x, int y)
+      C:\dev\b2dist\iop\distortfxint.c : lines 25-41
+0x00000E1C-0x00000E94    120  void DistortFXIntSetPeakGain(DistortFXIntState *fx, int band, int gain)
+      C:\dev\b2dist\iop\distortfxint.c : lines 228-233
+0x00000E94-0x00000EE4     80  void DistortFXIntSetWaveshape(DistortFXIntState *fx, int band, int distortion, int immediate)
+      C:\dev\b2dist\iop\distortfxint.c : lines 239-251
+0x00000EE4-0x00000F34     80  void DistortFXIntSetGain(DistortFXIntState *fx, int band, int gain, int immediate)
+      C:\dev\b2dist\iop\distortfxint.c : lines 257-269
+0x00000F34-0x00000FBC    136  void DistortFXIntSetVolumes(DistortFXIntState *fx, int channel, int voll, int volr, int immediate)
+      C:\dev\b2dist\iop\distortfxint.c : lines 275-289
+0x00000FBC-0x0000146C   1200  void DistortFXIntProcess(DistortFXIntState *fx, short *ina, short *inb, short *outl, short *outr)
+      C:\dev\b2dist\iop\distortfxint.c : lines 296-376

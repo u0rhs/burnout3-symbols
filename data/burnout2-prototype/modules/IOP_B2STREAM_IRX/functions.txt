@@ -1,0 +1,55 @@
+// Every function with debug information in B2STREAM.IRX, by address
+// Burnout 2 prototype, 29 July 2002
+
+0x00000000-0x0000002C     44  void B2StreamSdInit()
+      gamesource\IOP\b2stream\b2stream.c : lines 124-134
+0x0000002C-0x00000410    996  int B2StreamInit(struct @anon1 *lpInitParams)
+      gamesource\IOP\b2stream\b2stream.c : lines 139-254
+0x00000410-0x00000440     48  void B2StreamQuit()
+      gamesource\IOP\b2stream\b2stream.c : lines 259-270
+0x00000440-0x0000057C    316  int B2StreamOpen(char *lpacFilename)
+      gamesource\IOP\b2stream\b2stream.c : lines 276-321
+0x0000057C-0x000005F0    116  void B2StreamClose(int lnFileID)
+      gamesource\IOP\b2stream\b2stream.c : lines 326-333
+0x000005F0-0x00000664    116  void B2StreamResume()
+      gamesource\IOP\b2stream\b2stream.c : lines 343-353
+0x00000664-0x000006D4    112  void B2StreamPause()
+      gamesource\IOP\b2stream\b2stream.c : lines 358-366
+0x000006D4-0x00000768    148  void B2StreamStart(int lnFileID)
+      gamesource\IOP\b2stream\b2stream.c : lines 370-381
+0x00000768-0x00000804    156  void B2StreamStop(int lnFileID)
+      gamesource\IOP\b2stream\b2stream.c : lines 386-398
+0x00000804-0x00000988    388  void B2StreamSeek(int lnFileID, int lnSecondsFromEnd)
+      gamesource\IOP\b2stream\b2stream.c : lines 402-433
+0x00000988-0x00000990      8  void B2StreamSetVoice()
+      gamesource\IOP\b2stream\b2stream.c : lines 450-450
+0x00000990-0x000009AC     28  unsigned int B2StreamGetStatus(int lnFileID)
+      gamesource\IOP\b2stream\b2stream.c : lines 458-459
+0x000009AC-0x000009D0     36  static int _B2StreamVSYNCHandler(void *common)
+      gamesource\IOP\b2stream\b2stream.c : lines 488-491
+0x000009D0-0x00000C3C    620  void B2StreamSetVolumes(short *lpVolumes)
+      gamesource\IOP\b2stream\b2stream.c : lines 500-520
+0x00000C3C-0x00000CA4    104  void B2StreamSetMasterVolume(unsigned int vol)
+      gamesource\IOP\b2stream\b2stream.c : lines 528-534
+0x00000CA4-0x00000EC4    544  void B2StreamFillBuffers()
+      gamesource\IOP\b2stream\b2stream.c : lines 541-606
+0x00000EC4-0x0000103C    376  int _B2StreamPlay()
+      gamesource\IOP\b2stream\b2stream.c : lines 613-670
+0x0000103C-0x0000121C    480  static void *dispatch(unsigned int command, void *data_)
+      gamesource\IOP\b2stream\b2stream.c : lines 689-732
+0x0000121C-0x00001288    108  int sce_adpcm_loop()
+      gamesource\IOP\b2stream\b2stream.c : lines 741-755
+0x00001288-0x00001310    136  int start()
+      gamesource\IOP\b2stream\b2stream.c : lines 776-800
+0x000014A4-0x0000155C    184  void IVSInit()
+      gamesource\IOP\b2stream\streambuffer.c : lines 64-92
+0x0000155C-0x00001774    536  int IVSStreamReadThread()
+      gamesource\IOP\b2stream\streambuffer.c : lines 97-205
+0x00001774-0x0000196C    504  struct @anon0 *IVSOpen(char *lpacFilename)
+      gamesource\IOP\b2stream\streambuffer.c : lines 211-278
+0x0000196C-0x000019D8    108  void IVSClose(struct @anon0 *lpStream)
+      gamesource\IOP\b2stream\streambuffer.c : lines 282-293
+0x000019D8-0x00001B60    392  int IVSRead(struct @anon0 *lpStream, int lnNumBytes, void *lpBuffer)
+      gamesource\IOP\b2stream\streambuffer.c : lines 297-346
+0x00001B60-0x00001B68      8  int IVSSetPosition(struct @anon0 *lpStream, int lnPosition)
+      gamesource\IOP\b2stream\streambuffer.c : lines 352-352

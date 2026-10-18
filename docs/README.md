@@ -6,6 +6,7 @@ The documentation's home page is the repository's [README](../README.md). Conten
 
 | Page or folder | Contents |
 |---|---|
+| [files.md](files.md) | Symbols and maps: every data file with direct links (generated) |
 | [builds.md](builds.md) | The three builds and how they relate |
 | [data-guide.md](data-guide.md) | Finding things in the data |
 | [glossary.md](glossary.md) | Naming conventions and terms |

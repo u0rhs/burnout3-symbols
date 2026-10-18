@@ -11,4 +11,4 @@ Exports from the Burnout 3 prototype disc (June 2004): the four link maps and as
 - `disc/`
 - `maps/`
 - `modules/`
-- `originals/`
+- [originals/](originals/README.md)

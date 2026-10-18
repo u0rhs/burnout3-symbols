@@ -1,0 +1,27 @@
+// Every function with debug information in B3ROUTE.IRX, by address
+// Burnout 3 prototype, June 2004
+
+0x00000170-0x000002C0    336  static int B3DistIntHandler(int core_bit, void *data)
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c : lines 123-190
+0x000002C0-0x0000045C    412  static void B3DIST_CmdHandler(int func, void *data)
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c : lines 221-334
+0x0000045C-0x00000560    260  void B3RouteSetup()
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c : lines 439-492
+0x00000560-0x00000630    208  int start()
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\main.c : lines 626-658
+0x00000630-0x00000704    212  void B3RouteInit(int lnChannelMask)
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\procedures.c : lines 29-77
+0x00000704-0x0000070C      8  void B3RouteQuit()
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\procedures.c : lines 89-89
+0x0000070C-0x00000768     92  void B3RouteStartDist()
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\procedures.c : lines 98-110
+0x00000768-0x000007E0    120  void B3RouteStopDist()
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\procedures.c : lines 119-134
+0x000007E0-0x000008BC    220  void HitMemIntPositionA()
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\memint.c : lines 62-118
+0x000008BC-0x00000944    136  void HitMemIntPositionB()
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\memint.c : lines 133-168
+0x00000944-0x00000A24    224  void HitMemIntPositionC()
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\memint.c : lines 183-231
+0x00000A24-0x00000AAC    136  void HitMemIntPositionD()
+      D:\projects\CG1Code\GameSource\Sound\IOP\b3distrouter\memint.c : lines 245-277

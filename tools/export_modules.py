@@ -2,7 +2,7 @@
 
     python3 export_modules.py <disc folder> <output folder> "<label>"
 
-Each module gets a folder named after its path on the disc (IOP/B3ROUTE.IRX -> IOP_B3ROUTE.IRX) with the
+Each module gets a folder named after its path on the disc (IOP/B3ROUTE.IRX -> IOP_B3ROUTE_IRX) with the
 files export_elf.py writes. The main executable is left out (it is exported on its own). Identical copies
 are exported once: an .ELF next to an .IRX of the same module, and modules whose symbol tables match.
 """
@@ -43,7 +43,9 @@ def main():
             seen[key] = rel
             found.append((p, rel))
     for p, rel in found:
-        name = rel.replace('/', '_')
+        # e.g. IOP/B3ROUTE.IRX -> IOP_B3ROUTE_IRX: the folder must not end in a module extension, which
+        # .gitignore excludes
+        name = rel.replace('/', '_').replace('.', '_')
         subprocess.run([sys.executable, '-I', os.path.join(here, 'export_elf.py'), p, os.path.join(out, name), label],
                        check=True)
 

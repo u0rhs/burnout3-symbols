@@ -1,0 +1,59 @@
+// Every function with debug information in GTFSHOST.IRX, by address
+// Burnout 2 prototype, 29 July 2002
+
+0x0000023C-0x000002D0    148  int start()
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 305-338
+0x000002D0-0x000004B8    488  static int GtsMainRPCThread()
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 351-429
+0x000004B8-0x000005AC    244  static void *GTSHandleRPC(unsigned int command, void *data)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 442-486
+0x000005AC-0x000005EC     64  static void GTSCmdHandler(void *pCmdHeader)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 501-512
+0x000005EC-0x0000070C    288  static void GTSOpenEE(char *sFilename, GtsOpenedFileTag *fpReturnedFile)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 526-578
+0x0000070C-0x000007D8    204  static int GTSReadEE(int nFileID, unsigned int nTransferSectors, void *vpTransferAddress)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 591-621
+0x000007D8-0x00000960    392  static int GTSSeekEE(int nFileID, int nSectors, int nOrigin)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 634-700
+0x00000960-0x000009B8     88  static void GTSCloseEE(int nFileID)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 713-725
+0x000009B8-0x00000A54    156  static int GTSEETransferThread()
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 738-781
+0x00000A54-0x00000B0C    184  static void GTSEETransferNotifyCompletion(int nFileID, unsigned int nSectorsUnread)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 796-814
+0x00000B0C-0x00000C08    252  static void GTSEETransferRequestCompleted(GtsIOPTransferRequestTag *rpRequest)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 827-866
+0x00000C08-0x00000D20    280  static int GTSGetNextEETransferCommand(GtsIOPTransferRequestTag *rpRequest)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 880-937
+0x00000D20-0x00000E48    296  static void GTSTransferToEE(GtsIOPTransferRequestTag *rpRequest)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 950-1005
+0x00000E48-0x00000EE4    156  static int GTSReadThread()
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1049-1092
+0x00000EE4-0x00000FA0    188  static void GTSReadRequestCompleted(GtsIOPReadRequestTag *rpRequest)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1107-1135
+0x00000FA0-0x000010E0    320  static int GTSGetNextReadCommand(GtsIOPReadRequestTag *rpRequest)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1149-1199
+0x000010E0-0x00001254    372  static int GTSOpenFile(char *sFileName, GtsIOPFileTag *fpFile)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1246-1363
+0x00001254-0x000012C4    112  static void GTSCloseFile(GtsIOPFileTag *fpFile)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1376-1390
+0x000012C4-0x00001348    132  static void GTSSeekFile(GtsIOPFileTag *fpFile, int nTargetLSN)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1403-1429
+0x00001348-0x00001360     24  static int GTSFileIsEOF(GtsIOPFileTag *fpFile)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1443-1444
+0x00001360-0x000013B8     88  static void GTSReadFile(GtsIOPReadRequestTag *rpRequest)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1457-1544
+0x000013B8-0x000015E4    556  static void GTSInitialise(GtsConfigTag *cpConfig, GtsIOPFuncsTag *fpFileFuncs)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1823-1895
+0x000015E4-0x000015FC     24  static void GTSFlushRingBuffer(GtsIOPRingBufferTag *rbpRingBuffer)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1910-1913
+0x000015FC-0x00001644     72  static void GtsAdvanceRingBuffer(GtsIOPRingBufferTag *rbpRingBuffer, unsigned int nSectors)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1919-1928
+0x00001644-0x00001714    208  int GTSOpenIOP(char *sFilename)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1942-1977
+0x00001714-0x00001770     92  void GTSCloseIOP(int nFileID)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 1991-2006
+0x00001770-0x000018FC    396  unsigned int GTSReadIOP(int nFileID, unsigned int nBytesToRead, void *pBuffer)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 2019-2111
+0x000018FC-0x00001A5C    352  int GTSSeekIOP(int nFileID, int nOffset, int nOrigin)
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c : lines 2126-2206

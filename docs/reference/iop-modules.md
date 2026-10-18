@@ -8,101 +8,101 @@ Modules for the PS2's I/O processor (and the network GUI ELFs) that kept symbols
 
 | Build | Module | Probably | Symbols | Functions | Debug info | Export |
 |---|---|---|---:|---:|---|---|
-| Burnout 2 prototype | `IOP_B2DIST.IRX` | Burnout 2 distribution/"dist" driver | 95 | 21 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_B2DIST.IRX/symbols.txt) |
-| Burnout 2 prototype | `IOP_B2ILINK.IRX` | Burnout 2 i.LINK (FireWire) networking | 64 | 5 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_B2ILINK.IRX/symbols.txt) |
-| Burnout 2 prototype | `IOP_B2STREAM.IRX` | Burnout 2 audio/data streaming | 114 | 26 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_B2STREAM.IRX/symbols.txt) |
-| Burnout 2 prototype | `IOP_B2STRE~1.OLD` |  | 109 | 25 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_B2STRE~1.OLD/symbols.txt) |
-| Burnout 2 prototype | `IOP_GTFSB2.IRX` | Criterion GT file system (DVD/host/ATA) | 96 | 29 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_GTFSB2.IRX/symbols.txt) |
-| Burnout 2 prototype | `IOP_GTFSDVD.IRX` | Criterion GT file system (DVD/host/ATA) | 113 | 35 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_GTFSDVD.IRX/symbols.txt) |
-| Burnout 2 prototype | `IOP_GTFSDVDJ.IRX` | Criterion GT file system (DVD/host/ATA) | 87 | 27 |  | [folder](../../data/burnout2-prototype/modules/IOP_GTFSDVDJ.IRX/symbols.txt) |
-| Burnout 2 prototype | `IOP_GTFSHOST.IRX` | Criterion GT file system (DVD/host/ATA) | 101 | 28 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_GTFSHOST.IRX/symbols.txt) |
-| Burnout 2 prototype | `IOP_RWA.IRX` | RenderWare Audio IOP driver | 476 | 214 |  | [folder](../../data/burnout2-prototype/modules/IOP_RWA.IRX/symbols.txt) |
-| Burnout 3 prototype | `IOP_B3ROUTE.IRX` | Burnout 3 routing for comms | 83 | 12 | yes (types, outline) | [folder](../../data/burnout3-prototype/modules/IOP_B3ROUTE.IRX/symbols.txt) |
-| Burnout 3 prototype | `IOP_DEBUG_SULPHAC.IRX` | Sulpha audio debugger (client) | 191 | 40 |  | [folder](../../data/burnout3-prototype/modules/IOP_DEBUG_SULPHAC.IRX/symbols.txt) |
-| Burnout 3 prototype | `IOP_GTFSATMN.IRX` | Criterion GT file system (DVD/host/ATA) | 89 | 29 |  | [folder](../../data/burnout3-prototype/modules/IOP_GTFSATMN.IRX/symbols.txt) |
-| Burnout 3 prototype | `IOP_GTFSCDVD.IRX` | Criterion GT file system (DVD/host/ATA) | 110 | 36 |  | [folder](../../data/burnout3-prototype/modules/IOP_GTFSCDVD.IRX/symbols.txt) |
-| Burnout 3 prototype | `IOP_GTFSHOST.IRX` | Criterion GT file system (DVD/host/ATA) | 90 | 29 |  | [folder](../../data/burnout3-prototype/modules/IOP_GTFSHOST.IRX/symbols.txt) |
-| Burnout 3 prototype | `IOP_LGKBM.IRX` | Logitech keyboard/mouse | 111 | 40 |  | [folder](../../data/burnout3-prototype/modules/IOP_LGKBM.IRX/symbols.txt) |
-| Burnout 3 prototype | `IOP_RWA.IRX` | RenderWare Audio IOP driver | 405 | 182 |  | [folder](../../data/burnout3-prototype/modules/IOP_RWA.IRX/symbols.txt) |
-| Burnout 3 prototype | `IOP_RWSCOMMS.IRX` | RenderWare Studio comms (connects to the PC editor) | 73 | 10 | yes (types, outline) | [folder](../../data/burnout3-prototype/modules/IOP_RWSCOMMS.IRX/symbols.txt) |
-| Burnout 3 prototype | `NETGUI_MODULES_EZMIDI.IRX` | Sony MIDI | 118 | 27 |  | [folder](../../data/burnout3-prototype/modules/NETGUI_MODULES_EZMIDI.IRX/symbols.txt) |
-| Burnout 3 prototype | `NETGUI_MODULES_USBINIT.IRX` | USB init | 24 | 2 |  | [folder](../../data/burnout3-prototype/modules/NETGUI_MODULES_USBINIT.IRX/symbols.txt) |
-| Burnout 3 prototype | `NETWORK_DNAS_EU.ELF` | Sony DNAS network authentication | 3760 | 2075 |  | [folder](../../data/burnout3-prototype/modules/NETWORK_DNAS_EU.ELF/symbols.txt) |
+| Burnout 2 prototype | `IOP_B2DIST_IRX` | Burnout 2 distribution/"dist" driver | 95 | 21 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_B2DIST_IRX/symbols.txt) |
+| Burnout 2 prototype | `IOP_B2ILINK_IRX` | Burnout 2 i.LINK (FireWire) networking | 64 | 5 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_B2ILINK_IRX/symbols.txt) |
+| Burnout 2 prototype | `IOP_B2STREAM_IRX` | Burnout 2 audio/data streaming | 114 | 26 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_B2STREAM_IRX/symbols.txt) |
+| Burnout 2 prototype | `IOP_B2STRE~1_OLD` |  | 109 | 25 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_B2STRE~1_OLD/symbols.txt) |
+| Burnout 2 prototype | `IOP_GTFSB2_IRX` | Criterion GT file system (DVD/host/ATA) | 96 | 29 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_GTFSB2_IRX/symbols.txt) |
+| Burnout 2 prototype | `IOP_GTFSDVDJ_IRX` | Criterion GT file system (DVD/host/ATA) | 87 | 27 |  | [folder](../../data/burnout2-prototype/modules/IOP_GTFSDVDJ_IRX/symbols.txt) |
+| Burnout 2 prototype | `IOP_GTFSDVD_IRX` | Criterion GT file system (DVD/host/ATA) | 113 | 35 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_GTFSDVD_IRX/symbols.txt) |
+| Burnout 2 prototype | `IOP_GTFSHOST_IRX` | Criterion GT file system (DVD/host/ATA) | 101 | 28 | yes (types, outline) | [folder](../../data/burnout2-prototype/modules/IOP_GTFSHOST_IRX/symbols.txt) |
+| Burnout 2 prototype | `IOP_RWA_IRX` | RenderWare Audio IOP driver | 476 | 214 |  | [folder](../../data/burnout2-prototype/modules/IOP_RWA_IRX/symbols.txt) |
+| Burnout 3 prototype | `IOP_B3ROUTE_IRX` | Burnout 3 routing for comms | 83 | 12 | yes (types, outline) | [folder](../../data/burnout3-prototype/modules/IOP_B3ROUTE_IRX/symbols.txt) |
+| Burnout 3 prototype | `IOP_DEBUG_SULPHAC_IRX` | Sulpha audio debugger (client) | 191 | 40 |  | [folder](../../data/burnout3-prototype/modules/IOP_DEBUG_SULPHAC_IRX/symbols.txt) |
+| Burnout 3 prototype | `IOP_GTFSATMN_IRX` | Criterion GT file system (DVD/host/ATA) | 89 | 29 |  | [folder](../../data/burnout3-prototype/modules/IOP_GTFSATMN_IRX/symbols.txt) |
+| Burnout 3 prototype | `IOP_GTFSCDVD_IRX` | Criterion GT file system (DVD/host/ATA) | 110 | 36 |  | [folder](../../data/burnout3-prototype/modules/IOP_GTFSCDVD_IRX/symbols.txt) |
+| Burnout 3 prototype | `IOP_GTFSHOST_IRX` | Criterion GT file system (DVD/host/ATA) | 90 | 29 |  | [folder](../../data/burnout3-prototype/modules/IOP_GTFSHOST_IRX/symbols.txt) |
+| Burnout 3 prototype | `IOP_LGKBM_IRX` | Logitech keyboard/mouse | 111 | 40 |  | [folder](../../data/burnout3-prototype/modules/IOP_LGKBM_IRX/symbols.txt) |
+| Burnout 3 prototype | `IOP_RWA_IRX` | RenderWare Audio IOP driver | 405 | 182 |  | [folder](../../data/burnout3-prototype/modules/IOP_RWA_IRX/symbols.txt) |
+| Burnout 3 prototype | `IOP_RWSCOMMS_IRX` | RenderWare Studio comms (connects to the PC editor) | 73 | 10 | yes (types, outline) | [folder](../../data/burnout3-prototype/modules/IOP_RWSCOMMS_IRX/symbols.txt) |
+| Burnout 3 prototype | `NETGUI_MODULES_EZMIDI_IRX` | Sony MIDI | 118 | 27 |  | [folder](../../data/burnout3-prototype/modules/NETGUI_MODULES_EZMIDI_IRX/symbols.txt) |
+| Burnout 3 prototype | `NETGUI_MODULES_USBINIT_IRX` | USB init | 24 | 2 |  | [folder](../../data/burnout3-prototype/modules/NETGUI_MODULES_USBINIT_IRX/symbols.txt) |
+| Burnout 3 prototype | `NETWORK_DNAS_EU_ELF` | Sony DNAS network authentication | 3760 | 2075 |  | [folder](../../data/burnout3-prototype/modules/NETWORK_DNAS_EU_ELF/symbols.txt) |
 
 The Burnout 2 disc also has the text link maps of three of its IOP modules (`B2STRE~1.XMA`, `GTFSDV~1.XMA`, `GTFSHO~1.XMA`), kept in `data/burnout2-prototype/originals/IOP/`.
 
-## Burnout 2 prototype: IOP_B2DIST.IRX
+## Burnout 2 prototype: IOP_B2DIST_IRX
 
 `start`, `TimerFunc`, `distort_rpc_thread`, `msg_handler`, `RPC_Init`, `RPC_SetChannels`, `RPC_Update`, `RPC_Enable`, `distort_service_loop`, `spu_irq`, `DistortFXIntReset`, `DistortFXIntSetSampleRate`, `DistortFXIntSetFrameSize`, `DistortFXIntSetFrequency`, `DIV1616`, `MULT1616`, `DistortFXIntSetPeakGain`, `DistortFXIntSetWaveshape`, `DistortFXIntSetGain`, `DistortFXIntSetVolumes`, `DistortFXIntProcess`
 
-## Burnout 2 prototype: IOP_B2ILINK.IRX
+## Burnout 2 prototype: IOP_B2ILINK_IRX
 
 `svr_sceILsockInit`, `th_sceILsockInit`, `create_start_thread`, `terminate_delete_thread`, `start`
 
-## Burnout 2 prototype: IOP_B2STREAM.IRX
+## Burnout 2 prototype: IOP_B2STREAM_IRX
 
 `B2StreamSdInit`, `B2StreamInit`, `B2StreamQuit`, `B2StreamOpen`, `B2StreamClose`, `B2StreamResume`, `B2StreamPause`, `B2StreamStart`, `B2StreamStop`, `B2StreamSeek`, `B2StreamSetVoice`, `B2StreamGetStatus`, `_B2StreamVSYNCHandler`, `B2StreamSetVolumes`, `B2StreamSetMasterVolume`, `B2StreamFillBuffers`, `_B2StreamPlay`, `dispatch`, `sce_adpcm_loop`, `start`, `IVSInit`, `IVSStreamReadThread`, `IVSOpen`, `IVSClose`, `IVSRead`, `IVSSetPosition`
 
-## Burnout 2 prototype: IOP_B2STRE~1.OLD
+## Burnout 2 prototype: IOP_B2STRE~1_OLD
 
 `B2StreamSdInit`, `B2StreamInit`, `B2StreamQuit`, `B2StreamOpen`, `B2StreamClose`, `B2StreamResume`, `B2StreamPause`, `B2StreamStart`, `B2StreamStop`, `B2StreamSetVoice`, `B2StreamGetStatus`, `_B2StreamVSYNCHandler`, `B2StreamSetVolumes`, `B2StreamSetMasterVolume`, `B2StreamFillBuffers`, `_B2StreamPlay`, `dispatch`, `sce_adpcm_loop`, `start`, `IVSInit`, `IVSStreamReadThread`, `IVSOpen`, `IVSClose`, `IVSRead`, `IVSSetPosition`
 
-## Burnout 2 prototype: IOP_GTFSB2.IRX
+## Burnout 2 prototype: IOP_GTFSB2_IRX
 
 `start`, `GtsMainRPCThread`, `GTSHandleRPC`, `GTSCmdHandler`, `GTSOpenEE`, `GTSReadEE`, `GTSSeekEE`, `GTSCloseEE`, `GTSEETransferThread`, `GTSEETransferNotifyCompletion`, `GTSEETransferRequestCompleted`, `GTSGetNextEETransferCommand`, `GTSTransferToEE`, `GTSEENotifyError`, `GTSReadThread`, `GTSReadRequestCompleted`, `GTSGetNextReadCommand`, `GTSOpenFile`, `GTSCloseFile`, `GTSSeekFile`, `GTSFileIsEOF`, `GTSReadFile`, `GTSInitialise`, `GTSFlushRingBuffer`, `GtsAdvanceRingBuffer`, `GTSOpenIOP`, `GTSCloseIOP`, `GTSReadIOP`, `GTSSeekIOP`
 
-## Burnout 2 prototype: IOP_GTFSDVD.IRX
-
-`start`, `GtsMainRPCThread`, `GTSHandleRPC`, `GTSCmdHandler`, `GTSOpenEE`, `GTSReadEE`, `GTSSeekEE`, `GTSCloseEE`, `GTSEETransferThread`, `GTSEETransferNotifyCompletion`, `GTSEETransferRequestCompleted`, `GTSGetNextEETransferCommand`, `GTSTransferToEE`, `GTSEENotifyError`, `GTSReadThread`, `GTSReadRequestCompleted`, `GTSGetNextReadCommand`, `GTSOpenFile`, `GTSCloseFile`, `GTSSeekFile`, `GTSFileIsEOF`, `GTSReadFile`, `_makeInt`, `_TOCRead`, `_catString`, `_GetDirDetails`, `_ReadTOC`, `GTSSearchTOC`, `GTSInitialise`, `GTSFlushRingBuffer`, `GtsAdvanceRingBuffer`, `GTSOpenIOP`, `GTSCloseIOP`, `GTSReadIOP`, `GTSSeekIOP`
-
-## Burnout 2 prototype: IOP_GTFSDVDJ.IRX
+## Burnout 2 prototype: IOP_GTFSDVDJ_IRX
 
 `start`, `GtsMainRPCThread`, `GTSHandleRPC`, `GTSOpenEE`, `GTSReadEE`, `GTSSeekEE`, `GTSCloseEE`, `GTSEETransferThread`, `GTSEETransferNotifyCompletion`, `GTSEETransferRequestCompleted`, `GTSGetNextEETransferCommand`, `GTSTransferToEE`, `GTSReadThread`, `GTSReadRequestCompleted`, `GTSGetNextReadCommand`, `GTSOpenFile`, `GTSCloseFile`, `GTSSeekFile`, `GTSFileIsEOF`, `GTSReadFile`, `GTSInitialise`, `GTSFlushRingBuffer`, `GtsAdvanceRingBuffer`, `GTSOpenIOP`, `GTSCloseIOP`, `GTSReadIOP`, `GTSSeekIOP`
 
-## Burnout 2 prototype: IOP_GTFSHOST.IRX
+## Burnout 2 prototype: IOP_GTFSDVD_IRX
+
+`start`, `GtsMainRPCThread`, `GTSHandleRPC`, `GTSCmdHandler`, `GTSOpenEE`, `GTSReadEE`, `GTSSeekEE`, `GTSCloseEE`, `GTSEETransferThread`, `GTSEETransferNotifyCompletion`, `GTSEETransferRequestCompleted`, `GTSGetNextEETransferCommand`, `GTSTransferToEE`, `GTSEENotifyError`, `GTSReadThread`, `GTSReadRequestCompleted`, `GTSGetNextReadCommand`, `GTSOpenFile`, `GTSCloseFile`, `GTSSeekFile`, `GTSFileIsEOF`, `GTSReadFile`, `_makeInt`, `_TOCRead`, `_catString`, `_GetDirDetails`, `_ReadTOC`, `GTSSearchTOC`, `GTSInitialise`, `GTSFlushRingBuffer`, `GtsAdvanceRingBuffer`, `GTSOpenIOP`, `GTSCloseIOP`, `GTSReadIOP`, `GTSSeekIOP`
+
+## Burnout 2 prototype: IOP_GTFSHOST_IRX
 
 `start`, `GtsMainRPCThread`, `GTSHandleRPC`, `GTSCmdHandler`, `GTSOpenEE`, `GTSReadEE`, `GTSSeekEE`, `GTSCloseEE`, `GTSEETransferThread`, `GTSEETransferNotifyCompletion`, `GTSEETransferRequestCompleted`, `GTSGetNextEETransferCommand`, `GTSTransferToEE`, `GTSReadThread`, `GTSReadRequestCompleted`, `GTSGetNextReadCommand`, `GTSOpenFile`, `GTSCloseFile`, `GTSSeekFile`, `GTSFileIsEOF`, `GTSReadFile`, `GTSInitialise`, `GTSFlushRingBuffer`, `GtsAdvanceRingBuffer`, `GTSOpenIOP`, `GTSCloseIOP`, `GTSReadIOP`, `GTSSeekIOP`
 
-## Burnout 2 prototype: IOP_RWA.IRX
+## Burnout 2 prototype: IOP_RWA_IRX
 
 `skyTransMode`, `trySkyFopen`, `skyFopen`, `skyFclose`, `skyFexist`, `skyFread`, `skyFwrite`, `skyFseek`, `skyFtell`, `skyFgets`, `skyFputs`, `skyFeof`, `skyFflush`, `RwaInstallFileSystem`, `RwaUnInstallFileSystem`, `_rwaTimerModuleOpen`, `_rwaTimerModuleClose`, `RwaTimerStart`, `RwaTimerStop`, `RwaTimerGetValue`, `_rwaLListModuleOpen`, `_rwaLListModuleClose`, `_rwaFreeListModuleOpen`, `_rwaFreeListModuleClose`, `RwaFreeListCreate`, `_RwaFreeListFree`, `RwaFreeListDestroy`, `RwaFreeListAlloc`, `RwaFreeListFree`, `_rwaObjDefOpenModule`, `_rwaObjDefCloseModule`, `RwaObjDefCreate`, `_RwaObjDefFree`, `_RwaObjDefInit`, `RwaObjDefDestroy`, `RwaObjDefAssignID`, `_rwaObjDefCreateInstanceAllocator`, `_rwaObjDefAllocObj`, `_rwaObjDefFreeObj`, `_rwaObjDefCreateSupported`, `_rwaObjDefFindByUUID`, `_rwaObjDefEnum`, `_RwaObjDefFindByUUIDCallback`, `_RwaObjDefParamsFree`, `_RwaObjDefInitParam`, `_RwaObjDefNULLParam`, `_RwaCoreOpenPlatform`, `_RwaCoreClosePlatform`, `_RwaCoreOpenCodeModules`, `_RwaCoreOpenModuleCallback`, `_RwaCoreCloseModuleCallback`, `RwaCoreOpen`, `RwaCoreIsOpen`, `RwaCoreClose`, `RwaCoreUpdateStart`, `RwaCoreUpdateFinish`, `RwaSetBlockAlign`, `RwaSizeOf`, `_RwaFThread`, `RwaFsystemOpen`, `RwaFsystemClose`, `_RwaAsyncFileOpQueueCreate`, `_RwaAsyncFileOpQueueDestroy`, `_RwaAsyncFileOpQueueGet`, `_RwaAsyncFileOpQueueWaitEmpty`, `_RwaAsyncFileOpQueueWait`, `_rwaFileModuleOpen`, `_rwaFileModuleClose`, `_rwaObjHandleOpenModule`, `_rwaObjHandleCloseModule`, `RwaObjHandleCreateUsingInterface`, `_RwaObjHandleFree`, `RwaObjHandleRelease`, `_rwaMalloc`, `_rwaFree`, `_rwaObjOpenModule`, `_RwaTopLevelObjCreateCallback`, `_rwaObjCloseModule`, `RwaObjCreate`, `_RwaObjCreateCallback`, `_RwaObjCalcSize`, `_RwaObjInit`, `RwaObjDestroy`, `RwaObjStartExecute`, `RwaObjFinishExecute`, `RwaObjDisconnectParamIndex`, `_RwaObjDisconnectAll`, `RwaObjGetTopLevelObject`, `RwaObjDefAliasDestroy`, `_rwaObjInterfaceOpenModule`, `_rwaObjInterfaceCloseModule`, `RwaObjInterfaceAttach`, `RwaObjInterfaceRemove`, `_rwaObjInterfaceDefSupported`, `RwaObjInterfaceDefDestroy`, `RwaObjInterfaceDefFindByUUID`, `RwaAtomicFree`, `RwaParamTypeCreateAtomic`, `_RwaParamTypeFreeRanges`, `_RwaParamTypeFree`, `RwaParamTypeCreateAlias`, `RwaParamTypeDestroy`, `_rwaParamTypeOpenModule`, `_rwaParamTypeCloseModule`, `_rwaParamTypeCreateByTypeDefs`, `_RwaParamTypeSetupAtomics`, `_rwaSymbolTableInit`, `_rwaSymbolTableDestroy`, `_rwaSymbolTableAddParamType`, `_rwaSymbolTableRemoveParamType`, `_rwaSymbolTableFindParamTypeByUUID`, `_rwaSymbolTableFindParamTypeFirstDepend`, `_rwaSymbolTableFindParamTypeByIndex`, `RwaUUIDCompare`, `_rwaUniqueIDModuleOpen`, `_rwaUniqueIDModuleClose`, `_rwaUniqueIDAssignName`, `_rwaUniqueIDAssignUUID`, `_rwaUniqueIDFreeData`, `_rwaUniqueIDFreeName`, `_rwaUniqueIDFreeUUID`, `_rwaUniqueIDInitialize`, `_rwaHeapModuleOpen`, `_rwaHeapModuleClose`, `RwaHeapCreate`, `_RwaHeapAddBlock`, `RwaHeapDestroy`, `_RwaHeapFree`, `RwaHeapAlloc`, `RwaHeapFree`, `RwaHeapBlockCreate`, `RwaHeapBlockDestroy`, `RwaHeapBlockAlloc`, `RwaHeapBlockFree`, `RwaHeapBlockIsEmpty`, `RwOsGetFileInterface`, `RwEngineInit`, `RwEngineOpen`, `RwEngineStart`, `RwEngineStop`, `RwEngineTerm`, `RwEngineClose`, `_ps2open`, `_ps2ioctl`, `malloc`, `free`, `realloc`, `calloc`, `strupr`, `_RwaIOPFSOpen`, `_RwaIOPFSClose`, `_RwaIOPFSRead`, `_RwaIOPFSWrite`, `_RwaIOPFSLseek`, `_RwaIOPFSWriteAsync`, `_RwaIOPFSBlock`, `RwaIOPFSCommandQueueAdd`, `_RwaIOPFSCommandQueueOpen`, `_RwaIOPFSCommandQueueClose`, `_RwaIOPFSCommandQueueThread`, `_RwaIOPFSCommandProcess`, `RwaAutoDMAFunc`, `RwaOutputSPU2UpdateThread`, `wake_thread_intr`, `RwaOutputSPU2Create`, `RwaOutputSPU2Destroy`, `RwaOutputSPU2Update`, `RwaOutputSPU2SetMasterVolume`, `RwaOutputSPU2SetReverbType`, `RwaOutputSPU2SetReverbGain`, `RwaOutputSPU2SetSpeakerConfig`, `RwaOutputSPU2InitAutoDMA`, `RwaOutputSPU2CloseAutoDMA`, `RwaVoiceSPU2Create`, `RwaVoiceSPU2Destroy`, `RwaVoiceSPU2Update`, `RwaVoiceSPU2Stop`, `RwaVoiceSPU2Start`, `RwaVoiceSPU2SetFrequency`, `RwaVoiceSPU2GetPosition`, `RwaVoiceSPU2SetVolume`, `RwaVoiceSPU2RampVolume`, `RwaSPU2SyncClockRemoveEvent`, `RwaRPC_Init`, `RwaRPC_ProcessSystemCommand`, `RwaRPC_SIFIntHandler`, `RwaRPC_SPU2IntHandler`, `RwaRPC_UpdateThread`, `RwaRPC_Transfer`, `RwaSPU2DMA_IOPToEE`, `RwaSPU2DMA_SRAMToIOP`, `RwaGTFSInitialiseFileSystemFuncs`, `RwaGTFSGtsOpen`, `RwaGTFSGtsClose`, `RwaGTFSGtsRead`, `RwaGTFSGtsWrite`, `RwaGTFSGtsSeek`, `GTSOpenFile`, `GTSInitialise`, `GTSOpenIOP`, `GTSCloseIOP`, `GTSReadIOP`, `GTSSeekIOP`, `start`, `RwaObjectActionQueueService`, `_rwaCoreIOPOpen`, `_rwaCoreIOPUpdateThreadFunc`, `_rwaCoreIOPClose`, `RwaIOPHandleRPCCommand`, `RwaSemaphoreCreate`, `_RwaThreadFunc`, `RwaThreadCreate`, `RwaThreadStart`, `RwaThreadTerminate`
 
-## Burnout 3 prototype: IOP_B3ROUTE.IRX
+## Burnout 3 prototype: IOP_B3ROUTE_IRX
 
 `B3DistIntHandler`, `B3DIST_CmdHandler`, `B3RouteSetup`, `start`, `B3RouteInit`, `B3RouteQuit`, `B3RouteStartDist`, `B3RouteStopDist`, `HitMemIntPositionA`, `HitMemIntPositionB`, `HitMemIntPositionC`, `HitMemIntPositionD`
 
-## Burnout 3 prototype: IOP_DEBUG_SULPHAC.IRX
+## Burnout 3 prototype: IOP_DEBUG_SULPHAC_IRX
 
 `Sulpha_SdVoiceTrans`, `Sulpha_SdVoiceTransStatus`, `Sulpha_SdBlockTrans`, `Sulpha_SdBlockTransStatus`, `Sulpha_SdStopTrans`, `CallBackCore0`, `CallBackCore1`, `Sulpha_SdSetTransIntrHandler`, `Sulpha_SdGetSpu2IntrHandlerArgument`, `Sulpha_SdSetSpu2IntrHandler`, `Sulpha_SdGetTransIntrHandlerArgument`, `Sulpha_SdGetEffectAttr`, `Sulpha_SdGetParam`, `Sulpha_SdGetCoreAttr`, `Sulpha_SdGetSwitch`, `Sulpha_SdGetAddr`, `Sulpha_SdSetParam`, `LookAtKeyOn`, `SetupKeyOn`, `Sulpha_SdSetSwitch`, `Sulpha_SdSetAddr`, `Sulpha_SdSetCoreAttr`, `start`, `AddToBuffer`, `maintain`, `EventHandler`, `AddHeader`, `Sulpha_SdQuit`, `Sulpha_SdInit`, `Sulpha_SdNote2Pitch`, `Sulpha_SdPitch2Note`, `Sulpha_SdSetTransCallback`, `Sulpha_SdSetIRQCallback`, `Sulpha_SdSetEffectMode`, `Sulpha_SdSetEffectModeParams`, `Sulpha_SdSetEffectAttr`, `Sulpha_SdClearEffectWorkArea`, `Sulpha_SdCleanEffectWorkArea`, `Sulpha_SdProcBatch`, `Sulpha_SdProcBatchEx`
 
-## Burnout 3 prototype: IOP_GTFSATMN.IRX
+## Burnout 3 prototype: IOP_GTFSATMN_IRX
 
 `start`, `GtsMainRPCThread`, `GTSHandleRPC`, `GTSCmdHandler`, `GTSOpenEE`, `GTSReadEE`, `GTSSeekEE`, `GTSCloseEE`, `GTSEETransferThread`, `GTSEETransferNotifyCompletion`, `GTSEETransferRequestCompleted`, `GTSGetNextEETransferCommand`, `GTSTransferToEE`, `GTSReadThread`, `GTSReadRequestCompleted`, `GTSGetNextReadCommand`, `GTSOpenFile`, `GTSCloseFile`, `GTSSeekFile`, `GTSFileIsEOF`, `GTSReadFile`, `GTSInitialise`, `GTSFlushRingBuffer`, `GtsAdvanceRingBuffer`, `GTSOpenIOP`, `GTSCloseIOP`, `GTSReadIOP`, `GTSSeekIOP`, `GTSTellIOP`
 
-## Burnout 3 prototype: IOP_GTFSCDVD.IRX
+## Burnout 3 prototype: IOP_GTFSCDVD_IRX
 
 `start`, `GtsMainRPCThread`, `GTSHandleRPC`, `GTSCmdHandler`, `GTSOpenEE`, `GTSReadEE`, `GTSSeekEE`, `GTSCloseEE`, `GTSEETransferThread`, `GTSEETransferNotifyCompletion`, `GTSEETransferRequestCompleted`, `GTSGetNextEETransferCommand`, `GTSTransferToEE`, `GTSEENotifyError`, `GTSReadThread`, `GTSReadRequestCompleted`, `GTSGetNextReadCommand`, `GTSOpenFile`, `GTSCloseFile`, `GTSSeekFile`, `GTSFileIsEOF`, `GTSReadFile`, `_makeInt`, `_TOCRead`, `_catString`, `_GetDirDetails`, `_ReadTOC`, `GTSSearchTOC`, `GTSInitialise`, `GTSFlushRingBuffer`, `GtsAdvanceRingBuffer`, `GTSOpenIOP`, `GTSCloseIOP`, `GTSReadIOP`, `GTSSeekIOP`, `GTSTellIOP`
 
-## Burnout 3 prototype: IOP_GTFSHOST.IRX
+## Burnout 3 prototype: IOP_GTFSHOST_IRX
 
 `start`, `GtsMainRPCThread`, `GTSHandleRPC`, `GTSCmdHandler`, `GTSOpenEE`, `GTSReadEE`, `GTSSeekEE`, `GTSCloseEE`, `GTSEETransferThread`, `GTSEETransferNotifyCompletion`, `GTSEETransferRequestCompleted`, `GTSGetNextEETransferCommand`, `GTSTransferToEE`, `GTSReadThread`, `GTSReadRequestCompleted`, `GTSGetNextReadCommand`, `GTSOpenFile`, `GTSCloseFile`, `GTSSeekFile`, `GTSFileIsEOF`, `GTSReadFile`, `GTSInitialise`, `GTSFlushRingBuffer`, `GtsAdvanceRingBuffer`, `GTSOpenIOP`, `GTSCloseIOP`, `GTSReadIOP`, `GTSSeekIOP`, `GTSTellIOP`
 
-## Burnout 3 prototype: IOP_LGKBM.IRX
+## Burnout 3 prototype: IOP_LGKBM_IRX
 
 `get_hid_device_info`, `free_unit`, `new_unit`, `completion_routine`, `device_startup_thread`, `StartUSBDevice`, `hidbp_probe`, `hidbp_attach`, `hidbp_detach`, `set_config_done`, `led_transfer_done`, `start_led_transfer`, `CheckAndSetLEDState`, `in_done`, `start_datain`, `InitGlobalVariables`, `register_with_usbd`, `stop_lgkbm_driver`, `start`, `kbm_rpc_thread`, `kbm_rpc_server`, `flush_device_buffers`, `copy_device_data`, `get_device_data`, `copy_device_info`, `get_device_info`, `rb_init`, `rb_reinit`, `rb_destroy`, `rb_insert`, `rb_remove`, `rpc_timeout_handler`, `wait_for_rpc_timeout`, `start_rpc_timer`, `stop_rpc_timerAndSignalSema`, `InitXferTimer`, `DeAllocDeviceMemory`, `AllocDeviceMemory`, `alloc_device_unit`, `free_device_unit`
 
-## Burnout 3 prototype: IOP_RWA.IRX
+## Burnout 3 prototype: IOP_RWA_IRX
 
 `_rwaTimerModuleOpen`, `_rwaTimerModuleClose`, `RwaTimerStart`, `RwaTimerStop`, `RwaTimerGetValue`, `_RwaCoreOpenPlatform`, `_RwaCoreClosePlatform`, `_RwaCoreOpenCodeModules`, `_RwaCoreOpenModuleCallback`, `_RwaCoreCloseModuleCallback`, `_rwaCoreOpen`, `RwaCoreIsOpen`, `RwaCoreClose`, `RwaCoreSuspend`, `RwaCoreResume`, `RwaSetBlockAlign`, `_RwaFThread`, `RwaFsystemOpen`, `RwaFsystemClose`, `_RwaAsyncFileOpQueueCreate`, `_RwaAsyncFileOpQueueDestroy`, `_RwaAsyncFileOpQueueGet`, `_RwaAsyncFileOpQueueWaitEmpty`, `_RwaAsyncFileOpQueueWait`, `_RwaFopen`, `_RwaFclose`, `_RwaFread`, `_RwaFseek`, `_RwaFcancel`, `_stricmp`, `hmalloc`, `hrealloc`, `hcalloc`, `RwEngineInit`, `RwEngineOpen`, `RwEngineStart`, `RwEngineStop`, `RwEngineTerm`, `RwEngineClose`, `malloc`, `free`, `realloc`, `calloc`, `strupr`, `RwaAutoDMAFunc`, `RwaOutputSPU2UpdateThread`, `RwaOutputSPU2Create`, `RwaOutputSPU2Destroy`, `RwaOutputUpdateVoiceKeyReg`, `RwaOutputSPU2Update`, `RwaOutputSPU2SetMasterVolume`, `RwaOutputSPU2InitializeMultipleRequests`, `RwaOutputSPU2TileCopy`, `RwaOutputSPU2TileCopyContinue`, `RwaOutputSPU2SetReverbTypeCallback`, `RwaOutputSPU2SetReverbType`, `_RwaOutputSPU2SetReverbAttr`, `RwaOutputSPU2SetReverbGain`, `RwaOutputSPU2SetSpeakerConfig`, `RwaOutputSPU2Suspend`, `RwaOutputSPU2Resume`, `RwaOutputSPU2InitAutoDMA`, `RwaOutputSPU2CloseAutoDMA`, `RwaVoiceSPU2Create`, `RwaVoiceSPU2Destroy`, `RwaVoiceSPU2Update`, `RwaVoiceSPU2Stop`, `RwaVoiceSPU2Start`, `RwaVoiceSPU2SetFrequency`, `RwaVoiceSPU2GetPosition`, `RwaVoiceSPU2SetVolume`, `RwaVoiceSPU2RampVolume`, `_rwaDMAChainInitialize`, `_rwaDMAPacketRemove`, `_rwaDMAChainAddPacket`, `_rwaDMAChainDispatch`, `_rwaDMAChainContinueDispatch`, `_rwaDMAChannelDispatchPacket`, `_rwaDMAEventProcess`, `_RwaDMAChannelOpen`, `RwaDMADispatcherOpen`, `RwaDMADispatcherClose`, `_RwaDMADispatcherChainFinished`, `_RwaDMADispatcherDispatchHandler`, `_RwaDMADispatcherDispatchNextChain`, `RwaDMADispatcherSuspend`, `RwaDMADispatcherResume`, `RwaDMAChannelSuspend`, `RwaDMAChannelResume`, `RwaDMAChannelIsEnabled`, `_RwaDMAChannelSchedule`, `RwaDMADispatcherSetChainBuildCallback`, `RwaDMASchedulerInitialize`, `RwaDMASchedulerUninitialize`, `_RwaDMASchedulerChainBuild`, `_RwaDMASchedulerRequestStartCallback`, `_RwaDMASchedulerRequestEndCallback`, `RwaDMASchedulerAddRequest`, `RwaDMASchedulerAddMultipleRequests`, `RwaDMASchedulerCancelRequest`, `RwaDMASchedulerAddSynchronizedRequest`, `RwaDMASchedulerRemoveSynchronizedRequest`, `_RwaDMAStreamGetSPU2Address`, `_RwaDMAStreamNullCompletion`, `_RwaDMAStreamGetNextPacket`, `RwaDMAStreamInitialize`, `RwaDMAStreamStart`, `_RwaDMAStreamStopPacketCompletion`, `RwaDMAStreamStop`, `RwaDMAStreamSetNextPacketSource`, `RwaDMAStreamSetNextPacketDestination`, `_RwaDMAStreamInputPacketStartCallback`, `_RwaDMAStreamInputPacketCompleteCallback`, `_RwaDMAStreamOutputPacketStartCallback`, `_RwaDMAStreamOutputPacketCompleteCallback`, `_RwaSPU2TransferIRQWakeThread`, `_rwaSPU2TransferIRQOpen`, `RwaSPU2TransferIRQSuspend`, `RwaSPU2TransferIRQResume`, `_rwaSPU2TransferIRQClose`, `_RwaSPU2AccessIRQWakeThread`, `_rwaSPU2AccessIRQOpen`, `RwaSPU2AccessIRQSuspend`, `RwaSPU2AccessIRQResume`, `_rwaSPU2AccessIRQClose`, `_RwaSPU2AccessIRQHandler`, `RwaSPU2SyncClockInitialize`, `_RwaSPU2SyncClockHandler`, `RwaSPU2SyncClockRemoveEvent`, `RwaSPU2SyncClockAddEvent`, `_RwaSPUIRQThreadLoop`, `_rwaSPU2IRQThreadSuspendAll`, `_rwaSPU2IRQThreadResumeAll`, `_rwaSPU2IRQThreadCreate`, `_rwaSPU2IRQThreadDestroy`, `_rwaVSdDMAVoiceTransCompletion`, `RwaVSdDMAInitialize`, `RwaVSdSetTransIntrHandler`, `RwaVSdVoiceTrans`, `RwaVSdVoiceTransStatus`, `_rwaVSdFinishedBlockTrans`, `RwaVSdStopTrans`, `_rwaVSdDMABlockTransPacketCompletion`, `RwaVSdBlockTrans`, `RwaRPCOpen`, `_RwaRPCExitUpdateThread`, `RwaRPCClose`, `_RwaRPCProcessSystemCommand`, `_RwaRPCSifIntHandler`, `_RwaRPCSPU2IntHandler`, `_RwaRPCUpdateThread`, `RwaRPCTransfer`, `RwaSPU2DMAIOPToEE`, `RwaSPU2DMAIOPToSRAM`, `RwaSPU2DMASRAMToIOP`, `start`, `_rwaCoreIOPOpen`, `_rwaCoreIOPUpdateThreadFunc`, `_rwaCoreIOPClose`, `_rwaIOPObjectActionCallback`, `RwaIOPHandleRPCCommand`, `RwaOsCoreSuspend`, `RwaOsCoreResume`, `_rwaLockedCountCreate`, `RwaSemaphoreCreate`, `_RwaThreadFunc`, `_RwaThreadCreate`, `_RwaThreadStart`, `RwaThreadTerminate`, `_rwaSPU2RemoteIOPFopsCallback`, `_RwaSPU2RemoteIOPFopsProcessOperation`, `_RwaSPU2WaveUploadIOP`, `_RwaSPU2WaveReinterleaveIOP`, `_rwaMalloc`, `_rwaFree`, `_rwaFreeListModuleOpen`, `_rwaFreeListModuleClose`, `RwaFreeListCreate`, `_RwaFreeListFree`, `RwaFreeListDestroy`, `RwaFreeListAlloc`, `RwaFreeListFree`
 
-## Burnout 3 prototype: IOP_RWSCOMMS.IRX
+## Burnout 3 prototype: IOP_RWSCOMMS_IRX
 
 `RPCCommsHandler`, `RPCThreadLoop`, `start`, `ConnectionThreadLoop`, `StartConnectionThread`, `EventHandlerFunc`, `ServerInitialise`, `ServerListen`, `ServerMessage`, `ServerStop`
 
-## Burnout 3 prototype: NETGUI_MODULES_EZMIDI.IRX
+## Burnout 3 prototype: NETGUI_MODULES_EZMIDI_IRX
 
 `start`, `sce_midi_loop`, `midiFunc`, `timer_handler`, `atick`, `make_thread`, `set_timer`, `start_timer`, `clear_timer`, `stop_timer`, `metaMsgCB`, `repeatCB`, `channelMsgCB`, `set_module_context`, `MidiGetIopFileLength`, `MidiSetSq`, `MidiTransBdPacket`, `MidiTransBd`, `MidiSetHd`, `MidiSetPortAttr`, `MidiSetPortVolume`, `MidiInit`, `MidiQuit`, `MidiStop`, `MidiGetStatus`, `MidiSeek`, `MidiStart`
 
-## Burnout 3 prototype: NETGUI_MODULES_USBINIT.IRX
+## Burnout 3 prototype: NETGUI_MODULES_USBINIT_IRX
 
 `usb_autoload_setup`, `start`

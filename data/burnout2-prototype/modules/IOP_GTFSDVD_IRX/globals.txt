@@ -1,0 +1,45 @@
+// Global and file-static variables with an address in GTFSDVD.IRX
+// Burnout 2 prototype, 29 July 2002
+
+0x000002E0  int GtsMainRPCThread();
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x000004C8  void *GTSHandleRPC(unsigned int, void *, int);
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x000005A8  void GTSCmdHandler(void *, void *);
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00000994  int GTSEETransferThread();
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00000EAC  int GTSReadThread();
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001BFC  int GTSOpenIOP(char *);
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001CCC  void GTSCloseIOP(int);
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001D28  unsigned int GTSReadIOP(int, unsigned int, void *);
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00001EB4  int GTSSeekIOP(int, int, int);
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00002014  _libhead gtfsdvd_entry;
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00002068  _moduleinfo Module;
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00002100  static int _gnNumDirectories;
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00002104  int _gnNumFiles;
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00002108  struct @anon3 _gaTableOfContents[750];
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x00007310  char _gaacDirectoryNames[160][128];
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x0000C340  unsigned char _gaucLoadBuf[2048];
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x0000CB40  GtsIOPGlobalsTag gGlobals;
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x0000CBB0  struct @anon0 cmdDriveErrorHdr;
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x0000CBC0  struct @anon0 cmdNotifyHdr;
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x0000CBD0  int gRpcRet[4];
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c
+0x0000CBE0  int gRpcArg[32];
+      I:\GameShared\GameClasses\FileSystem\ps2\iop\gtfsstreamiop.c

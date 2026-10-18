@@ -2,6 +2,8 @@
 
 # Finding things
 
+All data files with direct links: [symbols and maps](files.md).
+
 Recipes for the common questions. Paths are relative to the repository root. A plain-text search over
 the whole repository (`grep -r`, or an editor's search) is often the fastest start; every export is
 text.

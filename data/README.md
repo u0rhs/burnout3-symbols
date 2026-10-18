@@ -18,7 +18,8 @@ The `originals/` folders keep the two text link maps from the discs, for referen
 | `*/originals/` | The original text link maps (see below) |
 | [`hashes.tsv`](hashes.tsv) | Size, CRC32, MD5 and SHA-1 of every source file ([as a table](../docs/reference/hashes.md)) |
 
-The documentation built on this data starts at the [Home](../README.md) page.
+Every file with its size and a direct link: [symbols and maps](../docs/files.md). The documentation built on
+this data starts at the [Home](../README.md) page.
 
 ## */originals/
 

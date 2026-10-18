@@ -1,0 +1,23 @@
+// Global and file-static variables with an address in RWSCOMMS.IRX
+// Burnout 3 prototype, June 2004
+
+0x000000C4  int RPCThreadLoop();
+      C:\RWStudio\console\Archive\game_framework\source\framework\core\commsserver\psx\commsmodule\main.c
+0x00000380  int ConnectionThreadLoop();
+      C:\RWStudio\console\Archive\game_framework\source\framework\core\commsserver\psx\commsmodule\Server.c
+0x00000524  void EventHandlerFunc(int, int);
+      C:\RWStudio\console\Archive\game_framework\source\framework\core\commsserver\psx\commsmodule\Server.c
+0x00000880  int g_nPort;
+      C:\RWStudio\console\Archive\game_framework\source\framework\core\commsserver\psx\commsmodule\Server.c
+0x000009F0  unsigned char Buffer[32768];
+      C:\RWStudio\console\Archive\game_framework\source\framework\core\commsserver\psx\commsmodule\main.c
+0x000089F0  _sif_serve_data ServerData;
+      C:\RWStudio\console\Archive\game_framework\source\framework\core\commsserver\psx\commsmodule\main.c
+0x00008A34  _sif_queue_data QueueData;
+      C:\RWStudio\console\Archive\game_framework\source\framework\core\commsserver\psx\commsmodule\main.c
+0x00008A4C  static int ConnectionID;
+      C:\RWStudio\console\Archive\game_framework\source\framework\core\commsserver\psx\commsmodule\Server.c
+0x00008A50  static int g_IFEventID;
+      C:\RWStudio\console\Archive\game_framework\source\framework\core\commsserver\psx\commsmodule\Server.c
+0x00008A54  static int g_IFID;
+      C:\RWStudio\console\Archive\game_framework\source\framework\core\commsserver\psx\commsmodule\Server.c
