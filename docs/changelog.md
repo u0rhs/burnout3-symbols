@@ -6,6 +6,9 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-19
 
+- Burnout Revenge prototypes credited to Hidden Palace, with dump and release credits and image hashes
+  ([builds](builds.md#provenance)); build times checked against Hidden Palace's, the Xbox 360 image against its
+  own dump log.
 - **Burnout Revenge prototype (14 July 2005) exported** ([data](../data/burnout-revenge-prototype/README.md)): 2,717
   types with members and methods, 9,416 functions with parameter names, 3,402 dropped functions, 4,220 globals,
   861 source files at Criterion's paths. New tools `export_revenge.py` and `stabs.py`; format page

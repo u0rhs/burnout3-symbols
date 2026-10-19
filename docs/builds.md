@@ -108,9 +108,9 @@ Revenge was built on Burnout 3's code: its classes are Burnout 3's renamed `CB4*
 
 | Build | Executable | Symbols |
 |---|---|---|
-| 14 July 2005 (`0713B4PN`), PS2 NTSC | `SLUS_212.42` (108 MB) | **Full symbol table** (12,023 functions) and **GCC debug information** (stabs in `.mdebug`): 2,717 types with members, offsets and methods, 9,416 functions with parameter names, 861 source files with their paths; the link map `B4EXTERN.MAP` on the disc (20,023 symbols, 1,230 objects). [Exported](../data/burnout-revenge-prototype/README.md) |
-| 4 August 2005, PS2 PAL | `SLES_535.06` | stripped |
-| 9 August 2005, PS2 PAL | `SLES_535.07` | stripped |
+| 14 July 2005 ("Alpha 7", `0713B4PN`), PS2 NTSC | `SLUS_212.42` (108 MB) | **Full symbol table** (12,023 functions) and **GCC debug information** (stabs in `.mdebug`): 2,717 types with members, offsets and methods, 9,416 functions with parameter names, 861 source files with their paths; the link map `B4EXTERN.MAP` on the disc (20,023 symbols, 1,230 objects). [Exported](../data/burnout-revenge-prototype/README.md) |
+| 4 August 2005 ("Beta 7"), PS2 PAL | `SLES_535.06` | stripped |
+| 9 August 2005 ("Beta 9"), PS2 PAL | `SLES_535.07` | stripped |
 | 7 February 2006 ("Beta 5"), Xbox 360 | `default.xex` | `B4Extern.pdb` (12.4 MB) on the disc: Microsoft debug information for the 360 build |
 
 - The July 14 build was compiled with **GCC** (SN Systems, `__gnu_compiled_cplusplus`), not CodeWarrior:
@@ -124,7 +124,8 @@ Revenge was built on Burnout 3's code: its classes are Burnout 3's renamed `CB4*
   `mnNumLayers` +0x30) and `CGt2dObject` (64 bytes: `mpFrame` +0x38, `mpfRender` +0x3C) are exactly
   what Burnout 3's retail code uses. Others changed: Burnout 3's `CGt2dFont` has one more word before
   its character table. Check each member against Burnout 3 code before using its name.
-- Provenance of these four discs isn't recorded here yet (no hashes compared).
+- All four are from [Hidden Palace](https://hiddenpalace.org/Category:Burnout_Revenge_prototypes); credits and
+  hashes under [Provenance](#provenance).
 - Exported: [`data/burnout-revenge-prototype/`](../data/burnout-revenge-prototype/README.md) (types, functions
   with parameter names, globals, symbols, source files). Every class page shows its Revenge counterpart, layout
   and methods next to the Burnout 2 ones. The Xbox 360 PDB is not decoded yet.
@@ -149,6 +150,27 @@ both assert files, `SYSTEM.CNF` and `VALUEDB/VDB.XML` are byte-identical to the 
 exports were made from. Hidden Palace's own notes on that build describe the map file and "leftovers from
 removed .elf files from internal and debug builds". Their notes on the Burnout 2 build: "Executable
 contains Symbols." All hashes: [reference/hashes.md](reference/hashes.md).
+
+**Burnout Revenge prototypes**, also from Hidden Palace:
+
+| | Jul 14, 2005 | Aug 4, 2005 | Aug 9, 2005 | Feb 7, 2006 |
+|---|---|---|---|---|
+| Hidden Palace page | [Jul 14, 2005 prototype](https://hiddenpalace.org/Burnout_Revenge_(Jul_14,_2005_prototype)) | [Aug 4, 2005 prototype](https://hiddenpalace.org/Burnout_Revenge_(Aug_4,_2005_prototype)) | [Aug 9, 2005 prototype](https://hiddenpalace.org/Burnout_Revenge_(Aug_9,_2005_prototype)) | [Feb 7, 2006 prototype](https://hiddenpalace.org/Burnout_Revenge_(Feb_7,_2006_prototype)) |
+| Platform | PS2 NTSC (`SLUS_212.42`) | PS2 PAL (`SLES_535.06`) | PS2 PAL (`SLES_535.07`) | Xbox 360 |
+| Build | 14 July 2005, 00:48:04, "Alpha 7" | 4 August 2005, 16:04:15, "Beta 7" | 9 August 2005, 08:41:16, "Beta 9" | 7 February 2006, "Beta 5" |
+| Disc label | | *Burnout Revenge INT.PAL2 Disc# 1 Beta 7 08/05/2005 Review* | | |
+| Released | October 2017, by AztecaEh (dumped by AlexKVideos1) | 19 May 2016, by Daniel B and SuperType1 (dumped by SuperType1) | 25 December 2020, Terarelease 1.0 | 30 June 2019, by CVLT OF OSIRIS (dumped by Cut Into Fourteen Pieces) |
+| Media | DVD-R | DVD-R | DVD-R | DVD-R (DiscImageCreator) |
+| Image | `track.iso`, 2,635,833,344 bytes | `track.iso`, 3,545,071,616 bytes | `track.iso`, 3,979,935,744 bytes | `Burnout-Revenge-Beta_5-2006-02-07.iso`, 4,056,037,376 bytes |
+| Image SHA-1 | `7ee78333ffae6428223cc28c2ddb1798f858123e` | `8a3931e1f81fe978911ae5321eebe871e5027db0` | `f1440bc4d7d910ff307cc75b634dcde18c27c9db` | `7eed9bc8279959978d1dce2f3e029c28153f3714` |
+| Image MD5 | `181ae28cd051d9f8c31c7d3ca17d8d9e` | `81f775c573062583471d6c18ac15b197` | `8382e86c3667c2a084adffe29bda17cd` | `3e224ed5e4a518eae49f10ca7a09e60d` |
+| Checked against | Hidden Palace's build time, to the second | Hidden Palace's build time, to the second | Hidden Palace's build time, to the second | The dump's own Redump `.dat` (same MD5, SHA-1 and size); executable stamp 7 Feb 2006 08:17:11 UTC |
+| Used for | **all the Revenge symbols and debug information** | the build listing above | the build listing above | the build listing above (its PDB is not decoded yet) |
+
+Hidden Palace lists no hashes for these four, so the hashes above are this repository's, for comparing
+downloads. The build times are Hidden Palace's (UK time). The discs record them in the mastering
+machine's time zone: `SLUS_212.42` is dated 13 July 2005 15:48:04 at GMT−8, `SLES_535.06` 5 August 2005
+00:04:15 and `SLES_535.07` 9 August 2005 16:41:16 at GMT+9, the same moments.
 
 ## How they relate
 
