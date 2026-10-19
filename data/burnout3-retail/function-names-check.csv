@@ -1,0 +1,1147 @@
+us_address,nahelam_name,code_check,prototype_name,prototype_proof
+0x00100008,start,no prototype counterpart,,
+0x00100240,mwInit,no prototype counterpart,,
+0x00100270,__construct_array,no prototype counterpart,,
+0x00100810,__initialize_cpp_rts,"agrees (proven: same code, unique)",__initialize_cpp_rts,"proven: same code, unique"
+0x00102E08,sceGsSyncV,"agrees (proven: same code, unique)",sceGsSyncV,"proven: same code, unique"
+0x00108120,_pictureCodingExtension,"agrees (proven: same code, unique)",_pictureCodingExtension,"proven: same code, unique"
+0x00108470,_quantMatrixExtension,"agrees (proven: same code, unique)",_quantMatrixExtension,"proven: same code, unique"
+0x00108538,_pictureDisplayExtension,"agrees (proven: same code, unique)",_pictureDisplayExtension,"proven: same code, unique"
+0x0010B148,_sequenceExtension,no prototype counterpart,,
+0x0010BB00,AddIntcHandler,no prototype counterpart,,
+0x0010BB20,RemoveIntcHandler,no prototype counterpart,,
+0x0010C1E0,sceSifSetDma,no prototype counterpart,,
+0x0010E048,scePrintf,"agrees (proven: same code, unique)",scePrintf,"proven: same code, unique"
+0x0010E608,sceSifSendCmd,"agrees (proven: same code, unique)",sceSifSendCmd,"proven: same code, unique"
+0x0010E880,sceSifInitRpc,agrees (strong),sceSifInitRpc,strong
+0x00110270,sceOpen,"agrees (proven: same code, unique)",sceOpen,"proven: same code, unique"
+0x001104F8,sceClose,"agrees (proven: same code, unique)",sceClose,"proven: same code, unique"
+0x001108B0,sceRead,agrees (proven: same place between proven functions),sceRead,proven: same place between proven functions
+0x001130B0,sceSifAllocIopHeap,"agrees (proven: same code, unique)",sceSifAllocIopHeap,"proven: same code, unique"
+0x00113218,sceSifFreeIopHeap,"agrees (proven: same code, same callers)",sceSifFreeIopHeap,"proven: same code, same callers"
+0x00113B50,sceSifSearchModuleByAddress,different function: the code matches the prototype name,sceSifUnloadModule,"proven: same code, unique"
+0x00113BE0,sceSifSearchModuleByName,"agrees (proven: same code, unique)",sceSifSearchModuleByName,"proven: same code, unique"
+0x00113D10,sceSifLoadModuleBuffer,"agrees (proven: same code, unique)",sceSifLoadModuleBuffer,"proven: same code, unique"
+0x00113D50,_sceSifLoadModule,"agrees (proven: same code, unique)",_sceSifLoadModule,"proven: same code, unique"
+0x00113F78,sceSifLoadModule,"agrees (proven: same code, unique)",sceSifLoadModule,"proven: same code, unique"
+0x00113F98,sceSifLoadStartModule,"agrees (proven: same code, unique)",sceSifLoadStartModule,"proven: same code, unique"
+0x00114108,sceSifGetIopAddr,"agrees (proven: same code, unique)",sceSifGetIopAddr,"proven: same code, unique"
+0x001142D8,sceSifResetIop,agrees (proven: same place between proven functions),sceSifResetIop,proven: same place between proven functions
+0x00114458,sceSifSyncIop,"agrees (proven: same code, unique)",sceSifSyncIop,"proven: same code, unique"
+0x001144A8,sceSifRebootIop,"agrees (proven: same code, unique)",sceSifRebootIop,"proven: same code, unique"
+0x0011DE98,ceilf,different function: the code matches the prototype name,cosf,"proven: same code, unique"
+0x0011E220,tanf,"agrees (proven: same code, unique)",tanf,"proven: same code, unique"
+0x0011E858,sceCdPOffCallback,agrees (proven: same place between proven functions),sceCdPOffCallback,proven: same place between proven functions
+0x0011EE50,sceCdNcmdDiskReady,"agrees (proven: same code, unique)",sceCdNcmdDiskReady,"proven: same code, unique"
+0x0011F218,sceCdInit,agrees (strong),sceCdInit,strong
+0x0011F6F0,sceCdDiskReady,agrees (strong),sceCdDiskReady,strong
+0x0011F8F8,sceCdGetDiskType,"agrees (proven: same code, unique)",sceCdGetDiskType,"proven: same code, unique"
+0x00121C00,fopen,agrees (proven: same place between proven functions),fopen,proven: same place between proven functions
+0x00123EA8,memcpy,"agrees (proven: same code, unique)",memcpy,"proven: same code, unique"
+0x00124060,memset,"agrees (proven: same code, unique)",memset,"proven: same code, unique"
+0x001252C8,printf,"agrees (proven: same code, unique)",printf,"proven: same code, unique"
+0x00125338,qsort,"agrees (proven: same code, unique)",qsort,"proven: same code, unique"
+0x00126A18,snprintf,"agrees (proven: same code, unique)",snprintf,"proven: same code, unique"
+0x00126B40,sprintf,"agrees (proven: same code, unique)",sprintf,"proven: same code, unique"
+0x00126DF0,strcasecmp,"agrees (proven: same code, unique)",strcasecmp,"proven: same code, unique"
+0x00126EC8,strcat,"agrees (proven: same code, unique)",strcat,"proven: same code, unique"
+0x001273E8,strlen,"agrees (proven: same code, unique)",strlen,"proven: same code, unique"
+0x00127520,strncasecmp,"agrees (proven: same code, unique)",strncasecmp,"proven: same code, unique"
+0x00127960,strncpy,"agrees (proven: same code, unique)",strncpy,"proven: same code, unique"
+0x0012CD40,__udivdi3,"agrees (proven: same code, unique)",__udivdi3,"proven: same code, unique"
+0x0012D2C0,__umoddi3,"agrees (proven: same code, unique)",__umoddi3,"proven: same code, unique"
+0x0012EB30,main,"not in our table; the prototype has this name, not proven here",,
+0x0012EF00,CB3ControllerMapping::GetControllerDeadTime(void),agrees (strong),CB3ControllerMapping::GetControllerDeadTime(),strong
+0x0012EF20,CB3ControllerMapping::WheelIsValid(void),"not in our table; the prototype has this name, not proven here",,
+0x0012EF50,CB3ControllerMapping::PadIsValid(void),agrees (strong),CB3ControllerMapping::PadIsValid(),strong
+0x0012F160,CB3ControllerMapping::GetBoost(void),different function: open,CB3ControllerMapping::GetCameraSwitch(),unverified
+0x0012F460,CB3ControllerMapping::GetMusicTrackSkip(void),no prototype counterpart,,
+0x0012F4E0,CB3ControllerMapping::GetGearDown(void),one function off: the prototype map puts this name at 0x12F240,,
+0x0012F610,CB3ControllerMapping::GetGearUp(void),one function off: the prototype map puts this name at 0x12F6B0,,
+0x0012F6B0,CB3ControllerMapping::GetHorn(void),different function: open,CB3ControllerMapping::GetGearUp(),unverified
+0x0012F720,CB3ControllerMapping::GetAftertouch(void),agrees (unverified),CB3ControllerMapping::GetAftertouch(),unverified
+0x0012F850,CB3ControllerMapping::GetSteering(void),agrees (unverified),CB3ControllerMapping::GetSteering(),unverified
+0x0012F970,CB3ControllerMapping::GetBrake(void),"not in our table; the prototype has this name, not proven here",,
+0x0012FA40,CB3ControllerMapping::GetAccelerator(void),"not in our table; the prototype has this name, not proven here",,
+0x0012FB50,CB3ControllerMapping::IsControlJustPressed(EGtPS2DualShockDeviceControl),no prototype counterpart,,
+0x0012FC30,"CB3ControllerMapping::GetPadControl(EGtPS2DualShockDeviceControl,bool)","not in our table; the prototype has this name, not proven here",,
+0x00130030,"CB3DebugManager::RenderPerfMonDataCallback(char const *,float,float,float,bool)","agrees (proven: same code, unique)","CB3DebugManager::RenderPerfMonDataCallback(const char*,float,float,float,bool)","proven: same code, unique"
+0x00130390,"CB3DebugManager::DrawVectorText(char const *,GtMathPs2::CGtV3d,GtMathPs2::CGtMatrix3x4 *,float,GtMathPs2::CGtV4d)",agrees (strong),"CB3DebugManager::DrawVectorText(const char*,GtMathPs2::CGtV3d,GtMathPs2::CGtMatrix3x4*,float,GtMathPs2::CGtV4d)",strong
+0x00130740,__ct__Q29GtMathPs26CGtV4d1,name not in the prototype map; the map names this function differently,__ct__Q29GtMathPs26CGtV4dF1,strong
+0x00130750,"CB3DebugManager::DrawLine(CGtLine const &,GtMathPs2::CGtV4d)","agrees (proven: same code, unique)","CB3DebugManager::DrawLine(const CGtLine&,GtMathPs2::CGtV4d)","proven: same code, unique"
+0x001308B0,CB3DebugManager::RenderWorld(void),agrees (strong),CB3DebugManager::RenderWorld(),strong
+0x001309C0,CB3DebugManager::Update(void),agrees (strong),CB3DebugManager::Update(),strong
+0x00130B00,CB3DebugManager::Prepare(void),agrees (strong),CB3DebugManager::Prepare(),strong
+0x00130B80,CB3DebugManager::Construct(void),agrees (strong),CB3DebugManager::Construct(),strong
+0x00130BF0,CB3Im3dVertex::CB3Im3dVertex(void),"not in our table; the prototype has this name, not proven here",,
+0x00130C20,CB3FrontEnd::SetInitialMenu(ulong),agrees (strong),CB3FrontEnd::SetInitialMenu(unsigned long),strong
+0x00130C40,CB3FrontEnd::Destruct(void),agrees (strong),CB3FrontEnd::Destruct(),strong
+0x00130D50,CB3VideoManager::PrepareVideo(void),no prototype counterpart,,
+0x00131100,CB3FrontEnd::Release(void),agrees (unverified),CB3FrontEnd::Release(),unverified
+0x001312D0,CB3FrontEnd::Render(void),agrees (unverified),CB3FrontEnd::Render(),unverified
+0x001313C0,CB3FrontEnd::Update(void),agrees (unverified),CB3FrontEnd::Update(),unverified
+0x00131480,CB3FrontEnd::Prepare(void),agrees (unverified),CB3FrontEnd::Prepare(),unverified
+0x00131990,CB3FrontEnd::Construct(void),agrees (unverified),CB3FrontEnd::Construct(),unverified
+0x00131AC0,CB3Game::RenderMenuPage(void),no prototype counterpart,,
+0x00131CB0,CB3Game::Is2PlayerSplitScreen(void),one function off: the prototype map puts this name at 0x131CA0,,
+0x00131CD8,CB3Game::IsInChampionship(void),one function off: the prototype map puts this name at 0x131CE0,,
+0x00131E38,CB3Game::IsCrashMode(void),one function off: the prototype map puts this name at 0x131E40,,
+0x00131F08,CB3Game::RequestNewGameMode(CB3GameMode *),one function off: the prototype map puts this name at 0x131F10,,
+0x00131F58,CB3Game::IsTurnBasedCrash(void),one function off: the prototype map puts this name at 0x131E00,,
+0x00131F88,CB3Game::UpdatePostSimulation(void),one function off: the prototype map puts this name at 0x131F90,,
+0x00132090,CB3Game::UpdatePreSimulation(void),no prototype counterpart,,
+0x001322B0,CB3Game::ResetGameMode(void),no prototype counterpart,,
+0x00132418,CB3Game::Destruct(void),no prototype counterpart,,
+0x001325F8,CB3Game::Update(void),no prototype counterpart,,
+0x00133190,CB3Game::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x00133BB0,CB3Game::Construct(void),"not in our table; the prototype has this name, not proven here",,
+0x00134340,CB3StageLogic::GetAIMode(void),agrees (likely),CB3StageLogic::GetAIMode(),likely
+0x001343D0,CB3StageLogic::OnPlayerCarDeath(void),no prototype counterpart,,
+0x001344D0,CB3Game::~CB3Game(void),agrees (likely),CB3Game::~CB3Game(),likely
+0x001345D0,CB3GameMode::GetNumLaps(void),agrees (likely),CB3GameMode::GetNumLaps(),likely
+0x001345E0,CB3GameMode::StartReplay(void),agrees (likely),CB3GameMode::StartReplay(),likely
+0x00134600,CB3GameMode::Release(void),"agrees (proven: same code, unique)",CB3GameMode::Release(),"proven: same code, unique"
+0x00134660,CB3GameMode::Update(void),"agrees (proven: same code, unique)",CB3GameMode::Update(),"proven: same code, unique"
+0x001346C0,CB3GameMode::Prepare(void),agrees (proven: same place between proven functions),CB3GameMode::Prepare(),proven: same place between proven functions
+0x00134910,CB3GameMode::Construct(void),"agrees (proven: same code, unique)",CB3GameMode::Construct(),"proven: same code, unique"
+0x00134940,CB3OnePlayerStage::StartReplay(void),agrees (likely),CB3OnePlayerStage::StartReplay(),likely
+0x00134A20,CB3OnePlayerStage::Render(void),agrees (strong),CB3OnePlayerStage::Render(),strong
+0x00135180,CB3OnePlayerStage::Update(void),agrees (likely),CB3OnePlayerStage::Update(),likely
+0x00135280,CB3OnePlayerStage::Prepare(void),agrees (unverified),CB3OnePlayerStage::Prepare(),unverified
+0x00135620,CB3OnlineStage::Update(void),agrees (likely),CB3OnlineStage::Update(),likely
+0x00135740,CB3OnlineStage::Prepare(void),agrees (proven: same place between proven functions),CB3OnlineStage::Prepare(),proven: same place between proven functions
+0x00135A90,CB3Player::ResetLastInputTime(void),agrees (strong),CB3Player::ResetLastInputTime(),strong
+0x00135AF0,CB3Player::Prepare(void),agrees (strong),CB3Player::Prepare(),strong
+0x00135B40,CB3Player::Construct(void),"same function, other signature in the prototype map",CB3Player::Construct(int),strong
+0x001364B0,CB3ProfileManager::Prepare(void),agrees (unverified),CB3ProfileManager::Prepare(),unverified
+0x00136E00,CB3ProfileManager::Construct(void),agrees (likely),CB3ProfileManager::Construct(),likely
+0x00139C00,CB3Profile::Evaluate(void),"not in our table; the prototype has this name, not proven here",,
+0x00139F20,CB3MyBurnoutPage::PrepareStats(void),"not in our table; the prototype has this name, not proven here",,
+0x0013A660,CB3Profile::IsCarUnlocked(ulong),"not in our table; the prototype has this name, not proven here",,
+0x0013A760,CB3Profile::IsTrackUnlocked(ulong),"not in our table; the prototype has this name, not proven here",,
+0x0013AD70,"CB3Profile::IsChallengeLocked(int,bool)",no prototype counterpart,,
+0x0013B200,"CB3Profile::GetTakeDownTotal(ulong,bool)","not in our table; the prototype has this name, not proven here",,
+0x0013B570,CB3Profile::GetCrashDamageTotal(void),"not in our table; the prototype has this name, not proven here",,
+0x0013B660,CB3Profile::GetBurnoutPointTotal(void),"not in our table; the prototype has this name, not proven here",,
+0x0013CBC0,CB3TwoPlayerSplitScreenStage::Update(void),agrees (strong),CB3TwoPlayerSplitScreenStage::Update(),strong
+0x0013CC70,CB3TwoPlayerSplitScreenStage::Prepare(void),agrees (unverified),CB3TwoPlayerSplitScreenStage::Prepare(),unverified
+0x0013CE20,CB3AsyncDataLoader::Abort(uint),agrees (likely),CB3AsyncDataLoader::Abort(unsigned int),likely
+0x0013CFA0,"CB3AsyncDataLoader::QueueLoadRequest(char const *,bool *,void *,uint)",agrees (strong),"CB3AsyncDataLoader::QueueLoadRequest(const char*,bool*,void*,unsigned int)",strong
+0x0013D4D0,CB3AsyncDataLoader::Construct(void),agrees (strong),CB3AsyncDataLoader::Construct(),strong
+0x00142200,CB3AICar::UpdateAICheckpoint(void),agrees (strong),CB3AICar::UpdateAICheckpoint(),strong
+0x001423E0,CB3AICar::UpdateOutOfRange(void),agrees (strong),CB3AICar::UpdateOutOfRange(),strong
+0x00143AD0,CB3AICar::Release(void),agrees (strong),CB3AICar::Release(),strong
+0x00143B10,CB3AICar::Update(void),agrees (unverified),CB3AICar::Update(),unverified
+0x00143CE0,CB3AICar::Prepare(void),agrees (likely),CB3AICar::Prepare(),likely
+0x00143E80,CB3AICar::Construct(int),agrees (strong),CB3AICar::Construct(int),strong
+0x00144970,CB3AIDriver::GenerateProfile(void),agrees (unverified),CB3AIDriver::GenerateProfile(),unverified
+0x00144D00,CB3AIDriver::CalcDifficultyIndex(void),agrees (strong),CB3AIDriver::CalcDifficultyIndex(),strong
+0x001459E0,CB3AIDriver::Release(void),agrees (strong),CB3AIDriver::Release(),strong
+0x00145A10,CB3AIDriver::Update(void),agrees (likely),CB3AIDriver::Update(),likely
+0x00145D10,CB3AIDriver::Prepare(void),agrees (strong),CB3AIDriver::Prepare(),strong
+0x0014DFF0,CB3Burn::SetNumExtraBoostBarSegments(int),agrees (strong),CB3Burn::SetNumExtraBoostBarSegments(int),strong
+0x0014E3A0,CB3Burn::Update(CB3RaceCar *),agrees (likely),CB3Burn::Update(CB3RaceCar*),likely
+0x0014E500,CB3Burn::Prepare(EB3BoostBarSize),agrees (strong),CB3Burn::Prepare(EB3BoostBarSize),strong
+0x0014E5F0,CB3Burn::Construct(void),agrees (strong),CB3Burn::Construct(),strong
+0x0014E830,"CB3GameData::GetGameDataThreshold(float *,float *,float *)","agrees (proven: same code, unique)","CB3GameData::GetGameDataThreshold(float*,float*,float*)","proven: same code, unique"
+0x0014E880,CB3GameData::GetNumSplitTimeCheckpoints(void),agrees (strong),CB3GameData::GetNumSplitTimeCheckpoints(),strong
+0x0014E8A0,CB3GameData::GetNumStartLines(void),no prototype counterpart,,
+0x0014E8C0,CB3GameData::Draw(int),no prototype counterpart,,
+0x0014EBC0,CB3GameData::SetStageID(ulong),no prototype counterpart,,
+0x0014EBD0,CB3GameData::SetGameDataFileName(char *),no prototype counterpart,,
+0x0014ECB0,CB3GameData::Destruct(void),no prototype counterpart,,
+0x0014EDD0,CB3GameData::Release(void),no prototype counterpart,,
+0x0014EF60,CB3GameData::Update(void),no prototype counterpart,,
+0x0014F050,CB3GameData::Prepare(void),no prototype counterpart,,
+0x0014FF70,CB3GameData::Construct(void),no prototype counterpart,,
+0x00150100,CB3NetworkCar::Release(void),no prototype counterpart,,
+0x00150120,CB3NetworkCar::Prepare(void),no prototype counterpart,,
+0x00150240,CB3NetworkCar::Construct(int),no prototype counterpart,,
+0x00150280,CB3PlayerCar::SetAIControlled(bool),no prototype counterpart,,
+0x00150300,CB3PlayerCameraManager::GetCurrentUnit(void),"not in our table; the prototype has this name, not proven here",,
+0x00150640,CB3PlayerCar::StopCrashing(void),no prototype counterpart,,
+0x00150820,CB3PlayerCar::PrepareSound(void),no prototype counterpart,,
+0x00150890,CB3PlayerCar::Release(void),"not in our table; the prototype has this name, not proven here",,
+0x001508C0,CB3PlayerCar::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x00150BE0,CB3PlayerCar::Prepare(EPlayerCarIndex),"same function, other signature in the prototype map",CB3PlayerCar::Prepare(),unverified
+0x00150CB0,CB3PlayerCar::Construct(EPlayerCarIndex),"same function, other signature in the prototype map",CB3PlayerCar::Construct(int),unverified
+0x00150F20,CB3RaceCar::Register(void),agrees (strong),CB3RaceCar::Register(),strong
+0x00151100,CB3RaceCar::SetCarID(ulong),agrees (strong),CB3RaceCar::SetCarID(unsigned long),strong
+0x00151160,CB3RaceCar::RepositionCarInLane(void),agrees (likely),CB3RaceCar::RepositionCarInLane(),likely
+0x00151780,CB3RaceCar::SetFinished(EB3ScoreFinishState),agrees (likely),CB3RaceCar::SetFinished(EB3ScoreFinishState),likely
+0x00151A40,CB3RaceCar::Draw(void),agrees (strong),CB3RaceCar::Draw(),strong
+0x00151C40,CB3RaceCar::Release(void),agrees (strong),CB3RaceCar::Release(),strong
+0x00152770,CB3RaceCar::Update(void),agrees (unverified),CB3RaceCar::Update(),unverified
+0x00152AF0,CB3RaceCar::Prepare(void),agrees (strong),CB3RaceCar::Prepare(),strong
+0x00153160,CB3RaceCar::Construct(void),agrees (strong),CB3RaceCar::Construct(),strong
+0x001531C0,"CB3RacePosition::DrawPositionMarker(GtMathPs2::CGtV3d,ushort const *,int,CB3RaceCar *,CB3RaceCar *,float,bool,bool,bool,float)","same function, other signature in the prototype map","CB3RacePosition::DrawPositionMarker(GtMathPs2::CGtV3d,const unsigned short*,int,CB3RaceCar*,CB3RaceCar*,float,bool,bool,bool,fl",unverified
+0x00154090,"CB3RacePosition::DrawSingleVehicleValue(CB3VehiclePhysics *,int,int,float,bool)",one function off: the prototype map puts this name at 0x1540A0,,
+0x00154220,CB3RacePosition::DrawTrafficValues(void),one function off: the prototype map puts this name at 0x154230,,
+0x00154340,CB3RacePosition::Draw(int),one function off: the prototype map puts this name at 0x154350,,
+0x00155010,"CB3ReplaySystem::NextFrame(CDrivingControls *,bool)",one function off: the prototype map puts this name at 0x155020,,
+0x00155200,CB3ReplaySystem::Construct(void),one function off: the prototype map puts this name at 0x155210,,
+0x001553E0,CB3Score::OnTakeDown(CB3RaceCar *),one function off: the prototype map puts this name at 0x1553F0,,
+0x00155A30,CB3Score::SetFinished(EB3ScoreFinishState),"not in our table; the prototype has this name, not proven here",,
+0x00156260,"CB3Score::AddScore(int,int)",agrees (likely),"CB3Score::AddScore(int,int)",likely
+0x0015A1F0,CB3Score::IncrementLapCount(void),"not in our table; the prototype has this name, not proven here",,
+0x0015A750,CB3Score::GetRaceCheckpointTime(int),agrees (likely),CB3Score::GetRaceCheckpointTime(int),likely
+0x0015AFC0,CB3Score::Release(void),agrees (strong),CB3Score::Release(),strong
+0x0015B000,CB3Score::Update(void),agrees (unverified),CB3Score::Update(),unverified
+0x0015C340,CB3Score::Prepare(void),"same function, other signature in the prototype map",CB3Score::Prepare(int),unverified
+0x0015C9A0,CB3FinishedScore::Prepare(int),agrees (likely),CB3FinishedScore::Prepare(int),likely
+0x0015CAC0,CB3Score::Construct(void),agrees (strong),CB3Score::Construct(),strong
+0x0015E340,"CB3SplitTimeCheckpoint::DrawCheckpoint(CGtTexture *,GtMathPs2::CGtV4d)","agrees (proven: same code, unique)","CB3SplitTimeCheckpoint::DrawCheckpoint(CGtTexture*,GtMathPs2::CGtV4d)","proven: same code, unique"
+0x0015E5E0,CB3SplitTimeCheckpoint::Draw(void),"agrees (proven: same code, unique)",CB3SplitTimeCheckpoint::Draw(),"proven: same code, unique"
+0x0015E720,CB3StartFinishLine::Draw(int),agrees (likely),CB3StartFinishLine::Draw(int),likely
+0x001605C0,CB3TrafficParam::CalcFormationSpeedChange(void),agrees (strong),CB3TrafficParam::CalcFormationSpeedChange(),strong
+0x00160A60,"CB3TrafficParam::GetParamInfoFromSplitter(CB3TrafficLane *,int)",agrees (strong),"CB3TrafficParam::GetParamInfoFromSplitter(CB3TrafficLane*,int)",strong
+0x00160E50,CB3TrafficParam::ResetMemberVariables(void),"agrees (proven: same code, unique)",CB3TrafficParam::ResetMemberVariables(),"proven: same code, unique"
+0x00161310,CB3TrafficParam::RemoveFromTrafficLights(void),agrees (proven: same place between proven functions),CB3TrafficParam::RemoveFromTrafficLights(),proven: same place between proven functions
+0x001613B0,CB3TrafficParam::Remove(void),agrees (proven: same place between proven functions),CB3TrafficParam::Remove(),proven: same place between proven functions
+0x00161B50,"CB3TrafficParam::CalcSpeed(int,bool,bool)",agrees (strong),"CB3TrafficParam::CalcSpeed(int,bool,bool)",strong
+0x00162E80,CB3TrafficParam::Update(bool),no prototype counterpart,,
+0x001631F0,CB3TrafficSystem::VehicleIsValid(uchar),no prototype counterpart,,
+0x001632C0,CB3TrafficSystem::ResetMemberVariables(void),no prototype counterpart,,
+0x00163700,CB3TrafficSystem::UseNextTriggerData(float),no prototype counterpart,,
+0x00163DD0,CB3TrafficSystem::AddToDeadTrafficParamList(CB3TrafficParam *),no prototype counterpart,,
+0x00163E90,"CB3TrafficSystem::AddToDeadTrafficList(CB3TrafficVehicle *,bool)",no prototype counterpart,,
+0x001645E0,"CB3TrafficSystem::UpdateHulls(int,float,int)",agrees (strong),"CB3TrafficSystem::UpdateHulls(int,float,int)",strong
+0x00164A50,"CB3TrafficSystem::Generate(ETrafficVehicleCategories,ulong,ETrafficVehicleCategories,ulong,CB3TrafficLane *,float,float,float,uchar,uchar,uchar)","same function, other signature in the prototype map","CB3TrafficSystem::Generate(ETrafficVehicleCategories,unsigned long,ETrafficVehicleCategories,unsigned long,CB3TrafficLane*,floa",unverified
+0x00165A40,"CB3TrafficSystem::GenerateInitialTraffic(CB3StartFinishLine *,int)",agrees (strong),"CB3TrafficSystem::GenerateInitialTraffic(CB3StartFinishLine*,int)",strong
+0x00166160,CB3TrafficSystem::Update(void),agrees (unverified),CB3TrafficSystem::Update(),unverified
+0x00166DB0,CB3TrafficSystem::Release(void),agrees (strong),CB3TrafficSystem::Release(),strong
+0x00166F50,CB3TrafficSystem::Prepare(void),agrees (strong),CB3TrafficSystem::Prepare(),strong
+0x00167B90,CB3TrafficSystem::Construct(void),agrees (strong),CB3TrafficSystem::Construct(),strong
+0x00167D10,CB3TrafficVehicle::StartCrashing(void),agrees (unverified),CB3TrafficVehicle::StartCrashing(),unverified
+0x001717D0,"CB3TrafficVehicle::DoTrafficBehaviour(CB3TrafficRaceCarInfo *,int)",agrees (strong),"CB3TrafficVehicle::DoTrafficBehaviour(CB3TrafficRaceCarInfo*,int)",strong
+0x00171A00,"CB3TrafficVehicle::ChangeLane(CB3TrafficLane *,float)",agrees (likely),"CB3TrafficVehicle::ChangeLane(CB3TrafficLane*,float)",likely
+0x00171BA0,CB3TrafficVehicle::CheckForChangeLane(void),agrees (strong),CB3TrafficVehicle::CheckForChangeLane(),strong
+0x00172000,CB3TrafficVehicle::RemoveFromLanes(void),"agrees (proven: same code, unique)",CB3TrafficVehicle::RemoveFromLanes(),"proven: same code, unique"
+0x00172E40,CB3TrafficVehicle::UpdatePosition(void),agrees (proven: same place between proven functions),CB3TrafficVehicle::UpdatePosition(),proven: same place between proven functions
+0x00173950,CB3TrafficVehicle::InitalisePosition(void),agrees (proven: same place between proven functions),CB3TrafficVehicle::InitalisePosition(),proven: same place between proven functions
+0x00173D30,CB3TrafficVehicle::Remove(void),agrees (likely),CB3TrafficVehicle::Remove(),likely
+0x001864F0,"CB3TrafficVehicle::Create(ETrafficVehicleCategories,uchar)",agrees (proven: same place between proven functions),"CB3TrafficVehicle::Create(ETrafficVehicleCategories,unsigned char)",proven: same place between proven functions
+0x00186850,"CB3TrafficVehicle::Update(CB3TrafficRaceCarInfo *,int)",agrees (likely),"CB3TrafficVehicle::Update(CB3TrafficRaceCarInfo*,int)",likely
+0x00199A20,"CB3World::RenderRaceCars(int,int)",agrees (likely),"CB3World::RenderRaceCars(int,int)",likely
+0x00199DC0,CB3World::UpdateSound(void),agrees (strong),CB3World::UpdateSound(),strong
+0x00199E00,CB3World::SetTrackID(ulong),"agrees (proven: same code, unique)",CB3World::SetTrackID(unsigned long),"proven: same code, unique"
+0x00199EB0,"CB3World::SetCarNumbers(int,int,int)",agrees (strong),"CB3World::SetCarNumbers(int,int,int)",strong
+0x0019A1D0,CB3World::Destruct(void),agrees (strong),CB3World::Destruct(),strong
+0x0019A2E0,CB3World::Release(void),agrees (unverified),CB3World::Release(),unverified
+0x0019A550,CB3World::Update(void),agrees (unverified),CB3World::Update(),unverified
+0x0019A950,CB3World::Prepare(bool),"same function, other signature in the prototype map",CB3World::Prepare(),unverified
+0x0019B380,CB3World::Construct(void),agrees (strong),CB3World::Construct(),strong
+0x0019B6B0,CB3TrailEmitterData::CB3TrailEmitterData(void),agrees (likely),CB3TrailEmitterData::CB3TrailEmitterData(),likely
+0x0019B6C0,GtMathPs2::CGtV3d::CGtV3d(void),"agrees (proven: same code, same callers)",GtMathPs2::CGtV3d::CGtV3d(),"proven: same code, same callers"
+0x0019B6D0,GtMathPs2::CGtMatrix3x3::CGtMatrix3x3(void),agrees (likely),GtMathPs2::CGtMatrix3x3::CGtMatrix3x3(),likely
+0x0019B6E0,CB3WrongWayWall::Render(void),agrees (strong),CB3WrongWayWall::Render(),strong
+0x0019C120,CB3WrongWayWall::Update(CB3RaceCar *),agrees (unverified),CB3WrongWayWall::Update(CB3RaceCar*),unverified
+0x0019DD00,CB3GraphicsManagerBase::DrawBootLoadingScreen(float),"not in our table; the prototype has this name, not proven here",,
+0x0019E8C0,CB3GraphicsManagerBase::SetViewportFullScreen(int),name not in the prototype map; the map names this function differently,CB3GraphicsManagerBase::SetViewportsSinglePlayer(),unverified
+0x0019E990,CB3GraphicsManagerBase::SetViewportsSinglePlayer(void),one function off: the prototype map puts this name at 0x19E8C0,,
+0x0019E9A0,CB3GraphicsManagerBase::SetDefaultLODSwitchDistances(void),agrees (strong),CB3GraphicsManagerBase::SetDefaultLODSwitchDistances(),strong
+0x0019EA30,CB3GraphicsManagerBase::CloseViewport(void),agrees (strong),CB3GraphicsManagerBase::CloseViewport(),strong
+0x0019EA70,"CB3GraphicsManagerBase::AttachCameraToViewport(EB3ViewportSelection,CGtCamera *)",agrees (strong),"CB3GraphicsManagerBase::AttachCameraToViewport(EB3ViewportSelection,CGtCamera*)",strong
+0x0019EAC0,CB3GraphicsManagerBase::UpdateViewport(EB3ViewportSelection),agrees (strong),CB3GraphicsManagerBase::UpdateViewport(EB3ViewportSelection),strong
+0x0019EBF0,CB3GraphicsManagerBase::Prepare(void),agrees (strong),CB3GraphicsManagerBase::Prepare(),strong
+0x0019EE40,CB3GraphicsManagerBase::Construct(void),agrees (unverified),CB3GraphicsManagerBase::Construct(),unverified
+0x0019F200,CB3GraphicsManagerBase::DestructViewports(void),no prototype counterpart,,
+0x0019F240,CB3GraphicsManagerBase::ConstructViewports(void),no prototype counterpart,,
+0x0019F3D0,CB3HUDComponent::AdjustScalingForSplitScreen(void),"agrees (proven: same code, unique)",CB3HUDComponent::AdjustScalingForSplitScreen(),"proven: same code, unique"
+0x0019F4B0,"CB3HUDComponent::UpdateTransition(float,bool,EHUDMode,EHUDMode)",agrees (proven: same place between proven functions),"CB3HUDComponent::UpdateTransition(float,bool,EHUDMode,EHUDMode)",proven: same place between proven functions
+0x0019F6A0,"CB3HUDComponent::Prepare(int,int,int,EPlayerCarIndex,EHUDAlign,int)","same function, other signature in the prototype map","CB3HUDComponent::Prepare(int,int,int,int,EHUDAlign,int)",proven: same place between proven functions
+0x001A0020,"CB3HUDManager::AddComponent(CB3HUDComponent *,int,int,int,int)",agrees (strong),"CB3HUDManager::AddComponent(CB3HUDComponent*,int,int,int,int)",strong
+0x001A00B0,CB3HUD::SetHUDMode(EHUDMode),agrees (strong),CB3HUD::SetHUDMode(EHUDMode),strong
+0x001A02C0,CB3HUD::GetAlignPos(EHUDAlign),agrees (strong),CB3HUD::GetAlignPos(EHUDAlign),strong
+0x001A03A0,CB3HUD::Update(float),agrees (strong),CB3HUD::Update(float),strong
+0x001A0560,CB3HUD::Prepare(void),no prototype counterpart,,
+0x001A0660,CB3HUDManager::SetNumPlayers(int),agrees (unverified),CB3HUDManager::SetNumPlayers(int),unverified
+0x001A0790,CB3HUDManager::Render(void),"agrees (proven: same code, unique)",CB3HUDManager::Render(),"proven: same code, unique"
+0x001A09A0,CB3HUDManager::PrepareCrashComponents(void),agrees (unverified),CB3HUDManager::PrepareCrashComponents(),unverified
+0x001A0AF0,CB3HUDManager::PrepareNormalComponents(void),agrees (likely),CB3HUDManager::PrepareNormalComponents(),likely
+0x001A1210,CB3HUDManager::PrepareScoreList(void),agrees (unverified),CB3HUDManager::PrepareScoreList(),unverified
+0x001A12B0,CB3HUDManager::Prepare(void),agrees (unverified),CB3HUDManager::Prepare(),unverified
+0x001A1920,CB3HUDManager::Construct(void),agrees (unverified),CB3HUDManager::Construct(),unverified
+0x001A1CD0,CB3HUDScore::UpdateScoreObject(float),agrees (likely),CB3HUDScore::UpdateScoreObject(float),likely
+0x001A2260,CB3HUDScore::Update(float),no prototype counterpart,,
+0x001A22A0,"CB3HUDScore::UpdateMessageGeneric(CB3HUDScore::CScoreMessage *,CB3HUDPrimaryMessage::EMessageType,int,const ushort *,float)",no prototype counterpart,,
+0x001A2700,CB3HUDScore::UpdateSmallMessage(float),no prototype counterpart,,
+0x001A37A0,"CB3HUDScore::Prepare(int,EHUDAlign,int,int)",no prototype counterpart,,
+0x001A3B30,CB3HUDSpeedo::Update(float),no prototype counterpart,,
+0x001A3C70,"CB3HUDSpeedo::Prepare(EPlayerCarIndex,EHUDAlign,int)",no prototype counterpart,,
+0x001A3F40,"CB3HUDBoostBar::UpdateTransition(float,bool,EHUDMode,EHUDMode)",no prototype counterpart,,
+0x001A45F0,"CB3HUDBoostBar::UpdateBoostMessage(CB3HUDBoostBar::EMessageType,CB3ScoreCategory const *,float,float)",no prototype counterpart,,
+0x001A4900,CB3HUDBoostBar::BarUpdate(float),agrees (unverified),CB3HUDBoostBar::BarUpdate(float),unverified
+0x001A52D0,"CB3HUDBoostBar::Prepare(int,EHUDAlign,int,bool,CB3HUDHeading *const)","same function, other signature in the prototype map","CB3HUDBoostBar::Prepare(int,EHUDAlign,int,bool,const CB3HUDHeading*)",likely
+0x001A5740,"C2dObjectBoostBarMessage::Render(CGt2dObject::CGt2dObjectSpace const &,void const *)",name not in the prototype map; the map names this function differently,"C2dObjectBoostBarMessage::_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)",unverified
+0x001AB010,CB3CollidingBody::ClearAccumulatedValues(void),agrees (strong),CB3CollidingBody::ClearAccumulatedValues(),strong
+0x001AB610,CB3CollidingBody::SetInitialMatrix(GtMathPs2::CGtMatrix3x4 const &),agrees (likely),CB3CollidingBody::SetInitialMatrix(const GtMathPs2::CGtMatrix3x4&),likely
+0x001ABDD0,CB3CollidingBody::StopCrashing(void),agrees (strong),CB3CollidingBody::StopCrashing(),strong
+0x001AC470,CB3CollidingBody::Update(float),agrees (likely),CB3CollidingBody::Update(float),likely
+0x001AD380,CB3CollidingBody::Prepare(void),agrees (unverified),CB3CollidingBody::Prepare(),unverified
+0x001AD890,CB3CrashActionDirector::HandleCrashingVehicleWorldCollision(CB3VehiclePhysics *),agrees (strong),CB3CrashActionDirector::HandleCrashingVehicleWorldCollision(CB3VehiclePhysics*),strong
+0x001ADA00,"CB3CrashActionDirector::DoTankerExplosion(CB3TrafficPhysics *,float,CGtAxisAlignedBox *,bool)",no prototype counterpart,,
+0x001ADC70,CB3CrashActionDirector::HandleCrashingVehicleVehicleCollision(CB3CollidingPair *),agrees (unverified),CB3CrashActionDirector::HandleCrashingVehicleVehicleCollision(CB3CollidingPair*),unverified
+0x001AE3F0,"CB3CrashActionDirector::ExplodeVehicle(GtMathPs2::CGtV3d,CB3VehiclePhysics *)",agrees (strong),"CB3CrashActionDirector::ExplodeVehicle(GtMathPs2::CGtV3d,CB3VehiclePhysics*)",strong
+0x001AE4A0,"CB3CrashActionDirector::SetSympatheticTraffic(int,CB3VehiclePhysics *)",agrees (strong),"CB3CrashActionDirector::SetSympatheticTraffic(int,CB3VehiclePhysics*)",strong
+0x001AE500,"CB3CrashActionDirector::StartTrafficCrashing(CB3TrafficPhysics *,int)",agrees (strong),"CB3CrashActionDirector::StartTrafficCrashing(CB3TrafficPhysics*,int)",strong
+0x001AE660,CB3CrashActionDirector::StopRaceCarCrashing(int),agrees (strong),CB3CrashActionDirector::StopRaceCarCrashing(int),strong
+0x001AF450,"CB3CrashActionDirector::StartRaceCarCrashing(CB3RaceCarPhysics *,int,CB3CollidingPair *,CB3CrashStartInfo *)",agrees (unverified),"CB3CrashActionDirector::StartRaceCarCrashing(CB3RaceCarPhysics*,int,CB3CollidingPair*,CB3CrashStartInfo*)",unverified
+0x001B1240,"CB3CrashActionDirector::UpdateTraffic(CB3CADTrafficData *,CB3TrafficPhysics *,float)",agrees (strong),"CB3CrashActionDirector::UpdateTraffic(CB3CADTrafficData*,CB3TrafficPhysics*,float)",strong
+0x001B1CC0,CB3CrashActionDirector::Update(float),agrees (unverified),CB3CrashActionDirector::Update(float),unverified
+0x001B20D0,"CB3CrashActionDirector::UpdateRaceCar(int,CB3RaceCarPhysics *,float)",agrees (strong),"CB3CrashActionDirector::UpdateRaceCar(int,CB3RaceCarPhysics*,float)",strong
+0x001B2760,CB3CrashActionDirector::Prepare(void),agrees (strong),CB3CrashActionDirector::Prepare(),strong
+0x001B2A00,CB3CrashActionDirector::Construct(void),agrees (unverified),CB3CrashActionDirector::Construct(),unverified
+0x001B2A40,CB3PhysicsManager::StopRaceCarBodyPartsCrashing(int),agrees (likely),CB3PhysicsManager::StopRaceCarBodyPartsCrashing(int),likely
+0x001B2BA0,CB3PhysicsManager::DoCrashBreaker(CB3VehiclePhysics *),"not in our table; the prototype has this name, not proven here",,
+0x001B3EA0,CB3PhysicsManager::UpdateNearMissArray(void),agrees (strong),CB3PhysicsManager::UpdateNearMissArray(),strong
+0x001B3F90,CB3PhysicsManager::ClearCrashingBodies(int),agrees (strong),CB3PhysicsManager::ClearCrashingBodies(int),strong
+0x001B41D0,"CB3PhysicsManager::CrashTrafficBody(CB3ActiveBody *,int,int,bool,bool,bool)",agrees (strong),"CB3PhysicsManager::CrashTrafficBody(CB3ActiveBody*,int,int,bool,bool,bool)",strong
+0x001B4530,CB3PhysicsManager::DynamisePropBody(CB3ActiveBody *),agrees (strong),CB3PhysicsManager::DynamisePropBody(CB3ActiveBody*),strong
+0x001B4810,"CB3PhysicsManager::AllowCollision(CB3ActiveBody &,CB3ActiveBody &)",agrees (unverified),"CB3PhysicsManager::AllowCollision(CB3ActiveBody&,CB3ActiveBody&)",unverified
+0x001B4AB0,CB3PhysicsManager::GetIntervals(CB3ActiveBody *),"agrees (proven: same code, unique)",CB3PhysicsManager::GetIntervals(CB3ActiveBody*),"proven: same code, unique"
+0x001B4BF0,CB3PhysicsManager::BodyBodyResponse(CB3CollidingPair *),"not in our table; the prototype has this name, not proven here",,
+0x001B5730,CB3PhysicsManager::BodyTrafficResponse(CB3CollidingPair *),agrees (strong),CB3PhysicsManager::BodyTrafficResponse(CB3CollidingPair*),strong
+0x001B5AA0,CB3PhysicsManager::VehicleTrafficResponse(CB3CollidingPair *),"not in our table; the prototype has this name, not proven here",,
+0x001B7220,CB3PhysicsManager::CollideAndRespondPair(CB3CollidingPair *),agrees (unverified),CB3PhysicsManager::CollideAndRespondPair(CB3CollidingPair*),unverified
+0x001B7C00,CB3PhysicsManager::ExtractActiveBody(int),agrees (strong),CB3PhysicsManager::ExtractActiveBody(int),strong
+0x001B7E10,CB3PhysicsManager::InsertActiveBody(int),agrees (unverified),CB3PhysicsManager::InsertActiveBody(int),unverified
+0x001B7F30,CB3PhysicsManager::UpdateActiveBodyList(void),agrees (strong),CB3PhysicsManager::UpdateActiveBodyList(),strong
+0x001B82F0,"CB3PhysicsManager::InduceTrafficVehicleCrash(CB3TrafficVehicle *,CB3VehiclePhysics *,bool)",agrees (strong),"CB3PhysicsManager::InduceTrafficVehicleCrash(CB3TrafficVehicle*,CB3VehiclePhysics*,bool)",strong
+0x001B84A0,CB3PhysicsManager::RemoveTrafficVehicle(CB3TrafficVehicle *),agrees (likely),CB3PhysicsManager::RemoveTrafficVehicle(CB3TrafficVehicle*),likely
+0x001B85F0,CB3PhysicsManager::AddTrafficVehicle(CB3TrafficVehicle *),agrees (strong),CB3PhysicsManager::AddTrafficVehicle(CB3TrafficVehicle*),strong
+0x001B86A0,"CB3PhysicsManager::AddBodyPart(CB3VehiclePhysics *,int,EBodyPartType)",agrees (unverified),"CB3PhysicsManager::AddBodyPart(CB3VehiclePhysics*,int,EBodyPartType)",unverified
+0x001B89D0,"CB3PhysicsManager::AddRaceCar(CB3RaceCar *,int)",agrees (strong),"CB3PhysicsManager::AddRaceCar(CB3RaceCar*,int)",strong
+0x001B8D20,CB3PhysicsManager::Release(void),agrees (unverified),CB3PhysicsManager::Release(),unverified
+0x001B8EF0,CB3PhysicsManager::PostEffectsUpdate(void),agrees (strong),CB3PhysicsManager::PostEffectsUpdate(),strong
+0x001B8F00,CB3PhysicsManager::Update(float),agrees (likely),CB3PhysicsManager::Update(float),likely
+0x001B9820,"QSortCallback(void const *,void const *)",no prototype counterpart,,
+0x001B9850,CB3PhysicsManager::Prepare(void),agrees (unverified),CB3PhysicsManager::Prepare(),unverified
+0x001BA280,CB3PhysicsManager::Construct(void),agrees (unverified),CB3PhysicsManager::Construct(),unverified
+0x001BA950,CB3ActiveBody::GetInteractionTypeAgainst(CB3ActiveBody *const),"same function, other signature in the prototype map",CB3ActiveBody::GetInteractionTypeAgainst(CB3ActiveBody*) const,strong
+0x001BAA30,CB3ActiveBody::GetNetworkCollBodyType(void),agrees (strong),CB3ActiveBody::GetNetworkCollBodyType() const,strong
+0x001BAAF0,"CB3PlayerCarPhysics::DoCrashBreaker(float,bool)","same function, other signature in the prototype map",CB3PlayerCarPhysics::DoCrashBreaker(),unverified
+0x001BAD00,CB3PlayerCarPhysics::ActivateCrashBreaker(void),name not in the prototype map; the map names this function differently,CB3PlayerCarPhysics::ActiveateCrashBreaker(),unverified
+0x001BB250,"CB3PlayerCarPhysics::StartCrashing(int,CB3CrashStartInfo *)","not in our table; the prototype has this name, not proven here",,
+0x001BB6E0,CB3PlayerCarPhysics::GetCrashingDrivingControls(void),"not in our table; the prototype has this name, not proven here",,
+0x001BD020,CB3PlayerCarPhysics::GetDrivingControls(void),agrees (unverified),CB3PlayerCarPhysics::GetDrivingControls(),unverified
+0x001BD6A0,CB3PlayerCarPhysics::Update(float),"not in our table; the prototype has this name, not proven here",,
+0x001BDE50,CB3PlayerCarPhysics::Prepare(CB3RaceCar *),agrees (strong),CB3PlayerCarPhysics::Prepare(CB3RaceCar*),strong
+0x001BDF10,CB3PlayerCarPhysics::Construct(void),agrees (strong),CB3PlayerCarPhysics::Construct(),strong
+0x001BE3C0,"CB3PropPhysics::Prepare(CB3Prop *,GtMathPs2::CGtMatrix3x4 *,CGtAxisAlignedBox const &)","not in our table; the prototype has this name, not proven here",,
+0x001BE8F0,CB3PropPhysics::Construct(void),agrees (strong),CB3PropPhysics::Construct(),strong
+0x001BE990,CB3RaceCarPhysics::DoCrashBreaker(bool),"not in our table; the prototype has this name, not proven here",,
+0x001BEAA0,"CB3RaceCarPhysics::ApplyNonSpinoutPositionedImpulse(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)",agrees (strong),"CB3RaceCarPhysics::ApplyNonSpinoutPositionedImpulse(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)",strong
+0x001BEBD0,"CB3RaceCarPhysics::ApplyNonSpinoutPositionedForce(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)",agrees (strong),"CB3RaceCarPhysics::ApplyNonSpinoutPositionedForce(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)",strong
+0x001BED00,CB3RaceCarPhysics::RollingStart(float),agrees (unverified),CB3RaceCarPhysics::RollingStart(float),unverified
+0x001BFC70,"CB3RaceCarPhysics::StartCrashing(int,CB3CrashStartInfo *)",agrees (unverified),"CB3RaceCarPhysics::StartCrashing(int,CB3CrashStartInfo*)",unverified
+0x001BFE80,"CB3RaceCarPhysics::ResetOnTrack(bool,CB3RaceCarPhysics *)",agrees (unverified),"CB3RaceCarPhysics::ResetOnTrack(bool,CB3RaceCarPhysics*)",unverified
+0x001C44E0,"CB3RaceCarPhysics::LightweightUpdate(float,int)",agrees (strong),"CB3RaceCarPhysics::LightweightUpdate(float,int)",strong
+0x001C4890,CB3RaceCarPhysics::Update(float),no prototype counterpart,,
+0x001C5080,CB3RaceCarPhysics::CacheWorldTriangles(int),no prototype counterpart,,
+0x001C5430,CB3RaceCarPhysics::DoDrivingWorldCollision(void),no prototype counterpart,,
+0x001C6600,CB3RaceCarPhysics::Prepare(CB3RaceCar *),no prototype counterpart,,
+0x001C6F90,"CB3Transmission::Update(float,float,int,int)",no prototype counterpart,,
+0x001C7880,CB3Transmission::Prepare(CB3RaceCarPhysics *),no prototype counterpart,,
+0x001CAD30,CB3VehiclePhysics::UpdateCrashSteering(float),agrees (likely),CB3VehiclePhysics::UpdateCrashSteering(float),likely
+0x001CBA30,CB3VehiclePhysics::StopCrashing(void),"not in our table; the prototype has this name, not proven here",,
+0x001CC4C0,"CB3VehiclePhysics::FireAirRamUpwards(uint,float,bool)","agrees (proven: same code, unique)","CB3VehiclePhysics::FireAirRamUpwards(unsigned int,float,bool)","proven: same code, unique"
+0x001CC520,"CB3VehiclePhysics::FireAirRam(uint,float,bool)",agrees (strong),"CB3VehiclePhysics::FireAirRam(unsigned int,float,bool)",strong
+0x001CC580,"CB3VehiclePhysics::FireAirRamWithDirection(uint,float,GtMathPs2::CGtV3d,bool)",agrees (strong),"CB3VehiclePhysics::FireAirRamWithDirection(unsigned int,float,GtMathPs2::CGtV3d,bool)",strong
+0x001CC900,CB3VehiclePhysics::UpdateSuspension(float),agrees (unverified),CB3VehiclePhysics::UpdateSuspension(float),unverified
+0x001CE470,CB3VehiclePhysics::Update(float),agrees (unverified),CB3VehiclePhysics::Update(float),unverified
+0x001CF2B0,"CB3VehiclePhysics::Prepare(CB3VehicleEssentialParams *,CB3VehicleParams *)",agrees (strong),"CB3VehiclePhysics::Prepare(CB3VehicleEssentialParams*,CB3VehicleParams*)",strong
+0x001CFC00,CB3VehiclePhysics::Prepare(void),agrees (strong),CB3VehiclePhysics::Prepare(),strong
+0x001D0B50,CB3AICarPhysics::UpdateRelativePlayer(void),no prototype counterpart,,
+0x001D0D00,CB3AICarPhysics::SetAIInRange(void),no prototype counterpart,,
+0x001D1130,CB3AICarPhysics::UpdateAttributes(void),no prototype counterpart,,
+0x001D2960,CB3AICarPhysics::Update(float),agrees (unverified),CB3AICarPhysics::Update(float),unverified
+0x001D2C10,CB3AICarPhysics::Prepare(CB3RaceCar *),agrees (unverified),CB3AICarPhysics::Prepare(CB3RaceCar*),unverified
+0x001D2D10,CB3AICarPhysics::Construct(void),agrees (strong),CB3AICarPhysics::Construct(),strong
+0x001D36E0,"CGtFilePS2DVD::Open(CGTFileSystem *,char const *,uint)",agrees (proven: same place between proven functions),"CGtFilePS2DVD::Open(CGTFileSystem*,const char*,unsigned int)",proven: same place between proven functions
+0x001D3830,CGtFileSystemPS2DVD::GetFileObject(uint),"agrees (proven: same code, unique)",CGtFileSystemPS2DVD::GetFileObject(unsigned int),"proven: same code, unique"
+0x001D3850,"CGtFileSystemPS2DVD::Init(uint,CGtFilePS2DVD *,CGtFileBufferPS2DVD *,char const *,int,int,int,char *)",agrees (proven: same place between proven functions),"CGtFileSystemPS2DVD::Init(unsigned int,CGtFilePS2DVD*,CGtFileBufferPS2DVD*,const char*,int,int,int,char*)",proven: same place between proven functions
+0x001D3A50,CGtTimer::SetSlowMo(int),"agrees (proven: same code, unique)",CGtTimer::SetSlowMo(int),"proven: same code, unique"
+0x001D3A60,CGtTimer::Update(void),agrees (proven: same place between proven functions),CGtTimer::Update(),proven: same place between proven functions
+0x001D3C50,CGtTimer::Start(void),"agrees (proven: same code, unique)",CGtTimer::Start(),"proven: same code, unique"
+0x001D3C90,CGtTimer::Prepare(void),"agrees (proven: same code, unique)",CGtTimer::Prepare(),"proven: same code, unique"
+0x001D3CE0,CGtTimer::Construct(void),"agrees (proven: same code, unique)",CGtTimer::Construct(),"proven: same code, unique"
+0x001D3D30,CGtTimer::PrepareTimerServices(int),"agrees (proven: same code, unique)",CGtTimer::PrepareTimerServices(int),"proven: same code, unique"
+0x001D3D70,BootNFSUnderDemo,no prototype counterpart,,
+0x001D3EE0,CB3Game::SetFrontendFrameRate(bool),agrees (strong),CB3Game::SetFrontendFrameRate(bool),strong
+0x001D3FF0,CB3Game::PreparePowerOff(void),"not in our table; the prototype has this name, not proven here",,
+0x001D4020,CB3Game::CheckPowerOff(void),no prototype counterpart,,
+0x001D41E0,CB3Game::PrepareHardware(void),no prototype counterpart,,
+0x001D45B0,CB3Game::ConstructHardware(void),no prototype counterpart,,
+0x001D4680,"CGt2dFrameHierarchy::ConstructFrameData(int,void *,uint)",no prototype counterpart,,
+0x001D4F90,CGt2dFrameHierarchy::Prepare(void),"agrees (proven: same code, unique)",CGt2dFrameHierarchy::Prepare(),"proven: same code, unique"
+0x001D51C0,CGt2dFrame::Clean(void),"agrees (proven: same code, unique)",CGt2dFrame::Clean(),"proven: same code, unique"
+0x001D53B0,CGt2dFrame::Sync(CGt2dFrame::CGt2dFrameSpace const &),agrees (strong),CGt2dFrame::Sync(const CGt2dFrame::CGt2dFrameSpace&),strong
+0x001D5B10,CGt2dFrame::Destruct(void),agrees (strong),CGt2dFrame::Destruct(),strong
+0x001D5CE0,"CGt2dFrame::ConstructChild(GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV4d)","not in our table; the prototype has this name, not proven here",,
+0x001D5D60,CGt2dFrame::ConstructChild(void),agrees (unverified),CGt2dFrame::ConstructChild(),unverified
+0x001D5DC0,CGt2dFrame::CGt2dFrameSpace::SetIdentity(void),"agrees (proven: same code, unique)",CGt2dFrame::CGt2dFrameSpace::SetIdentity(),"proven: same code, unique"
+0x001D5E00,"CGt2dObject::SetPos(GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &)",agrees (proven: same place between proven functions),"CGt2dObject::SetPos(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)",proven: same place between proven functions
+0x001D5E70,"CGt2dObject::Prepare(GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV4d,void (*)(CGt2dObject::CGt2dObjectSpace const &,void const *),uint,uint)","same function, other signature in the prototype map","CGt2dObject::Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,void (*)(const CGt2dObject::CGt2dObjec","proven: same code, unique"
+0x001D60B0,"CGt2dObjectImage::Prepare(GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV4d,CGtTexture *,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,int)","same function, other signature in the prototype map","CGt2dObjectImage::Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CGtTextu",proven: same place between proven functions
+0x001D7560,"CGt2dScene::DestructObject(int,CGt2dObject *)","agrees (proven: same code, unique)","CGt2dScene::DestructObject(int,CGt2dObject*)","proven: same code, unique"
+0x001D7580,"CGt2dScene::ConstructObject(int,CGt2dFrame *)","agrees (proven: same code, unique)","CGt2dScene::ConstructObject(int,CGt2dFrame*)","proven: same code, unique"
+0x001D75C0,CGt2dScene::Render(void),agrees (proven: same place between proven functions),CGt2dScene::Render(),proven: same place between proven functions
+0x001D78F0,CGt2dScene::Prepare(void),agrees (proven: same place between proven functions),CGt2dScene::Prepare(),proven: same place between proven functions
+0x001D7960,"CGt2dScene::Construct(int,int,int,void *,uint)","agrees (proven: same code, unique)","CGt2dScene::Construct(int,int,int,void*,unsigned int)","proven: same code, unique"
+0x001D7A70,CGt2dFont::MakeNumberCharactersFixedWidth(void),agrees (proven: same place between proven functions),CGt2dFont::MakeNumberCharactersFixedWidth(),proven: same place between proven functions
+0x001D7E10,"CGt2dFont::GetStringStartAndEnd(ushort const *,float,ushort const **,ushort const **,bool)",agrees (proven: same place between proven functions),"CGt2dFont::GetStringStartAndEnd(const unsigned short*,float,const unsigned short**,const unsigned short**,bool) const",proven: same place between proven functions
+0x001D8150,CGt2dFont::GetStringWidth(const ushort *),"agrees (proven: same code, unique)",CGt2dFont::GetStringWidth(const unsigned short*) const,"proven: same code, unique"
+0x001D8210,CGt2dFont::Prepare(CGtTexture *),agrees (strong),CGt2dFont::Prepare(CGtTexture*),strong
+0x001D8B88,RwOsGetFileInterface,"agrees (proven: same code, same callers)",RwOsGetFileInterface,"proven: same code, same callers"
+0x001E1FD0,RwCameraEndUpdate,"agrees (proven: same code, unique)",RwCameraEndUpdate,"proven: same code, unique"
+0x001E1FF0,RwCameraClear,"agrees (proven: same code, unique)",RwCameraClear,"proven: same code, unique"
+0x001E2068,RwCameraDestroy,"agrees (proven: same code, unique)",RwCameraDestroy,"proven: same code, unique"
+0x001E2110,RwCameraSetViewWindow,"agrees (proven: same code, unique)",RwCameraSetViewWindow,"proven: same code, unique"
+0x001E2288,RwCameraSetNearClipPlane,"agrees (proven: same code, unique)",RwCameraSetNearClipPlane,"proven: same code, unique"
+0x001E2358,RwCameraSetFarClipPlane,"agrees (proven: same code, unique)",RwCameraSetFarClipPlane,"proven: same code, unique"
+0x001E2A98,RwEngineSetVideoMode,"agrees (proven: same code, unique)",RwEngineSetVideoMode,"proven: same code, unique"
+0x001E2FF8,RwEngineInit,"agrees (proven: same code, unique)",RwEngineInit,"proven: same code, unique"
+0x001E4170,RwFrameDestroy,"agrees (proven: same code, unique)",RwFrameDestroy,"proven: same code, unique"
+0x001E75F0,RwRasterDestroy,"agrees (proven: same code, unique)",RwRasterDestroy,"proven: same code, unique"
+0x001E76C8,RwRasterSubRaster,"agrees (proven: same code, unique)",RwRasterSubRaster,"proven: same code, unique"
+0x001E8848,_rwFrameSyncHierarchyLTM,"agrees (proven: same code, unique)",_rwFrameSyncHierarchyLTM,"proven: same code, unique"
+0x001E8A60,FrameSyncHierarchyLTMRecurse,"agrees (proven: same code, unique)",FrameSyncHierarchyLTMRecurse,"proven: same code, unique"
+0x001EB1E8,_rwObjectHasFrameSetFrame,"agrees (proven: same code, unique)",_rwObjectHasFrameSetFrame,"proven: same code, unique"
+0x001F3080,_rwDMAOpenVIFPkt,"agrees (proven: same code, unique)",_rwDMAOpenVIFPkt,"proven: same code, unique"
+0x001F4288,_rwDMAYieldCallbackSet,agrees (strong),_rwDMAYieldCallbackSet,strong
+0x001F4290,_rwDMAMinVsyncCntSet,agrees (strong),_rwDMAMinVsyncCntSet,strong
+0x001F43B0,_rwDMAWaitQueue,"agrees (proven: same code, unique)",_rwDMAWaitQueue,"proven: same code, unique"
+0x001F45C0,_rwDMAPreAlloc,"agrees (proven: same code, unique)",_rwDMAPreAlloc,"proven: same code, unique"
+0x001F6108,SkyCameraClear,"agrees (proven: same code, unique)",SkyCameraClear,"proven: same code, unique"
+0x001FCA18,setUpFSAA0,"agrees (proven: same code, unique)",setUpFSAA0,"proven: same code, unique"
+0x001FD490,SkyStart,agrees (proven: same place between proven functions),SkyStart,proven: same place between proven functions
+0x001FE1A0,SkySystem,"agrees (proven: same code, unique)",SkySystem,"proven: same code, unique"
+0x001FE540,RpSkyResume,"agrees (proven: same code, unique)",RpSkyResume,"proven: same code, unique"
+0x001FF3C8,RpSkyGetModeStructurePtr,agrees (strong),RpSkyGetModeStructurePtr,strong
+0x001FF4A8,_skyRasterSetTwiddling,"not in our table; the prototype has this name, not proven here",,
+0x0020DD08,RpSkyTexCacheSetStartAddress,agrees (proven: same place between proven functions),RpSkyTexCacheSetStartAddress,proven: same place between proven functions
+0x0020DF10,RpSkyTexCacheRasterUnlockAll,agrees (proven: same place between proven functions),RpSkyTexCacheRasterUnlockAll,proven: same place between proven functions
+0x0020DFB0,RpSkyTexCacheFlush,agrees (proven: same place between proven functions),RpSkyTexCacheFlush,proven: same place between proven functions
+0x0020E050,RpSkyTexCacheDisable,"agrees (proven: same code, unique)",RpSkyTexCacheDisable,"proven: same code, unique"
+0x0020E310,RpSkySelectTrueTLClipper,different function: the code matches the prototype name,RpSkyTexCacheGetStartAddress,strong
+0x00211C30,"CGtViewport::SetSubRaster(CGtViewport *,RwRect *)","not in our table; proven against its prototype function (same code, unique)",,
+0x00211CB0,CGtViewport::SetAspectRatio(float),"agrees (proven: same code, unique)",CGtViewport::SetAspectRatio(float),"proven: same code, unique"
+0x00211CC0,CGtViewport::SetFOV(float),"agrees (proven: same code, unique)",CGtViewport::SetFOV(float),"proven: same code, unique"
+0x00211D60,CGtViewport::Prepare(void),"agrees (proven: same code, unique)",CGtViewport::Prepare(),"proven: same code, unique"
+0x00211D70,CGtViewport::Destruct(void),"agrees (proven: same code, unique)",CGtViewport::Destruct(),"proven: same code, unique"
+0x00212770,CGTFileSystem::FClose(void *),"agrees (proven: same code, unique)",CGTFileSystem::FClose(void*),"proven: same code, unique"
+0x002127A0,"CGTFileSystem::FOpen(char const *,char const *)",agrees (likely),"CGTFileSystem::FOpen(const char*,const char*)",likely
+0x00212890,"CGTFileSystem::Open(char const *,uint)",agrees (strong),"CGTFileSystem::Open(const char*,unsigned int)",strong
+0x002129A0,"CGTFileSystem::Init(uint,char const *)",agrees (strong),"CGTFileSystem::Init(unsigned int,const char*)",strong
+0x00212BD0,CGTFileSystem::GetFileSystemFromFileName(char const *),agrees (strong),CGTFileSystem::GetFileSystemFromFileName(const char*),strong
+0x00212CB0,CGTFileSystem::InstallToRenderWare(void),agrees (strong),CGTFileSystem::InstallToRenderWare(),strong
+0x00212E30,"CGtUnicode::FormatString(ushort *,ushort const *,ushort const *,ushort const *,ushort const *,ushort const *,int)",name not in the prototype map; the map names this function differently,"CGtUnicode::_FormatString(unsigned short*,const unsigned short*,const unsigned short*,const unsigned short*,const unsigned shor",strong
+0x00213360,"CGtUnicode::PrintReal(ushort *,float,int)",agrees (likely),"CGtUnicode::PrintReal(unsigned short*,float,int)",likely
+0x002136F0,"CGtUnicode::PrintInt(const ushort *,int,int)","same function, other signature in the prototype map","CGtUnicode::PrintInt(unsigned short*,int,int)",likely
+0x002138C0,"CGtUnicode::AppendN(ushort *,int,ushort const *)","agrees (proven: same code, unique)","CGtUnicode::AppendN(unsigned short*,int,const unsigned short*)","proven: same code, unique"
+0x00213940,"CGtUnicode::Append(ushort *,ushort const *)","agrees (proven: same code, unique)","CGtUnicode::Append(unsigned short*,const unsigned short*)","proven: same code, unique"
+0x002139A0,"CGtUnicode::Copy(ushort *,ushort const *)",different function: the code matches the prototype name,"CGtUnicode::CopyN(unsigned short*,int,const unsigned short*)","proven: same code, unique"
+0x00213A30,CGtUnicode::Length(ushort const *),"agrees (proven: same code, unique)",CGtUnicode::Length(const unsigned short*),"proven: same code, unique"
+0x00213BE0,"CGtUnicode::ConvertUTF8toUTF16Fast(uchar const *,ushort *,int)",agrees (strong),"CGtUnicode::ConvertUTF8toUTF16Fast(const unsigned char*,unsigned short*,int)",strong
+0x00213CB0,"CGtUnicode::ConvertUTF16toUTF8Fast(ushort const *,uchar *,int)",agrees (strong),"CGtUnicode::ConvertUTF16toUTF8Fast(const unsigned short*,unsigned char*,int)",strong
+0x002149C0,CGtInputManagerPS2Pad2::GetPadControls(EGtPS2InputPort),agrees (likely),CGtInputManagerPS2Pad2::GetPadControls(EGtPS2InputPort),likely
+0x00214CD0,CGtInputDevicePS2DualShock2::Update(void),agrees (proven: same place between proven functions),CGtInputDevicePS2DualShock2::Update(),proven: same place between proven functions
+0x00215868,scePad2Read,"agrees (proven: same code, unique)",scePad2Read,"proven: same code, unique"
+0x002172C0,CGtInputDevicePS2DualShock::IsControlJustPressed(int),agrees (unverified),CGtInputDevicePS2DualShock::IsControlJustPressed(int),unverified
+0x00217610,"CGtFSM::StateEnter(CGtState *,void *)","agrees (proven: same code, unique)","CGtFSM::StateEnter(CGtState*,void*)","proven: same code, unique"
+0x00217650,"CGtFSM::StateLeave(CGtState *,void *)","agrees (proven: same code, unique)","CGtFSM::StateLeave(CGtState*,void*)","proven: same code, unique"
+0x00217690,CGtFSM::GetStateFromID(ulong),"agrees (proven: same code, unique)",CGtFSM::GetStateFromID(unsigned long),"proven: same code, unique"
+0x002176D0,"CGtFSM::ApplyEvent(uint,void *)","agrees (proven: same code, unique)","CGtFSM::ApplyEvent(unsigned int,void*)","proven: same code, unique"
+0x00217710,CGtFSM::Update(void),"agrees (proven: same code, unique)",CGtFSM::Update(),"proven: same code, unique"
+0x002177C0,"CGtFSM::Construct(void *,CGtStateOffset const *,CGtTimer *)","agrees (proven: same code, unique)","CGtFSM::Construct(void*,const CGtStateOffset*,CGtTimer*)","proven: same code, unique"
+0x0021A290,Gt2dRenderer::Construct(void),agrees (strong),Gt2dRenderer::Construct(),strong
+0x0021A5F0,"CB3MenuInput::Update(float,CB3ControllerMapping *)",agrees (proven: same place between proven functions),"CB3MenuInput::Update(float,CB3ControllerMapping*)",proven: same place between proven functions
+0x0021AB40,"GtIDConvertToString(ulong,char *)",agrees (proven: same place between proven functions),"GtIDConvertToString(unsigned long,char*)",proven: same place between proven functions
+0x0021ADF0,"GtIDUnCompress(ulong,char *)",agrees (proven: same place between proven functions),"GtIDUnCompress(unsigned long,char*)",proven: same place between proven functions
+0x0021AEF0,GtIDCompress(char const *),agrees (proven: same place between proven functions),GtIDCompress(const char*),proven: same place between proven functions
+0x0021B4D0,CGtCamera::Construct(void),"agrees (proven: same code, unique)",CGtCamera::Construct(),"proven: same code, unique"
+0x0021B770,CB3Settings::Construct(void),"not in our table; the prototype has this name, not proven here",,
+0x0021B830,"GtComms::CGtCommsToolBase::Prepare(char const *,CGTFileSystem *,char const *)","agrees (proven: same code, unique)","GtComms::CGtCommsToolBase::Prepare(const char*,CGTFileSystem*,const char*)","proven: same code, unique"
+0x0021B8C0,GtComms::CGtCommsToolBase::Construct(char const *),"agrees (proven: same code, unique)",GtComms::CGtCommsToolBase::Construct(const char*),"proven: same code, unique"
+0x0021B910,GtComms::CGtCommsDatabase::RemoveEntry(void *),agrees (strong),GtComms::CGtCommsDatabase::RemoveEntry(void*),strong
+0x0021BB60,"GtComms::CGtCommsDatabase::AddEntry(float *,char const *,char const *,char const *,int,float,float,int)",agrees (strong),"GtComms::CGtCommsDatabase::AddEntry(float*,const char*,const char*,const char*,int,float,float,int)",strong
+0x0021BF80,"GtComms::CGtCommsDatabase::Construct(GtComms::CGtCommsDatabaseEntry *,int)","agrees (proven: same code, unique)","GtComms::CGtCommsDatabase::Construct(GtComms::CGtCommsDatabaseEntry*,int)","proven: same code, unique"
+0x0021BFA0,CGtHash::CalculateHash(char const *),"agrees (proven: same code, unique)",CGtHash::CalculateHash(const char*),"proven: same code, unique"
+0x0021C120,CB3StreamedTrack::RenderAfterSpecular(void),agrees (likely),CB3StreamedTrack::RenderAfterSpecular(),likely
+0x0021C590,CB3StreamedTrack::RenderAfterVehicles(void),agrees (likely),CB3StreamedTrack::RenderAfterVehicles(),likely
+0x0021C780,CB3StreamedTrack::RenderBeforeVehicles(void),agrees (strong),CB3StreamedTrack::RenderBeforeVehicles(),strong
+0x0021CFF0,CDrawnTrafficCache::IsUnitVisibleToMainCamera(int),name not in the prototype map; the map names this function differently,CB3StreamedTrack::IsUnitVisibleToMainCamera(int),likely
+0x0021D2E0,"CB3StaticTrack::RenderAllBackdrops(EBackdropRenderRange,bool,bool)",agrees (strong),"CB3StaticTrack::RenderAllBackdrops(EBackdropRenderRange,bool,bool)",strong
+0x0021D8E0,CB3SkyDomeRenderer::RelocateGSTextures(void),no prototype counterpart,,
+0x0021E350,CB3SkyDomeRenderer::SetProceduralGradientTex0AndFrame(void),no prototype counterpart,,
+0x0021E6F0,"CB3VehicleRenderer::RenderVehicle(CB3VehicleEssentialParams const *,CB3VehicleParams const *,EVehicleLOD)",agrees (unverified),"CB3VehicleRenderer::RenderVehicle(const CB3VehicleEssentialParams*,const CB3VehicleParams*,EVehicleLOD)",unverified
+0x0021F790,"CB3VehicleRenderer::RenderDeformedObject(EB3VehicleRenderType,GtMathPs2::CGtMatrix3x4 const &,CB3VehicleObject *,float,ushort,ushort,GtMathPs2::CGtMatrix3x4 const *,int,bool)","not in our table; the prototype has this name, not proven here",,
+0x0021FBB0,"CB3VehicleRenderer::RenderObject(EB3VehicleRenderType,GtMathPs2::CGtMatrix3x4 const &,CB3VehicleObject *,float,ushort,ushort,bool)","not in our table; the prototype has this name, not proven here",,
+0x0021FF60,"CB3VehicleRenderer::SetTexture(CGtTexture *,int)","agrees (proven: same code, unique)","CB3VehicleRenderer::SetTexture(CGtTexture*,int)","proven: same code, unique"
+0x00220040,"CB3VehicleRenderer::BeginRenderingSingleVehicle(CB3VehicleEssentialParams const *,CB3VehicleLODData *,float,float)",agrees (unverified),"CB3VehicleRenderer::BeginRenderingSingleVehicle(const CB3VehicleEssentialParams*,CB3VehicleLODData*,float,float)",unverified
+0x00220450,CB3VehicleRenderer::SetupCameraFrustum(void),no prototype counterpart,,
+0x002204C0,CB3VehicleRenderer::EndVehicleRendering(void),"agrees (proven: same code, unique)",CB3VehicleRenderer::EndVehicleRendering(),"proven: same code, unique"
+0x00220540,CB3VehicleRenderer::BeginVehicleRendering(void),agrees (proven: same place between proven functions),CB3VehicleRenderer::BeginVehicleRendering(),proven: same place between proven functions
+0x002208E0,CB3VehicleRenderer::SetupCameraData(void),"agrees (proven: same code, unique)",CB3VehicleRenderer::SetupCameraData(),"proven: same code, unique"
+0x00220B40,CB3VehicleRenderer::Construct(void),"agrees (proven: same code, unique)",CB3VehicleRenderer::Construct(),"proven: same code, unique"
+0x00220B70,CB3VehicleRenderer::FixUpVehicleData(CB3VehicleData *),agrees (strong),CB3VehicleRenderer::FixUpVehicleData(CB3VehicleData*),strong
+0x00221080,CGtScreenCentre::GetPositionY(void),"agrees (proven: same code, unique)",CGtScreenCentre::GetPositionY(),"proven: same code, unique"
+0x00221090,CGtScreenCentre::GetPositionX(void),"agrees (proven: same code, unique)",CGtScreenCentre::GetPositionX(),"proven: same code, unique"
+0x002213F0,CGtScreenCentre::Construct(void),"agrees (proven: same code, unique)",CGtScreenCentre::Construct(),"proven: same code, unique"
+0x00221580,CGtTextureCache::ForceBufferSwap(void),"agrees (proven: same code, unique)",CGtTextureCache::ForceBufferSwap(),"proven: same code, unique"
+0x002220E0,CGtTextureCache::Destruct(void),agrees (proven: same place between proven functions),CGtTextureCache::Destruct(),proven: same place between proven functions
+0x00222120,"CGtTextureCache::Construct(uint,int,int)",agrees (proven: same place between proven functions),"CGtTextureCache::Construct(unsigned int,int,int)",proven: same place between proven functions
+0x00222300,CB3MemoryManagerPS2::GetBlockSize(EB3MemoryBlock),agrees (likely),CB3MemoryManagerPS2::GetBlockSize(EB3MemoryBlock) const,likely
+0x002223C0,"CB3MemoryManagerPS2::ReleaseBlock(EB3MemoryBlock,int)",agrees (likely),"CB3MemoryManagerPS2::ReleaseBlock(EB3MemoryBlock,int)",likely
+0x002224C0,"CB3MemoryManagerPS2::AcquireBlock(EB3MemoryBlock,int)",agrees (likely),"CB3MemoryManagerPS2::AcquireBlock(EB3MemoryBlock,int)",likely
+0x002225C0,CB3MemoryManagerPS2::Update(void),agrees (unverified),CB3MemoryManagerPS2::Update(),unverified
+0x00222650,CB3MemoryManagerPS2::Construct(void),agrees (unverified),CB3MemoryManagerPS2::Construct(),unverified
+0x00222CA0,CB3GraphicsManager::DistortEnvmapBuffersIntoSphereMap(void),"not in our table; the prototype has this name, not proven here",,
+0x00222F70,CB3GraphicsManager::ClearOffscreenBuffer(uint),agrees (strong),CB3GraphicsManager::ClearOffscreenBuffer(unsigned int),strong
+0x00223130,CB3GraphicsManager::BuildCustomCameraData(ERaceCarIndex),"same function, other signature in the prototype map",CB3GraphicsManager::BuildCustomCameraData(int),unverified
+0x002253C0,CB3CameraData::SendRegistersToGS(void const),"same function, other signature in the prototype map",CB3CameraData::SendRegistersToGS() const,"proven: same code, unique"
+0x00225B30,CB3CameraData::Construct(RwCamera *),"agrees (proven: same code, unique)",CB3CameraData::Construct(RwCamera*),"proven: same code, unique"
+0x002260D0,"CB3GraphicsManager::CopyTextureAs32Bit(CGtTexture *,uint,uint)",agrees (strong),"CB3GraphicsManager::CopyTextureAs32Bit(CGtTexture*,unsigned int,unsigned int)",strong
+0x00226420,"CB3GraphicsManager::Copy4BitTextureAsPSMT4H(CGtTexture *,uint,CB3GraphicsManager::EClutID,bool,uint)",agrees (strong),"CB3GraphicsManager::Copy4BitTextureAsPSMT4H(CGtTexture*,unsigned int,CB3GraphicsManager::EClutID,bool,unsigned int)",strong
+0x00226A90,"CB3GraphicsManager::Copy8BitTextureAsPSMT8H(CGtTexture *,uint,CB3GraphicsManager::EClutID,uint)",agrees (strong),"CB3GraphicsManager::Copy8BitTextureAsPSMT8H(CGtTexture*,unsigned int,CB3GraphicsManager::EClutID,unsigned int)",strong
+0x002270B0,CB3GraphicsManager::PresentDrawBuffer(void),agrees (strong),CB3GraphicsManager::PresentDrawBuffer(),strong
+0x00227210,CB3GraphicsManager::RenderPalOrHdtvContrastFilter(void),agrees (unverified),CB3GraphicsManager::RenderPalOrHdtvContrastFilter(),unverified
+0x00227360,CB3GraphicsManager::OpenViewport(EB3ViewportSelection),agrees (strong),CB3GraphicsManager::OpenViewport(EB3ViewportSelection),strong
+0x002274B0,"CB3GraphicsManager::RenderFullScreenSpecular(GtMathPs2::CGtV3d,float,bool)",agrees (unverified),"CB3GraphicsManager::RenderFullScreenSpecular(GtMathPs2::CGtV3d,float,bool)",unverified
+0x00227A20,CB3GraphicsManager::SetVideoModeParams(RwSkyVideoMode *),agrees (strong),CB3GraphicsManager::SetVideoModeParams(RwSkyVideoMode*),strong
+0x00227B80,CB3GraphicsManager::SetVideoMode(EB3VideoMode),no prototype counterpart,,
+0x00227ED0,CB3GraphicsManager::OpenRenderWare(void),agrees (strong),CB3GraphicsManager::OpenRenderWare(),strong
+0x00228040,"rwDmaYieldCallback(int,uint)",no prototype counterpart,,
+0x00228160,CB3GraphicsManager::Construct(void),agrees (likely),CB3GraphicsManager::Construct(),likely
+0x0022B830,vsyncHandler(int),"not in our table; the prototype has this name, not proven here",,
+0x0022B850,CB3InputManager::GetMusicTrackSkip(void),no prototype counterpart,,
+0x0022BA70,CB3InputManager::ResetDeadInputTime(signed char),agrees (strong),CB3InputManager::ResetDeadInputTime(signed char),strong
+0x0022BAE0,CB3InputManager::GetDeadInputTime(signed char),agrees (strong),CB3InputManager::GetDeadInputTime(signed char),strong
+0x0022BE00,CB3InputManager::StopRumble(void),"not in our table; the prototype has this name, not proven here",,
+0x0022C610,"CB3InputManager::GetAvailableControllers(CB3ControllerMapping **,signed char)",agrees (strong),"CB3InputManager::GetAvailableControllers(CB3ControllerMapping**,signed char)",strong
+0x0022C810,"CB3InputManager::GetMenuButton(CB3MenuInput::EMenuControls,signed char)",agrees (strong),"CB3InputManager::GetMenuButton(CB3MenuInput::EMenuControls,signed char)",strong
+0x0022CCE0,CB3InputManager::GetMenuSquare(signed char),name not in the prototype map; the map names this function differently,CB3InputManager::GetMenuBuddies(signed char),strong
+0x0022CD60,CB3InputManager::GetMenuRight(signed char),agrees (strong),CB3InputManager::GetMenuRight(signed char),strong
+0x0022CDE0,CB3InputManager::GetMenuLeft(signed char),agrees (strong),CB3InputManager::GetMenuLeft(signed char),strong
+0x0022CE60,CB3InputManager::GetMenuDown(signed char),agrees (strong),CB3InputManager::GetMenuDown(signed char),strong
+0x0022CEE0,CB3InputManager::GetMenuUp(signed char),agrees (strong),CB3InputManager::GetMenuUp(signed char),strong
+0x0022CF60,CB3InputManager::GetMenuBack(signed char),agrees (strong),CB3InputManager::GetMenuBack(signed char),strong
+0x0022CFE0,CB3InputManager::GetMenuConfirm(signed char),agrees (strong),CB3InputManager::GetMenuConfirm(signed char),strong
+0x0022D070,CB3InputManager::GetLockedPlayersPort(signed char),agrees (likely),CB3InputManager::GetLockedPlayersPort(signed char),likely
+0x0022D0A0,CB3InputManager::AreLockedPlayersConnected(void),no prototype counterpart,,
+0x0022D180,"CB3InputManager::LockPlayerToPort(signed char,signed char)",no prototype counterpart,,
+0x0022E6A0,CGtPS2LibNet::SetNetworkConfigFileLocation(char const *),no prototype counterpart,,
+0x0022F020,CGtPS2LibNet::Update(int),no prototype counterpart,,
+0x00233C50,CGtNATDataManager::FindGatewayDevice(void),agrees (strong),CGtNATDataManager::FindGatewayDevice(),strong
+0x002351D0,CGtNetworkPlayerManager::GetHostPlayerID(void),no prototype counterpart,,
+0x00235300,CGtNetworkPlayerManager::GetPlayerIndexByID(int),no prototype counterpart,,
+0x002366D0,CGtNetworkPlayerManager::GetPlayer(int const),no prototype counterpart,,
+0x002366E0,CGtNetworkPlayerManager::GetPlayerByID(int),agrees (strong),CGtNetworkPlayerManager::GetPlayerByID(int) const,strong
+0x00236790,CGtNetworkPlayerManager::GetMyPlayerID(void),"agrees (proven: same code, unique)",CGtNetworkPlayerManager::GetMyPlayerID() const,"proven: same code, unique"
+0x00236940,CGtNetworkPlayerManager::ClearAllPlayers(void),agrees (strong),CGtNetworkPlayerManager::ClearAllPlayers(),strong
+0x00237200,CGtThreadMgr::EnableVBlankWait(void),agrees (strong),CGtThreadMgr::EnableVBlankWait(),strong
+0x002372F0,CGtThreadMgr::Open(void),agrees (likely),CGtThreadMgr::Open(),likely
+0x0023C100,CB3NetworkPlayer::Update(void),no prototype counterpart,,
+0x0023D0F0,CB3NetworkPlayer::ApplyCurrentData(CB3NetworkRaceUpdateMessage *),no prototype counterpart,,
+0x0023D410,"CB3NetworkPlayer::ApplyCrashingTrafficCarData(CB3NetworkRaceUpdateMessage *,int)",no prototype counterpart,,
+0x0023E3D0,__ct__Q29GtMathPs29XAxisTypeF1,no prototype counterpart,,
+0x0024ACE0,sceScfGetAspect,"agrees (proven: same code, unique)",sceScfGetAspect,"proven: same code, unique"
+0x0024B2A0,CB3SunRenderer::RelocateGSTextures(void),no prototype counterpart,,
+0x0024B390,CB3SunRenderer::RenderEnvmapBlob(void),"agrees (proven: same code, unique)",CB3SunRenderer::RenderEnvmapBlob(),"proven: same code, unique"
+0x0024B9E0,CB3SunRenderer::PrepareEnvmapSunCoronaData(void),agrees (proven: same place between proven functions),CB3SunRenderer::PrepareEnvmapSunCoronaData(),proven: same place between proven functions
+0x0024D360,CB3SunRenderer::Release(void),"agrees (proven: same code, unique)",CB3SunRenderer::Release(),"proven: same code, unique"
+0x0024D4D0,CB3CarViewerGameMode::Release(void),"agrees (proven: same code, unique)",CB3CarViewerGameMode::Release(),"proven: same code, unique"
+0x0024D520,CB3CarViewerGameMode::Render(void),agrees (proven: same place between proven functions),CB3CarViewerGameMode::Render(),proven: same place between proven functions
+0x0024D980,"CB3CarViewerGameMode::SetArrowVertices(CB3Im3dVertex *,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV4d)","same function, other signature in the prototype map","CB3CarViewerGameMode::SetArrowVertices(CB3Im3dVertex*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,G",strong
+0x0024DAB0,CB3CarViewerGameMode::Update(void),agrees (likely),CB3CarViewerGameMode::Update(),likely
+0x0024FA40,"CB3CarViewerGameMode::UpdateHinges(CB3VehicleEssentialParams *,CB3VehicleParams *)",agrees (proven: same place between proven functions),"CB3CarViewerGameMode::UpdateHinges(CB3VehicleEssentialParams*,CB3VehicleParams*)",proven: same place between proven functions
+0x0024FC20,CB3CarViewerGameMode::Prepare(void),agrees (proven: same place between proven functions),CB3CarViewerGameMode::Prepare(),proven: same place between proven functions
+0x0024FDA0,CB3CarViewerGameMode::Construct(void),"agrees (proven: same code, unique)",CB3CarViewerGameMode::Construct(),"proven: same code, unique"
+0x0024FDE0,GtComms::CGtCommsDatabase::CheckFileValid(char const *),name not in the prototype map; the map names this function differently,GtComms::CGtCommsDatabaseGame::CheckFileValid(const char*),proven: same place between proven functions
+0x0024FE90,GtComms::CGtCommsDatabaseGame::InitialiseDefaultValues(void),agrees (proven: same place between proven functions),GtComms::CGtCommsDatabaseGame::InitialiseDefaultValues(),proven: same place between proven functions
+0x0024FFC0,GtComms::CGtCommsDatabase::SetDefaultElementValue(GtComms::CGtCommsDatabaseEntry *),name not in the prototype map; the map names this function differently,GtComms::CGtCommsDatabaseGame::SetDefaultElementValue(GtComms::CGtCommsDatabaseEntry*),proven: same place between proven functions
+0x00250100,GtComms::CGtCommsDatabase::RemoveEntryCore(GtComms::CGtCommsDatabaseEntry *),different function: the code matches the prototype name,GtComms::CGtCommsDatabaseGame::RemoveEntryCore(GtComms::CGtCommsDatabaseEntry*),proven: same place between proven functions
+0x00250110,GtComms::CGtCommsDatabase::TransmitElement(GtComms::CGtCommsDatabaseEntry *),name not in the prototype map; the map names this function differently,GtComms::CGtCommsDatabaseGame::TransmitElement(GtComms::CGtCommsDatabaseEntry*),proven: same place between proven functions
+0x00250120,GtComms::CGtCommsDatabaseGame::Construct(void),"agrees (proven: same code, unique)",GtComms::CGtCommsDatabaseGame::Construct(),"proven: same code, unique"
+0x00250160,CB3TrafficPhysics::DetachLinkedVehicle(void),no prototype counterpart,,
+0x002502D0,CB3TrafficPhysics::StopCrashing(void),agrees (strong),CB3TrafficPhysics::StopCrashing(),strong
+0x002510F0,"CB3TrafficPhysics::Prepare(CB3TrafficVehicle *,int)",no prototype counterpart,,
+0x002513F0,CB3TrafficPhysics::Prepare(void),no prototype counterpart,,
+0x00251460,CB3TrafficPhysics::Construct(void),no prototype counterpart,,
+0x00251740,CB3StreamedTrack::TestPosition(GtMathPs2::CGtV3d),no prototype counterpart,,
+0x00251840,"CB3Viewport::Construct(int,int,int)","agrees (proven: same code, unique)","CB3Viewport::Construct(int,int,int)","proven: same code, unique"
+0x00251870,CB3TrackList::GetTrackRegion(ulong),agrees (proven: same place between proven functions),CB3TrackList::GetTrackRegion(unsigned long),proven: same place between proven functions
+0x002518E0,CB3TrackList::GetTrackIndexFromID(ulong),agrees (proven: same place between proven functions),CB3TrackList::GetTrackIndexFromID(unsigned long),proven: same place between proven functions
+0x00251A30,"CB3TrackList::CreateTrackPathFromIndex(int,char *,int)","agrees (proven: same code, unique)","CB3TrackList::CreateTrackPathFromIndex(int,char*,int)","proven: same code, unique"
+0x00251AE0,"CB3TrackList::CreateTrackPathFromID(ulong,char *,int)","agrees (proven: same code, unique)","CB3TrackList::CreateTrackPathFromID(unsigned long,char*,int)","proven: same code, unique"
+0x00251B90,CB3VehicleList::GetCarCount(EB3MenuCarClasses),agrees (likely),CB3VehicleList::GetCarCount(EB3MenuCarClasses),likely
+0x00251C10,"CB3VehicleList::GetCarID(EB3MenuCarClasses,int)",agrees (likely),"CB3VehicleList::GetCarID(EB3MenuCarClasses,int)",likely
+0x00251CB0,CB3VehicleList::GetClassFromID(ulong),agrees (likely),CB3VehicleList::GetClassFromID(unsigned long),likely
+0x00251E10,CB3TrackList::DoesTrackExist(ulong),agrees (strong),CB3TrackList::DoesTrackExist(unsigned long),strong
+0x00251E60,CB3VehicleList::GetVehicleIndexFromID(ulong),agrees (strong),CB3VehicleList::GetVehicleIndexFromID(unsigned long),strong
+0x00251EA0,CB3VehicleList::GetVehicleBoostBarSize(ulong),agrees (strong),CB3VehicleList::GetVehicleBoostBarSize(unsigned long),strong
+0x00251EF0,CB3VehicleList::IsVehicleDriveable(ulong),agrees (likely),CB3VehicleList::IsVehicleDriveable(unsigned long),likely
+0x00251F40,"CB3VehicleList::CreateVehiclePathFromIndex(int,char *,int)",agrees (strong),"CB3VehicleList::CreateVehiclePathFromIndex(int,char*,int)",strong
+0x00252000,CB3VehicleList::DoesVehicleExist(ulong),agrees (likely),CB3VehicleList::DoesVehicleExist(unsigned long),likely
+0x00252530,CB3RaceCarPhysicsAttribs::CopyToPhysics(CB3VehiclePhysics *),agrees (proven: same place between proven functions),CB3RaceCarPhysicsAttribs::CopyToPhysics(CB3VehiclePhysics*),proven: same place between proven functions
+0x00252C20,CB3RaceCarPhysicsAttribs::Register(CB3VehiclePhysics *),agrees (proven: same place between proven functions),CB3RaceCarPhysicsAttribs::Register(CB3VehiclePhysics*),proven: same place between proven functions
+0x002540A0,CB3RaceCarPhysicsAttribs::Prepare(CB3VehiclePhysics *),"agrees (proven: same code, unique)",CB3RaceCarPhysicsAttribs::Prepare(CB3VehiclePhysics*),"proven: same code, unique"
+0x002540E0,CB3RaceCarPhysicsAttribs::Construct(void),"agrees (proven: same code, unique)",CB3RaceCarPhysicsAttribs::Construct(),"proven: same code, unique"
+0x00257C70,"CB3EffectsManager::UpdateVehicleFireTrail(CB3VehiclePhysics *,CB3EffectsManager::CLighting const &)",agrees (strong),"CB3EffectsManager::UpdateVehicleFireTrail(CB3VehiclePhysics*,const CB3EffectsManager::CLighting&)",strong
+0x00258490,CB3EffectsManager::UpdateTrafficWorldCollisionEffects(CB3VehiclePhysics *),agrees (strong),CB3EffectsManager::UpdateTrafficWorldCollisionEffects(CB3VehiclePhysics*),strong
+0x0025AC30,"CB3EffectsManager::HandleAirRamEffects(CB3VehiclePhysics *,CB3EffectsManager::CLighting)",agrees (unverified),"CB3EffectsManager::HandleAirRamEffects(CB3VehiclePhysics*,CB3EffectsManager::CLighting)",unverified
+0x0025CA40,CB3EffectsManager::UpdateCollisionEffects(void),one function off: the prototype map puts this name at 0x25CA50,,
+0x002620C0,CB3EffectsManager::RenderPreFogEffects(int),agrees (strong),CB3EffectsManager::RenderPreFogEffects(int),strong
+0x002621D0,CB3EffectsManager::ActuallyRenderRaceCarImmediateEffects(CB3RaceCar *),agrees (unverified),CB3EffectsManager::ActuallyRenderRaceCarImmediateEffects(CB3RaceCar*),unverified
+0x00262240,CB3EffectsManager::EndCoronaSubmit(void),agrees (strong),CB3EffectsManager::EndCoronaSubmit(),strong
+0x002622A0,CB3EffectsManager::BeginCoronaSubmit(int),"not in our table; the prototype has this name, not proven here",,
+0x002623F0,CB3EffectsManager::EndUpdate(void),agrees (strong),CB3EffectsManager::EndUpdate(),strong
+0x00262CD0,CB3EffectsManager::Construct(void),agrees (strong),CB3EffectsManager::Construct(),strong
+0x002659C0,"CB3Bloom::Render(bool,bool)","agrees (proven: same code, unique)","CB3Bloom::Render(bool,bool)","proven: same code, unique"
+0x00265C40,CB3Bloom::Construct(void),"agrees (proven: same code, unique)",CB3Bloom::Construct(),"proven: same code, unique"
+0x00266AE0,"CB3TrafficValve::FillLaneSection(int,int,int,int,CB3StartFinishLine *,int,bool)",agrees (proven: same place between proven functions),"CB3TrafficValve::FillLaneSection(int,int,int,int,CB3StartFinishLine*,int,bool)",proven: same place between proven functions
+0x00268270,"CB3TrafficValve::PrepareGenerationTimes(float,bool)",agrees (proven: same place between proven functions),"CB3TrafficValve::PrepareGenerationTimes(float,bool)",proven: same place between proven functions
+0x00268730,CB3NetworkCarPhysics::HideUnderRoad(void),agrees (strong),CB3NetworkCarPhysics::HideUnderRoad(),strong
+0x00268970,CB3NetworkCarPhysics::Update(float),agrees (likely),CB3NetworkCarPhysics::Update(float),likely
+0x00269CB0,CB3NetworkCarPhysics::Prepare(CB3RaceCar *),"not in our table; the prototype has this name, not proven here",,
+0x00269CF0,CB3NetworkCarPhysics::Construct(void),agrees (strong),CB3NetworkCarPhysics::Construct(),strong
+0x00269D20,CB3TriggerStruct::Fixup(uint),"agrees (proven: same code, unique)",CB3TriggerStruct::Fixup(unsigned int),"proven: same code, unique"
+0x00269E80,CB3TrafficLightPositionStruct::Fixup(uint),"agrees (proven: same code, unique)",CB3TrafficLightPositionStruct::Fixup(unsigned int),"proven: same code, unique"
+0x00269EF0,CB3TrafficValvePositionStruct::Fixup(uint),"agrees (proven: same code, unique)",CB3TrafficValvePositionStruct::Fixup(unsigned int),"proven: same code, unique"
+0x00269FA0,CB3TrafficDataStruct::Fixup(uint),"agrees (proven: same code, unique)",CB3TrafficDataStruct::Fixup(unsigned int),"proven: same code, unique"
+0x0026BC30,CB3TrackRenderer::Construct(void),one function off: the prototype map puts this name at 0x26BCA0,,
+0x0026C480,CB3NetworkManager::UpdateDNASAquiringMemoryForElf(void),no prototype counterpart,,
+0x0026D2A0,CB3NetworkManager::UpdateDNASStatus(void),"not in our table; the prototype has this name, not proven here",,
+0x0026F0F0,"CB3NetworkManager::PlayerBootedCallback(ELobbyKickReason,void *)",no prototype counterpart,,
+0x0026F150,"CB3NetworkManager::PlayerListChangedCallback(int,void *)",no prototype counterpart,,
+0x0026F410,CB3NetworkManager::AmIHost(void),no prototype counterpart,,
+0x0026F4C0,"CB3NetworkManager::ForEachNetworkOpponent(char *,int,bool,int,int,int,char *,bool,void *)",no prototype counterpart,,
+0x0026F860,BootNetGui,no prototype counterpart,,
+0x0026FAA0,CB3NetworkManager::UpdateHostKeepAlive(void),no prototype counterpart,,
+0x00270EB0,CB3NetworkManager::GetLobbyStatus(void),no prototype counterpart,,
+0x00270ED0,CB3NetworkManager::Update(void),no prototype counterpart,,
+0x002714C0,CB3NetworkManager::Prepare(bool),"not in our table; the prototype has this name, not proven here",,
+0x00271730,CB3NetworkManager::Construct(void),"not in our table; the prototype has this name, not proven here",,
+0x002719B0,CGtArrayBase::FixUp(void),"agrees (proven: same code, unique)",CGtArrayBase::FixUp(),"proven: same code, unique"
+0x00271A00,CB3Strings::GetString(int),"not in our table; proven against its prototype function (same code, unique)",,
+0x00271A20,"CB3Strings::Prepare(void *,char const *,int)","agrees (proven: same code, unique)","CB3Strings::Prepare(void*,const char*,int)","proven: same code, unique"
+0x00271A50,CB3Strings::Construct(void),agrees (likely),CB3Strings::Construct(),likely
+0x00272A30,CB3SpatialTrigger::TestLine(CGtLine const &),agrees (strong),CB3SpatialTrigger::TestLine(const CGtLine&),strong
+0x00275EF0,CB3World::RenderFrontEnd(int),agrees (likely),CB3World::RenderFrontEnd(int),likely
+0x00276300,CB3World::Render(int),agrees (likely),CB3World::Render(int),likely
+0x00276870,CB3World::RenderTwoPlayer(int),"same function, other signature in the prototype map",CB3World::RenderTwoPlayer(),strong
+0x002768F0,CB3World::RenderOnePlayer(int),"same function, other signature in the prototype map",CB3World::RenderOnePlayer(),unverified
+0x00276D80,CB3SoundTrafficManager::Update(bool),agrees (proven: same place between proven functions),CB3SoundTrafficManager::Update(bool),proven: same place between proven functions
+0x00278B20,"CB3SoundTrafficVehicle::UpdateHorn(float,float,bool)","agrees (proven: same code, unique)","CB3SoundTrafficVehicle::UpdateHorn(float,float,bool)","proven: same code, unique"
+0x002795F0,"CB3SoundTrafficVehicle::Update(bool,float)",agrees (proven: same place between proven functions),"CB3SoundTrafficVehicle::Update(bool,float)",proven: same place between proven functions
+0x0027AB00,CB3SoundCrashManager::UpdateFire(void),agrees (strong),CB3SoundCrashManager::UpdateFire(),strong
+0x0027AD10,CB3SoundCrashManager::UpdateSteam(void),agrees (strong),CB3SoundCrashManager::UpdateSteam(),strong
+0x0027BEF0,CB3SoundCrashManager::FadeOutCrashStream(void),agrees (strong),CB3SoundCrashManager::FadeOutCrashStream(),strong
+0x0027BF00,CB3SoundCrashManager::UpdateKerbBounces(void),agrees (strong),CB3SoundCrashManager::UpdateKerbBounces(),strong
+0x00281160,CB3SoundCrashManager::Update(void),agrees (unverified),CB3SoundCrashManager::Update(),unverified
+0x002852A0,CB3HUDSoundManager::FEBack(void),no prototype counterpart,,
+0x00285340,CB3HUDSoundManager::FESelect(void),no prototype counterpart,,
+0x002853F0,CB3HUDSoundManager::FEVerticalMove(void),no prototype counterpart,,
+0x002858C0,"CB3HUDSoundManager::PlayHudSound(ulong,CGtSoundBank const *,float,float,bool)",no prototype counterpart,,
+0x00286C60,CB3HUDSoundManager::Update(void),agrees (unverified),CB3HUDSoundManager::Update(),unverified
+0x002870D0,CB3HUDSoundManager::Prepare(bool),agrees (likely),CB3HUDSoundManager::Prepare(bool),likely
+0x002875D0,"CB3SoundESMLow::Update(CB3RaceCar const *,float,float,float)",one function off: the prototype map puts this name at 0x287710,,
+0x00287970,"CB3SoundESMHigh::CalculateDoppler(CB3RaceCar const *,float *,float *)",agrees (strong),"CB3SoundESMHigh::CalculateDoppler(const CB3RaceCar*,float*,float*)",strong
+0x00287B80,CB3SoundESMHigh::Stop(void),no prototype counterpart,,
+0x00287C40,CB3SoundESMHigh::Start(void),agrees (likely),CB3SoundESMHigh::Start(),likely
+0x002882D0,"CB3SoundESMHigh::Prepare(ulong,int)",agrees (likely),"CB3SoundESMHigh::Prepare(unsigned long,int)",likely
+0x00288960,"CB3SoundESM::Prepare(ulong,int)","not in our table; the prototype has this name, not proven here",,
+0x00288F70,CB3SoundGameModeManager::GetModeBankPath(void const),"same function, other signature in the prototype map",CB3SoundGameModeManager::GetModeBankPath() const,unverified
+0x00289340,CB3SoundGameModeManager::UpdateGameStates(void),agrees (likely),CB3SoundGameModeManager::UpdateGameStates(),likely
+0x00289AF0,CB3SoundGameModeManager::SetGameModeData(int),agrees (strong),CB3SoundGameModeManager::SetGameModeData(int),strong
+0x00289BF0,CB3SoundGameModeManager::Update(void),agrees (unverified),CB3SoundGameModeManager::Update(),unverified
+0x00289EE0,CB3SoundGameModeManager::Prepare(void),agrees (unverified),CB3SoundGameModeManager::Prepare(),unverified
+0x0028AE30,CB3SoundManager::SetMasterPitchScalar(float),"agrees (proven: same code, unique)",CB3SoundManager::SetMasterPitchScalar(float),"proven: same code, unique"
+0x0028AEB0,CB3SoundManager::StopAll(void),no prototype counterpart,,
+0x0028B160,CB3SoundManager::Update(void),agrees (unverified),CB3SoundManager::Update(),unverified
+0x0028CB60,"CB3SoundPlayerCar::Prepare(ulong,int)",agrees (likely),"CB3SoundPlayerCar::Prepare(unsigned long,int)",likely
+0x0028CD60,CB3SoundRaceCar::UpdateHorn(CB3RaceCar *),agrees (strong),CB3SoundRaceCar::UpdateHorn(CB3RaceCar*),strong
+0x0028D1A0,CB3SoundRaceCar::StopBoost(CB3RaceCar const *),agrees (unverified),CB3SoundRaceCar::StopBoost(const CB3RaceCar*),unverified
+0x0028D830,CB3SoundRaceCar::Update(CB3RaceCar const *),"not in our table; the prototype has this name, not proven here",,
+0x0028E2E0,"CB3SoundSkidModel::Update(CB3Wheel const **,float,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,CGtSoundVirtualVoice **,GtMathPs2::CGtV3d,bool,float *,float *,bool,bool,bool)","same function, other signature in the prototype map","CB3SoundSkidModel::Update(const CB3Wheel**,float,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,CGtSoundVirtualVoice**,GtMathPs2::CGtV3d,b",strong
+0x0028EA10,CB3SoundSkidModel::Update(CB3RaceCar const *),agrees (strong),CB3SoundSkidModel::Update(const CB3RaceCar*),strong
+0x00297930,_rwaObjDefOpenModule,different function: the code matches the prototype name,_rwaVirtualVoiceSetWave,"proven: same code, unique"
+0x002B6BC0,CB3StopJunction::Prepare(CB3StopJunctionStruct *),"agrees (proven: same code, unique)",CB3StopJunction::Prepare(CB3StopJunctionStruct*),"proven: same code, unique"
+0x002B6C30,CGtPerfMon::Construct(void),agrees (proven: same place between proven functions),CGtPerfMon::Construct(),proven: same place between proven functions
+0x002B6C40,CGtFreeList::RemoveAllLinks(void),agrees (proven: same place between proven functions),CGtFreeList::RemoveAllLinks(),proven: same place between proven functions
+0x002B6DA0,CGtFreeList::AddLink(void),"agrees (proven: same code, unique)",CGtFreeList::AddLink(),"proven: same code, unique"
+0x002B6E20,CGtFreeListPool::SortFree(void),"agrees (proven: same code, unique)",CGtFreeListPool::SortFree(),"proven: same code, unique"
+0x002B6EF0,"CGtFreeListPool::Construct(uint,uint,uint,void const *,void *,uint)",no prototype counterpart,,
+0x002B7110,CB3EnvironmentData::FixUp(void),no prototype counterpart,,
+0x002B71A0,"CB3PropManager::KillProp(CB3Prop *,bool)",no prototype counterpart,,
+0x002B7870,CB3PropManager::Construct(void),"agrees (proven: same code, unique)",CB3PropManager::Construct(),"proven: same code, unique"
+0x002B96D0,"CB3ConvexHull::DebugRenderPlanes(GtMathPs2::CGtMatrix3x4 const &,GtMathPs2::CGtPlane const *,GtMathPs2::CGtV3d const *,bool)",agrees (proven: same place between proven functions),"CB3ConvexHull::DebugRenderPlanes(const GtMathPs2::CGtMatrix3x4&,const GtMathPs2::CGtPlane*,const GtMathPs2::CGtV3d*,bool)",proven: same place between proven functions
+0x002B9C10,"CB3ConvexHull::DebugRenderEdges(GtMathPs2::CGtMatrix3x4 const &const,bool)","same function, other signature in the prototype map","CB3ConvexHull::DebugRenderEdges(const GtMathPs2::CGtMatrix3x4&,bool) const",proven: same place between proven functions
+0x002BA0F0,"CB3ConvexHull::DeformHullVerts(GtMathPs2::CGtV3d *const,GtMathPs2::CGtMatrix3x4 *)","same function, other signature in the prototype map","CB3ConvexHull::DeformHullVerts(GtMathPs2::CGtV3d*,GtMathPs2::CGtMatrix3x4*) const",proven: same place between proven functions
+0x002BBB90,CB3EnvironmentManager::RenderBackdropTexture(void),agrees (strong),CB3EnvironmentManager::RenderBackdropTexture(),strong
+0x002BBF50,CB3EnvironmentManager::RenderSunCorona(void),agrees (strong),CB3EnvironmentManager::RenderSunCorona(),strong
+0x002BBFA0,CB3EnvironmentManager::SunOcclusionTest(void),agrees (strong),CB3EnvironmentManager::SunOcclusionTest(),strong
+0x002BC070,CB3EnvironmentManager::RenderSunToEnvironmentMap(void),agrees (strong),CB3EnvironmentManager::RenderSunToEnvironmentMap(),strong
+0x002BC140,CB3EnvironmentManager::RenderSkyToEnvironmentMap(void),agrees (strong),CB3EnvironmentManager::RenderSkyToEnvironmentMap(),strong
+0x002BC190,CB3EnvironmentManager::BuildEnvmapSunCoronaData(void),agrees (strong),CB3EnvironmentManager::BuildEnvmapSunCoronaData(),strong
+0x002BC270,CB3EnvironmentManager::RenderClouds(void),agrees (strong),CB3EnvironmentManager::RenderClouds(),strong
+0x002BC2B0,CB3EnvironmentManager::RenderSunBlob(void),agrees (strong),CB3EnvironmentManager::RenderSunBlob(),strong
+0x002BC380,CB3EnvironmentManager::RenderSky(void),agrees (likely),CB3EnvironmentManager::RenderSky(),likely
+0x002BC450,CB3EnvironmentManager::BeginRender(int),agrees (strong),CB3EnvironmentManager::BeginRender(int),strong
+0x002BC460,CB3EnvironmentManager::Update(float),agrees (unverified),CB3EnvironmentManager::Update(float),unverified
+0x002BC970,CB3EnvironmentManager::Release(void),agrees (strong),CB3EnvironmentManager::Release(),strong
+0x002BCA20,CB3EnvironmentManager::Prepare(void),agrees (likely),CB3EnvironmentManager::Prepare(),likely
+0x002BCE90,CB3EnvironmentManager::Destruct(void),agrees (strong),CB3EnvironmentManager::Destruct(),strong
+0x002BCEC0,CB3EnvironmentManager::Construct(void),agrees (strong),CB3EnvironmentManager::Construct(),strong
+0x002BDA00,CB3PhysicsManagerDebug::DrawHullToHullCollisionPlanes(void),agrees (strong),CB3PhysicsManagerDebug::DrawHullToHullCollisionPlanes(),strong
+0x002BDB90,CB3PhysicsManagerDebug::DrawCollisionTriangleCache(void),agrees (strong),CB3PhysicsManagerDebug::DrawCollisionTriangleCache(),strong
+0x002BDDF0,CB3PhysicsManagerDebug::DrawCollisionWorld(void),agrees (strong),CB3PhysicsManagerDebug::DrawCollisionWorld(),strong
+0x002BDF00,"ColWorldCallbackLeaf(CGtPolygonIntersectionResult const &,void *)",name not in the prototype map; the map names this function differently,"_ColWorldCallbackLeaf(const CGtPolygonIntersectionResult&,void*)","proven: same code, unique"
+0x002BE260,"ColWorldCallback(CGtPolygonIntersectionResult const &,void *)",name not in the prototype map; the map names this function differently,"_ColWorldCallback(const CGtPolygonIntersectionResult&,void*)",proven: same place between proven functions
+0x002BE770,CB3PhysicsManagerDebug::DrawIntervals(void),agrees (proven: same place between proven functions),CB3PhysicsManagerDebug::DrawIntervals(),proven: same place between proven functions
+0x002BEA00,CB3PhysicsManagerDebug::RenderWorld(void),agrees (proven: same place between proven functions),CB3PhysicsManagerDebug::RenderWorld(),proven: same place between proven functions
+0x002BEBB0,CB3PhysicsManagerDebug::Update(void),"agrees (proven: same code, unique)",CB3PhysicsManagerDebug::Update(),"proven: same code, unique"
+0x002BED00,CB3PhysicsManagerDebug::Construct(void),agrees (strong),CB3PhysicsManagerDebug::Construct(),strong
+0x002E2730,"CB3BehaviourOffset::Update(CGtCamera *,float)",agrees (unverified),"CB3BehaviourOffset::Update(CGtCamera*,float)",unverified
+0x002E32E0,CB3BehaviourOffset::Prepare(void *),agrees (unverified),CB3BehaviourOffset::Prepare(void*),unverified
+0x002E3440,"CB3BehaviourRaceCarFollow::Update(CGtCamera *,float)",agrees (proven: same place between proven functions),"CB3BehaviourRaceCarFollow::Update(CGtCamera*,float)",proven: same place between proven functions
+0x002E6F30,"CB3PlayerCameraManager::Construct(void *,CGtStateOffset const *,CGtTimer *)",different function: open,CB3BehaviourRotate::Construct(),unverified
+0x002E7140,CB3PlayerCameraManager::SetActiveBehaviour(int),one function off: the prototype map puts this name at 0x2E7150,,
+0x002E7340,CB3PlayerCameraManager::IsPlayerVisible(void),agrees (likely),CB3PlayerCameraManager::IsPlayerVisible(),likely
+0x002E7610,CB3PlayerCameraManager::Update(float),agrees (strong),CB3PlayerCameraManager::Update(float),strong
+0x002E7BA0,CB3PlayerCameraManager::Construct(int),agrees (strong),CB3PlayerCameraManager::Construct(int),strong
+0x002E7F00,"CB3PlayerCameraStateDebug::Action(EGtStateAction,void *,void *,void *)",agrees (strong),"CB3PlayerCameraStateDebug::Action(EGtStateAction,void*,void*,void*)",strong
+0x002E8250,"CB3PlayerCameraStateInGame::Action(EGtStateAction,void *,void *,void *)",agrees (unverified),"CB3PlayerCameraStateInGame::Action(EGtStateAction,void*,void*,void*)",unverified
+0x002E90F0,"CB3BehaviourFlyAround::Update(CGtCamera *,float)",agrees (unverified),"CB3BehaviourFlyAround::Update(CGtCamera*,float)",unverified
+0x002EEFC0,CB3SoundRaceCarManager::RelinquishRaceCar(CB3SoundRaceCar *),agrees (strong),CB3SoundRaceCarManager::RelinquishRaceCar(CB3SoundRaceCar*),strong
+0x002EEFE0,CB3SoundRaceCarManager::RequestRaceCar(EB3RaceCarType),agrees (likely),CB3SoundRaceCarManager::RequestRaceCar(EB3RaceCarType),likely
+0x002EF0F0,CB3TrafficDebug::RenderSpatialTriggers(void),agrees (strong),CB3TrafficDebug::RenderSpatialTriggers(),strong
+0x002EFE00,CB3TrafficDebug::RenderNearMissData(void),agrees (strong),CB3TrafficDebug::RenderNearMissData(),strong
+0x002F02C0,CB3TrafficDebug::RenderWorld(void),agrees (strong),CB3TrafficDebug::RenderWorld(),strong
+0x002F0330,CB3TrafficDebug::Update(void),agrees (likely),CB3TrafficDebug::Update(),likely
+0x002F0380,CB3TrafficDebug::Construct(void),"agrees (proven: same code, unique)",CB3TrafficDebug::Construct(),"proven: same code, unique"
+0x002F03A0,CB3CPUMonitors::Construct(void),different function: open,CB3NetworkCPUMonitors::Construct(),unverified
+0x002F9690,"CGt2dObjectParagraph::Prepare(GtMathPs2::CGtV2d const &,float,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV4d,ushort const *,CGtStaticParagraphSettings const *,uint,CGt2dObjectParagraph::ETextType)",no prototype counterpart,,
+0x002F9EA0,CGtLinearMalloc::CGtLinearMalloc(void),"agrees (proven: same code, unique)",CGtLinearMalloc::CGtLinearMalloc(),"proven: same code, unique"
+0x003012D0,"CB3StreamedTrack::ComputeVehicleRenderData(CB3VehicleEssentialParams *,float)",agrees (likely),"CB3StreamedTrack::ComputeVehicleRenderData(CB3VehicleEssentialParams*,float)",likely
+0x00301340,"CB3StreamedTrack::GetIrradiance(int,GtMathPs2::CGtV3d,CGtIrradianceMap *,float)",agrees (strong),"CB3StreamedTrack::GetIrradiance(int,GtMathPs2::CGtV3d,CGtIrradianceMap*,float)",strong
+0x00301B00,"CB3StreamedTrack::IntersectSphereWithUnit(uint,GtMathPs2::CGtSphere,bool (*)(CGtPolygonIntersectionResult const &,void *),void *)","same function, other signature in the prototype map","CB3StreamedTrack::IntersectSphereWithUnit(unsigned int,GtMathPs2::CGtSphere,bool (*)(const CGtPolygonIntersectionResult&, void*",strong
+0x00301D50,CB3StreamedTrack::UpdateStreamPVS(void),agrees (unverified),CB3StreamedTrack::UpdateStreamPVS(),unverified
+0x00302160,CB3StreamedTrack::Update(void),agrees (unverified),CB3StreamedTrack::Update(),unverified
+0x003026C0,CB3StreamedTrack::UpdateStreamFSM(void),agrees (likely),CB3StreamedTrack::UpdateStreamFSM(),likely
+0x003029B0,CB3StreamedTrack::UpdateStreamHighFSM(void),agrees (strong),CB3StreamedTrack::UpdateStreamHighFSM(),strong
+0x00302AE0,CB3StreamedTrack::UpdateStreamLowFSM(void),agrees (strong),CB3StreamedTrack::UpdateStreamLowFSM(),strong
+0x00302D20,"CB3StreamedTrack::Prepare(bool,int)","not in our table; the prototype has this name, not proven here",,
+0x003030E0,CB3StreamedTrack::Destruct(void),"agrees (proven: same code, unique)",CB3StreamedTrack::Destruct(),"proven: same code, unique"
+0x003030F0,CB3StreamedTrack::Construct(void),agrees (proven: same place between proven functions),CB3StreamedTrack::Construct(),proven: same place between proven functions
+0x003033F0,CB3ShadowMgr::RenderShadows(int),agrees (proven: same place between proven functions),CB3ShadowMgr::RenderShadows(int),proven: same place between proven functions
+0x00303750,CB3ShadowMgr::RenderFrontEndShadow(int),agrees (proven: same place between proven functions),CB3ShadowMgr::RenderFrontEndShadow(int),proven: same place between proven functions
+0x00303C10,CB3ShadowRenderer::BeginShadowPlaneRendering(void),"agrees (proven: same code, unique)",CB3ShadowRenderer::BeginShadowPlaneRendering(),"proven: same code, unique"
+0x003078F0,CB3TrafficSystem::Draw(int),agrees (unverified),CB3TrafficSystem::Draw(int),unverified
+0x003093E0,CB3TrafficSystem::PrepareTrafficVehicleData(void),agrees (strong),CB3TrafficSystem::PrepareTrafficVehicleData(),strong
+0x0030ABA0,"CB3BoostEffectParams::GetRadialBlurParams(CB3RadialBlurParams *const,CB3PlayerCar *,CB3PlayerCameraManager *)","same function, other signature in the prototype map","CB3BoostEffectParams::GetRadialBlurParams(CB3RadialBlurParams*,CB3PlayerCar*,CB3PlayerCameraManager*) const",likely
+0x0030B560,CB3MenuComponents::Construct(void),agrees (likely),CB3MenuComponents::Construct(),likely
+0x0030BFF0,CB3MenuChoices::RequestTwoPlayerGameMode(int),agrees (unverified),CB3MenuChoices::RequestTwoPlayerGameMode(int),unverified
+0x0030C2C0,CB3MenuChoices::RequestOnePlayerGameMode(int),agrees (likely),CB3MenuChoices::RequestOnePlayerGameMode(int),likely
+0x0030C560,CB3MenuChoices::RequestChampionshipGameMode(int),agrees (unverified),CB3MenuChoices::RequestChampionshipGameMode(int),unverified
+0x0030CA10,"CB3MenuChoices::GetDriverCarID(CB3GameStageDataStruct *,int,int)",agrees (unverified),"CB3MenuChoices::GetDriverCarID(CB3GameStageDataStruct*,int,int)",unverified
+0x0030D1B0,CB3MenuChoices::RequestNewGameMode(void),agrees (likely),CB3MenuChoices::RequestNewGameMode(),likely
+0x0030D3B0,CB3MenuChoices::Prepare(void),agrees (strong),CB3MenuChoices::Prepare(),strong
+0x0030D4B0,CB3MenuPageManager::ImmediateLeadOut(EB3MenuFlowFSMEvents),agrees (likely),CB3MenuPageManager::ImmediateLeadOut(EB3MenuFlowFSMEvents),likely
+0x0030D500,"CB3MenuPageManager::StartLeadOutBack(EB3MenuFlowFSMEvents,bool)",different function: open,"CB3MenuPageManager::StartLeadOutFore(EB3MenuFlowFSMEvents,bool)",strong
+0x0030D560,"CB3MenuPageManager::StartLeadOutFore(EB3MenuFlowFSMEvents,bool)",different function: open,CB3MenuPageManager::StartLeadOut(EB3MenuFlowFSMEvents),strong
+0x0030D5C0,"CB3MenuPageManager::SetMenuPage(CB3MenuPageBase *,bool)",agrees (strong),"CB3MenuPageManager::SetMenuPage(CB3MenuPageBase*,bool)",strong
+0x0030D6E0,CB3MenuPageManager::Render(void),agrees (strong),CB3MenuPageManager::Render(),strong
+0x0030D7C0,CB3MenuPageManager::Update(void),no prototype counterpart,,
+0x0030DD70,CB3MenuPageManager::ReleaseCurrentMenu(void),no prototype counterpart,,
+0x0030DE10,CB3MenuPageManager::Prepare(void),no prototype counterpart,,
+0x0030DF10,CB3MenuPageManager::Construct(void),no prototype counterpart,,
+0x0030E340,CB3MainMenuState::NextPage(int),no prototype counterpart,,
+0x0030ED50,CB3MenuFlowFSM::GetMenuFlowType(void),no prototype counterpart,,
+0x0030ED60,CB3MenuFlowFSM::GetOffsetTable(void),no prototype counterpart,,
+0x0030ED80,"CB3MenuFlowFSM::Construct(void *,CGtStateOffset *,CGtTimer *)","same function, other signature in the prototype map","CB3MenuFlowFSM::Construct(void*,const CGtStateOffset*,CGtTimer*)",strong
+0x0030F620,"CB3OnlineLobbyState::Action(EGtStateAction,void *,void *,void *)",agrees (unverified),"CB3OnlineLobbyState::Action(EGtStateAction,void*,void*,void*)",unverified
+0x00310200,"CB3CarSelectState::Action(EGtStateAction,void *,void *,void *)","not in our table; the prototype has this name, not proven here",,
+0x00311890,"CB3OnlineLobbyPage::PrepareClassSelect(ulong,bool)",name not in the prototype map; the map names this function differently,CB3OnlineLobbyPage::BuildGameOptionsText(),unverified
+0x00311EA0,"CB3OnlineLobbyPage::CheckCarClassLimit(ulong,bool)","not in our table; the prototype has this name, not proven here",,
+0x003120E0,CB3OnlineLobbyPage::GetCarClass(ulong),"agrees (proven: same code, unique)",CB3OnlineLobbyPage::GetCarClass(unsigned long),"proven: same code, unique"
+0x00312420,CB3OnlineLobbyPage::RebuildList(void),agrees (unverified),CB3OnlineLobbyPage::RebuildList(),unverified
+0x00312A60,CB3OnlineLobbyPage::ShowPrompts(void),agrees (unverified),CB3OnlineLobbyPage::ShowPrompts(),unverified
+0x00313B30,CB3OnlineLobbyPage::SetupTableData(void),agrees (likely),CB3OnlineLobbyPage::SetupTableData(),likely
+0x00314850,CB3OnlineLobbyPage::UpdateLatency(void),agrees (strong),CB3OnlineLobbyPage::UpdateLatency(),strong
+0x00315940,CB3OnlineLobbyPage::UpdateNATData(void),agrees (unverified),CB3OnlineLobbyPage::UpdateNATData(),unverified
+0x00316640,CB3OnlineLobbyPage::ReturnToNormalPageMode(void),"not in our table; the prototype has this name, not proven here",,
+0x00316840,CB3OnlineLobbyPage::UpdateVoIP(void),agrees (likely),CB3OnlineLobbyPage::UpdateVoIP(),likely
+0x00316E30,"CB3OnlineLobbyPage::ChatMessageCallback(char *,char *,void *)",agrees (strong),"CB3OnlineLobbyPage::ChatMessageCallback(char*,char*,void*)",strong
+0x00316E80,CB3OnlineLobbyPage::Update(void),agrees (unverified),CB3OnlineLobbyPage::Update(),unverified
+0x00317D20,CB3OnlineLobbyPage::Prepare(char *),agrees (unverified),CB3OnlineLobbyPage::Prepare(char*),unverified
+0x003180A0,CGtUnicode::PrintString(void),name not in the prototype map; the map names this function differently,"CGtUnicode::PrintString<PUs>(unsigned short*,const unsigned short*,unsigned short*const&)",strong
+0x00318380,CB3MainMenuPage::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x00318560,CB3CarSelectPage::SetPrompts(void),no prototype counterpart,,
+0x00318570,CB3MenuPageBase::Prepare(bool),one function off: the prototype map puts this name at 0x318530,,
+0x003187F0,"CB3HeadingComponent::Prepare(EGlobalStrings,CB3HeadingComponent::EHeadingType)","not in our table; the prototype has this name, not proven here",,
+0x00318A80,CB3CarSelectPage::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x00318F50,CB3CarSelectPage::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x003192F0,CB3ScrollingTextData::SetData(ushort const *),agrees (strong),CB3ScrollingTextData::SetData(const unsigned short*),strong
+0x00319330,CB3MenuComponentSelectionData::SelectNext(void),agrees (unverified),CB3MenuComponentSelectionData::SelectNext(),unverified
+0x00319360,CB3MenuComponentSelectionData::SelectPrev(void),agrees (unverified),CB3MenuComponentSelectionData::SelectPrev(),unverified
+0x00319390,CB3MenuComponentBase::Release(void),"agrees (proven: same code, unique)",CB3MenuComponentBase::Release(),"proven: same code, unique"
+0x003193A0,CB3MenuComponentBase::Prepare(void),"agrees (proven: same code, unique)",CB3MenuComponentBase::Prepare(),"proven: same code, unique"
+0x003193B0,CB3MenuComponentBase::Construct(int),"agrees (proven: same code, unique)",CB3MenuComponentBase::Construct(int),"proven: same code, unique"
+0x00319C80,"CB3HeadingComponent::Prepare(ushort const *,CB3HeadingComponent::EHeadingType)",one function off: the prototype map puts this name at 0x319A90,,
+0x0031B770,"CB3HelpBarComponent::SetString(const ushort *,bool,bool,float)",agrees (strong),"CB3HelpBarComponent::SetString(const unsigned short*,bool,bool,float)",strong
+0x0031C350,"CB3HelpBarComponent::Prepare(CB3MenuComponentSelectionData *const,CB3ScrollingTextData *const,bool,float)","same function, other signature in the prototype map","CB3HelpBarComponent::Prepare(const CB3MenuComponentSelectionData*,const CB3ScrollingTextData*,bool,float)",strong
+0x0031C470,CB3HelpBarComponent::Prepare(void),agrees (strong),CB3HelpBarComponent::Prepare(),strong
+0x0031C520,"CB3HelpBarComponent::Prepare(ushort const *,bool,float)",agrees (strong),"CB3HelpBarComponent::Prepare(const unsigned short*,bool,float)",strong
+0x0031CB20,"CB3ScrollingText2dObject::Prepare(ushort const *,bool,bool,float)",agrees (strong),"CB3ScrollingText2dObject::Prepare(const unsigned short*,bool,bool,float)",strong
+0x0031CF30,CB3BackgroundComponent::Update(float),agrees (unverified),CB3BackgroundComponent::Update(float),unverified
+0x0031D660,CB3BackgroundComponent::PrepareBorders(float),agrees (likely),CB3BackgroundComponent::PrepareBorders(float),likely
+0x0031D930,CB3BackgroundComponent::Prepare(EB3BackgroundType),agrees (unverified),CB3BackgroundComponent::Prepare(EB3BackgroundType),unverified
+0x0031E140,"CB3PromptsComponent::SetCurrentPrompts(uint,uint)",agrees (strong),"CB3PromptsComponent::SetCurrentPrompts(unsigned int,unsigned int)",strong
+0x0031ED50,"CB3PromptsComponent::Prepare(uint,uint)","not in our table; the prototype has this name, not proven here",,
+0x0031FF20,"CB3VSelectComponent::SetItemEnabled(int,bool)",one function off: the prototype map puts this name at 0x31FE40,,
+0x00320F90,"CB3VSelectComponent::PrepareItem(int,float,bool)","not in our table; the prototype has this name, not proven here",,
+0x003211B0,"CB3VSelectComponent::Prepare(bool,float,float,float,float,CB3MenuComponentSelectionData *const,CB3VSelectComponentEntryData *)","not in our table; the prototype has this name, not proven here",,
+0x00321550,"CB3VSelectComponent::Prepare(CB3MenuComponentSelectionData const *,CB3VSelectComponentEntryData *)",one function off: the prototype map puts this name at 0x321470,,
+0x00321770,CB3LoadingScreenPage::Update(void),one function off: the prototype map puts this name at 0x321690,,
+0x00322530,CB3MyBurnoutPage::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x003225C0,CB3MyBurnoutPage::Construct(void),one function off: the prototype map puts this name at 0x322610,,
+0x003226B0,"CB3MyBurnoutState::Action(EGtStateAction,void *,void *,void *)","not in our table; the prototype has this name, not proven here",,
+0x00324FE0,CGtVideoDecoder::Update(void),one function off: the prototype map puts this name at 0x325030,,
+0x003254A0,"CGtVideoDecoder::Prepare(CGtLinearMalloc *,int,int,char const *,float,uint)",one function off: the prototype map puts this name at 0x3254F0,,
+0x0032D080,"CB3MessageBoxComponent::Prepare(EB3MessageBoxType,const ushort *)","not in our table; the prototype has this name, not proven here",,
+0x0032D1B0,CB3MessageBoxComponent::Construct(void),agrees (strong),CB3MessageBoxComponent::Construct(),strong
+0x0032EDD0,CB3TrafficHullStruct::Fixup(uint),"agrees (proven: same code, unique)",CB3TrafficHullStruct::Fixup(unsigned int),"proven: same code, unique"
+0x0032EE00,CB3AIAggressionBehaviour::UpdateAggressiveHornBlast(void),agrees (proven: same place between proven functions),CB3AIAggressionBehaviour::UpdateAggressiveHornBlast(),proven: same place between proven functions
+0x0032EEE0,CB3AIAggressionBehaviour::DoAggressiveHornBlast(EAggressiveHornBlashReason),"agrees (proven: same code, unique)",CB3AIAggressionBehaviour::DoAggressiveHornBlast(EAggressiveHornBlashReason),"proven: same code, unique"
+0x00330370,CB3AIAggressionBehaviour::Update(void),agrees (unverified),CB3AIAggressionBehaviour::Update(),unverified
+0x00331B30,CB3AIAggressionBehaviour::Prepare(CB3AICar *),agrees (strong),CB3AIAggressionBehaviour::Prepare(CB3AICar*),strong
+0x00331FE0,"CB3ChatDisplayComponent::AddNewMessage(char *,const ushort *)",agrees (strong),"CB3ChatDisplayComponent::AddNewMessage(char*,const unsigned short*)",strong
+0x003322F0,CB3ChatDisplayComponent::PrepareWithoutStrings(EB3ChatDisplayOrientation),agrees (proven: same place between proven functions),CB3ChatDisplayComponent::PrepareWithoutStrings(EB3ChatDisplayOrientation),proven: same place between proven functions
+0x00332570,CB3ChatDisplayComponent::Prepare(EB3ChatDisplayOrientation),agrees (proven: same place between proven functions),CB3ChatDisplayComponent::Prepare(EB3ChatDisplayOrientation),proven: same place between proven functions
+0x00332610,CB3ChatDisplayComponent::SetOrientation(EB3ChatDisplayOrientation),agrees (proven: same place between proven functions),CB3ChatDisplayComponent::SetOrientation(EB3ChatDisplayOrientation),proven: same place between proven functions
+0x00332960,CB3ChatDisplayComponent::Construct(void),"agrees (proven: same code, unique)",CB3ChatDisplayComponent::Construct(),"proven: same code, unique"
+0x003329A0,CB3StaticTrack::Update(void),agrees (strong),CB3StaticTrack::Update(),strong
+0x00332D00,CB3StaticTrack::RenderBackdrop(CB3BackdropObject const &),"agrees (proven: same code, unique)",CB3StaticTrack::RenderBackdrop(const CB3BackdropObject&),"proven: same code, unique"
+0x00332D70,CB3StaticTrack::Release(void),"agrees (proven: same code, unique)",CB3StaticTrack::Release(),"proven: same code, unique"
+0x00332E00,CB3StaticTrack::Prepare(void),agrees (proven: same place between proven functions),CB3StaticTrack::Prepare(),proven: same place between proven functions
+0x00333110,CB3StaticTrack::Destruct(void),"agrees (proven: same code, unique)",CB3StaticTrack::Destruct(),"proven: same code, unique"
+0x00333120,CB3StaticTrack::Construct(void),"agrees (proven: same code, unique)",CB3StaticTrack::Construct(),"proven: same code, unique"
+0x00333140,CB3BodyPartPhysics::StopCrashing(void),agrees (strong),CB3BodyPartPhysics::StopCrashing(),strong
+0x00333FD0,CB3BodyPartPhysics::Release(void),agrees (strong),CB3BodyPartPhysics::Release(),strong
+0x003342D0,"CB3BodyPartPhysics::Prepare(CB3VehiclePhysics *,int,EBodyPartType)",no prototype counterpart,,
+0x00334680,CB3BodyPartPhysics::Construct(void),no prototype counterpart,,
+0x00335450,"CB3HUDLap::Prepare(int,EHUDAlign,int)",no prototype counterpart,,
+0x00335AB0,"CB3HUDPos::Prepare(int,EHUDAlign,int,bool,bool)",agrees (unverified),"CB3HUDPos::Prepare(int,EHUDAlign,int,bool,bool)",unverified
+0x00337AC0,CGtLobbyDirtySock::AmIInGame(void),name not in the prototype map; the map names this function differently,CGtLobbyPS2DirtySock::AmIInGame(),likely
+0x00337AD0,CGtLobbyDirtySock::AmIHost(void),name not in the prototype map; the map names this function differently,CGtLobbyPS2DirtySock::AmIHost(),strong
+0x0033A250,"CGtLobbyPS2DirtySock::ConnectToServer(char const *,int)","same function, other signature in the prototype map","CGtLobbyPS2DirtySock::ConnectToServer(char*,int)",unverified
+0x0033BBE0,CGtLobbyPS2DirtySock::GetLobbyStatus(void),one function off: the prototype map puts this name at 0x33BC20,,
+0x00342880,"CB3PauseState::Action(EGtStateAction,void *,void *,void *)",one function off: the prototype map puts this name at 0x3428D0,,
+0x00346DB0,CB3OnlineConnectingPage::UpdateISP(void),one function off: the prototype map puts this name at 0x346DF0,,
+0x003471A0,CB3OnlineConnectingPage::PrepareLobbyConnect(void),one function off: the prototype map puts this name at 0x3471E0,,
+0x0034D8B0,CB3OnScreenKeyboardComponent::RegisterKeyboardCallbacks(void),one function off: the prototype map puts this name at 0x34D8D0,,
+0x003517D0,CB3OnScreenKeyboardComponent::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x00351EE0,"CB3TextComponent::Prepare(GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,EGlobalStrings,uint,float,bool,float,uint,bool)","not in our table; the prototype has this name, not proven here",,
+0x00353A30,CB3CrashAnalyser::Update(float),"not in our table; the prototype has this name, not proven here",,
+0x00354350,CB3CrashAnalyser::GetVehicleBeforeImpact(void),agrees (strong),CB3CrashAnalyser::GetVehicleBeforeImpact(),strong
+0x00354760,CB3CrashAnalyser::UpdateCollidingPairs(void),agrees (strong),CB3CrashAnalyser::UpdateCollidingPairs(),strong
+0x00354D60,CB3CrashAnalyser::Prepare(CB3RaceCarPhysics *),different function: open,CB3CrashAnalyser::JoinExistingCrash(),unverified
+0x00354ED0,CB3CrashAnalyser::Construct(void),agrees (strong),CB3CrashAnalyser::Construct(),strong
+0x00354F70,CB3CrashAnalyser::Release(void),one function off: the prototype map puts this name at 0x353990,,
+0x003560F0,CB3CrashCameraDirector::UpdateCrash(float),agrees (unverified),CB3CrashCameraDirector::UpdateCrash(float),unverified
+0x00356FB0,CB3CrashCameraDirector::Update(float),"not in our table; the prototype has this name, not proven here",,
+0x00357520,CB3CrashCameraDirector::Prepare(bool),agrees (strong),CB3CrashCameraDirector::Prepare(bool),strong
+0x00357600,"CB3PlayerCameraStateCrashMode::Action(EGtStateAction,void *,void *,void *)",agrees (unverified),"CB3PlayerCameraStateCrashMode::Action(EGtStateAction,void*,void*,void*)",unverified
+0x003582A0,CB3BehaviourCluster::Prepare(void *),agrees (strong),CB3BehaviourCluster::Prepare(void*),strong
+0x00358780,CB3BehaviourCluster::SetRig(CB3ClusterRig *),agrees (strong),CB3BehaviourCluster::SetRig(CB3ClusterRig*),strong
+0x0035A700,CB3ClusterRig::PrepareFocus(float),agrees (unverified),CB3ClusterRig::PrepareFocus(float),unverified
+0x0035B830,"CB3ClusterRig::PrepareRotate(EB3RigType,EB3FocusType,CB3ChildBody *,float,float,GtMathPs2::CGtV3d,float,float,float,GtMathPs2::CGtMatrix3x4 const &,GtMathPs2::CGtMatrix3x4 const &,float,int,bool)","same function, other signature in the prototype map","CB3ClusterRig::PrepareRotate(EB3RigType,EB3FocusType,CB3ChildBody*,float,float,GtMathPs2::CGtV3d,float,float,float,const GtMath",strong
+0x0035D250,CGtSphereTree::AddToIntegrateList(CGtSphereTreeSphere *),agrees (proven: same place between proven functions),CGtSphereTree::AddToIntegrateList(CGtSphereTreeSphere*),proven: same place between proven functions
+0x0035EF30,CB3DebugMipMaps::Update(void),"agrees (proven: same code, unique)",CB3DebugMipMaps::Update(),"proven: same code, unique"
+0x003609A0,"CGtBuddiesPS2DirtySock::Prepare(char,char,char)","not in our table; the prototype has this name, not proven here",,
+0x00363F10,CB3CrashCombo::UpdateCollidingPairs(void),agrees (strong),CB3CrashCombo::UpdateCollidingPairs(),strong
+0x00364270,CB3CrashCombo::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x003642F0,CB3CrashCombo::Construct(void),agrees (likely),CB3CrashCombo::Construct(),likely
+0x00364910,"B3Im3d::RenderLinelist(CB3Im3dVertex const *,int)",one function off: the prototype map puts this name at 0x364920,,
+0x00365500,B3Im3d::SetTexture(CGtTexture *),one function off: the prototype map puts this name at 0x365510,,
+0x00365590,B3Im3d::EndRendering(void),one function off: the prototype map puts this name at 0x3655A0,,
+0x00365630,B3Im3d::BeginRendering(void),one function off: the prototype map puts this name at 0x365640,,
+0x00365870,B3Im3d::Construct(void),one function off: the prototype map puts this name at 0x365880,,
+0x00368EE0,"CB3ScoreBonus::OnEvent(EScoreBonusEvent,int,int,bool)",one function off: the prototype map puts this name at 0x368EF0,,
+0x00369260,CB3ScoreBonus::Update(void),one function off: the prototype map puts this name at 0x369270,,
+0x00369440,CB3CrashCombo::Prepare(CB3RaceCar *),different function: the code matches the prototype name,CB3ScoreBonus::Release(),strong
+0x003694A0,CB3ScoreBonus::Construct(void),one function off: the prototype map puts this name at 0x3694B0,,
+0x00371390,"CB3MenuImageUVs::CalculateUV(float,float,float,float,float,float,uint)",no prototype counterpart,,
+0x00371660,CB3MenuImages::CacheGlobalTextures(void),one function off: the prototype map puts this name at 0x3717A0,,
+0x00371940,CB3MenuImages::CacheFrontendTextures(void),one function off: the prototype map puts this name at 0x371870,,
+0x00371BE0,"CB3FlashText2dObject::Render(CGt2dObject::CGt2dObjectSpace const &,void const *)",name not in the prototype map; the map names this function differently,"CB3FlashText2dObject::_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)",strong
+0x00375450,CGtHiResSystemTimer::Construct(void),different function: the code matches the prototype name,"CB3NetworkReplayBodyMessage::Prepare(const unsigned char*,int,int)","proven: same code, unique"
+0x00376860,"CGtFramerateManager::Construct(float,float)",one function off: the prototype map puts this name at 0x3767E0,,
+0x00380AE0,"CB3Panel2dObject::Prepare(GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,bool,bool)",one function off: the prototype map puts this name at 0x380970,,
+0x00382640,"CGt2dObjectText::Prepare(GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,float,GtMathPs2::CGtV4d,CGt2dFont const *,ushort const *,CGt2dObjectText::COutlineDropShadow const *)","not in our table; the prototype has this name, not proven here",,
+0x00383BE0,"CGtSoundBank::FindWave(ulong const &const,bool)","not in our table; the prototype has this name, not proven here",,
+0x00384230,"CGtSoundBankManager::LoadBank(char const *,bool,bool,int)",one function off: the prototype map puts this name at 0x3840C0,,
+0x00384FE0,CGtSoundManager::StopAll(void),one function off: the prototype map puts this name at 0x384E70,,
+0x00385840,CGtSoundRealVoice::Start(CGtSoundVoiceParams const *),one function off: the prototype map puts this name at 0x3856D0,,
+0x00386000,CGtSoundStream::IsPlaying(void),"not in our table; the prototype has this name, not proven here",,
+0x00386280,CGtSoundStream::Play(bool),"not in our table; the prototype has this name, not proven here",,
+0x003872E0,CGtSoundVirtualVoice::ForgetMe(float),"agrees (proven: same code, unique)",CGtSoundVirtualVoice::ForgetMe(float),"proven: same code, unique"
+0x00387A90,CGtSoundVirtualVoice::Start(CGtSoundVoiceParams const *),agrees (proven: same place between proven functions),CGtSoundVirtualVoice::Start(const CGtSoundVoiceParams*),proven: same place between proven functions
+0x003884D0,CGtSoundVirtualVoice::Update(CGtSoundVoiceParams const *),agrees (proven: same place between proven functions),CGtSoundVirtualVoice::Update(const CGtSoundVoiceParams*),proven: same place between proven functions
+0x00388A90,CGtSoundVoiceParams::Construct(void),agrees (proven: same place between proven functions),CGtSoundVoiceParams::Construct(),proven: same place between proven functions
+0x00388D40,CGtSoundVoiceManager::TriggerVoice(CGtSoundVoiceParams const *),agrees (proven: same place between proven functions),CGtSoundVoiceManager::TriggerVoice(const CGtSoundVoiceParams*),proven: same place between proven functions
+0x00388F20,CGtSoundVoiceManager::AllocVirtualVoice(void),"agrees (proven: same code, unique)",CGtSoundVoiceManager::AllocVirtualVoice(),"proven: same code, unique"
+0x00389580,CGtSoundWave::CalcFrequency(void const),"same function, other signature in the prototype map",CGtSoundWave::CalcFrequency() const,strong
+0x003897B0,CB3OfflineSingleRaceLogic::GetScoreModeFlags(void),no prototype counterpart,,
+0x00389C30,CB3OfflineSingleRaceLogic::GetHUDType(void),"not in our table; the prototype has this name, not proven here",,
+0x00389EE0,CB3OfflineSingleRaceLogic::Update(void),no prototype counterpart,,
+0x0038A380,CB3OfflineSingleRaceLogic::Prepare(void),no prototype counterpart,,
+0x0038A6C0,CB3OnlineSingleRaceLogic::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x0038AB10,CB3OnlineSingleRaceLogic::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x0038AD80,CB3PromptBarComponent::Update(float),different function: the code matches the prototype name,CB3PromptBarComponent::Prepare(),unverified
+0x0038AFB0,CB3OfflineBurningLapLogic::GetOfflineGameModeType(void),no prototype counterpart,,
+0x0038AFC0,CB3OfflineBurningLapLogic::GetOnlineGameModeType(void),no prototype counterpart,,
+0x0038AFE0,CB3OfflineBurningLapLogic::GetScoreModeFlags(void),no prototype counterpart,,
+0x0038B080,CB3OfflineBurningLapLogic::OnWorldPrepared(void),no prototype counterpart,,
+0x0038B220,CB3OfflineBurningLapLogic::CrashShouldBeClearedUp(uchar),no prototype counterpart,,
+0x0038B2F0,CB3OfflineBurningLapLogic::StartReplay(void),name not in the prototype map; the map names this function differently,CB3OfflineSingleRaceLogic::StartReplay(),strong
+0x0038B370,CB3OfflineBurningLapLogic::HasStageFinished(void),no prototype counterpart,,
+0x0038B5B0,CB3OfflineBurningLapLogic::Update(void),no prototype counterpart,,
+0x0038BEB0,CB3OfflineLapEliminatorLogic::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x0038BFD0,CB3OfflineRoadRageLogic::GetHUDType(void),"not in our table; the prototype has this name, not proven here",,
+0x0038C020,CB3OfflineRoadRageLogic::GetScoreModeFlags(void),"not in our table; the prototype has this name, not proven here",,
+0x0038C3F0,CB3OfflineRoadRageLogic::OnWorldPrepared(void),"not in our table; the prototype has this name, not proven here",,
+0x0038C6B0,"CB3OfflineRoadRageLogic::OnRaceCarCollision(ERaceCarCollisionType,CB3RaceCarPhysics *,CB3RaceCarPhysics *,float)","not in our table; the prototype has this name, not proven here",,
+0x0038EDF0,"CB3OnlineRoadRageRaceLogic::OnTakedown(CB3RaceCar *,CB3RaceCar *)",agrees (strong),"CB3OnlineRoadRageRaceLogic::OnTakedown(CB3RaceCar*,CB3RaceCar*)",strong
+0x0038EEE0,CB3OnlineRoadRageRaceLogic::OnWorldPrepared(void),"not in our table; the prototype has this name, not proven here",,
+0x0038F830,CB3OnlineRoadRageRaceLogic::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x0038FF10,CB3OnlineRoadRageRaceLogic::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x003914A0,CB3OnlineStageLogic::UpdateRacing(void),"not in our table; the prototype has this name, not proven here",,
+0x003922D0,CB3OnlineStageLogic::Prepare(void),no prototype counterpart,,
+0x003934C0,CB3OfflineSingleCrashLogic::HasStageFinished(void),no prototype counterpart,,
+0x003934D0,"CB3OfflineSingleCrashLogic::OnNonFatalCollision(CB3RaceCarPhysics *,CB3TrafficVehicle *)",no prototype counterpart,,
+0x003935A0,CB3OfflineSingleCrashLogic::StartReplay(void),"not in our table; the prototype has this name, not proven here",,
+0x00393940,CB3OfflineSingleCrashLogic::Update((void)),"not in our table; the prototype has this name, not proven here",,
+0x003941A0,CB3OfflineSingleCrashLogic::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x00394280,CB3HUDLapTimer::PrepareMedalObjects(void),"not in our table; the prototype has this name, not proven here",,
+0x00394660,CB3HUDLapTimer::Update(float),"not in our table; the prototype has this name, not proven here",,
+0x00394870,"CB3HUDLapTimer::Prepare(int,EHUDAlign,int,bool,bool)","not in our table; the prototype has this name, not proven here",,
+0x00394C30,CB3TakedownCameraManager::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x00395310,CB3OfflineStageLogic::UpdateCameras(void),"not in our table; the prototype has this name, not proven here",,
+0x00395490,CB3OfflineStageLogic::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x00395580,CB3OfflineStageLogic::StartReplay(void),agrees (strong),CB3OfflineStageLogic::StartReplay(),strong
+0x003956A0,CB3OfflineStageLogic::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x00395920,CB3StageLogic::AssignStartPositionIndex(int),"not in our table; proven against its prototype function (same code, unique)",,
+0x00395970,CB3StageLogic::OnWorldPrepared(void),"not in our table; the prototype has this name, not proven here",,
+0x00395FC0,"CB3StageLogic::DamageRaceCar(CB3RaceCar *,CB3RaceCar *,EB3DamageType)",agrees (likely),"CB3StageLogic::DamageRaceCar(CB3RaceCar*,CB3RaceCar*,EB3DamageType)",likely
+0x0039F490,CB3OnlineGameOptionsPage::UpdateScroll(void),"not in our table; the prototype has this name, not proven here",,
+0x003A02F0,CB3OnlineGameOptionsPage::Update(void),no prototype counterpart,,
+0x003A0AA0,CB3CrashPickup::Draw(void),no prototype counterpart,,
+0x003A1010,CB3CrashPickup::Update(float),no prototype counterpart,,
+0x003A1800,CB3CrashRamp::Draw(CGtTexture *),agrees (unverified),CB3CrashRamp::Draw(CGtTexture*),unverified
+0x003A20E0,CB3TrackDataStruct::Fixup(uint),"agrees (proven: same code, unique)",CB3TrackDataStruct::Fixup(unsigned int),"proven: same code, unique"
+0x003A21C0,CB3HUDTakedowns::PrepareTakedownsObjects(void),agrees (likely),CB3HUDTakedowns::PrepareTakedownsObjects(),likely
+0x003A2510,CB3HUDTakedowns::Update(float),"not in our table; the prototype has this name, not proven here",,
+0x003A25F0,"CB3HUDTakedowns::Prepare(int,EHUDAlign,int,bool,bool)","not in our table; the prototype has this name, not proven here",,
+0x003A3190,"CB3RoundedPanel2dObject::Prepare(GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,uint)",agrees (strong),"CB3RoundedPanel2dObject::Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned int)",strong
+0x003B2EE0,"CB3Globe2dObject::Render(CGt2dObject::CGt2dObjectSpace *const,void const *)",name not in the prototype map; the map names this function differently,"CB3Globe2dObject::_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)",unverified
+0x003B55A0,CB3Globe2dObject::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x003B88E0,CB3MenuStringBuffer::AllocUTF16String(int),"not in our table; the prototype has this name, not proven here",,
+0x003BA6A0,CB3Challenge::OnChallengeRestart(void),"not in our table; the prototype has this name, not proven here",,
+0x003BA780,CB3Challenge::OnEndOfChallenge(void),"not in our table; the prototype has this name, not proven here",,
+0x003BA860,CB3Challenge::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x003BA880,CB3Challenge::Destruct(void),"not in our table; the prototype has this name, not proven here",,
+0x003BA890,CB3Challenge::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x003BA8A0,CB3Challenge::Construct(void),"not in our table; the prototype has this name, not proven here",,
+0x003BAB10,CB3ChampionshipChallenge::OnChallengeRestart(void),"not in our table; the prototype has this name, not proven here",,
+0x003BACA0,CB3ChampionshipChallenge::OnEndOfChallenge(void),"not in our table; the prototype has this name, not proven here",,
+0x003BAFE0,CB3ChampionshipChallenge::Prepare(void),no prototype counterpart,,
+0x003BB100,CB3ChampionshipChallenge::Construct(void),no prototype counterpart,,
+0x003BB190,CB3SingleChallenge::Prepare(void),no prototype counterpart,,
+0x003BB1A0,CB3SingleChallenge::Construct(void),no prototype counterpart,,
+0x003BC360,"CB3HOptionsSelectComponent::SetEnabledState(int,uint)",no prototype counterpart,,
+0x003BC540,"CB3HOptionsSelectComponent::SetYesNoOption(int,bool)",no prototype counterpart,,
+0x003BC5B0,"CB3VOptionsSelectComponent::SetOptionText(int,uint)","not in our table; the prototype has this name, not proven here",,
+0x003BD760,"CB3HOptionsSelectComponent::PreparePanel(int,uint,float)",no prototype counterpart,,
+0x003BE2A0,"CB3HSelectComponent::Prepare(bool,float,float,float,float,CB3MenuComponentSelectionData *const,CB3VSelectComponentEntryData *)","not in our table; the prototype has this name, not proven here",,
+0x003BE5A0,"CB3VOptionsSelectComponent::Prepare(CB3MenuComponentSelectionData const *,CB3VOptionsSelectComponentEntryData *)","not in our table; the prototype has this name, not proven here",,
+0x003C23A0,CB3HUDTimer::PrepareTimerObject(void),agrees (unverified),CB3HUDTimer::PrepareTimerObject(),unverified
+0x003C2640,CB3HUDTimer::Update(float),"not in our table; the prototype has this name, not proven here",,
+0x003C26F0,"CB3HUDTimer::Prepare(int,EHUDAlign,int)","not in our table; the prototype has this name, not proven here",,
+0x003C2F00,CB3TurnBasedCrashChallenge::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x003C2F90,CB3TurnBasedCrashChallenge::Construct(void),"not in our table; the prototype has this name, not proven here",,
+0x003C3570,CB3StreamManager::Construct(void),agrees (likely),CB3StreamManager::Construct(),likely
+0x003C9210,CB3OnePlayerModeSelectState::SetupGameModeSelect(void),"not in our table; the prototype has this name, not proven here",,
+0x003C9340,"CB3OnePlayerModeSelectState::Action(EGtStateAction,void *,void *,void *)","not in our table; the prototype has this name, not proven here",,
+0x003C96F0,CB3OnePlayerModeSelectPage::Update(void),no prototype counterpart,,
+0x003C98D0,CB3OnePlayerModeSelectPage::Prepare(void),no prototype counterpart,,
+0x003C9A10,CB3OnePlayerModeSelectPage::Construct(void),no prototype counterpart,,
+0x003CA2F0,"CB3ControllerRemovedComponent::CreateText(uchar,signed char)","not in our table; the prototype has this name, not proven here",,
+0x003CA5D0,CB3ControllerRemovedComponent::ReleaseComponents(void),"not in our table; the prototype has this name, not proven here",,
+0x003CA6B0,CB3ControllerRemovedComponent::Update(float),"not in our table; the prototype has this name, not proven here",,
+0x003CAA20,CB3ControllerRemovedComponent::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x003CAA40,CB3ControllerRemovedComponent::Construct(void),"not in our table; the prototype has this name, not proven here",,
+0x003CAAB0,CB3HUDScoreList::PrepareScoreListObject(void),"not in our table; the prototype has this name, not proven here",,
+0x003CB080,CB3HUDScoreList::Update(float),"not in our table; the prototype has this name, not proven here",,
+0x003CB090,CB3HUDScoreList::ActualPrepare(void),"not in our table; the prototype has this name, not proven here",,
+0x003CB400,"CB3HUDScoreList::Prepare(EHUDAlign,int)","agrees (proven: same code, unique)","CB3HUDScoreList::Prepare(EHUDAlign,int)","proven: same code, unique"
+0x003CC2D0,CB3CrashScore::Draw(void),"not in our table; the prototype has this name, not proven here",,
+0x003CC910,CB3CrashScore::CrashBreakerVehiclesRemaining(int),"not in our table; the prototype has this name, not proven here",,
+0x003CCE90,"CB3CrashScore::AddCrashScore(ECrashModePickupType,int)",agrees (strong),"CB3CrashScore::AddCrashScore(ECrashModePickupType,int)",strong
+0x003CD140,CB3CrashScore::CalcCrashCarsScore(int),"not in our table; the prototype has this name, not proven here",,
+0x003CD430,"CB3CrashScore::HandleCrashTrafficCar(CB3TrafficPhysics *,CB3TrafficVehicle *,bool,int)",agrees (unverified),"CB3CrashScore::HandleCrashTrafficCar(CB3TrafficPhysics*,CB3TrafficVehicle*,bool,int)",unverified
+0x003CD610,CB3CrashScore::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x003CD820,"CB3HUDBackground2dObject::Prepare(GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV4d,uint)","same function, other signature in the prototype map","CB3HUDBackground2dObject::Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,",unverified
+0x003CD920,"CB3HUDBackground2dObject::Render(CGt2dObject::CGt2dObjectSpace const &,void const *)",no prototype counterpart,,
+0x003D11D0,CB3Records::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x003D2FD0,"CB3RadialBlur2dObject::Render(CGt2dObject::CGt2dObjectSpace const &,void const *)",name not in the prototype map; the map names this function differently,"CB3RadialBlur2dObject::_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)","proven: same code, unique"
+0x003D7190,"CB3HUDCrashCombo::Prepare(int,EHUDAlign,int)",agrees (strong),"CB3HUDCrashCombo::Prepare(int,EHUDAlign,int)",strong
+0x003D76C0,"CGt2dObjectComboText::Render(CGt2dObject::CGt2dObjectSpace const &,void const *)",no prototype counterpart,,
+0x003D7EB0,"CPromptBarPanel2dObject::Prepare(GtMathPs2::CGtV2d const *,GtMathPs2::CGtV2d const *,GtMathPs2::CGtV2d const *)","same function, other signature in the prototype map","CPromptBarPanel2dObject::Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)","proven: same code, unique"
+0x003D8280,CB3HUDPrimaryMessage::UpdateMessage(float),agrees (unverified),CB3HUDPrimaryMessage::UpdateMessage(float),unverified
+0x003D8920,CB3HUDEscapeDistance::PrepareEscapeDistanceObject(void),"not in our table; the prototype has this name, not proven here",,
+0x003D8BC0,CB3HUDEscapeDistance::ActualPrepare(void),"not in our table; the prototype has this name, not proven here",,
+0x003DAEE0,"CB3VehicleDeform::Reset(CB3VehicleEssentialParams *,CB3VehicleParams *)",agrees (strong),"CB3VehicleDeform::Reset(CB3VehicleEssentialParams*,CB3VehicleParams*)",strong
+0x003DB450,"CB3VehicleDeform::Impact(CB3VehiclePhysics *,CB3VehicleEssentialParams *,CB3VehicleParams *,ETrafficVehicleCategories,EB3ActiveBodyType,EB3ImpactType,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float)","same function, other signature in the prototype map","CB3VehicleDeform::Impact(CB3VehiclePhysics*,CB3VehicleEssentialParams*,CB3VehicleParams*,ETrafficVehicleCategories,EB3ActiveBod",likely
+0x003DC070,CB3VehicleDeform::Update(void),agrees (strong),CB3VehicleDeform::Update(),strong
+0x003DC1A0,CB3VehicleDeform::UpdateDamageStates(void),"not in our table; the prototype has this name, not proven here",,
+0x003DC730,CB3VehicleDeform::ImpactBody(void),agrees (strong),CB3VehicleDeform::ImpactBody(),strong
+0x003DE1F0,CB3VehicleDeform::SidewaysDeformation(void),agrees (unverified),CB3VehicleDeform::SidewaysDeformation(),unverified
+0x003E0FE0,CB3VehicleDeform::UpdateAttachState(void),"not in our table; the prototype has this name, not proven here",,
+0x003E7AD0,"CB3MemoryManager::ReleaseBlock(EB3MemoryBlock,int)","not in our table; the prototype has this name, not proven here",,
+0x003E7D40,"CB3MemoryManager::AcquireBlock(EB3MemoryBlock,int)","not in our table; the prototype has this name, not proven here",,
+0x003E8750,CB3MemoryManager::ReleaseMemoryLayout(void),agrees (strong),CB3MemoryManager::ReleaseMemoryLayout(),strong
+0x003E8760,CB3MemoryManager::AcquireMemoryLayout(EB3MemoryLayout),"not in our table; the prototype has this name, not proven here",,
+0x003E87A0,CB3MemoryManager::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x003E8B80,CB3ManagedMemoryBlock::Update(int),"agrees (proven: same code, unique)",CB3ManagedMemoryBlock::Update(int),"proven: same code, unique"
+0x003E8BA0,CB3ManagedMemoryBlock::ReleaseMemoryBlock(int),"not in our table; proven against its prototype function (same code, unique)",,
+0x003E8BB0,CB3ManagedMemoryBlock::GetMemoryBlock(int),"not in our table; the prototype has this name, not proven here",,
+0x003E8FC0,CB3HardCodedCrashStageList::GetCrashStageTrackID(ulong),"not in our table; the prototype has this name, not proven here",,
+0x003E9490,"CB3HardCodedCrashStageList::GetCrashStageName(int,bool)","not in our table; the prototype has this name, not proven here",,
+0x003E9520,CB3HardCodedCrashStageList::GetCrashStageGtID(int),"not in our table; the prototype has this name, not proven here",,
+0x003E9540,CB3HardCodedCrashStageList::FindCrashStage(ulong),"not in our table; the prototype has this name, not proven here",,
+0x003EAB10,"CB3HardCodedTrackList::GetTrackString(int,bool)","not in our table; the prototype has this name, not proven here",,
+0x003EAB90,CB3HardCodedTrackList::FindTrack(ulong),agrees (strong),CB3HardCodedTrackList::FindTrack(unsigned long),strong
+0x003EB000,CB3HardCodedVehicleList::GetRaceVehicleSeries(int),"not in our table; the prototype has this name, not proven here",,
+0x003EB020,CB3HardCodedVehicleList::GetRaceVehicleGtID(int),"not in our table; the prototype has this name, not proven here",,
+0x003EB060,CB3HardCodedVehicleList::FindRaceVehicle(ulong),"not in our table; the prototype has this name, not proven here",,
+0x003EB0F0,"CB3MyBurnoutProfileLoadState::Action(EGtStateAction,void *,void *,void *)","not in our table; the prototype has this name, not proven here",,
+0x003EB670,"CB3MyBurnoutProfileSaveState::Action(EGtStateAction,void *,void *,void *)","not in our table; the prototype has this name, not proven here",,
+0x003EBA20,"CB3MyBurnoutProfileState::Action(EGtStateAction,void *,void *,void *)","not in our table; the prototype has this name, not proven here",,
+0x003EBEE0,"CB3MyBurnoutProgressState::Action(EGtStateAction,void *,void *,void *)","not in our table; the prototype has this name, not proven here",,
+0x003EC0C0,"CB3MyBurnoutRecordsState::Action(EGtStateAction,void *,void *,void *)","not in our table; the prototype has this name, not proven here",,
+0x003EC3E0,"CB3MyBurnoutRewardsState::Action(EGtStateAction,void *,void *,void *)",one function off: the prototype map puts this name at 0x3EC240,,
+0x003EC540,"CB3MyBurnoutSettingsState::Action(EGtStateAction,void *,void *,void *)","not in our table; the prototype has this name, not proven here",,
+0x003EC7E0,"CB3MyBurnoutProfileCreateNewState::Action(EGtStateAction,void *,void *,void *)","not in our table; the prototype has this name, not proven here",,
+0x003F03D0,CB3CarRewardsGaragePage::Update(void),no prototype counterpart,,
+0x003F0870,CB3MyBurnoutRewardsHeadlinesPage::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x003F0B30,CB3MyBurnoutRewardsHeadlinesPage::Prepare(EB3RewardImageType),agrees (strong),CB3MyBurnoutRewardsHeadlinesPage::Prepare(EB3RewardImageType),strong
+0x003F3670,CB3MyBurnoutSettingsControllerPage::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x003F5D60,"CB3HardCodedTrackRegionList::GetTrackRegionString(EB3TrackRegion,bool)","not in our table; the prototype has this name, not proven here",,
+0x003F60A0,"CB3RewardImageComponent::Prepare(EB3RewardPageType,EB3RewardImageType,int)","not in our table; the prototype has this name, not proven here",,
+0x003F6420,CB3HardCodedTrophyList::GetTrophySpecialCondition(int),no prototype counterpart,,
+0x003F64D0,CB3HardCodedTrophyList::GetTrophyTrackIndex(int),no prototype counterpart,,
+0x003F8C00,CB3SoundRadio::SetCrashNavMode((CB3SoundRadio::EB3RadioCrashNavState)),"not in our table; the prototype has this name, not proven here",,
+0x003FA600,CB3SoundRadio::SetMode(CB3SoundRadio::EB3RadioMode),no prototype counterpart,,
+0x003FACC0,CB3SoundRadio::Update(void),no prototype counterpart,,
+0x003FE040,CB3MemCardController::Construct(void),"not in our table; the prototype has this name, not proven here",,
+0x003FE130,"CB3MemCardMasterFSM::Construct(void *,CGtStateOffset const *,CGtTimer *)","not in our table; proven against its prototype function (same code, unique)",,
+0x00406378,LobbyApiInfoPtr,agrees (strong),LobbyApiInfoPtr,strong
+0x00406E20,LobbyApiUpdate,agrees (likely),LobbyApiUpdate,likely
+0x00409998,LobbyApiGetUserInfo,agrees (strong),LobbyApiGetUserInfo,strong
+0x0040FA48,TagFieldSetNumber,"agrees (proven: same code, unique)",TagFieldSetNumber,"proven: same code, unique"
+0x00410D20,TagFieldGetNumber,"agrees (proven: same code, unique)",TagFieldGetNumber,"proven: same code, unique"
+0x0041BE58,DirtyDnasInit,"agrees (proven: same code, unique)",DirtyDnasInit,"proven: same code, unique"
+0x0041C448,DirtyElfInit,"agrees (proven: same code, unique)",DirtyElfInit,"proven: same code, unique"
+0x0041C4B8,DirtyElfParse,"agrees (proven: same code, unique)",DirtyElfParse,"proven: same code, unique"
+0x0041C5B0,DirtyElfRelocate,"agrees (proven: same code, unique)",DirtyElfRelocate,"proven: same code, unique"
+0x0041D3E0,CB3SoundStaticPassManager::Update(void),agrees (likely),CB3SoundStaticPassManager::Update(),likely
+0x00421E50,"CB3MemCardSlaveFSM::Construct(void *,CGtStateOffset const *,CGtTimer *)","not in our table; proven against its prototype function (same code, unique)",,
+0x00424C40,CB3MyBurnoutDevelopmentPage::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x004251E0,CB3MyBurnoutDevelopmentPage::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x00425320,CB3MyBurnoutDevelopmentPage::Construct(void),"not in our table; the prototype has this name, not proven here",,
+0x00425330,"CB3MyBurnoutDevelopmentState::Action(EGtStateAction,void *,void *,void *)","not in our table; the prototype has this name, not proven here",,
+0x004256C0,CB3DirectionalBlurBase::UpdateCamera(int),"not in our table; the prototype has this name, not proven here",,
+0x00426C10,CB3DirectionalBlur::Render(void),agrees (strong),CB3DirectionalBlur::Render(),strong
+0x00427560,"CB3ImageReward2dObject::PrepareCarSelect(GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,GtMathPs2::CGtV4d,EB3MenuCarClasses,int)","not in our table; the prototype has this name, not proven here",,
+0x004277C0,"CB3ImageReward2dObject::GetCarTexture(EB3MenuCarClasses,int)","not in our table; the prototype has this name, not proven here",,
+0x004278B0,CB3CarViewComponent::Release(void),"not in our table; the prototype has this name, not proven here",,
+0x00427A30,CB3CarViewComponent::Update(float),"not in our table; the prototype has this name, not proven here",,
+0x0042B010,CB3CarViewComponent::SetVehicleToView(ulong),"not in our table; the prototype has this name, not proven here",,
+0x0042B030,"CB3CarViewComponent::Prepare(GtMathPs2::CGtV2d const &,GtMathPs2::CGtV2d const &,bool)","not in our table; the prototype has this name, not proven here",,
+0x0042B470,CB3CarViewComponent::Construct(void),"not in our table; the prototype has this name, not proven here",,
+0x0042B5F0,CB3CarouselComponent::GetEntryColour(int),"not in our table; the prototype has this name, not proven here",,
+0x0042B660,CB3CarouselComponent::GetEntryCount(void),"not in our table; the prototype has this name, not proven here",,
+0x0042B6A0,CB3CarouselComponent::IsUnlocked(int),"not in our table; the prototype has this name, not proven here",,
+0x0042B700,CB3CarouselComponent::GetEntryCarID(int),"not in our table; the prototype has this name, not proven here",,
+0x0042B7C0,CB3CarouselComponent::PrepareEntries(void),"not in our table; the prototype has this name, not proven here",,
+0x0042BC70,CB3CarouselComponent::GetCurrentEntry(void),"not in our table; the prototype has this name, not proven here",,
+0x0042BC80,CB3CarouselComponent::GetCurrentClass(void),no prototype counterpart,,
+0x0042BD70,CB3CarouselComponent::ScrollRight(void),"not in our table; the prototype has this name, not proven here",,
+0x0042BEA0,CB3CarouselComponent::ScrollLeft(void),"not in our table; the prototype has this name, not proven here",,
+0x0042C020,CB3CarouselComponent::ScrollDown(void),"not in our table; the prototype has this name, not proven here",,
+0x0042C090,CB3CarouselComponent::ScrollUp(void),"not in our table; the prototype has this name, not proven here",,
+0x0042C160,CB3CarouselComponent::CanScrollLeft(void),"not in our table; the prototype has this name, not proven here",,
+0x0042C1A0,CB3CarouselComponent::CanScrollRight(void),"not in our table; the prototype has this name, not proven here",,
+0x0042C240,CB3CarouselComponent::CanScrollUp(void),"not in our table; the prototype has this name, not proven here",,
+0x0042C268,CB3CarouselComponent::CanScrollDown(void),"not in our table; the prototype has this name, not proven here",,
+0x0042C298,CB3CarouselComponent::GetEntryPosition(int),"not in our table; the prototype has this name, not proven here",,
+0x0042C438,CB3CarouselComponent::Release(void),"not in our table; the prototype has this name, not proven here",,
+0x0042C5F8,CB3CarouselComponent::UpdateScrolling(float),"not in our table; the prototype has this name, not proven here",,
+0x0042CF98,"CB3CarouselComponent::PrepareCarSelect(EB3MenuCarClasses,int,EB3MenuCarClasses,int)","not in our table; the prototype has this name, not proven here",,
+0x0042D2A8,"CB3CarouselComponent::Prepare(EB3CarouselPageType,EB3RewardImageType,int)","not in our table; the prototype has this name, not proven here",,
+0x0042DA68,CB3CarouselComponent::GetClassString(EB3MenuCarClasses),"not in our table; the prototype has this name, not proven here",,
+0x0042DAD8,CB3CarouselComponent::PrepareImages(void),"not in our table; the prototype has this name, not proven here",,
+0x0042DEB8,CB3CarouselComponent::Construct(void),"not in our table; the prototype has this name, not proven here",,
+0x0042F0E8,"CB3MenuFinishedEvent::EvaluateRewards(signed char *,signed char *,bool)","not in our table; the prototype has this name, not proven here",,
+0x0042FBB8,CB3MenuFinishedEvent::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x00431FD8,"CB3DriverDetailsEATraxState::Action(EGtStateAction,void *,void *,void *)",no prototype counterpart,,
+0x004321A8,CB3SingleEventGameOptionsPage::GenerateRandomJunction(void),"not in our table; the prototype has this name, not proven here",,
+0x004325AC,CB3SingleEventGameOptionsPage::UpdateScroll(void),"not in our table; the prototype has this name, not proven here",,
+0x00432908,CB3SingleEventGameOptionsPage::UpdateMenu(void),"not in our table; the prototype has this name, not proven here",,
+0x00432A98,CB3SingleEventGameOptionsPage::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x00432AF8,CB3SingleEventGameOptionsPage::Prepare(EB3MenuChoicesOnePlayer),"not in our table; the prototype has this name, not proven here",,
+0x004365B8,CGtSysConfig::GetAspectRatio(void),no prototype counterpart,,
+0x00436D20,"CB3RefreshRateSelectState::Action(EGtStateAction,void *,void *,void *)",no prototype counterpart,,
+0x00438DB0,CB3EATraxDisplay::Render(void),no prototype counterpart,,
+0x00438E30,CB3EATraxDisplay::Update(void),no prototype counterpart,,
+0x00438F90,CB3EATrax2dObject::Prepare(void),no prototype counterpart,,
+0x00439100,CB3EATraxDisplay::Construct(void),no prototype counterpart,,
+0x004394A0,"CB3EATrax2dObject::Render(CGt2dObject::CGt2dObjectSpace const &,void const *)",no prototype counterpart,,
+0x00443670,CGtInputDevicePS2LogitechWheel::IsControlJustPressed(int),no prototype counterpart,,
+0x004567D0,"CB3MyBurnoutBonusState::Action(EGtStateAction,void *,void *,void *)",no prototype counterpart,,
+0x00456D30,CB3MyBurnoutBonusPage::Prepare(void),no prototype counterpart,,
+0x00456FF0,CB3MyBurnoutBonusPage::Construct(void),no prototype counterpart,,
+0x0045CF80,CB3CreateAccount2MenuPage::Update(void),"not in our table; the prototype has this name, not proven here",,
+0x0045F520,CB3CreateAccount2MenuPage::Prepare(void),"not in our table; the prototype has this name, not proven here",,
+0x004600B0,"CB3VehicleDeform::Render(CB3VehicleEssentialParams *,CB3VehicleParams *)",one function off: the prototype map puts this name at 0x4601C0,,
+0x00461040,"CB3VehicleDeform::Prepare(CB3VehicleEssentialParams *,CB3VehicleParams *)",one function off: the prototype map puts this name at 0x461150,,
+0x00461330,CB3VehicleDeform::Construct(void),one function off: the prototype map puts this name at 0x461440,,
+0x004D3E10,__sinit_B3DebugManager,no prototype counterpart,,
+0x004D3FF0,__sinit_B3Game,no prototype counterpart,,
+0x004D4770,__sinit_B3World,no prototype counterpart,,
+0x004D54E0,__sinit_B3HUDManager,no prototype counterpart,,
+0x004D72B0,__sinit_B3MenuPageManager,no prototype counterpart,,
+0x004D72E0,__sinit_B3MenuPages,no prototype counterpart,,
+0x004D7980,__sinit_B3MenuFlowFSM,no prototype counterpart,,
+0x004DDC60,CB3FrontEnd::`vtbl',no prototype counterpart,,
+0x004DDD40,CB3OnePlayerStage::`vtbl',no prototype counterpart,,
+0x004DDD70,CB3OnlineStage::`vtbl',no prototype counterpart,,
+0x004DDDA0,CB3TwoPlayerSplitScreenStage::`vtbl',no prototype counterpart,,
+0x004DDDD0,CB3AICar::`vtbl',no prototype counterpart,,
+0x004DDE30,CB3PlayerCar::`vtbl',no prototype counterpart,,
+0x004DDE60,CB3RaceCar::`vtbl',no prototype counterpart,,
+0x004DDEF0,CB3CollidingBody::`vtbl',no prototype counterpart,,
+0x004DDF10,CB3PlayerCarPhysics::`vtbl',no prototype counterpart,,
+0x004DDF60,CB3VehiclePhysics::`vtbl',no prototype counterpart,,
+0x004DDF80,CB3AICarPhysics::`vtbl',no prototype counterpart,,
+0x004DE020,CGtCamera::`vtbl',no prototype counterpart,,
+0x004DE0D0,CB3CarViewerGameMode::`vtbl',no prototype counterpart,,
+0x004DE990,CB3OfflineSingleRaceLogic::`vtbl',no prototype counterpart,,
+0x004DEBD0,CB3OfflineBurningLapLogic::`vtbl',no prototype counterpart,,
+0x004DEE10,CB3OfflineRoadRageLogic::`vtbl',no prototype counterpart,,
+0x004DF8AC,CB3OfflineSingleCrashLogic::`vtbl',no prototype counterpart,,
+0x004DFB64,CB3CrashScore::`vtbl',no prototype counterpart,,
+0x004E179C,rwDMAHYieldFunc,no prototype counterpart,,

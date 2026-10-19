@@ -6,6 +6,14 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-19
 
+- **5,054 retail functions named from the June 2004 prototype map, 2,903 proven against the code**
+  ([prototype names](reference/retail-prototype-names.md), `prototype-names.csv`). Each of Nahelam's
+  1,146 names checked the same way (`function-names-check.csv`): 627 agree, 9 corrected by the code,
+  52 one function off.
+- Compilers corrected: the `2.4.1.01` string is the linker's fixed tag; the prototype's code generation
+  is CodeWarrior PS2 3.0 build 38 to 3.0.1 build 103, retail's 3.0.1 build 119 ([builds](builds.md)).
+- Burnout Revenge prototypes described; the July 14, 2005 PS2 build keeps full symbols and debug
+  information ([builds](builds.md#burnout-revenge-prototypes-2005-to-2006)).
 - Added the two July 20, 2004 review builds (US 11.11, PAL 11.14): disc listings, strings, headers and value
   databases (`tools/export_iso.py` reads disc images directly). Neither executable has symbols. Their
   tuning is identical to each other; 34 values changed before retail.

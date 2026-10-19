@@ -40,6 +40,7 @@ The most-used files, one click away. **All of them, with sizes: [Symbols and map
 | [`classes.txt`](data/burnout3-prototype/maps/classes.txt) | All 890 Burnout 3 classes and their methods, with addresses in four builds |
 | [`B3O0PCH.symbols.csv`](data/burnout3-prototype/maps/B3O0PCH.symbols.csv) | The unoptimised build's symbols: 11,020 functions, including the small inline ones |
 | [`DNAT_200.MAP`](data/burnout3-prototype/originals/DNAT_200.MAP) | The original text link map of the prototype executable |
+| [`prototype-names.csv`](data/burnout3-retail/prototype-names.csv) | 5,054 functions in the retail game (SLUS-21050) with the prototype's names, 2,903 proven against the code |
 | [`function-names.csv`](data/burnout3-retail/function-names.csv) | 1,146 named functions in the retail game (SLUS-21050), 851 verified |
 | [`memory-map.csv`](data/burnout3-retail/memory-map.csv) | Named addresses in the retail game (SLUS-21050): save data, race state, tuning, display, controls |
 | [`types.h`](data/burnout2-prototype/SLUS_204.97/types.h) | 969 Burnout 2 types with member offsets: the ancestors of many Burnout 3 classes |
@@ -52,8 +53,9 @@ The most-used files, one click away. **All of them, with sizes: [Symbols and map
   static data, and the layout of its Burnout 2 ancestor. Example: [`CB3VehiclePhysics`](docs/classes/CB3VehiclePhysics.md).
 - **The game by system.** Physics, AI, traffic, crashes, cameras, HUD, menus, audio, rendering, network,
   progression: every source file and class, sorted ([game systems](docs/systems/README.md)).
-- **The retail game, named.** 1,146 functions in the shipping executable named, 851 verified
-  ([retail function names](docs/reference/retail-function-names.md)), plus every address Nahelam's mods
+- **The retail game, named.** 5,054 functions in the shipping executable carry Criterion's own names from
+  the prototype map, 2,903 of them proven against the code ([prototype names](docs/reference/retail-prototype-names.md));
+  Nahelam's 1,146 PAL names, each checked against the code ([retail function names](docs/reference/retail-function-names.md)), plus every address Nahelam's mods
   touch: a hidden development menu, debug views, a car viewer ([Nahelam's mods](docs/reference/nahelam-mods.md)).
 - **The retail game, located.** About 150 addresses in the shipping executable: the save profile, boost,
   the 1/60 s simulation step, the game's own widescreen flag, every HUD layout value, the button mapping

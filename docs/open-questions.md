@@ -26,8 +26,10 @@ What the data doesn't answer yet, and work that would add to it.
 ## Work that would extend this documentation
 
 - [ ] Name the July 20 review executables by matching functions against retail (the simple shift does not work: the US review build is 200 KB smaller)
-- [ ] Verify the 295 unverified retail names; name the functions between named ones
-- [ ] Carry the prototype names to the retail executable ([decompilation](avenues/decompilation.md)).
+- [x] Verify the 295 unverified retail names ([check](reference/retail-function-names.md#checked-against-the-code)); name the functions between named ones ([prototype names](reference/retail-prototype-names.md))
+- [x] Carry the prototype names to the retail executable ([prototype names](reference/retail-prototype-names.md)).
+- [ ] Export the Burnout Revenge July 2005 prototype's symbols and types ([builds](builds.md#burnout-revenge-prototypes-2005-to-2006)).
+- [ ] Check the prototype names' parameter lists against the retail code.
 - [ ] Turn `types.h` into compilable headers.
 - [ ] Ghidra / IDA import scripts for the names and types.
 - [ ] A splat `symbol_addrs.txt`.

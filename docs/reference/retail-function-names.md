@@ -53,6 +53,38 @@ the US executable, then checks the name itself:
   921 names in the prototype map, with exactly the same address drift as measured from the map
   ([link map formats](../formats/codewarrior-maps.md)), which supports both lists.
 
+## Checked against the code
+
+Each of these names was also tested against the code of the retail and prototype executables, the same
+way as the [prototype names](retail-prototype-names.md). Table:
+[`function-names-check.csv`](../../data/burnout3-retail/function-names-check.csv) (`code_check` column).
+
+<!-- check:start -->
+| Result | Names |
+|---|---:|
+| Agrees with the prototype map's name | 627 |
+| Same function; the prototype map gives another parameter list | 33 |
+| The prototype map names this function differently (e.g. `Render` where the map says `_Render`) | 20 |
+| A different function; the code matches the prototype map's name | 9 |
+| A different function; open | 7 |
+| One function off: the prototype map puts the name at a neighbouring address (the PAL to US shift) | 52 |
+| Not in the prototype table; proven against its prototype function | 6 |
+| Not in the prototype table; the prototype has the name, not proven | 201 |
+| No prototype counterpart (e.g. names from the Burnout Revenge prototype) | 191 |
+| **total** | **1,146** |
+<!-- check:end -->
+
+The 9 that the code settles: `0x00113B50` is `sceSifUnloadModule` (not `sceSifSearchModuleByAddress`),
+`0x0011DE98` `cosf` (not `ceilf`), `0x0020E310` `RpSkyTexCacheGetStartAddress`, `0x002139A0`
+`CGtUnicode::CopyN`, `0x00250100` `GtComms::CGtCommsDatabaseGame::RemoveEntryCore`, `0x00297930`
+`_rwaVirtualVoiceSetWave`, `0x00369440` `CB3ScoreBonus::Release`, `0x00375450`
+`CB3NetworkReplayBodyMessage::Prepare`, `0x0038AD80` `CB3PromptBarComponent::Prepare`. In each, the
+prototype's function is the same code as the retail one, or far closer to it than the function Nahelam's
+name belongs to.
+
+Parameter lists can legitimately differ: the prototype is from June 2004, and some of Nahelam's names come
+from the 2005 Burnout Revenge prototype, so either can be the retail one.
+
 ## Using the table
 
 - Every code address in the [retail memory map](retail-memory-map.md) and in [Nahelam's mods](nahelam-mods.md)

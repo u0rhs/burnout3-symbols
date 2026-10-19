@@ -37,7 +37,7 @@ def folder(pattern, skip=()):
     return out
 
 
-RETAIL = ['docs/reference/retail-function-names.md', 'docs/reference/retail-memory-map.md',
+RETAIL = ['docs/reference/retail-function-names.md', 'docs/reference/retail-prototype-names.md', 'docs/reference/retail-memory-map.md',
           'docs/reference/nahelam-mods.md', 'docs/discs.md']
 B2_LINEAGE = ['docs/reference/class-ancestors.md', 'docs/reference/class-lineage.md',
               'docs/reference/function-lineage.md', 'docs/reference/source-file-lineage.md',
