@@ -12,19 +12,19 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `StartTransition(bool,EHUDMode,EHUDMode)` | `0x00388710` 104 | `0x003FC0F0` 660 | `0x00423CE0` 104 | `0x0043DC50` 340 | `0x003D8070` proven |  |
-| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x00388780` 68 | `0x003FC390` 68 | `0x00423D50` 68 | `0x0043DBE0` 100 | `0x003D80E0` proven |  |
-| `UpdateCrashText(float)` | `0x003887D0` 256 | `0x003FC3E0` 248 | `0x00423DA0` 256 | `0x0043D8C0` 332 | `0x003D8130` proven |  |
-| `Update(float)` | `0x003888D0` 72 | `0x003FC4E0` 72 | `0x00423EA0` 72 | `0x0043D860` 84 | `0x003D8230` proven |  |
-| `UpdateMessage(float)` | `0x00388920` 1300 | `0x003FC530` 1424 | `0x00423EF0` 1480 | `0x0043D0F0` 1624 | `0x003D8280` unverified |  |
-| `Prepare(int,EHUDAlign,int,CB3HUDScore*)` | `0x00388E40` 236 | `0x003FCAC0` 336 | `0x004244C0` 344 | `0x0043CFA0` 316 |  |  |
-| `CB3HUDPrimaryMessage()` |  |  |  | `0x001997C0` 76 |  |  |
-| `ClearCurrentEvent()` |  |  |  | `0x0043DA10` 48 |  |  |
-| `GetCurrentEvent()` |  |  |  | `0x0043DA80` 312 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `StartTransition(bool,EHUDMode,EHUDMode)` | `0x00388710` 104 | `0x003FC0F0` 660 | `0x00423CE0` 104 | `0x0043DC50` 340 | `0x003D8070` proven |  |  |
+| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x00388780` 68 | `0x003FC390` 68 | `0x00423D50` 68 | `0x0043DBE0` 100 | `0x003D80E0` proven |  |  |
+| `UpdateCrashText(float)` | `0x003887D0` 256 | `0x003FC3E0` 248 | `0x00423DA0` 256 | `0x0043D8C0` 332 | `0x003D8130` proven |  |  |
+| `Update(float)` | `0x003888D0` 72 | `0x003FC4E0` 72 | `0x00423EA0` 72 | `0x0043D860` 84 | `0x003D8230` proven |  |  |
+| `UpdateMessage(float)` | `0x00388920` 1300 | `0x003FC530` 1424 | `0x00423EF0` 1480 | `0x0043D0F0` 1624 | `0x003D8280` unverified |  |  |
+| `Prepare(int,EHUDAlign,int,CB3HUDScore*)` | `0x00388E40` 236 | `0x003FCAC0` 336 | `0x004244C0` 344 | `0x0043CFA0` 316 |  |  |  |
+| `CB3HUDPrimaryMessage()` |  |  |  | `0x001997C0` 76 |  |  |  |
+| `ClearCurrentEvent()` |  |  |  | `0x0043DA10` 48 |  |  |  |
+| `GetCurrentEvent()` |  |  |  | `0x0043DA80` 312 |  |  |  |
 
 ## Notes
 

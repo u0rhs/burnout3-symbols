@@ -8,17 +8,35 @@
 - **Source file:** `GtSimpleOrientedBox.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 3
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtSimpleOrientedBox`, size 0x080, methods in `GameShared/GameClasses/Geometric/Primitives/GtSimpleOrientedBox.cpp` ([layout](#burnout-revenge-layout-of-cgtsimpleorientedbox))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ConvertTo(CGtOrientedBox*) const` | `0x00388610` 256 |  |  |  | `0x003D7F70` proven |  |
-| `ConvertTo(CGtOrientedBox*)` |  | `0x003FBE30` 704 | `0x00423A80` 600 | `0x0043CE00` 408 |  |  |
-| `CGtSimpleOrientedBox()` |  |  |  | `0x002256E0` 76 |  |  |
-| `Construct(const CGtExtrudedBox&)` |  |  |  | `0x002254D0` 412 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ConvertTo(CGtOrientedBox*) const` | `0x00388610` 256 |  |  |  | `0x003D7F70` proven |  | `void CGtSimpleOrientedBox::ConvertTo(CGtOrientedBox *lpBox) const` |
+| `ConvertTo(CGtOrientedBox*)` |  | `0x003FBE30` 704 | `0x00423A80` 600 | `0x0043CE00` 408 |  |  | `void CGtSimpleOrientedBox::ConvertTo(CGtOrientedBox *lpBox) const` (same name, different parameters) |
+| `CGtSimpleOrientedBox()` |  |  |  | `0x002256E0` 76 |  |  |  |
+| `Construct(const CGtExtrudedBox&)` |  |  |  | `0x002254D0` 412 |  |  |  |
+
+## Burnout Revenge layout of `CGtSimpleOrientedBox`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 56 file(s), e.g. `GameShared/GameClasses/Geometric/Intersection/GtIntersection.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSimpleOrientedBox {  // size 0x080
+    /* 0x000 */ CGtV3d maPoints[8];
+    // methods
+    // CGtSimpleOrientedBox(const CGtSimpleOrientedBox &);
+    // CGtSimpleOrientedBox();
+    // void ConvertTo(CGtOrientedBox *) const;
+    // void Construct(const CGtOrthogonalBox &);
+    // void Construct(const CGtExtrudedBox &);
+    // void Construct(const CGtAxisAlignedBox &);
+};
+```
 
 ## Notes
 

@@ -11,18 +11,18 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CopyToPhysics(CB3VehiclePhysics*)` | `0x00212920` 688 | `0x00221610` 728 | `0x00260B90` 728 | `0x002668A0` 1020 | `0x00252530` proven |  |
-| `Unregister()` | `0x00212BE0` 1056 | `0x00221900` 1056 | `0x00260E80` 1056 | `0x00266280` 1564 | `0x00252800` proven |  |
-| `Register(CB3VehiclePhysics*)` | `0x00213000` 5212 | `0x00221D20` 5544 | `0x002612A0` 5472 | `0x00264300` 8056 | `0x00252C20` proven |  |
-| `Destruct()` | `0x00214460` 8 | `0x002232D0` 8 | `0x00262800` 8 | `0x002642D0` 40 | `0x00254080` strong |  |
-| `Release()` | `0x00214470` 8 | `0x002232E0` 8 | `0x00262810` 8 | `0x002642A0` 40 | `0x00254090` strong |  |
-| `Prepare(CB3VehiclePhysics*)` | `0x00214480` 64 | `0x002232F0` 64 | `0x00262820` 64 | `0x00264250` 68 | `0x002540A0` proven |  |
-| `Construct()` | `0x002144C0` 604 | `0x00223330` 604 | `0x00262860` 604 | `0x00263DF0` 1120 | `0x002540E0` proven |  |
-| `GetAttribs()` |  |  |  | `0x001BF110` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CopyToPhysics(CB3VehiclePhysics*)` | `0x00212920` 688 | `0x00221610` 728 | `0x00260B90` 728 | `0x002668A0` 1020 | `0x00252530` proven |  |  |
+| `Unregister()` | `0x00212BE0` 1056 | `0x00221900` 1056 | `0x00260E80` 1056 | `0x00266280` 1564 | `0x00252800` proven |  |  |
+| `Register(CB3VehiclePhysics*)` | `0x00213000` 5212 | `0x00221D20` 5544 | `0x002612A0` 5472 | `0x00264300` 8056 | `0x00252C20` proven |  |  |
+| `Destruct()` | `0x00214460` 8 | `0x002232D0` 8 | `0x00262800` 8 | `0x002642D0` 40 | `0x00254080` strong |  |  |
+| `Release()` | `0x00214470` 8 | `0x002232E0` 8 | `0x00262810` 8 | `0x002642A0` 40 | `0x00254090` strong |  |  |
+| `Prepare(CB3VehiclePhysics*)` | `0x00214480` 64 | `0x002232F0` 64 | `0x00262820` 64 | `0x00264250` 68 | `0x002540A0` proven |  |  |
+| `Construct()` | `0x002144C0` 604 | `0x00223330` 604 | `0x00262860` 604 | `0x00263DF0` 1120 | `0x002540E0` proven |  |  |
+| `GetAttribs()` |  |  |  | `0x001BF110` 28 |  |  |  |
 
 ## Notes
 

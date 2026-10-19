@@ -6,15 +6,61 @@
 
 - **Area:** [Rendering](../systems/rendering.md)
 - **Methods per build:** B3O0PCH 2
+- **Burnout Revenge counterpart:** `CB4VehicleRendererBase`, size 0x01C ([layout](#burnout-revenge-layout-of-cb4vehiclerendererbase))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `HACKChromeCarAccess()` |  |  |  | `0x00169800` 28 |  |  |
-| `IsChromeCar()` |  |  |  | `0x00234680` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `HACKChromeCarAccess()` |  |  |  | `0x00169800` 28 |  |  |  |
+| `IsChromeCar()` |  |  |  | `0x00234680` 28 |  |  |  |
+
+## Burnout Revenge layout of `CB4VehicleRendererBase`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameSource/Game/B4CarViewerDebug.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4VehicleRendererBase {  // size 0x01C
+    /* 0x000 */ RwInt32 mnOverallRenderCost;
+    /* 0x004 */ RwInt32 mnTextureSetupCost;
+    /* 0x008 */ RwInt32 mnBodyRollCosts;
+    /* 0x00C */ RwInt32 mnBitSortingCost;
+    /* 0x010 */ RwInt32 mnComputeObjectDataCost;
+    /* 0x014 */ RwInt32 mnMeshRenderCost;
+    /* 0x018 */ bool mbChromeCar;
+    /* 0x019 */ bool mbDrawBodyParts;
+    // methods
+    // CB4VehicleRendererBase(const CB4VehicleRendererBase &);
+    // CB4VehicleRendererBase();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void BeginVehicleRendering();
+    // void EndVehicleRendering();
+    // void BeginVehicleShadowRendering();
+    // void EndVehicleShadowRendering();
+    // void SetBackfaceCulling(bool);
+    // void SetupCameraData();
+    // void SetupCameraFrustum();
+    // void FrustumTestUndamagedVehicle(CB4VehicleEssentialParams *);
+    // void FrustumTestDamagedVehicle(CB4VehicleEssentialParams *, CB4VehicleParams *);
+    // void RenderVehicle(const CB4VehicleEssentialParams *, const CB4VehicleParams *, EVehicleLOD, float, bool);
+    // bool RenderVehicleShadow(const CB4VehicleEssentialParams *, const CB4VehicleParams *);
+    // bool & HACKChromeCarAccess();
+    // void BeginRenderingSingleVehicle(const CB4VehicleEssentialParams *, CB4VehicleLODData *, float, float);
+    // void EndRenderingSingleVehicle();
+    // void ComputePerObjectData(const GtMathPs2::CGtMatrix3x4 &, bool);
+    // void SetTexture(CGtTexture *, int);
+    // void SetTextureColourOverlay(CGtTexture *);
+    // void RenderObject(EB4VehicleRenderType, const GtMathPs2::CGtMatrix3x4 &, CB4VehicleObject *, float, unsigned short, unsigned short, bool, bool);
+    // void RenderDeformedObject(EB4VehicleRenderType, const GtMathPs2::CGtMatrix3x4 &, CB4VehicleObject *, float, unsigned short, unsigned short, const GtMathPs2::CGtMatrix3x4 *, int, bool, bool);
+    // void RenderObjectShadow(EB4VehicleRenderType, const GtMathPs2::CGtMatrix3x4 &, CB4VehicleObject *, float, unsigned short);
+    // void RenderDeformedObjectShadow(EB4VehicleRenderType, const GtMathPs2::CGtMatrix3x4 &, CB4VehicleObject *, float, unsigned short, const GtMathPs2::CGtMatrix3x4 *, int);
+};
+```
 
 ## Notes
 

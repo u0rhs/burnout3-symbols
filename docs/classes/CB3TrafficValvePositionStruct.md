@@ -8,14 +8,34 @@
 - **Source file:** `B3TrafficValveStruct.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrafficValvePositionStruct`, size 0x010, methods in `SharedClasses/TrafficData/B4TrafficValveStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4trafficvalvepositionstruct))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Fixup(unsigned int)` | `0x0022C280` 28 | `0x002443C0` 28 | `0x00280DE0` 28 | `0x00281E80` 72 | `0x00269EF0` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Fixup(unsigned int)` | `0x0022C280` 28 | `0x002443C0` 28 | `0x00280DE0` 28 | `0x00281E80` 72 | `0x00269EF0` proven |  | `void CB4TrafficValvePositionStruct::Fixup(unsigned int lnStartAddress)` |
+
+## Burnout Revenge layout of `CB4TrafficValvePositionStruct`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 239 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficValvePositionStruct {  // size 0x010
+    /* 0x000 */ RwInt32 *mpnLanes;
+    /* 0x004 */ RwInt32 *mpnSegments;
+    /* 0x008 */ RwInt32 mnNumLanes;
+    /* 0x00C */ RwUInt8 mx8IsAGenerator;
+    /* 0x00D */ RwUInt8 mx8Specials;
+    /* 0x00E */ unsigned char mau8Pad[2];
+    // methods
+    // CB4TrafficValvePositionStruct(const CB4TrafficValvePositionStruct &);
+    // CB4TrafficValvePositionStruct();
+    // void Fixup(unsigned int);
+};
+```
 
 ## Notes
 

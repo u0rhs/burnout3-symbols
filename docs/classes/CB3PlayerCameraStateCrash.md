@@ -11,14 +11,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x002C1390` 1016 | `0x00306ED0` 1152 | `0x00339260` 1152 | `0x0032DEF0` 628 |  |  |
-| `CB3PlayerCameraStateCrash()` |  |  |  | `0x0013EBE0` 60 |  |  |
-| `GetCutTime(CB3PlayerCameraManager*,const CB3CrashCut*)` |  |  |  | `0x0032DD10` 200 |  |  |
-| `SetNextCut(CB3PlayerCameraManager*,const CB3CrashCut*)` |  |  |  | `0x0032DDE0` 268 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x002C1390` 1016 | `0x00306ED0` 1152 | `0x00339260` 1152 | `0x0032DEF0` 628 |  |  |  |
+| `CB3PlayerCameraStateCrash()` |  |  |  | `0x0013EBE0` 60 |  |  |  |
+| `GetCutTime(CB3PlayerCameraManager*,const CB3CrashCut*)` |  |  |  | `0x0032DD10` 200 |  |  |  |
+| `SetNextCut(CB3PlayerCameraManager*,const CB3CrashCut*)` |  |  |  | `0x0032DDE0` 268 |  |  |  |
 
 ## Notes
 

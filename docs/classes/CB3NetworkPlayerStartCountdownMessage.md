@@ -8,18 +8,40 @@
 - **Source file:** `B3NetworkPlayerStartCountdownMessage.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 2, B3INTERN 3, B3O0PCH 2
 - **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4NetworkPlayerStartCountdownMessage`, size 0x030, methods in `GameSource/Network/Messages/B4NetworkPlayerStartCountdownMessage.cpp` ([layout](#burnout-revenge-layout-of-cb4networkplayerstartcountdownmessage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Retrieve(int*,float*,int*)` | `0x00173F10` 100 | `0x00190190` 1116 |  | `0x001A4060` 468 | `0x001A8550` strong |  |
-| `Prepare(int,float,int*)` | `0x00173F80` 80 | `0x001905F0` 80 |  | `0x001A3F20` 156 |  |  |
-| `Construct()` | `0x00173FD0` 8 |  | `0x0018A8F0` 8 |  |  |  |
-| `Prepare(int,float)` |  |  | `0x0018A8C0` 44 |  |  |  |
-| `Retrieve(int*,float*)` |  |  | `0x0018A490` 1068 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Retrieve(int*,float*,int*)` | `0x00173F10` 100 | `0x00190190` 1116 |  | `0x001A4060` 468 | `0x001A8550` strong |  | `bool CB4NetworkPlayerStartCountdownMessage::Retrieve(int *lpnHostID, float *lprStartCountdownTime, int *lanReceivedClientsIDs)` |
+| `Prepare(int,float,int*)` | `0x00173F80` 80 | `0x001905F0` 80 |  | `0x001A3F20` 156 |  |  | `bool CB4NetworkPlayerStartCountdownMessage::Prepare(int lnHostID, float lrStartCountdownTime, int *lanReceivedClientsIDs)` |
+| `Construct()` | `0x00173FD0` 8 |  | `0x0018A8F0` 8 |  |  |  | `void CB4NetworkPlayerStartCountdownMessage::Construct()` |
+| `Prepare(int,float)` |  |  | `0x0018A8C0` 44 |  |  |  |  |
+| `Retrieve(int*,float*)` |  |  | `0x0018A490` 1068 |  |  |  |  |
+
+## Burnout Revenge layout of `CB4NetworkPlayerStartCountdownMessage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 92 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkPlayerStartCountdownMessage : public CB4NetworkMessageWithPlayerIDs {  // size 0x030
+    // base CB4NetworkMessageWithPlayerIDs at 0x000
+    /* 0x010 */ GtNetworkPlayerID mnHostID;
+    /* 0x014 */ RwReal mrStartCountdownTime;
+    /* 0x018 */ int manReceivedClientsIDs[6];
+    // methods
+    // CB4NetworkPlayerStartCountdownMessage(const CB4NetworkPlayerStartCountdownMessage &);
+    // CB4NetworkPlayerStartCountdownMessage();
+    // void Construct();
+    // bool Prepare(int, float, int *);
+    // void Release();
+    // void Destruct();
+    // bool Retrieve(int *, float *, int *);
+};
+```
 
 ## Notes
 

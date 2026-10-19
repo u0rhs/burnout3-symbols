@@ -16,27 +16,29 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 **Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
 
-| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
-|---|---:|---:|---|---:|---|
-| `B3AsyncDataLoader.cpp` | 5 | 1,708 | `0x00139BF0` | 5 (1) | `0x0013CE20`–`0x0013D4D0` |
-| `B3StaticTrackData.cpp` | 1 | 2,020 | `0x001598E0` | 1 (1) | `0x0015E8E0`–`0x0015E8E0` |
-| `B3StreamedTrackData.cpp` | 2 | 416 | `0x0015A0D0` | 2 (2) | `0x0015F0D0`–`0x0015F200` |
-| `GtFileSystemPS2DVD.cpp` | 14 | 2,784 | `0x00199360` | 14 (14) | `0x001D2EE0`–`0x001D3850` |
-| `GtFileSystem.cpp` | 18 | 2,048 | `0x001D85C0` | 17 (9) | `0x00212590`–`0x00212CB0` |
-| `B3StreamedTrackPS2.cpp` | 6 | 4,652 | `0x001E13E0` | 5 (0) | `0x0021C120`–`0x0021D080` |
-| `B3StaticTrackPS2.cpp` | 3 | 1,484 | `0x001E2620` | 3 (0) | `0x0021D2E0`–`0x0021D770` |
-| `B3StreamedTrackCollisionPS2.cpp` | 1 | 184 | `0x002118C0` |  |  |
-| `B3DataLists.cpp` | 18 | 2,508 | `0x002119F0` | 16 (7) | `0x00251870`–`0x00252000` |
-| `B3EnvironmentData.cpp` | 1 | 140 | `0x00278020` |  |  |
-| `B3PropManager.cpp` | 7 | 1,704 | `0x002780B0` | 3 (1) | `0x002B72F0`–`0x002B7870` |
-| `B3EnvironmentManager.cpp` | 17 | 4,512 | `0x0027BA50` | 16 (0) | `0x002BB830`–`0x002BCEC0` |
-| `B3PropManagerPS2.cpp` | 1 | 632 | `0x002B8C50` |  |  |
-| `B3StreamedTrack.cpp` | 18 | 7,032 | `0x002C1E10` | 15 (2) | `0x00301220`–`0x003030F0` |
-| `GtVideoDecoderPS2.cpp` | 12 | 3,676 | `0x002E0C20` | 12 (10) | `0x00324ED0`–`0x00325BD0` |
-| `B3StaticTrack.cpp` | 6 | 1,856 | `0x002EB4E0` | 6 (5) | `0x003329A0`–`0x00333120` |
-| `GtByteStream.cpp` | 7 | 512 | `0x0032FF80` | 7 (7) | `0x003742C0`–`0x003744C0` |
-| `B3TrackDataStruct.cpp` | 1 | 28 | `0x0035B310` | 1 (1) | `0x003A20E0`–`0x003A20E0` |
-| `B3StreamManager.cpp` | 8 | 1,256 | `0x00374FE0` | 5 (0) | `0x003C30E0`–`0x003C3570` |
+**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source paths ([source files](../reference/revenge-source-file-lineage.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |
+|---|---:|---:|---|---:|---|---|
+| `B3AsyncDataLoader.cpp` | 5 | 1,708 | `0x00139BF0` | 5 (1) | `0x0013CE20`–`0x0013D4D0` | `GameSource/Game/B4AsyncDataLoader.cpp` |
+| `B3StaticTrackData.cpp` | 1 | 2,020 | `0x001598E0` | 1 (1) | `0x0015E8E0`–`0x0015E8E0` | `GameSource/World/B4StaticTrackData.cpp` |
+| `B3StreamedTrackData.cpp` | 2 | 416 | `0x0015A0D0` | 2 (2) | `0x0015F0D0`–`0x0015F200` | `GameSource/World/B4StreamedTrackData.cpp` |
+| `GtFileSystemPS2DVD.cpp` | 14 | 2,784 | `0x00199360` | 14 (14) | `0x001D2EE0`–`0x001D3850` | `GameShared/GameClasses/System/FileSystem/ps2/GtFileSystemPS2DVD.cpp` |
+| `GtFileSystem.cpp` | 18 | 2,048 | `0x001D85C0` | 17 (9) | `0x00212590`–`0x00212CB0` | `GameShared/GameClasses/System/FileSystem/GtFileSystem.cpp` |
+| `B3StreamedTrackPS2.cpp` | 6 | 4,652 | `0x001E13E0` | 5 (0) | `0x0021C120`–`0x0021D080` | `GameSource/World/Ps2/B4StreamedTrackPS2.cpp` |
+| `B3StaticTrackPS2.cpp` | 3 | 1,484 | `0x001E2620` | 3 (0) | `0x0021D2E0`–`0x0021D770` | `GameSource/World/Ps2/B4StaticTrackPS2.cpp` |
+| `B3StreamedTrackCollisionPS2.cpp` | 1 | 184 | `0x002118C0` |  |  | `GameSource/World/Ps2/B4StreamedTrackCollisionPS2.cpp` |
+| `B3DataLists.cpp` | 18 | 2,508 | `0x002119F0` | 16 (7) | `0x00251870`–`0x00252000` | `SharedClasses/DataLists/B4DataLists.cpp` |
+| `B3EnvironmentData.cpp` | 1 | 140 | `0x00278020` |  |  | `GameSource/World/B4EnvironmentData.cpp` |
+| `B3PropManager.cpp` | 7 | 1,704 | `0x002780B0` | 3 (1) | `0x002B72F0`–`0x002B7870` | `GameSource/World/B4PropManager.cpp` |
+| `B3EnvironmentManager.cpp` | 17 | 4,512 | `0x0027BA50` | 16 (0) | `0x002BB830`–`0x002BCEC0` | `GameSource/World/B4EnvironmentManager.cpp` |
+| `B3PropManagerPS2.cpp` | 1 | 632 | `0x002B8C50` |  |  | `GameSource/World/Ps2/B4PropManagerPS2.cpp` |
+| `B3StreamedTrack.cpp` | 18 | 7,032 | `0x002C1E10` | 15 (2) | `0x00301220`–`0x003030F0` | `GameSource/World/B4StreamedTrack.cpp` |
+| `GtVideoDecoderPS2.cpp` | 12 | 3,676 | `0x002E0C20` | 12 (10) | `0x00324ED0`–`0x00325BD0` | `GameShared/GameClasses/Graphical/VideoDecoder/Ps2/GtVideoDecoderPS2.cpp` |
+| `B3StaticTrack.cpp` | 6 | 1,856 | `0x002EB4E0` | 6 (5) | `0x003329A0`–`0x00333120` | `GameSource/World/B4StaticTrack.cpp` |
+| `GtByteStream.cpp` | 7 | 512 | `0x0032FF80` | 7 (7) | `0x003742C0`–`0x003744C0` | `GameShared/GameClasses/Memory/GtByteStream.cpp` |
+| `B3TrackDataStruct.cpp` | 1 | 28 | `0x0035B310` | 1 (1) | `0x003A20E0`–`0x003A20E0` | `SharedClasses/TrackData/B4TrackDataStruct.cpp` |
+| `B3StreamManager.cpp` | 8 | 1,256 | `0x00374FE0` | 5 (0) | `0x003C30E0`–`0x003C3570` | `GameSource/World/B4StreamManager.cpp` |
 
 ## Classes
 

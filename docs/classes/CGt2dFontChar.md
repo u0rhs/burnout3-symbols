@@ -6,15 +6,16 @@
 
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CGt2dFontChar`, size 0x020 ([layout](#burnout-revenge-layout-of-cgt2dfontchar))
 - **Burnout 2 ancestor (by name):** `C2dFontChar`, size 0x014, declared in 38 file(s), e.g. `gamesource/Hud/CHud.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `IsRenderable()` |  |  |  | `0x001A1380` 84 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `IsRenderable()` |  |  |  | `0x001A1380` 84 |  |  |  |
 
 ## Burnout 2 layout of `C2dFontChar`
 
@@ -27,6 +28,25 @@ public:
     /* 0x008 */ float mrWidth;
     /* 0x00C */ float mrKernLeft;
     /* 0x010 */ float mrKernRight;
+};
+```
+
+## Burnout Revenge layout of `CGt2dFontChar`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 54 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dFont.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dFontChar {  // size 0x020
+    /* 0x000 */ CGtV2d mTopLeftUV;
+    /* 0x008 */ CGtV2d mSizeUV;
+    /* 0x010 */ CGtV2d mStart;
+    /* 0x018 */ RwReal mrAdvance;
+    /* 0x01C */ GtUTF16 mCharacter;
+    /* 0x01E */ RwUInt16 muPriority;
+    // methods
+    // CGt2dFontChar(const CGt2dFontChar &);
+    // CGt2dFontChar();
+    // bool IsRenderable() const;
 };
 ```
 

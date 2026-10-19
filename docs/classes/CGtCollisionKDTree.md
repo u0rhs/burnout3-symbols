@@ -8,23 +8,63 @@
 - **Source file:** `GtCollisionKDTree.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 6
 - **Retail (SLUS-21050):** 3 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtCollisionKDTree`, size 0x030, methods in `GameShared/GameClasses/Geometric/Intersection/GtCollisionKDTree.cpp` ([layout](#burnout-revenge-layout-of-cgtcollisionkdtree))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SphereBBoxTest(GtMathPs2::CGtSphere) const` | `0x003717A0` 444 |  |  |  |  |  |
-| `FixUp()` | `0x00371960` 224 | `0x003E0B60` 224 | `0x00409670` 224 | `0x0041F470` 296 | `0x003BE8D0` proven |  |
-| `IntersectSphere(GtMathPs2::CGtSphere,bool (*)(const CGtPolygonIntersectionResult&, void*),void*) const` | `0x00371A40` 1356 |  |  |  | `0x003BE9B0` likely |  |
-| `IntersectLine(const CGtLine&,bool (*)(const CGtPolygonIntersectionResult&, void*),void*) const` | `0x00371F90` 1948 |  |  |  |  |  |
-| `IntersectLineNearest(const CGtLine&,CGtPolygonIntersectionResult*) const` | `0x00372730` 1944 |  |  |  | `0x003BF720` strong |  |
-| `SphereBBoxTest(GtMathPs2::CGtSphere)` |  | `0x003E09A0` 444 | `0x004094B0` 444 | `0x0041F770` 1348 |  |  |
-| `IntersectSphere(GtMathPs2::CGtSphere,bool (*)` |  | `0x003E0C40` 1496 | `0x00409750` 1496 | `0x0041EA80` 2460 |  |  |
-| `IntersectLine(const CGtLine&,bool (*)` |  | `0x003E1220` 2328 | `0x00409D30` 2328 | `0x0041E2F0` 1928 |  |  |
-| `IntersectLineNearest(const CGtLine&,CGtPolygonIntersectionResult*)` |  | `0x003E1B40` 2284 | `0x0040A650` 2284 | `0x0041DB60` 1924 |  |  |
-| `IntervalTest(float,float,float,float,float*,float*)` |  |  |  | `0x0041F5A0` 452 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SphereBBoxTest(GtMathPs2::CGtSphere) const` | `0x003717A0` 444 |  |  |  |  |  | `bool CGtCollisionKDTree::SphereBBoxTest(GtMathPs2::CGtSphere lSphere) const` |
+| `FixUp()` | `0x00371960` 224 | `0x003E0B60` 224 | `0x00409670` 224 | `0x0041F470` 296 | `0x003BE8D0` proven |  | `void CGtCollisionKDTree::FixUp()` |
+| `IntersectSphere(GtMathPs2::CGtSphere,bool (*)(const CGtPolygonIntersectionResult&, void*),void*) const` | `0x00371A40` 1356 |  |  |  | `0x003BE9B0` likely |  | `void CGtCollisionKDTree::IntersectSphere(GtMathPs2::CGtSphere lSphere, bool (*lpfCollisionCallback)(const CGtPolygonIntersectionResult &, void *), void *lpData) const` |
+| `IntersectLine(const CGtLine&,bool (*)(const CGtPolygonIntersectionResult&, void*),void*) const` | `0x00371F90` 1948 |  |  |  |  |  | `void CGtCollisionKDTree::IntersectLine(const CGtLine &lLine, bool (*lpfCollisionCallback)(const CGtPolygonIntersectionResult &, void *), void *lpData) const` |
+| `IntersectLineNearest(const CGtLine&,CGtPolygonIntersectionResult*) const` | `0x00372730` 1944 |  |  |  | `0x003BF720` strong |  | `EGtIntersectionResult CGtCollisionKDTree::IntersectLineNearest(const CGtLine &lLine, CGtPolygonIntersectionResult *lpPolygonIntersectionOut) const` |
+| `SphereBBoxTest(GtMathPs2::CGtSphere)` |  | `0x003E09A0` 444 | `0x004094B0` 444 | `0x0041F770` 1348 |  |  | `bool CGtCollisionKDTree::SphereBBoxTest(GtMathPs2::CGtSphere lSphere) const` (same name, different parameters) |
+| `IntersectSphere(GtMathPs2::CGtSphere,bool (*)` |  | `0x003E0C40` 1496 | `0x00409750` 1496 | `0x0041EA80` 2460 |  |  | `void CGtCollisionKDTree::IntersectSphere(GtMathPs2::CGtSphere lSphere, bool (*lpfCollisionCallback)(const CGtPolygonIntersectionResult &, void *), void *lpData) const` (same name, different parameters) |
+| `IntersectLine(const CGtLine&,bool (*)` |  | `0x003E1220` 2328 | `0x00409D30` 2328 | `0x0041E2F0` 1928 |  |  | `void CGtCollisionKDTree::IntersectLine(const CGtLine &lLine, bool (*lpfCollisionCallback)(const CGtPolygonIntersectionResult &, void *), void *lpData) const` (same name, different parameters) |
+| `IntersectLineNearest(const CGtLine&,CGtPolygonIntersectionResult*)` |  | `0x003E1B40` 2284 | `0x0040A650` 2284 | `0x0041DB60` 1924 |  |  | `EGtIntersectionResult CGtCollisionKDTree::IntersectLineNearest(const CGtLine &lLine, CGtPolygonIntersectionResult *lpPolygonIntersectionOut) const` (same name, different parameters) |
+| `IntervalTest(float,float,float,float,float*,float*)` |  |  |  | `0x0041F5A0` 452 |  |  | `bool CGtCollisionKDTree::IntervalTest(float lrAxisLineStart, float lrAxisLineEnd, float lrAxisBBoxInf, float lrAxisBBoxSup, float *lprLineParamStartInOut, float *lprLineParamEndInOut) const` (same name, different parameters) |
+
+## Burnout Revenge layout of `CGtCollisionKDTree`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 26 file(s), e.g. `GameShared/GameClasses/Geometric/Intersection/GtCollisionKDTree.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtCollisionKDTree {  // size 0x030
+    /* static */ RwInt32 knMaxTreeDepth;
+    /* static */ RwUInt32 kxClipFlagInfX;
+    /* static */ RwUInt32 kxClipFlagSupX;
+    /* static */ RwUInt32 kxClipFlagInfY;
+    /* static */ RwUInt32 kxClipFlagSupY;
+    /* static */ RwUInt32 kxClipFlagInfZ;
+    /* static */ RwUInt32 kxClipFlagSupZ;
+    /* static */ RwUInt32 kxClipFlagMask;
+    /* static */ RwUInt8 ku8ContentsMaxCount;
+    /* static */ RwUInt8 ku8ContentsSplit;
+    /* static */ RwUInt8 ku8NodeTypePlaneDivideNodeXAxis;
+    /* static */ RwUInt8 ku8NodeTypePlaneDivideNodeYAxis;
+    /* static */ RwUInt8 ku8NodeTypePlaneDivideNodeZAxis;
+    /* 0x000 */ CGtAxisAlignedBox mBBox;
+    /* 0x020 */ CNodeBranch *mpNodeBranchArray;
+    /* 0x024 */ void *mpPolygonSoups;
+    /* 0x028 */ RwUInt16 mu16NumPolygonSoups;
+    /* 0x02A */ RwUInt16 mu16NumBranches;
+    /* 0x02C */ RwBool mbIs16Bit;
+    // methods
+    // CGtCollisionKDTree(const CGtCollisionKDTree &);
+    // CGtCollisionKDTree();
+    // EGtIntersectionResult IntersectLineNearest(const CGtLine &, CGtPolygonIntersectionResult *) const;
+    // void IntersectLine(const CGtLine &, bool (*)(const CGtPolygonIntersectionResult &, void *), void *) const;
+    // bool GetAnyIntersection(const CGtLine &);
+    // void IntersectSphere(GtMathPs2::CGtSphere, bool (*)(const CGtPolygonIntersectionResult &, void *), void *) const;
+    // void IntersectFrustum(const CGtFrustum &, bool (*)(const CGtPolygonIntersectionResult &, void *), void *) const;
+    // void FixUp();
+    // bool IntervalTest(float, float, float, float, float *, float *) const;
+    // bool SphereBBoxTest(GtMathPs2::CGtSphere) const;
+};
+```
 
 ## Notes
 

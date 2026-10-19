@@ -11,12 +11,12 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0035C250` 2220 | `0x003C75C0` 2220 | `0x003F03D0` 2220 | `0x003FDFC0` 4760 |  |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned int)` | `0x0035CB00` 188 | `0x003C7E70` 188 | `0x003F0C80` 188 | `0x003FDED0` 236 | `0x003A3190` strong |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0035C250` 2220 | `0x003C75C0` 2220 | `0x003F03D0` 2220 | `0x003FDFC0` 4760 |  |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned int)` | `0x0035CB00` 188 | `0x003C7E70` 188 | `0x003F0C80` 188 | `0x003FDED0` 236 | `0x003A3190` strong |  |  |
 
 ## Notes
 

@@ -12,38 +12,38 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_BanBuddyCallback(bool,void*)` | `0x0034F460` 140 | `0x003B9760` 140 | `0x003E2FE0` 140 | `0x003F0F50` 168 |  |  |
-| `_AddUserCallback(bool,void*)` | `0x0034F4F0` 140 | `0x003B97F0` 140 | `0x003E3070` 140 | `0x003F0EA0` 168 |  |  |
-| `UpdateSendingMail()` | `0x0034F580` 524 | `0x003B9880` 524 | `0x003E3100` 524 | `0x003F0BD0` 720 |  |  |
-| `UpdateBuddyBanningMode()` | `0x0034F790` 424 | `0x003B9A90` 424 | `0x003E3310` 424 | `0x003F09F0` 472 |  |  |
-| `GetSelectedLobbyPlayerCallback(char*,int,bool,int,int,int,char*,bool,void*)` | `0x0034F940` 44 | `0x003B9C40` 44 | `0x003E34C0` 44 | `0x003F0920` 64 | `0x00396830` strong |  |
-| `ForEachLobbyPlayer(char*,int,bool,int,int,int,char*,bool,void*)` | `0x0034F970` 176 | `0x003B9C70` 176 | `0x003E34F0` 176 | `0x003F0840` 220 |  |  |
-| `SetupTable()` | `0x0034FA20` 316 | `0x003B9D20` 316 | `0x003E35A0` 316 | `0x003F03A0` 756 |  |  |
-| `ChatMessageCallback(char*,char*,void*)` | `0x0034FB60` 72 | `0x003B9E60` 72 | `0x003E36E0` 72 | `0x003F0350` 80 |  |  |
-| `PreparePlayerSelectedSubstate()` | `0x0034FBB0` 396 | `0x003B9EB0` 396 | `0x003E3730` 396 | `0x003F0150` 512 |  |  |
-| `PrepareViewPlayersSubstate()` | `0x0034FD40` 328 | `0x003BA040` 328 | `0x003E38C0` 328 | `0x003EFF70` 472 |  |  |
-| `PrepareMainMenuSubstate()` | `0x0034FE90` 372 | `0x003BA190` 372 | `0x003E3A10` 372 | `0x003EFC80` 452 |  |  |
-| `OnKeyboardShow()` | `0x00350010` 524 | `0x003BA310` 524 | `0x003E3B90` 524 | `0x003EFBD0` 168 |  |  |
-| `OnKeyboardCancel()` | `0x00350220` 188 | `0x003BA520` 188 | `0x003E3DA0` 188 | `0x003EFB00` 204 |  |  |
-| `OnKeyboardDone()` | `0x003502E0` 412 | `0x003BA5E0` 412 | `0x003E3E60` 412 | `0x003EF990` 364 |  |  |
-| `Release()` | `0x00350480` 60 | `0x003BA780` 60 | `0x003E4000` 60 | `0x003EF940` 72 |  |  |
-| `UpdatePlayerSelected()` | `0x003504C0` 784 | `0x003BA7C0` 784 | `0x003E4040` 784 | `0x003EF5A0` 924 |  |  |
-| `UpdateViewPlayers()` | `0x003507D0` 1040 | `0x003BAAD0` 1320 | `0x003E4350` 1320 | `0x003EF0C0` 1244 |  |  |
-| `UpdateChat()` | `0x00350BE0` 680 | `0x003BB000` 680 | `0x003E4880` 680 | `0x003EEDF0` 712 |  |  |
-| `UpdateMainMenu()` | `0x00350E90` 704 | `0x003BB2B0` 704 | `0x003E4B30` 704 | `0x003EEBE0` 528 |  |  |
-| `Update()` | `0x00351150` 296 | `0x003BB570` 296 | `0x003E4DF0` 296 | `0x003EEAF0` 232 |  |  |
-| `Prepare()` | `0x00351280` 532 | `0x003BB6A0` 532 | `0x003E4F20` 532 | `0x003EE850` 668 |  |  |
-| `CB3OnlineOpenLobbyPage()` |  |  |  | `0x00341420` 124 |  |  |
-| `PrepareChatSubstate()` |  |  |  | `0x003EFE50` 276 |  |  |
-| `ReleaseChatSubstate()` |  |  |  | `0x003F06F0` 68 |  |  |
-| `ReleaseMainMenuSubstate()` |  |  |  | `0x003F06A0` 72 |  |  |
-| `ReleasePlayerSelectedSubstate()` |  |  |  | `0x003F07F0` 72 |  |  |
-| `ReleaseViewPlayersSubstate()` |  |  |  | `0x003F0740` 168 |  |  |
-| `UpdateBuddyAddingMode()` |  |  |  | `0x003F0960` 132 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_BanBuddyCallback(bool,void*)` | `0x0034F460` 140 | `0x003B9760` 140 | `0x003E2FE0` 140 | `0x003F0F50` 168 |  |  |  |
+| `_AddUserCallback(bool,void*)` | `0x0034F4F0` 140 | `0x003B97F0` 140 | `0x003E3070` 140 | `0x003F0EA0` 168 |  |  |  |
+| `UpdateSendingMail()` | `0x0034F580` 524 | `0x003B9880` 524 | `0x003E3100` 524 | `0x003F0BD0` 720 |  |  |  |
+| `UpdateBuddyBanningMode()` | `0x0034F790` 424 | `0x003B9A90` 424 | `0x003E3310` 424 | `0x003F09F0` 472 |  |  |  |
+| `GetSelectedLobbyPlayerCallback(char*,int,bool,int,int,int,char*,bool,void*)` | `0x0034F940` 44 | `0x003B9C40` 44 | `0x003E34C0` 44 | `0x003F0920` 64 | `0x00396830` strong |  |  |
+| `ForEachLobbyPlayer(char*,int,bool,int,int,int,char*,bool,void*)` | `0x0034F970` 176 | `0x003B9C70` 176 | `0x003E34F0` 176 | `0x003F0840` 220 |  |  |  |
+| `SetupTable()` | `0x0034FA20` 316 | `0x003B9D20` 316 | `0x003E35A0` 316 | `0x003F03A0` 756 |  |  |  |
+| `ChatMessageCallback(char*,char*,void*)` | `0x0034FB60` 72 | `0x003B9E60` 72 | `0x003E36E0` 72 | `0x003F0350` 80 |  |  |  |
+| `PreparePlayerSelectedSubstate()` | `0x0034FBB0` 396 | `0x003B9EB0` 396 | `0x003E3730` 396 | `0x003F0150` 512 |  |  |  |
+| `PrepareViewPlayersSubstate()` | `0x0034FD40` 328 | `0x003BA040` 328 | `0x003E38C0` 328 | `0x003EFF70` 472 |  |  |  |
+| `PrepareMainMenuSubstate()` | `0x0034FE90` 372 | `0x003BA190` 372 | `0x003E3A10` 372 | `0x003EFC80` 452 |  |  |  |
+| `OnKeyboardShow()` | `0x00350010` 524 | `0x003BA310` 524 | `0x003E3B90` 524 | `0x003EFBD0` 168 |  |  |  |
+| `OnKeyboardCancel()` | `0x00350220` 188 | `0x003BA520` 188 | `0x003E3DA0` 188 | `0x003EFB00` 204 |  |  |  |
+| `OnKeyboardDone()` | `0x003502E0` 412 | `0x003BA5E0` 412 | `0x003E3E60` 412 | `0x003EF990` 364 |  |  |  |
+| `Release()` | `0x00350480` 60 | `0x003BA780` 60 | `0x003E4000` 60 | `0x003EF940` 72 |  |  |  |
+| `UpdatePlayerSelected()` | `0x003504C0` 784 | `0x003BA7C0` 784 | `0x003E4040` 784 | `0x003EF5A0` 924 |  |  |  |
+| `UpdateViewPlayers()` | `0x003507D0` 1040 | `0x003BAAD0` 1320 | `0x003E4350` 1320 | `0x003EF0C0` 1244 |  |  |  |
+| `UpdateChat()` | `0x00350BE0` 680 | `0x003BB000` 680 | `0x003E4880` 680 | `0x003EEDF0` 712 |  |  |  |
+| `UpdateMainMenu()` | `0x00350E90` 704 | `0x003BB2B0` 704 | `0x003E4B30` 704 | `0x003EEBE0` 528 |  |  |  |
+| `Update()` | `0x00351150` 296 | `0x003BB570` 296 | `0x003E4DF0` 296 | `0x003EEAF0` 232 |  |  |  |
+| `Prepare()` | `0x00351280` 532 | `0x003BB6A0` 532 | `0x003E4F20` 532 | `0x003EE850` 668 |  |  |  |
+| `CB3OnlineOpenLobbyPage()` |  |  |  | `0x00341420` 124 |  |  |  |
+| `PrepareChatSubstate()` |  |  |  | `0x003EFE50` 276 |  |  |  |
+| `ReleaseChatSubstate()` |  |  |  | `0x003F06F0` 68 |  |  |  |
+| `ReleaseMainMenuSubstate()` |  |  |  | `0x003F06A0` 72 |  |  |  |
+| `ReleasePlayerSelectedSubstate()` |  |  |  | `0x003F07F0` 72 |  |  |  |
+| `ReleaseViewPlayersSubstate()` |  |  |  | `0x003F0740` 168 |  |  |  |
+| `UpdateBuddyAddingMode()` |  |  |  | `0x003F0960` 132 |  |  |  |
 
 ## Notes
 

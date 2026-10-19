@@ -8,21 +8,22 @@
 - **Source file:** `B3Player.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 7
 - **Retail (SLUS-21050):** 3 of its 4 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4Player`, size 0x024, methods in `GameSource/Game/B4Player.cpp` ([layout](#burnout-revenge-layout-of-cb4player))
 - **Burnout 2 ancestor (by name):** `CPlayer`, size 0x018, declared in 79 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ResetLastInputTime()` | `0x00134D40` 16 | `0x0013CA60` 16 | `0x0013A660` 16 | `0x00142700` 52 | `0x00135A90` strong |  |
-| `Update()` | `0x00134D50` 152 | `0x0013CA70` 300 | `0x0013A670` 300 | `0x00142570` 220 |  |  |
-| `Prepare()` | `0x00134DF0` 80 | `0x0013CBA0` 272 | `0x0013A7A0` 272 | `0x00142510` 84 | `0x00135AF0` strong |  |
-| `Construct(int)` | `0x00134E40` 12 | `0x0013CCB0` 12 | `0x0013A8B0` 12 | `0x001424E0` 44 | `0x00135B40` strong |  |
-| `Activate()` |  |  |  | `0x0013FCB0` 52 |  |  |
-| `Deactivate()` |  |  |  | `0x00135540` 28 |  |  |
-| `IsActive()` |  |  |  | `0x001426E0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ResetLastInputTime()` | `0x00134D40` 16 | `0x0013CA60` 16 | `0x0013A660` 16 | `0x00142700` 52 | `0x00135A90` strong |  | `void CB4Player::ResetLastInputTime()` |
+| `Update()` | `0x00134D50` 152 | `0x0013CA70` 300 | `0x0013A670` 300 | `0x00142570` 220 |  |  | `void CB4Player::Update()` |
+| `Prepare()` | `0x00134DF0` 80 | `0x0013CBA0` 272 | `0x0013A7A0` 272 | `0x00142510` 84 | `0x00135AF0` strong |  | `bool CB4Player::Prepare()` |
+| `Construct(int)` | `0x00134E40` 12 | `0x0013CCB0` 12 | `0x0013A8B0` 12 | `0x001424E0` 44 | `0x00135B40` strong |  | `void CB4Player::Construct(int lnIndex)` |
+| `Activate()` |  |  |  | `0x0013FCB0` 52 |  |  |  |
+| `Deactivate()` |  |  |  | `0x00135540` 28 |  |  |  |
+| `IsActive()` |  |  |  | `0x001426E0` 28 |  |  |  |
 
 ## Burnout 2 layout of `CPlayer`
 
@@ -37,6 +38,35 @@ public:
     /* 0x00C */ int mPlayerIndex;
     /* 0x010 */ EPlayerStatus meStatus;
     /* 0x014 */ EPlayerStatus meLastStatus;
+};
+```
+
+## Burnout Revenge layout of `CB4Player`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 238 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Player {  // size 0x024
+    /* 0x000 */ CB4ControllerMapping *mpControllerMapping;
+    /* 0x004 */ short unsigned int mac16PlayerName[9];
+    /* 0x018 */ RwInt32 mnIndex;
+    /* 0x01C */ RwReal mrLastInputTime;
+    /* 0x020 */ bool mbActive;
+    // methods
+    // CB4Player(const CB4Player &);
+    // CB4Player();
+    // void Construct(int);
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void Activate();
+    // void Deactivate();
+    // bool IsActive();
+    // RwReal GetLastInputTime();
+    // void ResetLastInputTime();
+    // GtUTF16 * GetName();
+    // void SetName(const unsigned short *);
 };
 ```
 

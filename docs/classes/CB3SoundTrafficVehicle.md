@@ -8,34 +8,114 @@
 - **Source file:** `B3SoundTrafficVehicle.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 14, B3INTERN 14, B3O0PCH 20
 - **Retail (SLUS-21050):** 13 of its 13 DNAT_200 methods found, 13 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundTrafficVehicle`, size 0x170, methods in `GameSource/Sound/Traffic/B4SoundTrafficVehicle.cpp` ([layout](#burnout-revenge-layout-of-cb4soundtrafficvehicle))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetPlayerIndex() const` | `0x00238D00` 8 |  |  |  | `0x00278810` proven |  |
-| `IsHorning()` | `0x00238D10` 12 | `0x00262BA0` 12 | `0x0029B8A0` 12 | `0x002A1F20` 32 | `0x00278820` proven |  |
-| `UpdateDoppler(float*,float*,float)` | `0x00238D20` 396 | `0x00262BB0` 880 | `0x0029B8B0` 880 | `0x002A1C20` 768 | `0x00278830` proven |  |
-| `StartSpecialVehicle(float,float,float,float,CGtSoundVirtualVoice**,const CGtSoundWave*)` | `0x00238EB0` 300 | `0x00263110` 388 | `0x0029BE10` 388 | `0x002A17E0` 372 | `0x002789C0` proven |  |
-| `UpdateHorn(float,float,bool)` | `0x00238FE0` 500 | `0x002632A0` 592 | `0x0029BFA0` 500 | `0x002A1420` 680 | `0x00278B20` proven |  |
-| `StartHorn()` | `0x002391E0` 336 | `0x002634F0` 388 | `0x0029C1A0` 388 | `0x002A1200` 536 | `0x00278D20` proven |  |
-| `Deactivate()` | `0x00239330` 168 | `0x00263680` 168 | `0x0029C330` 168 | `0x002A0E50` 236 | `0x00278E70` proven |  |
-| `Activate(int,CB3TrafficVehicle*,signed char)` | `0x002393E0` 1580 | `0x00263730` 2152 | `0x0029C3E0` 2144 | `0x002A03D0` 2688 | `0x00278F20` proven |  |
-| `GetID()` | `0x00239A10` 8 | `0x00263FA0` 8 | `0x0029CC40` 8 | `0x002A03B0` 28 | `0x00279550` proven |  |
-| `Release()` | `0x00239A20` 132 | `0x00263FB0` 132 | `0x0029CC50` 132 | `0x002A02E0` 200 | `0x00279560` proven |  |
-| `Update(bool,float)` | `0x00239AB0` 3692 | `0x00264040` 5036 | `0x0029CCE0` 4712 | `0x0029F2C0` 4128 | `0x002795F0` proven |  |
-| `Prepare()` | `0x0023A920` 160 | `0x002653F0` 160 | `0x0029DF50` 160 | `0x0029F1A0` 280 | `0x0027A550` proven |  |
-| `Construct()` | `0x0023A9C0` 760 | `0x00265490` 760 | `0x0029DFF0` 760 | `0x0029EE60` 832 | `0x0027A5F0` proven |  |
-| `GetPlayerIndex()` |  | `0x00262B90` 8 | `0x0029B890` 8 | `0x002A1F40` 28 |  |  |
-| `UpdateEngine(float,float)` |  | `0x00262F20` 484 | `0x0029BC20` 484 | `0x002A1A60` 444 |  |  |
-| `CB3SoundTrafficVehicle()` |  |  |  | `0x002B1A50` 64 |  |  |
-| `StartEngine()` |  |  |  | `0x002A1120` 216 |  |  |
-| `StartRoadNoise()` |  |  |  | `0x002A1070` 168 |  |  |
-| `UpdatePasses(float)` |  |  |  | `0x002A0F40` 292 |  |  |
-| `UpdateRoadNoise(float,float)` |  |  |  | `0x002A16F0` 228 |  |  |
-| `UpdateSpecialVehicle(float,float,CGtSoundVirtualVoice*,const CGtSoundWave*)` |  |  |  | `0x002A1960` 252 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetPlayerIndex() const` | `0x00238D00` 8 |  |  |  | `0x00278810` proven |  | `ERaceCarIndex CB4SoundTrafficVehicle::GetPlayerIndex() const` |
+| `IsHorning()` | `0x00238D10` 12 | `0x00262BA0` 12 | `0x0029B8A0` 12 | `0x002A1F20` 32 | `0x00278820` proven |  | `bool CB4SoundTrafficVehicle::IsHorning()` |
+| `UpdateDoppler(float*,float*,float)` | `0x00238D20` 396 | `0x00262BB0` 880 | `0x0029B8B0` 880 | `0x002A1C20` 768 | `0x00278830` proven |  | `void CB4SoundTrafficVehicle::UpdateDoppler(float *lpPitchScalar, float *lpVolScalar, float lrBoostLevel)` |
+| `StartSpecialVehicle(float,float,float,float,CGtSoundVirtualVoice**,const CGtSoundWave*)` | `0x00238EB0` 300 | `0x00263110` 388 | `0x0029BE10` 388 | `0x002A17E0` 372 | `0x002789C0` proven |  | `void CB4SoundTrafficVehicle::StartSpecialVehicle(float lrVolume, float lrMaxDistance, float lrMinDistance, float lrPitch, CGtSoundVoiceHandle &lVirtualVoice, const CGtSoundWave *lpWave)` (same name, different parameters) |
+| `UpdateHorn(float,float,bool)` | `0x00238FE0` 500 | `0x002632A0` 592 | `0x0029BFA0` 500 | `0x002A1420` 680 | `0x00278B20` proven |  | `void CB4SoundTrafficVehicle::UpdateHorn(float lrPitchScalar, float lrVolScalar, bool lbPassedPlayer)` |
+| `StartHorn()` | `0x002391E0` 336 | `0x002634F0` 388 | `0x0029C1A0` 388 | `0x002A1200` 536 | `0x00278D20` proven |  | `void CB4SoundTrafficVehicle::StartHorn(bool lbDueToChecking)` (same name, different parameters) |
+| `Deactivate()` | `0x00239330` 168 | `0x00263680` 168 | `0x0029C330` 168 | `0x002A0E50` 236 | `0x00278E70` proven |  | `void CB4SoundTrafficVehicle::Deactivate()` |
+| `Activate(int,CB3TrafficVehicle*,signed char)` | `0x002393E0` 1580 | `0x00263730` 2152 | `0x0029C3E0` 2144 | `0x002A03D0` 2688 | `0x00278F20` proven |  | `void CB4SoundTrafficVehicle::Activate(int lnID, CB4TrafficVehicle *lpOwner, ERaceCarIndex lePlayerIndex)` (same name, different parameters) |
+| `GetID()` | `0x00239A10` 8 | `0x00263FA0` 8 | `0x0029CC40` 8 | `0x002A03B0` 28 | `0x00279550` proven |  | `RwInt32 CB4SoundTrafficVehicle::GetID()` |
+| `Release()` | `0x00239A20` 132 | `0x00263FB0` 132 | `0x0029CC50` 132 | `0x002A02E0` 200 | `0x00279560` proven |  | `void CB4SoundTrafficVehicle::Release()` |
+| `Update(bool,float)` | `0x00239AB0` 3692 | `0x00264040` 5036 | `0x0029CCE0` 4712 | `0x0029F2C0` 4128 | `0x002795F0` proven |  | `void CB4SoundTrafficVehicle::Update(bool lbBoostMode, float lrBoostLevel)` |
+| `Prepare()` | `0x0023A920` 160 | `0x002653F0` 160 | `0x0029DF50` 160 | `0x0029F1A0` 280 | `0x0027A550` proven |  | `bool CB4SoundTrafficVehicle::Prepare()` |
+| `Construct()` | `0x0023A9C0` 760 | `0x00265490` 760 | `0x0029DFF0` 760 | `0x0029EE60` 832 | `0x0027A5F0` proven |  | `void CB4SoundTrafficVehicle::Construct()` |
+| `GetPlayerIndex()` |  | `0x00262B90` 8 | `0x0029B890` 8 | `0x002A1F40` 28 |  |  | `ERaceCarIndex CB4SoundTrafficVehicle::GetPlayerIndex() const` (same name, different parameters) |
+| `UpdateEngine(float,float)` |  | `0x00262F20` 484 | `0x0029BC20` 484 | `0x002A1A60` 444 |  |  | `void CB4SoundTrafficVehicle::UpdateEngine(float lrPitchScalar, float lrVolScalar)` |
+| `CB3SoundTrafficVehicle()` |  |  |  | `0x002B1A50` 64 |  |  |  |
+| `StartEngine()` |  |  |  | `0x002A1120` 216 |  |  | `void CB4SoundTrafficVehicle::StartEngine()` |
+| `StartRoadNoise()` |  |  |  | `0x002A1070` 168 |  |  | `void CB4SoundTrafficVehicle::StartRoadNoise()` |
+| `UpdatePasses(float)` |  |  |  | `0x002A0F40` 292 |  |  | `void CB4SoundTrafficVehicle::UpdatePasses(float lrBoostLevel)` |
+| `UpdateRoadNoise(float,float)` |  |  |  | `0x002A16F0` 228 |  |  | `void CB4SoundTrafficVehicle::UpdateRoadNoise(float lrPitchScalar, float lrVolScalar)` |
+| `UpdateSpecialVehicle(float,float,CGtSoundVirtualVoice*,const CGtSoundWave*)` |  |  |  | `0x002A1960` 252 |  |  | `void CB4SoundTrafficVehicle::UpdateSpecialVehicle(float lrVolume, float lrPitch, CGtSoundVoiceHandle &lVirtualVoice, const CGtSoundWave *lpWave)` (same name, different parameters) |
+
+## Burnout Revenge layout of `CB4SoundTrafficVehicle`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 15 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundTrafficVehicle {  // size 0x170
+    /* 0x000 */ CB4TrafficVehicle *mpOwner;
+    /* 0x010 */ CB4SoundTrafficPass mPass;
+    /* 0x060 */ CB4SoundDoppler mRoadDoppler;
+    /* 0x08C */ CB4SoundDoppler mEngineDoppler;
+    /* 0x0C0 */ CGtV3d mPos;
+    /* 0x0D0 */ CGtSoundVoiceHandle mRoadNoise;
+    /* 0x0E0 */ CGtSoundVoiceHandle mEngineNoise;
+    /* 0x0F0 */ CGtSoundVoiceHandle mHornVoice;
+    /* 0x100 */ CGtSoundWave *mpRoadWave;
+    /* 0x104 */ CGtSoundWave *mpEngineWave;
+    /* 0x108 */ CGtSoundWave *mpHornWave;
+    /* 0x10C */ RwReal mrHornRamp;
+    /* 0x110 */ RwReal mrDistance;
+    /* 0x114 */ RwReal mrPitch;
+    /* 0x118 */ RwReal mrVolume;
+    /* 0x11C */ RwReal mrHornVolume;
+    /* 0x120 */ RwReal mrHornPitch;
+    /* 0x124 */ RwReal mrHornSpeedOfSound;
+    /* 0x128 */ RwReal mrDistVolumeScalar;
+    /* 0x12C */ RwReal mrEngVolumeScalar;
+    /* 0x130 */ RwReal mrRelSpeed;
+    /* 0x134 */ RwReal mrRoadPitchScalar;
+    /* 0x138 */ RwReal mrRoadVolScalar;
+    /* 0x13C */ RwReal mrEnginePitchScalar;
+    /* 0x140 */ RwReal mrEngineVolScalar;
+    /* 0x144 */ RwInt32 mnVehicleID;
+    /* 0x148 */ RwUInt32 mxFlags;
+    /* 0x14C */ RwUInt32 muRoadNoiseID;
+    /* 0x150 */ RwUInt32 muEngineNoiseID;
+    /* 0x154 */ ETrafficVehicleCategories meType;
+    /* 0x158 */ bool mbIsActive;
+    /* 0x159 */ bool mbInBoost;
+    /* 0x15A */ bool mbHornAttack;
+    /* 0x15B */ RwInt8 mn8PatternPos;
+    /* 0x15C */ RwInt8 mn8WhichPattern;
+    /* 0x15D */ RwInt8 mn8UpdatesTillNextSqueak;
+    /* 0x15E */ RwInt8 mn8HornOnTime;
+    /* 0x15F */ RwInt8 mn8HornOffTime;
+    /* 0x160 */ RwInt8 mn8PlayerRaceCarIndex;
+    // methods
+    // CB4SoundTrafficVehicle(const CB4SoundTrafficVehicle &);
+    // CB4SoundTrafficVehicle();
+    // void Construct();
+    // bool Prepare();
+    // void Update(bool, float);
+    // void Release();
+    // void Destruct();
+    // void SetPos(GtMathPs2::CGtV3d *);
+    // RwInt32 GetID();
+    // void SetID(int);
+    // void Activate(int, CB4TrafficVehicle *, ERaceCarIndex);
+    // void Deactivate();
+    // bool IsActive();
+    // bool IsHorning();
+    // ERaceCarIndex GetPlayerIndex() const;
+    // void UpdatePasses(float);
+    // void StartRoadNoise();
+    // void StartEngine();
+    // void StartSqueak();
+    // void StartHorn(bool);
+    // void StopHorn();
+    // void UpdateHorn(float, float, bool);
+    // void UpdateHorns(float);
+    // RwReal UpdateHornPattern();
+    // void UpdateRoadNoise(float, float);
+    // void UpdateEngine(float, float);
+    // void StartSpecialVehicle(float, float, float, float, CGtSoundVoiceHandle &, const CGtSoundWave *);
+    // void UpdateSpecialVehicle(float, float, CGtSoundVoiceHandle &, const CGtSoundWave *);
+    // void UpdateSqueak(float, float);
+    // void UpdateDoppler(float *, float *, float);
+};
+```
 
 ## Notes
 

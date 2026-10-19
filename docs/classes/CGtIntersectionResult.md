@@ -8,14 +8,30 @@
 - **Source file:** `GtSphereTree.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtIntersectionResult`, size 0x030 ([layout](#burnout-revenge-layout-of-cgtintersectionresult))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CGtIntersectionResult()` | `0x00312E60` 8 | `0x0036B570` 8 | `0x0039A440` 8 | `0x002ED800` 60 | `0x0035C3D0` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CGtIntersectionResult()` | `0x00312E60` 8 | `0x0036B570` 8 | `0x0039A440` 8 | `0x002ED800` 60 | `0x0035C3D0` proven |  |  |
+
+## Burnout Revenge layout of `CGtIntersectionResult`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 6 file(s), e.g. `GameShared/GameClasses/Containers/GtSphereTree.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtIntersectionResult {  // size 0x030
+    /* 0x000 */ CGtV3d mPoint;
+    /* 0x010 */ CGtV3d mNormal;
+    /* 0x020 */ RwReal mrPenetration;
+    // methods
+    // CGtIntersectionResult(const CGtIntersectionResult &);
+    // CGtIntersectionResult();
+};
+```
 
 ## Notes
 

@@ -8,15 +8,35 @@
 - **Source file:** `B3ConvexHull.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 2
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ConvexHullBodyPart`, size 0x1A0, methods in `SharedClasses/PhysicsData/B4ConvexHull.cpp` ([layout](#burnout-revenge-layout-of-cb4convexhullbodypart))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Initialise()` | `0x0027A280` 44 | `0x002AE890` 44 | `0x002E5B70` 44 | `0x002E6AA0` 100 | `0x002B9640` strong |  |
-| `CB3ConvexHullBodyPart()` |  |  |  | `0x001918E0` 80 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Initialise()` | `0x0027A280` 44 | `0x002AE890` 44 | `0x002E5B70` 44 | `0x002E6AA0` 100 | `0x002B9640` strong |  | `void CB4ConvexHullBodyPart::Initialise()` |
+| `CB3ConvexHullBodyPart()` |  |  |  | `0x001918E0` 80 |  |  |  |
+
+## Burnout Revenge layout of `CB4ConvexHullBodyPart`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 313 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ConvexHullBodyPart : public CB4ConvexHull {  // size 0x1A0
+    // base CB4ConvexHull at 0x000
+    /* 0x01C */ CB4ConvexHullPlane maPlaneVertData[6];
+    /* 0x040 */ CGtPlane maPlaneData[6];
+    /* 0x0A0 */ CGtV3d maVertData[8];
+    /* 0x120 */ CB4ConvexHullEdge maEdgeData[12];
+    /* 0x138 */ CB4ConvexHullVertMap maVertWeightData[8];
+    // methods
+    // CB4ConvexHullBodyPart(const CB4ConvexHullBodyPart &);
+    // CB4ConvexHullBodyPart();
+    // void Initialise();
+};
+```
 
 ## Notes
 

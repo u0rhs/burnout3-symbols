@@ -8,24 +8,54 @@
 - **Source file:** `GtSoundListenerManager.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 9
 - **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtSoundListenerManager`, size 0x014, methods in `GameShared/GameClasses/Sound/GtSoundListenerManager.cpp` ([layout](#burnout-revenge-layout-of-cgtsoundlistenermanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetFixedListener() const` | `0x00341D10` 8 |  |  |  | `0x00384A50` strong |  |
-| `GetNearestListener(GtMathPs2::CGtV3d) const` | `0x00341D20` 288 |  |  |  | `0x00384A60` proven |  |
-| `SetListener(int,CGtSoundListener*)` | `0x00341E40` 108 | `0x003A57F0` 192 | `0x003CF710` 192 | `0x003D8700` 156 | `0x00384B80` proven |  |
-| `Destruct()` | `0x00341EB0` 120 | `0x003A58B0` 120 | `0x003CF7D0` 120 | `0x003D8610` 160 | `0x00384BF0` proven |  |
-| `Release()` | `0x00341F30` 96 | `0x003A5930` 96 | `0x003CF850` 96 | `0x003D8590` 128 | `0x00384C70` proven |  |
-| `Update()` | `0x00341F90` 96 | `0x003A5990` 136 | `0x003CF8B0` 136 | `0x003D8500` 132 | `0x00384CE0` proven |  |
-| `Prepare(unsigned int)` | `0x00341FF0` 148 | `0x003A5A20` 228 | `0x003CF940` 228 | `0x003D8410` 240 | `0x00384D40` proven |  |
-| `Construct(RwaSPU2Output*)` | `0x00342090` 144 | `0x003A5B10` 188 | `0x003CFA30` 188 | `0x003D8340` 208 | `0x00384DE0` proven |  |
-| `GetFixedListener()` |  | `0x003A56C0` 8 | `0x003CF5E0` 8 | `0x003D8970` 44 |  |  |
-| `GetNearestListener(GtMathPs2::CGtV3d)` |  | `0x003A56D0` 288 | `0x003CF5F0` 288 | `0x003D87A0` 452 |  |  |
-| `GetListener(int)` |  |  |  | `0x003D86B0` 80 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetFixedListener() const` | `0x00341D10` 8 |  |  |  | `0x00384A50` strong |  | `CGtSoundListener * CGtSoundListenerManager::GetFixedListener() const` |
+| `GetNearestListener(GtMathPs2::CGtV3d) const` | `0x00341D20` 288 |  |  |  | `0x00384A60` proven |  | `CGtSoundListener * CGtSoundListenerManager::GetNearestListener(GtMathPs2::CGtV3d lPos) const` |
+| `SetListener(int,CGtSoundListener*)` | `0x00341E40` 108 | `0x003A57F0` 192 | `0x003CF710` 192 | `0x003D8700` 156 | `0x00384B80` proven |  | `void CGtSoundListenerManager::SetListener(int lnListenerIndex, CGtSoundListener *lpListener)` |
+| `Destruct()` | `0x00341EB0` 120 | `0x003A58B0` 120 | `0x003CF7D0` 120 | `0x003D8610` 160 | `0x00384BF0` proven |  | `void CGtSoundListenerManager::Destruct()` |
+| `Release()` | `0x00341F30` 96 | `0x003A5930` 96 | `0x003CF850` 96 | `0x003D8590` 128 | `0x00384C70` proven |  | `void CGtSoundListenerManager::Release()` |
+| `Update()` | `0x00341F90` 96 | `0x003A5990` 136 | `0x003CF8B0` 136 | `0x003D8500` 132 | `0x00384CE0` proven |  | `void CGtSoundListenerManager::Update()` |
+| `Prepare(unsigned int)` | `0x00341FF0` 148 | `0x003A5A20` 228 | `0x003CF940` 228 | `0x003D8410` 240 | `0x00384D40` proven |  | `bool CGtSoundListenerManager::Prepare(unsigned int lunNumPlayers)` |
+| `Construct(RwaSPU2Output*)` | `0x00342090` 144 | `0x003A5B10` 188 | `0x003CFA30` 188 | `0x003D8340` 208 | `0x00384DE0` proven |  | `void CGtSoundListenerManager::Construct(RwaSPU2Output *lpOutput)` |
+| `GetFixedListener()` |  | `0x003A56C0` 8 | `0x003CF5E0` 8 | `0x003D8970` 44 |  |  | `CGtSoundListener * CGtSoundListenerManager::GetFixedListener() const` (same name, different parameters) |
+| `GetNearestListener(GtMathPs2::CGtV3d)` |  | `0x003A56D0` 288 | `0x003CF5F0` 288 | `0x003D87A0` 452 |  |  | `CGtSoundListener * CGtSoundListenerManager::GetNearestListener(GtMathPs2::CGtV3d lPos) const` (same name, different parameters) |
+| `GetListener(int)` |  |  |  | `0x003D86B0` 80 |  |  | `CGtSoundListener * CGtSoundListenerManager::GetListener(int lnListenerIndex) const` (same name, different parameters) |
+
+## Burnout Revenge layout of `CGtSoundListenerManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 154 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundBankManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSoundListenerManager {  // size 0x014
+    /* static */ RwInt32 knMaxListeners;
+    /* 0x000 */ CGtSoundListener *mapListeners[2];
+    /* 0x008 */ RwUInt32 munNumActiveListeners;
+    /* 0x00C */ RwaOsOutput *mpOutput;
+    /* 0x010 */ RwaListener *mpListener;
+    // methods
+    // CGtSoundListenerManager(const CGtSoundListenerManager &);
+    // CGtSoundListenerManager();
+    // void Construct(RwaSPU2Output *);
+    // bool Prepare(unsigned int);
+    // void Update(GtMathPs2::CGtMatrix3x4 *, float);
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // CGtSoundListener * GetListener(int) const;
+    // CGtSoundListener * GetFixedListener() const;
+    // void SetListener(int, CGtSoundListener *);
+    // CGtSoundListener * GetNearestListener(GtMathPs2::CGtV3d) const;
+    // void SetDopplerScale(float);
+    // void Calculate3DVolumeandPan(CGtSoundVoiceParams *);
+};
+```
 
 ## Notes
 

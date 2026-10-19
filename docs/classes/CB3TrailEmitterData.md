@@ -8,14 +8,31 @@
 - **Source file:** `B3World.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrailEmitterData`, size 0x020 ([layout](#burnout-revenge-layout-of-cb4trailemitterdata))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3TrailEmitterData()` | `0x00169260` 8 | `0x00182500` 8 | `0x0017D1E0` 8 | `0x00191960` 44 | `0x0019B6B0` likely |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3TrailEmitterData()` | `0x00169260` 8 | `0x00182500` 8 | `0x0017D1E0` 8 | `0x00191960` 44 | `0x0019B6B0` likely |  |  |
+
+## Burnout Revenge layout of `CB4TrailEmitterData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 330 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrailEmitterData {  // size 0x020
+    /* 0x000 */ CGtV3d mLastPosition;
+    /* 0x010 */ CB4TrailEmitter *mpTrailEmitter;
+    /* 0x014 */ RwReal mrLastTrailTime;
+    // methods
+    // CB4TrailEmitterData(const CB4TrailEmitterData &);
+    // CB4TrailEmitterData();
+    // void Prepare();
+};
+```
 
 ## Notes
 

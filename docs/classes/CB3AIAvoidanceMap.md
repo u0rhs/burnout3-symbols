@@ -8,38 +8,95 @@
 - **Source file:** `B3AIAvoidance.cpp`
 - **Methods per build:** DNAT_200 14, B3DEBUG 14, B3INTERN 14, B3O0PCH 23
 - **Retail (SLUS-21050):** 14 of its 14 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4AIAvoidanceMap`, size 0x460, methods in `GameSource/World/B4AIAvoidance.cpp` ([layout](#burnout-revenge-layout-of-cb4aiavoidancemap))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CalculateCarPositionInMap(bool)` | `0x0013A2C0` 964 | `0x00142FF0` 1052 | `0x00141500` 964 | `0x0014FD70` 1488 | `0x0013D530` strong |  |
-| `CalculateCarCoverage()` | `0x0013A690` 284 | `0x00143410` 284 | `0x001418D0` 284 | `0x0014FB40` 548 | `0x0013D910` strong |  |
-| `GetChannelRisk(int,float*,float*,float*) const` | `0x0013A7B0` 760 |  |  |  | `0x0013DA30` strong |  |
-| `CalcRiskOfPosition(const CB3AILane*,unsigned short,GtMathPs2::CGtV3d,float*,float*,float*) const` | `0x0013AAB0` 548 |  |  |  | `0x0013DD30` strong |  |
-| `CheckNoGoZones()` | `0x0013ACE0` 1440 | `0x00143C40` 1476 | `0x001420A0` 1476 | `0x0014E8C0` 2536 | `0x0013DF60` strong |  |
-| `FillInNoGoData(const CB3AILane*,unsigned short,EAIAvoidanceRisk,float,float)` | `0x0013B280` 608 | `0x00144210` 760 | `0x00142670` 760 | `0x0014E490` 944 | `0x0013E530` strong |  |
-| `GetSafestChannel()` | `0x0013B4E0` 392 | `0x00144510` 392 | `0x00142970` 392 | `0x0014E210` 640 | `0x0013E790` strong |  |
-| `CheckCrashingTraffic()` | `0x0013B670` 1040 | `0x001446A0` 1284 | `0x00142B00` 1088 | `0x0014DC00` 1380 | `0x0013E920` strong |  |
-| `CheckTraffic()` | `0x0013BA80` 380 | `0x00144BB0` 380 | `0x00142F40` 380 | `0x0014D950` 608 | `0x0013ED50` strong |  |
-| `CheckRaceCar()` | `0x0013BC00` 420 | `0x00144D30` 720 | `0x001430C0` 720 | `0x0014D6B0` 632 | `0x0013EED0` strong |  |
-| `CheckVehicle(const GtMathPs2::CGtMatrix3x4&,GtMathPs2::CGtV3d,bool,bool,EAIAvoidanceRisk,const CGtAxisAligne` | `0x0013BDB0` 1200 | `0x00145000` 1520 | `0x00143390` 1200 | `0x0014CDE0` 1812 | `0x0013F090` strong |  |
-| `AddCarToMap(EAIAvoidanceRisk,float,float,float,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathP` | `0x0013C260` 4872 | `0x001455F0` 6392 | `0x00143840` 5712 | `0x0014AD80` 8036 | `0x0013F550` strong |  |
-| `Update(bool)` | `0x0013D570` 304 | `0x00146EF0` 304 | `0x00144E90` 304 | `0x0014AC20` 336 | `0x00140850` strong |  |
-| `Prepare(CB3AICar*)` | `0x0013D6A0` 176 | `0x00147020` 256 | `0x00144FC0` 256 | `0x0014A9B0` 292 | `0x00140980` proven |  |
-| `GetChannelRisk(int,float*,float*,float*)` |  | `0x00143530` 1100 | `0x001419F0` 1100 | `0x0014F5E0` 1368 |  |  |
-| `CalcRiskOfPosition(const CB3AILane*,unsigned short,GtMathPs2::CGtV3d,float*,float*,float*)` |  | `0x00143980` 700 | `0x00141E40` 596 | `0x0014F2E0` 732 |  |  |
-| `CB3AIAvoidanceMap()` |  |  |  | `0x001912A0` 92 |  |  |
-| `Construct()` |  |  |  | `0x0014A9A0` 16 |  |  |
-| `GetChannelDistance(int)` |  |  |  | `0x0014A910` 72 |  |  |
-| `GetChannelRiskTime(int)` |  |  |  | `0x0014A960` 64 |  |  |
-| `Release()` |  |  |  | `0x0014AD70` 16 |  |  |
-| `ResetRiskScale()` |  |  |  | `0x0014AAE0` 32 |  |  |
-| `SetChannelDistance(int,float)` |  |  |  | `0x0014AB00` 148 |  |  |
-| `SetChannelRiskTime(int,float)` |  |  |  | `0x0014ABC0` 92 |  |  |
-| `SetRiskScale(float)` |  |  |  | `0x00151A70` 112 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CalculateCarPositionInMap(bool)` | `0x0013A2C0` 964 | `0x00142FF0` 1052 | `0x00141500` 964 | `0x0014FD70` 1488 | `0x0013D530` strong |  | `void CB4AIAvoidanceMap::CalculateCarPositionInMap(bool lbInRange)` |
+| `CalculateCarCoverage()` | `0x0013A690` 284 | `0x00143410` 284 | `0x001418D0` 284 | `0x0014FB40` 548 | `0x0013D910` strong |  | `void CB4AIAvoidanceMap::CalculateCarCoverage()` |
+| `GetChannelRisk(int,float*,float*,float*) const` | `0x0013A7B0` 760 |  |  |  | `0x0013DA30` strong |  | `void CB4AIAvoidanceMap::GetChannelRisk(int lnTargetChannel, float *lprResultAvgRiskTime, float *lprResultMaxRiskTime, float *lprResultCrossingRisk) const` |
+| `CalcRiskOfPosition(const CB3AILane*,unsigned short,GtMathPs2::CGtV3d,float*,float*,float*) const` | `0x0013AAB0` 548 |  |  |  | `0x0013DD30` strong |  | `EAIAvoidanceRisk CB4AIAvoidanceMap::CalcRiskOfPosition(const CB4AILaneSegment *lpTargetSegIndex, GtMathPs2::CGtV3d lTargetPosition, float *lprResultAvgRiskTime, float *lprResultAccRiskTime, float *lprResultMaxRiskTime) const` (same name, different parameters) |
+| `CheckNoGoZones()` | `0x0013ACE0` 1440 | `0x00143C40` 1476 | `0x001420A0` 1476 | `0x0014E8C0` 2536 | `0x0013DF60` strong |  | `void CB4AIAvoidanceMap::CheckNoGoZones()` |
+| `FillInNoGoData(const CB3AILane*,unsigned short,EAIAvoidanceRisk,float,float)` | `0x0013B280` 608 | `0x00144210` 760 | `0x00142670` 760 | `0x0014E490` 944 | `0x0013E530` strong |  | `void CB4AIAvoidanceMap::FillInNoGoData(const CB4AILaneSegment *lpSegIndex, EAIAvoidanceRisk leLaneRiskType, float lrTime, float lrDistance)` (same name, different parameters) |
+| `GetSafestChannel()` | `0x0013B4E0` 392 | `0x00144510` 392 | `0x00142970` 392 | `0x0014E210` 640 | `0x0013E790` strong |  |  |
+| `CheckCrashingTraffic()` | `0x0013B670` 1040 | `0x001446A0` 1284 | `0x00142B00` 1088 | `0x0014DC00` 1380 | `0x0013E920` strong |  | `void CB4AIAvoidanceMap::CheckCrashingTraffic()` |
+| `CheckTraffic()` | `0x0013BA80` 380 | `0x00144BB0` 380 | `0x00142F40` 380 | `0x0014D950` 608 | `0x0013ED50` strong |  | `void CB4AIAvoidanceMap::CheckTraffic()` |
+| `CheckRaceCar()` | `0x0013BC00` 420 | `0x00144D30` 720 | `0x001430C0` 720 | `0x0014D6B0` 632 | `0x0013EED0` strong |  | `void CB4AIAvoidanceMap::CheckRaceCar()` |
+| `CheckVehicle(const GtMathPs2::CGtMatrix3x4&,GtMathPs2::CGtV3d,bool,bool,EAIAvoidanceRisk,const CGtAxisAligne` | `0x0013BDB0` 1200 | `0x00145000` 1520 | `0x00143390` 1200 | `0x0014CDE0` 1812 | `0x0013F090` strong |  | `void CB4AIAvoidanceMap::CheckVehicle(const GtMathPs2::CGtMatrix3x4 &lMatrix, GtMathPs2::CGtV3d lVelocity, bool lbCrashing, bool lbAICar, EAIAvoidanceRisk leRisk, const CGtAxisAlignedBox &lBBox)` (same name, different parameters) |
+| `AddCarToMap(EAIAvoidanceRisk,float,float,float,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathP` | `0x0013C260` 4872 | `0x001455F0` 6392 | `0x00143840` 5712 | `0x0014AD80` 8036 | `0x0013F550` strong |  | `void CB4AIAvoidanceMap::AddCarToMap(EAIAvoidanceRisk leRiskType, float lrDistAhead, float lrRelDist, float lrTimeAhead, GtMathPs2::CGtV3d lStartPos, GtMathPs2::CGtV3d lEndPos, GtMathPs2::CGtV3d lStartCarAt, GtMathPs2::CGtV3d lEndCarAt, const CGtAxisAlignedBox &lBBox)` (same name, different parameters) |
+| `Update(bool)` | `0x0013D570` 304 | `0x00146EF0` 304 | `0x00144E90` 304 | `0x0014AC20` 336 | `0x00140850` strong |  | `void CB4AIAvoidanceMap::Update(bool lbInRange)` |
+| `Prepare(CB3AICar*)` | `0x0013D6A0` 176 | `0x00147020` 256 | `0x00144FC0` 256 | `0x0014A9B0` 292 | `0x00140980` proven |  | `bool CB4AIAvoidanceMap::Prepare(CB4AICar *lpCar)` |
+| `GetChannelRisk(int,float*,float*,float*)` |  | `0x00143530` 1100 | `0x001419F0` 1100 | `0x0014F5E0` 1368 |  |  | `void CB4AIAvoidanceMap::GetChannelRisk(int lnTargetChannel, float *lprResultAvgRiskTime, float *lprResultMaxRiskTime, float *lprResultCrossingRisk) const` (same name, different parameters) |
+| `CalcRiskOfPosition(const CB3AILane*,unsigned short,GtMathPs2::CGtV3d,float*,float*,float*)` |  | `0x00143980` 700 | `0x00141E40` 596 | `0x0014F2E0` 732 |  |  | `EAIAvoidanceRisk CB4AIAvoidanceMap::CalcRiskOfPosition(const CB4AILaneSegment *lpTargetSegIndex, GtMathPs2::CGtV3d lTargetPosition, float *lprResultAvgRiskTime, float *lprResultAccRiskTime, float *lprResultMaxRiskTime) const` (same name, different parameters) |
+| `CB3AIAvoidanceMap()` |  |  |  | `0x001912A0` 92 |  |  |  |
+| `Construct()` |  |  |  | `0x0014A9A0` 16 |  |  | `void CB4AIAvoidanceMap::Construct()` |
+| `GetChannelDistance(int)` |  |  |  | `0x0014A910` 72 |  |  |  |
+| `GetChannelRiskTime(int)` |  |  |  | `0x0014A960` 64 |  |  |  |
+| `Release()` |  |  |  | `0x0014AD70` 16 |  |  | `void CB4AIAvoidanceMap::Release()` |
+| `ResetRiskScale()` |  |  |  | `0x0014AAE0` 32 |  |  |  |
+| `SetChannelDistance(int,float)` |  |  |  | `0x0014AB00` 148 |  |  |  |
+| `SetChannelRiskTime(int,float)` |  |  |  | `0x0014ABC0` 92 |  |  |  |
+| `SetRiskScale(float)` |  |  |  | `0x00151A70` 112 |  |  |  |
+
+## Burnout Revenge layout of `CB4AIAvoidanceMap`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 305 file(s), e.g. `GameShared/GameClasses/System/MemoryCard/NewMemoryCard/GtMemoryCardManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AIAvoidanceMap {  // size 0x460
+    /* 0x000 */ CGtV3d mNearLeftPos;
+    /* 0x010 */ CGtV3d mNearRightPos;
+    /* 0x020 */ CGtV3d mAICarPos;
+    /* 0x030 */ CGtV3d mAvoidLeft;
+    /* 0x040 */ RwReal mrNearHaloSize;
+    /* 0x044 */ RwReal mrLeftCarHaloOffset;
+    /* 0x048 */ RwReal mrRightCarHaloOffset;
+    /* 0x04C */ RwReal mrRiskScale;
+    /* 0x050 */ CB4AICar *mpCar;
+    /* 0x054 */ signed char man8ChannelRiskType[256];
+    /* 0x154 */ unsigned char mau8ChannelTimeToImpact[256];
+    /* 0x254 */ short int man16ChannelDistance[256];
+    /* 0x454 */ RwUInt8 mu8CarWidthChannels;
+    /* 0x455 */ RwUInt8 mu8CarLeftChannel;
+    /* 0x456 */ RwUInt8 mu8CarRightChannel;
+    /* 0x457 */ RwUInt8 mn8Pad;
+    // methods
+    // CB4AIAvoidanceMap(const CB4AIAvoidanceMap &);
+    // CB4AIAvoidanceMap();
+    // void Construct();
+    // bool Prepare(CB4AICar *);
+    // void Update(bool);
+    // void Release();
+    // void Destruct();
+    // EAIAvoidanceRisk CalcRiskOfPosition(const CB4AILaneSegment *, GtMathPs2::CGtV3d, float *, float *, float *) const;
+    // void GetChannelRisk(int, float *, float *, float *) const;
+    // RwInt32 GetSafestChannel();
+    // void SetRiskScale(float);
+    // void ResetRiskScale();
+    // RwReal GetChannelTimeToImpact(int) const;
+    // void SetChannelTimeToImpact(int, float);
+    // RwReal GetChannelDistance(int) const;
+    // void SetChannelDistance(int, float);
+    // RwUInt8 GetCarLeftChannelIndex() const;
+    // RwUInt8 GetCarRightChannelIndex() const;
+    // RwUInt8 GetCarWidthInChannels() const;
+    // RwInt8 GetChannelRiskType(int) const;
+    // void CalculateCarPositionInMap(bool);
+    // void CheckVehicle(const GtMathPs2::CGtMatrix3x4 &, GtMathPs2::CGtV3d, bool, bool, EAIAvoidanceRisk, const CGtAxisAlignedBox &);
+    // void CheckRaceCar();
+    // void CheckTraffic();
+    // void CheckCrashingTraffic();
+    // void CheckNoGoZones();
+    // void CalculateCarCoverage();
+    // void FillInNoGoData(const CB4AILaneSegment *, EAIAvoidanceRisk, float, float);
+    // void AddCarToMap(EAIAvoidanceRisk, float, float, float, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, const CGtAxisAlignedBox &);
+    // void AddNoGoZonesAcross(const CB4AILaneSegment *, EAISegmentLinkType, float, float);
+};
+```
 
 ## Notes
 

@@ -8,29 +8,59 @@
 - **Source file:** `GtSoundUtils.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 10
 - **Retail (SLUS-21050):** 4 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtSoundUtils`, size 0x001, methods in `GameShared/GameClasses/Sound/GtSoundUtils.cpp` ([layout](#burnout-revenge-layout-of-cgtsoundutils))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GenerateVariantPath(const char*,const char*,const char*,char*,CGtSoundUtils::ESoundVariantMode)` | `0x00343CF0` 108 | `0x003A7F80` 108 | `0x003D2140` 108 | `0x003DBAB0` 104 | `0x00386E70` proven |  |
-| `IntToAsciiVariant(unsigned char,char&)` | `0x00343D60` 84 | `0x003A7FF0` 84 | `0x003D21B0` 84 | `0x003DBA00` 168 | `0x00386EE0` likely |  |
-| `AsciiVariantToInt(char,unsigned char&)` | `0x00343DC0` 124 | `0x003A8050` 124 | `0x003D2210` 124 | `0x003DB8D0` 292 | `0x00386F40` likely |  |
-| `GenerateVariantFromVariant(const char*,char*,CGtSoundUtils::ESoundVariantMode,unsigned char,unsigned char)` | `0x00343E40` 580 | `0x003A80D0` 636 | `0x003D2290` 620 | `0x003DB750` 384 | `0x00386FD0` unverified |  |
-| `Construct()` | `0x00344090` 28 | `0x003A8350` 28 | `0x003D2500` 28 | `0x003DB710` 56 |  |  |
-| `CGtSoundUtils()` |  |  |  | `0x002B1E00` 24 |  |  |
-| `Clamp(float,float,float)` |  |  |  | `0x002B7290` 120 |  |  |
-| `Lerp(float,float,float)` |  |  |  | `0x002AB3D0` 64 |  |  |
-| `LinearLag(float,float,float,float)` |  |  |  | `0x002B7310` 76 |  |  |
-| `SmoothStep(float,float,float)` |  |  |  | `0x001D6860` 180 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GenerateVariantPath(const char*,const char*,const char*,char*,CGtSoundUtils::ESoundVariantMode)` | `0x00343CF0` 108 | `0x003A7F80` 108 | `0x003D2140` 108 | `0x003DBAB0` 104 | `0x00386E70` proven |  | `void CGtSoundUtils::GenerateVariantPath(const char *lpcSrcPath, const char *lpcSrcFilename, const char *lpcSrcExt, char *lpcDst, CGtSoundUtils::ESoundVariantMode leMode)` |
+| `IntToAsciiVariant(unsigned char,char&)` | `0x00343D60` 84 | `0x003A7FF0` 84 | `0x003D21B0` 84 | `0x003DBA00` 168 | `0x00386EE0` likely |  | `bool CGtSoundUtils::IntToAsciiVariant(unsigned char lu8Num, char &lcDst)` |
+| `AsciiVariantToInt(char,unsigned char&)` | `0x00343DC0` 124 | `0x003A8050` 124 | `0x003D2210` 124 | `0x003DB8D0` 292 | `0x00386F40` likely |  | `bool CGtSoundUtils::AsciiVariantToInt(char lcAscii, unsigned char &lu8Dst)` |
+| `GenerateVariantFromVariant(const char*,char*,CGtSoundUtils::ESoundVariantMode,unsigned char,unsigned char)` | `0x00343E40` 580 | `0x003A80D0` 636 | `0x003D2290` 620 | `0x003DB750` 384 | `0x00386FD0` unverified |  | `void CGtSoundUtils::GenerateVariantFromVariant(const char *lpcSrc, char *lpcDst, CGtSoundUtils::ESoundVariantMode leVariantMode, unsigned char lu8VariantIndexPos, unsigned char lu8VariantCountPos)` |
+| `Construct()` | `0x00344090` 28 | `0x003A8350` 28 | `0x003D2500` 28 | `0x003DB710` 56 |  |  | `void CGtSoundUtils::Construct()` |
+| `CGtSoundUtils()` |  |  |  | `0x002B1E00` 24 |  |  |  |
+| `Clamp(float,float,float)` |  |  |  | `0x002B7290` 120 |  |  | `RwReal CGtSoundUtils::Clamp(float lrMin, float lrMax, float lrN)` |
+| `Lerp(float,float,float)` |  |  |  | `0x002AB3D0` 64 |  |  |  |
+| `LinearLag(float,float,float,float)` |  |  |  | `0x002B7310` 76 |  |  |  |
+| `SmoothStep(float,float,float)` |  |  |  | `0x001D6860` 180 |  |  |  |
 
 ## Static data (DNAT_200)
 
 | Address | Size | Section | Name |
 |---|---:|---|---|
 | `0x00444298` | 8 | .sbss | `CGtSoundUtils::_mRandom` |
+
+## Burnout Revenge layout of `CGtSoundUtils`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 4 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSoundUtils {  // size 0x001
+    /* static */ CGtRandom _mRandom;
+    // methods
+    // CGtSoundUtils(const CGtSoundUtils &);
+    // static RwReal Clamp(float, float, float);
+    // static RwReal Mix(float, float, float);
+    // static RwReal Step(float, float);
+    // static RwReal Pulse(float, float, float);
+    // static RwReal Lerp(float, float, float);
+    // static RwReal LinearLag(float, float, float);
+    // static RwReal LinearLag(float, float, float, float);
+    // static RwReal SmoothStep(float, float, float);
+    // static RwReal Bias(float, float);
+    // static RwReal Gain(float, float);
+    // static void GenerateVariantPath(const char *, const char *, const char *, char *, CGtSoundUtils::ESoundVariantMode);
+    // static GtID GenerateVariantFromVariant(unsigned long, CGtSoundUtils::ESoundVariantMode, unsigned char, unsigned char);
+    // static void GenerateVariantFromVariant(const char *, char *, CGtSoundUtils::ESoundVariantMode, unsigned char, unsigned char);
+    // static bool AsciiVariantToInt(char, unsigned char &);
+    // static bool IntToAsciiVariant(unsigned char, char &);
+    // void Construct();
+    // CGtSoundUtils();
+};
+```
 
 ## Notes
 

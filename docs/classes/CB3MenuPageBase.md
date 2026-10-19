@@ -11,17 +11,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Prepare(bool)` | `0x002D7F50` 48 | `0x00321400` 48 | `0x00353620` 48 | `0x0034FEF0` 60 | `0x00318530` proven |  |
-| `CB3MenuPageBase()` |  |  |  | `0x003411F0` 40 |  |  |
-| `GetMenuPhase()` |  |  |  | `0x00348050` 40 |  |  |
-| `ImmediateLeadOut(EB3MenuFlowFSMEvents)` |  |  |  | `0x00350850` 48 |  |  |
-| `StartLeadOut(EB3MenuFlowFSMEvents)` |  |  |  | `0x00348020` 48 |  |  |
-| `StartLeadOutBack(EB3MenuFlowFSMEvents,bool)` |  |  |  | `0x003508A0` 56 |  |  |
-| `StartLeadOutFore(EB3MenuFlowFSMEvents,bool)` |  |  |  | `0x0034FEA0` 56 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Prepare(bool)` | `0x002D7F50` 48 | `0x00321400` 48 | `0x00353620` 48 | `0x0034FEF0` 60 | `0x00318530` proven |  |  |
+| `CB3MenuPageBase()` |  |  |  | `0x003411F0` 40 |  |  |  |
+| `GetMenuPhase()` |  |  |  | `0x00348050` 40 |  |  |  |
+| `ImmediateLeadOut(EB3MenuFlowFSMEvents)` |  |  |  | `0x00350850` 48 |  |  |  |
+| `StartLeadOut(EB3MenuFlowFSMEvents)` |  |  |  | `0x00348020` 48 |  |  |  |
+| `StartLeadOutBack(EB3MenuFlowFSMEvents,bool)` |  |  |  | `0x003508A0` 56 |  |  |  |
+| `StartLeadOutFore(EB3MenuFlowFSMEvents,bool)` |  |  |  | `0x0034FEA0` 56 |  |  |  |
 
 ## Notes
 

@@ -6,14 +6,36 @@
 
 - **Area:** [Crashes, takedowns and scoring](../systems/crash-scoring.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4CrashStartInfo`, size 0x030 ([layout](#burnout-revenge-layout-of-cb4crashstartinfo))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `operator =(const CB3CrashStartInfo&)` |  |  |  | `0x00178550` 108 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `operator =(const CB3CrashStartInfo&)` |  |  |  | `0x00178550` 108 |  |  |  |
+
+## Burnout Revenge layout of `CB4CrashStartInfo`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 317 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CrashStartInfo {  // size 0x030
+    /* 0x000 */ CGtV3d mImpactPosition;
+    /* 0x010 */ EB4CollisionSurface meWallTagType;
+    /* 0x014 */ CB4CheckedTrafficPhysics *mpCheckedVehicle;
+    /* 0x018 */ CB4TrafficPhysics *mpCrashingTraffic;
+    /* 0x01C */ CB4TrafficVehicle *mpTrafficVehicle;
+    /* 0x020 */ CB4RaceCar *mpRaceCar;
+    /* 0x024 */ bool mbCrashCausedByShockwave;
+    /* 0x025 */ bool mbWasCausedByWall;
+    /* 0x026 */ bool mbWasCausedByVehicle;
+    // methods
+    // CB4CrashStartInfo(const CB4CrashStartInfo &);
+    // CB4CrashStartInfo();
+};
+```
 
 ## Notes
 

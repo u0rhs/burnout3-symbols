@@ -8,17 +8,47 @@
 - **Source file:** `B3HUDLap.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 4
 - **vtable (DNAT_200):** `0x00440500`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
+- **Burnout Revenge counterpart:** `CB4HUDLap`, size 0x058, methods in `GameSource/Hud/B4HUDLap.cpp` ([layout](#burnout-revenge-layout-of-cb4hudlap))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update(float)` | `0x002EDA60` 792 | `0x0033C7A0` 792 | `0x0036DE30` 792 | `0x0036CEB0` 224 |  |  |
-| `Prepare(int,EHUDAlign,int)` | `0x002EDD80` 900 | `0x0033CAC0` 992 | `0x0036E150` 1000 | `0x0036CAF0` 952 |  |  |
-| `CB3HUDLap()` |  |  |  | `0x00199BC0` 60 |  |  |
-| `PrepareLapObject()` |  |  |  | `0x0036CF90` 628 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update(float)` | `0x002EDA60` 792 | `0x0033C7A0` 792 | `0x0036DE30` 792 | `0x0036CEB0` 224 |  |  | `void CB4HUDLap::Update(float lrTimeStep)` |
+| `Prepare(int,EHUDAlign,int)` | `0x002EDD80` 900 | `0x0033CAC0` 992 | `0x0036E150` 1000 | `0x0036CAF0` 952 |  |  | `bool CB4HUDLap::Prepare(EPlayerCarIndex lePlayer, EHUDAlign leAlign, int lxFlags, bool lbCompact)` (same name, different parameters) |
+| `CB3HUDLap()` |  |  |  | `0x00199BC0` 60 |  |  |  |
+| `PrepareLapObject()` |  |  |  | `0x0036CF90` 628 |  |  |  |
+
+## Burnout Revenge layout of `CB4HUDLap`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Hud/B4HUDLap.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HUDLap : public CB4HUDComponent {  // size 0x058
+    // base CB4HUDComponent at 0x000
+    /* static */ RwInt32 knLapStringLength;
+    /* static */ RwInt32 knSlashStringLength;
+    /* 0x020 */ CGt2dObject *mapObjects[4];
+    /* 0x030 */ CB4RaceCar *mpRaceCar;
+    /* 0x034 */ RwInt32 mnLastLap;
+    /* 0x038 */ RwInt32 mnLastMaxLap;
+    /* 0x03C */ RwReal mrTimeLeft;
+    /* 0x040 */ RwReal mrLastTimeTaken;
+    /* 0x044 */ RwReal mrMessageTime;
+    /* 0x048 */ short unsigned int maSlashString[3];
+    /* 0x04E */ short unsigned int maLapString[2];
+    /* 0x052 */ bool mbCompact;
+    /* 0x054 */ RwReal mrAnimTime;
+    // methods
+    // CB4HUDLap(const CB4HUDLap &);
+    // CB4HUDLap();
+    // bool Prepare(EPlayerCarIndex, EHUDAlign, int, bool);
+    // virtual void Update(float);
+    // void PrepareLapObjects();
+};
+```
 
 ## Notes
 

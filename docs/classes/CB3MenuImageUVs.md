@@ -10,14 +10,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3MenuImageUVs()` | `0x00309640` 8 | `0x0035E580` 8 | `0x003CD7B0` 8 | `0x00392E90` 60 |  |  |
-| `_CalculateUV(float,float,float,float,float,float,unsigned int)` | `0x0032C750` 120 | `0x00388170` 120 | `0x003B6D20` 120 | `0x003B8090` 284 |  |  |
-| `CB3MenuImageUVs(const CB3MenuImageUVs&)` |  |  |  | `0x003B81B0` 76 |  |  |
-| `operator =(const CB3MenuImageUVs&)` |  |  |  | `0x0038C930` 68 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3MenuImageUVs()` | `0x00309640` 8 | `0x0035E580` 8 | `0x003CD7B0` 8 | `0x00392E90` 60 |  |  |  |
+| `_CalculateUV(float,float,float,float,float,float,unsigned int)` | `0x0032C750` 120 | `0x00388170` 120 | `0x003B6D20` 120 | `0x003B8090` 284 |  |  |  |
+| `CB3MenuImageUVs(const CB3MenuImageUVs&)` |  |  |  | `0x003B81B0` 76 |  |  |  |
+| `operator =(const CB3MenuImageUVs&)` |  |  |  | `0x0038C930` 68 |  |  |  |
 
 ## Notes
 

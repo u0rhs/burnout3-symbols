@@ -6,14 +6,33 @@
 
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4HullCollideParams`, size 0x290 ([layout](#burnout-revenge-layout-of-cb4hullcollideparams))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3HullCollideParams()` |  |  |  | `0x001B51E0` 92 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3HullCollideParams()` |  |  |  | `0x001B51E0` 92 |  |  |  |
+
+## Burnout Revenge layout of `CB4HullCollideParams`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 4 file(s), e.g. `GameSource/Physics/B4CollisionDetector.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HullCollideParams {  // size 0x290
+    /* 0x000 */ CB4HullCollideHullParams mHullA;
+    /* 0x130 */ CB4HullCollideHullParams mHullB;
+    /* 0x260 */ RwBool mbResolveFull;
+    /* 0x264 */ RwBool mbPenetrating;
+    /* 0x270 */ CGtV3d mNormalFromHullA;
+    /* 0x280 */ CGtV3d mCollisionPoint;
+    // methods
+    // CB4HullCollideParams(const CB4HullCollideParams &);
+    // CB4HullCollideParams();
+};
+```
 
 ## Notes
 

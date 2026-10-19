@@ -8,29 +8,70 @@
 - **Source file:** `GtSoundRealVoice.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 10, B3INTERN 10, B3O0PCH 15
 - **Retail (SLUS-21050):** 9 of its 10 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtSoundRealVoice`, size 0x038, methods in `GameShared/GameClasses/Sound/GtSoundRealVoice.cpp` ([layout](#burnout-revenge-layout-of-cgtsoundrealvoice))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `IgnoreGlobalPitch()` | `0x00342430` 16 | `0x003A5F00` 16 | `0x003CFE20` 16 | `0x003D9F70` 36 | `0x00385240` proven |  |
-| `MuteDryVoice(int,bool)` | `0x00342440` 8 | `0x003A5F10` 8 | `0x003CFE30` 8 | `0x003D9F60` 16 | `0x00385250` strong |  |
-| `UpdatePause()` | `0x00342450` 720 | `0x003A5F20` 796 | `0x003CFE40` 796 | `0x003D9BD0` 912 |  |  |
-| `Pause()` | `0x00342720` 124 | `0x003A6240` 160 | `0x003D0160` 160 | `0x003D9AF0` 224 | `0x00385540` unverified |  |
-| `IsPlaying() const` | `0x003427A0` 132 |  |  |  | `0x003855F0` strong |  |
-| `Stop()` | `0x00342830` 76 | `0x003A6390` 76 | `0x003D02B0` 76 | `0x003D9910` 104 | `0x00385680` proven |  |
-| `Start(const CGtSoundVoiceParams*)` | `0x00342880` 708 | `0x003A63E0` 928 | `0x003D0300` 928 | `0x003D9430` 1140 | `0x003856D0` proven |  |
-| `Update(float,float,float,float)` | `0x00342B50` 240 | `0x003A6780` 388 | `0x003D06A0` 388 | `0x003D92C0` 356 | `0x00385A00` proven |  |
-| `Update(const CGtSoundVoiceParams*)` | `0x00342C40` 724 | `0x003A6910` 828 | `0x003D0830` 828 | `0x003D8ED0` 912 | `0x00385B10` proven |  |
-| `Construct(RwaSPU2Output*,CGtSoundRealVoiceDSPSend*,int)` | `0x00342F20` 120 | `0x003A6C50` 120 | `0x003D0B70` 120 | `0x003D8E20` 172 | `0x00385E20` proven |  |
-| `IsPlaying()` |  | `0x003A62E0` 168 | `0x003D0200` 168 | `0x003D99E0` 260 |  |  |
-| `CGtSoundRealVoice()` |  |  |  | `0x002B1EA0` 24 |  |  |
-| `IsAvailable()` |  |  |  | `0x003DE0F0` 108 |  |  |
-| `IsLocked()` |  |  |  | `0x003DE160` 40 |  |  |
-| `Lock(bool)` |  |  |  | `0x003DE2E0` 76 |  |  |
-| `SetWave(const CGtSoundWave*)` |  |  |  | `0x003D9980` 92 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `IgnoreGlobalPitch()` | `0x00342430` 16 | `0x003A5F00` 16 | `0x003CFE20` 16 | `0x003D9F70` 36 | `0x00385240` proven |  |  |
+| `MuteDryVoice(int,bool)` | `0x00342440` 8 | `0x003A5F10` 8 | `0x003CFE30` 8 | `0x003D9F60` 16 | `0x00385250` strong |  | `void CGtSoundRealVoice::MuteDryVoice(int lnVoiceIndex, bool lbMute)` |
+| `UpdatePause()` | `0x00342450` 720 | `0x003A5F20` 796 | `0x003CFE40` 796 | `0x003D9BD0` 912 |  |  | `RwReal CGtSoundRealVoice::UpdatePause()` |
+| `Pause()` | `0x00342720` 124 | `0x003A6240` 160 | `0x003D0160` 160 | `0x003D9AF0` 224 | `0x00385540` unverified |  |  |
+| `IsPlaying() const` | `0x003427A0` 132 |  |  |  | `0x003855F0` strong |  | `bool CGtSoundRealVoice::IsPlaying() const` |
+| `Stop()` | `0x00342830` 76 | `0x003A6390` 76 | `0x003D02B0` 76 | `0x003D9910` 104 | `0x00385680` proven |  | `bool CGtSoundRealVoice::Stop()` |
+| `Start(const CGtSoundVoiceParams*)` | `0x00342880` 708 | `0x003A63E0` 928 | `0x003D0300` 928 | `0x003D9430` 1140 | `0x003856D0` proven |  | `bool CGtSoundRealVoice::Start(const CGtSoundVoiceParams &lParams)` (same name, different parameters) |
+| `Update(float,float,float,float)` | `0x00342B50` 240 | `0x003A6780` 388 | `0x003D06A0` 388 | `0x003D92C0` 356 | `0x00385A00` proven |  | `void CGtSoundRealVoice::Update(float lrUserVolumeScalar, float lrMasterPitchScalar, float lrCurrenTime, float lrCurrentTimeStep)` |
+| `Update(const CGtSoundVoiceParams*)` | `0x00342C40` 724 | `0x003A6910` 828 | `0x003D0830` 828 | `0x003D8ED0` 912 | `0x00385B10` proven |  |  |
+| `Construct(RwaSPU2Output*,CGtSoundRealVoiceDSPSend*,int)` | `0x00342F20` 120 | `0x003A6C50` 120 | `0x003D0B70` 120 | `0x003D8E20` 172 | `0x00385E20` proven |  | `void CGtSoundRealVoice::Construct(RwaSPU2Output *lpOutput, int lnCore, CGtSoundRealVoiceDSPSend *laDSPSends, int lnDSPSendCount)` (same name, different parameters) |
+| `IsPlaying()` |  | `0x003A62E0` 168 | `0x003D0200` 168 | `0x003D99E0` 260 |  |  | `bool CGtSoundRealVoice::IsPlaying() const` (same name, different parameters) |
+| `CGtSoundRealVoice()` |  |  |  | `0x002B1EA0` 24 |  |  |  |
+| `IsAvailable()` |  |  |  | `0x003DE0F0` 108 |  |  |  |
+| `IsLocked()` |  |  |  | `0x003DE160` 40 |  |  |  |
+| `Lock(bool)` |  |  |  | `0x003DE2E0` 76 |  |  |  |
+| `SetWave(const CGtSoundWave*)` |  |  |  | `0x003D9980` 92 |  |  | `void CGtSoundRealVoice::SetWave(const CGtSoundWave *lpWave)` |
+
+## Burnout Revenge layout of `CGtSoundRealVoice`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 6 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundBankManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSoundRealVoice : public CGtSoundVoice {  // size 0x038
+    // base CGtSoundVoice at 0x000
+    /* 0x034 */ RwaOsVoice *mpHardwareVoice;
+    // methods
+    // CGtSoundRealVoice(const CGtSoundRealVoice &);
+    // virtual bool Update(const CGtSoundVoiceParams &);
+    // virtual bool Start(const CGtSoundVoiceParams &);
+    // virtual bool Stop();
+    // virtual bool IsPlaying() const;
+    // bool NvUpdate(const CGtSoundVoiceParams &);
+    // bool NvStart(const CGtSoundVoiceParams &, CGtSoundListenerManager *);
+    // bool NvStop();
+    // bool NvIsPlaying() const;
+    // void MuteDryVoice(int, bool);
+    // void Pause(bool);
+    // void Update(float, float, float, float);
+    // bool IsAvailable() const;
+    // void Construct(RwaSPU2Output *, int, CGtSoundRealVoiceDSPSend *, int);
+    // void Destruct();
+    // RwReal UpdatePause();
+    // CGtSoundRealVoice();
+    // void SetPosition(GtMathPs2::CGtV3d);
+    // void SetVelocity(GtMathPs2::CGtV3d);
+    // void SetWave(const CGtSoundWave *);
+    // void SetReverb(float);
+    // void SetPan(float);
+    // void SetMinDistance(float);
+    // void SetMaxDistance(float);
+    // void SetWaveStartPosition(unsigned int);
+    // void SetLooped(bool);
+    // void SetDspGain(float);
+    // void SetDspPan(float);
+};
+```
 
 ## Notes
 

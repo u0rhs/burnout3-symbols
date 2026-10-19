@@ -6,6 +6,15 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-19
 
+- **Burnout Revenge prototype (14 July 2005) exported** ([data](../data/burnout-revenge-prototype/README.md)): 2,717
+  types with members and methods, 9,416 functions with parameter names, 3,402 dropped functions, 4,220 globals,
+  861 source files at Criterion's paths. New tools `export_revenge.py` and `stabs.py`; format page
+  [GCC stabs in .mdebug](formats/gcc-stabs-mdebug.md).
+- **Burnout Revenge lineage** in the sidebar: [classes](reference/revenge-class-lineage.md) (444 of 890 Burnout 3
+  classes), [functions](reference/revenge-function-lineage.md) (2,805), [source files](reference/revenge-source-file-lineage.md)
+  (300 of 598, with their folders). Class pages show the Revenge counterpart, layout and method signatures with
+  parameter names next to Burnout 2's; system pages give each file's Revenge path.
+
 - `_FinalMix` (`0x002FC820`, `B3SoundDistPS2.cpp`) regenerated with `verify_retail_names.py` as proven (same place
   between proven functions): now 3,008 proven, 517 unverified.
 - **5,054 retail functions named from the June 2004 prototype map, 3,007 proven against the code**

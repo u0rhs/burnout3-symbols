@@ -6,15 +6,31 @@
 
 - **Area:** [Rendering](../systems/rendering.md)
 - **Methods per build:** B3O0PCH 2
+- **Burnout Revenge counterpart:** `CGtTextureDictionary`, size 0x010 ([layout](#burnout-revenge-layout-of-cgttexturedictionary))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Find(const char*)` |  |  |  | `0x00166630` 156 |  |  |
-| `FixUp()` |  |  |  | `0x001354D0` 112 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Find(const char*)` |  |  |  | `0x00166630` 156 |  |  |  |
+| `FixUp()` |  |  |  | `0x001354D0` 112 |  |  |  |
+
+## Burnout Revenge layout of `CGtTextureDictionary`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 28 file(s), e.g. `GameSource/Game/B4Game.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtTextureDictionary : public CGtDictionary<CGtTexture> {  // size 0x010
+    // base CGtDictionary<CGtTexture> at 0x000
+    // methods
+    // CGtTextureDictionary(const CGtTextureDictionary &);
+    // CGtTextureDictionary();
+    // void FixUp();
+    // CGtTexture * Find(const char *) const;
+};
+```
 
 ## Notes
 

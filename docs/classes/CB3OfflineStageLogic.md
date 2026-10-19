@@ -11,22 +11,22 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UseTakedownCamera(CB3RaceCar*,CB3RaceCar*)` | `0x00133650` 8 | `0x0013AC60` 8 | `0x001384A0` 8 | `0x0013F020` 20 | `0x00134330` likely |  |
-| `OnTakedown(CB3RaceCar*,CB3RaceCar*)` | `0x0034E100` 496 | `0x003B7B20` 644 | `0x003E13A0` 652 | `0x003ECEB0` 216 | `0x003951A0` unverified |  |
-| `IsUsingTakedownCamera(int)` | `0x0034E2F0` 16 | `0x003B7DB0` 16 | `0x003E1630` 16 | `0x003ECE70` 60 |  |  |
-| `PlayerCarShouldResetAtFrontOfPack()` | `0x0034E300` 8 | `0x003B7DC0` 8 | `0x003E1640` 8 | `0x003ECE50` 20 |  |  |
-| `UpdateCameras()` | `0x0034E310` 368 | `0x003B7DD0` 616 | `0x003E1650` 616 | `0x003ECC60` 412 |  |  |
-| `Update()` | `0x0034E480` 176 | `0x003B8040` 280 | `0x003E18C0` 280 | `0x003ECB90` 196 |  |  |
-| `Destruct()` | `0x0034E530` 8 | `0x003B8160` 8 | `0x003E19E0` 8 | `0x003ECB30` 88 |  |  |
-| `Release()` | `0x0034E540` 8 | `0x003B8170` 8 | `0x003E19F0` 8 | `0x003ECAD0` 88 |  |  |
-| `StartReplay()` | `0x0034E550` 288 | `0x003B8180` 508 | `0x003E1A00` 508 | `0x003ECA70` 92 | `0x00395580` strong |  |
-| `Prepare()` | `0x0034E670` 288 | `0x003B8380` 508 | `0x003E1C00` 508 | `0x003ECA10` 92 |  |  |
-| `Construct()` | `0x0034E790` 40 | `0x003B8580` 40 | `0x003E1E00` 40 | `0x003EC9B0` 92 | `0x003957D0` strong |  |
-| `CB3OfflineStageLogic()` |  |  |  | `0x0013E0B0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UseTakedownCamera(CB3RaceCar*,CB3RaceCar*)` | `0x00133650` 8 | `0x0013AC60` 8 | `0x001384A0` 8 | `0x0013F020` 20 | `0x00134330` likely |  |  |
+| `OnTakedown(CB3RaceCar*,CB3RaceCar*)` | `0x0034E100` 496 | `0x003B7B20` 644 | `0x003E13A0` 652 | `0x003ECEB0` 216 | `0x003951A0` unverified |  |  |
+| `IsUsingTakedownCamera(int)` | `0x0034E2F0` 16 | `0x003B7DB0` 16 | `0x003E1630` 16 | `0x003ECE70` 60 |  |  |  |
+| `PlayerCarShouldResetAtFrontOfPack()` | `0x0034E300` 8 | `0x003B7DC0` 8 | `0x003E1640` 8 | `0x003ECE50` 20 |  |  |  |
+| `UpdateCameras()` | `0x0034E310` 368 | `0x003B7DD0` 616 | `0x003E1650` 616 | `0x003ECC60` 412 |  |  |  |
+| `Update()` | `0x0034E480` 176 | `0x003B8040` 280 | `0x003E18C0` 280 | `0x003ECB90` 196 |  |  |  |
+| `Destruct()` | `0x0034E530` 8 | `0x003B8160` 8 | `0x003E19E0` 8 | `0x003ECB30` 88 |  |  |  |
+| `Release()` | `0x0034E540` 8 | `0x003B8170` 8 | `0x003E19F0` 8 | `0x003ECAD0` 88 |  |  |  |
+| `StartReplay()` | `0x0034E550` 288 | `0x003B8180` 508 | `0x003E1A00` 508 | `0x003ECA70` 92 | `0x00395580` strong |  |  |
+| `Prepare()` | `0x0034E670` 288 | `0x003B8380` 508 | `0x003E1C00` 508 | `0x003ECA10` 92 |  |  |  |
+| `Construct()` | `0x0034E790` 40 | `0x003B8580` 40 | `0x003E1E00` 40 | `0x003EC9B0` 92 | `0x003957D0` strong |  |  |
+| `CB3OfflineStageLogic()` |  |  |  | `0x0013E0B0` 60 |  |  |  |
 
 ## Notes
 

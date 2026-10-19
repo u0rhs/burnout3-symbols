@@ -6,17 +6,45 @@
 
 - **Area:** [Rendering](../systems/rendering.md)
 - **Methods per build:** B3DEBUG 4
+- **Burnout Revenge counterpart:** `CGtScreenGrabberAccumulation`, size 0x02C ([layout](#burnout-revenge-layout-of-cgtscreengrabberaccumulation))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CameraBeginUpdate(void*,void*,int)` |  | `0x00360DB0` 72 |  |  |  |  |
-| `TakeScreenGrab(CGTFileSystem*,char*)` |  | `0x00360E00` 2448 |  |  |  |  |
-| `SetSuperSampling(int,int,int)` |  | `0x00361790` 272 |  |  |  |  |
-| `Init()` |  | `0x003618A0` 76 |  |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CameraBeginUpdate(void*,void*,int)` |  | `0x00360DB0` 72 |  |  |  |  |  |
+| `TakeScreenGrab(CGTFileSystem*,char*)` |  | `0x00360E00` 2448 |  |  |  |  |  |
+| `SetSuperSampling(int,int,int)` |  | `0x00361790` 272 |  |  |  |  |  |
+| `Init()` |  | `0x003618A0` 76 |  |  |  |  |  |
+
+## Burnout Revenge layout of `CGtScreenGrabberAccumulation`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameShared/GameClasses/Graphical/ScreenShot/GtScreenGrabberAccumulation.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtScreenGrabberAccumulation : public CGtScreenGrabber {  // size 0x02C
+    // base CGtScreenGrabber at 0x000
+    /* 0x018 */ char *mpPixelBuffer;
+    /* 0x01C */ RwInt32 mnCurrentFrame;
+    /* 0x020 */ RwInt32 mnNumAccumulationFrames;
+    /* 0x024 */ RwInt32 mnNumSamplesX;
+    /* 0x028 */ RwInt32 mnNumSamplesY;
+    /* static */ RwStandardFunc mpStdCameraBeginFunc;
+    /* static */ RwReal mrXOffset;
+    /* static */ RwReal mrYOffset;
+    // methods
+    // CGtScreenGrabberAccumulation(const CGtScreenGrabberAccumulation &);
+    // CGtScreenGrabberAccumulation();
+    // void Init();
+    // bool TakeScreenGrab(CGTFileSystem *);
+    // bool TakeScreenGrab(CGTFileSystem *, char *);
+    // void SetSuperSampling(int, int, int);
+    // RwInt32 GetNumAccumulationFrames();
+    // static RwBool CameraBeginUpdate(void *, void *, int);
+};
+```
 
 ## Notes
 

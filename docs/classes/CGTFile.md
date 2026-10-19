@@ -6,18 +6,19 @@
 
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Methods per build:** B3O0PCH 4
+- **Burnout Revenge counterpart:** `CGTFile`, size 0x030 ([layout](#burnout-revenge-layout-of-cgtfile))
 - **Burnout 2 ancestor (by name):** `CGTFile`, size 0x028, declared in 98 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CGTFile()` |  |  |  | `0x001DA530` 40 |  |  |
-| `GetFileLength()` |  |  |  | `0x001489B0` 28 |  |  |
-| `IsEOF()` |  |  |  | `0x001D9280` 48 |  |  |
-| `SetPriority(int)` |  |  |  | `0x00218550` 52 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CGTFile()` |  |  |  | `0x001DA530` 40 |  |  |  |
+| `GetFileLength()` |  |  |  | `0x001489B0` 28 |  |  |  |
+| `IsEOF()` |  |  |  | `0x001D9280` 48 |  |  |  |
+| `SetPriority(int)` |  |  |  | `0x00218550` 52 |  |  |  |
 
 ## Burnout 2 layout of `CGTFile`
 
@@ -32,6 +33,40 @@ public:
     /* 0x018 */ EFileStatus mnStatus;
     /* 0x01C */ EFileError mnError;
     /* 0x020 */ int mbAsynchronousFile;
+};
+```
+
+## Burnout Revenge layout of `CGTFile`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 385 file(s), e.g. `GameShared/CodeSDKs/Rws36/framework/core/streamhandler/streamhandler.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGTFile {  // size 0x030
+    /* 0x000 */ CGTFileSystem *mpFileSys;
+    /* 0x008 */ RwInt64 mnFileLength;
+    /* 0x010 */ RwInt64 mnFilePosition;
+    /* 0x018 */ EFileStatus mnStatus;
+    /* 0x01C */ EFileError mnError;
+    /* 0x020 */ RwBool mbAsynchronousFile;
+    /* 0x024 */ RwInt32 mnPriority;
+    /* 0x028 */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CGTFile(const CGTFile &);
+    // CGTFile();
+    // virtual EFileSystemError Open(CGTFileSystem *, const char *, unsigned int);
+    // virtual void Close();
+    // virtual RwUInt32 Read(void *, unsigned int);
+    // virtual RwUInt32 Write(const void *, unsigned int);
+    // virtual RwInt64 SetPosition(long, EFileMoveMethod);
+    // virtual EFileStatus Sync(int);
+    // virtual RwBool Abort();
+    // virtual EFileStatus GetStatus();
+    // void SetPriority(int);
+    // EFileError GetLastError();
+    // RwInt64 GetFileLength();
+    // RwInt64 GetPosition();
+    // RwBool IsEOF();
+    // RwBool IsAsynchronous();
 };
 ```
 

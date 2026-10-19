@@ -8,20 +8,51 @@
 - **Source file:** `B3PopcornRendererPS2.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
 - **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4PopcornArray`, size 0x040, methods in `GameSource/Graphics/PopcornRenderer/Ps2/B4PopcornRendererPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4popcornarray))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Render()` | `0x0031B750` 1368 | `0x00376870` 1448 | `0x003A5450` 1448 | `0x003A5460` 2084 | `0x00365920` proven |  |
-| `SpawnBouncyPopcorn(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float)` | `0x0031BCB0` 444 | `0x00376E20` 576 | `0x003A5A00` 576 | `0x003A5120` 832 | `0x00365E80` proven |  |
-| `Release()` | `0x0031BE70` 8 | `0x00377060` 8 | `0x003A5C40` 8 | `0x003A5100` 28 | `0x00366040` proven |  |
-| `Prepare()` | `0x0031BE80` 256 | `0x00377070` 344 | `0x003A5C50` 344 | `0x003A5020` 220 | `0x00366050` proven |  |
-| `Destruct()` | `0x0031BF80` 8 | `0x003771D0` 8 | `0x003A5DB0` 8 | `0x003A5010` 16 | `0x00366150` strong |  |
-| `Construct(EPopcornArrayID)` | `0x0031BF90` 640 | `0x003771E0` 784 | `0x003A5DC0` 776 | `0x003A4C90` 836 | `0x00366160` strong |  |
-| `IsRenderable()` |  |  |  | `0x003A5D10` 20 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Render()` | `0x0031B750` 1368 | `0x00376870` 1448 | `0x003A5450` 1448 | `0x003A5460` 2084 | `0x00365920` proven |  | `void CB4PopcornArray::Render()` |
+| `SpawnBouncyPopcorn(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float)` | `0x0031BCB0` 444 | `0x00376E20` 576 | `0x003A5A00` 576 | `0x003A5120` 832 | `0x00365E80` proven |  | `void CB4PopcornArray::SpawnBouncyPopcorn(GtMathPs2::CGtV3d lSpawnPosition, GtMathPs2::CGtV3d lSpawnVelocity, float lrSpawnTime, float lrHeightAbovePlane)` |
+| `Release()` | `0x0031BE70` 8 | `0x00377060` 8 | `0x003A5C40` 8 | `0x003A5100` 28 | `0x00366040` proven |  | `void CB4PopcornArray::Release()` |
+| `Prepare()` | `0x0031BE80` 256 | `0x00377070` 344 | `0x003A5C50` 344 | `0x003A5020` 220 | `0x00366050` proven |  | `bool CB4PopcornArray::Prepare()` |
+| `Destruct()` | `0x0031BF80` 8 | `0x003771D0` 8 | `0x003A5DB0` 8 | `0x003A5010` 16 | `0x00366150` strong |  | `void CB4PopcornArray::Destruct()` |
+| `Construct(EPopcornArrayID)` | `0x0031BF90` 640 | `0x003771E0` 784 | `0x003A5DC0` 776 | `0x003A4C90` 836 | `0x00366160` strong |  | `void CB4PopcornArray::Construct(EPopcornArrayID leArrayID)` |
+| `IsRenderable()` |  |  |  | `0x003A5D10` 20 |  |  |  |
+
+## Burnout Revenge layout of `CB4PopcornArray`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 8 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4PopcornArray {  // size 0x040
+    /* 0x000 */ RwUInt128 mu128Alpha_1;
+    /* 0x010 */ RwReal mrGravity;
+    /* 0x014 */ RwReal mrMinusOneOverGravity;
+    /* 0x018 */ RwReal mrBounceRatio;
+    /* 0x01C */ CPopcorn4 *mpaPopcorns;
+    /* 0x020 */ RwUInt64 *mpDMAData;
+    /* 0x024 */ RwInt32 mnNumPopcorn;
+    /* 0x028 */ RwInt32 mnNextPopcorn;
+    /* 0x02C */ CGtTexture *mpTexture;
+    /* 0x030 */ CB4PopcornArrayStandardParams *mpStandardParams;
+    // methods
+    // CB4PopcornArray(const CB4PopcornArray &);
+    // CB4PopcornArray();
+    // void Construct(EPopcornArrayID);
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void SpawnPopcorn(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float);
+    // void SpawnBouncyPopcorn(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, float);
+    // bool IsRenderable();
+    // void Render();
+};
+```
 
 ## Notes
 

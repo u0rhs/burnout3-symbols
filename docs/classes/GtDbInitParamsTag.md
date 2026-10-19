@@ -6,14 +6,42 @@
 
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `GtDbInitParamsTag`, size 0x038 ([layout](#burnout-revenge-layout-of-gtdbinitparamstag))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `operator =(const GtDbInitParamsTag&)` |  |  |  | `0x00296150` 268 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `operator =(const GtDbInitParamsTag&)` |  |  |  | `0x00296150` 268 |  |  |  |
+
+## Burnout Revenge layout of `GtDbInitParamsTag`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 20 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class GtDbInitParamsTag {  // size 0x038
+    /* 0x000 */ RwInt32 mnScreenWidth;
+    /* 0x004 */ RwInt32 mnScreenHeight;
+    /* 0x008 */ RwInt32 mnMaxVariables;
+    /* 0x00C */ RwInt32 mnMaxFunctions;
+    /* 0x010 */ RwInt32 mnMaxMenus;
+    /* 0x014 */ RwInt32 mnMaxMenuItems;
+    /* 0x018 */ RwInt32 mnMaxWindows;
+    /* 0x01C */ RwInt32 mnMaxWatch;
+    /* 0x020 */ RwInt32 mnMaxWatchHistory;
+    /* 0x024 */ RwInt32 mnMaxUserWindows;
+    /* 0x028 */ RwInt32 mnMaxLog;
+    /* 0x02C */ RwInt8 *mpBufferAddress;
+    /* 0x030 */ RwInt32 mnBufferSize;
+    /* 0x034 */ bool mbEnableCombinedWatch;
+    /* 0x035 */ bool mbRegisterInternalVariables;
+    // methods
+    // GtDbInitParamsTag(const GtDbInitParamsTag &);
+    // GtDbInitParamsTag();
+};
+```
 
 ## Notes
 

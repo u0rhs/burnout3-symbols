@@ -8,14 +8,36 @@
 - **Source file:** `B3TrafficHullStruct.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrafficHullStruct`, size 0x018, methods in `SharedClasses/TrafficData/B4TrafficHullStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4traffichullstruct))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Fixup(unsigned int)` | `0x002E7BD0` 40 | `0x003333E0` 40 | `0x00364E70` 40 | `0x00364F30` 96 | `0x0032EDD0` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Fixup(unsigned int)` | `0x002E7BD0` 40 | `0x003333E0` 40 | `0x00364E70` 40 | `0x00364F30` 96 | `0x0032EDD0` proven |  | `void CB4TrafficHullStruct::Fixup(unsigned int lnStartAddress)` |
+
+## Burnout Revenge layout of `CB4TrafficHullStruct`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 91 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficHullStruct {  // size 0x018
+    /* 0x000 */ CB4TrafficFillerStruct *mpTrafficFillers;
+    /* 0x004 */ RwInt32 mnStartSlice;
+    /* 0x008 */ RwInt32 mnEndSlice;
+    /* 0x00C */ RwUInt16 *mpu16ExtraSegments;
+    /* 0x010 */ RwUInt8 *mpu8ValveIndices;
+    /* 0x014 */ RwUInt8 mu8NumTrafficFillers;
+    /* 0x015 */ RwUInt8 mu8NumValveIndices;
+    /* 0x016 */ unsigned char mau8Pad[2];
+    // methods
+    // CB4TrafficHullStruct(const CB4TrafficHullStruct &);
+    // CB4TrafficHullStruct();
+    // void Fixup(unsigned int);
+};
+```
 
 ## Notes
 

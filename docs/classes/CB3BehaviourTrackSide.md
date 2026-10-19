@@ -12,23 +12,23 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` | `0x002BC3D0` 8 | `0x002FEF70` 8 | `0x00332720` 8 | `0x0032DD00` 16 | `0x002FD290` likely |  |
-| `IncrementSegment(bool)` | `0x002BC3E0` 292 | `0x002FEF80` 292 | `0x00332730` 292 | `0x0032DA80` 628 | `0x002F5AC0` unverified |  |
-| `StepForward(float)` | `0x002BC510` 288 | `0x002FF0B0` 288 | `0x00332860` 288 | `0x0032D8C0` 440 | `0x002F5BD0` likely |  |
-| `Destruct()` | `0x002BC630` 8 | `0x002FF1D0` 8 | `0x00332980` 8 | `0x0032D8B0` 16 | `0x002FD2A0` likely |  |
-| `Release(void*)` | `0x002BC640` 8 | `0x002FF1E0` 8 | `0x00332990` 8 | `0x0032D8A0` 16 | `0x002FD2B0` likely |  |
-| `GetRigMatrix(GtMathPs2::CGtMatrix3x4*)` | `0x002BC650` 320 | `0x002FF1F0` 516 | `0x003329A0` 428 | `0x0032D6E0` 440 |  |  |
-| `GetRigPosition(GtMathPs2::CGtV3d*)` | `0x002BC790` 1392 | `0x002FF400` 1572 | `0x00332B50` 1476 | `0x0032D190` 1356 |  |  |
-| `Update(CGtCamera*,float)` | `0x002BCD00` 9236 | `0x002FFA30` 16024 | `0x00333120` 13488 | `0x0032C7F0` 2456 | `0x002FD2C0` likely |  |
-| `Prepare(void*)` | `0x002BF120` 8772 | `0x003038D0` 13656 | `0x003365D0` 11240 | `0x0032B7C0` 4144 | `0x002FEC40` unverified |  |
-| `SetParameters(EB3BehaviourType,CB3AttribsTrackSide*,int)` | `0x002C1370` 16 | `0x00306E30` 140 | `0x003391C0` 140 | `0x0032B730` 136 | `0x00300BC0` likely |  |
-| `Construct(int)` | `0x002C1380` 8 | `0x00306EC0` 8 | `0x00339250` 8 | `0x0032B620` 36 | `0x00300BD0` strong |  |
-| `CB3BehaviourTrackSide()` |  |  |  | `0x0013E740` 124 |  |  |
-| `GetDesiredFOV(float)` |  |  |  | `0x0032B650` 112 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` | `0x002BC3D0` 8 | `0x002FEF70` 8 | `0x00332720` 8 | `0x0032DD00` 16 | `0x002FD290` likely |  |  |
+| `IncrementSegment(bool)` | `0x002BC3E0` 292 | `0x002FEF80` 292 | `0x00332730` 292 | `0x0032DA80` 628 | `0x002F5AC0` unverified |  |  |
+| `StepForward(float)` | `0x002BC510` 288 | `0x002FF0B0` 288 | `0x00332860` 288 | `0x0032D8C0` 440 | `0x002F5BD0` likely |  |  |
+| `Destruct()` | `0x002BC630` 8 | `0x002FF1D0` 8 | `0x00332980` 8 | `0x0032D8B0` 16 | `0x002FD2A0` likely |  |  |
+| `Release(void*)` | `0x002BC640` 8 | `0x002FF1E0` 8 | `0x00332990` 8 | `0x0032D8A0` 16 | `0x002FD2B0` likely |  |  |
+| `GetRigMatrix(GtMathPs2::CGtMatrix3x4*)` | `0x002BC650` 320 | `0x002FF1F0` 516 | `0x003329A0` 428 | `0x0032D6E0` 440 |  |  |  |
+| `GetRigPosition(GtMathPs2::CGtV3d*)` | `0x002BC790` 1392 | `0x002FF400` 1572 | `0x00332B50` 1476 | `0x0032D190` 1356 |  |  |  |
+| `Update(CGtCamera*,float)` | `0x002BCD00` 9236 | `0x002FFA30` 16024 | `0x00333120` 13488 | `0x0032C7F0` 2456 | `0x002FD2C0` likely |  |  |
+| `Prepare(void*)` | `0x002BF120` 8772 | `0x003038D0` 13656 | `0x003365D0` 11240 | `0x0032B7C0` 4144 | `0x002FEC40` unverified |  |  |
+| `SetParameters(EB3BehaviourType,CB3AttribsTrackSide*,int)` | `0x002C1370` 16 | `0x00306E30` 140 | `0x003391C0` 140 | `0x0032B730` 136 | `0x00300BC0` likely |  |  |
+| `Construct(int)` | `0x002C1380` 8 | `0x00306EC0` 8 | `0x00339250` 8 | `0x0032B620` 36 | `0x00300BD0` strong |  |  |
+| `CB3BehaviourTrackSide()` |  |  |  | `0x0013E740` 124 |  |  |  |
+| `GetDesiredFOV(float)` |  |  |  | `0x0032B650` 112 |  |  |  |
 
 ## Notes
 

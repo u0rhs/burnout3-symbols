@@ -8,19 +8,20 @@
 - **Source file:** `Gt2dFrameHierarchy.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 4, B3INTERN 4, B3O0PCH 5
 - **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGt2dFrameHierarchy`, size 0x018, methods in `GameShared/GameClasses/Graphical/2d/Gt2dFrameHierarchy.cpp` ([layout](#burnout-revenge-layout-of-cgt2dframehierarchy))
 - **Burnout 2 ancestor (by name):** `C2dFrameHierarchy`, size 0x03C, declared in 72 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ConstructFrameData(int,void*,unsigned int)` | `0x0019A910` 252 | `0x001CF390` 392 | `0x001C8A10` 392 | `0x001DAB00` 312 |  |  |
-| `Sync()` | `0x0019AA10` 1744 | `0x001CF550` 1864 | `0x001C8BD0` 1744 | `0x001DA9C0` 156 |  |  |
-| `Prepare()` | `0x0019B210` 552 | `0x001CFE10` 656 | `0x001C93D0` 552 | `0x001DA960` 92 | `0x001D4F90` proven |  |
-| `_GetRequiredMemory(int)` |  | `0x001CF520` 36 | `0x001C8BA0` 36 | `0x001DAAC0` 64 |  |  |
-| `GetRootFrame()` |  |  |  | `0x00196F10` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ConstructFrameData(int,void*,unsigned int)` | `0x0019A910` 252 | `0x001CF390` 392 | `0x001C8A10` 392 | `0x001DAB00` 312 |  |  | `void * CGt2dFrameHierarchy::ConstructFrameData(int lnMaxChildren, void *lpMemoryBlock, unsigned int luMemoryBlockSize)` |
+| `Sync()` | `0x0019AA10` 1744 | `0x001CF550` 1864 | `0x001C8BD0` 1744 | `0x001DA9C0` 156 |  |  | `void CGt2dFrameHierarchy::Sync()` |
+| `Prepare()` | `0x0019B210` 552 | `0x001CFE10` 656 | `0x001C93D0` 552 | `0x001DA960` 92 | `0x001D4F90` proven |  | `void CGt2dFrameHierarchy::Prepare()` |
+| `_GetRequiredMemory(int)` |  | `0x001CF520` 36 | `0x001C8BA0` 36 | `0x001DAAC0` 64 |  |  |  |
+| `GetRootFrame()` |  |  |  | `0x00196F10` 28 |  |  |  |
 
 ## Burnout 2 layout of `C2dFrameHierarchy`
 
@@ -32,6 +33,26 @@ public:
     /* 0x000 */ C2dFrame *mpRootFrame;
     /* 0x004 */ GtLListPoolTag mFrameListPool;
     /* 0x020 */ GtLListPoolTag mAnimListPool;
+};
+```
+
+## Burnout Revenge layout of `CGt2dFrameHierarchy`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 49 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dFrameHierarchy.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dFrameHierarchy {  // size 0x018
+    /* 0x000 */ CGtFreeListPool mFrameListPool;
+    /* 0x014 */ CGt2dFrame *mpRootFrame;
+    // methods
+    // CGt2dFrameHierarchy(const CGt2dFrameHierarchy &);
+    // CGt2dFrameHierarchy();
+    // static RwUInt32 _GetRequiredMemory(int);
+    // void Construct(int, void *, unsigned int);
+    // void Prepare();
+    // void Sync();
+    // CGt2dFrame * GetRootFrame() const;
+    // void * ConstructFrameData(int, void *, unsigned int);
 };
 ```
 

@@ -8,22 +8,23 @@
 - **Source file:** `B3GraphicsManagerPS2.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 7
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CameraData`, size 0x230, methods in `GameSource/Graphics/Ps2/B4GraphicsManagerPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4cameradata))
 - **Burnout 2 ancestor (by name):** `CCameraData`, size 0x0BC, declared in 92 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SendRegistersToGS() const` | `0x001E9240` 120 |  |  |  | `0x002253C0` proven |  |
-| `ConstructEnvMap(GtMathPs2::CGtMatrix3x4,EB3RenderableCamera)` | `0x001E92C0` 1488 | `0x001EA810` 1684 | `0x0021CCA0` 1596 | `0x00233EF0` 1932 | `0x00225440` unverified |  |
-| `Construct(RwCamera*)` | `0x001E9890` 1432 | `0x001EAEB0` 1432 | `0x0021D2E0` 1432 | `0x002335B0` 2076 | `0x00225B30` proven |  |
-| `SendRegistersToGS()` |  | `0x001EA790` 120 | `0x0021CC20` 120 | `0x002346A0` 148 |  |  |
-| `CB3CameraData()` |  |  |  | `0x00195E30` 156 |  |  |
-| `GetNearClipPlane()` |  |  |  | `0x00268FD0` 28 |  |  |
-| `GetRegisterData()` |  |  |  | `0x00228900` 28 |  |  |
-| `GetVU1Data()` |  |  |  | `0x00228360` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SendRegistersToGS() const` | `0x001E9240` 120 |  |  |  | `0x002253C0` proven |  | `void CB4CameraData::SendRegistersToGS() const` |
+| `ConstructEnvMap(GtMathPs2::CGtMatrix3x4,EB3RenderableCamera)` | `0x001E92C0` 1488 | `0x001EA810` 1684 | `0x0021CCA0` 1596 | `0x00233EF0` 1932 | `0x00225440` unverified |  | `RwUInt32 CB4CameraData::ConstructEnvMap(EB4RenderableCamera leCamera, bool lbCubeMap, RwInt32 lnWidth, RwInt32 lnHeight, RwUInt32 luMemoryOffset)` (same name, different parameters) |
+| `Construct(RwCamera*)` | `0x001E9890` 1432 | `0x001EAEB0` 1432 | `0x0021D2E0` 1432 | `0x002335B0` 2076 | `0x00225B30` proven |  | `void CB4CameraData::Construct(RwCamera *lpCamera)` |
+| `SendRegistersToGS()` |  | `0x001EA790` 120 | `0x0021CC20` 120 | `0x002346A0` 148 |  |  | `void CB4CameraData::SendRegistersToGS() const` (same name, different parameters) |
+| `CB3CameraData()` |  |  |  | `0x00195E30` 156 |  |  | `CB4CameraData * CB4CameraData::CB4CameraData()` |
+| `GetNearClipPlane()` |  |  |  | `0x00268FD0` 28 |  |  |  |
+| `GetRegisterData()` |  |  |  | `0x00228900` 28 |  |  |  |
+| `GetVU1Data()` |  |  |  | `0x00228360` 28 |  |  |  |
 
 ## Burnout 2 layout of `CCameraData`
 
@@ -40,6 +41,35 @@ public:
     /* 0x014 */ float marData[8];
     /* 0x034 */ int manIData[4];
     /* 0x044 */ RwV3d maVectors[10];
+};
+```
+
+## Burnout Revenge layout of `CB4CameraData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 88 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CameraData {  // size 0x230
+    /* 0x000 */ CGtCameraFrustum mFrustum;
+    /* 0x0A0 */ CGtMatrix3x4 mMatrix;
+    /* 0x0E0 */ CGtMatrix3x4 mViewMatrix;
+    /* 0x120 */ long long unsigned int mau128VU1Data[10];
+    /* 0x1C0 */ long long unsigned int mau128RegisterData[4];
+    /* 0x200 */ CGtV2d mViewWindow;
+    /* 0x208 */ CGtV2d mRecipViewWindow;
+    /* 0x210 */ CGtV2d mViewOffset;
+    /* 0x218 */ CGtV2d mFrameBufferSize;
+    /* 0x220 */ CGtV2d mFrameBufferOffset;
+    // methods
+    // CB4CameraData(const CB4CameraData &);
+    // CB4CameraData();
+    // void Construct(RwCamera *);
+    // RwUInt32 ConstructEnvMap(GtMathPs2::CGtMatrix3x4, EB4RenderableCamera, bool, int, int, unsigned int);
+    // void SendRegistersToGS() const;
+    // u_long128 * GetVU1Data() const;
+    // u_long128 * GetRegisterData() const;
+    // RwReal GetNearClipPlane() const;
+    // RwReal GetFarClipPlane() const;
 };
 ```
 

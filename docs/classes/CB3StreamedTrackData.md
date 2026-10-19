@@ -6,16 +6,38 @@
 
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Methods per build:** B3O0PCH 3
+- **Burnout Revenge counterpart:** `CB4StreamedTrackData`, size 0x060, methods in `GameSource/World/B4StreamedTrackData.cpp` ([layout](#burnout-revenge-layout-of-cb4streamedtrackdata))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `FixUp()` |  |  |  | `0x0017C110` 44 |  |  |
-| `GetLoadedState()` |  |  |  | `0x0032F3D0` 44 |  |  |
-| `SetLoadedState(CB3StreamedTrackData::ELoadedState)` |  |  |  | `0x0032F020` 52 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `FixUp()` |  |  |  | `0x0017C110` 44 |  |  | `void CB4StreamedTrackData::FixUp()` |
+| `GetLoadedState()` |  |  |  | `0x0032F3D0` 44 |  |  |  |
+| `SetLoadedState(CB3StreamedTrackData::ELoadedState)` |  |  |  | `0x0032F020` 52 |  |  |  |
+
+## Burnout Revenge layout of `CB4StreamedTrackData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 18 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4StreamedTrackData {  // size 0x060
+    /* 0x000 */ ELoadedState meLoadedState;
+    /* 0x004 */ RwInt32 mnOriginalHullID;
+    /* 0x008 */ RwUInt32 muDataSize;
+    /* 0x010 */ CGtExtrudedBox mBoundingBox;
+    /* 0x050 */ CB4TrackRenderObject mWorldRenderObject;
+    /* 0x058 */ RwBool mbIsLOD;
+    // methods
+    // CB4StreamedTrackData(const CB4StreamedTrackData &);
+    // CB4StreamedTrackData();
+    // void FixUp();
+    // ELoadedState GetLoadedState();
+    // void SetLoadedState(CB4StreamedTrackData::ELoadedState);
+};
+```
 
 ## Notes
 

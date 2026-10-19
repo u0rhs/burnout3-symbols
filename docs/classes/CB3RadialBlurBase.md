@@ -6,15 +6,34 @@
 
 - **Area:** [Rendering](../systems/rendering.md)
 - **Methods per build:** B3O0PCH 2
+- **Burnout Revenge counterpart:** `CB4RadialBlurBase`, size 0x050 ([layout](#burnout-revenge-layout-of-cb4radialblurbase))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3RadialBlurBase()` |  |  |  | `0x00196170` 44 |  |  |
-| `Prepare()` |  |  |  | `0x00326270` 180 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3RadialBlurBase()` |  |  |  | `0x00196170` 44 |  |  |  |
+| `Prepare()` |  |  |  | `0x00326270` 180 |  |  |  |
+
+## Burnout Revenge layout of `CB4RadialBlurBase`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 87 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4RadialBlurBase {  // size 0x050
+    /* 0x000 */ CB4RadialBlurParams mParams;
+    // methods
+    // CB4RadialBlurBase(const CB4RadialBlurBase &);
+    // CB4RadialBlurBase();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void Render();
+};
+```
 
 ## Notes
 

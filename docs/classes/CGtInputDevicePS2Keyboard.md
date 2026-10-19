@@ -8,19 +8,53 @@
 - **Source file:** `GtInputDevicePS2Keyboard.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 6
 - **Retail (SLUS-21050):** 2 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtInputDevicePS2Keyboard`, size 0x128, methods in `GameShared/GameClasses/System/Input/Ps2/GtInputDevicePS2Keyboard.cpp` ([layout](#burnout-revenge-layout-of-cgtinputdeviceps2keyboard))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetLEDState()` | `0x002C4820` 176 | `0x0030BB20` 176 | `0x0033D930` 176 | `0x00332B20` 228 | `0x00303F10` likely |  |
-| `IsControlPressed(EGtVirtualKeyCodes)` | `0x002C48D0` 72 | `0x0030BBD0` 72 | `0x0033D9E0` 72 | `0x00332A80` 160 | `0x00303FC0` proven |  |
-| `Update()` | `0x002C4920` 1084 | `0x0030BC20` 1084 | `0x0033DA30` 1084 | `0x00332280` 1892 |  |  |
-| `Prepare(int)` | `0x002C4D60` 108 | `0x0030C060` 108 | `0x0033DE70` 108 | `0x003321E0` 152 |  |  |
-| `Construct()` | `0x002C4DD0` 32 | `0x0030C0D0` 32 | `0x0033DEE0` 32 | `0x00332160` 64 |  |  |
-| `Release()` |  |  |  | `0x00332A40` 56 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetLEDState()` | `0x002C4820` 176 | `0x0030BB20` 176 | `0x0033D930` 176 | `0x00332B20` 228 | `0x00303F10` likely |  |  |
+| `IsControlPressed(EGtVirtualKeyCodes)` | `0x002C48D0` 72 | `0x0030BBD0` 72 | `0x0033D9E0` 72 | `0x00332A80` 160 | `0x00303FC0` proven |  |  |
+| `Update()` | `0x002C4920` 1084 | `0x0030BC20` 1084 | `0x0033DA30` 1084 | `0x00332280` 1892 |  |  |  |
+| `Prepare(int)` | `0x002C4D60` 108 | `0x0030C060` 108 | `0x0033DE70` 108 | `0x003321E0` 152 |  |  |  |
+| `Construct()` | `0x002C4DD0` 32 | `0x0030C0D0` 32 | `0x0033DEE0` 32 | `0x00332160` 64 |  |  |  |
+| `Release()` |  |  |  | `0x00332A40` 56 |  |  |  |
+
+## Burnout Revenge layout of `CGtInputDevicePS2Keyboard`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 188 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtInputDevicePS2Keyboard : public CGtInputDeviceKeyboard {  // size 0x128
+    // base CGtInputDeviceKeyboard at 0x000
+    /* 0x014 */ lgKbdDeviceDesc mKeyboardDeviceDesc;
+    /* 0x01E */ lgKbdStateInfo mCurrentKeyboardState;
+    /* 0x03E */ lgKbdStateInfo mPreviousKeyboardState;
+    /* 0x060 */ lgKbdEventList mEventList;
+    /* 0x104 */ lgKbdXlatedList mTranslatedCharList;
+    /* 0x11C */ RwInt32 mnKeyboardDevice;
+    /* 0x120 */ RwInt32 mnAttemptedDeviceIndex;
+    /* 0x124 */ RwUInt8 mx8LedState;
+    // methods
+    // CGtInputDevicePS2Keyboard(const CGtInputDevicePS2Keyboard &);
+    // CGtInputDevicePS2Keyboard();
+    // void Construct(EGtLanguage);
+    // void Create();
+    // bool Prepare(int);
+    // bool Update();
+    // void Release();
+    // void Destruct();
+    // bool IsKeyboardAttached();
+    // bool IsControlJustPressed(EGtVirtualKeyCodes);
+    // bool IsControlJustReleased(EGtVirtualKeyCodes);
+    // bool IsControlPressed(EGtVirtualKeyCodes);
+    // RwUInt8 GetLEDState();
+    // void SetLocale(EGtLanguage);
+};
+```
 
 ## Notes
 

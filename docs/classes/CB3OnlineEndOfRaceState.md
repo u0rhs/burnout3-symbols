@@ -11,23 +11,23 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `AddFakeResults()` | `0x003A75F0` 220 | `0x00422300` 360 | `0x00447D40` 360 | `0x00462570` 452 |  |  |
-| `DealWithSecondResultsPageEvent(EGtStateAction,void*,void*,void*)` | `0x003A76D0` 888 | `0x004225B0` 1204 | `0x00447FF0` 1204 | `0x00462110` 824 |  |  |
-| `EnterSecondResultsPage()` | `0x003A7A50` 728 | `0x00422E80` 816 | `0x004488C0` 816 | `0x00461920` 956 |  |  |
-| `EnterFirstResultsPage()` | `0x003A7D30` 504 | `0x004231B0` 596 | `0x00448BF0` 596 | `0x00461630` 752 |  |  |
-| `AddRaceTimesToSecondResultsPage()` | `0x003A7F30` 640 | `0x00423410` 732 | `0x00448E50` 732 | `0x004612D0` 864 |  |  |
-| `Action(EGtStateAction,void*,void*,void*)` | `0x003A81B0` 1016 | `0x00423850` 384 | `0x00449290` 384 | `0x00460F50` 536 |  |  |
-| `AddRaceTimes(CB3ResultsPage*,bool)` | `0x003A85B0` 1732 | `0x004239D0` 2812 | `0x00449410` 2812 | `0x004606E0` 2156 |  |  |
-| `DealWithReplayPageEvent(EGtStateAction,void*,void*,void*)` |  | `0x00422470` 316 | `0x00447EB0` 316 | `0x00462450` 276 |  |  |
-| `DealWithFirstResultsPageEvent(EGtStateAction,void*,void*,void*)` |  | `0x00422A70` 328 | `0x004484B0` 328 | `0x00461F80` 388 |  |  |
-| `CheckForTimeouts()` |  | `0x00422BC0` 412 | `0x00448600` 412 | `0x00461DE0` 412 |  |  |
-| `EnterReplayPage()` |  | `0x00422D60` 288 | `0x004487A0` 288 | `0x00461CE0` 256 |  |  |
-| `AddRaceTimesToFirstResultsPage()` |  | `0x004236F0` 340 | `0x00449130` 340 | `0x00461170` 344 |  |  |
-| `CB3OnlineEndOfRaceState()` |  |  |  | `0x003451A0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `AddFakeResults()` | `0x003A75F0` 220 | `0x00422300` 360 | `0x00447D40` 360 | `0x00462570` 452 |  |  |  |
+| `DealWithSecondResultsPageEvent(EGtStateAction,void*,void*,void*)` | `0x003A76D0` 888 | `0x004225B0` 1204 | `0x00447FF0` 1204 | `0x00462110` 824 |  |  |  |
+| `EnterSecondResultsPage()` | `0x003A7A50` 728 | `0x00422E80` 816 | `0x004488C0` 816 | `0x00461920` 956 |  |  |  |
+| `EnterFirstResultsPage()` | `0x003A7D30` 504 | `0x004231B0` 596 | `0x00448BF0` 596 | `0x00461630` 752 |  |  |  |
+| `AddRaceTimesToSecondResultsPage()` | `0x003A7F30` 640 | `0x00423410` 732 | `0x00448E50` 732 | `0x004612D0` 864 |  |  |  |
+| `Action(EGtStateAction,void*,void*,void*)` | `0x003A81B0` 1016 | `0x00423850` 384 | `0x00449290` 384 | `0x00460F50` 536 |  |  |  |
+| `AddRaceTimes(CB3ResultsPage*,bool)` | `0x003A85B0` 1732 | `0x004239D0` 2812 | `0x00449410` 2812 | `0x004606E0` 2156 |  |  |  |
+| `DealWithReplayPageEvent(EGtStateAction,void*,void*,void*)` |  | `0x00422470` 316 | `0x00447EB0` 316 | `0x00462450` 276 |  |  |  |
+| `DealWithFirstResultsPageEvent(EGtStateAction,void*,void*,void*)` |  | `0x00422A70` 328 | `0x004484B0` 328 | `0x00461F80` 388 |  |  |  |
+| `CheckForTimeouts()` |  | `0x00422BC0` 412 | `0x00448600` 412 | `0x00461DE0` 412 |  |  |  |
+| `EnterReplayPage()` |  | `0x00422D60` 288 | `0x004487A0` 288 | `0x00461CE0` 256 |  |  |  |
+| `AddRaceTimesToFirstResultsPage()` |  | `0x004236F0` 340 | `0x00449130` 340 | `0x00461170` 344 |  |  |  |
+| `CB3OnlineEndOfRaceState()` |  |  |  | `0x003451A0` 60 |  |  |  |
 
 ## Notes
 

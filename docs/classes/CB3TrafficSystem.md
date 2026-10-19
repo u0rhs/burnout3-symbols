@@ -8,41 +8,42 @@
 - **Source file:** `B3TrafficSystem.cpp`
 - **Methods per build:** DNAT_200 18, B3DEBUG 18, B3INTERN 18, B3O0PCH 26
 - **Retail (SLUS-21050):** 11 of its 18 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrafficSystem`, size 0x3B320, methods in `GameSource/World/B4TrafficSystem.cpp` ([layout](#burnout-revenge-layout-of-cb4trafficsystem))
 - **Burnout 2 ancestor (by name):** `CTrafficSystem`, size 0x2A200, declared in 47 file(s), e.g. `gamesource/Game/CProfile.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `VehicleIsValid(unsigned char)` | `0x0015E270` 68 |  | `0x00170050` 164 |  |  |  |
-| `IsSegmentLocked(int,unsigned short)` | `0x0015E2C0` 128 | `0x00174DC0` 272 | `0x00170100` 272 | `0x00188690` 344 |  |  |
-| `ResetMemberVariables()` | `0x0015E340` 952 | `0x00174ED0` 952 | `0x00170210` 952 | `0x00188110` 1284 |  |  |
-| `UseNextTriggerData(float)` | `0x0015E700` 1696 | `0x00175290` 1740 | `0x001705D0` 1740 | `0x00187800` 2272 |  |  |
-| `AddToDeadTrafficParamList(CB3TrafficParam*)` | `0x0015EDA0` 180 | `0x00175960` 244 | `0x00170CA0` 244 | `0x001876E0` 284 |  | `void CTrafficSystem::AddToDeadTrafficParamList(CTrafficParam *lpTrafficParam)` (same name, different parameters) |
-| `AddToDeadTrafficList(CB3TrafficVehicle*,bool)` | `0x0015EE60` 276 | `0x00175A60` 440 | `0x00170DA0` 440 | `0x00187370` 488 |  | `void CTrafficSystem::AddToDeadTrafficList(CTrafficVehicle *lpTrafficVehicle)` (same name, different parameters) |
-| `DoFiller(CB3TrafficFillerStruct*,CB3StartFinishLine*,int,int)` | `0x0015EF80` 1168 | `0x00175C20` 1264 | `0x00170F60` 1480 | `0x00186C20` 1312 |  |  |
-| `CheckForNewHull(int,int)` | `0x0015F410` 204 | `0x00176110` 204 | `0x00171530` 204 | `0x00186A30` 492 | `0x00164510` strong |  |
-| `UpdateHulls(int,float,int)` | `0x0015F4E0` 1132 | `0x001761E0` 1320 | `0x00171600` 1320 | `0x00186440` 1516 | `0x001645E0` strong |  |
-| `Generate(ETrafficVehicleCategories,unsigned long,ETrafficVehicleCategories,unsigned long,CB3TrafficLane*,floa` | `0x0015F950` 5620 | `0x00176710` 5240 | `0x00171B30` 5240 | `0x00185930` 2572 | `0x00164A50` unverified | `CTrafficVehicle *CTrafficSystem::Generate(EB2VehicleType leNewVehicleType, EB2VehicleType leNewTrailerVehicleType, CLane *lpLane, float lrParamAlong, float lrSpeedModifier, int lbHotspotGenerated)` (same name, different parameters) |
-| `GenerateInitialTraffic(CB3StartFinishLine*,int)` | `0x00160F50` 880 | `0x00177B90` 1060 | `0x00172FB0` 1060 | `0x00185460` 1232 | `0x00165A40` strong |  |
-| `VerifyAndLoadVehicleIDs()` | `0x001612C0` 840 | `0x00177FC0` 840 | `0x001733E0` 840 | `0x001851C0` 488 | `0x00165DF0` likely |  |
-| `Update()` | `0x00161610` 2212 | `0x00178310` 2740 | `0x00173730` 2736 | `0x00184410` 3500 | `0x00166160` unverified | `void CTrafficSystem::Update()` |
-| `Release()` | `0x00161EC0` 428 | `0x00178DD0` 428 | `0x001741E0` 428 | `0x001841C0` 580 | `0x00166DB0` strong |  |
-| `Prepare()` | `0x00162070` 3040 | `0x00178F80` 3804 | `0x00174390` 3792 | `0x00182D50` 5224 | `0x00166F50` strong |  |
-| `Construct()` | `0x00162C50` 364 | `0x00179E60` 364 | `0x00175260` 364 | `0x00182B70` 468 | `0x00167B90` strong |  |
-| `LockTrafficSegment(int,unsigned short,bool)` |  | `0x00174CB0` 260 |  | `0x001887F0` 312 |  |  |
-| `Draw(int)` | `0x002C8750` 5328 | `0x0030FE50` 6468 | `0x00341B30` 6260 | `0x00337980` 5588 | `0x003078F0` unverified | `int CTrafficSystem::Draw(int PlayerIndex)` |
-| `PrepareTrafficVehicleData()` | `0x002C9FE0` 684 | `0x00311B60` 860 | `0x00343770` 860 | `0x00336D90` 1056 | `0x003093E0` strong |  |
-| `CB3TrafficSystem()` |  |  |  | `0x00192210` 184 |  |  |
-| `CheckVehicleID(unsigned long,int)` |  |  |  | `0x001853B0` 168 |  |  |
-| `DoCurrentFiller(CB3TrafficHullStruct*,CB3StartFinishLine*,int,int)` |  |  |  | `0x00187140` 192 |  |  |
-| `DrawTrafficLightCorona(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,int,CGtCamera*)` |  |  |  | `0x00338FC0` 376 |  |  |
-| `GetPayloadIndex()` |  |  |  | `0x00186340` 248 |  |  |
-| `GetTrafficGtID(unsigned char)` |  |  |  | `0x0016CC60` 80 |  |  |
-| `RetrieveFromDeadTrafficList()` |  |  |  | `0x00187200` 360 |  |  |
-| `RetrieveFromDeadTrafficParamList()` |  |  |  | `0x00187560` 380 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `VehicleIsValid(unsigned char)` | `0x0015E270` 68 |  | `0x00170050` 164 |  |  |  | `bool CB4TrafficSystem::VehicleIsValid(unsigned char lu8VehicleIndex)` |
+| `IsSegmentLocked(int,unsigned short)` | `0x0015E2C0` 128 | `0x00174DC0` 272 | `0x00170100` 272 | `0x00188690` 344 |  |  | `bool CB4TrafficSystem::IsSegmentLocked(int lnPlayerIndex, unsigned short lu16SegmentIndex)` |
+| `ResetMemberVariables()` | `0x0015E340` 952 | `0x00174ED0` 952 | `0x00170210` 952 | `0x00188110` 1284 |  |  | `void CB4TrafficSystem::ResetMemberVariables()` |
+| `UseNextTriggerData(float)` | `0x0015E700` 1696 | `0x00175290` 1740 | `0x001705D0` 1740 | `0x00187800` 2272 |  |  | `void CB4TrafficSystem::UseNextTriggerData(float lrRaceTime)` |
+| `AddToDeadTrafficParamList(CB3TrafficParam*)` | `0x0015EDA0` 180 | `0x00175960` 244 | `0x00170CA0` 244 | `0x001876E0` 284 |  | `void CTrafficSystem::AddToDeadTrafficParamList(CTrafficParam *lpTrafficParam)` (same name, different parameters) | `void CB4TrafficSystem::AddToDeadTrafficParamList(CB4TrafficParam *lpTrafficParam)` |
+| `AddToDeadTrafficList(CB3TrafficVehicle*,bool)` | `0x0015EE60` 276 | `0x00175A60` 440 | `0x00170DA0` 440 | `0x00187370` 488 |  | `void CTrafficSystem::AddToDeadTrafficList(CTrafficVehicle *lpTrafficVehicle)` (same name, different parameters) | `void CB4TrafficSystem::AddToDeadTrafficList(CB4TrafficVehicle *lpTrafficVehicle, bool lbHasPhysics)` |
+| `DoFiller(CB3TrafficFillerStruct*,CB3StartFinishLine*,int,int)` | `0x0015EF80` 1168 | `0x00175C20` 1264 | `0x00170F60` 1480 | `0x00186C20` 1312 |  |  | `void CB4TrafficSystem::DoFiller(CB4TrafficFillerStruct *lpCurrentFiller, CB4StartFinishLine *laStartLinePos, int lnNumStartLines, EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `CheckForNewHull(int,int)` | `0x0015F410` 204 | `0x00176110` 204 | `0x00171530` 204 | `0x00186A30` 492 | `0x00164510` strong |  | `bool CB4TrafficSystem::CheckForNewHull(int lnSliceIndex, EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `UpdateHulls(int,float,int)` | `0x0015F4E0` 1132 | `0x001761E0` 1320 | `0x00171600` 1320 | `0x00186440` 1516 | `0x001645E0` strong |  | `void CB4TrafficSystem::UpdateHulls(int lnSliceIndex, float lrRaceTime, EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `Generate(ETrafficVehicleCategories,unsigned long,ETrafficVehicleCategories,unsigned long,CB3TrafficLane*,floa` | `0x0015F950` 5620 | `0x00176710` 5240 | `0x00171B30` 5240 | `0x00185930` 2572 | `0x00164A50` unverified | `CTrafficVehicle *CTrafficSystem::Generate(EB2VehicleType leNewVehicleType, EB2VehicleType leNewTrailerVehicleType, CLane *lpLane, float lrParamAlong, float lrSpeedModifier, int lbHotspotGenerated)` (same name, different parameters) | `CB4TrafficVehicle * CB4TrafficSystem::Generate(ETrafficVehicleCategories leNewVehicleClass, unsigned long lNewVehicleType, ETrafficVehicleCategories leNewTrailerClass, unsigned long lNewTrailerVehicleType, CB4TrafficLane *lpLane, float lrParamAlong, float lrLaneSpeed, float lrInitalFlow, unsigned char lu8VehicleColour, unsigned char lu8TrailerColour, bool lbIsCrashTarget)` (same name, different parameters) |
+| `GenerateInitialTraffic(CB3StartFinishLine*,int)` | `0x00160F50` 880 | `0x00177B90` 1060 | `0x00172FB0` 1060 | `0x00185460` 1232 | `0x00165A40` strong |  | `void CB4TrafficSystem::GenerateInitialTraffic(CB4StartFinishLine *laStartLinePos, int lnNumStartLines)` |
+| `VerifyAndLoadVehicleIDs()` | `0x001612C0` 840 | `0x00177FC0` 840 | `0x001733E0` 840 | `0x001851C0` 488 | `0x00165DF0` likely |  | `void CB4TrafficSystem::VerifyAndLoadVehicleIDs()` |
+| `Update()` | `0x00161610` 2212 | `0x00178310` 2740 | `0x00173730` 2736 | `0x00184410` 3500 | `0x00166160` unverified | `void CTrafficSystem::Update()` | `void CB4TrafficSystem::Update()` |
+| `Release()` | `0x00161EC0` 428 | `0x00178DD0` 428 | `0x001741E0` 428 | `0x001841C0` 580 | `0x00166DB0` strong |  | `void CB4TrafficSystem::Release()` |
+| `Prepare()` | `0x00162070` 3040 | `0x00178F80` 3804 | `0x00174390` 3792 | `0x00182D50` 5224 | `0x00166F50` strong |  | `bool CB4TrafficSystem::Prepare()` |
+| `Construct()` | `0x00162C50` 364 | `0x00179E60` 364 | `0x00175260` 364 | `0x00182B70` 468 | `0x00167B90` strong |  | `void CB4TrafficSystem::Construct()` |
+| `LockTrafficSegment(int,unsigned short,bool)` |  | `0x00174CB0` 260 |  | `0x001887F0` 312 |  |  | `void CB4TrafficSystem::LockTrafficSegment(EPlayerCarIndex lePlayerIndex, unsigned short lu16SegmentIndex, bool lbLock, bool lbTrafficLightOverride)` (same name, different parameters) |
+| `Draw(int)` | `0x002C8750` 5328 | `0x0030FE50` 6468 | `0x00341B30` 6260 | `0x00337980` 5588 | `0x003078F0` unverified | `int CTrafficSystem::Draw(int PlayerIndex)` | `void CB4TrafficSystem::Draw(EPlayerCarIndex lePlayer)` (same name, different parameters) |
+| `PrepareTrafficVehicleData()` | `0x002C9FE0` 684 | `0x00311B60` 860 | `0x00343770` 860 | `0x00336D90` 1056 | `0x003093E0` strong |  | `bool CB4TrafficSystem::PrepareTrafficVehicleData()` |
+| `CB3TrafficSystem()` |  |  |  | `0x00192210` 184 |  |  | `CB4TrafficSystem * CB4TrafficSystem::CB4TrafficSystem()` |
+| `CheckVehicleID(unsigned long,int)` |  |  |  | `0x001853B0` 168 |  |  | `void CB4TrafficSystem::CheckVehicleID(unsigned long lVehicleID, int lnVehicleIndex)` |
+| `DoCurrentFiller(CB3TrafficHullStruct*,CB3StartFinishLine*,int,int)` |  |  |  | `0x00187140` 192 |  |  | `void CB4TrafficSystem::DoCurrentFiller(CB4TrafficHullStruct *lpCurrentHull, CB4StartFinishLine *laStartLinePos, int lnNumStartLines, EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `DrawTrafficLightCorona(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,int,CGtCamera*)` |  |  |  | `0x00338FC0` 376 |  |  | `void CB4TrafficSystem::DrawTrafficLightCorona(GtMathPs2::CGtV3d lCoronaPosOffset, GtMathPs2::CGtV3d lCoronaColour, int lnCoronaIndex, CGtCamera *lpCamera)` |
+| `GetPayloadIndex()` |  |  |  | `0x00186340` 248 |  |  | `RwUInt8 CB4TrafficSystem::GetPayloadIndex(ETrafficVehicleCategories leVehicleClass, signed char ln8NumPayloadSets)` (same name, different parameters) |
+| `GetTrafficGtID(unsigned char)` |  |  |  | `0x0016CC60` 80 |  |  |  |
+| `RetrieveFromDeadTrafficList()` |  |  |  | `0x00187200` 360 |  |  | `CB4TrafficVehicle * CB4TrafficSystem::RetrieveFromDeadTrafficList()` |
+| `RetrieveFromDeadTrafficParamList()` |  |  |  | `0x00187560` 380 |  |  | `CB4TrafficParam * CB4TrafficSystem::RetrieveFromDeadTrafficParamList()` |
 
 ## Burnout 2 layout of `CTrafficSystem`
 
@@ -96,6 +97,132 @@ public:
     // void CTrafficSystem::FixUpTRA()  [0x00253E20]
     // void CTrafficSystem::Setup(ETrafficSystemTypes leTrafficSystemType)  [0x00253FF0]
     // void CTrafficSystem::Init()  [0x00254150]
+};
+```
+
+## Burnout Revenge layout of `CB4TrafficSystem`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 85 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficSystem {  // size 0x3B320
+    /* 0x000 */ CB4TrafficDataStruct *mpTrafficData;
+    /* 0x004 */ CB4TrafficValve maValves[255];
+    /* 0x11EE4 */ CB4StopJunction maStopJunctions[7];
+    /* 0x11FC4 */ CB4TrafficLight maTrafficLights[128];
+    /* 0x12BC4 */ CB4TrafficSplitter maSplitters[128];
+    /* 0x131D0 */ CB4TrafficVehicle maTraffic[254];
+    /* 0x2CE90 */ CB4TrafficParam maTrafficParam[254];
+    /* 0x31DF0 */ CB4TrafficParamPositions maTrafficParamPositions[254];
+    /* 0x36D50 */ long unsigned int maSourceIDs[12];
+    /* 0x36DB0 */ CB4VehicleData *mpaSourceData[12];
+    /* 0x36DE0 */ int manVehicleMaxCrashScores[12];
+    /* 0x36E10 */ RwInt8 mn8NumSources;
+    /* 0x36E14 */ float maarPlayerCarDistances[6][254];
+    /* 0x385E4 */ unsigned char maau8MaxUpdateBucket[6][254];
+    /* 0x38BD8 */ unsigned char maau8AIBucket[6][25];
+    /* 0x38C6E */ unsigned char maau8NearMissBucket[6][8];
+    /* 0x38CA0 */ unsigned int max32ValidTraffic[8];
+    /* 0x38CC0 */ unsigned int max32ValidParam[8];
+    /* 0x38CE0 */ unsigned int max32AssignedCoronas[8];
+    /* 0x38D00 */ RwInt32 mnHalfSliceCount;
+    /* 0x38D08 */ CGtRandom mRand;
+    /* 0x38D10 */ unsigned char mau8NumMaxUpdated[6];
+    /* 0x38D16 */ unsigned char mau8NumAIUpdated[6];
+    /* 0x38D1C */ unsigned char mau8NumNMUpdated[6];
+    /* 0x38D24 */ CB4TrafficVehicle *mpDeadTraffic;
+    /* 0x38D28 */ CB4TrafficVehicle *mpDeadTrafficEnd;
+    /* 0x38D2C */ CB4TrafficParam *mpDeadTrafficParam;
+    /* 0x38D30 */ CB4TrafficVehicle *mpPurgatoryTraffic;
+    /* 0x38D34 */ CB4TrafficVehicle *mpPurgatoryTrafficEnd;
+    /* 0x38D38 */ unsigned char mau8PurgatoryCountdowns[254];
+    /* 0x38E36 */ RwUInt8 mnPurgatoryCountdownStartIndex;
+    /* 0x38E37 */ RwUInt8 mnPurgatoryCountdownEndIndex;
+    /* 0x38E38 */ RwUInt8 *mpau8NextParamArray;
+    /* 0x38E3C */ RwReal mrNextTriggerTime;
+    /* 0x38E40 */ RwUInt16 mu16NextTriggerSlice;
+    /* 0x38E42 */ RwUInt8 mu8NextTriggerLap;
+    /* 0x38E43 */ unsigned char mau8CurrentHullIndex[2];
+    /* 0x38E45 */ unsigned char mau8FillersRemaining[2];
+    /* 0x38E47 */ RwUInt8 mu8MaxVehicles;
+    /* 0x38E48 */ RwUInt8 mu8NumVehicles;
+    /* 0x38E49 */ RwUInt8 mu8NumValves;
+    /* 0x38E4A */ RwUInt8 mu8NumSplitters;
+    /* 0x38E4B */ RwUInt8 mu8NumTrafficLights;
+    /* 0x38E4C */ RwUInt8 mu8NumStopJunctions;
+    /* 0x38E4D */ RwUInt8 mu8NextTriggerIndex;
+    /* 0x38E4E */ RwUInt8 mu8TriggerState;
+    /* 0x38E4F */ RwUInt8 mu8NextKillFiller;
+    /* 0x38E50 */ bool mbIsOnline;
+    /* 0x38E51 */ bool mbIsCrashMode;
+    /* 0x38E52 */ bool mbIsSplitScreen;
+    /* 0x38E53 */ bool mbIsRightSideDriving;
+    /* 0x38E54 */ bool mbIsActive;
+    /* 0x38E55 */ bool mbCurrentHullIsForwards;
+    /* 0x38E56 */ bool mbIsTriggering;
+    /* 0x38E57 */ bool mbIsGenerationDisabled;
+    /* 0x38E60 */ CB4VehicleParams mFakeVehicle;
+    /* 0x3B200 */ CB4VehicleReflectivityData mHardcodedTrafficReflectivityData;
+    /* 0x3B2F0 */ bool mbCurrentVehicleIsLoaded;
+    /* 0x3B2F1 */ RwInt8 mn8CurrentNumSources;
+    /* 0x3B2F4 */ RwUInt32 muCurrentVehicleLoadId;
+    /* 0x3B2F8 */ RwReal mrStartTime;
+    /* 0x3B2FC */ RwInt32 mnInitialFrame;
+    /* 0x3B300 */ RwInt32 mnNum10HzUpdates;
+    /* 0x3B304 */ RwInt32 mnNumCrashModeVehicles;
+    /* 0x3B308 */ EGtPrepareState mePrepareState;
+    /* 0x3B30C */ EGtPrepareState meTrafficLoadingState;
+    /* 0x3B310 */ unsigned char mauNextVehicleColour[12];
+    /* 0x3B31C */ bool mbTrafficGenerated;
+    /* 0x3B31D */ bool mbEnableUpdate;
+    // methods
+    // CB4TrafficSystem(const CB4TrafficSystem &);
+    // CB4TrafficSystem();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void VerifyAndLoadVehicleIDs();
+    // void CheckVehicleID(unsigned long, int);
+    // void GenerateInitialTraffic(CB4StartFinishLine *, int);
+    // void GenerateStationaryTraffic();
+    // void InitialiseStationaryVehicle(CB4TrafficVehicle *, CB4StationaryTrafficStruct *, CB4TrafficVehicleWeightStruct *);
+    // void SetVehicleSourceDataFromID(unsigned long, CB4TrafficVehicle *);
+    // CB4TrafficVehicle * Generate(ETrafficVehicleCategories, unsigned long, ETrafficVehicleCategories, unsigned long, CB4TrafficLane *, float, float, float, unsigned char, unsigned char, bool);
+    // RwUInt8 GetPayloadIndex(ETrafficVehicleCategories, signed char);
+    // CB4TrafficVehicleWeightStruct * GetRandomVehicleID(ETrafficVehicleCategories);
+    // RwUInt8 GetRandomVehicleColour(CB4TrafficVehicleWeightStruct *, ETrafficVehicleCategories);
+    // void UpdateHulls(int, float, EPlayerCarIndex);
+    // bool CheckForNewHull(int, EPlayerCarIndex);
+    // void DoFiller(CB4TrafficFillerStruct *, CB4StartFinishLine *, int, EPlayerCarIndex);
+    // void DoCurrentFiller(CB4TrafficHullStruct *, CB4StartFinishLine *, int, EPlayerCarIndex);
+    // CB4TrafficVehicle * RetrieveFromDeadTrafficList();
+    // void AddToDeadTrafficList(CB4TrafficVehicle *, bool);
+    // CB4TrafficParam * RetrieveFromDeadTrafficParamList();
+    // void AddToDeadTrafficParamList(CB4TrafficParam *);
+    // void UseNextTriggerData(float);
+    // void ResetMemberVariables();
+    // void SetOnline(bool);
+    // void SetMaxVehicles(int);
+    // void SetRightSideDriving(bool);
+    // bool IsSegmentLocked(int, unsigned short);
+    // void LockTrafficSegment(EPlayerCarIndex, unsigned short, bool, bool);
+    // GtID GetTrafficGtID(unsigned char);
+    // void DisableTrafficGeneration(bool);
+    // void Draw(EPlayerCarIndex);
+    // void DrawTrafficLightCorona(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, int, CGtCamera *);
+    // bool VehicleIsValid(unsigned char);
+    // bool ThisIsDecisionMakingFrame();
+    // RwInt32 GetNum10HzUpdates();
+    // void SetStartTime(float);
+    // RwInt32 GetNumVehiclesInCurrentCrashJunction();
+    // void EnableUpdate(bool);
+    // RwInt32 CountCrashJunctionVehicles();
+    // bool PrepareTrafficVehicleData();
+    // void PutInDeadList(CB4TrafficVehicle *);
+    // void PutInPurgatoryList(CB4TrafficVehicle *);
+    // void RemoveFromPurgatoryList(CB4TrafficVehicle *);
 };
 ```
 

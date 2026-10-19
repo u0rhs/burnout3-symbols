@@ -8,18 +8,41 @@
 - **Source file:** `B3StartFinishLine.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 5
 - **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4StartFinishLine`, size 0x010, methods in `GameSource/World/B4StartFinishLine.cpp` ([layout](#burnout-revenge-layout-of-cb4startfinishline))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Draw(int)` | `0x001596A0` 220 | `0x0016F170` 220 | `0x0016A910` 220 | `0x0017B4D0` 288 | `0x0015E720` unverified |  |
-| `Destruct()` | `0x00159780` 8 | `0x0016F250` 8 | `0x0016A9F0` 8 | `0x0017B4A0` 40 | `0x0015E780` proven |  |
-| `Release()` | `0x00159790` 44 | `0x0016F260` 44 | `0x0016AA00` 44 | `0x0017B460` 56 | `0x0015E790` proven |  |
-| `Prepare(CB3PlanarTriggerStruct*,bool)` | `0x001597C0` 204 | `0x0016F290` 284 | `0x0016AA30` 284 | `0x0017B3B0` 164 | `0x0015E7C0` proven |  |
-| `Construct()` | `0x00159890` 12 | `0x0016F3B0` 12 | `0x0016AB50` 12 | `0x0017B370` 56 | `0x0015E890` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Draw(int)` | `0x001596A0` 220 | `0x0016F170` 220 | `0x0016A910` 220 | `0x0017B4D0` 288 | `0x0015E720` unverified |  | `void CB4StartFinishLine::Draw(int lxFlags)` |
+| `Destruct()` | `0x00159780` 8 | `0x0016F250` 8 | `0x0016A9F0` 8 | `0x0017B4A0` 40 | `0x0015E780` proven |  | `void CB4StartFinishLine::Destruct()` |
+| `Release()` | `0x00159790` 44 | `0x0016F260` 44 | `0x0016AA00` 44 | `0x0017B460` 56 | `0x0015E790` proven |  | `void CB4StartFinishLine::Release()` |
+| `Prepare(CB3PlanarTriggerStruct*,bool)` | `0x001597C0` 204 | `0x0016F290` 284 | `0x0016AA30` 284 | `0x0017B3B0` 164 | `0x0015E7C0` proven |  | `bool CB4StartFinishLine::Prepare(CB4PlanarTriggerStruct *lpPlanarTriggerData, bool lbFinishLine)` |
+| `Construct()` | `0x00159890` 12 | `0x0016F3B0` 12 | `0x0016AB50` 12 | `0x0017B370` 56 | `0x0015E890` proven |  | `void CB4StartFinishLine::Construct()` |
+
+## Burnout Revenge layout of `CB4StartFinishLine`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 238 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4StartFinishLine : public CB4SplitTimeCheckpoint {  // size 0x010
+    // base CB4SplitTimeCheckpoint at 0x000
+    /* 0x008 */ CGtTexture *mpFinishGraphic;
+    /* 0x00C */ bool mbFinishLine;
+    // methods
+    // CB4StartFinishLine(const CB4StartFinishLine &);
+    // CB4StartFinishLine();
+    // void Construct();
+    // bool Prepare(CB4PlanarTriggerStruct *, bool);
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void Draw(int);
+    // CGtV3d GetPos();
+};
+```
 
 ## Notes
 

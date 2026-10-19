@@ -8,25 +8,62 @@
 - **Source file:** `B3BehaviourCluster.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 12
 - **Retail (SLUS-21050):** 4 of its 5 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ClusterRig`, size 0x0E0, methods in `GameSource/Camera/Behaviours/B4BehaviourCluster.cpp` ([layout](#burnout-revenge-layout-of-cb4clusterrig))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateFocus(float)` | `0x0030F5F0` 6696 | `0x00366B90` 9480 | `0x003964E0` 7456 | `0x0039A940` 2368 | `0x00358850` strong |  |
-| `PrepareFocus(float)` | `0x00311020` 4832 | `0x003690A0` 6072 | `0x00398200` 5416 | `0x0039A040` 1728 | `0x0035A700` unverified |  |
-| `PrepareRotate(EB3RigType,EB3FocusType,CB3ChildBody*,float,float,GtMathPs2::CGtV3d,float,float,float,const GtMath` | `0x00312300` 892 | `0x0036A860` 1080 | `0x00399730` 1080 | `0x00399DF0` 580 | `0x0035B830` strong |  |
-| `PrepareOffset(EB3RigType,EB3FocusType,CB3ChildBody*,GtMathPs2::CGtV3d,float,float,int)` | `0x00312680` 268 | `0x0036ACA0` 372 | `0x00399B70` 372 | `0x00399C60` 400 | `0x0035BC10` likely |  |
-| `PrepareStatic(EB3RigType,EB3FocusType,CB3ChildBody*,GtMathPs2::CGtV3d,float,float,int)` | `0x00312790` 124 | `0x0036AE20` 252 | `0x00399CF0` 252 | `0x00399B90` 204 |  |  |
-| `CB3ClusterRig()` |  |  |  | `0x0013E8E0` 76 |  |  |
-| `GetDesiredFOV(float,float)` |  |  |  | `0x003999E0` 88 |  |  |
-| `GetPositionOnCylinder(GtMathPs2::CGtV3d*,GtMathPs2::CGtSphere,const GtMathPs2::CGtMatrix3x4&,float,float)` |  |  |  | `0x00399A40` 336 |  |  |
-| `ResetRotatePosition()` |  |  |  | `0x0039A730` 156 |  |  |
-| `Update(CGtCamera*)` |  |  |  | `0x0039B280` 152 |  |  |
-| `UpdatePosition()` |  |  |  | `0x0039A7D0` 364 |  |  |
-| `operator =(const CB3ClusterRig&)` |  |  |  | `0x00398680` 332 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateFocus(float)` | `0x0030F5F0` 6696 | `0x00366B90` 9480 | `0x003964E0` 7456 | `0x0039A940` 2368 | `0x00358850` strong |  | `void CB4ClusterRig::UpdateFocus(float lrAspectRatio)` |
+| `PrepareFocus(float)` | `0x00311020` 4832 | `0x003690A0` 6072 | `0x00398200` 5416 | `0x0039A040` 1728 | `0x0035A700` unverified |  | `void CB4ClusterRig::PrepareFocus(float lrAspectRatio)` |
+| `PrepareRotate(EB3RigType,EB3FocusType,CB3ChildBody*,float,float,GtMathPs2::CGtV3d,float,float,float,const GtMath` | `0x00312300` 892 | `0x0036A860` 1080 | `0x00399730` 1080 | `0x00399DF0` 580 | `0x0035B830` strong |  | `void CB4ClusterRig::PrepareRotate(EB4RigType leRigType, EB4FocusType leFocusType, CB4ChildBody *lpChild, float lrAngleY, float lrHeight, GtMathPs2::CGtV3d lPosition, float lrRadius, float lrFOV, float lrFocusRadius, const GtMathPs2::CGtMatrix3x4 &lRigMatrix, const GtMathPs2::CGtMatrix3x4 &lRigMatrixInverse, float lrAspectRatio, EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `PrepareOffset(EB3RigType,EB3FocusType,CB3ChildBody*,GtMathPs2::CGtV3d,float,float,int)` | `0x00312680` 268 | `0x0036ACA0` 372 | `0x00399B70` 372 | `0x00399C60` 400 | `0x0035BC10` likely |  |  |
+| `PrepareStatic(EB3RigType,EB3FocusType,CB3ChildBody*,GtMathPs2::CGtV3d,float,float,int)` | `0x00312790` 124 | `0x0036AE20` 252 | `0x00399CF0` 252 | `0x00399B90` 204 |  |  | `void CB4ClusterRig::PrepareStatic(EB4RigType leRigType, EB4FocusType leFocusType, CB4ChildBody *lpChild, GtMathPs2::CGtV3d lPosition, float lrFOV, float lrAspectRatio, EPlayerCarIndex lePlayerIndex, bool lbAutoAdjustFoV)` (same name, different parameters) |
+| `CB3ClusterRig()` |  |  |  | `0x0013E8E0` 76 |  |  |  |
+| `GetDesiredFOV(float,float)` |  |  |  | `0x003999E0` 88 |  |  | `RwReal CB4ClusterRig::GetDesiredFOV(float lrDistance, float lrWidth)` |
+| `GetPositionOnCylinder(GtMathPs2::CGtV3d*,GtMathPs2::CGtSphere,const GtMathPs2::CGtMatrix3x4&,float,float)` |  |  |  | `0x00399A40` 336 |  |  | `void CB4ClusterRig::GetPositionOnCylinder(GtMathPs2::CGtV3d *lpOutPosition, GtMathPs2::CGtSphere lSphere, const GtMathPs2::CGtMatrix3x4 &lSphereMatrix, float lrAngleY, float lrHeight)` |
+| `ResetRotatePosition()` |  |  |  | `0x0039A730` 156 |  |  | `void CB4ClusterRig::ResetRotatePosition()` |
+| `Update(CGtCamera*)` |  |  |  | `0x0039B280` 152 |  |  | `void CB4ClusterRig::Update(CGtCamera *lpCamera)` |
+| `UpdatePosition()` |  |  |  | `0x0039A7D0` 364 |  |  | `void CB4ClusterRig::UpdatePosition()` |
+| `operator =(const CB3ClusterRig&)` |  |  |  | `0x00398680` 332 |  |  |  |
+
+## Burnout Revenge layout of `CB4ClusterRig`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 318 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ClusterRig {  // size 0x0E0
+    /* 0x000 */ CGtMatrix3x4 mRigMatrix;
+    /* 0x040 */ CGtMatrix3x4 mCameraMatrix;
+    /* 0x080 */ CGtSphereTreeSphere *mpParent;
+    /* 0x084 */ CB4ChildBody *mpChild;
+    /* 0x090 */ CGtSphere mSphere;
+    /* 0x0A0 */ CGtV3d mRigOffset;
+    /* 0x0B0 */ RwReal mrAngleY;
+    /* 0x0B4 */ RwReal mrHeight;
+    /* 0x0B8 */ RwReal mrFOV;
+    /* 0x0BC */ RwReal mrFocusRadius;
+    /* 0x0C0 */ RwReal mrFocusAngle;
+    /* 0x0C4 */ EPlayerCarIndex mePlayerIndex;
+    /* 0x0C8 */ EB4FocusType meFocusType;
+    /* 0x0CC */ EB4RigType meRigType;
+    /* 0x0D0 */ bool mbAutoAdjustFoV;
+    // methods
+    // CB4ClusterRig(const CB4ClusterRig &);
+    // CB4ClusterRig();
+    // void PrepareStatic(EB4RigType, EB4FocusType, CB4ChildBody *, GtMathPs2::CGtV3d, float, float, EPlayerCarIndex, bool);
+    // void PrepareRotate(/* 10EB4RigType12EB4FocusTypeP12CB4ChildBodyffGQ29GtMathPs26CGtV3dfffRCQ29GtMathPs212CGtMatrix3x4T10_f15EPlayerCarIndex */);
+    // void Update(CGtCamera *);
+    // void ResetRotatePosition();
+    // void PrepareFocus(float);
+    // void UpdatePosition();
+    // void UpdateFocus(float);
+    // static void GetPositionOnCylinder(GtMathPs2::CGtV3d *, GtMathPs2::CGtSphere, const GtMathPs2::CGtMatrix3x4 &, float, float);
+    // RwReal GetDesiredFOV(float, float);
+};
+```
 
 ## Notes
 

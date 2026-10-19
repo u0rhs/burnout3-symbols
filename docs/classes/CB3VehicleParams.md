@@ -6,15 +6,83 @@
 
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Methods per build:** B3O0PCH 2
+- **Burnout Revenge counterpart:** `CB4VehicleParams`, size 0x23A0, methods in `GameSource/World/B4World.cpp` ([layout](#burnout-revenge-layout-of-cb4vehicleparams))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3VehicleParams()` |  |  |  | `0x00190F30` 332 |  |  |
-| `operator =(const CB3VehicleParams&)` |  |  |  | `0x001BD640` 1620 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3VehicleParams()` |  |  |  | `0x00190F30` 332 |  |  | `CB4VehicleParams * CB4VehicleParams::CB4VehicleParams()` |
+| `operator =(const CB3VehicleParams&)` |  |  |  | `0x001BD640` 1620 |  |  |  |
+
+## Burnout Revenge layout of `CB4VehicleParams`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 322 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4VehicleParams {  // size 0x23A0
+    /* 0x000 */ CGtMatrix3x4 maWheelMatrices[6];
+    /* 0x180 */ CGtMatrix3x4 maBodyPartMatrices[8];
+    /* 0x380 */ CGtV3d maaBodyPartAttachPoints[8][2];
+    /* 0x480 */ CB4VehicleDeform mDeform;
+    /* 0x6E0 */ CGtV3dPlus mDistanceToWorldPlusNormal;
+    /* 0x6F0 */ CB4VehicleReflectivityData *mpReflectivityData;
+    /* 0x6F4 */ RwReal mrGlossinessGlass;
+    /* 0x6F8 */ RwReal mrSpecularityGlass;
+    /* 0x6FC */ signed char maeWheelAttachStates[6];
+    /* 0x702 */ signed char maeBodyPartAttachStates[8];
+    /* 0x70C */ float marWheelAttachHeightOffset[6];
+    /* 0x724 */ float marWheelRadii[6];
+    /* 0x73C */ float marWheelSpeeds[6];
+    /* 0x760 */ CGtMatrix3x4 maMainBoneMatrices[19];
+    /* 0xC20 */ CGtMatrix3x4 maMainAnimBoneMatrices[19];
+    /* 0x10E0 */ CGtMatrix3x4 maaBodyPartBoneMatrices[8][3];
+    /* 0x16E0 */ CGtMatrix3x4 maaBodyPartAnimBoneMatrices[8][3];
+    /* 0x1CE0 */ CGtV3d maMainBoneTranslationEnergy[19];
+    /* 0x1E10 */ CGtV3d maMainBoneRotationEnergy[19];
+    /* 0x1F40 */ float marMainBoneScaleEnergy[19];
+    /* 0x1F8C */ float maarMainBoneEnergy[19][7];
+    /* 0x21A0 */ float maarBodyPartBoneAngles[8][3];
+    /* 0x2200 */ float maarBodyPartBoneLengths[8][3];
+    /* 0x2260 */ float marHingeAngles[8];
+    /* 0x2280 */ float marWheelDamage[6];
+    /* 0x2298 */ float marBodyPartDamage[8];
+    /* 0x22B8 */ float marBodyPartFatigue[8];
+    /* 0x22D8 */ float marAjarDamageThreshold[8];
+    /* 0x22F8 */ float marLooseDamageThreshold[8];
+    /* 0x2318 */ float marDetachDamageThreshold[8];
+    /* 0x2340 */ CGtV3dPlus mAirRamPositionAndTime;
+    /* 0x2350 */ CGtV3dPlus mExplosionPositionAndTime;
+    /* 0x2360 */ RwReal mrTotalEnergy;
+    /* 0x2364 */ RwReal mrMaxEnergy;
+    /* 0x2368 */ RwReal mrRoofDamage;
+    /* 0x236C */ RwUInt8 meGlassState;
+    /* 0x236D */ RwUInt8 mx8EffectsFlags;
+    /* 0x236E */ RwUInt8 mx8SteamFireTriggered;
+    /* 0x236F */ unsigned char max8EffectsFlags[8];
+    /* 0x2377 */ unsigned char maeGlassState[8];
+    /* 0x237F */ RwUInt8 muSmokeAccumulator8;
+    /* 0x2380 */ RwUInt8 muDustAccumulator8;
+    /* 0x2381 */ RwUInt8 muDirtAccumulator8;
+    /* 0x2382 */ RwUInt8 muChunksAccumulator8;
+    /* 0x2383 */ bool mabMainObjectIsDamaged;
+    /* 0x2384 */ bool mabBodyPartIsDamaged[8];
+    /* 0x238C */ bool mbDrawMeAnyway;
+    /* 0x238D */ bool mbPayloadReleased;
+    /* 0x2390 */ CB4VehiclePayloadSet *mpCurrentPayload;
+    /* 0x2394 */ RwInt32 mnGear;
+    /* 0x2398 */ RwInt32 mnRPM;
+    /* 0x239C */ bool mbIsInAir;
+    /* 0x239D */ RwUInt8 mu8BoostingState;
+    /* 0x239E */ bool mbIsInDrift;
+    /* 0x239F */ bool mbBoostStart;
+    // methods
+    // CB4VehicleParams(const CB4VehicleParams &);
+    // CB4VehicleParams();
+};
+```
 
 ## Notes
 

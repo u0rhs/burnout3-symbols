@@ -11,14 +11,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00383930` 232 | `0x003F69E0` 276 | `0x0041E610` 276 | `0x00436850` 292 | `0x003D2FD0` proven |  |
-| `SetOpacity(float)` | `0x00383A20` 8 | `0x003F6B00` 8 | `0x0041E730` 8 | `0x00436810` 64 |  |  |
-| `Release()` | `0x00383A30` 8 | `0x003F6B10` 8 | `0x0041E740` 8 | `0x00436800` 16 |  |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,float)` | `0x00383A40` 120 | `0x003F6B20` 120 | `0x0041E750` 120 | `0x00436720` 224 | `0x003D30E0` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00383930` 232 | `0x003F69E0` 276 | `0x0041E610` 276 | `0x00436850` 292 | `0x003D2FD0` proven |  |  |
+| `SetOpacity(float)` | `0x00383A20` 8 | `0x003F6B00` 8 | `0x0041E730` 8 | `0x00436810` 64 |  |  |  |
+| `Release()` | `0x00383A30` 8 | `0x003F6B10` 8 | `0x0041E740` 8 | `0x00436800` 16 |  |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,float)` | `0x00383A40` 120 | `0x003F6B20` 120 | `0x0041E750` 120 | `0x00436720` 224 | `0x003D30E0` proven |  |  |
 
 ## Notes
 

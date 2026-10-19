@@ -9,39 +9,143 @@
 - **Methods per build:** DNAT_200 22, B3DEBUG 22, B3INTERN 20, B3O0PCH 26
 - **Retail (SLUS-21050):** 2 of its 22 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00441C60`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
+- **Burnout Revenge counterpart:** `CB4CrashScore`, size 0x630, methods in `GameSource/World/B4CrashScore.cpp` ([layout](#burnout-revenge-layout-of-cb4crashscore))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `BuildAftermathDrawList()` | `0x0037D760` 1176 | `0x003EF850` 1360 | `0x004178B0` 628 | `0x0042F190` 876 |  |  |
-| `Draw()` | `0x0037DC00` 252 | `0x003EFDA0` 252 | `0x00417B30` 252 | `0x0042F0D0` 148 |  |  |
-| `AddVehicleScoreToDrawList(CB3VehiclePhysics*)` | `0x0037DD00` 324 | `0x003EFEA0` 484 | `0x00417C30` 484 | `0x0042EE70` 604 |  |  |
-| `CrashBreakerVehiclesRemaining(int)` | `0x0037DE50` 220 | `0x003F0090` 220 | `0x00417E20` 188 | `0x0042EDA0` 196 |  |  |
-| `GetScoreForCar(CB3VehiclePhysics*)` | `0x0037DF30` 140 | `0x003F0170` 140 | `0x00417EE0` 140 | `0x0042ECE0` 180 |  |  |
-| `GetNumCrashedCars(int)` | `0x0037DFC0` 120 | `0x003F0200` 120 | `0x00417F70` 120 | `0x0042EC20` 192 |  |  |
-| `HandleCrashbreaker(int)` | `0x0037E040` 120 | `0x003F0280` 220 |  | `0x0042EAF0` 172 |  |  |
-| `HandleCrashBattleDelta(float,float,CB3VehiclePhysics*,CB3VehiclePhysics*)` | `0x0037E0C0` 220 | `0x003F0360` 340 | `0x00417FF0` 340 | `0x0042E910` 480 |  |  |
-| `AddCrashMultiplier(ECrashModePickupType,int)` | `0x0037E1A0` 32 | `0x003F04C0` 136 | `0x00418150` 252 | `0x0042E890` 128 |  |  |
-| `AddCrashScore(ECrashModePickupType,int)` | `0x0037E1C0` 68 | `0x003F0550` 168 | `0x00418250` 168 | `0x0042E7C0` 196 | `0x003CCE90` strong |  |
-| `GetFinalPlayerScore(int)` | `0x0037E210` 440 | `0x003F0600` 496 | `0x00418300` 408 | `0x0042E650` 360 |  |  |
-| `CalcPlayerMultiplier(int)` | `0x0037E3D0` 196 | `0x003F07F0` 292 |  | `0x0042E4F0` 352 |  |  |
-| `GetTotalPickupScore(int)` | `0x0037E4A0` 176 | `0x003F0920` 176 | `0x004184A0` 176 | `0x0042E3D0` 284 |  |  |
-| `CalcCrashCarsScore(int)` | `0x0037E550` 272 | `0x003F09D0` 272 | `0x00418550` 272 | `0x0042E150` 628 |  |  |
-| `HandleVehicleImpact(CB3VehiclePhysics*)` | `0x0037E660` 160 | `0x003F0AE0` 160 | `0x00418660` 160 | `0x0042E070` 212 |  |  |
-| `HandleCrashTrafficCar(CB3TrafficPhysics*,CB3TrafficVehicle*,bool,int)` | `0x0037E700` 252 | `0x003F0B80` 320 | `0x00418700` 320 | `0x0042DED0` 412 | `0x003CD430` unverified |  |
-| `HandleCrashRaceCar(CB3RaceCarPhysics*,int)` | `0x0037E800` 264 | `0x003F0CC0` 404 | `0x00418840` 404 | `0x0042DD30` 412 |  |  |
-| `Destruct()` | `0x0037E910` 8 | `0x003F0E60` 8 | `0x004189E0` 8 | `0x0042DD20` 16 |  |  |
-| `Release()` | `0x0037E920` 8 | `0x003F0E70` 8 | `0x004189F0` 8 | `0x0042DD10` 16 |  |  |
-| `Update()` | `0x0037E930` 8 | `0x003F0E80` 8 | `0x00418A00` 8 | `0x0042DD00` 16 |  |  |
-| `Prepare()` | `0x0037E940` 472 | `0x003F0E90` 472 | `0x00418A10` 324 | `0x0042D9F0` 784 |  |  |
-| `Construct()` | `0x0037EB20` 8 | `0x003F1070` 8 | `0x00418B60` 8 | `0x0042D9E0` 16 |  |  |
-| `CB3CrashScore()` |  |  |  | `0x00191520` 40 |  |  |
-| `DrawAftermathLabels()` |  |  |  | `0x0042F500` 236 |  |  |
-| `GetCrashingVehicleIndex(CB3VehiclePhysics*)` |  |  |  | `0x0042EBA0` 116 |  |  |
-| `SetScoreSwap()` |  |  |  | `0x003FBB90` 32 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `BuildAftermathDrawList()` | `0x0037D760` 1176 | `0x003EF850` 1360 | `0x004178B0` 628 | `0x0042F190` 876 |  |  |  |
+| `Draw()` | `0x0037DC00` 252 | `0x003EFDA0` 252 | `0x00417B30` 252 | `0x0042F0D0` 148 |  |  | `void CB4CrashScore::Draw(EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `AddVehicleScoreToDrawList(CB3VehiclePhysics*)` | `0x0037DD00` 324 | `0x003EFEA0` 484 | `0x00417C30` 484 | `0x0042EE70` 604 |  |  |  |
+| `CrashBreakerVehiclesRemaining(int)` | `0x0037DE50` 220 | `0x003F0090` 220 | `0x00417E20` 188 | `0x0042EDA0` 196 |  |  |  |
+| `GetScoreForCar(CB3VehiclePhysics*)` | `0x0037DF30` 140 | `0x003F0170` 140 | `0x00417EE0` 140 | `0x0042ECE0` 180 |  |  |  |
+| `GetNumCrashedCars(int)` | `0x0037DFC0` 120 | `0x003F0200` 120 | `0x00417F70` 120 | `0x0042EC20` 192 |  |  | `RwUInt8 CB4CrashScore::GetNumCrashedCars(EPlayerCarIndex lePlayerIndex) const` (same name, different parameters) |
+| `HandleCrashbreaker(int)` | `0x0037E040` 120 | `0x003F0280` 220 |  | `0x0042EAF0` 172 |  |  |  |
+| `HandleCrashBattleDelta(float,float,CB3VehiclePhysics*,CB3VehiclePhysics*)` | `0x0037E0C0` 220 | `0x003F0360` 340 | `0x00417FF0` 340 | `0x0042E910` 480 |  |  |  |
+| `AddCrashMultiplier(ECrashModePickupType,int)` | `0x0037E1A0` 32 | `0x003F04C0` 136 | `0x00418150` 252 | `0x0042E890` 128 |  |  | `void CB4CrashScore::AddCrashMultiplier(EPlayerCarIndex lePlayerCarIndex, CB4VehiclePhysics *lpVehiclePhysics)` (same name, different parameters) |
+| `AddCrashScore(ECrashModePickupType,int)` | `0x0037E1C0` 68 | `0x003F0550` 168 | `0x00418250` 168 | `0x0042E7C0` 196 | `0x003CCE90` strong |  | `void CB4CrashScore::AddCrashScore(ECrashModePickupType leCrashModePickup, EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `GetFinalPlayerScore(int)` | `0x0037E210` 440 | `0x003F0600` 496 | `0x00418300` 408 | `0x0042E650` 360 |  |  | `RwInt32 CB4CrashScore::GetFinalPlayerScore(int lnMultiplier, int lnCarsScore, int lnPickupScore, int lnPropsScore, int lnScoreSwapScore) const` (same name, different parameters) |
+| `CalcPlayerMultiplier(int)` | `0x0037E3D0` 196 | `0x003F07F0` 292 |  | `0x0042E4F0` 352 |  |  |  |
+| `GetTotalPickupScore(int)` | `0x0037E4A0` 176 | `0x003F0920` 176 | `0x004184A0` 176 | `0x0042E3D0` 284 |  |  | `RwInt32 CB4CrashScore::GetTotalPickupScore(EPlayerCarIndex lePlayerIndex) const` (same name, different parameters) |
+| `CalcCrashCarsScore(int)` | `0x0037E550` 272 | `0x003F09D0` 272 | `0x00418550` 272 | `0x0042E150` 628 |  |  | `RwInt32 CB4CrashScore::CalcCrashCarsScore(EPlayerCarIndex lePlayerIndex) const` (same name, different parameters) |
+| `HandleVehicleImpact(CB3VehiclePhysics*)` | `0x0037E660` 160 | `0x003F0AE0` 160 | `0x00418660` 160 | `0x0042E070` 212 |  |  | `bool CB4CrashScore::HandleVehicleImpact(CB4VehiclePhysics *lpVehiclePhysics, CB4RaceCarPhysics *lpRaceCarPhysics)` (same name, different parameters) |
+| `HandleCrashTrafficCar(CB3TrafficPhysics*,CB3TrafficVehicle*,bool,int)` | `0x0037E700` 252 | `0x003F0B80` 320 | `0x00418700` 320 | `0x0042DED0` 412 | `0x003CD430` unverified |  | `void CB4CrashScore::HandleCrashTrafficCar(CB4TrafficPhysics *lpTrafficPhysics, CB4TrafficVehicle *lpTrafficCar, bool lbRegisterCrashScore)` (same name, different parameters) |
+| `HandleCrashRaceCar(CB3RaceCarPhysics*,int)` | `0x0037E800` 264 | `0x003F0CC0` 404 | `0x00418840` 404 | `0x0042DD30` 412 |  |  | `void CB4CrashScore::HandleCrashRaceCar(CB4RaceCarPhysics *lpRaceCarPhysics)` (same name, different parameters) |
+| `Destruct()` | `0x0037E910` 8 | `0x003F0E60` 8 | `0x004189E0` 8 | `0x0042DD20` 16 |  |  | `void CB4CrashScore::Destruct()` |
+| `Release()` | `0x0037E920` 8 | `0x003F0E70` 8 | `0x004189F0` 8 | `0x0042DD10` 16 |  |  | `void CB4CrashScore::Release()` |
+| `Update()` | `0x0037E930` 8 | `0x003F0E80` 8 | `0x00418A00` 8 | `0x0042DD00` 16 |  |  | `void CB4CrashScore::Update()` |
+| `Prepare()` | `0x0037E940` 472 | `0x003F0E90` 472 | `0x00418A10` 324 | `0x0042D9F0` 784 |  |  | `bool CB4CrashScore::Prepare()` |
+| `Construct()` | `0x0037EB20` 8 | `0x003F1070` 8 | `0x00418B60` 8 | `0x0042D9E0` 16 |  |  | `void CB4CrashScore::Construct()` |
+| `CB3CrashScore()` |  |  |  | `0x00191520` 40 |  |  |  |
+| `DrawAftermathLabels()` |  |  |  | `0x0042F500` 236 |  |  |  |
+| `GetCrashingVehicleIndex(CB3VehiclePhysics*)` |  |  |  | `0x0042EBA0` 116 |  |  | `RwInt32 CB4CrashScore::GetCrashingVehicleIndex(CB4VehiclePhysics *lpVehicle) const` (same name, different parameters) |
+| `SetScoreSwap()` |  |  |  | `0x003FBB90` 32 |  |  |  |
+
+## Burnout Revenge layout of `CB4CrashScore`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 146 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CrashScore {  // size 0x630
+    /* 0x000 */ RwInt32 mnCheatModeFinalCrashScoreOverload;
+    /* 0x008 */ CGtRandom mScoreRandomiser;
+    /* 0x010 */ CB4TrafficVehicle *mapTargetVehicleList[1];
+    /* 0x014 */ RwInt32 mnTargetVehicleCount;
+    /* 0x018 */ int manTargetVehicleCrashedCount[2];
+    /* 0x020 */ CB4VehiclePhysics *mapCurrentCrashCars[50];
+    /* 0x0E8 */ int manCrashingCarScores[50];
+    /* 0x1B0 */ float marCrashingCarTimes[50];
+    /* 0x278 */ int manMultiplierScores[50];
+    /* 0x340 */ float marMultiplierTimes[50];
+    /* 0x408 */ ERaceCarIndex maeCrashingCarOwner[50];
+    /* 0x4D0 */ unsigned int mauCrashingCarScoresAccum[2];
+    /* 0x4D8 */ RwUInt32 muCrashingCarCount;
+    /* 0x4DC */ bool mbGiveMeScoreCheat;
+    /* 0x4E0 */ RwInt32 mnGiveMeScoreCheat;
+    /* 0x4E4 */ ECrashModePickupType maaeCrashScorePickups[2][5];
+    /* 0x50C */ float maarCrashScoreProps[2][5];
+    /* 0x534 */ CB4VehiclePhysics *mapCurrentAftermathCars[8];
+    /* 0x554 */ float marAftermathCarsStartTime[8];
+    /* 0x574 */ RwUInt8 mu8NextAftermathSlotIndex;
+    /* 0x578 */ int man32CrashMultipliers[2];
+    /* 0x580 */ CCachedHeartbreakerScore maHeartbreakerScores[2];
+    /* 0x5A0 */ int manHeartbreakerCounts[2];
+    /* 0x5A8 */ int manNetworkCarsStoredScores[6];
+    /* 0x5C0 */ int manNetworkCarsStoredMultiplier[6];
+    /* 0x5D8 */ unsigned int mauTotalCrashedCars[2];
+    /* 0x5E0 */ RwUInt8 mu8NumCrashingCars;
+    /* 0x5E1 */ bool mabCrashCarHasImpacted[50];
+    /* 0x613 */ unsigned char mau8NumScorePickups[2];
+    /* 0x615 */ unsigned char mau8NumScoreProps[2];
+    /* 0x617 */ bool mabCrashBreakerOverride[2];
+    /* 0x619 */ bool mabDoneCrashBreaker[2];
+    /* 0x61B */ bool mbCrashBattleScoring;
+    /* 0x61C */ RwInt32 mnScoreSwapTotalScoreDiff;
+    /* 0x620 */ RwInt32 mnScoreSwapMultiplierDiff;
+    /* 0x624 */ bool mbEnabled;
+    /* 0x628 */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CB4CrashScore(const CB4CrashScore &);
+    // CB4CrashScore();
+    // virtual void Construct();
+    // virtual bool Prepare();
+    // virtual void Update();
+    // virtual void Release();
+    // virtual void Destruct();
+    // void HandleCrashRaceCar(CB4RaceCarPhysics *);
+    // void HandleCrashTrafficCar(CB4TrafficPhysics *, CB4TrafficVehicle *, bool);
+    // bool HandleVehicleImpact(CB4VehiclePhysics *, CB4RaceCarPhysics *);
+    // void HandleTargetVehicleCrash(EPlayerCarIndex);
+    // void AddCrashScore(ECrashModePickupType, EPlayerCarIndex);
+    // void AddCrashProp(float, EPlayerCarIndex);
+    // void AddCrashMultiplier(EPlayerCarIndex, CB4VehiclePhysics *);
+    // void AddHeartbreaker(EPlayerCarIndex);
+    // RwInt32 CalculateHeartbreakerScoreForItem(int, int) const;
+    // RwUInt8 GetNumCrashedCars(EPlayerCarIndex) const;
+    // bool GetScoreForActiveCar(EPlayerCarIndex, CB4VehiclePhysics *, int *, float *) const;
+    // bool GetMultiplierForActiveCar(CB4VehiclePhysics *, int *, float *) const;
+    // RwInt32 CrashBreakerVehiclesRemaining(EPlayerCarIndex) const;
+    // RwInt32 GetFinalPlayerScoreFromCarIndex(EPlayerCarIndex) const;
+    // RwInt32 GetFinalPlayerScoreFromRaceCarResults(CB4RaceCarRoundResults *) const;
+    // void SetCrashBreakerOverride(EPlayerCarIndex);
+    // RwInt32 CalcCrashCarsScore(EPlayerCarIndex) const;
+    // RwInt32 GetTotalPickupScore(EPlayerCarIndex) const;
+    // RwInt32 GetTotalPropScore(EPlayerCarIndex) const;
+    // RwInt32 GetTargetVehicleScore(EPlayerCarIndex) const;
+    // RwUInt8 GetMultipliers(EPlayerCarIndex) const;
+    // RwInt32 GetHeartbreakerScore(EPlayerCarIndex) const;
+    // RwInt32 GetHeartbreakerCount(EPlayerCarIndex) const;
+    // RwInt32 GetScoreSwapScore(EPlayerCarIndex) const;
+    // void DoScoreSwap();
+    // bool WereScoresSwapped() const;
+    // void SetGiveMeScoreCheat(int);
+    // ECrashModePickupType GetPlayerScorePickup(EPlayerCarIndex, int) const;
+    // RwUInt8 GetNumPlayerScorePickups(EPlayerCarIndex) const;
+    // void SetPlayerDoneCrashBreaker(EPlayerCarIndex);
+    // bool GetPlayerDoneCrashBreaker(EPlayerCarIndex) const;
+    // void AddTargetVehicle(CB4TrafficVehicle *);
+    // CB4TrafficVehicle * GetTargetVehicle(int) const;
+    // RwInt32 GetTargetVehicleIndex(unsigned char);
+    // RwInt32 GetTargetVehicleCount() const;
+    // void AddVehicleToLabelDrawList(CB4VehiclePhysics *);
+    // void Draw(EPlayerCarIndex);
+    // RwInt32 GetStoredNetworkCarScore(int) const;
+    // void SetStoredNetworkCarScore(int, int);
+    // RwInt32 GetStoredNetworkCarMultiplier(int) const;
+    // void SetStoredNetworkCarMultiplier(int, int);
+    // RwInt32 GetFinalPlayerScoreFromCarIndexWithoutMultipliers(EPlayerCarIndex) const;
+    // void RemoveVehicle(CB4VehiclePhysics *);
+    // void Enable(bool);
+    // bool IsEnabled() const;
+    // RwUInt32 GetTotalCrashedCars(EPlayerCarIndex) const;
+    // RwInt32 GetCrashingVehicleIndex(CB4VehiclePhysics *) const;
+    // RwInt32 GetFinalPlayerScore(int, int, int, int, int) const;
+    // RwInt32 GetScoreSwapMultiplier(EPlayerCarIndex) const;
+};
+```
 
 ## Notes
 

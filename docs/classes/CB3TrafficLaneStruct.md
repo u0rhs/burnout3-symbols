@@ -6,14 +6,33 @@
 
 - **Area:** [Traffic](../systems/traffic.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4TrafficLaneStruct`, size 0x014, methods in `SharedClasses/TrafficData/B4TrafficLaneStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4trafficlanestruct))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Fixup(unsigned int)` |  |  |  | `0x00282000` 96 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Fixup(unsigned int)` |  |  |  | `0x00282000` 96 |  |  | `void CB4TrafficLaneStruct::Fixup(unsigned int lnBase)` |
+
+## Burnout Revenge layout of `CB4TrafficLaneStruct`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 317 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficLaneStruct {  // size 0x014
+    /* 0x000 */ CB4SegmentNodeStruct *mpSegmentNodeData;
+    /* 0x004 */ CB4SegmentDimensions *mpSegmentDimensions;
+    /* 0x008 */ CB4TrafficSegmentStruct *mpTrafficSegmentData;
+    /* 0x00C */ CGtV3d *mpNodes;
+    /* 0x010 */ RwInt32 mnNumSegments;
+    // methods
+    // CB4TrafficLaneStruct(const CB4TrafficLaneStruct &);
+    // CB4TrafficLaneStruct();
+    // void Fixup(unsigned int);
+};
+```
 
 ## Notes
 

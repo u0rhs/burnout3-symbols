@@ -7,17 +7,39 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `GtNetworkConditions.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 2, B3INTERN 3, B3O0PCH 3
+- **Burnout Revenge counterpart:** `CGtNetworkConditions`, size 0x001, methods in `GameShared/GameClasses/System/Networking/Packeting/GtNetworkConditions.cpp` ([layout](#burnout-revenge-layout-of-cgtnetworkconditions))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SendDelayedMessages(int)` | `0x00211620` 8 | `0x0021FBC0` 8 | `0x0025F3B0` 8 | `0x00261E70` 16 |  |  |
-| `FakeNetworkConditionsWillDealWithThisPacket(unsigned char*,int,int,int,int)` | `0x00211630` 8 | `0x0021FBD0` 8 | `0x0025F3C0` 8 | `0x00261E50` 20 |  |  |
-| `Construct(CGtNetworkAdapter*,int)` | `0x00211640` 8 |  | `0x0025F3D0` 8 |  |  |  |
-| `SetMessageSentCallback(void (*)` |  |  |  | `0x00237500` 20 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SendDelayedMessages(int)` | `0x00211620` 8 | `0x0021FBC0` 8 | `0x0025F3B0` 8 | `0x00261E70` 16 |  |  | `void CGtNetworkConditions::SendDelayedMessages(int lnCurrentFrame)` |
+| `FakeNetworkConditionsWillDealWithThisPacket(unsigned char*,int,int,int,int)` | `0x00211630` 8 | `0x0021FBD0` 8 | `0x0025F3C0` 8 | `0x00261E50` 20 |  |  | `bool CGtNetworkConditions::FakeNetworkConditionsWillDealWithThisPacket(unsigned char *lpData, int lnLength, int lnIPAddress, int lnPort, int lnCurrentFrame)` |
+| `Construct(CGtNetworkAdapter*,int)` | `0x00211640` 8 |  | `0x0025F3D0` 8 |  |  |  | `void CGtNetworkConditions::Construct(CGtNetworkAdapter *lpNetworkAdapter, int lnMaxMessageSize)` |
+| `SetMessageSentCallback(void (*)` |  |  |  | `0x00237500` 20 |  |  |  |
+
+## Burnout Revenge layout of `CGtNetworkConditions`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 129 file(s), e.g. `GameShared/GameClasses/Development/AutomaticTest/GtAutoTestComms.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtNetworkConditions {  // size 0x001
+    // methods
+    // CGtNetworkConditions(const CGtNetworkConditions &);
+    // CGtNetworkConditions();
+    // void Construct(CGtNetworkAdapter *, int);
+    // void Destruct();
+    // bool FakeNetworkConditionsWillDealWithThisPacket(unsigned char *, int, int, int, int);
+    // void SendDelayedMessages(int);
+    // MessageSentCallback * SetMessageSentCallback(void (*)(void *));
+    // bool IsRandomPacketDrop();
+    // RwInt32 GetPacketDelayTime();
+    // void Enable();
+    // void Disable();
+};
+```
 
 ## Notes
 

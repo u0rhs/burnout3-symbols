@@ -9,63 +9,178 @@
 - **Methods per build:** DNAT_200 29, B3DEBUG 31, B3INTERN 33, B3O0PCH 46
 - **Retail (SLUS-21050):** 10 of its 29 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FF70`, 64 bytes = 16 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 14 virtual functions)
+- **Burnout Revenge counterpart:** `CGtPS2LibNet`, size 0x798, methods in `GameShared/GameClasses/System/Networking/Packeting/Ps2/GtPS2LibNet.cpp` ([layout](#burnout-revenge-layout-of-cgtps2libnet))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SocketIsSuspended()` | `0x001EEE90` 12 | `0x001F1680` 12 | `0x00224650` 12 | `0x0023E8B0` 52 |  |  |
-| `ReleaseInitLibnet()` | `0x001EEEA0` 192 | `0x001F1D50` 1280 | `0x00224CD0` 1280 | `0x0023DB30` 872 |  |  |
-| `SyncInitLibnet()` | `0x001EEF60` 964 | `0x001F2250` 5320 | `0x002251D0` 4868 | `0x0023C6C0` 5224 |  |  |
-| `SyncGetConfigs()` | `0x001EF330` 472 | `0x001F3720` 1208 | `0x002264E0` 1008 | `0x0023C100` 1284 |  |  |
-| `Sync()` | `0x001EF510` 236 | `0x001F3BE0` 372 | `0x002268D0` 180 | `0x0023BF10` 312 |  |  |
-| `TCPThread(void*)` | `0x001EF600` 220 | `0x001F3D60` 1388 | `0x00226990` 1388 | `0x0023BA20` 976 |  |  |
-| `RecvThread(void*)` | `0x001EF6E0` 596 | `0x001F42D0` 1120 | `0x00226F00` 996 | `0x0023B660` 948 |  |  |
-| `SendThread(void*)` | `0x001EF940` 316 | `0x001F4730` 412 | `0x002272F0` 288 | `0x0023B430` 552 |  |  |
-| `SetNetworkConfigFileLocation(const char*)` | `0x001EFA80` 12 | `0x001F5680` 12 | `0x002276B0` 12 | `0x0023AB30` 56 |  |  |
-| `GetNetConfigList() const` | `0x001EFA90` 12 |  |  |  |  |  |
-| `GetModuleData(CModuleData*,int,bool) const` | `0x001EFAA0` 200 |  |  |  |  |  |
-| `ClearSendBuffer()` | `0x001EFB70` 148 | `0x001F56E0` 300 | `0x002277E0` 300 | `0x0023A9B0` 320 |  |  |
-| `ChangePort(int)` | `0x001EFC10` 196 | `0x001F5810` 852 | `0x00227910` 852 | `0x0023A780` 548 | `0x0022E830` strong |  |
-| `Receive(void*,int)` | `0x001EFCE0` 92 | `0x001F5B70` 456 | `0x00227C70` 456 | `0x0023A650` 292 | `0x0022E900` strong |  |
-| `Send(void*,int)` | `0x001EFD40` 12 | `0x001F5D40` 416 | `0x00227E40` 416 | `0x0023A550` 256 | `0x0022E960` strong |  |
-| `Disconnect()` | `0x001EFD50` 92 | `0x001F5EE0` 264 | `0x00227FE0` 264 | `0x0023A440` 268 | `0x0022E970` strong |  |
-| `Connect(int,int)` | `0x001EFDB0` 316 | `0x001F5FF0` 1008 | `0x002280F0` 1008 | `0x0023A0F0` 840 | `0x0022E9D0` strong |  |
-| `TCPDestroy()` | `0x001EFEF0` 80 | `0x001F63E0` 236 | `0x002284E0` 236 | `0x00239FF0` 248 |  |  |
-| `TCPCreate()` | `0x001EFF40` 68 | `0x001F64D0` 328 | `0x002285D0` 328 | `0x00239EF0` 248 |  |  |
-| `ResumeSocket(int)` | `0x001EFF90` 184 | `0x001F6620` 452 | `0x00228720` 452 | `0x00239DB0` 320 | `0x0022EB40` strong |  |
-| `SuspendSocket()` | `0x001F0050` 96 | `0x001F67F0` 492 | `0x002288F0` 492 | `0x00239C40` 360 | `0x0022EC00` strong |  |
-| `ReceiveFrom(void**,int*,int*)` | `0x001F00B0` 368 | `0x001F69E0` 1080 | `0x00228AE0` 1080 | `0x002399E0` 600 | `0x0022EC60` strong |  |
-| `SendTo(void*,int,int,int)` | `0x001F0220` 548 | `0x001F6E20` 2068 | `0x00228F20` 2068 | `0x002395B0` 912 | `0x0022EDE0` strong |  |
-| `UpInterface(int)` | `0x001F0450` 32 | `0x001F7640` 320 | `0x00229740` 240 | `0x00239490` 276 | `0x0022F000` strong |  |
-| `Update(int)` | `0x001F0470` 476 | `0x001F7780` 1460 | `0x00229830` 584 | `0x00239040` 1096 |  |  |
-| `Release()` | `0x001F0650` 256 | `0x001F7D40` 604 | `0x00229A80` 488 | `0x00238E20` 532 |  |  |
-| `Prepare()` | `0x001F0750` 464 | `0x001F7FA0` 2060 | `0x00229C70` 560 | `0x002386D0` 1864 |  |  |
-| `Destruct()` | `0x001F0920` 280 |  | `0x00229EA0` 1816 |  |  |  |
-| `Construct()` | `0x001F0A40` 384 | `0x001F87B0` 1548 | `0x0022A5C0` 540 | `0x00238100` 1488 |  |  |
-| `IncrementRecvBufferFill(int)` |  | `0x001F1690` 376 | `0x00224660` 376 | `0x0023E530` 408 |  |  |
-| `IncrementRecvBufferEmpty(int)` |  | `0x001F1810` 352 | `0x002247E0` 352 | `0x0023E3A0` 388 |  |  |
-| `OpenSocket(int)` |  | `0x001F1970` 988 | `0x00224940` 908 | `0x0023DEA0` 708 |  |  |
-| `PutMessageOnWire(CMessageData*)` |  | `0x001F48D0` 3496 | `0x00227410` 672 | `0x0023AB70` 1612 |  |  |
-| `GetNetConfigList()` |  | `0x001F5690` 76 | `0x002276C0` 76 | `0x0023AAF0` 52 |  |  |
-| `CGtPS2LibNet()` |  |  |  | `0x0028A030` 60 |  |  |
-| `CloseSocket()` |  |  |  | `0x0023E170` 124 |  |  |
-| `EndThreadTimeCheck(bool)` |  |  |  | `0x0023E200` 16 |  |  |
-| `GetModuleData(CModuleData*,int,bool)` |  |  | `0x00227710` 200 |  |  |  |
-| `IncrementSendBufferEmpty()` |  |  |  | `0x0023E210` 120 |  |  |
-| `IncrementSendBufferFill()` |  |  |  | `0x0023E290` 148 |  |  |
-| `OpenThread(void*)` |  |  |  | `0x0023BDF0` 276 |  |  |
-| `RecvBufferIsFull()` |  |  |  | `0x0023E6D0` 292 |  |  |
-| `ReleaseCheckDNAS()` |  |  |  | `0x0023C0F0` 16 |  |  |
-| `ReleaseGetConfigs()` |  |  |  | `0x0023C610` 172 |  |  |
-| `ResetError()` |  |  |  | `0x0023E880` 36 |  |  |
-| `SendBufferIsFull()` |  |  |  | `0x0023E330` 112 |  |  |
-| `SetATWINMONBuild(bool)` |  |  |  | `0x001D9F70` 36 |  |  |
-| `SetError(ENetworkAdaptorError)` |  |  |  | `0x0023E800` 128 |  |  |
-| `StartThreadTimeCheck(bool)` |  |  |  | `0x0023E1F0` 16 |  |  |
-| `SyncCheckDNAS()` |  |  |  | `0x0023C050` 148 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SocketIsSuspended()` | `0x001EEE90` 12 | `0x001F1680` 12 | `0x00224650` 12 | `0x0023E8B0` 52 |  |  | `bool CGtPS2LibNet::SocketIsSuspended()` |
+| `ReleaseInitLibnet()` | `0x001EEEA0` 192 | `0x001F1D50` 1280 | `0x00224CD0` 1280 | `0x0023DB30` 872 |  |  | `void CGtPS2LibNet::ReleaseInitLibnet()` |
+| `SyncInitLibnet()` | `0x001EEF60` 964 | `0x001F2250` 5320 | `0x002251D0` 4868 | `0x0023C6C0` 5224 |  |  | `void CGtPS2LibNet::SyncInitLibnet()` |
+| `SyncGetConfigs()` | `0x001EF330` 472 | `0x001F3720` 1208 | `0x002264E0` 1008 | `0x0023C100` 1284 |  |  | `void CGtPS2LibNet::SyncGetConfigs()` |
+| `Sync()` | `0x001EF510` 236 | `0x001F3BE0` 372 | `0x002268D0` 180 | `0x0023BF10` 312 |  |  | `void CGtPS2LibNet::Sync()` |
+| `TCPThread(void*)` | `0x001EF600` 220 | `0x001F3D60` 1388 | `0x00226990` 1388 | `0x0023BA20` 976 |  |  | `RwInt32 CGtPS2LibNet::TCPThread(void *lpArgs)` |
+| `RecvThread(void*)` | `0x001EF6E0` 596 | `0x001F42D0` 1120 | `0x00226F00` 996 | `0x0023B660` 948 |  |  | `RwInt32 CGtPS2LibNet::RecvThread(void *lpArgs)` |
+| `SendThread(void*)` | `0x001EF940` 316 | `0x001F4730` 412 | `0x002272F0` 288 | `0x0023B430` 552 |  |  | `RwInt32 CGtPS2LibNet::SendThread(void *lpArgs)` |
+| `SetNetworkConfigFileLocation(const char*)` | `0x001EFA80` 12 | `0x001F5680` 12 | `0x002276B0` 12 | `0x0023AB30` 56 |  |  | `void CGtPS2LibNet::SetNetworkConfigFileLocation(const char *lacNetDBLocation)` |
+| `GetNetConfigList() const` | `0x001EFA90` 12 |  |  |  |  |  | `ezNetCnfCombinationList_t * CGtPS2LibNet::GetNetConfigList() const` |
+| `GetModuleData(CModuleData*,int,bool) const` | `0x001EFAA0` 200 |  |  |  |  |  | `RwBool CGtPS2LibNet::GetModuleData(CModuleData *lpModuleData, int lnModuleIndex, bool lbDiskBuild) const` |
+| `ClearSendBuffer()` | `0x001EFB70` 148 | `0x001F56E0` 300 | `0x002277E0` 300 | `0x0023A9B0` 320 |  |  | `void CGtPS2LibNet::ClearSendBuffer()` |
+| `ChangePort(int)` | `0x001EFC10` 196 | `0x001F5810` 852 | `0x00227910` 852 | `0x0023A780` 548 | `0x0022E830` strong |  | `void CGtPS2LibNet::ChangePort(int lnPort)` |
+| `Receive(void*,int)` | `0x001EFCE0` 92 | `0x001F5B70` 456 | `0x00227C70` 456 | `0x0023A650` 292 | `0x0022E900` strong |  | `RwInt32 CGtPS2LibNet::Receive(void *lpData, int lnLength)` |
+| `Send(void*,int)` | `0x001EFD40` 12 | `0x001F5D40` 416 | `0x00227E40` 416 | `0x0023A550` 256 | `0x0022E960` strong |  | `void CGtPS2LibNet::Send(void *lpData, int lnLength)` |
+| `Disconnect()` | `0x001EFD50` 92 | `0x001F5EE0` 264 | `0x00227FE0` 264 | `0x0023A440` 268 | `0x0022E970` strong |  | `ETCPThreadState CGtPS2LibNet::Disconnect()` |
+| `Connect(int,int)` | `0x001EFDB0` 316 | `0x001F5FF0` 1008 | `0x002280F0` 1008 | `0x0023A0F0` 840 | `0x0022E9D0` strong |  | `ETCPThreadState CGtPS2LibNet::Connect(int lnIPAddress, int lnPort)` |
+| `TCPDestroy()` | `0x001EFEF0` 80 | `0x001F63E0` 236 | `0x002284E0` 236 | `0x00239FF0` 248 |  |  | `void CGtPS2LibNet::TCPDestroy()` |
+| `TCPCreate()` | `0x001EFF40` 68 | `0x001F64D0` 328 | `0x002285D0` 328 | `0x00239EF0` 248 |  |  | `void CGtPS2LibNet::TCPCreate()` |
+| `ResumeSocket(int)` | `0x001EFF90` 184 | `0x001F6620` 452 | `0x00228720` 452 | `0x00239DB0` 320 | `0x0022EB40` strong |  | `void CGtPS2LibNet::ResumeSocket(int lnNewPort)` |
+| `SuspendSocket()` | `0x001F0050` 96 | `0x001F67F0` 492 | `0x002288F0` 492 | `0x00239C40` 360 | `0x0022EC00` strong |  | `void CGtPS2LibNet::SuspendSocket()` |
+| `ReceiveFrom(void**,int*,int*)` | `0x001F00B0` 368 | `0x001F69E0` 1080 | `0x00228AE0` 1080 | `0x002399E0` 600 | `0x0022EC60` strong |  | `RwInt32 CGtPS2LibNet::ReceiveFrom(void **lppData, int *lpnIPAddress, int *lpnPort)` |
+| `SendTo(void*,int,int,int)` | `0x001F0220` 548 | `0x001F6E20` 2068 | `0x00228F20` 2068 | `0x002395B0` 912 | `0x0022EDE0` strong |  | `void CGtPS2LibNet::SendTo(void *lpData, int lnLength, int lnIPAddress, int lnPort)` |
+| `UpInterface(int)` | `0x001F0450` 32 | `0x001F7640` 320 | `0x00229740` 240 | `0x00239490` 276 | `0x0022F000` strong |  | `ENetworkStatus CGtPS2LibNet::UpInterface(int lnNetworkConfigIndex)` |
+| `Update(int)` | `0x001F0470` 476 | `0x001F7780` 1460 | `0x00229830` 584 | `0x00239040` 1096 |  |  | `ENetworkStatus CGtPS2LibNet::Update(int lnCurrentFrame, float lrTimeStep)` (same name, different parameters) |
+| `Release()` | `0x001F0650` 256 | `0x001F7D40` 604 | `0x00229A80` 488 | `0x00238E20` 532 |  |  | `void CGtPS2LibNet::Release()` |
+| `Prepare()` | `0x001F0750` 464 | `0x001F7FA0` 2060 | `0x00229C70` 560 | `0x002386D0` 1864 |  |  | `ENetworkStatus CGtPS2LibNet::Prepare()` |
+| `Destruct()` | `0x001F0920` 280 |  | `0x00229EA0` 1816 |  |  |  | `void CGtPS2LibNet::Destruct()` |
+| `Construct()` | `0x001F0A40` 384 | `0x001F87B0` 1548 | `0x0022A5C0` 540 | `0x00238100` 1488 |  |  | `void CGtPS2LibNet::Construct()` |
+| `IncrementRecvBufferFill(int)` |  | `0x001F1690` 376 | `0x00224660` 376 | `0x0023E530` 408 |  |  | `void CGtPS2LibNet::IncrementRecvBufferFill(int lnPtrIncrement)` |
+| `IncrementRecvBufferEmpty(int)` |  | `0x001F1810` 352 | `0x002247E0` 352 | `0x0023E3A0` 388 |  |  | `void CGtPS2LibNet::IncrementRecvBufferEmpty(int lnPtrIncrement)` |
+| `OpenSocket(int)` |  | `0x001F1970` 988 | `0x00224940` 908 | `0x0023DEA0` 708 |  |  | `void CGtPS2LibNet::OpenSocket(int lnPort)` |
+| `PutMessageOnWire(CMessageData*)` |  | `0x001F48D0` 3496 | `0x00227410` 672 | `0x0023AB70` 1612 |  |  | `void CGtPS2LibNet::PutMessageOnWire(CMessageData *lpMsgData)` |
+| `GetNetConfigList()` |  | `0x001F5690` 76 | `0x002276C0` 76 | `0x0023AAF0` 52 |  |  | `ezNetCnfCombinationList_t * CGtPS2LibNet::GetNetConfigList() const` (same name, different parameters) |
+| `CGtPS2LibNet()` |  |  |  | `0x0028A030` 60 |  |  |  |
+| `CloseSocket()` |  |  |  | `0x0023E170` 124 |  |  | `void CGtPS2LibNet::CloseSocket()` |
+| `EndThreadTimeCheck(bool)` |  |  |  | `0x0023E200` 16 |  |  | `void CGtPS2LibNet::EndThreadTimeCheck(bool lbSend)` |
+| `GetModuleData(CModuleData*,int,bool)` |  |  | `0x00227710` 200 |  |  |  |  |
+| `IncrementSendBufferEmpty()` |  |  |  | `0x0023E210` 120 |  |  | `void CGtPS2LibNet::IncrementSendBufferEmpty()` |
+| `IncrementSendBufferFill()` |  |  |  | `0x0023E290` 148 |  |  | `void CGtPS2LibNet::IncrementSendBufferFill()` |
+| `OpenThread(void*)` |  |  |  | `0x0023BDF0` 276 |  |  | `RwInt32 CGtPS2LibNet::OpenThread(void *lpArgs)` |
+| `RecvBufferIsFull()` |  |  |  | `0x0023E6D0` 292 |  |  | `bool CGtPS2LibNet::RecvBufferIsFull()` |
+| `ReleaseCheckDNAS()` |  |  |  | `0x0023C0F0` 16 |  |  | `void CGtPS2LibNet::ReleaseCheckDNAS()` |
+| `ReleaseGetConfigs()` |  |  |  | `0x0023C610` 172 |  |  | `void CGtPS2LibNet::ReleaseGetConfigs()` |
+| `ResetError()` |  |  |  | `0x0023E880` 36 |  |  | `void CGtPS2LibNet::ResetError()` |
+| `SendBufferIsFull()` |  |  |  | `0x0023E330` 112 |  |  | `bool CGtPS2LibNet::SendBufferIsFull()` |
+| `SetATWINMONBuild(bool)` |  |  |  | `0x001D9F70` 36 |  |  |  |
+| `SetError(ENetworkAdaptorError)` |  |  |  | `0x0023E800` 128 |  |  | `void CGtPS2LibNet::SetError(ENetworkAdaptorError leError)` |
+| `StartThreadTimeCheck(bool)` |  |  |  | `0x0023E1F0` 16 |  |  | `void CGtPS2LibNet::StartThreadTimeCheck(bool lbSend)` |
+| `SyncCheckDNAS()` |  |  |  | `0x0023C050` 148 |  |  | `void CGtPS2LibNet::SyncCheckDNAS()` |
+
+## Burnout Revenge layout of `CGtPS2LibNet`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 36 file(s), e.g. `GameShared/GameClasses/System/Networking/Packeting/Ps2/GtPS2LibNet.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtPS2LibNet : public CGtNetworkAdapter {  // size 0x798
+    // base CGtNetworkAdapter at 0x000
+    /* 0x04C */ RwInt32 mnGetStatusFrameCount;
+    /* 0x050 */ ENetworkOperation meOperation;
+    /* 0x054 */ bool mbOperationFinished;
+    /* 0x055 */ bool mbWantToSleepOpenThread;
+    /* 0x056 */ bool mbOpenThreadSleeping;
+    /* 0x057 */ bool mbATWINMON;
+    /* 0x058 */ bool mbReportedPrepareError;
+    /* 0x059 */ bool mbReportedUpdateError;
+    /* 0x05C */ sceSifMClientData mMSIFRPCClientData;
+    /* 0x098 */ GtThreadHandle mSendThreadHandle;
+    /* 0x09C */ GtThreadHandle mRecvThreadHandle;
+    /* 0x0A0 */ GtThreadHandle mOpenThreadHandle;
+    /* 0x0A4 */ GtThreadHandle mTCPThreadHandle;
+    /* 0x0A8 */ RwInt32 mnSendThreadBusySema;
+    /* 0x0AC */ RwInt32 mnNetCnfIfMc2Thread;
+    /* 0x0B0 */ RwInt32 mnNetworkConfigIndex;
+    /* 0x0B4 */ sceInsockInAddr mMyLocalIPAddress;
+    /* 0x0B8 */ RwInt32 mnSock;
+    /* 0x0BC */ RwInt32 mnTCPSock;
+    /* 0x0C0 */ CMessageData maBufferedSendMessageData[32];
+    /* 0x3C0 */ RwInt32 mnSendMsgBufFillIndex;
+    /* 0x3C4 */ RwInt32 mnSendMsgBufEmptyIndex;
+    /* 0x3C8 */ CMessageData maBufferedRecvMessageData[32];
+    /* 0x6C8 */ RwUInt8 *mpRecvBuffer;
+    /* 0x6CC */ RwUInt8 *mpRecvBufferEmptyPtr;
+    /* 0x6D0 */ RwUInt8 *mpRecvBufferFillPtr;
+    /* 0x6D4 */ RwInt32 mnRecvArrayEmpty;
+    /* 0x6D8 */ RwInt32 mnRecvArrayFill;
+    /* 0x6DC */ RwInt32 mnRecvBufferSize;
+    /* 0x6E0 */ sceInsockSockaddrIn mSockAddrIn;
+    /* 0x6F0 */ char macNetDBLocation[32];
+    /* 0x710 */ RwInt32 mnUDPPortSocketIsBoundTo;
+    /* 0x714 */ bool mbLibNetInitialised;
+    /* 0x718 */ RwInt32 mnSuspendCount;
+    /* 0x71C */ bool mbInittedLibnet;
+    /* 0x71D */ bool mbRegisteredHandler;
+    /* 0x71E */ bool mbUppedInterface;
+    /* 0x720 */ ETCPThreadState meTCPThreadState;
+    /* 0x724 */ sceInsockSockaddrIn mTCPSockAddrIn;
+    /* 0x734 */ RwReal mrCheckedLinkStatusTime;
+    /* 0x738 */ RwReal mrLinkWentDownTime;
+    /* 0x73C */ RwReal mrCurrentTimeStep;
+    /* 0x740 */ char macHostnameToResolve[64];
+    /* 0x780 */ sceInsockHostent_t mResolvedHostname;
+    /* 0x794 */ bool mbHostnameFilled;
+    // methods
+    // CGtPS2LibNet(const CGtPS2LibNet &);
+    // CGtPS2LibNet();
+    // void Construct();
+    // void Destruct();
+    // virtual ENetworkStatus Prepare();
+    // virtual void Release();
+    // virtual ENetworkStatus UpInterface(int);
+    // ENetworkStatus Update(int, float);
+    // virtual void SendTo(void *, int, int, int);
+    // virtual RwInt32 ReceiveFrom(void **, int *, int *);
+    // virtual void SuspendSocket();
+    // virtual void ResumeSocket(int);
+    // virtual bool SocketIsSuspended();
+    // virtual void TCPCreate();
+    // virtual void TCPDestroy();
+    // virtual ETCPThreadState Connect(int, int);
+    // virtual ETCPThreadState Disconnect();
+    // virtual void Send(void *, int);
+    // virtual RwInt32 Receive(void *, int);
+    // virtual void ChangePort(int);
+    // virtual RwInt32 GetUDPSocketPort();
+    // virtual void ClearSendBuffer();
+    // RwBool GetModuleData(CModuleData *, int, bool) const;
+    // RwInt32 SendThread(void *);
+    // RwInt32 RecvThread(void *);
+    // RwInt32 TCPThread(void *);
+    // RwInt32 OpenThread(void *);
+    // ezNetCnfCombinationList_t * GetNetConfigList() const;
+    // void SetNetworkConfigFileLocation(const char *);
+    // void SetATWINMONBuild(bool);
+    // bool ChosenInterfaceIsPPPoE();
+    // virtual ENetworkCableStatus GetNetworkCableStatus(float);
+    // virtual void StartGetHostByName(const char *);
+    // virtual bool UpdateGetHostByName(sceInsockHostent *, bool *);
+    // void Sync();
+    // void SyncCheckDNAS();
+    // void ReleaseCheckDNAS();
+    // void SyncGetConfigs();
+    // void ReleaseGetConfigs();
+    // void SyncInitLibnet();
+    // void ReleaseInitLibnet();
+    // void SyncGetHostByName();
+    // void OpenSocket(int);
+    // void CloseSocket();
+    // void PutMessageOnWire(CMessageData *);
+    // RwBool SockAddrMatch(const sceInsockSockaddrIn *, const sceInsockSockaddrIn *, int) const;
+    // void IncrementSendBufferEmpty();
+    // void IncrementSendBufferFill();
+    // bool SendBufferIsFull();
+    // void IncrementRecvBufferEmpty(int);
+    // void IncrementRecvBufferFill(int);
+    // bool RecvBufferIsFull();
+    // void StartThreadTimeCheck(bool);
+    // void EndThreadTimeCheck(bool);
+    // void SetError(ENetworkAdaptorError);
+    // void ResetError();
+    // void CheckForCableRemoval(float);
+    // void CancelGetHostByName();
+};
+```
 
 ## Notes
 

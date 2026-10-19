@@ -8,14 +8,29 @@
 - **Source file:** `B3GraphicsManagerPS2.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CBlit`, size 0x3C0, methods in `GameSource/Graphics/Ps2/B4GraphicsManagerPS2.cpp` ([layout](#burnout-revenge-layout-of-cblit))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `BuildPacket(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned long,boo` | `0x001ED710` 740 | `0x001EFA10` 920 | `0x00221AE0` 920 | `0x0022EAD0` 1044 | `0x0022B540` likely |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `BuildPacket(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned long,boo` | `0x001ED710` 740 | `0x001EFA10` 920 | `0x00221AE0` 920 | `0x0022EAD0` 1044 | `0x0022B540` likely |  | `u_long128 * CBlit::BuildPacket(unsigned int luScreenWidth, unsigned int luScreenHeight, unsigned int luDisplayHeight, unsigned int luBrightness, unsigned int luAlpha, unsigned int luUOffset, unsigned int luVOffset, unsigned long lu64DimX, bool lbMirror)` (same name, different parameters) |
+
+## Burnout Revenge layout of `CBlit`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Graphics/Ps2/B4GraphicsManagerPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CBlit {  // size 0x3C0
+    /* 0x000 */ long long unsigned int maBuffer[57];
+    // methods
+    // CBlit(const CBlit &);
+    // CBlit();
+    // u_long128 * BuildPacket(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned long, bool);
+};
+```
 
 ## Notes
 

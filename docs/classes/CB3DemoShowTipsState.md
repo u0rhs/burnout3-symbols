@@ -11,12 +11,12 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x00331620` 272 | `0x0038D810` 272 | `0x003BC3C0` 272 | `0x003BEF50` 204 |  |  |
-| `CB3DemoShowTipsState()` |  |  |  | `0x003445E0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x00331620` 272 | `0x0038D810` 272 | `0x003BC3C0` 272 | `0x003BEF50` 204 |  |  |  |
+| `CB3DemoShowTipsState()` |  |  |  | `0x003445E0` 60 |  |  |  |
 
 ## Notes
 

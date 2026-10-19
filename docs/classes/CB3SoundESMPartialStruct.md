@@ -6,14 +6,36 @@
 
 - **Area:** [Audio and music](../systems/audio.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4SoundESMPartialStruct`, size 0x010, methods in `SharedClasses/SoundData/B4SoundESMStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4soundesmpartialstruct))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update(const CB3SoundESMGraphInputs&,CB3SoundEsmGraphOutputs&)` |  |  |  | `0x00327EE0` 120 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update(const CB3SoundESMGraphInputs&,CB3SoundEsmGraphOutputs&)` |  |  |  | `0x00327EE0` 120 |  |  | `void CB4SoundESMPartialStruct::Update(const CB4SoundESMGraphInputs &lInputs, CB4SoundEsmGraphOutputs &lOutputs) const` (same name, different parameters) |
+
+## Burnout Revenge layout of `CB4SoundESMPartialStruct`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 324 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundESMPartialStruct {  // size 0x010
+    /* static */ RwUInt8 kxAttribMask;
+    /* static */ RwUInt8 kxTypeMask;
+    /* 0x000 */ GtID mWaveID;
+    /* 0x008 */ CB4SoundESMGraphStruct *mpGraphs;
+    /* 0x00C */ RwUInt8 mun8GraphCount;
+    /* 0x00D */ RwUInt8 mun8Type;
+    // methods
+    // CB4SoundESMPartialStruct(const CB4SoundESMPartialStruct &);
+    // CB4SoundESMPartialStruct();
+    // void Construct(CB4SoundESMGraphStruct *, CB4SoundESMPointStruct *, int, int);
+    // void Update(const CB4SoundESMGraphInputs &, CB4SoundEsmGraphOutputs &) const;
+    // void FixUp();
+};
+```
 
 ## Notes
 

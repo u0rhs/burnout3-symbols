@@ -8,22 +8,49 @@
 - **Source file:** `B3DebrisRendererPS2.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
 - **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4DebrisArray`, size 0x030, methods in `GameSource/Graphics/DebrisRenderer/Ps2/B4DebrisRendererPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4debrisarray))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UploadStaticDataAndGeometry(bool) const` | `0x002B3EA0` 152 |  |  |  | `0x002F4650` proven |  |
-| `SpawnDebris(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,float,float)` | `0x002B3F40` 572 | `0x002F3200` 704 | `0x003284C0` 704 | `0x0031DEB0` 932 | `0x002F46F0` proven |  |
-| `Release()` | `0x002B4180` 8 | `0x002F34C0` 8 | `0x00328780` 8 | `0x0031DEA0` 16 | `0x002F4930` strong |  |
-| `Prepare()` | `0x002B4190` 68 | `0x002F34D0` 68 | `0x00328790` 68 | `0x0031DE30` 112 | `0x002F4940` proven |  |
-| `Destruct()` | `0x002B41E0` 8 | `0x002F3520` 8 | `0x003287E0` 8 | `0x0031DE20` 16 | `0x002F4990` strong |  |
-| `Construct(EDebrisGeometry)` | `0x002B41F0` 124 | `0x002F3530` 216 | `0x003287F0` 216 | `0x0031DDE0` 64 | `0x002F49A0` proven |  |
-| `ConstructGeometryData(EDebrisGeometry)` | `0x002B4270` 328 | `0x002F3610` 472 | `0x003288D0` 472 | `0x0031DB20` 504 | `0x002F4A20` proven |  |
-| `UploadStaticDataAndGeometry(bool)` |  | `0x002F3160` 152 | `0x00328420` 152 | `0x0031E260` 196 |  |  |
-| `ConstructDebrisArray(EDebrisGeometry)` |  |  |  | `0x0031DD20` 192 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UploadStaticDataAndGeometry(bool) const` | `0x002B3EA0` 152 |  |  |  | `0x002F4650` proven |  | `void CB4DebrisArray::UploadStaticDataAndGeometry(bool lbFlush) const` |
+| `SpawnDebris(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,float,float)` | `0x002B3F40` 572 | `0x002F3200` 704 | `0x003284C0` 704 | `0x0031DEB0` 932 | `0x002F46F0` proven |  | `void CB4DebrisArray::SpawnDebris(GtMathPs2::CGtV3d lPos, GtMathPs2::CGtV3d lLinearVelocity, GtMathPs2::CGtV3d lRotationAxis, GtMathPs2::CGtV3d lPrelight, float lrRotationalVelocity, float lrSizeScale, float lrHeightAboveGround, float lrSpawnTime)` |
+| `Release()` | `0x002B4180` 8 | `0x002F34C0` 8 | `0x00328780` 8 | `0x0031DEA0` 16 | `0x002F4930` strong |  | `void CB4DebrisArray::Release()` |
+| `Prepare()` | `0x002B4190` 68 | `0x002F34D0` 68 | `0x00328790` 68 | `0x0031DE30` 112 | `0x002F4940` proven |  | `bool CB4DebrisArray::Prepare()` |
+| `Destruct()` | `0x002B41E0` 8 | `0x002F3520` 8 | `0x003287E0` 8 | `0x0031DE20` 16 | `0x002F4990` strong |  | `void CB4DebrisArray::Destruct()` |
+| `Construct(EDebrisGeometry)` | `0x002B41F0` 124 | `0x002F3530` 216 | `0x003287F0` 216 | `0x0031DDE0` 64 | `0x002F49A0` proven |  | `void CB4DebrisArray::Construct(EDebrisGeometry leGeometry)` |
+| `ConstructGeometryData(EDebrisGeometry)` | `0x002B4270` 328 | `0x002F3610` 472 | `0x003288D0` 472 | `0x0031DB20` 504 | `0x002F4A20` proven |  | `void CB4DebrisArray::ConstructGeometryData(EDebrisGeometry leGeometry)` |
+| `UploadStaticDataAndGeometry(bool)` |  | `0x002F3160` 152 | `0x00328420` 152 | `0x0031E260` 196 |  |  | `void CB4DebrisArray::UploadStaticDataAndGeometry(bool lbFlush) const` (same name, different parameters) |
+| `ConstructDebrisArray(EDebrisGeometry)` |  |  |  | `0x0031DD20` 192 |  |  | `void CB4DebrisArray::ConstructDebrisArray(EDebrisGeometry leGeometryType)` |
+
+## Burnout Revenge layout of `CB4DebrisArray`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 6 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4DebrisArray {  // size 0x030
+    /* 0x000 */ CDebrisStaticData mStaticData;
+    /* 0x010 */ CDebrisGeometryData *mpGeometryData;
+    /* 0x014 */ CDebris *mpaDebrisArray;
+    /* 0x018 */ RwUInt32 muArraySize;
+    /* 0x01C */ RwUInt32 muNextParticle;
+    /* 0x020 */ RwReal mrRadius;
+    // methods
+    // CB4DebrisArray(const CB4DebrisArray &);
+    // CB4DebrisArray();
+    // void Construct(EDebrisGeometry);
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void SpawnDebris(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, float, float, float);
+    // void ConstructGeometryData(EDebrisGeometry);
+    // void ConstructDebrisArray(EDebrisGeometry);
+    // void UploadStaticDataAndGeometry(bool) const;
+};
+```
 
 ## Notes
 

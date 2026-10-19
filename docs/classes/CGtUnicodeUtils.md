@@ -11,13 +11,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Compare(unsigned short*,unsigned short*)` | `0x00315960` 112 | `0x0036F850` 112 | `0x0039E720` 112 | `0x0039D8E0` 268 | `0x0035EFA0` unverified |  |
-| `FindUTFChar(unsigned short*,unsigned short)` | `0x003159D0` 60 | `0x0036F8C0` 60 | `0x0039E790` 60 | `0x0039D870` 108 |  |  |
-| `PrintUTFChar(unsigned short*,unsigned short)` | `0x00315A10` 52 | `0x0036F900` 52 | `0x0039E7D0` 52 | `0x0039D800` 100 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Compare(unsigned short*,unsigned short*)` | `0x00315960` 112 | `0x0036F850` 112 | `0x0039E720` 112 | `0x0039D8E0` 268 | `0x0035EFA0` unverified |  | `RwInt32 CGtUnicodeUtils::Compare(unsigned short *lpString1, unsigned short *lpString2)` |
+| `FindUTFChar(unsigned short*,unsigned short)` | `0x003159D0` 60 | `0x0036F8C0` 60 | `0x0039E790` 60 | `0x0039D870` 108 |  |  |  |
+| `PrintUTFChar(unsigned short*,unsigned short)` | `0x00315A10` 52 | `0x0036F900` 52 | `0x0039E7D0` 52 | `0x0039D800` 100 |  |  |  |
 
 ## Notes
 

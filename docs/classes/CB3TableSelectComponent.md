@@ -12,15 +12,15 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x00309C20` 64 | `0x0035EBA0` 64 | `0x0038FE60` 64 | `0x00393A90` 128 | `0x003522C0` proven |  |
-| `Update(float)` | `0x00309C60` 292 | `0x0035EBE0` 292 | `0x0038FEA0` 292 | `0x003938A0` 496 | `0x00352300` proven |  |
-| `Prepare(int,CGt2dObjectTable*,const CB3MenuComponentSelectionData*)` | `0x00309D90` 96 | `0x0035ED10` 140 | `0x0038FFD0` 140 | `0x00393820` 120 | `0x00352430` proven |  |
-| `Construct()` | `0x00309DF0` 44 | `0x0035EDA0` 44 | `0x00390060` 44 | `0x003937E0` 52 | `0x00352490` proven |  |
-| `CB3TableSelectComponent()` |  |  |  | `0x0033C310` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x00309C20` 64 | `0x0035EBA0` 64 | `0x0038FE60` 64 | `0x00393A90` 128 | `0x003522C0` proven |  |  |
+| `Update(float)` | `0x00309C60` 292 | `0x0035EBE0` 292 | `0x0038FEA0` 292 | `0x003938A0` 496 | `0x00352300` proven |  |  |
+| `Prepare(int,CGt2dObjectTable*,const CB3MenuComponentSelectionData*)` | `0x00309D90` 96 | `0x0035ED10` 140 | `0x0038FFD0` 140 | `0x00393820` 120 | `0x00352430` proven |  |  |
+| `Construct()` | `0x00309DF0` 44 | `0x0035EDA0` 44 | `0x00390060` 44 | `0x003937E0` 52 | `0x00352490` proven |  |  |
+| `CB3TableSelectComponent()` |  |  |  | `0x0033C310` 60 |  |  |  |
 
 ## Notes
 

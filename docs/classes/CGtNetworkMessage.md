@@ -7,47 +7,104 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `GtNetworkMessage.cpp`
 - **Methods per build:** DNAT_200 15, B3DEBUG 9, B3INTERN 13, B3O0PCH 26
+- **Burnout Revenge counterpart:** `CGtNetworkMessage`, size 0x006, methods in `GameShared/GameClasses/System/Networking/Packeting/GtNetworkMessage.cpp` ([layout](#burnout-revenge-layout-of-cgtnetworkmessage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetEncryptMessageContentsFunction(bool (*)(int))` | `0x001EE870` 8 |  |  |  |  |  |
-| `EncryptionKeyIsValid()` | `0x001EE880` 8 | `0x001F0E90` 8 | `0x00223060` 8 | `0x00237F50` 12 |  |  |
-| `GetEncryptionKey()` | `0x001EE890` 28 |  | `0x00223070` 28 |  |  |  |
-| `UnsetEncryptionKey()` | `0x001EE8B0` 8 | `0x001F0EA0` 8 | `0x00223090` 8 | `0x00237F40` 12 |  |  |
-| `SetEncryptionKey(char*)` | `0x001EE8C0` 48 | `0x001F0EB0` 48 | `0x002230A0` 48 | `0x00237F00` 60 |  |  |
-| `DecryptData(int,int)` | `0x001EE8F0` 336 | `0x001F0EE0` 460 |  | `0x00237C70` 428 |  |  |
-| `EncryptData(int,int)` | `0x001EEA40` 368 |  |  |  |  |  |
-| `IsNewerThan(unsigned short) const` | `0x001EEBB0` 108 |  |  |  |  |  |
-| `DecryptBody(int)` | `0x001EEC20` 104 | `0x001F10B0` 148 | `0x00223440` 584 | `0x00237930` 124 |  |  |
-| `DecryptHeader()` | `0x001EEC90` 60 | `0x001F1150` 156 | `0x00223690` 588 | `0x002378C0` 112 |  |  |
-| `Encrypt(int)` | `0x001EECD0` 140 |  | `0x002238E0` 1068 |  |  |  |
-| `CheckCRC(int)` | `0x001EED60` 80 |  | `0x00223D10` 876 |  |  |  |
-| `CalculateCRC(int)` | `0x001EEDB0` 116 |  | `0x00224080` 652 |  |  |  |
-| `Clear()` | `0x001EEE30` 44 | `0x001F11F0` 688 | `0x00224310` 264 | `0x00237740` 232 |  |  |
-| `Construct()` | `0x001EEE60` 44 | `0x001F14A0` 476 | `0x00224420` 560 | `0x00237520` 372 |  |  |
-| `SetEncryptMessageContentsFunction(bool (*)` |  | `0x001F0E80` 8 | `0x00223050` 8 | `0x00237F60` 28 |  |  |
-| `GetCRC()` |  |  |  | `0x0023B1C0` 28 |  |  |
-| `GetFrame()` |  |  |  | `0x00237830` 28 |  |  |
-| `GetGameID()` |  |  |  | `0x001A4260` 236 |  |  |
-| `GetRecvingPlayerID()` |  |  |  | `0x0023B220` 240 |  |  |
-| `GetSendingPlayerID()` |  |  |  | `0x0023B310` 280 |  |  |
-| `GetType()` |  |  |  | `0x001A4350` 36 |  |  |
-| `IsAck()` |  |  |  | `0x0023F020` 60 |  |  |
-| `IsEncrypted()` |  |  |  | `0x001A3E60` 44 |  |  |
-| `IsNack()` |  |  |  | `0x0023EFE0` 60 |  |  |
-| `IsNewerThan(unsigned short)` |  |  | `0x002230D0` 876 |  |  |  |
-| `IsReliable()` |  |  |  | `0x0023B1E0` 60 |  |  |
-| `MessageIsValid()` |  |  |  | `0x001A3E90` 44 |  |  |
-| `Prepare(int,unsigned short,bool)` |  |  |  | `0x001A3D40` 240 |  |  |
-| `Release()` |  |  |  | `0x001A3FF0` 40 |  |  |
-| `SetDealtWith()` |  |  |  | `0x001A4020` 52 |  |  |
-| `SetEncrypted(bool)` |  |  |  | `0x00237850` 104 |  |  |
-| `SetGameID(unsigned char)` |  |  |  | `0x0023EF60` 128 |  |  |
-| `SetReadyToSend()` |  |  |  | `0x001A3E30` 48 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetEncryptMessageContentsFunction(bool (*)(int))` | `0x001EE870` 8 |  |  |  |  |  | `void CGtNetworkMessage::SetEncryptMessageContentsFunction(bool (*lpEncryptMessageContentsFunction)(int))` |
+| `EncryptionKeyIsValid()` | `0x001EE880` 8 | `0x001F0E90` 8 | `0x00223060` 8 | `0x00237F50` 12 |  |  | `bool CGtNetworkMessage::EncryptionKeyIsValid()` |
+| `GetEncryptionKey()` | `0x001EE890` 28 |  | `0x00223070` 28 |  |  |  | `RwChar * CGtNetworkMessage::GetEncryptionKey()` |
+| `UnsetEncryptionKey()` | `0x001EE8B0` 8 | `0x001F0EA0` 8 | `0x00223090` 8 | `0x00237F40` 12 |  |  | `void CGtNetworkMessage::UnsetEncryptionKey()` |
+| `SetEncryptionKey(char*)` | `0x001EE8C0` 48 | `0x001F0EB0` 48 | `0x002230A0` 48 | `0x00237F00` 60 |  |  | `void CGtNetworkMessage::SetEncryptionKey(const char *lacEncryptionKeyBuffer)` (same name, different parameters) |
+| `DecryptData(int,int)` | `0x001EE8F0` 336 | `0x001F0EE0` 460 |  | `0x00237C70` 428 |  |  | `void CGtNetworkMessage::DecryptData(int lnOffset, int lnLength)` |
+| `EncryptData(int,int)` | `0x001EEA40` 368 |  |  |  |  |  | `void CGtNetworkMessage::EncryptData(int lnOffset, int lnLength)` |
+| `IsNewerThan(unsigned short) const` | `0x001EEBB0` 108 |  |  |  |  |  | `bool CGtNetworkMessage::IsNewerThan(unsigned short lu16Frame) const` |
+| `DecryptBody(int)` | `0x001EEC20` 104 | `0x001F10B0` 148 | `0x00223440` 584 | `0x00237930` 124 |  |  | `void CGtNetworkMessage::DecryptBody(int lnMessageLength)` |
+| `DecryptHeader()` | `0x001EEC90` 60 | `0x001F1150` 156 | `0x00223690` 588 | `0x002378C0` 112 |  |  | `void CGtNetworkMessage::DecryptHeader()` |
+| `Encrypt(int)` | `0x001EECD0` 140 |  | `0x002238E0` 1068 |  |  |  | `void CGtNetworkMessage::Encrypt(int lnMessageLength)` |
+| `CheckCRC(int)` | `0x001EED60` 80 |  | `0x00223D10` 876 |  |  |  | `bool CGtNetworkMessage::CheckCRC(int lnMessageLength)` |
+| `CalculateCRC(int)` | `0x001EEDB0` 116 |  | `0x00224080` 652 |  |  |  | `void CGtNetworkMessage::CalculateCRC(int lnMessageLength)` |
+| `Clear()` | `0x001EEE30` 44 | `0x001F11F0` 688 | `0x00224310` 264 | `0x00237740` 232 |  |  | `void CGtNetworkMessage::Clear()` |
+| `Construct()` | `0x001EEE60` 44 | `0x001F14A0` 476 | `0x00224420` 560 | `0x00237520` 372 |  |  | `void CGtNetworkMessage::Construct()` |
+| `SetEncryptMessageContentsFunction(bool (*)` |  | `0x001F0E80` 8 | `0x00223050` 8 | `0x00237F60` 28 |  |  | `void CGtNetworkMessage::SetEncryptMessageContentsFunction(bool (*lpEncryptMessageContentsFunction)(int))` (same name, different parameters) |
+| `GetCRC()` |  |  |  | `0x0023B1C0` 28 |  |  |  |
+| `GetFrame()` |  |  |  | `0x00237830` 28 |  |  |  |
+| `GetGameID()` |  |  |  | `0x001A4260` 236 |  |  |  |
+| `GetRecvingPlayerID()` |  |  |  | `0x0023B220` 240 |  |  |  |
+| `GetSendingPlayerID()` |  |  |  | `0x0023B310` 280 |  |  |  |
+| `GetType()` |  |  |  | `0x001A4350` 36 |  |  |  |
+| `IsAck()` |  |  |  | `0x0023F020` 60 |  |  |  |
+| `IsEncrypted()` |  |  |  | `0x001A3E60` 44 |  |  | `bool CGtNetworkMessage::IsEncrypted() const` (same name, different parameters) |
+| `IsNack()` |  |  |  | `0x0023EFE0` 60 |  |  |  |
+| `IsNewerThan(unsigned short)` |  |  | `0x002230D0` 876 |  |  |  |  |
+| `IsReliable()` |  |  |  | `0x0023B1E0` 60 |  |  |  |
+| `MessageIsValid()` |  |  |  | `0x001A3E90` 44 |  |  |  |
+| `Prepare(int,unsigned short,bool)` |  |  |  | `0x001A3D40` 240 |  |  |  |
+| `Release()` |  |  |  | `0x001A3FF0` 40 |  |  |  |
+| `SetDealtWith()` |  |  |  | `0x001A4020` 52 |  |  | `void CGtNetworkMessage::SetDealtWith()` |
+| `SetEncrypted(bool)` |  |  |  | `0x00237850` 104 |  |  |  |
+| `SetGameID(unsigned char)` |  |  |  | `0x0023EF60` 128 |  |  |  |
+| `SetReadyToSend()` |  |  |  | `0x001A3E30` 48 |  |  | `void CGtNetworkMessage::SetReadyToSend()` |
+
+## Burnout Revenge layout of `CGtNetworkMessage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 161 file(s), e.g. `GameShared/GameClasses/System/Networking/Buddies/GtBuddiesDirtySock.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtNetworkMessage {  // size 0x006
+    /* 0x000 */ RwUInt8 mu8CRC;
+    /* 0x001 */ RwUInt8 mu8GameID;
+    /* 0x002 */ RwUInt8 mx8Flags;
+    /* 0x003 */ RwInt8 mn8Type;
+    /* 0x004 */ RwUInt16 mu16Frame;
+    // methods
+    // CGtNetworkMessage(const CGtNetworkMessage &);
+    // CGtNetworkMessage();
+    // void Construct();
+    // void Clear();
+    // void Prepare(int, unsigned short, bool);
+    // void Release();
+    // RwInt32 GetType() const;
+    // RwUInt16 GetFrame() const;
+    // bool IsReliable() const;
+    // bool IsAck() const;
+    // bool IsNack() const;
+    // void SetGameID(unsigned char);
+    // RwUInt8 GetGameID() const;
+    // void CalculateCRC(int);
+    // bool CheckCRC(int);
+    // void Encrypt(int);
+    // void DecryptHeader();
+    // void DecryptBody(int);
+    // void SetReadyToSend();
+    // void SetDealtWith();
+    // bool MessageIsValid() const;
+    // bool IsEncrypted() const;
+    // bool IsNewerThan(unsigned short) const;
+    // bool IsOlderThan(unsigned short) const;
+    // RwUInt8 GetCRC() const;
+    // static void SetEncryptionKey(const char *);
+    // static void UnsetEncryptionKey();
+    // static RwChar * GetEncryptionKey();
+    // static bool EncryptionKeyIsValid();
+    // static void SetEncryptMessageContentsFunction(bool (*)(int));
+    // static void RegisterMessageTypeAsContainingPlayerIDs(unsigned char);
+    // bool MessageContainsPlayerIDs() const;
+    // static bool MessageContainsPlayerIDs(signed char);
+    // void PrepareAck(int, unsigned short, unsigned char);
+    // void PrepareNack(int, unsigned short, unsigned char);
+    // void PutBit(bool);
+    // void PutByte(unsigned char);
+    // void EncryptData(int, int);
+    // void DecryptData(int, int);
+    // void EncryptOrDecrypt(int, int);
+    // void SetEncrypted(bool);
+};
+```
 
 ## Notes
 

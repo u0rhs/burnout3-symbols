@@ -6,20 +6,21 @@
 
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Methods per build:** B3O0PCH 6
+- **Burnout Revenge counterpart:** `CB4Wheel`, size 0x0C0, methods in `GameSource/Physics/B4VehiclePhysics.cpp` ([layout](#burnout-revenge-layout-of-cb4wheel))
 - **Burnout 2 ancestor (by name):** `CWheel`, size 0x090, declared in 89 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ApplyDriveTorque(float)` |  |  |  | `0x001C6A70` 44 |  |  |
-| `ApplyReactionTorque(float)` |  |  |  | `0x001C6950` 44 |  |  |
-| `CB3Wheel()` |  |  |  | `0x00191F20` 124 |  |  |
-| `Construct()` |  |  |  | `0x001CB9C0` 68 |  |  |
-| `Prepare()` |  |  |  | `0x001CC930` 304 |  |  |
-| `Update(float)` |  |  |  | `0x001C6A10` 88 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ApplyDriveTorque(float)` |  |  |  | `0x001C6A70` 44 |  |  |  |
+| `ApplyReactionTorque(float)` |  |  |  | `0x001C6950` 44 |  |  |  |
+| `CB3Wheel()` |  |  |  | `0x00191F20` 124 |  |  |  |
+| `Construct()` |  |  |  | `0x001CB9C0` 68 |  |  | `void CB4Wheel::Construct()` |
+| `Prepare()` |  |  |  | `0x001CC930` 304 |  |  | `void CB4Wheel::Prepare()` |
+| `Update(float)` |  |  |  | `0x001C6A10` 88 |  |  |  |
 
 ## Burnout 2 layout of `CWheel`
 
@@ -50,6 +51,50 @@ public:
     /* 0x068 */ RwV3d mOldPosition;
     /* 0x074 */ int meLastValidColTag;
     /* 0x078 */ RwV3d mOldContactPoint;
+};
+```
+
+## Burnout Revenge layout of `CB4Wheel`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 321 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Wheel {  // size 0x0C0
+    /* 0x000 */ CGtV3d mPosition;
+    /* 0x010 */ CGtV3d mContactPoint;
+    /* 0x020 */ CGtV3d mContactNormal;
+    /* 0x030 */ CGtV3d mOldPosition;
+    /* 0x040 */ CGtV3d mOldContactPoint;
+    /* 0x050 */ RwReal mrRadius;
+    /* 0x054 */ RwReal mrTotalTorque;
+    /* 0x058 */ RwReal mrAngle;
+    /* 0x05C */ RwReal mrAngularVelocity;
+    /* 0x060 */ RwReal mrHeight;
+    /* 0x064 */ RwReal mrNewHeight;
+    /* 0x068 */ RwReal mrWheelDamage;
+    /* 0x06C */ RwReal mrRadiusScalar;
+    /* 0x070 */ RwReal mrWidthScalar;
+    /* 0x074 */ RwReal mrAttachHeight;
+    /* 0x078 */ RwReal mrDistanceToGround;
+    /* 0x07C */ EB4WheelEffectState meEffectState;
+    /* 0x080 */ CB4WheelEffects mEffects;
+    /* 0x0B0 */ CB4CollisionTag meColTag;
+    /* 0x0B2 */ bool mbKerbed;
+    /* 0x0B3 */ bool mbWasTouchingWorld;
+    /* 0x0B4 */ bool mbIsTouchingWorld;
+    /* 0x0B5 */ bool mbSuspensionImpulse;
+    // methods
+    // CB4Wheel(const CB4Wheel &);
+    // CB4Wheel();
+    // void Construct();
+    // bool IsNearToGround();
+    // void Prepare();
+    // void Reset();
+    // void Release();
+    // void Destruct();
+    // void Update(float);
+    // void ApplyDriveTorque(float);
+    // void ApplyReactionTorque(float);
 };
 ```
 

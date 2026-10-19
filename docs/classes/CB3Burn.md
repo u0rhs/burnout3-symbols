@@ -8,44 +8,45 @@
 - **Source file:** `B3Burn.cpp`
 - **Methods per build:** DNAT_200 16, B3DEBUG 16, B3INTERN 16, B3O0PCH 30
 - **Retail (SLUS-21050):** 16 of its 16 DNAT_200 methods found, 14 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4Burn`, size 0x0A4, methods in `GameSource/World/B4Burn.cpp` ([layout](#burnout-revenge-layout-of-cb4burn))
 - **Burnout 2 ancestor (by name):** `CBurn`, size 0x02C, declared in 87 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetCurrentBurnDuration(const CB3RaceCar*)` | `0x0014A880` 40 | `0x0015B7E0` 112 | `0x00157260` 112 | `0x00165530` 96 | `0x0014DD80` proven |  |
-| `GetSegmentSizeInBurn()` | `0x0014A8B0` 48 | `0x0015B850` 48 | `0x001572D0` 48 | `0x001654F0` 64 | `0x0014DDB0` proven |  |
-| `SetInfiniteBoost(bool)` | `0x0014A8E0` 152 | `0x0015B880` 152 | `0x00157300` 152 | `0x001654A0` 80 | `0x0014DDE0` proven |  |
-| `StopBurn()` | `0x0014A980` 56 | `0x0015B920` 56 | `0x001573A0` 56 | `0x00165450` 68 | `0x0014DEB0` proven |  |
-| `StartBurn(CB3RaceCarPhysics*)` | `0x0014A9C0` 160 | `0x0015B960` 160 | `0x001573E0` 160 | `0x00165370` 216 | `0x0014DEF0` proven |  |
-| `SetNumExtraBoostBarSegments(int)` | `0x0014AA60` 108 | `0x0015BA00` 200 | `0x00157480` 200 | `0x001652A0` 200 | `0x0014DFF0` proven |  |
-| `RemoveSegment()` | `0x0014AAD0` 312 | `0x0015BAD0` 368 | `0x00157550` 368 | `0x00165200` 156 | `0x0014E060` proven |  |
-| `AddSegment()` | `0x0014AC10` 168 | `0x0015BC40` 232 | `0x001576C0` 232 | `0x00165190` 100 | `0x0014E1C0` proven |  |
-| `RemoveBurn(float)` | `0x0014ACC0` 120 | `0x0015BD30` 120 | `0x001577B0` 120 | `0x001650D0` 184 | `0x0014E250` proven |  |
-| `AddBurn(float)` | `0x0014AD40` 140 | `0x0015BDB0` 140 | `0x00157830` 140 | `0x00165020` 172 | `0x0014E2D0` proven | `void CBurn::AddBurn(float lrPoints)` |
-| `Release()` | `0x0014ADD0` 8 | `0x0015BE40` 8 | `0x001578C0` 8 | `0x00165010` 16 | `0x0014E390` strong |  |
-| `Update(CB3RaceCar*)` | `0x0014ADE0` 348 | `0x0015BE50` 348 | `0x001578D0` 348 | `0x00164E20` 492 | `0x0014E3A0` proven | `void CBurn::Update(CRaceCar *pRaceCar)` (same name, different parameters) |
-| `Prepare(EB3BoostBarSize)` | `0x0014AF40` 240 | `0x0015BFB0` 272 | `0x00157A30` 272 | `0x00164CB0` 368 | `0x0014E500` proven |  |
-| `Construct()` | `0x0014B030` 8 | `0x0015C0C0` 8 | `0x00157B40` 8 | `0x00164CA0` 16 | `0x0014E5F0` strong |  |
-| `UnregisterStaticVariables()` | `0x0014B040` 112 | `0x0015C0D0` 112 | `0x00157B50` 112 | `0x00164C10` 136 | `0x0014E600` proven |  |
-| `RegisterStaticVariables()` | `0x0014B0B0` 324 | `0x0015C140` 324 | `0x00157BC0` 324 | `0x00164AB0` 348 | `0x0014E670` proven |  |
-| `GetCurrentBurnRatio()` |  |  |  | `0x00140A40` 84 |  |  |
-| `GetCurrentBurnValue()` |  |  |  | `0x001A2D40` 28 |  |  |
-| `GetMaxBurnValue()` |  |  |  | `0x00154B30` 28 |  |  |
-| `GetMaxPossibleBurnValue()` |  |  |  | `0x002B4C30` 24 |  |  |
-| `GetNumExtraBoostBarSegments()` |  |  |  | `0x001A2510` 28 |  |  |
-| `GetTotalBoostEarned()` |  |  |  | `0x001A2D20` 28 |  |  |
-| `HasMinimumBoost()` |  |  |  | `0x0019B560` 72 |  |  |
-| `HasUsedUnstoppableBoost()` |  |  |  | `0x003DF640` 28 |  |  |
-| `IsBurnFull()` |  |  |  | `0x00156C00` 72 |  |  |
-| `IsInfiniteBoost()` |  |  |  | `0x003E7540` 28 |  |  |
-| `IsUnstoppableBoost()` |  |  |  | `0x001BAD20` 28 |  |  |
-| `IsUsingBurn()` |  |  |  | `0x00140A20` 28 |  |  |
-| `SetCatchupMultiplier(float)` |  |  |  | `0x00169FA0` 96 |  |  |
-| `SetUnstoppableBoost(bool)` |  |  |  | `0x003DF610` 44 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetCurrentBurnDuration(const CB3RaceCar*)` | `0x0014A880` 40 | `0x0015B7E0` 112 | `0x00157260` 112 | `0x00165530` 96 | `0x0014DD80` proven |  | `RwReal CB4Burn::GetCurrentBurnDuration()` (same name, different parameters) |
+| `GetSegmentSizeInBurn()` | `0x0014A8B0` 48 | `0x0015B850` 48 | `0x001572D0` 48 | `0x001654F0` 64 | `0x0014DDB0` proven |  | `RwReal CB4Burn::GetSegmentSizeInBurn()` |
+| `SetInfiniteBoost(bool)` | `0x0014A8E0` 152 | `0x0015B880` 152 | `0x00157300` 152 | `0x001654A0` 80 | `0x0014DDE0` proven |  | `void CB4Burn::SetInfiniteBoost(bool lbInfiniteBoost)` |
+| `StopBurn()` | `0x0014A980` 56 | `0x0015B920` 56 | `0x001573A0` 56 | `0x00165450` 68 | `0x0014DEB0` proven |  | `void CB4Burn::StopBurn()` |
+| `StartBurn(CB3RaceCarPhysics*)` | `0x0014A9C0` 160 | `0x0015B960` 160 | `0x001573E0` 160 | `0x00165370` 216 | `0x0014DEF0` proven |  | `bool CB4Burn::StartBurn(CB4RaceCarPhysics *lpPhysics)` |
+| `SetNumExtraBoostBarSegments(int)` | `0x0014AA60` 108 | `0x0015BA00` 200 | `0x00157480` 200 | `0x001652A0` 200 | `0x0014DFF0` proven |  | `void CB4Burn::SetNumExtraBoostBarSegments(int lnNumSegments)` |
+| `RemoveSegment()` | `0x0014AAD0` 312 | `0x0015BAD0` 368 | `0x00157550` 368 | `0x00165200` 156 | `0x0014E060` proven |  | `void CB4Burn::RemoveSegment()` |
+| `AddSegment()` | `0x0014AC10` 168 | `0x0015BC40` 232 | `0x001576C0` 232 | `0x00165190` 100 | `0x0014E1C0` proven |  | `void CB4Burn::AddSegment()` |
+| `RemoveBurn(float)` | `0x0014ACC0` 120 | `0x0015BD30` 120 | `0x001577B0` 120 | `0x001650D0` 184 | `0x0014E250` proven |  | `void CB4Burn::RemoveBurn(float lrBurn)` |
+| `AddBurn(float)` | `0x0014AD40` 140 | `0x0015BDB0` 140 | `0x00157830` 140 | `0x00165020` 172 | `0x0014E2D0` proven | `void CBurn::AddBurn(float lrPoints)` | `void CB4Burn::AddBurn(float lrBurn)` |
+| `Release()` | `0x0014ADD0` 8 | `0x0015BE40` 8 | `0x001578C0` 8 | `0x00165010` 16 | `0x0014E390` strong |  | `void CB4Burn::Release()` |
+| `Update(CB3RaceCar*)` | `0x0014ADE0` 348 | `0x0015BE50` 348 | `0x001578D0` 348 | `0x00164E20` 492 | `0x0014E3A0` proven | `void CBurn::Update(CRaceCar *pRaceCar)` (same name, different parameters) | `void CB4Burn::Update()` (same name, different parameters) |
+| `Prepare(EB3BoostBarSize)` | `0x0014AF40` 240 | `0x0015BFB0` 272 | `0x00157A30` 272 | `0x00164CB0` 368 | `0x0014E500` proven |  | `bool CB4Burn::Prepare(CB4RaceCar *lpRaceCar)` (same name, different parameters) |
+| `Construct()` | `0x0014B030` 8 | `0x0015C0C0` 8 | `0x00157B40` 8 | `0x00164CA0` 16 | `0x0014E5F0` strong |  | `void CB4Burn::Construct()` |
+| `UnregisterStaticVariables()` | `0x0014B040` 112 | `0x0015C0D0` 112 | `0x00157B50` 112 | `0x00164C10` 136 | `0x0014E600` proven |  | `void CB4Burn::UnregisterStaticVariables()` |
+| `RegisterStaticVariables()` | `0x0014B0B0` 324 | `0x0015C140` 324 | `0x00157BC0` 324 | `0x00164AB0` 348 | `0x0014E670` proven |  | `void CB4Burn::RegisterStaticVariables()` |
+| `GetCurrentBurnRatio()` |  |  |  | `0x00140A40` 84 |  |  |  |
+| `GetCurrentBurnValue()` |  |  |  | `0x001A2D40` 28 |  |  |  |
+| `GetMaxBurnValue()` |  |  |  | `0x00154B30` 28 |  |  |  |
+| `GetMaxPossibleBurnValue()` |  |  |  | `0x002B4C30` 24 |  |  |  |
+| `GetNumExtraBoostBarSegments()` |  |  |  | `0x001A2510` 28 |  |  |  |
+| `GetTotalBoostEarned()` |  |  |  | `0x001A2D20` 28 |  |  |  |
+| `HasMinimumBoost()` |  |  |  | `0x0019B560` 72 |  |  |  |
+| `HasUsedUnstoppableBoost()` |  |  |  | `0x003DF640` 28 |  |  |  |
+| `IsBurnFull()` |  |  |  | `0x00156C00` 72 |  |  |  |
+| `IsInfiniteBoost()` |  |  |  | `0x003E7540` 28 |  |  |  |
+| `IsUnstoppableBoost()` |  |  |  | `0x001BAD20` 28 |  |  |  |
+| `IsUsingBurn()` |  |  |  | `0x00140A20` 28 |  |  |  |
+| `SetCatchupMultiplier(float)` |  |  |  | `0x00169FA0` 96 |  |  |  |
+| `SetUnstoppableBoost(bool)` |  |  |  | `0x003DF610` 44 |  |  |  |
 
 ## Static data (DNAT_200)
 
@@ -84,6 +85,125 @@ public:
     // void CBurn::Reset()  [0x0022B000]
     // void CBurn::Destroy()  [0x0022B060]
     // void CBurn::Init()  [0x0022B070]
+};
+```
+
+## Burnout Revenge layout of `CB4Burn`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 314 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Burn {  // size 0x0A4
+    /* 0x000 */ CB4BoostEffectParams mBoostEffectParams;
+    /* 0x030 */ RwReal mrLastBurnStartTime;
+    /* 0x034 */ RwReal mrLastBurnStopTime;
+    /* 0x038 */ RwInt32 mnNumExtraSegments;
+    /* 0x03C */ RwReal mrMaxBoost;
+    /* 0x040 */ RwReal mrCurrentBoost;
+    /* 0x044 */ RwReal mrTotalBoostEarned;
+    /* 0x048 */ RwReal mrBoostRate;
+    /* 0x04C */ RwReal mrMinimumBoostUsed;
+    /* 0x050 */ RwReal mrBoostMultiplier;
+    /* 0x054 */ RwReal mrCatchUpMultiplier;
+    /* 0x058 */ RwReal mrCrashBarScale;
+    /* 0x05C */ RwReal mrPreCrashbreakerStateStartTime;
+    /* 0x060 */ RwReal mrLastBurnStateChangeTime;
+    /* 0x064 */ RwReal mrCrashModePosition0;
+    /* 0x068 */ RwReal mrCrashModePosition1;
+    /* 0x06C */ EBurnTimeState meBurnTimeState;
+    /* 0x070 */ CB4CrashBarValues mCrashBarValues;
+    /* 0x094 */ CB4RaceCar *mpOwnerCar;
+    /* 0x098 */ bool mbInfiniteBoost;
+    /* 0x099 */ bool mbCheatInfiniteBoost;
+    /* 0x09A */ bool mbUsingBurn;
+    /* 0x09B */ bool mbRequestStopBurn;
+    /* 0x09C */ bool mbBurnoutPotential;
+    /* 0x09D */ bool mbUnstoppableBoost;
+    /* 0x09E */ bool mbUsedUnstoppableBoost;
+    /* 0x09F */ bool mbCrashBarBoostStart;
+    /* 0x0A0 */ bool mbCrashBarPrepared;
+    /* 0x0A1 */ bool mbHitSweetSpot;
+    /* 0x0A2 */ bool mbPreCrashbreakerState;
+    /* static */ RwReal gmrMinimumBoostTime;
+    /* static */ RwReal gmrMinimumBoostRecoveryTime;
+    /* static */ RwReal gmrPowerBoostDepletionMultiplier;
+    /* static */ float gmarBoostBarSizes[4];
+    /* static */ float gmarBurnoutBoostMultipliers[4];
+    /* static */ float gmarBoostRate[4];
+    // methods
+    // CB4Burn(const CB4Burn &);
+    // CB4Burn();
+    // static void RegisterStaticVariables();
+    // static void UnregisterStaticVariables();
+    // void Construct();
+    // bool Prepare(CB4RaceCar *);
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void AddBurn(float);
+    // void RemoveBurn(float);
+    // void RemoveOneSegmentOfBurn();
+    // void AddSegment();
+    // void RemoveSegment();
+    // void SetFullBurn();
+    // void SetEmptyBurn();
+    // bool StartBurn(CB4RaceCarPhysics *);
+    // void StopBurn();
+    // void SetNetworkCarBurn(bool);
+    // RwReal GetCurrentBurnValue() const;
+    // RwReal GetMaxBurnValue() const;
+    // RwReal GetMaxPossibleBurnValue() const;
+    // RwReal GetCurrentBurnRatio() const;
+    // void SetCurrentBurnRatio(float);
+    // RwReal GetTotalBoostEarned() const;
+    // bool IsBurnFull() const;
+    // bool IsUsingBurn() const;
+    // RwInt32 GetNumExtraBoostBarSegments() const;
+    // void SetNumExtraBoostBarSegments(int);
+    // bool IsInfiniteBoost() const;
+    // void SetInfiniteBoost(bool);
+    // RwReal GetSegmentSizeInBurn();
+    // bool HasMinimumBoost();
+    // bool HasAtLeastOneSegmentOfBoost();
+    // void SetCatchupMultiplier(float);
+    // void SetUnstoppableBoost(bool);
+    // bool IsUnstoppableBoost();
+    // bool HasUsedUnstoppableBoost();
+    // RwReal GetCurrentBurnDuration();
+    // EB4ShockwaveType CalcCrashbreakerType();
+    // void SetCrashBarScale(float);
+    // RwReal GetCrashBarScale();
+    // void SetCrashBarBoostStart();
+    // bool GetCrashBarBoostStart();
+    // void SetCrashBarAccelerationMultiplier(float);
+    // void SetCrashBarMinSpeed(float);
+    // void SetCrashBarStartingSpeedProportion(float);
+    // RwReal GetCrashBarLowerSweetSpotMin() const;
+    // RwReal GetCrashBarLowerSweetSpotMax() const;
+    // RwReal GetCrashBarLowerSafeMin() const;
+    // RwReal GetCrashBarUpperSafeMax() const;
+    // RwReal GetCrashBarUpperSweetSpotMin() const;
+    // RwReal GetCrashBarUpperSweetSpotMax() const;
+    // RwReal GetCrashBarAccelerationMultiplier() const;
+    // RwReal GetCrashBarMinSpeed() const;
+    // RwReal GetCrashBarStartingSpeedProportion() const;
+    // void RegisterCrashBarVariables(CB4RaceCar *);
+    // CB4RaceCar * GetOwnerCar() const;
+    // void UnRegisterCrashBarVariables();
+    // void SetHitSweetSpot(bool);
+    // bool GetHitSweetSpot() const;
+    // CB4CrashBarValues * GetCrashBarValues() const;
+    // void SetCrashBarValues(const CB4CrashBarValues *);
+    // void SetPreCrashbreakerState(bool);
+    // bool IsInPreCrashbreakerState();
+    // void SetPreCrashbreakerStateStartTime(float);
+    // RwReal GetPreCrashbreakerStateStartTime();
+    // void SetBoostUsageRate(float);
+    // void SetCrashModePosition0(float);
+    // RwReal GetCrashModePosition0();
+    // void SetCrashModePosition1(float);
+    // RwReal GetCrashModePosition1();
+    // void OnBurnStopped(float);
 };
 ```
 

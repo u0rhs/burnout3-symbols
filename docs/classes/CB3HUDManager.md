@@ -8,30 +8,68 @@
 - **Source file:** `B3HUDManager.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 10, B3INTERN 10, B3O0PCH 17
 - **Retail (SLUS-21050):** 10 of its 10 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4HUDManager`, size 0x5E0, methods in `GameSource/Hud/B4HUDManager.cpp` ([layout](#burnout-revenge-layout-of-cb4hudmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `AddComponent(CB3HUDComponent*,int,int,int,int)` | `0x0016C510` 136 | `0x001875C0` 732 | `0x00181FD0` 740 | `0x001994A0` 488 | `0x001A0020` strong |  |
-| `SetNumPlayers(int)` | `0x0016CA40` 152 | `0x00187DE0` 368 | `0x001827F0` 368 | `0x00198A30` 460 | `0x001A0660` unverified |  |
-| `Render()` | `0x0016CAE0` 104 | `0x00187F50` 168 | `0x00182960` 164 | `0x00198860` 156 | `0x001A0790` proven |  |
-| `Release()` | `0x0016CB50` 104 | `0x00188000` 232 | `0x00182A10` 240 | `0x001987D0` 144 | `0x001A0800` unverified |  |
-| `Update(float)` | `0x0016CBC0` 108 | `0x001880F0` 140 | `0x00182B00` 148 | `0x00198740` 132 | `0x001A0930` proven |  |
-| `PrepareCrashComponents()` | `0x0016CC30` 304 | `0x00188180` 304 | `0x00182BA0` 304 | `0x00198460` 352 | `0x001A09A0` unverified |  |
-| `PrepareNormalComponents()` | `0x0016CD60` 1628 | `0x001882B0` 1628 | `0x00182CD0` 1532 | `0x00197CD0` 1928 | `0x001A0AF0` likely |  |
-| `PrepareScoreList()` | `0x0016D3C0` 44 | `0x00188910` 44 | `0x001832D0` 44 | `0x00197C90` 56 | `0x001A1210` unverified |  |
-| `Prepare()` | `0x0016D3F0` 984 | `0x00188940` 1104 | `0x00183300` 1136 | `0x00197A90` 508 | `0x001A12B0` unverified |  |
-| `Construct()` | `0x0016D7D0` 1020 | `0x00188D90` 1088 | `0x00183770` 1104 | `0x00197590` 1280 | `0x001A1920` unverified |  |
-| `CB3HUDManager()` |  |  |  | `0x00199C40` 92 |  |  |
-| `GetHUDType()` |  |  |  | `0x0019B5B0` 28 |  |  |
-| `GetNumPlayers()` |  |  |  | `0x00197520` 28 |  |  |
-| `GetPalette()` |  |  |  | `0x001402C0` 28 |  |  |
-| `PrepareSharedComponents()` |  |  |  | `0x001985C0` 372 |  |  |
-| `SetHUDType(EHUDType)` |  |  |  | `0x0013FC30` 120 |  |  |
-| `SetRenderSize(int,int,int,int)` |  |  |  | `0x00198900` 304 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `AddComponent(CB3HUDComponent*,int,int,int,int)` | `0x0016C510` 136 | `0x001875C0` 732 | `0x00181FD0` 740 | `0x001994A0` 488 | `0x001A0020` strong |  | `void CB4HUDManager::AddComponent(CB4HUDComponent *lpComponent, EPlayerCarIndex lePlayer, int lnNumLayers, int lnMaxObjects, int lnMaxChildFrames)` (same name, different parameters) |
+| `SetNumPlayers(int)` | `0x0016CA40` 152 | `0x00187DE0` 368 | `0x001827F0` 368 | `0x00198A30` 460 | `0x001A0660` unverified |  | `void CB4HUDManager::SetNumPlayers(int lnNumPlayers)` |
+| `Render()` | `0x0016CAE0` 104 | `0x00187F50` 168 | `0x00182960` 164 | `0x00198860` 156 | `0x001A0790` proven |  | `void CB4HUDManager::Render()` |
+| `Release()` | `0x0016CB50` 104 | `0x00188000` 232 | `0x00182A10` 240 | `0x001987D0` 144 | `0x001A0800` unverified |  | `void CB4HUDManager::Release()` |
+| `Update(float)` | `0x0016CBC0` 108 | `0x001880F0` 140 | `0x00182B00` 148 | `0x00198740` 132 | `0x001A0930` proven |  | `void CB4HUDManager::Update(float lrTimeStep)` |
+| `PrepareCrashComponents()` | `0x0016CC30` 304 | `0x00188180` 304 | `0x00182BA0` 304 | `0x00198460` 352 | `0x001A09A0` unverified |  | `void CB4HUDManager::PrepareCrashComponents(EPlayerCarIndex lePlayer)` (same name, different parameters) |
+| `PrepareNormalComponents()` | `0x0016CD60` 1628 | `0x001882B0` 1628 | `0x00182CD0` 1532 | `0x00197CD0` 1928 | `0x001A0AF0` likely |  | `void CB4HUDManager::PrepareNormalComponents(EPlayerCarIndex lePlayer)` (same name, different parameters) |
+| `PrepareScoreList()` | `0x0016D3C0` 44 | `0x00188910` 44 | `0x001832D0` 44 | `0x00197C90` 56 | `0x001A1210` unverified |  |  |
+| `Prepare()` | `0x0016D3F0` 984 | `0x00188940` 1104 | `0x00183300` 1136 | `0x00197A90` 508 | `0x001A12B0` unverified |  | `bool CB4HUDManager::Prepare()` |
+| `Construct()` | `0x0016D7D0` 1020 | `0x00188D90` 1088 | `0x00183770` 1104 | `0x00197590` 1280 | `0x001A1920` unverified |  | `void CB4HUDManager::Construct()` |
+| `CB3HUDManager()` |  |  |  | `0x00199C40` 92 |  |  |  |
+| `GetHUDType()` |  |  |  | `0x0019B5B0` 28 |  |  |  |
+| `GetNumPlayers()` |  |  |  | `0x00197520` 28 |  |  |  |
+| `GetPalette()` |  |  |  | `0x001402C0` 28 |  |  |  |
+| `PrepareSharedComponents()` |  |  |  | `0x001985C0` 372 |  |  | `void CB4HUDManager::PrepareSharedComponents(EPlayerCarIndex lePlayer)` (same name, different parameters) |
+| `SetHUDType(EHUDType)` |  |  |  | `0x0013FC30` 120 |  |  |  |
+| `SetRenderSize(int,int,int,int)` |  |  |  | `0x00198900` 304 |  |  |  |
+
+## Burnout Revenge layout of `CB4HUDManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 36 file(s), e.g. `GameSource/Game/B4OnePlayerStage.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HUDManager {  // size 0x5E0
+    /* 0x000 */ CB4HUD maHUD[2];
+    /* 0x5D0 */ bool mbHasWideScreenBorders;
+    /* 0x5D4 */ RwInt32 mnNumPlayers;
+    /* 0x5D8 */ EHUDType meHUDType;
+    /* 0x5DC */ EGtPrepareState mePrepareState;
+    // methods
+    // CB4HUDManager(const CB4HUDManager &);
+    // CB4HUDManager();
+    // void Construct();
+    // bool Prepare();
+    // void Update(float);
+    // void Render();
+    // void Release();
+    // void Destruct();
+    // void SetNumPlayers(int);
+    // RwInt32 GetNumPlayers() const;
+    // void SetHUDType(EHUDType);
+    // EHUDType GetHUDType() const;
+    // CGtV2d GetAlignHandle(EHUDAlign);
+    // CGtV2d CalcAlignedPos(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, int);
+    // void AddComponent(CB4HUDComponent *, EPlayerCarIndex, int, int, int);
+    // void SetNormalHUD();
+    // static CB4HUDRating * GetRatingComponent();
+    // static CB4HUDCrashTicker * GetCrashStyleTickerComponent();
+    // void PrepareNormalComponents(EPlayerCarIndex);
+    // void PrepareCrashComponents(EPlayerCarIndex);
+    // void PrepareSharedComponents(EPlayerCarIndex);
+    // void PrepareFinishComponents(EPlayerCarIndex);
+};
+```
 
 ## Notes
 

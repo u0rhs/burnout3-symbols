@@ -8,27 +8,70 @@
 - **Source file:** `B3ConvexHull.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 10, B3INTERN 10, B3O0PCH 12
 - **Retail (SLUS-21050):** 10 of its 10 DNAT_200 methods found, 10 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ConvexHull`, size 0x01C, methods in `SharedClasses/PhysicsData/B4ConvexHull.cpp` ([layout](#burnout-revenge-layout-of-cb4convexhull))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `DebugRenderPlanes(const GtMathPs2::CGtMatrix3x4&,const GtMathPs2::CGtPlane*,const GtMathPs2::CGtV3d*,bool)` | `0x0027A310` 1184 | `0x002AE920` 1312 | `0x002E5C00` 1312 | `0x002E6680` 820 | `0x002B96D0` proven |  |
-| `DebugRenderEdges(const GtMathPs2::CGtMatrix3x4&,bool) const` | `0x0027A7B0` 1096 |  |  |  | `0x002B9C10` proven |  |
-| `DeformHullVerts(GtMathPs2::CGtV3d*,GtMathPs2::CGtMatrix3x4*) const` | `0x0027AC00` 676 |  |  |  | `0x002BA0F0` proven |  |
-| `MakeFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EB3HullShape)` | `0x0027AEB0` 120 | `0x002AF5E0` 120 | `0x002E68C0` 120 | `0x002E5FA0` 192 | `0x002BA3A0` proven |  |
-| `MakeBoatFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027AF30` 556 | `0x002AF660` 556 | `0x002E6940` 556 | `0x002E5C80` 788 | `0x002BA420` proven |  |
-| `MakeConeFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027B160` 328 | `0x002AF890` 328 | `0x002E6B70` 328 | `0x002E5A90` 484 | `0x002BA650` proven |  |
-| `ScaleAndFillInHullDetails(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027B2B0` 576 | `0x002AF9E0` 848 | `0x002E6CC0` 712 | `0x002E54C0` 1476 | `0x002BA7A0` proven |  |
-| `MakeBoxFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027B4F0` 1284 | `0x002AFD30` 1284 | `0x002E6F90` 1284 | `0x002E46C0` 3184 | `0x002BA9F0` proven |  |
-| `Construct()` | `0x0027BA00` 16 | `0x002B0240` 16 | `0x002E74A0` 16 | `0x002E4690` 44 | `0x002BAEE0` proven |  |
-| `Fixup()` | `0x0027BA10` 64 | `0x002B0250` 64 | `0x002E74B0` 64 | `0x002E4600` 140 | `0x002BAEF0` proven |  |
-| `DebugRenderEdges(const GtMathPs2::CGtMatrix3x4&,bool)` |  | `0x002AEE40` 1260 | `0x002E6120` 1260 | `0x002E63A0` 724 |  |  |
-| `DeformHullVerts(GtMathPs2::CGtV3d*,GtMathPs2::CGtMatrix3x4*)` |  | `0x002AF330` 676 | `0x002E6610` 676 | `0x002E6060` 824 |  |  |
-| `CanDeform()` |  |  |  | `0x00449550` 36 |  |  |
-| `operator =(const CB3ConvexHull&)` |  |  |  | `0x001CC880` 172 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `DebugRenderPlanes(const GtMathPs2::CGtMatrix3x4&,const GtMathPs2::CGtPlane*,const GtMathPs2::CGtV3d*,bool)` | `0x0027A310` 1184 | `0x002AE920` 1312 | `0x002E5C00` 1312 | `0x002E6680` 820 | `0x002B96D0` proven |  | `void CB4ConvexHull::DebugRenderPlanes(const GtMathPs2::CGtMatrix3x4 &lMatrix, const GtMathPs2::CGtPlane *lpaDeformedPlanes, const GtMathPs2::CGtV3d *lpaDeformedVerts, bool lbShowNumbers)` |
+| `DebugRenderEdges(const GtMathPs2::CGtMatrix3x4&,bool) const` | `0x0027A7B0` 1096 |  |  |  | `0x002B9C10` proven |  | `void CB4ConvexHull::DebugRenderEdges(const GtMathPs2::CGtMatrix3x4 &lMatrix, bool lbShowNumbers) const` |
+| `DeformHullVerts(GtMathPs2::CGtV3d*,GtMathPs2::CGtMatrix3x4*) const` | `0x0027AC00` 676 |  |  |  | `0x002BA0F0` proven |  | `bool CB4ConvexHull::DeformHullVerts(GtMathPs2::CGtV3d *lpWorldImpactPointOut, GtMathPs2::CGtV3d lWorldImpactPoint, const GtMathPs2::CGtMatrix3x4 &lObjectMatrix, GtMathPs2::CGtMatrix3x4 *lpaDeformMatrices, const CB4ConvexHull *lpOriginalHull)` (same name, different parameters) |
+| `MakeFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EB3HullShape)` | `0x0027AEB0` 120 | `0x002AF5E0` 120 | `0x002E68C0` 120 | `0x002E5FA0` 192 | `0x002BA3A0` proven |  | `void CB4ConvexHull::MakeFromBoundingBox(GtMathPs2::CGtV3d lMin, GtMathPs2::CGtV3d lMax, EB4HullShape leHullType)` |
+| `MakeBoatFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027AF30` 556 | `0x002AF660` 556 | `0x002E6940` 556 | `0x002E5C80` 788 | `0x002BA420` proven |  | `void CB4ConvexHull::MakeBoatFromBoundingBox(GtMathPs2::CGtV3d lMin, GtMathPs2::CGtV3d lMax)` |
+| `MakeConeFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027B160` 328 | `0x002AF890` 328 | `0x002E6B70` 328 | `0x002E5A90` 484 | `0x002BA650` proven |  | `void CB4ConvexHull::MakeConeFromBoundingBox(GtMathPs2::CGtV3d lMin, GtMathPs2::CGtV3d lMax)` |
+| `ScaleAndFillInHullDetails(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027B2B0` 576 | `0x002AF9E0` 848 | `0x002E6CC0` 712 | `0x002E54C0` 1476 | `0x002BA7A0` proven |  |  |
+| `MakeBoxFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027B4F0` 1284 | `0x002AFD30` 1284 | `0x002E6F90` 1284 | `0x002E46C0` 3184 | `0x002BA9F0` proven |  | `void CB4ConvexHull::MakeBoxFromBoundingBox(GtMathPs2::CGtV3d lMin, GtMathPs2::CGtV3d lMax)` |
+| `Construct()` | `0x0027BA00` 16 | `0x002B0240` 16 | `0x002E74A0` 16 | `0x002E4690` 44 | `0x002BAEE0` proven |  | `void CB4ConvexHull::Construct()` |
+| `Fixup()` | `0x0027BA10` 64 | `0x002B0250` 64 | `0x002E74B0` 64 | `0x002E4600` 140 | `0x002BAEF0` proven |  | `void CB4ConvexHull::Fixup()` |
+| `DebugRenderEdges(const GtMathPs2::CGtMatrix3x4&,bool)` |  | `0x002AEE40` 1260 | `0x002E6120` 1260 | `0x002E63A0` 724 |  |  | `void CB4ConvexHull::DebugRenderEdges(const GtMathPs2::CGtMatrix3x4 &lMatrix, bool lbShowNumbers) const` (same name, different parameters) |
+| `DeformHullVerts(GtMathPs2::CGtV3d*,GtMathPs2::CGtMatrix3x4*)` |  | `0x002AF330` 676 | `0x002E6610` 676 | `0x002E6060` 824 |  |  | `bool CB4ConvexHull::DeformHullVerts(GtMathPs2::CGtV3d *lpWorldImpactPointOut, GtMathPs2::CGtV3d lWorldImpactPoint, const GtMathPs2::CGtMatrix3x4 &lObjectMatrix, GtMathPs2::CGtMatrix3x4 *lpaDeformMatrices, const CB4ConvexHull *lpOriginalHull)` (same name, different parameters) |
+| `CanDeform()` |  |  |  | `0x00449550` 36 |  |  |  |
+| `operator =(const CB3ConvexHull&)` |  |  |  | `0x001CC880` 172 |  |  |  |
+
+## Burnout Revenge layout of `CB4ConvexHull`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 330 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ConvexHull {  // size 0x01C
+    /* 0x000 */ CB4ConvexHullPlane *maPlaneVerts;
+    /* 0x004 */ CGtPlane *maPlanes;
+    /* 0x008 */ CGtV3d *maVerts;
+    /* 0x00C */ CB4ConvexHullEdge *maEdges;
+    /* 0x010 */ CB4ConvexHullVertMap *maVertWeights;
+    /* 0x014 */ RwUInt32 mxFlags;
+    /* 0x018 */ RwUInt8 mu8NumVerts;
+    /* 0x019 */ RwUInt8 mu8NumPlanes;
+    /* 0x01A */ RwUInt8 mu8NumEdges;
+    // methods
+    // CB4ConvexHull(const CB4ConvexHull &);
+    // CB4ConvexHull();
+    // void Fixup();
+    // void CalculateNormals();
+    // void CalculatePlaneData(int);
+    // void MakeFromBoundingBox(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, EB4HullShape);
+    // void MakeBoxFromBoundingBox(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d);
+    // void MakeConeFromBoundingBox(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d);
+    // void MakeBoatFromBoundingBox(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d);
+    // void DebugRenderEdges(const GtMathPs2::CGtMatrix3x4 &, bool) const;
+    // void DebugRenderPlanes(const GtMathPs2::CGtMatrix3x4 &, const GtMathPs2::CGtPlane *, const GtMathPs2::CGtV3d *, bool);
+    // bool FindSharedPlaneEdge(unsigned char *, unsigned char, unsigned char);
+    // bool FindPlaneWithVertex(unsigned char *, unsigned char, unsigned char);
+    // bool DeformHullVerts(GtMathPs2::CGtV3d *, GtMathPs2::CGtV3d, const GtMathPs2::CGtMatrix3x4 &, GtMathPs2::CGtMatrix3x4 *, const CB4ConvexHull *);
+    // void MakePlanar();
+    // void Construct();
+    // void Destroy();
+    // void Prepare();
+    // void Release();
+    // bool CanDeform();
+    // bool IsPointInHull(GtMathPs2::CGtV3d);
+    // bool IsConvex();
+    // void ScaleAndFillInHullDetails(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d);
+};
+```
 
 ## Notes
 

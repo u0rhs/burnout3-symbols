@@ -7,16 +7,38 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3NetworkAllNATDataFinalisedMessage.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 2, B3INTERN 3, B3O0PCH 2
+- **Burnout Revenge counterpart:** `CB4NetworkAllNATDataFinalisedMessage`, size 0x040, methods in `GameSource/Network/Messages/B4NetworkAllNATDataFinalisedMessage.cpp` ([layout](#burnout-revenge-layout-of-cb4networkallnatdatafinalisedmessage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Retrieve(int*,EPlayerNATState*)` | `0x002ED9B0` 96 | `0x0033C280` 1152 | `0x0036D900` 1144 | `0x0036C8D0` 532 |  |  |
-| `Prepare(int*,EPlayerNATState*)` | `0x002EDA10` 60 | `0x0033C700` 160 | `0x0036DD80` 160 | `0x0036C7F0` 224 |  |  |
-| `Construct()` | `0x002EDA50` 8 |  | `0x0036DE20` 8 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Retrieve(int*,EPlayerNATState*)` | `0x002ED9B0` 96 | `0x0033C280` 1152 | `0x0036D900` 1144 | `0x0036C8D0` 532 |  |  | `bool CB4NetworkAllNATDataFinalisedMessage::Retrieve(int *lpanPlayerIDs, EPlayerNATState *lpanPlayerStatus)` |
+| `Prepare(int*,EPlayerNATState*)` | `0x002EDA10` 60 | `0x0033C700` 160 | `0x0036DD80` 160 | `0x0036C7F0` 224 |  |  | `void CB4NetworkAllNATDataFinalisedMessage::Prepare(int *lpanPlayerIDs, EPlayerNATState *lpanPlayerStatus)` |
+| `Construct()` | `0x002EDA50` 8 |  | `0x0036DE20` 8 |  |  |  | `void CB4NetworkAllNATDataFinalisedMessage::Construct()` |
+
+## Burnout Revenge layout of `CB4NetworkAllNATDataFinalisedMessage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 92 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkAllNATDataFinalisedMessage : public CB4NetworkMessageWithPlayerIDs {  // size 0x040
+    // base CB4NetworkMessageWithPlayerIDs at 0x000
+    /* 0x010 */ int manPlayerIDs[6];
+    /* 0x028 */ EPlayerNATState maePlayerNATStatus[6];
+    // methods
+    // CB4NetworkAllNATDataFinalisedMessage(const CB4NetworkAllNATDataFinalisedMessage &);
+    // CB4NetworkAllNATDataFinalisedMessage();
+    // void Construct();
+    // void Prepare(int *, EPlayerNATState *);
+    // bool Retrieve(int *, EPlayerNATState *);
+    // void Update();
+    // void Release();
+    // void Destruct();
+};
+```
 
 ## Notes
 

@@ -8,20 +8,38 @@
 - **Source file:** `B3SoundESMStruct.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundEsmGraphOutputs`, size 0x008, methods in `SharedClasses/SoundData/B4SoundESMStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4soundesmgraphoutputs))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Apply(CGtSoundVirtualVoice*,const CB3RaceCar*,float) const` | `0x002BA450` 244 |  |  |  | `0x002FB2E0` strong |  |
-| `Apply(unsigned int) const` | `0x002BA550` 208 |  |  |  | `0x002FB3E0` proven |  |
-| `Apply(CGtSoundRealVoice*,const CB3RaceCar*,float,float) const` | `0x002BA620` 388 |  |  |  | `0x002FB4B0` proven |  |
-| `Apply(CGtSoundVirtualVoice*,const CB3RaceCar*,float)` |  | `0x002FC340` 532 | `0x00330010` 532 | `0x00328610` 260 |  |  |
-| `Apply(unsigned int)` |  | `0x002FC560` 208 | `0x00330230` 208 | `0x00328420` 264 |  |  |
-| `Apply(CGtSoundRealVoice*,const CB3RaceCar*,float,float)` |  | `0x002FC630` 680 | `0x00330300` 680 | `0x00328200` 540 |  |  |
-| `Construct()` |  |  |  | `0x00327D80` 340 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Apply(CGtSoundVirtualVoice*,const CB3RaceCar*,float) const` | `0x002BA450` 244 |  |  |  | `0x002FB2E0` strong |  | `void CB4SoundEsmGraphOutputs::Apply(CGtSoundVirtualVoice *lpVirtualVoice, const CB4RaceCar *lpRaceCar, float lrGain) const` |
+| `Apply(unsigned int) const` | `0x002BA550` 208 |  |  |  | `0x002FB3E0` proven |  |  |
+| `Apply(CGtSoundRealVoice*,const CB3RaceCar*,float,float) const` | `0x002BA620` 388 |  |  |  | `0x002FB4B0` proven |  |  |
+| `Apply(CGtSoundVirtualVoice*,const CB3RaceCar*,float)` |  | `0x002FC340` 532 | `0x00330010` 532 | `0x00328610` 260 |  |  |  |
+| `Apply(unsigned int)` |  | `0x002FC560` 208 | `0x00330230` 208 | `0x00328420` 264 |  |  |  |
+| `Apply(CGtSoundRealVoice*,const CB3RaceCar*,float,float)` |  | `0x002FC630` 680 | `0x00330300` 680 | `0x00328200` 540 |  |  |  |
+| `Construct()` |  |  |  | `0x00327D80` 340 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundEsmGraphOutputs`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameSource/Sound/Esm/B4SoundESM.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundEsmGraphOutputs {  // size 0x008
+    /* 0x000 */ float marOutputs[2];
+    // methods
+    // CB4SoundEsmGraphOutputs(const CB4SoundEsmGraphOutputs &);
+    // CB4SoundEsmGraphOutputs();
+    // void Construct();
+    // void Apply(CGtSoundVirtualVoice *, const CB4RaceCar *, float, float) const;
+    // void Apply(unsigned int) const;
+    // void Apply(CGtSoundVirtualVoice *, const CB4RaceCar *, float) const;
+};
+```
 
 ## Notes
 

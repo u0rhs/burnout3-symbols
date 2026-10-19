@@ -12,14 +12,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x00387510` 284 | `0x003FAA80` 284 | `0x004226E0` 284 | `0x0043C480` 372 |  |  |
-| `Update(float)` | `0x00387630` 136 | `0x003FABA0` 136 | `0x00422800` 136 | `0x0043C410` 100 |  |  |
-| `Prepare(int,EHUDAlign,int)` | `0x003876C0` 420 | `0x003FAC30` 520 | `0x00422890` 528 | `0x0043C1F0` 536 | `0x003D7190` strong |  |
-| `CB3HUDCrashCombo()` |  |  |  | `0x00199690` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x00387510` 284 | `0x003FAA80` 284 | `0x004226E0` 284 | `0x0043C480` 372 |  |  |  |
+| `Update(float)` | `0x00387630` 136 | `0x003FABA0` 136 | `0x00422800` 136 | `0x0043C410` 100 |  |  |  |
+| `Prepare(int,EHUDAlign,int)` | `0x003876C0` 420 | `0x003FAC30` 520 | `0x00422890` 528 | `0x0043C1F0` 536 | `0x003D7190` strong |  |  |
+| `CB3HUDCrashCombo()` |  |  |  | `0x00199690` 60 |  |  |  |
 
 ## Notes
 

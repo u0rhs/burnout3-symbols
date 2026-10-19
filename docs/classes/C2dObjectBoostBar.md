@@ -8,24 +8,48 @@
 - **Source file:** `B3HUDBoostBar.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 10
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `C2dObjectBoostBar`, size 0x040, methods in `GameSource/Hud/B4HUDBoostBar.cpp` ([layout](#burnout-revenge-layout-of-c2dobjectboostbar))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00171F00` 5968 | `0x0018DF20` 6264 | `0x00188360` 6012 | `0x0019E1B0` 1164 | `0x001A6290` likely |  |
-| `_RenderParticles(const B3HUDParticleParamsTag*,const CGt2dObject::CGt2dObjectSpace&,const CB3HUDBoostBar::CB` | `0x00173650` 1636 | `0x0018F7A0` 1676 | `0x00189AE0` 1676 | `0x0019DA00` 1832 | `0x001A7B00` likely |  |
-| `_RenderBackground(const CGt2dObject::CGt2dObjectSpace&,float,int,float)` | `0x00173CC0` 392 | `0x0018FE30` 512 |  | `0x0019D570` 952 | `0x001A8180` unverified |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CB3HUDBoostBar::CBoostBarObjectD` |  |  |  | `0x0019D480` 196 |  |  |
-| `_RenderBackground(const CGt2dObject::CGt2dObjectSpace&,float,int)` |  |  | `0x0018A170` 444 |  |  |  |
-| `_RenderBackgroundGlow(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x0019F960` 1668 |  |  |
-| `_RenderBlueFlame(const CGt2dObject::CGt2dObjectSpace&,float,unsigned char)` |  |  |  | `0x0019FFF0` 648 |  |  |
-| `_RenderFireCore(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x0019F3D0` 1340 |  |  |
-| `_RenderFireEdge(const CGt2dObject::CGt2dObjectSpace&,float,float,float)` |  |  |  | `0x0019ECA0` 1752 |  |  |
-| `_RenderFireOverlay(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x0019E640` 1516 |  |  |
-| `_RenderShatter(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x001A02E0` 2544 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00171F00` 5968 | `0x0018DF20` 6264 | `0x00188360` 6012 | `0x0019E1B0` 1164 | `0x001A6290` likely |  | `void C2dObjectBoostBar::_Render(const CGt2dObject::CGt2dObjectSpace &lObjectSpace, const void *lpData)` |
+| `_RenderParticles(const B3HUDParticleParamsTag*,const CGt2dObject::CGt2dObjectSpace&,const CB3HUDBoostBar::CB` | `0x00173650` 1636 | `0x0018F7A0` 1676 | `0x00189AE0` 1676 | `0x0019DA00` 1832 | `0x001A7B00` likely |  | `void C2dObjectBoostBar::_RenderParticles(const B4HUDParticleParamsTag *lpParams, const CGt2dObject::CGt2dObjectSpace &lObjectSpace, const CB4HUDBoostBar::CBoostBarObjectData::CParticle *lpaParticleArray, int lnNumParticles, float lrCurrentTime, bool lbCompact)` (same name, different parameters) |
+| `_RenderBackground(const CGt2dObject::CGt2dObjectSpace&,float,int,float)` | `0x00173CC0` 392 | `0x0018FE30` 512 |  | `0x0019D570` 952 | `0x001A8180` unverified |  | `void C2dObjectBoostBar::_RenderBackground(const CGt2dObject::CGt2dObjectSpace &lObjectSpace, float lrWidth, int lnMultiplier, float lrMultiplierFlashIntensity, float lrCurrentTime, bool lbDisplayGreyBackground, const C2dObjectBoostBar::C2dObjectBoostBarData *lpBoostBarData)` (same name, different parameters) |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CB3HUDBoostBar::CBoostBarObjectD` |  |  |  | `0x0019D480` 196 |  |  | `void C2dObjectBoostBar::Prepare(const GtMathPs2::CGtV2d &lPos, const GtMathPs2::CGtV2d &lHandle, GtMathPs2::CGtV4d lColour, CB4HUDBoostBar::CBoostBarObjectData *lpObjectData)` (same name, different parameters) |
+| `_RenderBackground(const CGt2dObject::CGt2dObjectSpace&,float,int)` |  |  | `0x0018A170` 444 |  |  |  |  |
+| `_RenderBackgroundGlow(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x0019F960` 1668 |  |  |  |
+| `_RenderBlueFlame(const CGt2dObject::CGt2dObjectSpace&,float,unsigned char)` |  |  |  | `0x0019FFF0` 648 |  |  |  |
+| `_RenderFireCore(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x0019F3D0` 1340 |  |  |  |
+| `_RenderFireEdge(const CGt2dObject::CGt2dObjectSpace&,float,float,float)` |  |  |  | `0x0019ECA0` 1752 |  |  |  |
+| `_RenderFireOverlay(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x0019E640` 1516 |  |  |  |
+| `_RenderShatter(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x001A02E0` 2544 |  |  |  |
+
+## Burnout Revenge layout of `C2dObjectBoostBar`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Hud/B4HUDBoostBar.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class C2dObjectBoostBar : public CGt2dObject {  // size 0x040
+    // base CGt2dObject at 0x000
+    // methods
+    // C2dObjectBoostBar(const C2dObjectBoostBar &);
+    // C2dObjectBoostBar();
+    // void Prepare(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, GtMathPs2::CGtV4d, CB4HUDBoostBar::CBoostBarObjectData *);
+    // static void _RenderBackground(const CGt2dObject::CGt2dObjectSpace &, float, int, float, float, bool, const C2dObjectBoostBar::C2dObjectBoostBarData *);
+    // static void _RenderShatter(const CGt2dObject::CGt2dObjectSpace &, float, float, bool);
+    // static void _RenderBackgroundGlow(const CGt2dObject::CGt2dObjectSpace &, GtMathPs2::CGtV4d, float, float);
+    // static void _RenderFireCore(const CGt2dObject::CGt2dObjectSpace &, GtMathPs2::CGtV4d, float, float);
+    // static void _RenderFireEdge(const CGt2dObject::CGt2dObjectSpace &, GtMathPs2::CGtV4d, float, float, float);
+    // static void _RenderBlueFlame(const CGt2dObject::CGt2dObjectSpace &, float, unsigned char);
+    // static void _RenderFireOverlay(const CGt2dObject::CGt2dObjectSpace &, GtMathPs2::CGtV4d, float, float);
+    // static void _RenderParticles(const B4HUDParticleParamsTag *, const CGt2dObject::CGt2dObjectSpace &, const CB4HUDBoostBar::CBoostBarObjectData::CParticle *, int, float, bool);
+    // static void _Render(const CGt2dObject::CGt2dObjectSpace &, const void *);
+};
+```
 
 ## Notes
 

@@ -12,15 +12,15 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x00333010` 956 | `0x00393BE0` 1000 | `0x003BE030` 1000 | `0x003C3600` 1016 |  |  |
-| `SetupStartFrame(CB3CameraPlayerParams*,CB3PlayerCameraManager*)` | `0x003333D0` 256 | `0x00393FD0` 300 | `0x003BE420` 300 | `0x003C3470` 388 |  |  |
-| `SetupTransition(CB3PlayerCameraManager*)` | `0x003334D0` 644 | `0x00394100` 644 | `0x003BE550` 644 | `0x003C30B0` 948 | `0x00447000` unverified |  |
-| `Restart(CB3PlayerCameraManager*)` | `0x00333790` 64 | `0x00394390` 64 | `0x003BE7E0` 64 | `0x003C3050` 96 |  |  |
-| `CB3PlayerCameraStatePlayer()` |  |  |  | `0x0013EAB0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x00333010` 956 | `0x00393BE0` 1000 | `0x003BE030` 1000 | `0x003C3600` 1016 |  |  |  |
+| `SetupStartFrame(CB3CameraPlayerParams*,CB3PlayerCameraManager*)` | `0x003333D0` 256 | `0x00393FD0` 300 | `0x003BE420` 300 | `0x003C3470` 388 |  |  |  |
+| `SetupTransition(CB3PlayerCameraManager*)` | `0x003334D0` 644 | `0x00394100` 644 | `0x003BE550` 644 | `0x003C30B0` 948 | `0x00447000` unverified |  |  |
+| `Restart(CB3PlayerCameraManager*)` | `0x00333790` 64 | `0x00394390` 64 | `0x003BE7E0` 64 | `0x003C3050` 96 |  |  |  |
+| `CB3PlayerCameraStatePlayer()` |  |  |  | `0x0013EAB0` 60 |  |  |  |
 
 ## Notes
 

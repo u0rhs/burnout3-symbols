@@ -12,51 +12,51 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_GetImageSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002D1EF0` 124 | `0x0031A960` 124 | `0x0034CB50` 124 | `0x0034F390` 200 | `0x003113C0` strong |  |
-| `_RenderImage(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const void` | `0x002D1F70` 1076 | `0x0031A9E0` 1148 | `0x0034CBD0` 1148 | `0x0034EE00` 1416 | `0x00311440` strong |  |
-| `BuildGameOptionsText()` | `0x002D23B0` 1140 | `0x0031AE60` 1140 | `0x0034D050` 1128 | `0x0034E7E0` 1508 | `0x00311890` unverified |  |
-| `CheckCarClassLimit(unsigned long,bool)` | `0x002D2830` 264 | `0x0031B2E0` 264 | `0x0034D4C0` 264 | `0x0034E650` 388 |  |  |
-| `GetCarClass(unsigned long)` | `0x002D2940` 296 | `0x0031B3F0` 296 | `0x0034D5D0` 296 | `0x0034E4E0` 356 | `0x003120E0` proven |  |
-| `_BanBuddyCallback(bool,void*)` | `0x002D2A70` 120 | `0x0031B520` 120 | `0x0034D700` 120 | `0x0034E310` 144 | `0x00312210` likely |  |
-| `_AddUserCallback(bool,void*)` | `0x002D2AF0` 120 | `0x0031B5A0` 120 | `0x0034D780` 120 | `0x0034E280` 144 | `0x003122A0` likely |  |
-| `RebuildList()` | `0x002D2B70` 1380 | `0x0031B620` 1808 | `0x0034D800` 1808 | `0x0034DB60` 1816 | `0x00312420` unverified |  |
-| `ShowPrompts()` | `0x002D30E0` 1408 | `0x0031BD30` 1408 | `0x0034DF10` 1408 | `0x0034D440` 1788 | `0x00312A60` unverified |  |
-| `OnKeyboardShow()` | `0x002D3660` 264 | `0x0031C2B0` 264 | `0x0034E490` 264 | `0x0034D240` 296 | `0x00313090` strong |  |
-| `OnKeyboardCancel()` | `0x002D3770` 132 | `0x0031C3C0` 132 | `0x0034E5A0` 132 | `0x0034D190` 164 | `0x003131A0` strong |  |
-| `OnKeyboardDone()` | `0x002D3800` 340 | `0x0031C450` 340 | `0x0034E630` 340 | `0x0034D000` 368 | `0x00313230` unverified |  |
-| `SetPlayerLatency(int,int)` | `0x002D3960` 284 | `0x0031C5B0` 284 | `0x0034E790` 284 | `0x0034CCF0` 612 | `0x00313450` strong |  |
-| `SetPlayerCar(int,unsigned long,int)` | `0x002D3A80` 196 | `0x0031C6D0` 196 | `0x0034E8B0` 196 | `0x0034CB10` 480 | `0x00313580` strong |  |
-| `SetPlayerHeadsetStatus(int,unsigned char)` | `0x002D3B50` 296 | `0x0031C7A0` 296 | `0x0034E980` 296 | `0x0034C750` 692 | `0x00313650` likely |  |
-| `SetPlayerName(int,char*,bool,bool)` | `0x002D3C80` 384 | `0x0031C8D0` 384 | `0x0034EAB0` 384 | `0x0034C4B0` 660 | `0x003139B0` strong |  |
-| `SetupTableData()` | `0x002D3E00` 2276 | `0x0031CA50` 2244 | `0x0034EC30` 2244 | `0x0034AEA0` 5480 | `0x00313B30` likely |  |
-| `Release()` | `0x002D46F0` 60 | `0x0031D320` 60 | `0x0034F500` 60 | `0x0034AE50` 72 | `0x003146E0` strong |  |
-| `UpdateConfirmLeave()` | `0x002D4730` 308 | `0x0031D360` 396 | `0x0034F540` 396 | `0x0034AC30` 364 | `0x00314720` unverified |  |
-| `UpdateLatency()` | `0x002D4870` 480 | `0x0031D4F0` 480 | `0x0034F6D0` 480 | `0x0034AA30` 508 | `0x00314850` strong |  |
-| `UpdateLaunchGame()` | `0x002D4A50` 500 | `0x0031D6D0` 584 | `0x0034F8B0` 584 | `0x0034A830` 460 | `0x00314A30` unverified |  |
-| `UpdateBuddyBanningMode()` | `0x002D4C50` 452 | `0x0031D920` 524 | `0x0034FB00` 524 | `0x0034A500` 536 | `0x00314CC0` unverified |  |
-| `UpdateBuddyDetailsPageMode()` | `0x002D4E20` 708 | `0x0031DB30` 820 | `0x0034FD10` 820 | `0x0034A0A0` 892 | `0x00314E50` unverified |  |
-| `UpdateSelectPlayerPageMode()` | `0x002D50F0` 1056 | `0x0031DE70` 1208 | `0x00350050` 1208 | `0x00349AC0` 1472 |  |  |
-| `UpdateNormalPageMode()` | `0x002D5510` 1848 | `0x0031E330` 1980 | `0x00350510` 1980 | `0x00349280` 2068 | `0x00315560` unverified |  |
-| `UpdateNATData()` | `0x002D5C50` 904 | `0x0031EAF0` 904 | `0x00350CD0` 904 | `0x00348E40` 1088 | `0x00315940` unverified |  |
-| `ReturnToNormalPageMode()` | `0x002D5FE0` 1072 | `0x0031EE80` 1072 | `0x00351060` 1072 | `0x00348870` 1304 |  |  |
-| `UpdateVoIP()` | `0x002D6410` 852 | `0x0031F2B0` 928 | `0x00351490` 928 | `0x00348480` 944 | `0x00316840` likely |  |
-| `UpdateKeyboard()` | `0x002D6770` 732 | `0x0031F650` 812 | `0x00351830` 812 | `0x003480F0` 904 | `0x00316BE0` unverified |  |
-| `ChatMessageCallback(char*,char*,void*)` | `0x002D6A50` 72 | `0x0031F980` 72 | `0x00351B60` 72 | `0x003480A0` 80 | `0x00316E30` strong |  |
-| `Update()` | `0x002D6AA0` 2136 | `0x0031F9D0` 3268 | `0x00351BB0` 3268 | `0x00347610` 2564 | `0x00316E80` unverified |  |
-| `HandleError(int)` | `0x002D7300` 360 | `0x003206A0` 360 | `0x00352880` 360 | `0x00347470` 416 | `0x00317B80` likely |  |
-| `Prepare(char*)` | `0x002D7470` 764 | `0x00320810` 844 | `0x003529F0` 844 | `0x00347010` 824 | `0x00317D20` unverified |  |
-| `CB3OnlineLobbyPage()` |  |  |  | `0x00341BF0` 364 |  |  |
-| `ClearPlayerData(int)` |  |  |  | `0x0034CF60` 148 |  |  |
-| `GetMenuConfirm()` |  |  |  | `0x0034EDD0` 44 |  |  |
-| `SetPlayerTalking(int,int)` |  |  |  | `0x0034CA10` 244 |  |  |
-| `UpdateBuddyAddingMode()` |  |  |  | `0x0034A420` 172 |  |  |
-| `UpdateBuddyKickingMode()` |  |  |  | `0x0034A720` 272 |  |  |
-| `UpdateClassLimitForceChange()` |  |  |  | `0x0034ADA0` 176 |  |  |
-| `UpdateGameParameters()` |  |  |  | `0x0034E3A0` 164 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_GetImageSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002D1EF0` 124 | `0x0031A960` 124 | `0x0034CB50` 124 | `0x0034F390` 200 | `0x003113C0` strong |  |  |
+| `_RenderImage(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const void` | `0x002D1F70` 1076 | `0x0031A9E0` 1148 | `0x0034CBD0` 1148 | `0x0034EE00` 1416 | `0x00311440` strong |  |  |
+| `BuildGameOptionsText()` | `0x002D23B0` 1140 | `0x0031AE60` 1140 | `0x0034D050` 1128 | `0x0034E7E0` 1508 | `0x00311890` unverified |  |  |
+| `CheckCarClassLimit(unsigned long,bool)` | `0x002D2830` 264 | `0x0031B2E0` 264 | `0x0034D4C0` 264 | `0x0034E650` 388 |  |  |  |
+| `GetCarClass(unsigned long)` | `0x002D2940` 296 | `0x0031B3F0` 296 | `0x0034D5D0` 296 | `0x0034E4E0` 356 | `0x003120E0` proven |  |  |
+| `_BanBuddyCallback(bool,void*)` | `0x002D2A70` 120 | `0x0031B520` 120 | `0x0034D700` 120 | `0x0034E310` 144 | `0x00312210` likely |  |  |
+| `_AddUserCallback(bool,void*)` | `0x002D2AF0` 120 | `0x0031B5A0` 120 | `0x0034D780` 120 | `0x0034E280` 144 | `0x003122A0` likely |  |  |
+| `RebuildList()` | `0x002D2B70` 1380 | `0x0031B620` 1808 | `0x0034D800` 1808 | `0x0034DB60` 1816 | `0x00312420` unverified |  |  |
+| `ShowPrompts()` | `0x002D30E0` 1408 | `0x0031BD30` 1408 | `0x0034DF10` 1408 | `0x0034D440` 1788 | `0x00312A60` unverified |  |  |
+| `OnKeyboardShow()` | `0x002D3660` 264 | `0x0031C2B0` 264 | `0x0034E490` 264 | `0x0034D240` 296 | `0x00313090` strong |  |  |
+| `OnKeyboardCancel()` | `0x002D3770` 132 | `0x0031C3C0` 132 | `0x0034E5A0` 132 | `0x0034D190` 164 | `0x003131A0` strong |  |  |
+| `OnKeyboardDone()` | `0x002D3800` 340 | `0x0031C450` 340 | `0x0034E630` 340 | `0x0034D000` 368 | `0x00313230` unverified |  |  |
+| `SetPlayerLatency(int,int)` | `0x002D3960` 284 | `0x0031C5B0` 284 | `0x0034E790` 284 | `0x0034CCF0` 612 | `0x00313450` strong |  |  |
+| `SetPlayerCar(int,unsigned long,int)` | `0x002D3A80` 196 | `0x0031C6D0` 196 | `0x0034E8B0` 196 | `0x0034CB10` 480 | `0x00313580` strong |  |  |
+| `SetPlayerHeadsetStatus(int,unsigned char)` | `0x002D3B50` 296 | `0x0031C7A0` 296 | `0x0034E980` 296 | `0x0034C750` 692 | `0x00313650` likely |  |  |
+| `SetPlayerName(int,char*,bool,bool)` | `0x002D3C80` 384 | `0x0031C8D0` 384 | `0x0034EAB0` 384 | `0x0034C4B0` 660 | `0x003139B0` strong |  |  |
+| `SetupTableData()` | `0x002D3E00` 2276 | `0x0031CA50` 2244 | `0x0034EC30` 2244 | `0x0034AEA0` 5480 | `0x00313B30` likely |  |  |
+| `Release()` | `0x002D46F0` 60 | `0x0031D320` 60 | `0x0034F500` 60 | `0x0034AE50` 72 | `0x003146E0` strong |  |  |
+| `UpdateConfirmLeave()` | `0x002D4730` 308 | `0x0031D360` 396 | `0x0034F540` 396 | `0x0034AC30` 364 | `0x00314720` unverified |  |  |
+| `UpdateLatency()` | `0x002D4870` 480 | `0x0031D4F0` 480 | `0x0034F6D0` 480 | `0x0034AA30` 508 | `0x00314850` strong |  |  |
+| `UpdateLaunchGame()` | `0x002D4A50` 500 | `0x0031D6D0` 584 | `0x0034F8B0` 584 | `0x0034A830` 460 | `0x00314A30` unverified |  |  |
+| `UpdateBuddyBanningMode()` | `0x002D4C50` 452 | `0x0031D920` 524 | `0x0034FB00` 524 | `0x0034A500` 536 | `0x00314CC0` unverified |  |  |
+| `UpdateBuddyDetailsPageMode()` | `0x002D4E20` 708 | `0x0031DB30` 820 | `0x0034FD10` 820 | `0x0034A0A0` 892 | `0x00314E50` unverified |  |  |
+| `UpdateSelectPlayerPageMode()` | `0x002D50F0` 1056 | `0x0031DE70` 1208 | `0x00350050` 1208 | `0x00349AC0` 1472 |  |  |  |
+| `UpdateNormalPageMode()` | `0x002D5510` 1848 | `0x0031E330` 1980 | `0x00350510` 1980 | `0x00349280` 2068 | `0x00315560` unverified |  |  |
+| `UpdateNATData()` | `0x002D5C50` 904 | `0x0031EAF0` 904 | `0x00350CD0` 904 | `0x00348E40` 1088 | `0x00315940` unverified |  |  |
+| `ReturnToNormalPageMode()` | `0x002D5FE0` 1072 | `0x0031EE80` 1072 | `0x00351060` 1072 | `0x00348870` 1304 |  |  |  |
+| `UpdateVoIP()` | `0x002D6410` 852 | `0x0031F2B0` 928 | `0x00351490` 928 | `0x00348480` 944 | `0x00316840` likely |  |  |
+| `UpdateKeyboard()` | `0x002D6770` 732 | `0x0031F650` 812 | `0x00351830` 812 | `0x003480F0` 904 | `0x00316BE0` unverified |  |  |
+| `ChatMessageCallback(char*,char*,void*)` | `0x002D6A50` 72 | `0x0031F980` 72 | `0x00351B60` 72 | `0x003480A0` 80 | `0x00316E30` strong |  |  |
+| `Update()` | `0x002D6AA0` 2136 | `0x0031F9D0` 3268 | `0x00351BB0` 3268 | `0x00347610` 2564 | `0x00316E80` unverified |  |  |
+| `HandleError(int)` | `0x002D7300` 360 | `0x003206A0` 360 | `0x00352880` 360 | `0x00347470` 416 | `0x00317B80` likely |  |  |
+| `Prepare(char*)` | `0x002D7470` 764 | `0x00320810` 844 | `0x003529F0` 844 | `0x00347010` 824 | `0x00317D20` unverified |  |  |
+| `CB3OnlineLobbyPage()` |  |  |  | `0x00341BF0` 364 |  |  |  |
+| `ClearPlayerData(int)` |  |  |  | `0x0034CF60` 148 |  |  |  |
+| `GetMenuConfirm()` |  |  |  | `0x0034EDD0` 44 |  |  |  |
+| `SetPlayerTalking(int,int)` |  |  |  | `0x0034CA10` 244 |  |  |  |
+| `UpdateBuddyAddingMode()` |  |  |  | `0x0034A420` 172 |  |  |  |
+| `UpdateBuddyKickingMode()` |  |  |  | `0x0034A720` 272 |  |  |  |
+| `UpdateClassLimitForceChange()` |  |  |  | `0x0034ADA0` 176 |  |  |  |
+| `UpdateGameParameters()` |  |  |  | `0x0034E3A0` 164 |  |  |  |
 
 ## Notes
 

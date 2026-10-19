@@ -8,23 +8,24 @@
 - **Source file:** `B3ParticleRendererPS2.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 10
 - **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ParticleRenderer`, size 0x001, methods in `GameSource/Graphics/ParticleRenderer/Ps2/B4ParticleRendererPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4particlerenderer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `DispatchArray(CB3ParticleRenderer::CB3ParticleRendererEntry*)` | `0x00214720` 564 | `0x00223590` 980 | `0x00262AC0` 700 | `0x002693D0` 1112 | `0x00254340` strong |  |
-| `EndRender()` | `0x00214960` 996 | `0x00223970` 1048 | `0x00262D80` 996 | `0x00268D80` 584 | `0x00254580` strong |  |
-| `RenderParticleArray(CB3ParticleArray*)` | `0x00214D50` 192 | `0x00223D90` 352 | `0x00263170` 192 | `0x00268C00` 348 | `0x00254970` strong |  |
-| `BeginRender(bool)` | `0x00214E10` 16 | `0x00223EF0` 96 | `0x00263230` 16 | `0x00268BC0` 60 | `0x00254A50` likely |  |
-| `Destruct()` | `0x00214E20` 8 | `0x00223F50` 8 | `0x00263240` 8 | `0x00268BB0` 8 | `0x00254A70` strong |  |
-| `Construct()` | `0x00214E30` 8 | `0x00223F60` 8 | `0x00263250` 8 | `0x00268BA0` 8 | `0x00254A80` strong |  |
-| `RestoreRenderstates()` |  |  |  | `0x00269830` 192 |  |  |
-| `SetRenderstates()` |  |  |  | `0x00269330` 148 |  |  |
-| `UploadCameraData()` |  |  |  | `0x00269060` 708 |  |  |
-| `UploadVUCode()` |  |  |  | `0x00268FF0` 112 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `DispatchArray(CB3ParticleRenderer::CB3ParticleRendererEntry*)` | `0x00214720` 564 | `0x00223590` 980 | `0x00262AC0` 700 | `0x002693D0` 1112 | `0x00254340` strong |  | `void CB4ParticleRenderer::DispatchArray(CB4ParticleRenderer::CB4ParticleRendererEntry *lpEntry)` |
+| `EndRender()` | `0x00214960` 996 | `0x00223970` 1048 | `0x00262D80` 996 | `0x00268D80` 584 | `0x00254580` strong |  | `void CB4ParticleRenderer::EndRender()` |
+| `RenderParticleArray(CB3ParticleArray*)` | `0x00214D50` 192 | `0x00223D90` 352 | `0x00263170` 192 | `0x00268C00` 348 | `0x00254970` strong |  | `void CB4ParticleRenderer::RenderParticleArray(CB4ParticleArray *lpParticleArray)` |
+| `BeginRender(bool)` | `0x00214E10` 16 | `0x00223EF0` 96 | `0x00263230` 16 | `0x00268BC0` 60 | `0x00254A50` likely |  | `void CB4ParticleRenderer::BeginRender(bool lbIsCrash, bool lbIsLookbackCamera)` (same name, different parameters) |
+| `Destruct()` | `0x00214E20` 8 | `0x00223F50` 8 | `0x00263240` 8 | `0x00268BB0` 8 | `0x00254A70` strong |  | `void CB4ParticleRenderer::Destruct()` |
+| `Construct()` | `0x00214E30` 8 | `0x00223F60` 8 | `0x00263250` 8 | `0x00268BA0` 8 | `0x00254A80` strong |  | `void CB4ParticleRenderer::Construct()` |
+| `RestoreRenderstates()` |  |  |  | `0x00269830` 192 |  |  | `void CB4ParticleRenderer::RestoreRenderstates()` |
+| `SetRenderstates()` |  |  |  | `0x00269330` 148 |  |  | `void CB4ParticleRenderer::SetRenderstates()` |
+| `UploadCameraData()` |  |  |  | `0x00269060` 708 |  |  | `void CB4ParticleRenderer::UploadCameraData()` |
+| `UploadVUCode()` |  |  |  | `0x00268FF0` 112 |  |  | `void CB4ParticleRenderer::UploadVUCode()` |
 
 ## Static data (DNAT_200)
 
@@ -37,6 +38,37 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `0x00443E38` | 1 | .sbss | `CB3ParticleRenderer::mbIsCrash` |
 | `0x01CAE010` | 64 | .bss | `CB3ParticleRenderer::mInvCamLTM` |
 | `0x01CAE050` | 384 | .bss | `CB3ParticleRenderer::maRenderableArrays` |
+
+## Burnout Revenge layout of `CB4ParticleRenderer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Graphics/ParticleRenderer/Ps2/B4ParticleRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ParticleRenderer {  // size 0x001
+    /* static */ CGtMatrix3x4 mInvCamLTM;
+    /* static */ CB4ParticleRendererEntry maRenderableArrays[39];
+    /* static */ RwInt32 mnNumRenderableArrays;
+    /* static */ RwInt32 mnDMANumQW;
+    /* static */ RwReal mrFOVScale;
+    /* static */ RwReal mrMinNearClip;
+    /* static */ bool mbIsCrash;
+    /* static */ bool mbIsLookbackCamera;
+    /* static */ RwReal mrLastCurrentTime;
+    // methods
+    // CB4ParticleRenderer(const CB4ParticleRenderer &);
+    // CB4ParticleRenderer();
+    // static void Construct();
+    // static void Destruct();
+    // static void BeginRender(bool, bool);
+    // static void RenderParticleArray(CB4ParticleArray *);
+    // static void EndRender();
+    // static void UploadVUCode();
+    // static void UploadCameraData();
+    // static void SetRenderstates();
+    // static void DispatchArray(CB4ParticleRenderer::CB4ParticleRendererEntry *);
+    // static void RestoreRenderstates();
+};
+```
 
 ## Notes
 

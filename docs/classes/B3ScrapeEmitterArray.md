@@ -6,19 +6,42 @@
 
 - **Area:** [Effects](../systems/effects.md)
 - **Methods per build:** B3O0PCH 6
+- **Burnout Revenge counterpart:** `B4ScrapeEmitterArray`, size 0x088 ([layout](#burnout-revenge-layout-of-b4scrapeemitterarray))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `AddEntry(CB3ScrapeEmitter*)` |  |  |  | `0x003C4DC0` 92 |  |  |
-| `GetSize()` |  |  |  | `0x003C4BC0` 28 |  |  |
-| `Prepare()` |  |  |  | `0x003C4930` 72 |  |  |
-| `RemoveEntry(int)` |  |  |  | `0x003C4BE0` 196 |  |  |
-| `operator CB3ScrapeEmitter**()` |  |  |  | `0x003C5120` 24 |  |  |
-| `operator [](int)` |  |  |  | `0x003C4CB0` 72 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `AddEntry(CB3ScrapeEmitter*)` |  |  |  | `0x003C4DC0` 92 |  |  |  |
+| `GetSize()` |  |  |  | `0x003C4BC0` 28 |  |  |  |
+| `Prepare()` |  |  |  | `0x003C4930` 72 |  |  |  |
+| `RemoveEntry(int)` |  |  |  | `0x003C4BE0` 196 |  |  |  |
+| `operator CB3ScrapeEmitter**()` |  |  |  | `0x003C5120` 24 |  |  |  |
+| `operator [](int)` |  |  |  | `0x003C4CB0` 72 |  |  |  |
+
+## Burnout Revenge layout of `B4ScrapeEmitterArray`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 7 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class B4ScrapeEmitterArray {  // size 0x088
+    /* 0x000 */ CB4ScrapeEmitter *mapEmitters[32];
+    /* 0x080 */ RwInt32 mnCurrentSize;
+    /* 0x084 */ RwInt32 mnMaxSize;
+    // methods
+    // B4ScrapeEmitterArray(const B4ScrapeEmitterArray &);
+    // B4ScrapeEmitterArray();
+    // bool Prepare();
+    // void AddEntry(CB4ScrapeEmitter *);
+    // void RemoveEntry(CB4ScrapeEmitter *);
+    // void RemoveEntry(int);
+    // CB4ScrapeEmitter * __vc(int);
+    // RwInt32 GetSize();
+    // CB4ScrapeEmitter ** __opPP16CB4ScrapeEmitter();
+};
+```
 
 ## Notes
 

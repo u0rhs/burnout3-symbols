@@ -8,19 +8,51 @@
 - **Source file:** `B3CameraBehaviour.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 6
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CameraBehaviour`, size 0x018, methods in `GameSource/Camera/Behaviours/B4CameraBehaviour.cpp` ([layout](#burnout-revenge-layout-of-cb4camerabehaviour))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` | `0x0032FF50` 40 | `0x0038BCA0` 40 | `0x003BA850` 40 | `0x003BD350` 48 | `0x00374290` proven |  |
-| `CB3CameraBehaviour()` |  |  |  | `0x0013E6D0` 60 |  |  |
-| `Destruct()` |  |  |  | `0x003BD380` 40 |  |  |
-| `Prepare(void*)` |  |  |  | `0x003BD3B0` 52 |  |  |
-| `Release(void*)` |  |  |  | `0x003BD3F0` 48 |  |  |
-| `SetInterpolating(bool)` |  |  |  | `0x003BC2E0` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` | `0x0032FF50` 40 | `0x0038BCA0` 40 | `0x003BA850` 40 | `0x003BD350` 48 | `0x00374290` proven |  | `void CB4CameraBehaviour::Construct(CB4PlayerCameraManager *lpPlayerCameraManager)` (same name, different parameters) |
+| `CB3CameraBehaviour()` |  |  |  | `0x0013E6D0` 60 |  |  |  |
+| `Destruct()` |  |  |  | `0x003BD380` 40 |  |  | `void CB4CameraBehaviour::Destruct()` |
+| `Prepare(void*)` |  |  |  | `0x003BD3B0` 52 |  |  | `bool CB4CameraBehaviour::Prepare(void *lpData)` |
+| `Release(void*)` |  |  |  | `0x003BD3F0` 48 |  |  | `void CB4CameraBehaviour::Release(void *lpData)` |
+| `SetInterpolating(bool)` |  |  |  | `0x003BC2E0` 36 |  |  |  |
+
+## Burnout Revenge layout of `CB4CameraBehaviour`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 319 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CameraBehaviour : public CGtCameraBehaviour {  // size 0x018
+    // base CGtCameraBehaviour at 0x000
+    /* 0x004 */ CB4PlayerCameraManager *mpPlayerCameraManager;
+    /* 0x008 */ bool mbIsInterpolating;
+    /* 0x00C */ RwReal mrTime;
+    /* 0x010 */ RwReal mrCurrentTimeInShakeRange;
+    /* 0x014 */ bool mbRequestingCut;
+    // methods
+    // CB4CameraBehaviour(const CB4CameraBehaviour &);
+    // CB4CameraBehaviour();
+    // virtual void Construct(CB4PlayerCameraManager *);
+    // virtual void Destruct();
+    // virtual bool Prepare(void *);
+    // virtual void Release(void *);
+    // virtual void Update(CGtCamera *, float);
+    // void SetInterpolating(bool);
+    // virtual void HandleObjectCollision(CB4ActiveBody *);
+    // bool IsRequestingCut() const;
+    // void ResetSpeedBasedShake();
+    // virtual void RegisterVariables();
+    // virtual void UnregisterVariables();
+    // void ApplySpeedBasedShake(CB4RaceCarPhysics *, float);
+    // void RequestCut();
+};
+```
 
 ## Notes
 

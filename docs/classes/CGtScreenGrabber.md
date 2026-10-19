@@ -6,20 +6,53 @@
 
 - **Area:** [Rendering](../systems/rendering.md)
 - **Methods per build:** B3DEBUG 7
+- **Burnout Revenge counterpart:** `CGtScreenGrabber`, size 0x018 ([layout](#burnout-revenge-layout-of-cgtscreengrabber))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SaveImageToDisk(RwImage*,const char*,CGTFileSystem*)` |  | `0x003604D0` 1600 |  |  |  |  |
-| `GetImageBufferSize(RwRaster*)` |  | `0x00360B10` 20 |  |  |  |  |
-| `Save(CGTFileSystem*,char*)` |  | `0x00360B30` 136 |  |  |  |  |
-| `Save(CGTFileSystem*)` |  | `0x00360BC0` 128 |  |  |  |  |
-| `CaptureCameraRaster(RwRaster*,char*)` |  | `0x00360C40` 216 |  |  |  |  |
-| `AllocatePixelBuffer(RwRaster*,int)` |  | `0x00360D20` 60 |  |  |  |  |
-| `Init()` |  | `0x00360D60` 68 |  |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SaveImageToDisk(RwImage*,const char*,CGTFileSystem*)` |  | `0x003604D0` 1600 |  |  |  |  |  |
+| `GetImageBufferSize(RwRaster*)` |  | `0x00360B10` 20 |  |  |  |  |  |
+| `Save(CGTFileSystem*,char*)` |  | `0x00360B30` 136 |  |  |  |  |  |
+| `Save(CGTFileSystem*)` |  | `0x00360BC0` 128 |  |  |  |  |  |
+| `CaptureCameraRaster(RwRaster*,char*)` |  | `0x00360C40` 216 |  |  |  |  |  |
+| `AllocatePixelBuffer(RwRaster*,int)` |  | `0x00360D20` 60 |  |  |  |  |  |
+| `Init()` |  | `0x00360D60` 68 |  |  |  |  |  |
+
+## Burnout Revenge layout of `CGtScreenGrabber`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 4 file(s), e.g. `GameShared/GameClasses/Graphical/ScreenShot/GtScreenGrabber.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtScreenGrabber {  // size 0x018
+    /* 0x000 */ RwInt32 mnUserBufferSize;
+    /* 0x004 */ RwInt32 mnScreenShotIndex;
+    /* 0x008 */ RwReal mrBrightenAmount;
+    /* 0x00C */ RwImage *mpImage;
+    /* 0x010 */ CGTFile *mpOutputFile;
+    /* 0x014 */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CGtScreenGrabber(const CGtScreenGrabber &);
+    // CGtScreenGrabber();
+    // void Init();
+    // bool TakeScreenGrab(CGTFileSystem *);
+    // virtual RwChar * GetBaseFilename();
+    // virtual char * AllocImageBuffer(int);
+    // virtual void FreeImageBuffer(char *);
+    // virtual RwCamera * GetRwCamera();
+    // virtual void RenderScreen();
+    // virtual void SaveImageToDisk(RwImage *, const char *, CGTFileSystem *);
+    // static RwInt32 GetCameraRasterBufferSize(RwRaster *);
+    // static RwInt32 GetImageBufferSize(RwRaster *);
+    // void CaptureCameraRaster(RwRaster *, char *);
+    // void Save(CGTFileSystem *);
+    // void Save(CGTFileSystem *, char *);
+    // char * AllocatePixelBuffer(RwRaster *, int);
+};
+```
 
 ## Notes
 

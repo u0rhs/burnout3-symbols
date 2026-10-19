@@ -12,22 +12,22 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x00320060` 1188 | `0x0037B920` 1260 | `0x003AA4D0` 1260 | `0x003ABF70` 524 | `0x00369690` unverified |  |
-| `HandleTrackRecordEvents(EB3MenuFlowFSMEvents)` | `0x00320510` 232 | `0x0037BE10` 232 | `0x003AA9C0` 232 | `0x003ABAA0` 296 | `0x0036A230` unverified |  |
-| `HandleRankingMenuEvents(EB3MenuFlowFSMEvents)` | `0x00320600` 588 | `0x0037BF00` 620 | `0x003AAAB0` 620 | `0x003AB6B0` 624 | `0x0036A3A0` unverified |  |
-| `CB3OnlineRankingsState()` |  |  |  | `0x003449E0` 60 |  |  |
-| `HandleCrashRecordDisplayEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003ABDF0` 128 |  |  |
-| `HandleCrashRecordEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003ABC70` 248 |  |  |
-| `HandleCrashZoneSelectEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003ABBD0` 160 |  |  |
-| `HandleErrorDisplayEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003ABEF0` 128 |  |  |
-| `HandleOtherRecordEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003ABE70` 116 |  |  |
-| `HandleRegionSelectEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003AB920` 192 |  |  |
-| `HandleTrackRecordDisplayEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003ABD70` 128 |  |  |
-| `HandleTrackSelectEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003AB9E0` 180 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x00320060` 1188 | `0x0037B920` 1260 | `0x003AA4D0` 1260 | `0x003ABF70` 524 | `0x00369690` unverified |  |  |
+| `HandleTrackRecordEvents(EB3MenuFlowFSMEvents)` | `0x00320510` 232 | `0x0037BE10` 232 | `0x003AA9C0` 232 | `0x003ABAA0` 296 | `0x0036A230` unverified |  |  |
+| `HandleRankingMenuEvents(EB3MenuFlowFSMEvents)` | `0x00320600` 588 | `0x0037BF00` 620 | `0x003AAAB0` 620 | `0x003AB6B0` 624 | `0x0036A3A0` unverified |  |  |
+| `CB3OnlineRankingsState()` |  |  |  | `0x003449E0` 60 |  |  |  |
+| `HandleCrashRecordDisplayEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003ABDF0` 128 |  |  |  |
+| `HandleCrashRecordEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003ABC70` 248 |  |  |  |
+| `HandleCrashZoneSelectEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003ABBD0` 160 |  |  |  |
+| `HandleErrorDisplayEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003ABEF0` 128 |  |  |  |
+| `HandleOtherRecordEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003ABE70` 116 |  |  |  |
+| `HandleRegionSelectEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003AB920` 192 |  |  |  |
+| `HandleTrackRecordDisplayEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003ABD70` 128 |  |  |  |
+| `HandleTrackSelectEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x003AB9E0` 180 |  |  |  |
 
 ## Notes
 

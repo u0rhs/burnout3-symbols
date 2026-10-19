@@ -8,17 +8,18 @@
 - **Source file:** `B3Settings.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 3
 - **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4Settings`, size 0x05C, methods in `GameSource/Game/B4Settings.cpp` ([layout](#burnout-revenge-layout-of-cb4settings))
 - **Burnout 2 ancestor (by name):** `CSettings`, size 0x04C, declared in 72 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Destruct()` | `0x001E09F0` 8 | `0x001E03C0` 8 | `0x002130C0` 8 | `0x00223760` 16 | `0x0021B760` likely |  |
-| `Construct()` | `0x001E0A00` 56 | `0x001E03D0` 56 | `0x002130D0` 56 | `0x002236D0` 132 |  |  |
-| `operator =(const CB3Settings&)` |  |  |  | `0x004817A0` 220 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Destruct()` | `0x001E09F0` 8 | `0x001E03C0` 8 | `0x002130C0` 8 | `0x00223760` 16 | `0x0021B760` likely |  | `void CB4Settings::Destruct()` |
+| `Construct()` | `0x001E0A00` 56 | `0x001E03D0` 56 | `0x002130D0` 56 | `0x002236D0` 132 |  |  | `void CB4Settings::Construct()` |
+| `operator =(const CB3Settings&)` |  |  |  | `0x004817A0` 220 |  |  |  |
 
 ## Burnout 2 layout of `CSettings`
 
@@ -35,6 +36,58 @@ public:
     // functions of this class with code in this build:
     // void CSettings::Set()  [0x0020E3D0]
     // void CSettings::Init()  [0x0020E480]
+};
+```
+
+## Burnout Revenge layout of `CB4Settings`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 44 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Settings {  // size 0x05C
+    /* 0x000 */ unsigned char maun8SongFlags[40];
+    /* 0x028 */ signed char mabRumble[2];
+    /* 0x02A */ RwInt8 mn8ScreenOffsetX;
+    /* 0x02B */ RwInt8 mn8ScreenOffsetY;
+    /* 0x02C */ RwInt8 mbPad0;
+    /* 0x02D */ RwInt8 mn8SoundConfig;
+    /* 0x02E */ RwInt8 mn8SFXVolume;
+    /* 0x02F */ RwInt8 mn8MusicVolume;
+    /* 0x030 */ RwInt8 mn8DJVolume;
+    /* 0x031 */ RwInt8 mn8SongIndex;
+    /* 0x032 */ RwInt8 mn8SoundtrackIndex;
+    /* static */ RwInt8 mgb50Hz;
+    /* static */ RwInt8 mgbProgressiveScan;
+    /* 0x033 */ RwInt8 mn8RadioOn;
+    /* 0x034 */ RwInt8 mbPlayModeRandom;
+    /* 0x035 */ RwInt8 mn8TakedownCamMode;
+    /* 0x036 */ RwInt8 mbCrashAutoSlowMo;
+    /* 0x037 */ signed char mabExternalCam[2];
+    /* 0x039 */ RwInt8 mbAutoSaveIsOn;
+    /* 0x03A */ RwInt8 mbViewedRaceTraining;
+    /* 0x03B */ RwInt8 mbViewedTrafficAttackTraining;
+    /* 0x03C */ RwInt8 mbViewedCrashTraining;
+    /* 0x03D */ RwInt8 mbViewedRoadRageTraining;
+    /* 0x03E */ RwInt8 mbViewedRevengeTraining;
+    /* static */ EGtLanguage mgeLanguage;
+    /* 0x040 */ EOptionServicePartySecurity mePartySecurity;
+    /* 0x044 */ EGtNetworkHeadsetOutputMode mePartyHeadsetOutputMode;
+    /* 0x048 */ bool mbPartyAppearanceOnline;
+    /* 0x049 */ char macPartyPassword[16];
+    // methods
+    // CB4Settings(const CB4Settings &);
+    // CB4Settings();
+    // void Construct();
+    // void Destruct();
+    // void Activate();
+    // void InGameActivate();
+    // void TraxActivate();
+    // void SetFXVolume(signed char);
+    // RwInt8 ChangeFXVolume(signed char);
+    // void SetMusicVolume(signed char);
+    // RwInt8 ChangeMusicVolume(signed char);
+    // void SetSpeakerConfig(EB4SpeakerConfig);
+    // bool UseMetricUnits();
 };
 ```
 

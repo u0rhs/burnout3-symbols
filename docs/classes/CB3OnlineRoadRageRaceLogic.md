@@ -12,38 +12,38 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetResultsPageType()` | `0x00349E70` 8 | `0x003B0BA0` 8 | `0x003DA720` 8 | `0x003E7160` 20 |  |  |
-| `GetOfflineGameModeType()` | `0x00349E80` 8 | `0x003B0BB0` 8 | `0x003DA730` 8 | `0x003E7180` 20 |  |  |
-| `GetOnlineGameModeType()` | `0x00349E90` 8 | `0x003B0BC0` 8 | `0x003DA740` 8 | `0x003E71A0` 20 |  |  |
-| `IsRoadRage()` | `0x00349EA0` 8 | `0x003B0BD0` 8 | `0x003DA750` 8 | `0x003E71C0` 20 |  |  |
-| `AssignStartPositionIndex(int)` | `0x00349EB0` 184 | `0x003B0BE0` 596 | `0x003DA760` 596 | `0x003E6FA0` 436 |  |  |
-| `DamageRaceCar(CB3RaceCar*,CB3RaceCar*,EB3DamageType)` | `0x00349F70` 52 | `0x003B0E40` 52 | `0x003DA9C0` 52 | `0x003E6F50` 80 | `0x0038ECF0` strong |  |
-| `GetGameModeScore(int,const CB3FinishedScore*,int*,int*)` | `0x00349FB0` 16 | `0x003B0E80` 180 | `0x003DAA00` 180 | `0x003E6EC0` 112 |  |  |
-| `CarsBecomeFragileAfterBeingSlammed()` | `0x00349FC0` 8 | `0x003B0F40` 8 | `0x003DAAC0` 8 | `0x003E6EA0` 20 |  |  |
-| `PlayerCarShouldResetAtFrontOfPack()` | `0x00349FD0` 8 | `0x003B0F50` 8 | `0x003DAAD0` 8 | `0x003E6E80` 20 |  |  |
-| `StartReplay()` | `0x00349FE0` 8 | `0x003B0F60` 8 | `0x003DAAE0` 8 | `0x003E6E60` 20 |  |  |
-| `GetRacePositionType()` | `0x00349FF0` 8 | `0x003B0F70` 8 | `0x003DAAF0` 8 | `0x003E6E40` 20 |  |  |
-| `GetHUDType()` | `0x0034A000` 8 | `0x003B0F80` 8 | `0x003DAB00` 8 | `0x003E6E20` 20 |  |  |
-| `HasStageFinished()` | `0x0034A010` 8 | `0x003B0F90` 8 | `0x003DAB10` 8 | `0x003E6E00` 28 |  |  |
-| `OnRaceCarFinished(CB3RaceCar*,EB3ScoreFinishState)` | `0x0034A020` 76 | `0x003B0FA0` 76 | `0x003DAB20` 76 | `0x003E6DA0` 92 |  |  |
-| `OnTakedown(CB3RaceCar*,CB3RaceCar*)` | `0x0034A070` 224 | `0x003B0FF0` 276 | `0x003DAB70` 276 | `0x003E6C90` 268 | `0x0038EDF0` strong |  |
-| `OnWorldPrepared()` | `0x0034A150` 188 | `0x003B1110` 240 | `0x003DAC90` 240 | `0x003E6B70` 284 |  |  |
-| `OnPostCrashReset(CB3RaceCarPhysics*)` | `0x0034A210` 84 | `0x003B1200` 84 | `0x003DAD80` 84 | `0x003E6AE0` 132 | `0x0038F3E0` strong |  |
-| `OnPreCrashReset(CB3RaceCarPhysics*)` | `0x0034A270` 200 | `0x003B1260` 200 | `0x003DADE0` 200 | `0x003E69E0` 256 |  |  |
-| `OnNetworkCarDeath(CB3NetworkCar*)` | `0x0034A340` 24 | `0x003B1330` 124 | `0x003DAEB0` 124 | `0x003E6950` 144 |  |  |
-| `OnPlayerCarDeath(CB3PlayerCar*)` | `0x0034A360` 56 | `0x003B13B0` 144 | `0x003DAF30` 144 | `0x003E68A0` 176 |  |  |
-| `OnRaceCarCollision(ERaceCarCollisionType,CB3RaceCarPhysics*,CB3RaceCarPhysics*,float)` | `0x0034A3A0` 364 | `0x003B1440` 364 | `0x003DAFC0` 364 | `0x003E66D0` 460 |  |  |
-| `Destruct()` | `0x0034A510` 8 | `0x003B15B0` 8 | `0x003DB130` 8 | `0x003E66A0` 48 |  |  |
-| `Release()` | `0x0034A520` 20 | `0x003B15C0` 20 | `0x003DB140` 20 | `0x003E6650` 68 |  |  |
-| `UpdateCameras()` | `0x0034A540` 224 | `0x003B15E0` 280 | `0x003DB160` 280 | `0x003E6570` 224 |  |  |
-| `Update()` | `0x0034A620` 900 | `0x003B1700` 1864 | `0x003DB280` 1864 | `0x003E5F20` 1616 |  |  |
-| `Prepare()` | `0x0034A9B0` 132 | `0x003B1E50` 132 | `0x003DB9D0` 132 | `0x003E5E60` 180 |  |  |
-| `Construct()` | `0x0034AA40` 8 | `0x003B1EE0` 8 | `0x003DBA60` 8 | `0x003E5E30` 48 |  |  |
-| `CB3OnlineRoadRageRaceLogic()` |  |  |  | `0x0013DEB0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetResultsPageType()` | `0x00349E70` 8 | `0x003B0BA0` 8 | `0x003DA720` 8 | `0x003E7160` 20 |  |  |  |
+| `GetOfflineGameModeType()` | `0x00349E80` 8 | `0x003B0BB0` 8 | `0x003DA730` 8 | `0x003E7180` 20 |  |  |  |
+| `GetOnlineGameModeType()` | `0x00349E90` 8 | `0x003B0BC0` 8 | `0x003DA740` 8 | `0x003E71A0` 20 |  |  |  |
+| `IsRoadRage()` | `0x00349EA0` 8 | `0x003B0BD0` 8 | `0x003DA750` 8 | `0x003E71C0` 20 |  |  |  |
+| `AssignStartPositionIndex(int)` | `0x00349EB0` 184 | `0x003B0BE0` 596 | `0x003DA760` 596 | `0x003E6FA0` 436 |  |  |  |
+| `DamageRaceCar(CB3RaceCar*,CB3RaceCar*,EB3DamageType)` | `0x00349F70` 52 | `0x003B0E40` 52 | `0x003DA9C0` 52 | `0x003E6F50` 80 | `0x0038ECF0` strong |  |  |
+| `GetGameModeScore(int,const CB3FinishedScore*,int*,int*)` | `0x00349FB0` 16 | `0x003B0E80` 180 | `0x003DAA00` 180 | `0x003E6EC0` 112 |  |  |  |
+| `CarsBecomeFragileAfterBeingSlammed()` | `0x00349FC0` 8 | `0x003B0F40` 8 | `0x003DAAC0` 8 | `0x003E6EA0` 20 |  |  |  |
+| `PlayerCarShouldResetAtFrontOfPack()` | `0x00349FD0` 8 | `0x003B0F50` 8 | `0x003DAAD0` 8 | `0x003E6E80` 20 |  |  |  |
+| `StartReplay()` | `0x00349FE0` 8 | `0x003B0F60` 8 | `0x003DAAE0` 8 | `0x003E6E60` 20 |  |  |  |
+| `GetRacePositionType()` | `0x00349FF0` 8 | `0x003B0F70` 8 | `0x003DAAF0` 8 | `0x003E6E40` 20 |  |  |  |
+| `GetHUDType()` | `0x0034A000` 8 | `0x003B0F80` 8 | `0x003DAB00` 8 | `0x003E6E20` 20 |  |  |  |
+| `HasStageFinished()` | `0x0034A010` 8 | `0x003B0F90` 8 | `0x003DAB10` 8 | `0x003E6E00` 28 |  |  |  |
+| `OnRaceCarFinished(CB3RaceCar*,EB3ScoreFinishState)` | `0x0034A020` 76 | `0x003B0FA0` 76 | `0x003DAB20` 76 | `0x003E6DA0` 92 |  |  |  |
+| `OnTakedown(CB3RaceCar*,CB3RaceCar*)` | `0x0034A070` 224 | `0x003B0FF0` 276 | `0x003DAB70` 276 | `0x003E6C90` 268 | `0x0038EDF0` strong |  |  |
+| `OnWorldPrepared()` | `0x0034A150` 188 | `0x003B1110` 240 | `0x003DAC90` 240 | `0x003E6B70` 284 |  |  |  |
+| `OnPostCrashReset(CB3RaceCarPhysics*)` | `0x0034A210` 84 | `0x003B1200` 84 | `0x003DAD80` 84 | `0x003E6AE0` 132 | `0x0038F3E0` strong |  |  |
+| `OnPreCrashReset(CB3RaceCarPhysics*)` | `0x0034A270` 200 | `0x003B1260` 200 | `0x003DADE0` 200 | `0x003E69E0` 256 |  |  |  |
+| `OnNetworkCarDeath(CB3NetworkCar*)` | `0x0034A340` 24 | `0x003B1330` 124 | `0x003DAEB0` 124 | `0x003E6950` 144 |  |  |  |
+| `OnPlayerCarDeath(CB3PlayerCar*)` | `0x0034A360` 56 | `0x003B13B0` 144 | `0x003DAF30` 144 | `0x003E68A0` 176 |  |  |  |
+| `OnRaceCarCollision(ERaceCarCollisionType,CB3RaceCarPhysics*,CB3RaceCarPhysics*,float)` | `0x0034A3A0` 364 | `0x003B1440` 364 | `0x003DAFC0` 364 | `0x003E66D0` 460 |  |  |  |
+| `Destruct()` | `0x0034A510` 8 | `0x003B15B0` 8 | `0x003DB130` 8 | `0x003E66A0` 48 |  |  |  |
+| `Release()` | `0x0034A520` 20 | `0x003B15C0` 20 | `0x003DB140` 20 | `0x003E6650` 68 |  |  |  |
+| `UpdateCameras()` | `0x0034A540` 224 | `0x003B15E0` 280 | `0x003DB160` 280 | `0x003E6570` 224 |  |  |  |
+| `Update()` | `0x0034A620` 900 | `0x003B1700` 1864 | `0x003DB280` 1864 | `0x003E5F20` 1616 |  |  |  |
+| `Prepare()` | `0x0034A9B0` 132 | `0x003B1E50` 132 | `0x003DB9D0` 132 | `0x003E5E60` 180 |  |  |  |
+| `Construct()` | `0x0034AA40` 8 | `0x003B1EE0` 8 | `0x003DBA60` 8 | `0x003E5E30` 48 |  |  |  |
+| `CB3OnlineRoadRageRaceLogic()` |  |  |  | `0x0013DEB0` 60 |  |  |  |
 
 ## Notes
 

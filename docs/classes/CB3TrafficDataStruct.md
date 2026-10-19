@@ -8,14 +8,74 @@
 - **Source file:** `B3TrafficDataStruct.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrafficDataStruct`, size 0x0C0, methods in `SharedClasses/TrafficData/B4TrafficDataStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4trafficdatastruct))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Fixup(unsigned int)` | `0x0022C330` 444 | `0x00244470` 444 | `0x00280E90` 444 | `0x00282060` 688 | `0x00269FA0` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Fixup(unsigned int)` | `0x0022C330` 444 | `0x00244470` 444 | `0x00280E90` 444 | `0x00282060` 688 | `0x00269FA0` proven |  | `void CB4TrafficDataStruct::Fixup(unsigned int lnStartAddress)` |
+
+## Burnout Revenge layout of `CB4TrafficDataStruct`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 86 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficDataStruct {  // size 0x0C0
+    /* 0x000 */ GtID mHelicopterID;
+    /* 0x008 */ GtID mLTrainID;
+    /* 0x010 */ GtID mTramID;
+    /* 0x018 */ GtID mMonoRailID;
+    /* 0x020 */ GtID mPlaneID;
+    /* 0x028 */ RwUInt32 mu32VersionNumber;
+    /* 0x02C */ CB4StopJunctionStruct *mpStopJunctions;
+    /* 0x030 */ RwInt32 mnNumStopJunctions;
+    /* 0x034 */ CB4TrafficLightPositionStruct *mpTrafficLights;
+    /* 0x038 */ RwInt32 mnNumTrafficLights;
+    /* 0x03C */ CB4TrafficValvePositionStruct *mpTrafficValves;
+    /* 0x040 */ RwInt32 mnNumTrafficValves;
+    /* 0x044 */ CB4TrafficSplitterPositionStruct *mpTrafficSplitters;
+    /* 0x048 */ RwInt32 mnNumTrafficSplitters;
+    /* 0x04C */ CB4TriggerStruct *mpTriggers;
+    /* 0x050 */ RwInt32 mnNumTriggers;
+    /* 0x054 */ CB4StationaryTrafficStruct *mpStationaryVehicles;
+    /* 0x058 */ RwInt32 mnNumStationaryVehicles;
+    /* 0x05C */ CB4TrafficVehicleWeightStruct *mpCarWeightings;
+    /* 0x060 */ RwInt32 mnNumCarWeightings;
+    /* 0x064 */ RwInt32 mnTotalCarWeighting;
+    /* 0x068 */ CB4TrafficVehicleWeightStruct *mpVanWeightings;
+    /* 0x06C */ RwInt32 mnNumVanWeightings;
+    /* 0x070 */ RwInt32 mnTotalVanWeighting;
+    /* 0x074 */ CB4TrafficVehicleWeightStruct *mpBusWeightings;
+    /* 0x078 */ RwInt32 mnNumBusWeightings;
+    /* 0x07C */ RwInt32 mnTotalBusWeighting;
+    /* 0x080 */ CB4TrafficVehicleWeightStruct *mpLorryWeightings;
+    /* 0x084 */ RwInt32 mnNumLorryWeightings;
+    /* 0x088 */ RwInt32 mnTotalLorryWeighting;
+    /* 0x08C */ CB4TrafficVehicleWeightStruct *mpArticCabWeightings;
+    /* 0x090 */ RwInt32 mnNumArticCabWeightings;
+    /* 0x094 */ RwInt32 mnTotalArticCabWeighting;
+    /* 0x098 */ CB4TrafficVehicleWeightStruct *mpArticTrailerWeightings;
+    /* 0x09C */ RwInt32 mnNumArticTrailerWeightings;
+    /* 0x0A0 */ RwInt32 mnTotalArticTrailerWeighting;
+    /* 0x0A4 */ CB4CrashTrafficDestructorStruct *mpCrashTrafficDestructors;
+    /* 0x0A8 */ RwInt32 mnNumCrashTrafficDestructors;
+    /* 0x0AC */ CB4TrafficHullStruct *mpTrafficHulls;
+    /* 0x0B0 */ RwInt32 mnNumTrafficHulls;
+    /* 0x0B4 */ CB4TrafficLightCoronaStruct *mpTrafficLightCoronas;
+    /* 0x0B8 */ RwInt32 mnNumTrafficLightCoronas;
+    /* 0x0BC */ RwUInt8 mx8Flags;
+    /* 0x0BD */ RwUInt8 mu8UsedSpecialVehicles;
+    /* 0x0BE */ RwUInt8 mu8NumSpecialVehicles;
+    /* 0x0BF */ RwUInt8 mu8Pad;
+    // methods
+    // CB4TrafficDataStruct(const CB4TrafficDataStruct &);
+    // CB4TrafficDataStruct();
+    // void Fixup(unsigned int);
+};
+```
 
 ## Notes
 

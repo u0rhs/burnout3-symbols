@@ -8,29 +8,30 @@
 - **Source file:** `GtVideoDecoderPS2.cpp`
 - **Methods per build:** DNAT_200 11, B3DEBUG 12, B3INTERN 12, B3O0PCH 15
 - **Retail (SLUS-21050):** 11 of its 11 DNAT_200 methods found, 9 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtVideoDecoder`, size 0x128, methods in `GameShared/GameClasses/Graphical/VideoDecoder/Ps2/GtVideoDecoderPS2.cpp` ([layout](#burnout-revenge-layout-of-cgtvideodecoder))
 - **Burnout 2 ancestor (by shared methods: `NodataCallback`, `RestartDMA`, `StopDMA`):** `CGTMpegDecoder`, size 0x309BC0, declared in 57 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Abort()` | `0x002E0C20` 12 | `0x0032B1E0` 92 | `0x0035D570` 92 | `0x0035E0B0` 56 | `0x00324ED0` strong |  |
-| `IsCompleted()` | `0x002E0C30` 8 | `0x0032B240` 84 | `0x0035D5D0` 84 | `0x0035E070` 52 | `0x00324EE0` strong |  |
-| `GetImage()` | `0x002E0C40` 24 | `0x0032B2A0` 100 | `0x0035D630` 100 | `0x0035E020` 72 | `0x00324F10` proven |  |
-| `SetExternalSync(float)` | `0x002E0C60` 8 | `0x0032B310` 96 | `0x0035D6A0` 96 | `0x0035DFE0` 60 | `0x00324F30` proven |  |
-| `Release()` | `0x002E0C70` 228 | `0x0032B370` 332 | `0x0035D700` 332 | `0x0035DEB0` 304 | `0x00324F40` proven |  |
-| `Update()` | `0x002E0D60` 1172 | `0x0032B4C0` 836 | `0x0035D850` 836 | `0x0035DB10` 924 | `0x00325030` proven | `int CGTMpegDecoder::Update()` |
-| `Prepare(CGtLinearMalloc*,int,int,const char*,float,unsigned int)` | `0x002E1200` 1168 | `0x0032B810` 1116 | `0x0035DBA0` 1116 | `0x0035D650` 1216 | `0x003254F0` proven |  |
-| `Construct()` | `0x002E1690` 76 | `0x0032BC70` 76 | `0x0035E000` 76 | `0x0035D5C0` 144 | `0x00325990` proven |  |
-| `NodataCallback(sceMpeg*,sceMpegCbData*,void*)` | `0x002E16E0` 420 | `0x0032BCC0` 204 | `0x0035E050` 204 | `0x0035D500` 180 | `0x003259E0` proven | `int CGTMpegDecoder::NodataCallback(void *lpData)` |
-| `RestartDMA(sceMpeg*,sceMpegCbData*,void*)` | `0x002E1890` 32 | `0x0032BF20` 32 | `0x0035E2B0` 32 | `0x0035D240` 48 | `0x00325B90` proven | `int CGTMpegDecoder::RestartDMA(void *lpDecoder)` |
-| `StopDMA(sceMpeg*,sceMpegCbData*,void*)` | `0x002E18B0` 32 | `0x0032BF40` 32 | `0x0035E2D0` 32 | `0x0035D210` 48 | `0x00325BB0` proven | `int CGTMpegDecoder::StopDMA(void *lpDecoder)` |
-| `StartBufferFill(int)` |  | `0x0032BD90` 392 | `0x0035E120` 392 | `0x0035D2C0` 396 |  |  |
-| `EndBufferFill()` |  |  |  | `0x0035D480` 124 |  |  |
-| `SetGSTexLocation(int)` |  |  |  | `0x00134E30` 36 |  |  |
-| `ViBufIsEmpty()` |  |  |  | `0x0035D270` 68 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Abort()` | `0x002E0C20` 12 | `0x0032B1E0` 92 | `0x0035D570` 92 | `0x0035E0B0` 56 | `0x00324ED0` strong |  | `void CGtVideoDecoder::Abort()` |
+| `IsCompleted()` | `0x002E0C30` 8 | `0x0032B240` 84 | `0x0035D5D0` 84 | `0x0035E070` 52 | `0x00324EE0` strong |  | `bool CGtVideoDecoder::IsCompleted()` |
+| `GetImage()` | `0x002E0C40` 24 | `0x0032B2A0` 100 | `0x0035D630` 100 | `0x0035E020` 72 | `0x00324F10` proven |  | `CGtVideoImage * CGtVideoDecoder::GetImage()` |
+| `SetExternalSync(float)` | `0x002E0C60` 8 | `0x0032B310` 96 | `0x0035D6A0` 96 | `0x0035DFE0` 60 | `0x00324F30` proven |  | `void CGtVideoDecoder::SetExternalSync(float lrTime)` |
+| `Release()` | `0x002E0C70` 228 | `0x0032B370` 332 | `0x0035D700` 332 | `0x0035DEB0` 304 | `0x00324F40` proven |  | `void CGtVideoDecoder::Release()` |
+| `Update()` | `0x002E0D60` 1172 | `0x0032B4C0` 836 | `0x0035D850` 836 | `0x0035DB10` 924 | `0x00325030` proven | `int CGTMpegDecoder::Update()` | `void CGtVideoDecoder::Update()` |
+| `Prepare(CGtLinearMalloc*,int,int,const char*,float,unsigned int)` | `0x002E1200` 1168 | `0x0032B810` 1116 | `0x0035DBA0` 1116 | `0x0035D650` 1216 | `0x003254F0` proven |  | `bool CGtVideoDecoder::Prepare(CGtLinearMalloc *lpLinearMalloc, int lnMaxVideoWidth, int lnMaxVideoHeight, const char *lpcFileName, float lrTimeStep, unsigned int lxPlaybackFlags)` |
+| `Construct()` | `0x002E1690` 76 | `0x0032BC70` 76 | `0x0035E000` 76 | `0x0035D5C0` 144 | `0x00325990` proven |  | `void CGtVideoDecoder::Construct()` |
+| `NodataCallback(sceMpeg*,sceMpegCbData*,void*)` | `0x002E16E0` 420 | `0x0032BCC0` 204 | `0x0035E050` 204 | `0x0035D500` 180 | `0x003259E0` proven | `int CGTMpegDecoder::NodataCallback(void *lpData)` | `int CGtVideoDecoder::NodataCallback(sceMpeg *lpMpeg, sceMpegCbData *lpCbData, void *lpData)` |
+| `RestartDMA(sceMpeg*,sceMpegCbData*,void*)` | `0x002E1890` 32 | `0x0032BF20` 32 | `0x0035E2B0` 32 | `0x0035D240` 48 | `0x00325B90` proven | `int CGTMpegDecoder::RestartDMA(void *lpDecoder)` | `int CGtVideoDecoder::RestartDMA(sceMpeg *lpMpeg, sceMpegCbData *lpCbData, void *lpDecoder)` |
+| `StopDMA(sceMpeg*,sceMpegCbData*,void*)` | `0x002E18B0` 32 | `0x0032BF40` 32 | `0x0035E2D0` 32 | `0x0035D210` 48 | `0x00325BB0` proven | `int CGTMpegDecoder::StopDMA(void *lpDecoder)` | `int CGtVideoDecoder::StopDMA(sceMpeg *lpMpeg, sceMpegCbData *lpCbData, void *lpDecoder)` |
+| `StartBufferFill(int)` |  | `0x0032BD90` 392 | `0x0035E120` 392 | `0x0035D2C0` 396 |  |  | `void CGtVideoDecoder::StartBufferFill(int lnNumBuffers)` |
+| `EndBufferFill()` |  |  |  | `0x0035D480` 124 |  |  | `void CGtVideoDecoder::EndBufferFill()` |
+| `SetGSTexLocation(int)` |  |  |  | `0x00134E30` 36 |  |  |  |
+| `ViBufIsEmpty()` |  |  |  | `0x0035D270` 68 |  |  | `bool CGtVideoDecoder::ViBufIsEmpty()` |
 
 ## Burnout 2 layout of `CGTMpegDecoder`
 
@@ -69,6 +70,68 @@ public:
     // int CGTMpegDecoder::ConvertToRasters()  [0x0027D340]
     // int CGTMpegDecoder::RestartDMA(void *lpDecoder)  [0x0027D580]
     // int CGTMpegDecoder::StopDMA(void *lpDecoder)  [0x0027D5B0]
+};
+```
+
+## Burnout Revenge layout of `CGtVideoDecoder`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 295 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dObjectVideoImage.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtVideoDecoder {  // size 0x128
+    /* static */ RwInt32 knNumVideoImages;
+    /* 0x000 */ CGtVideoImage maVideoImages[2];
+    /* 0x030 */ RwInt32 mnDecodeImageBuffer;
+    /* 0x034 */ RwInt32 mnDisplayImageBuffer;
+    /* 0x038 */ RwInt32 mnCurrentFrame;
+    /* 0x03C */ RwReal mrSyncTime;
+    /* 0x040 */ RwReal mrTimeStep;
+    /* 0x044 */ RwReal mrUpdateTimeStep;
+    /* 0x048 */ bool mbPlaying;
+    /* 0x049 */ bool mbCompleted;
+    /* 0x04A */ bool mbStop;
+    /* 0x04B */ bool mbLoop;
+    /* 0x04C */ bool mbEOF;
+    /* 0x04D */ bool mbAbort;
+    /* 0x04E */ bool mbIsPaused;
+    /* 0x050 */ RwInt32 mnNumMacroBlocksX;
+    /* 0x054 */ RwInt32 mnNumMacroBlocksY;
+    /* 0x058 */ RwInt32 mnNumMacroBlocks;
+    /* 0x05C */ RwUInt32 mxPlaybackFlags;
+    /* 0x060 */ RwUInt128 *mpu128StreamBuffer;
+    /* 0x064 */ RwUInt8 *mpu8DecodeWorkArea;
+    /* 0x068 */ RwUInt128 *mpu128RingBufferTags;
+    /* 0x06C */ CGTFile *mpMpegStream;
+    /* 0x070 */ RwInt32 mnReadSize;
+    /* 0x078 */ sceMpeg mMpegDecoder;
+    /* 0x0C0 */ ViBuf mRingBuffer;
+    /* 0x120 */ RwInt32 mnGSMemAddr;
+    /* 0x124 */ EGtPrepareState mePrepareState;
+    // methods
+    // CGtVideoDecoder(const CGtVideoDecoder &);
+    // CGtVideoDecoder();
+    // void Construct();
+    // bool Prepare(CGtLinearMalloc *, int, int, const char *, float, unsigned int);
+    // void Update();
+    // void Pause();
+    // void UnPause();
+    // void Release();
+    // void Destruct();
+    // void SetExternalSync(float);
+    // CGtVideoImage * GetImage();
+    // RwReal GetTimeFromStart();
+    // bool IsCompleted();
+    // void Abort();
+    // void SetGSTexLocation(int);
+    // void SetConsoleFrameTime(float);
+    // bool IsVideoClosed();
+    // static int StopDMA(sceMpeg *, sceMpegCbData *, void *);
+    // static int RestartDMA(sceMpeg *, sceMpegCbData *, void *);
+    // static int ErrorCallback(sceMpeg *, sceMpegCbData *, void *);
+    // bool ViBufIsEmpty();
+    // void StartBufferFill(int);
+    // void EndBufferFill();
+    // static int NodataCallback(sceMpeg *, sceMpegCbData *, void *);
 };
 ```
 

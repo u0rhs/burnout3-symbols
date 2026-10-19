@@ -9,28 +9,75 @@
 - **Methods per build:** DNAT_200 11, B3DEBUG 11, B3INTERN 11, B3O0PCH 15
 - **Retail (SLUS-21050):** 10 of its 11 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440920`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
+- **Burnout Revenge counterpart:** `CB4BehaviourInterpolate`, size 0x1E0, methods in `GameSource/Camera/Behaviours/B4BehaviourInterpolate.cpp` ([layout](#burnout-revenge-layout-of-cb4behaviourinterpolate))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` | `0x0032F3A0` 8 | `0x0038B080` 8 | `0x003B9C30` 8 | `0x003BD320` 40 | `0x003736C0` likely |  |
-| `CatmullRom(GtMathPs2::CGtV3d*,float,float)` | `0x0032F3B0` 508 | `0x0038B090` 508 | `0x003B9C40` 508 | `0x003BCFE0` 728 | `0x003736D0` strong |  |
-| `GetTimeScale()` | `0x0032F5B0` 100 | `0x0038B290` 100 | `0x003B9E40` 100 | `0x003BCF90` 76 | `0x003738D0` strong |  |
-| `GetTimeElapsed()` | `0x0032F620` 80 | `0x0038B300` 80 | `0x003B9EB0` 80 | `0x003BCEE0` 168 | `0x00373940` strong |  |
-| `Destruct()` | `0x0032F670` 8 | `0x0038B350` 8 | `0x003B9F00` 8 | `0x003BCED0` 16 | `0x003739A0` likely |  |
-| `Release(void*)` | `0x0032F680` 8 | `0x0038B360` 8 | `0x003B9F10` 8 | `0x003BCEC0` 16 | `0x003739B0` likely |  |
-| `Update(CGtCamera*,float)` | `0x0032F690` 1372 | `0x0038B370` 1480 | `0x003B9F20` 1480 | `0x003BC3B0` 1168 | `0x003739C0` strong |  |
-| `Prepare(void*)` | `0x0032FBF0` 568 | `0x0038B940` 568 | `0x003BA4F0` 568 | `0x003BC0F0` 496 | `0x00373F60` strong |  |
-| `SetParameters(EB3PlayerCameraBehaviour,EB3PlayerCameraBehaviour,float,EB3InterpolationType,EB3Interpol` | `0x0032FE30` 144 | `0x0038BB80` 144 | `0x003BA730` 144 | `0x003BBFA0` 304 | `0x003741A0` strong |  |
-| `SetParameters(EB3PlayerCameraBehaviour,EB3PlayerCameraBehaviour,EB3PlayerCameraBehaviour,EB3PlayerCame` | `0x0032FEC0` 60 | `0x0038BC10` 60 | `0x003BA7C0` 60 | `0x003BBED0` 196 |  |  |
-| `Construct(CB3PlayerCameraManager*)` | `0x0032FF00` 80 | `0x0038BC50` 80 | `0x003BA800` 80 | `0x003BBE70` 84 | `0x00374240` proven |  |
-| `CB3BehaviourInterpolate()` |  |  |  | `0x0013E800` 124 |  |  |
-| `GetEndBehaviour()` |  |  |  | `0x00314320` 28 |  |  |
-| `GetLength()` |  |  |  | `0x00314300` 28 |  |  |
-| `GetStartBehaviour()` |  |  |  | `0x00314340` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` | `0x0032F3A0` 8 | `0x0038B080` 8 | `0x003B9C30` 8 | `0x003BD320` 40 | `0x003736C0` likely |  | `void CB4BehaviourInterpolate::Construct()` |
+| `CatmullRom(GtMathPs2::CGtV3d*,float,float)` | `0x0032F3B0` 508 | `0x0038B090` 508 | `0x003B9C40` 508 | `0x003BCFE0` 728 | `0x003736D0` strong |  | `void CB4BehaviourInterpolate::CatmullRom(GtMathPs2::CGtV3d *lpPositionOut, float lrRatio)` (same name, different parameters) |
+| `GetTimeScale()` | `0x0032F5B0` 100 | `0x0038B290` 100 | `0x003B9E40` 100 | `0x003BCF90` 76 | `0x003738D0` strong |  | `RwReal CB4BehaviourInterpolate::GetTimeScale()` |
+| `GetTimeElapsed()` | `0x0032F620` 80 | `0x0038B300` 80 | `0x003B9EB0` 80 | `0x003BCEE0` 168 | `0x00373940` strong |  | `RwReal CB4BehaviourInterpolate::GetTimeElapsed()` |
+| `Destruct()` | `0x0032F670` 8 | `0x0038B350` 8 | `0x003B9F00` 8 | `0x003BCED0` 16 | `0x003739A0` likely |  | `void CB4BehaviourInterpolate::Destruct()` |
+| `Release(void*)` | `0x0032F680` 8 | `0x0038B360` 8 | `0x003B9F10` 8 | `0x003BCEC0` 16 | `0x003739B0` likely |  | `void CB4BehaviourInterpolate::Release(void *lpData)` |
+| `Update(CGtCamera*,float)` | `0x0032F690` 1372 | `0x0038B370` 1480 | `0x003B9F20` 1480 | `0x003BC3B0` 1168 | `0x003739C0` strong |  | `void CB4BehaviourInterpolate::Update(CGtCamera *lpCamera, float lrTimeStep)` |
+| `Prepare(void*)` | `0x0032FBF0` 568 | `0x0038B940` 568 | `0x003BA4F0` 568 | `0x003BC0F0` 496 | `0x00373F60` strong |  | `bool CB4BehaviourInterpolate::Prepare(void *lpData)` |
+| `SetParameters(EB3PlayerCameraBehaviour,EB3PlayerCameraBehaviour,float,EB3InterpolationType,EB3Interpol` | `0x0032FE30` 144 | `0x0038BB80` 144 | `0x003BA730` 144 | `0x003BBFA0` 304 | `0x003741A0` strong |  |  |
+| `SetParameters(EB3PlayerCameraBehaviour,EB3PlayerCameraBehaviour,EB3PlayerCameraBehaviour,EB3PlayerCame` | `0x0032FEC0` 60 | `0x0038BC10` 60 | `0x003BA7C0` 60 | `0x003BBED0` 196 |  |  |  |
+| `Construct(CB3PlayerCameraManager*)` | `0x0032FF00` 80 | `0x0038BC50` 80 | `0x003BA800` 80 | `0x003BBE70` 84 | `0x00374240` proven |  |  |
+| `CB3BehaviourInterpolate()` |  |  |  | `0x0013E800` 124 |  |  |  |
+| `GetEndBehaviour()` |  |  |  | `0x00314320` 28 |  |  |  |
+| `GetLength()` |  |  |  | `0x00314300` 28 |  |  |  |
+| `GetStartBehaviour()` |  |  |  | `0x00314340` 28 |  |  |  |
+
+## Burnout Revenge layout of `CB4BehaviourInterpolate`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 318 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4BehaviourInterpolate : public CB4CameraBehaviour {  // size 0x1E0
+    // base CB4CameraBehaviour at 0x000
+    /* 0x020 */ CGtCamera maCamera[4];
+    /* 0x160 */ CGtV3d mVelocity;
+    /* 0x170 */ CGtV3d mStartPosition;
+    /* 0x180 */ CGtV3d mEndPosition;
+    /* 0x190 */ CGtV3d mLookAtPosition;
+    /* 0x1A0 */ RwReal mrStartFOV;
+    /* 0x1A4 */ RwReal mrEndFOV;
+    /* 0x1A8 */ RwReal mrStartTime;
+    /* 0x1AC */ RwReal mrLength;
+    /* 0x1B0 */ RwReal mrTime;
+    /* 0x1B4 */ EB4PlayerCameraBehaviour maeBehaviour[4];
+    /* 0x1C4 */ EB4PlayerCameraBehaviour meMyIdentifier;
+    /* 0x1C8 */ EB4InterpolationType meType;
+    /* 0x1CC */ EB4InterpolationTimeMode meTimeMode;
+    /* 0x1D0 */ bool mbInterpolatePositions;
+    // methods
+    // CB4BehaviourInterpolate(const CB4BehaviourInterpolate &);
+    // CB4BehaviourInterpolate();
+    // void Construct(CB4PlayerCameraManager *, EB4PlayerCameraBehaviour);
+    // virtual void Construct();
+    // virtual void Destruct();
+    // virtual bool Prepare(void *);
+    // virtual void Release(void *);
+    // virtual void Update(CGtCamera *, float);
+    // void UpdatePositionInterpolation(CGtCamera *, float);
+    // void UpdateBehaviourInterpolation(CGtCamera *, float);
+    // void SetParameters(EB4PlayerCameraBehaviour, EB4PlayerCameraBehaviour, EB4PlayerCameraBehaviour, EB4PlayerCameraBehaviour, float, EB4InterpolationTimeMode);
+    // void SetParameters(EB4PlayerCameraBehaviour, EB4PlayerCameraBehaviour, float, EB4InterpolationType, EB4InterpolationTimeMode);
+    // void SetParameters(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, float, float, EB4InterpolationType, EB4InterpolationTimeMode);
+    // EB4PlayerCameraBehaviour GetStartBehaviour();
+    // EB4PlayerCameraBehaviour GetEndBehaviour();
+    // RwReal GetTimeScale();
+    // RwReal GetTimeElapsed();
+    // RwReal GetLength();
+    // EB4KeyFrameTypeTransition GetTypeTransitionFromCameraBehaviour(EB4PlayerCameraBehaviour);
+    // void CatmullRom(GtMathPs2::CGtV3d *, float);
+};
+```
 
 ## Notes
 

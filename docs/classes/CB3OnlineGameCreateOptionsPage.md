@@ -11,25 +11,25 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `OnKeyboardShow()` | `0x003514A0` 8 | `0x003BB8C0` 8 | `0x003E5140` 8 | `0x003F21B0` 16 |  |  |
-| `OnKeyboardCancel()` | `0x003514B0` 56 | `0x003BB8D0` 56 | `0x003E5150` 56 | `0x003F2160` 76 |  |  |
-| `OnKeyboardDone()` | `0x003514F0` 372 | `0x003BB910` 372 | `0x003E5190` 372 | `0x003F1F10` 580 |  |  |
-| `Release()` | `0x00351670` 8 | `0x003BBA90` 8 | `0x003E5310` 8 | `0x003F1E70` 16 |  |  |
-| `UpdateScroll()` | `0x00351680` 1000 | `0x003BBAA0` 1000 | `0x003E5320` 1000 | `0x003F1B90` 736 |  |  |
-| `UpdateKeyboard()` | `0x00351A70` 548 | `0x003BBE90` 548 | `0x003E5710` 548 | `0x003F18A0` 748 |  |  |
-| `UpdateMenu()` | `0x00351CA0` 1116 | `0x003BC0C0` 1148 | `0x003E5940` 1148 | `0x003F14D0` 908 |  |  |
-| `Update()` | `0x00352100` 228 | `0x003BC540` 228 | `0x003E5DC0` 228 | `0x003F13F0` 212 |  |  |
-| `Prepare()` | `0x003521F0` 744 | `0x003BC630` 744 | `0x003E5EB0` 744 | `0x003F1000` 904 |  |  |
-| `BuildAvailableGameModesString()` |  |  |  | `0x003F2310` 468 |  |  |
-| `CB3OnlineGameCreateOptionsPage()` |  |  |  | `0x00341B70` 60 |  |  |
-| `EnableNext()` |  |  |  | `0x003F1E80` 68 |  |  |
-| `SetNextEnabledState()` |  |  |  | `0x003F1ED0` 64 |  |  |
-| `ShowAvailableGameModes()` |  |  |  | `0x003F2230` 216 |  |  |
-| `UpdateError()` |  |  |  | `0x003F21C0` 112 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `OnKeyboardShow()` | `0x003514A0` 8 | `0x003BB8C0` 8 | `0x003E5140` 8 | `0x003F21B0` 16 |  |  |  |
+| `OnKeyboardCancel()` | `0x003514B0` 56 | `0x003BB8D0` 56 | `0x003E5150` 56 | `0x003F2160` 76 |  |  |  |
+| `OnKeyboardDone()` | `0x003514F0` 372 | `0x003BB910` 372 | `0x003E5190` 372 | `0x003F1F10` 580 |  |  |  |
+| `Release()` | `0x00351670` 8 | `0x003BBA90` 8 | `0x003E5310` 8 | `0x003F1E70` 16 |  |  |  |
+| `UpdateScroll()` | `0x00351680` 1000 | `0x003BBAA0` 1000 | `0x003E5320` 1000 | `0x003F1B90` 736 |  |  |  |
+| `UpdateKeyboard()` | `0x00351A70` 548 | `0x003BBE90` 548 | `0x003E5710` 548 | `0x003F18A0` 748 |  |  |  |
+| `UpdateMenu()` | `0x00351CA0` 1116 | `0x003BC0C0` 1148 | `0x003E5940` 1148 | `0x003F14D0` 908 |  |  |  |
+| `Update()` | `0x00352100` 228 | `0x003BC540` 228 | `0x003E5DC0` 228 | `0x003F13F0` 212 |  |  |  |
+| `Prepare()` | `0x003521F0` 744 | `0x003BC630` 744 | `0x003E5EB0` 744 | `0x003F1000` 904 |  |  |  |
+| `BuildAvailableGameModesString()` |  |  |  | `0x003F2310` 468 |  |  |  |
+| `CB3OnlineGameCreateOptionsPage()` |  |  |  | `0x00341B70` 60 |  |  |  |
+| `EnableNext()` |  |  |  | `0x003F1E80` 68 |  |  |  |
+| `SetNextEnabledState()` |  |  |  | `0x003F1ED0` 64 |  |  |  |
+| `ShowAvailableGameModes()` |  |  |  | `0x003F2230` 216 |  |  |  |
+| `UpdateError()` |  |  |  | `0x003F21C0` 112 |  |  |  |
 
 ## Notes
 

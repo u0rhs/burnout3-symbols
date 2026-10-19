@@ -11,27 +11,27 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetupTrackOptions(unsigned long)` | `0x00356F20` 684 | `0x003C18E0` 684 |  | `0x003FAB20` 880 |  |  |
-| `SetupCrashModeOptions()` | `0x003571D0` 616 | `0x003C1B90` 616 |  | `0x003FA880` 672 |  |  |
-| `SetupRoadRageOptions()` | `0x00357440` 1032 | `0x003C1E00` 1032 | `0x003EB030` 632 | `0x003FA440` 1084 |  |  |
-| `SetupRaceModeOptions()` | `0x00357850` 856 | `0x003C2210` 856 |  | `0x003FA0A0` 916 |  |  |
-| `GenerateRandomJunction()` | `0x00357BB0` 300 | `0x003C2570` 336 |  | `0x003F9F70` 300 |  |  |
-| `GenerateRandomTrackInRegion(EB3TrackRegion)` | `0x00357CE0` 364 | `0x003C26C0` 408 |  | `0x003F9DB0` 440 |  |  |
-| `GenerateRandomTrack()` | `0x00357E50` 300 | `0x003C2860` 308 | `0x003EB2B0` 1496 | `0x003F9C50` 352 |  |  |
-| `Release()` | `0x00357F80` 8 | `0x003C29A0` 8 | `0x003EB890` 8 | `0x003F9C40` 16 |  |  |
-| `UpdateCrashScroll()` | `0x00357F90` 1184 | `0x003C29B0` 1228 |  | `0x003F9620` 1560 |  |  |
-| `UpdateScroll()` | `0x00358430` 1684 | `0x003C2E80` 1768 | `0x003EB8A0` 2248 | `0x003F8C40` 2404 |  |  |
-| `UpdateRoadRageMenu()` | `0x00358AD0` 1072 | `0x003C3570` 1104 | `0x003EC170` 1028 | `0x003F86A0` 1352 |  |  |
-| `UpdateCrashMenu()` | `0x00358F00` 788 | `0x003C39C0` 820 |  | `0x003F82A0` 1024 |  |  |
-| `UpdateRaceMenu()` | `0x00359220` 840 | `0x003C3D00` 872 |  | `0x003F7E50` 1100 |  |  |
-| `Update()` | `0x00359570` 188 | `0x003C4070` 188 | `0x003EC8B0` 124 | `0x003F7D40` 260 |  |  |
-| `Prepare(bool,CB3LobbyCreateGameParams*)` | `0x00359630` 852 | `0x003C4130` 936 | `0x003EC930` 1516 | `0x003F78D0` 1128 |  |  |
-| `CB3OnlineGameOptionsPage()` |  |  |  | `0x003413E0` 60 |  |  |
-| `UpdateMenu()` |  |  | `0x003EC580` 808 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetupTrackOptions(unsigned long)` | `0x00356F20` 684 | `0x003C18E0` 684 |  | `0x003FAB20` 880 |  |  |  |
+| `SetupCrashModeOptions()` | `0x003571D0` 616 | `0x003C1B90` 616 |  | `0x003FA880` 672 |  |  |  |
+| `SetupRoadRageOptions()` | `0x00357440` 1032 | `0x003C1E00` 1032 | `0x003EB030` 632 | `0x003FA440` 1084 |  |  |  |
+| `SetupRaceModeOptions()` | `0x00357850` 856 | `0x003C2210` 856 |  | `0x003FA0A0` 916 |  |  |  |
+| `GenerateRandomJunction()` | `0x00357BB0` 300 | `0x003C2570` 336 |  | `0x003F9F70` 300 |  |  |  |
+| `GenerateRandomTrackInRegion(EB3TrackRegion)` | `0x00357CE0` 364 | `0x003C26C0` 408 |  | `0x003F9DB0` 440 |  |  |  |
+| `GenerateRandomTrack()` | `0x00357E50` 300 | `0x003C2860` 308 | `0x003EB2B0` 1496 | `0x003F9C50` 352 |  |  |  |
+| `Release()` | `0x00357F80` 8 | `0x003C29A0` 8 | `0x003EB890` 8 | `0x003F9C40` 16 |  |  |  |
+| `UpdateCrashScroll()` | `0x00357F90` 1184 | `0x003C29B0` 1228 |  | `0x003F9620` 1560 |  |  |  |
+| `UpdateScroll()` | `0x00358430` 1684 | `0x003C2E80` 1768 | `0x003EB8A0` 2248 | `0x003F8C40` 2404 |  |  |  |
+| `UpdateRoadRageMenu()` | `0x00358AD0` 1072 | `0x003C3570` 1104 | `0x003EC170` 1028 | `0x003F86A0` 1352 |  |  |  |
+| `UpdateCrashMenu()` | `0x00358F00` 788 | `0x003C39C0` 820 |  | `0x003F82A0` 1024 |  |  |  |
+| `UpdateRaceMenu()` | `0x00359220` 840 | `0x003C3D00` 872 |  | `0x003F7E50` 1100 |  |  |  |
+| `Update()` | `0x00359570` 188 | `0x003C4070` 188 | `0x003EC8B0` 124 | `0x003F7D40` 260 |  |  |  |
+| `Prepare(bool,CB3LobbyCreateGameParams*)` | `0x00359630` 852 | `0x003C4130` 936 | `0x003EC930` 1516 | `0x003F78D0` 1128 |  |  |  |
+| `CB3OnlineGameOptionsPage()` |  |  |  | `0x003413E0` 60 |  |  |  |
+| `UpdateMenu()` |  |  | `0x003EC580` 808 |  |  |  |  |
 
 ## Notes
 

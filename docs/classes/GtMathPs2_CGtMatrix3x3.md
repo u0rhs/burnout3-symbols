@@ -11,15 +11,15 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CGtMatrix3x3()` | `0x00169280` 8 | `0x00182520` 8 | `0x0017D200` 8 | `0x00191B60` 76 | `0x0019B6D0` likely |  |
-| `CGtMatrix3x3(const GtMathPs2::CGtMatrix3x3&)` |  |  |  | `0x001A51C0` 100 |  |  |
-| `Invert()` |  |  |  | `0x001A6B40` 292 |  |  |
-| `operator *(const GtMathPs2::CGtMatrix3x3&)` |  |  |  | `0x001A50B0` 268 |  |  |
-| `operator =(const GtMathPs2::CGtMatrix3x3&)` |  |  |  | `0x001A5010` 92 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CGtMatrix3x3()` | `0x00169280` 8 | `0x00182520` 8 | `0x0017D200` 8 | `0x00191B60` 76 | `0x0019B6D0` likely |  |  |
+| `CGtMatrix3x3(const GtMathPs2::CGtMatrix3x3&)` |  |  |  | `0x001A51C0` 100 |  |  |  |
+| `Invert()` |  |  |  | `0x001A6B40` 292 |  |  |  |
+| `operator *(const GtMathPs2::CGtMatrix3x3&)` |  |  |  | `0x001A50B0` 268 |  |  |  |
+| `operator =(const GtMathPs2::CGtMatrix3x3&)` |  |  |  | `0x001A5010` 92 |  |  |  |
 
 ## Notes
 

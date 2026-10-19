@@ -9,21 +9,47 @@
 - **Methods per build:** DNAT_200 6, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
 - **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440090`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
+- **Burnout Revenge counterpart:** `CB4SoundESMHigh`, size 0x7290, methods in `GameSource/Sound/Esm/B4SoundESM.cpp` ([layout](#burnout-revenge-layout-of-cb4soundesmhigh))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CalculateDoppler(const CB3RaceCar*,float*,float*)` | `0x0024A410` 516 | `0x0027A980` 776 | `0x002B2240` 552 | `0x002AE460` 700 | `0x00287970` strong |  |
-| `Start()` | `0x0024A620` 484 | `0x0027AD90` 628 | `0x002B2570` 628 | `0x002ADFB0` 804 | `0x00287C40` likely |  |
-| `Release()` | `0x0024A810` 464 | `0x0027B010` 340 | `0x002B27F0` 340 | `0x002ADE40` 360 | `0x00287E20` unverified |  |
-| `Update(const CB3RaceCar*,float,float,float)` | `0x0024A9E0` 504 | `0x0027B170` 944 | `0x002B2950` 676 | `0x002ADB30` 696 | `0x00287F20` unverified |  |
-| `Prepare(unsigned long,int)` | `0x0024ABE0` 504 | `0x0027B520` 500 | `0x002B2C00` 500 | `0x002AD8C0` 624 | `0x002882D0` likely |  |
-| `Construct()` | `0x0024ADE0` 56 | `0x0027B720` 56 | `0x002B2E00` 56 | `0x002AD870` 76 | `0x00288440` strong |  |
-| `Stop()` |  | `0x0027AC90` 244 | `0x002B2470` 244 | `0x002AE330` 292 |  |  |
-| `CB3SoundESMHigh()` |  |  |  | `0x002B1C30` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CalculateDoppler(const CB3RaceCar*,float*,float*)` | `0x0024A410` 516 | `0x0027A980` 776 | `0x002B2240` 552 | `0x002AE460` 700 | `0x00287970` strong |  | `void CB4SoundESMHigh::CalculateDoppler(const CB4RaceCar *lpRaceCar, float *lprGain, float *lprPitch)` |
+| `Start()` | `0x0024A620` 484 | `0x0027AD90` 628 | `0x002B2570` 628 | `0x002ADFB0` 804 | `0x00287C40` likely |  | `void CB4SoundESMHigh::Start()` |
+| `Release()` | `0x0024A810` 464 | `0x0027B010` 340 | `0x002B27F0` 340 | `0x002ADE40` 360 | `0x00287E20` unverified |  | `void CB4SoundESMHigh::Release()` |
+| `Update(const CB3RaceCar*,float,float,float)` | `0x0024A9E0` 504 | `0x0027B170` 944 | `0x002B2950` 676 | `0x002ADB30` 696 | `0x00287F20` unverified |  | `void CB4SoundESMHigh::Update(const CB4RaceCar *lpRaceCar, float lrVolume, float lrTurboTurbineSpeed, float lrVolumeFalloffScalar, float lrGinsuVolumeScalar)` (same name, different parameters) |
+| `Prepare(unsigned long,int)` | `0x0024ABE0` 504 | `0x0027B520` 500 | `0x002B2C00` 500 | `0x002AD8C0` 624 | `0x002882D0` likely |  | `bool CB4SoundESMHigh::Prepare(bool lbIsPlayerCar, unsigned long lCarID, ERaceCarIndex leRaceCarIndex)` (same name, different parameters) |
+| `Construct()` | `0x0024ADE0` 56 | `0x0027B720` 56 | `0x002B2E00` 56 | `0x002AD870` 76 | `0x00288440` strong |  | `void CB4SoundESMHigh::Construct()` |
+| `Stop()` |  | `0x0027AC90` 244 | `0x002B2470` 244 | `0x002AE330` 292 |  |  | `void CB4SoundESMHigh::Stop()` |
+| `CB3SoundESMHigh()` |  |  |  | `0x002B1C30` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundESMHigh`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 15 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundESMHigh : public CB4SoundESM {  // size 0x7290
+    // base CB4SoundESM at 0x000
+    /* 0x7230 */ CGtSoundVirtualVoice *maRealVoices[12];
+    /* 0x7260 */ CGtSoundVirtualVoice *mpTurboVoice;
+    /* 0x7264 */ CB4SoundDoppler mDoppler;
+    // methods
+    // CB4SoundESMHigh(const CB4SoundESMHigh &);
+    // CB4SoundESMHigh();
+    // void Construct();
+    // void Destruct();
+    // virtual bool Prepare(bool, unsigned long, ERaceCarIndex);
+    // virtual void Update(const CB4RaceCar *, float, float, float, float);
+    // virtual void Release();
+    // virtual void Start();
+    // virtual void Stop();
+    // void SetMasterPitchScalar(float);
+    // void CalculateDoppler(const CB4RaceCar *, float *, float *);
+};
+```
 
 ## Notes
 

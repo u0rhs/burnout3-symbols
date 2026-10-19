@@ -8,26 +8,60 @@
 - **Source file:** `B3SoundCustomSoundTrackPS2.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 13, B3O0PCH 2
 - **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundCustomSoundtrack`, size 0x004, methods in `GameSource/Sound/Radio/Ps2/B4SoundCustomSoundTrackPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4soundcustomsoundtrack))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Resume()` | `0x003CD850` 8 | `0x0044B730` 8 | `0x00472840` 8 | `0x0048A1E0` 16 |  |  |
-| `Pause()` | `0x003CD860` 8 | `0x0044B740` 8 | `0x00472850` 8 | `0x0048A1D0` 16 | `0x0042B4D0` strong |  |
-| `Construct()` |  |  | `0x004728C0` 8 |  |  |  |
-| `Cue()` |  |  | `0x00472880` 8 |  |  |  |
-| `Destruct()` |  |  | `0x00472890` 8 |  |  |  |
-| `GetCustomSongByIndex(int,CB3SoundMusicSoundtrack*,CB3SoundMusicSong*,char*,int)` |  |  | `0x00472810` 8 |  |  |  |
-| `GetCustomSoundtrackByIndex(int,CB3SoundMusicSoundtrack*)` |  |  | `0x00472820` 8 |  |  |  |
-| `IsPlaying()` |  |  | `0x00472830` 8 |  |  |  |
-| `Play()` |  |  | `0x00472870` 8 |  |  |  |
-| `Prepare()` |  |  | `0x004728B0` 8 |  |  |  |
-| `SetCustomSoundtrack(CB3SoundMusicSoundtrack*,int,EB3MusicManagerSoundtrackPlayMode)` |  |  | `0x00472800` 8 |  |  |  |
-| `Stop()` |  |  | `0x00472860` 8 |  |  |  |
-| `Update()` |  |  | `0x004728A0` 8 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Resume()` | `0x003CD850` 8 | `0x0044B730` 8 | `0x00472840` 8 | `0x0048A1E0` 16 |  |  | `void CB4SoundCustomSoundtrack::Resume()` |
+| `Pause()` | `0x003CD860` 8 | `0x0044B740` 8 | `0x00472850` 8 | `0x0048A1D0` 16 | `0x0042B4D0` strong |  | `void CB4SoundCustomSoundtrack::Pause()` |
+| `Construct()` |  |  | `0x004728C0` 8 |  |  |  |  |
+| `Cue()` |  |  | `0x00472880` 8 |  |  |  |  |
+| `Destruct()` |  |  | `0x00472890` 8 |  |  |  |  |
+| `GetCustomSongByIndex(int,CB3SoundMusicSoundtrack*,CB3SoundMusicSong*,char*,int)` |  |  | `0x00472810` 8 |  |  |  |  |
+| `GetCustomSoundtrackByIndex(int,CB3SoundMusicSoundtrack*)` |  |  | `0x00472820` 8 |  |  |  |  |
+| `IsPlaying()` |  |  | `0x00472830` 8 |  |  |  |  |
+| `Play()` |  |  | `0x00472870` 8 |  |  |  |  |
+| `Prepare()` |  |  | `0x004728B0` 8 |  |  |  |  |
+| `SetCustomSoundtrack(CB3SoundMusicSoundtrack*,int,EB3MusicManagerSoundtrackPlayMode)` |  |  | `0x00472800` 8 |  |  |  |  |
+| `Stop()` |  |  | `0x00472860` 8 |  |  |  |  |
+| `Update()` |  |  | `0x004728A0` 8 |  |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundCustomSoundtrack`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 61 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundCustomSoundtrack {  // size 0x004
+    /* 0x000 */ RwInt32 mnSoundtrackCount;
+    // methods
+    // CB4SoundCustomSoundtrack(const CB4SoundCustomSoundtrack &);
+    // CB4SoundCustomSoundtrack();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void Cue();
+    // void Play();
+    // void Stop();
+    // void Pause();
+    // void PausePlayback(bool);
+    // void Resume();
+    // RwInt32 GetSongPlayingTimeMS();
+    // bool IsPlaying();
+    // RwInt32 GetCustomSoundTrackCount();
+    // void GetCustomSoundtrackByIndex(int, CB4SoundMusicSoundtrack *);
+    // void GetCustomSongByIndex(int, CB4SoundMusicSoundtrack *, CB4SoundMusicSong *, unsigned short *, int);
+    // bool SetCustomSoundtrack(CB4SoundMusicSoundtrack *, int, EB4MusicManagerSoundtrackPlayMode);
+    // void SetCustomSong(int);
+    // void PlayContinuously(bool);
+    // void SetVolume(float);
+};
+```
 
 ## Notes
 

@@ -9,15 +9,32 @@
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 2
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004406F0`, 12 bytes = 3 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 1 virtual functions)
+- **Burnout Revenge counterpart:** `CB4PauseState`, size 0x020, methods in `GameSource/Menu/States/B4PauseState.cpp` ([layout](#burnout-revenge-layout-of-cb4pausestate))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x002FB560` 792 | `0x0034F2C0` 1036 | `0x00380920` 1036 | `0x00380CB0` 608 | `0x003428D0` unverified |  |
-| `CB3PauseState()` |  |  |  | `0x00345520` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x002FB560` 792 | `0x0034F2C0` 1036 | `0x00380920` 1036 | `0x00380CB0` 608 | `0x003428D0` unverified |  | `void CB4PauseState::Action(EGtStateAction leAction, void *lpOwner, void *lpActionData, void *lpUserData)` |
+| `CB3PauseState()` |  |  |  | `0x00345520` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4PauseState`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Menu/States/B4MenuFlowManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4PauseState : public CGtState {  // size 0x020
+    // base CGtState at 0x000
+    /* 0x010 */ GtID mPreviousStateID;
+    /* 0x018 */ CB4PauseOptionsService mPauseOptionsService;
+    // methods
+    // CB4PauseState(const CB4PauseState &);
+    // CB4PauseState();
+    // virtual void Action(EGtStateAction, void *, void *, void *);
+};
+```
 
 ## Notes
 

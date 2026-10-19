@@ -7,14 +7,225 @@
 - **Area:** [Progression, profiles and saves](../systems/progression-saves.md)
 - **Source file:** `B3Profile.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4ProfileStoredData`, size 0x1CF8, methods in `GameSource/Game/Persistence/B4ProfileStoredData.cpp` ([layout](#burnout-revenge-layout-of-cb4profilestoreddata))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Prepare()` | `0x001395D0` 448 | `0x00141EC0` 448 | `0x001403D0` 448 | `0x00142740` 660 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Prepare()` | `0x001395D0` 448 | `0x00141EC0` 448 | `0x001403D0` 448 | `0x00142740` 660 |  |  | `bool CB4ProfileStoredData::Prepare()` |
+
+## Burnout Revenge layout of `CB4ProfileStoredData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 265 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ProfileStoredData {  // size 0x1CF8
+    /* 0x000 */ CGtTimeStamp mTimeStamp;
+    /* 0x004 */ RwReal mrTotalPlayingTimeInSecs;
+    /* 0x008 */ short unsigned int maNameString[9];
+    /* 0x01A */ short unsigned int maMutiPlayer1NameString[9];
+    /* 0x02C */ short unsigned int maMutiPlayer2NameString[9];
+    /* 0x03E */ short unsigned int mau16OnlineRevengePoints[3];
+    /* 0x044 */ signed char man8OnlineUnlockedPlaylists[3];
+    /* 0x047 */ signed char man8OnlineSelectedPlaylists[3];
+    /* 0x04A */ signed char man8ChallengeMedal[275];
+    /* 0x15D */ signed char man8ChallengeRating[275];
+    /* 0x270 */ RwUInt32 muTotalChallenges;
+    /* 0x274 */ unsigned char mau8ChallengeSheetsUnlocked[8];
+    /* 0x27C */ unsigned char maau8ChallengesCompleted[8][8];
+    /* 0x2BC */ unsigned char maau8SignatureTDsCompleted[3][8];
+    /* 0x2D8 */ long unsigned int maChallengeList[275];
+    /* 0xB70 */ long unsigned int maVehicleList[128];
+    /* 0xF70 */ long unsigned int maTrackList[52];
+    /* 0x1110 */ RwUInt8 mu8B3SaveDetected;
+    /* 0x1111 */ RwUInt8 mu8MaddenSaveDetected;
+    /* 0x1114 */ RwUInt32 muOnlineRaceEventCount;
+    /* 0x1118 */ RwUInt32 muOnlineCrashEventCount;
+    /* 0x111C */ RwUInt32 muOfflineRaceEventCount;
+    /* 0x1120 */ RwUInt32 muOfflineCrashEventCount;
+    /* 0x1124 */ float marFastestLaps[52];
+    /* 0x11F4 */ float marLongestBurnTime[52];
+    /* 0x12C4 */ float marLongestDrift[52];
+    /* 0x1394 */ float marLongestOncoming[52];
+    /* 0x1464 */ float marLongestAir[52];
+    /* 0x1534 */ bool mabFastestLapNeedsUploading[52];
+    /* 0x1568 */ unsigned int mauHighestTrafficAttackScore[52];
+    /* 0x1638 */ float marLongestTrafficAttackSurvivalTime[52];
+    /* 0x1708 */ unsigned int mauLargestTrafficAttackNumChecks[52];
+    /* 0x17D8 */ bool mabTAScoreNeedsUploading[52];
+    /* 0x180C */ unsigned int mauHighestRoadRageScore[52];
+    /* 0x18DC */ unsigned int mauHighestRoadRageNumTakedowns[52];
+    /* 0x19AC */ unsigned int mauLongestRoadRageTakedownStreak[52];
+    /* 0x1A7C */ unsigned int mauHighestCrashModeScore[108];
+    /* 0x1C2C */ bool mabHighestCrashScoreNeedsUploading[108];
+    /* 0x1C98 */ RwUInt32 muStandardTakedowns;
+    /* 0x1C9C */ RwUInt32 muSignatureTakedowns;
+    /* 0x1CA0 */ RwUInt32 muAftertouchTakedowns;
+    /* 0x1CA4 */ RwUInt32 muCrashbreakerTakedowns;
+    /* 0x1CA8 */ RwUInt32 muPsycheOutTakedowns;
+    /* 0x1CAC */ RwUInt32 muTrafficCheckTakedowns;
+    /* 0x1CB0 */ RwUInt32 muVerticalTakedowns;
+    /* 0x1CB4 */ RwUInt32 muTBoneTakedowns;
+    /* 0x1CB8 */ RwUInt32 muRevengeTakedowns;
+    /* 0x1CBC */ RwUInt32 muTotalSlams;
+    /* 0x1CC0 */ RwUInt32 muTotalShunts;
+    /* 0x1CC4 */ RwUInt32 muTotalRevengeSlams;
+    /* 0x1CC8 */ RwUInt32 muTotalRevengeShunts;
+    /* 0x1CCC */ RwUInt32 muTotalPerfectLaps;
+    /* 0x1CD0 */ RwUInt32 muTotalBurnoutLaps;
+    /* 0x1CD4 */ RwUInt32 muTotalCrashEscapes;
+    /* 0x1CD8 */ RwUInt32 muTotalVehiclesChecked;
+    /* 0x1CDC */ RwReal mrTotalBurnTime;
+    /* 0x1CE0 */ RwReal mrTotalDrift;
+    /* 0x1CE4 */ RwReal mrTotalOncoming;
+    /* 0x1CE8 */ RwReal mrTotalAir;
+    /* 0x1CEC */ RwUInt32 muTotalCrashDamage;
+    /* 0x1CF0 */ RwUInt32 muLargestNumCrashModeExplosions;
+    /* 0x1CF4 */ bool mbRumble;
+    /* 0x1CF5 */ bool mbIsEmpty;
+    // methods
+    // CB4ProfileStoredData(const CB4ProfileStoredData &);
+    // CB4ProfileStoredData();
+    // bool Prepare();
+    // CGtTimeStamp GetTimeStamp() const;
+    // void SetTimeStamp();
+    // RwReal GetTotalPlayingTimeInSeconds() const;
+    // void AddPlayingTime(float);
+    // void SetTotalPlayingTimeInSeconds(float);
+    // GtUTF16 * GetProfileName() const;
+    // void SetProfileName(const unsigned short *);
+    // GtUTF16 * GetPlayer1Name() const;
+    // void SetPlayer1Name(const unsigned short *);
+    // GtUTF16 * GetPlayer2Name() const;
+    // void SetPlayer2Name(const unsigned short *);
+    // RwInt8 GetChallengeMedal(unsigned int) const;
+    // void SetChallengeMedal(signed char, unsigned int);
+    // void SetChallengeMedalsFromArray(const signed char *, unsigned int);
+    // RwInt8 GetChallengeRating(unsigned int) const;
+    // void SetChallengeRating(signed char, unsigned int);
+    // void SetChallengeRatingsFromArray(const signed char *, unsigned int);
+    // RwUInt32 GetTotalNumberOfChallenges() const;
+    // void SetTotalNumberOfChallenges(unsigned int);
+    // bool IsChallengeSheetUnlocked(EB4TrackLocale);
+    // void SetChallengeSheetUnlocked(EB4TrackLocale, bool);
+    // bool IsChallengeCompleted(EB4TrackLocale, EB4SheetChallengeTypes);
+    // void SetChallengeCompleted(EB4TrackLocale, EB4SheetChallengeTypes, bool);
+    // bool IsSignatureTakedownCompleted(EB4TrackLocale, EB4SignatureTakedownType);
+    // void SetSignatureTakedownCompleted(EB4TrackLocale, EB4SignatureTakedownType, bool);
+    // GtID * GetChallengeList() const;
+    // RwUInt32 GetChallengeIndex(unsigned long) const;
+    // GtID * GetVehicleList() const;
+    // RwInt32 GetVehicleIndex(unsigned long) const;
+    // GtID * GetTrackList() const;
+    // RwInt32 GetTrackIndex(unsigned long) const;
+    // RwUInt32 GetNumberOfOnlineRaceEventsCompleted() const;
+    // void SetNumberOfOnlineRaceEventsCompleted(unsigned int);
+    // RwUInt32 GetNumberOfOnlineCrashEventsCompleted() const;
+    // void SetNumberOfOnlineCrashEventsCompleted(unsigned int);
+    // RwUInt32 GetNumberOfOfflineRaceEventsCompleted() const;
+    // void SetNumberOfOfflineRaceEventsCompleted(unsigned int);
+    // RwUInt32 GetNumberOfOfflineCrashEventsCompleted() const;
+    // void SetNumberOfOfflineCrashEventsCompleted(unsigned int);
+    // RwReal GetFastestLapTimeForTrack(int) const;
+    // RwReal GetLongestBurnTimeForTrack(int) const;
+    // RwReal GetLongestDriftDistanceForTrack(int) const;
+    // RwReal GetLongestOncomingDistanceForTrack(int) const;
+    // RwReal GetLongestAirDistanceForTrack(int) const;
+    // void SetFastestLapTimeForTrack(int, float);
+    // void SetLongestBurnTimeForTrack(int, float);
+    // void SetLongestDriftDistanceForTrack(int, float);
+    // void SetLongestOncomingDistanceForTrack(int, float);
+    // void SetLongestAirDistanceForTrack(int, float);
+    // RwUInt32 GetHighestTrafficAttackScoreForTrack(int) const;
+    // RwReal GetLongestTrafficAttackSurvivalTimeForTrack(int) const;
+    // RwUInt32 GetLargestTrafficAttackNumChecksForTrack(int) const;
+    // void SetHighestTrafficAttackScoreForTrack(int, unsigned int);
+    // void SetLongestTrafficAttackSurvivalTimeForTrack(int, float);
+    // void SetLargestTrafficAttackNumChecksForTrack(int, unsigned int);
+    // RwUInt32 GetHighestRoadRageScoreForTrack(int) const;
+    // RwUInt32 GetHighestRoadRageNumTakedownsForTrack(int) const;
+    // RwUInt32 GetLongestRoadRageTakedownStreakForTrack(int) const;
+    // void SetHighestRoadRageScoreForTrack(int, unsigned int);
+    // void SetHighestRoadRageNumTakedownsForTrack(int, unsigned int);
+    // void SetLongestRoadRageTakedownStreakForTrack(int, unsigned int);
+    // RwUInt32 GetHighestCrashModeScoreForJunction(int) const;
+    // void SetHighestCrashModeScoreForJunction(int, unsigned int);
+    // RwUInt32 GetNumberOfStandardTakedowns() const;
+    // void SetNumberOfStandardTakedowns(unsigned int);
+    // RwUInt32 GetNumberOfSignatureTakedowns() const;
+    // void SetNumberOfSignatureTakedowns(unsigned int);
+    // RwUInt32 GetNumberOfAftertouchTakedowns() const;
+    // void SetNumberOfAftertouchTakedowns(unsigned int);
+    // RwUInt32 GetNumberOfCrashbreakerTakedowns() const;
+    // void SetNumberOfCrashbreakerTakedowns(unsigned int);
+    // RwUInt32 GetNumberOfPsycheOutTakedowns() const;
+    // void SetNumberOfPsycheOutTakedowns(unsigned int);
+    // RwUInt32 GetNumberOfTrafficCheckTakedowns() const;
+    // void SetNumberOfTrafficCheckTakedowns(unsigned int);
+    // RwUInt32 GetNumberOfVerticalTakedowns() const;
+    // void SetNumberOfVerticalTakedowns(unsigned int);
+    // RwUInt32 GetNumberOfTBoneTakedowns() const;
+    // void SetNumberOfTBoneTakedowns(unsigned int);
+    // RwUInt32 GetNumberOfRevengeTakedowns() const;
+    // void SetNumberOfRevengeTakedowns(unsigned int);
+    // RwUInt32 GetNumberOfSlams() const;
+    // void SetNumberOfSlams(unsigned int);
+    // RwUInt32 GetNumberOfShunts() const;
+    // void SetNumberOfShunts(unsigned int);
+    // RwUInt32 GetNumberOfRevengeSlams() const;
+    // void SetNumberOfRevengeSlams(unsigned int);
+    // RwUInt32 GetNumberOfRevengeShunts() const;
+    // void SetNumberOfRevengeShunts(unsigned int);
+    // RwUInt32 GetNumberOfPerfectLaps() const;
+    // void SetNumberOfPerfectLaps(unsigned int);
+    // RwUInt32 GetNumberOfBurnoutLaps() const;
+    // void SetNumberOfBurnoutLaps(unsigned int);
+    // RwUInt32 GetNumberOfCrashEscapes() const;
+    // void SetNumberOfCrashEscapes(unsigned int);
+    // RwUInt32 GetNumberOfVehiclesChecked() const;
+    // void SetNumberOfVehiclesChecked(unsigned int);
+    // RwReal GetTotalBurnTime() const;
+    // void SetTotalBurnTime(float);
+    // RwReal GetTotalDriftDistance() const;
+    // void SetTotalDriftDistance(float);
+    // RwReal GetTotalOncomingDistance() const;
+    // void SetTotalOncomingDistance(float);
+    // RwReal GetTotalAirDistance() const;
+    // void SetTotalAirDistance(float);
+    // RwUInt32 GetTotalCrashDamage() const;
+    // void SetTotalCrashDamage(unsigned int);
+    // RwUInt32 GetLargestCrashModeVehiclesExploded() const;
+    // void SetLargestCrashModeVehiclesExploded(unsigned int);
+    // bool GetRumble() const;
+    // void SetRumble(bool);
+    // bool IsEmpty() const;
+    // void SetIsEmpty(bool);
+    // void UpdateChallengeList();
+    // void UpdateVehicleList();
+    // void UpdateTrackList();
+    // void SetOnlineRevengePoints(EPlayListCategory, unsigned short);
+    // RwUInt16 GetOnlineRevengePoints(EPlayListCategory) const;
+    // void SetOnlineUnlockedPlayList(EPlayListCategory, signed char);
+    // RwInt8 GetOnlineUnlockedPlayList(EPlayListCategory) const;
+    // void SetOnlineSelectedPlayList(EPlayListCategory, signed char);
+    // RwInt8 GetOnlineSelectedPlayList(EPlayListCategory) const;
+    // RwInt32 AddToVehicleList(unsigned long);
+    // RwInt32 AddToTrackList(unsigned long);
+    // void SetB3SaveDetected(bool);
+    // bool GetB3SaveDetected() const;
+    // void SetMaddenSaveDetected(bool);
+    // bool GetMaddenSaveDetected() const;
+    // bool GetFastestLapNeedsUploading(int) const;
+    // void SetFastestLapNeedsUploading(int, bool);
+    // bool GetBestTrafficAttackNeedsUploading(int) const;
+    // void SetBestTrafficAttackNeedsUploading(int, bool);
+    // bool GetBestCrashScoreNeedsUploading(int) const;
+    // void SetBestCrashScoreNeedsUploading(int, bool);
+};
+```
 
 ## Notes
 

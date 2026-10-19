@@ -11,14 +11,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_BuildBatchData(const GtMathPs2::CGtV2d&,GtMathPs2::CGtV2d*,const unsigned short**,const CGt2dObject:` | `0x002DA6A0` 932 | `0x00323EE0` 1264 | `0x00356080` 1264 | `0x00353510` 1356 | `0x0031C5D0` likely |  |
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002DAA50` 396 | `0x003243D0` 484 | `0x00356570` 484 | `0x00353310` 508 | `0x0031C990` strong |  |
-| `Prepare(const unsigned short*,bool,bool,float)` | `0x002DABE0` 356 | `0x003245C0` 400 | `0x00356760` 400 | `0x003530F0` 464 | `0x0031CB20` strong |  |
-| `Update(float)` |  |  |  | `0x003532C0` 72 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_BuildBatchData(const GtMathPs2::CGtV2d&,GtMathPs2::CGtV2d*,const unsigned short**,const CGt2dObject:` | `0x002DA6A0` 932 | `0x00323EE0` 1264 | `0x00356080` 1264 | `0x00353510` 1356 | `0x0031C5D0` likely |  |  |
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002DAA50` 396 | `0x003243D0` 484 | `0x00356570` 484 | `0x00353310` 508 | `0x0031C990` strong |  |  |
+| `Prepare(const unsigned short*,bool,bool,float)` | `0x002DABE0` 356 | `0x003245C0` 400 | `0x00356760` 400 | `0x003530F0` 464 | `0x0031CB20` strong |  |  |
+| `Update(float)` |  |  |  | `0x003532C0` 72 |  |  |  |
 
 ## Notes
 

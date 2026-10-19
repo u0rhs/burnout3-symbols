@@ -8,34 +8,35 @@
 - **Source file:** `B3DebugManager.cpp`
 - **Methods per build:** DNAT_200 12, B3DEBUG 19, B3INTERN 19, B3O0PCH 20
 - **Retail (SLUS-21050):** 10 of its 12 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4DebugManager`, size 0x36A0, methods in `GameSource/Game/B4DebugManager.cpp` ([layout](#burnout-revenge-layout-of-cb4debugmanager))
 - **Burnout 2 ancestor (by name):** `CDebugManager`, size 0x1694, declared in 3 file(s), e.g. `gamesource/Physics/CVehiclePhysics.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `PerfMonResetCallback(void*)` |  | `0x0012FA20` 8 | `0x00131DA0` 8 | `0x00134B00` 32 |  |  |
-| `RenderPerfMonDataCallback(const char*,float,float,float,bool)` | `0x0012FA40` 864 | `0x0012FA30` 864 | `0x00131DB0` 864 | `0x001345E0` 936 | `0x00130030` proven |  |
-| `DrawVectorText(const char*,GtMathPs2::CGtV3d,GtMathPs2::CGtMatrix3x4*,float,GtMathPs2::CGtV4d)` | `0x0012FDA0` 944 | `0x0012FD90` 944 | `0x00132110` 944 | `0x00134040` 1292 | `0x00130390` strong |  |
-| `DrawText(const char*,float,float,float,GtMathPs2::CGtV4d)` |  | `0x00130140` 112 | `0x001324C0` 112 | `0x00133FC0` 116 |  |  |
-| `DrawCross(GtMathPs2::CGtV3d,float,GtMathPs2::CGtV4d)` | `0x00130160` 268 | `0x001301C0` 268 | `0x00132540` 268 | `0x001316F0` 576 |  |  |
-| `DrawLine(const CGtLine&,GtMathPs2::CGtV4d)` | `0x00130270` 344 | `0x001302D0` 456 | `0x00132650` 456 | `0x001312C0` 408 | `0x00130750` proven |  |
-| `StopUpdate(void*)` | `0x001303D0` 12 | `0x001304E0` 12 | `0x00132860` 12 | `0x001311C0` 24 |  |  |
-| `RenderWorld()` | `0x001303E0` 188 | `0x00130500` 488 | `0x00132880` 488 | `0x00131090` 260 | `0x001308B0` strong |  |
-| `PlayUpdateAndCameras(void*)` |  | `0x001304A0` 12 | `0x00132820` 12 | `0x00131240` 24 |  |  |
-| `RenderOverlays()` | `0x001304A0` 8 | `0x001306F0` 1904 | `0x00132A70` 1880 | `0x00130900` 1628 | `0x00130970` likely |  |
-| `Destruct()` | `0x001304B0` 64 | `0x00130E60` 92 | `0x001331D0` 72 | `0x00130870` 136 | `0x00130980` strong |  |
-| `PlayCameras(void*)` |  | `0x001304B0` 12 | `0x00132830` 12 | `0x00131220` 24 |  |  |
-| `StepCameraFrame(void*)` |  | `0x001304C0` 12 | `0x00132840` 12 | `0x00131200` 24 |  |  |
-| `StepUpdateAndCameraFrame(void*)` |  | `0x001304D0` 12 | `0x00132850` 12 | `0x001311E0` 24 |  |  |
-| `StopUpdateAndCameras(void*)` |  | `0x001304F0` 12 | `0x00132870` 12 | `0x001311A0` 24 |  |  |
-| `Update()` | `0x001304F0` 64 | `0x00130EC0` 1284 | `0x00133220` 1264 | `0x00130080` 868 | `0x001309C0` strong |  |
-| `UpdateStartOfFrame()` | `0x00130530` 236 | `0x001313D0` 564 | `0x00133710` 564 | `0x0012FCA0` 380 | `0x00130A00` strong |  |
-| `Prepare()` | `0x00130620` 124 | `0x00131610` 124 | `0x00133950` 124 | `0x0012FBD0` 196 | `0x00130B00` strong |  |
-| `Construct()` | `0x001306A0` 104 | `0x00131690` 604 | `0x001339D0` 560 | `0x0012F8B0` 756 | `0x00130B80` strong |  |
-| `CB3DebugManager()` |  |  |  | `0x00134BD0` 80 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `PerfMonResetCallback(void*)` |  | `0x0012FA20` 8 | `0x00131DA0` 8 | `0x00134B00` 32 |  |  |  |
+| `RenderPerfMonDataCallback(const char*,float,float,float,bool)` | `0x0012FA40` 864 | `0x0012FA30` 864 | `0x00131DB0` 864 | `0x001345E0` 936 | `0x00130030` proven |  |  |
+| `DrawVectorText(const char*,GtMathPs2::CGtV3d,GtMathPs2::CGtMatrix3x4*,float,GtMathPs2::CGtV4d)` | `0x0012FDA0` 944 | `0x0012FD90` 944 | `0x00132110` 944 | `0x00134040` 1292 | `0x00130390` strong |  | `void CB4DebugManager::DrawVectorText(const char *lpcString, GtMathPs2::CGtV3d lPosition, GtMathPs2::CGtMatrix3x4 *lpOptionalCameraMatrix, float lrSize, GtMathPs2::CGtV4d lColour)` |
+| `DrawText(const char*,float,float,float,GtMathPs2::CGtV4d)` |  | `0x00130140` 112 | `0x001324C0` 112 | `0x00133FC0` 116 |  |  | `void CB4DebugManager::DrawText(const char *lpcString, float lrX, float lrY, float lrSize, GtMathPs2::CGtV4d lColour)` |
+| `DrawCross(GtMathPs2::CGtV3d,float,GtMathPs2::CGtV4d)` | `0x00130160` 268 | `0x001301C0` 268 | `0x00132540` 268 | `0x001316F0` 576 |  |  | `void CB4DebugManager::DrawCross(GtMathPs2::CGtV3d lPosition, float lrRadius, GtMathPs2::CGtV4d lColour)` |
+| `DrawLine(const CGtLine&,GtMathPs2::CGtV4d)` | `0x00130270` 344 | `0x001302D0` 456 | `0x00132650` 456 | `0x001312C0` 408 | `0x00130750` proven |  | `void CB4DebugManager::DrawLine(const CGtLine &lLine, GtMathPs2::CGtV4d lColour)` |
+| `StopUpdate(void*)` | `0x001303D0` 12 | `0x001304E0` 12 | `0x00132860` 12 | `0x001311C0` 24 |  |  |  |
+| `RenderWorld()` | `0x001303E0` 188 | `0x00130500` 488 | `0x00132880` 488 | `0x00131090` 260 | `0x001308B0` strong |  | `void CB4DebugManager::RenderWorld()` |
+| `PlayUpdateAndCameras(void*)` |  | `0x001304A0` 12 | `0x00132820` 12 | `0x00131240` 24 |  |  |  |
+| `RenderOverlays()` | `0x001304A0` 8 | `0x001306F0` 1904 | `0x00132A70` 1880 | `0x00130900` 1628 | `0x00130970` likely |  | `void CB4DebugManager::RenderOverlays()` |
+| `Destruct()` | `0x001304B0` 64 | `0x00130E60` 92 | `0x001331D0` 72 | `0x00130870` 136 | `0x00130980` strong |  | `void CB4DebugManager::Destruct()` |
+| `PlayCameras(void*)` |  | `0x001304B0` 12 | `0x00132830` 12 | `0x00131220` 24 |  |  |  |
+| `StepCameraFrame(void*)` |  | `0x001304C0` 12 | `0x00132840` 12 | `0x00131200` 24 |  |  |  |
+| `StepUpdateAndCameraFrame(void*)` |  | `0x001304D0` 12 | `0x00132850` 12 | `0x001311E0` 24 |  |  |  |
+| `StopUpdateAndCameras(void*)` |  | `0x001304F0` 12 | `0x00132870` 12 | `0x001311A0` 24 |  |  |  |
+| `Update()` | `0x001304F0` 64 | `0x00130EC0` 1284 | `0x00133220` 1264 | `0x00130080` 868 | `0x001309C0` strong |  | `void CB4DebugManager::Update()` |
+| `UpdateStartOfFrame()` | `0x00130530` 236 | `0x001313D0` 564 | `0x00133710` 564 | `0x0012FCA0` 380 | `0x00130A00` strong |  | `void CB4DebugManager::UpdateStartOfFrame()` |
+| `Prepare()` | `0x00130620` 124 | `0x00131610` 124 | `0x00133950` 124 | `0x0012FBD0` 196 | `0x00130B00` strong |  | `bool CB4DebugManager::Prepare()` |
+| `Construct()` | `0x001306A0` 104 | `0x00131690` 604 | `0x001339D0` 560 | `0x0012F8B0` 756 | `0x00130B80` strong |  | `void CB4DebugManager::Construct()` |
+| `CB3DebugManager()` |  |  |  | `0x00134BD0` 80 |  |  | `CB4DebugManager * CB4DebugManager::CB4DebugManager()` |
 
 ## Static data (DNAT_200)
 
@@ -80,6 +81,104 @@ public:
     /* 0x1590 */ float mrPastValues[32];
     /* 0x1610 */ float mrPastTimes[32];
     /* 0x1690 */ int mnPastValuesIndex;
+};
+```
+
+## Burnout Revenge layout of `CB4DebugManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 38 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4DebugManager {  // size 0x36A0
+    /* 0x000 */ bool mbPlay;
+    /* 0x001 */ bool mbPlayCameras;
+    /* 0x002 */ bool mbStepping;
+    /* 0x003 */ bool mbSteppingCameras;
+    /* 0x004 */ bool mbInfiniteBoost;
+    /* 0x010 */ CB4AIDebug mAIDebug;
+    /* 0xA10 */ CB4PhysicsManagerDebug mPhysicsDebug;
+    /* 0x28F0 */ CB4CarViewerDebug mCarViewerDebug;
+    /* 0x2A10 */ CB4TrafficDebug mTrafficDebug;
+    /* 0x2A17 */ CB4GameDataDebug mGameDataDebug;
+    /* 0x2A18 */ CB4DebugMipMaps mMipMapDebug;
+    /* 0x2A1C */ CB4SliceEnvironmentDebug mEnvironmentDataDebug;
+    /* static */ bool gmbRequestStopAll;
+    /* static */ bool gmbRequestStopUpdate;
+    /* static */ bool gmbRequestStepAll;
+    /* static */ bool gmbRequestStepCameras;
+    /* static */ bool gmbRequestPlayAll;
+    /* static */ bool gmbRequestPlayCameras;
+    /* 0x3668 */ RwInt32 mnDebugDisplayPadIndex;
+    /* 0x366C */ RwInt32 mnPerfMonPage;
+    /* 0x3670 */ CGtV2d mPerfMonOrigin;
+    /* 0x3678 */ bool mbShowSpikeRating;
+    /* static */ RwReal gmrGpuMonitorOpacity;
+    /* 0x3679 */ bool mbDrawGpuMonitors;
+    /* 0x367A */ bool mbDrawGpuMonitorsAsGraph;
+    /* static */ bool gmbDrawGpuTextAsTable;
+    /* static */ RwReal gmrGpuTextTableOffset;
+    /* 0x367B */ bool mbShowRaceCarLapTimes;
+    /* 0x367C */ ERaceCarIndex meRaceCarIndex;
+    /* 0x3680 */ CB4EarlyFinishData mEarlyFinishData;
+    /* 0x3688 */ EB4KillerHornType meKillerHornType;
+    /* 0x368C */ EScoreBonusEvent meBonusEventType;
+    /* 0x3690 */ EScoreCategoryType meScoreEventType;
+    /* 0x3694 */ ESmallMessageEvent meSmallMessageType;
+    // methods
+    // CB4DebugManager(const CB4DebugManager &);
+    // CB4DebugManager();
+    // void Construct();
+    // bool Prepare();
+    // void UpdateStartOfFrame();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void RenderWorld();
+    // void RenderOverlays();
+    // void DrawCross(GtMathPs2::CGtV3d, float, GtMathPs2::CGtV4d);
+    // void DrawLine(const CGtLine &, GtMathPs2::CGtV4d);
+    // void DrawVector(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, GtMathPs2::CGtV4d);
+    // void DrawAxis(const GtMathPs2::CGtMatrix3x4 &, float);
+    // void DrawText(const char *, float, float, float, GtMathPs2::CGtV4d);
+    // void DrawVectorText(const char *, GtMathPs2::CGtV3d, GtMathPs2::CGtMatrix3x4 *, float, GtMathPs2::CGtV4d);
+    // void DrawCircle(GtMathPs2::CGtSphere, GtMathPs2::CGtV4d);
+    // void DrawAlignedCircle(GtMathPs2::CGtSphere, GtMathPs2::CGtV4d, GtMathPs2::CGtV3d);
+    // static void StopUpdate(void *);
+    // static void StopUpdateAndCameras(void *);
+    // static void PlayCameras(void *);
+    // static void PlayUpdateAndCameras(void *);
+    // static void StepUpdateAndCameraFrame(void *);
+    // static void SetDebugDisplayColour(void *);
+    // static void SetSlowMotion(void *);
+    // static void StepCameraFrame(void *);
+    // static void RenderPerfMonDataCallback(const char *, float, float, float, int, bool);
+    // static void RenderPerfMonGpuDataCallback(const char *, float, GtMathPs2::CGtV4d, bool);
+    // static void RenderPerfMonGpuDataAsGraphCallback(const char *, float, GtMathPs2::CGtV4d, bool);
+    // static void PerfMonResetCallback(void *);
+    // static void PerfMonDumpCallback(void *);
+    // CB4RaceCarPhysics * GetNearestRaceCarPhysicsInFront(GtMathPs2::CGtMatrix3x4 *);
+    // CB4RaceCarPhysics * GetNearestNonCrashingRaceCarInFront(GtMathPs2::CGtMatrix3x4 *);
+    // static void FinishRace(void *);
+    // static void SetRaceCarFinished(CB4PlayerCar *, int);
+    // static void SetFastestLap(void *);
+    // static void SetUnlockPlaylists(void *);
+    // static void SetUnlockChallenges(void *);
+    // static void SetUnlockSecondaryRewards(void *);
+    // static void SetUnlockVehicles(void *);
+    // static void DisplayBonusMessage(void *);
+    // static void DisplayScoreMessage(void *);
+    // static void DisplayPromptMessage(void *);
+    // static void UnlockVehiclesWithVideos(void *);
+    // static void UnlockChallengeSheetsWithVideos(void *);
+    // static void UnlockChallengesWithVideos(void *);
+    // static void UnlockPreviewChallengesWithVideos(void *);
+    // void DoChaosKillerHorn(CB4PlayerCar *);
+    // void DoTakedownKillerHorn(CB4PlayerCar *);
+    // void DoSlamEffectKillerHorn(CB4PlayerCar *);
+    // static void CallbackGetHornType(void *, void *, char *, const char *);
+    // static void CallbackGetMessageType(void *, void *, char *, const char *);
+    // static void CallbackGetScoreMessageType(void *, void *, char *, const char *);
+    // static void CallbackGetPromptMessageType(void *, void *, char *, const char *);
 };
 ```
 

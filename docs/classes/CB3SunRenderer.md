@@ -8,27 +8,28 @@
 - **Source file:** `B3SunRendererPS2.cpp`
 - **Methods per build:** DNAT_200 12, B3DEBUG 12, B3INTERN 12, B3O0PCH 14
 - **Retail (SLUS-21050):** 12 of its 12 DNAT_200 methods found, 9 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SunRenderer`, size 0x001, methods in `GameSource/Graphics/SunRenderer/Ps2/B4SunRendererPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4sunrenderer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RenderEnvmap()` | `0x0020BB30` 36 | `0x00217BB0` 36 | `0x00257AB0` 36 | `0x0025DD80` 40 | `0x0024B360` proven |  |
-| `RenderEnvmapBlob()` | `0x0020BB60` 848 | `0x00217BE0` 1076 | `0x00257AE0` 848 | `0x0025D860` 1304 | `0x0024B390` proven |  |
-| `RenderEnvmapCorona()` | `0x0020BEB0` 764 | `0x00218020` 764 | `0x00257E30` 764 | `0x0025D4C0` 916 | `0x0024B6E0` proven |  |
-| `PrepareEnvmapSunCoronaData()` | `0x0020C1B0` 1392 | `0x00218320` 1648 | `0x00258130` 1392 | `0x0025CFA0` 1300 | `0x0024B9E0` proven |  |
-| `RenderCorona()` | `0x0020C720` 2168 | `0x00218990` 2224 | `0x002586A0` 2216 | `0x0025C020` 3112 | `0x0024BF60` proven |  |
-| `OcclusionTest()` | `0x0020CFA0` 1540 | `0x00219240` 1592 | `0x00258F50` 1592 | `0x0025B620` 2548 | `0x0024C7E0` proven |  |
-| `RenderBlob()` | `0x0020D5B0` 792 | `0x00219880` 792 | `0x00259590` 792 | `0x0025B220` 1016 | `0x0024CDF0` proven |  |
-| `SetupCamera(GtMathPs2::CGtV3d,GtMathPs2::CGtV4d,float,float)` | `0x0020D8D0` 592 | `0x00219BA0` 836 | `0x002598B0` 704 | `0x0025AD30` 1088 | `0x0024D110` proven |  |
-| `Release()` | `0x0020DB20` 44 | `0x00219EF0` 44 | `0x00259B70` 44 | `0x0025ACF0` 52 | `0x0024D360` proven |  |
-| `Prepare(CGtTexture*,CGtTexture*,CGtTexture*)` | `0x0020DB50` 240 | `0x00219F20` 680 | `0x00259BA0` 680 | `0x0025AB20` 396 | `0x0024D390` unverified |  |
-| `Destruct()` | `0x0020DC40` 12 | `0x0021A1D0` 12 | `0x00259E50` 12 | `0x0025AB10` 16 | `0x0024D4A0` strong |  |
-| `Construct()` | `0x0020DC50` 12 | `0x0021A1E0` 12 | `0x00259E60` 12 | `0x0025AB00` 16 | `0x0024D4B0` strong |  |
-| `InterpolateCoronaColumn(int,int,int,GtMathPs2::CGtV3d)` |  |  |  | `0x0025CE40` 352 |  |  |
-| `InterpolateCoronaRow(int,int,int,GtMathPs2::CGtV3d)` |  |  |  | `0x0025CC50` 360 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RenderEnvmap()` | `0x0020BB30` 36 | `0x00217BB0` 36 | `0x00257AB0` 36 | `0x0025DD80` 40 | `0x0024B360` proven |  | `void CB4SunRenderer::RenderEnvmap()` |
+| `RenderEnvmapBlob()` | `0x0020BB60` 848 | `0x00217BE0` 1076 | `0x00257AE0` 848 | `0x0025D860` 1304 | `0x0024B390` proven |  | `void CB4SunRenderer::RenderEnvmapBlob()` |
+| `RenderEnvmapCorona()` | `0x0020BEB0` 764 | `0x00218020` 764 | `0x00257E30` 764 | `0x0025D4C0` 916 | `0x0024B6E0` proven |  | `void CB4SunRenderer::RenderEnvmapCorona()` |
+| `PrepareEnvmapSunCoronaData()` | `0x0020C1B0` 1392 | `0x00218320` 1648 | `0x00258130` 1392 | `0x0025CFA0` 1300 | `0x0024B9E0` proven |  | `void CB4SunRenderer::PrepareEnvmapSunCoronaData()` |
+| `RenderCorona()` | `0x0020C720` 2168 | `0x00218990` 2224 | `0x002586A0` 2216 | `0x0025C020` 3112 | `0x0024BF60` proven |  | `void CB4SunRenderer::RenderCorona()` |
+| `OcclusionTest()` | `0x0020CFA0` 1540 | `0x00219240` 1592 | `0x00258F50` 1592 | `0x0025B620` 2548 | `0x0024C7E0` proven |  | `void CB4SunRenderer::OcclusionTest()` |
+| `RenderBlob()` | `0x0020D5B0` 792 | `0x00219880` 792 | `0x00259590` 792 | `0x0025B220` 1016 | `0x0024CDF0` proven |  | `void CB4SunRenderer::RenderBlob()` |
+| `SetupCamera(GtMathPs2::CGtV3d,GtMathPs2::CGtV4d,float,float)` | `0x0020D8D0` 592 | `0x00219BA0` 836 | `0x002598B0` 704 | `0x0025AD30` 1088 | `0x0024D110` proven |  | `void CB4SunRenderer::SetupCamera(GtMathPs2::CGtV3d lSunDirection, GtMathPs2::CGtV4d lColour, float lrBlobRadius, float lrCoronaRadius)` |
+| `Release()` | `0x0020DB20` 44 | `0x00219EF0` 44 | `0x00259B70` 44 | `0x0025ACF0` 52 | `0x0024D360` proven |  | `void CB4SunRenderer::Release()` |
+| `Prepare(CGtTexture*,CGtTexture*,CGtTexture*)` | `0x0020DB50` 240 | `0x00219F20` 680 | `0x00259BA0` 680 | `0x0025AB20` 396 | `0x0024D390` unverified |  | `bool CB4SunRenderer::Prepare(CGtTexture *lpBlobTexture, CGtTexture *lpCoronaTexture, CGtTexture *lpCloudTexture)` |
+| `Destruct()` | `0x0020DC40` 12 | `0x0021A1D0` 12 | `0x00259E50` 12 | `0x0025AB10` 16 | `0x0024D4A0` strong |  | `void CB4SunRenderer::Destruct()` |
+| `Construct()` | `0x0020DC50` 12 | `0x0021A1E0` 12 | `0x00259E60` 12 | `0x0025AB00` 16 | `0x0024D4B0` strong |  | `void CB4SunRenderer::Construct()` |
+| `InterpolateCoronaColumn(int,int,int,GtMathPs2::CGtV3d)` |  |  |  | `0x0025CE40` 352 |  |  | `void CB4SunRenderer::InterpolateCoronaColumn(int lnSourceA, int lnSourceB, int lnColumn, GtMathPs2::CGtV3d lStep)` |
+| `InterpolateCoronaRow(int,int,int,GtMathPs2::CGtV3d)` |  |  |  | `0x0025CC50` 360 |  |  | `void CB4SunRenderer::InterpolateCoronaRow(int lnSourceA, int lnSourceB, int lnRow, GtMathPs2::CGtV3d lStep)` |
 
 ## Static data (DNAT_200)
 
@@ -63,6 +64,64 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `0x01CAC9C0` | 256 | .bss | `CB3SunRenderer::maEnvmapCoronaVertices` |
 | `0x01CACAC0` | 128 | .bss | `CB3SunRenderer::maEnvmapCoronaSTs` |
 | `0x01CACB40` | 16 | .bss | `CB3SunRenderer::mu128CoronaTex0` |
+
+## Burnout Revenge layout of `CB4SunRenderer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Graphics/SunRenderer/Ps2/B4SunRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SunRenderer : public CB4SunRendererBase {  // size 0x001
+    // base CB4SunRendererBase at 0x000
+    /* static */ CGtV3d mEnvMapCentre;
+    /* static */ CGtV4d mBlobColour;
+    /* static */ CGtV4d mCoronaColour;
+    /* static */ u_long128 mu128BlobTex0;
+    /* static */ u_long128 mu128CoronaTex0;
+    /* static */ CGtTexture *mpCoronaTexture;
+    /* static */ CGtTexture *mpEnvmapCoronaTexture;
+    /* static */ RwReal mrBlobRadius;
+    /* static */ RwReal mrCoronaRadius;
+    /* static */ CGtV3d mSunDirection;
+    /* static */ CGtV2d mSunPos;
+    /* static */ CGtV2d mScreenSize;
+    /* static */ CGtV2d mScreenOffset;
+    /* static */ RwInt32 mnScreenSizeX;
+    /* static */ RwInt32 mnScreenSizeY;
+    /* static */ RwInt32 mnXYOffsetX;
+    /* static */ RwInt32 mnXYOffsetY;
+    /* static */ RwInt32 mnGSOffsetX;
+    /* static */ RwInt32 mnGSOffsetY;
+    /* static */ RwReal mrAspectRatio;
+    /* static */ RwReal mrFOVScale;
+    /* static */ bool mbBehind;
+    /* static */ RwInt32 mnCoronaX;
+    /* static */ RwInt32 mnCoronaY;
+    /* static */ RwInt32 mnCoronaRed;
+    /* static */ RwInt32 mnCoronaGreen;
+    /* static */ RwInt32 mnCoronaBlue;
+    /* static */ CGtV3d maEnvmapCoronaVertices[16];
+    /* static */ CGtV2d maEnvmapCoronaSTs[16];
+    // methods
+    // CB4SunRenderer(const CB4SunRenderer &);
+    // CB4SunRenderer();
+    // static void Construct();
+    // static void Destruct();
+    // static bool Prepare(CGtTexture *, CGtTexture *, CGtTexture *);
+    // static void Release();
+    // static void SetupCamera(GtMathPs2::CGtV3d, GtMathPs2::CGtV4d, float, float);
+    // static void RenderBlob();
+    // static void OcclusionTest();
+    // static void PrepareEnvmapSunCoronaData();
+    // static void RenderCorona();
+    // static void RenderEnvmap();
+    // static void RelocateGSTextures();
+    // static void InterpolateCoronaRow(int, int, int, GtMathPs2::CGtV3d);
+    // static void InterpolateCoronaColumn(int, int, int, GtMathPs2::CGtV3d);
+    // static void RenderEnvmapCorona();
+    // static void RenderEnvmapBlob();
+    // static void RenderSunOccludedAlphaToSkyGradient();
+};
+```
 
 ## Notes
 

@@ -6,20 +6,21 @@
 
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Methods per build:** B3O0PCH 6
+- **Burnout Revenge counterpart:** `CGt2dLayer`, size 0x010 ([layout](#burnout-revenge-layout-of-cgt2dlayer))
 - **Burnout 2 ancestor (by name):** `C2dLayer`, size 0x018, declared in 72 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct(CGt2dScene*)` |  |  |  | `0x001DCCE0` 72 |  |  |
-| `IsRenderable()` |  |  |  | `0x001DD570` 116 |  |  |
-| `Prepare()` |  |  |  | `0x001DCDC0` 60 |  |  |
-| `RenderObjects()` |  |  |  | `0x001DCEF0` 468 |  |  |
-| `UpdateClipFrame(const CGt2dFrame*)` |  |  |  | `0x001DD1C0` 244 |  |  |
-| `UpdateProperties(unsigned int)` |  |  |  | `0x001DD420` 332 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct(CGt2dScene*)` |  |  |  | `0x001DCCE0` 72 |  |  |  |
+| `IsRenderable()` |  |  |  | `0x001DD570` 116 |  |  |  |
+| `Prepare()` |  |  |  | `0x001DCDC0` 60 |  |  |  |
+| `RenderObjects()` |  |  |  | `0x001DCEF0` 468 |  |  |  |
+| `UpdateClipFrame(const CGt2dFrame*)` |  |  |  | `0x001DD1C0` 244 |  |  |  |
+| `UpdateProperties(unsigned int)` |  |  |  | `0x001DD420` 332 |  |  |  |
 
 ## Burnout 2 layout of `C2dLayer`
 
@@ -32,6 +33,36 @@ public:
     /* 0x004 */ GtLListTag mObjectList;
     /* 0x00C */ GtLListTag mFXList;
     /* 0x014 */ C2dFrame *mpClipFrame;
+};
+```
+
+## Burnout Revenge layout of `CGt2dLayer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 38 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dScene.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dLayer {  // size 0x010
+    /* static */ RwUInt32 kxPropertyDefault;
+    /* static */ RwUInt32 kxPropertyHidden;
+    /* static */ RwUInt32 kxPropertyAdditive;
+    /* static */ RwUInt32 kxPropertySubtractive;
+    /* static */ RwUInt32 kxPropertyNoFilter;
+    /* static */ RwUInt32 kxPropertyTextureTile;
+    /* static */ RwUInt32 kxPropertySourceRGB;
+    /* static */ RwUInt32 kxPropertyInvalid;
+    /* static */ RwUInt32 kxBlendFlags;
+    /* 0x000 */ RwUInt32 mxProperties;
+    /* 0x004 */ CGtFreeList mObjectList;
+    /* 0x00C */ CGt2dFrame *mpClipFrame;
+    // methods
+    // CGt2dLayer(const CGt2dLayer &);
+    // CGt2dLayer();
+    // void Construct(CGt2dScene *);
+    // void Prepare();
+    // RwInt32 UpdateProperties(unsigned int);
+    // CGt2dFrame * UpdateClipFrame(const CGt2dFrame *) const;
+    // bool IsRenderable();
+    // void RenderObjects();
 };
 ```
 

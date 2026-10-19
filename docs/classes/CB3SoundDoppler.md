@@ -8,21 +8,22 @@
 - **Source file:** `B3SoundDoppler.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 8
 - **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundDoppler`, size 0x02C, methods in `GameSource/Sound/Traffic/B4SoundDoppler.cpp` ([layout](#burnout-revenge-layout-of-cb4sounddoppler))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetMaxVolBoost(float)` | `0x002B43C0` 8 | `0x002F46F0` 8 | `0x00328AB0` 8 | `0x00320920` 36 | `0x002F4B70` proven |  |
-| `SetMaxVolToPower(float)` | `0x002B43D0` 8 | `0x002F4700` 8 | `0x00328AC0` 8 | `0x003208F0` 36 | `0x002F4B80` proven |  |
-| `SetMaxVolLinear(float)` | `0x002B43E0` 8 | `0x002F4710` 8 | `0x00328AD0` 8 | `0x003208C0` 36 | `0x002F4B90` proven |  |
-| `CalculatePitch(float,float)` | `0x002B43F0` 524 | `0x002F4720` 524 | `0x00328AE0` 524 | `0x003204C0` 1016 | `0x002F4BA0` proven |  |
-| `CalculateVolume(float,float)` | `0x002B4600` 224 | `0x002F4930` 224 | `0x00328CF0` 224 | `0x00320320` 416 | `0x002F4DC0` proven |  |
-| `Update(float,float,float,float,float*,float*)` | `0x002B46E0` 112 | `0x002F4A10` 112 | `0x00328DD0` 112 | `0x00320280` 156 | `0x002F4EA0` proven |  |
-| `Prepare()` | `0x002B4750` 84 | `0x002F4A80` 84 | `0x00328E40` 84 | `0x003201D0` 164 | `0x002F4F10` unverified |  |
-| `Construct()` | `0x002B47B0` 8 | `0x002F4AE0` 8 | `0x00328EA0` 8 | `0x003201C0` 16 | `0x002F4F80` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetMaxVolBoost(float)` | `0x002B43C0` 8 | `0x002F46F0` 8 | `0x00328AB0` 8 | `0x00320920` 36 | `0x002F4B70` proven |  | `void CB4SoundDoppler::SetMaxVolBoost(float lrMax)` |
+| `SetMaxVolToPower(float)` | `0x002B43D0` 8 | `0x002F4700` 8 | `0x00328AC0` 8 | `0x003208F0` 36 | `0x002F4B80` proven |  | `void CB4SoundDoppler::SetMaxVolToPower(float lrMax)` |
+| `SetMaxVolLinear(float)` | `0x002B43E0` 8 | `0x002F4710` 8 | `0x00328AD0` 8 | `0x003208C0` 36 | `0x002F4B90` proven |  | `void CB4SoundDoppler::SetMaxVolLinear(float lrMax)` |
+| `CalculatePitch(float,float)` | `0x002B43F0` 524 | `0x002F4720` 524 | `0x00328AE0` 524 | `0x003204C0` 1016 | `0x002F4BA0` proven |  | `RwReal CB4SoundDoppler::CalculatePitch(float lrDistance, float lrSpeed)` |
+| `CalculateVolume(float,float)` | `0x002B4600` 224 | `0x002F4930` 224 | `0x00328CF0` 224 | `0x00320320` 416 | `0x002F4DC0` proven |  | `RwReal CB4SoundDoppler::CalculateVolume(float lrDistance, float lrSpeed)` |
+| `Update(float,float,float,float,float*,float*)` | `0x002B46E0` 112 | `0x002F4A10` 112 | `0x00328DD0` 112 | `0x00320280` 156 | `0x002F4EA0` proven |  | `void CB4SoundDoppler::Update(float lrDistance, float lrRelSpeed, float lrCarSpeed, float lrBoostFactor, float *lpPitch, float *lpVolume)` |
+| `Prepare()` | `0x002B4750` 84 | `0x002F4A80` 84 | `0x00328E40` 84 | `0x003201D0` 164 | `0x002F4F10` unverified |  | `bool CB4SoundDoppler::Prepare()` |
+| `Construct()` | `0x002B47B0` 8 | `0x002F4AE0` 8 | `0x00328EA0` 8 | `0x003201C0` 16 | `0x002F4F80` proven |  | `void CB4SoundDoppler::Construct()` |
 
 ## Static data (DNAT_200)
 
@@ -31,6 +32,46 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `0x01D93AA0` | 16 | .bss | `CB3SoundDoppler::garPointDistances` |
 | `0x01D93AB0` | 16 | .bss | `CB3SoundDoppler::garPointScalar` |
 | `0x01D93AC0` | 16 | .bss | `CB3SoundDoppler::garBasePitch` |
+
+## Burnout Revenge layout of `CB4SoundDoppler`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 18 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundDoppler {  // size 0x02C
+    /* static */ float garPointDistances[4];
+    /* static */ float garPointScalar[4];
+    /* static */ float garBasePitch[4];
+    /* 0x000 */ RwReal mrHollyWoodFactor;
+    /* 0x004 */ RwReal mrSpeedFactor;
+    /* 0x008 */ RwReal mrBoostFactor;
+    /* 0x00C */ RwReal mrMaxVolumeDistance;
+    /* 0x010 */ RwReal mrMaxVolumeSpeed;
+    /* 0x014 */ RwReal mrMaxPitchSpeed;
+    /* 0x018 */ RwReal mrMaxVolLinear;
+    /* 0x01C */ RwReal mrMaxVolToPower;
+    /* 0x020 */ RwReal mrMaxVolBoost;
+    /* 0x024 */ RwInt32 lnNFactor;
+    /* 0x028 */ RwInt32 lnNFactorBoost;
+    // methods
+    // CB4SoundDoppler(const CB4SoundDoppler &);
+    // CB4SoundDoppler();
+    // void Construct();
+    // bool Prepare();
+    // void Update(float, float, float, float, float *, float *);
+    // void Release();
+    // void Destruct();
+    // void SetHollyWoodFactor(float);
+    // void SetSpeedFactor(float);
+    // void SetPointDistance(int, float);
+    // void SetMaxVolumeDistance(float);
+    // void SetMaxVolLinear(float);
+    // void SetMaxVolToPower(float);
+    // void SetMaxVolBoost(float);
+    // RwReal CalculateVolume(float, float);
+    // RwReal CalculatePitch(float, float);
+};
+```
 
 ## Notes
 

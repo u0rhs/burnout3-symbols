@@ -7,25 +7,65 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3NetworkRaceUpdateMessage.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 1, B3INTERN 10, B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4NetworkRaceUpdateMessage`, size 0x27C, methods in `GameSource/Network/Messages/B4NetworkRaceUpdateMessage.cpp` ([layout](#burnout-revenge-layout-of-cb4networkraceupdatemessage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `PrepareAggDrivingData(bool (*)[6],bool (*)[6],int)` | `0x00173FE0` 380 |  |  |  |  |  |
-| `IsCrashing() const` | `0x00174160` 16 |  |  |  |  |  |
-| `Release()` | `0x00174170` 20 |  | `0x0018AC40` 20 |  |  |  |
-| `RetrieveCrashingTraffic(unsigned char*,GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV` | `0x00174190` 2552 |  | `0x0018AC60` 2880 |  |  |  |
-| `Retrieve(GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,CNetworkControls*,CUpdateM` | `0x00174B90` 2760 |  | `0x0018B7A0` 4096 |  |  |  |
-| `EndPrepare(int)` | `0x00175660` 12 |  | `0x0018C7A0` 80 |  |  |  |
-| `AddCrashingTraffic(unsigned char,const GtMathPs2::CGtMatrix3x4*,const GtMathPs2::CGtV3d*,const GtM` | `0x00175670` 596 |  | `0x0018C7F0` 744 |  |  |  |
-| `Prepare(const GtMathPs2::CGtMatrix3x4*,const GtMathPs2::CGtV3d*,const GtMathPs2::CGtV3d*,const CNe` | `0x001758D0` 868 |  | `0x0018CAE0` 1444 |  |  |  |
-| `Construct()` | `0x00175C40` 556 | `0x00190640` 616 | `0x0018D090` 616 | `0x001A4670` 768 |  |  |
-| `IsCrashing()` |  |  | `0x0018AC30` 16 |  |  |  |
-| `PrepareAggDrivingByte(EInteractionType,int,bool)` |  |  | `0x0018A900` 276 |  |  |  |
-| `PrepareAggDrivingData(bool (*)` |  |  | `0x0018AA20` 528 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `PrepareAggDrivingData(bool (*)[6],bool (*)[6],int)` | `0x00173FE0` 380 |  |  |  |  |  |  |
+| `IsCrashing() const` | `0x00174160` 16 |  |  |  |  |  |  |
+| `Release()` | `0x00174170` 20 |  | `0x0018AC40` 20 |  |  |  | `void CB4NetworkRaceUpdateMessage::Release()` |
+| `RetrieveCrashingTraffic(unsigned char*,GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV` | `0x00174190` 2552 |  | `0x0018AC60` 2880 |  |  |  | `void CB4NetworkRaceUpdateMessage::RetrieveCrashingTraffic(unsigned char *lpu8TrafficVehicleID, GtMathPs2::CGtMatrix3x4 *lpMatrix, GtMathPs2::CGtV3d *lpLinearVelocity, GtMathPs2::CGtV3d *lpAngularVelocity, int lnTrafficIndex)` (same name, different parameters) |
+| `Retrieve(GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,CNetworkControls*,CUpdateM` | `0x00174B90` 2760 |  | `0x0018B7A0` 4096 |  |  |  | `bool CB4NetworkRaceUpdateMessage::Retrieve(CUpdateMessageParams *lpParams, unsigned short *lpu16AdjustedFrame)` (same name, different parameters) |
+| `EndPrepare(int)` | `0x00175660` 12 |  | `0x0018C7A0` 80 |  |  |  | `void CB4NetworkRaceUpdateMessage::EndPrepare(int lnNumCrashingTraffic, int lnNumCheckedTraffic)` (same name, different parameters) |
+| `AddCrashingTraffic(unsigned char,const GtMathPs2::CGtMatrix3x4*,const GtMathPs2::CGtV3d*,const GtM` | `0x00175670` 596 |  | `0x0018C7F0` 744 |  |  |  | `void CB4NetworkRaceUpdateMessage::AddCrashingTraffic(unsigned char lu8TrafficVehicleID, const GtMathPs2::CGtMatrix3x4 *lpMatrix, const GtMathPs2::CGtV3d *lpLinearVelocity, const GtMathPs2::CGtV3d *lpAngularVelocity)` (same name, different parameters) |
+| `Prepare(const GtMathPs2::CGtMatrix3x4*,const GtMathPs2::CGtV3d*,const GtMathPs2::CGtV3d*,const CNe` | `0x001758D0` 868 |  | `0x0018CAE0` 1444 |  |  |  | `void CB4NetworkRaceUpdateMessage::Prepare(CUpdateMessageParams *lpParams, unsigned short lu16AdjustedFrame)` (same name, different parameters) |
+| `Construct()` | `0x00175C40` 556 | `0x00190640` 616 | `0x0018D090` 616 | `0x001A4670` 768 |  |  | `void CB4NetworkRaceUpdateMessage::Construct()` |
+| `IsCrashing()` |  |  | `0x0018AC30` 16 |  |  |  |  |
+| `PrepareAggDrivingByte(EInteractionType,int,bool)` |  |  | `0x0018A900` 276 |  |  |  |  |
+| `PrepareAggDrivingData(bool (*)` |  |  | `0x0018AA20` 528 |  |  |  |  |
+
+## Burnout Revenge layout of `CB4NetworkRaceUpdateMessage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 91 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkRaceUpdateMessage : public CB4NetworkMessage {  // size 0x27C
+    // base CB4NetworkMessage at 0x000
+    /* 0x008 */ CB4OORRaceCarData mOORRaceCar;
+    /* 0x018 */ CB4IRRaceCarData mIRRaceCar;
+    /* 0x034 */ CB4IRCrashingTrafficData maCrashingTraffic[24];
+    /* 0x244 */ unsigned char macHeadsetData[56];
+    // methods
+    // CB4NetworkRaceUpdateMessage(const CB4NetworkRaceUpdateMessage &);
+    // CB4NetworkRaceUpdateMessage();
+    // void Construct();
+    // void Prepare(CUpdateMessageParams *, unsigned short);
+    // void AddCrashingTraffic(unsigned char, const GtMathPs2::CGtMatrix3x4 *, const GtMathPs2::CGtV3d *, const GtMathPs2::CGtV3d *);
+    // void AddCheckedTraffic(unsigned char, const GtMathPs2::CGtMatrix3x4 *, const GtMathPs2::CGtV3d *, const GtMathPs2::CGtV3d *);
+    // void AddVoIP(const unsigned char *);
+    // void EndPrepare(int, int);
+    // RwInt32 GetMessageSize();
+    // bool Retrieve(CUpdateMessageParams *, unsigned short *);
+    // void RetrieveCrashingTraffic(unsigned char *, GtMathPs2::CGtMatrix3x4 *, GtMathPs2::CGtV3d *, GtMathPs2::CGtV3d *, int);
+    // void RetrieveCheckedTraffic(unsigned char *, GtMathPs2::CGtMatrix3x4 *, GtMathPs2::CGtV3d *, GtMathPs2::CGtV3d *, int);
+    // void RetrieveVoIP(unsigned char *);
+    // void Release();
+    // void Destruct();
+    // RwUInt16 GetAdjustedFrame() const;
+    // RwUInt8 GetNumCrashingTraffic() const;
+    // RwUInt8 GetNumCheckedTraffic() const;
+    // bool ContainsVoIPData() const;
+    // bool IsNewerThan(unsigned short) const;
+    // bool IsOlderThan(unsigned short) const;
+    // bool NetworkCarIsCrashing() const;
+    // bool CanTidyCrashingTraffic() const;
+    // bool CanTidyCheckedTraffic() const;
+};
+```
 
 ## Notes
 

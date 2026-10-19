@@ -8,29 +8,59 @@
 - **Source file:** `B3DebugMipMaps.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 10, B3INTERN 10, B3O0PCH 10
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4DebugMipMaps`, size 0x001, methods in `GameSource/Graphics/Debug/B4DebugMipMaps.cpp` ([layout](#burnout-revenge-layout-of-cb4debugmipmaps))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update()` | `0x003158F0` 72 | `0x0036F6C0` 72 | `0x0039E590` 72 | `0x0039D210` 96 | `0x0035EF30` proven |  |
-| `Destruct()` | `0x00315940` 8 | `0x0036F710` 44 | `0x0039E5E0` 44 | `0x0039D1D0` 60 | `0x0035EF80` strong |  |
-| `Construct()` | `0x00315950` 8 | `0x0036F740` 272 | `0x0039E610` 272 | `0x0039D080` 332 | `0x0035EF90` strong |  |
-| `CbTexCachePostCallback(RwRaster*)` |  | `0x0034AC60` 812 | `0x0037C2B0` 812 | `0x0037AE10` 1008 |  |  |
-| `EnableTextureDebugDisplay(bool)` |  | `0x0034AF90` 52 | `0x0037C5E0` 52 | `0x0037AD80` 104 |  |  |
-| `CbSharpnessEdit(void*,void*,int)` |  | `0x0036F260` 256 | `0x0039E130` 256 | `0x0039D690` 356 |  |  |
-| `CbTextureEdit(void*,void*,int)` |  | `0x0036F360` 144 | `0x0039E230` 140 | `0x0039D5A0` 228 |  |  |
-| `CbSharpnessGetText(void*,void*,char*,const char*)` |  | `0x0036F3F0` 200 | `0x0039E2C0` 200 | `0x0039D4A0` 248 |  |  |
-| `CbTextureGetText(void*,void*,char*,const char*)` |  | `0x0036F4C0` 340 | `0x0039E390` 340 | `0x0039D350` 324 |  |  |
-| `CbDebugMenuCallback(EDbMenuNotify,void*)` |  | `0x0036F620` 156 | `0x0039E4F0` 156 | `0x0039D270` 216 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update()` | `0x003158F0` 72 | `0x0036F6C0` 72 | `0x0039E590` 72 | `0x0039D210` 96 | `0x0035EF30` proven |  | `void CB4DebugMipMaps::Update()` |
+| `Destruct()` | `0x00315940` 8 | `0x0036F710` 44 | `0x0039E5E0` 44 | `0x0039D1D0` 60 | `0x0035EF80` strong |  | `void CB4DebugMipMaps::Destruct()` |
+| `Construct()` | `0x00315950` 8 | `0x0036F740` 272 | `0x0039E610` 272 | `0x0039D080` 332 | `0x0035EF90` strong |  | `void CB4DebugMipMaps::Construct()` |
+| `CbTexCachePostCallback(RwRaster*)` |  | `0x0034AC60` 812 | `0x0037C2B0` 812 | `0x0037AE10` 1008 |  |  |  |
+| `EnableTextureDebugDisplay(bool)` |  | `0x0034AF90` 52 | `0x0037C5E0` 52 | `0x0037AD80` 104 |  |  |  |
+| `CbSharpnessEdit(void*,void*,int)` |  | `0x0036F260` 256 | `0x0039E130` 256 | `0x0039D690` 356 |  |  |  |
+| `CbTextureEdit(void*,void*,int)` |  | `0x0036F360` 144 | `0x0039E230` 140 | `0x0039D5A0` 228 |  |  |  |
+| `CbSharpnessGetText(void*,void*,char*,const char*)` |  | `0x0036F3F0` 200 | `0x0039E2C0` 200 | `0x0039D4A0` 248 |  |  |  |
+| `CbTextureGetText(void*,void*,char*,const char*)` |  | `0x0036F4C0` 340 | `0x0039E390` 340 | `0x0039D350` 324 |  |  |  |
+| `CbDebugMenuCallback(EDbMenuNotify,void*)` |  | `0x0036F620` 156 | `0x0039E4F0` 156 | `0x0039D270` 216 |  |  |  |
 
 ## Static data (DNAT_200)
 
 | Address | Size | Section | Name |
 |---|---:|---|---|
 | `0x00443564` | 4 | .sdata | `CB3DebugMipMaps::mgrFlashTime` |
+
+## Burnout Revenge layout of `CB4DebugMipMaps`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 38 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4DebugMipMaps {  // size 0x001
+    /* static */ bool mgbEditing;
+    /* static */ RwRGBA mgFlashColour;
+    /* static */ RwReal mgrFlashTime;
+    /* static */ RwReal mgrFadeBrightness;
+    /* static */ RwInt32 mgnTextureSelection;
+    // methods
+    // CB4DebugMipMaps(const CB4DebugMipMaps &);
+    // CB4DebugMipMaps();
+    // static void Construct();
+    // static void Destruct();
+    // static void Update();
+    // static void EnableTextureDebugDisplay(bool);
+    // static bool CbDebugMenuCallback(EDbMenuNotify, void *);
+    // static void CbTextureGetText(void *, void *, char *, const char *);
+    // static void CbSharpnessGetText(void *, void *, char *, const char *);
+    // static void CbTextureEdit(void *, void *, int);
+    // static void CbSharpnessEdit(void *, void *, int);
+    // static CGtTexture * GetTextureByIndex(CGtTextureDictionary *, int);
+    // static RwUInt32 CountTextures(CGtTextureDictionary *);
+    // static bool CbTexCachePostCallback(RwRaster *);
+};
+```
 
 ## Notes
 

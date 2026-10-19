@@ -8,29 +8,30 @@
 - **Source file:** `Gt2dFont.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 11
 - **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGt2dFont`, size 0x220, methods in `GameShared/GameClasses/Graphical/2d/Gt2dFont.cpp` ([layout](#burnout-revenge-layout-of-cgt2dfont))
 - **Burnout 2 ancestor (by name):** `C2dFont`, size 0x119C, declared in 38 file(s), e.g. `gamesource/Hud/CHud.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `MakeNumberCharactersFixedWidth()` | `0x0019DC10` 276 | `0x001D32F0` 276 | `0x001CC580` 276 | `0x002240E0` 440 | `0x001D7A70` proven |  |
-| `RenderString(const unsigned short*,float,float,float,GtMathPs2::CGtV4d) const` | `0x0019DD30` 628 |  |  |  | `0x001D7B90` proven |  |
-| `GetStringStartAndEnd(const unsigned short*,float,const unsigned short**,const unsigned short**,bool) const` | `0x0019DFB0` 552 |  |  |  | `0x001D7E10` proven |  |
-| `GetStringWidthIncludingLRKern(const unsigned short*) const` | `0x0019E1E0` 164 |  |  |  | `0x001D80A0` proven |  |
-| `GetStringWidth(const unsigned short*) const` | `0x0019E290` 184 |  |  |  | `0x001D8150` proven |  |
-| `Prepare(CGtTexture*)` | `0x0019E350` 80 | `0x001D3CE0` 212 | `0x001CCF70` 212 | `0x002237F0` 132 | `0x001D8210` proven |  |
-| `RenderString(const unsigned short*,float,float,float,GtMathPs2::CGtV4d)` |  | `0x001D3410` 724 | `0x001CC6A0` 724 | `0x00223E60` 632 |  |  |
-| `GetStringStartAndEnd(const unsigned short*,float,const unsigned short**,const unsigned short**,bool)` |  | `0x001D36F0` 884 | `0x001CC980` 884 | `0x00223A20` 1076 |  |  |
-| `GetStringWidthIncludingLRKern(const unsigned short*)` |  | `0x001D3A70` 296 | `0x001CCD00` 296 | `0x00223970` 172 |  |  |
-| `GetStringWidth(const unsigned short*)` |  | `0x001D3BA0` 316 | `0x001CCE30` 316 | `0x00223880` 236 |  |  |
-| `FixupPointers(unsigned int)` |  |  |  | `0x00223770` 124 |  |  |
-| `GetBaseline()` |  |  |  | `0x0019D210` 28 |  |  |
-| `GetCharacter(unsigned short)` |  |  |  | `0x001A1420` 136 |  |  |
-| `GetTexture()` |  |  |  | `0x001A1DE0` 28 |  |  |
-| `GetUVScale()` |  |  |  | `0x001A13E0` 52 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `MakeNumberCharactersFixedWidth()` | `0x0019DC10` 276 | `0x001D32F0` 276 | `0x001CC580` 276 | `0x002240E0` 440 | `0x001D7A70` proven |  | `void CGt2dFont::MakeNumberCharactersFixedWidth()` |
+| `RenderString(const unsigned short*,float,float,float,GtMathPs2::CGtV4d) const` | `0x0019DD30` 628 |  |  |  | `0x001D7B90` proven |  | `void CGt2dFont::RenderString(const unsigned short *lpString, float lrPosX, float lrPosY, float lrHeight, GtMathPs2::CGtV4d lColour) const` |
+| `GetStringStartAndEnd(const unsigned short*,float,const unsigned short**,const unsigned short**,bool) const` | `0x0019DFB0` 552 |  |  |  | `0x001D7E10` proven |  | `RwReal CGt2dFont::GetStringStartAndEnd(const unsigned short *lpString, float lrWidth, const unsigned short **lppOutStart, const unsigned short **lppOutEnd, bool lbForceWrap) const` |
+| `GetStringWidthIncludingLRKern(const unsigned short*) const` | `0x0019E1E0` 164 |  |  |  | `0x001D80A0` proven |  | `RwReal CGt2dFont::GetStringWidthIncludingLRKern(const unsigned short *lpString) const` |
+| `GetStringWidth(const unsigned short*) const` | `0x0019E290` 184 |  |  |  | `0x001D8150` proven |  | `RwReal CGt2dFont::GetStringWidth(const unsigned short *lpString) const` |
+| `Prepare(CGtTexture*)` | `0x0019E350` 80 | `0x001D3CE0` 212 | `0x001CCF70` 212 | `0x002237F0` 132 | `0x001D8210` proven |  |  |
+| `RenderString(const unsigned short*,float,float,float,GtMathPs2::CGtV4d)` |  | `0x001D3410` 724 | `0x001CC6A0` 724 | `0x00223E60` 632 |  |  | `void CGt2dFont::RenderString(const unsigned short *lpString, float lrPosX, float lrPosY, float lrHeight, GtMathPs2::CGtV4d lColour) const` (same name, different parameters) |
+| `GetStringStartAndEnd(const unsigned short*,float,const unsigned short**,const unsigned short**,bool)` |  | `0x001D36F0` 884 | `0x001CC980` 884 | `0x00223A20` 1076 |  |  | `RwReal CGt2dFont::GetStringStartAndEnd(const unsigned short *lpString, float lrWidth, const unsigned short **lppOutStart, const unsigned short **lppOutEnd, bool lbForceWrap) const` (same name, different parameters) |
+| `GetStringWidthIncludingLRKern(const unsigned short*)` |  | `0x001D3A70` 296 | `0x001CCD00` 296 | `0x00223970` 172 |  |  | `RwReal CGt2dFont::GetStringWidthIncludingLRKern(const unsigned short *lpString) const` (same name, different parameters) |
+| `GetStringWidth(const unsigned short*)` |  | `0x001D3BA0` 316 | `0x001CCE30` 316 | `0x00223880` 236 |  |  | `RwReal CGt2dFont::GetStringWidth(const unsigned short *lpString) const` (same name, different parameters) |
+| `FixupPointers(unsigned int)` |  |  |  | `0x00223770` 124 |  |  |  |
+| `GetBaseline()` |  |  |  | `0x0019D210` 28 |  |  |  |
+| `GetCharacter(unsigned short)` |  |  |  | `0x001A1420` 136 |  |  |  |
+| `GetTexture()` |  |  |  | `0x001A1DE0` 28 |  |  |  |
+| `GetUVScale()` |  |  |  | `0x001A13E0` 52 |  |  |  |
 
 ## Burnout 2 layout of `C2dFont`
 
@@ -43,6 +44,41 @@ public:
     /* 0x1190 */ RwRaster *mpRaster;
     /* 0x1194 */ float mrWidthScale;
     /* 0x1198 */ C2dFontChar *mpCharIndex;
+};
+```
+
+## Burnout Revenge layout of `CGt2dFont`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 54 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dFont.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dFont {  // size 0x220
+    /* 0x000 */ RwUInt32 muVersionID;
+    /* 0x004 */ CGtTexture *mpTexture;
+    /* 0x008 */ CGtV2d mUVScale;
+    /* 0x010 */ RwReal mrBaseline;
+    /* 0x014 */ RwReal mrXHeight;
+    /* 0x018 */ CGt2dFontChar *mpLastChar;
+    /* 0x01C */ CGt2dFontChar *mapHashFontCharsArray[128];
+    // methods
+    // CGt2dFont(const CGt2dFont &);
+    // CGt2dFont();
+    // void Prepare(CGtTexture *);
+    // RwReal GetStringWidth(const unsigned short *) const;
+    // RwReal GetStringWidthIncludingLRKern(const unsigned short *) const;
+    // RwReal GetStringStartAndEnd(const unsigned short *, float, const unsigned short **, const unsigned short **, bool) const;
+    // void RenderString(const unsigned short *, float, float, float, GtMathPs2::CGtV4d) const;
+    // void RenderStringJustified(const unsigned short *, float, float, float, GtMathPs2::CGtV4d, float) const;
+    // void MakeNumberCharactersFixedWidth();
+    // void MakeCharacterSubscript(unsigned short);
+    // CGt2dFontChar * GetCharacter(unsigned short) const;
+    // CGtTexture * GetTexture() const;
+    // RwReal GetBaseline() const;
+    // RwReal GetXHeight() const;
+    // RwReal GetLCCentre() const;
+    // RwReal GetUCCentre() const;
+    // CGtV2d GetUVScale() const;
+    // void FixUp();
 };
 ```
 

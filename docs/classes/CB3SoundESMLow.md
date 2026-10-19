@@ -9,20 +9,45 @@
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 7
 - **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440070`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
+- **Burnout Revenge counterpart:** `CB4SoundESMLow`, size 0x7270, methods in `GameSource/Sound/Esm/B4SoundESM.cpp` ([layout](#burnout-revenge-layout-of-cb4soundesmlow))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x0024A060` 272 | `0x0027A400` 320 | `0x002B1D40` 320 | `0x002AE9F0` 164 | `0x00287670` unverified |  |
-| `Update(const CB3RaceCar*,float,float,float)` | `0x0024A170` 416 | `0x0027A540` 732 | `0x002B1E80` 596 | `0x002AE860` 392 | `0x00287710` unverified |  |
-| `Prepare(unsigned long,int)` | `0x0024A310` 200 | `0x0027A820` 296 | `0x002B20E0` 296 | `0x002AE750` 264 | `0x00287890` unverified |  |
-| `Construct()` | `0x0024A3E0` 40 | `0x0027A950` 40 | `0x002B2210` 40 | `0x002AE720` 48 | `0x00287940` strong |  |
-| `CB3SoundESMLow()` |  |  |  | `0x002B1BC0` 60 |  |  |
-| `Start()` |  |  |  | `0x002AEAA0` 248 |  |  |
-| `Stop()` |  |  |  | `0x002AEBA0` 136 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x0024A060` 272 | `0x0027A400` 320 | `0x002B1D40` 320 | `0x002AE9F0` 164 | `0x00287670` unverified |  | `void CB4SoundESMLow::Release()` |
+| `Update(const CB3RaceCar*,float,float,float)` | `0x0024A170` 416 | `0x0027A540` 732 | `0x002B1E80` 596 | `0x002AE860` 392 | `0x00287710` unverified |  | `void CB4SoundESMLow::Update(const CB4RaceCar *lpRaceCar, float lrVolume, float lrTurboTurbineSpeed, float lrSpeedVolumeScalar, float lrGinsuVolumeScalar)` (same name, different parameters) |
+| `Prepare(unsigned long,int)` | `0x0024A310` 200 | `0x0027A820` 296 | `0x002B20E0` 296 | `0x002AE750` 264 | `0x00287890` unverified |  | `bool CB4SoundESMLow::Prepare(bool lbIsPlayerCar, unsigned long lCarID, ERaceCarIndex leRaceCarIndex)` (same name, different parameters) |
+| `Construct()` | `0x0024A3E0` 40 | `0x0027A950` 40 | `0x002B2210` 40 | `0x002AE720` 48 | `0x00287940` strong |  | `void CB4SoundESMLow::Construct()` |
+| `CB3SoundESMLow()` |  |  |  | `0x002B1BC0` 60 |  |  |  |
+| `Start()` |  |  |  | `0x002AEAA0` 248 |  |  | `void CB4SoundESMLow::Start()` |
+| `Stop()` |  |  |  | `0x002AEBA0` 136 |  |  | `void CB4SoundESMLow::Stop()` |
+
+## Burnout Revenge layout of `CB4SoundESMLow`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 15 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundESMLow : public CB4SoundESM {  // size 0x7270
+    // base CB4SoundESM at 0x000
+    /* 0x7230 */ RwReal mrAngle;
+    /* 0x7234 */ RwReal mrEngVol;
+    /* 0x7238 */ RwReal mrExVol;
+    /* 0x723C */ CGtSoundVirtualVoice *maVirtualVoices[12];
+    // methods
+    // CB4SoundESMLow(const CB4SoundESMLow &);
+    // CB4SoundESMLow();
+    // void Construct();
+    // void Destruct();
+    // virtual bool Prepare(bool, unsigned long, ERaceCarIndex);
+    // virtual void Update(const CB4RaceCar *, float, float, float, float);
+    // virtual void Release();
+    // virtual void Start();
+    // virtual void Stop();
+};
+```
 
 ## Notes
 

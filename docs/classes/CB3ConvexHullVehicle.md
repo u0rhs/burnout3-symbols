@@ -8,16 +8,36 @@
 - **Source file:** `B3ConvexHull.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 3
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ConvexHullVehicle`, size 0x340, methods in `SharedClasses/PhysicsData/B4ConvexHull.cpp` ([layout](#burnout-revenge-layout-of-cb4convexhullvehicle))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Initialise()` | `0x0027A2E0` 44 | `0x002AE8F0` 44 | `0x002E5BD0` 44 | `0x002E69C0` 100 | `0x002B96A0` proven |  |
-| `CB3ConvexHullVehicle()` |  |  |  | `0x00191FD0` 80 |  |  |
-| `operator =(const CB3ConvexHullVehicle&)` |  |  |  | `0x001CC730` 332 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Initialise()` | `0x0027A2E0` 44 | `0x002AE8F0` 44 | `0x002E5BD0` 44 | `0x002E69C0` 100 | `0x002B96A0` proven |  | `void CB4ConvexHullVehicle::Initialise()` |
+| `CB3ConvexHullVehicle()` |  |  |  | `0x00191FD0` 80 |  |  |  |
+| `operator =(const CB3ConvexHullVehicle&)` |  |  |  | `0x001CC730` 332 |  |  |  |
+
+## Burnout Revenge layout of `CB4ConvexHullVehicle`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 324 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ConvexHullVehicle : public CB4ConvexHull {  // size 0x340
+    // base CB4ConvexHull at 0x000
+    /* 0x01C */ CB4ConvexHullPlane maPlaneVertData[14];
+    /* 0x060 */ CGtPlane maPlaneData[14];
+    /* 0x140 */ CGtV3d maVertData[16];
+    /* 0x240 */ CB4ConvexHullEdge maEdgeData[28];
+    /* 0x278 */ CB4ConvexHullVertMap maVertWeightData[16];
+    // methods
+    // CB4ConvexHullVehicle(const CB4ConvexHullVehicle &);
+    // CB4ConvexHullVehicle();
+    // void Initialise();
+};
+```
 
 ## Notes
 

@@ -10,27 +10,27 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_BuildBatchData(const GtMathPs2::CGtV2d&,const CB3StylisedText2dObject::CB3StylisedText2dObjectData&)` | `0x0037F0C0` 1296 | `0x003F1610` 2020 | `0x00419100` 2020 | `0x00433AA0` 2252 |  |  |
-| `_DispatchLRGradient(GtMathPs2::CGtV4d,GtMathPs2::CGtV4d,GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,con` | `0x0037F5D0` 496 | `0x003F1E00` 596 | `0x004198F0` 596 | `0x004337F0` 680 |  |  |
-| `_DispatchMetallic(GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d*,const GtMathPs2:` | `0x0037F7C0` 2664 | `0x003F2060` 2960 | `0x00419B50` 2960 | `0x00432B30` 3252 |  |  |
-| `_RenderDisintegrate(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00380230` 1440 | `0x003F2BF0` 1500 | `0x0041A6E0` 1500 | `0x004322A0` 2180 |  |  |
-| `_RenderDistort(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x003807D0` 2804 | `0x003F31D0` 3008 | `0x0041ACC0` 3008 | `0x00430FA0` 4252 |  |  |
-| `_RenderNormal(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x003812D0` 2136 | `0x003F3D90` 2148 | `0x0041B880` 2148 | `0x004305C0` 2404 |  |  |
-| `ModifyEffect(CB3StylisedText2dObject::EStylisedTextEffect)` | `0x00381B30` 124 | `0x003F4600` 472 | `0x0041C0F0` 472 | `0x00430410` 428 |  |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CB3StylisedText2dObject::E` | `0x00381BB0` 444 | `0x003F47E0` 944 | `0x0041C2D0` 944 | `0x004300F0` 772 |  |  |
-| `HackConvertString(unsigned short*,int,const unsigned short*,bool)` | `0x00381D70` 380 | `0x003F4B90` 560 | `0x0041C680` 560 | `0x0042FE00` 752 |  |  |
-| `CB3StylisedText2dObject()` |  |  |  | `0x00421930` 44 |  |  |
-| `GetCurrentEffect()` |  |  |  | `0x0043AC40` 60 |  |  |
-| `GetUVBatchData()` |  |  |  | `0x00430F90` 16 |  |  |
-| `GetXYBatchData()` |  |  |  | `0x00430400` 16 |  |  |
-| `SetDisintegrateT(float)` |  |  |  | `0x0043ABE0` 88 |  |  |
-| `SetDistortT(float)` |  |  |  | `0x0043A970` 88 |  |  |
-| `SetRotation(float)` |  |  |  | `0x00439C20` 88 |  |  |
-| `SetWhiteness(float)` |  |  |  | `0x0043A1C0` 144 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_BuildBatchData(const GtMathPs2::CGtV2d&,const CB3StylisedText2dObject::CB3StylisedText2dObjectData&)` | `0x0037F0C0` 1296 | `0x003F1610` 2020 | `0x00419100` 2020 | `0x00433AA0` 2252 |  |  |  |
+| `_DispatchLRGradient(GtMathPs2::CGtV4d,GtMathPs2::CGtV4d,GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,con` | `0x0037F5D0` 496 | `0x003F1E00` 596 | `0x004198F0` 596 | `0x004337F0` 680 |  |  |  |
+| `_DispatchMetallic(GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d*,const GtMathPs2:` | `0x0037F7C0` 2664 | `0x003F2060` 2960 | `0x00419B50` 2960 | `0x00432B30` 3252 |  |  |  |
+| `_RenderDisintegrate(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00380230` 1440 | `0x003F2BF0` 1500 | `0x0041A6E0` 1500 | `0x004322A0` 2180 |  |  |  |
+| `_RenderDistort(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x003807D0` 2804 | `0x003F31D0` 3008 | `0x0041ACC0` 3008 | `0x00430FA0` 4252 |  |  |  |
+| `_RenderNormal(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x003812D0` 2136 | `0x003F3D90` 2148 | `0x0041B880` 2148 | `0x004305C0` 2404 |  |  |  |
+| `ModifyEffect(CB3StylisedText2dObject::EStylisedTextEffect)` | `0x00381B30` 124 | `0x003F4600` 472 | `0x0041C0F0` 472 | `0x00430410` 428 |  |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CB3StylisedText2dObject::E` | `0x00381BB0` 444 | `0x003F47E0` 944 | `0x0041C2D0` 944 | `0x004300F0` 772 |  |  |  |
+| `HackConvertString(unsigned short*,int,const unsigned short*,bool)` | `0x00381D70` 380 | `0x003F4B90` 560 | `0x0041C680` 560 | `0x0042FE00` 752 |  |  |  |
+| `CB3StylisedText2dObject()` |  |  |  | `0x00421930` 44 |  |  |  |
+| `GetCurrentEffect()` |  |  |  | `0x0043AC40` 60 |  |  |  |
+| `GetUVBatchData()` |  |  |  | `0x00430F90` 16 |  |  |  |
+| `GetXYBatchData()` |  |  |  | `0x00430400` 16 |  |  |  |
+| `SetDisintegrateT(float)` |  |  |  | `0x0043ABE0` 88 |  |  |  |
+| `SetDistortT(float)` |  |  |  | `0x0043A970` 88 |  |  |  |
+| `SetRotation(float)` |  |  |  | `0x00439C20` 88 |  |  |  |
+| `SetWhiteness(float)` |  |  |  | `0x0043A1C0` 144 |  |  |  |
 
 ## Notes
 

@@ -6,14 +6,37 @@
 
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4HullWorldTriCollideParams`, size 0x1A0 ([layout](#burnout-revenge-layout-of-cb4hullworldtricollideparams))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3HullWorldTriCollideParams()` |  |  |  | `0x001A7C70` 92 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3HullWorldTriCollideParams()` |  |  |  | `0x001A7C70` 92 |  |  |  |
+
+## Burnout Revenge layout of `CB4HullWorldTriCollideParams`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 4 file(s), e.g. `GameSource/Physics/B4CollidingBody.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HullWorldTriCollideParams {  // size 0x1A0
+    /* 0x000 */ CB4HullCollideHullParams mHull;
+    /* 0x130 */ CB4WorldTriangleCacheBase *mpWorldTriCache;
+    /* 0x140 */ CGtV3d mSkewerExitDir;
+    /* 0x150 */ bool mbSkewered;
+    /* 0x151 */ bool mbPenetrating;
+    /* 0x152 */ CB4CollisionTag mColTag;
+    /* 0x160 */ CGtV3d mMin;
+    /* 0x170 */ CGtV3d mMax;
+    /* 0x180 */ CGtV3d mVelocity;
+    /* 0x190 */ CGtV3d mVelocityDir;
+    // methods
+    // CB4HullWorldTriCollideParams(const CB4HullWorldTriCollideParams &);
+    // CB4HullWorldTriCollideParams();
+};
+```
 
 ## Notes
 

@@ -11,11 +11,11 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct(CB3SkyDomeRendererBase::ESkyComponent)` | `0x001E34F0` 600 | `0x001E3210` 768 | `0x00215EB0` 768 | `0x002278C0` 828 | `0x0021E490` strong |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct(CB3SkyDomeRendererBase::ESkyComponent)` | `0x001E34F0` 600 | `0x001E3210` 768 | `0x00215EB0` 768 | `0x002278C0` 828 | `0x0021E490` strong |  | `void CB4SkyDomeRenderer::CB4SkyDomeHemisphereParams::Construct(CB4SkyDomeRendererBase::ESkyComponent leComponent)` |
 
 ## Notes
 

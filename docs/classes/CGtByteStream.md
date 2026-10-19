@@ -8,26 +8,86 @@
 - **Source file:** `GtByteStream.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 10
 - **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtByteStream`, size 0x018, methods in `GameShared/GameClasses/Memory/GtByteStream.cpp` ([layout](#burnout-revenge-layout-of-cgtbytestream))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ReadMemory(void*,int)` | `0x0032FF80` 184 | `0x0038BCD0` 288 | `0x003BA880` 280 | `0x003BD780` 192 | `0x003742C0` proven |  |
-| `WriteMemory(const void*,int)` | `0x00330040` 180 | `0x0038BDF0` 332 | `0x003BA9A0` 324 | `0x003BD610` 212 | `0x00374380` proven |  |
-| `GetUsage() const` | `0x00330100` 16 |  |  |  | `0x00374440` proven |  |
-| `GetSpaceFree() const` | `0x00330110` 24 |  |  |  | `0x00374450` proven |  |
-| `SetPosition(int)` | `0x00330130` 56 | `0x0038BF70` 180 | `0x003BAB20` 180 | `0x003BD4E0` 128 | `0x00374470` proven |  |
-| `GetPosition() const` | `0x00330170` 16 |  |  |  | `0x003744B0` proven |  |
-| `Create(void*,int,int)` | `0x00330180` 36 | `0x0038C040` 176 | `0x003BABF0` 176 | `0x003BD420` 140 | `0x003744C0` proven |  |
-| `GetUsage()` |  | `0x0038BF40` 16 | `0x003BAAF0` 16 | `0x003BD5E0` 40 |  |  |
-| `GetSpaceFree()` |  | `0x0038BF50` 24 | `0x003BAB00` 24 | `0x003BD5A0` 52 |  |  |
-| `GetPosition()` |  | `0x0038C030` 16 | `0x003BABE0` 16 | `0x003BD4B0` 40 |  |  |
-| `Align(int)` |  |  |  | `0x003BD6F0` 132 |  |  |
-| `ResetUsage()` |  |  |  | `0x0016F1E0` 36 |  |  |
-| `UpdateUsage()` |  |  |  | `0x003BD560` 64 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ReadMemory(void*,int)` | `0x0032FF80` 184 | `0x0038BCD0` 288 | `0x003BA880` 280 | `0x003BD780` 192 | `0x003742C0` proven |  |  |
+| `WriteMemory(const void*,int)` | `0x00330040` 180 | `0x0038BDF0` 332 | `0x003BA9A0` 324 | `0x003BD610` 212 | `0x00374380` proven |  |  |
+| `GetUsage() const` | `0x00330100` 16 |  |  |  | `0x00374440` proven |  | `RwInt32 CGtByteStream::GetUsage() const` |
+| `GetSpaceFree() const` | `0x00330110` 24 |  |  |  | `0x00374450` proven |  |  |
+| `SetPosition(int)` | `0x00330130` 56 | `0x0038BF70` 180 | `0x003BAB20` 180 | `0x003BD4E0` 128 | `0x00374470` proven |  |  |
+| `GetPosition() const` | `0x00330170` 16 |  |  |  | `0x003744B0` proven |  |  |
+| `Create(void*,int,int)` | `0x00330180` 36 | `0x0038C040` 176 | `0x003BABF0` 176 | `0x003BD420` 140 | `0x003744C0` proven |  |  |
+| `GetUsage()` |  | `0x0038BF40` 16 | `0x003BAAF0` 16 | `0x003BD5E0` 40 |  |  | `RwInt32 CGtByteStream::GetUsage() const` (same name, different parameters) |
+| `GetSpaceFree()` |  | `0x0038BF50` 24 | `0x003BAB00` 24 | `0x003BD5A0` 52 |  |  |  |
+| `GetPosition()` |  | `0x0038C030` 16 | `0x003BABE0` 16 | `0x003BD4B0` 40 |  |  |  |
+| `Align(int)` |  |  |  | `0x003BD6F0` 132 |  |  |  |
+| `ResetUsage()` |  |  |  | `0x0016F1E0` 36 |  |  |  |
+| `UpdateUsage()` |  |  |  | `0x003BD560` 64 |  |  |  |
+
+## Burnout Revenge layout of `CGtByteStream`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 5 file(s), e.g. `GameShared/GameClasses/Memory/GtByteStream.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtByteStream {  // size 0x018
+    /* 0x000 */ RwBool mbError;
+    /* 0x004 */ RwInt8 *mpBuffer;
+    /* 0x008 */ RwInt8 *mpCurrent;
+    /* 0x00C */ RwInt8 *mpUsage;
+    /* 0x010 */ RwInt32 mnSize;
+    /* 0x014 */ RwInt32 mnAlignment;
+    // methods
+    // CGtByteStream(const CGtByteStream &);
+    // CGtByteStream();
+    // void Create(void *, int, int);
+    // void Destroy();
+    // RwInt32 GetPosition() const;
+    // void SetPosition(int);
+    // RwInt8 * GetCurrentPointer() const;
+    // RwInt32 GetSize() const;
+    // RwInt32 GetSpaceFree() const;
+    // RwInt32 GetUsage() const;
+    // RwBool IsEndOfBuffer() const;
+    // RwBool IsError() const;
+    // void ClearError();
+    // RwBool WriteInt8(signed char);
+    // RwBool WriteInt16(short);
+    // RwBool WriteInt32(int);
+    // RwBool WriteInt64(long);
+    // RwBool WriteReal(float);
+    // RwBool WriteV3d(const GtMathPs2::CGtV3d *);
+    // RwBool WriteV4d(const GtMathPs2::CGtV4d *);
+    // RwBool WriteMatrix(const GtMathPs2::CGtMatrix3x4 *);
+    // RwBool WriteMemory(const void *, int);
+    // void * ReserveWriteSpace(int);
+    // RwInt8 ReadInt8();
+    // RwInt16 ReadInt16();
+    // RwInt32 ReadInt32();
+    // RwInt64 ReadInt64();
+    // RwReal ReadReal();
+    // RwBool ReadInt8(signed char *);
+    // RwBool ReadInt16(short *);
+    // RwBool ReadInt32(int *);
+    // RwBool ReadInt64(long *);
+    // RwBool ReadReal(float *);
+    // RwBool ReadV3d(GtMathPs2::CGtV3d *);
+    // RwBool ReadV4d(GtMathPs2::CGtV4d *);
+    // RwBool ReadMatrix(GtMathPs2::CGtMatrix3x4 *);
+    // RwBool ReadMemory(void *, int);
+    // RwInt32 GetBufferSize();
+    // void * GetBuffer();
+    // RwInt32 GetOffsetInBuffer(void *);
+    // void ResetUsage();
+    // void UpdateUsage();
+    // RwInt32 Align(int);
+};
+```
 
 ## Notes
 

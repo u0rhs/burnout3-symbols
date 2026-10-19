@@ -8,34 +8,35 @@
 - **Source file:** `GtFileSystem.cpp`
 - **Methods per build:** DNAT_200 18, B3DEBUG 18, B3INTERN 19, B3O0PCH 19
 - **Retail (SLUS-21050):** 17 of its 18 DNAT_200 methods found, 9 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGTFileSystem`, size 0x114, methods in `GameShared/GameClasses/System/FileSystem/GtFileSystem.cpp` ([layout](#burnout-revenge-layout-of-cgtfilesystem))
 - **Burnout 2 ancestor (by name):** `CGTFileSystem`, size 0x010, declared in 98 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `FTell(void*)` | `0x001D85C0` 8 | `0x001D4770` 8 | `0x002073D0` 8 | `0x00218A10` 44 |  |  |
-| `FExist(const char*)` | `0x001D85D0` 72 | `0x001D4780` 72 | `0x002073E0` 72 | `0x002189B0` 96 | `0x00212590` proven | `int CGTFileSystem::FExist(char *name)` |
-| `FFlush(void*)` | `0x001D8620` 8 | `0x001D47D0` 8 | `0x00207430` 8 | `0x00218990` 20 | `0x002125E0` proven | `int CGTFileSystem::FFlush()` |
-| `FSeek(void*,long,int)` | `0x001D8630` 124 | `0x001D47E0` 124 | `0x00207440` 124 | `0x002188B0` 216 | `0x002125F0` proven | `int CGTFileSystem::FSeek(void *fptr, long offset, int origin)` |
-| `FEof(void*)` | `0x001D86B0` 20 | `0x001D4860` 20 | `0x002074C0` 20 | `0x00218870` 52 | `0x00212670` proven | `int CGTFileSystem::FEof(void *fptr)` |
-| `FPuts(const char*,void*)` | `0x001D86D0` 72 | `0x001D4880` 72 | `0x002074E0` 72 | `0x00218800` 112 | `0x00212690` proven | `int CGTFileSystem::FPuts()` |
-| `FGets(char*,int,void*)` | `0x001D8720` 8 | `0x001D48D0` 8 | `0x00207530` 8 | `0x002187E0` 20 | `0x002126E0` proven | `char *CGTFileSystem::FGets()` |
-| `FWrite(const void*,unsigned int,unsigned int,void*)` | `0x001D8730` 68 | `0x001D48E0` 76 | `0x00207540` 68 | `0x00218770` 112 | `0x002126F0` proven | `unsigned int CGTFileSystem::FWrite(void *addr, unsigned int size, unsigned int count, void *fptr)` |
-| `FRead(void*,unsigned int,unsigned int,void*)` | `0x001D8780` 68 | `0x001D4930` 76 | `0x00207590` 68 | `0x00218700` 112 | `0x00212730` proven | `unsigned int CGTFileSystem::FRead(void *addr, unsigned int size, unsigned int count, void *fptr)` |
-| `FClose(void*)` | `0x001D87D0` 40 | `0x001D4980` 40 | `0x002075E0` 40 | `0x002186C0` 64 | `0x00212770` proven | `int CGTFileSystem::FClose(void *fptr)` |
-| `FOpen(const char*,const char*)` | `0x001D8800` 220 | `0x001D49B0` 220 | `0x00207610` 220 | `0x00218590` 296 | `0x002127A0` likely | `void *CGTFileSystem::FOpen(char *name, char *access)` |
-| `Open(const char*,unsigned int)` | `0x001D88E0` 256 | `0x001D4A90` 256 | `0x002077A0` 256 | `0x00218430` 288 | `0x00212890` strong | `CGTFile *CGTFileSystem::Open(char *sFilename, unsigned int nOpenFlags)` |
-| `Init(unsigned int,const char*)` | `0x001D89E0` 196 | `0x001D4B90` 196 | `0x002078A0` 196 | `0x00218310` 284 | `0x002129A0` strong | `int CGTFileSystem::Init(unsigned int nMaxOpenFiles, char *sRWName)` |
-| `SetAsDefaultFilesystem()` | `0x001D8AB0` 8 | `0x001D4C60` 8 | `0x00207970` 8 | `0x002182F0` 28 | `0x00212A70` likely | `void CGTFileSystem::SetAsDefaultFilesystem()` |
-| `BuildFileName(char*,int,const char*,const char*,char)` | `0x001D8AC0` 236 | `0x001D4C70` 236 | `0x00207980` 236 | `0x002181C0` 304 | `0x00212A80` strong | `char *CGTFileSystem::BuildFileName(char *lpBuffer, int nBufferLength, char *lpDriveName, char *lpFilePath, char cSeparator)` |
-| `GetFileNameFromDeviceName(const char*)` | `0x001D8BB0` 68 | `0x001D4D60` 68 | `0x00207A70` 68 | `0x00218140` 124 | `0x00212B80` strong | `char *CGTFileSystem::GetFileNameFromDeviceName(char *spName)` |
-| `GetFileSystemFromFileName(const char*)` | `0x001D8C00` 200 | `0x001D4DB0` 200 | `0x00207AC0` 200 | `0x00218040` 252 | `0x00212BD0` strong | `CGTFileSystem *CGTFileSystem::GetFileSystemFromFileName(char *spName)` |
-| `InstallToRenderWare()` | `0x001D8CD0` 376 | `0x001D4E80` 376 | `0x00207B90` 376 | `0x00217E80` 232 | `0x00212CB0` strong | `int CGTFileSystem::InstallToRenderWare()` |
-| `CGTFileSystem()` |  |  |  | `0x001DA5A0` 40 |  |  |
-| `CloseAllFiles()` |  |  | `0x002076F0` 172 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `FTell(void*)` | `0x001D85C0` 8 | `0x001D4770` 8 | `0x002073D0` 8 | `0x00218A10` 44 |  |  |  |
+| `FExist(const char*)` | `0x001D85D0` 72 | `0x001D4780` 72 | `0x002073E0` 72 | `0x002189B0` 96 | `0x00212590` proven | `int CGTFileSystem::FExist(char *name)` |  |
+| `FFlush(void*)` | `0x001D8620` 8 | `0x001D47D0` 8 | `0x00207430` 8 | `0x00218990` 20 | `0x002125E0` proven | `int CGTFileSystem::FFlush()` |  |
+| `FSeek(void*,long,int)` | `0x001D8630` 124 | `0x001D47E0` 124 | `0x00207440` 124 | `0x002188B0` 216 | `0x002125F0` proven | `int CGTFileSystem::FSeek(void *fptr, long offset, int origin)` |  |
+| `FEof(void*)` | `0x001D86B0` 20 | `0x001D4860` 20 | `0x002074C0` 20 | `0x00218870` 52 | `0x00212670` proven | `int CGTFileSystem::FEof(void *fptr)` |  |
+| `FPuts(const char*,void*)` | `0x001D86D0` 72 | `0x001D4880` 72 | `0x002074E0` 72 | `0x00218800` 112 | `0x00212690` proven | `int CGTFileSystem::FPuts()` |  |
+| `FGets(char*,int,void*)` | `0x001D8720` 8 | `0x001D48D0` 8 | `0x00207530` 8 | `0x002187E0` 20 | `0x002126E0` proven | `char *CGTFileSystem::FGets()` |  |
+| `FWrite(const void*,unsigned int,unsigned int,void*)` | `0x001D8730` 68 | `0x001D48E0` 76 | `0x00207540` 68 | `0x00218770` 112 | `0x002126F0` proven | `unsigned int CGTFileSystem::FWrite(void *addr, unsigned int size, unsigned int count, void *fptr)` |  |
+| `FRead(void*,unsigned int,unsigned int,void*)` | `0x001D8780` 68 | `0x001D4930` 76 | `0x00207590` 68 | `0x00218700` 112 | `0x00212730` proven | `unsigned int CGTFileSystem::FRead(void *addr, unsigned int size, unsigned int count, void *fptr)` |  |
+| `FClose(void*)` | `0x001D87D0` 40 | `0x001D4980` 40 | `0x002075E0` 40 | `0x002186C0` 64 | `0x00212770` proven | `int CGTFileSystem::FClose(void *fptr)` |  |
+| `FOpen(const char*,const char*)` | `0x001D8800` 220 | `0x001D49B0` 220 | `0x00207610` 220 | `0x00218590` 296 | `0x002127A0` likely | `void *CGTFileSystem::FOpen(char *name, char *access)` |  |
+| `Open(const char*,unsigned int)` | `0x001D88E0` 256 | `0x001D4A90` 256 | `0x002077A0` 256 | `0x00218430` 288 | `0x00212890` strong | `CGTFile *CGTFileSystem::Open(char *sFilename, unsigned int nOpenFlags)` | `CGTFile * CGTFileSystem::Open(const char *sFilename, unsigned int nOpenFlags)` |
+| `Init(unsigned int,const char*)` | `0x001D89E0` 196 | `0x001D4B90` 196 | `0x002078A0` 196 | `0x00218310` 284 | `0x002129A0` strong | `int CGTFileSystem::Init(unsigned int nMaxOpenFiles, char *sRWName)` | `RwBool CGTFileSystem::Init(unsigned int nMaxOpenFiles, const char *sRWName)` |
+| `SetAsDefaultFilesystem()` | `0x001D8AB0` 8 | `0x001D4C60` 8 | `0x00207970` 8 | `0x002182F0` 28 | `0x00212A70` likely | `void CGTFileSystem::SetAsDefaultFilesystem()` | `void CGTFileSystem::SetAsDefaultFilesystem()` |
+| `BuildFileName(char*,int,const char*,const char*,char)` | `0x001D8AC0` 236 | `0x001D4C70` 236 | `0x00207980` 236 | `0x002181C0` 304 | `0x00212A80` strong | `char *CGTFileSystem::BuildFileName(char *lpBuffer, int nBufferLength, char *lpDriveName, char *lpFilePath, char cSeparator)` | `RwChar * CGTFileSystem::BuildFileName(char *lpBuffer, int nBufferLength, const char *lpDriveName, const char *lpFilePath, char cSeparator)` |
+| `GetFileNameFromDeviceName(const char*)` | `0x001D8BB0` 68 | `0x001D4D60` 68 | `0x00207A70` 68 | `0x00218140` 124 | `0x00212B80` strong | `char *CGTFileSystem::GetFileNameFromDeviceName(char *spName)` | `RwChar * CGTFileSystem::GetFileNameFromDeviceName(const char *spName)` |
+| `GetFileSystemFromFileName(const char*)` | `0x001D8C00` 200 | `0x001D4DB0` 200 | `0x00207AC0` 200 | `0x00218040` 252 | `0x00212BD0` strong | `CGTFileSystem *CGTFileSystem::GetFileSystemFromFileName(char *spName)` | `CGTFileSystem * CGTFileSystem::GetFileSystemFromFileName(const char *spName)` |
+| `InstallToRenderWare()` | `0x001D8CD0` 376 | `0x001D4E80` 376 | `0x00207B90` 376 | `0x00217E80` 232 | `0x00212CB0` strong | `int CGTFileSystem::InstallToRenderWare()` | `RwBool CGTFileSystem::InstallToRenderWare()` |
+| `CGTFileSystem()` |  |  |  | `0x001DA5A0` 40 |  |  |  |
+| `CloseAllFiles()` |  |  | `0x002076F0` 172 |  |  |  |  |
 
 ## Static data (DNAT_200)
 
@@ -77,6 +78,74 @@ public:
     // char *CGTFileSystem::GetFileNameFromDeviceName(char *spName)  [0x001FB8A0]
     // CGTFileSystem *CGTFileSystem::GetFileSystemFromFileName(char *spName)  [0x001FB8E0]
     // int CGTFileSystem::InstallToRenderWare()  [0x001FB9A0]
+};
+```
+
+## Burnout Revenge layout of `CGTFileSystem`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 385 file(s), e.g. `GameShared/CodeSDKs/Rws36/framework/core/streamhandler/streamhandler.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGTFileSystem {  // size 0x114
+    /* static */ RwUInt32 mnNumFilesystems;
+    /* static */ CGTFileSystem *mpaFilesystems[2];
+    /* static */ char msaFSNames[2][5];
+    /* static */ CGTFileSystem *mpDefaultFilesystem;
+    /* static */ RwBool mbInstalledToRW;
+    /* static */ RtFileSystem mStdRwFileSystem;
+    /* static */ RtFileSystem mFileSystem;
+    /* 0x000 */ char mpacDemoPath[256];
+    /* 0x100 */ EFileSystemStatus mnStatus;
+    /* 0x104 */ EFileSystemError mnLastError;
+    /* 0x108 */ RwUInt32 mnNumFiles;
+    /* 0x10C */ CGTRtFile *mpRtFileArray;
+    /* 0x110 */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CGTFileSystem(const CGTFileSystem &);
+    // CGTFileSystem();
+    // RwBool InstallToRenderWare();
+    // void UninstallFromRenderWare();
+    // void SetAsDefaultFilesystem();
+    // CGTFile * Open(const char *, unsigned int);
+    // EFileSystemError GetLastError();
+    // static void * FOpen(const char *, const char *);
+    // static int FClose(void *);
+    // static size_t FRead(void *, unsigned int, unsigned int, void *);
+    // static size_t FWrite(const void *, unsigned int, unsigned int, void *);
+    // static RwChar * FGets(char *, int, void *);
+    // static int FPuts(const char *, void *);
+    // static int FEof(void *);
+    // static int FSeek(void *, long, int);
+    // static int FFlush(void *);
+    // static RwBool FExist(const char *);
+    // static int FTell(void *);
+    // static RwInt32 FSync(void *, int);
+    // static RwBool FCancel(void *);
+    // static CGTFileSystem * GetFileSystemFromFileName(const char *);
+    // static RwChar * GetFileNameFromDeviceName(const char *);
+    // static RwChar * BuildFileName(char *, int, const char *, const char *, char);
+    // virtual RwBool FileExists(const char *);
+    // virtual EFileSystemStatus GetStatus();
+    // static CGTFileSystem * GetDefaultFileSystem();
+    // void CloseAllFiles();
+    // void SetDemoPath(const char *);
+    // RwBool CanOpenFile();
+    // virtual CGTFile * GetFileObject(unsigned int);
+    // static RtFile * RtFileSystemGetObject(RtFileSystem *, unsigned int);
+    // static RwChar * RtFileSystemGetDeviceName(RtFileSystem *);
+    // static void RtFileSystemClose(RtFileSystem *);
+    // static RtFileSystemError RtFsystOpen(RtFileSystem *, RtFile *, const char *, unsigned int);
+    // static void RtFsystClose(RtFile *);
+    // static size_t RtFsystRead(RtFile *, void *, unsigned int);
+    // static size_t RtFsystWrite(RtFile *, const void *, unsigned int);
+    // static int RtFsystEof(RtFile *);
+    // static RtInt64 RtFsystSeek(RtFile *, int, RtFileSeekMethod);
+    // static RwBool RtFsystExist(RtFileSystem *, const char *);
+    // static RtFileStatus RtFsystSync(RtFile *, int);
+    // static RwBool RtFsystCancel(RtFile *);
+    // static RtFileStatus RtFsystGets(RtFile *);
+    // static CGTFileSystem * GetFileSystem(RtFileSystem *);
+    // RwBool Init(unsigned int, const char *);
 };
 ```
 

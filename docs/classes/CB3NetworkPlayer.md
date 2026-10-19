@@ -8,74 +8,206 @@
 - **Source file:** `B3NetworkPlayer.cpp`
 - **Methods per build:** DNAT_200 27, B3DEBUG 12, B3INTERN 28, B3O0PCH 43
 - **vtable (DNAT_200):** `0x0043FFB0`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
+- **Burnout Revenge counterpart:** `CB4NetworkPlayer`, size 0x5B40, methods in `GameSource/Network/B4NetworkPlayer.cpp` ([layout](#burnout-revenge-layout-of-cb4networkplayer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetTimeSinceLastPacketArrived() const` | `0x001FC000` 20 |  |  |  |  |  |
-| `DealWithShuntsAndSlams(CUpdateMessageParams*)` | `0x001FC020` 532 |  | `0x00240AC0` 3936 |  |  |  |
-| `IsAllNATDataFinalised()` | `0x001FC240` 368 | `0x00205BC0` 656 | `0x00241A20` 656 | `0x0024FF70` 804 |  |  |
-| `SendDetailsOfNATFinalisedStatus()` | `0x001FC3B0` 384 | `0x00205E50` 2092 | `0x00241CB0` 2092 | `0x0024FAB0` 1212 |  |  |
-| `GetName() const` | `0x001FC530` 8 |  |  |  |  |  |
-| `RecvReplay()` | `0x001FC540` 48 | `0x00206690` 1304 | `0x002424F0` 1304 | `0x0024F5E0` 1156 |  |  |
-| `SendReplay(CB3ReplayFileHeader*,unsigned char*)` | `0x001FC570` 364 | `0x00206BB0` 1560 | `0x00242A10` 1548 | `0x0024F040` 1432 |  |  |
-| `Destruct()` | `0x001FC6E0` 56 |  | `0x00243020` 56 |  |  |  |
-| `Release()` | `0x001FC720` 8 | `0x002071D0` 8 | `0x00243060` 8 | `0x0024F010` 40 |  |  |
-| `PostUpdate()` | `0x001FC730` 924 |  | `0x00243070` 2424 |  |  |  |
-| `IsOurTurnToSend(int*)` | `0x001FCAD0` 352 |  | `0x002439F0` 900 |  |  |  |
-| `BandwidthIsAvailableForCrashingTraffic()` | `0x001FCC30` 600 |  | `0x00243D80` 1940 |  |  |  |
-| `Update()` | `0x001FCE90` 1176 |  | `0x00244520` 3544 |  |  |  |
-| `StickValuesIntoCrashingTrafficPhysics()` | `0x001FD330` 3304 |  | `0x00245300` 6424 |  |  |  |
-| `ApplyTrafficCarData(CB3NetworkRaceUpdateMessage*,int)` | `0x001FE020` 4012 |  | `0x00246C20` 6528 |  |  |  |
-| `ApplyRaceCarDataReadyForPredictiveApplication(unsigned short,const CB3NetworkRaceUpdateMessage*)` | `0x001FEFF0` 704 |  | `0x002485C0` 2580 |  |  |  |
-| `ApplyNetworkCarData(CB3NetworkRaceUpdateMessage*,const GtMathPs2::CGtMatrix3x4&,int)` | `0x001FF2B0` 424 |  | `0x00248FE0` 796 |  |  |  |
-| `RetrieveMessage(unsigned short)` | `0x001FF460` 676 |  | `0x00249300` 2952 |  |  |  |
-| `RegisterMessages()` | `0x001FF710` 600 | `0x002071E0` 600 | `0x0024A700` 600 | `0x0024EBE0` 764 |  |  |
-| `CheckForNewMessages(unsigned short)` | `0x001FF970` 972 |  | `0x0024A960` 2084 |  |  |  |
-| `UpdateLatency(unsigned short,unsigned short)` | `0x001FFD40` 308 |  | `0x0024B190` 1592 |  |  |  |
-| `UpdatePing()` | `0x001FFE80` 424 |  | `0x0024B7D0` 424 |  |  |  |
-| `SetSendFrequency()` | `0x00200030` 12 | `0x00207440` 12 | `0x0024B980` 12 | `0x0024EBA0` 32 |  |  |
-| `Prepare(const char*,int,CGtNetworkAdapter*,int,void*)` | `0x00200040` 196 | `0x00207450` 196 | `0x0024B990` 196 | `0x0024EA90` 268 |  |  |
-| `PrepareForGameStart()` | `0x00200110` 544 | `0x00207520` 584 | `0x0024BA60` 584 | `0x0024E7C0` 584 |  |  |
-| `OnGameStart()` | `0x00200330` 104 | `0x00207770` 104 | `0x0024BCB0` 104 | `0x0024E710` 168 |  |  |
-| `Construct(CGtNetworkPlayerManager*,CGtNetworkHeadset*)` | `0x002003A0` 252 |  | `0x0024BD20` 252 |  |  |  |
-| `GetTimeSinceLastPacketArrived()` |  | `0x00205BA0` 20 | `0x00240AA0` 20 | `0x00250340` 56 |  |  |
-| `GetName()` |  | `0x00206680` 8 | `0x002424E0` 8 | `0x0024FA90` 28 |  |  |
-| `Activate()` |  |  |  | `0x00141B30` 32 |  |  |
-| `CB3NetworkPlayer()` |  |  |  | `0x00289F20` 108 |  |  |
-| `Deactivate()` |  |  |  | `0x00142420` 28 |  |  |
-| `ForceUpdatesToBeSent()` |  |  |  | `0x00288E50` 32 |  |  |
-| `GetNetworkCar()` |  |  |  | `0x00141FC0` 28 |  |  |
-| `GetPing()` |  |  |  | `0x00141FE0` 28 |  |  |
-| `GetReceiveHasHeadsetMessage()` |  |  |  | `0x00348850` 28 |  |  |
-| `GetSendFinishedRaceMessage()` |  |  |  | `0x003E8A70` 28 |  |  |
-| `GetSendGameStatusMessage()` |  |  |  | `0x003DFFE0` 28 |  |  |
-| `GetSendHasHeadsetMessage()` |  |  |  | `0x00348830` 28 |  |  |
-| `GetSendRaceReadyMessage()` |  |  |  | `0x003E8110` 28 |  |  |
-| `GetSendStartCountdownMessage()` |  |  |  | `0x002873E0` 28 |  |  |
-| `IsNetworkPlayerReceivingUpdates()` |  |  |  | `0x00280730` 36 |  |  |
-| `ReceiveNewHost(int*,int*)` |  |  |  | `0x00286230` 60 |  |  |
-| `RegisterLocalPlayerUsedCrashBreaker()` |  |  |  | `0x001BE040` 32 |  |  |
-| `RegisterNetCarGroundPlayer(int)` |  |  |  | `0x00179910` 44 |  |  |
-| `RegisterNetCarSlammedPlayer(int,bool)` |  |  |  | `0x001791F0` 88 |  |  |
-| `RegisterNetCarTookDownPlayer(int)` |  |  |  | `0x00178090` 44 |  |  |
-| `RegisterNetCarTradedPaintWithPlayer(int,bool)` |  |  |  | `0x001795D0` 44 |  |  |
-| `RegisterPlayerGroundNetCar(int)` |  |  |  | `0x00179850` 44 |  |  |
-| `RegisterPlayerSlammedNetCar(int,bool)` |  |  |  | `0x00179100` 88 |  |  |
-| `RegisterPlayerTookDownNetCar(int)` |  |  |  | `0x00177FD0` 44 |  |  |
-| `RegisterPlayerTradedPaintWithNetCar(int,bool)` |  |  |  | `0x00179510` 44 |  |  |
-| `ResetInteractionBools()` |  |  |  | `0x002502A0` 156 |  |  |
-| `RetrieveHostKeepAlive(int*)` |  |  |  | `0x00286270` 52 |  |  |
-| `SendHostKeepAlive()` |  |  |  | `0x00285790` 48 |  |  |
-| `SendNewHost(int,int*)` |  |  |  | `0x002861F0` 64 |  |  |
-| `SetNetworkCar(CB3NetworkCar*)` |  |  |  | `0x00141BB0` 36 |  |  |
-| `SetNetworkCarPhysics(CB3NetworkCarPhysics*)` |  |  |  | `0x001AF730` 36 |  |  |
-| `SetPreparing(bool)` |  |  |  | `0x0018EE90` 36 |  |  |
-| `StoreMessage(const CB3NetworkRaceUpdateMessage*)` |  |  | `0x00249E90` 2152 |  |  |  |
-| `UpdateHasntArrivedForAWhile()` |  |  |  | `0x00280240` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetTimeSinceLastPacketArrived() const` | `0x001FC000` 20 |  |  |  |  |  |  |
+| `DealWithShuntsAndSlams(CUpdateMessageParams*)` | `0x001FC020` 532 |  | `0x00240AC0` 3936 |  |  |  |  |
+| `IsAllNATDataFinalised()` | `0x001FC240` 368 | `0x00205BC0` 656 | `0x00241A20` 656 | `0x0024FF70` 804 |  |  |  |
+| `SendDetailsOfNATFinalisedStatus()` | `0x001FC3B0` 384 | `0x00205E50` 2092 | `0x00241CB0` 2092 | `0x0024FAB0` 1212 |  |  |  |
+| `GetName() const` | `0x001FC530` 8 |  |  |  |  |  | `RwChar * CB4NetworkPlayer::GetName() const` |
+| `RecvReplay()` | `0x001FC540` 48 | `0x00206690` 1304 | `0x002424F0` 1304 | `0x0024F5E0` 1156 |  |  |  |
+| `SendReplay(CB3ReplayFileHeader*,unsigned char*)` | `0x001FC570` 364 | `0x00206BB0` 1560 | `0x00242A10` 1548 | `0x0024F040` 1432 |  |  |  |
+| `Destruct()` | `0x001FC6E0` 56 |  | `0x00243020` 56 |  |  |  | `void CB4NetworkPlayer::Destruct()` |
+| `Release()` | `0x001FC720` 8 | `0x002071D0` 8 | `0x00243060` 8 | `0x0024F010` 40 |  |  | `void CB4NetworkPlayer::Release()` |
+| `PostUpdate()` | `0x001FC730` 924 |  | `0x00243070` 2424 |  |  |  | `void CB4NetworkPlayer::PostUpdate()` |
+| `IsOurTurnToSend(int*)` | `0x001FCAD0` 352 |  | `0x002439F0` 900 |  |  |  | `bool CB4NetworkPlayer::IsOurTurnToSend(int *lpnFrameNumberToPutInMessage)` |
+| `BandwidthIsAvailableForCrashingTraffic()` | `0x001FCC30` 600 |  | `0x00243D80` 1940 |  |  |  |  |
+| `Update()` | `0x001FCE90` 1176 |  | `0x00244520` 3544 |  |  |  | `void CB4NetworkPlayer::Update()` |
+| `StickValuesIntoCrashingTrafficPhysics()` | `0x001FD330` 3304 |  | `0x00245300` 6424 |  |  |  |  |
+| `ApplyTrafficCarData(CB3NetworkRaceUpdateMessage*,int)` | `0x001FE020` 4012 |  | `0x00246C20` 6528 |  |  |  |  |
+| `ApplyRaceCarDataReadyForPredictiveApplication(unsigned short,const CB3NetworkRaceUpdateMessage*)` | `0x001FEFF0` 704 |  | `0x002485C0` 2580 |  |  |  | `void CB4NetworkPlayer::ApplyRaceCarDataReadyForPredictiveApplication(unsigned short lu16OurAdjustedFrame, CB4NetworkRaceUpdateMessage *lpUpdateMessage)` (same name, different parameters) |
+| `ApplyNetworkCarData(CB3NetworkRaceUpdateMessage*,const GtMathPs2::CGtMatrix3x4&,int)` | `0x001FF2B0` 424 |  | `0x00248FE0` 796 |  |  |  | `void CB4NetworkPlayer::ApplyNetworkCarData(CB4NetworkRaceUpdateMessage *lpUpdateMessage, const GtMathPs2::CGtMatrix3x4 &lRecordedMatrix, int lnNumDiffsToApply)` |
+| `RetrieveMessage(unsigned short)` | `0x001FF460` 676 |  | `0x00249300` 2952 |  |  |  | `CB4NetworkRaceUpdateMessage * CB4NetworkPlayer::RetrieveMessage(unsigned short lu16AdjustedFrame)` |
+| `RegisterMessages()` | `0x001FF710` 600 | `0x002071E0` 600 | `0x0024A700` 600 | `0x0024EBE0` 764 |  |  | `void CB4NetworkPlayer::RegisterMessages()` |
+| `CheckForNewMessages(unsigned short)` | `0x001FF970` 972 |  | `0x0024A960` 2084 |  |  |  | `void CB4NetworkPlayer::CheckForNewMessages(unsigned short lu16AdjustedFrame)` |
+| `UpdateLatency(unsigned short,unsigned short)` | `0x001FFD40` 308 |  | `0x0024B190` 1592 |  |  |  | `void CB4NetworkPlayer::UpdateLatency(unsigned short lu16FrameSent, unsigned short lu16FrameRecvd)` |
+| `UpdatePing()` | `0x001FFE80` 424 |  | `0x0024B7D0` 424 |  |  |  |  |
+| `SetSendFrequency()` | `0x00200030` 12 | `0x00207440` 12 | `0x0024B980` 12 | `0x0024EBA0` 32 |  |  | `void CB4NetworkPlayer::SetSendFrequency()` |
+| `Prepare(const char*,int,CGtNetworkAdapter*,int,void*)` | `0x00200040` 196 | `0x00207450` 196 | `0x0024B990` 196 | `0x0024EA90` 268 |  |  | `bool CB4NetworkPlayer::Prepare(const char *lacIPaddress, int lnPort, CGtNetworkAdapter *lpNetworkAdapter, int lnPlayerID, void *lpUserData)` |
+| `PrepareForGameStart()` | `0x00200110` 544 | `0x00207520` 584 | `0x0024BA60` 584 | `0x0024E7C0` 584 |  |  |  |
+| `OnGameStart()` | `0x00200330` 104 | `0x00207770` 104 | `0x0024BCB0` 104 | `0x0024E710` 168 |  |  | `void CB4NetworkPlayer::OnGameStart()` |
+| `Construct(CGtNetworkPlayerManager*,CGtNetworkHeadset*)` | `0x002003A0` 252 |  | `0x0024BD20` 252 |  |  |  | `void CB4NetworkPlayer::Construct(CGtNetworkPlayerManager *lpPlayerManager)` (same name, different parameters) |
+| `GetTimeSinceLastPacketArrived()` |  | `0x00205BA0` 20 | `0x00240AA0` 20 | `0x00250340` 56 |  |  |  |
+| `GetName()` |  | `0x00206680` 8 | `0x002424E0` 8 | `0x0024FA90` 28 |  |  | `RwChar * CB4NetworkPlayer::GetName() const` (same name, different parameters) |
+| `Activate()` |  |  |  | `0x00141B30` 32 |  |  |  |
+| `CB3NetworkPlayer()` |  |  |  | `0x00289F20` 108 |  |  | `CB4NetworkPlayer * CB4NetworkPlayer::CB4NetworkPlayer()` |
+| `Deactivate()` |  |  |  | `0x00142420` 28 |  |  |  |
+| `ForceUpdatesToBeSent()` |  |  |  | `0x00288E50` 32 |  |  |  |
+| `GetNetworkCar()` |  |  |  | `0x00141FC0` 28 |  |  |  |
+| `GetPing()` |  |  |  | `0x00141FE0` 28 |  |  |  |
+| `GetReceiveHasHeadsetMessage()` |  |  |  | `0x00348850` 28 |  |  |  |
+| `GetSendFinishedRaceMessage()` |  |  |  | `0x003E8A70` 28 |  |  |  |
+| `GetSendGameStatusMessage()` |  |  |  | `0x003DFFE0` 28 |  |  |  |
+| `GetSendHasHeadsetMessage()` |  |  |  | `0x00348830` 28 |  |  |  |
+| `GetSendRaceReadyMessage()` |  |  |  | `0x003E8110` 28 |  |  |  |
+| `GetSendStartCountdownMessage()` |  |  |  | `0x002873E0` 28 |  |  |  |
+| `IsNetworkPlayerReceivingUpdates()` |  |  |  | `0x00280730` 36 |  |  |  |
+| `ReceiveNewHost(int*,int*)` |  |  |  | `0x00286230` 60 |  |  |  |
+| `RegisterLocalPlayerUsedCrashBreaker()` |  |  |  | `0x001BE040` 32 |  |  |  |
+| `RegisterNetCarGroundPlayer(int)` |  |  |  | `0x00179910` 44 |  |  |  |
+| `RegisterNetCarSlammedPlayer(int,bool)` |  |  |  | `0x001791F0` 88 |  |  |  |
+| `RegisterNetCarTookDownPlayer(int)` |  |  |  | `0x00178090` 44 |  |  |  |
+| `RegisterNetCarTradedPaintWithPlayer(int,bool)` |  |  |  | `0x001795D0` 44 |  |  |  |
+| `RegisterPlayerGroundNetCar(int)` |  |  |  | `0x00179850` 44 |  |  |  |
+| `RegisterPlayerSlammedNetCar(int,bool)` |  |  |  | `0x00179100` 88 |  |  |  |
+| `RegisterPlayerTookDownNetCar(int)` |  |  |  | `0x00177FD0` 44 |  |  |  |
+| `RegisterPlayerTradedPaintWithNetCar(int,bool)` |  |  |  | `0x00179510` 44 |  |  |  |
+| `ResetInteractionBools()` |  |  |  | `0x002502A0` 156 |  |  | `void CB4NetworkPlayer::ResetInteractionBools()` |
+| `RetrieveHostKeepAlive(int*)` |  |  |  | `0x00286270` 52 |  |  |  |
+| `SendHostKeepAlive()` |  |  |  | `0x00285790` 48 |  |  |  |
+| `SendNewHost(int,int*)` |  |  |  | `0x002861F0` 64 |  |  |  |
+| `SetNetworkCar(CB3NetworkCar*)` |  |  |  | `0x00141BB0` 36 |  |  |  |
+| `SetNetworkCarPhysics(CB3NetworkCarPhysics*)` |  |  |  | `0x001AF730` 36 |  |  |  |
+| `SetPreparing(bool)` |  |  |  | `0x0018EE90` 36 |  |  |  |
+| `StoreMessage(const CB3NetworkRaceUpdateMessage*)` |  |  | `0x00249E90` 2152 |  |  |  |  |
+| `UpdateHasntArrivedForAWhile()` |  |  |  | `0x00280240` 28 |  |  |  |
+
+## Burnout Revenge layout of `CB4NetworkPlayer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 91 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkPlayer : public CB4LightweightNetworkPlayer {  // size 0x5B40
+    // base CB4LightweightNetworkPlayer at 0x000
+    /* 0x620 */ CB4NetworkMenuPlayerData mMenuData;
+    /* 0x660 */ bool mbPlayerReady;
+    /* 0x661 */ bool mbActive;
+    /* 0x662 */ bool mbPreparing;
+    /* 0x663 */ bool mb50Hz;
+    /* 0x664 */ RwInt32 mnFrameOfLastUpdateApplied;
+    /* 0x668 */ RwInt32 mnFrameOfLastPredictiveUpdateApplied;
+    /* 0x66C */ RwInt32 mnLatency;
+    /* 0x670 */ RwInt32 mnLatencyIndex;
+    /* 0x674 */ float marPastLatencies[64];
+    /* 0x774 */ RwUInt16 mu16LastTrafficSendFrame;
+    /* 0x776 */ RwInt16 mn16FrameGapBetweenSendsToThisPlayer;
+    /* 0x778 */ RwInt32 mnLastFrameWeSentUpdateMessageOn;
+    /* 0x77C */ CB4NetworkCar *mpNetworkCar;
+    /* 0x780 */ CB4NetworkCarPhysics *mpNetworkCarPhysics;
+    /* 0x784 */ CB4NetworkRaceUpdateMessage mUpdateMsgSend;
+    /* 0xA00 */ CB4NetworkRaceUpdateMessage mUpdateMsgRecv;
+    /* 0xC7C */ CB4NetworkPlayerFinishedRaceMessage mRaceFinishedToSend;
+    /* 0xDF4 */ CB4NetworkRaceReadyMessage mReadyMessageSend;
+    /* 0xE04 */ CB4NetworkScoreMessage mScoreMsgSend;
+    /* 0xE10 */ CB4NetworkScoreMessage mScoreMsgRecv;
+    /* 0xE1C */ CB4NetworkPlayerStartCountdownMessage mStartCoundownMessageSend;
+    /* 0xE4C */ CB4NetworkHasHeadsetMessage mHasHeadsetMessageSend;
+    /* 0xE58 */ CB4NetworkHasHeadsetMessage mHasHeadsetMessageReceive;
+    /* 0xE64 */ CB4NetworkSelectedCarMessageUnreliable mSelectedCarUnreliableMsgSend;
+    /* 0xE74 */ CB4NetworkSelectedCarMessageUnreliable mSelectedCarUnreliableMsgRecv;
+    /* 0xE84 */ CB4NetworkSelectedCarMessage mSelectedCarMessageSend;
+    /* 0xEA0 */ CGtNetworkHeadsetMessage<9> mHeadsetMessageSend;
+    /* 0xEE0 */ CGtNetworkHeadsetMessage<9> mHeadsetMessageRecv;
+    /* 0xF20 */ RwUInt16 mu16FrameBodySectionWasSent;
+    /* 0xF24 */ CB4NetworkRaceUpdateMessage maUpdateMsgBuffer[16];
+    /* 0x36E4 */ RwInt32 mnNumUpdateMsgsBuffered;
+    /* 0x36F0 */ CCrashingTrafficData maCrashingTraffic[24];
+    /* 0x48F0 */ RwInt32 mnCrashingTrafficCount;
+    /* 0x48F4 */ RwInt32 mnCrashingTrafficDiffsLeftToApply;
+    /* 0x4900 */ CCrashingTrafficData maCheckedTraffic[24];
+    /* 0x5B00 */ RwInt32 mnCheckedTrafficCount;
+    /* 0x5B04 */ RwInt32 mnCheckedTrafficDiffsLeftToApply;
+    /* 0x5B08 */ bool mbNewCrashingTrafficUpdateData;
+    /* 0x5B09 */ bool mbNewCheckedTrafficUpdateData;
+    /* 0x5B0A */ bool mbNeedToTidyCrashingTraffic;
+    /* 0x5B0B */ bool mbNeedToTidyCheckedTraffic;
+    /* 0x5B0C */ RwInt8 mn8NumForcedUpdates;
+    /* 0x5B10 */ RwInt32 mnLastCarState;
+    /* 0x5B14 */ RwInt32 mnFlashFrequency;
+    /* 0x5B18 */ bool mbUpdateMessageSendingEnabled;
+    /* 0x5B1C */ RwReal mrLocalPlayerCrashBreakerPower;
+    /* 0x5B20 */ unsigned char max8NetCarHitPlayer[6];
+    /* 0x5B26 */ unsigned char max8PlayerHitNetCar[6];
+    /* 0x5B2C */ bool mbLocalPlayerUsedCrashBreaker;
+    /* 0x5B2D */ bool mbLocalPlayerHitCrashBreakerPickup;
+    /* 0x5B2E */ bool mbLocalPlayerHitScoreSwapPickup;
+    /* 0x5B2F */ bool mbLocalPlayerHitHeartBreakerPickup;
+    /* 0x5B30 */ bool mbLocalPlayerUsingAftertouch;
+    /* 0x5B31 */ RwUInt8 mu8CrashBreakerTrafficID;
+    /* 0x5B32 */ RwUInt8 mu8CrashBreakerTrafficIDRecvd;
+    /* 0x5B34 */ RwInt32 mnCrashBreakerBoolSendResetCountdown;
+    /* 0x5B38 */ RwInt32 mnCrashBreakerBoolRecvResetCountdown;
+    // methods
+    // CB4NetworkPlayer(const CB4NetworkPlayer &);
+    // CB4NetworkPlayer();
+    // void Construct(CGtNetworkPlayerManager *);
+    // virtual bool Prepare(const char *, int, CGtNetworkAdapter *, int, void *);
+    // void Update();
+    // void NetworkCatchupUpdate();
+    // void PostUpdate();
+    // void UpdateScoreMessage();
+    // void OnGameLoaded();
+    // void OnGameStart();
+    // void OnGroupJoin();
+    // virtual void Release();
+    // void Destruct();
+    // void Activate();
+    // void Deactivate();
+    // bool IsActive();
+    // void SetPreparing(bool);
+    // bool IsPreparing();
+    // void SetSendFrequency();
+    // CB4NetworkCar * GetNetworkCar() const;
+    // void SetNetworkCar(CB4NetworkCar *);
+    // CB4NetworkCarPhysics * GetNetworkCarPhysics() const;
+    // void SetNetworkCarPhysics(CB4NetworkCarPhysics *);
+    // CB4NetworkPlayerFinishedRaceMessage * GetSendFinishedRaceMessage();
+    // CB4NetworkScoreMessage * GetSendScoreMessage();
+    // CB4NetworkRaceReadyMessage * GetSendRaceReadyMessage();
+    // CB4NetworkPlayerStartCountdownMessage * GetSendStartCountdownMessage();
+    // CB4NetworkHasHeadsetMessage * GetSendHasHeadsetMessage();
+    // CB4NetworkHasHeadsetMessage * GetReceiveHasHeadsetMessage();
+    // CB4NetworkSelectedCarMessage * GetSendCarSelectedMessage();
+    // CB4NetworkSelectedCarMessageUnreliable * GetSendCarSelectedMessageUnreliable();
+    // CB4NetworkSelectedCarMessageUnreliable * GetReceivedCarSelectedMessageUnreliable();
+    // void RegisterNetworkEvent(ENetworkEventType, int, float);
+    // void ForceUpdatesToBeSent();
+    // virtual RwChar * GetName() const;
+    // void Set50Hz(bool);
+    // void EnableUpdateMessageSending(bool);
+    // bool WeAreSendingUpdateMessagesToThisPlayer();
+    // void RegisterMessages();
+    // void StoreMessage(const CB4NetworkRaceUpdateMessage *);
+    // CB4NetworkRaceUpdateMessage * RetrieveMessage(unsigned short);
+    // void RemoveMessage(CB4NetworkRaceUpdateMessage *);
+    // void CheckForNewMessages(unsigned short);
+    // void CheckForPlayerTimeConvergence(CB4NetworkRaceUpdateMessage *);
+    // void ApplyCurrentData(CB4NetworkRaceUpdateMessage *);
+    // void ApplyNetworkCarData(CB4NetworkRaceUpdateMessage *, const GtMathPs2::CGtMatrix3x4 &, int);
+    // void ApplyCrashingTrafficCarData(CB4NetworkRaceUpdateMessage *, int);
+    // void ApplyCheckedTrafficCarData(CB4NetworkRaceUpdateMessage *, int);
+    // void ApplyRaceCarDataReadyForPredictiveApplication(unsigned short, CB4NetworkRaceUpdateMessage *);
+    // void UpdateLatency(unsigned short, unsigned short);
+    // bool BandwidthIsAvailableToSendTraffic();
+    // void AddPlayerCarToPacket(CB4PlayerCar *, CUpdateMessageParams *, unsigned short);
+    // RwInt32 AddCrashingTrafficToPacket(int);
+    // RwInt32 AddCheckedTrafficToPacket(int, int);
+    // void StickValuesIntoTrafficPhysics();
+    // void ClearUpLeftoverCheckedTraffic();
+    // void ClearUpLeftoverCrashingTraffic();
+    // bool IsOurTurnToSend(int *);
+    // void ResetInteractionBools();
+    // void DealWithAggressiveDriving(CUpdateMessageParams *);
+    // void CheckForPlayerDisconnectTimeout();
+    // bool TrafficIsOwnedByAnotherPlayer(CB4TrafficVehicle *) const;
+};
+```
 
 ## Notes
 

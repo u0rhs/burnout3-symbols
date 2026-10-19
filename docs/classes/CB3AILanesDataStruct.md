@@ -7,14 +7,44 @@
 - **Area:** [AI drivers](../systems/ai.md)
 - **Source file:** `B3AILaneStruct.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4AILanesDataStruct`, size 0x0B8, methods in `SharedClasses/AILaneData/B4AILaneStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4ailanesdatastruct))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Fixup()` | `0x002321A0` 132 | `0x0024F4C0` 132 | `0x0028B350` 132 | `0x0028A1B0` 192 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Fixup()` | `0x002321A0` 132 | `0x0024F4C0` 132 | `0x0028B350` 132 | `0x0028A1B0` 192 |  |  | `void CB4AILanesDataStruct::Fixup()` |
+
+## Burnout Revenge layout of `CB4AILanesDataStruct`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 9 file(s), e.g. `GameSource/Game/Challenge/B4Challenge.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AILanesDataStruct {  // size 0x0B8
+    /* 0x000 */ RwUInt32 mnLaneDataVersion;
+    /* 0x004 */ RwInt32 mnLaneCount;
+    /* 0x008 */ RwInt32 mnSliceCount;
+    /* 0x00C */ RwInt32 mnSliceEnvironmentCount;
+    /* 0x010 */ RwInt32 mnCornerCount;
+    /* 0x014 */ RwUInt32 mnCheckpointCount;
+    /* 0x018 */ RwInt32 mnCrossoverSliceCount;
+    /* 0x01C */ CB4AILaneStruct *mpLanesArray;
+    /* 0x020 */ CB4SliceStruct *mpSlicesArray;
+    /* 0x024 */ CB4SliceEnvironmentStruct *mpSliceEnvironmentArray;
+    /* 0x028 */ CB4AICornerStruct *mpCornersArray;
+    /* 0x02C */ CB4AICrossoverSliceStruct *mpCrossoverSlicesArray;
+    /* 0x030 */ CGtV3d *mpNodesArray;
+    /* 0x034 */ CB4AICheckpoint maCheckpoints[8];
+    /* 0x0B4 */ RwUInt8 mn8ColourOccluded;
+    /* 0x0B5 */ RwUInt8 mn8ColourVisible;
+    // methods
+    // CB4AILanesDataStruct(const CB4AILanesDataStruct &);
+    // CB4AILanesDataStruct();
+    // void Fixup();
+};
+```
 
 ## Notes
 

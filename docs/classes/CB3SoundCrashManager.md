@@ -8,74 +8,196 @@
 - **Source file:** `B3SoundCrashManager.cpp`
 - **Methods per build:** DNAT_200 49, B3DEBUG 50, B3INTERN 49, B3O0PCH 61
 - **Retail (SLUS-21050):** 34 of its 49 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundCrashManager`, size 0x18B0, methods in `GameSource/Sound/Crash/B4SoundCrashManager.cpp` ([layout](#burnout-revenge-layout-of-cb4soundcrashmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `PlayCarAlarm(CB3VehiclePhysics*)` | `0x0023ACC0` 272 | `0x00265790` 304 | `0x0029E2F0` 304 | `0x002AC010` 372 | `0x0027A920` unverified |  |
-| `UpdateFire()` | `0x0023ADD0` 528 | `0x002658C0` 740 | `0x0029E420` 636 | `0x002ABD90` 628 | `0x0027AB00` strong |  |
-| `UpdateSteam()` | `0x0023AFE0` 584 | `0x00265BB0` 796 | `0x0029E6A0` 680 | `0x002ABAE0` 688 | `0x0027AD10` strong |  |
-| `UpdateDeadMansHorn()` | `0x0023B230` 624 | `0x00265ED0` 776 | `0x0029E950` 704 | `0x002AB850` 656 | `0x0027AF60` strong |  |
-| `DoExplosion(GtMathPs2::CGtV3d)` | `0x0023B4A0` 1672 | `0x002661E0` 2480 | `0x0029EC10` 2276 | `0x002AB4D0` 584 |  |  |
-| `AirRam(GtMathPs2::CGtV3d,float,bool)` | `0x0023BB30` 664 | `0x00266BC0` 760 | `0x0029F530` 760 | `0x002AB130` 664 | `0x0027B4C0` strong |  |
-| `SetPlayerCarSpeed(float)` | `0x0023BDD0` 8 | `0x00266EC0` 8 | `0x0029F830` 8 | `0x002AB000` 36 | `0x0027B760` strong |  |
-| `PlayerCarHasBeenOnRamp()` | `0x0023BDE0` 152 | `0x00266ED0` 152 | `0x0029F840` 152 | `0x002AAF20` 216 | `0x0027B770` unverified |  |
-| `UpdateCrashStream(bool)` | `0x0023BE80` 1416 | `0x00266F70` 1484 | `0x0029F8E0` 1484 | `0x002AA850` 1732 | `0x0027B820` unverified |  |
-| `FadeOutCrashStream()` | `0x0023C410` 12 | `0x00267540` 12 | `0x0029FEB0` 12 | `0x002AA6B0` 32 | `0x0027BEF0` strong |  |
-| `UpdateKerbBounces()` | `0x0023C420` 340 | `0x00267550` 576 | `0x0029FEC0` 576 | `0x002AA4F0` 424 | `0x0027BF00` strong |  |
-| `UpdateParticulateGlass()` | `0x0023C580` 680 | `0x002678C0` 1112 | `0x002A0230` 1112 | `0x002A9EA0` 1020 | `0x0027C070` likely |  |
-| `WheelImpact(bool,GtMathPs2::CGtV3d,float)` | `0x0023C830` 564 | `0x00267D20` 600 | `0x002A0690` 600 | `0x002A9BE0` 624 | `0x0027C370` strong |  |
-| `SmallBodyProp(bool,GtMathPs2::CGtV3d,float)` | `0x0023CA70` 1920 | `0x00267F80` 2608 | `0x002A08F0` 2412 | `0x002A9920` 704 |  |  |
-| `LargeBodyProp(bool,GtMathPs2::CGtV3d,float)` | `0x0023D1F0` 1920 | `0x002689B0` 2608 | `0x002A1260` 2412 | `0x002A9660` 704 |  |  |
-| `DetachSmallBodyPart(GtMathPs2::CGtV3d,float)` | `0x0023D970` 1872 | `0x002693E0` 2560 | `0x002A1BD0` 2364 | `0x002A93F0` 620 |  |  |
-| `DetachLargeBodyPart(GtMathPs2::CGtV3d,float)` | `0x0023E0C0` 1872 | `0x00269DE0` 2560 | `0x002A2510` 2364 | `0x002A9180` 620 |  |  |
-| `DetachBodyPart(GtMathPs2::CGtV3d,float,EVehicleFlyingBit)` | `0x0023E810` 284 | `0x0026A7E0` 596 | `0x002A2E50` 596 | `0x002A9020` 340 | `0x0027D240` likely |  |
-| `CarCrash(GtMathPs2::CGtV3d,float)` | `0x0023E930` 5216 | `0x0026AA40` 6776 | `0x002A30B0` 6248 | `0x002A89C0` 1624 | `0x0027D380` unverified |  |
-| `CarNudge(GtMathPs2::CGtV3d,float)` | `0x0023FD90` 1968 | `0x0026C580` 2708 | `0x002A49D0` 2512 | `0x002A86D0` 740 |  |  |
-| `WorldCrash(GtMathPs2::CGtV3d,float)` | `0x00240540` 1984 | `0x0026D020` 2672 | `0x002A53A0` 2476 | `0x002A83C0` 780 |  |  |
-| `WorldNudge(GtMathPs2::CGtV3d,float)` | `0x00240D30` 1996 | `0x0026DA90` 2684 | `0x002A5D50` 2488 | `0x002A80F0` 720 |  |  |
-| `DeformSmallBodyPart(GtMathPs2::CGtV3d,float)` | `0x00241500` 1872 | `0x0026E510` 2572 | `0x002A6710` 2376 | `0x002A7E70` 636 |  |  |
-| `DeformLargeBodyPart(GtMathPs2::CGtV3d,float)` | `0x00241C50` 1872 | `0x0026EF20` 2572 | `0x002A7060` 2376 | `0x002A7BF0` 636 |  |  |
-| `DeformRoof(GtMathPs2::CGtV3d,float)` | `0x002423A0` 116 | `0x0026F930` 488 | `0x002A79B0` 488 | `0x002A7AF0` 252 | `0x0027EE40` strong |  |
-| `DeformBonnet(GtMathPs2::CGtV3d,float)` | `0x00242420` 104 | `0x0026FB20` 472 | `0x002A7BA0` 472 | `0x002A7A00` 228 | `0x0027EEC0` strong |  |
-| `DeformFrontBumper(GtMathPs2::CGtV3d,float)` | `0x00242490` 48 | `0x0026FD00` 432 | `0x002A7D80` 432 | `0x002A7940` 184 | `0x0027EF30` strong |  |
-| `DeformRearBumper(GtMathPs2::CGtV3d,float)` | `0x002424C0` 48 | `0x0026FEB0` 596 | `0x002A7F30` 596 | `0x002A7870` 208 | `0x0027EF60` strong |  |
-| `DeformSpoiler(GtMathPs2::CGtV3d,float)` | `0x002424F0` 64 | `0x00270110` 624 | `0x002A8190` 624 | `0x002A7790` 224 | `0x0027EF90` strong |  |
-| `DeformBoot(GtMathPs2::CGtV3d,float)` | `0x00242530` 104 | `0x00270380` 636 | `0x002A8400` 636 | `0x002A7690` 252 | `0x0027EFD0` strong |  |
-| `DeformDoor(GtMathPs2::CGtV3d,float)` | `0x002425A0` 104 | `0x00270600` 584 | `0x002A8680` 584 | `0x002A75C0` 196 | `0x0027F040` strong |  |
-| `DealWithObjectObjectCollision(const CB3CollidingPair*)` | `0x00242610` 488 | `0x00270850` 1256 | `0x002A88D0` 1256 | `0x002A71C0` 1012 | `0x0027F0B0` strong |  |
-| `CarToCar(GtMathPs2::CGtV3d*,float,const CB3CollidingPair*)` | `0x00242800` 452 | `0x00270D40` 740 | `0x002A8DC0` 740 | `0x002A6E50` 868 | `0x0027F2A0` strong |  |
-| `BodyPartImpact(bool,EVehicleFlyingBit,GtMathPs2::CGtV3d,float)` | `0x002429D0` 320 | `0x00271030` 320 | `0x002A90B0` 320 | `0x002A6D00` 336 | `0x0027F480` likely |  |
-| `PropImpact(bool,EB3PropType,GtMathPs2::CGtV3d,float)` | `0x00242B10` 700 | `0x00271170` 796 | `0x002A91F0` 796 | `0x002A6A10` 740 | `0x0027F5E0` strong |  |
-| `PayLoadImpact(bool,CB3BodyPartPhysics*,float)` | `0x00242DD0` 2916 | `0x00271490` 3644 | `0x002A9510` 3368 | `0x002A6140` 2256 | `0x0027F8D0` unverified |  |
-| `SmashWindscreen(GtMathPs2::CGtV3d,float,bool)` | `0x00243940` 1780 | `0x002722D0` 2528 | `0x002AA240` 2324 | `0x002A5E60` 732 |  |  |
-| `SmashWindow(GtMathPs2::CGtV3d,float,bool)` | `0x00244040` 1792 | `0x00272CB0` 2540 | `0x002AAB60` 2336 | `0x002A5B70` 748 |  |  |
-| `SmashHeadLights(GtMathPs2::CGtV3d,float)` | `0x00244740` 1784 | `0x002736A0` 2528 | `0x002AB480` 2324 | `0x002A5840` 732 |  |  |
-| `GenericGlassSmash(CB3VehiclePhysics*)` | `0x00244E40` 160 | `0x00274080` 160 | `0x002ABDA0` 160 | `0x002A5790` 176 | `0x00280860` strong |  |
-| `TrafficWorldImpact(ESoundWorldCrashSurfaceType,CB3VehiclePhysics*)` | `0x00244EE0` 2100 | `0x00274120` 3872 | `0x002ABE40` 3640 | `0x002A5320` 1020 |  |  |
-| `RaceCarWorldImpact(ESoundWorldCrashSurfaceType,CB3RaceCarPhysics*,float)` | `0x00245720` 4272 | `0x00275040` 6352 | `0x002ACC80` 5960 | `0x002A4F70` 868 |  |  |
-| `Release()` | `0x002467D0` 192 | `0x00276910` 192 | `0x002AE3D0` 192 | `0x002A4ED0` 156 | `0x00280FC0` unverified |  |
-| `ReleaseStreams()` | `0x00246890` 128 | `0x002769D0` 128 |  | `0x002A4DF0` 212 | `0x002810E0` strong |  |
-| `Update()` | `0x00246910` 984 | `0x00276A50` 1068 | `0x002AE490` 1068 | `0x002A49B0` 1056 | `0x00281160` unverified |  |
-| `ChoosePayloadTrackID()` | `0x00246CF0` 520 | `0x00276E80` 520 | `0x002AE8C0` 520 | `0x002A46D0` 724 | `0x00281890` unverified |  |
-| `Prepare()` | `0x00246F00` 2888 | `0x00277090` 3004 | `0x002AEAD0` 2888 | `0x002A3390` 4924 | `0x00281C30` unverified |  |
-| `Construct()` | `0x00247A50` 320 | `0x00277C50` 384 | `0x002AF620` 384 | `0x002A3120` 620 | `0x00282930` likely |  |
-| `RegisterVariables()` | `0x00247B90` 2628 | `0x00277DD0` 2752 | `0x002AF7A0` 2752 | `0x002A1F60` 4536 | `0x00282AC0` likely |  |
-| `StartExtraCrashSound(RwV3d*,const CGtSoundWave*,float,CGtSoundVoiceParams*,CGtSoundVirtualVoice**,float*)` |  | `0x00267790` 300 | `0x002A0100` 300 | `0x002AA2A0` 264 |  |  |
-| `CB3SoundCrashManager()` |  |  |  | `0x002B1AC0` 76 |  |  |
-| `MakeTrackSpecificStreamPath(char*,int)` |  |  |  | `0x002AB030` 256 |  |  |
-| `PlayCrashStream(GtMathPs2::CGtV3d)` |  |  |  | `0x002AA6D0` 336 |  |  |
-| `RandomAboutOne(float)` |  |  |  | `0x002A5720` 100 |  |  |
-| `SoundIsVisible(GtMathPs2::CGtV3d,int,float)` |  |  |  | `0x002AB720` 296 |  |  |
-| `StopExtraCrashSound(CGtSoundVirtualVoice**)` |  |  |  | `0x002AA4A0` 72 |  |  |
-| `StopParticulateGlass()` |  |  |  | `0x002A9E50` 68 |  |  |
-| `UpdateAirRam(GtMathPs2::CGtV3d)` |  |  |  | `0x002AB410` 192 |  |  |
-| `UpdateCarAlarms()` |  |  |  | `0x002AC190` 196 |  |  |
-| `UpdateExtraCrashSound(RwV3d*,CGtSoundVoiceParams*,CGtSoundVirtualVoice**,float,float,float)` |  |  |  | `0x002AA3B0` 232 |  |  |
-| `UpdateWheelCollapse()` |  |  |  | `0x002AA6A0` 16 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `PlayCarAlarm(CB3VehiclePhysics*)` | `0x0023ACC0` 272 | `0x00265790` 304 | `0x0029E2F0` 304 | `0x002AC010` 372 | `0x0027A920` unverified |  |  |
+| `UpdateFire()` | `0x0023ADD0` 528 | `0x002658C0` 740 | `0x0029E420` 636 | `0x002ABD90` 628 | `0x0027AB00` strong |  |  |
+| `UpdateSteam()` | `0x0023AFE0` 584 | `0x00265BB0` 796 | `0x0029E6A0` 680 | `0x002ABAE0` 688 | `0x0027AD10` strong |  |  |
+| `UpdateDeadMansHorn()` | `0x0023B230` 624 | `0x00265ED0` 776 | `0x0029E950` 704 | `0x002AB850` 656 | `0x0027AF60` strong |  |  |
+| `DoExplosion(GtMathPs2::CGtV3d)` | `0x0023B4A0` 1672 | `0x002661E0` 2480 | `0x0029EC10` 2276 | `0x002AB4D0` 584 |  |  |  |
+| `AirRam(GtMathPs2::CGtV3d,float,bool)` | `0x0023BB30` 664 | `0x00266BC0` 760 | `0x0029F530` 760 | `0x002AB130` 664 | `0x0027B4C0` strong |  |  |
+| `SetPlayerCarSpeed(float)` | `0x0023BDD0` 8 | `0x00266EC0` 8 | `0x0029F830` 8 | `0x002AB000` 36 | `0x0027B760` strong |  |  |
+| `PlayerCarHasBeenOnRamp()` | `0x0023BDE0` 152 | `0x00266ED0` 152 | `0x0029F840` 152 | `0x002AAF20` 216 | `0x0027B770` unverified |  |  |
+| `UpdateCrashStream(bool)` | `0x0023BE80` 1416 | `0x00266F70` 1484 | `0x0029F8E0` 1484 | `0x002AA850` 1732 | `0x0027B820` unverified |  |  |
+| `FadeOutCrashStream()` | `0x0023C410` 12 | `0x00267540` 12 | `0x0029FEB0` 12 | `0x002AA6B0` 32 | `0x0027BEF0` strong |  |  |
+| `UpdateKerbBounces()` | `0x0023C420` 340 | `0x00267550` 576 | `0x0029FEC0` 576 | `0x002AA4F0` 424 | `0x0027BF00` strong |  |  |
+| `UpdateParticulateGlass()` | `0x0023C580` 680 | `0x002678C0` 1112 | `0x002A0230` 1112 | `0x002A9EA0` 1020 | `0x0027C070` likely |  |  |
+| `WheelImpact(bool,GtMathPs2::CGtV3d,float)` | `0x0023C830` 564 | `0x00267D20` 600 | `0x002A0690` 600 | `0x002A9BE0` 624 | `0x0027C370` strong |  |  |
+| `SmallBodyProp(bool,GtMathPs2::CGtV3d,float)` | `0x0023CA70` 1920 | `0x00267F80` 2608 | `0x002A08F0` 2412 | `0x002A9920` 704 |  |  |  |
+| `LargeBodyProp(bool,GtMathPs2::CGtV3d,float)` | `0x0023D1F0` 1920 | `0x002689B0` 2608 | `0x002A1260` 2412 | `0x002A9660` 704 |  |  |  |
+| `DetachSmallBodyPart(GtMathPs2::CGtV3d,float)` | `0x0023D970` 1872 | `0x002693E0` 2560 | `0x002A1BD0` 2364 | `0x002A93F0` 620 |  |  |  |
+| `DetachLargeBodyPart(GtMathPs2::CGtV3d,float)` | `0x0023E0C0` 1872 | `0x00269DE0` 2560 | `0x002A2510` 2364 | `0x002A9180` 620 |  |  |  |
+| `DetachBodyPart(GtMathPs2::CGtV3d,float,EVehicleFlyingBit)` | `0x0023E810` 284 | `0x0026A7E0` 596 | `0x002A2E50` 596 | `0x002A9020` 340 | `0x0027D240` likely |  |  |
+| `CarCrash(GtMathPs2::CGtV3d,float)` | `0x0023E930` 5216 | `0x0026AA40` 6776 | `0x002A30B0` 6248 | `0x002A89C0` 1624 | `0x0027D380` unverified |  |  |
+| `CarNudge(GtMathPs2::CGtV3d,float)` | `0x0023FD90` 1968 | `0x0026C580` 2708 | `0x002A49D0` 2512 | `0x002A86D0` 740 |  |  |  |
+| `WorldCrash(GtMathPs2::CGtV3d,float)` | `0x00240540` 1984 | `0x0026D020` 2672 | `0x002A53A0` 2476 | `0x002A83C0` 780 |  |  |  |
+| `WorldNudge(GtMathPs2::CGtV3d,float)` | `0x00240D30` 1996 | `0x0026DA90` 2684 | `0x002A5D50` 2488 | `0x002A80F0` 720 |  |  |  |
+| `DeformSmallBodyPart(GtMathPs2::CGtV3d,float)` | `0x00241500` 1872 | `0x0026E510` 2572 | `0x002A6710` 2376 | `0x002A7E70` 636 |  |  |  |
+| `DeformLargeBodyPart(GtMathPs2::CGtV3d,float)` | `0x00241C50` 1872 | `0x0026EF20` 2572 | `0x002A7060` 2376 | `0x002A7BF0` 636 |  |  |  |
+| `DeformRoof(GtMathPs2::CGtV3d,float)` | `0x002423A0` 116 | `0x0026F930` 488 | `0x002A79B0` 488 | `0x002A7AF0` 252 | `0x0027EE40` strong |  |  |
+| `DeformBonnet(GtMathPs2::CGtV3d,float)` | `0x00242420` 104 | `0x0026FB20` 472 | `0x002A7BA0` 472 | `0x002A7A00` 228 | `0x0027EEC0` strong |  |  |
+| `DeformFrontBumper(GtMathPs2::CGtV3d,float)` | `0x00242490` 48 | `0x0026FD00` 432 | `0x002A7D80` 432 | `0x002A7940` 184 | `0x0027EF30` strong |  |  |
+| `DeformRearBumper(GtMathPs2::CGtV3d,float)` | `0x002424C0` 48 | `0x0026FEB0` 596 | `0x002A7F30` 596 | `0x002A7870` 208 | `0x0027EF60` strong |  |  |
+| `DeformSpoiler(GtMathPs2::CGtV3d,float)` | `0x002424F0` 64 | `0x00270110` 624 | `0x002A8190` 624 | `0x002A7790` 224 | `0x0027EF90` strong |  |  |
+| `DeformBoot(GtMathPs2::CGtV3d,float)` | `0x00242530` 104 | `0x00270380` 636 | `0x002A8400` 636 | `0x002A7690` 252 | `0x0027EFD0` strong |  |  |
+| `DeformDoor(GtMathPs2::CGtV3d,float)` | `0x002425A0` 104 | `0x00270600` 584 | `0x002A8680` 584 | `0x002A75C0` 196 | `0x0027F040` strong |  |  |
+| `DealWithObjectObjectCollision(const CB3CollidingPair*)` | `0x00242610` 488 | `0x00270850` 1256 | `0x002A88D0` 1256 | `0x002A71C0` 1012 | `0x0027F0B0` strong |  |  |
+| `CarToCar(GtMathPs2::CGtV3d*,float,const CB3CollidingPair*)` | `0x00242800` 452 | `0x00270D40` 740 | `0x002A8DC0` 740 | `0x002A6E50` 868 | `0x0027F2A0` strong |  |  |
+| `BodyPartImpact(bool,EVehicleFlyingBit,GtMathPs2::CGtV3d,float)` | `0x002429D0` 320 | `0x00271030` 320 | `0x002A90B0` 320 | `0x002A6D00` 336 | `0x0027F480` likely |  |  |
+| `PropImpact(bool,EB3PropType,GtMathPs2::CGtV3d,float)` | `0x00242B10` 700 | `0x00271170` 796 | `0x002A91F0` 796 | `0x002A6A10` 740 | `0x0027F5E0` strong |  |  |
+| `PayLoadImpact(bool,CB3BodyPartPhysics*,float)` | `0x00242DD0` 2916 | `0x00271490` 3644 | `0x002A9510` 3368 | `0x002A6140` 2256 | `0x0027F8D0` unverified |  |  |
+| `SmashWindscreen(GtMathPs2::CGtV3d,float,bool)` | `0x00243940` 1780 | `0x002722D0` 2528 | `0x002AA240` 2324 | `0x002A5E60` 732 |  |  |  |
+| `SmashWindow(GtMathPs2::CGtV3d,float,bool)` | `0x00244040` 1792 | `0x00272CB0` 2540 | `0x002AAB60` 2336 | `0x002A5B70` 748 |  |  |  |
+| `SmashHeadLights(GtMathPs2::CGtV3d,float)` | `0x00244740` 1784 | `0x002736A0` 2528 | `0x002AB480` 2324 | `0x002A5840` 732 |  |  |  |
+| `GenericGlassSmash(CB3VehiclePhysics*)` | `0x00244E40` 160 | `0x00274080` 160 | `0x002ABDA0` 160 | `0x002A5790` 176 | `0x00280860` strong |  |  |
+| `TrafficWorldImpact(ESoundWorldCrashSurfaceType,CB3VehiclePhysics*)` | `0x00244EE0` 2100 | `0x00274120` 3872 | `0x002ABE40` 3640 | `0x002A5320` 1020 |  |  |  |
+| `RaceCarWorldImpact(ESoundWorldCrashSurfaceType,CB3RaceCarPhysics*,float)` | `0x00245720` 4272 | `0x00275040` 6352 | `0x002ACC80` 5960 | `0x002A4F70` 868 |  |  |  |
+| `Release()` | `0x002467D0` 192 | `0x00276910` 192 | `0x002AE3D0` 192 | `0x002A4ED0` 156 | `0x00280FC0` unverified |  | `bool CB4SoundCrashManager::Release()` |
+| `ReleaseStreams()` | `0x00246890` 128 | `0x002769D0` 128 |  | `0x002A4DF0` 212 | `0x002810E0` strong |  |  |
+| `Update()` | `0x00246910` 984 | `0x00276A50` 1068 | `0x002AE490` 1068 | `0x002A49B0` 1056 | `0x00281160` unverified |  | `void CB4SoundCrashManager::Update()` |
+| `ChoosePayloadTrackID()` | `0x00246CF0` 520 | `0x00276E80` 520 | `0x002AE8C0` 520 | `0x002A46D0` 724 | `0x00281890` unverified |  |  |
+| `Prepare()` | `0x00246F00` 2888 | `0x00277090` 3004 | `0x002AEAD0` 2888 | `0x002A3390` 4924 | `0x00281C30` unverified |  | `bool CB4SoundCrashManager::Prepare()` |
+| `Construct()` | `0x00247A50` 320 | `0x00277C50` 384 | `0x002AF620` 384 | `0x002A3120` 620 | `0x00282930` likely |  | `void CB4SoundCrashManager::Construct()` |
+| `RegisterVariables()` | `0x00247B90` 2628 | `0x00277DD0` 2752 | `0x002AF7A0` 2752 | `0x002A1F60` 4536 | `0x00282AC0` likely |  |  |
+| `StartExtraCrashSound(RwV3d*,const CGtSoundWave*,float,CGtSoundVoiceParams*,CGtSoundVirtualVoice**,float*)` |  | `0x00267790` 300 | `0x002A0100` 300 | `0x002AA2A0` 264 |  |  |  |
+| `CB3SoundCrashManager()` |  |  |  | `0x002B1AC0` 76 |  |  | `CB4SoundCrashManager * CB4SoundCrashManager::CB4SoundCrashManager()` |
+| `MakeTrackSpecificStreamPath(char*,int)` |  |  |  | `0x002AB030` 256 |  |  |  |
+| `PlayCrashStream(GtMathPs2::CGtV3d)` |  |  |  | `0x002AA6D0` 336 |  |  |  |
+| `RandomAboutOne(float)` |  |  |  | `0x002A5720` 100 |  |  |  |
+| `SoundIsVisible(GtMathPs2::CGtV3d,int,float)` |  |  |  | `0x002AB720` 296 |  |  |  |
+| `StopExtraCrashSound(CGtSoundVirtualVoice**)` |  |  |  | `0x002AA4A0` 72 |  |  |  |
+| `StopParticulateGlass()` |  |  |  | `0x002A9E50` 68 |  |  |  |
+| `UpdateAirRam(GtMathPs2::CGtV3d)` |  |  |  | `0x002AB410` 192 |  |  |  |
+| `UpdateCarAlarms()` |  |  |  | `0x002AC190` 196 |  |  |  |
+| `UpdateExtraCrashSound(RwV3d*,CGtSoundVoiceParams*,CGtSoundVirtualVoice**,float,float,float)` |  |  |  | `0x002AA3B0` 232 |  |  |  |
+| `UpdateWheelCollapse()` |  |  |  | `0x002AA6A0` 16 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundCrashManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 17 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundCrashManager {  // size 0x18B0
+    /* 0x000 */ CB4SoundCrashParams mNudgeChkTrfParams;
+    /* 0x01C */ CB4SoundCrashParams mNudgeAggDrvParams;
+    /* 0x038 */ CB4SoundCrashParams mNudgeAny2WorldParams;
+    /* 0x054 */ RwReal mrNudgeChkTrfDrivingScalar;
+    /* 0x058 */ RwReal mrNudgeChkTrfCheckedScalar;
+    /* 0x05C */ RwReal mrNudgeChkTrfCrashedScalar;
+    /* 0x060 */ RwReal mrNudgeChkTrfInitialScalar;
+    /* 0x064 */ RwReal mrNudgeChkTrfWorldImpactPitchRange;
+    /* 0x068 */ RwReal mrNudgeChkTrfWorldImpactVolScalar;
+    /* 0x06C */ CB4SoundCrashParams mCrashAny2CarParams;
+    /* 0x088 */ CB4SoundCrashParams mCrashRaceCar2WorldParams;
+    /* 0x0A4 */ CB4SoundCrashParams mCrashTraffic2WorldParams;
+    /* 0x0C0 */ RwReal mrInitialCrashImpactVol;
+    /* 0x0C4 */ CB4SoundCrashParams maScrapeParams[2][2];
+    /* 0x134 */ float marScrapePitchFluctuationRange[2];
+    /* 0x13C */ float marScrapeVolPercentFromSpeed[2];
+    /* 0x144 */ CB4SoundCrashParams mDeformParams;
+    /* 0x160 */ CB4SoundCrashParams mGlassHeadLightParams;
+    /* 0x17C */ CB4SoundCrashParams mGlassWindowParams;
+    /* 0x198 */ CB4SoundCrashParams mGlassWindScreenParams;
+    /* 0x1B4 */ CB4SoundCrashParams mCrashbreakerParams;
+    /* 0x1D0 */ CB4SoundCrashParams mCarExplosionParams;
+    /* 0x1EC */ CB4SoundCrashParams mLorryExplosionParams;
+    /* 0x208 */ CB4SoundCrashParams mPropParams;
+    /* 0x224 */ CB4SoundCrashParams mBodyPartParams;
+    /* 0x240 */ CB4SoundCrashParams mRemoveParams;
+    /* 0x25C */ RwReal mrCrashStreamVol;
+    /* 0x260 */ RwReal mrSlomoStreamVol;
+    /* 0x264 */ RwReal mrAmbientStreamVol;
+    /* 0x268 */ RwReal mrLaunchStreamVol;
+    /* 0x26C */ float mrFocusScalar[5];
+    /* 0x280 */ float mrFocusRange[5];
+    /* static */ RwInt32 knVariantPathMaxLength;
+    /* 0x294 */ CGtSoundVoiceHandle mWindBedVoice;
+    /* 0x2A4 */ CGtSoundVoiceHandle mWindDetVoice;
+    /* 0x2B4 */ CGtSoundWave *mpWindBedWave;
+    /* 0x2B8 */ CGtSoundWave *mpWindDetWave;
+    /* 0x2BC */ RwReal mrFlybackWindStopTime;
+    /* 0x2C0 */ CB4SoundCollisionInterpreter mCollisionInterpreter;
+    /* 0x1620 */ CB4SoundTakedown mTakedown;
+    /* 0x1664 */ CB4SoundAggDrvPlayOrder mAggDrvPlayOrder;
+    /* 0x166C */ CB4SoundCrashStream mCrashStream;
+    /* 0x1694 */ CB4SoundCrowd mCrowd;
+    /* 0x1834 */ CGtSoundStream *mpAmbientStream;
+    /* 0x1838 */ EB4SoundAmbientStreamState meAmbStreamState;
+    /* 0x183C */ CGtSoundStream *mpLaunchStream;
+    /* 0x1840 */ EB4SoundAmbientStreamState meLaunchStreamState;
+    /* 0x1844 */ char macBankVariantPath[25];
+    /* 0x1860 */ CGtSoundFlipFlopBank *mpAggDrvFFBank;
+    /* 0x1864 */ CGtSoundFlipFlopBank *mpImpGlassFFBank;
+    /* 0x1868 */ CGtSoundFlipFlopBank *mpNonLitFFBank;
+    /* 0x186C */ CGtSoundFlipFlopBank *mpCrashExtraFFBank;
+    /* 0x1870 */ CGtSoundBank *mpBassExtraFFBank;
+    /* 0x1874 */ EGtPrepareState mePrepareState;
+    /* 0x1878 */ EGtPrepareState meBankPrepareState;
+    /* 0x187C */ RwReal mrMinDistance;
+    /* 0x1880 */ RwReal mrMaxDistance;
+    /* 0x1884 */ RwReal mrGlobalVolume;
+    /* 0x1888 */ RwReal mrGlobalVolumeAttackTime;
+    /* 0x188C */ RwReal mrGlobalVolumeSustainTime;
+    /* 0x1890 */ RwReal mrGlobalVolumeDecayTime;
+    /* 0x1894 */ eExplosionDuckMode meExplosionDuckMode;
+    /* 0x1898 */ RwInt32 mnAggDrvUsageTarget;
+    /* 0x189C */ RwInt32 mnImpGlassUsageTarget;
+    /* 0x18A0 */ RwInt32 mnNonLitUsageTarget;
+    /* 0x18A4 */ RwInt32 mnCrashExtraUsageTarget;
+    /* 0x18A8 */ RwInt32 mnBassExtraUsageTarget;
+    /* 0x18AC */ RwUInt8 mu8AmbientStreamFadeTimer;
+    /* 0x18AD */ bool mbInCrash;
+    /* 0x18AE */ bool mbFlybackWindStarted;
+    // methods
+    // CB4SoundCrashManager(const CB4SoundCrashManager &);
+    // CB4SoundCrashManager();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // bool Release();
+    // void Destruct();
+    // CB4SoundCollisionInterpreter * GetCollisionInterpreter();
+    // CB4SoundAggDrvPlayOrder * GetAggDrvPlayOrder();
+    // CGtSoundFlipFlopBank * GetAggDrvBank();
+    // CGtSoundFlipFlopBank * GetImpGlassBank();
+    // CGtSoundFlipFlopBank * GetNonLitBank();
+    // CGtSoundFlipFlopBank * GetCrashExtraBank();
+    // CGtSoundBank * GetBassExtraBank();
+    // CB4SoundTakedown * GetTakedown();
+    // CB4SoundCrashStream * GetCrashStream();
+    // CB4SoundCrowd * GetCrowd();
+    // RwReal GetMinDistance();
+    // RwReal GetMaxDistance();
+    // void SetInCrash(bool);
+    // bool IsInCrash();
+    // void TriggerPreCrashbreakerWoosh();
+    // void TriggerLaunchStream();
+    // void FadeLaunchStream();
+    // void ReleaseLaunchStream();
+    // eExplosionDuckMode GetExplosionMode();
+    // bool PrepareFlipFlopBanks();
+    // bool PrepareAmbientStream();
+    // void ReleaseAmbientStream();
+    // void GetAmbientStreamPath(char *, int);
+    // bool PrepareLaunchStream();
+    // void InitialiseCommsToolVars();
+    // void RegisterCommsToolVars();
+    // void RegisterParamSet(CB4SoundCrashParams &, const char *, const char *);
+    // void UnregisterCommsToolVars();
+    // void UnRegisterParamSet(CB4SoundCrashParams &);
+    // void RegisterDebugDisplayVars();
+    // void StartWind(bool, bool);
+    // void StopWind();
+    // void UpdateWind();
+    // void UpdateGlobalVolExplosionDucker();
+};
+```
 
 ## Notes
 

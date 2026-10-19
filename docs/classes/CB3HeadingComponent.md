@@ -12,21 +12,21 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x002D8A50` 180 | `0x00321FF0` 292 | `0x003541D0` 284 | `0x00352FB0` 316 | `0x003193D0` proven |  |
-| `Update(float)` | `0x002D8B10` 1172 | `0x00322120` 1252 | `0x003542F0` 1252 | `0x00352960` 1460 | `0x00319490` unverified |  |
-| `SetAwardHeadingString(const unsigned short*)` | `0x002D8FB0` 268 | `0x00322610` 268 | `0x003547E0` 268 | `0x003527A0` 436 |  |  |
-| `Prepare(const unsigned short*,CB3HeadingComponent::EHeadingType)` | `0x002D90C0` 496 | `0x00322720` 564 | `0x003548F0` 556 | `0x00352420` 472 | `0x00319A90` unverified |  |
-| `Prepare(EGlobalStrings,CB3HeadingComponent::EHeadingType)` | `0x002D92B0` 72 | `0x00322960` 72 | `0x00354B20` 72 | `0x003523D0` 76 |  |  |
-| `Prepare(CB3HeadingComponent::EHeadingType)` | `0x002D9300` 916 | `0x003229B0` 1016 | `0x00354B70` 1016 | `0x00351E30` 1288 | `0x00319E80` unverified |  |
-| `Construct()` | `0x002D9970` 56 | `0x00323080` 56 | `0x00355240` 56 | `0x00351DE0` 76 | `0x0031B0F0` proven |  |
-| `CB3HeadingComponent()` |  |  |  | `0x0033C880` 60 |  |  |
-| `SetHeadingString(const unsigned short*)` |  |  |  | `0x00352690` 272 |  |  |
-| `SetNewHeading(EGlobalStrings)` |  |  |  | `0x00425280` 44 |  |  |
-| `SetNewHeading(const unsigned short*)` |  |  |  | `0x004234C0` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x002D8A50` 180 | `0x00321FF0` 292 | `0x003541D0` 284 | `0x00352FB0` 316 | `0x003193D0` proven |  |  |
+| `Update(float)` | `0x002D8B10` 1172 | `0x00322120` 1252 | `0x003542F0` 1252 | `0x00352960` 1460 | `0x00319490` unverified |  |  |
+| `SetAwardHeadingString(const unsigned short*)` | `0x002D8FB0` 268 | `0x00322610` 268 | `0x003547E0` 268 | `0x003527A0` 436 |  |  |  |
+| `Prepare(const unsigned short*,CB3HeadingComponent::EHeadingType)` | `0x002D90C0` 496 | `0x00322720` 564 | `0x003548F0` 556 | `0x00352420` 472 | `0x00319A90` unverified |  |  |
+| `Prepare(EGlobalStrings,CB3HeadingComponent::EHeadingType)` | `0x002D92B0` 72 | `0x00322960` 72 | `0x00354B20` 72 | `0x003523D0` 76 |  |  |  |
+| `Prepare(CB3HeadingComponent::EHeadingType)` | `0x002D9300` 916 | `0x003229B0` 1016 | `0x00354B70` 1016 | `0x00351E30` 1288 | `0x00319E80` unverified |  |  |
+| `Construct()` | `0x002D9970` 56 | `0x00323080` 56 | `0x00355240` 56 | `0x00351DE0` 76 | `0x0031B0F0` proven |  |  |
+| `CB3HeadingComponent()` |  |  |  | `0x0033C880` 60 |  |  |  |
+| `SetHeadingString(const unsigned short*)` |  |  |  | `0x00352690` 272 |  |  |  |
+| `SetNewHeading(EGlobalStrings)` |  |  |  | `0x00425280` 44 |  |  |  |
+| `SetNewHeading(const unsigned short*)` |  |  |  | `0x004234C0` 36 |  |  |  |
 
 ## Notes
 

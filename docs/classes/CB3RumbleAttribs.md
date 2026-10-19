@@ -10,12 +10,12 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UnregisterStaticVariables()` | `0x002FDA50` 8 | `0x003523E0` 8 | `0x00383A50` 8 | `0x003842C0` 8 |  |  |
-| `RegisterStaticVariables()` | `0x002FDA60` 8 | `0x003523F0` 8 | `0x00383A60` 8 | `0x003842B0` 8 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UnregisterStaticVariables()` | `0x002FDA50` 8 | `0x003523E0` 8 | `0x00383A50` 8 | `0x003842C0` 8 |  |  | `void CB4RumbleAttribs::UnregisterStaticVariables()` |
+| `RegisterStaticVariables()` | `0x002FDA60` 8 | `0x003523F0` 8 | `0x00383A60` 8 | `0x003842B0` 8 |  |  | `void CB4RumbleAttribs::RegisterStaticVariables()` |
 
 ## Static data (DNAT_200)
 

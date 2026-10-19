@@ -11,37 +11,37 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetOfflineGameModeType()` | `0x003497C0` 8 | `0x003B01A0` 8 | `0x003D9D20` 8 | `0x003E5D70` 20 |  |  |
-| `GetOnlineGameModeType()` | `0x003497D0` 8 | `0x003B01B0` 8 | `0x003D9D30` 8 | `0x003E5D90` 20 |  |  |
-| `DoAfterTouchNotSlowMo()` | `0x003497E0` 8 | `0x003B01C0` 8 | `0x003D9D40` 8 | `0x003E5DB0` 20 |  |  |
-| `UseCrashBattleScoring()` | `0x003497F0` 8 | `0x003B01D0` 8 | `0x003D9D50` 8 | `0x003E5DD0` 20 |  |  |
-| `IsCrashType()` | `0x00349800` 8 | `0x003B01E0` 8 | `0x003D9D60` 8 | `0x003E5DF0` 20 |  |  |
-| `IsCooperative()` | `0x00349810` 8 | `0x003B01F0` 8 | `0x003D9D70` 8 | `0x003E5E10` 20 |  |  |
-| `OnWorldPrepared()` | `0x00349820` 72 | `0x003B0200` 224 | `0x003D9D80` 224 | `0x003E5CD0` 152 |  |  |
-| `GetGameModeScore(int,const CB3FinishedScore*,int*,int*)` | `0x00349870` 16 | `0x003B02E0` 180 | `0x003D9E60` 180 | `0x003E5C20` 100 |  |  |
-| `AllowRestartButton()` | `0x00349880` 120 | `0x003B03A0` 120 | `0x003D9F20` 120 | `0x003E5B90` 132 |  |  |
-| `LeaveLobby()` | `0x00349900` 8 | `0x003B0420` 8 | `0x003D9FA0` 8 | `0x003E5B60` 48 |  |  |
-| `SetGameModeStatusMessageArrived(signed char)` | `0x00349910` 12 | `0x003B0430` 96 | `0x003D9FB0` 96 | `0x003E5B20` 64 |  |  |
-| `SetGameModeStatusMessageDelivered()` | `0x00349920` 12 | `0x003B0490` 12 | `0x003DA010` 12 | `0x003E5B00` 32 |  |  |
-| `DisplayDollarValuesAboveTraffic()` | `0x00349930` 8 | `0x003B04A0` 8 | `0x003DA020` 8 | `0x003E5AE0` 20 |  |  |
-| `ClearUpCrash(int)` | `0x00349940` 112 | `0x003B04B0` 240 | `0x003DA030` 240 | `0x003E5A10` 204 |  |  |
-| `StartReplay()` | `0x003499B0` 8 | `0x003B05A0` 8 | `0x003DA120` 8 | `0x003E59F0` 20 |  |  |
-| `GetResultsPageType()` | `0x003499C0` 8 | `0x003B05B0` 8 | `0x003DA130` 8 | `0x003E59D0` 20 |  |  |
-| `GetRacePositionType()` | `0x003499D0` 8 | `0x003B05C0` 8 | `0x003DA140` 8 | `0x003E59B0` 20 |  |  |
-| `GetHUDType()` | `0x003499E0` 8 | `0x003B05D0` 8 | `0x003DA150` 8 | `0x003E5990` 20 |  |  |
-| `HasStageFinished()` | `0x003499F0` 8 | `0x003B05E0` 8 | `0x003DA160` 8 | `0x003E5970` 28 |  |  |
-| `Destruct()` | `0x00349A00` 8 | `0x003B05F0` 8 | `0x003DA170` 8 | `0x003E5940` 48 |  |  |
-| `Release()` | `0x00349A10` 20 | `0x003B0600` 20 | `0x003DA180` 20 | `0x003E58F0` 68 |  |  |
-| `UpdateCameras()` | `0x00349A30` 224 | `0x003B0620` 280 | `0x003DA1A0` 280 | `0x003E5810` 224 |  |  |
-| `Update()` | `0x00349B10` 780 | `0x003B0740` 1036 | `0x003DA2C0` 1036 | `0x003E53A0` 1136 |  |  |
-| `Prepare()` | `0x00349E20` 44 | `0x003B0B50` 44 | `0x003DA6D0` 44 | `0x003E5340` 84 |  |  |
-| `Construct()` | `0x00349E50` 28 | `0x003B0B80` 28 | `0x003DA700` 28 | `0x003E5300` 60 |  |  |
-| `CB3OnlineCoOpCrashLogic()` |  |  |  | `0x0013DE70` 60 |  |  |
-| `ResetContinueVars()` |  |  |  | `0x003E5C90` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetOfflineGameModeType()` | `0x003497C0` 8 | `0x003B01A0` 8 | `0x003D9D20` 8 | `0x003E5D70` 20 |  |  |  |
+| `GetOnlineGameModeType()` | `0x003497D0` 8 | `0x003B01B0` 8 | `0x003D9D30` 8 | `0x003E5D90` 20 |  |  |  |
+| `DoAfterTouchNotSlowMo()` | `0x003497E0` 8 | `0x003B01C0` 8 | `0x003D9D40` 8 | `0x003E5DB0` 20 |  |  |  |
+| `UseCrashBattleScoring()` | `0x003497F0` 8 | `0x003B01D0` 8 | `0x003D9D50` 8 | `0x003E5DD0` 20 |  |  |  |
+| `IsCrashType()` | `0x00349800` 8 | `0x003B01E0` 8 | `0x003D9D60` 8 | `0x003E5DF0` 20 |  |  |  |
+| `IsCooperative()` | `0x00349810` 8 | `0x003B01F0` 8 | `0x003D9D70` 8 | `0x003E5E10` 20 |  |  |  |
+| `OnWorldPrepared()` | `0x00349820` 72 | `0x003B0200` 224 | `0x003D9D80` 224 | `0x003E5CD0` 152 |  |  |  |
+| `GetGameModeScore(int,const CB3FinishedScore*,int*,int*)` | `0x00349870` 16 | `0x003B02E0` 180 | `0x003D9E60` 180 | `0x003E5C20` 100 |  |  |  |
+| `AllowRestartButton()` | `0x00349880` 120 | `0x003B03A0` 120 | `0x003D9F20` 120 | `0x003E5B90` 132 |  |  |  |
+| `LeaveLobby()` | `0x00349900` 8 | `0x003B0420` 8 | `0x003D9FA0` 8 | `0x003E5B60` 48 |  |  |  |
+| `SetGameModeStatusMessageArrived(signed char)` | `0x00349910` 12 | `0x003B0430` 96 | `0x003D9FB0` 96 | `0x003E5B20` 64 |  |  |  |
+| `SetGameModeStatusMessageDelivered()` | `0x00349920` 12 | `0x003B0490` 12 | `0x003DA010` 12 | `0x003E5B00` 32 |  |  |  |
+| `DisplayDollarValuesAboveTraffic()` | `0x00349930` 8 | `0x003B04A0` 8 | `0x003DA020` 8 | `0x003E5AE0` 20 |  |  |  |
+| `ClearUpCrash(int)` | `0x00349940` 112 | `0x003B04B0` 240 | `0x003DA030` 240 | `0x003E5A10` 204 |  |  |  |
+| `StartReplay()` | `0x003499B0` 8 | `0x003B05A0` 8 | `0x003DA120` 8 | `0x003E59F0` 20 |  |  |  |
+| `GetResultsPageType()` | `0x003499C0` 8 | `0x003B05B0` 8 | `0x003DA130` 8 | `0x003E59D0` 20 |  |  |  |
+| `GetRacePositionType()` | `0x003499D0` 8 | `0x003B05C0` 8 | `0x003DA140` 8 | `0x003E59B0` 20 |  |  |  |
+| `GetHUDType()` | `0x003499E0` 8 | `0x003B05D0` 8 | `0x003DA150` 8 | `0x003E5990` 20 |  |  |  |
+| `HasStageFinished()` | `0x003499F0` 8 | `0x003B05E0` 8 | `0x003DA160` 8 | `0x003E5970` 28 |  |  |  |
+| `Destruct()` | `0x00349A00` 8 | `0x003B05F0` 8 | `0x003DA170` 8 | `0x003E5940` 48 |  |  |  |
+| `Release()` | `0x00349A10` 20 | `0x003B0600` 20 | `0x003DA180` 20 | `0x003E58F0` 68 |  |  |  |
+| `UpdateCameras()` | `0x00349A30` 224 | `0x003B0620` 280 | `0x003DA1A0` 280 | `0x003E5810` 224 |  |  |  |
+| `Update()` | `0x00349B10` 780 | `0x003B0740` 1036 | `0x003DA2C0` 1036 | `0x003E53A0` 1136 |  |  |  |
+| `Prepare()` | `0x00349E20` 44 | `0x003B0B50` 44 | `0x003DA6D0` 44 | `0x003E5340` 84 |  |  |  |
+| `Construct()` | `0x00349E50` 28 | `0x003B0B80` 28 | `0x003DA700` 28 | `0x003E5300` 60 |  |  |  |
+| `CB3OnlineCoOpCrashLogic()` |  |  |  | `0x0013DE70` 60 |  |  |  |
+| `ResetContinueVars()` |  |  |  | `0x003E5C90` 60 |  |  |  |
 
 ## Notes
 

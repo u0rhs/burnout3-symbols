@@ -9,17 +9,40 @@
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
 - **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00441630`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
+- **Burnout Revenge counterpart:** `CB4HUDCrashTimer`, size 0x048, methods in `GameSource/Hud/B4HUDCrashTimer.cpp` ([layout](#burnout-revenge-layout-of-cb4hudcrashtimer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `PrepareCrashTimerObject()` | `0x0036AFA0` 588 | `0x003D7D70` 1136 | `0x004008C0` 1036 | `0x00413210` 984 | `0x003B8170` unverified |  |
-| `Update(float)` | `0x0036B1F0` 8 | `0x003D81E0` 8 | `0x00400CD0` 8 | `0x004131E0` 40 |  |  |
-| `Prepare(int,EHUDAlign,int,bool)` | `0x0036B200` 180 | `0x003D81F0` 400 | `0x00400CE0` 408 | `0x00413080` 340 |  |  |
-| `CB3HUDCrashTimer()` |  |  |  | `0x001998F0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `PrepareCrashTimerObject()` | `0x0036AFA0` 588 | `0x003D7D70` 1136 | `0x004008C0` 1036 | `0x00413210` 984 | `0x003B8170` unverified |  |  |
+| `Update(float)` | `0x0036B1F0` 8 | `0x003D81E0` 8 | `0x00400CD0` 8 | `0x004131E0` 40 |  |  | `void CB4HUDCrashTimer::Update(float lrTimeStep)` |
+| `Prepare(int,EHUDAlign,int,bool)` | `0x0036B200` 180 | `0x003D81F0` 400 | `0x00400CE0` 408 | `0x00413080` 340 |  |  | `bool CB4HUDCrashTimer::Prepare(EPlayerCarIndex lePlayer, EHUDAlign leAlign, int lxFlags, bool lbCompact, bool lbOnlineSingleRace)` (same name, different parameters) |
+| `CB3HUDCrashTimer()` |  |  |  | `0x001998F0` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4HUDCrashTimer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Hud/B4HUDCrashTimer.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HUDCrashTimer : public CB4HUDComponent {  // size 0x048
+    // base CB4HUDComponent at 0x000
+    /* static */ RwInt32 knMaxCountdownStringChars;
+    /* 0x020 */ CGt2dObject *mapObjects[1];
+    /* 0x024 */ CB4RaceCar *mpRaceCar;
+    /* 0x028 */ CGtV2d mCountdownTextPos;
+    /* 0x030 */ short unsigned int maCountdownString[8];
+    /* 0x040 */ bool mbOnlineSingleRace;
+    // methods
+    // CB4HUDCrashTimer(const CB4HUDCrashTimer &);
+    // CB4HUDCrashTimer();
+    // bool Prepare(EPlayerCarIndex, EHUDAlign, int, bool, bool);
+    // virtual void Update(float);
+    // void PrepareCrashTimerObjects(const GtMathPs2::CGtV2d &);
+};
+```
 
 ## Notes
 

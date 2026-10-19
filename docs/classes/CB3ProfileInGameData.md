@@ -10,13 +10,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateSpecialCaseTakedownCounters(CB3RaceCar*)` | `0x00139330` 116 | `0x00141B30` 244 | `0x00140040` 244 | `0x00142D90` 216 |  |  |
-| `CacheCurrentProfile(CB3Profile*)` | `0x001393B0` 56 | `0x00141C30` 172 | `0x00140140` 172 | `0x00142D10` 120 |  |  |
-| `Prepare()` |  |  |  | `0x00142CC0` 72 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateSpecialCaseTakedownCounters(CB3RaceCar*)` | `0x00139330` 116 | `0x00141B30` 244 | `0x00140040` 244 | `0x00142D90` 216 |  |  |  |
+| `CacheCurrentProfile(CB3Profile*)` | `0x001393B0` 56 | `0x00141C30` 172 | `0x00140140` 172 | `0x00142D10` 120 |  |  |  |
+| `Prepare()` |  |  |  | `0x00142CC0` 72 |  |  |  |
 
 ## Notes
 

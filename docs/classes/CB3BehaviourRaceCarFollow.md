@@ -9,20 +9,61 @@
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
 - **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440180`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
+- **Burnout Revenge counterpart:** `CB4BehaviourRaceCarFollow`, size 0x070, methods in `GameSource/Camera/Behaviours/B4BehaviourRaceCarFollow.cpp` ([layout](#burnout-revenge-layout-of-cb4behaviourracecarfollow))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` | `0x002A2B10` 8 | `0x002DB090` 8 | `0x003125A0` 8 | `0x003129E0` 40 | `0x002E3410` likely |  |
-| `Destruct()` | `0x002A2B20` 8 | `0x002DB0A0` 8 | `0x003125B0` 8 | `0x003129B0` 44 | `0x002E3420` proven |  |
-| `Release(void*)` | `0x002A2B30` 8 | `0x002DB0B0` 8 | `0x003125C0` 8 | `0x003129A0` 16 | `0x002E3430` proven |  |
-| `Update(CGtCamera*,float)` | `0x002A2B40` 5492 | `0x002DB0C0` 7332 | `0x003125D0` 6696 | `0x00312250` 1860 | `0x002E3440` proven |  |
-| `Prepare(void*)` | `0x002A40C0` 4916 | `0x002DCD70` 7460 | `0x00314000` 6968 | `0x00311DA0` 1128 | `0x002E4A40` proven |  |
-| `Construct(int,bool)` | `0x002A5400` 120 | `0x002DEAA0` 180 | `0x00315B40` 180 | `0x00311D00` 152 | `0x002E5D90` proven |  |
-| `CB3BehaviourRaceCarFollow()` |  |  |  | `0x0013EA20` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` | `0x002A2B10` 8 | `0x002DB090` 8 | `0x003125A0` 8 | `0x003129E0` 40 | `0x002E3410` likely |  | `void CB4BehaviourRaceCarFollow::Construct()` |
+| `Destruct()` | `0x002A2B20` 8 | `0x002DB0A0` 8 | `0x003125B0` 8 | `0x003129B0` 44 | `0x002E3420` proven |  | `void CB4BehaviourRaceCarFollow::Destruct()` |
+| `Release(void*)` | `0x002A2B30` 8 | `0x002DB0B0` 8 | `0x003125C0` 8 | `0x003129A0` 16 | `0x002E3430` proven |  | `void CB4BehaviourRaceCarFollow::Release(void *lpData)` |
+| `Update(CGtCamera*,float)` | `0x002A2B40` 5492 | `0x002DB0C0` 7332 | `0x003125D0` 6696 | `0x00312250` 1860 | `0x002E3440` proven |  | `void CB4BehaviourRaceCarFollow::Update(CGtCamera *lpCamera, float lrTimeStep)` |
+| `Prepare(void*)` | `0x002A40C0` 4916 | `0x002DCD70` 7460 | `0x00314000` 6968 | `0x00311DA0` 1128 | `0x002E4A40` proven |  | `bool CB4BehaviourRaceCarFollow::Prepare(void *lpData)` |
+| `Construct(int,bool)` | `0x002A5400` 120 | `0x002DEAA0` 180 | `0x00315B40` 180 | `0x00311D00` 152 | `0x002E5D90` proven |  |  |
+| `CB3BehaviourRaceCarFollow()` |  |  |  | `0x0013EA20` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4BehaviourRaceCarFollow`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 318 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4BehaviourRaceCarFollow : public CB4CameraBehaviour {  // size 0x070
+    // base CB4CameraBehaviour at 0x000
+    /* 0x018 */ CB4AttribsRaceCarFollow *mpAttribs;
+    /* 0x020 */ GtID mRaceCarID;
+    /* 0x028 */ GtID mTrackID;
+    /* 0x030 */ CGtV3d mPlayerPosition;
+    /* 0x040 */ CGtV3d mWindOffset;
+    /* 0x050 */ RwReal mrAngleY;
+    /* 0x054 */ RwReal mrAngleX;
+    /* 0x058 */ RwReal mrEntryAngle;
+    /* 0x05C */ RwReal mrLastBurnFOV;
+    /* 0x060 */ RwReal mrWindShake;
+    /* 0x064 */ ERaceCarIndex meRaceCarIndex;
+    /* 0x068 */ EPlayerCarIndex meStreamIndex;
+    /* 0x06C */ bool mbIsAttached;
+    /* 0x06D */ bool mbIsLookBack;
+    // methods
+    // CB4BehaviourRaceCarFollow(const CB4BehaviourRaceCarFollow &);
+    // CB4BehaviourRaceCarFollow();
+    // void Construct(CB4PlayerCameraManager *, bool);
+    // void SetRaceCar(ERaceCarIndex);
+    // void SetStream(EPlayerCarIndex);
+    // virtual void Construct();
+    // virtual void Destruct();
+    // virtual bool Prepare(void *);
+    // virtual void Release(void *);
+    // virtual void Update(CGtCamera *, float);
+    // void SetAttached(bool);
+    // RwReal GetWindEffect();
+    // void SetAttribs(CB4AttribsRaceCarFollow *);
+    // CB4AttribsRaceCarFollow * GetAttribs();
+    // virtual void RegisterVariables();
+};
+```
 
 ## Notes
 

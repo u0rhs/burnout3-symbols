@@ -14,36 +14,38 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 **Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
 
-| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
-|---|---:|---:|---|---:|---|
-| `B3DemoMenuPage.cpp` | 3 | 880 | `0x002EAE70` |  |  |
-| `B3DemoSelectState.cpp` | 1 | 752 | `0x002EB1F0` |  |  |
-| `B3DemoGameState.cpp` | 1 | 492 | `0x002EE5E0` |  |  |
-| `B3DemoRaceInfoPage.cpp` | 3 | 356 | `0x002EE7D0` |  |  |
-| `B3DemoRaceInfoState.cpp` | 1 | 276 | `0x002EE940` |  |  |
-| `B3DemoPausePage.cpp` | 3 | 712 | `0x002EEA60` |  |  |
-| `B3DemoPauseState.cpp` | 1 | 676 | `0x002EED30` |  |  |
-| `B3DemoRaceResultsPage.cpp` | 9 | 5,580 | `0x002EEFE0` |  |  |
-| `B3DemoTitleScreenPage.cpp` | 3 | 200 | `0x002F1150` |  |  |
-| `B3DemoTitleScreenState.cpp` | 1 | 248 | `0x002F1230` |  |  |
-| `B3DemoRaceFinishedPage.cpp` | 5 | 2,072 | `0x00330940` |  |  |
-| `B3DemoRaceFinishedState.cpp` | 1 | 912 | `0x00331170` |  |  |
-| `B3DemoShowTipsPage.cpp` | 3 | 280 | `0x00331500` |  |  |
-| `B3DemoShowTipsState.cpp` | 1 | 272 | `0x00331620` |  |  |
-| `B3DemoGameModePage.cpp` | 3 | 812 | `0x00356860` |  |  |
-| `B3DemoGameModeState.cpp` | 1 | 896 | `0x00356BA0` |  |  |
-| `B3DemoRaceIntroPage.cpp` | 3 | 352 | `0x00359990` |  |  |
-| `B3DemoRaceIntroState.cpp` | 1 | 1,008 | `0x00359B00` |  |  |
-| `B3DemoStageSelectState.cpp` | 1 | 308 | `0x0035B3C0` |  |  |
-| `B3DemoStageSelectPage.cpp` | 3 | 580 | `0x0035B500` |  |  |
-| `B3DemoRestartState.cpp` | 1 | 460 | `0x0035BD50` |  |  |
-| `B3DemoRestartPage.cpp` | 3 | 464 | `0x0035BF20` |  |  |
-| `B3MSDemoGameModePage.cpp` | 3 | 436 | `0x0037C1D0` |  |  |
-| `B3DemoNFSU2VidState.cpp` | 1 | 372 | `0x0037C3A0` |  |  |
-| `B3DemoMarketingVidState.cpp` | 1 | 88 | `0x0037C520` |  |  |
-| `B3OPMDemoTitleScreenState.cpp` | 1 | 104 | `0x0037C580` |  |  |
-| `B3CrashDemoMainMenuPage.cpp` | 2 | 256 | `0x003A6310` |  |  |
-| `B3CrashDemoRaceIntroPage.cpp` | 2 | 80 | `0x003A6420` |  |  |
+**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source paths ([source files](../reference/revenge-source-file-lineage.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |
+|---|---:|---:|---|---:|---|---|
+| `B3DemoMenuPage.cpp` | 3 | 880 | `0x002EAE70` |  |  |  |
+| `B3DemoSelectState.cpp` | 1 | 752 | `0x002EB1F0` |  |  |  |
+| `B3DemoGameState.cpp` | 1 | 492 | `0x002EE5E0` |  |  |  |
+| `B3DemoRaceInfoPage.cpp` | 3 | 356 | `0x002EE7D0` |  |  |  |
+| `B3DemoRaceInfoState.cpp` | 1 | 276 | `0x002EE940` |  |  |  |
+| `B3DemoPausePage.cpp` | 3 | 712 | `0x002EEA60` |  |  |  |
+| `B3DemoPauseState.cpp` | 1 | 676 | `0x002EED30` |  |  |  |
+| `B3DemoRaceResultsPage.cpp` | 9 | 5,580 | `0x002EEFE0` |  |  |  |
+| `B3DemoTitleScreenPage.cpp` | 3 | 200 | `0x002F1150` |  |  |  |
+| `B3DemoTitleScreenState.cpp` | 1 | 248 | `0x002F1230` |  |  |  |
+| `B3DemoRaceFinishedPage.cpp` | 5 | 2,072 | `0x00330940` |  |  |  |
+| `B3DemoRaceFinishedState.cpp` | 1 | 912 | `0x00331170` |  |  |  |
+| `B3DemoShowTipsPage.cpp` | 3 | 280 | `0x00331500` |  |  |  |
+| `B3DemoShowTipsState.cpp` | 1 | 272 | `0x00331620` |  |  |  |
+| `B3DemoGameModePage.cpp` | 3 | 812 | `0x00356860` |  |  |  |
+| `B3DemoGameModeState.cpp` | 1 | 896 | `0x00356BA0` |  |  |  |
+| `B3DemoRaceIntroPage.cpp` | 3 | 352 | `0x00359990` |  |  |  |
+| `B3DemoRaceIntroState.cpp` | 1 | 1,008 | `0x00359B00` |  |  |  |
+| `B3DemoStageSelectState.cpp` | 1 | 308 | `0x0035B3C0` |  |  |  |
+| `B3DemoStageSelectPage.cpp` | 3 | 580 | `0x0035B500` |  |  |  |
+| `B3DemoRestartState.cpp` | 1 | 460 | `0x0035BD50` |  |  |  |
+| `B3DemoRestartPage.cpp` | 3 | 464 | `0x0035BF20` |  |  |  |
+| `B3MSDemoGameModePage.cpp` | 3 | 436 | `0x0037C1D0` |  |  |  |
+| `B3DemoNFSU2VidState.cpp` | 1 | 372 | `0x0037C3A0` |  |  |  |
+| `B3DemoMarketingVidState.cpp` | 1 | 88 | `0x0037C520` |  |  |  |
+| `B3OPMDemoTitleScreenState.cpp` | 1 | 104 | `0x0037C580` |  |  |  |
+| `B3CrashDemoMainMenuPage.cpp` | 2 | 256 | `0x003A6310` |  |  |  |
+| `B3CrashDemoRaceIntroPage.cpp` | 2 | 80 | `0x003A6420` |  |  |  |
 
 ## Classes
 

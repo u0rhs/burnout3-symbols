@@ -6,22 +6,23 @@
 
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Methods per build:** B3DEBUG 8
+- **Burnout Revenge counterpart:** `CGtFilePS2Host`, size 0x040 ([layout](#burnout-revenge-layout-of-cgtfileps2host))
 - **Burnout 2 ancestor (by shared methods: `Abort`, `Close`, `GetStatus`, `Open`, `Read`, `SetPosition`, `Sync`, `Write`):** `CGTFilePS2DVD`, size 0x038, declared in 1 file(s), e.g. `I:/GameShared/GameClasses/FileSystem/ps2/GTFileSystemPS2DVD.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Abort()` |  | `0x001CE410` 8 |  |  |  |  |
-| `Sync(int)` |  | `0x001CE420` 140 |  |  |  |  |
-| `SetPosition(long,EFileMoveMethod)` |  | `0x001CE4B0` 284 |  |  |  |  |
-| `Write(const void*,unsigned int)` |  | `0x001CE5D0` 140 |  |  |  |  |
-| `Read(void*,unsigned int)` |  | `0x001CE660` 420 |  |  |  |  |
-| `Close()` |  | `0x001CE810` 12 |  |  |  |  |
-| `Open(CGTFileSystem*,const char*,unsigned int)` |  | `0x001CE820` 368 |  |  |  |  |
-| `GetStatus()` |  | `0x001CE990` 56 |  |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Abort()` |  | `0x001CE410` 8 |  |  |  |  |  |
+| `Sync(int)` |  | `0x001CE420` 140 |  |  |  |  |  |
+| `SetPosition(long,EFileMoveMethod)` |  | `0x001CE4B0` 284 |  |  |  |  |  |
+| `Write(const void*,unsigned int)` |  | `0x001CE5D0` 140 |  |  |  |  |  |
+| `Read(void*,unsigned int)` |  | `0x001CE660` 420 |  |  |  |  |  |
+| `Close()` |  | `0x001CE810` 12 |  |  |  |  |  |
+| `Open(CGTFileSystem*,const char*,unsigned int)` |  | `0x001CE820` 368 |  |  |  |  |  |
+| `GetStatus()` |  | `0x001CE990` 56 |  |  |  |  |  |
 
 ## Burnout 2 layout of `CGTFilePS2DVD`
 
@@ -45,6 +46,30 @@ public:
     // void CGTFilePS2DVD::Close()  [0x001FC1D0]
     // EFileSystemError CGTFilePS2DVD::Open(CGTFileSystem *pFileSystem, char *lpFilename, unsigned int nOpenFlags)  [0x001FC250]
     // EFileStatus CGTFilePS2DVD::GetStatus()  [0x001FC390]
+};
+```
+
+## Burnout Revenge layout of `CGtFilePS2Host`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameShared/GameClasses/System/FileSystem/ps2/GtFileSystemPS2ATMon.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtFilePS2Host : public CGTFile {  // size 0x040
+    // base CGTFile at 0x000
+    /* 0x030 */ int mnSCEFile;
+    /* 0x034 */ RwInt32 mnBufferOffset;
+    /* 0x038 */ CGtFileBufferPS2Host *mpBuffer;
+    // methods
+    // CGtFilePS2Host(const CGtFilePS2Host &);
+    // CGtFilePS2Host();
+    // virtual EFileStatus GetStatus();
+    // virtual EFileSystemError Open(CGTFileSystem *, const char *, unsigned int);
+    // virtual void Close();
+    // virtual RwUInt32 Read(void *, unsigned int);
+    // virtual RwUInt32 Write(const void *, unsigned int);
+    // virtual RwInt64 SetPosition(long, EFileMoveMethod);
+    // virtual EFileStatus Sync(int);
+    // virtual RwBool Abort();
 };
 ```
 

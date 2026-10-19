@@ -11,23 +11,23 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GenerateRandomJunction()` | `0x003D1090` 272 | `0x004892C0` 316 | `0x004767A0` 308 | `0x004927F0` 336 |  |  |
-| `GenerateRandomTrackInRegion(EB3TrackRegion)` | `0x003D11A0` 364 | `0x00489400` 408 | `0x004768E0` 400 | `0x00492630` 440 |  |  |
-| `GenerateRandomTrack()` | `0x003D1310` 300 | `0x004895A0` 308 | `0x00476A70` 300 | `0x004924D0` 352 |  |  |
-| `PrepareRaceMenu()` | `0x003D1440` 552 | `0x004896E0` 552 | `0x00476BA0` 552 | `0x00491F30` 536 |  |  |
-| `Release()` | `0x003D1670` 8 | `0x00489910` 8 | `0x00476DD0` 8 | `0x00491F20` 16 |  |  |
-| `UpdateScroll()` | `0x003D1680` 1780 | `0x00489920` 1780 | `0x00476DE0` 1780 | `0x00491930` 1520 |  |  |
-| `UpdateMenu()` | `0x003D1D80` 948 | `0x0048A020` 980 | `0x004774E0` 980 | `0x00491370` 1464 |  |  |
-| `Update()` | `0x003D2140` 96 | `0x0048A400` 96 | `0x004778C0` 96 | `0x004912F0` 120 |  |  |
-| `Prepare(EB3MenuChoicesOnePlayer)` | `0x003D21A0` 1372 | `0x0048A460` 1372 | `0x00477920` 1372 | `0x00490F40` 936 |  |  |
-| `CB3SingleEventGameOptionsPage()` |  |  |  | `0x00342400` 60 |  |  |
-| `PrepareCrashMenu()` |  |  |  | `0x00492410` 188 |  |  |
-| `PrepareRoadRageMenu()` |  |  |  | `0x004922B0` 340 |  |  |
-| `PrepareTimeAttackMenu()` |  |  |  | `0x00492150` 340 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GenerateRandomJunction()` | `0x003D1090` 272 | `0x004892C0` 316 | `0x004767A0` 308 | `0x004927F0` 336 |  |  |  |
+| `GenerateRandomTrackInRegion(EB3TrackRegion)` | `0x003D11A0` 364 | `0x00489400` 408 | `0x004768E0` 400 | `0x00492630` 440 |  |  |  |
+| `GenerateRandomTrack()` | `0x003D1310` 300 | `0x004895A0` 308 | `0x00476A70` 300 | `0x004924D0` 352 |  |  |  |
+| `PrepareRaceMenu()` | `0x003D1440` 552 | `0x004896E0` 552 | `0x00476BA0` 552 | `0x00491F30` 536 |  |  |  |
+| `Release()` | `0x003D1670` 8 | `0x00489910` 8 | `0x00476DD0` 8 | `0x00491F20` 16 |  |  |  |
+| `UpdateScroll()` | `0x003D1680` 1780 | `0x00489920` 1780 | `0x00476DE0` 1780 | `0x00491930` 1520 |  |  |  |
+| `UpdateMenu()` | `0x003D1D80` 948 | `0x0048A020` 980 | `0x004774E0` 980 | `0x00491370` 1464 |  |  |  |
+| `Update()` | `0x003D2140` 96 | `0x0048A400` 96 | `0x004778C0` 96 | `0x004912F0` 120 |  |  |  |
+| `Prepare(EB3MenuChoicesOnePlayer)` | `0x003D21A0` 1372 | `0x0048A460` 1372 | `0x00477920` 1372 | `0x00490F40` 936 |  |  |  |
+| `CB3SingleEventGameOptionsPage()` |  |  |  | `0x00342400` 60 |  |  |  |
+| `PrepareCrashMenu()` |  |  |  | `0x00492410` 188 |  |  |  |
+| `PrepareRoadRageMenu()` |  |  |  | `0x004922B0` 340 |  |  |  |
+| `PrepareTimeAttackMenu()` |  |  |  | `0x00492150` 340 |  |  |  |
 
 ## Notes
 

@@ -8,19 +8,51 @@
 - **Source file:** `B3SoundTrafficPass.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 6
 - **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundTrafficPass`, size 0x050, methods in `GameSource/Sound/Traffic/B4SoundTrafficPass.cpp` ([layout](#burnout-revenge-layout-of-cb4soundtrafficpass))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Stop()` | `0x00238430` 108 | `0x00262060` 108 | `0x0029AEF0` 108 | `0x0029EDC0` 160 | `0x00277F40` proven |  |
-| `Release()` | `0x002384A0` 108 | `0x002620D0` 108 | `0x0029AF60` 108 | `0x0029ED90` 40 | `0x00277FB0` proven |  |
-| `Update(float,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,float)` | `0x00238510` 1836 | `0x00262140` 2448 | `0x0029AFD0` 2040 | `0x0029E360` 2544 | `0x00278020` proven |  |
-| `Prepare(ETrafficVehicleCategories,int)` | `0x00238C40` 168 | `0x00262AD0` 168 | `0x0029B7D0` 168 | `0x0029E2D0` 140 | `0x00278750` proven |  |
-| `Construct()` | `0x00238CF0` 8 | `0x00262B80` 8 | `0x0029B880` 8 | `0x0029E2C0` 16 | `0x00278800` proven |  |
-| `CB3SoundTrafficPass()` |  |  |  | `0x002B1A90` 48 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Stop()` | `0x00238430` 108 | `0x00262060` 108 | `0x0029AEF0` 108 | `0x0029EDC0` 160 | `0x00277F40` proven |  | `void CB4SoundTrafficPass::Stop()` |
+| `Release()` | `0x002384A0` 108 | `0x002620D0` 108 | `0x0029AF60` 108 | `0x0029ED90` 40 | `0x00277FB0` proven |  | `void CB4SoundTrafficPass::Release()` |
+| `Update(float,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,float)` | `0x00238510` 1836 | `0x00262140` 2448 | `0x0029AFD0` 2040 | `0x0029E360` 2544 | `0x00278020` proven |  | `void CB4SoundTrafficPass::Update(float lrBoostLevel, GtMathPs2::CGtV3d *lCarPos, GtMathPs2::CGtV3d *lCarFacing, GtMathPs2::CGtV3d *lTrafficPos, GtMathPs2::CGtV3d *lTrafficFacing, float lrRelativeSpeed)` |
+| `Prepare(ETrafficVehicleCategories,int)` | `0x00238C40` 168 | `0x00262AD0` 168 | `0x0029B7D0` 168 | `0x0029E2D0` 140 | `0x00278750` proven |  | `bool CB4SoundTrafficPass::Prepare(ETrafficVehicleCategories leType, ERaceCarIndex lePlayerIndex)` (same name, different parameters) |
+| `Construct()` | `0x00238CF0` 8 | `0x00262B80` 8 | `0x0029B880` 8 | `0x0029E2C0` 16 | `0x00278800` proven |  | `void CB4SoundTrafficPass::Construct()` |
+| `CB3SoundTrafficPass()` |  |  |  | `0x002B1A90` 48 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundTrafficPass`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 16 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundTrafficPass {  // size 0x050
+    /* 0x000 */ CGtSoundVoiceHandle mPassVoice;
+    /* 0x010 */ bool mbPassPlaying;
+    /* 0x011 */ RwUInt8 mun8Updates;
+    /* 0x012 */ RwUInt8 mun8Damper;
+    /* 0x014 */ RwReal mrVolume;
+    /* 0x020 */ CGtV3d mPlanePos;
+    /* 0x030 */ ETrafficVehicleCategories meType;
+    /* 0x034 */ RwReal mrDotProduct;
+    /* 0x038 */ RwReal mrLastDotProduct;
+    /* 0x03C */ RwReal mrPitchMod;
+    /* 0x040 */ RwReal mrPlaneDistance;
+    /* 0x044 */ ERaceCarIndex mePlayerIndex;
+    // methods
+    // CB4SoundTrafficPass(const CB4SoundTrafficPass &);
+    // CB4SoundTrafficPass();
+    // void Construct();
+    // bool Prepare(ETrafficVehicleCategories, ERaceCarIndex);
+    // void Stop();
+    // void Update(float, GtMathPs2::CGtV3d *, GtMathPs2::CGtV3d *, GtMathPs2::CGtV3d *, GtMathPs2::CGtV3d *, float);
+    // void Release();
+    // void Destruct();
+    // void DrawPositionMarker(GtMathPs2::CGtV3d *, char *, int);
+};
+```
 
 ## Notes
 

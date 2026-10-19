@@ -8,19 +8,44 @@
 - **Source file:** `B3MenuInput.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 6
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4MenuInput`, size 0x158, methods in `GameSource/Game/B4MenuInput.cpp` ([layout](#burnout-revenge-layout-of-cb4menuinput))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update(float,CB3ControllerMapping*)` | `0x001DFB30` 824 | `0x001DF150` 824 | `0x00211E50` 824 | `0x002228D0` 688 | `0x0021A5F0` proven |  |
-| `Prepare()` | `0x001DFE70` 68 | `0x001DF490` 68 | `0x00212190` 68 | `0x00222810` 192 | `0x0021A950` proven |  |
-| `Construct()` | `0x001DFEC0` 8 | `0x001DF4E0` 8 | `0x002121E0` 8 | `0x00222800` 16 | `0x0021A9A0` strong |  |
-| `CheckButton(unsigned int)` |  |  |  | `0x00141EB0` 148 |  |  |
-| `DebounceButton(unsigned int)` |  |  |  | `0x00347380` 88 |  |  |
-| `GetDirection(CB3ControllerMapping*,float,float,float)` |  |  |  | `0x00222B80` 348 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update(float,CB3ControllerMapping*)` | `0x001DFB30` 824 | `0x001DF150` 824 | `0x00211E50` 824 | `0x002228D0` 688 | `0x0021A5F0` proven |  | `void CB4MenuInput::Update(float lrTimestep, CB4ControllerMapping *lpController)` |
+| `Prepare()` | `0x001DFE70` 68 | `0x001DF490` 68 | `0x00212190` 68 | `0x00222810` 192 | `0x0021A950` proven |  | `bool CB4MenuInput::Prepare()` |
+| `Construct()` | `0x001DFEC0` 8 | `0x001DF4E0` 8 | `0x002121E0` 8 | `0x00222800` 16 | `0x0021A9A0` strong |  | `void CB4MenuInput::Construct()` |
+| `CheckButton(unsigned int)` |  |  |  | `0x00141EB0` 148 |  |  | `bool CB4MenuInput::CheckButton(CB4MenuInput::EMenuControls leButtonID)` (same name, different parameters) |
+| `DebounceButton(unsigned int)` |  |  |  | `0x00347380` 88 |  |  | `void CB4MenuInput::DebounceButton(CB4MenuInput::EMenuControls leButtonID)` (same name, different parameters) |
+| `GetDirection(CB3ControllerMapping*,float,float,float)` |  |  |  | `0x00222B80` 348 |  |  | `bool CB4MenuInput::GetDirection(bool lbVertical, CB4MenuInput::EMenuControls leButtonID)` (same name, different parameters) |
+
+## Burnout Revenge layout of `CB4MenuInput`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 310 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4MenuInput {  // size 0x158
+    /* 0x000 */ RwReal mrAnalogueX;
+    /* 0x004 */ RwReal mrAnalogueY;
+    /* 0x008 */ CB4MenuInputButton maControls[28];
+    // methods
+    // CB4MenuInput(const CB4MenuInput &);
+    // CB4MenuInput();
+    // void Construct();
+    // bool Prepare();
+    // void Update(float, CB4ControllerMapping *);
+    // bool CheckButton(EGtPS2DualShockDeviceControl);
+    // void DebounceButton(EGtPS2DualShockDeviceControl);
+    // bool CheckButton(CB4MenuInput::EMenuControls);
+    // void DebounceButton(CB4MenuInput::EMenuControls);
+    // RwReal GetDirection(float, float, float);
+    // bool GetDirection(bool, CB4MenuInput::EMenuControls);
+};
+```
 
 ## Notes
 

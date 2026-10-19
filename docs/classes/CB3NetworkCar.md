@@ -8,24 +8,69 @@
 - **Source file:** `B3NetworkCar.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 11
 - **vtable (DNAT_200):** `0x0043FD00`, 36 bytes = 9 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 7 virtual functions)
+- **Burnout Revenge counterpart:** `CB4NetworkCar`, size 0x2D90, methods in `GameSource/World/B4NetworkCar.cpp` ([layout](#burnout-revenge-layout-of-cb4networkcar))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `PrepareSound()` | `0x0014C950` 104 | `0x0015DC40` 104 | `0x00159530` 104 | `0x001677F0` 192 |  |  |
-| `Release()` | `0x0014C9C0` 8 | `0x0015DCB0` 8 | `0x001595A0` 8 | `0x001677C0` 40 |  |  |
-| `Update()` | `0x0014C9D0` 8 | `0x0015DCC0` 8 | `0x001595B0` 8 | `0x00167790` 40 |  |  |
-| `Prepare()` | `0x0014C9E0` 276 | `0x0015DCD0` 276 | `0x001595C0` 276 | `0x001672D0` 220 |  |  |
-| `Construct(int)` | `0x0014CB00` 64 | `0x0015DDF0` 64 | `0x001596E0` 64 | `0x00167280` 76 |  |  |
-| `CB3NetworkCar()` |  |  |  | `0x00190D80` 140 |  |  |
-| `GetNetworkPlayer()` |  |  |  | `0x0016E9C0` 48 |  |  |
-| `InRange()` |  |  |  | `0x00142000` 28 |  |  |
-| `SetInRange()` |  |  |  | `0x00281390` 32 |  |  |
-| `SetNetworkPlayer(CB3NetworkPlayer*)` |  |  |  | `0x00141B70` 52 |  |  |
-| `SetOutOfRange()` |  |  |  | `0x002813B0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `PrepareSound()` | `0x0014C950` 104 | `0x0015DC40` 104 | `0x00159530` 104 | `0x001677F0` 192 |  |  | `bool CB4NetworkCar::PrepareSound()` |
+| `Release()` | `0x0014C9C0` 8 | `0x0015DCB0` 8 | `0x001595A0` 8 | `0x001677C0` 40 |  |  | `void CB4NetworkCar::Release()` |
+| `Update()` | `0x0014C9D0` 8 | `0x0015DCC0` 8 | `0x001595B0` 8 | `0x00167790` 40 |  |  | `void CB4NetworkCar::Update()` |
+| `Prepare()` | `0x0014C9E0` 276 | `0x0015DCD0` 276 | `0x001595C0` 276 | `0x001672D0` 220 |  |  | `bool CB4NetworkCar::Prepare()` |
+| `Construct(int)` | `0x0014CB00` 64 | `0x0015DDF0` 64 | `0x001596E0` 64 | `0x00167280` 76 |  |  | `void CB4NetworkCar::Construct(int lnArrayIndex)` |
+| `CB3NetworkCar()` |  |  |  | `0x00190D80` 140 |  |  |  |
+| `GetNetworkPlayer()` |  |  |  | `0x0016E9C0` 48 |  |  |  |
+| `InRange()` |  |  |  | `0x00142000` 28 |  |  |  |
+| `SetInRange()` |  |  |  | `0x00281390` 32 |  |  |  |
+| `SetNetworkPlayer(CB3NetworkPlayer*)` |  |  |  | `0x00141B70` 52 |  |  |  |
+| `SetOutOfRange()` |  |  |  | `0x002813B0` 28 |  |  |  |
+
+## Burnout Revenge layout of `CB4NetworkCar`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 306 file(s), e.g. `GameShared/GameClasses/System/MemoryCard/NewMemoryCard/GtMemoryCardManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkCar : public CB4RaceCar {  // size 0x2D90
+    // base CB4RaceCar at 0x000
+    /* 0x2CA0 */ CGtMatrix3x4 mMatrix;
+    /* 0x2CE0 */ CGtV3d mLinearVelocity;
+    /* 0x2CF0 */ CGtV3d mAngularVelocity;
+    /* 0x2D00 */ CNetworkControls mDrivingControls;
+    /* 0x2D03 */ bool mbNewUpdateData;
+    /* 0x2D04 */ bool mbShouldBeCrashing;
+    /* 0x2D05 */ bool mbUsingAftertouch;
+    /* 0x2D06 */ bool mbCanSpinWheelsOnStartLine;
+    /* 0x2D07 */ bool mbBoostStart;
+    /* 0x2D08 */ EDriftState meDriftState;
+    /* 0x2D10 */ CGtV3d mPosDiff;
+    /* 0x2D20 */ bool mbDiffMatrix;
+    /* 0x2D30 */ CGtMatrix3x4 mTransMatrix;
+    /* 0x2D70 */ RwInt32 mnDiffsLeftToApply;
+    /* 0x2D74 */ bool mbNewPredictiveUpdateData;
+    /* 0x2D75 */ bool mbAtLeastOneUpdateHasBeenReceived;
+    /* 0x2D78 */ RwReal mrTimeGap;
+    /* 0x2D7C */ CB4NetworkPlayer *mpNetworkPlayer;
+    /* 0x2D80 */ RwInt32 mnArrayIndex;
+    /* 0x2D84 */ bool mbInRange;
+    // methods
+    // CB4NetworkCar(const CB4NetworkCar &);
+    // CB4NetworkCar();
+    // void Construct(int);
+    // virtual bool Prepare();
+    // virtual void Update();
+    // virtual void Release();
+    // void Destruct();
+    // bool InRange();
+    // void SetInRange();
+    // void SetOutOfRange();
+    // void SetNetworkPlayer(CB4NetworkPlayer *);
+    // CB4NetworkPlayer * GetNetworkPlayer();
+    // virtual bool PrepareSound();
+};
+```
 
 ## Notes
 

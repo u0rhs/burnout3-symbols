@@ -10,16 +10,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_BuildBatchData(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const unsigned short*,const CGt2dObject` | `0x00387870` 872 | `0x003FAE40` 1168 | `0x00422AA0` 1168 | `0x0043BC30` 1224 |  |  |
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00387BE0` 864 | `0x003FB2D0` 864 | `0x00422F30` 864 | `0x0043B800` 1072 |  |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,CB3CrashCombo*)` |  |  |  | `0x0043B690` 192 |  |  |
-| `StopCrashing()` |  |  |  | `0x0043C100` 60 |  |  |
-| `Update(float)` |  |  |  | `0x0043B750` 172 |  |  |
-| `_GenerateComboString(unsigned short*,int,const CB3CrashComboItem*,int)` |  |  |  | `0x0043C140` 168 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_BuildBatchData(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const unsigned short*,const CGt2dObject` | `0x00387870` 872 | `0x003FAE40` 1168 | `0x00422AA0` 1168 | `0x0043BC30` 1224 |  |  |  |
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00387BE0` 864 | `0x003FB2D0` 864 | `0x00422F30` 864 | `0x0043B800` 1072 |  |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,CB3CrashCombo*)` |  |  |  | `0x0043B690` 192 |  |  |  |
+| `StopCrashing()` |  |  |  | `0x0043C100` 60 |  |  |  |
+| `Update(float)` |  |  |  | `0x0043B750` 172 |  |  |  |
+| `_GenerateComboString(unsigned short*,int,const CB3CrashComboItem*,int)` |  |  |  | `0x0043C140` 168 |  |  |  |
 
 ## Notes
 

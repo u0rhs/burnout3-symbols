@@ -11,23 +11,23 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetCurrentRenderableVehicle()` | `0x003CB550` 8 | `0x00448B90` 8 | `0x00471570` 8 | `0x0048A1A0` 36 |  |  |
-| `Release()` | `0x003CB560` 424 | `0x00448BA0` 424 | `0x00471580` 264 | `0x00489EF0` 688 |  |  |
-| `Update(float)` | `0x003CB710` 2264 | `0x00448D50` 3876 | `0x00471690` 3260 | `0x00489E00` 228 |  |  |
-| `UpdateCameraNoise(float)` | `0x003CBFF0` 908 | `0x00449C80` 908 |  | `0x00489AE0` 796 |  |  |
-| `UpdateScanLine(float)` | `0x003CC380` 560 | `0x0044A010` 560 |  | `0x00489890` 588 |  |  |
-| `UpdateMaskCarChangeState(float)` | `0x003CC5B0` 324 | `0x0044A240` 348 |  | `0x00489660` 560 |  |  |
-| `UpdateLoadState()` | `0x003CC700` 2292 | `0x0044A3A0` 2428 | `0x00472350` 800 | `0x00488B20` 2360 |  |  |
-| `SetVehicleToView(unsigned long)` | `0x003CD000` 8 | `0x0044AD20` 8 | `0x00472670` 8 | `0x00488AF0` 36 |  |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x003CD010` 1992 | `0x0044AD30` 2448 |  | `0x00488430` 1724 |  |  |
-| `Construct()` | `0x003CD7E0` 104 | `0x0044B6C0` 104 | `0x004727B0` 80 | `0x00488380` 164 |  |  |
-| `CB3CarViewComponent()` |  |  |  | `0x0033BC40` 124 |  |  |
-| `Prepare()` |  |  | `0x00472680` 300 |  |  |  |
-| `UpdateCamera(float)` |  |  |  | `0x00489460` 512 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetCurrentRenderableVehicle()` | `0x003CB550` 8 | `0x00448B90` 8 | `0x00471570` 8 | `0x0048A1A0` 36 |  |  |  |
+| `Release()` | `0x003CB560` 424 | `0x00448BA0` 424 | `0x00471580` 264 | `0x00489EF0` 688 |  |  |  |
+| `Update(float)` | `0x003CB710` 2264 | `0x00448D50` 3876 | `0x00471690` 3260 | `0x00489E00` 228 |  |  |  |
+| `UpdateCameraNoise(float)` | `0x003CBFF0` 908 | `0x00449C80` 908 |  | `0x00489AE0` 796 |  |  |  |
+| `UpdateScanLine(float)` | `0x003CC380` 560 | `0x0044A010` 560 |  | `0x00489890` 588 |  |  |  |
+| `UpdateMaskCarChangeState(float)` | `0x003CC5B0` 324 | `0x0044A240` 348 |  | `0x00489660` 560 |  |  |  |
+| `UpdateLoadState()` | `0x003CC700` 2292 | `0x0044A3A0` 2428 | `0x00472350` 800 | `0x00488B20` 2360 |  |  |  |
+| `SetVehicleToView(unsigned long)` | `0x003CD000` 8 | `0x0044AD20` 8 | `0x00472670` 8 | `0x00488AF0` 36 |  |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x003CD010` 1992 | `0x0044AD30` 2448 |  | `0x00488430` 1724 |  |  |  |
+| `Construct()` | `0x003CD7E0` 104 | `0x0044B6C0` 104 | `0x004727B0` 80 | `0x00488380` 164 |  |  |  |
+| `CB3CarViewComponent()` |  |  |  | `0x0033BC40` 124 |  |  |  |
+| `Prepare()` |  |  | `0x00472680` 300 |  |  |  |  |
+| `UpdateCamera(float)` |  |  |  | `0x00489460` 512 |  |  |  |
 
 ## Notes
 

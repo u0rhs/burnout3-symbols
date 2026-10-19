@@ -8,40 +8,121 @@
 - **Source file:** `B3CrashAnalyser.cpp`
 - **Methods per build:** DNAT_200 20, B3DEBUG 20, B3INTERN 20, B3O0PCH 27
 - **Retail (SLUS-21050):** 11 of its 20 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CrashAnalyser`, size 0x1050, methods in `GameSource/Camera/Crash/B4CrashAnalyser.cpp` ([layout](#burnout-revenge-layout-of-cb4crashanalyser))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Destruct()` | `0x0030AD60` 8 | `0x003618F0` 8 | `0x003912C0` 8 | `0x00397370` 28 | `0x00353980` strong |  |
-| `Release()` | `0x0030AD70` 108 | `0x00361900` 108 | `0x003912D0` 108 | `0x003972E0` 144 | `0x00353990` likely |  |
-| `RenderDebug()` | `0x0030ADE0` 8 | `0x00361970` 8 | `0x00391340` 8 | `0x003972D0` 16 | `0x00353A20` strong |  |
-| `Update(float)` | `0x0030ADF0` 1044 | `0x00361980` 1044 | `0x00391350` 1044 | `0x003970D0` 272 |  |  |
-| `GetClosestCluster(GtMathPs2::CGtPlane)` | `0x0030B240` 156 | `0x00361DD0` 156 | `0x003917A0` 156 | `0x00396F80` 332 |  |  |
-| `GetFrustumInterest(const CGtFrustum&,GtMathPs2::CGtV3d,float)` | `0x0030B2E0` 68 | `0x00361E70` 68 | `0x00391840` 68 | `0x00396EC0` 136 | `0x00353C00` unverified |  |
-| `GetInterestCallback(const CGtSphereTreeSphere*,EGtIntersectionResult,const CGtIntersectionResult&,void*)` | `0x0030B330` 288 | `0x00361EC0` 288 | `0x00391890` 288 | `0x00396CD0` 484 |  |  |
-| `CalculateClusterInterest(CGtSphereTreeSphere*)` | `0x0030B450` 964 | `0x00361FE0` 964 | `0x003919B0` 964 | `0x00396BF0` 220 |  |  |
-| `GetNextCluster()` | `0x0030B820` 76 | `0x003623B0` 76 | `0x00391D80` 76 | `0x00396A80` 144 |  |  |
-| `GetMostInterestingCluster()` | `0x0030B870` 76 | `0x00362400` 76 | `0x00391DD0` 76 | `0x003969E0` 152 | `0x00354260` unverified |  |
-| `GetMostInterestingChild(CGtSphereTreeSphere*)` | `0x0030B8C0` 152 | `0x00362450` 152 | `0x00391E20` 152 | `0x00396880` 248 | `0x003542B0` strong |  |
-| `GetVehicleBeforeImpact()` | `0x0030B960` 264 | `0x003624F0` 264 | `0x00391EC0` 264 | `0x00396760` 284 | `0x00354350` strong |  |
-| `GetClosestTime(float*,float*,CB3ChildBody*,CB3ChildBody*)` | `0x0030BA70` 340 | `0x00362600` 476 | `0x00391FD0` 340 | `0x00396580` 472 |  |  |
-| `UpdateCollisionOdds()` | `0x0030BBD0` 556 | `0x003627E0` 556 | `0x00392130` 556 | `0x003962C0` 644 |  |  |
-| `UpdateCollidingPairs()` | `0x0030BE00` 340 | `0x00362A10` 712 | `0x00392360` 712 | `0x00395F70` 836 | `0x00354760` strong |  |
-| `CalculateCurrentInterest(CB3ChildBody*)` | `0x0030BF60` 352 | `0x00362CE0` 388 | `0x00392630` 388 | `0x00395DD0` 408 |  |  |
-| `AddCollidingBody(CB3CollidingBody*)` | `0x0030C0C0` 364 | `0x00362E70` 364 | `0x003927C0` 364 | `0x00395BA0` 556 | `0x00354B20` likely |  |
-| `JoinExistingCrash()` | `0x0030C230` 228 | `0x00362FE0` 404 | `0x00392930` 404 | `0x00395A60` 308 | `0x00354D60` unverified |  |
-| `Prepare(CB3RaceCarPhysics*)` | `0x0030C320` 120 | `0x00363180` 120 | `0x00392AD0` 120 | `0x00395990` 196 |  |  |
-| `Construct()` | `0x0030C3A0` 132 | `0x00363200` 132 | `0x00392B50` 132 | `0x003958B0` 224 | `0x00354ED0` strong |  |
-| `GetFocusChild()` |  |  |  | `0x003982A0` 28 |  |  |
-| `GetNumChildren()` |  |  |  | `0x00398E80` 28 |  |  |
-| `GetSliceStart()` |  |  |  | `0x0042C8A0` 28 |  |  |
-| `IsTrailer(CB3CollidingBody*)` |  |  |  | `0x00397420` 88 |  |  |
-| `IsVehicle(CB3CollidingBody*)` |  |  |  | `0x00397390` 140 |  |  |
-| `StartClusterIterator()` |  |  |  | `0x00398940` 28 |  |  |
-| `UpdateTreeInterest()` |  |  |  | `0x00396B10` 180 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Destruct()` | `0x0030AD60` 8 | `0x003618F0` 8 | `0x003912C0` 8 | `0x00397370` 28 | `0x00353980` strong |  | `void CB4CrashAnalyser::Destruct()` |
+| `Release()` | `0x0030AD70` 108 | `0x00361900` 108 | `0x003912D0` 108 | `0x003972E0` 144 | `0x00353990` likely |  | `void CB4CrashAnalyser::Release()` |
+| `RenderDebug()` | `0x0030ADE0` 8 | `0x00361970` 8 | `0x00391340` 8 | `0x003972D0` 16 | `0x00353A20` strong |  | `void CB4CrashAnalyser::RenderDebug()` |
+| `Update(float)` | `0x0030ADF0` 1044 | `0x00361980` 1044 | `0x00391350` 1044 | `0x003970D0` 272 |  |  | `void CB4CrashAnalyser::Update(float lrTimeStep)` |
+| `GetClosestCluster(GtMathPs2::CGtPlane)` | `0x0030B240` 156 | `0x00361DD0` 156 | `0x003917A0` 156 | `0x00396F80` 332 |  |  |  |
+| `GetFrustumInterest(const CGtFrustum&,GtMathPs2::CGtV3d,float)` | `0x0030B2E0` 68 | `0x00361E70` 68 | `0x00391840` 68 | `0x00396EC0` 136 | `0x00353C00` unverified |  | `RwReal CB4CrashAnalyser::GetFrustumInterest(const CGtFrustum &lFrustum, GtMathPs2::CGtV3d lCameraPos, float lrTanFOV)` |
+| `GetInterestCallback(const CGtSphereTreeSphere*,EGtIntersectionResult,const CGtIntersectionResult&,void*)` | `0x0030B330` 288 | `0x00361EC0` 288 | `0x00391890` 288 | `0x00396CD0` 484 |  |  | `bool CB4CrashAnalyser::GetInterestCallback(const CGtSphereTreeSphere *lpSphere, EGtIntersectionResult leState, const CGtIntersectionResult &lResult, void *lpUserData)` |
+| `CalculateClusterInterest(CGtSphereTreeSphere*)` | `0x0030B450` 964 | `0x00361FE0` 964 | `0x003919B0` 964 | `0x00396BF0` 220 |  |  | `RwReal CB4CrashAnalyser::CalculateClusterInterest(CGtSphereTreeSphere *lpSphere)` |
+| `GetNextCluster()` | `0x0030B820` 76 | `0x003623B0` 76 | `0x00391D80` 76 | `0x00396A80` 144 |  |  |  |
+| `GetMostInterestingCluster()` | `0x0030B870` 76 | `0x00362400` 76 | `0x00391DD0` 76 | `0x003969E0` 152 | `0x00354260` unverified |  | `CGtSphereTreeSphere * CB4CrashAnalyser::GetMostInterestingCluster()` |
+| `GetMostInterestingChild(CGtSphereTreeSphere*)` | `0x0030B8C0` 152 | `0x00362450` 152 | `0x00391E20` 152 | `0x00396880` 248 | `0x003542B0` strong |  | `CB4ChildBody * CB4CrashAnalyser::GetMostInterestingChild(CGtSphereTreeSphere *lpSphere)` |
+| `GetVehicleBeforeImpact()` | `0x0030B960` 264 | `0x003624F0` 264 | `0x00391EC0` 264 | `0x00396760` 284 | `0x00354350` strong |  | `CB4ChildBody * CB4CrashAnalyser::GetVehicleBeforeImpact(float lrWithinTime)` (same name, different parameters) |
+| `GetClosestTime(float*,float*,CB3ChildBody*,CB3ChildBody*)` | `0x0030BA70` 340 | `0x00362600` 476 | `0x00391FD0` 340 | `0x00396580` 472 |  |  |  |
+| `UpdateCollisionOdds()` | `0x0030BBD0` 556 | `0x003627E0` 556 | `0x00392130` 556 | `0x003962C0` 644 |  |  | `void CB4CrashAnalyser::UpdateCollisionOdds()` |
+| `UpdateCollidingPairs()` | `0x0030BE00` 340 | `0x00362A10` 712 | `0x00392360` 712 | `0x00395F70` 836 | `0x00354760` strong |  | `void CB4CrashAnalyser::UpdateCollidingPairs()` |
+| `CalculateCurrentInterest(CB3ChildBody*)` | `0x0030BF60` 352 | `0x00362CE0` 388 | `0x00392630` 388 | `0x00395DD0` 408 |  |  |  |
+| `AddCollidingBody(CB3CollidingBody*)` | `0x0030C0C0` 364 | `0x00362E70` 364 | `0x003927C0` 364 | `0x00395BA0` 556 | `0x00354B20` likely |  | `void CB4CrashAnalyser::AddCollidingBody(CB4CollidingBody *lpBody)` |
+| `JoinExistingCrash()` | `0x0030C230` 228 | `0x00362FE0` 404 | `0x00392930` 404 | `0x00395A60` 308 | `0x00354D60` unverified |  | `void CB4CrashAnalyser::JoinExistingCrash()` |
+| `Prepare(CB3RaceCarPhysics*)` | `0x0030C320` 120 | `0x00363180` 120 | `0x00392AD0` 120 | `0x00395990` 196 |  |  | `bool CB4CrashAnalyser::Prepare(CB4PlayerCarPhysics *lpPlayerCar)` (same name, different parameters) |
+| `Construct()` | `0x0030C3A0` 132 | `0x00363200` 132 | `0x00392B50` 132 | `0x003958B0` 224 | `0x00354ED0` strong |  | `void CB4CrashAnalyser::Construct()` |
+| `GetFocusChild()` |  |  |  | `0x003982A0` 28 |  |  |  |
+| `GetNumChildren()` |  |  |  | `0x00398E80` 28 |  |  |  |
+| `GetSliceStart()` |  |  |  | `0x0042C8A0` 28 |  |  |  |
+| `IsTrailer(CB3CollidingBody*)` |  |  |  | `0x00397420` 88 |  |  | `bool CB4CrashAnalyser::IsTrailer(CB4CollidingBody *lpBody)` |
+| `IsVehicle(CB3CollidingBody*)` |  |  |  | `0x00397390` 140 |  |  |  |
+| `StartClusterIterator()` |  |  |  | `0x00398940` 28 |  |  |  |
+| `UpdateTreeInterest()` |  |  |  | `0x00396B10` 180 |  |  | `void CB4CrashAnalyser::UpdateTreeInterest()` |
+
+## Burnout Revenge layout of `CB4CrashAnalyser`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 319 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CrashAnalyser {  // size 0x1050
+    /* 0x000 */ CGtSphereTree mTree;
+    /* 0x060 */ CGtSphereTreeSphere maParents[10];
+    /* 0x2E0 */ CB4ChildBody maChildren[30];
+    /* 0x1000 */ float marParentInterests[10];
+    /* 0x1028 */ CB4PlayerCarPhysics *mpPlayerCar;
+    /* 0x102C */ RwInt32 mnFocusChild;
+    /* 0x1030 */ RwInt32 mnNumChildren;
+    /* 0x1034 */ RwInt32 mnCurrentEntry;
+    /* 0x1038 */ RwInt32 mnNumCrashingChildren;
+    /* 0x103C */ RwInt32 mnSliceStart;
+    /* 0x1040 */ RwInt32 mnNextChild;
+    /* 0x1044 */ RwReal mrTimeSinceLastLabel;
+    /* 0x1048 */ RwUInt8 mu8CrashIndex;
+    /* 0x1049 */ bool mbCanAftertouchTakedown;
+    /* 0x104A */ bool mbIsPrepared;
+    /* 0x104B */ bool mbIgnoreTargetCar;
+    // methods
+    // CB4CrashAnalyser(const CB4CrashAnalyser &);
+    // CB4CrashAnalyser();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare(CB4PlayerCarPhysics *);
+    // void Release();
+    // void Update(float);
+    // bool IsTargetCollisionImminent() const;
+    // CB4ChildBody * GetTargetChild() const;
+    // CB4ChildBody * GetVehicleChild(CB4VehiclePhysics *);
+    // bool GetPositionOfNearestUnoccludedTrafficVehicle(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d *) const;
+    // bool GetPositionOfNearestUnoccludedCrashBreakerPickup(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d *) const;
+    // CB4ChildBody * GetVehicleBeforeImpact(float);
+    // CB4VehiclePhysics * GetFallingVehicle() const;
+    // void IgnoreTargetCar();
+    // CB4ChildBody * GetNextChild();
+    // void AddCrashingBody(CB4CollidingBody *);
+    // CB4ChildBody * GetMostInterestingChild(CGtSphereTreeSphere *);
+    // CGtSphereTreeSphere * GetMostInterestingCluster();
+    // CGtSphereTreeSphere * GetBiggestCluster();
+    // CGtSphereTreeSphere * GetMostInterestingParent(CB4ChildBody *);
+    // CB4ChildBody * GetMostInterestingBody();
+    // void RenderDebug();
+    // RwReal GetFrustumInterest(const CGtFrustum &, GtMathPs2::CGtV3d, float);
+    // RwReal GetFrustumNumChildren(const CGtFrustum &, GtMathPs2::CGtV3d);
+    // RwReal GetCrashKineticScale();
+    // CB4ChildBody * GetPlayerCarChild();
+    // RwInt32 GetNumChildren();
+    // bool CanAftertouchTakedown();
+    // RwInt32 GetSliceStart();
+    // void FindChildrenOnSpline(float *, float *, CB4NuSpline *);
+    // RwInt32 GetNumChildrenOnSpline(float, float);
+    // bool IsPlayerCarFalling();
+    // bool IsVehicleFalling(const CB4ChildBody *, float *) const;
+    // void RemoveChild(CB4ChildBody *);
+    // bool RemoveCollidingBody(CB4CollidingBody *);
+    // bool IsPrepared() const;
+    // void AddCollidingBody(CB4CollidingBody *);
+    // void GetClosestTime(float *, float *, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d);
+    // void UpdateCollisionOdds();
+    // void UpdateTreeInterest();
+    // RwReal CalculateClusterInterest(CGtSphereTreeSphere *);
+    // void UpdateCollidingPairs();
+    // void JoinExistingCrash();
+    // static bool GetInterestCallback(const CGtSphereTreeSphere *, EGtIntersectionResult, const CGtIntersectionResult &, void *);
+    // static bool GetNumChildrenCallback(const CGtSphereTreeSphere *, EGtIntersectionResult, const CGtIntersectionResult &, void *);
+    // CB4ChildBody * GetVehicleChildUnsafe(CB4VehiclePhysics *) const;
+    // bool IsTrailer(CB4CollidingBody *);
+    // bool HasUnreleasedPayload(CB4CollidingBody *);
+    // RwReal GetPickupInterest(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d);
+    // CB4ChildBody * GetChild(int) const;
+    // CB4ChildBody * GetChild(int);
+    // bool IsParent(CGtSphereTreeSphere *) const;
+    // bool IsChild(CGtSphereTreeSphere *) const;
+};
+```
 
 ## Notes
 

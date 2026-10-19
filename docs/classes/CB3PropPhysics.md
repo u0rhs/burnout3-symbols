@@ -9,21 +9,22 @@
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
 - **Retail (SLUS-21050):** 5 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FE40`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
+- **Burnout Revenge counterpart:** `CB4PropPhysics`, size 0x710, methods in `GameSource/Physics/B4PropPhysics.cpp` ([layout](#burnout-revenge-layout-of-cb4propphysics))
 - **Burnout 2 ancestor (by name):** `CPropPhysics`, size 0x5C0, declared in 82 file(s), e.g. `gamesource/Game/CGrandPrixTable.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CollideWithWorld()` | `0x001867D0` 704 | `0x001AD8A0` 704 | `0x001A99E0` 704 | `0x001BE7E0` 1072 | `0x001BDF60` strong |  |
-| `Destruct()` | `0x00186A90` 8 | `0x001ADB60` 8 | `0x001A9CA0` 8 | `0x001BE7B0` 40 | `0x001BE210` strong |  |
-| `Release()` | `0x00186AA0` 48 | `0x001ADB70` 48 | `0x001A9CB0` 48 | `0x001BE770` 64 | `0x001BE220` strong |  |
-| `Update(float)` | `0x00186AD0` 360 | `0x001ADBA0` 2852 | `0x001A9CE0` 2852 | `0x001BE4C0` 588 | `0x001BE250` strong | `void CPropPhysics::Update(float lrTimeStep)` |
-| `Prepare(CB3Prop*,GtMathPs2::CGtMatrix3x4*,const CGtAxisAlignedBox&)` | `0x00186C40` 492 | `0x001AE6D0` 548 | `0x001AA810` 548 | `0x001BE170` 592 |  |  |
-| `Construct()` | `0x00186E30` 148 | `0x001AE900` 148 | `0x001AAA40` 148 | `0x001BE060` 208 | `0x001BE8F0` strong |  |
-| `CB3PropPhysics()` |  |  |  | `0x00191BB0` 92 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CollideWithWorld()` | `0x001867D0` 704 | `0x001AD8A0` 704 | `0x001A99E0` 704 | `0x001BE7E0` 1072 | `0x001BDF60` strong |  | `void CB4PropPhysics::CollideWithWorld(int lnActiveBodyIndex)` (same name, different parameters) |
+| `Destruct()` | `0x00186A90` 8 | `0x001ADB60` 8 | `0x001A9CA0` 8 | `0x001BE7B0` 40 | `0x001BE210` strong |  | `void CB4PropPhysics::Destruct()` |
+| `Release()` | `0x00186AA0` 48 | `0x001ADB70` 48 | `0x001A9CB0` 48 | `0x001BE770` 64 | `0x001BE220` strong |  | `void CB4PropPhysics::Release()` |
+| `Update(float)` | `0x00186AD0` 360 | `0x001ADBA0` 2852 | `0x001A9CE0` 2852 | `0x001BE4C0` 588 | `0x001BE250` strong | `void CPropPhysics::Update(float lrTimeStep)` | `void CB4PropPhysics::Update(float lrTimeStep)` |
+| `Prepare(CB3Prop*,GtMathPs2::CGtMatrix3x4*,const CGtAxisAlignedBox&)` | `0x00186C40` 492 | `0x001AE6D0` 548 | `0x001AA810` 548 | `0x001BE170` 592 |  |  | `bool CB4PropPhysics::Prepare(CB4PropInstance *lpProp, GtMathPs2::CGtMatrix3x4 *lpMatrix, const CGtAxisAlignedBox &lBox, ERaceCarIndex leOwnerIndex)` (same name, different parameters) |
+| `Construct()` | `0x00186E30` 148 | `0x001AE900` 148 | `0x001AAA40` 148 | `0x001BE060` 208 | `0x001BE8F0` strong |  | `void CB4PropPhysics::Construct()` |
+| `CB3PropPhysics()` |  |  |  | `0x00191BB0` 92 |  |  |  |
 
 ## Burnout 2 layout of `CPropPhysics`
 
@@ -47,6 +48,33 @@ public:
     // void CPropPhysics::Reset()  [0x001D24C0]
     // void CPropPhysics::Setup()  [0x001D2520]
     // void CPropPhysics::Init()  [0x001D25F0]
+};
+```
+
+## Burnout Revenge layout of `CB4PropPhysics`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 237 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4PropPhysics : public CB4CollidingBody {  // size 0x710
+    // base CB4CollidingBody at 0x000
+    /* 0x210 */ CB4PropInstance *mpProp;
+    /* 0x214 */ RwReal mrLastBodyCollisionTime;
+    /* 0x220 */ CB4PropWorldTriangleCache mCollisionCache;
+    /* 0x550 */ CGtSphere mCollisionCacheSphere;
+    /* 0x560 */ CB4ConvexHullProp mBoundingHull;
+    /* 0x700 */ RwInt8 mn8WorldCollision30HzUpdates;
+    /* 0x701 */ RwUInt8 mu8Owner;
+    // methods
+    // CB4PropPhysics(const CB4PropPhysics &);
+    // CB4PropPhysics();
+    // void Construct();
+    // bool Prepare(CB4PropInstance *, GtMathPs2::CGtMatrix3x4 *, const CGtAxisAlignedBox &, ERaceCarIndex);
+    // virtual void Update(float);
+    // virtual void Release();
+    // void Destruct();
+    // virtual void CollideWithWorld(int);
+    // ERaceCarIndex GetOwnerIndex() const;
 };
 ```
 

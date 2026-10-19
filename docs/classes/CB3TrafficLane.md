@@ -8,23 +8,60 @@
 - **Source file:** `B3TrafficLane.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 10
 - **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 9 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrafficLane`, size 0x04C, methods in `GameSource/World/B4TrafficLane.cpp` ([layout](#burnout-revenge-layout-of-cb4trafficlane))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `FindNextValve(int,int*,int*)` | `0x0015AAB0` 192 | `0x001708A0` 336 | `0x0016BED0` 336 | `0x0017DF40` 376 | `0x0015FAD0` proven |  |
-| `FindPreviousValve(int,int*,int*)` | `0x0015AB70` 192 | `0x001709F0` 276 | `0x0016C020` 276 | `0x0017DDC0` 372 | `0x0015FBA0` proven |  |
-| `GetNearestParamInSameLane(CB3TrafficParam*)` | `0x0015AC30` 796 | `0x00170B10` 796 | `0x0016C140` 796 | `0x0017DB20` 672 | `0x0015FC70` proven |  |
-| `GetNearestParam(float)` | `0x0015AF50` 836 | `0x00170E30` 836 | `0x0016C460` 836 | `0x0017D890` 648 | `0x0015FFA0` proven |  |
-| `GetSignedForwardDistBetweenParams(float,float)` | `0x0015B2A0` 268 | `0x00171180` 268 | `0x0016C7B0` 268 | `0x0017D830` 84 | `0x001602F0` proven |  |
-| `GetParamFromDist(float)` | `0x0015B3B0` 284 | `0x00171290` 284 | `0x0016C8C0` 284 | `0x0017D600` 548 | `0x00160400` proven |  |
-| `DoesNeighbourExist(int,ESegmentNeighbourTypes)` | `0x0015B4D0` 72 | `0x001713B0` 72 | `0x0016C9E0` 72 | `0x0017D450` 164 | `0x00160520` proven |  |
-| `Release()` | `0x0015B520` 28 | `0x00171400` 28 | `0x0016CA30` 28 | `0x0017D400` 68 | `0x00160570` proven |  |
-| `Prepare(int,unsigned char)` | `0x0015B540` 40 | `0x00171420` 40 | `0x0016CA50` 40 | `0x0017D390` 104 | `0x00160590` proven |  |
-| `GetDistFromParam(float)` |  |  |  | `0x0017D500` 256 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `FindNextValve(int,int*,int*)` | `0x0015AAB0` 192 | `0x001708A0` 336 | `0x0016BED0` 336 | `0x0017DF40` 376 | `0x0015FAD0` proven |  | `CB4TrafficValve * CB4TrafficLane::FindNextValve(int lnSegmentIndex, int *lpnValveLaneIndex, int *lpnValveSegmentIndex)` |
+| `FindPreviousValve(int,int*,int*)` | `0x0015AB70` 192 | `0x001709F0` 276 | `0x0016C020` 276 | `0x0017DDC0` 372 | `0x0015FBA0` proven |  | `CB4TrafficValve * CB4TrafficLane::FindPreviousValve(int lnSegmentIndex, int *lpnValveLaneIndex, int *lpnValveSegmentIndex)` |
+| `GetNearestParamInSameLane(CB3TrafficParam*)` | `0x0015AC30` 796 | `0x00170B10` 796 | `0x0016C140` 796 | `0x0017DB20` 672 | `0x0015FC70` proven |  | `CB4TrafficParam * CB4TrafficLane::GetNearestParamInSameLane(CB4TrafficParam *lpTestParam)` |
+| `GetNearestParam(float)` | `0x0015AF50` 836 | `0x00170E30` 836 | `0x0016C460` 836 | `0x0017D890` 648 | `0x0015FFA0` proven |  | `CB4TrafficParam * CB4TrafficLane::GetNearestParam(float lrParamAlong)` |
+| `GetSignedForwardDistBetweenParams(float,float)` | `0x0015B2A0` 268 | `0x00171180` 268 | `0x0016C7B0` 268 | `0x0017D830` 84 | `0x001602F0` proven |  | `RwReal CB4TrafficLane::GetSignedForwardDistBetweenParams(float lrParamAlong1, float lrParamAlong2)` |
+| `GetParamFromDist(float)` | `0x0015B3B0` 284 | `0x00171290` 284 | `0x0016C8C0` 284 | `0x0017D600` 548 | `0x00160400` proven |  | `RwReal CB4TrafficLane::GetParamFromDist(float lrDistance)` |
+| `DoesNeighbourExist(int,ESegmentNeighbourTypes)` | `0x0015B4D0` 72 | `0x001713B0` 72 | `0x0016C9E0` 72 | `0x0017D450` 164 | `0x00160520` proven |  | `bool CB4TrafficLane::DoesNeighbourExist(int lnSegmentIndex, ESegmentNeighbourTypes leNeighbourType)` |
+| `Release()` | `0x0015B520` 28 | `0x00171400` 28 | `0x0016CA30` 28 | `0x0017D400` 68 | `0x00160570` proven |  | `void CB4TrafficLane::Release()` |
+| `Prepare(int,unsigned char)` | `0x0015B540` 40 | `0x00171420` 40 | `0x0016CA50` 40 | `0x0017D390` 104 | `0x00160590` proven |  | `RwInt32 CB4TrafficLane::Prepare(int lnGlobalSegmentIndex, unsigned char lu8LaneIndex)` |
+| `GetDistFromParam(float)` |  |  |  | `0x0017D500` 256 |  |  | `RwReal CB4TrafficLane::GetDistFromParam(float lrParamAlong)` |
+
+## Burnout Revenge layout of `CB4TrafficLane`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 316 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficLane {  // size 0x04C
+    /* 0x000 */ CB4TrafficLaneStruct *mpData;
+    /* 0x004 */ RwUInt16 mu16GlobalSegmentIndex;
+    /* 0x006 */ unsigned char mau8Valves[24];
+    /* 0x01E */ unsigned char mau8ValveLaneDataIndices[24];
+    /* 0x036 */ unsigned char mau8Splitters[16];
+    /* 0x046 */ RwUInt8 mu8LastTrafficParam;
+    /* 0x047 */ RwUInt8 mu8LaneIndex;
+    /* 0x048 */ RwUInt8 mu8NumValves;
+    /* 0x049 */ RwUInt8 mu8NumSplitters;
+    // methods
+    // CB4TrafficLane(const CB4TrafficLane &);
+    // CB4TrafficLane();
+    // void Construct();
+    // RwInt32 Prepare(int, unsigned char);
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // bool DoesNeighbourExist(int, ESegmentNeighbourTypes);
+    // RwReal GetParamFromDist(float);
+    // RwReal GetDistFromParam(float);
+    // RwReal GetSignedForwardDistBetweenParams(float, float);
+    // RwReal GetSignedBackwardDistBetweenParams(float, float);
+    // CB4TrafficParam * GetNearestParam(float);
+    // CB4TrafficParam * GetNearestParamInSameLane(CB4TrafficParam *);
+    // RwReal FindDistToNextValve(int);
+    // CB4TrafficValve * FindPreviousValve(int, int *, int *);
+    // CB4TrafficValve * FindNextValve(int, int *, int *);
+};
+```
 
 ## Notes
 

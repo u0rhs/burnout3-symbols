@@ -8,15 +8,32 @@
 - **Source file:** `B3DemoPauseState.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 2
 - **vtable (DNAT_200):** `0x00440580`, 12 bytes = 3 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 1 virtual functions)
+- **Burnout Revenge counterpart:** `CB4DemoPauseState`, size 0x018 ([layout](#burnout-revenge-layout-of-cb4demopausestate))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x002EED30` 676 | `0x0033DDC0` 796 | `0x0036F460` 796 | `0x0036E320` 408 |  |  |
-| `CB3DemoPauseState()` |  |  |  | `0x003446A0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x002EED30` 676 | `0x0033DDC0` 796 | `0x0036F460` 796 | `0x0036E320` 408 |  |  |  |
+| `CB3DemoPauseState()` |  |  |  | `0x003446A0` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4DemoPauseState`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Menu/States/Demo/B4DemoPauseState.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4DemoPauseState : public CGtState {  // size 0x018
+    // base CGtState at 0x000
+    /* 0x010 */ EDemoPauseSubstate meSubstate;
+    /* 0x014 */ CB4DemoOptionsService mDemoOptionsService;
+    // methods
+    // CB4DemoPauseState(const CB4DemoPauseState &);
+    // CB4DemoPauseState();
+    // virtual void Action(EGtStateAction, void *, void *, void *);
+};
+```
 
 ## Notes
 

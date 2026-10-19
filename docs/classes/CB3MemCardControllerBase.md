@@ -10,26 +10,26 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `OnFormatSuccess()` | `0x003C5420` 412 | `0x00442440` 412 | `0x0046B070` 412 | `0x004824B0` 192 |  |  |
-| `StartFormat()` | `0x003C55C0` 188 | `0x004425E0` 188 | `0x0046B210` 188 | `0x00482460` 72 |  |  |
-| `OnMemCardPageExit()` | `0x003C5680` 356 | `0x004426A0` 356 | `0x0046B2D0` 356 | `0x004823E0` 128 |  |  |
-| `CheckSaveGameData()` | `0x003C57F0` 12 | `0x00442810` 12 | `0x0046B440` 12 | `0x004823B0` 40 |  |  |
-| `SetSaveGameDataProfileAsCurrent(unsigned int)` | `0x003C5800` 980 | `0x00442820` 1024 | `0x0046B450` 1000 | `0x00482360` 68 |  |  |
-| `GetSavedGameProfile(unsigned int)` | `0x003C5BE0` 48 | `0x00442C20` 160 | `0x0046B840` 148 | `0x00482310` 68 |  |  |
-| `Load(unsigned int)` | `0x003C5C10` 996 | `0x00442CC0` 996 | `0x0046B8E0` 972 | `0x004822D0` 64 |  |  |
-| `Save(unsigned int,unsigned short*,int)` | `0x003C6000` 288 | `0x004430B0` 288 | `0x0046BCB0` 288 | `0x004821B0` 244 |  |  |
-| `StartLoadProfileFlow()` | `0x003C6120` 500 | `0x004431D0` 500 | `0x0046BDD0` 488 | `0x004820D0` 212 |  |  |
-| `StartSaveProfileFlow()` | `0x003C6320` 500 | `0x004433D0` 500 | `0x0046BFC0` 488 | `0x00481FF0` 212 |  |  |
-| `Update()` | `0x003C6520` 24 | `0x004435D0` 24 | `0x0046C1B0` 24 | `0x00481FC0` 48 |  |  |
-| `Construct()` | `0x003C6540` 248 | `0x004435F0` 248 | `0x0046C1D0` 248 | `0x00481F00` 192 |  |  |
-| `CalcRequiredSaveBytes()` |  |  |  | `0x004825A0` 124 |  |  |
-| `DisableAutoSave()` |  |  |  | `0x0045CDA0` 32 |  |  |
-| `GetBytesRequiredForNewSaveGame()` |  |  |  | `0x004549A0` 28 |  |  |
-| `ResetSaveGameDataTimeStamps()` |  |  |  | `0x00482570` 40 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `OnFormatSuccess()` | `0x003C5420` 412 | `0x00442440` 412 | `0x0046B070` 412 | `0x004824B0` 192 |  |  |  |
+| `StartFormat()` | `0x003C55C0` 188 | `0x004425E0` 188 | `0x0046B210` 188 | `0x00482460` 72 |  |  |  |
+| `OnMemCardPageExit()` | `0x003C5680` 356 | `0x004426A0` 356 | `0x0046B2D0` 356 | `0x004823E0` 128 |  |  |  |
+| `CheckSaveGameData()` | `0x003C57F0` 12 | `0x00442810` 12 | `0x0046B440` 12 | `0x004823B0` 40 |  |  |  |
+| `SetSaveGameDataProfileAsCurrent(unsigned int)` | `0x003C5800` 980 | `0x00442820` 1024 | `0x0046B450` 1000 | `0x00482360` 68 |  |  |  |
+| `GetSavedGameProfile(unsigned int)` | `0x003C5BE0` 48 | `0x00442C20` 160 | `0x0046B840` 148 | `0x00482310` 68 |  |  |  |
+| `Load(unsigned int)` | `0x003C5C10` 996 | `0x00442CC0` 996 | `0x0046B8E0` 972 | `0x004822D0` 64 |  |  |  |
+| `Save(unsigned int,unsigned short*,int)` | `0x003C6000` 288 | `0x004430B0` 288 | `0x0046BCB0` 288 | `0x004821B0` 244 |  |  |  |
+| `StartLoadProfileFlow()` | `0x003C6120` 500 | `0x004431D0` 500 | `0x0046BDD0` 488 | `0x004820D0` 212 |  |  |  |
+| `StartSaveProfileFlow()` | `0x003C6320` 500 | `0x004433D0` 500 | `0x0046BFC0` 488 | `0x00481FF0` 212 |  |  |  |
+| `Update()` | `0x003C6520` 24 | `0x004435D0` 24 | `0x0046C1B0` 24 | `0x00481FC0` 48 |  |  |  |
+| `Construct()` | `0x003C6540` 248 | `0x004435F0` 248 | `0x0046C1D0` 248 | `0x00481F00` 192 |  |  |  |
+| `CalcRequiredSaveBytes()` |  |  |  | `0x004825A0` 124 |  |  |  |
+| `DisableAutoSave()` |  |  |  | `0x0045CDA0` 32 |  |  |  |
+| `GetBytesRequiredForNewSaveGame()` |  |  |  | `0x004549A0` 28 |  |  |  |
+| `ResetSaveGameDataTimeStamps()` |  |  |  | `0x00482570` 40 |  |  |  |
 
 ## Notes
 

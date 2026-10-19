@@ -6,14 +6,35 @@
 
 - **Area:** [Effects](../systems/effects.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4ScrapeParams`, size 0x040 ([layout](#burnout-revenge-layout-of-cb4scrapeparams))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3ScrapeParams()` |  |  |  | `0x003C59D0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3ScrapeParams()` |  |  |  | `0x003C59D0` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4ScrapeParams`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 322 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ScrapeParams {  // size 0x040
+    /* 0x000 */ CGtRGBA mStartColour;
+    /* 0x010 */ CGtRGBA mEndColour;
+    /* 0x020 */ char macTexName[12];
+    /* 0x02C */ CGtTexture *mpTexture;
+    /* 0x030 */ RwUInt32 muBlendMode;
+    /* 0x034 */ RwReal mrStartSize;
+    /* 0x038 */ RwReal mrEndSize;
+    /* 0x03C */ RwReal mrBaseLife;
+    // methods
+    // CB4ScrapeParams(const CB4ScrapeParams &);
+    // CB4ScrapeParams();
+};
+```
 
 ## Notes
 

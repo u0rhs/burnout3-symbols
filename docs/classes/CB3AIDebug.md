@@ -8,27 +8,80 @@
 - **Source file:** `B3AIDebug.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 11, B3INTERN 6, B3O0PCH 14
 - **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4AIDebug`, size 0xA00, methods in `GameSource/Game/B4AIDebug.cpp` ([layout](#burnout-revenge-layout-of-cb4aidebug))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RenderWorld()` | `0x002364D0` 8 | `0x0025D530` 3912 | `0x00297690` 8 | `0x00298D70` 4340 | `0x00275EA0` strong |  |
-| `Destruct()` | `0x002364E0` 8 | `0x0025E680` 60 | `0x002978A0` 8 | `0x00298AE0` 72 | `0x00275EB0` strong |  |
-| `Update()` | `0x002364F0` 8 | `0x0025E6C0` 8 | `0x002978B0` 8 | `0x00298AD0` 16 | `0x00275EC0` strong |  |
-| `Prepare()` | `0x00236500` 8 | `0x0025E6D0` 8 | `0x002978C0` 8 | `0x00298AB0` 20 | `0x00275ED0` strong |  |
-| `Construct()` | `0x00236510` 8 | `0x0025E6E0` 320 | `0x002978D0` 8 | `0x002988A0` 516 | `0x00275EE0` strong |  |
-| `_SaveAICheckpointTimes(void*)` |  | `0x0025C790` 268 |  | `0x0029B0C0` 316 |  |  |
-| `_TogglePlayerAIControlled(void*)` |  | `0x0025C8A0` 168 |  | `0x0029B030` 140 |  |  |
-| `_RenderRaceMap(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,void*,bool,float)` |  | `0x0025C950` 848 |  | `0x0029AB30` 1276 |  |  |
-| `_RenderAvoidanceMap(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,void*,bool,float)` |  | `0x0025CCA0` 1232 |  | `0x0029A450` 1748 |  |  |
-| `DrawSegment(CB3AILaneStruct*,unsigned short,GtMathPs2::CGtV4d,bool)` |  | `0x0025D170` 960 |  | `0x00299E70` 1036 |  |  |
-| `RenderOverlays()` |  | `0x0025E480` 512 | `0x002976A0` 512 | `0x00298B30` 564 |  |  |
-| `CB3AIDebug()` |  |  |  | `0x00134CA0` 128 |  |  |
-| `DrawAICorner(CB3AICornerStruct*)` |  |  |  | `0x0029A300` 324 |  |  |
-| `DrawAILaneSegment(CB3AILaneStruct*,unsigned short)` |  |  |  | `0x0029A280` 116 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RenderWorld()` | `0x002364D0` 8 | `0x0025D530` 3912 | `0x00297690` 8 | `0x00298D70` 4340 | `0x00275EA0` strong |  | `void CB4AIDebug::RenderWorld()` |
+| `Destruct()` | `0x002364E0` 8 | `0x0025E680` 60 | `0x002978A0` 8 | `0x00298AE0` 72 | `0x00275EB0` strong |  | `void CB4AIDebug::Destruct()` |
+| `Update()` | `0x002364F0` 8 | `0x0025E6C0` 8 | `0x002978B0` 8 | `0x00298AD0` 16 | `0x00275EC0` strong |  | `void CB4AIDebug::Update()` |
+| `Prepare()` | `0x00236500` 8 | `0x0025E6D0` 8 | `0x002978C0` 8 | `0x00298AB0` 20 | `0x00275ED0` strong |  | `bool CB4AIDebug::Prepare()` |
+| `Construct()` | `0x00236510` 8 | `0x0025E6E0` 320 | `0x002978D0` 8 | `0x002988A0` 516 | `0x00275EE0` strong |  | `void CB4AIDebug::Construct()` |
+| `_SaveAICheckpointTimes(void*)` |  | `0x0025C790` 268 |  | `0x0029B0C0` 316 |  |  |  |
+| `_TogglePlayerAIControlled(void*)` |  | `0x0025C8A0` 168 |  | `0x0029B030` 140 |  |  |  |
+| `_RenderRaceMap(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,void*,bool,float)` |  | `0x0025C950` 848 |  | `0x0029AB30` 1276 |  |  |  |
+| `_RenderAvoidanceMap(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,void*,bool,float)` |  | `0x0025CCA0` 1232 |  | `0x0029A450` 1748 |  |  |  |
+| `DrawSegment(CB3AILaneStruct*,unsigned short,GtMathPs2::CGtV4d,bool)` |  | `0x0025D170` 960 |  | `0x00299E70` 1036 |  |  |  |
+| `RenderOverlays()` |  | `0x0025E480` 512 | `0x002976A0` 512 | `0x00298B30` 564 |  |  |  |
+| `CB3AIDebug()` |  |  |  | `0x00134CA0` 128 |  |  |  |
+| `DrawAICorner(CB3AICornerStruct*)` |  |  |  | `0x0029A300` 324 |  |  |  |
+| `DrawAILaneSegment(CB3AILaneStruct*,unsigned short)` |  |  |  | `0x0029A280` 116 |  |  |  |
+
+## Burnout Revenge layout of `CB4AIDebug`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 76 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AIDebug {  // size 0xA00
+    /* 0x000 */ enum { eRenderLanesNone = 0, eRenderLanesNearPlayer = 1, eRenderLanesAll = 2, eRenderLanesAI = 3, eRenderLanesPatch = 4, eRenderLanesCount = 5 } meRenderLanes;
+    /* 0x004 */ enum { eRenderCornersNone = 0, eRenderCornersAll = 1, eRenderCornersAI = 2, eRenderCornersCount = 3 } meRenderCorners;
+    /* 0x008 */ enum { eLaneDrawLaneType = 0, eLaneDrawResetType = 1, eLaneDrawCount = 2 } meLaneDrawType;
+    /* 0x00C */ bool mbShowTarget;
+    /* 0x00D */ bool mbShowSpline;
+    /* 0x00E */ bool mbIgnoreResetAILaneError;
+    /* 0x00F */ bool mbShowDebugAggressiveHUD;
+    /* 0x010 */ RwInt32 mnRenderSegmentsAhead;
+    /* 0x014 */ ERaceCarIndex meDriverIndex;
+    /* 0x018 */ RwInt32 mnLastNumRaceCars;
+    /* 0x01C */ char maacDecisions[6][32];
+    /* 0x0DC */ char maacDrivers[6][128];
+    /* 0x3DC */ char maacSlamStates[6][128];
+    /* 0x6E0 */ CGtV3d maaLastPoints[6][4];
+    /* 0x860 */ CGtV3d maaLastLanePoints[6][4];
+    /* 0x9E0 */ RwInt32 mnLastPointIndex;
+    /* 0x9E4 */ RwInt32 mnLastPointUpdateCount;
+    /* 0x9E8 */ RwInt32 mnNumLastPoints;
+    /* 0x9EC */ bool mbRenderPoints;
+    /* 0x9ED */ bool mbShowLinks;
+    /* 0x9F0 */ RwInt32 mnLaneIndex;
+    /* 0x9F4 */ RwInt32 mnSegmentIndex;
+    // methods
+    // CB4AIDebug(const CB4AIDebug &);
+    // CB4AIDebug();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void RenderWorld();
+    // void RenderOverlays();
+    // bool IsIgnoreAILaneError();
+    // void DrawSegment(const CB4AILaneSegment *, GtMathPs2::CGtV4d, bool, float);
+    // void DrawAILaneSegment(CB4AILaneSegment *);
+    // void DrawAICorner(CB4AICornerStruct *);
+    // static void _RenderAvoidanceMap(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, void *, bool, float);
+    // static void _RenderRaceMap(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, void *, bool, float);
+    // static void _RenderLanesGetText(void *, void *, char *, const char *);
+    // static void _RenderCornersGetText(void *, void *, char *, const char *);
+    // static void _RenderLaneTypeGetText(void *, void *, char *, const char *);
+    // static void _TogglePlayerAIControlled(void *);
+    // static void _SaveAICheckpointTimes(void *);
+};
+```
 
 ## Notes
 

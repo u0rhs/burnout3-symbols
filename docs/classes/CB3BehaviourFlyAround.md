@@ -9,24 +9,65 @@
 - **Methods per build:** DNAT_200 7, B3DEBUG 8, B3INTERN 7, B3O0PCH 11
 - **Retail (SLUS-21050):** 6 of its 7 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440220`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
+- **Burnout Revenge counterpart:** `CB4BehaviourFlyAround`, size 0x0E0, methods in `GameSource/Camera/Behaviours/B4BehaviourFlyAround.cpp` ([layout](#burnout-revenge-layout-of-cb4behaviourflyaround))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` | `0x002A80D0` 8 | `0x002E2B60` 24 | `0x00319930` 24 | `0x003162B0` 20 | `0x002E90B0` likely |  |
-| `Destruct()` | `0x002A80E0` 8 | `0x002E2B80` 8 | `0x00319950` 8 | `0x003162A0` 16 | `0x002E90D0` likely |  |
-| `Release(void*)` | `0x002A80F0` 8 | `0x002E2B90` 8 | `0x00319960` 8 | `0x00316290` 16 | `0x002E90E0` likely |  |
-| `Update(CGtCamera*,float)` | `0x002A8100` 11696 | `0x002E2BA0` 17564 | `0x00319970` 15080 | `0x00315800` 2692 | `0x002E90F0` unverified |  |
-| `Prepare(void*)` | `0x002AAEE0` 2492 | `0x002E7040` 4476 | `0x0031D460` 4144 | `0x003156E0` 288 | `0x002EC8F0` proven |  |
-| `Construct(int,EB3FlyAroundType)` | `0x002AB8F0` 164 | `0x002E8210` 224 | `0x0031E4C0` 224 | `0x00315610` 204 | `0x002ED310` strong |  |
-| `SetRaceCar(int,CGtCamera*)` | `0x002AB9A0` 1816 | `0x002E9050` 3172 | `0x0031E5A0` 3172 | `0x00315400` 300 |  |  |
-| `SetRaceCarLookAt(int,CGtCamera*)` |  | `0x002E82F0` 3424 |  | `0x00315530` 224 |  |  |
-| `CB3BehaviourFlyAround()` |  |  |  | `0x0013ED20` 76 |  |  |
-| `SetMode(EB3FlyAroundMode,CGtCamera*)` |  |  |  | `0x003153A0` 84 |  |  |
-| `SetRotate(CGtCamera*)` |  |  |  | `0x003151B0` 488 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` | `0x002A80D0` 8 | `0x002E2B60` 24 | `0x00319930` 24 | `0x003162B0` 20 | `0x002E90B0` likely |  | `void CB4BehaviourFlyAround::Construct()` |
+| `Destruct()` | `0x002A80E0` 8 | `0x002E2B80` 8 | `0x00319950` 8 | `0x003162A0` 16 | `0x002E90D0` likely |  | `void CB4BehaviourFlyAround::Destruct()` |
+| `Release(void*)` | `0x002A80F0` 8 | `0x002E2B90` 8 | `0x00319960` 8 | `0x00316290` 16 | `0x002E90E0` likely |  | `void CB4BehaviourFlyAround::Release(void *lpData)` |
+| `Update(CGtCamera*,float)` | `0x002A8100` 11696 | `0x002E2BA0` 17564 | `0x00319970` 15080 | `0x00315800` 2692 | `0x002E90F0` unverified |  | `void CB4BehaviourFlyAround::Update(CGtCamera *lpCamera, float lrTimeStep)` |
+| `Prepare(void*)` | `0x002AAEE0` 2492 | `0x002E7040` 4476 | `0x0031D460` 4144 | `0x003156E0` 288 | `0x002EC8F0` proven |  | `bool CB4BehaviourFlyAround::Prepare(void *lpData)` |
+| `Construct(int,EB3FlyAroundType)` | `0x002AB8F0` 164 | `0x002E8210` 224 | `0x0031E4C0` 224 | `0x00315610` 204 | `0x002ED310` strong |  |  |
+| `SetRaceCar(int,CGtCamera*)` | `0x002AB9A0` 1816 | `0x002E9050` 3172 | `0x0031E5A0` 3172 | `0x00315400` 300 |  |  | `void CB4BehaviourFlyAround::SetRaceCar(ERaceCarIndex leRaceCarIndex, CGtCamera *lpCamera)` (same name, different parameters) |
+| `SetRaceCarLookAt(int,CGtCamera*)` |  | `0x002E82F0` 3424 |  | `0x00315530` 224 |  |  |  |
+| `CB3BehaviourFlyAround()` |  |  |  | `0x0013ED20` 76 |  |  |  |
+| `SetMode(EB3FlyAroundMode,CGtCamera*)` |  |  |  | `0x003153A0` 84 |  |  | `void CB4BehaviourFlyAround::SetMode(EB4FlyAroundMode leMode, CGtCamera *lpCamera)` |
+| `SetRotate(CGtCamera*)` |  |  |  | `0x003151B0` 488 |  |  | `void CB4BehaviourFlyAround::SetRotate(CGtCamera *lpCamera)` |
+
+## Burnout Revenge layout of `CB4BehaviourFlyAround`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 318 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4BehaviourFlyAround : public CB4CameraBehaviour {  // size 0x0E0
+    // base CB4CameraBehaviour at 0x000
+    /* 0x020 */ CGtMatrix3x4 mOldCarMatrix;
+    /* 0x060 */ CGtMatrix3x4 mCameraMatrix;
+    /* 0x0A0 */ RwReal mrRadius;
+    /* 0x0A4 */ RwReal mrAngleXZ;
+    /* 0x0A8 */ RwReal mrRotatingAngleXZ;
+    /* 0x0AC */ RwReal mrAngleYZ;
+    /* 0x0B0 */ RwInt32 mnPort;
+    /* 0x0B4 */ EPlayerCarIndex mePlayerIndex;
+    /* 0x0B8 */ ERaceCarIndex meRaceCarIndex;
+    /* 0x0BC */ ERaceCarIndex meOldRaceCarIndex;
+    /* 0x0C0 */ EB4FlyAroundType meType;
+    /* 0x0C4 */ EB4FlyAroundMode meMode;
+    /* 0x0C8 */ char macPlayer[16];
+    /* 0x0D8 */ bool mbInvertPitch;
+    /* 0x0D9 */ bool mbRotating;
+    // methods
+    // CB4BehaviourFlyAround(const CB4BehaviourFlyAround &);
+    // CB4BehaviourFlyAround();
+    // void Construct(CB4PlayerCameraManager *, EB4FlyAroundType);
+    // void SetRaceCar(ERaceCarIndex, CGtCamera *);
+    // void SetRaceCarLookAt(ERaceCarIndex, CGtCamera *);
+    // void SetMode(EB4FlyAroundMode, CGtCamera *);
+    // void SetPanHandle(ERaceCarIndex, CGtCamera *);
+    // virtual void Construct();
+    // virtual void Destruct();
+    // virtual bool Prepare(void *);
+    // virtual void Release(void *);
+    // virtual void Update(CGtCamera *, float);
+    // void SetRotating();
+    // void SetRotate(CGtCamera *);
+};
+```
 
 ## Notes
 

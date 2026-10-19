@@ -7,19 +7,50 @@
 - **Area:** [Crashes, takedowns and scoring](../systems/crash-scoring.md)
 - **Source file:** `B3CrashAnalyser.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 6
+- **Burnout Revenge counterpart:** `CGtSphereTreeSphere`, size 0x040, methods in `GameShared/GameClasses/Containers/GtSphereTree.cpp` ([layout](#burnout-revenge-layout-of-cgtspheretreesphere))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetFromSiblingListLink(RwLLLink*)` | `0x0030B210` 8 | `0x00361DA0` 8 | `0x00391770` 8 | `0x00396980` 28 |  |  |
-| `GetChildList()` | `0x0030B220` 8 | `0x00361DB0` 8 | `0x00391780` 8 | `0x003969A0` 28 |  |  |
-| `GetNumChildren()` | `0x0030B230` 8 | `0x00361DC0` 8 | `0x00391790` 8 | `0x003969C0` 28 |  |  |
-| `AddChild(CGtSphereTreeSphere*)` |  |  |  | `0x0039CC30` 168 |  |  |
-| `ComputeBindingDistance()` |  |  |  | `0x0039C870` 180 |  |  |
-| `GetSphere()` |  |  |  | `0x00396550` 40 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetFromSiblingListLink(RwLLLink*)` | `0x0030B210` 8 | `0x00361DA0` 8 | `0x00391770` 8 | `0x00396980` 28 |  |  |  |
+| `GetChildList()` | `0x0030B220` 8 | `0x00361DB0` 8 | `0x00391780` 8 | `0x003969A0` 28 |  |  |  |
+| `GetNumChildren()` | `0x0030B230` 8 | `0x00361DC0` 8 | `0x00391790` 8 | `0x003969C0` 28 |  |  |  |
+| `AddChild(CGtSphereTreeSphere*)` |  |  |  | `0x0039CC30` 168 |  |  | `void CGtSphereTreeSphere::AddChild(CGtSphereTreeSphere *lpNewChild)` |
+| `ComputeBindingDistance()` |  |  |  | `0x0039C870` 180 |  |  |  |
+| `GetSphere()` |  |  |  | `0x00396550` 40 |  |  |  |
+
+## Burnout Revenge layout of `CGtSphereTreeSphere`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 329 file(s), e.g. `GameShared/GameClasses/Containers/GtSphereTree.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSphereTreeSphere : public CGtSphere {  // size 0x040
+    // base CGtSphere at 0x000
+    /* 0x010 */ CGtSphereTreeSphere *mpParent;
+    /* 0x014 */ RwLLLink mSiblingListLink;
+    /* 0x01C */ RwLLLink mRecomputationListLink;
+    /* 0x024 */ RwInt32 mnChildCount;
+    /* 0x028 */ RwLinkList mChildren;
+    /* 0x030 */ RwReal mrBindingDistanceSq;
+    /* 0x034 */ void *mpUserData;
+    /* 0x038 */ RwInt32 mnUserData2;
+    /* 0x03C */ RwInt32 mnUserData3;
+    // methods
+    // CGtSphereTreeSphere(const CGtSphereTreeSphere &);
+    // CGtSphereTreeSphere();
+    // void Construct();
+    // CGtSphereArg GetSphere() const;
+    // RwInt32 GetNumChildren() const;
+    // RwLinkList * GetChildList();
+    // static CGtSphereTreeSphere * GetFromSiblingListLink(RwLLLink *);
+    // CGtSphereTreeSphere * GetParent() const;
+    // void AddChild(CGtSphereTreeSphere *);
+    // void ComputeBindingDistance();
+};
+```
 
 ## Notes
 

@@ -17,6 +17,22 @@ B3 = os.path.join(ROOT, 'data', 'burnout3-prototype', 'maps')
 DOCS = os.path.join(ROOT, 'docs')
 
 
+def revenge_paths():
+    """Burnout Revenge source paths by lower-case file name (data/burnout-revenge-prototype)."""
+    p = os.path.join(ROOT, 'data', 'burnout-revenge-prototype', 'SLUS_212.42', 'functions.csv')
+    out = {}
+    if os.path.exists(p):
+        for r in csv.DictReader(open(p)):
+            out.setdefault(r['source_file'].split('/')[-1].lower(), r['source_file'])
+    return out
+
+
+def revenge_file(paths, o):
+    """B3HUDComponent.cpp -> GameSource/Hud/B4HUDComponent.cpp (CB3/B3 read as CB4/B4; Gt* unchanged)."""
+    b = re.sub(r'^B3(?=[A-Z_])', 'B4', o)
+    return paths.get(b.lower(), '')
+
+
 def retail_by_file():
     """Per prototype source file: retail functions found, how many proven, and their address range
     (data/burnout3-retail/prototype-names.csv)."""
@@ -265,6 +281,7 @@ def main():
     os.makedirs(os.path.join(DOCS, 'reference'), exist_ok=True)
     sysdir = os.path.join(DOCS, 'systems')
     RETAIL_FILES = retail_by_file()
+    REVENGE_PATHS = revenge_paths()
     b2_outline = os.path.join(B2, 'source_outline')
     b2_files = []
     for dp, dn, fn in os.walk(b2_outline):
@@ -296,13 +313,16 @@ def main():
               link(os.path.join(B3, 'DNAT_200.symbols.txt'), sysdir), '',
               '**Retail** is how many of the file\'s functions were found in SLUS-21050 (how many of them proven) and '
               'where they lie there ([prototype names](../reference/retail-prototype-names.md)).', '',
-              '| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |',
-              '|---|---:|---:|---|---:|---|']
+              '**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source '
+              'paths ([source files](../reference/revenge-source-file-lineage.md)).', '',
+              '| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |',
+              '|---|---:|---:|---|---:|---|---|']
         for o in files:
             rf = RETAIL_FILES.get(o)
-            L.append('| `%s` | %d | %s | `0x%08X` | %s | %s |' % (
+            rp = revenge_file(REVENGE_PATHS, o)
+            L.append('| `%s` | %d | %s | `0x%08X` | %s | %s | %s |' % (
                 o, objs[o], format(size[o], ','), first[o], '%d (%d)' % rf[:2] if rf else '',
-                '`0x%08X`–`0x%08X`' % rf[2:] if rf else ''))
+                '`0x%08X`–`0x%08X`' % rf[2:] if rf else '', '`%s`' % rp if rp else ''))
         L += ['', '## Classes', '',
               'Each class with its method count, its probable Burnout 2 counterpart (same name without `B3`) '
               'and that class\'s size there. Method addresses for all four builds are in '

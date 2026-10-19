@@ -7,17 +7,44 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3VehicleReflectivityData.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 4
+- **Burnout Revenge counterpart:** `CB4VehicleReflectivityData`, size 0x0F0, methods in `GameSource/Graphics/VehicleRenderer/B4VehicleReflectivityData.cpp` ([layout](#burnout-revenge-layout-of-cb4vehiclereflectivitydata))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Register(unsigned long)` | `0x002CA290` 404 | `0x00311EC0` 448 | `0x00343AD0` 448 | `0x00339200` 436 |  |  |
-| `Release()` | `0x002CA430` 132 | `0x00312080` 132 | `0x00343C90` 132 | `0x00339140` 40 |  |  |
-| `SetPath(unsigned long)` |  |  |  | `0x00339170` 144 |  |  |
-| `Unregister()` |  |  |  | `0x003393C0` 172 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Register(unsigned long)` | `0x002CA290` 404 | `0x00311EC0` 448 | `0x00343AD0` 448 | `0x00339200` 436 |  |  |  |
+| `Release()` | `0x002CA430` 132 | `0x00312080` 132 | `0x00343C90` 132 | `0x00339140` 40 |  |  |  |
+| `SetPath(unsigned long)` |  |  |  | `0x00339170` 144 |  |  |  |
+| `Unregister()` |  |  |  | `0x003393C0` 172 |  |  |  |
+
+## Burnout Revenge layout of `CB4VehicleReflectivityData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 323 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4VehicleReflectivityData {  // size 0x0F0
+    /* 0x000 */ GtID mVehicleID;
+    /* 0x008 */ float marReflectivity[8];
+    /* 0x028 */ float marGlossiness[8];
+    /* 0x048 */ float marSpecularity[8];
+    /* 0x068 */ RwReal mrGlossinessGlass;
+    /* 0x06C */ RwReal mrSpecularityGlass;
+    /* 0x070 */ char macCarPath[128];
+    // methods
+    // CB4VehicleReflectivityData(const CB4VehicleReflectivityData &);
+    // CB4VehicleReflectivityData();
+    // void Construct(bool);
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void Register(unsigned long);
+    // void Unregister();
+    // void SetPath(unsigned long);
+};
+```
 
 ## Notes
 

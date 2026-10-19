@@ -6,18 +6,19 @@
 
 - **Area:** [Audio and music](../systems/audio.md)
 - **Methods per build:** B3O0PCH 5
+- **Burnout Revenge counterpart:** `CGtSoundVoice`, size 0x034, methods in `GameShared/GameClasses/Sound/GtSoundVoice.cpp` ([layout](#burnout-revenge-layout-of-cgtsoundvoice))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_GetGroupData(unsigned int)` |  |  |  | `0x003D9280` 60 |  |  |
-| `_GetMasterPitch()` |  |  |  | `0x003D9270` 12 |  |  |
-| `_GetMasterVolume()` |  |  |  | `0x003D9260` 12 |  |  |
-| `_NextUniquePlayId()` |  |  |  | `0x003D98F0` 20 |  |  |
-| `_SetMasterVolume(float)` |  |  |  | `0x002B16F0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_GetGroupData(unsigned int)` |  |  |  | `0x003D9280` 60 |  |  |  |
+| `_GetMasterPitch()` |  |  |  | `0x003D9270` 12 |  |  |  |
+| `_GetMasterVolume()` |  |  |  | `0x003D9260` 12 |  |  |  |
+| `_NextUniquePlayId()` |  |  |  | `0x003D98F0` 20 |  |  |  |
+| `_SetMasterVolume(float)` |  |  |  | `0x002B16F0` 28 |  |  |  |
 
 ## Static data (DNAT_200)
 
@@ -28,6 +29,64 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `0x004442A4` | 4 | .sbss | `CGtSoundVoice::_mrMasterPitch` |
 | `0x004442A8` | 4 | .sbss | `CGtSoundVoice::_mrMasterVolume` |
 | `0x01DC5490` | 128 | .bss | `CGtSoundVoice::_maGroupData` |
+
+## Burnout Revenge layout of `CGtSoundVoice`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 290 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundBankManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSoundVoice : public CGtSoundVoiceInterface {  // size 0x034
+    // base CGtSoundVoiceInterface at 0x000
+    /* static */ RwReal krMinFrequency;
+    /* static */ RwReal krMaxFrequency;
+    /* static */ RwReal krMinVolume;
+    /* static */ RwReal krMaxVolume;
+    /* static */ RwUInt8 ku8PausingWaitTime;
+    /* static */ RwUInt32 ku32MaxGroups;
+    /* 0x004 */ CGtSoundWave *mpWave;
+    /* 0x008 */ RwUInt32 mu32UniquePlayId;
+    /* 0x00C */ RwUInt32 mu32PausedWavePosition;
+    /* 0x010 */ RwReal mrUserVolume;
+    /* 0x014 */ RwReal mrUserFrequency;
+    /* 0x018 */ RwReal mrUserPitch;
+    /* 0x01C */ RwReal mrForgetMeTime;
+    /* 0x020 */ RwReal mrForgetMeStartTime;
+    /* 0x024 */ RwReal mrMaxDistance;
+    /* 0x028 */ RwReal mrTriggerTime;
+    /* 0x02C */ RwUInt16 mxVoiceFlags;
+    /* 0x02E */ RwUInt8 mePausedState;
+    /* 0x02F */ RwUInt8 mu8PausedWaitCount;
+    /* 0x030 */ RwUInt8 mu8Group;
+    /* static */ CGtSoundVoiceGroup _maGroupData[20];
+    /* static */ RwUInt32 _muUniquePlayIdCounter;
+    /* static */ RwReal _mrMasterPitch;
+    /* static */ RwReal _mrMasterVolume;
+    /* static */ RwReal _mrUserVolume;
+    /* static */ RwUInt8 _muMaxActiveCount;
+    // methods
+    // CGtSoundVoice(const CGtSoundVoice &);
+    // RwUInt32 GetUniquePlayId() const;
+    // CGtSoundWave * GetWave() const;
+    // RwUInt8 GetGroup() const;
+    // static CGtSoundVoiceGroup & _GetGroupData(unsigned int);
+    // static RwReal _GetMasterPitch();
+    // static RwReal _GetMasterVolume();
+    // void Construct();
+    // bool IsLocked() const;
+    // void Lock(bool);
+    // bool IsOkayToStart(const CGtSoundVoiceParams &, CGtSoundListenerManager *) const;
+    // void SetVolume(float);
+    // void SetBaseFrequency(float);
+    // void SetTriggerDelay(float);
+    // void SetGroup(unsigned char);
+    // void SetForgetMeTime(float);
+    // void SetPitch(float);
+    // void SetIgnoreMasterPitch(bool);
+    // void SetIgnoreMasterVolume(bool);
+    // static RwUInt32 _NextUniquePlayId();
+    // CGtSoundVoice();
+};
+```
 
 ## Notes
 

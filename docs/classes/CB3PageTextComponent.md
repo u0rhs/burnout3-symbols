@@ -12,21 +12,21 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetNumLines()` | `0x00338080` 72 | `0x0039AAC0` 72 | `0x003C4CE0` 72 | `0x003CB430` 116 | `0x00379230` proven |  |
-| `HideSelectionBar()` | `0x003380D0` 64 | `0x0039AB10` 64 | `0x003C4D30` 64 | `0x003CB3B0` 116 | `0x00379280` proven |  |
-| `ShowSelectionBar()` | `0x00338110` 184 | `0x0039AB50` 184 | `0x003C4D70` 184 | `0x003CB220` 396 |  |  |
-| `ScrollUp()` | `0x003381D0` 152 | `0x0039AC10` 152 | `0x003C4E30` 152 | `0x003CB080` 416 |  |  |
-| `ScrollDown()` | `0x00338270` 304 | `0x0039ACB0` 304 | `0x003C4ED0` 304 | `0x003CAD10` 836 |  |  |
-| `Release()` | `0x003383A0` 164 | `0x0039ADE0` 236 | `0x003C5000` 228 | `0x003CABF0` 284 | `0x003795C0` proven |  |
-| `Update(float)` | `0x00338450` 20 | `0x0039AED0` 20 | `0x003C50F0` 20 | `0x003CABC0` 44 |  |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const unsigned short*,unsigned int)` | `0x00338470` 568 | `0x0039AEF0` 664 | `0x003C5110` 656 | `0x003CA7C0` 1024 | `0x00379690` unverified |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,EGlobalStrings,unsigned int)` | `0x003386B0` 108 | `0x0039B190` 108 | `0x003C53A0` 108 | `0x003CA760` 92 | `0x00379910` proven |  |
-| `Construct()` | `0x00338720` 16 | `0x0039B200` 16 | `0x003C5410` 16 | `0x003CA720` 60 | `0x00379980` proven |  |
-| `CB3PageTextComponent()` |  |  |  | `0x0033C280` 76 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetNumLines()` | `0x00338080` 72 | `0x0039AAC0` 72 | `0x003C4CE0` 72 | `0x003CB430` 116 | `0x00379230` proven |  |  |
+| `HideSelectionBar()` | `0x003380D0` 64 | `0x0039AB10` 64 | `0x003C4D30` 64 | `0x003CB3B0` 116 | `0x00379280` proven |  |  |
+| `ShowSelectionBar()` | `0x00338110` 184 | `0x0039AB50` 184 | `0x003C4D70` 184 | `0x003CB220` 396 |  |  |  |
+| `ScrollUp()` | `0x003381D0` 152 | `0x0039AC10` 152 | `0x003C4E30` 152 | `0x003CB080` 416 |  |  |  |
+| `ScrollDown()` | `0x00338270` 304 | `0x0039ACB0` 304 | `0x003C4ED0` 304 | `0x003CAD10` 836 |  |  |  |
+| `Release()` | `0x003383A0` 164 | `0x0039ADE0` 236 | `0x003C5000` 228 | `0x003CABF0` 284 | `0x003795C0` proven |  |  |
+| `Update(float)` | `0x00338450` 20 | `0x0039AED0` 20 | `0x003C50F0` 20 | `0x003CABC0` 44 |  |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const unsigned short*,unsigned int)` | `0x00338470` 568 | `0x0039AEF0` 664 | `0x003C5110` 656 | `0x003CA7C0` 1024 | `0x00379690` unverified |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,EGlobalStrings,unsigned int)` | `0x003386B0` 108 | `0x0039B190` 108 | `0x003C53A0` 108 | `0x003CA760` 92 | `0x00379910` proven |  |  |
+| `Construct()` | `0x00338720` 16 | `0x0039B200` 16 | `0x003C5410` 16 | `0x003CA720` 60 | `0x00379980` proven |  |  |
+| `CB3PageTextComponent()` |  |  |  | `0x0033C280` 76 |  |  |  |
 
 ## Static data (DNAT_200)
 

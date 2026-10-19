@@ -8,25 +8,26 @@
 - **Source file:** `Gt2dScene.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 11
 - **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGt2dScene`, size 0x034, methods in `GameShared/GameClasses/Graphical/2d/Gt2dScene.cpp` ([layout](#burnout-revenge-layout-of-cgt2dscene))
 - **Burnout 2 ancestor (by name):** `C2dScene`, size 0x07C, declared in 71 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `DestructObject(int,CGt2dObject*)` | `0x0019D710` 24 | `0x001D2B50` 220 | `0x001CBE40` 200 | `0x001DD730` 148 | `0x001D7560` proven |  |
-| `ConstructObject(int,CGt2dFrame*)` | `0x0019D730` 60 | `0x001D2C30` 276 | `0x001CBF10` 256 | `0x001DD630` 212 | `0x001D7580` proven |  |
-| `Render()` | `0x0019D770` 800 | `0x001D2D50` 856 | `0x001CC010` 840 | `0x001DD5F0` 52 | `0x001D75C0` proven |  |
-| `Prepare()` | `0x0019DA90` 112 | `0x001D30B0` 120 | `0x001CC360` 112 | `0x001DCD30` 132 | `0x001D78F0` proven |  |
-| `Construct(int,int,int,void*,unsigned int)` | `0x0019DB00` 268 | `0x001D3130` 448 | `0x001CC3D0` 432 | `0x001DCB40` 408 | `0x001D7960` proven |  |
-| `ChangeObjectsLayer(CGt2dObject*,int,int)` |  |  |  | `0x001A39D0` 208 |  |  |
-| `GetLayerProperties(int)` |  |  |  | `0x00197400` 96 |  |  |
-| `RenderLayerRange(int,int)` |  |  |  | `0x001DCE00` 236 |  |  |
-| `SetLayerClipFrame(int,const CGt2dFrame*)` |  |  |  | `0x00352620` 104 |  |  |
-| `SetLayerProperties(int,int)` |  |  |  | `0x00197360` 160 |  |  |
-| `_GetRequiredMemory(int,int,int)` |  |  |  | `0x001DCAA0` 160 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `DestructObject(int,CGt2dObject*)` | `0x0019D710` 24 | `0x001D2B50` 220 | `0x001CBE40` 200 | `0x001DD730` 148 | `0x001D7560` proven |  | `void CGt2dScene::DestructObject(int lnLayer, CGt2dObject *lpObject)` |
+| `ConstructObject(int,CGt2dFrame*)` | `0x0019D730` 60 | `0x001D2C30` 276 | `0x001CBF10` 256 | `0x001DD630` 212 | `0x001D7580` proven |  | `CGt2dObject * CGt2dScene::ConstructObject(int lnLayer, CGt2dFrame *lpFrame)` |
+| `Render()` | `0x0019D770` 800 | `0x001D2D50` 856 | `0x001CC010` 840 | `0x001DD5F0` 52 | `0x001D75C0` proven |  | `void CGt2dScene::Render()` |
+| `Prepare()` | `0x0019DA90` 112 | `0x001D30B0` 120 | `0x001CC360` 112 | `0x001DCD30` 132 | `0x001D78F0` proven |  | `void CGt2dScene::Prepare()` |
+| `Construct(int,int,int,void*,unsigned int)` | `0x0019DB00` 268 | `0x001D3130` 448 | `0x001CC3D0` 432 | `0x001DCB40` 408 | `0x001D7960` proven |  | `void CGt2dScene::Construct(int lnNumLayers, int lnMaxObjects, int lnMaxChildFrames, void *lpMemoryBlock, unsigned int luMemoryBlockSize)` |
+| `ChangeObjectsLayer(CGt2dObject*,int,int)` |  |  |  | `0x001A39D0` 208 |  |  |  |
+| `GetLayerProperties(int)` |  |  |  | `0x00197400` 96 |  |  |  |
+| `RenderLayerRange(int,int)` |  |  |  | `0x001DCE00` 236 |  |  | `void CGt2dScene::RenderLayerRange(int lnStartLayer, int lnCount)` |
+| `SetLayerClipFrame(int,const CGt2dFrame*)` |  |  |  | `0x00352620` 104 |  |  |  |
+| `SetLayerProperties(int,int)` |  |  |  | `0x00197360` 160 |  |  |  |
+| `_GetRequiredMemory(int,int,int)` |  |  |  | `0x001DCAA0` 160 |  |  |  |
 
 ## Burnout 2 layout of `C2dScene` (variant 1)
 
@@ -50,6 +51,33 @@ From the Burnout 2 debug info (declared in 18 file(s), e.g. `gamesource/Game/CSe
 ```cpp
 class C2dScene {  // size 0x000
 public:
+};
+```
+
+## Burnout Revenge layout of `CGt2dScene`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 38 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dScene.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dScene : public CGt2dFrameHierarchy {  // size 0x034
+    // base CGt2dFrameHierarchy at 0x000
+    /* 0x018 */ CGtFreeListPool mObjectListPool;
+    /* 0x02C */ CGt2dLayer *mpLayers;
+    /* 0x030 */ RwInt32 mnNumLayers;
+    // methods
+    // CGt2dScene(const CGt2dScene &);
+    // CGt2dScene();
+    // static RwUInt32 _GetRequiredMemory(int, int, int);
+    // void Construct(int, int, int, void *, unsigned int);
+    // void Prepare();
+    // void Render();
+    // void RenderLayerRange(int, int);
+    // CGt2dObject * ConstructObject(int, CGt2dFrame *);
+    // void DestructObject(int, CGt2dObject *);
+    // void ChangeObjectsLayer(CGt2dObject *, int, int);
+    // RwUInt32 GetLayerProperties(int) const;
+    // void SetLayerProperties(int, int);
+    // void SetLayerClipFrame(int, const CGt2dFrame *);
 };
 ```
 

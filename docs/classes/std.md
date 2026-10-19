@@ -11,14 +11,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `unexpected()` | `0x001006E0` 36 | `0x001006E0` 36 | `0x001006E0` 36 | `0x00100720` 36 |  |  |
-| `terminate()` | `0x00100710` 36 | `0x00100710` 36 | `0x00100710` 36 | `0x00100750` 36 | `0x00100710` proven |  |
-| `duhandler()` | `0x00100740` 36 | `0x00100740` 36 | `0x00100740` 36 | `0x00100780` 36 | `0x00100740` likely |  |
-| `dthandler()` | `0x00100770` 28 | `0x00100770` 28 | `0x00100770` 28 | `0x001007B0` 28 | `0x00100770` likely |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `unexpected()` | `0x001006E0` 36 | `0x001006E0` 36 | `0x001006E0` 36 | `0x00100720` 36 |  |  |  |
+| `terminate()` | `0x00100710` 36 | `0x00100710` 36 | `0x00100710` 36 | `0x00100750` 36 | `0x00100710` proven |  |  |
+| `duhandler()` | `0x00100740` 36 | `0x00100740` 36 | `0x00100740` 36 | `0x00100780` 36 | `0x00100740` likely |  |  |
+| `dthandler()` | `0x00100770` 28 | `0x00100770` 28 | `0x00100770` 28 | `0x001007B0` 28 | `0x00100770` likely |  |  |
 
 ## Static data (DNAT_200)
 

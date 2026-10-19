@@ -8,15 +8,31 @@
 - **Source file:** `B3HUDDPad2dObject.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 2
 - **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4HUDDPad2dObject`, size 0x040, methods in `GameSource/Hud/B4HUDDPad2dObject.cpp` ([layout](#burnout-revenge-layout-of-cb4huddpad2dobject))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d)` | `0x00387270` 144 | `0x003FA7E0` 144 | `0x00422440` 144 | `0x0043B1B0` 164 | `0x003D6BA0` strong |  |
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00387300` 520 | `0x003FA870` 520 | `0x004224D0` 520 | `0x0043B260` 1056 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d)` | `0x00387270` 144 | `0x003FA7E0` 144 | `0x00422440` 144 | `0x0043B1B0` 164 | `0x003D6BA0` strong |  | `void CB4HUDDPad2dObject::Prepare(CB4ControllerMapping *lpControllerMapping, const GtMathPs2::CGtV2d &lPos, const GtMathPs2::CGtV2d &lHandle, const GtMathPs2::CGtV2d &lSize, GtMathPs2::CGtV4d lColour)` (same name, different parameters) |
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00387300` 520 | `0x003FA870` 520 | `0x004224D0` 520 | `0x0043B260` 1056 |  |  | `void CB4HUDDPad2dObject::_Render(const CGt2dObject::CGt2dObjectSpace &lObjectSpace, const void *lpData)` |
+
+## Burnout Revenge layout of `CB4HUDDPad2dObject`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Hud/B4HUDDPad2dObject.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HUDDPad2dObject : public CGt2dObject {  // size 0x040
+    // base CGt2dObject at 0x000
+    // methods
+    // CB4HUDDPad2dObject(const CB4HUDDPad2dObject &);
+    // CB4HUDDPad2dObject();
+    // void Prepare(CB4ControllerMapping *, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, GtMathPs2::CGtV4d);
+    // static void _Render(const CGt2dObject::CGt2dObjectSpace &, const void *);
+};
+```
 
 ## Notes
 

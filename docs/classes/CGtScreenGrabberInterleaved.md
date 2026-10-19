@@ -6,17 +6,40 @@
 
 - **Area:** [Rendering](../systems/rendering.md)
 - **Methods per build:** B3DEBUG 4
+- **Burnout Revenge counterpart:** `CGtScreenGrabberInterleaved`, size 0x020 ([layout](#burnout-revenge-layout-of-cgtscreengrabberinterleaved))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CameraBeginUpdate(void*,void*,int)` |  | `0x0035FFE0` 72 |  |  |  |  |
-| `TakeScreenGrab(CGTFileSystem*)` |  | `0x00360030` 892 |  |  |  |  |
-| `SetSuperSampling(int,int)` |  | `0x003603B0` 220 |  |  |  |  |
-| `Init()` |  | `0x00360490` 60 |  |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CameraBeginUpdate(void*,void*,int)` |  | `0x0035FFE0` 72 |  |  |  |  |  |
+| `TakeScreenGrab(CGTFileSystem*)` |  | `0x00360030` 892 |  |  |  |  |  |
+| `SetSuperSampling(int,int)` |  | `0x003603B0` 220 |  |  |  |  |  |
+| `Init()` |  | `0x00360490` 60 |  |  |  |  |  |
+
+## Burnout Revenge layout of `CGtScreenGrabberInterleaved`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameShared/GameClasses/Graphical/ScreenShot/GtScreenGrabberInterleaved.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtScreenGrabberInterleaved : public CGtScreenGrabber {  // size 0x020
+    // base CGtScreenGrabber at 0x000
+    /* 0x018 */ RwInt32 mnNumSamplesX;
+    /* 0x01C */ RwInt32 mnNumSamplesY;
+    /* static */ RwStandardFunc mpStdCameraBeginFunc;
+    /* static */ RwReal mrXOffset;
+    /* static */ RwReal mrYOffset;
+    // methods
+    // CGtScreenGrabberInterleaved(const CGtScreenGrabberInterleaved &);
+    // CGtScreenGrabberInterleaved();
+    // void Init();
+    // bool TakeScreenGrab(CGTFileSystem *);
+    // void SetSuperSampling(int, int);
+    // static RwBool CameraBeginUpdate(void *, void *, int);
+};
+```
 
 ## Notes
 

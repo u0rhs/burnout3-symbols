@@ -11,33 +11,33 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ImmediateLeadOut(EB3MenuFlowFSMEvents)` | `0x002CDEC0` 64 | `0x00316530` 180 | `0x00348100` 180 | `0x00340740` 172 | `0x0030D4B0` likely |  |
-| `StartLeadOutBack(EB3MenuFlowFSMEvents,bool)` | `0x002CDF00` 88 | `0x003165F0` 208 | `0x003481C0` 208 | `0x00340670` 208 |  |  |
-| `StartLeadOutFore(EB3MenuFlowFSMEvents,bool)` | `0x002CDF60` 88 | `0x003166C0` 208 | `0x00348290` 208 | `0x00340580` 208 | `0x0030D500` strong |  |
-| `StartLeadOut(EB3MenuFlowFSMEvents)` | `0x002CDFC0` 88 | `0x00316790` 196 | `0x00348360` 196 | `0x00340540` 52 | `0x0030D560` strong |  |
-| `SetMenuPage(CB3MenuPageBase*,bool)` | `0x002CE020` 228 | `0x00316860` 364 | `0x00348430` 364 | `0x00340470` 196 | `0x0030D5C0` strong |  |
-| `AddComponent(CB3MenuComponentBase*,int)` | `0x002CE110` 36 | `0x003169D0` 172 | `0x003485A0` 172 | `0x003403E0` 140 | `0x0030D6B0` strong |  |
-| `Render()` | `0x002CE140` 224 | `0x00316A80` 360 | `0x00348650` 332 | `0x003402A0` 320 | `0x0030D6E0` strong |  |
-| `Update()` | `0x002CE220` 1248 | `0x00316BF0` 1072 | `0x003487A0` 1616 | `0x0033FE00` 1184 |  |  |
-| `ReleaseCurrentMenu()` | `0x002CE700` 148 | `0x00317020` 188 | `0x00348DF0` 188 | `0x0033FD20` 184 |  |  |
-| `Prepare()` | `0x002CE7A0` 252 | `0x003170E0` 316 | `0x00348EB0` 316 | `0x0033FB80` 408 |  |  |
-| `Construct()` | `0x002CE8A0` 980 | `0x00317220` 980 | `0x00348FF0` 980 | `0x0033F5F0` 1416 |  |  |
-| `AllocUTF16String(int)` |  |  |  | `0x00289090` 52 |  |  |
-| `AreMenusActive()` |  |  |  | `0x00141470` 48 |  |  |
-| `CB3MenuPageManager()` |  |  |  | `0x003407F0` 44 |  |  |
-| `DrawLoadingScreen()` |  |  |  | `0x0013C430` 32 |  |  |
-| `GetCurrentMenuPage()` |  |  |  | `0x001356D0` 28 |  |  |
-| `GetCurrentPalette()` |  |  |  | `0x0034C490` 24 |  |  |
-| `GetLeadTimeScale()` |  |  |  | `0x00352F90` 28 |  |  |
-| `GetMenuPhase()` |  |  |  | `0x00348080` 28 |  |  |
-| `GetMinutesAndSecondsString(float)` |  |  |  | `0x00425A80` 52 |  |  |
-| `IsLoading()` |  |  |  | `0x00352600` 28 |  |  |
-| `KillCurrentPage()` |  |  |  | `0x00289020` 72 |  |  |
-| `SetCurrentMenuToPauseMenu(bool)` |  |  |  | `0x0036E4C0` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ImmediateLeadOut(EB3MenuFlowFSMEvents)` | `0x002CDEC0` 64 | `0x00316530` 180 | `0x00348100` 180 | `0x00340740` 172 | `0x0030D4B0` likely |  |  |
+| `StartLeadOutBack(EB3MenuFlowFSMEvents,bool)` | `0x002CDF00` 88 | `0x003165F0` 208 | `0x003481C0` 208 | `0x00340670` 208 |  |  |  |
+| `StartLeadOutFore(EB3MenuFlowFSMEvents,bool)` | `0x002CDF60` 88 | `0x003166C0` 208 | `0x00348290` 208 | `0x00340580` 208 | `0x0030D500` strong |  |  |
+| `StartLeadOut(EB3MenuFlowFSMEvents)` | `0x002CDFC0` 88 | `0x00316790` 196 | `0x00348360` 196 | `0x00340540` 52 | `0x0030D560` strong |  |  |
+| `SetMenuPage(CB3MenuPageBase*,bool)` | `0x002CE020` 228 | `0x00316860` 364 | `0x00348430` 364 | `0x00340470` 196 | `0x0030D5C0` strong |  |  |
+| `AddComponent(CB3MenuComponentBase*,int)` | `0x002CE110` 36 | `0x003169D0` 172 | `0x003485A0` 172 | `0x003403E0` 140 | `0x0030D6B0` strong |  |  |
+| `Render()` | `0x002CE140` 224 | `0x00316A80` 360 | `0x00348650` 332 | `0x003402A0` 320 | `0x0030D6E0` strong |  |  |
+| `Update()` | `0x002CE220` 1248 | `0x00316BF0` 1072 | `0x003487A0` 1616 | `0x0033FE00` 1184 |  |  |  |
+| `ReleaseCurrentMenu()` | `0x002CE700` 148 | `0x00317020` 188 | `0x00348DF0` 188 | `0x0033FD20` 184 |  |  |  |
+| `Prepare()` | `0x002CE7A0` 252 | `0x003170E0` 316 | `0x00348EB0` 316 | `0x0033FB80` 408 |  |  |  |
+| `Construct()` | `0x002CE8A0` 980 | `0x00317220` 980 | `0x00348FF0` 980 | `0x0033F5F0` 1416 |  |  |  |
+| `AllocUTF16String(int)` |  |  |  | `0x00289090` 52 |  |  |  |
+| `AreMenusActive()` |  |  |  | `0x00141470` 48 |  |  |  |
+| `CB3MenuPageManager()` |  |  |  | `0x003407F0` 44 |  |  |  |
+| `DrawLoadingScreen()` |  |  |  | `0x0013C430` 32 |  |  |  |
+| `GetCurrentMenuPage()` |  |  |  | `0x001356D0` 28 |  |  |  |
+| `GetCurrentPalette()` |  |  |  | `0x0034C490` 24 |  |  |  |
+| `GetLeadTimeScale()` |  |  |  | `0x00352F90` 28 |  |  |  |
+| `GetMenuPhase()` |  |  |  | `0x00348080` 28 |  |  |  |
+| `GetMinutesAndSecondsString(float)` |  |  |  | `0x00425A80` 52 |  |  |  |
+| `IsLoading()` |  |  |  | `0x00352600` 28 |  |  |  |
+| `KillCurrentPage()` |  |  |  | `0x00289020` 72 |  |  |  |
+| `SetCurrentMenuToPauseMenu(bool)` |  |  |  | `0x0036E4C0` 36 |  |  |  |
 
 ## Notes
 

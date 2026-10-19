@@ -12,23 +12,23 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetSelectedBuddyName(char*)` | `0x0031C210` 48 | `0x003774F0` 48 | `0x003A60D0` 48 | `0x003A8140` 80 | `0x00366400` likely |  |
-| `SetFocus(bool)` | `0x0031C240` 284 | `0x00377520` 284 | `0x003A6100` 284 | `0x003A8040` 256 | `0x00366440` strong |  |
-| `SendingMail(char*)` | `0x0031C360` 140 | `0x00377640` 140 | `0x003A6220` 140 | `0x003A7F90` 168 |  |  |
-| `MailSent(int)` | `0x0031C3F0` 56 | `0x003776D0` 56 | `0x003A62B0` 56 | `0x003A7F10` 128 | `0x00366570` strong |  |
-| `HandleInput()` | `0x0031C430` 876 | `0x00377710` 876 | `0x003A62F0` 876 | `0x003A7BD0` 488 |  |  |
-| `SetupBuddyData()` | `0x0031C7A0` 2152 | `0x00377A80` 2432 | `0x003A6660` 2432 | `0x003A7020` 2952 | `0x00366980` unverified |  |
-| `Release()` | `0x0031D010` 156 | `0x00378400` 156 | `0x003A6FE0` 156 | `0x003A6F00` 280 | `0x00367040` proven |  |
-| `Update(float)` | `0x0031D0B0` 368 | `0x003784A0` 368 | `0x003A7080` 368 | `0x003A6D10` 432 |  |  |
-| `Prepare()` | `0x0031D220` 1772 | `0x00378610` 1756 | `0x003A71F0` 1756 | `0x003A5DD0` 3804 | `0x003677B0` strong |  |
-| `Construct()` | `0x0031D910` 48 | `0x00378CF0` 48 | `0x003A78D0` 48 | `0x003A5D90` 60 | `0x00367E40` proven |  |
-| `CB3BuddyDisplayComponent()` |  |  |  | `0x0033BF50` 316 |  |  |
-| `GetSelectedBuddyIndex()` |  |  |  | `0x003AD4F0` 56 |  |  |
-| `PositionSelectionBar()` |  |  |  | `0x003A7DC0` 328 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetSelectedBuddyName(char*)` | `0x0031C210` 48 | `0x003774F0` 48 | `0x003A60D0` 48 | `0x003A8140` 80 | `0x00366400` likely |  |  |
+| `SetFocus(bool)` | `0x0031C240` 284 | `0x00377520` 284 | `0x003A6100` 284 | `0x003A8040` 256 | `0x00366440` strong |  |  |
+| `SendingMail(char*)` | `0x0031C360` 140 | `0x00377640` 140 | `0x003A6220` 140 | `0x003A7F90` 168 |  |  |  |
+| `MailSent(int)` | `0x0031C3F0` 56 | `0x003776D0` 56 | `0x003A62B0` 56 | `0x003A7F10` 128 | `0x00366570` strong |  |  |
+| `HandleInput()` | `0x0031C430` 876 | `0x00377710` 876 | `0x003A62F0` 876 | `0x003A7BD0` 488 |  |  |  |
+| `SetupBuddyData()` | `0x0031C7A0` 2152 | `0x00377A80` 2432 | `0x003A6660` 2432 | `0x003A7020` 2952 | `0x00366980` unverified |  |  |
+| `Release()` | `0x0031D010` 156 | `0x00378400` 156 | `0x003A6FE0` 156 | `0x003A6F00` 280 | `0x00367040` proven |  |  |
+| `Update(float)` | `0x0031D0B0` 368 | `0x003784A0` 368 | `0x003A7080` 368 | `0x003A6D10` 432 |  |  |  |
+| `Prepare()` | `0x0031D220` 1772 | `0x00378610` 1756 | `0x003A71F0` 1756 | `0x003A5DD0` 3804 | `0x003677B0` strong |  |  |
+| `Construct()` | `0x0031D910` 48 | `0x00378CF0` 48 | `0x003A78D0` 48 | `0x003A5D90` 60 | `0x00367E40` proven |  |  |
+| `CB3BuddyDisplayComponent()` |  |  |  | `0x0033BF50` 316 |  |  |  |
+| `GetSelectedBuddyIndex()` |  |  |  | `0x003AD4F0` 56 |  |  |  |
+| `PositionSelectionBar()` |  |  |  | `0x003A7DC0` 328 |  |  |  |
 
 ## Notes
 

@@ -6,17 +6,40 @@
 
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Methods per build:** B3O0PCH 4
+- **Burnout Revenge counterpart:** `CB4RaceCarPhysicsAttribTable`, size 0x1140, methods in `GameSource/Physics/B4RaceCarPhysicsAttributesTable.cpp` ([layout](#burnout-revenge-layout-of-cb4racecarphysicsattribtable))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `AllocAttrib(CB3RaceCarPhysics*)` |  |  |  | `0x001BF130` 308 |  |  |
-| `Construct()` |  |  |  | `0x001AEAC0` 132 |  |  |
-| `Destruct()` |  |  |  | `0x001B0A70` 132 |  |  |
-| `FreeAttrib(CB3RaceCarPhysicsAttribs*)` |  |  |  | `0x001C8020` 144 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `AllocAttrib(CB3RaceCarPhysics*)` |  |  |  | `0x001BF130` 308 |  |  | `CB4DrivableVehiclePhysicsAttribs * CB4RaceCarPhysicsAttribTable::AllocAttrib(CB4DrivableVehiclePhysics *lpPhysics, unsigned long lVehicleID)` (same name, different parameters) |
+| `Construct()` |  |  |  | `0x001AEAC0` 132 |  |  |  |
+| `Destruct()` |  |  |  | `0x001B0A70` 132 |  |  |  |
+| `FreeAttrib(CB3RaceCarPhysicsAttribs*)` |  |  |  | `0x001C8020` 144 |  |  | `void CB4RaceCarPhysicsAttribTable::FreeAttrib(CB4DrivableVehiclePhysicsAttribs *lpAttrib)` (same name, different parameters) |
+
+## Burnout Revenge layout of `CB4RaceCarPhysicsAttribTable`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameSource/Physics/B4DrivableVehiclePhysics.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4RaceCarPhysicsAttribTable {  // size 0x1140
+    /* 0x000 */ CB4DrivableVehiclePhysicsAttribs maAttribs[6];
+    /* 0x1110 */ CB4DrivableVehiclePhysicsAttribs *mapAttribs[6];
+    /* 0x1128 */ int mabIsCopy[6];
+    // methods
+    // CB4RaceCarPhysicsAttribTable(const CB4RaceCarPhysicsAttribTable &);
+    // CB4RaceCarPhysicsAttribTable();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // CB4DrivableVehiclePhysicsAttribs * AllocAttrib(CB4DrivableVehiclePhysics *, unsigned long);
+    // void FreeAttrib(CB4DrivableVehiclePhysicsAttribs *);
+    // CB4DrivableVehiclePhysicsAttribs * GetAttrib(unsigned long) const;
+};
+```
 
 ## Notes
 

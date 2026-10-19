@@ -7,14 +7,42 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `B3CPUMonitors.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4CPUMonitors`, size 0x07C, methods in `GameSource/Game/B4CPUMonitors.cpp` ([layout](#burnout-revenge-layout-of-cb4cpumonitors))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` | `0x002AEF70` 52 | `0x002ED7D0` 52 | `0x00322B50` 52 | `0x0031AD00` 164 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` | `0x002AEF70` 52 | `0x002ED7D0` 52 | `0x00322B50` 52 | `0x0031AD00` 164 |  |  | `void CB4CPUMonitors::Construct()` |
+
+## Burnout Revenge layout of `CB4CPUMonitors`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Game/B4CPUMonitors.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CPUMonitors {  // size 0x07C
+    /* 0x000 */ RwInt32 mnFreeCPU;
+    /* 0x004 */ RwInt32 mnUpdateCost;
+    /* 0x008 */ RwInt32 mnCameraCost;
+    /* 0x00C */ RwInt32 mnAICost;
+    /* 0x010 */ RwInt32 mnGraphicsCost;
+    /* 0x014 */ RwInt32 mnNetworkCost;
+    /* 0x018 */ RwInt32 mnPhysicsCost;
+    /* 0x01C */ RwInt32 mnSoundCost;
+    /* 0x020 */ RwInt32 mnTrafficCost;
+    /* 0x024 */ RwInt32 mnDebugManagerCost;
+    /* 0x028 */ RwInt32 mnSleepCost;
+    /* 0x02C */ RwInt32 mnEffectsCost;
+    /* 0x030 */ CB4NetworkCPUMonitors mNet;
+    // methods
+    // CB4CPUMonitors(const CB4CPUMonitors &);
+    // CB4CPUMonitors();
+    // void Construct();
+    // void Destruct();
+};
+```
 
 ## Notes
 

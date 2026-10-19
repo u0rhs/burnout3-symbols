@@ -8,23 +8,48 @@
 - **Source file:** `B3BloomPS2.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 10, B3INTERN 10, B3O0PCH 10
 - **Retail (SLUS-21050):** 10 of its 10 DNAT_200 methods found, 9 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4Bloom`, size 0x028, methods in `GameSource/Graphics/Bloom/Ps2/B4BloomPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4bloom))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RestoreRenderstates(unsigned long)` | `0x00226720` 168 | `0x0023D290` 168 | `0x00279DA0` 168 | `0x0027C820` 240 | `0x00264920` proven |  |
-| `CopyToScreen(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int)` | `0x002267D0` 592 | `0x0023D340` 588 | `0x00279E50` 592 | `0x0027C4C0` 860 | `0x002649D0` proven |  |
-| `Blend(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,bool,bool)` | `0x00226A20` 556 | `0x0023D590` 556 | `0x0027A0A0` 556 | `0x0027C190` 808 | `0x00264C30` proven |  |
-| `Blur(unsigned int,unsigned int,unsigned int,unsigned int)` | `0x00226C50` 840 | `0x0023D7C0` 1056 | `0x0027A2D0` 840 | `0x0027BBF0` 1428 | `0x00264E60` proven |  |
-| `SecondDownsample(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int)` | `0x00226FA0` 492 | `0x0023DBE0` 568 | `0x0027A620` 492 | `0x0027B910` 724 | `0x002651C0` proven |  |
-| `FirstDownsample(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned i` | `0x00227190` 1412 | `0x0023DE20` 1568 | `0x0027A810` 1564 | `0x0027B170` 1952 | `0x002653B0` proven |  |
-| `SetRenderstates()` | `0x00227720` 108 | `0x0023E440` 108 | `0x0027AE30` 108 | `0x0027B0D0` 152 | `0x00265950` proven |  |
-| `Render(bool,bool)` | `0x00227790` 624 | `0x0023E4B0` 928 | `0x0027AEA0` 832 | `0x0027AD10` 960 | `0x002659C0` proven |  |
-| `Prepare()` | `0x00227A00` 8 | `0x0023E850` 8 | `0x0027B1E0` 8 | `0x0027ACF0` 20 | `0x00265C30` strong |  |
-| `Construct()` | `0x00227A10` 24 | `0x0023E860` 24 | `0x0027B1F0` 24 | `0x0027ACA0` 68 | `0x00265C40` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RestoreRenderstates(unsigned long)` | `0x00226720` 168 | `0x0023D290` 168 | `0x00279DA0` 168 | `0x0027C820` 240 | `0x00264920` proven |  | `void CB4Bloom::RestoreRenderstates(unsigned long lu64Scissor)` |
+| `CopyToScreen(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int)` | `0x002267D0` 592 | `0x0023D340` 588 | `0x00279E50` 592 | `0x0027C4C0` 860 | `0x002649D0` proven |  | `void CB4Bloom::CopyToScreen(unsigned int luSizeX, unsigned int luSizeY, unsigned int luOffX, unsigned int luOffY, unsigned int luSixteenthBufferAddress, unsigned int luSixteenthBufferStride, unsigned int luFrameBufferAddress, unsigned int luFrameBufferStride)` |
+| `Blend(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,bool,bool)` | `0x00226A20` 556 | `0x0023D590` 556 | `0x0027A0A0` 556 | `0x0027C190` 808 | `0x00264C30` proven |  | `void CB4Bloom::Blend(unsigned int luSizeX, unsigned int luSizeY, unsigned int luOffX, unsigned int luOffY, unsigned int luSixteenthBufferAddress, unsigned int luSixteenthBufferStride, bool lbIsPaused, bool lbResetTrails)` |
+| `Blur(unsigned int,unsigned int,unsigned int,unsigned int)` | `0x00226C50` 840 | `0x0023D7C0` 1056 | `0x0027A2D0` 840 | `0x0027BBF0` 1428 | `0x00264E60` proven |  | `void CB4Bloom::Blur(unsigned int luSizeX, unsigned int luSizeY, unsigned int luSixteenthBufferAddress, unsigned int luSixteenthBufferStride)` |
+| `SecondDownsample(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int)` | `0x00226FA0` 492 | `0x0023DBE0` 568 | `0x0027A620` 492 | `0x0027B910` 724 | `0x002651C0` proven |  | `void CB4Bloom::SecondDownsample(unsigned int luSizeX, unsigned int luSizeY, unsigned int luQuarterBufferAddress, unsigned int luQuarterBufferStride, unsigned int luSixteenthBufferAddress, unsigned int luSixteenthBufferStride)` |
+| `FirstDownsample(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned i` | `0x00227190` 1412 | `0x0023DE20` 1568 | `0x0027A810` 1564 | `0x0027B170` 1952 | `0x002653B0` proven |  | `void CB4Bloom::FirstDownsample(unsigned int luSizeX, unsigned int luSizeY, unsigned int luOffX, unsigned int luOffY, unsigned int luFrameBufferAddress, unsigned int luFrameBufferStride, unsigned int luTempBufferAddress, unsigned int luQuarterBufferAddress, unsigned int luQuarterBufferStride)` (same name, different parameters) |
+| `SetRenderstates()` | `0x00227720` 108 | `0x0023E440` 108 | `0x0027AE30` 108 | `0x0027B0D0` 152 | `0x00265950` proven |  | `void CB4Bloom::SetRenderstates()` |
+| `Render(bool,bool)` | `0x00227790` 624 | `0x0023E4B0` 928 | `0x0027AEA0` 832 | `0x0027AD10` 960 | `0x002659C0` proven |  | `void CB4Bloom::Render(bool lbIsPaused, bool lbResetTrails)` |
+| `Prepare()` | `0x00227A00` 8 | `0x0023E850` 8 | `0x0027B1E0` 8 | `0x0027ACF0` 20 | `0x00265C30` strong |  | `bool CB4Bloom::Prepare()` |
+| `Construct()` | `0x00227A10` 24 | `0x0023E860` 24 | `0x0027B1F0` 24 | `0x0027ACA0` 68 | `0x00265C40` proven |  | `void CB4Bloom::Construct()` |
+
+## Burnout Revenge layout of `CB4Bloom`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 88 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Bloom : public CB4BloomBase {  // size 0x028
+    // base CB4BloomBase at 0x000
+    // methods
+    // CB4Bloom(const CB4Bloom &);
+    // CB4Bloom();
+    // void Construct();
+    // bool Prepare();
+    // void Render(bool, bool);
+    // void SetRenderstates();
+    // void FirstDownsample(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
+    // void SecondDownsample(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
+    // void Blur(unsigned int, unsigned int, unsigned int, unsigned int);
+    // void ApplyMask(unsigned int, unsigned int, unsigned int, unsigned int);
+    // void Blend(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, bool, bool);
+    // void CopyToScreen(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
+    // void RestoreRenderstates(unsigned long);
+};
+```
 
 ## Notes
 

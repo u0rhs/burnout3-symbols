@@ -6,15 +6,16 @@
 
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Methods per build:** B3O0PCH 2
+- **Burnout Revenge counterpart:** `CB4NormalGameModes`, size 0x001 ([layout](#burnout-revenge-layout-of-cb4normalgamemodes))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetOfflineGameDataFileName(ENormalOfflineGameModes,ETrackDirections)` |  |  |  | `0x0033DF00` 68 |  |  |
-| `GetOnlineGameDataFileName(ENormalOnlineGameModes,ETrackDirections)` |  |  |  | `0x0033E8E0` 68 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetOfflineGameDataFileName(ENormalOfflineGameModes,ETrackDirections)` |  |  |  | `0x0033DF00` 68 |  |  |  |
+| `GetOnlineGameDataFileName(ENormalOnlineGameModes,ETrackDirections)` |  |  |  | `0x0033E8E0` 68 |  |  |  |
 
 ## Static data (DNAT_200)
 
@@ -22,6 +23,22 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 |---|---:|---|---|
 | `0x003FFF10` | 126 | .data | `CB3NormalGameModes::gmaaacOfflineFileNames` |
 | `0x003FFF90` | 108 | .data | `CB3NormalGameModes::gmaaacOnlineFileNames` |
+
+## Burnout Revenge layout of `CB4NormalGameModes`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 92 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NormalGameModes {  // size 0x001
+    /* static */ char gmaaacOfflineFileNames[8][2][9];
+    /* static */ char gmaaacOnlineFileNames[6][2][9];
+    // methods
+    // CB4NormalGameModes(const CB4NormalGameModes &);
+    // CB4NormalGameModes();
+    // static RwChar * GetOfflineGameDataFileName(ENormalOfflineGameModes, ETrackDirections);
+    // static RwChar * GetOnlineGameDataFileName(ENormalOnlineGameModes, ETrackDirections);
+};
+```
 
 ## Notes
 

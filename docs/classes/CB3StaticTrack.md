@@ -8,26 +8,58 @@
 - **Source file:** `B3StaticTrack.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 10, B3INTERN 10, B3O0PCH 12
 - **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4StaticTrack`, size 0x018, methods in `GameSource/World/B4StaticTrack.cpp` ([layout](#burnout-revenge-layout-of-cb4statictrack))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RenderStaticObjectToReflectedCamera(const CB3StaticTrackObject&)` |  | `0x001E24D0` 544 | `0x00215170` 544 | `0x00227280` 556 |  |  |
-| `RenderAllBackdrops(EBackdropRenderRange,bool,bool)` | `0x001E2620` 604 | `0x001E21B0` 604 |  | `0x002275D0` 748 | `0x0021D2E0` strong |  |
-| `RenderWater(float,const CB3BackdropObject&,const CB3BackdropObject*)` | `0x001E2880` 532 | `0x001E2410` 188 | `0x002150B0` 188 | `0x002274B0` 240 | `0x0021D550` strong |  |
-| `RenderStaticObject(const CB3StaticTrackObject&)` | `0x001E2AA0` 348 | `0x001E26F0` 400 | `0x00215390` 400 | `0x002270E0` 360 | `0x0021D770` strong |  |
-| `Update()` | `0x002EB4E0` 820 | `0x00338980` 1144 | `0x0036A2C0` 1120 | `0x00369220` 1336 | `0x003329A0` strong |  |
-| `RenderBackdrop(const CB3BackdropObject&)` | `0x002EB820` 108 | `0x00338E00` 108 | `0x0036A720` 108 | `0x003691A0` 120 | `0x00332D00` proven |  |
-| `Release()` | `0x002EB890` 132 | `0x00338E70` 132 | `0x0036A790` 132 | `0x003690F0` 176 | `0x00332D70` proven |  |
-| `Prepare()` | `0x002EB920` 760 | `0x00338F00` 760 | `0x0036A820` 760 | `0x00368CC0` 1072 | `0x00332E00` proven |  |
-| `Destruct()` | `0x002EBC20` 12 | `0x00339200` 12 | `0x0036AB20` 12 | `0x00368CA0` 32 | `0x00333110` proven |  |
-| `Construct()` | `0x002EBC30` 24 | `0x00339210` 24 | `0x0036AB30` 24 | `0x00368C60` 56 | `0x00333120` proven |  |
-| `GetBloomIntensity()` |  |  |  | `0x0033B630` 28 |  |  |
-| `GetBloomThreshold()` |  |  |  | `0x0033B650` 28 |  |  |
-| `RenderAllBackdrops(bool,bool,bool)` |  |  | `0x00214E60` 584 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RenderStaticObjectToReflectedCamera(const CB3StaticTrackObject&)` |  | `0x001E24D0` 544 | `0x00215170` 544 | `0x00227280` 556 |  |  | `void CB4StaticTrack::RenderStaticObjectToReflectedCamera(const CB4StaticTrackObject &lObject)` |
+| `RenderAllBackdrops(EBackdropRenderRange,bool,bool)` | `0x001E2620` 604 | `0x001E21B0` 604 |  | `0x002275D0` 748 | `0x0021D2E0` strong |  | `void CB4StaticTrack::RenderAllBackdrops(EBackdropRenderRange leRange, bool lbRenderMainCamera, bool lbRenderEnvmap)` |
+| `RenderWater(float,const CB3BackdropObject&,const CB3BackdropObject*)` | `0x001E2880` 532 | `0x001E2410` 188 | `0x002150B0` 188 | `0x002274B0` 240 | `0x0021D550` strong |  | `void CB4StaticTrack::RenderWater(float lrWaterPlaneHeight, const CB4BackdropObject &lWaterObject, const CB4BackdropObject *lpReflectionObject)` |
+| `RenderStaticObject(const CB3StaticTrackObject&)` | `0x001E2AA0` 348 | `0x001E26F0` 400 | `0x00215390` 400 | `0x002270E0` 360 | `0x0021D770` strong |  | `void CB4StaticTrack::RenderStaticObject(const CB4StaticTrackObject &lObject)` |
+| `Update()` | `0x002EB4E0` 820 | `0x00338980` 1144 | `0x0036A2C0` 1120 | `0x00369220` 1336 | `0x003329A0` strong |  | `void CB4StaticTrack::Update()` |
+| `RenderBackdrop(const CB3BackdropObject&)` | `0x002EB820` 108 | `0x00338E00` 108 | `0x0036A720` 108 | `0x003691A0` 120 | `0x00332D00` proven |  | `void CB4StaticTrack::RenderBackdrop(const CB4BackdropObject &lObject)` |
+| `Release()` | `0x002EB890` 132 | `0x00338E70` 132 | `0x0036A790` 132 | `0x003690F0` 176 | `0x00332D70` proven |  | `void CB4StaticTrack::Release()` |
+| `Prepare()` | `0x002EB920` 760 | `0x00338F00` 760 | `0x0036A820` 760 | `0x00368CC0` 1072 | `0x00332E00` proven |  | `bool CB4StaticTrack::Prepare()` |
+| `Destruct()` | `0x002EBC20` 12 | `0x00339200` 12 | `0x0036AB20` 12 | `0x00368CA0` 32 | `0x00333110` proven |  | `void CB4StaticTrack::Destruct()` |
+| `Construct()` | `0x002EBC30` 24 | `0x00339210` 24 | `0x0036AB30` 24 | `0x00368C60` 56 | `0x00333120` proven |  | `void CB4StaticTrack::Construct()` |
+| `GetBloomIntensity()` |  |  |  | `0x0033B630` 28 |  |  |  |
+| `GetBloomThreshold()` |  |  |  | `0x0033B650` 28 |  |  |  |
+| `RenderAllBackdrops(bool,bool,bool)` |  |  | `0x00214E60` 584 |  |  |  |  |
+
+## Burnout Revenge layout of `CB4StaticTrack`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 5 file(s), e.g. `GameSource/World/B4RacePosition.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4StaticTrack {  // size 0x018
+    /* 0x000 */ bool mbDataLoaded;
+    /* 0x001 */ bool mbDataFixedUp;
+    /* 0x004 */ CB4StaticTrackData *mpDataBuffer;
+    /* 0x008 */ EGtPrepareState mePrepareState;
+    /* 0x00C */ RwUInt32 muLoadId;
+    /* 0x010 */ RwReal mrBloomThreshold;
+    /* 0x014 */ RwReal mrBloomIntensity;
+    // methods
+    // CB4StaticTrack(const CB4StaticTrack &);
+    // CB4StaticTrack();
+    // void Construct();
+    // bool Prepare();
+    // void Release();
+    // void Destruct();
+    // void Update();
+    // void RenderAllBackdrops(EBackdropRenderRange, bool, bool);
+    // void RenderBackdrop(const CB4BackdropObject &);
+    // void RenderStaticObject(const CB4StaticTrackObject &);
+    // void RenderStaticObjectToReflectedCamera(const CB4StaticTrackObject &);
+    // void RenderWater(float, const CB4BackdropObject &, const CB4BackdropObject *);
+    // RwReal GetBloomThreshold();
+    // RwReal GetBloomIntensity();
+};
+```
 
 ## Notes
 

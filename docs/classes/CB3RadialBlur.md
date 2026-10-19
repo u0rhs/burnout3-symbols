@@ -8,24 +8,52 @@
 - **Source file:** `B3RadialBlurPS2.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 11
 - **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 9 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4RadialBlur`, size 0x060, methods in `GameSource/Graphics/RadialBlur/Ps2/B4RadialBlurPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4radialblur))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RestoreRenderstates(const CB3CameraData*)` | `0x002B90F0` 136 | `0x002FAC00` 136 | `0x0032E8D0` 136 | `0x00327910` 212 | `0x002F9EC0` proven |  |
-| `CopyToScreen(unsigned long,unsigned long,unsigned long,unsigned long,int,int,int,int)` | `0x002B9180` 468 | `0x002FAC90` 468 | `0x0032E960` 468 | `0x00327680` 656 | `0x002F9F50` proven |  |
-| `BlurOut(int,int,int,int,const GtMathPs2::CGtV2d&)` | `0x002B9360` 640 | `0x002FAE70` 876 | `0x0032EB40` 876 | `0x00327190` 1264 | `0x002FA130` proven |  |
-| `BlurSetRenderstates(unsigned long,unsigned long,int,int)` | `0x002B95E0` 208 | `0x002FB1E0` 208 | `0x0032EEB0` 208 | `0x00327080` 272 | `0x002FA3C0` proven |  |
-| `SetAlpha(unsigned long,unsigned long,int,int,int,int,CGtTexture*,bool)` | `0x002B96B0` 736 | `0x002FB2B0` 736 | `0x0032EF80` 736 | `0x00326BE0` 1172 | `0x002FA490` proven |  |
-| `Downsample(unsigned long,unsigned long,unsigned long,unsigned long,int,int,int,int)` | `0x002B9990` 388 | `0x002FB590` 548 | `0x0032F260` 548 | `0x003269B0` 548 | `0x002FA770` proven |  |
-| `SetRenderstates()` | `0x002B9B20` 156 | `0x002FB7C0` 156 | `0x0032F490` 156 | `0x003268E0` 208 | `0x002FA900` proven |  |
-| `Render()` | `0x002B9BC0` 996 | `0x002FB860` 1172 | `0x0032F530` 1172 | `0x00326330` 1444 | `0x002FA9A0` proven |  |
-| `Prepare()` | `0x002B9FB0` 224 | `0x002FBD00` 312 | `0x0032F9D0` 312 | `0x00326210` 96 | `0x002FAD90` proven |  |
-| `CB3RadialBlur()` |  |  |  | `0x00196140` 44 |  |  |
-| `Construct()` |  |  |  | `0x001948B0` 16 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RestoreRenderstates(const CB3CameraData*)` | `0x002B90F0` 136 | `0x002FAC00` 136 | `0x0032E8D0` 136 | `0x00327910` 212 | `0x002F9EC0` proven |  | `void CB4RadialBlur::RestoreRenderstates(const CB4CameraData *lpCameraData)` |
+| `CopyToScreen(unsigned long,unsigned long,unsigned long,unsigned long,int,int,int,int)` | `0x002B9180` 468 | `0x002FAC90` 468 | `0x0032E960` 468 | `0x00327680` 656 | `0x002F9F50` proven |  | `void CB4RadialBlur::CopyToScreen(unsigned long lu64FrameBufferAddress, unsigned long lu64FrameBufferStride, unsigned long lu64WorkspaceAddress, unsigned long lu64WorkspaceStride, int lnTopLeftX, int lnTopLeftY, int lnSizeX, int lnSizeY)` |
+| `BlurOut(int,int,int,int,const GtMathPs2::CGtV2d&)` | `0x002B9360` 640 | `0x002FAE70` 876 | `0x0032EB40` 876 | `0x00327190` 1264 | `0x002FA130` proven |  | `void CB4RadialBlur::BlurOut(int lnFocusX, int lnFocusY, int lnSizeX, int lnSizeY, const GtMathPs2::CGtV2d &lUVScale)` |
+| `BlurSetRenderstates(unsigned long,unsigned long,int,int)` | `0x002B95E0` 208 | `0x002FB1E0` 208 | `0x0032EEB0` 208 | `0x00327080` 272 | `0x002FA3C0` proven |  | `void CB4RadialBlur::BlurSetRenderstates(unsigned long lu64WorkspaceAddress, unsigned long lu64WorkspaceStride, int lnSizeX, int lnSizeY)` |
+| `SetAlpha(unsigned long,unsigned long,int,int,int,int,CGtTexture*,bool)` | `0x002B96B0` 736 | `0x002FB2B0` 736 | `0x0032EF80` 736 | `0x00326BE0` 1172 | `0x002FA490` proven |  | `void CB4RadialBlur::SetAlpha(unsigned long lu64WorkspaceAddress, unsigned long lu64WorkspaceStride, int lnFocusX, int lnFocusY, int lnSizeX, int lnSizeY, CGtTexture *lpTexture, bool lbBlurOverhead)` |
+| `Downsample(unsigned long,unsigned long,unsigned long,unsigned long,int,int,int,int)` | `0x002B9990` 388 | `0x002FB590` 548 | `0x0032F260` 548 | `0x003269B0` 548 | `0x002FA770` proven |  | `void CB4RadialBlur::Downsample(unsigned long lu64FrameBufferAddress, unsigned long lu64FrameBufferStride, unsigned long lu64WorkspaceAddress, unsigned long lu64WorkspaceStride, int lnTopLeftX, int lnTopLeftY, int lnSizeX, int lnSizeY)` |
+| `SetRenderstates()` | `0x002B9B20` 156 | `0x002FB7C0` 156 | `0x0032F490` 156 | `0x003268E0` 208 | `0x002FA900` proven |  | `void CB4RadialBlur::SetRenderstates()` |
+| `Render()` | `0x002B9BC0` 996 | `0x002FB860` 1172 | `0x0032F530` 1172 | `0x00326330` 1444 | `0x002FA9A0` proven |  | `void CB4RadialBlur::Render()` |
+| `Prepare()` | `0x002B9FB0` 224 | `0x002FBD00` 312 | `0x0032F9D0` 312 | `0x00326210` 96 | `0x002FAD90` proven |  | `bool CB4RadialBlur::Prepare()` |
+| `CB3RadialBlur()` |  |  |  | `0x00196140` 44 |  |  |  |
+| `Construct()` |  |  |  | `0x001948B0` 16 |  |  |  |
+
+## Burnout Revenge layout of `CB4RadialBlur`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 87 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4RadialBlur : public CB4RadialBlurBase {  // size 0x060
+    // base CB4RadialBlurBase at 0x000
+    /* 0x050 */ CGtTexture *mpMaskTexture;
+    // methods
+    // CB4RadialBlur(const CB4RadialBlur &);
+    // CB4RadialBlur();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void Render();
+    // void SetRenderstates();
+    // void Downsample(unsigned long, unsigned long, unsigned long, unsigned long, int, int, int, int);
+    // void SetAlpha(unsigned long, unsigned long, int, int, int, int, CGtTexture *, bool);
+    // void DrawTint(unsigned long, unsigned long, int, int, int, int, CGtTexture *);
+    // void BlurSetRenderstates(unsigned long, unsigned long, int, int);
+    // void BlurOut(int, int, int, int, const GtMathPs2::CGtV2d &);
+    // void CopyToScreen(unsigned long, unsigned long, unsigned long, unsigned long, int, int, int, int);
+    // void RestoreRenderstates(const CB4CameraData *);
+};
+```
 
 ## Notes
 

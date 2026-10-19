@@ -7,18 +7,47 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `B3EnvironmentData.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 5
+- **Burnout Revenge counterpart:** `CB4EnvironmentData`, size 0x0B0, methods in `GameSource/World/B4EnvironmentData.cpp` ([layout](#burnout-revenge-layout-of-cb4environmentdata))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `FixUp()` | `0x00278020` 140 | `0x002AB830` 204 | `0x002E2AD0` 204 | `0x002E0DF0` 288 |  |  |
-| `CB3EnvironmentData()` |  |  |  | `0x002E8AF0` 108 |  |  |
-| `GetCurrentVersionNumber()` |  |  |  | `0x002E0F10` 24 |  |  |
-| `GetEnvironmentInfo(CB3EnvironmentInfo&,float)` |  |  |  | `0x002E72D0` 424 |  |  |
-| `operator =(const CB3EnvironmentData&)` |  |  |  | `0x002E6F90` 324 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `FixUp()` | `0x00278020` 140 | `0x002AB830` 204 | `0x002E2AD0` 204 | `0x002E0DF0` 288 |  |  | `void CB4EnvironmentData::FixUp()` |
+| `CB3EnvironmentData()` |  |  |  | `0x002E8AF0` 108 |  |  |  |
+| `GetCurrentVersionNumber()` |  |  |  | `0x002E0F10` 24 |  |  |  |
+| `GetEnvironmentInfo(CB3EnvironmentInfo&,float)` |  |  |  | `0x002E72D0` 424 |  |  |  |
+| `operator =(const CB3EnvironmentData&)` |  |  |  | `0x002E6F90` 324 |  |  |  |
+
+## Burnout Revenge layout of `CB4EnvironmentData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/World/B4EnvironmentData.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4EnvironmentData {  // size 0x0B0
+    /* 0x000 */ CB4EnvironmentInfo mMinEnvironmentInfo;
+    /* 0x030 */ CB4EnvironmentInfo mMaxEnvironmentInfo;
+    /* 0x060 */ CGtRGB mSpecularColour;
+    /* 0x070 */ CGtRGB mSunColour;
+    /* 0x080 */ CGtV3d mSunMoonDirection;
+    /* 0x090 */ RwReal mrSunCoronaRadius;
+    /* 0x094 */ RwBool mbSunIsMoon;
+    /* 0x098 */ CGtTexture *mpGradientTexture;
+    /* 0x09C */ CGtTexture *mpCloudTexture;
+    /* 0x0A0 */ CGtTexture *mpCloudEnvMapTexture;
+    /* 0x0A4 */ CGtTexture *mpSunMoonTexture;
+    /* 0x0A8 */ RwUInt32 muVersionNumber;
+    /* 0x0AC */ RwUInt32 muNOTUSEDANYMORE;
+    // methods
+    // CB4EnvironmentData(const CB4EnvironmentData &);
+    // CB4EnvironmentData();
+    // void FixUp();
+    // void GetEnvironmentInfo(CB4EnvironmentInfo &, float);
+    // RwUInt32 GetCurrentVersionNumber();
+};
+```
 
 ## Notes
 

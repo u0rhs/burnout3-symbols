@@ -11,13 +11,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetFullFilename()` | `0x003C6640` 96 | `0x004436F0` 188 | `0x0046C2D0` 188 | `0x00481E50` 164 | `0x004216A0` proven |  |
-| `Set(const char*,const void*,unsigned int)` |  |  |  | `0x00464A10` 68 |  |  |
-| `_SetDirName(const char*)` |  |  |  | `0x00464A60` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetFullFilename()` | `0x003C6640` 96 | `0x004436F0` 188 | `0x0046C2D0` 188 | `0x00481E50` 164 | `0x004216A0` proven |  |  |
+| `Set(const char*,const void*,unsigned int)` |  |  |  | `0x00464A10` 68 |  |  |  |
+| `_SetDirName(const char*)` |  |  |  | `0x00464A60` 28 |  |  |  |
 
 ## Static data (DNAT_200)
 

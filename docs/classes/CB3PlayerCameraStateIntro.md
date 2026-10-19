@@ -12,12 +12,12 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x002A7D40` 900 | `0x002E2740` 1048 | `0x003195A0` 900 | `0x00314F50` 608 | `0x002E8BD0` unverified |  |
-| `CB3PlayerCameraStateIntro()` |  |  |  | `0x0013ECA0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x002A7D40` 900 | `0x002E2740` 1048 | `0x003195A0` 900 | `0x00314F50` 608 | `0x002E8BD0` unverified |  |  |
+| `CB3PlayerCameraStateIntro()` |  |  |  | `0x0013ECA0` 60 |  |  |  |
 
 ## Notes
 

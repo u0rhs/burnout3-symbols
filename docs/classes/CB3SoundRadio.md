@@ -7,30 +7,120 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundRadio.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 17, B3O0PCH 9
+- **Burnout Revenge counterpart:** `CB4SoundRadio`, size 0x1C0, methods in `GameSource/Sound/Radio/B4SoundRadio.cpp` ([layout](#burnout-revenge-layout-of-cb4soundradio))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `EnableRadioDJ(int)` | `0x003A8C80` 8 | `0x004244D0` 8 | `0x00449F20` 28 | `0x004627E0` 16 |  |  |
-| `SetRadioVolume(float)` | `0x003A8C90` 8 | `0x004244E0` 8 | `0x00449F40` 16 | `0x004627D0` 16 |  |  |
-| `SetCrashNavMode(CB3SoundRadio::EB3RadioCrashNavState)` | `0x003A8CA0` 8 | `0x004244F0` 8 | `0x0044A1B0` 68 | `0x004627C0` 16 |  |  |
-| `SetMode(CB3SoundRadio::EB3RadioMode)` | `0x003A8CB0` 8 | `0x00424500` 8 | `0x0044B850` 424 | `0x004627B0` 16 |  |  |
-| `Destruct()` | `0x003A8CC0` 8 | `0x00424510` 8 | `0x0044BA00` 8 | `0x004627A0` 16 |  |  |
-| `Release()` | `0x003A8CD0` 8 | `0x00424520` 8 | `0x0044BA10` 408 | `0x00462780` 20 |  |  |
-| `Update()` | `0x003A8CE0` 8 | `0x00424530` 8 | `0x0044BBB0` 312 | `0x00462770` 16 |  |  |
-| `Prepare()` | `0x003A8CF0` 8 | `0x00424540` 8 | `0x0044BCF0` 848 | `0x00462750` 20 |  |  |
-| `Construct()` | `0x003A8D00` 8 | `0x00424550` 8 | `0x0044C040` 68 | `0x00462740` 16 |  |  |
-| `GetModeSpecificPath(char*)` |  |  | `0x00449F50` 324 |  |  |  |
-| `GetTrackSpecificPath(unsigned long,char*,int*,int*,bool)` |  |  | `0x0044A0A0` 268 |  |  |  |
-| `IsDjFinished()` |  |  | `0x00449F10` 16 |  |  |  |
-| `LoadIdentBank()` |  |  | `0x0044B700` 332 |  |  |  |
-| `UpdateFrontEndGeneral()` |  |  | `0x0044B600` 252 |  |  |  |
-| `UpdateFrontEndSinglePlayer()` |  |  | `0x0044B100` 1276 |  |  |  |
-| `UpdateSinglePlayerIntro()` |  |  | `0x0044ABA0` 1376 |  |  |  |
-| `UpdateSinglePlayerPlay()` |  |  | `0x0044A200` 2464 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `EnableRadioDJ(int)` | `0x003A8C80` 8 | `0x004244D0` 8 | `0x00449F20` 28 | `0x004627E0` 16 |  |  | `void CB4SoundRadio::EnableRadioDJ(int lbEnable)` |
+| `SetRadioVolume(float)` | `0x003A8C90` 8 | `0x004244E0` 8 | `0x00449F40` 16 | `0x004627D0` 16 |  |  |  |
+| `SetCrashNavMode(CB3SoundRadio::EB3RadioCrashNavState)` | `0x003A8CA0` 8 | `0x004244F0` 8 | `0x0044A1B0` 68 | `0x004627C0` 16 |  |  | `void CB4SoundRadio::SetCrashNavMode(CB4SoundRadio::EB4RadioCrashNavState leCrashNavState)` |
+| `SetMode(CB3SoundRadio::EB3RadioMode)` | `0x003A8CB0` 8 | `0x00424500` 8 | `0x0044B850` 424 | `0x004627B0` 16 |  |  | `void CB4SoundRadio::SetMode(CB4SoundRadio::EB4RadioMode leNewMode)` |
+| `Destruct()` | `0x003A8CC0` 8 | `0x00424510` 8 | `0x0044BA00` 8 | `0x004627A0` 16 |  |  | `void CB4SoundRadio::Destruct()` |
+| `Release()` | `0x003A8CD0` 8 | `0x00424520` 8 | `0x0044BA10` 408 | `0x00462780` 20 |  |  | `bool CB4SoundRadio::Release()` |
+| `Update()` | `0x003A8CE0` 8 | `0x00424530` 8 | `0x0044BBB0` 312 | `0x00462770` 16 |  |  | `void CB4SoundRadio::Update()` |
+| `Prepare()` | `0x003A8CF0` 8 | `0x00424540` 8 | `0x0044BCF0` 848 | `0x00462750` 20 |  |  | `bool CB4SoundRadio::Prepare(CB4SoundRadio::EB4RadioMode leMode)` (same name, different parameters) |
+| `Construct()` | `0x003A8D00` 8 | `0x00424550` 8 | `0x0044C040` 68 | `0x00462740` 16 |  |  | `void CB4SoundRadio::Construct()` |
+| `GetModeSpecificPath(char*)` |  |  | `0x00449F50` 324 |  |  |  |  |
+| `GetTrackSpecificPath(unsigned long,char*,int*,int*,bool)` |  |  | `0x0044A0A0` 268 |  |  |  |  |
+| `IsDjFinished()` |  |  | `0x00449F10` 16 |  |  |  |  |
+| `LoadIdentBank()` |  |  | `0x0044B700` 332 |  |  |  |  |
+| `UpdateFrontEndGeneral()` |  |  | `0x0044B600` 252 |  |  |  |  |
+| `UpdateFrontEndSinglePlayer()` |  |  | `0x0044B100` 1276 |  |  |  |  |
+| `UpdateSinglePlayerIntro()` |  |  | `0x0044ABA0` 1376 |  |  |  |  |
+| `UpdateSinglePlayerPlay()` |  |  | `0x0044A200` 2464 |  |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundRadio`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 13 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundRadio {  // size 0x1C0
+    /* 0x000 */ CB4SoundMusicManager mMusicManager;
+    /* 0x0EC */ RwInt32 mnSoundtrackIndex;
+    /* static */ RwInt32 knMaxDjSegments;
+    /* static */ RwInt32 knMaxIdentBankPathLength;
+    /* static */ RwInt32 knMaxRadioStreamPathLength;
+    /* 0x0F0 */ char macRadioStreamPath[32];
+    /* 0x110 */ char macIdentBankPath[32];
+    /* 0x130 */ unsigned char mauShuffledArray[38];
+    /* 0x158 */ GtID mTrackId;
+    /* 0x160 */ CGtSoundStream *mpDjStream;
+    /* 0x164 */ CGtSoundBank *mpIdentBank;
+    /* 0x168 */ CGtSoundWave *mpIdentWave;
+    /* 0x16C */ CGtSoundVoiceHandle mIdentVoice;
+    /* 0x17C */ EGtPrepareState mePrepareState;
+    /* 0x180 */ EB4RadioState meState;
+    /* 0x184 */ EB4RadioMode meMode;
+    /* 0x188 */ EB4RadioCrashNavState meCrashNavState;
+    /* 0x18C */ RwInt32 mnSegmentIndex;
+    /* 0x190 */ RwInt32 mnSegmentCount;
+    /* 0x194 */ RwInt32 mnSegmentOffsetStart;
+    /* 0x198 */ RwInt32 mnSegmentOffsetEnd;
+    /* 0x19C */ RwReal mrTimeTillNextDjInject;
+    /* 0x1A0 */ RwInt8 mnIdentIndex;
+    /* 0x1A1 */ RwInt8 mnShuffleIndex;
+    /* 0x1A4 */ RwUInt32 mxFlags;
+    /* 0x1A8 */ RwInt32 mnPadMapping;
+    /* 0x1AC */ RwReal mrRadioDJStreamVolume;
+    /* 0x1B0 */ RwReal mrIdentFrequency;
+    /* 0x1B4 */ RwReal mrIdentVolume;
+    /* 0x1B8 */ bool mbDisableDj;
+    /* 0x1B9 */ bool mbDjHasPlayed;
+    /* 0x1BA */ bool mbCueMusicInPrepare;
+    /* 0x1BB */ bool mbSkipTrack;
+    /* 0x1BC */ bool mbSkipTrackEnable;
+    /* 0x1BD */ bool mbReachedMainMenu;
+    // methods
+    // CB4SoundRadio(const CB4SoundRadio &);
+    // CB4SoundRadio();
+    // void Construct();
+    // bool Prepare(CB4SoundRadio::EB4RadioMode);
+    // void Update();
+    // bool Release();
+    // void Destruct();
+    // void Reset();
+    // void Start();
+    // void Stop();
+    // void Pause();
+    // void SetMode(CB4SoundRadio::EB4RadioMode);
+    // EB4RadioMode GetMode();
+    // void SetCrashNavMode(CB4SoundRadio::EB4RadioCrashNavState);
+    // void SetEnableDj(bool);
+    // void SetMusicVolume(float);
+    // void SetDJVolume(float);
+    // void EnableRadioDJ(int);
+    // void EnableTrackSkip(bool);
+    // bool IsDjFinished() const;
+    // bool IsDjTalking() const;
+    // bool LoadIdentBank();
+    // bool UnloadIdentBank();
+    // EGtPrepareState GetPrepareState();
+    // void SetReachedMainMenu(bool);
+    // RwChar * GetLanguagePrefix() const;
+    // void GetTrackSpecificPath(unsigned long, char *, int *, int *, bool, bool) const;
+    // void GetContinentPath(unsigned long, char *) const;
+    // void GetModeSpecificPath(char *) const;
+    // void ChooseInGamePath(char *, int *, int *) const;
+    // void ChooseIntroPath(char *, int *, int *) const;
+    // void ChooseFrontEndPath(char *, int *, int *) const;
+    // void UpdateSinglePlayerIntro();
+    // void UpdateSinglePlayerPlay();
+    // void UpdateFrontEndGeneral();
+    // void UpdateFrontEndMusicSettingsPage();
+    // void UpdateFrontEndSinglePlayer();
+    // void RefreshDebugStates() const;
+    // void PlayIdent();
+    // bool IdentIsPlaying();
+    // void StopIdent();
+    // void StopDJ();
+    // void Shuffle();
+    // void AdvanceMusic();
+};
+```
 
 ## Notes
 

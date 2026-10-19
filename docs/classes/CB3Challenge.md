@@ -7,22 +7,73 @@
 - **Area:** [Crashes, takedowns and scoring](../systems/crash-scoring.md)
 - **Source file:** `B3Challenge.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 9
+- **Burnout Revenge counterpart:** `CB4Challenge`, size 0xB160, methods in `GameSource/Game/Challenge/B4Challenge.cpp` ([layout](#burnout-revenge-layout-of-cb4challenge))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `OnChallengeFinishDriving()` | `0x0036DCA0` 8 | `0x003DB0B0` 8 | `0x00403C00` 8 | `0x00417320` 16 |  |  |
-| `OnChallengeRestart()` | `0x0036DCB0` 208 | `0x003DB0C0` 316 | `0x00403C10` 316 | `0x004172B0` 112 |  |  |
-| `OnEndOfChallenge()` | `0x0036DD80` 208 | `0x003DB200` 208 | `0x00403D50` 208 | `0x00417250` 96 |  |  |
-| `Update()` | `0x0036DE50` 8 | `0x003DB2D0` 8 | `0x00403E20` 8 | `0x00417240` 16 |  |  |
-| `Destruct()` | `0x0036DE60` 8 | `0x003DB2E0` 8 | `0x00403E30` 8 | `0x00417230` 16 |  |  |
-| `Release()` | `0x0036DE70` 8 | `0x003DB2F0` 8 | `0x00403E40` 8 | `0x00417220` 16 |  |  |
-| `Prepare()` | `0x0036DE80` 8 | `0x003DB300` 8 | `0x00403E50` 8 | `0x00417200` 20 |  |  |
-| `Construct()` | `0x0036DE90` 8 | `0x003DB310` 8 | `0x00403E60` 8 | `0x004171F0` 16 |  |  |
-| `CB3Challenge()` |  |  |  | `0x0013DCD0` 40 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `OnChallengeFinishDriving()` | `0x0036DCA0` 8 | `0x003DB0B0` 8 | `0x00403C00` 8 | `0x00417320` 16 |  |  |  |
+| `OnChallengeRestart()` | `0x0036DCB0` 208 | `0x003DB0C0` 316 | `0x00403C10` 316 | `0x004172B0` 112 |  |  | `void CB4Challenge::OnChallengeRestart()` |
+| `OnEndOfChallenge()` | `0x0036DD80` 208 | `0x003DB200` 208 | `0x00403D50` 208 | `0x00417250` 96 |  |  |  |
+| `Update()` | `0x0036DE50` 8 | `0x003DB2D0` 8 | `0x00403E20` 8 | `0x00417240` 16 |  |  | `void CB4Challenge::Update()` |
+| `Destruct()` | `0x0036DE60` 8 | `0x003DB2E0` 8 | `0x00403E30` 8 | `0x00417230` 16 |  |  | `void CB4Challenge::Destruct()` |
+| `Release()` | `0x0036DE70` 8 | `0x003DB2F0` 8 | `0x00403E40` 8 | `0x00417220` 16 |  |  | `void CB4Challenge::Release()` |
+| `Prepare()` | `0x0036DE80` 8 | `0x003DB300` 8 | `0x00403E50` 8 | `0x00417200` 20 |  |  | `bool CB4Challenge::Prepare()` |
+| `Construct()` | `0x0036DE90` 8 | `0x003DB310` 8 | `0x00403E60` 8 | `0x004171F0` 16 |  |  | `void CB4Challenge::Construct()` |
+| `CB3Challenge()` |  |  |  | `0x0013DCD0` 40 |  |  |  |
+
+## Burnout Revenge layout of `CB4Challenge`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 95 file(s), e.g. `GameSource/Camera/Crash/Camera Directors/Child States/B4CrashModeChildStateInCrashbreaker.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Challenge {  // size 0xB160
+    /* 0x000 */ RwInt32 mnStageIndex;
+    /* 0x004 */ RwInt32 mnNumStages;
+    /* 0x008 */ CB4RaceSetupConfig maConfig[18];
+    /* 0x2768 */ CB4RaceCarResults maResults[6];
+    /* 0xB150 */ RwInt32 mnWorstCrashParPossible;
+    /* 0xB154 */ EB4ProgressionRating meInitialRating;
+    /* 0xB158 */ bool mbMenuExitSelected;
+    /* 0xB15C */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CB4Challenge(const CB4Challenge &);
+    // CB4Challenge();
+    // virtual void Construct();
+    // virtual bool Prepare();
+    // virtual void Release();
+    // virtual void Destruct();
+    // virtual void Update();
+    // CB4RaceSetupConfig * GetCurrentRaceSetupConfig();
+    // CB4RaceSetupConfig * GetRaceSetupConfig(int);
+    // void SetNumStages(int);
+    // RwInt32 GetNumStages();
+    // CB4RaceCarResults * GetRaceCarResults(int);
+    // CB4RaceCarRoundResults * GetCurrentRoundRaceCarResults(int);
+    // CB4RaceCarRoundResults * GetRoundRaceCarResults(int, int);
+    // RwInt32 GetRoundNumber();
+    // bool IsMultiStageChallenge();
+    // void OnLeaveFrontend(CB4GameMode *);
+    // virtual void OnFinishCurrentStage();
+    // bool IsFinalStage();
+    // void RetryStage(bool);
+    // void OnChallengeRestart();
+    // void OnMenuExit();
+    // void UpdateTotals(int);
+    // void OnGameDataReady(CB4GameData *);
+    // RwInt32 GetWorstCrashParPossible();
+    // EB4ProgressionRating GetInitialRating();
+    // bool IsCrashTour() const;
+    // bool IsGrandPrix() const;
+    // virtual bool ShouldWeUseNextRaceSetupConfig();
+    // void StartStage(CB4GameMode *, bool);
+    // void SetupUpdateMessageSending();
+    // void SetupCarNumbers();
+};
+```
 
 ## Notes
 

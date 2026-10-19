@@ -6,22 +6,40 @@
 
 - **Area:** [Rendering](../systems/rendering.md)
 - **Methods per build:** B3O0PCH 3
+- **Burnout Revenge counterpart:** `CGtVu0CodeManager`, size 0x001 ([layout](#burnout-revenge-layout-of-cgtvu0codemanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetCurrentVu0CodePointer()` |  |  |  | `0x00229520` 12 |  |  |
-| `UploadVu0Code(void*)` |  |  |  | `0x002294A0` 116 |  |  |
-| `WaitForUploadToFinish()` |  |  |  | `0x002293C0` 64 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetCurrentVu0CodePointer()` |  |  |  | `0x00229520` 12 |  |  |  |
+| `UploadVu0Code(void*)` |  |  |  | `0x002294A0` 116 |  |  |  |
+| `WaitForUploadToFinish()` |  |  |  | `0x002293C0` 64 |  |  |  |
 
 ## Static data (DNAT_200)
 
 | Address | Size | Section | Name |
 |---|---:|---|---|
 | `0x004441A8` | 4 | .sbss | `CGtVu0CodeManager::gmpCurrentVu0Code` |
+
+## Burnout Revenge layout of `CGtVu0CodeManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Menu/Interaction/AptAdaptors/Offline/B4CarSelectAptAdapter.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtVu0CodeManager {  // size 0x001
+    /* static */ void *gmpCurrentVu0Code;
+    // methods
+    // CGtVu0CodeManager(const CGtVu0CodeManager &);
+    // CGtVu0CodeManager();
+    // static bool UploadVu0Code(void *);
+    // static void WaitForUploadToFinish();
+    // static void * GetCurrentVu0CodePointer();
+    // static void PokeCodePointer(void *);
+};
+```
 
 ## Notes
 

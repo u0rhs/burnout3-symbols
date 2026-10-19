@@ -8,34 +8,35 @@
 - **Source file:** `Gt2dObject.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 1, B3O0PCH 19
 - **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGt2dObject`, size 0x040, methods in `GameShared/GameClasses/Graphical/2d/Gt2dObject.cpp` ([layout](#burnout-revenge-layout-of-cgt2dobject))
 - **Burnout 2 ancestor (by name):** `C2dObject`, size 0x0A0, declared in 48 file(s), e.g. `gamesource/Hud/CHud.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetPos(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x0019BFD0` 108 | `0x001D0E50` 108 |  | `0x001DAD00` 96 | `0x001D5E00` proven |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,void (*)(const CGt2dObject::CGt2dObjec` | `0x0019C040` 48 |  |  |  | `0x001D5E70` proven |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,void (*)` |  | `0x001D0EC0` 252 | `0x001CA240` 252 | `0x001DAC40` 192 |  |  |
-| `CGt2dObject()` |  |  |  | `0x001403E0` 44 |  |  |
-| `Colour()` |  |  |  | `0x0016E9F0` 52 |  |  |
-| `DebugClearRenderFunction()` |  |  |  | `0x001DD710` 28 |  |  |
-| `GetBottomEdge()` |  |  |  | `0x0019D230` 80 |  |  |
-| `GetDataBlock()` |  |  |  | `0x0019D550` 28 |  |  |
-| `GetFrame()` |  |  |  | `0x001DD1A0` 28 |  |  |
-| `GetLeftEdge()` |  |  |  | `0x0019D300` 40 |  |  |
-| `GetRightEdge()` |  |  |  | `0x0019D280` 80 |  |  |
-| `GetTopEdge()` |  |  |  | `0x0019D2D0` 40 |  |  |
-| `ObjectSpace()` |  |  |  | `0x001402A0` 24 |  |  |
-| `Pos()` |  |  |  | `0x00140510` 24 |  |  |
-| `Render(const CGt2dObject::CGt2dObjectSpace&)` |  |  |  | `0x001400B0` 80 |  |  |
-| `SetColour(GtMathPs2::CGtV4d)` |  |  |  | `0x0019CC60` 68 |  |  |
-| `SetFrame(CGt2dFrame*)` |  |  |  | `0x001A3990` 52 |  |  |
-| `SetPos(const GtMathPs2::CGtV2d&)` |  |  |  | `0x00140450` 48 |  |  |
-| `SetSize(const GtMathPs2::CGtV2d&)` |  |  |  | `0x001A3750` 52 |  |  |
-| `Size()` |  |  |  | `0x001404F0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetPos(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x0019BFD0` 108 | `0x001D0E50` 108 |  | `0x001DAD00` 96 | `0x001D5E00` proven |  | `void CGt2dObject::SetPos(const GtMathPs2::CGtV2d &lPos, const GtMathPs2::CGtV2d &lHandle)` |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,void (*)(const CGt2dObject::CGt2dObjec` | `0x0019C040` 48 |  |  |  | `0x001D5E70` proven |  | `void CGt2dObject::Prepare(const GtMathPs2::CGtV2d &lTopLeftPos, const GtMathPs2::CGtV2d &lSize, GtMathPs2::CGtV4d lColour, void (*lpfRender)(const CGt2dObject::CGt2dObjectSpace &, const void *), unsigned int luThisSize, unsigned int luDataSize)` (same name, different parameters) |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,void (*)` |  | `0x001D0EC0` 252 | `0x001CA240` 252 | `0x001DAC40` 192 |  |  | `void CGt2dObject::Prepare(const GtMathPs2::CGtV2d &lTopLeftPos, const GtMathPs2::CGtV2d &lSize, GtMathPs2::CGtV4d lColour, void (*lpfRender)(const CGt2dObject::CGt2dObjectSpace &, const void *), unsigned int luThisSize, unsigned int luDataSize)` (same name, different parameters) |
+| `CGt2dObject()` |  |  |  | `0x001403E0` 44 |  |  |  |
+| `Colour()` |  |  |  | `0x0016E9F0` 52 |  |  |  |
+| `DebugClearRenderFunction()` |  |  |  | `0x001DD710` 28 |  |  |  |
+| `GetBottomEdge()` |  |  |  | `0x0019D230` 80 |  |  |  |
+| `GetDataBlock()` |  |  |  | `0x0019D550` 28 |  |  |  |
+| `GetFrame()` |  |  |  | `0x001DD1A0` 28 |  |  |  |
+| `GetLeftEdge()` |  |  |  | `0x0019D300` 40 |  |  |  |
+| `GetRightEdge()` |  |  |  | `0x0019D280` 80 |  |  |  |
+| `GetTopEdge()` |  |  |  | `0x0019D2D0` 40 |  |  |  |
+| `ObjectSpace()` |  |  |  | `0x001402A0` 24 |  |  |  |
+| `Pos()` |  |  |  | `0x00140510` 24 |  |  |  |
+| `Render(const CGt2dObject::CGt2dObjectSpace&)` |  |  |  | `0x001400B0` 80 |  |  |  |
+| `SetColour(GtMathPs2::CGtV4d)` |  |  |  | `0x0019CC60` 68 |  |  |  |
+| `SetFrame(CGt2dFrame*)` |  |  |  | `0x001A3990` 52 |  |  |  |
+| `SetPos(const GtMathPs2::CGtV2d&)` |  |  |  | `0x00140450` 48 |  |  | `void CGt2dObject::SetPos(const GtMathPs2::CGtV2d &lPos, const GtMathPs2::CGtV2d &lHandle)` (same name, different parameters) |
+| `SetSize(const GtMathPs2::CGtV2d&)` |  |  |  | `0x001A3750` 52 |  |  |  |
+| `Size()` |  |  |  | `0x001404F0` 28 |  |  |  |
 
 ## Static data (DNAT_200)
 
@@ -61,6 +62,43 @@ public:
     // void C2dObject::MakeTextOutline(float lrPosX, float lrPosY, float lrHandleX, float lrHandleY, float lrHeight, RwRGBAReal *lpColour, C2dFont *lpFont, char *lpcString, float lrShadowOffsetX, float lrShadowOffsetY)  [0x001D0140]
     // void C2dObject::MakeTextItalicOutline(float lrPosX, float lrPosY, float lrHandleX, float lrHandleY, float lrHeight, RwRGBAReal *lpColour, C2dFont *lpFont, char *lpcString, float lrShadowOffsetX, float lrShadowOffsetY)  [0x001E8C60]
     // void C2dObject::MakeTextSoftDropShadow(float lrPosX, float lrPosY, float lrHandleX, float lrHandleY, float lrHeight, RwRGBAReal *lpColour, C2dFont *lpFont, char *lpcString, float lrShadowOffsetX, float lrShadowOffsetY)  [0x001FC9A0]
+};
+```
+
+## Burnout Revenge layout of `CGt2dObject`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 58 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dBezierCurve.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dObject {  // size 0x040
+    /* static */ RwUInt32 kuDataBlockSize;
+    /* static */ RwUInt32 kuDataBlockByteSize;
+    /* static */ RwUInt32 ku2dObjectRenderBatchDataSize;
+    /* static */ unsigned char mgu8RenderBatchData[8128];
+    /* 0x000 */ CGt2dObjectSpace mObjectSpace;
+    /* 0x020 */ unsigned int mauDataBlock[6];
+    /* 0x038 */ CGt2dFrame *mpFrame;
+    /* 0x03C */ void (*mpfRender)();
+    // methods
+    // CGt2dObject(const CGt2dObject &);
+    // CGt2dObject();
+    // CGt2dObjectSpace & ObjectSpace() const;
+    // CGtV2dArg Pos() const;
+    // CGtV4dArg Colour() const;
+    // CGtV2dArg Size() const;
+    // void SetPos(const GtMathPs2::CGtV2d &);
+    // void SetPos(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &);
+    // void SetColour(GtMathPs2::CGtV4d);
+    // void SetSize(const GtMathPs2::CGtV2d &);
+    // CGt2dFrame * GetFrame() const;
+    // void SetFrame(CGt2dFrame *);
+    // void Render(const CGt2dObject::CGt2dObjectSpace &) const;
+    // RwReal GetLeftEdge() const;
+    // RwReal GetRightEdge() const;
+    // RwReal GetTopEdge() const;
+    // RwReal GetBottomEdge() const;
+    // void Prepare(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, GtMathPs2::CGtV4d, void (*)(const CGt2dObject::CGt2dObjectSpace &, const void *), unsigned int, unsigned int);
+    // void * GetDataBlock() const;
 };
 ```
 

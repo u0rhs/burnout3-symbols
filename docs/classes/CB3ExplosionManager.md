@@ -8,25 +8,52 @@
 - **Source file:** `B3ExplosionManager.cpp`
 - **Methods per build:** DNAT_200 11, B3DEBUG 11, B3INTERN 11, B3O0PCH 12
 - **Retail (SLUS-21050):** 1 of its 11 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ExplosionManager`, size 0x100, methods in `GameSource/World/B4ExplosionManager.cpp` ([layout](#burnout-revenge-layout-of-cb4explosionmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RenderFullScreenFlash(float)` | `0x00352B00` 124 | `0x003BCF60` 124 | `0x003E67E0` 124 | `0x003F4340` 196 |  |  |
-| `UpdateExplosionTrails(float)` | `0x00352B80` 500 | `0x003BCFE0` 500 | `0x003E6860` 500 | `0x003F40D0` 620 | `0x00399C30` strong |  |
-| `AddExplosionTrail(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x00352D80` 152 | `0x003BD1E0` 204 | `0x003E6A60` 204 | `0x003F3F70` 280 |  |  |
-| `DoAirRamExplosion(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x00352E20` 2104 | `0x003BD2B0` 2188 | `0x003E6B30` 2104 | `0x003F3AD0` 1184 |  |  |
-| `DoExplosion(const GtMathPs2::CGtMatrix3x4&,const CGtAxisAlignedBox&,GtMathPs2::CGtV3d,float)` | `0x00353660` 3080 | `0x003BDB40` 3080 | `0x003E7370` 3080 | `0x003F3010` 2600 |  |  |
-| `Update(float)` | `0x00354270` 296 | `0x003BE750` 296 | `0x003E7F80` 296 | `0x003F2E70` 308 |  |  |
-| `Release()` | `0x003543A0` 8 | `0x003BE880` 8 | `0x003E80B0` 8 | `0x003F2E60` 16 |  |  |
-| `Prepare()` | `0x003543B0` 132 | `0x003BE890` 132 | `0x003E80C0` 132 | `0x003F2DD0` 136 |  |  |
-| `Destruct()` | `0x00354440` 8 | `0x003BE920` 8 | `0x003E8150` 8 | `0x003F2DC0` 16 |  |  |
-| `Construct()` | `0x00354450` 8 | `0x003BE930` 8 | `0x003E8160` 8 | `0x003F2DB0` 16 |  |  |
-| `UpdateFire(GtMathPs2::CGtV3d,float,float,float)` | `0x00354460` 2120 | `0x003BE940` 2120 | `0x003E8170` 2120 | `0x003F28E0` 1220 |  |  |
-| `CB3ExplosionManager()` |  |  |  | `0x003F4410` 80 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RenderFullScreenFlash(float)` | `0x00352B00` 124 | `0x003BCF60` 124 | `0x003E67E0` 124 | `0x003F4340` 196 |  |  | `void CB4ExplosionManager::RenderFullScreenFlash(float lrFlashTime, float lrFlashScale)` (same name, different parameters) |
+| `UpdateExplosionTrails(float)` | `0x00352B80` 500 | `0x003BCFE0` 500 | `0x003E6860` 500 | `0x003F40D0` 620 | `0x00399C30` strong |  | `void CB4ExplosionManager::UpdateExplosionTrails(float lrTimestep)` |
+| `AddExplosionTrail(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x00352D80` 152 | `0x003BD1E0` 204 | `0x003E6A60` 204 | `0x003F3F70` 280 |  |  | `void CB4ExplosionManager::AddExplosionTrail(GtMathPs2::CGtV3d lPos, GtMathPs2::CGtV3d lVel)` |
+| `DoAirRamExplosion(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x00352E20` 2104 | `0x003BD2B0` 2188 | `0x003E6B30` 2104 | `0x003F3AD0` 1184 |  |  | `void CB4ExplosionManager::DoAirRamExplosion(GtMathPs2::CGtV3d lPos, GtMathPs2::CGtV3d lDirection, GtMathPs2::CGtV3d lSourceVelocity)` |
+| `DoExplosion(const GtMathPs2::CGtMatrix3x4&,const CGtAxisAlignedBox&,GtMathPs2::CGtV3d,float)` | `0x00353660` 3080 | `0x003BDB40` 3080 | `0x003E7370` 3080 | `0x003F3010` 2600 |  |  | `void CB4ExplosionManager::DoExplosion(const GtMathPs2::CGtMatrix3x4 &lMatrix, const CGtAxisAlignedBox &lBBox, GtMathPs2::CGtV3d lVelocity, float lrHeightAboveGround, float lrExplosionPower, bool lbIsPlayerCrashbreakerExplosion, CB4RaceCarPhysics *lpRaceCarPhysics)` (same name, different parameters) |
+| `Update(float)` | `0x00354270` 296 | `0x003BE750` 296 | `0x003E7F80` 296 | `0x003F2E70` 308 |  |  | `void CB4ExplosionManager::Update(float lrTimestep)` |
+| `Release()` | `0x003543A0` 8 | `0x003BE880` 8 | `0x003E80B0` 8 | `0x003F2E60` 16 |  |  | `void CB4ExplosionManager::Release()` |
+| `Prepare()` | `0x003543B0` 132 | `0x003BE890` 132 | `0x003E80C0` 132 | `0x003F2DD0` 136 |  |  | `bool CB4ExplosionManager::Prepare()` |
+| `Destruct()` | `0x00354440` 8 | `0x003BE920` 8 | `0x003E8150` 8 | `0x003F2DC0` 16 |  |  | `void CB4ExplosionManager::Destruct()` |
+| `Construct()` | `0x00354450` 8 | `0x003BE930` 8 | `0x003E8160` 8 | `0x003F2DB0` 16 |  |  | `void CB4ExplosionManager::Construct()` |
+| `UpdateFire(GtMathPs2::CGtV3d,float,float,float)` | `0x00354460` 2120 | `0x003BE940` 2120 | `0x003E8170` 2120 | `0x003F28E0` 1220 |  |  | `void CB4ExplosionManager::UpdateFire(GtMathPs2::CGtV3d lPos, float lrQuantity, float lrAlpha, float lrTimestep)` |
+| `CB3ExplosionManager()` |  |  |  | `0x003F4410` 80 |  |  |  |
+
+## Burnout Revenge layout of `CB4ExplosionManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/World/B4ExplosionManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ExplosionManager {  // size 0x100
+    /* 0x000 */ CExplosionTrail maExplosionTrails[5];
+    /* 0x0F0 */ CGtRandom mRandom;
+    /* 0x0F8 */ RwReal mrExplosionStartTime;
+    // methods
+    // CB4ExplosionManager(const CB4ExplosionManager &);
+    // CB4ExplosionManager();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void Update(float);
+    // void DoExplosion(const GtMathPs2::CGtMatrix3x4 &, const CGtAxisAlignedBox &, GtMathPs2::CGtV3d, float, float, bool, CB4RaceCarPhysics *);
+    // void DoAirRamExplosion(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d);
+    // void UpdateFire(GtMathPs2::CGtV3d, float, float, float);
+    // void RenderFullScreenFlash(float, float);
+    // void AddExplosionTrail(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d);
+    // void UpdateExplosionTrails(float);
+};
+```
 
 ## Notes
 

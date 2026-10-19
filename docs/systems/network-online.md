@@ -14,107 +14,109 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 **Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
 
-| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
-|---|---:|---:|---|---:|---|
-| `B3OnlineStage.cpp` | 8 | 1,940 | `0x00134570` | 8 (7) | `0x001353B0`–`0x00135A60` |
-| `B3NetworkCar.cpp` | 5 | 460 | `0x0014C950` |  |  |
-| `B3NetworkMessage.cpp` | 2 | 164 | `0x00173E60` | 2 (0) | `0x001A84A0`–`0x001A8540` |
-| `B3NetworkPlayerStartCountdownMessage.cpp` | 3 | 188 | `0x00173F10` | 1 (0) | `0x001A8550`–`0x001A8550` |
-| `B3NetworkRaceUpdateMessage.cpp` | 14 | 10,224 | `0x00173FE0` |  |  |
-| `GtCommsToolBase.cpp` | 3 | 192 | `0x001E0A40` | 3 (2) | `0x0021B820`–`0x0021B8C0` |
-| `GtCommsDatabase.cpp` | 7 | 2,092 | `0x001E0B10` | 6 (2) | `0x0021B8F0`–`0x0021BF80` |
-| `GtNetworkAdapter.cpp` | 6 | 208 | `0x001EE770` |  |  |
-| `GtNetworkMessage.cpp` | 15 | 1,500 | `0x001EE870` |  |  |
-| `GtPS2LibNet.cpp` | 34 | 7,792 | `0x001EEE90` | 10 (0) | `0x0022E830`–`0x0022F000` |
-| `GtNetworkPlayer.cpp` | 17 | 3,220 | `0x001F0C70` |  |  |
-| `GtNATDataManager.cpp` | 27 | 18,684 | `0x001F1970` | 5 (0) | `0x00231B30`–`0x00233C50` |
-| `GtNetworkPlayerManager.cpp` | 34 | 7,360 | `0x001F6300` | 9 (3) | `0x002366E0`–`0x00236C50` |
-| `B3NetworkPlayer.cpp` | 31 | 20,696 | `0x001FC000` |  |  |
-| `GtSyncTimeClient.cpp` | 5 | 976 | `0x00201190` |  |  |
-| `GtSyncTimeHost.cpp` | 4 | 640 | `0x00201580` |  |  |
-| `GtSyncTime.cpp` | 5 | 384 | `0x00201820` |  |  |
-| `GtSyncTimeMessage.cpp` | 1 | 44 | `0x002019B0` |  |  |
-| `GtCommsDatabaseGame.cpp` | 6 | 836 | `0x00210530` | 6 (6) | `0x0024FDE0`–`0x00250120` |
-| `GtNetworkConditions.cpp` | 3 | 24 | `0x00211620` |  |  |
-| `B3NetworkCarPhysics.cpp` | 9 | 7,036 | `0x0022A500` | 8 (0) | `0x00268620`–`0x00269CF0` |
-| `B3NetworkRaceReadyMessage.cpp` | 2 | 20 | `0x0022DED0` | 1 (1) | `0x0026BD30`–`0x0026BD30` |
-| `B3NetworkManager.cpp` | 52 | 16,516 | `0x0022E030` | 17 (0) | `0x0026CAB0`–`0x0026E380` |
-| `B3NetworkPlayerFinishedRaceMessage.cpp` | 3 | 384 | `0x00233440` |  |  |
-| `B3NetworkPingMessage.cpp` | 6 | 248 | `0x00277F00` |  |  |
-| `GtNetworkHeadset.cpp` | 28 | 9,576 | `0x0027F490` | 10 (0) | `0x002BF7F0`–`0x002C0380` |
-| `GtHeadsetMessage.cpp` | 4 | 296 | `0x00281A90` |  |  |
-| `GtHeadset.cpp` | 2 | 16 | `0x00281BE0` |  |  |
-| `GtLogitechHeadset.cpp` | 14 | 1,928 | `0x00281C00` | 10 (2) | `0x002C2260`–`0x002C2840` |
-| `B3NetworkNewHostMessage.cpp` | 3 | 152 | `0x002B8B10` |  |  |
-| `B3NetworkHostKeepAliveMessage.cpp` | 3 | 132 | `0x002B8BC0` |  |  |
-| `B3OnlineLobbyState.cpp` | 4 | 4,164 | `0x002D0580` | 3 (0) | `0x0030F010`–`0x0030F620` |
-| `B3OnlineLobbyPage.cpp` | 35 | 22,740 | `0x002D1EF0` | 31 (1) | `0x003113C0`–`0x003180A0` |
-| `B3OnlineMenuPage.cpp` | 3 | 816 | `0x002DF9E0` | 3 (0) | `0x00323730`–`0x00323A10` |
-| `B3OnlineMenuState.cpp` | 2 | 2,440 | `0x002DFD20` | 2 (0) | `0x00323E30`–`0x003242F0` |
-| `B3OnlineGameCreateState.cpp` | 2 | 1,372 | `0x002E06C0` | 2 (1) | `0x003248F0`–`0x00324E10` |
-| `B3OnlineGameCreatePage.cpp` | 4 | 1,384 | `0x002E2A00` | 3 (0) | `0x00326FB0`–`0x00327310` |
-| `B3OnlineJoinGamePage.cpp` | 12 | 10,876 | `0x002E2F10` | 11 (0) | `0x00327540`–`0x0032AAB0` |
-| `B3OnlineJoinGameState.cpp` | 1 | 824 | `0x002E5930` | 1 (0) | `0x0032ADF0`–`0x0032ADF0` |
-| `B3ChatDisplayComponent.cpp` | 9 | 2,968 | `0x002EA370` | 8 (6) | `0x00331DE0`–`0x00332960` |
-| `B3NetworkAllNATDataFinalisedMessage.cpp` | 3 | 164 | `0x002ED9B0` |  |  |
-| `GtLobbyDirtySock.cpp` | 111 | 21,460 | `0x002F1330` | 95 (4) | `0x00335DE0`–`0x0033C8D0` |
-| `B3OnlineSelectPersonaPage.cpp` | 7 | 5,524 | `0x002F9A70` | 6 (2) | `0x00340450`–`0x003418F0` |
-| `B3NetworkHasHeadsetMessage.cpp` | 3 | 124 | `0x002FAF50` | 3 (2) | `0x00341C70`–`0x00341CF0` |
-| `B3OnlineOpenConnectionState.cpp` | 5 | 3,220 | `0x002FEC30` | 2 (0) | `0x00345D00`–`0x00346200` |
-| `B3OnlineSelNetConfigPage.cpp` | 4 | 2,028 | `0x002FF8E0` | 3 (0) | `0x003464A0`–`0x00346950` |
-| `B3OnlineConnectingPage.cpp` | 6 | 1,896 | `0x003000A0` | 5 (0) | `0x00346DE0`–`0x00347440` |
-| `B3OnlineSelectLoginPage.cpp` | 14 | 5,880 | `0x003007C0` | 10 (0) | `0x003476B0`–`0x00349840` |
-| `B3OnlineRetrieveConfigsPage.cpp` | 3 | 1,608 | `0x00302320` | 2 (0) | `0x00349E00`–`0x0034A430` |
-| `B3OnlineLoginToLobbyState.cpp` | 8 | 7,728 | `0x00302970` | 5 (0) | `0x0034A4E0`–`0x0034BC30` |
-| `B3OnlineLoginToLobbyPage.cpp` | 5 | 2,368 | `0x003047C0` | 3 (2) | `0x0034BEA0`–`0x0034CD50` |
-| `B3DNASPage.cpp` | 4 | 892 | `0x0030AA40` | 2 (0) | `0x003530E0`–`0x00353520` |
-| `GtBuddies.cpp` | 2 | 224 | `0x00315A50` | 2 (1) | `0x0035F0A0`–`0x0035F100` |
-| `GtBuddiesPS2DirtySock.cpp` | 37 | 4,388 | `0x00315B30` | 28 (6) | `0x0035F490`–`0x003608F0` |
-| `B3SharedLoginExtPS2.cpp` | 2 | 44 | `0x00316D60` |  |  |
-| `B3BuddyDisplayComponent.cpp` | 11 | 6,012 | `0x0031C210` | 7 (2) | `0x00366400`–`0x00367E40` |
-| `B3OnlineNewsState.cpp` | 1 | 264 | `0x0031FF50` | 1 (0) | `0x003694C0`–`0x003694C0` |
-| `B3OnlineRankingsState.cpp` | 3 | 2,008 | `0x00320060` | 3 (0) | `0x00369690`–`0x0036A3A0` |
-| `B3OnlineBuddiesState.cpp` | 1 | 2,040 | `0x00320850` | 1 (0) | `0x0036A910`–`0x0036A910` |
-| `B3OnlineOptimatchState.cpp` | 1 | 804 | `0x00321050` |  |  |
-| `B3OnlineBuddiesMenuPage.cpp` | 30 | 16,312 | `0x00321380` | 13 (0) | `0x0036C250`–`0x0036E0A0` |
-| `B3OnlineRankingsMenuPage.cpp` | 3 | 620 | `0x003253B0` |  |  |
-| `B3BuddyReadMailComponent.cpp` | 5 | 1,572 | `0x0032D2D0` | 4 (4) | `0x003724E0`–`0x00372AF0` |
-| `B3OnlineReadMailMenuPage.cpp` | 7 | 1,616 | `0x0032D8F0` | 2 (0) | `0x00372B20`–`0x00372BA0` |
-| `B3OnlineBuddiesSearchMenuPage.cpp` | 9 | 3,056 | `0x0032DF60` | 6 (0) | `0x00372FB0`–`0x003734F0` |
-| `B3DemoOnlineGameCreateState.cpp` | 1 | 936 | `0x003301B0` |  |  |
-| `B3DemoOnlineJoinGameState.cpp` | 1 | 992 | `0x00330560` |  |  |
-| `B3NetworkReplayMessage.cpp` | 6 | 456 | `0x00334320` | 4 (4) | `0x003753F0`–`0x00375520` |
-| `B3OnlineTrackRecordsMenuPage.cpp` | 3 | 520 | `0x00335230` |  |  |
-| `B3OnlineRecordsDisplayMenuPage.cpp` | 18 | 9,628 | `0x00335750` |  |  |
-| `B3OnlineCrashRecordsMenuPage.cpp` | 3 | 496 | `0x00337E80` |  |  |
-| `B3OnlineNewsMenuPage.cpp` | 5 | 1,568 | `0x00338730` | 1 (0) | `0x003799E0`–`0x003799E0` |
-| `B3OnlineOptimatchMenuPage.cpp` | 16 | 9,528 | `0x00338CF0` |  |  |
-| `B3CreateAccount2MenuPage.cpp` | 3 | 5,060 | `0x0033B1E0` |  |  |
-| `B3CreateAccountDupNameMenuPage.cpp` | 4 | 1,564 | `0x0033C5C0` |  |  |
-| `B3CreateAccountSaveMenuPage.cpp` | 4 | 2,068 | `0x0033CB80` |  |  |
-| `B3CreateAccount1MenuPage.cpp` | 6 | 5,788 | `0x0033D330` |  |  |
-| `B3OnlineCreateAccountState.cpp` | 1 | 916 | `0x0033EA00` |  |  |
-| `B3OnlineLobbySelectPage.cpp` | 4 | 2,500 | `0x00340440` |  |  |
-| `B3OnlineSingleRaceLogic.cpp` | 20 | 1,372 | `0x00346AA0` |  |  |
-| `B3OnlineCompCrashLogic.cpp` | 28 | 2,624 | `0x00348CD0` |  |  |
-| `B3OnlineCoOpCrashLogic.cpp` | 25 | 1,552 | `0x003497C0` |  |  |
-| `B3OnlineRoadRageRaceLogic.cpp` | 27 | 2,840 | `0x00349E70` | 3 (0) | `0x0038ECF0`–`0x0038F3E0` |
-| `B3OnlineStageLogic.cpp` | 31 | 4,956 | `0x0034AA50` | 3 (0) | `0x003906A0`–`0x00391F10` |
-| `B3OnlineTurnBasedCrashLogic.cpp` | 28 | 3,064 | `0x0034BE60` | 2 (0) | `0x00392740`–`0x00392B30` |
-| `B3OnlineOpenLobbyPage.cpp` | 22 | 8,272 | `0x0034F460` | 1 (0) | `0x00396830`–`0x00396830` |
-| `B3OnlineGameCreateOptionsPage.cpp` | 10 | 4,192 | `0x003514A0` |  |  |
-| `B3OnlineOpenLobbyState.cpp` | 2 | 1,556 | `0x003524E0` |  |  |
-| `B3OnlineGameOptionsPage.cpp` | 16 | 10,880 | `0x00356F20` |  |  |
-| `B3OnlineVehicleSelectPage.cpp` | 2 | 280 | `0x0035C100` |  |  |
-| `B3OnlineWaitPage.cpp` | 2 | 28 | `0x0035C220` |  |  |
-| `B3DemoOnlineModeSelectPage.cpp` | 3 | 564 | `0x0037ADB0` |  |  |
-| `B3DemoOnlineTrackSelectPage.cpp` | 3 | 780 | `0x0037AFF0` |  |  |
-| `B3NetworkGameModeStatusMessage.cpp` | 3 | 120 | `0x0037D6D0` | 1 (1) | `0x003CC240`–`0x003CC240` |
-| `B3OnlineWaitingForPlayersPage.cpp` | 4 | 344 | `0x00383110` |  |  |
-| `B3OnlineEndOfRaceState.cpp` | 7 | 5,728 | `0x003A75F0` |  |  |
-| `B3OnlineCrashResultsPage.cpp` | 8 | 4,936 | `0x003A8DF0` |  |  |
-| `B3OnlineUploadResultsPage.cpp` | 4 | 676 | `0x003C35D0` |  |  |
-| `B3NetworkVoIPManagerPS2.cpp` | 14 | 332 | `0x003C49E0` | 1 (0) | `0x0041EAD0`–`0x0041EAD0` |
+**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source paths ([source files](../reference/revenge-source-file-lineage.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |
+|---|---:|---:|---|---:|---|---|
+| `B3OnlineStage.cpp` | 8 | 1,940 | `0x00134570` | 8 (7) | `0x001353B0`–`0x00135A60` | `GameSource/Game/B4OnlineStage.cpp` |
+| `B3NetworkCar.cpp` | 5 | 460 | `0x0014C950` |  |  | `GameSource/World/B4NetworkCar.cpp` |
+| `B3NetworkMessage.cpp` | 2 | 164 | `0x00173E60` | 2 (0) | `0x001A84A0`–`0x001A8540` | `GameSource/Network/Messages/B4NetworkMessage.cpp` |
+| `B3NetworkPlayerStartCountdownMessage.cpp` | 3 | 188 | `0x00173F10` | 1 (0) | `0x001A8550`–`0x001A8550` | `GameSource/Network/Messages/B4NetworkPlayerStartCountdownMessage.cpp` |
+| `B3NetworkRaceUpdateMessage.cpp` | 14 | 10,224 | `0x00173FE0` |  |  | `GameSource/Network/Messages/B4NetworkRaceUpdateMessage.cpp` |
+| `GtCommsToolBase.cpp` | 3 | 192 | `0x001E0A40` | 3 (2) | `0x0021B820`–`0x0021B8C0` | `GameShared/GameClasses/Development/CommsTool/GtCommsToolBase.cpp` |
+| `GtCommsDatabase.cpp` | 7 | 2,092 | `0x001E0B10` | 6 (2) | `0x0021B8F0`–`0x0021BF80` | `GameShared/GameClasses/Development/CommsTool/GtCommsDatabase.cpp` |
+| `GtNetworkAdapter.cpp` | 6 | 208 | `0x001EE770` |  |  | `GameShared/GameClasses/System/Networking/Packeting/GtNetworkAdapter.cpp` |
+| `GtNetworkMessage.cpp` | 15 | 1,500 | `0x001EE870` |  |  | `GameShared/GameClasses/System/Networking/Packeting/GtNetworkMessage.cpp` |
+| `GtPS2LibNet.cpp` | 34 | 7,792 | `0x001EEE90` | 10 (0) | `0x0022E830`–`0x0022F000` | `GameShared/GameClasses/System/Networking/Packeting/Ps2/GtPS2LibNet.cpp` |
+| `GtNetworkPlayer.cpp` | 17 | 3,220 | `0x001F0C70` |  |  | `GameShared/GameClasses/System/Networking/Players/GtNetworkPlayer.cpp` |
+| `GtNATDataManager.cpp` | 27 | 18,684 | `0x001F1970` | 5 (0) | `0x00231B30`–`0x00233C50` | `GameShared/GameClasses/System/Networking/Players/GtNATDataManager.cpp` |
+| `GtNetworkPlayerManager.cpp` | 34 | 7,360 | `0x001F6300` | 9 (3) | `0x002366E0`–`0x00236C50` | `GameShared/GameClasses/System/Networking/Players/GtNetworkPlayerManager.cpp` |
+| `B3NetworkPlayer.cpp` | 31 | 20,696 | `0x001FC000` |  |  | `GameSource/Network/B4NetworkPlayer.cpp` |
+| `GtSyncTimeClient.cpp` | 5 | 976 | `0x00201190` |  |  | `GameShared/GameClasses/System/Networking/SyncTime/GtSyncTimeClient.cpp` |
+| `GtSyncTimeHost.cpp` | 4 | 640 | `0x00201580` |  |  | `GameShared/GameClasses/System/Networking/SyncTime/GtSyncTimeHost.cpp` |
+| `GtSyncTime.cpp` | 5 | 384 | `0x00201820` |  |  | `GameShared/GameClasses/System/Networking/SyncTime/GtSyncTime.cpp` |
+| `GtSyncTimeMessage.cpp` | 1 | 44 | `0x002019B0` |  |  | `GameShared/GameClasses/System/Networking/Packeting/GtSyncTimeMessage.cpp` |
+| `GtCommsDatabaseGame.cpp` | 6 | 836 | `0x00210530` | 6 (6) | `0x0024FDE0`–`0x00250120` | `GameShared/GameClasses/Development/CommsTool/GtCommsDatabaseGame.cpp` |
+| `GtNetworkConditions.cpp` | 3 | 24 | `0x00211620` |  |  | `GameShared/GameClasses/System/Networking/Packeting/GtNetworkConditions.cpp` |
+| `B3NetworkCarPhysics.cpp` | 9 | 7,036 | `0x0022A500` | 8 (0) | `0x00268620`–`0x00269CF0` | `GameSource/Physics/B4NetworkCarPhysics.cpp` |
+| `B3NetworkRaceReadyMessage.cpp` | 2 | 20 | `0x0022DED0` | 1 (1) | `0x0026BD30`–`0x0026BD30` | `GameSource/Network/Messages/B4NetworkRaceReadyMessage.cpp` |
+| `B3NetworkManager.cpp` | 52 | 16,516 | `0x0022E030` | 17 (0) | `0x0026CAB0`–`0x0026E380` | `GameSource/Network/B4NetworkManager.cpp` |
+| `B3NetworkPlayerFinishedRaceMessage.cpp` | 3 | 384 | `0x00233440` |  |  | `GameSource/Network/Messages/B4NetworkPlayerFinishedRaceMessage.cpp` |
+| `B3NetworkPingMessage.cpp` | 6 | 248 | `0x00277F00` |  |  | `GameSource/Network/Messages/B4NetworkPingMessage.cpp` |
+| `GtNetworkHeadset.cpp` | 28 | 9,576 | `0x0027F490` | 10 (0) | `0x002BF7F0`–`0x002C0380` |  |
+| `GtHeadsetMessage.cpp` | 4 | 296 | `0x00281A90` |  |  |  |
+| `GtHeadset.cpp` | 2 | 16 | `0x00281BE0` |  |  |  |
+| `GtLogitechHeadset.cpp` | 14 | 1,928 | `0x00281C00` | 10 (2) | `0x002C2260`–`0x002C2840` | `GameShared/GameClasses/System/Headset/Source/Ps2/GtLogitechHeadset.cpp` |
+| `B3NetworkNewHostMessage.cpp` | 3 | 152 | `0x002B8B10` |  |  | `GameSource/Network/Messages/B4NetworkNewHostMessage.cpp` |
+| `B3NetworkHostKeepAliveMessage.cpp` | 3 | 132 | `0x002B8BC0` |  |  | `GameSource/Network/Messages/B4NetworkHostKeepAliveMessage.cpp` |
+| `B3OnlineLobbyState.cpp` | 4 | 4,164 | `0x002D0580` | 3 (0) | `0x0030F010`–`0x0030F620` |  |
+| `B3OnlineLobbyPage.cpp` | 35 | 22,740 | `0x002D1EF0` | 31 (1) | `0x003113C0`–`0x003180A0` |  |
+| `B3OnlineMenuPage.cpp` | 3 | 816 | `0x002DF9E0` | 3 (0) | `0x00323730`–`0x00323A10` |  |
+| `B3OnlineMenuState.cpp` | 2 | 2,440 | `0x002DFD20` | 2 (0) | `0x00323E30`–`0x003242F0` |  |
+| `B3OnlineGameCreateState.cpp` | 2 | 1,372 | `0x002E06C0` | 2 (1) | `0x003248F0`–`0x00324E10` |  |
+| `B3OnlineGameCreatePage.cpp` | 4 | 1,384 | `0x002E2A00` | 3 (0) | `0x00326FB0`–`0x00327310` |  |
+| `B3OnlineJoinGamePage.cpp` | 12 | 10,876 | `0x002E2F10` | 11 (0) | `0x00327540`–`0x0032AAB0` |  |
+| `B3OnlineJoinGameState.cpp` | 1 | 824 | `0x002E5930` | 1 (0) | `0x0032ADF0`–`0x0032ADF0` |  |
+| `B3ChatDisplayComponent.cpp` | 9 | 2,968 | `0x002EA370` | 8 (6) | `0x00331DE0`–`0x00332960` |  |
+| `B3NetworkAllNATDataFinalisedMessage.cpp` | 3 | 164 | `0x002ED9B0` |  |  | `GameSource/Network/Messages/B4NetworkAllNATDataFinalisedMessage.cpp` |
+| `GtLobbyDirtySock.cpp` | 111 | 21,460 | `0x002F1330` | 95 (4) | `0x00335DE0`–`0x0033C8D0` | `GameShared/GameClasses/System/Networking/LobbyService/PlatformIndependent/DirtySock/GtLobbyDirtySock.cpp` |
+| `B3OnlineSelectPersonaPage.cpp` | 7 | 5,524 | `0x002F9A70` | 6 (2) | `0x00340450`–`0x003418F0` |  |
+| `B3NetworkHasHeadsetMessage.cpp` | 3 | 124 | `0x002FAF50` | 3 (2) | `0x00341C70`–`0x00341CF0` | `GameSource/Network/Messages/B4NetworkHasHeadsetMessage.cpp` |
+| `B3OnlineOpenConnectionState.cpp` | 5 | 3,220 | `0x002FEC30` | 2 (0) | `0x00345D00`–`0x00346200` |  |
+| `B3OnlineSelNetConfigPage.cpp` | 4 | 2,028 | `0x002FF8E0` | 3 (0) | `0x003464A0`–`0x00346950` |  |
+| `B3OnlineConnectingPage.cpp` | 6 | 1,896 | `0x003000A0` | 5 (0) | `0x00346DE0`–`0x00347440` |  |
+| `B3OnlineSelectLoginPage.cpp` | 14 | 5,880 | `0x003007C0` | 10 (0) | `0x003476B0`–`0x00349840` |  |
+| `B3OnlineRetrieveConfigsPage.cpp` | 3 | 1,608 | `0x00302320` | 2 (0) | `0x00349E00`–`0x0034A430` |  |
+| `B3OnlineLoginToLobbyState.cpp` | 8 | 7,728 | `0x00302970` | 5 (0) | `0x0034A4E0`–`0x0034BC30` |  |
+| `B3OnlineLoginToLobbyPage.cpp` | 5 | 2,368 | `0x003047C0` | 3 (2) | `0x0034BEA0`–`0x0034CD50` |  |
+| `B3DNASPage.cpp` | 4 | 892 | `0x0030AA40` | 2 (0) | `0x003530E0`–`0x00353520` |  |
+| `GtBuddies.cpp` | 2 | 224 | `0x00315A50` | 2 (1) | `0x0035F0A0`–`0x0035F100` | `GameShared/GameClasses/System/Networking/Buddies/GtBuddies.cpp` |
+| `GtBuddiesPS2DirtySock.cpp` | 37 | 4,388 | `0x00315B30` | 28 (6) | `0x0035F490`–`0x003608F0` |  |
+| `B3SharedLoginExtPS2.cpp` | 2 | 44 | `0x00316D60` |  |  | `GameSource/EASharedLogin/Ps2/B4SharedLoginExtPS2.cpp` |
+| `B3BuddyDisplayComponent.cpp` | 11 | 6,012 | `0x0031C210` | 7 (2) | `0x00366400`–`0x00367E40` |  |
+| `B3OnlineNewsState.cpp` | 1 | 264 | `0x0031FF50` | 1 (0) | `0x003694C0`–`0x003694C0` |  |
+| `B3OnlineRankingsState.cpp` | 3 | 2,008 | `0x00320060` | 3 (0) | `0x00369690`–`0x0036A3A0` |  |
+| `B3OnlineBuddiesState.cpp` | 1 | 2,040 | `0x00320850` | 1 (0) | `0x0036A910`–`0x0036A910` |  |
+| `B3OnlineOptimatchState.cpp` | 1 | 804 | `0x00321050` |  |  |  |
+| `B3OnlineBuddiesMenuPage.cpp` | 30 | 16,312 | `0x00321380` | 13 (0) | `0x0036C250`–`0x0036E0A0` |  |
+| `B3OnlineRankingsMenuPage.cpp` | 3 | 620 | `0x003253B0` |  |  |  |
+| `B3BuddyReadMailComponent.cpp` | 5 | 1,572 | `0x0032D2D0` | 4 (4) | `0x003724E0`–`0x00372AF0` |  |
+| `B3OnlineReadMailMenuPage.cpp` | 7 | 1,616 | `0x0032D8F0` | 2 (0) | `0x00372B20`–`0x00372BA0` |  |
+| `B3OnlineBuddiesSearchMenuPage.cpp` | 9 | 3,056 | `0x0032DF60` | 6 (0) | `0x00372FB0`–`0x003734F0` |  |
+| `B3DemoOnlineGameCreateState.cpp` | 1 | 936 | `0x003301B0` |  |  |  |
+| `B3DemoOnlineJoinGameState.cpp` | 1 | 992 | `0x00330560` |  |  |  |
+| `B3NetworkReplayMessage.cpp` | 6 | 456 | `0x00334320` | 4 (4) | `0x003753F0`–`0x00375520` |  |
+| `B3OnlineTrackRecordsMenuPage.cpp` | 3 | 520 | `0x00335230` |  |  |  |
+| `B3OnlineRecordsDisplayMenuPage.cpp` | 18 | 9,628 | `0x00335750` |  |  |  |
+| `B3OnlineCrashRecordsMenuPage.cpp` | 3 | 496 | `0x00337E80` |  |  |  |
+| `B3OnlineNewsMenuPage.cpp` | 5 | 1,568 | `0x00338730` | 1 (0) | `0x003799E0`–`0x003799E0` |  |
+| `B3OnlineOptimatchMenuPage.cpp` | 16 | 9,528 | `0x00338CF0` |  |  |  |
+| `B3CreateAccount2MenuPage.cpp` | 3 | 5,060 | `0x0033B1E0` |  |  |  |
+| `B3CreateAccountDupNameMenuPage.cpp` | 4 | 1,564 | `0x0033C5C0` |  |  |  |
+| `B3CreateAccountSaveMenuPage.cpp` | 4 | 2,068 | `0x0033CB80` |  |  |  |
+| `B3CreateAccount1MenuPage.cpp` | 6 | 5,788 | `0x0033D330` |  |  |  |
+| `B3OnlineCreateAccountState.cpp` | 1 | 916 | `0x0033EA00` |  |  |  |
+| `B3OnlineLobbySelectPage.cpp` | 4 | 2,500 | `0x00340440` |  |  |  |
+| `B3OnlineSingleRaceLogic.cpp` | 20 | 1,372 | `0x00346AA0` |  |  | `GameSource/Game/Logic/B4OnlineSingleRaceLogic.cpp` |
+| `B3OnlineCompCrashLogic.cpp` | 28 | 2,624 | `0x00348CD0` |  |  |  |
+| `B3OnlineCoOpCrashLogic.cpp` | 25 | 1,552 | `0x003497C0` |  |  |  |
+| `B3OnlineRoadRageRaceLogic.cpp` | 27 | 2,840 | `0x00349E70` | 3 (0) | `0x0038ECF0`–`0x0038F3E0` |  |
+| `B3OnlineStageLogic.cpp` | 31 | 4,956 | `0x0034AA50` | 3 (0) | `0x003906A0`–`0x00391F10` |  |
+| `B3OnlineTurnBasedCrashLogic.cpp` | 28 | 3,064 | `0x0034BE60` | 2 (0) | `0x00392740`–`0x00392B30` |  |
+| `B3OnlineOpenLobbyPage.cpp` | 22 | 8,272 | `0x0034F460` | 1 (0) | `0x00396830`–`0x00396830` |  |
+| `B3OnlineGameCreateOptionsPage.cpp` | 10 | 4,192 | `0x003514A0` |  |  |  |
+| `B3OnlineOpenLobbyState.cpp` | 2 | 1,556 | `0x003524E0` |  |  |  |
+| `B3OnlineGameOptionsPage.cpp` | 16 | 10,880 | `0x00356F20` |  |  |  |
+| `B3OnlineVehicleSelectPage.cpp` | 2 | 280 | `0x0035C100` |  |  |  |
+| `B3OnlineWaitPage.cpp` | 2 | 28 | `0x0035C220` |  |  |  |
+| `B3DemoOnlineModeSelectPage.cpp` | 3 | 564 | `0x0037ADB0` |  |  |  |
+| `B3DemoOnlineTrackSelectPage.cpp` | 3 | 780 | `0x0037AFF0` |  |  |  |
+| `B3NetworkGameModeStatusMessage.cpp` | 3 | 120 | `0x0037D6D0` | 1 (1) | `0x003CC240`–`0x003CC240` |  |
+| `B3OnlineWaitingForPlayersPage.cpp` | 4 | 344 | `0x00383110` |  |  |  |
+| `B3OnlineEndOfRaceState.cpp` | 7 | 5,728 | `0x003A75F0` |  |  |  |
+| `B3OnlineCrashResultsPage.cpp` | 8 | 4,936 | `0x003A8DF0` |  |  |  |
+| `B3OnlineUploadResultsPage.cpp` | 4 | 676 | `0x003C35D0` |  |  |  |
+| `B3NetworkVoIPManagerPS2.cpp` | 14 | 332 | `0x003C49E0` | 1 (0) | `0x0041EAD0`–`0x0041EAD0` |  |
 
 ## Classes
 

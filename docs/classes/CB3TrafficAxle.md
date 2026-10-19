@@ -8,24 +8,25 @@
 - **Source file:** `B3TrafficAxle.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 10
 - **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrafficAxle`, size 0x030, methods in `GameSource/World/B4TrafficAxle.cpp` ([layout](#burnout-revenge-layout-of-cb4trafficaxle))
 - **Burnout 2 ancestor (by name):** `CTrafficAxle`, size 0x028, declared in 88 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `MoveToSegmentCentre(GtMathPs2::CGtV3d)` | `0x0015A270` 400 | `0x0016FDD0` 676 | `0x0016B570` 420 | `0x0017CF90` 920 | `0x0015F270` proven |  |
-| `IntersectLineSegment()` | `0x0015A400` 572 | `0x00170080` 880 | `0x0016B720` 768 | `0x0017CA50` 1180 | `0x0015F410` proven |  |
-| `AdjustAxleHeight(CB3TrafficLane*,int)` | `0x0015A640` 728 | `0x001703F0` 728 | `0x0016BA20` 728 | `0x0017C5D0` 1140 | `0x0015F650` proven | `int CTrafficAxle::AdjustAxleHeight(CLane *lpMergeLane, int lnMergeSegment)` (same name, different parameters) |
-| `InitalisePosition(CB3TrafficVehicle*)` | `0x0015A920` 180 | `0x001706D0` 244 | `0x0016BD00` 244 | `0x0017C4A0` 304 | `0x0015F940` proven |  |
-| `Release()` | `0x0015A9E0` 92 | `0x001707D0` 92 | `0x0016BE00` 92 | `0x0017C380` 40 | `0x0015FA00` proven |  |
-| `Prepare()` | `0x0015AA40` 96 | `0x00170830` 96 | `0x0016BE60` 96 | `0x0017C350` 44 | `0x0015FA60` proven |  |
-| `Construct()` | `0x0015AAA0` 8 | `0x00170890` 8 | `0x0016BEC0` 8 | `0x0017C340` 16 | `0x0015FAC0` strong |  |
-| `CB3TrafficAxle()` |  |  |  | `0x00192370` 48 |  |  |
-| `ResetMemberVariables()` |  |  |  | `0x0017C3B0` 200 |  |  |
-| `operator =(const CB3TrafficAxle&)` |  |  |  | `0x0018C460` 180 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `MoveToSegmentCentre(GtMathPs2::CGtV3d)` | `0x0015A270` 400 | `0x0016FDD0` 676 | `0x0016B570` 420 | `0x0017CF90` 920 | `0x0015F270` proven |  | `void CB4TrafficAxle::MoveToSegmentCentre(GtMathPs2::CGtV3d lTargetPosition)` |
+| `IntersectLineSegment()` | `0x0015A400` 572 | `0x00170080` 880 | `0x0016B720` 768 | `0x0017CA50` 1180 | `0x0015F410` proven |  | `bool CB4TrafficAxle::IntersectLineSegment()` |
+| `AdjustAxleHeight(CB3TrafficLane*,int)` | `0x0015A640` 728 | `0x001703F0` 728 | `0x0016BA20` 728 | `0x0017C5D0` 1140 | `0x0015F650` proven | `int CTrafficAxle::AdjustAxleHeight(CLane *lpMergeLane, int lnMergeSegment)` (same name, different parameters) | `bool CB4TrafficAxle::AdjustAxleHeight(CB4TrafficLane *lpMergeLane, int lnMergeSegment)` |
+| `InitalisePosition(CB3TrafficVehicle*)` | `0x0015A920` 180 | `0x001706D0` 244 | `0x0016BD00` 244 | `0x0017C4A0` 304 | `0x0015F940` proven |  | `void CB4TrafficAxle::InitalisePosition(CB4TrafficVehicle *lpOwnerVehicle)` |
+| `Release()` | `0x0015A9E0` 92 | `0x001707D0` 92 | `0x0016BE00` 92 | `0x0017C380` 40 | `0x0015FA00` proven |  | `void CB4TrafficAxle::Release()` |
+| `Prepare()` | `0x0015AA40` 96 | `0x00170830` 96 | `0x0016BE60` 96 | `0x0017C350` 44 | `0x0015FA60` proven |  | `bool CB4TrafficAxle::Prepare()` |
+| `Construct()` | `0x0015AAA0` 8 | `0x00170890` 8 | `0x0016BEC0` 8 | `0x0017C340` 16 | `0x0015FAC0` strong |  | `void CB4TrafficAxle::Construct()` |
+| `CB3TrafficAxle()` |  |  |  | `0x00192370` 48 |  |  |  |
+| `ResetMemberVariables()` |  |  |  | `0x0017C3B0` 200 |  |  | `void CB4TrafficAxle::ResetMemberVariables()` |
+| `operator =(const CB3TrafficAxle&)` |  |  |  | `0x0018C460` 180 |  |  |  |
 
 ## Burnout 2 layout of `CTrafficAxle`
 
@@ -45,6 +46,35 @@ public:
     // int CTrafficAxle::AdjustAxleHeight(CLane *lpMergeLane, int lnMergeSegment)  [0x00264CD0]
     // int CTrafficAxle::Create(CTrafficVehicle *lpTrafficVehicle)  [0x00265050]
     // void CTrafficAxle::Reset()  [0x002650D0]
+};
+```
+
+## Burnout Revenge layout of `CB4TrafficAxle`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 316 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficAxle {  // size 0x030
+    /* 0x000 */ CGtV3dPlus mPositionAndWheelRadius;
+    /* 0x010 */ CGtV3d mUp;
+    /* 0x020 */ CB4TrafficLaneSegment mCacheSegment;
+    /* 0x028 */ CGtV3d *mpNodes;
+    /* 0x02C */ RwInt16 mn16Segment;
+    /* 0x02E */ RwUInt8 mu8LaneIndex;
+    /* 0x02F */ RwUInt8 mu8TrafficVehicle;
+    // methods
+    // CB4TrafficAxle(const CB4TrafficAxle &);
+    // CB4TrafficAxle();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void ResetMemberVariables();
+    // void MoveToSegmentCentre(GtMathPs2::CGtV3d);
+    // void InitalisePosition(CB4TrafficVehicle *);
+    // bool AdjustAxleHeight(CB4TrafficLane *, int);
+    // bool IntersectLineSegment();
 };
 ```
 

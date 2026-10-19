@@ -8,37 +8,119 @@
 - **Source file:** `B3SoundGameModeManager.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 13, B3INTERN 13, B3O0PCH 23
 - **Retail (SLUS-21050):** 13 of its 13 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundGameModeManager`, size 0x3C6C0, methods in `GameSource/Sound/Core/B4SoundGameModeManager.cpp` ([layout](#burnout-revenge-layout-of-cb4soundgamemodemanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetModeBankPath() const` | `0x0024B310` 140 |  |  |  | `0x00288F70` unverified |  |
-| `UpdateVoiceGroupModeMixer()` | `0x0024B3A0` 648 | `0x0027C0E0` 648 | `0x002B3550` 648 | `0x002B0190` 1096 | `0x00289080` strong |  |
-| `TriggerSpotDucker(float)` | `0x0024B630` 20 | `0x0027C370` 112 | `0x002B37E0` 112 | `0x002B0130` 96 | `0x00289320` proven |  |
-| `UpdateGameStates()` | `0x0024B650` 936 | `0x0027C3E0` 1284 | `0x002B3850` 1284 | `0x002AFCD0` 1116 | `0x00289340` likely |  |
-| `UpdateTakedownPitcher()` | `0x0024BA00` 700 | `0x0027C8F0` 764 | `0x002B3D60` 764 | `0x002AFA10` 656 | `0x00289770` strong |  |
-| `CancelTakedownPitcher()` | `0x0024BCC0` 28 | `0x0027CBF0` 28 | `0x002B4060` 28 | `0x002AF9D0` 64 | `0x00289A30` strong |  |
-| `StartTakedownPitcher()` | `0x0024BCE0` 148 | `0x0027CC10` 148 | `0x002B4080` 148 | `0x002AF8E0` 232 | `0x00289A50` strong |  |
-| `SetGameModeData(int)` | `0x0024BD80` 8 | `0x0027CCB0` 8 | `0x002B4120` 8 | `0x002AF8B0` 36 | `0x00289AF0` strong |  |
-| `Destruct()` | `0x0024BD90` 48 | `0x0027CCC0` 48 | `0x002B4130` 48 | `0x002AF870` 60 | `0x00289B00` strong |  |
-| `Release()` | `0x0024BDC0` 176 | `0x0027CCF0` 176 | `0x002B4160` 176 | `0x002AF730` 316 | `0x00289B30` strong |  |
-| `Update()` | `0x0024BE70` 704 | `0x0027CDA0` 996 | `0x002B4210` 976 | `0x002AF310` 940 | `0x00289BF0` unverified |  |
-| `Prepare()` | `0x0024C130` 1248 | `0x0027D190` 1352 | `0x002B45E0` 1352 | `0x002AECE0` 1584 | `0x00289EE0` unverified |  |
-| `Construct(RwaSPU2Output*)` | `0x0024C610` 104 | `0x0027D6E0` 104 | `0x002B4B30` 104 | `0x002AEC30` 172 | `0x0028A3C0` likely |  |
-| `GetModeBankPath()` |  | `0x0027C030` 176 | `0x002B34A0` 176 | `0x002B0620` 232 |  |  |
-| `CB3SoundGameModeManager()` |  |  |  | `0x002B1940` 112 |  |  |
-| `GetCrashManager()` |  |  |  | `0x001AA690` 28 |  |  |
-| `GetDistortionController()` |  |  |  | `0x002AE310` 28 |  |  |
-| `GetESMManager()` |  |  |  | `0x002B2120` 28 |  |  |
-| `GetHUDManager()` |  |  |  | `0x001405C0` 28 |  |  |
-| `GetPrepareState()` |  |  |  | `0x0018FD50` 28 |  |  |
-| `GetRaceCarManager()` |  |  |  | `0x001534E0` 28 |  |  |
-| `GetRadio()` |  |  |  | `0x001359A0` 28 |  |  |
-| `GetTrackBank()` |  |  |  | `0x002B3D20` 28 |  |  |
-| `GetTrafficManager()` |  |  |  | `0x0026CBB0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetModeBankPath() const` | `0x0024B310` 140 |  |  |  | `0x00288F70` unverified |  | `RwChar * CB4SoundGameModeManager::GetModeBankPath() const` |
+| `UpdateVoiceGroupModeMixer()` | `0x0024B3A0` 648 | `0x0027C0E0` 648 | `0x002B3550` 648 | `0x002B0190` 1096 | `0x00289080` strong |  | `void CB4SoundGameModeManager::UpdateVoiceGroupModeMixer()` |
+| `TriggerSpotDucker(float)` | `0x0024B630` 20 | `0x0027C370` 112 | `0x002B37E0` 112 | `0x002B0130` 96 | `0x00289320` proven |  | `void CB4SoundGameModeManager::TriggerSpotDucker(float lrTime, float lrAttackTime, float lrDecayTime)` (same name, different parameters) |
+| `UpdateGameStates()` | `0x0024B650` 936 | `0x0027C3E0` 1284 | `0x002B3850` 1284 | `0x002AFCD0` 1116 | `0x00289340` likely |  | `void CB4SoundGameModeManager::UpdateGameStates()` |
+| `UpdateTakedownPitcher()` | `0x0024BA00` 700 | `0x0027C8F0` 764 | `0x002B3D60` 764 | `0x002AFA10` 656 | `0x00289770` strong |  |  |
+| `CancelTakedownPitcher()` | `0x0024BCC0` 28 | `0x0027CBF0` 28 | `0x002B4060` 28 | `0x002AF9D0` 64 | `0x00289A30` strong |  |  |
+| `StartTakedownPitcher()` | `0x0024BCE0` 148 | `0x0027CC10` 148 | `0x002B4080` 148 | `0x002AF8E0` 232 | `0x00289A50` strong |  |  |
+| `SetGameModeData(int)` | `0x0024BD80` 8 | `0x0027CCB0` 8 | `0x002B4120` 8 | `0x002AF8B0` 36 | `0x00289AF0` strong |  | `void CB4SoundGameModeManager::SetGameModeData(int ln32PlayerCount)` |
+| `Destruct()` | `0x0024BD90` 48 | `0x0027CCC0` 48 | `0x002B4130` 48 | `0x002AF870` 60 | `0x00289B00` strong |  | `void CB4SoundGameModeManager::Destruct()` |
+| `Release()` | `0x0024BDC0` 176 | `0x0027CCF0` 176 | `0x002B4160` 176 | `0x002AF730` 316 | `0x00289B30` strong |  | `void CB4SoundGameModeManager::Release()` |
+| `Update()` | `0x0024BE70` 704 | `0x0027CDA0` 996 | `0x002B4210` 976 | `0x002AF310` 940 | `0x00289BF0` unverified |  | `void CB4SoundGameModeManager::Update()` |
+| `Prepare()` | `0x0024C130` 1248 | `0x0027D190` 1352 | `0x002B45E0` 1352 | `0x002AECE0` 1584 | `0x00289EE0` unverified |  | `bool CB4SoundGameModeManager::Prepare()` |
+| `Construct(RwaSPU2Output*)` | `0x0024C610` 104 | `0x0027D6E0` 104 | `0x002B4B30` 104 | `0x002AEC30` 172 | `0x0028A3C0` likely |  | `void CB4SoundGameModeManager::Construct(RwaSPU2Output *lpOutput)` |
+| `GetModeBankPath()` |  | `0x0027C030` 176 | `0x002B34A0` 176 | `0x002B0620` 232 |  |  | `RwChar * CB4SoundGameModeManager::GetModeBankPath() const` (same name, different parameters) |
+| `CB3SoundGameModeManager()` |  |  |  | `0x002B1940` 112 |  |  | `CB4SoundGameModeManager * CB4SoundGameModeManager::CB4SoundGameModeManager()` |
+| `GetCrashManager()` |  |  |  | `0x001AA690` 28 |  |  |  |
+| `GetDistortionController()` |  |  |  | `0x002AE310` 28 |  |  |  |
+| `GetESMManager()` |  |  |  | `0x002B2120` 28 |  |  |  |
+| `GetHUDManager()` |  |  |  | `0x001405C0` 28 |  |  |  |
+| `GetPrepareState()` |  |  |  | `0x0018FD50` 28 |  |  |  |
+| `GetRaceCarManager()` |  |  |  | `0x001534E0` 28 |  |  |  |
+| `GetRadio()` |  |  |  | `0x001359A0` 28 |  |  |  |
+| `GetTrackBank()` |  |  |  | `0x002B3D20` 28 |  |  |  |
+| `GetTrafficManager()` |  |  |  | `0x0026CBB0` 28 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundGameModeManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 13 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundGameModeManager {  // size 0x3C6C0
+    /* 0x000 */ RwUInt32 mx32GameMode;
+    /* 0x004 */ EGtPrepareState mePrepareState;
+    /* 0x008 */ RwInt32 mn32PlayerCount;
+    /* 0x00C */ RwReal mrSpotTimer;
+    /* 0x010 */ RwInt32 mnPreviousTimer;
+    /* 0x014 */ bool mbPlayedExplosionIntro;
+    /* 0x018 */ CB4SoundRaceCarManager mRaceCarManager;
+    /* 0x16C8 */ CB4SoundESMManager mESMManager;
+    /* 0x301E0 */ CB4SoundCrashManager mCrashManager;
+    /* 0x31A90 */ CB4SoundTrafficManager mTrafficManager;
+    /* 0x35B50 */ CB4HUDSoundManager mHUDManager;
+    /* 0x35C50 */ CB4SoundStaticPassManager mStaticPassManager;
+    /* 0x35D80 */ CB4SoundRadio mRadio;
+    /* 0x35F40 */ CB4SoundDistortion mDistortion;
+    /* 0x389C0 */ CGtSoundVoiceGroup mTargetMix[20];
+    /* 0x38A60 */ CGtSoundBank *mpTrackBank;
+    /* 0x38A64 */ CGtSoundBank *mpModeBank;
+    /* 0x38A68 */ EVoiceGroupMode meVoiceGroupMode;
+    /* 0x38A6C */ RwUInt8 muFadeUpCounter;
+    /* 0x38A6D */ bool mbIsPausedOnline;
+    /* 0x38A6E */ bool mbJustEnteredSpotDuck;
+    /* 0x38A6F */ bool mbJustLeftSpotDuck;
+    /* 0x38A70 */ bool mbDuckerActive;
+    /* 0x38A74 */ RwReal mrSpotDuckAttack;
+    /* 0x38A78 */ RwReal mrSpotDuckDecay;
+    /* 0x38A7C */ RwReal mrDefaultTransitionTime;
+    /* 0x38A80 */ CGtSoundStream *mpFEStream;
+    /* 0x38A84 */ EB4SoundFEStreamState meStreamState;
+    /* 0x38A88 */ RwReal mrMasterFadeDuringCountdown;
+    /* 0x38A8C */ RwReal mrCheckinTrafficTimer;
+    /* 0x38A90 */ char maaacMixerDirs[12][20][64];
+    /* 0x3C690 */ bool mbMixerRegistered;
+    // methods
+    // CB4SoundGameModeManager(const CB4SoundGameModeManager &);
+    // CB4SoundGameModeManager();
+    // void Construct(RwaSPU2Output *);
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void OnlinePause();
+    // void OnlineUnpause();
+    // void SetGameModeData(int);
+    // void SetActiveVoiceGroupMode(EVoiceGroupMode);
+    // CB4SoundStaticPassManager * GetStaticPassManager();
+    // CB4SoundRaceCarManager * GetRaceCarManager();
+    // CB4SoundESMManager * GetESMManager();
+    // CB4SoundTrafficManager * GetTrafficManager();
+    // CB4HUDSoundManager * GetHUDManager();
+    // CB4SoundDistortion * GetDSPController();
+    // CB4SoundCrashManager * GetCrashManager();
+    // CB4SoundRadio * GetRadio();
+    // CGtSoundBank * GetTrackBank() const;
+    // EGtPrepareState GetPrepareState() const;
+    // void TriggerSpotDucker(float, float, float);
+    // void TriggerCheckinTrafficMode(float);
+    // void UpdateCheckingTrafficTimer();
+    // RwChar * GetModeBankPath() const;
+    // CGtSoundBank * GetModeBank() const;
+    // bool CueFEStream(eSoundFEStreamType);
+    // void PlayFEStream();
+    // void StopFEStream();
+    // RwReal32 GetReverbLevel() const;
+    // void UpdateGameStates();
+    // void UpdateVoiceGroupModeMixer();
+    // void RegisterDebugDisplayVars();
+    // void RegisterCommsToolVars();
+    // void RegisterMode(EVoiceGroupMode, const char *, const char *);
+    // void RegisterGroup(EVoiceGroupMode, EVoiceGroup, const char *, const char *);
+    // void UnregisterCommsToolVars();
+    // void UnregisterMode(EVoiceGroupMode);
+    // void UnregisterGroup(EVoiceGroupMode, EVoiceGroup);
+};
+```
 
 ## Notes
 

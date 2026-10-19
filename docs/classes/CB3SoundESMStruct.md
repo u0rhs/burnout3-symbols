@@ -8,15 +8,38 @@
 - **Source file:** `B3SoundESMStruct.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundESMStruct`, size 0x048, methods in `SharedClasses/SoundData/B4SoundESMStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4soundesmstruct))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update(const CB3SoundESMGraphInputs&,CB3SoundEsmGraphOutputs*) const` | `0x002BA8D0` 296 |  |  |  | `0x002FB770` proven |  |
-| `Update(const CB3SoundESMGraphInputs&,CB3SoundEsmGraphOutputs*)` |  | `0x002FCAA0` 344 | `0x00330770` 344 | `0x00327CB0` 204 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update(const CB3SoundESMGraphInputs&,CB3SoundEsmGraphOutputs*) const` | `0x002BA8D0` 296 |  |  |  | `0x002FB770` proven |  | `void CB4SoundESMStruct::Update(const CB4SoundESMGraphInputs &lInputs, CB4SoundEsmGraphOutputs *laOutputs) const` |
+| `Update(const CB3SoundESMGraphInputs&,CB3SoundEsmGraphOutputs*)` |  | `0x002FCAA0` 344 | `0x00330770` 344 | `0x00327CB0` 204 |  |  | `void CB4SoundESMStruct::Update(const CB4SoundESMGraphInputs &lInputs, CB4SoundEsmGraphOutputs *laOutputs) const` (same name, different parameters) |
+
+## Burnout Revenge layout of `CB4SoundESMStruct`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 324 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundESMStruct {  // size 0x048
+    /* static */ RwUInt32 kun32MaxDSPs;
+    /* static */ RwUInt32 kun32MaxPartials;
+    /* 0x000 */ CB4SoundESMInputLag maInputLags[7];
+    /* 0x038 */ RwUInt32 mun32VersionNumber;
+    /* 0x03C */ CB4SoundESMPartialStruct *mpPartials;
+    /* 0x040 */ RwUInt8 mun8PartialCount;
+    /* 0x044 */ RwBool mbHighDetail;
+    // methods
+    // CB4SoundESMStruct(const CB4SoundESMStruct &);
+    // CB4SoundESMStruct();
+    // void Construct(CB4SoundESMPartialStruct *, CB4SoundESMGraphStruct *, CB4SoundESMPointStruct *, int, int, int, int);
+    // void FixUp();
+    // void Update(const CB4SoundESMGraphInputs &, CB4SoundEsmGraphOutputs *) const;
+};
+```
 
 ## Notes
 

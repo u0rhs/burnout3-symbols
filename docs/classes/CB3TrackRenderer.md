@@ -8,30 +8,90 @@
 - **Source file:** `B3TrackRendererRuntimePS2.cpp`
 - **Methods per build:** DNAT_200 14, B3DEBUG 14, B3INTERN 14, B3O0PCH 17
 - **Retail (SLUS-21050):** 13 of its 14 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrackRenderer`, size 0x0D0, methods in `GameSource/Graphics/TrackRenderer/Ps2/B4TrackRendererRuntimePS2.cpp` ([layout](#burnout-revenge-layout-of-cb4trackrenderer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `EndInstanceRender()` | `0x0022C550` 124 | `0x00244690` 464 | `0x002810B0` 464 | `0x002846A0` 232 | `0x0026A1C0` strong |  |
-| `FlushInstances()` | `0x0022C5D0` 888 | `0x00244860` 944 | `0x00281280` 940 | `0x00284280` 1056 | `0x0026A240` likely |  |
-| `RenderInstances(signed char,const CB3InstanceData*)` | `0x0022C950` 280 | `0x00244C10` 660 | `0x00281630` 660 | `0x002840D0` 424 | `0x0026A610` likely |  |
-| `PushCameraForInstanceRendering(EB3RenderableCamera)` | `0x0022CA70` 204 | `0x00244EB0` 348 | `0x002818D0` 348 | `0x00283E30` 468 | `0x0026A710` strong |  |
-| `BeginInstanceRender(const CB3InstanceMesh*,const CGtAxisAlignedBox*,const CB3TrackMaterial&,float,float,EB3In` | `0x0022CB40` 1632 | `0x00245010` 2028 | `0x00281A30` 1896 | `0x00283B00` 804 | `0x0026A7E0` likely |  |
-| `RenderMesh(const CB3TrackMesh&,EB3TrackClipMode,bool)` | `0x0022D1A0` 564 | `0x00245800` 788 | `0x002821A0` 788 | `0x00283700` 760 | `0x0026AF50` unverified |  |
-| `EndMaterial()` | `0x0022D4D0` 64 | `0x00245C40` 64 | `0x002825E0` 64 | `0x002834B0` 76 | `0x0026B2B0` strong |  |
-| `ReallySetMaterial()` | `0x0022D510` 1216 | `0x00245C80` 1216 | `0x00282620` 1216 | `0x00282E70` 1588 | `0x0026B2F0` strong |  |
-| `SetMaterial(const CB3TrackMaterial&)` | `0x0022D9D0` 112 | `0x00246140` 200 | `0x00282AE0` 200 | `0x00282D40` 228 |  |  |
-| `RestoreRenderStatesAfterRenderingTrack()` | `0x0022DA40` 300 | `0x00246210` 300 | `0x00282BB0` 300 | `0x00282BB0` 400 | `0x0026B7B0` strong |  |
-| `PrepareRenderStatesForRenderingTrack()` | `0x0022DB70` 288 | `0x00246340` 384 | `0x00282CE0` 288 | `0x002828C0` 544 | `0x0026B8E0` unverified |  |
-| `ReallySetupCameraData()` | `0x0022DC90` 448 | `0x002464C0` 884 | `0x00282E00` 448 | `0x00282590` 756 | `0x0026BAA0` strong |  |
-| `Destruct()` | `0x0022DE50` 52 | `0x00246840` 52 | `0x00282FC0` 52 | `0x00282520` 112 | `0x0026BC60` strong |  |
-| `Construct()` | `0x0022DE90` 56 | `0x00246880` 112 | `0x00283000` 112 | `0x00282480` 160 | `0x0026BCA0` unverified |  |
-| `CB3TrackRenderer()` |  |  |  | `0x00284790` 48 |  |  |
-| `SetCamera(EB3RenderableCamera)` |  |  |  | `0x00226540` 200 |  |  |
-| `SetReflectionPlaneHeight(float)` |  |  |  | `0x002275A0` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `EndInstanceRender()` | `0x0022C550` 124 | `0x00244690` 464 | `0x002810B0` 464 | `0x002846A0` 232 | `0x0026A1C0` strong |  | `bool CB4TrackRenderer::EndInstanceRender()` |
+| `FlushInstances()` | `0x0022C5D0` 888 | `0x00244860` 944 | `0x00281280` 940 | `0x00284280` 1056 | `0x0026A240` likely |  | `void CB4TrackRenderer::FlushInstances()` |
+| `RenderInstances(signed char,const CB3InstanceData*)` | `0x0022C950` 280 | `0x00244C10` 660 | `0x00281630` 660 | `0x002840D0` 424 | `0x0026A610` likely |  | `bool CB4TrackRenderer::RenderInstances(signed char ln8NumInstances, const CB4InstanceData *lpaInstances)` |
+| `PushCameraForInstanceRendering(EB3RenderableCamera)` | `0x0022CA70` 204 | `0x00244EB0` 348 | `0x002818D0` 348 | `0x00283E30` 468 | `0x0026A710` strong |  | `bool CB4TrackRenderer::PushCameraForInstanceRendering(EB4RenderableCamera leCamera)` |
+| `BeginInstanceRender(const CB3InstanceMesh*,const CGtAxisAlignedBox*,const CB3TrackMaterial&,float,float,EB3In` | `0x0022CB40` 1632 | `0x00245010` 2028 | `0x00281A30` 1896 | `0x00283B00` 804 | `0x0026A7E0` likely |  | `void CB4TrackRenderer::BeginInstanceRender(const CB4InstanceMesh *lpInstance, const CGtAxisAlignedBox *lpInstanceBox, const CB4TrackMaterial &lMaterial, float lrLodSwitchDist, float lrStopDrawDist, EB4InstanceDistanceCheck leDistanceCheck, bool lbRotating, float lrSpeed)` (same name, different parameters) |
+| `RenderMesh(const CB3TrackMesh&,EB3TrackClipMode,bool)` | `0x0022D1A0` 564 | `0x00245800` 788 | `0x002821A0` 788 | `0x00283700` 760 | `0x0026AF50` unverified |  | `bool CB4TrackRenderer::RenderMesh(const CB4TrackMesh &lMesh, EB4TrackClipMode leCullMode, bool lbDisableEffects)` |
+| `EndMaterial()` | `0x0022D4D0` 64 | `0x00245C40` 64 | `0x002825E0` 64 | `0x002834B0` 76 | `0x0026B2B0` strong |  | `void CB4TrackRenderer::EndMaterial()` |
+| `ReallySetMaterial()` | `0x0022D510` 1216 | `0x00245C80` 1216 | `0x00282620` 1216 | `0x00282E70` 1588 | `0x0026B2F0` strong |  | `void CB4TrackRenderer::ReallySetMaterial()` |
+| `SetMaterial(const CB3TrackMaterial&)` | `0x0022D9D0` 112 | `0x00246140` 200 | `0x00282AE0` 200 | `0x00282D40` 228 |  |  | `bool CB4TrackRenderer::SetMaterial(const CB4TrackMaterial &lMaterial)` |
+| `RestoreRenderStatesAfterRenderingTrack()` | `0x0022DA40` 300 | `0x00246210` 300 | `0x00282BB0` 300 | `0x00282BB0` 400 | `0x0026B7B0` strong |  | `void CB4TrackRenderer::RestoreRenderStatesAfterRenderingTrack()` |
+| `PrepareRenderStatesForRenderingTrack()` | `0x0022DB70` 288 | `0x00246340` 384 | `0x00282CE0` 288 | `0x002828C0` 544 | `0x0026B8E0` unverified |  | `void CB4TrackRenderer::PrepareRenderStatesForRenderingTrack()` |
+| `ReallySetupCameraData()` | `0x0022DC90` 448 | `0x002464C0` 884 | `0x00282E00` 448 | `0x00282590` 756 | `0x0026BAA0` strong |  | `void CB4TrackRenderer::ReallySetupCameraData()` |
+| `Destruct()` | `0x0022DE50` 52 | `0x00246840` 52 | `0x00282FC0` 52 | `0x00282520` 112 | `0x0026BC60` strong |  | `void CB4TrackRenderer::Destruct()` |
+| `Construct()` | `0x0022DE90` 56 | `0x00246880` 112 | `0x00283000` 112 | `0x00282480` 160 | `0x0026BCA0` unverified |  | `void CB4TrackRenderer::Construct()` |
+| `CB3TrackRenderer()` |  |  |  | `0x00284790` 48 |  |  |  |
+| `SetCamera(EB3RenderableCamera)` |  |  |  | `0x00226540` 200 |  |  |  |
+| `SetReflectionPlaneHeight(float)` |  |  |  | `0x002275A0` 36 |  |  |  |
+
+## Burnout Revenge layout of `CB4TrackRenderer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 5 file(s), e.g. `GameSource/Graphics/PropParticleRenderer/Ps2/B4PropParticleRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrackRenderer {  // size 0x0D0
+    /* 0x000 */ u_long128 mu128Cnt0FlushENop;
+    /* 0x010 */ u_long128 mu128Cnt1StcyclUnpackVUSwitch;
+    /* 0x020 */ u_long128 mu128Cnt0Mscnt;
+    /* 0x030 */ CGtV3dPlus mSpecularDirectionAndPower;
+    /* 0x040 */ CGtV3dPlus mCameraPositionAndSpecularity;
+    /* 0x050 */ CGtV3dPlus mActualCameraPositionAndSpecularity;
+    /* 0x060 */ CGtV3d mActualCameraRight;
+    /* 0x070 */ CGtV3dPlus mCameraPositionAndDistSq;
+    /* 0x080 */ CB4InstanceMesh *mpInstance;
+    /* 0x084 */ RwInt8 mn8InstanceNumCameras;
+    /* 0x085 */ RwInt8 mn8InstanceCurrentCamera;
+    /* 0x086 */ RwInt8 man8NumInstanceQWToRender;
+    /* 0x087 */ signed char man8InstanceRenderableCamera[3];
+    /* 0x08A */ RwInt8 mn8Rotating;
+    /* 0x08C */ RwInt32 mnInstanceRenderCost;
+    /* 0x090 */ RwReal mrFarLodStopDrawDistance;
+    /* 0x094 */ CB4TrackMaterial *mpCurrentMaterial;
+    /* 0x098 */ RwInt8 meCachedCullMode;
+    /* 0x099 */ RwInt8 meCurrentCamera;
+    /* 0x09A */ bool mbReadyToRender;
+    /* 0x09B */ bool mbMeshDataExists;
+    /* 0x09C */ bool mbMaterialDispatched;
+    /* 0x0A0 */ RwUInt64 mu64FBMask;
+    /* 0x0A8 */ RwUInt64 mu64OldFBMask;
+    /* 0x0B0 */ RwUInt64 mu64ZBMask;
+    /* 0x0B8 */ RwUInt64 mu64OldZBMask;
+    /* 0x0C0 */ RwUInt32 muOldAlpha1;
+    /* 0x0C4 */ RwUInt32 muOldTest1;
+    /* 0x0C8 */ RwReal mrCurrentMipMapLodBias;
+    /* 0x0CC */ RwReal mrReflectionPlaneHeight;
+    // methods
+    // CB4TrackRenderer(const CB4TrackRenderer &);
+    // CB4TrackRenderer();
+    // void Construct();
+    // void Destruct();
+    // void PrepareRenderStatesForRenderingTrack();
+    // void RestoreRenderStatesAfterRenderingTrack();
+    // void SetCamera(EB4RenderableCamera);
+    // void EndMaterial();
+    // bool RenderMesh(const CB4TrackMesh &, EB4TrackClipMode, bool);
+    // void BeginNonInstanceRender(const CB4TrackMaterial &);
+    // void BeginInstanceRender(const CB4InstanceMesh *, const CGtAxisAlignedBox *, const CB4TrackMaterial &, float, float, EB4InstanceDistanceCheck, bool, float);
+    // bool PushCameraForInstanceRendering(EB4RenderableCamera);
+    // bool RenderInstances(signed char, const CB4InstanceData *);
+    // bool EndInstanceRender();
+    // void SetReflectionPlaneHeight(float);
+    // void ReallySetupCameraData();
+    // bool SetMaterial(const CB4TrackMaterial &);
+    // void ReallySetMaterial();
+    // void FlushInstances();
+};
+```
 
 ## Notes
 

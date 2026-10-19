@@ -11,23 +11,23 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x003D0800` 20 | `0x0044F010` 20 | `0x00475EC0` 20 | `0x0048EAE0` 80 |  |  |
-| `Update()` | `0x003D0820` 972 | `0x0044F030` 1056 | `0x00475EE0` 1056 | `0x0048E730` 940 |  |  |
-| `Prepare()` | `0x003D0BF0` 1096 | `0x0044F450` 1092 | `0x00476300` 1092 | `0x0048E590` 412 |  |  |
-| `Construct()` | `0x003D1040` 72 | `0x0044F8A0` 72 | `0x00476750` 72 | `0x0048E530` 96 |  |  |
-| `PreparePlaylist()` |  | `0x0044EE80` 392 | `0x00475D30` 392 | `0x0048EE70` 364 |  |  |
-| `AddWhereToPlayText(char*)` |  |  |  | `0x0048ECE0` 172 |  |  |
-| `CB3MyBurnoutSettingsEATraxPage()` |  |  |  | `0x003424C0` 60 |  |  |
-| `GetWhereToPlay(int)` |  |  |  | `0x0048EB30` 200 |  |  |
-| `PlaySongByIndex(int)` |  |  |  | `0x0048F0E0` 128 |  |  |
-| `PrepareWhereToPlayList()` |  |  |  | `0x0048ED90` 216 |  |  |
-| `SetSongWhereToPlay(int,CB3MyBurnoutSettingsEATraxPage::EVWhereToPlayEntries)` |  |  |  | `0x0048EC00` 220 |  |  |
-| `SetSoundtrackByIndex(int)` |  |  |  | `0x0048F070` 108 |  |  |
-| `UpdateMusicManagerSongPlayFlags()` |  |  |  | `0x0048EFE0` 136 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x003D0800` 20 | `0x0044F010` 20 | `0x00475EC0` 20 | `0x0048EAE0` 80 |  |  |  |
+| `Update()` | `0x003D0820` 972 | `0x0044F030` 1056 | `0x00475EE0` 1056 | `0x0048E730` 940 |  |  |  |
+| `Prepare()` | `0x003D0BF0` 1096 | `0x0044F450` 1092 | `0x00476300` 1092 | `0x0048E590` 412 |  |  |  |
+| `Construct()` | `0x003D1040` 72 | `0x0044F8A0` 72 | `0x00476750` 72 | `0x0048E530` 96 |  |  |  |
+| `PreparePlaylist()` |  | `0x0044EE80` 392 | `0x00475D30` 392 | `0x0048EE70` 364 |  |  |  |
+| `AddWhereToPlayText(char*)` |  |  |  | `0x0048ECE0` 172 |  |  |  |
+| `CB3MyBurnoutSettingsEATraxPage()` |  |  |  | `0x003424C0` 60 |  |  |  |
+| `GetWhereToPlay(int)` |  |  |  | `0x0048EB30` 200 |  |  |  |
+| `PlaySongByIndex(int)` |  |  |  | `0x0048F0E0` 128 |  |  |  |
+| `PrepareWhereToPlayList()` |  |  |  | `0x0048ED90` 216 |  |  |  |
+| `SetSongWhereToPlay(int,CB3MyBurnoutSettingsEATraxPage::EVWhereToPlayEntries)` |  |  |  | `0x0048EC00` 220 |  |  |  |
+| `SetSoundtrackByIndex(int)` |  |  |  | `0x0048F070` 108 |  |  |  |
+| `UpdateMusicManagerSongPlayFlags()` |  |  |  | `0x0048EFE0` 136 |  |  |  |
 
 ## Notes
 

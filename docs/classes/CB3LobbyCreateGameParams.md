@@ -6,40 +6,125 @@
 
 - **Area:** [Network and online](../systems/network-online.md)
 - **Methods per build:** B3O0PCH 27
+- **Burnout Revenge counterpart:** `CB4LobbyCreateGameParams`, size 0x058, methods in `GameSource/Network/B4LobbyCreateParamsDirtySock.cpp` ([layout](#burnout-revenge-layout-of-cb4lobbycreategameparams))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ClassLimit()` |  |  |  | `0x003469A0` 36 |  |  |
-| `GameMode()` |  |  |  | `0x00346480` 28 |  |  |
-| `GameName()` |  |  |  | `0x00345B00` 28 |  |  |
-| `InfiniteBoost()` |  |  |  | `0x0034E4B0` 44 |  |  |
-| `LapsLimit()` |  |  |  | `0x0034E480` 36 |  |  |
-| `MaxPlayers()` |  |  |  | `0x003F13B0` 28 |  |  |
-| `Password()` |  |  |  | `0x003F1390` 28 |  |  |
-| `RagerClassLimit()` |  |  |  | `0x003469D0` 36 |  |  |
-| `RankLimit()` |  |  |  | `0x003F13D0` 32 |  |  |
-| `SetClassLimit(int)` |  |  |  | `0x003BDC30` 72 |  |  |
-| `SetGameMode(EB3MenuChoicesOnline)` |  |  |  | `0x003BDBA0` 36 |  |  |
-| `SetGameName(char*)` |  |  |  | `0x003BDC00` 36 |  |  |
-| `SetInfiniteBoost(bool)` |  |  |  | `0x0035CBC0` 80 |  |  |
-| `SetLapsLimit(int)` |  |  |  | `0x0035CC10` 68 |  |  |
-| `SetMaxPlayers(int)` |  |  |  | `0x0035CC60` 36 |  |  |
-| `SetNetworkVersion(int)` |  |  |  | `0x0035F9E0` 64 |  |  |
-| `SetPassword(char*)` |  |  |  | `0x003BDBD0` 36 |  |  |
-| `SetPlayerBootedCallback(bool (*)` |  |  |  | `0x0035F960` 52 |  |  |
-| `SetPlayerListChangedCallback(bool (*)` |  |  |  | `0x0035F9A0` 52 |  |  |
-| `SetRagerClassLimit(int)` |  |  |  | `0x003F8BF0` 72 |  |  |
-| `SetRankLimit(int)` |  |  |  | `0x003F1860` 64 |  |  |
-| `SetSkillLevel(int)` |  |  |  | `0x002867B0` 36 |  |  |
-| `SetStage(unsigned long)` |  |  |  | `0x0035F900` 48 |  |  |
-| `SetTrack(unsigned long)` |  |  |  | `0x0035F930` 48 |  |  |
-| `SkillLevel()` |  |  |  | `0x002867E0` 28 |  |  |
-| `Stage()` |  |  |  | `0x003465C0` 48 |  |  |
-| `Track()` |  |  |  | `0x003465F0` 48 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ClassLimit()` |  |  |  | `0x003469A0` 36 |  |  |  |
+| `GameMode()` |  |  |  | `0x00346480` 28 |  |  |  |
+| `GameName()` |  |  |  | `0x00345B00` 28 |  |  |  |
+| `InfiniteBoost()` |  |  |  | `0x0034E4B0` 44 |  |  |  |
+| `LapsLimit()` |  |  |  | `0x0034E480` 36 |  |  |  |
+| `MaxPlayers()` |  |  |  | `0x003F13B0` 28 |  |  |  |
+| `Password()` |  |  |  | `0x003F1390` 28 |  |  |  |
+| `RagerClassLimit()` |  |  |  | `0x003469D0` 36 |  |  |  |
+| `RankLimit()` |  |  |  | `0x003F13D0` 32 |  |  |  |
+| `SetClassLimit(int)` |  |  |  | `0x003BDC30` 72 |  |  |  |
+| `SetGameMode(EB3MenuChoicesOnline)` |  |  |  | `0x003BDBA0` 36 |  |  |  |
+| `SetGameName(char*)` |  |  |  | `0x003BDC00` 36 |  |  |  |
+| `SetInfiniteBoost(bool)` |  |  |  | `0x0035CBC0` 80 |  |  |  |
+| `SetLapsLimit(int)` |  |  |  | `0x0035CC10` 68 |  |  |  |
+| `SetMaxPlayers(int)` |  |  |  | `0x0035CC60` 36 |  |  |  |
+| `SetNetworkVersion(int)` |  |  |  | `0x0035F9E0` 64 |  |  |  |
+| `SetPassword(char*)` |  |  |  | `0x003BDBD0` 36 |  |  |  |
+| `SetPlayerBootedCallback(bool (*)` |  |  |  | `0x0035F960` 52 |  |  |  |
+| `SetPlayerListChangedCallback(bool (*)` |  |  |  | `0x0035F9A0` 52 |  |  |  |
+| `SetRagerClassLimit(int)` |  |  |  | `0x003F8BF0` 72 |  |  |  |
+| `SetRankLimit(int)` |  |  |  | `0x003F1860` 64 |  |  |  |
+| `SetSkillLevel(int)` |  |  |  | `0x002867B0` 36 |  |  |  |
+| `SetStage(unsigned long)` |  |  |  | `0x0035F900` 48 |  |  |  |
+| `SetTrack(unsigned long)` |  |  |  | `0x0035F930` 48 |  |  |  |
+| `SkillLevel()` |  |  |  | `0x002867E0` 28 |  |  |  |
+| `Stage()` |  |  |  | `0x003465C0` 48 |  |  |  |
+| `Track()` |  |  |  | `0x003465F0` 48 |  |  |  |
+
+## Burnout Revenge layout of `CB4LobbyCreateGameParams`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 9 file(s), e.g. `GameSource/Menu/B4MenuChoices.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4LobbyCreateGameParams : public CGtLobbyGameParamsDirtySock {  // size 0x058
+    // base CGtLobbyGameParamsDirtySock at 0x000
+    /* static */ RwUInt32 knB4GameParamsNetworkVersionBaseBit;
+    /* static */ RwUInt32 knB4GameParamsNetworkVersionNumBits;
+    /* static */ RwUInt32 knB4GameParamsNetworkVersionBitMask;
+    /* static */ RwUInt32 knB4GameParamsRagerVehicleLevelBaseBit;
+    /* static */ RwUInt32 knB4GameParamsRagerVehicleLevelNumBits;
+    /* static */ RwUInt32 knB4GameParamsRagerVehicleLevelBitMask;
+    /* static */ RwUInt32 knB4GameParamsLanguageBaseBit;
+    /* static */ RwUInt32 knB4GameParamsLanguageNumBits;
+    /* static */ RwUInt32 knB4GameParamsLanguageBitMask;
+    /* static */ RwUInt32 knB4GameParamsInfiniteBoostBaseBit;
+    /* static */ RwUInt32 knB4GameParamsInfiniteBoostNumBits;
+    /* static */ RwUInt32 knB4GameParamsInfiniteBoostBitMask;
+    /* static */ RwUInt32 knB4GameParamsVehicleLevelBaseBit;
+    /* static */ RwUInt32 knB4GameParamsVehicleLevelNumBits;
+    /* static */ RwUInt32 knB4GameParamsVehicleLevelBitMask;
+    /* static */ RwUInt32 knB4GameParamsLapsBaseBit;
+    /* static */ RwUInt32 knB4GameParamsLapsNumBits;
+    /* static */ RwUInt32 knB4GameParamsLapsBitMask;
+    /* static */ RwUInt32 knB4GameParamsRoundsBaseBit;
+    /* static */ RwUInt32 knB4GameParamsRoundsNumBits;
+    /* static */ RwUInt32 knB4GameParamsRoundsBitMask;
+    /* static */ RwUInt32 knB4GameParamsSecurityBaseBit;
+    /* static */ RwUInt32 knB4GameParamsSecurityNumBits;
+    /* static */ RwUInt32 knB4GameParamsSecurityBitMask;
+    /* static */ RwUInt32 knB4GameParamsSkillBaseBit;
+    /* static */ RwUInt32 knB4GameParamsSkillNumBits;
+    /* static */ RwUInt32 knB4GameParamsSkillBitMask;
+    /* static */ RwUInt32 knB4GameParamsModeBaseBit;
+    /* static */ RwUInt32 knB4GameParamsModeNumBits;
+    /* static */ RwUInt32 knB4GameParamsModeBitMask;
+    // methods
+    // CB4LobbyCreateGameParams(const CB4LobbyCreateGameParams &);
+    // CB4LobbyCreateGameParams();
+    // void Prepare();
+    // void SetGameName(const char *);
+    // void SetPassword(const char *);
+    // void SetUserSetName(const char *);
+    // void SetGameMode(EB4MenuChoicesOnline);
+    // void SetVehicleLevelLimit(int);
+    // void SetRagerVehicleLevelLimit(int);
+    // void SetInfiniteBoost(bool);
+    // void SetLanguage(EGtLanguage);
+    // void SetCourse(CB4LobbyCreateGameParams::EB4CourseSpecifier);
+    // void SetMaxPlayers(int);
+    // void SetLapsLimit(int);
+    // void SetNetworkVersion(int);
+    // void SetPlayerListChangedCallback(bool (*)(bool, void *), void *);
+    // void SetPlayerBootedCallback(bool (*)(ELobbyKickReason, void *), void *);
+    // void SetSkillLevel(unsigned int);
+    // void SetRoomID(int);
+    // void SetRandomNumberSeed(unsigned int);
+    // void SetNumberRounds(int);
+    // void SetSecurity(CB4LobbyCreateGameParams::EB4GameSecurity);
+    // void SetFixedGame(bool);
+    // void SetRankedGame(bool);
+    // RwChar * GameName();
+    // RwChar * HostName();
+    // RwChar * Password();
+    // RwChar * UserSetName();
+    // EB4MenuChoicesOnline GameMode();
+    // RwInt32 VehicleLevelLimit();
+    // RwInt32 RagerVehicleLevelLimit();
+    // bool InfiniteBoost();
+    // EGtLanguage Language();
+    // EB4CourseSpecifier Course();
+    // RwInt32 NumberOfPlayers();
+    // RwInt32 MaxPlayers();
+    // RwInt32 LapsLimit();
+    // RwInt32 NetworkVersion();
+    // RwUInt32 SkillLevel();
+    // RwInt32 RoomID();
+    // RwUInt32 RandomNumberSeed();
+    // RwInt32 NumberRounds();
+    // EB4GameSecurity Security();
+};
+```
 
 ## Notes
 

@@ -22,6 +22,11 @@ FOLDERS = {
         'Exports from the Burnout 2 prototype: the executable\'s symbols and DWARF 1 debug information '
         '(`SLUS_204.97/`), modules with symbols (`modules/`), the disc listing and strings (`disc/`), and the '
         'original IOP link maps (`originals/`). Described in [data](../README.md).'),
+    'data/burnout-revenge-prototype': ('Burnout Revenge prototype (14 July 2005)',
+        'Exports from the Burnout Revenge July 14, 2005 PS2 prototype (`SLUS_212.42`), which kept its symbol table and '
+        'GCC debug information: types with members and methods, functions with parameter names, globals and source '
+        'files (`SLUS_212.42/`). Revenge was built on Burnout 3\'s code. Written by `tools/export_revenge.py`; the '
+        'executable and its link map are not copied. Described on [builds](../../docs/builds.md#burnout-revenge-prototypes-2005-to-2006).'),
     'data/burnout3-review-us-2004-07-20': ('Burnout 3 US review build (20 July 2004, 11:11)',
         'Exports from the US review disc ("Print Reviews Only Alpha 1 07-18-2004"): the disc listing, strings and headers '
         'of the stripped `SLUS_210.50`, and the value database (`disc/`). Described on [builds](../../docs/builds.md).'),

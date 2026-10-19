@@ -8,14 +8,44 @@
 - **Source file:** `B3TrackDataStruct.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrackDataStruct`, size 0x4A0, methods in `SharedClasses/TrackData/B4TrackDataStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4trackdatastruct))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Fixup(unsigned int)` | `0x0035B310` 28 | `0x003C62C0` 28 | `0x003EEBC0` 28 | `0x003FCBA0` 72 | `0x003A20E0` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Fixup(unsigned int)` | `0x0035B310` 28 | `0x003C62C0` 28 | `0x003EEBC0` 28 | `0x003FCBA0` 72 | `0x003A20E0` proven |  | `void CB4TrackDataStruct::Fixup(unsigned int lnStartAddress)` |
+
+## Burnout Revenge layout of `CB4TrackDataStruct`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 8 file(s), e.g. `GameSource/Game/Challenge/B4Challenge.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrackDataStruct {  // size 0x4A0
+    /* 0x000 */ CB4StartPositionStruct maStartPositionStructs[6];
+    /* 0x1E0 */ CB4PlanarTriggerStruct maStartLineStructs[4];
+    /* 0x260 */ CB4PlanarTriggerStruct maFinishLineStructs[4];
+    /* 0x2E0 */ CB4PlanarTriggerStruct maSplitTimeCheckpointStructs[12];
+    /* 0x460 */ CB4CrashModeWindStruct maWind[2];
+    /* 0x470 */ CB4SignatureTakedownStruct *mpSignatureTakedowns;
+    /* 0x474 */ CB4CrashModePickupStruct *mpCrashModePickups;
+    /* 0x478 */ CB4CrashModeRampStruct *mpCrashModeRamps;
+    /* 0x47C */ RwUInt32 muVersionNumber;
+    /* 0x480 */ int manIntroSequences[2];
+    /* 0x488 */ RwInt32 mnNumStartLines;
+    /* 0x48C */ RwInt32 mnNumFinishLines;
+    /* 0x490 */ RwInt32 mnNumSplitTimeCheckpoints;
+    /* 0x494 */ RwInt32 mnNumSignatureTakedowns;
+    /* 0x498 */ RwInt32 mnNumCrashModePickups;
+    /* 0x49C */ RwInt32 mnNumCrashModeRamps;
+    // methods
+    // CB4TrackDataStruct(const CB4TrackDataStruct &);
+    // CB4TrackDataStruct();
+    // void Fixup(unsigned int);
+};
+```
 
 ## Notes
 

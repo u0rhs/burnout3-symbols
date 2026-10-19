@@ -6,14 +6,33 @@
 
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CGtStaticParagraphSettings`, size 0x018 ([layout](#burnout-revenge-layout-of-cgtstaticparagraphsettings))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CGtStaticParagraphSettings()` |  |  |  | `0x001403B0` 44 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CGtStaticParagraphSettings()` |  |  |  | `0x001403B0` 44 |  |  |  |
+
+## Burnout Revenge layout of `CGtStaticParagraphSettings`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dObjectParagraph.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtStaticParagraphSettings {  // size 0x018
+    /* 0x000 */ CGtV2d mOffset;
+    /* 0x008 */ RwReal mrTextHeight;
+    /* 0x00C */ RwReal mrLineSpacing;
+    /* 0x010 */ CGt2dFont *mpFont;
+    /* 0x014 */ RwInt16 mn16FirstLine;
+    /* 0x016 */ RwInt16 mn16NumberOfLines;
+    // methods
+    // CGtStaticParagraphSettings(const CGtStaticParagraphSettings &);
+    // CGtStaticParagraphSettings();
+};
+```
 
 ## Notes
 

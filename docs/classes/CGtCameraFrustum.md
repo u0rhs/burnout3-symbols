@@ -7,16 +7,37 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `GtCameraFrustumPS2.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 3
+- **Burnout Revenge counterpart:** `CGtCameraFrustum`, size 0x0A0, methods in `GameShared/GameClasses/Graphical/CameraFrustum/Ps2/GtCameraFrustumPS2.cpp` ([layout](#burnout-revenge-layout-of-cgtcamerafrustum))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `InitialisePerspective(const GtMathPs2::CGtMatrix3x4&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const` | `0x002ED2D0` 1348 | `0x0033B9C0` 1832 | `0x0036D220` 1348 | `0x0036B790` 4100 |  |  |
-| `Initialise(RwCamera*)` | `0x002ED820` 392 | `0x0033C0F0` 392 | `0x0036D770` 392 | `0x0036B600` 388 |  |  |
-| `CGtCameraFrustum()` |  |  |  | `0x00195ED0` 108 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `InitialisePerspective(const GtMathPs2::CGtMatrix3x4&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const` | `0x002ED2D0` 1348 | `0x0033B9C0` 1832 | `0x0036D220` 1348 | `0x0036B790` 4100 |  |  | `void CGtCameraFrustum::InitialisePerspective(const GtMathPs2::CGtMatrix3x4 &lCameraMatrix, const GtMathPs2::CGtV2d &lFrameBufferSize, const GtMathPs2::CGtV2d &lViewWindow, const GtMathPs2::CGtV2d &lViewOffset, float lrNearClipPlane, float lrFarClipPlane)` (same name, different parameters) |
+| `Initialise(RwCamera*)` | `0x002ED820` 392 | `0x0033C0F0` 392 | `0x0036D770` 392 | `0x0036B600` 388 |  |  | `void CGtCameraFrustum::Initialise(RwCamera *lpCamera)` |
+| `CGtCameraFrustum()` |  |  |  | `0x00195ED0` 108 |  |  |  |
+
+## Burnout Revenge layout of `CGtCameraFrustum`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 89 file(s), e.g. `GameShared/GameClasses/Graphical/CameraFrustum/Ps2/GtCameraFrustumPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtCameraFrustum : public CGtCameraFrustumBase {  // size 0x0A0
+    // base CGtCameraFrustumBase at 0x000
+    /* 0x060 */ CGtV4d mOuterFrustumNX;
+    /* 0x070 */ CGtV4d mOuterFrustumNY;
+    /* 0x080 */ CGtV4d mOuterFrustumNZ;
+    /* 0x090 */ CGtV4d mOuterFrustumD;
+    // methods
+    // CGtCameraFrustum(const CGtCameraFrustum &);
+    // CGtCameraFrustum();
+    // void Initialise(RwCamera *);
+    // void InitialisePerspective(const GtMathPs2::CGtMatrix3x4 &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, float, float);
+    // void InitialiseParallel(const GtMathPs2::CGtMatrix3x4 &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, float, float);
+};
+```
 
 ## Notes
 

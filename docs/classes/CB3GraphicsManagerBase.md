@@ -8,33 +8,34 @@
 - **Source file:** `B3GraphicsManager.cpp`
 - **Methods per build:** DNAT_200 11, B3DEBUG 13, B3INTERN 12, B3O0PCH 18
 - **Retail (SLUS-21050):** 10 of its 11 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4GraphicsManagerBase`, size 0x4E0, methods in `GameSource/Graphics/B4GraphicsManager.cpp` ([layout](#burnout-revenge-layout-of-cb4graphicsmanagerbase))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `DrawBootLoadingScreen(float)` | `0x0016ABB0` 864 | `0x00184900` 1080 | `0x0017F590` 1080 | `0x001959C0` 980 |  |  |
-| `SetViewportsSplitScreen()` | `0x0016AF10` 340 | `0x00184E40` 340 | `0x0017F9D0` 340 | `0x001957C0` 504 | `0x0019E760` likely |  |
-| `SetViewportsSinglePlayer()` | `0x0016B070` 136 | `0x00184FA0` 136 | `0x0017FB30` 136 | `0x001956D0` 188 | `0x0019E8C0` unverified |  |
-| `SetDefaultLODSwitchDistances()` | `0x0016B100` 52 | `0x00185030` 52 | `0x0017FBC0` 52 | `0x00195670` 92 | `0x0019E9A0` strong |  |
-| `CloseViewport()` | `0x0016B140` 52 | `0x001850E0` 144 | `0x0017FC70` 144 | `0x00195590` 80 | `0x0019EA30` strong |  |
-| `AttachCameraToViewport(EB3ViewportSelection,CGtCamera*)` | `0x0016B180` 68 | `0x00185170` 132 | `0x0017FD00` 132 | `0x001954B0` 156 | `0x0019EA70` strong |  |
-| `UpdateViewport(EB3ViewportSelection)` | `0x0016B1D0` 64 | `0x00185200` 116 | `0x0017FD90` 116 | `0x00195410` 148 | `0x0019EAC0` strong |  |
-| `Destruct()` | `0x0016B210` 80 | `0x00185280` 80 | `0x0017FE10` 80 | `0x001953A0` 108 | `0x0019EB10` strong |  |
-| `Update()` | `0x0016B260` 140 | `0x001852D0` 192 | `0x0017FE60` 192 | `0x00195290` 260 | `0x0019EB60` strong |  |
-| `Prepare()` | `0x0016B2F0` 592 | `0x00185390` 1684 | `0x0017FF20` 1520 | `0x00194DF0` 1184 | `0x0019EBF0` strong |  |
-| `Construct()` | `0x0016B540` 908 | `0x00185A30` 1372 | `0x00180510` 1180 | `0x00194960` 1004 | `0x0019EE40` unverified |  |
-| `TakeScreenGrab()` |  | `0x00184D40` 248 |  |  |  |  |
-| `GetViewport(EB3ViewportSelection)` |  | `0x00185070` 104 | `0x0017FC00` 104 |  |  |  |
-| `CB3GraphicsManagerBase()` |  |  |  | `0x00195FD0` 176 |  |  |
-| `GetB3LogoTexDic()` |  |  |  | `0x00195DA0` 20 |  |  |
-| `GetCurrentViewport()` |  |  |  | `0x00169890` 28 |  |  |
-| `GetCurrentViewportParams()` |  |  |  | `0x0029BCE0` 28 |  |  |
-| `GetPlayerViewportParams(int)` |  |  |  | `0x001414A0` 84 |  |  |
-| `GetScaledLODDistanceSquared(EB3LodSwitchDistances)` |  |  |  | `0x00169820` 76 |  |  |
-| `SetupPlayerViewportFog(int,float)` |  |  |  | `0x002E7270` 92 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `DrawBootLoadingScreen(float)` | `0x0016ABB0` 864 | `0x00184900` 1080 | `0x0017F590` 1080 | `0x001959C0` 980 |  |  | `void CB4GraphicsManagerBase::DrawBootLoadingScreen(float lrProgress)` |
+| `SetViewportsSplitScreen()` | `0x0016AF10` 340 | `0x00184E40` 340 | `0x0017F9D0` 340 | `0x001957C0` 504 | `0x0019E760` likely |  | `void CB4GraphicsManagerBase::SetViewportsSplitScreen()` |
+| `SetViewportsSinglePlayer()` | `0x0016B070` 136 | `0x00184FA0` 136 | `0x0017FB30` 136 | `0x001956D0` 188 | `0x0019E8C0` unverified |  | `void CB4GraphicsManagerBase::SetViewportsSinglePlayer()` |
+| `SetDefaultLODSwitchDistances()` | `0x0016B100` 52 | `0x00185030` 52 | `0x0017FBC0` 52 | `0x00195670` 92 | `0x0019E9A0` strong |  | `void CB4GraphicsManagerBase::SetDefaultLODSwitchDistances()` |
+| `CloseViewport()` | `0x0016B140` 52 | `0x001850E0` 144 | `0x0017FC70` 144 | `0x00195590` 80 | `0x0019EA30` strong |  | `void CB4GraphicsManagerBase::CloseViewport()` |
+| `AttachCameraToViewport(EB3ViewportSelection,CGtCamera*)` | `0x0016B180` 68 | `0x00185170` 132 | `0x0017FD00` 132 | `0x001954B0` 156 | `0x0019EA70` strong |  | `void CB4GraphicsManagerBase::AttachCameraToViewport(EB4ViewportSelection leViewportSelection, CGtCamera *lpCamera)` |
+| `UpdateViewport(EB3ViewportSelection)` | `0x0016B1D0` 64 | `0x00185200` 116 | `0x0017FD90` 116 | `0x00195410` 148 | `0x0019EAC0` strong |  | `void CB4GraphicsManagerBase::UpdateViewport(EB4ViewportSelection leViewportSelection)` |
+| `Destruct()` | `0x0016B210` 80 | `0x00185280` 80 | `0x0017FE10` 80 | `0x001953A0` 108 | `0x0019EB10` strong |  | `void CB4GraphicsManagerBase::Destruct()` |
+| `Update()` | `0x0016B260` 140 | `0x001852D0` 192 | `0x0017FE60` 192 | `0x00195290` 260 | `0x0019EB60` strong |  | `void CB4GraphicsManagerBase::Update()` |
+| `Prepare()` | `0x0016B2F0` 592 | `0x00185390` 1684 | `0x0017FF20` 1520 | `0x00194DF0` 1184 | `0x0019EBF0` strong |  | `bool CB4GraphicsManagerBase::Prepare()` |
+| `Construct()` | `0x0016B540` 908 | `0x00185A30` 1372 | `0x00180510` 1180 | `0x00194960` 1004 | `0x0019EE40` unverified |  | `void CB4GraphicsManagerBase::Construct()` |
+| `TakeScreenGrab()` |  | `0x00184D40` 248 |  |  |  |  |  |
+| `GetViewport(EB3ViewportSelection)` |  | `0x00185070` 104 | `0x0017FC00` 104 |  |  |  |  |
+| `CB3GraphicsManagerBase()` |  |  |  | `0x00195FD0` 176 |  |  | `CB4GraphicsManagerBase * CB4GraphicsManagerBase::CB4GraphicsManagerBase()` |
+| `GetB3LogoTexDic()` |  |  |  | `0x00195DA0` 20 |  |  |  |
+| `GetCurrentViewport()` |  |  |  | `0x00169890` 28 |  |  |  |
+| `GetCurrentViewportParams()` |  |  |  | `0x0029BCE0` 28 |  |  |  |
+| `GetPlayerViewportParams(int)` |  |  |  | `0x001414A0` 84 |  |  |  |
+| `GetScaledLODDistanceSquared(EB3LodSwitchDistances)` |  |  |  | `0x00169820` 76 |  |  |  |
+| `SetupPlayerViewportFog(int,float)` |  |  |  | `0x002E7270` 92 |  |  |  |
 
 ## Static data (DNAT_200)
 
@@ -45,6 +46,117 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `0x00442DE4` | 4 | .sdata | `CB3GraphicsManagerBase::mgpSmallFontDef` |
 | `0x00442DE8` | 4 | .sdata | `CB3GraphicsManagerBase::mgpSmallFontTexDic` |
 | `0x00442DEC` | 4 | .sdata | `CB3GraphicsManagerBase::mgpB3LogoTexDic` |
+
+## Burnout Revenge layout of `CB4GraphicsManagerBase`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 86 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4GraphicsManagerBase {  // size 0x4E0
+    /* 0x000 */ RwInt32 mnScreenWidth;
+    /* 0x004 */ RwInt32 mnScreenHeight;
+    /* 0x008 */ RwInt32 mnScreenDepth;
+    /* 0x00C */ bool mbMirrorMode;
+    /* 0x00D */ bool mbWidescreen;
+    /* 0x00E */ bool mb50Hz;
+    /* 0x00F */ bool mbVerticalSplit;
+    /* 0x010 */ CGtScreenCentre mScreenPosition;
+    /* 0x020 */ CGtV2d mScreenPositionData;
+    /* 0x028 */ CGtV2d mScreenPositionDataOld;
+    /* 0x030 */ CGtTexture *mpGlassUnbrokenTexture;
+    /* 0x034 */ CGtTexture *mpGlassCrackTexture;
+    /* 0x038 */ CGtTexture *mpGlassSmashTexture;
+    /* 0x03C */ CGtTexture *mpUndersideTexture;
+    /* 0x040 */ bool mbTakeScreenShot;
+    /* 0x041 */ bool mbScreenShotInProgress;
+    /* 0x044 */ EB4ScreenshotType meShotType;
+    /* 0x048 */ EB4ViewportMode meViewportMode;
+    /* 0x04C */ bool mbDrawRacePositions;
+    /* 0x04D */ bool mbDrawBackdrops;
+    /* 0x04E */ bool mbDrawChevrons;
+    /* 0x04F */ bool mbDrawTrack;
+    /* 0x050 */ bool mbDrawTrackIntoEnvmap;
+    /* 0x051 */ bool mbDrawInstances;
+    /* 0x052 */ bool mbDrawInstancesIntoEnvmap;
+    /* 0x053 */ bool mbDrawProps;
+    /* 0x054 */ bool mbDrawPropsGlowing;
+    /* 0x055 */ bool mbDrawTraffic;
+    /* 0x056 */ bool mbDrawRacecars;
+    /* 0x057 */ bool mbDrawShadows;
+    /* 0x058 */ bool mbDrawBloom;
+    /* 0x059 */ bool mbDrawFog;
+    /* 0x05A */ bool mbDrawRadialBlur;
+    /* 0x05B */ bool mbDrawHUD;
+    /* 0x05C */ bool mbDrawParticles;
+    /* 0x060 */ float marLodSwitchDistances[5];
+    /* 0x074 */ CGTFileSystem *mpWriteableFileSystem;
+    /* 0x078 */ EGtPrepareState mePrepareState;
+    /* 0x080 */ CB4RenderTargetManager mRenderTargetManager;
+    /* 0x0C0 */ CB4Viewport maPlayerViewports[2];
+    /* 0x200 */ CB4ViewportParams maPlayerViewportParams[2];
+    /* 0x400 */ CB4Viewport mMainViewport;
+    /* 0x4A0 */ CB4Viewport *mpCurrentViewport;
+    /* 0x4A4 */ CB4ViewportParams *mpCurrentViewportParams;
+    /* 0x4A8 */ EB4VideoMode meCurrentVideoMode;
+    /* 0x4AC */ RwInt32 mnDisplayWidth;
+    /* 0x4B0 */ RwInt32 mnDisplayHeight;
+    /* 0x4B4 */ RwInt32 mnDisplayDepth;
+    /* 0x4B8 */ RwBool mbClearFrameBuffer;
+    /* 0x4C0 */ CGtV2d mUVScale;
+    /* 0x4C8 */ bool mbSetUVScale;
+    /* 0x4CC */ CB4ClippedViewport mClippedViewport;
+    /* 0x4DC */ RwBool mbDrawToClippedViewport;
+    // methods
+    // CB4GraphicsManagerBase(const CB4GraphicsManagerBase &);
+    // CB4GraphicsManagerBase();
+    // void ConstructViewports();
+    // void DestructViewports();
+    // void Construct();
+    // bool Prepare();
+    // EB4VideoMode GetVideoMode();
+    // void SetDefaultLODSwitchDistances();
+    // RwReal GetScaledLODDistanceSquared(EB4LodSwitchDistances);
+    // void SetVideoMode(EB4VideoMode);
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void UpdateViewport(EB4ViewportSelection);
+    // void AttachCameraToViewport(EB4ViewportSelection, CGtCamera *);
+    // void ClearFrameBuffer();
+    // void OpenViewport(EB4ViewportSelection);
+    // void CloseViewport();
+    // void PresentDrawBuffer();
+    // void ClearDirtyZBuffer();
+    // CB4Viewport * GetCurrentViewport();
+    // CB4ViewportParams * GetCurrentViewportParams();
+    // void RenderFullScreenSpecular(GtMathPs2::CGtV3d, float);
+    // void RenderFullScreenPass(GtMathPs2::CGtV4d, EB4FullScreenPassBlendMode);
+    // CB4Viewport * GetPlayerViewport(int);
+    // CB4ViewportParams * GetPlayerViewportParams(int);
+    // void SetViewportsSinglePlayer();
+    // void UpdateFrontEndViewport();
+    // void SetViewportsSplitScreen();
+    // void SetViewportFullScreen(int);
+    // CB4Viewport * GetViewport(EB4ViewportSelection);
+    // void SetupPlayerViewportFog(int, float);
+    // RwUInt32 GetVBlankCount();
+    // void DrawBootLoadingScreen(float);
+    // void TakeScreenGrab();
+    // void TEMPDrawFakeWidescreenBorders();
+    // bool IsVerticalSplit();
+    // RwInt32 GetDisplayWidth();
+    // RwInt32 GetDisplayHeight();
+    // RwBool GetDrawingToClippedViewport();
+    // void SetDrawingToClippedViewport(int);
+    // CB4ClippedViewport * GetClippedViewport();
+    // void DoClearScreenNextFrame();
+    // CB4RenderTargetManager * GetRenderTargetManager();
+    // void SetDirectionalBlurUVScale(const GtMathPs2::CGtV2d &);
+    // void ResetDirectionalBlurUVScaleFlag();
+    // CGtV2d * GetDirectionalBlurUVScale();
+    // bool ChangeDirectionalBlurUVScale();
+};
+```
 
 ## Notes
 

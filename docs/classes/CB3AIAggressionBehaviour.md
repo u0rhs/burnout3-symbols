@@ -8,35 +8,95 @@
 - **Source file:** `B3AIAggressionBehaviour.cpp`
 - **Methods per build:** DNAT_200 14, B3DEBUG 14, B3INTERN 14, B3O0PCH 20
 - **Retail (SLUS-21050):** 13 of its 14 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4AIAggressionBehaviour`, size 0x060, methods in `GameSource/World/B4AIAggressionBehaviour.cpp` ([layout](#burnout-revenge-layout-of-cb4aiaggressionbehaviour))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateAggressiveHornBlast()` | `0x002E7C00` 216 | `0x00333410` 216 | `0x00364EA0` 216 | `0x003672A0` 360 | `0x0032EE00` proven |  |
-| `DoAggressiveHornBlast(EAggressiveHornBlashReason)` | `0x002E7CE0` 488 | `0x003334F0` 488 | `0x00364F80` 488 | `0x00367160` 312 | `0x0032EEE0` proven |  |
-| `CanStickySpeedMatch() const` | `0x002E7ED0` 612 |  |  |  | `0x0032F0D0` proven |  |
-| `GetAttackTarget() const` | `0x002E8140` 8 |  |  |  | `0x0032F350` proven |  |
-| `ClearState()` | `0x002E8150` 492 | `0x00333BC0` 912 | `0x00365650` 912 | `0x00366680` 108 | `0x0032F360` strong |  |
-| `StopAttacking(bool,bool)` | `0x002E8340` 748 | `0x00333F50` 1348 | `0x003659E0` 1296 | `0x003664D0` 432 | `0x0032F550` strong |  |
-| `MoveToTarget()` | `0x002E8630` 740 | `0x003344A0` 1364 | `0x00365EF0` 1248 | `0x00366150` 884 | `0x0032F840` strong |  |
-| `UpdateSlam()` | `0x002E8920` 544 | `0x00334A00` 1064 | `0x003663D0` 1064 | `0x00365EC0` 652 | `0x0032FB30` unverified |  |
-| `CanSlam()` | `0x002E8B40` 476 | `0x00334E30` 952 | `0x00366800` 952 | `0x00365C00` 696 | `0x0032FD90` strong |  |
-| `FindTarget()` | `0x002E8D20` 916 | `0x003351F0` 1808 | `0x00366BC0` 1808 | `0x00365970` 644 | `0x0032FF80` likely |  |
-| `Release()` | `0x002E90C0` 8 | `0x00335900` 8 | `0x003672D0` 8 | `0x00365960` 16 |  |  |
-| `Update()` | `0x002E90D0` 4056 | `0x00335910` 6384 | `0x003672E0` 6284 | `0x00365100` 2132 | `0x00330370` unverified |  |
-| `Prepare(CB3AICar*)` | `0x002EA0B0` 628 | `0x00337200` 1128 | `0x00368B70` 1088 | `0x00364FD0` 296 | `0x00331B30` strong |  |
-| `Construct()` | `0x002EA330` 60 | `0x00337670` 60 | `0x00368FB0` 60 | `0x00364F90` 60 | `0x00331DA0` likely |  |
-| `CanStickySpeedMatch()` |  | `0x003336E0` 1228 | `0x00365170` 1228 | `0x00366D50` 780 |  |  |
-| `GetAttackTarget()` |  | `0x00333BB0` 8 | `0x00365640` 8 | `0x003667B0` 28 |  |  |
-| `CB3AIAggressionBehaviour()` |  |  |  | `0x001913A0` 48 |  |  |
-| `CanBlock()` |  |  |  | `0x00366900` 484 |  |  |
-| `IsSafeToAttack()` |  |  |  | `0x003667D0` 292 |  |  |
-| `SetState(EAIAggressionState,float)` |  |  |  | `0x003666F0` 188 |  |  |
-| `UpdateBlock()` |  |  |  | `0x00366AF0` 608 |  |  |
-| `UpdateTargetData()` |  |  |  | `0x00367080` 224 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateAggressiveHornBlast()` | `0x002E7C00` 216 | `0x00333410` 216 | `0x00364EA0` 216 | `0x003672A0` 360 | `0x0032EE00` proven |  | `void CB4AIAggressionBehaviour::UpdateAggressiveHornBlast()` |
+| `DoAggressiveHornBlast(EAggressiveHornBlashReason)` | `0x002E7CE0` 488 | `0x003334F0` 488 | `0x00364F80` 488 | `0x00367160` 312 | `0x0032EEE0` proven |  | `void CB4AIAggressionBehaviour::DoAggressiveHornBlast(EAggressiveHornBlashReason leReason)` |
+| `CanStickySpeedMatch() const` | `0x002E7ED0` 612 |  |  |  | `0x0032F0D0` proven |  | `bool CB4AIAggressionBehaviour::CanStickySpeedMatch() const` |
+| `GetAttackTarget() const` | `0x002E8140` 8 |  |  |  | `0x0032F350` proven |  | `CB4AICar * CB4AIAggressionBehaviour::GetAttackTarget() const` |
+| `ClearState()` | `0x002E8150` 492 | `0x00333BC0` 912 | `0x00365650` 912 | `0x00366680` 108 | `0x0032F360` strong |  | `void CB4AIAggressionBehaviour::ClearState()` |
+| `StopAttacking(bool,bool)` | `0x002E8340` 748 | `0x00333F50` 1348 | `0x003659E0` 1296 | `0x003664D0` 432 | `0x0032F550` strong |  | `void CB4AIAggressionBehaviour::StopAttacking(bool lbSteerAway, bool lbForceWait)` |
+| `MoveToTarget()` | `0x002E8630` 740 | `0x003344A0` 1364 | `0x00365EF0` 1248 | `0x00366150` 884 | `0x0032F840` strong |  | `bool CB4AIAggressionBehaviour::MoveToTarget()` |
+| `UpdateSlam()` | `0x002E8920` 544 | `0x00334A00` 1064 | `0x003663D0` 1064 | `0x00365EC0` 652 | `0x0032FB30` unverified |  | `void CB4AIAggressionBehaviour::UpdateSlam()` |
+| `CanSlam()` | `0x002E8B40` 476 | `0x00334E30` 952 | `0x00366800` 952 | `0x00365C00` 696 | `0x0032FD90` strong |  | `bool CB4AIAggressionBehaviour::CanSlam()` |
+| `FindTarget()` | `0x002E8D20` 916 | `0x003351F0` 1808 | `0x00366BC0` 1808 | `0x00365970` 644 | `0x0032FF80` likely |  | `bool CB4AIAggressionBehaviour::FindTarget()` |
+| `Release()` | `0x002E90C0` 8 | `0x00335900` 8 | `0x003672D0` 8 | `0x00365960` 16 |  |  | `void CB4AIAggressionBehaviour::Release()` |
+| `Update()` | `0x002E90D0` 4056 | `0x00335910` 6384 | `0x003672E0` 6284 | `0x00365100` 2132 | `0x00330370` unverified |  | `void CB4AIAggressionBehaviour::Update()` |
+| `Prepare(CB3AICar*)` | `0x002EA0B0` 628 | `0x00337200` 1128 | `0x00368B70` 1088 | `0x00364FD0` 296 | `0x00331B30` strong |  | `bool CB4AIAggressionBehaviour::Prepare(CB4AICar *lpCar)` |
+| `Construct()` | `0x002EA330` 60 | `0x00337670` 60 | `0x00368FB0` 60 | `0x00364F90` 60 | `0x00331DA0` likely |  | `void CB4AIAggressionBehaviour::Construct()` |
+| `CanStickySpeedMatch()` |  | `0x003336E0` 1228 | `0x00365170` 1228 | `0x00366D50` 780 |  |  | `bool CB4AIAggressionBehaviour::CanStickySpeedMatch() const` (same name, different parameters) |
+| `GetAttackTarget()` |  | `0x00333BB0` 8 | `0x00365640` 8 | `0x003667B0` 28 |  |  | `CB4AICar * CB4AIAggressionBehaviour::GetAttackTarget() const` (same name, different parameters) |
+| `CB3AIAggressionBehaviour()` |  |  |  | `0x001913A0` 48 |  |  |  |
+| `CanBlock()` |  |  |  | `0x00366900` 484 |  |  | `bool CB4AIAggressionBehaviour::CanBlock() const` (same name, different parameters) |
+| `IsSafeToAttack()` |  |  |  | `0x003667D0` 292 |  |  | `bool CB4AIAggressionBehaviour::IsSafeToAttack() const` (same name, different parameters) |
+| `SetState(EAIAggressionState,float)` |  |  |  | `0x003666F0` 188 |  |  | `void CB4AIAggressionBehaviour::SetState(EAIAggressionState leState, float lrTimeout)` |
+| `UpdateBlock()` |  |  |  | `0x00366AF0` 608 |  |  | `bool CB4AIAggressionBehaviour::UpdateBlock()` |
+| `UpdateTargetData()` |  |  |  | `0x00367080` 224 |  |  | `void CB4AIAggressionBehaviour::UpdateTargetData()` |
+
+## Burnout Revenge layout of `CB4AIAggressionBehaviour`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 305 file(s), e.g. `GameShared/GameClasses/System/MemoryCard/NewMemoryCard/GtMemoryCardManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AIAggressionBehaviour {  // size 0x060
+    /* 0x000 */ EAIAggressionState meState;
+    /* 0x010 */ CGtV3d mTargetPos;
+    /* 0x020 */ bool mbTargetPosValid;
+    /* 0x021 */ bool mbSpeedMatch;
+    /* 0x022 */ bool mbStickySpeedMatch;
+    /* 0x023 */ bool mbFatalCollisions;
+    /* 0x024 */ bool mbTouchedPlayerCarRecently;
+    /* 0x025 */ bool mbSlammedAnotherCarThisFrame;
+    /* 0x026 */ bool mbWantToBoost;
+    /* 0x028 */ RwReal mrFatalCollisionTime;
+    /* 0x02C */ RwReal mrStateFinishTime;
+    /* 0x030 */ RwReal mrStateStartTime;
+    /* 0x034 */ RwReal mrDirection;
+    /* 0x038 */ RwReal mrSeparationAcross;
+    /* 0x03C */ RwReal mrSeparationAlong;
+    /* 0x040 */ bool mbCanSlam;
+    /* 0x041 */ bool mbCanBlock;
+    /* 0x042 */ bool mbCanStickySpeedMatch;
+    /* 0x044 */ CB4AICar *mpCar;
+    /* 0x048 */ CB4AICar *mpCarTarget;
+    /* 0x04C */ RwReal mrHornStopTime;
+    /* 0x050 */ RwReal mrHornFrequency;
+    /* 0x054 */ RwUInt32 mxHornPattern;
+    /* 0x058 */ bool mbDoingAggressiveHornBlast;
+    // methods
+    // CB4AIAggressionBehaviour(const CB4AIAggressionBehaviour &);
+    // CB4AIAggressionBehaviour();
+    // void Construct();
+    // bool Prepare(CB4AICar *);
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // bool IsAttacking() const;
+    // CB4AICar * GetAttackTarget() const;
+    // void StopAttacking(bool, bool);
+    // bool CanStickySpeedMatch() const;
+    // void ClearState();
+    // void DoAggressiveHornBlast(EAggressiveHornBlashReason);
+    // bool IsSafeToAttack() const;
+    // bool CanSlam();
+    // void UpdateSlam();
+    // bool FindTarget();
+    // bool MoveToTarget();
+    // bool CanBlock() const;
+    // bool UpdateBlock();
+    // void UpdateTargetData();
+    // bool CheckForAIAIAttack();
+    // void SetState(EAIAggressionState, float);
+    // void UpdateAggressiveHornBlast();
+    // void CheckForSlammingBoost();
+};
+```
 
 ## Notes
 

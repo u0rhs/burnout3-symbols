@@ -8,59 +8,182 @@
 - **Source file:** `B3SoundHUDManager.cpp`
 - **Methods per build:** DNAT_200 40, B3DEBUG 40, B3INTERN 40, B3O0PCH 46
 - **Retail (SLUS-21050):** 8 of its 40 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4HUDSoundManager`, size 0x100, methods in `GameSource/Sound/Hud/B4SoundHUDManager.cpp` ([layout](#burnout-revenge-layout-of-cb4hudsoundmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CrashModeCrashBreak()` | `0x00248BE0` 52 | `0x00278F50` 52 | `0x002B0920` 52 | `0x00490EE0` 96 |  |  |
-| `CrashModePoisonIvy()` | `0x00248C20` 48 | `0x00278F90` 48 | `0x002B0960` 48 | `0x00490E80` 92 |  |  |
-| `CrashModeBonusDollar()` | `0x00248C50` 48 | `0x00278FC0` 48 | `0x002B0990` 48 | `0x00490E20` 92 |  |  |
-| `CrashModeMultiplier()` | `0x00248C80` 48 | `0x00278FF0` 48 | `0x002B09C0` 48 | `0x00490DC0` 92 |  |  |
-| `OnRaceCarCollision(ERaceCarCollisionType,CB3RaceCarPhysics*,CB3RaceCarPhysics*,float)` | `0x00248CB0` 40 | `0x00279020` 40 | `0x002B09F0` 40 | `0x00490D70` 76 |  |  |
-| `FEBuddyGoesOffline()` | `0x00248CE0` 48 | `0x00279050` 48 | `0x002B0A20` 48 | `0x00490D10` 92 |  |  |
-| `FEBuddyComesOnline()` | `0x00248D10` 48 | `0x00279080` 48 | `0x002B0A50` 48 | `0x00490CB0` 92 |  |  |
-| `FEMailFromBuddy()` | `0x00248D40` 52 | `0x002790B0` 52 | `0x002B0A80` 52 | `0x00490C50` 96 |  |  |
-| `FECreatedGame()` | `0x00248D80` 52 | `0x002790F0` 52 | `0x002B0AC0` 52 | `0x00490B30` 96 |  |  |
-| `FEScanningLines()` | `0x00248DC0` 92 | `0x00279130` 92 | `0x002B0B00` 92 | `0x00490AB0` 120 |  |  |
-| `FEGlobeSweep()` | `0x00248E20` 44 | `0x00279190` 44 | `0x002B0B60` 44 | `0x00490A50` 84 |  |  |
-| `FEIconHiLite()` | `0x00248E50` 84 | `0x002791C0` 84 | `0x002B0B90` 84 | `0x004909D0` 116 |  |  |
-| `FEIconPulse()` | `0x00248EB0` 88 | `0x00279220` 88 | `0x002B0BF0` 88 | `0x00490950` 120 |  |  |
-| `FeMapZoomOut()` | `0x00248F10` 48 | `0x00279280` 48 | `0x002B0C50` 48 | `0x004908F0` 88 |  |  |
-| `FeMapZoom()` | `0x00248F40` 88 | `0x002792B0` 88 | `0x002B0C80` 88 | `0x00490870` 120 |  |  |
-| `FETextBoxFill()` | `0x00248FA0` 48 | `0x00279310` 48 | `0x002B0CE0` 48 | `0x00490810` 88 |  |  |
-| `FeMenuTextIn()` | `0x00248FD0` 8 | `0x00279340` 8 | `0x002B0D10` 8 | `0x00490800` 16 |  |  |
-| `FERoadShow()` | `0x00248FE0` 52 | `0x00279350` 52 | `0x002B0D20` 52 | `0x004907A0` 92 |  |  |
-| `FEGlobeHilight()` | `0x00249020` 52 | `0x00279390` 52 | `0x002B0D60` 52 | `0x00490740` 92 |  |  |
-| `FEGlobeSelect()` | `0x00249060` 52 | `0x002793D0` 52 | `0x002B0DA0` 52 | `0x004906E0` 92 |  |  |
-| `FEGlobeSpin()` | `0x002490A0` 44 | `0x00279410` 44 | `0x002B0DE0` 44 | `0x00490680` 84 |  |  |
-| `FEBack()` | `0x002490D0` 144 | `0x00279440` 144 | `0x002B0E10` 132 | `0x004905B0` 200 |  |  |
-| `FESelect()` | `0x00249160` 152 | `0x002794D0` 152 | `0x002B0EA0` 140 | `0x004904E0` 200 |  |  |
-| `FEVerticalMove()` | `0x00249200` 152 | `0x00279570` 152 | `0x002B0F30` 140 | `0x00490410` 208 |  |  |
-| `FEKeyboardSel()` | `0x002492A0` 52 | `0x00279610` 52 | `0x002B0FC0` 52 | `0x004903B0` 92 |  |  |
-| `FEKeyboardMove()` | `0x002492E0` 48 | `0x00279650` 48 | `0x002B1000` 48 | `0x00490350` 88 |  |  |
-| `FEKeyboardDel()` | `0x00249310` 48 | `0x00279680` 48 | `0x002B1030` 48 | `0x004902F0` 88 |  |  |
-| `Medal(int,bool)` | `0x00249340` 288 | `0x002796B0` 288 | `0x002B1060` 288 | `0x00490160` 392 |  |  |
-| `PlayHudSound(unsigned long,const CGtSoundBank*,float,float,bool)` | `0x00249460` 280 | `0x002797D0` 288 | `0x002B1180` 280 | `0x0048FFA0` 352 |  |  |
-| `LostBoostBarSegment()` | `0x00249580` 8 | `0x002798F0` 8 | `0x002B12A0` 8 | `0x0048FEC0` 28 |  |  |
-| `GainedBoostBarSegment()` | `0x00249590` 8 | `0x00279900` 8 | `0x002B12B0` 8 | `0x0048FEA0` 28 |  |  |
-| `GeneralPopup()` | `0x002495A0` 52 | `0x00279910` 52 | `0x002B12C0` 52 | `0x0048FE30` 96 | `0x00285BC0` strong |  |
-| `HandleHudMessage(CB3HUDPrimaryMessage::EMessageType,EScoreBonusEvent)` | `0x002495E0` 404 | `0x00279950` 404 | `0x002B1300` 404 | `0x0048FD30` 252 |  |  |
-| `Slam(GtMathPs2::CGtV3d,CB3RaceCarPhysics*,CB3RaceCarPhysics*)` | `0x00249780` 340 | `0x00279AF0` 368 | `0x002B14A0` 324 | `0x0048FB70` 440 | `0x00286970` strong |  |
-| `Shunt(GtMathPs2::CGtV3d,CB3RaceCarPhysics*,CB3RaceCarPhysics*)` | `0x002498E0` 296 | `0x00279C60` 324 | `0x002B15F0` 280 | `0x0048F9C0` 420 | `0x00286AD0` strong |  |
-| `Release()` | `0x00249A10` 80 | `0x00279DB0` 80 | `0x002B1710` 80 | `0x0048F920` 148 | `0x00286C00` strong |  |
-| `Update()` | `0x00249A60` 524 | `0x00279E00` 524 | `0x002B1760` 512 | `0x0048F710` 528 | `0x00286C60` unverified |  |
-| `FEOnlineUpdatePlayersInGame(int)` | `0x00249C70` 8 | `0x0027A010` 8 | `0x002B1960` 8 | `0x0048F6E0` 36 | `0x002870C0` strong |  |
-| `Prepare(bool)` | `0x00249C80` 300 | `0x0027A020` 300 | `0x002B1970` 288 | `0x0048F4D0` 520 | `0x002870D0` likely |  |
-| `Construct()` | `0x00249DB0` 684 | `0x0027A150` 684 | `0x002B1A90` 684 | `0x0048F160` 880 | `0x00287240` unverified |  |
-| `AfterTouchTakeDown()` |  |  |  | `0x00490100` 92 |  |  |
-| `FEPlayerJoined()` |  |  |  | `0x00490B90` 96 |  |  |
-| `FEPlayerLeft()` |  |  |  | `0x00490BF0` 96 |  |  |
-| `GeneralCrashBonus()` |  |  |  | `0x0048FF40` 92 |  |  |
-| `GeneralCrashEscape()` |  |  |  | `0x0048FEE0` 92 |  |  |
-| `GeneralTakedown()` |  |  |  | `0x0048FE90` 16 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CrashModeCrashBreak()` | `0x00248BE0` 52 | `0x00278F50` 52 | `0x002B0920` 52 | `0x00490EE0` 96 |  |  | `void CB4HUDSoundManager::CrashModeCrashBreak()` |
+| `CrashModePoisonIvy()` | `0x00248C20` 48 | `0x00278F90` 48 | `0x002B0960` 48 | `0x00490E80` 92 |  |  | `void CB4HUDSoundManager::CrashModePoisonIvy()` |
+| `CrashModeBonusDollar()` | `0x00248C50` 48 | `0x00278FC0` 48 | `0x002B0990` 48 | `0x00490E20` 92 |  |  | `void CB4HUDSoundManager::CrashModeBonusDollar()` |
+| `CrashModeMultiplier()` | `0x00248C80` 48 | `0x00278FF0` 48 | `0x002B09C0` 48 | `0x00490DC0` 92 |  |  |  |
+| `OnRaceCarCollision(ERaceCarCollisionType,CB3RaceCarPhysics*,CB3RaceCarPhysics*,float)` | `0x00248CB0` 40 | `0x00279020` 40 | `0x002B09F0` 40 | `0x00490D70` 76 |  |  |  |
+| `FEBuddyGoesOffline()` | `0x00248CE0` 48 | `0x00279050` 48 | `0x002B0A20` 48 | `0x00490D10` 92 |  |  |  |
+| `FEBuddyComesOnline()` | `0x00248D10` 48 | `0x00279080` 48 | `0x002B0A50` 48 | `0x00490CB0` 92 |  |  |  |
+| `FEMailFromBuddy()` | `0x00248D40` 52 | `0x002790B0` 52 | `0x002B0A80` 52 | `0x00490C50` 96 |  |  |  |
+| `FECreatedGame()` | `0x00248D80` 52 | `0x002790F0` 52 | `0x002B0AC0` 52 | `0x00490B30` 96 |  |  |  |
+| `FEScanningLines()` | `0x00248DC0` 92 | `0x00279130` 92 | `0x002B0B00` 92 | `0x00490AB0` 120 |  |  |  |
+| `FEGlobeSweep()` | `0x00248E20` 44 | `0x00279190` 44 | `0x002B0B60` 44 | `0x00490A50` 84 |  |  |  |
+| `FEIconHiLite()` | `0x00248E50` 84 | `0x002791C0` 84 | `0x002B0B90` 84 | `0x004909D0` 116 |  |  |  |
+| `FEIconPulse()` | `0x00248EB0` 88 | `0x00279220` 88 | `0x002B0BF0` 88 | `0x00490950` 120 |  |  |  |
+| `FeMapZoomOut()` | `0x00248F10` 48 | `0x00279280` 48 | `0x002B0C50` 48 | `0x004908F0` 88 |  |  |  |
+| `FeMapZoom()` | `0x00248F40` 88 | `0x002792B0` 88 | `0x002B0C80` 88 | `0x00490870` 120 |  |  |  |
+| `FETextBoxFill()` | `0x00248FA0` 48 | `0x00279310` 48 | `0x002B0CE0` 48 | `0x00490810` 88 |  |  |  |
+| `FeMenuTextIn()` | `0x00248FD0` 8 | `0x00279340` 8 | `0x002B0D10` 8 | `0x00490800` 16 |  |  |  |
+| `FERoadShow()` | `0x00248FE0` 52 | `0x00279350` 52 | `0x002B0D20` 52 | `0x004907A0` 92 |  |  |  |
+| `FEGlobeHilight()` | `0x00249020` 52 | `0x00279390` 52 | `0x002B0D60` 52 | `0x00490740` 92 |  |  |  |
+| `FEGlobeSelect()` | `0x00249060` 52 | `0x002793D0` 52 | `0x002B0DA0` 52 | `0x004906E0` 92 |  |  |  |
+| `FEGlobeSpin()` | `0x002490A0` 44 | `0x00279410` 44 | `0x002B0DE0` 44 | `0x00490680` 84 |  |  |  |
+| `FEBack()` | `0x002490D0` 144 | `0x00279440` 144 | `0x002B0E10` 132 | `0x004905B0` 200 |  |  |  |
+| `FESelect()` | `0x00249160` 152 | `0x002794D0` 152 | `0x002B0EA0` 140 | `0x004904E0` 200 |  |  |  |
+| `FEVerticalMove()` | `0x00249200` 152 | `0x00279570` 152 | `0x002B0F30` 140 | `0x00490410` 208 |  |  |  |
+| `FEKeyboardSel()` | `0x002492A0` 52 | `0x00279610` 52 | `0x002B0FC0` 52 | `0x004903B0` 92 |  |  |  |
+| `FEKeyboardMove()` | `0x002492E0` 48 | `0x00279650` 48 | `0x002B1000` 48 | `0x00490350` 88 |  |  |  |
+| `FEKeyboardDel()` | `0x00249310` 48 | `0x00279680` 48 | `0x002B1030` 48 | `0x004902F0` 88 |  |  |  |
+| `Medal(int,bool)` | `0x00249340` 288 | `0x002796B0` 288 | `0x002B1060` 288 | `0x00490160` 392 |  |  |  |
+| `PlayHudSound(unsigned long,const CGtSoundBank*,float,float,bool)` | `0x00249460` 280 | `0x002797D0` 288 | `0x002B1180` 280 | `0x0048FFA0` 352 |  |  | `CGtSoundVoiceHandle CB4HUDSoundManager::PlayHudSound(unsigned long lWaveId, const CGtSoundBank *lpBank, float lrVolume, float lrFrequencyScalar, bool lbPlayVirtual, float lrDelay)` (same name, different parameters) |
+| `LostBoostBarSegment()` | `0x00249580` 8 | `0x002798F0` 8 | `0x002B12A0` 8 | `0x0048FEC0` 28 |  |  | `void CB4HUDSoundManager::LostBoostBarSegment()` |
+| `GainedBoostBarSegment()` | `0x00249590` 8 | `0x00279900` 8 | `0x002B12B0` 8 | `0x0048FEA0` 28 |  |  | `void CB4HUDSoundManager::GainedBoostBarSegment()` |
+| `GeneralPopup()` | `0x002495A0` 52 | `0x00279910` 52 | `0x002B12C0` 52 | `0x0048FE30` 96 | `0x00285BC0` strong |  | `void CB4HUDSoundManager::GeneralPopup()` |
+| `HandleHudMessage(CB3HUDPrimaryMessage::EMessageType,EScoreBonusEvent)` | `0x002495E0` 404 | `0x00279950` 404 | `0x002B1300` 404 | `0x0048FD30` 252 |  |  | `void CB4HUDSoundManager::HandleHudMessage(unsigned int lxMessageFlags, EScoreBonusEvent leBonusEvent, int lnNumStars)` (same name, different parameters) |
+| `Slam(GtMathPs2::CGtV3d,CB3RaceCarPhysics*,CB3RaceCarPhysics*)` | `0x00249780` 340 | `0x00279AF0` 368 | `0x002B14A0` 324 | `0x0048FB70` 440 | `0x00286970` strong |  |  |
+| `Shunt(GtMathPs2::CGtV3d,CB3RaceCarPhysics*,CB3RaceCarPhysics*)` | `0x002498E0` 296 | `0x00279C60` 324 | `0x002B15F0` 280 | `0x0048F9C0` 420 | `0x00286AD0` strong |  |  |
+| `Release()` | `0x00249A10` 80 | `0x00279DB0` 80 | `0x002B1710` 80 | `0x0048F920` 148 | `0x00286C00` strong |  | `void CB4HUDSoundManager::Release()` |
+| `Update()` | `0x00249A60` 524 | `0x00279E00` 524 | `0x002B1760` 512 | `0x0048F710` 528 | `0x00286C60` unverified |  | `void CB4HUDSoundManager::Update()` |
+| `FEOnlineUpdatePlayersInGame(int)` | `0x00249C70` 8 | `0x0027A010` 8 | `0x002B1960` 8 | `0x0048F6E0` 36 | `0x002870C0` strong |  |  |
+| `Prepare(bool)` | `0x00249C80` 300 | `0x0027A020` 300 | `0x002B1970` 288 | `0x0048F4D0` 520 | `0x002870D0` likely |  | `bool CB4HUDSoundManager::Prepare(bool lbInGame)` |
+| `Construct()` | `0x00249DB0` 684 | `0x0027A150` 684 | `0x002B1A90` 684 | `0x0048F160` 880 | `0x00287240` unverified |  | `void CB4HUDSoundManager::Construct()` |
+| `AfterTouchTakeDown()` |  |  |  | `0x00490100` 92 |  |  |  |
+| `FEPlayerJoined()` |  |  |  | `0x00490B90` 96 |  |  |  |
+| `FEPlayerLeft()` |  |  |  | `0x00490BF0` 96 |  |  |  |
+| `GeneralCrashBonus()` |  |  |  | `0x0048FF40` 92 |  |  |  |
+| `GeneralCrashEscape()` |  |  |  | `0x0048FEE0` 92 |  |  |  |
+| `GeneralTakedown()` |  |  |  | `0x0048FE90` 16 |  |  | `void CB4HUDSoundManager::GeneralTakedown(int lnCombo)` (same name, different parameters) |
+
+## Burnout Revenge layout of `CB4HUDSoundManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 13 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HUDSoundManager {  // size 0x100
+    /* 0x000 */ RwInt32 mnPreviousHeartTimer;
+    /* 0x004 */ RwInt32 mnPreviousGenericTimer;
+    /* 0x008 */ bool mbPlayedExplosionIntro;
+    /* 0x009 */ bool mbInGame;
+    /* 0x00A */ bool mbSomeoneTalking;
+    /* 0x00C */ CGtSoundVoiceHandle mStaticVoice;
+    /* 0x01C */ CGtSoundVoiceHandle mFlameVoice1;
+    /* 0x02C */ CGtSoundVoiceHandle mFlameVoice2;
+    /* 0x03C */ CGtSoundVoiceHandle mLockingVoice;
+    /* 0x04C */ CGtSoundVoiceHandle mLockedVoice;
+    /* 0x05C */ CGtSoundVoiceHandle mTensionVoice1;
+    /* 0x06C */ CGtSoundVoiceHandle mTensionVoice2;
+    /* 0x07C */ CGtSoundVoiceHandle mCamRevVoice;
+    /* 0x08C */ bool mbVertMoveDamper;
+    /* 0x08D */ bool mbSelectDamper;
+    /* 0x08E */ bool mbBackDamper;
+    /* 0x08F */ bool mbRRSwoosh;
+    /* 0x090 */ RwInt32 mnRiserDamper;
+    /* 0x094 */ RwReal mrNextPitch;
+    /* 0x098 */ RwReal mrFlameLoopFader;
+    /* 0x09C */ RwReal mrVolumeGeneralPopup;
+    /* 0x0A0 */ RwReal mrVolumeGeneralPosition;
+    /* 0x0A4 */ RwReal mrVolumeGeneralLap;
+    /* 0x0A8 */ RwReal mrVolumeGeneralTouch;
+    /* 0x0AC */ RwReal mrVolumeGeneralSlam;
+    /* 0x0B0 */ RwReal mrVolumeGeneralSlammed;
+    /* 0x0B4 */ RwReal mrVolumeGeneralTakedown;
+    /* 0x0B8 */ RwReal mrVolumeGeneralTakenout;
+    /* 0x0BC */ RwReal mrVolumeGeneralCrashEscape;
+    /* 0x0C0 */ RwReal mrVolumeGeneralCrashBonus;
+    /* 0x0C4 */ RwInt32 mnForceESMUpdateCounter;
+    /* 0x0C8 */ RwInt32 mnForceMusicUpdateCounter;
+    /* 0x0CC */ RwInt32 mnSlamDamper;
+    /* 0x0D0 */ RwInt32 mnShuntDamper;
+    /* 0x0D4 */ RwReal mrShunt3dVolume;
+    /* 0x0D8 */ RwReal mrSlam3dVolume;
+    /* 0x0DC */ RwInt32 mnLastCrashTimer;
+    /* 0x0E0 */ RwInt32 mnTimerBlipCounter;
+    /* 0x0E4 */ RwUInt8 mun8SprayDamper;
+    /* 0x0E5 */ RwUInt8 mun8PulseDamper;
+    /* 0x0E6 */ RwUInt8 mun8RoadShowDamper;
+    /* 0x0E7 */ RwUInt8 mun8MapDamper;
+    /* 0x0E8 */ RwUInt8 mun8LineDamper;
+    /* 0x0E9 */ RwUInt8 mu8WhiteoutDamper;
+    /* 0x0EA */ RwUInt8 mu8RevCamDamper;
+    /* 0x0EC */ RwReal mrCashDamper;
+    /* 0x0F0 */ RwInt32 mnPlayersInGame;
+    /* 0x0F4 */ EB4ScoreMedalType mePreviousMedal;
+    /* 0x0F8 */ CGtSoundBank *mpHudBank;
+    /* 0x0FC */ CGtSoundBank *mpFEBank;
+    // methods
+    // CB4HUDSoundManager(const CB4HUDSoundManager &);
+    // CB4HUDSoundManager();
+    // void Construct();
+    // bool Prepare(bool);
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void Shunt(GtMathPs2::CGtV3d, CB4RaceCarPhysics *, CB4RaceCarPhysics *);
+    // void Slam(GtMathPs2::CGtV3d, CB4RaceCarPhysics *, CB4RaceCarPhysics *);
+    // void HandleHudMessage(unsigned int, EScoreBonusEvent, int);
+    // void StarAdded(int);
+    // void OnRaceCarCollision(CB4RaceCarPhysics *, CB4RaceCarPhysics *, float);
+    // void GainedBoostBarSegment();
+    // void LostBoostBarSegment();
+    // void GeneralPopup();
+    // void ElimTimer(float, float);
+    // void EliminatorMedal(EB4ScoreMedalType);
+    // void CrashModeCrashBreak();
+    // void CrashModeStealer();
+    // void CrashModePoisonIvy();
+    // void CrashModeBonusDollar();
+    // void NearlyDead();
+    // void SignatureFlash();
+    // void AfterTouchTakeDown(int);
+    // void GeneralTakedown(int);
+    // void InGameMusicVolumeChange();
+    // void InGameVolumeChange();
+    // void SomeoneIsTalkingOnline(bool);
+    // void GenericTimerBlip(float, float);
+    // void GenericHeartBeat(float, float, float);
+    // CGtSoundVoiceHandle PlayHudSound(unsigned long, const CGtSoundBank *, float, float, bool, float);
+    // void DoOnlineFESound(eSoundOnlineFEMessage);
+    // void DoCrashModeSound(eSoundCrashModeMessage);
+    // void DoFrontEndSound(eSoundFEGeneral);
+    // void DoMedal(eMedalType);
+    // void MedalDown();
+    // void CashTick();
+    // void CashUp();
+    // void AddRoadRageLetter(int);
+    // void LostRoadRageLetters(int);
+    // void HandleFESound(eSoundFEGeneral);
+    // void PlayFESound(unsigned long, unsigned long, const CGtSoundBank *, float, float);
+    // void UpdateNetworkPlayerCount(int);
+    // void HandleFESoundInGame(eSoundFEGeneral);
+    // void HandleFESoundInFE(eSoundFEGeneral);
+    // eSoundHudMessageType GetAudioTypeFromHUD(CB4HUDComponent::EHUDTexture, unsigned int);
+    // void UpdateDampers();
+    // void UpdateModeSpecific();
+    // void UpdateRace();
+    // void UpdateRace2P();
+    // void UpdateBurningLap();
+    // void UpdateTimeAttack();
+    // void UpdateLapEliminator();
+    // void UpdateElimThump();
+    // void UpdateRoadRage();
+    // void UpdateRoadRage2P();
+    // void UpdateTrafficAttack();
+    // void UpdateTensionLoops();
+    // void StartTensionLoops();
+    // void StopTensionLoops();
+    // void UpdateCrashMode();
+    // void UpdateCrashBreaker();
+};
+```
 
 ## Notes
 

@@ -9,29 +9,30 @@
 - **Methods per build:** DNAT_200 11, B3DEBUG 11, B3INTERN 11, B3O0PCH 15
 - **Retail (SLUS-21050):** 10 of its 11 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FE80`, 44 bytes = 11 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 9 virtual functions)
+- **Burnout Revenge counterpart:** `CB4AICarPhysics`, size 0x1590, methods in `GameSource/Physics/B4AICarPhysics.cpp` ([layout](#burnout-revenge-layout-of-cb4aicarphysics))
 - **Burnout 2 ancestor (by name):** `CAICarPhysics`, size 0xE00, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateStickySpeedMatch()` | `0x00197C90` 304 | `0x001CB770` 420 | `0x001C5140` 304 | `0x001D8490` 388 | `0x001D1670` strong |  |
-| `IgnoreInRaceBrake(float)` | `0x00197DC0` 20 | `0x001CB920` 20 | `0x001C5270` 20 | `0x001D8450` 64 | `0x001D17B0` strong |  |
-| `OnGoneOutOfRange()` | `0x00197DE0` 264 | `0x001CB940` 264 | `0x001C5290` 264 | `0x001D8250` 432 |  |  |
-| `GetRacingDrivingControls()` | `0x00197EF0` 2000 | `0x001CBA50` 2000 | `0x001C53A0` 2000 | `0x001D7690` 3008 | `0x001D17D0` likely |  |
-| `GetPreRaceDrivingControls()` | `0x001986C0` 1412 | `0x001CC220` 1456 | `0x001C5B70` 1456 | `0x001D71E0` 1188 | `0x001D2210` strong |  |
-| `GetDrivingControls()` | `0x00198C50` 400 | `0x001CC7D0` 704 | `0x001C6120` 704 | `0x001D6FB0` 552 | `0x001D2790` unverified |  |
-| `Destruct()` | `0x00198DE0` 8 | `0x001CCA90` 8 | `0x001C63E0` 8 | `0x001D6EC0` 40 | `0x001D2940` strong |  |
-| `Release()` | `0x00198DF0` 8 | `0x001CCAA0` 8 | `0x001C63F0` 8 | `0x001D6E90` 40 | `0x001D2950` strong |  |
-| `Update(float)` | `0x00198E00` 668 | `0x001CCAB0` 2464 | `0x001C6400` 2368 | `0x001D6BC0` 660 | `0x001D2960` unverified |  |
-| `Prepare(CB3RaceCar*)` | `0x001990A0` 228 | `0x001CD450` 228 | `0x001C6D40` 228 | `0x001D6A60` 352 | `0x001D2C10` unverified |  |
-| `Construct()` | `0x00199190` 92 | `0x001CD540` 204 | `0x001C6E30` 204 | `0x001D6980` 220 | `0x001D2D10` strong |  |
-| `CB3AICarPhysics()` |  |  |  | `0x001920B0` 60 |  |  |
-| `InRaceBrake(float)` |  |  |  | `0x001D6EF0` 180 |  |  |
-| `OnComeIntoRange()` |  |  |  | `0x001D8400` 68 |  |  |
-| `UpdateAttributes()` |  |  |  | `0x001D8620` 196 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateStickySpeedMatch()` | `0x00197C90` 304 | `0x001CB770` 420 | `0x001C5140` 304 | `0x001D8490` 388 | `0x001D1670` strong |  | `void CB4AICarPhysics::UpdateStickySpeedMatch()` |
+| `IgnoreInRaceBrake(float)` | `0x00197DC0` 20 | `0x001CB920` 20 | `0x001C5270` 20 | `0x001D8450` 64 | `0x001D17B0` strong |  | `void CB4AICarPhysics::IgnoreInRaceBrake(float lrTime)` |
+| `OnGoneOutOfRange()` | `0x00197DE0` 264 | `0x001CB940` 264 | `0x001C5290` 264 | `0x001D8250` 432 |  |  |  |
+| `GetRacingDrivingControls()` | `0x00197EF0` 2000 | `0x001CBA50` 2000 | `0x001C53A0` 2000 | `0x001D7690` 3008 | `0x001D17D0` likely |  | `void CB4AICarPhysics::GetRacingDrivingControls()` |
+| `GetPreRaceDrivingControls()` | `0x001986C0` 1412 | `0x001CC220` 1456 | `0x001C5B70` 1456 | `0x001D71E0` 1188 | `0x001D2210` strong |  | `void CB4AICarPhysics::GetPreRaceDrivingControls()` |
+| `GetDrivingControls()` | `0x00198C50` 400 | `0x001CC7D0` 704 | `0x001C6120` 704 | `0x001D6FB0` 552 | `0x001D2790` unverified |  | `void CB4AICarPhysics::GetDrivingControls()` |
+| `Destruct()` | `0x00198DE0` 8 | `0x001CCA90` 8 | `0x001C63E0` 8 | `0x001D6EC0` 40 | `0x001D2940` strong |  | `void CB4AICarPhysics::Destruct()` |
+| `Release()` | `0x00198DF0` 8 | `0x001CCAA0` 8 | `0x001C63F0` 8 | `0x001D6E90` 40 | `0x001D2950` strong |  | `void CB4AICarPhysics::Release()` |
+| `Update(float)` | `0x00198E00` 668 | `0x001CCAB0` 2464 | `0x001C6400` 2368 | `0x001D6BC0` 660 | `0x001D2960` unverified |  | `void CB4AICarPhysics::Update(float lrTimeStep)` |
+| `Prepare(CB3RaceCar*)` | `0x001990A0` 228 | `0x001CD450` 228 | `0x001C6D40` 228 | `0x001D6A60` 352 | `0x001D2C10` unverified |  | `bool CB4AICarPhysics::Prepare(CB4RaceCar *lpRaceCar)` |
+| `Construct()` | `0x00199190` 92 | `0x001CD540` 204 | `0x001C6E30` 204 | `0x001D6980` 220 | `0x001D2D10` strong |  | `void CB4AICarPhysics::Construct()` |
+| `CB3AICarPhysics()` |  |  |  | `0x001920B0` 60 |  |  |  |
+| `InRaceBrake(float)` |  |  |  | `0x001D6EF0` 180 |  |  | `void CB4AICarPhysics::InRaceBrake(float lrAmount)` |
+| `OnComeIntoRange()` |  |  |  | `0x001D8400` 68 |  |  |  |
+| `UpdateAttributes()` |  |  |  | `0x001D8620` 196 |  |  | `void CB4AICarPhysics::UpdateAttributes()` |
 
 ## Burnout 2 layout of `CAICarPhysics`
 
@@ -52,6 +53,58 @@ public:
     /* 0xDE0 */ float mDebugAngle;
     /* 0xDE4 */ float mDebugDesSpeed;
     /* 0xDE8 */ RwV3d mDebugPosition;
+};
+```
+
+## Burnout Revenge layout of `CB4AICarPhysics`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 237 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AICarPhysics : public CB4RaceCarPhysics {  // size 0x1590
+    // base CB4RaceCarPhysics at 0x000
+    /* 0x1550 */ bool mbPaused;
+    /* 0x1551 */ bool mbIsInRange;
+    /* 0x1552 */ bool mbWasInRange;
+    /* 0x1553 */ bool mbProperBraking;
+    /* 0x1554 */ bool mbForceFragile;
+    /* 0x1555 */ RwInt8 me8RelativePlayerIndex;
+    /* 0x1556 */ RwInt8 mn8Pad1;
+    /* 0x1558 */ RwInt16 mn16Pad2;
+    /* 0x155C */ EAIRelativePosition meRelativePosition;
+    /* 0x1560 */ RwReal mrRelativePositionScale;
+    /* 0x1564 */ float marDistanceSqToPlayers[2];
+    /* 0x156C */ CB4AICar *mpAICar;
+    /* 0x1570 */ RwReal mrPreviousDesiredAcceleration;
+    /* 0x1574 */ RwReal mrIgnoreBrakeTime;
+    /* 0x1578 */ RwReal mrAccelerationAdjustEndTime;
+    /* 0x157C */ RwReal mrStuckTime;
+    /* 0x1580 */ RwReal mrReverseTime;
+    // methods
+    // CB4AICarPhysics(const CB4AICarPhysics &);
+    // CB4AICarPhysics();
+    // void Construct();
+    // virtual bool Prepare(CB4RaceCar *);
+    // virtual void Update(float);
+    // virtual void Release();
+    // void Destruct();
+    // virtual void GetDrivingControls();
+    // virtual void CollideWithWorld(int);
+    // virtual void StartCrashing(unsigned char, CB4CrashStartInfo *);
+    // void IgnoreInRaceBrake(float);
+    // CB4PlayerCar * GetRelativePlayer();
+    // void InRaceBrake(float);
+    // void GetRacingDrivingControls();
+    // void GetPreRaceDrivingControls();
+    // void GetRollingStartDrivingControls();
+    // void SetAIOutOfRange();
+    // void SetAIInRange();
+    // void OnGoneOutOfRange();
+    // void OnComeIntoRange();
+    // void UpdateStickySpeedMatch();
+    // void UpdateAttributes();
+    // void UpdateRelativePlayer();
+    // void AdjustOutOfRange(CB4PlayerCar *, float, CAIRangeAttribs &);
 };
 ```
 

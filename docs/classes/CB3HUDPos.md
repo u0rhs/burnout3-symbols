@@ -9,17 +9,54 @@
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
 - **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440520`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
+- **Burnout Revenge counterpart:** `CB4HUDPos`, size 0x060, methods in `GameSource/Hud/B4HUDPos.cpp` ([layout](#burnout-revenge-layout-of-cb4hudpos))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `PreparePosObject()` | `0x002EE110` 368 | `0x0033CEA0` 368 | `0x0036E540` 368 | `0x0036D7B0` 764 |  |  |
-| `Update(float)` | `0x002EE280` 252 | `0x0033D010` 252 | `0x0036E6B0` 252 | `0x0036D630` 380 |  |  |
-| `Prepare(int,EHUDAlign,int,bool,bool)` | `0x002EE380` 608 | `0x0033D110` 708 | `0x0036E7B0` 716 | `0x0036D210` 1052 | `0x00335AB0` unverified |  |
-| `CB3HUDPos()` |  |  |  | `0x00199C00` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `PreparePosObject()` | `0x002EE110` 368 | `0x0033CEA0` 368 | `0x0036E540` 368 | `0x0036D7B0` 764 |  |  |  |
+| `Update(float)` | `0x002EE280` 252 | `0x0033D010` 252 | `0x0036E6B0` 252 | `0x0036D630` 380 |  |  | `void CB4HUDPos::Update(float lrTimeStep)` |
+| `Prepare(int,EHUDAlign,int,bool,bool)` | `0x002EE380` 608 | `0x0033D110` 708 | `0x0036E7B0` 716 | `0x0036D210` 1052 | `0x00335AB0` unverified |  | `bool CB4HUDPos::Prepare(EPlayerCarIndex lePlayer, EHUDAlign leAlign, int lxFlags, bool lbWarnLastPlace, bool lbCompact)` (same name, different parameters) |
+| `CB3HUDPos()` |  |  |  | `0x00199C00` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4HUDPos`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Hud/B4HUDManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HUDPos : public CB4HUDComponent {  // size 0x060
+    // base CB4HUDComponent at 0x000
+    /* static */ RwInt32 knMaxObjects;
+    /* static */ RwInt32 knSlashStringLength;
+    /* static */ RwInt32 knPosStringLength;
+    /* 0x020 */ CGt2dObject *mapObjects[4];
+    /* 0x030 */ CB4RaceCar *mpRaceCar;
+    /* 0x034 */ RwInt32 mnLastPos;
+    /* 0x038 */ RwInt32 mnLastNumActiveRacesCars;
+    /* 0x03C */ RwReal mrTimeLeft;
+    /* 0x040 */ RwReal mrWarnTimeLeft;
+    /* 0x044 */ short unsigned int maSlashString[4];
+    /* 0x04C */ short unsigned int maPosString[3];
+    /* 0x054 */ RwReal mrAnimTime;
+    /* 0x058 */ RwReal mrPrevFlashUpdateTime;
+    /* 0x05C */ bool mbWarnLastPlace;
+    /* 0x05D */ bool mbCompact;
+    /* 0x05E */ bool mbIsCurrentlyShowing;
+    /* 0x05F */ bool mbIsCurrentlyInFlashMode;
+    // methods
+    // CB4HUDPos(const CB4HUDPos &);
+    // CB4HUDPos();
+    // bool Prepare(EPlayerCarIndex, EHUDAlign, int, bool, bool);
+    // virtual void Update(float);
+    // void SetColour(GtMathPs2::CGtV4d);
+    // void PrepareFixedObjects();
+    // void PreparePosValueObjects();
+    // void DoFlashing();
+};
+```
 
 ## Notes
 

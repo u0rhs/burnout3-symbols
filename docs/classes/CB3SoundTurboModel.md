@@ -8,21 +8,47 @@
 - **Source file:** `B3SoundTurboModel.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 8
 - **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundTurboModel`, size 0x020, methods in `GameSource/Sound/Cars/B4SoundTurboModel.cpp` ([layout](#burnout-revenge-layout-of-cb4soundturbomodel))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Destruct()` | `0x00250BE0` 8 | `0x00283280` 8 | `0x002B9E20` 8 | `0x002B7DB0` 16 | `0x0028FAD0` strong |  |
-| `Release()` | `0x00250BF0` 60 | `0x00283290` 60 | `0x002B9E30` 60 | `0x002B7D50` 96 | `0x0028FAE0` strong |  |
-| `Update(const CB3RaceCar*,const CB3SoundRaceCarAttribs*)` | `0x00250C30` 824 | `0x002832D0` 1156 | `0x002B9E70` 1156 | `0x002B7AE0` 612 | `0x0028FB20` strong |  |
-| `Prepare(const char*)` | `0x00250F70` 200 | `0x00283760` 304 | `0x002BA300` 304 | `0x002B7950` 388 | `0x0028FE70` likely |  |
-| `Construct()` | `0x00251040` 16 | `0x00283890` 16 | `0x002BA430` 16 | `0x002B7920` 44 | `0x0028FF20` proven |  |
-| `DumpValve(const CB3RaceCar*,const CB3SoundRaceCarAttribs*,float)` |  |  |  | `0x002B7DC0` 400 |  |  |
-| `GetCurrentTurbineSpeed()` |  |  |  | `0x00318B50` 28 |  |  |
-| `UpdateDumpValve(const CB3RaceCar*)` |  |  |  | `0x002B7F50` 196 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Destruct()` | `0x00250BE0` 8 | `0x00283280` 8 | `0x002B9E20` 8 | `0x002B7DB0` 16 | `0x0028FAD0` strong |  | `void CB4SoundTurboModel::Destruct()` |
+| `Release()` | `0x00250BF0` 60 | `0x00283290` 60 | `0x002B9E30` 60 | `0x002B7D50` 96 | `0x0028FAE0` strong |  | `void CB4SoundTurboModel::Release()` |
+| `Update(const CB3RaceCar*,const CB3SoundRaceCarAttribs*)` | `0x00250C30` 824 | `0x002832D0` 1156 | `0x002B9E70` 1156 | `0x002B7AE0` 612 | `0x0028FB20` strong |  | `void CB4SoundTurboModel::Update(const CB4RaceCar *lpRaceCar, const CB4SoundRaceCarAttribs *lpAttribs)` |
+| `Prepare(const char*)` | `0x00250F70` 200 | `0x00283760` 304 | `0x002BA300` 304 | `0x002B7950` 388 | `0x0028FE70` likely |  | `bool CB4SoundTurboModel::Prepare(const char *lpcBankPath)` |
+| `Construct()` | `0x00251040` 16 | `0x00283890` 16 | `0x002BA430` 16 | `0x002B7920` 44 | `0x0028FF20` proven |  | `void CB4SoundTurboModel::Construct()` |
+| `DumpValve(const CB3RaceCar*,const CB3SoundRaceCarAttribs*,float)` |  |  |  | `0x002B7DC0` 400 |  |  | `void CB4SoundTurboModel::DumpValve(const CB4RaceCar *lpRaceCar, const CB4SoundRaceCarAttribs *lpAttribs, float lrForce)` |
+| `GetCurrentTurbineSpeed()` |  |  |  | `0x00318B50` 28 |  |  |  |
+| `UpdateDumpValve(const CB3RaceCar*)` |  |  |  | `0x002B7F50` 196 |  |  | `void CB4SoundTurboModel::UpdateDumpValve(const CB4RaceCar *lpRaceCar)` |
+
+## Burnout Revenge layout of `CB4SoundTurboModel`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 278 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundTurboModel {  // size 0x020
+    /* 0x000 */ CGtSoundBank *mpBank;
+    /* 0x004 */ CGtSoundWave *mpDumpWave;
+    /* 0x008 */ RwReal mrPreviousRpm;
+    /* 0x00C */ RwReal mrTurbineSpeed;
+    /* 0x010 */ CGtSoundVoiceHandle mDumpVoice;
+    // methods
+    // CB4SoundTurboModel(const CB4SoundTurboModel &);
+    // CB4SoundTurboModel();
+    // void Construct();
+    // bool Prepare(const char *);
+    // void Update(const CB4RaceCar *, const CB4SoundRaceCarAttribs *);
+    // void Release();
+    // void Destruct();
+    // RwReal GetCurrentTurbineSpeed() const;
+    // void DumpValve(const CB4RaceCar *, const CB4SoundRaceCarAttribs *, float);
+    // void UpdateDumpValve(const CB4RaceCar *);
+};
+```
 
 ## Notes
 

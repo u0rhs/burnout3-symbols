@@ -9,15 +9,15 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RenderScreen()` |  | `0x001847A0` 24 |  |  |  |  |
-| `GetRwCamera()` |  | `0x001847C0` 12 |  |  |  |  |
-| `FreeImageBuffer(char*)` |  | `0x00184850` 8 |  |  |  |  |
-| `AllocImageBuffer(int)` |  | `0x00184860` 44 |  |  |  |  |
-| `GetBaseFilename()` |  | `0x00186040` 12 |  |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RenderScreen()` |  | `0x001847A0` 24 |  |  |  |  |  |
+| `GetRwCamera()` |  | `0x001847C0` 12 |  |  |  |  |  |
+| `FreeImageBuffer(char*)` |  | `0x00184850` 8 |  |  |  |  |  |
+| `AllocImageBuffer(int)` |  | `0x00184860` 44 |  |  |  |  |  |
+| `GetBaseFilename()` |  | `0x00186040` 12 |  |  |  |  |  |
 
 ## Notes
 

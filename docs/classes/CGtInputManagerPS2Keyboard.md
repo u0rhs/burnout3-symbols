@@ -7,23 +7,57 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `GtInputManagerPS2Keyboard.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 10
+- **Burnout Revenge counterpart:** `CGtInputManagerPS2Keyboard`, size 0x4AC ([layout](#burnout-revenge-layout-of-cgtinputmanagerps2keyboard))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update()` | `0x002C46C0` 104 | `0x0030B990` 104 | `0x0033D7A0` 104 | `0x003320C0` 128 |  |  |
-| `Prepare()` | `0x002C4730` 100 | `0x0030BA00` 100 | `0x0033D810` 100 | `0x00332050` 112 |  |  |
-| `Construct(int,int)` | `0x002C47A0` 116 | `0x0030BA70` 168 | `0x0033D880` 168 | `0x00331FA0` 176 |  |  |
-| `GetLEDState(int)` |  |  |  | `0x0038D3F0` 72 |  |  |
-| `IsControlPressed(int,EGtVirtualKeyCodes)` |  |  |  | `0x0038D330` 80 |  |  |
-| `IsPaused()` |  |  |  | `0x00332140` 28 |  |  |
-| `RegisterCharacterCallback(int,void (*)` |  |  |  | `0x00391E80` 108 |  |  |
-| `RegisterEventCallback(int,void (*)` |  |  |  | `0x00391F90` 108 |  |  |
-| `UnregisterCharacterCallback(int)` |  |  |  | `0x003920D0` 92 |  |  |
-| `UnregisterEventCallback(int)` |  |  |  | `0x003921B0` 92 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update()` | `0x002C46C0` 104 | `0x0030B990` 104 | `0x0033D7A0` 104 | `0x003320C0` 128 |  |  |  |
+| `Prepare()` | `0x002C4730` 100 | `0x0030BA00` 100 | `0x0033D810` 100 | `0x00332050` 112 |  |  |  |
+| `Construct(int,int)` | `0x002C47A0` 116 | `0x0030BA70` 168 | `0x0033D880` 168 | `0x00331FA0` 176 |  |  |  |
+| `GetLEDState(int)` |  |  |  | `0x0038D3F0` 72 |  |  |  |
+| `IsControlPressed(int,EGtVirtualKeyCodes)` |  |  |  | `0x0038D330` 80 |  |  |  |
+| `IsPaused()` |  |  |  | `0x00332140` 28 |  |  |  |
+| `RegisterCharacterCallback(int,void (*)` |  |  |  | `0x00391E80` 108 |  |  |  |
+| `RegisterEventCallback(int,void (*)` |  |  |  | `0x00391F90` 108 |  |  |  |
+| `UnregisterCharacterCallback(int)` |  |  |  | `0x003920D0` 92 |  |  |  |
+| `UnregisterEventCallback(int)` |  |  |  | `0x003921B0` 92 |  |  |  |
+
+## Burnout Revenge layout of `CGtInputManagerPS2Keyboard`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 187 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtInputManagerPS2Keyboard : public CGtInputManager {  // size 0x4AC
+    // base CGtInputManager at 0x000
+    /* 0x004 */ CGtInputDevicePS2Keyboard maInputDevicesPS2Keyboard[4];
+    /* 0x4A4 */ RwInt32 mnNumAllowableKeyboards;
+    /* 0x4A8 */ bool mbPaused;
+    // methods
+    // CGtInputManagerPS2Keyboard(const CGtInputManagerPS2Keyboard &);
+    // CGtInputManagerPS2Keyboard();
+    // void Construct(int, int, EGtLanguage);
+    // void Destruct();
+    // void Prepare();
+    // void Release();
+    // void Update();
+    // void SetPaused(bool);
+    // bool IsPaused();
+    // bool IsControlJustPressed(int, EGtVirtualKeyCodes);
+    // bool IsControlJustReleased(int, EGtVirtualKeyCodes);
+    // bool IsControlPressed(int, EGtVirtualKeyCodes);
+    // void RegisterEventCallback(int, void (*)(int, int, int, int, void *), void *);
+    // void UnregisterEventCallback(int);
+    // void RegisterCharacterCallback(int, void (*)(unsigned short, void *), void *);
+    // void UnregisterCharacterCallback(int);
+    // RwInt32 GetNumAttachedKeyboards();
+    // RwUInt8 GetLEDState(int);
+    // void SetLocale(EGtLanguage);
+};
+```
 
 ## Notes
 

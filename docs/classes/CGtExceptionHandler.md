@@ -6,15 +6,35 @@
 
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Methods per build:** B3INTERN 2
+- **Burnout Revenge counterpart:** `CGtExceptionHandler`, size 0x001 ([layout](#burnout-revenge-layout-of-cgtexceptionhandler))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `InitGS(sceGsDBuff*)` |  |  | `0x00390FD0` 376 |  |  |  |
-| `SetHandler(CGtExceptionHandler::EExceptionType)` |  |  | `0x00391260` 88 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `InitGS(sceGsDBuff*)` |  |  | `0x00390FD0` 376 |  |  |  |  |
+| `SetHandler(CGtExceptionHandler::EExceptionType)` |  |  | `0x00391260` 88 |  |  |  |  |
+
+## Burnout Revenge layout of `CGtExceptionHandler`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameShared/GameClasses/Development/ExceptionHandler/GtExceptionHandler.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtExceptionHandler {  // size 0x001
+    /* static */ long long unsigned int _manPadData[16];
+    // methods
+    // CGtExceptionHandler(const CGtExceptionHandler &);
+    // CGtExceptionHandler();
+    // static void SetHandler(CGtExceptionHandler::EExceptionType);
+    // static void HandleException(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned long long *);
+    // static void InitGS(sceGsDBuff *);
+    // static void InitPad();
+    // static void ClosePad();
+    // static RwBool QueryPadButton(CGtExceptionHandler::EButtonID);
+};
+```
 
 ## Notes
 

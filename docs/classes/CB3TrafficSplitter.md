@@ -7,15 +7,42 @@
 - **Area:** [Traffic](../systems/traffic.md)
 - **Source file:** `B3TrafficSplitter.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 2
+- **Burnout Revenge counterpart:** `CB4TrafficSplitter`, size 0x00C, methods in `GameSource/World/B4TrafficSplitter.cpp` ([layout](#burnout-revenge-layout-of-cb4trafficsplitter))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetLaneChanges(bool*,unsigned char*,ETrafficVehicleCategories,CB3TrafficParam*)` | `0x0022DEF0` 292 | `0x00246900` 400 | `0x00283090` 400 | `0x00284820` 496 |  |  |
-| `Prepare(CB3TrafficSplitterPositionStruct*)` | `0x0022E020` 12 | `0x00246A90` 12 | `0x00283220` 12 | `0x002847F0` 40 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetLaneChanges(bool*,unsigned char*,ETrafficVehicleCategories,CB3TrafficParam*)` | `0x0022DEF0` 292 | `0x00246900` 400 | `0x00283090` 400 | `0x00284820` 496 |  |  | `bool CB4TrafficSplitter::GetLaneChanges(bool *lpbIsLeft, unsigned char *lpu8NumTurnings, ETrafficVehicleCategories leCategory, CB4TrafficParam *lpParam)` |
+| `Prepare(CB3TrafficSplitterPositionStruct*)` | `0x0022E020` 12 | `0x00246A90` 12 | `0x00283220` 12 | `0x002847F0` 40 |  |  | `bool CB4TrafficSplitter::Prepare(CB4TrafficSplitterPositionStruct *lpPosition)` |
+
+## Burnout Revenge layout of `CB4TrafficSplitter`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 85 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficSplitter {  // size 0x00C
+    /* 0x000 */ CB4TrafficSplitterFlowStruct *mpFlowData;
+    /* 0x004 */ CB4TrafficSplitterPositionStruct *mpPositionData;
+    /* 0x008 */ RwUInt8 mu8LockingDetourIndex;
+    /* 0x009 */ bool mbIsDetourLocked;
+    // methods
+    // CB4TrafficSplitter(const CB4TrafficSplitter &);
+    // CB4TrafficSplitter();
+    // void Construct();
+    // bool Prepare(CB4TrafficSplitterPositionStruct *);
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // bool GetLaneChanges(bool *, unsigned char *, ETrafficVehicleCategories, CB4TrafficParam *);
+    // bool IsSplitterLocked();
+    // bool IsSplitterLocked(unsigned char);
+    // void LockSplitterToDetour(unsigned char);
+    // void UnlockSplitter();
+};
+```
 
 ## Notes
 

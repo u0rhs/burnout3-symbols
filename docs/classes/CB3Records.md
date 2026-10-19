@@ -11,22 +11,22 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetDefaultTrackRecordValues()` | `0x00381EF0` 1612 | `0x003F4DC0` 1612 | `0x0041C9F0` 1612 | `0x00435590` 1312 |  |  |
-| `GetTrackRecords(unsigned long)` | `0x00382540` 64 | `0x003F5410` 120 | `0x0041D040` 120 | `0x00435120` 100 |  |  |
-| `Update()` | `0x00382580` 428 | `0x003F5490` 748 | `0x0041D0C0` 748 | `0x00434FD0` 336 |  | `void CRecords::Update(unsigned int lunPlayer)` (same name, different parameters) |
-| `Prepare()` | `0x00382730` 924 | `0x003F5780` 924 | `0x0041D3B0` 924 | `0x00434F70` 88 |  |  |
-| `Construct()` | `0x00382AD0` 8 | `0x003F5B20` 8 | `0x0041D750` 8 | `0x00434F60` 16 |  |  |
-| `CB3Records()` |  |  |  | `0x00435AB0` 132 |  |  |
-| `GetCrashRecords(unsigned long)` |  |  |  | `0x00435190` 104 |  |  |
-| `GetLatestRecordUpdateType()` |  |  |  | `0x00427680` 36 |  |  |
-| `GetMostRecentlyUpdatedTrackID()` |  |  |  | `0x004253C0` 64 |  |  |
-| `GetNextRecordIndex(signed char)` |  |  | `0x0041C8B0` 308 |  |  |  |
-| `SetDefaultCrashRecordValues()` |  |  |  | `0x00435200` 900 |  |  |
-| `operator =(const CB3Records&)` |  |  |  | `0x00481880` 244 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetDefaultTrackRecordValues()` | `0x00381EF0` 1612 | `0x003F4DC0` 1612 | `0x0041C9F0` 1612 | `0x00435590` 1312 |  |  |  |
+| `GetTrackRecords(unsigned long)` | `0x00382540` 64 | `0x003F5410` 120 | `0x0041D040` 120 | `0x00435120` 100 |  |  |  |
+| `Update()` | `0x00382580` 428 | `0x003F5490` 748 | `0x0041D0C0` 748 | `0x00434FD0` 336 |  | `void CRecords::Update(unsigned int lunPlayer)` (same name, different parameters) |  |
+| `Prepare()` | `0x00382730` 924 | `0x003F5780` 924 | `0x0041D3B0` 924 | `0x00434F70` 88 |  |  |  |
+| `Construct()` | `0x00382AD0` 8 | `0x003F5B20` 8 | `0x0041D750` 8 | `0x00434F60` 16 |  |  |  |
+| `CB3Records()` |  |  |  | `0x00435AB0` 132 |  |  |  |
+| `GetCrashRecords(unsigned long)` |  |  |  | `0x00435190` 104 |  |  |  |
+| `GetLatestRecordUpdateType()` |  |  |  | `0x00427680` 36 |  |  |  |
+| `GetMostRecentlyUpdatedTrackID()` |  |  |  | `0x004253C0` 64 |  |  |  |
+| `GetNextRecordIndex(signed char)` |  |  | `0x0041C8B0` 308 |  |  |  |  |
+| `SetDefaultCrashRecordValues()` |  |  |  | `0x00435200` 900 |  |  |  |
+| `operator =(const CB3Records&)` |  |  |  | `0x00481880` 244 |  |  |  |
 
 ## Burnout 2 layout of `CRecords`
 

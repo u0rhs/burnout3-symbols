@@ -8,26 +8,104 @@
 - **Source file:** `B3SoundCrashedTraffic.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 10, B3INTERN 10, B3O0PCH 13
 - **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 8 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundCrashedTraffic`, size 0x0AC, methods in `GameSource/Sound/Traffic/B4SoundCrashedTraffic.cpp` ([layout](#burnout-revenge-layout-of-cb4soundcrashedtraffic))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateSkidVoices()` | `0x00251050` 664 | `0x002838A0` 756 | `0x002BA440` 756 | `0x002B8E10` 1392 | `0x0028FF30` proven |  |
-| `StartSkidVoices()` | `0x002512F0` 348 | `0x00283BA0` 476 | `0x002BA740` 476 | `0x002B8BD0` 576 | `0x002901D0` proven |  |
-| `StartBassVoices()` | `0x00251450` 272 | `0x00283F40` 360 | `0x002BAAE0` 360 | `0x002B8840` 412 | `0x00290320` proven |  |
-| `SetActive()` | `0x00251560` 12 | `0x002840B0` 12 | `0x002BAC50` 12 | `0x002B8790` 32 | `0x00290430` proven |  |
-| `SetOwner(CB3VehiclePhysics*)` | `0x00251570` 8 | `0x002840C0` 8 | `0x002BAC60` 8 | `0x002B8760` 36 | `0x00290440` strong |  |
-| `Release()` | `0x00251580` 172 | `0x002840D0` 172 | `0x002BAC70` 172 | `0x002B86B0` 172 | `0x00290450` proven |  |
-| `Update()` | `0x00251630` 1004 | `0x00284180` 864 | `0x002BAD20` 864 | `0x002B8360` 836 | `0x00290510` proven |  |
-| `Prepare()` | `0x00251A20` 452 | `0x002844E0` 492 | `0x002BB080` 492 | `0x002B80C0` 672 | `0x00290900` proven |  |
-| `Construct()` | `0x00251BF0` 60 | `0x002846D0` 60 | `0x002BB270` 60 | `0x002B8020` 152 | `0x00290AD0` proven |  |
-| `UpdateBassVoices()` |  | `0x00283D80` 448 | `0x002BA920` 448 | `0x002B89E0` 388 |  |  |
-| `GetOwner()` |  |  |  | `0x0029DCE0` 28 |  |  |
-| `ReleaseBassVoices()` |  |  |  | `0x002B87B0` 132 |  |  |
-| `ReleaseSkidVoices()` |  |  |  | `0x002B8B70` 84 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateSkidVoices()` | `0x00251050` 664 | `0x002838A0` 756 | `0x002BA440` 756 | `0x002B8E10` 1392 | `0x0028FF30` proven |  | `void CB4SoundCrashedTraffic::UpdateSkidVoices()` |
+| `StartSkidVoices()` | `0x002512F0` 348 | `0x00283BA0` 476 | `0x002BA740` 476 | `0x002B8BD0` 576 | `0x002901D0` proven |  | `void CB4SoundCrashedTraffic::StartSkidVoices()` |
+| `StartBassVoices()` | `0x00251450` 272 | `0x00283F40` 360 | `0x002BAAE0` 360 | `0x002B8840` 412 | `0x00290320` proven |  | `void CB4SoundCrashedTraffic::StartBassVoices()` |
+| `SetActive()` | `0x00251560` 12 | `0x002840B0` 12 | `0x002BAC50` 12 | `0x002B8790` 32 | `0x00290430` proven |  | `void CB4SoundCrashedTraffic::SetActive()` |
+| `SetOwner(CB3VehiclePhysics*)` | `0x00251570` 8 | `0x002840C0` 8 | `0x002BAC60` 8 | `0x002B8760` 36 | `0x00290440` strong |  | `void CB4SoundCrashedTraffic::SetOwner(CB4VehiclePhysics *lpOwner)` |
+| `Release()` | `0x00251580` 172 | `0x002840D0` 172 | `0x002BAC70` 172 | `0x002B86B0` 172 | `0x00290450` proven |  | `void CB4SoundCrashedTraffic::Release()` |
+| `Update()` | `0x00251630` 1004 | `0x00284180` 864 | `0x002BAD20` 864 | `0x002B8360` 836 | `0x00290510` proven |  | `void CB4SoundCrashedTraffic::Update()` |
+| `Prepare()` | `0x00251A20` 452 | `0x002844E0` 492 | `0x002BB080` 492 | `0x002B80C0` 672 | `0x00290900` proven |  | `bool CB4SoundCrashedTraffic::Prepare()` |
+| `Construct()` | `0x00251BF0` 60 | `0x002846D0` 60 | `0x002BB270` 60 | `0x002B8020` 152 | `0x00290AD0` proven |  | `void CB4SoundCrashedTraffic::Construct()` |
+| `UpdateBassVoices()` |  | `0x00283D80` 448 | `0x002BA920` 448 | `0x002B89E0` 388 |  |  | `void CB4SoundCrashedTraffic::UpdateBassVoices()` |
+| `GetOwner()` |  |  |  | `0x0029DCE0` 28 |  |  |  |
+| `ReleaseBassVoices()` |  |  |  | `0x002B87B0` 132 |  |  | `void CB4SoundCrashedTraffic::ReleaseBassVoices()` |
+| `ReleaseSkidVoices()` |  |  |  | `0x002B8B70` 84 |  |  | `void CB4SoundCrashedTraffic::ReleaseSkidVoices()` |
+
+## Burnout Revenge layout of `CB4SoundCrashedTraffic`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 14 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundCrashedTraffic {  // size 0x0AC
+    /* 0x000 */ CB4VehiclePhysics *mpOwner;
+    /* 0x004 */ CGtSoundBank *mpSkidBank;
+    /* 0x008 */ CGtSoundWave *mpSkidSmallWave1;
+    /* 0x00C */ CGtSoundWave *mpSkidSmallWave2;
+    /* 0x010 */ CGtSoundWave *mpSkidBigWave;
+    /* 0x014 */ CGtSoundVoiceHandle mSkidVoice;
+    /* 0x024 */ CGtSoundWave *mpBassWave;
+    /* 0x028 */ CGtSoundVoiceHandle mBassVoice;
+    /* 0x038 */ CGtSoundVoiceHandle mBassVoiceFlange;
+    /* 0x048 */ CGtSoundWave *mpSteamWave;
+    /* 0x04C */ CGtSoundVoiceHandle mSteamVoice;
+    /* static */ CGtSoundVoiceHandle mgaPostCrashVoices[4];
+    /* static */ RwInt32 mgnPostCrashVoiceNext;
+    /* 0x05C */ RwInt32 mnPostCrashIndex;
+    /* 0x060 */ RwInt32 mnNumWheelsOnGround;
+    /* 0x064 */ RwReal mrInterestLevel;
+    /* 0x068 */ RwInt32 mnUpdatesTimeout;
+    /* 0x06C */ RwUInt32 muSkidID;
+    /* 0x070 */ RwReal mrAirFadeOut;
+    /* 0x074 */ RwReal mrFlutter;
+    /* 0x078 */ RwInt32 mnSkidOnTimer;
+    /* 0x07C */ RwInt32 mnSkidOffTimer;
+    /* 0x080 */ RwReal mrFadePitch;
+    /* 0x084 */ RwReal mrFadeVolume;
+    /* 0x088 */ RwReal mrInitialSkidPitch;
+    /* 0x08C */ RwReal mrPreviousDistance;
+    /* 0x090 */ RwReal mrRelativeVelocity;
+    /* 0x094 */ RwInt32 mnInAirTimer;
+    /* 0x098 */ RwReal mrBassVol;
+    /* 0x09C */ RwReal mrBassPitch;
+    /* 0x0A0 */ bool mbHasPlayedTakeOff;
+    /* 0x0A1 */ bool mbWillDMH;
+    /* 0x0A2 */ bool mbWillAlarm;
+    /* 0x0A3 */ bool mbWillSteam;
+    /* 0x0A4 */ bool mbIsInteresting;
+    /* 0x0A5 */ bool mbHasBeenInteresting;
+    /* 0x0A6 */ bool mbLyingAboutBeingInteresting;
+    /* 0x0A7 */ bool mbHasBeenLying;
+    /* 0x0A8 */ bool mbPostedToCrowd;
+    // methods
+    // CB4SoundCrashedTraffic(const CB4SoundCrashedTraffic &);
+    // CB4SoundCrashedTraffic();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // CB4VehiclePhysics * GetOwner();
+    // void SetOwner(CB4VehiclePhysics *);
+    // void SetActive();
+    // bool HasBeenInteresting();
+    // bool IsInteresting();
+    // bool IsLyingAboutBeingInteresting();
+    // bool HasHighRelativeVelocity();
+    // void UpdateInterestingness();
+    // RwReal FixSympatheticSkids(float);
+    // void ReleaseSkidVoices();
+    // void StartSkidVoices();
+    // void UpdateSkidVoices();
+    // void ReleaseBassVoices();
+    // void StartBassVoices();
+    // void UpdateBassVoices();
+    // void CheckForTakeOff();
+    // void PlayTakeOff();
+    // void UpdateSteam();
+    // void ReleaseSteamVoice();
+    // void UpdatePostCrashSound(unsigned long, CGtSoundBank *, float, bool);
+    // void ReleasePostCrashVoices();
+};
+```
 
 ## Notes
 

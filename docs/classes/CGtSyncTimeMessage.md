@@ -7,14 +7,31 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `GtSyncTimeMessage.cpp`
 - **Methods per build:** DNAT_200 1, B3INTERN 1
+- **Burnout Revenge counterpart:** `CGtSyncTimeMessage`, size 0x010, methods in `GameShared/GameClasses/System/Networking/Packeting/GtSyncTimeMessage.cpp` ([layout](#burnout-revenge-layout-of-cgtsynctimemessage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` | `0x002019B0` 44 |  | `0x0024D810` 44 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` | `0x002019B0` 44 |  | `0x0024D810` 44 |  |  |  | `void CGtSyncTimeMessage::Construct()` |
+
+## Burnout Revenge layout of `CGtSyncTimeMessage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 6 file(s), e.g. `GameShared/GameClasses/System/Networking/Packeting/GtSyncTimeMessage.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSyncTimeMessage : public CGtNetworkMessage {  // size 0x010
+    // base CGtNetworkMessage at 0x000
+    /* 0x008 */ RwReal mrClientSendTime;
+    /* 0x00C */ RwReal mrHostTime;
+    // methods
+    // CGtSyncTimeMessage(const CGtSyncTimeMessage &);
+    // CGtSyncTimeMessage();
+    // void Construct();
+};
+```
 
 ## Notes
 

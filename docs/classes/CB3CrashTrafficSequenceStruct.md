@@ -8,14 +8,34 @@
 - **Source file:** `B3CrashTrafficGenerationStruct.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CrashTrafficSequenceStruct`, size 0x00C, methods in `SharedClasses/TrafficData/B4CrashTrafficGenerationStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4crashtrafficsequencestruct))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Fixup(unsigned int)` | `0x003158E0` 16 | `0x0036F250` 16 | `0x0039E120` 16 | `0x0039D050` 48 | `0x0035EF20` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Fixup(unsigned int)` | `0x003158E0` 16 | `0x0036F250` 16 | `0x0039E120` 16 | `0x0039D050` 48 | `0x0035EF20` proven |  | `void CB4CrashTrafficSequenceStruct::Fixup(unsigned int lnStartAddress)` |
+
+## Burnout Revenge layout of `CB4CrashTrafficSequenceStruct`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 240 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CrashTrafficSequenceStruct {  // size 0x00C
+    /* 0x000 */ CB4CrashTrafficVehicleStruct *mpVehicles;
+    /* 0x004 */ RwReal mrGenerationDistance;
+    /* 0x008 */ RwUInt8 mu8NumVehicles;
+    /* 0x009 */ RwUInt8 mu8NumRolledOutVehicles;
+    /* 0x00A */ RwUInt8 mu8ValveIndex;
+    /* 0x00B */ RwUInt8 mu8ValveLaneIndex;
+    // methods
+    // CB4CrashTrafficSequenceStruct(const CB4CrashTrafficSequenceStruct &);
+    // CB4CrashTrafficSequenceStruct();
+    // void Fixup(unsigned int);
+};
+```
 
 ## Notes
 

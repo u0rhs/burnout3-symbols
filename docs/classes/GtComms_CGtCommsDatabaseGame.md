@@ -12,25 +12,25 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CheckFileValid(const char*)` | `0x00210530` 160 | `0x0021DE20` 160 | `0x0025D660` 160 | `0x002607B0` 256 | `0x0024FDE0` proven |  |
-| `InitialiseDefaultValues()` | `0x002105D0` 284 | `0x0021DEC0` 332 | `0x0025D700` 332 | `0x00260640` 368 | `0x0024FE90` proven |  |
-| `SetDefaultElementValue(GtComms::CGtCommsDatabaseEntry*)` | `0x002106F0` 320 | `0x0021E010` 352 | `0x0025D850` 352 | `0x002604F0` 332 | `0x0024FFC0` proven |  |
-| `RemoveEntryCore(GtComms::CGtCommsDatabaseEntry*)` | `0x00210830` 8 | `0x0021E170` 8 | `0x0025D9B0` 8 | `0x002603E0` 48 | `0x00250100` proven |  |
-| `TransmitElement(GtComms::CGtCommsDatabaseEntry*)` | `0x00210840` 8 | `0x0021E180` 116 | `0x0025D9C0` 116 | `0x002602D0` 260 | `0x00250110` proven |  |
-| `Construct()` | `0x00210850` 56 | `0x0021E200` 56 | `0x0025DA40` 56 | `0x00260230` 76 | `0x00250120` proven |  |
-| `CGtCommsDatabaseGame()` |  |  |  | `0x0013EDD0` 60 |  |  |
-| `GetDefaultValueByHash(int)` |  |  |  | `0x00260410` 220 |  |  |
-| `GetVDBBuffer()` |  |  |  | `0x002244E0` 32 |  |  |
-| `GetVDBBufferSize()` |  |  |  | `0x00224500` 24 |  |  |
-| `TransmitBool(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x00260290` 16 |  |  |
-| `TransmitCallback(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x002602C0` 16 |  |  |
-| `TransmitInt(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x00260280` 16 |  |  |
-| `TransmitReal(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x002602A0` 16 |  |  |
-| `TransmitVec3d(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x002602B0` 16 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CheckFileValid(const char*)` | `0x00210530` 160 | `0x0021DE20` 160 | `0x0025D660` 160 | `0x002607B0` 256 | `0x0024FDE0` proven |  | `bool GtComms::CGtCommsDatabaseGame::CheckFileValid(const char *lpcFileName)` |
+| `InitialiseDefaultValues()` | `0x002105D0` 284 | `0x0021DEC0` 332 | `0x0025D700` 332 | `0x00260640` 368 | `0x0024FE90` proven |  | `void GtComms::CGtCommsDatabaseGame::InitialiseDefaultValues(int lnBufferIndex)` (same name, different parameters) |
+| `SetDefaultElementValue(GtComms::CGtCommsDatabaseEntry*)` | `0x002106F0` 320 | `0x0021E010` 352 | `0x0025D850` 352 | `0x002604F0` 332 | `0x0024FFC0` proven |  | `void GtComms::CGtCommsDatabaseGame::SetDefaultElementValue(GtComms::CGtCommsDatabaseEntry *lpEntry)` |
+| `RemoveEntryCore(GtComms::CGtCommsDatabaseEntry*)` | `0x00210830` 8 | `0x0021E170` 8 | `0x0025D9B0` 8 | `0x002603E0` 48 | `0x00250100` proven |  | `void GtComms::CGtCommsDatabaseGame::RemoveEntryCore(GtComms::CGtCommsDatabaseEntry *lpEntry)` |
+| `TransmitElement(GtComms::CGtCommsDatabaseEntry*)` | `0x00210840` 8 | `0x0021E180` 116 | `0x0025D9C0` 116 | `0x002602D0` 260 | `0x00250110` proven |  | `void GtComms::CGtCommsDatabaseGame::TransmitElement(GtComms::CGtCommsDatabaseEntry *lpElement)` |
+| `Construct()` | `0x00210850` 56 | `0x0021E200` 56 | `0x0025DA40` 56 | `0x00260230` 76 | `0x00250120` proven |  | `void GtComms::CGtCommsDatabaseGame::Construct()` |
+| `CGtCommsDatabaseGame()` |  |  |  | `0x0013EDD0` 60 |  |  |  |
+| `GetDefaultValueByHash(int)` |  |  |  | `0x00260410` 220 |  |  | `CGtCommsDatabaseDefaultValue * GtComms::CGtCommsDatabaseGame::GetDefaultValueByHash(int lnHash, GtComms::CGtCommsDatabaseBuffer **lppVDBBufferOut)` (same name, different parameters) |
+| `GetVDBBuffer()` |  |  |  | `0x002244E0` 32 |  |  |  |
+| `GetVDBBufferSize()` |  |  |  | `0x00224500` 24 |  |  |  |
+| `TransmitBool(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x00260290` 16 |  |  | `void GtComms::CGtCommsDatabaseGame::TransmitBool(GtComms::CGtCommsDatabaseEntry *lpEntry)` |
+| `TransmitCallback(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x002602C0` 16 |  |  | `void GtComms::CGtCommsDatabaseGame::TransmitCallback(GtComms::CGtCommsDatabaseEntry *lpEntry)` |
+| `TransmitInt(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x00260280` 16 |  |  | `void GtComms::CGtCommsDatabaseGame::TransmitInt(GtComms::CGtCommsDatabaseEntry *lpEntry)` |
+| `TransmitReal(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x002602A0` 16 |  |  | `void GtComms::CGtCommsDatabaseGame::TransmitReal(GtComms::CGtCommsDatabaseEntry *lpEntry)` |
+| `TransmitVec3d(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x002602B0` 16 |  |  | `void GtComms::CGtCommsDatabaseGame::TransmitVec3d(GtComms::CGtCommsDatabaseEntry *lpEntry)` |
 
 ## Notes
 

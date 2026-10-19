@@ -8,62 +8,157 @@
 - **Source file:** `B3GraphicsManagerPS2.cpp`
 - **Methods per build:** DNAT_200 19, B3DEBUG 21, B3INTERN 21, B3O0PCH 49
 - **Retail (SLUS-21050):** 15 of its 19 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4GraphicsManager`, size 0x12F0, methods in `GameSource/Graphics/Ps2/B4GraphicsManagerPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4graphicsmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetVBlankCount()` | `0x001E75C0` 8 | `0x001E8770` 8 | `0x0021AF00` 8 | `0x00235B20` 20 | `0x00222C90` likely |  |
-| `SetDownsampledFramebufferAsRenderSource(bool,GtMathPs2::CGtV2d*)` | `0x001E75D0` 264 | `0x001E8780` 304 | `0x0021AF10` 304 | `0x002359B0` 368 |  |  |
-| `DownsampleFramebufferAndGenerateMipMaps(int)` | `0x001E76E0` 692 | `0x001E88B0` 692 | `0x0021B040` 692 | `0x00235600` 900 |  |  |
-| `Downsample(unsigned int,unsigned int,unsigned int,unsigned int,int,int,int,int)` | `0x001E79A0` 576 | `0x001E8B70` 604 | `0x0021B300` 604 | `0x00235320` 736 |  |  |
-| `DistortEnvmapBuffersIntoSphereMap()` | `0x001E7BE0` 556 | `0x001E8DD0` 556 | `0x0021B560` 556 | `0x00234FB0` 880 |  |  |
-| `ClearOffscreenBuffer(unsigned int)` | `0x001E7E10` 440 | `0x001E9000` 464 | `0x0021B790` 464 | `0x00234CE0` 712 | `0x00222F70` strong |  |
-| `BuildCustomCameraData(int)` | `0x001E7FD0` 4716 | `0x001E91D0` 5568 | `0x0021B960` 4800 | `0x00234740` 1440 | `0x00223130` unverified |  |
-| `CopyTextureAs32Bit(CGtTexture*,unsigned int,unsigned int)` | `0x001E9E30` 836 | `0x001EB450` 1016 | `0x0021D880` 1016 | `0x00233150` 1120 | `0x002260D0` strong |  |
-| `Copy4BitTextureAsPSMT4H(CGtTexture*,unsigned int,CB3GraphicsManager::EClutID,bool,unsigned int)` | `0x001EA180` 1644 | `0x001EB850` 1884 | `0x0021DC80` 1884 | `0x00232890` 2228 | `0x00226420` strong |  |
-| `Copy8BitTextureAsPSMT8H(CGtTexture*,unsigned int,CB3GraphicsManager::EClutID,unsigned int)` | `0x001EA7F0` 1568 | `0x001EBFB0` 1808 | `0x0021E3E0` 1808 | `0x00231F90` 2152 | `0x00226A90` strong |  |
-| `PresentDrawBuffer()` | `0x001EAE10` 348 | `0x001EC6C0` 420 | `0x0021EAF0` 420 | `0x00231DB0` 472 | `0x002270B0` strong |  |
-| `RenderPalOrHdtvContrastFilter()` | `0x001EAF70` 452 | `0x001EC870` 452 | `0x0021ECA0` 452 | `0x00231B10` 668 | `0x00227210` unverified |  |
-| `OpenViewport(EB3ViewportSelection)` | `0x001EB140` 328 | `0x001ECA40` 452 | `0x0021EE70` 452 | `0x00231940` 452 | `0x00227360` strong |  |
-| `RenderFullScreenSpecular(GtMathPs2::CGtV3d,float,bool)` | `0x001EB290` 548 | `0x001ECC10` 568 | `0x0021F040` 548 | `0x002314F0` 900 | `0x002274B0` unverified |  |
-| `SetVideoModeParams(RwSkyVideoMode*)` | `0x001EB4C0` 356 | `0x001ED350` 432 | `0x0021F770` 432 | `0x00230CB0` 644 | `0x00227A20` strong |  |
-| `OpenRenderWare()` | `0x001EB630` 356 | `0x001ED500` 504 | `0x0021F920` 504 | `0x00230A90` 500 | `0x00227ED0` strong |  |
-| `Prepare()` | `0x001EB7D0` 236 | `0x001ED730` 68 | `0x0021FB50` 68 | `0x002309C0` 88 | `0x00228070` strong |  |
-| `Construct()` | `0x001EB8C0` 460 | `0x001ED780` 352 | `0x0021FBA0` 352 | `0x002308D0` 228 | `0x00228160` likely |  |
-| `PreBuildSpheremapWarpData()` | `0x001EBA90` 6228 | `0x001ED8E0` 7292 | `0x0021FD00` 6440 | `0x0022F470` 3780 | `0x002298B0` unverified |  |
-| `RelockAllLockedRasters()` |  | `0x001ECE50` 852 | `0x0021F270` 852 | `0x002310D0` 736 |  |  |
-| `CreateWorkBuffers()` |  | `0x001ED1B0` 408 | `0x0021F5D0` 408 | `0x00230F40` 400 |  |  |
-| `BlockAddressToPageAddress(unsigned int)` |  |  |  | `0x00232800` 28 |  |  |
-| `BlockAddressToXOffset(unsigned int)` |  |  |  | `0x00232850` 64 |  |  |
-| `BlockAddressToYOffset(unsigned int)` |  |  |  | `0x00232820` 48 |  |  |
-| `CB3GraphicsManager()` |  |  |  | `0x00195DC0` 108 |  |  |
-| `ClearFrameBuffer()` |  |  |  | `0x001356F0` 72 |  |  |
-| `GetBuffer1Address()` |  |  |  | `0x00228030` 28 |  |  |
-| `GetBuffer2Address()` |  |  |  | `0x002280D0` 28 |  |  |
-| `GetBuffer3Address()` |  |  |  | `0x00229400` 28 |  |  |
-| `GetBuffer4Address()` |  |  |  | `0x00134E60` 28 |  |  |
-| `GetCameraData(EB3RenderableCamera)` |  |  |  | `0x00225760` 60 |  |  |
-| `GetCameraPosition()` |  |  |  | `0x00330E00` 64 |  |  |
-| `GetCloudsTextureAddress()` |  |  |  | `0x002280A0` 48 |  |  |
-| `GetClutAddress(CB3GraphicsManager::EClutID)` |  |  |  | `0x00231410` 76 |  |  |
-| `GetCrackedGlassTex0()` |  |  |  | `0x00229440` 28 |  |  |
-| `GetCrackedGlassTextureAddress()` |  |  |  | `0x002313E0` 40 |  |  |
-| `GetCurrentRenderableCamera()` |  |  |  | `0x002283D0` 28 |  |  |
-| `GetEnvmapCentre()` |  |  |  | `0x0025B1E0` 52 |  |  |
-| `GetEnvmapCloudsTextureAddress()` |  |  |  | `0x00228050` 48 |  |  |
-| `GetFrameBufferPageAddress()` |  |  |  | `0x00235990` 32 |  |  |
-| `GetMinDmaFifoMemoryFree()` |  |  |  | `0x0013C3D0` 28 |  |  |
-| `GetSmashedGlassTex0()` |  |  |  | `0x00229420` 28 |  |  |
-| `GetSmashedGlassTextureAddress()` |  |  |  | `0x002313B0` 44 |  |  |
-| `GetUnbrokenGlassTex0()` |  |  |  | `0x00229460` 28 |  |  |
-| `GetUndersideTex0()` |  |  |  | `0x00229480` 28 |  |  |
-| `GetVehicleUndersideTextureAddress()` |  |  |  | `0x00231460` 44 |  |  |
-| `GetZBufferPageAddress()` |  |  |  | `0x00228080` 32 |  |  |
-| `SetCurrentRenderableCamera(EB3RenderableCamera)` |  |  |  | `0x00282890` 36 |  |  |
-| `SetDmaFifoMemoryFreeThisFrame(unsigned int)` |  |  |  | `0x00230A50` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetVBlankCount()` | `0x001E75C0` 8 | `0x001E8770` 8 | `0x0021AF00` 8 | `0x00235B20` 20 | `0x00222C90` likely |  | `RwUInt32 CB4GraphicsManager::GetVBlankCount()` |
+| `SetDownsampledFramebufferAsRenderSource(bool,GtMathPs2::CGtV2d*)` | `0x001E75D0` 264 | `0x001E8780` 304 | `0x0021AF10` 304 | `0x002359B0` 368 |  |  |  |
+| `DownsampleFramebufferAndGenerateMipMaps(int)` | `0x001E76E0` 692 | `0x001E88B0` 692 | `0x0021B040` 692 | `0x00235600` 900 |  |  |  |
+| `Downsample(unsigned int,unsigned int,unsigned int,unsigned int,int,int,int,int)` | `0x001E79A0` 576 | `0x001E8B70` 604 | `0x0021B300` 604 | `0x00235320` 736 |  |  |  |
+| `DistortEnvmapBuffersIntoSphereMap()` | `0x001E7BE0` 556 | `0x001E8DD0` 556 | `0x0021B560` 556 | `0x00234FB0` 880 |  |  | `void CB4GraphicsManager::DistortEnvmapBuffersIntoSphereMap()` |
+| `ClearOffscreenBuffer(unsigned int)` | `0x001E7E10` 440 | `0x001E9000` 464 | `0x0021B790` 464 | `0x00234CE0` 712 | `0x00222F70` strong |  | `void CB4GraphicsManager::ClearOffscreenBuffer(unsigned int luBufferID)` |
+| `BuildCustomCameraData(int)` | `0x001E7FD0` 4716 | `0x001E91D0` 5568 | `0x0021B960` 4800 | `0x00234740` 1440 | `0x00223130` unverified |  | `void CB4GraphicsManager::BuildCustomCameraData(ERaceCarIndex leRaceCarIndex)` (same name, different parameters) |
+| `CopyTextureAs32Bit(CGtTexture*,unsigned int,unsigned int)` | `0x001E9E30` 836 | `0x001EB450` 1016 | `0x0021D880` 1016 | `0x00233150` 1120 | `0x002260D0` strong |  | `u_long128 CB4GraphicsManager::CopyTextureAs32Bit(CGtTexture *lpTexture, unsigned int luDestinationAddress, unsigned int luStride)` |
+| `Copy4BitTextureAsPSMT4H(CGtTexture*,unsigned int,CB3GraphicsManager::EClutID,bool,unsigned int)` | `0x001EA180` 1644 | `0x001EB850` 1884 | `0x0021DC80` 1884 | `0x00232890` 2228 | `0x00226420` strong |  | `u_long128 CB4GraphicsManager::Copy4BitTextureAsPSMT4H(CGtTexture *lpTexture, unsigned int luDestinationAddress, CB4GraphicsManager::EClutID leClutBufferID, bool lbHigh, unsigned int luStride)` |
+| `Copy8BitTextureAsPSMT8H(CGtTexture*,unsigned int,CB3GraphicsManager::EClutID,unsigned int)` | `0x001EA7F0` 1568 | `0x001EBFB0` 1808 | `0x0021E3E0` 1808 | `0x00231F90` 2152 | `0x00226A90` strong |  | `u_long128 CB4GraphicsManager::Copy8BitTextureAsPSMT8H(CGtTexture *lpTexture, unsigned int luDestinationAddress, CB4GraphicsManager::EClutID leClutBufferID, unsigned int luStride)` |
+| `PresentDrawBuffer()` | `0x001EAE10` 348 | `0x001EC6C0` 420 | `0x0021EAF0` 420 | `0x00231DB0` 472 | `0x002270B0` strong |  | `void CB4GraphicsManager::PresentDrawBuffer()` |
+| `RenderPalOrHdtvContrastFilter()` | `0x001EAF70` 452 | `0x001EC870` 452 | `0x0021ECA0` 452 | `0x00231B10` 668 | `0x00227210` unverified |  | `void CB4GraphicsManager::RenderPalOrHdtvContrastFilter()` |
+| `OpenViewport(EB3ViewportSelection)` | `0x001EB140` 328 | `0x001ECA40` 452 | `0x0021EE70` 452 | `0x00231940` 452 | `0x00227360` strong |  | `void CB4GraphicsManager::OpenViewport(EB4ViewportSelection leViewportSelection)` |
+| `RenderFullScreenSpecular(GtMathPs2::CGtV3d,float,bool)` | `0x001EB290` 548 | `0x001ECC10` 568 | `0x0021F040` 548 | `0x002314F0` 900 | `0x002274B0` unverified |  | `void CB4GraphicsManager::RenderFullScreenSpecular(GtMathPs2::CGtV3d lColour, float lrIntensity)` (same name, different parameters) |
+| `SetVideoModeParams(RwSkyVideoMode*)` | `0x001EB4C0` 356 | `0x001ED350` 432 | `0x0021F770` 432 | `0x00230CB0` 644 | `0x00227A20` strong |  | `void CB4GraphicsManager::SetVideoModeParams(RwSkyVideoMode *lpCustomVideoMode)` |
+| `OpenRenderWare()` | `0x001EB630` 356 | `0x001ED500` 504 | `0x0021F920` 504 | `0x00230A90` 500 | `0x00227ED0` strong |  | `void CB4GraphicsManager::OpenRenderWare()` |
+| `Prepare()` | `0x001EB7D0` 236 | `0x001ED730` 68 | `0x0021FB50` 68 | `0x002309C0` 88 | `0x00228070` strong |  | `bool CB4GraphicsManager::Prepare()` |
+| `Construct()` | `0x001EB8C0` 460 | `0x001ED780` 352 | `0x0021FBA0` 352 | `0x002308D0` 228 | `0x00228160` likely |  | `void CB4GraphicsManager::Construct()` |
+| `PreBuildSpheremapWarpData()` | `0x001EBA90` 6228 | `0x001ED8E0` 7292 | `0x0021FD00` 6440 | `0x0022F470` 3780 | `0x002298B0` unverified |  |  |
+| `RelockAllLockedRasters()` |  | `0x001ECE50` 852 | `0x0021F270` 852 | `0x002310D0` 736 |  |  | `void CB4GraphicsManager::RelockAllLockedRasters()` |
+| `CreateWorkBuffers()` |  | `0x001ED1B0` 408 | `0x0021F5D0` 408 | `0x00230F40` 400 |  |  | `void CB4GraphicsManager::CreateWorkBuffers()` |
+| `BlockAddressToPageAddress(unsigned int)` |  |  |  | `0x00232800` 28 |  |  |  |
+| `BlockAddressToXOffset(unsigned int)` |  |  |  | `0x00232850` 64 |  |  |  |
+| `BlockAddressToYOffset(unsigned int)` |  |  |  | `0x00232820` 48 |  |  |  |
+| `CB3GraphicsManager()` |  |  |  | `0x00195DC0` 108 |  |  |  |
+| `ClearFrameBuffer()` |  |  |  | `0x001356F0` 72 |  |  |  |
+| `GetBuffer1Address()` |  |  |  | `0x00228030` 28 |  |  |  |
+| `GetBuffer2Address()` |  |  |  | `0x002280D0` 28 |  |  |  |
+| `GetBuffer3Address()` |  |  |  | `0x00229400` 28 |  |  |  |
+| `GetBuffer4Address()` |  |  |  | `0x00134E60` 28 |  |  |  |
+| `GetCameraData(EB3RenderableCamera)` |  |  |  | `0x00225760` 60 |  |  |  |
+| `GetCameraPosition()` |  |  |  | `0x00330E00` 64 |  |  |  |
+| `GetCloudsTextureAddress()` |  |  |  | `0x002280A0` 48 |  |  |  |
+| `GetClutAddress(CB3GraphicsManager::EClutID)` |  |  |  | `0x00231410` 76 |  |  |  |
+| `GetCrackedGlassTex0()` |  |  |  | `0x00229440` 28 |  |  |  |
+| `GetCrackedGlassTextureAddress()` |  |  |  | `0x002313E0` 40 |  |  |  |
+| `GetCurrentRenderableCamera()` |  |  |  | `0x002283D0` 28 |  |  |  |
+| `GetEnvmapCentre()` |  |  |  | `0x0025B1E0` 52 |  |  |  |
+| `GetEnvmapCloudsTextureAddress()` |  |  |  | `0x00228050` 48 |  |  |  |
+| `GetFrameBufferPageAddress()` |  |  |  | `0x00235990` 32 |  |  |  |
+| `GetMinDmaFifoMemoryFree()` |  |  |  | `0x0013C3D0` 28 |  |  |  |
+| `GetSmashedGlassTex0()` |  |  |  | `0x00229420` 28 |  |  |  |
+| `GetSmashedGlassTextureAddress()` |  |  |  | `0x002313B0` 44 |  |  |  |
+| `GetUnbrokenGlassTex0()` |  |  |  | `0x00229460` 28 |  |  |  |
+| `GetUndersideTex0()` |  |  |  | `0x00229480` 28 |  |  |  |
+| `GetVehicleUndersideTextureAddress()` |  |  |  | `0x00231460` 44 |  |  |  |
+| `GetZBufferPageAddress()` |  |  |  | `0x00228080` 32 |  |  |  |
+| `SetCurrentRenderableCamera(EB3RenderableCamera)` |  |  |  | `0x00282890` 36 |  |  |  |
+| `SetDmaFifoMemoryFreeThisFrame(unsigned int)` |  |  |  | `0x00230A50` 60 |  |  | `void CB4GraphicsManager::SetDmaFifoMemoryFreeThisFrame(unsigned int luSpaceFree)` |
+
+## Burnout Revenge layout of `CB4GraphicsManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 86 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4GraphicsManager : public CB4GraphicsManagerBase {  // size 0x12F0
+    // base CB4GraphicsManagerBase at 0x000
+    /* 0x4E0 */ u_long128 mu128UndersideTex0;
+    /* 0x4F0 */ u_long128 mu128UnbrokenGlassTex0;
+    /* 0x500 */ u_long128 mu128CrackedGlassTex0;
+    /* 0x510 */ u_long128 mu128SmashedGlassTex0;
+    /* 0x520 */ RwUInt32 muBuffer1Address;
+    /* 0x524 */ RwUInt32 muBuffer2Address;
+    /* 0x528 */ RwUInt32 muBuffer3Address;
+    /* 0x52C */ RwUInt32 muBuffer4Address;
+    /* 0x530 */ RwUInt32 muDmaFifoMemoryFree;
+    /* 0x534 */ RwInt32 mnBlitOffsetU;
+    /* 0x538 */ RwInt32 mnBlitOffsetV;
+    /* 0x53C */ u_long128 *mpDMABuffer;
+    /* 0x540 */ CGtMatrix3x4 mCameraEnvMapMatrix;
+    /* 0x580 */ CB4CameraData maCameraData[6];
+    /* 0x12A0 */ EB4RenderableCamera meCurrentRenderableCamera;
+    /* 0x12A4 */ EB4RenderableCamera meMaxRenderableCamera;
+    /* 0x12A8 */ u_long128 *mpSpheremapDMAMemory;
+    /* 0x12AC */ RwInt32 mnSpheremapDMAMemoryUsageQW;
+    /* 0x12B0 */ u_long128 *mapSpheremapDMAPackets[5];
+    /* 0x12C4 */ int manSpheremapFaceWidths_Pow2[5];
+    /* 0x12D8 */ int manSpheremapFaceHeights_Pow2[5];
+    // methods
+    // CB4GraphicsManager(const CB4GraphicsManager &);
+    // CB4GraphicsManager();
+    // bool PrepareSpheremapWarpData();
+    // void ReleaseSpheremapWarpData();
+    // void Construct();
+    // bool Prepare();
+    // void OpenRenderWare();
+    // void SetVideoMode(EB4VideoMode);
+    // void OpenViewport(EB4ViewportSelection);
+    // void PresentDrawBuffer();
+    // void RelockAllLockedRasters();
+    // void RenderFullScreenSpecular(GtMathPs2::CGtV3d, float);
+    // void RenderFullScreenPass(GtMathPs2::CGtV4d, EB4FullScreenPassBlendMode);
+    // void BeginShadowMapRender(const GtMathPs2::CGtMatrix3x4 &, const GtMathPs2::CGtMatrix3x4 &, const GtMathPs2::CGtV2d &, EB4WorkBufferSize);
+    // void EndShadowMapRender();
+    // RwUInt32 GetVBlankCount();
+    // u_long128 GetUndersideTex0();
+    // u_long128 GetUnbrokenGlassTex0();
+    // u_long128 GetCrackedGlassTex0();
+    // u_long128 GetSmashedGlassTex0();
+    // RwUInt32 GetFrameBufferPageAddress();
+    // RwUInt32 GetZBufferPageAddress();
+    // RwUInt32 GetBuffer1Address();
+    // RwUInt32 GetClutAddress(CB4GraphicsManager::EClutID);
+    // RwUInt32 GetBuffer2Address();
+    // RwUInt32 GetBuffer3Address();
+    // RwUInt32 GetBuffer4Address();
+    // RwUInt32 GetVehicleUndersideTextureAddress();
+    // RwUInt32 GetCloudsTextureAddress();
+    // RwUInt32 GetEnvmapCloudsTextureAddress();
+    // RwUInt32 GetCrackedGlassTextureAddress();
+    // RwUInt32 GetSmashedGlassTextureAddress();
+    // static RwUInt32 BlockAddressToPageAddress(unsigned int);
+    // static RwUInt32 BlockAddressToXOffset(unsigned int);
+    // static RwUInt32 BlockAddressToYOffset(unsigned int);
+    // u_long128 Copy8BitTextureAsPSMT8H(CGtTexture *, unsigned int, CB4GraphicsManager::EClutID, unsigned int);
+    // u_long128 Copy4BitTextureAsPSMT4H(CGtTexture *, unsigned int, CB4GraphicsManager::EClutID, bool, unsigned int);
+    // u_long128 CopyTextureAs32Bit(CGtTexture *, unsigned int, unsigned int);
+    // u_long128 RelocateGSTexturePSMT8H(unsigned long long, unsigned int, CB4GraphicsManager::EClutID);
+    // u_long128 RelocateGSTexturePSMCT32(unsigned long long, unsigned int);
+    // void BuildCustomCameraData(ERaceCarIndex);
+    // CB4CameraData * GetCameraData(EB4RenderableCamera);
+    // void SetCurrentRenderableCamera(EB4RenderableCamera);
+    // EB4RenderableCamera GetCurrentRenderableCamera();
+    // void ClearFrameBuffer();
+    // CGtV3d GetCameraPosition();
+    // CGtV3d GetEnvmapCentre();
+    // void ClearOffscreenBuffer(unsigned int);
+    // void DistortEnvmapBuffersIntoSphereMap();
+    // RwUInt32 GetMinDmaFifoMemoryFree();
+    // void SetDmaFifoMemoryFreeThisFrame(unsigned int);
+    // EB4RenderableCamera GetCurrentMaxCamera();
+    // void RenderFullScreenBrightnessFilter(float);
+    // CGtCameraFrustum * GetCameraFrustum();
+    // void CreateWorkBuffers();
+    // void ClearScreen();
+    // void CopyGSMemory(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long);
+    // void RenderPalOrHdtvContrastFilter();
+    // void SetVideoModeParams(RwSkyVideoMode *);
+    // void Downsample(unsigned int, unsigned int, unsigned int, unsigned int, int, int, int, int);
+    // void BuildInGameSphereMapData();
+    // void BuildFrontEndSphereMapData();
+};
+```
 
 ## Notes
 

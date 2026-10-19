@@ -8,17 +8,18 @@
 - **Source file:** `B3ScrapeRenderPS2.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 4
 - **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ScrapeRenderer`, size 0x001, methods in `GameSource/Graphics/Scrapes/Ps2/B4ScrapeRenderPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4scraperenderer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Render(CB3ScrapeEmitter**,int,CB3ScrapeParams*,EB3ScrapeType)` | `0x00334EA0` 640 | `0x00397030` 952 | `0x003C1410` 952 | `0x003C5B80` 996 | `0x00375F90` proven |  |
-| `EndRender()` | `0x00335130` 36 | `0x00397400` 36 | `0x003C17E0` 36 | `0x003C5B50` 44 | `0x00376230` proven |  |
-| `BeginRender()` | `0x00335160` 36 | `0x00397430` 36 | `0x003C1810` 36 | `0x003C5B20` 44 | `0x00376260` proven |  |
-| `Construct()` | `0x00335190` 148 | `0x00397460` 148 | `0x003C1840` 148 | `0x003C5A10` 272 | `0x00376290` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Render(CB3ScrapeEmitter**,int,CB3ScrapeParams*,EB3ScrapeType)` | `0x00334EA0` 640 | `0x00397030` 952 | `0x003C1410` 952 | `0x003C5B80` 996 | `0x00375F90` proven |  | `void CB4ScrapeRenderer::Render(CB4ScrapeEmitter **lppEmitter, int lnEmitterCount, CB4ScrapeParams *lpParams, EB4ScrapeType leScrapeType)` |
+| `EndRender()` | `0x00335130` 36 | `0x00397400` 36 | `0x003C17E0` 36 | `0x003C5B50` 44 | `0x00376230` proven |  | `void CB4ScrapeRenderer::EndRender()` |
+| `BeginRender()` | `0x00335160` 36 | `0x00397430` 36 | `0x003C1810` 36 | `0x003C5B20` 44 | `0x00376260` proven |  | `void CB4ScrapeRenderer::BeginRender()` |
+| `Construct()` | `0x00335190` 148 | `0x00397460` 148 | `0x003C1840` 148 | `0x003C5A10` 272 | `0x00376290` proven |  | `void CB4ScrapeRenderer::Construct()` |
 
 ## Static data (DNAT_200)
 
@@ -26,6 +27,24 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 |---|---:|---|---|
 | `0x00444270` | 8 | .sbss | `CB3ScrapeRenderer::mRandom` |
 | `0x01DC5380` | 48 | .bss | `CB3ScrapeRenderer::maDMAParams` |
+
+## Burnout Revenge layout of `CB4ScrapeRenderer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Graphics/Scrapes/Ps2/B4ScrapeRenderPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ScrapeRenderer {  // size 0x001
+    /* static */ CB4ScrapeParamsDMA maDMAParams[1];
+    /* static */ CGtRandom mRandom;
+    // methods
+    // CB4ScrapeRenderer(const CB4ScrapeRenderer &);
+    // CB4ScrapeRenderer();
+    // static void Construct();
+    // static void BeginRender();
+    // static void EndRender();
+    // static void Render(CB4ScrapeEmitter **, int, CB4ScrapeParams *, EB4ScrapeType);
+};
+```
 
 ## Notes
 

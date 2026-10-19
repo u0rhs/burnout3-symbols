@@ -9,36 +9,37 @@
 - **Methods per build:** DNAT_200 17, B3DEBUG 17, B3INTERN 17, B3O0PCH 22
 - **Retail (SLUS-21050):** 13 of its 17 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FCD0`, 48 bytes = 12 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 10 virtual functions)
+- **Burnout Revenge counterpart:** `CB4AICar`, size 0x3790, methods in `GameSource/World/B4AICar.cpp` ([layout](#burnout-revenge-layout-of-cb4aicar))
 - **Burnout 2 ancestor (by name):** `CAICar`, size 0x4C80, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CalcSeparationAlongTrack(CB3RaceCar*)` | `0x0013E650` 224 | `0x00148290` 380 | `0x001461E0` 288 | `0x00153F10` 272 | `0x001419F0` strong |  |
-| `CalcSeparationAcrossTrack(CB3RaceCar*)` | `0x0013E730` 220 | `0x00148410` 372 | `0x00146300` 280 | `0x00153DF0` 276 | `0x00141AE0` strong |  |
-| `IncreaseAggression(float)` | `0x0013E810` 72 | `0x00148590` 172 | `0x00146420` 172 | `0x00153D40` 164 | `0x00141BC0` strong |  |
-| `OnSetActive(bool)` | `0x0013E860` 328 | `0x00148640` 328 | `0x001464D0` 328 | `0x00153C60` 216 | `0x00141C10` likely |  |
-| `ResetCarInSlice(int,GtMathPs2::CGtMatrix3x4*)` | `0x0013E9B0` 324 | `0x00148790` 332 | `0x00146620` 324 | `0x00153800` 276 | `0x00141D60` unverified |  |
-| `UpdateAICheckpoint()` | `0x0013EB00` 328 | `0x001488E0` 468 | `0x00146770` 460 | `0x00153500` 628 | `0x00142200` strong |  |
-| `PrepareSound()` | `0x0013EC50` 132 | `0x00148AC0` 132 | `0x00146940` 132 | `0x001533F0` 240 | `0x00142350` likely |  |
-| `UpdateOutOfRange()` | `0x0013ECE0` 5400 | `0x00148B50` 7672 | `0x001469D0` 5512 | `0x00151FB0` 2348 | `0x001423E0` strong | `void CAICar::UpdateOutOfRange()` |
-| `SetAIInRange()` | `0x00140200` 140 | `0x0014A950` 148 | `0x00147F60` 140 | `0x00151EF0` 192 |  | `void CAICar::SetAIInRange()` |
-| `SetAIOutOfRange()` | `0x00140290` 24 | `0x0014A9F0` 32 | `0x00147FF0` 24 | `0x00151E90` 84 |  | `void CAICar::SetAIOutOfRange()` |
-| `AdjustOutOfRange(CB3PlayerCar*,float,CAIRangeAttribs&)` | `0x001402B0` 544 | `0x0014AA10` 604 | `0x00148010` 604 | `0x00151B60` 808 |  |  |
-| `UpdateAttributes()` | `0x001404D0` 892 | `0x0014AC70` 1248 | `0x00148270` 1248 | `0x00151570` 1276 |  | `void CAICar::UpdateAttributes()` |
-| `StopCrashing()` | `0x00140850` 76 | `0x0014B150` 76 | `0x00148750` 76 | `0x001514D0` 112 | `0x00143A80` likely |  |
-| `Release()` | `0x001408A0` 56 | `0x0014B1A0` 56 | `0x001487A0` 56 | `0x00151480` 68 | `0x00143AD0` strong |  |
-| `Update()` | `0x001408E0` 400 | `0x0014B1E0` 5436 | `0x001487E0` 2720 | `0x001508B0` 2728 | `0x00143B10` unverified | `void CAICar::Update()` |
-| `Prepare()` | `0x00140A70` 436 | `0x0014C720` 520 | `0x00149280` 516 | `0x00150590` 792 | `0x00143CE0` likely |  |
-| `Construct(int)` | `0x00140C30` 216 | `0x0014C930` 316 | `0x00149490` 316 | `0x001503D0` 440 | `0x00143E80` strong |  |
-| `CB3AICar()` |  |  |  | `0x00191150` 108 |  |  |
-| `ResetVarsFromProfile()` |  |  |  | `0x001532A0` 100 |  | `void CAICar::ResetVarsFromProfile()` |
-| `SetAICarPhysics(CB3AICarPhysics*)` |  |  |  | `0x001AF790` 36 |  |  |
-| `UpdateDead()` |  |  |  | `0x001537A0` 96 |  |  |
-| `UpdateProfileVars()` |  |  |  | `0x00153310` 224 |  | `void CAICar::UpdateProfileVars()` |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CalcSeparationAlongTrack(CB3RaceCar*)` | `0x0013E650` 224 | `0x00148290` 380 | `0x001461E0` 288 | `0x00153F10` 272 | `0x001419F0` strong |  | `RwReal CB4AICar::CalcSeparationAlongTrack(CB4RaceCar *lpOther)` |
+| `CalcSeparationAcrossTrack(CB3RaceCar*)` | `0x0013E730` 220 | `0x00148410` 372 | `0x00146300` 280 | `0x00153DF0` 276 | `0x00141AE0` strong |  | `RwReal CB4AICar::CalcSeparationAcrossTrack(CB4RaceCar *lpOther)` |
+| `IncreaseAggression(float)` | `0x0013E810` 72 | `0x00148590` 172 | `0x00146420` 172 | `0x00153D40` 164 | `0x00141BC0` strong |  | `void CB4AICar::IncreaseAggression(float lrValue)` |
+| `OnSetActive(bool)` | `0x0013E860` 328 | `0x00148640` 328 | `0x001464D0` 328 | `0x00153C60` 216 | `0x00141C10` likely |  | `void CB4AICar::OnSetActive(bool lbActive)` |
+| `ResetCarInSlice(int,GtMathPs2::CGtMatrix3x4*)` | `0x0013E9B0` 324 | `0x00148790` 332 | `0x00146620` 324 | `0x00153800` 276 | `0x00141D60` unverified |  | `void CB4AICar::ResetCarInSlice(int lnSliceIndex, const CB4AILaneSegmentManager *lpPlayerReference, GtMathPs2::CGtMatrix3x4 *lpReferenceMatrix)` (same name, different parameters) |
+| `UpdateAICheckpoint()` | `0x0013EB00` 328 | `0x001488E0` 468 | `0x00146770` 460 | `0x00153500` 628 | `0x00142200` strong |  | `void CB4AICar::UpdateAICheckpoint()` |
+| `PrepareSound()` | `0x0013EC50` 132 | `0x00148AC0` 132 | `0x00146940` 132 | `0x001533F0` 240 | `0x00142350` likely |  | `bool CB4AICar::PrepareSound()` |
+| `UpdateOutOfRange()` | `0x0013ECE0` 5400 | `0x00148B50` 7672 | `0x001469D0` 5512 | `0x00151FB0` 2348 | `0x001423E0` strong | `void CAICar::UpdateOutOfRange()` | `void CB4AICar::UpdateOutOfRange()` |
+| `SetAIInRange()` | `0x00140200` 140 | `0x0014A950` 148 | `0x00147F60` 140 | `0x00151EF0` 192 |  | `void CAICar::SetAIInRange()` |  |
+| `SetAIOutOfRange()` | `0x00140290` 24 | `0x0014A9F0` 32 | `0x00147FF0` 24 | `0x00151E90` 84 |  | `void CAICar::SetAIOutOfRange()` |  |
+| `AdjustOutOfRange(CB3PlayerCar*,float,CAIRangeAttribs&)` | `0x001402B0` 544 | `0x0014AA10` 604 | `0x00148010` 604 | `0x00151B60` 808 |  |  |  |
+| `UpdateAttributes()` | `0x001404D0` 892 | `0x0014AC70` 1248 | `0x00148270` 1248 | `0x00151570` 1276 |  | `void CAICar::UpdateAttributes()` |  |
+| `StopCrashing()` | `0x00140850` 76 | `0x0014B150` 76 | `0x00148750` 76 | `0x001514D0` 112 | `0x00143A80` likely |  | `void CB4AICar::StopCrashing()` |
+| `Release()` | `0x001408A0` 56 | `0x0014B1A0` 56 | `0x001487A0` 56 | `0x00151480` 68 | `0x00143AD0` strong |  | `void CB4AICar::Release()` |
+| `Update()` | `0x001408E0` 400 | `0x0014B1E0` 5436 | `0x001487E0` 2720 | `0x001508B0` 2728 | `0x00143B10` unverified | `void CAICar::Update()` | `void CB4AICar::Update()` |
+| `Prepare()` | `0x00140A70` 436 | `0x0014C720` 520 | `0x00149280` 516 | `0x00150590` 792 | `0x00143CE0` likely |  | `bool CB4AICar::Prepare()` |
+| `Construct(int)` | `0x00140C30` 216 | `0x0014C930` 316 | `0x00149490` 316 | `0x001503D0` 440 | `0x00143E80` strong |  | `void CB4AICar::Construct(int lnAIIndex)` |
+| `CB3AICar()` |  |  |  | `0x00191150` 108 |  |  |  |
+| `ResetVarsFromProfile()` |  |  |  | `0x001532A0` 100 |  | `void CAICar::ResetVarsFromProfile()` | `void CB4AICar::ResetVarsFromProfile()` |
+| `SetAICarPhysics(CB3AICarPhysics*)` |  |  |  | `0x001AF790` 36 |  |  |  |
+| `UpdateDead()` |  |  |  | `0x001537A0` 96 |  |  | `void CB4AICar::UpdateDead()` |
+| `UpdateProfileVars()` |  |  |  | `0x00153310` 224 |  | `void CAICar::UpdateProfileVars()` | `void CB4AICar::UpdateProfileVars()` |
 
 ## Burnout 2 layout of `CAICar`
 
@@ -85,6 +86,68 @@ public:
     // int CAICar::Reset(RwV3d *StartPos, RwV3d *StartDir)  [0x00223E30]
     // int CAICar::Setup(int lnIndex, int lbIsFrontEnd)  [0x00223FB0]
     // void CAICar::Init()  [0x00224040]
+};
+```
+
+## Burnout Revenge layout of `CB4AICar`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 305 file(s), e.g. `GameShared/GameClasses/System/MemoryCard/NewMemoryCard/GtMemoryCardManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AICar : public CB4RaceCar {  // size 0x3790
+    // base CB4RaceCar at 0x000
+    /* 0x2CA0 */ CGtV3d mDesiredDirection;
+    /* 0x2CB0 */ CGtV3d mLastDesiredDirection;
+    /* 0x2CC0 */ float marAICheckpointTimes[8];
+    /* 0x2CE0 */ CB4AIDriver mDriver;
+    /* 0x3760 */ CB4AICarPhysics *mpPhysics;
+    /* 0x3764 */ RwReal mrCarWidth;
+    /* 0x3768 */ RwReal mrCarLength;
+    /* 0x376C */ RwReal mrCarHeightAboveRoad;
+    /* 0x3770 */ EAIMode meAIMode;
+    /* 0x3774 */ RwReal mrPreviousTime;
+    /* 0x3778 */ RwUInt16 mun16LastSlice;
+    /* 0x377A */ RwUInt16 mun16LastKnownGoodSlice;
+    /* 0x377C */ RwInt8 mnCurrentAICheckpoint;
+    /* 0x377D */ bool mbInvincibleThisFrame;
+    /* 0x377E */ bool mbWasActivatedLastFrame;
+    /* 0x3780 */ RwInt32 mnNumFramesFallingOutOfWorld;
+    /* 0x3784 */ EGtPrepareState meAIPrepareState;
+    /* 0x3788 */ RwInt32 mnLaneSegmentHash;
+    /* 0x378C */ RwUInt8 mu8StuckTime;
+    // methods
+    // CB4AICar(const CB4AICar &);
+    // CB4AICar();
+    // void Construct(int);
+    // virtual bool Prepare();
+    // virtual void Update();
+    // virtual void Release();
+    // void Destruct();
+    // virtual void StopCrashing();
+    // void SetAICarPhysics(CB4AICarPhysics *);
+    // static bool ChampionshipPointsAreValid();
+    // void IncreaseAggression(float);
+    // RwReal CalcSeparationAcrossTrack(CB4RaceCar *);
+    // RwReal CalcSeparationAlongTrack(CB4RaceCar *);
+    // void ResetCarInSlice(int, const CB4AILaneSegmentManager *, GtMathPs2::CGtMatrix3x4 *);
+    // bool IsInRange();
+    // bool WasInRange();
+    // void OnComeIntoRange();
+    // void OnGoneOutOfRange();
+    // virtual bool PrepareSound();
+    // virtual void UpdateOutOfRange();
+    // void UpdateDead();
+    // void UpdateProfileVars();
+    // void ResetVarsFromProfile();
+    // void RegisterValues();
+    // void UpdateAICheckpoint();
+    // void UpdateCarHeightAboveRoad();
+    // virtual void OnSetActive(bool);
+    // void ResetCarInAILanes(bool, bool, const CB4AILane *);
+    // bool SearchForResetSegment(const CB4AILaneSegment *, CB4AILaneSegment *, int *, bool, int, int, const CB4AILane *);
+    // void FindNearLane(const CB4AILaneSegment *, CB4AILaneSegment *, bool);
+    // void UpdateAIPositionOutOfRange(const CB4AILaneSegment *, GtMathPs2::CGtV3d, CB4AILaneSegment *);
+    // void FindResetSegment(const CB4AILaneSegmentManager *, int, bool, bool, CB4AILaneSegment *);
 };
 ```
 

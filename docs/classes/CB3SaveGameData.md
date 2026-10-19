@@ -7,20 +7,45 @@
 - **Area:** [Progression, profiles and saves](../systems/progression-saves.md)
 - **Source file:** `B3MemoryCardController.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 7
+- **Burnout Revenge counterpart:** `CB4SaveGameData`, size 0x1D80, methods in `GameSource/Game/B4SaveGameDataManager.cpp` ([layout](#burnout-revenge-layout-of-cb4savegamedata))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Check()` | `0x003C66A0` 240 | `0x004437B0` 240 | `0x0046C390` 228 | `0x00481C90` 344 |  |  |
-| `BuildDataForSave(unsigned int,unsigned short*,int,int)` | `0x003C6790` 1632 | `0x004438A0` 1676 | `0x0046C480` 1168 | `0x004814B0` 624 |  |  |
-| `CB3SaveGameData()` |  |  |  | `0x00482670` 44 |  |  |
-| `GetSavedGameProfile(unsigned int)` |  |  |  | `0x00481450` 88 |  |  |
-| `Init()` |  |  |  | `0x004813F0` 96 |  |  |
-| `ResetTimeStamps()` |  |  |  | `0x00481DF0` 96 |  |  |
-| `SetCurrent(unsigned int)` |  |  |  | `0x00481B20` 356 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Check()` | `0x003C66A0` 240 | `0x004437B0` 240 | `0x0046C390` 228 | `0x00481C90` 344 |  |  |  |
+| `BuildDataForSave(unsigned int,unsigned short*,int,int)` | `0x003C6790` 1632 | `0x004438A0` 1676 | `0x0046C480` 1168 | `0x004814B0` 624 |  |  |  |
+| `CB3SaveGameData()` |  |  |  | `0x00482670` 44 |  |  |  |
+| `GetSavedGameProfile(unsigned int)` |  |  |  | `0x00481450` 88 |  |  |  |
+| `Init()` |  |  |  | `0x004813F0` 96 |  |  |  |
+| `ResetTimeStamps()` |  |  |  | `0x00481DF0` 96 |  |  |  |
+| `SetCurrent(unsigned int)` |  |  |  | `0x00481B20` 356 |  |  |  |
+
+## Burnout Revenge layout of `CB4SaveGameData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Game/B4MemoryCardManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SaveGameData {  // size 0x1D80
+    /* 0x000 */ RwInt32 mnDataVersion;
+    /* 0x004 */ RwInt32 mnRankID;
+    /* 0x008 */ RwInt32 mnNumUnlockedEvents;
+    /* 0x00C */ RwInt32 mnNumGoldMedals;
+    /* 0x010 */ RwInt32 mnPercentComplete;
+    /* 0x014 */ RwReal mrTotalPlayingTime;
+    /* 0x018 */ CGtTimeStamp mSaveDateTimeStamp;
+    /* 0x01C */ CB4Settings mSettings;
+    /* 0x078 */ CB4Profile mPlayerProfile;
+    /* 0x1D78 */ RwUInt32 munCheckSum;
+    // methods
+    // CB4SaveGameData(const CB4SaveGameData &);
+    // CB4SaveGameData();
+    // bool IsChecksumValid();
+    // RwUInt32 CalcChecksum();
+};
+```
 
 ## Notes
 

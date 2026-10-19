@@ -8,14 +8,57 @@
 - **Source file:** `B3StaticTrackData.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4StaticTrackData`, size 0x060, methods in `GameSource/World/B4StaticTrackData.cpp` ([layout](#burnout-revenge-layout-of-cb4statictrackdata))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `FixUp()` | `0x001598E0` 2020 | `0x0016F400` 2088 | `0x0016ABA0` 2088 | `0x0017B6A0` 2024 | `0x0015E8E0` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `FixUp()` | `0x001598E0` 2020 | `0x0016F400` 2088 | `0x0016ABA0` 2088 | `0x0017B6A0` 2024 | `0x0015E8E0` proven |  | `void CB4StaticTrackData::FixUp()` |
+
+## Burnout Revenge layout of `CB4StaticTrackData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 12 file(s), e.g. `GameSource/Graphics/PropParticleRenderer/B4PropParticleRenderer.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4StaticTrackData {  // size 0x060
+    /* 0x000 */ RwInt32 mxVersionNumber;
+    /* 0x004 */ RwUInt32 muNOTUSEDANYMORE;
+    /* 0x008 */ CB4TrackMaterial *mpaMaterials;
+    /* 0x00C */ RwInt16 mn16NumMaterials;
+    /* 0x00E */ RwInt16 mn16NumAnimatedMaterials;
+    /* 0x010 */ RwInt16 *mpan16AnimatedMaterialIndices;
+    /* 0x014 */ RwInt8 mn8FE_BackdropStopToDrawVehicles;
+    /* 0x015 */ RwInt8 mn8FE_BackdropStopToDrawSpecular;
+    /* 0x016 */ RwInt16 mn16NumTextures;
+    /* 0x018 */ CGtTexture **mpapTextures;
+    /* 0x01C */ RwInt16 mn16NumBackdrops;
+    /* 0x01E */ RwInt16 mn16NumChevrons;
+    /* 0x020 */ RwInt16 mn16NumWater;
+    /* 0x022 */ RwInt16 mn16NumReflection;
+    /* 0x024 */ CB4BackdropObject *mpaBackdrops;
+    /* 0x028 */ CB4BackdropObject *mpaChevrons;
+    /* 0x02C */ CB4BackdropObject *mpaWater;
+    /* 0x030 */ CB4BackdropObject *mpaReflection;
+    /* 0x034 */ RwInt16 mn16NumInstances;
+    /* 0x038 */ CB4StaticTrackInstance *mpaInstances;
+    /* 0x03C */ CB4StaticPropGeometry *mpaPropGeometry;
+    /* 0x040 */ RwUInt32 mnNumPropTypes;
+    /* 0x044 */ RwUInt32 mnFirstPayloadPropTypeIndex;
+    /* 0x048 */ RwUInt32 mnNumPropInstances;
+    /* 0x04C */ CB4PropType *mpaPropTypes;
+    /* 0x050 */ CGtCollisionKDTree *mpKDTree;
+    /* 0x054 */ RwInt16 mn16HullCount;
+    /* 0x058 */ CB4TrackSeekData *mpaStreamSeekOffsets1P;
+    /* 0x05C */ CB4TrackSeekData *mpaStreamSeekOffsets2P;
+    // methods
+    // CB4StaticTrackData(const CB4StaticTrackData &);
+    // CB4StaticTrackData();
+    // void FixUp();
+};
+```
 
 ## Notes
 

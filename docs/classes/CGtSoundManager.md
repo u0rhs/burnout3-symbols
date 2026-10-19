@@ -8,31 +8,75 @@
 - **Source file:** `GtSoundManager.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 10, B3INTERN 10, B3O0PCH 18
 - **Retail (SLUS-21050):** 6 of its 10 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtSoundManager`, size 0x6560, methods in `GameShared/GameClasses/Sound/GtSoundManager.cpp` ([layout](#burnout-revenge-layout-of-cgtsoundmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `StopAll()` | `0x00342120` 60 | `0x003A5BD0` 60 | `0x003CFAF0` 60 | `0x003D8D70` 84 | `0x00384E70` strong |  |
-| `IsPaused()` | `0x00342160` 8 | `0x003A5C10` 8 | `0x003CFB30` 8 | `0x003D8D50` 28 |  |  |
-| `Unpause()` | `0x00342170` 56 | `0x003A5C20` 56 | `0x003CFB40` 56 | `0x003D8D00` 72 | `0x00384EC0` strong |  |
-| `Pause()` | `0x003421B0` 60 | `0x003A5C60` 60 | `0x003CFB80` 60 | `0x003D8CB0` 76 | `0x00384F00` strong |  |
-| `Destruct()` | `0x003421F0` 64 | `0x003A5CA0` 64 | `0x003CFBC0` 64 | `0x003D8C50` 92 | `0x00384F40` strong |  |
-| `UpdateFinish()` | `0x00342230` 8 | `0x003A5CE0` 8 | `0x003CFC00` 8 | `0x003D8C30` 32 |  |  |
-| `UpdateStart()` | `0x00342240` 8 | `0x003A5CF0` 8 | `0x003CFC10` 8 | `0x003D8C10` 32 |  |  |
-| `Update(float,float,float,float)` | `0x00342250` 128 | `0x003A5D00` 128 | `0x003CFC20` 128 | `0x003D8B90` 124 | `0x00385010` strong |  |
-| `Prepare(void*,void*,int,int)` | `0x003422D0` 200 | `0x003A5D80` 200 | `0x003CFCA0` 200 | `0x003D8A90` 244 |  |  |
-| `Construct(CGtSoundManagerConstructParams*)` | `0x003423A0` 136 | `0x003A5E50` 168 | `0x003CFD70` 168 | `0x003D89A0` 232 | `0x00385160` unverified |  |
-| `CGtSoundManager()` |  |  |  | `0x002B1DA0` 96 |  |  |
-| `CloseRenderWare()` |  |  |  | `0x003D8DF0` 36 |  |  |
-| `GetBankManager()` |  |  |  | `0x0029ED50` 28 |  |  |
-| `GetListenerManager()` |  |  |  | `0x002A16D0` 28 |  |  |
-| `GetPrepareState()` |  |  |  | `0x0013B690` 28 |  |  |
-| `GetStreamManager()` |  |  |  | `0x00135B50` 28 |  |  |
-| `GetVoiceManager()` |  |  |  | `0x00130F60` 28 |  |  |
-| `OpenRenderWare()` |  |  |  | `0x003D8DD0` 32 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `StopAll()` | `0x00342120` 60 | `0x003A5BD0` 60 | `0x003CFAF0` 60 | `0x003D8D70` 84 | `0x00384E70` strong |  | `void CGtSoundManager::StopAll()` |
+| `IsPaused()` | `0x00342160` 8 | `0x003A5C10` 8 | `0x003CFB30` 8 | `0x003D8D50` 28 |  |  | `bool CGtSoundManager::IsPaused()` |
+| `Unpause()` | `0x00342170` 56 | `0x003A5C20` 56 | `0x003CFB40` 56 | `0x003D8D00` 72 | `0x00384EC0` strong |  | `void CGtSoundManager::Unpause()` |
+| `Pause()` | `0x003421B0` 60 | `0x003A5C60` 60 | `0x003CFB80` 60 | `0x003D8CB0` 76 | `0x00384F00` strong |  | `void CGtSoundManager::Pause()` |
+| `Destruct()` | `0x003421F0` 64 | `0x003A5CA0` 64 | `0x003CFBC0` 64 | `0x003D8C50` 92 | `0x00384F40` strong |  | `void CGtSoundManager::Destruct()` |
+| `UpdateFinish()` | `0x00342230` 8 | `0x003A5CE0` 8 | `0x003CFC00` 8 | `0x003D8C30` 32 |  |  | `void CGtSoundManager::UpdateFinish()` |
+| `UpdateStart()` | `0x00342240` 8 | `0x003A5CF0` 8 | `0x003CFC10` 8 | `0x003D8C10` 32 |  |  | `void CGtSoundManager::UpdateStart()` |
+| `Update(float,float,float,float)` | `0x00342250` 128 | `0x003A5D00` 128 | `0x003CFC20` 128 | `0x003D8B90` 124 | `0x00385010` strong |  | `void CGtSoundManager::Update(float lrMasterVolume, float lrUserSFXVolume, float lrMasterPitchScalar, float lrCurrentTime, float lrCurrentTimeStep)` (same name, different parameters) |
+| `Prepare(void*,void*,int,int)` | `0x003422D0` 200 | `0x003A5D80` 200 | `0x003CFCA0` 200 | `0x003D8A90` 244 |  |  | `bool CGtSoundManager::Prepare(void *lpWaveObjectBuffer, int lnWaveObjectBufferSize, void *lpStreamMediaBlock, int lnStreamMediaBlockSize, int lnStreamMediaBufferSize)` (same name, different parameters) |
+| `Construct(CGtSoundManagerConstructParams*)` | `0x003423A0` 136 | `0x003A5E50` 168 | `0x003CFD70` 168 | `0x003D89A0` 232 | `0x00385160` unverified |  | `void CGtSoundManager::Construct(CGtSoundManagerConstructParams *lpConstructionParams)` |
+| `CGtSoundManager()` |  |  |  | `0x002B1DA0` 96 |  |  |  |
+| `CloseRenderWare()` |  |  |  | `0x003D8DF0` 36 |  |  | `void CGtSoundManager::CloseRenderWare()` |
+| `GetBankManager()` |  |  |  | `0x0029ED50` 28 |  |  |  |
+| `GetListenerManager()` |  |  |  | `0x002A16D0` 28 |  |  |  |
+| `GetPrepareState()` |  |  |  | `0x0013B690` 28 |  |  |  |
+| `GetStreamManager()` |  |  |  | `0x00135B50` 28 |  |  |  |
+| `GetVoiceManager()` |  |  |  | `0x00130F60` 28 |  |  |  |
+| `OpenRenderWare()` |  |  |  | `0x003D8DD0` 32 |  |  | `void CGtSoundManager::OpenRenderWare()` |
+
+## Burnout Revenge layout of `CGtSoundManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSoundManager {  // size 0x6560
+    /* 0x000 */ bool mbInSurround;
+    /* 0x008 */ CGtSoundBankManager mBankManager;
+    /* 0x4388 */ CGtSoundListenerManager mListenerManager;
+    /* 0x439C */ CGtSoundVoiceManager mVoiceManager;
+    /* 0x640C */ CGtSoundStreamManager mStreamManager;
+    /* 0x654C */ CGtSoundUtils mUtils;
+    /* 0x6550 */ RwaOsOutput *mpOutput;
+    /* 0x6554 */ EGtPrepareState mePrepareState;
+    /* 0x6558 */ bool mbRwaOpen;
+    /* 0x6559 */ bool mbIsPaused;
+    /* 0x655C */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CGtSoundManager(const CGtSoundManager &);
+    // EGtPrepareState GetPrepareState() const;
+    // CGtSoundBankManager * GetBankManager();
+    // CGtSoundListenerManager * GetListenerManager();
+    // CGtSoundVoiceManager * GetVoiceManager();
+    // CGtSoundStreamManager * GetStreamManager();
+    // CGtSoundUtils & GetUtils();
+    // RwaOsOutput * GetOutput();
+    // virtual void Pause();
+    // virtual void Unpause();
+    // virtual bool IsPaused();
+    // void StopAll();
+    // bool Prepare(void *, int, void *, int, int);
+    // void Update(float, float, float, float, float);
+    // bool Release();
+    // void Construct(CGtSoundManagerConstructParams *);
+    // void Destruct();
+    // CGtSoundManager();
+    // virtual void OpenRenderWare();
+    // virtual void CloseRenderWare();
+    // void UpdateStart();
+    // void UpdateFinish();
+};
+```
 
 ## Notes
 

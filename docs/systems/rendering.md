@@ -16,44 +16,46 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 **Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
 
-| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
-|---|---:|---:|---|---:|---|
-| `B3GraphicsManager.cpp` | 12 | 3,304 | `0x0016ABB0` | 10 (0) | `0x0019E760`–`0x0019EE40` |
-| `GtViewport.cpp` | 8 | 2,084 | `0x001D7D70` | 7 (6) | `0x00211CB0`–`0x00211ED0` |
-| `B3SkyDomeRendererPS2.cpp` | 13 | 2,836 | `0x001E2C00` | 12 (10) | `0x0021DB50`–`0x0021E490` |
-| `B3VehicleRendererRuntimePS2.cpp` | 15 | 4,136 | `0x001E3750` | 9 (5) | `0x0021FF60`–`0x00220B40` |
-| `B3VehicleRendererRuntime.cpp` | 5 | 5,204 | `0x001E4780` | 4 (1) | `0x0021E6F0`–`0x00220FD0` |
-| `GtScreenCentre.cpp` | 4 | 912 | `0x001E5BB0` | 4 (4) | `0x00221080`–`0x002213F0` |
-| `GtTextureCachePS2.cpp` | 13 | 3,620 | `0x001E5F50` | 11 (9) | `0x00221490`–`0x00222260` |
-| `B3GraphicsManagerPS2.cpp` | 27 | 25,688 | `0x001E75C0` | 20 (2) | `0x00222C90`–`0x0022B540` |
-| `B3FogPS2.cpp` | 7 | 3,236 | `0x002019E0` | 7 (4) | `0x00240EF0`–`0x002419C0` |
-| `B3SunRendererPS2.cpp` | 14 | 8,532 | `0x0020BB30` | 12 (9) | `0x0024B360`–`0x0024D4B0` |
-| `GtTexturePS2.cpp` | 4 | 596 | `0x00211650` |  |  |
-| `B3Viewport.cpp` | 2 | 104 | `0x00211980` | 2 (2) | `0x00251800`–`0x00251840` |
-| `B3ParticleRendererPS2.cpp` | 17 | 6,520 | `0x00214720` | 15 (6) | `0x00254340`–`0x002558A0` |
-| `B3SparkRendererPS2.cpp` | 19 | 5,796 | `0x00225020` | 17 (13) | `0x00263120`–`0x00264170` |
-| `B3BloomPS2.cpp` | 10 | 4,824 | `0x00226720` | 10 (9) | `0x00264920`–`0x00265C40` |
-| `B3TrackMaterialPS2.cpp` | 2 | 96 | `0x0022C4F0` | 2 (2) | `0x0026A160`–`0x0026A170` |
-| `B3TrackRendererRuntimePS2.cpp` | 16 | 6,476 | `0x0022C550` | 14 (1) | `0x0026A1C0`–`0x0026BCA0` |
-| `B3TrailRenderPS2.cpp` | 4 | 1,380 | `0x002B2E40` | 4 (3) | `0x002F3600`–`0x002F3A60` |
-| `B3DebrisRendererPS2.cpp` | 15 | 4,076 | `0x002B33C0` | 14 (11) | `0x002F3B60`–`0x002F4A20` |
-| `B3RadialBlurPS2.cpp` | 9 | 3,952 | `0x002B90F0` | 9 (9) | `0x002F9EC0`–`0x002FAD90` |
-| `B3Shadows.cpp` | 4 | 1,860 | `0x002C3A00` | 3 (3) | `0x00303170`–`0x00303750` |
-| `B3ShadowRendererPS2.cpp` | 5 | 1,368 | `0x002C4150` | 5 (4) | `0x003039A0`–`0x00303EC0` |
-| `B3CoronaRendererPS2.cpp` | 15 | 2,932 | `0x002C7B70` | 12 (2) | `0x00306D90`–`0x003076D0` |
-| `B3TrafficSystemLoadAndRender.cpp` | 10 | 7,192 | `0x002C8750` | 4 (1) | `0x003078F0`–`0x003093E0` |
-| `B3VehicleReflectivityData.cpp` | 2 | 536 | `0x002CA290` |  |  |
-| `GtCameraFrustumBase.cpp` | 1 | 504 | `0x002ED0D0` |  |  |
-| `GtCameraFrustumPS2.cpp` | 2 | 1,740 | `0x002ED2D0` |  |  |
-| `GtFrustumBuilder.cpp` | 1 | 1,128 | `0x00301EB0` | 1 (0) | `0x00349980`–`0x00349980` |
-| `B3DebugMipMaps.cpp` | 3 | 88 | `0x003158F0` | 3 (1) | `0x0035EF30`–`0x0035EF90` |
-| `B3Im3DPS2.cpp` | 13 | 3,840 | `0x0031A760` | 13 (7) | `0x00364920`–`0x00365880` |
-| `B3PopcornRendererPS2.cpp` | 9 | 2,848 | `0x0031B6C0` | 9 (6) | `0x00365890`–`0x00366160` |
-| `B3ScrapeRenderPS2.cpp` | 6 | 876 | `0x00334EA0` | 5 (4) | `0x00375F90`–`0x00376290` |
-| `B3TextureCollectionPS2.cpp` | 3 | 332 | `0x00337D20` | 3 (1) | `0x00378EA0`–`0x00378FF0` |
-| `GtWideLine.cpp` | 1 | 268 | `0x003C3CF0` | 1 (0) | `0x0041D910`–`0x0041D910` |
-| `B3DirectionalBlur.cpp` | 4 | 2,164 | `0x003C8890` | 1 (1) | `0x00426030`–`0x00426030` |
-| `B3DirectionalBlurPS2.cpp` | 8 | 3,992 | `0x003C90C0` | 8 (6) | `0x00426080`–`0x00426C10` |
+**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source paths ([source files](../reference/revenge-source-file-lineage.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |
+|---|---:|---:|---|---:|---|---|
+| `B3GraphicsManager.cpp` | 12 | 3,304 | `0x0016ABB0` | 10 (0) | `0x0019E760`–`0x0019EE40` | `GameSource/Graphics/B4GraphicsManager.cpp` |
+| `GtViewport.cpp` | 8 | 2,084 | `0x001D7D70` | 7 (6) | `0x00211CB0`–`0x00211ED0` | `GameShared/GameClasses/Graphical/Camera/GtViewport.cpp` |
+| `B3SkyDomeRendererPS2.cpp` | 13 | 2,836 | `0x001E2C00` | 12 (10) | `0x0021DB50`–`0x0021E490` | `GameSource/Graphics/B4SkyDomeRenderer/Ps2/B4SkyDomeRendererPS2.cpp` |
+| `B3VehicleRendererRuntimePS2.cpp` | 15 | 4,136 | `0x001E3750` | 9 (5) | `0x0021FF60`–`0x00220B40` | `GameSource/Graphics/VehicleRenderer/Ps2/B4VehicleRendererRuntimePS2.cpp` |
+| `B3VehicleRendererRuntime.cpp` | 5 | 5,204 | `0x001E4780` | 4 (1) | `0x0021E6F0`–`0x00220FD0` | `GameSource/Graphics/VehicleRenderer/B4VehicleRendererRuntime.cpp` |
+| `GtScreenCentre.cpp` | 4 | 912 | `0x001E5BB0` | 4 (4) | `0x00221080`–`0x002213F0` | `GameShared/GameClasses/Graphical/GtScreenCentre.cpp` |
+| `GtTextureCachePS2.cpp` | 13 | 3,620 | `0x001E5F50` | 11 (9) | `0x00221490`–`0x00222260` | `GameShared/GameClasses/Graphical/TextureCachePS2/GtTextureCachePS2.cpp` |
+| `B3GraphicsManagerPS2.cpp` | 27 | 25,688 | `0x001E75C0` | 20 (2) | `0x00222C90`–`0x0022B540` | `GameSource/Graphics/Ps2/B4GraphicsManagerPS2.cpp` |
+| `B3FogPS2.cpp` | 7 | 3,236 | `0x002019E0` | 7 (4) | `0x00240EF0`–`0x002419C0` | `GameSource/Graphics/Fog/Ps2/B4FogPS2.cpp` |
+| `B3SunRendererPS2.cpp` | 14 | 8,532 | `0x0020BB30` | 12 (9) | `0x0024B360`–`0x0024D4B0` | `GameSource/Graphics/SunRenderer/Ps2/B4SunRendererPS2.cpp` |
+| `GtTexturePS2.cpp` | 4 | 596 | `0x00211650` |  |  | `GameShared/GameClasses/Graphical/TextureClasses/Ps2/GtTexturePS2.cpp` |
+| `B3Viewport.cpp` | 2 | 104 | `0x00211980` | 2 (2) | `0x00251800`–`0x00251840` | `GameSource/Graphics/B4Viewport.cpp` |
+| `B3ParticleRendererPS2.cpp` | 17 | 6,520 | `0x00214720` | 15 (6) | `0x00254340`–`0x002558A0` | `GameSource/Graphics/ParticleRenderer/Ps2/B4ParticleRendererPS2.cpp` |
+| `B3SparkRendererPS2.cpp` | 19 | 5,796 | `0x00225020` | 17 (13) | `0x00263120`–`0x00264170` | `GameSource/Graphics/SparkRenderer/Ps2/B4SparkRendererPS2.cpp` |
+| `B3BloomPS2.cpp` | 10 | 4,824 | `0x00226720` | 10 (9) | `0x00264920`–`0x00265C40` | `GameSource/Graphics/Bloom/Ps2/B4BloomPS2.cpp` |
+| `B3TrackMaterialPS2.cpp` | 2 | 96 | `0x0022C4F0` | 2 (2) | `0x0026A160`–`0x0026A170` | `GameSource/Graphics/TrackRenderer/Ps2/B4TrackMaterialPS2.cpp` |
+| `B3TrackRendererRuntimePS2.cpp` | 16 | 6,476 | `0x0022C550` | 14 (1) | `0x0026A1C0`–`0x0026BCA0` | `GameSource/Graphics/TrackRenderer/Ps2/B4TrackRendererRuntimePS2.cpp` |
+| `B3TrailRenderPS2.cpp` | 4 | 1,380 | `0x002B2E40` | 4 (3) | `0x002F3600`–`0x002F3A60` | `GameSource/Graphics/Trails/Ps2/B4TrailRenderPS2.cpp` |
+| `B3DebrisRendererPS2.cpp` | 15 | 4,076 | `0x002B33C0` | 14 (11) | `0x002F3B60`–`0x002F4A20` | `GameSource/Graphics/DebrisRenderer/Ps2/B4DebrisRendererPS2.cpp` |
+| `B3RadialBlurPS2.cpp` | 9 | 3,952 | `0x002B90F0` | 9 (9) | `0x002F9EC0`–`0x002FAD90` | `GameSource/Graphics/RadialBlur/Ps2/B4RadialBlurPS2.cpp` |
+| `B3Shadows.cpp` | 4 | 1,860 | `0x002C3A00` | 3 (3) | `0x00303170`–`0x00303750` | `GameSource/World/B4Shadows.cpp` |
+| `B3ShadowRendererPS2.cpp` | 5 | 1,368 | `0x002C4150` | 5 (4) | `0x003039A0`–`0x00303EC0` | `GameSource/Graphics/ShadowRenderer/Ps2/B4ShadowRendererPS2.cpp` |
+| `B3CoronaRendererPS2.cpp` | 15 | 2,932 | `0x002C7B70` | 12 (2) | `0x00306D90`–`0x003076D0` | `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp` |
+| `B3TrafficSystemLoadAndRender.cpp` | 10 | 7,192 | `0x002C8750` | 4 (1) | `0x003078F0`–`0x003093E0` | `GameSource/World/B4TrafficSystemLoadAndRender.cpp` |
+| `B3VehicleReflectivityData.cpp` | 2 | 536 | `0x002CA290` |  |  | `GameSource/Graphics/VehicleRenderer/B4VehicleReflectivityData.cpp` |
+| `GtCameraFrustumBase.cpp` | 1 | 504 | `0x002ED0D0` |  |  | `GameShared/GameClasses/Graphical/CameraFrustum/GtCameraFrustumBase.cpp` |
+| `GtCameraFrustumPS2.cpp` | 2 | 1,740 | `0x002ED2D0` |  |  | `GameShared/GameClasses/Graphical/CameraFrustum/Ps2/GtCameraFrustumPS2.cpp` |
+| `GtFrustumBuilder.cpp` | 1 | 1,128 | `0x00301EB0` | 1 (0) | `0x00349980`–`0x00349980` | `GameShared/GameClasses/Geometric/GtFrustumBuilder.cpp` |
+| `B3DebugMipMaps.cpp` | 3 | 88 | `0x003158F0` | 3 (1) | `0x0035EF30`–`0x0035EF90` | `GameSource/Graphics/Debug/B4DebugMipMaps.cpp` |
+| `B3Im3DPS2.cpp` | 13 | 3,840 | `0x0031A760` | 13 (7) | `0x00364920`–`0x00365880` | `GameSource/Graphics/Im3D/Ps2/B4Im3DPS2.cpp` |
+| `B3PopcornRendererPS2.cpp` | 9 | 2,848 | `0x0031B6C0` | 9 (6) | `0x00365890`–`0x00366160` | `GameSource/Graphics/PopcornRenderer/Ps2/B4PopcornRendererPS2.cpp` |
+| `B3ScrapeRenderPS2.cpp` | 6 | 876 | `0x00334EA0` | 5 (4) | `0x00375F90`–`0x00376290` | `GameSource/Graphics/Scrapes/Ps2/B4ScrapeRenderPS2.cpp` |
+| `B3TextureCollectionPS2.cpp` | 3 | 332 | `0x00337D20` | 3 (1) | `0x00378EA0`–`0x00378FF0` | `GameSource/Graphics/Ps2/B4TextureCollectionPS2.cpp` |
+| `GtWideLine.cpp` | 1 | 268 | `0x003C3CF0` | 1 (0) | `0x0041D910`–`0x0041D910` |  |
+| `B3DirectionalBlur.cpp` | 4 | 2,164 | `0x003C8890` | 1 (1) | `0x00426030`–`0x00426030` | `GameSource/Graphics/DirectionalBlur/B4DirectionalBlur.cpp` |
+| `B3DirectionalBlurPS2.cpp` | 8 | 3,992 | `0x003C90C0` | 8 (6) | `0x00426080`–`0x00426C10` | `GameSource/Graphics/DirectionalBlur/Ps2/B4DirectionalBlurPS2.cpp` |
 
 ## Classes
 

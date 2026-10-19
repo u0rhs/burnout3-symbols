@@ -8,17 +8,34 @@
 - **Source file:** `B3SoundESMStruct.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundESMGraphInputs`, size 0x01C, methods in `SharedClasses/SoundData/B4SoundESMStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4soundesmgraphinputs))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ApplyLag(const CB3SoundESMGraphInputs&,const CB3SoundESMInputLag*)` | `0x002BA1C0` 364 | `0x002FBFB0` 364 | `0x0032FC80` 364 | `0x00328910` 276 | `0x002FAFB0` proven |  |
-| `Construct(const CB3RaceCar*,float)` | `0x002BA330` 248 | `0x002FC120` 500 | `0x0032FDF0` 500 | `0x00328790` 372 | `0x002FB120` proven |  |
-| `Construct()` | `0x002BA430` 32 | `0x002FC320` 32 | `0x0032FFF0` 32 | `0x00328720` 104 | `0x002FB220` proven |  |
-| `operator =(const CB3SoundESMGraphInputs&)` |  |  |  | `0x002ADDF0` 68 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ApplyLag(const CB3SoundESMGraphInputs&,const CB3SoundESMInputLag*)` | `0x002BA1C0` 364 | `0x002FBFB0` 364 | `0x0032FC80` 364 | `0x00328910` 276 | `0x002FAFB0` proven |  | `void CB4SoundESMGraphInputs::ApplyLag(const CB4SoundESMGraphInputs &lPreviousInputs, const CB4SoundESMInputLag *laLagValues)` |
+| `Construct(const CB3RaceCar*,float)` | `0x002BA330` 248 | `0x002FC120` 500 | `0x0032FDF0` 500 | `0x00328790` 372 | `0x002FB120` proven |  | `void CB4SoundESMGraphInputs::Construct(const CB4RaceCar *lpRaceCar, float lrTurboSpeed)` |
+| `Construct()` | `0x002BA430` 32 | `0x002FC320` 32 | `0x0032FFF0` 32 | `0x00328720` 104 | `0x002FB220` proven |  | `void CB4SoundESMGraphInputs::Construct()` |
+| `operator =(const CB3SoundESMGraphInputs&)` |  |  |  | `0x002ADDF0` 68 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundESMGraphInputs`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 284 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundESMGraphInputs {  // size 0x01C
+    /* 0x000 */ float marInputs[7];
+    // methods
+    // CB4SoundESMGraphInputs(const CB4SoundESMGraphInputs &);
+    // CB4SoundESMGraphInputs();
+    // void Construct();
+    // void Construct(const CB4RaceCar *, float);
+    // void ApplyLag(const CB4SoundESMGraphInputs &, const CB4SoundESMInputLag *);
+};
+```
 
 ## Notes
 

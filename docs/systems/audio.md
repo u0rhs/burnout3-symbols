@@ -14,48 +14,50 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 **Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
 
-| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
-|---|---:|---:|---|---:|---|
-| `B3SoundManagerPS2.cpp` | 2 | 128 | `0x00236ED0` | 2 (0) | `0x00276980`–`0x00276990` |
-| `B3SoundTrafficManager.cpp` | 8 | 5,292 | `0x00236F60` | 8 (6) | `0x00276A30`–`0x00277360` |
-| `B3SoundTrafficPass.cpp` | 5 | 2,228 | `0x00238430` | 5 (5) | `0x00277F40`–`0x00278800` |
-| `B3SoundTrafficVehicle.cpp` | 13 | 8,052 | `0x00238D00` | 13 (13) | `0x00278810`–`0x0027A5F0` |
-| `B3SoundCrashManager.cpp` | 50 | 55,344 | `0x0023ACC0` | 35 (0) | `0x0027A920`–`0x00282AC0` |
-| `B3SoundScrape.cpp` | 7 | 1,500 | `0x002485E0` | 2 (1) | `0x00283510`–`0x00283560` |
-| `B3SoundHUDManager.cpp` | 40 | 5,004 | `0x00248BE0` | 8 (0) | `0x00285BC0`–`0x00287240` |
-| `B3SoundESM.cpp` | 13 | 4,712 | `0x0024A060` | 11 (0) | `0x00287670`–`0x00288770` |
-| `B3SoundGameModeManager.cpp` | 14 | 4,936 | `0x0024B310` | 13 (1) | `0x00288F70`–`0x0028A3C0` |
-| `B3SoundListener.cpp` | 3 | 1,692 | `0x0024C680` | 3 (0) | `0x0028A450`–`0x0028AC50` |
-| `B3SoundManager.cpp` | 12 | 1,336 | `0x0024CD30` | 9 (1) | `0x0028AD10`–`0x0028B580` |
-| `B3SoundAICar.cpp` | 9 | 2,008 | `0x0024D1D0` | 9 (0) | `0x0028B720`–`0x0028BF40` |
-| `B3SoundPlayerCar.cpp` | 8 | 2,836 | `0x0024D9E0` | 7 (0) | `0x0028C0F0`–`0x0028CD10` |
-| `B3SoundRaceCar.cpp` | 13 | 3,492 | `0x0024E520` | 10 (1) | `0x0028CD60`–`0x0028DD80` |
-| `B3SoundSkidModel.cpp` | 7 | 6,280 | `0x0024F330` | 7 (0) | `0x0028E120`–`0x0028ED30` |
-| `B3SoundTurboModel.cpp` | 5 | 1,108 | `0x00250BE0` | 5 (1) | `0x0028FAD0`–`0x0028FF20` |
-| `B3SoundCrashedTraffic.cpp` | 9 | 2,992 | `0x00251050` | 9 (8) | `0x0028FF30`–`0x00290AD0` |
-| `B3SoundRaceCarManager.cpp` | 7 | 7,136 | `0x002AC0C0` | 7 (0) | `0x002ED3C0`–`0x002EEFE0` |
-| `B3SoundDoppler.cpp` | 8 | 976 | `0x002B43C0` | 8 (7) | `0x002F4B70`–`0x002F4F80` |
-| `B3SoundESMManager.cpp` | 6 | 268 | `0x002BA090` | 5 (0) | `0x002FAE70`–`0x002FAF50` |
-| `B3SoundESMStruct.cpp` | 8 | 2,068 | `0x002BA1C0` | 8 (7) | `0x002FAFB0`–`0x002FB770` |
-| `B3SoundDSPBlock.cpp` | 8 | 2,252 | `0x002BAA00` | 8 (5) | `0x002FB890`–`0x002FC160` |
-| `B3SoundDistPS2.cpp` | 10 | 4,244 | `0x002BB2F0` | 10 (9) | `0x002FC1C0`–`0x002FD0E0` |
-| `GtSoundBank.cpp` | 11 | 1,100 | `0x00340E30` | 7 (1) | `0x00383A70`–`0x00383EF0` |
-| `GtSoundBankManager.cpp` | 7 | 1,316 | `0x003412D0` | 6 (2) | `0x00383F60`–`0x00384460` |
-| `GtSoundListener.cpp` | 12 | 1,188 | `0x00341830` | 12 (11) | `0x00384550`–`0x003849F0` |
-| `GtSoundListenerManager.cpp` | 8 | 1,008 | `0x00341D10` | 8 (7) | `0x00384A50`–`0x00384DE0` |
-| `GtSoundManager.cpp` | 10 | 728 | `0x00342120` | 6 (0) | `0x00384E70`–`0x00385160` |
-| `GtSoundRealVoice.cpp` | 10 | 2,868 | `0x00342430` | 9 (6) | `0x00385240`–`0x00385E20` |
-| `GtSoundStream.cpp` | 15 | 2,112 | `0x00342FA0` | 9 (1) | `0x00385F20`–`0x003868C0` |
-| `GtSoundStreamManager.cpp` | 9 | 1,192 | `0x00343820` | 7 (2) | `0x003869D0`–`0x00386D50` |
-| `GtSoundUtils.cpp` | 5 | 924 | `0x00343CF0` | 4 (1) | `0x00386E70`–`0x00386FD0` |
-| `GtSoundVirtualVoice.cpp` | 12 | 5,544 | `0x003440B0` | 12 (6) | `0x003872D0`–`0x00388A10` |
-| `GtSoundVoice.cpp` | 1 | 92 | `0x00345690` | 1 (1) | `0x00388A90`–`0x00388A90` |
-| `GtSoundVoiceManager.cpp` | 12 | 2,416 | `0x003456F0` | 11 (7) | `0x00388AF0`–`0x00389380` |
-| `GtSoundWave.cpp` | 4 | 284 | `0x003460A0` | 4 (2) | `0x003894D0`–`0x003895D0` |
-| `B3SoundRadio.cpp` | 9 | 72 | `0x003A8C80` |  |  |
-| `B3SoundMusicManager.cpp` | 8 | 144 | `0x003A8D10` |  |  |
-| `B3SoundStaticPassManager.cpp` | 3 | 1,228 | `0x003C3810` | 3 (1) | `0x0041D3D0`–`0x0041D8D0` |
-| `B3SoundCustomSoundTrackPS2.cpp` | 2 | 16 | `0x003CD850` | 1 (0) | `0x0042B4D0`–`0x0042B4D0` |
+**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source paths ([source files](../reference/revenge-source-file-lineage.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |
+|---|---:|---:|---|---:|---|---|
+| `B3SoundManagerPS2.cpp` | 2 | 128 | `0x00236ED0` | 2 (0) | `0x00276980`–`0x00276990` | `GameSource/Sound/Ps2/B4SoundManagerPS2.cpp` |
+| `B3SoundTrafficManager.cpp` | 8 | 5,292 | `0x00236F60` | 8 (6) | `0x00276A30`–`0x00277360` | `GameSource/Sound/Traffic/B4SoundTrafficManager.cpp` |
+| `B3SoundTrafficPass.cpp` | 5 | 2,228 | `0x00238430` | 5 (5) | `0x00277F40`–`0x00278800` | `GameSource/Sound/Traffic/B4SoundTrafficPass.cpp` |
+| `B3SoundTrafficVehicle.cpp` | 13 | 8,052 | `0x00238D00` | 13 (13) | `0x00278810`–`0x0027A5F0` | `GameSource/Sound/Traffic/B4SoundTrafficVehicle.cpp` |
+| `B3SoundCrashManager.cpp` | 50 | 55,344 | `0x0023ACC0` | 35 (0) | `0x0027A920`–`0x00282AC0` | `GameSource/Sound/Crash/B4SoundCrashManager.cpp` |
+| `B3SoundScrape.cpp` | 7 | 1,500 | `0x002485E0` | 2 (1) | `0x00283510`–`0x00283560` | `GameSource/Sound/Crash/B4SoundScrape.cpp` |
+| `B3SoundHUDManager.cpp` | 40 | 5,004 | `0x00248BE0` | 8 (0) | `0x00285BC0`–`0x00287240` | `GameSource/Sound/Hud/B4SoundHUDManager.cpp` |
+| `B3SoundESM.cpp` | 13 | 4,712 | `0x0024A060` | 11 (0) | `0x00287670`–`0x00288770` | `GameSource/Sound/Esm/B4SoundESM.cpp` |
+| `B3SoundGameModeManager.cpp` | 14 | 4,936 | `0x0024B310` | 13 (1) | `0x00288F70`–`0x0028A3C0` | `GameSource/Sound/Core/B4SoundGameModeManager.cpp` |
+| `B3SoundListener.cpp` | 3 | 1,692 | `0x0024C680` | 3 (0) | `0x0028A450`–`0x0028AC50` | `GameSource/Sound/Core/B4SoundListener.cpp` |
+| `B3SoundManager.cpp` | 12 | 1,336 | `0x0024CD30` | 9 (1) | `0x0028AD10`–`0x0028B580` | `GameSource/Sound/B4SoundManager.cpp` |
+| `B3SoundAICar.cpp` | 9 | 2,008 | `0x0024D1D0` | 9 (0) | `0x0028B720`–`0x0028BF40` | `GameSource/Sound/Cars/B4SoundAICar.cpp` |
+| `B3SoundPlayerCar.cpp` | 8 | 2,836 | `0x0024D9E0` | 7 (0) | `0x0028C0F0`–`0x0028CD10` | `GameSource/Sound/Cars/B4SoundPlayerCar.cpp` |
+| `B3SoundRaceCar.cpp` | 13 | 3,492 | `0x0024E520` | 10 (1) | `0x0028CD60`–`0x0028DD80` | `GameSource/Sound/Cars/B4SoundRaceCar.cpp` |
+| `B3SoundSkidModel.cpp` | 7 | 6,280 | `0x0024F330` | 7 (0) | `0x0028E120`–`0x0028ED30` | `GameSource/Sound/Cars/B4SoundSkidModel.cpp` |
+| `B3SoundTurboModel.cpp` | 5 | 1,108 | `0x00250BE0` | 5 (1) | `0x0028FAD0`–`0x0028FF20` | `GameSource/Sound/Cars/B4SoundTurboModel.cpp` |
+| `B3SoundCrashedTraffic.cpp` | 9 | 2,992 | `0x00251050` | 9 (8) | `0x0028FF30`–`0x00290AD0` | `GameSource/Sound/Traffic/B4SoundCrashedTraffic.cpp` |
+| `B3SoundRaceCarManager.cpp` | 7 | 7,136 | `0x002AC0C0` | 7 (0) | `0x002ED3C0`–`0x002EEFE0` | `GameSource/Sound/Cars/B4SoundRaceCarManager.cpp` |
+| `B3SoundDoppler.cpp` | 8 | 976 | `0x002B43C0` | 8 (7) | `0x002F4B70`–`0x002F4F80` | `GameSource/Sound/Traffic/B4SoundDoppler.cpp` |
+| `B3SoundESMManager.cpp` | 6 | 268 | `0x002BA090` | 5 (0) | `0x002FAE70`–`0x002FAF50` | `GameSource/Sound/Esm/B4SoundESMManager.cpp` |
+| `B3SoundESMStruct.cpp` | 8 | 2,068 | `0x002BA1C0` | 8 (7) | `0x002FAFB0`–`0x002FB770` | `SharedClasses/SoundData/B4SoundESMStruct.cpp` |
+| `B3SoundDSPBlock.cpp` | 8 | 2,252 | `0x002BAA00` | 8 (5) | `0x002FB890`–`0x002FC160` |  |
+| `B3SoundDistPS2.cpp` | 10 | 4,244 | `0x002BB2F0` | 10 (9) | `0x002FC1C0`–`0x002FD0E0` | `GameSource/Sound/Dsp/B4SoundDistPS2.cpp` |
+| `GtSoundBank.cpp` | 11 | 1,100 | `0x00340E30` | 7 (1) | `0x00383A70`–`0x00383EF0` | `GameShared/GameClasses/Sound/GtSoundBank.cpp` |
+| `GtSoundBankManager.cpp` | 7 | 1,316 | `0x003412D0` | 6 (2) | `0x00383F60`–`0x00384460` | `GameShared/GameClasses/Sound/GtSoundBankManager.cpp` |
+| `GtSoundListener.cpp` | 12 | 1,188 | `0x00341830` | 12 (11) | `0x00384550`–`0x003849F0` | `GameShared/GameClasses/Sound/GtSoundListener.cpp` |
+| `GtSoundListenerManager.cpp` | 8 | 1,008 | `0x00341D10` | 8 (7) | `0x00384A50`–`0x00384DE0` | `GameShared/GameClasses/Sound/GtSoundListenerManager.cpp` |
+| `GtSoundManager.cpp` | 10 | 728 | `0x00342120` | 6 (0) | `0x00384E70`–`0x00385160` | `GameShared/GameClasses/Sound/GtSoundManager.cpp` |
+| `GtSoundRealVoice.cpp` | 10 | 2,868 | `0x00342430` | 9 (6) | `0x00385240`–`0x00385E20` | `GameShared/GameClasses/Sound/GtSoundRealVoice.cpp` |
+| `GtSoundStream.cpp` | 15 | 2,112 | `0x00342FA0` | 9 (1) | `0x00385F20`–`0x003868C0` | `GameShared/GameClasses/Sound/GtSoundStream.cpp` |
+| `GtSoundStreamManager.cpp` | 9 | 1,192 | `0x00343820` | 7 (2) | `0x003869D0`–`0x00386D50` | `GameShared/GameClasses/Sound/GtSoundStreamManager.cpp` |
+| `GtSoundUtils.cpp` | 5 | 924 | `0x00343CF0` | 4 (1) | `0x00386E70`–`0x00386FD0` | `GameShared/GameClasses/Sound/GtSoundUtils.cpp` |
+| `GtSoundVirtualVoice.cpp` | 12 | 5,544 | `0x003440B0` | 12 (6) | `0x003872D0`–`0x00388A10` | `GameShared/GameClasses/Sound/GtSoundVirtualVoice.cpp` |
+| `GtSoundVoice.cpp` | 1 | 92 | `0x00345690` | 1 (1) | `0x00388A90`–`0x00388A90` | `GameShared/GameClasses/Sound/GtSoundVoice.cpp` |
+| `GtSoundVoiceManager.cpp` | 12 | 2,416 | `0x003456F0` | 11 (7) | `0x00388AF0`–`0x00389380` | `GameShared/GameClasses/Sound/GtSoundVoiceManager.cpp` |
+| `GtSoundWave.cpp` | 4 | 284 | `0x003460A0` | 4 (2) | `0x003894D0`–`0x003895D0` | `GameShared/GameClasses/Sound/GtSoundWave.cpp` |
+| `B3SoundRadio.cpp` | 9 | 72 | `0x003A8C80` |  |  | `GameSource/Sound/Radio/B4SoundRadio.cpp` |
+| `B3SoundMusicManager.cpp` | 8 | 144 | `0x003A8D10` |  |  | `GameSource/Sound/Radio/B4SoundMusicManager.cpp` |
+| `B3SoundStaticPassManager.cpp` | 3 | 1,228 | `0x003C3810` | 3 (1) | `0x0041D3D0`–`0x0041D8D0` | `GameSource/Sound/B4SoundStaticPassManager.cpp` |
+| `B3SoundCustomSoundTrackPS2.cpp` | 2 | 16 | `0x003CD850` | 1 (0) | `0x0042B4D0`–`0x0042B4D0` | `GameSource/Sound/Radio/Ps2/B4SoundCustomSoundTrackPS2.cpp` |
 
 ## Classes
 

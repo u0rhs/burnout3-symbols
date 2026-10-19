@@ -8,16 +8,17 @@
 - **Source file:** `B3PopcornRendererPS2.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 3
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4PopcornRenderer`, size 0x001, methods in `GameSource/Graphics/PopcornRenderer/Ps2/B4PopcornRendererPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4popcornrenderer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `EndRender()` | `0x0031B6C0` 80 | `0x003767A0` 80 | `0x003A5380` 80 | `0x003A5D30` 92 | `0x00365890` proven |  |
-| `RenderPopcornArray(CB3PopcornArray*)` | `0x0031B710` 36 | `0x003767F0` 112 | `0x003A53D0` 112 | `0x003A5CA0` 104 | `0x003658E0` proven |  |
-| `BeginRender()` | `0x0031B740` 8 | `0x00376860` 8 | `0x003A5440` 8 | `0x003A5C90` 12 | `0x00365910` strong |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `EndRender()` | `0x0031B6C0` 80 | `0x003767A0` 80 | `0x003A5380` 80 | `0x003A5D30` 92 | `0x00365890` proven |  | `void CB4PopcornRenderer::EndRender()` |
+| `RenderPopcornArray(CB3PopcornArray*)` | `0x0031B710` 36 | `0x003767F0` 112 | `0x003A53D0` 112 | `0x003A5CA0` 104 | `0x003658E0` proven |  | `void CB4PopcornRenderer::RenderPopcornArray(CB4PopcornArray *lpArray)` |
+| `BeginRender()` | `0x0031B740` 8 | `0x00376860` 8 | `0x003A5440` 8 | `0x003A5C90` 12 | `0x00365910` strong |  | `void CB4PopcornRenderer::BeginRender()` |
 
 ## Static data (DNAT_200)
 
@@ -25,6 +26,25 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 |---|---:|---|---|
 | `0x00444258` | 4 | .sbss | `CB3PopcornRenderer::mnNumRenderableArrays` |
 | `0x01DC4F50` | 16 | .bss | `CB3PopcornRenderer::mapRenderableArrays` |
+
+## Burnout Revenge layout of `CB4PopcornRenderer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Graphics/PopcornRenderer/Ps2/B4PopcornRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4PopcornRenderer {  // size 0x001
+    /* static */ CB4PopcornArray *mapRenderableArrays[5];
+    /* static */ RwInt32 mnNumRenderableArrays;
+    // methods
+    // CB4PopcornRenderer(const CB4PopcornRenderer &);
+    // CB4PopcornRenderer();
+    // static void Construct();
+    // static void Destruct();
+    // static void BeginRender();
+    // static void RenderPopcornArray(CB4PopcornArray *);
+    // static void EndRender();
+};
+```
 
 ## Notes
 

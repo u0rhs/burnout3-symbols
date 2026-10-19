@@ -6,14 +6,43 @@
 
 - **Area:** [Rendering](../systems/rendering.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4VehicleRendererSPRCache`, size 0x6C0 ([layout](#burnout-revenge-layout-of-cb4vehiclerenderersprcache))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Prepare()` |  |  |  | `0x002297C0` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Prepare()` |  |  |  | `0x002297C0` 36 |  |  |  |
+
+## Burnout Revenge layout of `CB4VehicleRendererSPRCache`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Graphics/VehicleRenderer/Ps2/B4VehicleRendererRuntimePS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4VehicleRendererSPRCache {  // size 0x6C0
+    /* 0x000 */ CGtRGBA mLightingRGBAMinGlass;
+    /* 0x010 */ CGtRGBA mLightingRGBAMin;
+    /* 0x020 */ CGtRGBA mLightingRGBAMax;
+    /* 0x030 */ RwReal mr2ndPassAlpha;
+    /* 0x034 */ RwReal mrOpacity;
+    /* 0x038 */ RwUInt32 mxMeshesToIlluminate;
+    /* 0x03C */ RwInt32 mnObjectDataCount;
+    /* 0x040 */ long long unsigned int mauObjectData[89];
+    /* 0x5D0 */ CQWIrradianceMap mWorldSpaceIrradianceMap;
+    /* 0x600 */ UGtVectorAsTypes mCameraToVehicleWorldSpaceVectorPlusNormalShift;
+    /* 0x610 */ CMeshDataCache mMeshData;
+    /* 0x680 */ u_long128 mu128CntTagWithFlushE;
+    /* 0x690 */ u_long128 mu128CntTagToTransferStaticMeshData;
+    /* 0x6A0 */ u_long128 mu128RenderStateGifTag;
+    /* 0x6B0 */ u_long128 mu128CntWithMscnt;
+    // methods
+    // CB4VehicleRendererSPRCache(const CB4VehicleRendererSPRCache &);
+    // CB4VehicleRendererSPRCache();
+    // void Prepare();
+};
+```
 
 ## Notes
 

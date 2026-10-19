@@ -8,16 +8,43 @@
 - **Source file:** `B3MenuStringBuffer.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 3
 - **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4MenuStringBuffer`, size 0xAF4, methods in `GameSource/Menu/B4MenuStringBuffer.cpp` ([layout](#burnout-revenge-layout-of-cb4menustringbuffer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetMinutesAndSecondsString(float)` | `0x0036B2C0` 256 | `0x003D8380` 304 | `0x00400E80` 304 | `0x004136A0` 412 |  |  |
-| `AllocUTF16String(int)` | `0x0036B3C0` 20 | `0x003D84B0` 116 | `0x00400FB0` 116 | `0x00413630` 112 |  |  |
-| `Prepare()` | `0x0036B3E0` 40 | `0x003D8530` 40 | `0x00401030` 40 | `0x004135F0` 64 | `0x003B8900` strong |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetMinutesAndSecondsString(float)` | `0x0036B2C0` 256 | `0x003D8380` 304 | `0x00400E80` 304 | `0x004136A0` 412 |  |  |  |
+| `AllocUTF16String(int)` | `0x0036B3C0` 20 | `0x003D84B0` 116 | `0x00400FB0` 116 | `0x00413630` 112 |  |  | `GtUTF16 * CB4MenuStringBuffer::AllocUTF16String(int lnBufferSize)` |
+| `Prepare()` | `0x0036B3E0` 40 | `0x003D8530` 40 | `0x00401030` 40 | `0x004135F0` 64 | `0x003B8900` strong |  | `bool CB4MenuStringBuffer::Prepare()` |
+
+## Burnout Revenge layout of `CB4MenuStringBuffer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 4 file(s), e.g. `GameSource/Game/Logic/B4StageLogic.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4MenuStringBuffer {  // size 0xAF4
+    /* static */ RwInt32 knMaxMinutesAndSecondsString;
+    /* static */ RwInt32 knMaxDollarString;
+    /* 0x000 */ short unsigned int maStringBuffer[1400];
+    /* 0xAF0 */ GtUTF16 *mpFreeSpace;
+    // methods
+    // CB4MenuStringBuffer(const CB4MenuStringBuffer &);
+    // CB4MenuStringBuffer();
+    // bool Prepare();
+    // GtUTF16 * AllocUTF16String(int);
+    // GtUTF16 * GetMinutesAndSecondsString(float);
+    // GtUTF16 * GetDollarString(int);
+    // static void PrintDollarString(unsigned short *, int);
+    // static void PrintDollarString(char *, int);
+    // static void PrintMinutesAndSecondsString(unsigned short *, float);
+    // static void PrintMinutesAndSecondsString(char *, float);
+    // static void PrintSmallDistanceString(unsigned short *, float);
+    // static void PrintLargeDistanceString(unsigned short *, float);
+};
+```
 
 ## Notes
 

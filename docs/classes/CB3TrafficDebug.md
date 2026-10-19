@@ -8,21 +8,53 @@
 - **Source file:** `B3TrafficDebug.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 8, B3INTERN 8, B3O0PCH 8
 - **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrafficDebug`, size 0x007, methods in `GameSource/Game/B4TrafficDebug.cpp` ([layout](#burnout-revenge-layout-of-cb4trafficdebug))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RenderSpatialTriggers()` | `0x002ADCE0` 3332 | `0x002EC030` 4000 | `0x00321580` 3592 | `0x00319890` 4952 | `0x002EF0F0` strong |  |
-| `RenderNearMissData()` | `0x002AE9F0` 1176 | `0x002ECFD0` 1220 | `0x00322390` 1220 | `0x00318FB0` 2260 | `0x002EFE00` strong |  |
-| `RenderWorld()` | `0x002AEE90` 112 | `0x002ED4A0` 112 | `0x00322860` 112 | `0x00318F40` 100 | `0x002F02C0` strong |  |
-| `Update()` | `0x002AEF00` 36 | `0x002ED760` 36 | `0x00322AE0` 36 | `0x00318C70` 44 | `0x002F0330` unverified |  |
-| `Prepare()` | `0x002AEF30` 8 | `0x002ED790` 8 | `0x00322B10` 8 | `0x00318C60` 16 | `0x002F0360` strong |  |
-| `Destruct()` | `0x002AEF40` 8 | `0x002ED7A0` 8 | `0x00322B20` 8 | `0x00318C50` 16 | `0x002F0370` strong |  |
-| `Construct()` | `0x002AEF50` 28 | `0x002ED7B0` 28 | `0x00322B30` 28 | `0x00318C10` 64 | `0x002F0380` proven |  |
-| `RenderOverlays()` |  | `0x002ED510` 584 | `0x003228D0` 516 | `0x00318CA0` 664 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RenderSpatialTriggers()` | `0x002ADCE0` 3332 | `0x002EC030` 4000 | `0x00321580` 3592 | `0x00319890` 4952 | `0x002EF0F0` strong |  | `void CB4TrafficDebug::RenderSpatialTriggers()` |
+| `RenderNearMissData()` | `0x002AE9F0` 1176 | `0x002ECFD0` 1220 | `0x00322390` 1220 | `0x00318FB0` 2260 | `0x002EFE00` strong |  | `void CB4TrafficDebug::RenderNearMissData()` |
+| `RenderWorld()` | `0x002AEE90` 112 | `0x002ED4A0` 112 | `0x00322860` 112 | `0x00318F40` 100 | `0x002F02C0` strong |  | `void CB4TrafficDebug::RenderWorld()` |
+| `Update()` | `0x002AEF00` 36 | `0x002ED760` 36 | `0x00322AE0` 36 | `0x00318C70` 44 | `0x002F0330` unverified |  | `void CB4TrafficDebug::Update()` |
+| `Prepare()` | `0x002AEF30` 8 | `0x002ED790` 8 | `0x00322B10` 8 | `0x00318C60` 16 | `0x002F0360` strong |  | `void CB4TrafficDebug::Prepare()` |
+| `Destruct()` | `0x002AEF40` 8 | `0x002ED7A0` 8 | `0x00322B20` 8 | `0x00318C50` 16 | `0x002F0370` strong |  | `void CB4TrafficDebug::Destruct()` |
+| `Construct()` | `0x002AEF50` 28 | `0x002ED7B0` 28 | `0x00322B30` 28 | `0x00318C10` 64 | `0x002F0380` proven |  | `void CB4TrafficDebug::Construct()` |
+| `RenderOverlays()` |  | `0x002ED510` 584 | `0x003228D0` 516 | `0x00318CA0` 664 |  |  |  |
+
+## Burnout Revenge layout of `CB4TrafficDebug`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 39 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficDebug {  // size 0x007
+    /* 0x000 */ bool mbDrawNearMisses;
+    /* 0x001 */ bool mbDrawSpatialTriggers;
+    /* 0x002 */ bool mbDrawTimeTriggers;
+    /* 0x003 */ bool mbDrawTrafficCounts;
+    /* 0x004 */ bool mbTrafficSystemActive;
+    /* 0x005 */ bool mbDrawTrafficLanes;
+    /* 0x006 */ bool mbDrawTrafficVehicleDebug;
+    // methods
+    // CB4TrafficDebug(const CB4TrafficDebug &);
+    // CB4TrafficDebug();
+    // void Construct();
+    // void Destruct();
+    // void Prepare();
+    // void Release();
+    // void Update();
+    // void RenderOverlays();
+    // void RenderWorld();
+    // void RenderNearMissData();
+    // void RenderSpatialTriggers();
+    // void RenderTrafficLanes();
+    // void RenderTrafficVehicleDebug();
+    // void DrawSegment(CB4TrafficLaneStruct *, int, GtMathPs2::CGtV4d, float, bool);
+};
+```
 
 ## Notes
 

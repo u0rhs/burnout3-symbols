@@ -8,34 +8,116 @@
 - **Source file:** `B3PhysicsManagerDebug.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 14, B3INTERN 13, B3O0PCH 21
 - **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4PhysicsManagerDebug`, size 0x1EE0, methods in `GameSource/Physics/B4PhysicsManagerDebug.cpp` ([layout](#burnout-revenge-layout-of-cb4physicsmanagerdebug))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `DrawHullToHullCollisionPlanes()` | `0x0027D7D0` 388 | `0x002B3F60` 428 | `0x002E9F30` 428 | `0x002EC730` 484 | `0x002BDA00` strong |  |
-| `DrawCollisionTriangleCache()` | `0x0027D960` 644 | `0x002B4110` 644 | `0x002EA0E0` 644 | `0x002EC410` 788 | `0x002BDB90` strong |  |
-| `DrawCollisionWorld()` | `0x0027DBF0` 260 | `0x002B43A0` 308 | `0x002EA370` 308 | `0x002EC2C0` 328 | `0x002BDDF0` strong |  |
-| `DrawIntervals()` | `0x0027E4C0` 644 | `0x002B5280` 692 | `0x002EB250` 692 | `0x002EB220` 992 | `0x002BE770` proven |  |
-| `RenderWorld()` | `0x0027E750` 420 | `0x002B5540` 652 | `0x002EB510` 652 | `0x002EB090` 184 | `0x002BEA00` proven |  |
-| `Update()` | `0x0027E900` 292 | `0x002B6210` 292 | `0x002EC180` 292 | `0x002EA570` 388 | `0x002BEBB0` proven |  |
-| `Prepare()` | `0x0027EA30` 8 | `0x002B6340` 8 | `0x002EC2B0` 8 | `0x002EA560` 16 | `0x002BECE0` strong |  |
-| `Destruct()` | `0x0027EA40` 8 | `0x002B6350` 8 | `0x002EC2C0` 8 | `0x002EA550` 16 | `0x002BECF0` strong |  |
-| `Construct()` | `0x0027EA50` 156 | `0x002B6360` 388 | `0x002EC2D0` 388 | `0x002EA320` 548 | `0x002BED00` strong |  |
-| `StartDebugCrash()` |  | `0x002B29F0` 4440 |  | `0x002ECF00` 1312 |  |  |
-| `DrawDamageValues()` |  | `0x002B3B50` 592 | `0x002E9B20` 592 | `0x002ECCE0` 536 |  |  |
-| `DrawStatistics()` |  | `0x002B5030` 584 | `0x002EB000` 584 | `0x002EB600` 748 |  |  |
-| `RenderOverlays()` |  | `0x002B57D0` 1892 | `0x002EB7A0` 1892 | `0x002EAA30` 1572 |  |  |
-| `GetPhysicsString(CB3RaceCarPhysics*,int,char*)` |  | `0x002B5F40` 716 | `0x002EBF10` 616 | `0x002EA700` 812 |  |  |
-| `AddBodyTriangleCache(CB3CollidingBody*)` |  |  |  | `0x001C1780` 500 |  |  |
-| `CB3PhysicsManagerDebug()` |  |  |  | `0x00134C20` 80 |  |  |
-| `DrawBodyHulls()` |  |  |  | `0x002EB150` 204 |  |  |
-| `DrawSurfaceTags()` |  |  |  | `0x002ECB90` 324 |  |  |
-| `GetSlamCrashInvulnTime()` |  |  |  | `0x001B7B40` 28 |  |  |
-| `GetTradePaintThreshold()` |  |  |  | `0x001B4E50` 28 |  |  |
-| `IsDrawingCollisionWorld()` |  |  |  | `0x00226520` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `DrawHullToHullCollisionPlanes()` | `0x0027D7D0` 388 | `0x002B3F60` 428 | `0x002E9F30` 428 | `0x002EC730` 484 | `0x002BDA00` strong |  | `void CB4PhysicsManagerDebug::DrawHullToHullCollisionPlanes()` |
+| `DrawCollisionTriangleCache()` | `0x0027D960` 644 | `0x002B4110` 644 | `0x002EA0E0` 644 | `0x002EC410` 788 | `0x002BDB90` strong |  | `void CB4PhysicsManagerDebug::DrawCollisionTriangleCache()` |
+| `DrawCollisionWorld()` | `0x0027DBF0` 260 | `0x002B43A0` 308 | `0x002EA370` 308 | `0x002EC2C0` 328 | `0x002BDDF0` strong |  | `void CB4PhysicsManagerDebug::DrawCollisionWorld()` |
+| `DrawIntervals()` | `0x0027E4C0` 644 | `0x002B5280` 692 | `0x002EB250` 692 | `0x002EB220` 992 | `0x002BE770` proven |  | `void CB4PhysicsManagerDebug::DrawIntervals()` |
+| `RenderWorld()` | `0x0027E750` 420 | `0x002B5540` 652 | `0x002EB510` 652 | `0x002EB090` 184 | `0x002BEA00` proven |  | `void CB4PhysicsManagerDebug::RenderWorld()` |
+| `Update()` | `0x0027E900` 292 | `0x002B6210` 292 | `0x002EC180` 292 | `0x002EA570` 388 | `0x002BEBB0` proven |  | `void CB4PhysicsManagerDebug::Update()` |
+| `Prepare()` | `0x0027EA30` 8 | `0x002B6340` 8 | `0x002EC2B0` 8 | `0x002EA560` 16 | `0x002BECE0` strong |  | `void CB4PhysicsManagerDebug::Prepare()` |
+| `Destruct()` | `0x0027EA40` 8 | `0x002B6350` 8 | `0x002EC2C0` 8 | `0x002EA550` 16 | `0x002BECF0` strong |  | `void CB4PhysicsManagerDebug::Destruct()` |
+| `Construct()` | `0x0027EA50` 156 | `0x002B6360` 388 | `0x002EC2D0` 388 | `0x002EA320` 548 | `0x002BED00` strong |  | `void CB4PhysicsManagerDebug::Construct()` |
+| `StartDebugCrash()` |  | `0x002B29F0` 4440 |  | `0x002ECF00` 1312 |  |  |  |
+| `DrawDamageValues()` |  | `0x002B3B50` 592 | `0x002E9B20` 592 | `0x002ECCE0` 536 |  |  | `void CB4PhysicsManagerDebug::DrawDamageValues()` |
+| `DrawStatistics()` |  | `0x002B5030` 584 | `0x002EB000` 584 | `0x002EB600` 748 |  |  |  |
+| `RenderOverlays()` |  | `0x002B57D0` 1892 | `0x002EB7A0` 1892 | `0x002EAA30` 1572 |  |  |  |
+| `GetPhysicsString(CB3RaceCarPhysics*,int,char*)` |  | `0x002B5F40` 716 | `0x002EBF10` 616 | `0x002EA700` 812 |  |  |  |
+| `AddBodyTriangleCache(CB3CollidingBody*)` |  |  |  | `0x001C1780` 500 |  |  |  |
+| `CB3PhysicsManagerDebug()` |  |  |  | `0x00134C20` 80 |  |  |  |
+| `DrawBodyHulls()` |  |  |  | `0x002EB150` 204 |  |  | `void CB4PhysicsManagerDebug::DrawBodyHulls()` |
+| `DrawSurfaceTags()` |  |  |  | `0x002ECB90` 324 |  |  |  |
+| `GetSlamCrashInvulnTime()` |  |  |  | `0x001B7B40` 28 |  |  |  |
+| `GetTradePaintThreshold()` |  |  |  | `0x001B4E50` 28 |  |  |  |
+| `IsDrawingCollisionWorld()` |  |  |  | `0x00226520` 28 |  |  |  |
+
+## Burnout Revenge layout of `CB4PhysicsManagerDebug`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 39 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4PhysicsManagerDebug {  // size 0x1EE0
+    /* 0x000 */ bool mbInstantRamp;
+    /* 0x001 */ bool mbCrashDebugMode;
+    /* 0x002 */ bool mbCrashRaceCar;
+    /* 0x003 */ bool mbUseCrashingCollision;
+    /* 0x004 */ bool mbShowText;
+    /* 0x005 */ bool mbRunPlayerAt60;
+    /* 0x006 */ bool mbDrawCollisionWorld;
+    /* 0x007 */ bool mbAllBodyHulls;
+    /* 0x008 */ bool mbDrawPropCOM;
+    /* 0x009 */ bool mbDrawIntervals;
+    /* 0x00A */ bool mbDrawStats;
+    /* 0x00B */ bool mbDrawCollisionWorldLeaf;
+    /* 0x00C */ bool mbDrawSurfaceTags;
+    /* 0x00D */ bool mbDrawCollisionTriCache;
+    /* 0x00E */ bool mbDrawPosition;
+    /* 0x00F */ bool mbDrawBearing;
+    /* 0x010 */ bool mbDrawWheelHeights;
+    /* 0x011 */ bool mbDrawNumbers;
+    /* 0x012 */ bool mbDrawHullToHullPlanes;
+    /* 0x013 */ bool mbDrawDamageValues;
+    /* 0x014 */ bool mbDrawPlayerCarBones;
+    /* 0x015 */ bool mbBoxWorldCollision;
+    /* 0x016 */ bool mbBoxBoxCollision;
+    /* 0x017 */ bool mbDrawShockwave;
+    /* 0x018 */ bool mbEarlyOutSphereTest;
+    /* 0x019 */ bool mbEarlyOutBoxTest;
+    /* 0x01C */ EColWorldFilter meColWorldFilter;
+    /* 0x020 */ RwReal mrSlamCrashInvulnTime;
+    /* 0x024 */ RwReal mrTradePaintThreshold;
+    /* 0x028 */ ECrashDebugSetup meCrashSetup;
+    /* 0x02C */ RwInt32 mnTrafficType;
+    /* 0x030 */ RwInt32 mnTrafficAngle;
+    /* 0x034 */ RwInt32 mnRaceCarSpeed;
+    /* 0x038 */ CB4PhysicsDebugTriangleCache maTriangleCache[2];
+    /* 0x1B40 */ CB4CollidingBody *mapBodyCache[2];
+    /* 0x1B48 */ RwUInt32 mnNumCachedBodies;
+    /* 0x1B50 */ CB4PhysicsManagerDebugHullPlaneEntry maDebugHullPlanes[8];
+    /* 0x1ED0 */ RwUInt32 mnNumDebugHullPlanes;
+    // methods
+    // CB4PhysicsManagerDebug(const CB4PhysicsManagerDebug &);
+    // CB4PhysicsManagerDebug();
+    // void Construct();
+    // void Destruct();
+    // void Prepare();
+    // void Release();
+    // void Update();
+    // void RenderOverlays();
+    // void RenderWorld();
+    // void StartDebugCrash();
+    // void AddBodyTriangleCache(CB4CollidingBody *);
+    // void AddHullPlaneEntry(const GtMathPs2::CGtMatrix3x4 &, CB4ConvexHull *, unsigned char *, unsigned char);
+    // RwReal GetSlamCrashInvulnTime();
+    // RwReal GetTradePaintThreshold();
+    // bool IsDrawingCollisionWorld();
+    // bool UseBoxWorldCollision();
+    // bool UseBoxBoxCollision();
+    // bool UseEarlyOutSphereTest();
+    // bool UseEarlyOutBoxTest();
+    // void DrawBodyHulls();
+    // void DrawBodyCollisionPoints();
+    // void DrawIntervals();
+    // void DrawStatistics();
+    // void DrawCollisionWorld();
+    // void DrawSurfaceTags();
+    // void DrawCollisionTriangleCache();
+    // void DrawHullToHullCollisionPlanes();
+    // void DrawDamageValues();
+    // void DrawPropCOM();
+    // void DrawShockwave();
+    // void DrawBox(GtMathPs2::CGtMatrix3x4 *, CGtAxisAlignedBox *, GtMathPs2::CGtV4d);
+    // bool GetPhysicsString(CB4RaceCarPhysics *, int, char *);
+    // char * GetBodyPartString(EVehicleBodyPart);
+};
+```
 
 ## Notes
 

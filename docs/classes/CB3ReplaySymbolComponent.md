@@ -12,16 +12,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x0035E650` 184 | `0x003C9C20` 184 | `0x003F2A40` 156 | `0x00402090` 272 | `0x003A6840` proven |  |
-| `Update(float)` | `0x0035E710` 324 | `0x003C9CE0` 324 | `0x003F2AE0` 308 | `0x00401FB0` 212 |  |  |
-| `Prepare()` | `0x0035E860` 548 | `0x003C9E30` 548 | `0x003F2C20` 488 | `0x00401BA0` 700 | `0x003A6A50` strong |  |
-| `Construct()` | `0x0035EA90` 56 | `0x003CA060` 56 | `0x003F2E10` 56 | `0x00401B50` 76 |  |  |
-| `CB3ReplaySymbolComponent()` |  |  |  | `0x0033BE60` 60 |  |  |
-| `UpdateBorders(float)` |  |  |  | `0x00401E60` 332 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x0035E650` 184 | `0x003C9C20` 184 | `0x003F2A40` 156 | `0x00402090` 272 | `0x003A6840` proven |  |  |
+| `Update(float)` | `0x0035E710` 324 | `0x003C9CE0` 324 | `0x003F2AE0` 308 | `0x00401FB0` 212 |  |  |  |
+| `Prepare()` | `0x0035E860` 548 | `0x003C9E30` 548 | `0x003F2C20` 488 | `0x00401BA0` 700 | `0x003A6A50` strong |  |  |
+| `Construct()` | `0x0035EA90` 56 | `0x003CA060` 56 | `0x003F2E10` 56 | `0x00401B50` 76 |  |  |  |
+| `CB3ReplaySymbolComponent()` |  |  |  | `0x0033BE60` 60 |  |  |  |
+| `UpdateBorders(float)` |  |  |  | `0x00401E60` 332 |  |  |  |
 
 ## Notes
 

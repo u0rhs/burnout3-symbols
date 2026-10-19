@@ -11,25 +11,25 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetRewardsContentPanelContents(unsigned int,int,unsigned short**)` | `0x0035D300` 700 | `0x003C87A0` 764 | `0x003F15D0` 764 | `0x00401520` 1180 |  |  |
-| `SetRecordsContentPanelContents(int,int,unsigned short**,unsigned short**,unsigned short**)` | `0x0035D5C0` 920 | `0x003C8AA0` 1004 | `0x003F18D0` 1004 | `0x00401000` 1300 |  |  |
-| `SetContentPanel(unsigned int)` | `0x0035D960` 1104 | `0x003C8E90` 1252 | `0x003F1CC0` 1244 | `0x004009A0` 1624 |  |  |
-| `GetFormattedTrophyString(int)` | `0x0035DDB0` 16 | `0x003C9380` 16 | `0x003F21A0` 16 | `0x00400970` 44 |  |  |
-| `SelectMenuItem(int)` | `0x0035DDC0` 424 | `0x003C9390` 424 | `0x003F21B0` 424 | `0x004005F0` 660 |  |  |
-| `OnMenuDown()` | `0x0035DF70` 64 | `0x003C9540` 64 | `0x003F2360` 64 | `0x00400570` 84 |  |  |
-| `OnMenuUp()` | `0x0035DFB0` 52 | `0x003C9580` 52 | `0x003F23A0` 52 | `0x00400520` 68 |  |  |
-| `Release()` | `0x0035DFF0` 316 | `0x003C95C0` 316 | `0x003F23E0` 316 | `0x004002F0` 556 |  |  |
-| `Update(float)` | `0x0035E130` 8 | `0x003C9700` 8 | `0x003F2520` 8 | `0x004002E0` 16 |  |  |
-| `Prepare(ETabbedDisplayPrepareType,unsigned long,int)` | `0x0035E140` 1048 | `0x003C9710` 1048 | `0x003F2530` 1048 | `0x003FFD50` 1420 |  |  |
-| `Construct()` | `0x0035E560` 48 | `0x003C9B30` 48 | `0x003F2950` 48 | `0x003FFD10` 60 |  |  |
-| `CB3TabbedDisplayComponent()` |  |  |  | `0x0033BE20` 60 |  |  |
-| `FormatTrophyString(unsigned short*,int)` |  |  |  | `0x00400890` 216 |  |  |
-| `GetMainPanelFlags()` |  |  |  | `0x004005D0` 20 |  |  |
-| `MakeTimeString(float,unsigned short*)` |  |  |  | `0x004019C0` 228 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetRewardsContentPanelContents(unsigned int,int,unsigned short**)` | `0x0035D300` 700 | `0x003C87A0` 764 | `0x003F15D0` 764 | `0x00401520` 1180 |  |  |  |
+| `SetRecordsContentPanelContents(int,int,unsigned short**,unsigned short**,unsigned short**)` | `0x0035D5C0` 920 | `0x003C8AA0` 1004 | `0x003F18D0` 1004 | `0x00401000` 1300 |  |  |  |
+| `SetContentPanel(unsigned int)` | `0x0035D960` 1104 | `0x003C8E90` 1252 | `0x003F1CC0` 1244 | `0x004009A0` 1624 |  |  |  |
+| `GetFormattedTrophyString(int)` | `0x0035DDB0` 16 | `0x003C9380` 16 | `0x003F21A0` 16 | `0x00400970` 44 |  |  |  |
+| `SelectMenuItem(int)` | `0x0035DDC0` 424 | `0x003C9390` 424 | `0x003F21B0` 424 | `0x004005F0` 660 |  |  |  |
+| `OnMenuDown()` | `0x0035DF70` 64 | `0x003C9540` 64 | `0x003F2360` 64 | `0x00400570` 84 |  |  |  |
+| `OnMenuUp()` | `0x0035DFB0` 52 | `0x003C9580` 52 | `0x003F23A0` 52 | `0x00400520` 68 |  |  |  |
+| `Release()` | `0x0035DFF0` 316 | `0x003C95C0` 316 | `0x003F23E0` 316 | `0x004002F0` 556 |  |  |  |
+| `Update(float)` | `0x0035E130` 8 | `0x003C9700` 8 | `0x003F2520` 8 | `0x004002E0` 16 |  |  |  |
+| `Prepare(ETabbedDisplayPrepareType,unsigned long,int)` | `0x0035E140` 1048 | `0x003C9710` 1048 | `0x003F2530` 1048 | `0x003FFD50` 1420 |  |  |  |
+| `Construct()` | `0x0035E560` 48 | `0x003C9B30` 48 | `0x003F2950` 48 | `0x003FFD10` 60 |  |  |  |
+| `CB3TabbedDisplayComponent()` |  |  |  | `0x0033BE20` 60 |  |  |  |
+| `FormatTrophyString(unsigned short*,int)` |  |  |  | `0x00400890` 216 |  |  |  |
+| `GetMainPanelFlags()` |  |  |  | `0x004005D0` 20 |  |  |  |
+| `MakeTimeString(float,unsigned short*)` |  |  |  | `0x004019C0` 228 |  |  |  |
 
 ## Notes
 

@@ -8,21 +8,59 @@
 - **Source file:** `B3SoundScrape.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
 - **Retail (SLUS-21050):** 2 of its 7 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundScrape`, size 0x040, methods in `GameSource/Sound/Crash/B4SoundScrape.cpp` ([layout](#burnout-revenge-layout-of-cb4soundscrape))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetInfo(ESoundWorldCrashSurfaceType,float,float,GtMathPs2::CGtV3d*)` | `0x002485E0` 64 | `0x00278890` 64 | `0x002B0260` 64 | `0x002ACBF0` 144 | `0x00283510` strong |  |
-| `Release()` | `0x00248620` 88 | `0x002788D0` 88 | `0x002B02A0` 88 | `0x002ACB60` 132 | `0x00283560` proven |  |
-| `UpdateScrape(int)` | `0x00248680` 580 | `0x00278930` 672 | `0x002B0300` 672 | `0x002AC6F0` 1128 |  |  |
-| `StartScrape(int,const CGtSoundWave*)` | `0x002488D0` 276 | `0x00278BD0` 316 | `0x002B05A0` 316 | `0x002AC560` 396 |  |  |
-| `Update(bool)` | `0x002489F0` 288 | `0x00278D10` 288 | `0x002B06E0` 288 | `0x002AC3F0` 360 |  |  |
-| `Prepare()` | `0x00248B10` 192 | `0x00278E30` 272 | `0x002B0800` 272 | `0x002AC290` 340 |  |  |
-| `Construct()` | `0x00248BD0` 12 | `0x00278F40` 12 | `0x002B0910` 12 | `0x002AC260` 36 |  |  |
-| `CB3SoundScrape()` |  |  |  | `0x002B1B10` 44 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetInfo(ESoundWorldCrashSurfaceType,float,float,GtMathPs2::CGtV3d*)` | `0x002485E0` 64 | `0x00278890` 64 | `0x002B0260` 64 | `0x002ACBF0` 144 | `0x00283510` strong |  |  |
+| `Release()` | `0x00248620` 88 | `0x002788D0` 88 | `0x002B02A0` 88 | `0x002ACB60` 132 | `0x00283560` proven |  |  |
+| `UpdateScrape(int)` | `0x00248680` 580 | `0x00278930` 672 | `0x002B0300` 672 | `0x002AC6F0` 1128 |  |  | `void CB4SoundScrape::UpdateScrape(CB4SoundScrape::EB4SoundScrapePartial leWhich)` (same name, different parameters) |
+| `StartScrape(int,const CGtSoundWave*)` | `0x002488D0` 276 | `0x00278BD0` 316 | `0x002B05A0` 316 | `0x002AC560` 396 |  |  | `void CB4SoundScrape::StartScrape(CB4SoundScrape::EB4SoundScrapePartial leWhich)` (same name, different parameters) |
+| `Update(bool)` | `0x002489F0` 288 | `0x00278D10` 288 | `0x002B06E0` 288 | `0x002AC3F0` 360 |  |  | `void CB4SoundScrape::Update(bool lbPlayerCrashing)` |
+| `Prepare()` | `0x00248B10` 192 | `0x00278E30` 272 | `0x002B0800` 272 | `0x002AC290` 340 |  |  |  |
+| `Construct()` | `0x00248BD0` 12 | `0x00278F40` 12 | `0x002B0910` 12 | `0x002AC260` 36 |  |  |  |
+| `CB3SoundScrape()` |  |  |  | `0x002B1B10` 44 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundScrape`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 19 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundScrape {  // size 0x040
+    /* 0x000 */ CGtSoundVoiceHandle mScrapeVoice[2];
+    /* 0x020 */ CGtV3d mPos;
+    /* 0x030 */ EB4SoundScrapeType meType;
+    /* 0x034 */ RwReal mrPriority;
+    /* 0x038 */ RwUInt8 mu8Speed;
+    // methods
+    // CB4SoundScrape(const CB4SoundScrape &);
+    // CB4SoundScrape();
+    // void Construct(CB4SoundScrape::EB4SoundScrapeType, float, unsigned char, GtMathPs2::CGtV3d);
+    // void Start();
+    // void Update(bool);
+    // void Release();
+    // void Destruct();
+    // bool IsSameScrape(const CB4SoundCrashMessageCollision &);
+    // void Poke(const CB4SoundCrashMessageCollision &);
+    // EB4SoundScrapeType GetType() const;
+    // RwReal GetPriority() const;
+    // RwUInt8 GetSpeed() const;
+    // CGtV3d * GetPosition() const;
+    // void SetType(CB4SoundScrape::EB4SoundScrapeType);
+    // void SetPriority(float);
+    // void SetSpeed(unsigned char);
+    // void SetPosition(GtMathPs2::CGtV3d);
+    // bool IsPlaying();
+    // static bool IsFastEnough(const CB4SoundCrashMessageCollision &);
+    // static EB4SoundScrapeType GetScrapeTypeFromCollisionType(EB4SoundCollisionType);
+    // void StartScrape(CB4SoundScrape::EB4SoundScrapePartial);
+    // void UpdateScrape(CB4SoundScrape::EB4SoundScrapePartial);
+};
+```
 
 ## Notes
 

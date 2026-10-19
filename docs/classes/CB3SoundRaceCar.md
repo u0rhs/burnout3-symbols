@@ -8,36 +8,144 @@
 - **Source file:** `B3SoundRaceCar.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 13, B3INTERN 13, B3O0PCH 23
 - **Retail (SLUS-21050):** 10 of its 13 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundRaceCar`, size 0x288, methods in `GameSource/Sound/Cars/B4SoundRaceCar.cpp` ([layout](#burnout-revenge-layout-of-cb4soundracecar))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateHorn(CB3RaceCar*)` | `0x0024E520` 208 | `0x00280490` 208 | `0x002B7310` 208 | `0x002B51F0` 268 | `0x0028CD60` strong |  |
-| `UpdateBoostIn(const CB3RaceCar*)` | `0x0024E5F0` 212 | `0x00280560` 212 | `0x002B73E0` 212 | `0x002B5000` 276 | `0x0028CE30` strong |  |
-| `UpdateBoostOut(const CB3RaceCar*)` | `0x0024E6D0` 212 | `0x00280640` 212 | `0x002B74C0` 212 | `0x002B4EE0` 276 |  |  |
-| `StopBoost(const CB3RaceCar*)` | `0x0024E7B0` 196 | `0x00280720` 244 | `0x002B75A0` 244 | `0x002B4C50` 316 | `0x0028D1A0` unverified |  |
-| `DoBoostIn(const CB3RaceCar*)` | `0x0024E880` 216 | `0x00280820` 248 | `0x002B76A0` 248 | `0x002B4A10` 536 |  |  |
-| `StartBoost(const CB3RaceCar*)` | `0x0024E960` 200 | `0x00280920` 236 | `0x002B77A0` 236 | `0x002B48C0` 332 | `0x0028D660` unverified |  |
-| `Destruct()` | `0x0024EA30` 8 | `0x00280A10` 8 | `0x002B7890` 8 | `0x002B4890` 44 | `0x0028D7B0` strong |  |
-| `Release()` | `0x0024EA40` 100 | `0x00280A20` 100 | `0x002B78A0` 100 | `0x002B47F0` 160 | `0x0028D7C0` proven |  |
-| `Update(const CB3RaceCar*)` | `0x0024EAB0` 824 | `0x00280A90` 1232 | `0x002B7910` 1232 | `0x002B4530` 692 |  |  |
-| `Unregister()` | `0x0024EDF0` 60 | `0x00280F60` 60 | `0x002B7DE0` 60 | `0x002B44E0` 76 | `0x0028DA00` strong |  |
-| `Register(unsigned long)` | `0x0024EE30` 356 | `0x00280FA0` 376 | `0x002B7E20` 376 | `0x002B42B0` 516 | `0x0028DA40` strong |  |
-| `Prepare(unsigned long,int)` | `0x0024EFA0` 356 | `0x00281120` 472 | `0x002B7FA0` 472 | `0x002B4050` 608 | `0x0028DBB0` unverified |  |
-| `Construct()` | `0x0024F110` 544 | `0x00281300` 588 | `0x002B8180` 588 | `0x002B3D40` 780 | `0x0028DD80` strong |  |
-| `BoostReady()` |  |  |  | `0x002B4ED0` 16 |  |  |
-| `CB3SoundRaceCar()` |  |  |  | `0x002B1D30` 40 |  |  |
-| `GetAttribs()` |  |  |  | `0x00318B90` 28 |  |  |
-| `GetESM()` |  |  |  | `0x00318BB0` 28 |  |  |
-| `GetLock()` |  |  |  | `0x00316580` 28 |  |  |
-| `IsPlayerCar()` |  |  |  | `0x002B44C0` 28 |  |  |
-| `IsRegistered()` |  |  |  | `0x002B24A0` 28 |  |  |
-| `SetLock(bool)` |  |  |  | `0x00316550` 36 |  |  |
-| `StopHorn()` |  |  |  | `0x002B5300` 72 |  |  |
-| `UpdateBoost(const CB3RaceCar*)` |  |  |  | `0x002B4D90` 308 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateHorn(CB3RaceCar*)` | `0x0024E520` 208 | `0x00280490` 208 | `0x002B7310` 208 | `0x002B51F0` 268 | `0x0028CD60` strong |  | `void CB4SoundRaceCar::UpdateHorn(CB4RaceCar *lpRaceCar)` |
+| `UpdateBoostIn(const CB3RaceCar*)` | `0x0024E5F0` 212 | `0x00280560` 212 | `0x002B73E0` 212 | `0x002B5000` 276 | `0x0028CE30` strong |  | `void CB4SoundRaceCar::UpdateBoostIn(const CB4RaceCar *lpRaceCar)` |
+| `UpdateBoostOut(const CB3RaceCar*)` | `0x0024E6D0` 212 | `0x00280640` 212 | `0x002B74C0` 212 | `0x002B4EE0` 276 |  |  | `void CB4SoundRaceCar::UpdateBoostOut(const CB4RaceCar *lpRaceCar)` |
+| `StopBoost(const CB3RaceCar*)` | `0x0024E7B0` 196 | `0x00280720` 244 | `0x002B75A0` 244 | `0x002B4C50` 316 | `0x0028D1A0` unverified |  | `void CB4SoundRaceCar::StopBoost(const CB4RaceCar *lpRaceCar)` |
+| `DoBoostIn(const CB3RaceCar*)` | `0x0024E880` 216 | `0x00280820` 248 | `0x002B76A0` 248 | `0x002B4A10` 536 |  |  | `void CB4SoundRaceCar::DoBoostIn(const CB4RaceCar *lpRaceCar)` |
+| `StartBoost(const CB3RaceCar*)` | `0x0024E960` 200 | `0x00280920` 236 | `0x002B77A0` 236 | `0x002B48C0` 332 | `0x0028D660` unverified |  | `void CB4SoundRaceCar::StartBoost(const CB4RaceCar *lpRaceCar)` |
+| `Destruct()` | `0x0024EA30` 8 | `0x00280A10` 8 | `0x002B7890` 8 | `0x002B4890` 44 | `0x0028D7B0` strong |  | `void CB4SoundRaceCar::Destruct()` |
+| `Release()` | `0x0024EA40` 100 | `0x00280A20` 100 | `0x002B78A0` 100 | `0x002B47F0` 160 | `0x0028D7C0` proven |  | `void CB4SoundRaceCar::Release()` |
+| `Update(const CB3RaceCar*)` | `0x0024EAB0` 824 | `0x00280A90` 1232 | `0x002B7910` 1232 | `0x002B4530` 692 |  |  | `void CB4SoundRaceCar::Update(const CB4RaceCar *lpRaceCar)` |
+| `Unregister()` | `0x0024EDF0` 60 | `0x00280F60` 60 | `0x002B7DE0` 60 | `0x002B44E0` 76 | `0x0028DA00` strong |  | `void CB4SoundRaceCar::Unregister()` |
+| `Register(unsigned long)` | `0x0024EE30` 356 | `0x00280FA0` 376 | `0x002B7E20` 376 | `0x002B42B0` 516 | `0x0028DA40` strong |  | `void CB4SoundRaceCar::Register(unsigned long lID)` |
+| `Prepare(unsigned long,int)` | `0x0024EFA0` 356 | `0x00281120` 472 | `0x002B7FA0` 472 | `0x002B4050` 608 | `0x0028DBB0` unverified |  | `bool CB4SoundRaceCar::Prepare(unsigned long lID, ERaceCarIndex leRaceCarIndex)` (same name, different parameters) |
+| `Construct()` | `0x0024F110` 544 | `0x00281300` 588 | `0x002B8180` 588 | `0x002B3D40` 780 | `0x0028DD80` strong |  | `void CB4SoundRaceCar::Construct()` |
+| `BoostReady()` |  |  |  | `0x002B4ED0` 16 |  |  |  |
+| `CB3SoundRaceCar()` |  |  |  | `0x002B1D30` 40 |  |  | `CB4SoundRaceCar * CB4SoundRaceCar::CB4SoundRaceCar()` |
+| `GetAttribs()` |  |  |  | `0x00318B90` 28 |  |  |  |
+| `GetESM()` |  |  |  | `0x00318BB0` 28 |  |  |  |
+| `GetLock()` |  |  |  | `0x00316580` 28 |  |  |  |
+| `IsPlayerCar()` |  |  |  | `0x002B44C0` 28 |  |  |  |
+| `IsRegistered()` |  |  |  | `0x002B24A0` 28 |  |  |  |
+| `SetLock(bool)` |  |  |  | `0x00316550` 36 |  |  |  |
+| `StopHorn()` |  |  |  | `0x002B5300` 72 |  |  | `void CB4SoundRaceCar::StopHorn()` |
+| `UpdateBoost(const CB3RaceCar*)` |  |  |  | `0x002B4D90` 308 |  |  | `void CB4SoundRaceCar::UpdateBoost(const CB4RaceCar *lpRaceCar)` |
+
+## Burnout Revenge layout of `CB4SoundRaceCar`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 279 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundRaceCar {  // size 0x288
+    /* 0x000 */ RwReal mrSweetTimer;
+    /* 0x004 */ bool mbWillPlaySweet;
+    /* 0x008 */ CB4SoundESM *mpEsm;
+    /* 0x00C */ CB4SoundSkidModel mSkidModel;
+    /* 0x070 */ CB4SoundRaceCarAttribs *mpAttribs;
+    /* 0x074 */ CGtSoundVoiceHandle mBoostHighVoice;
+    /* 0x084 */ CGtSoundVoiceHandle mBoostLowVoice;
+    /* 0x094 */ CGtSoundVoiceHandle mJetVoice;
+    /* 0x0A4 */ CGtSoundVoiceHandle mBoostFeedbackVoice[3];
+    /* 0x0D4 */ CGtSoundWave *mpBoostFeedbackWave[3];
+    /* 0x0E0 */ CGtSoundVoiceHandle mRissetVoice[3];
+    /* 0x110 */ CGtSoundWave *mpRissetWave[3];
+    /* 0x11C */ CGtSoundWave *mpJetWave;
+    /* 0x120 */ CGtSoundWave *mpWheelChirp;
+    /* 0x124 */ CGtSoundWave *mpWheelCrunch;
+    /* 0x128 */ bool mbPlayedTakeOffNoise;
+    /* 0x12C */ RwReal mrInAirWhooshTime;
+    /* 0x130 */ bool mbWasBoostTriggeredByAI;
+    /* 0x134 */ RwReal mrAIBoostDelay;
+    /* 0x138 */ float mrFeedbackPitch[3];
+    /* 0x144 */ float mrFeedbackVol[3];
+    /* 0x150 */ RwReal mrBoostPitch;
+    /* 0x154 */ RwReal mrBoostTime;
+    /* 0x158 */ float mrRissetPitch[3];
+    /* 0x164 */ float mrRissetVol[3];
+    /* 0x170 */ RwReal mrPreviousBurn;
+    /* 0x174 */ bool mbBoostIncreasing;
+    /* 0x178 */ RwInt32 mnNumWheelsOnGroundALittleWhileAgo;
+    /* 0x17C */ RwInt32 mnNumWheelsOnGround;
+    /* 0x180 */ RwReal mrChirpTimer;
+    /* 0x184 */ CGtSoundVoiceHandle mBoostInVoice;
+    /* 0x194 */ CGtSoundVoiceHandle mBoostOutVoice;
+    /* 0x1A4 */ CGtSoundVoiceHandle mHornVoice;
+    /* 0x1B4 */ CGtSoundVoiceHandle mRadiatorVoice;
+    /* 0x1C4 */ RwReal mrBoostVol;
+    /* 0x1C8 */ RwReal mrBoostStartForceTimer;
+    /* 0x1CC */ RwReal mrBoostDamper;
+    /* 0x1D0 */ CGtSoundWave *mpHornWave;
+    /* 0x1D4 */ CGtSoundWave *mpBoostLoopHighWave;
+    /* 0x1D8 */ CGtSoundWave *mpBoostLoopLowWave;
+    /* 0x1DC */ CGtSoundWave *mpBoostInWave;
+    /* 0x1E0 */ CGtSoundWave *mpBoostOutWave;
+    /* 0x1E4 */ CGtSoundWave *mpReBoostWave;
+    /* 0x1E8 */ CGtSoundWave *mpBoostReadyWave;
+    /* 0x1EC */ CGtSoundWave *mpPowerBoostWave;
+    /* 0x1F0 */ CGtSoundWave *mpRadiatorWave;
+    /* 0x1F4 */ RwInt32 mnLastBoostChain;
+    /* 0x1F8 */ RwInt32 mnIndex;
+    /* 0x1FC */ bool mbBoostReady;
+    /* 0x1FD */ bool mbLocked;
+    /* 0x1FE */ bool mbPlayerCar;
+    /* 0x1FF */ bool mbRegistered;
+    /* 0x200 */ bool mbPlayingPowerBoost;
+    /* 0x201 */ char macPath[128];
+    /* 0x281 */ bool mbGainingBoost;
+    /* 0x282 */ bool mbWasCrashingLastFrame;
+    /* 0x283 */ bool mbHasRadiatorSteam;
+    /* 0x284 */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CB4SoundRaceCar(const CB4SoundRaceCar &);
+    // CB4SoundRaceCar();
+    // virtual bool Prepare(unsigned long, ERaceCarIndex);
+    // virtual void Update(const CB4RaceCar *);
+    // virtual void Release();
+    // CB4SoundESM * GetESM() const;
+    // CB4SoundRaceCarAttribs * GetAttribs() const;
+    // bool IsPlayerCar() const;
+    // void TriggerBoostStart(CB4RaceCar *, float);
+    // bool IsRegistered() const;
+    // virtual void Register(unsigned long);
+    // virtual void Unregister();
+    // bool GetLock() const;
+    // void SetLock(bool);
+    // void Construct();
+    // void Destruct();
+    // void StartBoost(const CB4RaceCar *);
+    // void StopBoost(const CB4RaceCar *);
+    // void UpdateBoost(const CB4RaceCar *);
+    // void DoBoostIn(const CB4RaceCar *);
+    // void DoReBoost(const CB4RaceCar *);
+    // void DoPowerBoost(const CB4RaceCar *);
+    // void BoostReady();
+    // void UpdateBoostIn(const CB4RaceCar *);
+    // void UpdateBoostOut(const CB4RaceCar *);
+    // void UpdateHorn(CB4RaceCar *);
+    // void StopHorn();
+    // void CheckForTakeOff(const CB4RaceCar *);
+    // void PlaySweetener(const CB4RaceCar *);
+    // void CheckSweetener(const CB4RaceCar *, CB4RaceCarPhysics *);
+    // void InitSweetener();
+    // void CheckWheelsOnGround(const CB4RaceCar *);
+    // void StartRissets();
+    // void StopRissets();
+    // void UpdateRissets(const CB4RaceCar *);
+    // void UpdateJetLoop(const CB4RaceCar *);
+    // void StartRadiator();
+    // void UpdateRadiator(const CB4RaceCar *, CB4RaceCarPhysics *);
+    // void StopRadiator();
+};
+```
 
 ## Notes
 

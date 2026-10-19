@@ -8,45 +8,142 @@
 - **Source file:** `B3StreamedTrack.cpp`
 - **Methods per build:** DNAT_200 24, B3DEBUG 24, B3INTERN 24, B3O0PCH 29
 - **Retail (SLUS-21050):** 20 of its 24 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4StreamedTrack`, size 0x1F8, methods in `GameSource/World/B4StreamedTrack.cpp` ([layout](#burnout-revenge-layout-of-cb4streamedtrack))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RenderAfterSpecular()` | `0x001E13E0` 1328 | `0x001E0F00` 1384 | `0x00213C00` 1316 | `0x00226880` 2108 | `0x0021C120` likely |  |
-| `RenderAfterVehicles()` | `0x001E1920` 464 | `0x001E1480` 464 | `0x00214130` 464 | `0x00226650` 556 | `0x0021C590` likely |  |
-| `RenderBeforeVehicles()` | `0x001E1AF0` 2124 | `0x001E1650` 2164 | `0x00214300` 2164 | `0x002258A0` 3124 | `0x0021C780` strong |  |
-| `IsUnitVisibleToMainCamera(int)` | `0x001E2340` 124 | `0x001E1ED0` 124 | `0x00214B80` 124 | `0x002257A0` 248 | `0x0021CFF0` unverified |  |
-| `DoUnitFrustumTesting()` | `0x001E23C0` 604 | `0x001E1F50` 604 | `0x00214C00` 604 | `0x002251C0` 780 | `0x0021D080` strong |  |
-| `TestPosition(GtMathPs2::CGtV3d)` | `0x002118C0` 184 | `0x00220200` 192 | `0x0025FA00` 184 | `0x002625D0` 352 |  |  |
-| `ForEveryUnitInSafeArea(void (*)(CB3StreamedTrackLODAndCollisionData*, int, void*),void*)` | `0x002C1E10` 176 |  |  |  | `0x00301220` strong |  |
-| `ComputeVehicleRenderData(CB3VehicleEssentialParams*,float)` | `0x002C1EC0` 120 | `0x00307DA0` 120 | `0x0033A070` 120 | `0x00330A10` 172 | `0x003012D0` likely |  |
-| `GetIrradiance(int,GtMathPs2::CGtV3d,CGtIrradianceMap*,float)` | `0x002C1F40` 2004 | `0x00307E20` 2728 | `0x0033A0F0` 2712 | `0x00330560` 800 | `0x00301340` strong |  |
-| `IntersectSphereWithUnit(unsigned int,GtMathPs2::CGtSphere,bool (*)(const CGtPolygonIntersectionResult&, void*` | `0x002C2720` 184 |  |  |  | `0x00301B00` strong |  |
-| `IntersectLineWithUnit(unsigned int,const CGtLine&,bool (*)(const CGtPolygonIntersectionResult&, void*),void*)` | `0x002C27E0` 176 |  |  |  | `0x00301BC0` strong |  |
-| `IntersectLineNearestWithUnit(unsigned int,const CGtLine&,CGtPolygonIntersectionResult*)` | `0x002C2890` 192 | `0x00308E80` 884 | `0x0033B130` 876 | `0x003302B0` 252 | `0x00301C80` strong |  |
-| `UpdateStreamPVS()` | `0x002C2950` 648 | `0x00309200` 856 | `0x0033B4A0` 808 | `0x00330030` 632 | `0x00301D50` unverified |  |
-| `Update()` | `0x002C2BE0` 856 | `0x00309560` 1060 | `0x0033B7D0` 1028 | `0x0032FBE0` 1096 | `0x00302160` unverified |  |
-| `GetUnitOriginalID(int)` | `0x002C2F40` 164 | `0x00309990` 172 | `0x0033BBE0` 164 | `0x0032FB30` 108 | `0x00302610` likely |  |
-| `GetUnit(int,EB3TrackType)` | `0x002C2FF0` 196 | `0x00309A40` 204 | `0x0033BC90` 196 | `0x0032F9B0` 372 |  |  |
-| `UpdateStreamFSM()` | `0x002C30C0` 660 | `0x00309B10` 812 | `0x0033BD60` 780 | `0x0032F5F0` 960 | `0x003026C0` likely |  |
-| `UpdateStreamHighFSM()` | `0x002C3360` 300 | `0x00309E40` 400 | `0x0033C070` 392 | `0x0032F400` 492 | `0x003029B0` strong |  |
-| `UpdateStreamLowFSM()` | `0x002C3490` 300 | `0x00309FD0` 404 | `0x0033C200` 396 | `0x0032F1C0` 524 | `0x00302AE0` strong |  |
-| `RestartStream()` | `0x002C35C0` 408 | `0x0030A170` 736 | `0x0033C390` 720 | `0x0032ED60` 692 | `0x00302C10` unverified |  |
-| `Release()` | `0x002C3760` 84 | `0x0030A450` 84 | `0x0033C660` 84 | `0x0032EC80` 216 |  |  |
-| `Prepare(bool,int)` | `0x002C37C0` 440 | `0x0030A4B0` 608 | `0x0033C6C0` 608 | `0x0032E960` 788 |  |  |
-| `Destruct()` | `0x002C3980` 12 | `0x0030A710` 12 | `0x0033C920` 12 | `0x0032E940` 32 | `0x003030E0` proven |  |
-| `Construct()` | `0x002C3990` 112 | `0x0030A720` 112 | `0x0033C930` 112 | `0x0032E820` 280 | `0x003030F0` proven |  |
-| `ForEveryUnitInSafeArea(void (*)` |  | `0x00307CE0` 184 | `0x00339FC0` 176 | `0x00330AC0` 188 |  |  |
-| `IntersectSphereWithUnit(unsigned int,GtMathPs2::CGtSphere,bool (*)` |  | `0x003088D0` 720 | `0x0033AB90` 712 | `0x00330480` 212 |  |  |
-| `IntersectLineWithUnit(unsigned int,const CGtLine&,bool (*)` |  | `0x00308BA0` 724 | `0x0033AE60` 716 | `0x003303B0` 196 |  |  |
-| `GetCurrentWaterPlaneHeight()` |  |  |  | `0x002264E0` 60 |  |  |
-| `GetHighDetailUnit(int)` |  |  |  | `0x00226610` 52 |  |  |
-| `GetLODAndCollisionUnit(int)` |  |  |  | `0x0032FBA0` 52 |  |  |
-| `IsReadyToRender()` |  |  |  | `0x0029BD50` 28 |  |  |
-| `ReadAnotherUnit()` |  |  |  | `0x0032F060` 316 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RenderAfterSpecular()` | `0x001E13E0` 1328 | `0x001E0F00` 1384 | `0x00213C00` 1316 | `0x00226880` 2108 | `0x0021C120` likely |  | `void CB4StreamedTrack::RenderAfterSpecular()` |
+| `RenderAfterVehicles()` | `0x001E1920` 464 | `0x001E1480` 464 | `0x00214130` 464 | `0x00226650` 556 | `0x0021C590` likely |  | `void CB4StreamedTrack::RenderAfterVehicles()` |
+| `RenderBeforeVehicles()` | `0x001E1AF0` 2124 | `0x001E1650` 2164 | `0x00214300` 2164 | `0x002258A0` 3124 | `0x0021C780` strong |  | `void CB4StreamedTrack::RenderBeforeVehicles()` |
+| `IsUnitVisibleToMainCamera(int)` | `0x001E2340` 124 | `0x001E1ED0` 124 | `0x00214B80` 124 | `0x002257A0` 248 | `0x0021CFF0` unverified |  | `bool CB4StreamedTrack::IsUnitVisibleToMainCamera(int lnCircularUnit)` |
+| `DoUnitFrustumTesting()` | `0x001E23C0` 604 | `0x001E1F50` 604 | `0x00214C00` 604 | `0x002251C0` 780 | `0x0021D080` strong |  | `void CB4StreamedTrack::DoUnitFrustumTesting()` |
+| `TestPosition(GtMathPs2::CGtV3d)` | `0x002118C0` 184 | `0x00220200` 192 | `0x0025FA00` 184 | `0x002625D0` 352 |  |  | `RwInt32 CB4StreamedTrack::TestPosition(GtMathPs2::CGtV3d lPos)` |
+| `ForEveryUnitInSafeArea(void (*)(CB3StreamedTrackLODAndCollisionData*, int, void*),void*)` | `0x002C1E10` 176 |  |  |  | `0x00301220` strong |  | `void CB4StreamedTrack::ForEveryUnitInSafeArea(void (*lfCallback)(CB4StreamedTrackLODAndCollisionData *, int, void *), void *lpData)` |
+| `ComputeVehicleRenderData(CB3VehicleEssentialParams*,float)` | `0x002C1EC0` 120 | `0x00307DA0` 120 | `0x0033A070` 120 | `0x00330A10` 172 | `0x003012D0` likely |  | `void CB4StreamedTrack::ComputeVehicleRenderData(CB4VehicleEssentialParams *lpEssentialParams, float lrAmountToTestDownwards)` |
+| `GetIrradiance(int,GtMathPs2::CGtV3d,CGtIrradianceMap*,float)` | `0x002C1F40` 2004 | `0x00307E20` 2728 | `0x0033A0F0` 2712 | `0x00330560` 800 | `0x00301340` strong |  | `void CB4StreamedTrack::GetIrradiance(int lnUnit, GtMathPs2::CGtV3d lPosition, CGtIrradianceMap *lpIrradiance, float lrAmountToTestDownwards)` |
+| `IntersectSphereWithUnit(unsigned int,GtMathPs2::CGtSphere,bool (*)(const CGtPolygonIntersectionResult&, void*` | `0x002C2720` 184 |  |  |  | `0x00301B00` strong |  | `bool CB4StreamedTrack::IntersectSphereWithUnit(unsigned int lnUnit, GtMathPs2::CGtSphere lSphere, bool (*lpfCallback)(const CGtPolygonIntersectionResult &, void *), void *lpData)` (same name, different parameters) |
+| `IntersectLineWithUnit(unsigned int,const CGtLine&,bool (*)(const CGtPolygonIntersectionResult&, void*),void*)` | `0x002C27E0` 176 |  |  |  | `0x00301BC0` strong |  | `bool CB4StreamedTrack::IntersectLineWithUnit(unsigned int lnUnit, const CGtLine &lLine, bool (*lpfCallback)(const CGtPolygonIntersectionResult &, void *), void *lpData)` |
+| `IntersectLineNearestWithUnit(unsigned int,const CGtLine&,CGtPolygonIntersectionResult*)` | `0x002C2890` 192 | `0x00308E80` 884 | `0x0033B130` 876 | `0x003302B0` 252 | `0x00301C80` strong |  | `bool CB4StreamedTrack::IntersectLineNearestWithUnit(unsigned int lnUnit, const CGtLine &lLine, CGtPolygonIntersectionResult *lpPolygonIntersectionOut)` |
+| `UpdateStreamPVS()` | `0x002C2950` 648 | `0x00309200` 856 | `0x0033B4A0` 808 | `0x00330030` 632 | `0x00301D50` unverified |  | `void CB4StreamedTrack::UpdateStreamPVS()` |
+| `Update()` | `0x002C2BE0` 856 | `0x00309560` 1060 | `0x0033B7D0` 1028 | `0x0032FBE0` 1096 | `0x00302160` unverified |  | `bool CB4StreamedTrack::Update()` |
+| `GetUnitOriginalID(int)` | `0x002C2F40` 164 | `0x00309990` 172 | `0x0033BBE0` 164 | `0x0032FB30` 108 | `0x00302610` likely |  | `RwInt32 CB4StreamedTrack::GetUnitOriginalID(int lnUnit)` |
+| `GetUnit(int,EB3TrackType)` | `0x002C2FF0` 196 | `0x00309A40` 204 | `0x0033BC90` 196 | `0x0032F9B0` 372 |  |  | `CB4StreamedTrackData * CB4StreamedTrack::GetUnit(int lnUnit, EB4TrackType leDetailLevel)` |
+| `UpdateStreamFSM()` | `0x002C30C0` 660 | `0x00309B10` 812 | `0x0033BD60` 780 | `0x0032F5F0` 960 | `0x003026C0` likely |  | `void CB4StreamedTrack::UpdateStreamFSM()` |
+| `UpdateStreamHighFSM()` | `0x002C3360` 300 | `0x00309E40` 400 | `0x0033C070` 392 | `0x0032F400` 492 | `0x003029B0` strong |  | `bool CB4StreamedTrack::UpdateStreamHighFSM()` |
+| `UpdateStreamLowFSM()` | `0x002C3490` 300 | `0x00309FD0` 404 | `0x0033C200` 396 | `0x0032F1C0` 524 | `0x00302AE0` strong |  | `bool CB4StreamedTrack::UpdateStreamLowFSM()` |
+| `RestartStream()` | `0x002C35C0` 408 | `0x0030A170` 736 | `0x0033C390` 720 | `0x0032ED60` 692 | `0x00302C10` unverified |  |  |
+| `Release()` | `0x002C3760` 84 | `0x0030A450` 84 | `0x0033C660` 84 | `0x0032EC80` 216 |  |  | `void CB4StreamedTrack::Release()` |
+| `Prepare(bool,int)` | `0x002C37C0` 440 | `0x0030A4B0` 608 | `0x0033C6C0` 608 | `0x0032E960` 788 |  |  | `bool CB4StreamedTrack::Prepare(bool lb2Player, EPlayerCarIndex leStreamedWorldID)` (same name, different parameters) |
+| `Destruct()` | `0x002C3980` 12 | `0x0030A710` 12 | `0x0033C920` 12 | `0x0032E940` 32 | `0x003030E0` proven |  | `void CB4StreamedTrack::Destruct()` |
+| `Construct()` | `0x002C3990` 112 | `0x0030A720` 112 | `0x0033C930` 112 | `0x0032E820` 280 | `0x003030F0` proven |  | `void CB4StreamedTrack::Construct()` |
+| `ForEveryUnitInSafeArea(void (*)` |  | `0x00307CE0` 184 | `0x00339FC0` 176 | `0x00330AC0` 188 |  |  | `void CB4StreamedTrack::ForEveryUnitInSafeArea(void (*lfCallback)(CB4StreamedTrackLODAndCollisionData *, int, void *), void *lpData)` (same name, different parameters) |
+| `IntersectSphereWithUnit(unsigned int,GtMathPs2::CGtSphere,bool (*)` |  | `0x003088D0` 720 | `0x0033AB90` 712 | `0x00330480` 212 |  |  | `bool CB4StreamedTrack::IntersectSphereWithUnit(unsigned int lnUnit, GtMathPs2::CGtSphere lSphere, bool (*lpfCallback)(const CGtPolygonIntersectionResult &, void *), void *lpData)` (same name, different parameters) |
+| `IntersectLineWithUnit(unsigned int,const CGtLine&,bool (*)` |  | `0x00308BA0` 724 | `0x0033AE60` 716 | `0x003303B0` 196 |  |  | `bool CB4StreamedTrack::IntersectLineWithUnit(unsigned int lnUnit, const CGtLine &lLine, bool (*lpfCallback)(const CGtPolygonIntersectionResult &, void *), void *lpData)` (same name, different parameters) |
+| `GetCurrentWaterPlaneHeight()` |  |  |  | `0x002264E0` 60 |  |  |  |
+| `GetHighDetailUnit(int)` |  |  |  | `0x00226610` 52 |  |  |  |
+| `GetLODAndCollisionUnit(int)` |  |  |  | `0x0032FBA0` 52 |  |  |  |
+| `IsReadyToRender()` |  |  |  | `0x0029BD50` 28 |  |  |  |
+| `ReadAnotherUnit()` |  |  |  | `0x0032F060` 316 |  |  |  |
+
+## Burnout Revenge layout of `CB4StreamedTrack`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 11 file(s), e.g. `GameSource/Physics/B4RaceCarPhysics.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4StreamedTrack {  // size 0x1F8
+    /* 0x000 */ int manCurrentUnit[2];
+    /* 0x008 */ int manNumStreamUnits[2];
+    /* static */ bool mabActiveDetourChevrons[8];
+    /* static */ bool mabRenderActiveDetourChevrons[8];
+    /* 0x010 */ EGtPrepareState mePrepareState;
+    /* 0x014 */ CB4TrackSeekData *mpNextDataInfo;
+    /* 0x018 */ bool mb2Player;
+    /* 0x019 */ bool mbResetAll;
+    /* 0x01C */ EPlayerCarIndex mePlayerID;
+    /* 0x020 */ int manStreamedCentreUnit[2];
+    /* 0x028 */ int manStreamedStartUnit[2];
+    /* 0x030 */ int manStreamedEndUnit[2];
+    /* 0x038 */ int manStreamStartDestinationUnit[2];
+    /* 0x040 */ int manStreamEndDestinationUnit[2];
+    /* 0x048 */ int manStreamCircularUnit[2];
+    /* 0x050 */ EStreamStateMachine meStreamStateMachine;
+    /* 0x054 */ EStreamStateMachineHigh meStreamStateMachineHigh;
+    /* 0x058 */ EStreamStateMachineLow meStreamStateMachineLow;
+    /* 0x05C */ bool mbInitialUnitsLoaded;
+    /* 0x05D */ bool mbInitialHighDetailUnitsLoaded;
+    /* 0x05E */ bool mbInitialLODUnitsLoaded;
+    /* 0x05F */ bool mbCurrentlyLoading;
+    /* 0x060 */ bool mbForwardStreaming;
+    /* 0x064 */ int manSafeCarCurrentUnit[2];
+    /* 0x06C */ int manWorldTrackStartUnit[2];
+    /* 0x074 */ int manWorldTrackEndUnit[2];
+    /* 0x07C */ bool mbPointToPointTrack;
+    /* 0x07E */ short unsigned int mau16FrustumTestResults[18];
+    /* 0x0A4 */ CB4StreamedTrackData *mapPVSRender[18];
+    /* 0x0EC */ CB4StreamedTrackData *mapPVSEnvMap[18];
+    /* 0x134 */ CB4InstanceManager *mapPVSInstances[18];
+    /* 0x17C */ CB4StreamedTrackHighData *mapUnitsHiRes[10];
+    /* 0x1A4 */ CB4StreamedTrackLODAndCollisionData *mapUnitsLODCol[18];
+    /* 0x1EC */ CB4StreamedTrackHighData *mpCurrentUnitHiRes;
+    /* 0x1F0 */ CB4StreamedTrackHighData *mpSafeUnitHiRes;
+    /* 0x1F4 */ EB4StreamBasis meBasis;
+    // methods
+    // CB4StreamedTrack(const CB4StreamedTrack &);
+    // CB4StreamedTrack();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare(bool, EPlayerCarIndex);
+    // void Release();
+    // bool Update();
+    // void UpdateStreamPVS();
+    // bool IsReadyToRender();
+    // void DoUnitFrustumTesting();
+    // void RenderBeforeVehicles();
+    // void RenderAfterVehicles();
+    // void RenderAfterSpecular();
+    // void RenderChevrons();
+    // void RenderForEnvironmentMap();
+    // void RenderForReflectionMap();
+    // RwInt32 TestPosition(GtMathPs2::CGtV3d);
+    // void ForEveryUnitInSafeArea(void (*)(CB4StreamedTrackLODAndCollisionData *, int, void *), void *);
+    // bool IsUnitVisibleToMainCamera(int);
+    // RwInt32 GetUnitOriginalID(int);
+    // CB4StreamedTrackHighData * GetHighDetailUnit(int);
+    // CB4StreamedTrackLODAndCollisionData * GetLODAndCollisionUnit(int);
+    // bool IntersectLineNearestWithUnit(unsigned int, const CGtLine &, CGtPolygonIntersectionResult *);
+    // bool IntersectLineNearestWithWorld(const CGtLine &, CGtPolygonIntersectionResult *);
+    // bool IntersectLineWithUnit(unsigned int, const CGtLine &, bool (*)(const CGtPolygonIntersectionResult &, void *), void *);
+    // bool IntersectSphereWithUnit(unsigned int, GtMathPs2::CGtSphere, bool (*)(const CGtPolygonIntersectionResult &, void *), void *);
+    // bool IntersectFrustumWithUnit(unsigned int, const CGtFrustum &, bool (*)(const CGtPolygonIntersectionResult &, void *), void *);
+    // RwReal GetCurrentWaterPlaneHeight();
+    // void GetIrradiance(int, GtMathPs2::CGtV3d, CGtIrradianceMap *, float);
+    // void ComputeVehicleRenderData(CB4VehicleEssentialParams *, float);
+    // EPlayerCarIndex GetPlayerID();
+    // CB4StreamedTrackPVS * GetSafeUnitHiResPVS();
+    // void FlagReset();
+    // bool IsUpToDate() const;
+    // void SetBasis(CB4StreamedTrack::EB4StreamBasis);
+    // EB4StreamBasis GetBasis() const;
+    // RwInt32 ConvertIntoWorldUnits(EB4TrackType, int);
+    // RwInt32 GetUnitForCurrentBasis() const;
+    // RwUInt32 ConvertIntoBufferUnits(int, int) const;
+    // bool IsCurrentlyLoading() const;
+    // void UpdateStreamFSM();
+    // bool UpdateStreamLowFSM();
+    // bool UpdateStreamHighFSM();
+    // bool ReadAnotherUnitForwards();
+    // bool ReadAnotherUnitBackwards();
+    // bool IsForwardStreamingFromCurrentUnits(int) const;
+    // CB4StreamedTrackData * GetUnit(int, EB4TrackType);
+    // static bool IrradianceLineTestCB(const CGtIntersectionResult &, const CGtPolygonIntersectionResult &, void *);
+    // bool AllowChevronRender();
+    // bool InternalIntersectLineNearestWithUnit(unsigned int, const CGtLine &, CGtPolygonIntersectionResult *);
+};
+```
 
 ## Notes
 

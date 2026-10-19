@@ -8,17 +8,86 @@
 - **Source file:** `B3SoundStaticPassManager.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundStaticPassManager`, size 0x12C, methods in `GameSource/Sound/B4SoundStaticPassManager.cpp` ([layout](#burnout-revenge-layout-of-cb4soundstaticpassmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x003C3810` 8 | `0x00440070` 8 | `0x00468180` 8 | `0x0047ECC0` 16 | `0x0041D3D0` strong |  |
-| `Update()` | `0x003C3820` 1204 | `0x00440080` 2576 | `0x00468190` 2576 | `0x0047E5B0` 1804 | `0x0041D3E0` likely |  |
-| `Prepare()` | `0x003C3CE0` 16 | `0x00440A90` 16 | `0x00468BA0` 16 | `0x0047E580` 48 | `0x0041D8D0` proven |  |
-| `TriggerPass(GtMathPs2::CGtV3d,float,float)` |  |  |  | `0x0047ECD0` 248 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x003C3810` 8 | `0x00440070` 8 | `0x00468180` 8 | `0x0047ECC0` 16 | `0x0041D3D0` strong |  | `void CB4SoundStaticPassManager::Release()` |
+| `Update()` | `0x003C3820` 1204 | `0x00440080` 2576 | `0x00468190` 2576 | `0x0047E5B0` 1804 | `0x0041D3E0` likely |  | `void CB4SoundStaticPassManager::Update()` |
+| `Prepare()` | `0x003C3CE0` 16 | `0x00440A90` 16 | `0x00468BA0` 16 | `0x0047E580` 48 | `0x0041D8D0` proven |  | `bool CB4SoundStaticPassManager::Prepare()` |
+| `TriggerPass(GtMathPs2::CGtV3d,float,float)` |  |  |  | `0x0047ECD0` 248 |  |  | `void CB4SoundStaticPassManager::TriggerPass(GtMathPs2::CGtV3d lPos, float lrVolume, float lrPitch, ESoundStaticPassType leType)` (same name, different parameters) |
+
+## Burnout Revenge layout of `CB4SoundStaticPassManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 14 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundStaticPassManager {  // size 0x12C
+    /* 0x000 */ RwReal mrOffDamper;
+    /* 0x004 */ RwReal mrTriggerTime;
+    /* 0x008 */ bool mbUnderSomething;
+    /* 0x009 */ bool mbDoLeft;
+    /* 0x00C */ CGtSoundVoiceHandle maRushVoice[2];
+    /* 0x02C */ float marRushStartTime[2];
+    /* 0x034 */ CGtSoundWave *mRushWave;
+    /* 0x038 */ RwReal mrLeftDamper;
+    /* 0x03C */ RwReal mrRightDamper;
+    /* 0x040 */ RwReal mrLeftHandDist;
+    /* 0x044 */ RwReal mrRightHandDist;
+    /* 0x048 */ RwReal mrBigStereoDamper;
+    /* 0x04C */ RwReal mrSmallStereoDamper;
+    /* 0x050 */ float mrMinCarWhooshSpeed[2];
+    /* 0x058 */ float mrMaxCarWhooshSpeed[2];
+    /* 0x060 */ float mrMinBigWhooshVol[2];
+    /* 0x068 */ float mrBigWhooshVolRange[2];
+    /* 0x070 */ float mrMinBigWhooshPitch[2];
+    /* 0x078 */ float mrBigWhooshPitchRange[2];
+    /* 0x080 */ float mrMinBigExitWhooshVol[2];
+    /* 0x088 */ float mrBigExitWhooshVolRange[2];
+    /* 0x090 */ float mrMinBigExitWhooshPitch[2];
+    /* 0x098 */ float mrBigExitWhooshPitchRange[2];
+    /* 0x0A0 */ float mrMinMedWhooshVol[2];
+    /* 0x0A8 */ float mrMedWhooshVolRange[2];
+    /* 0x0B0 */ float mrMinMedWhooshPitch[2];
+    /* 0x0B8 */ float mrMedWhooshPitchRange[2];
+    /* 0x0C0 */ float mrMinSmlWhooshVol[2];
+    /* 0x0C8 */ float mrSmlWhooshVolRange[2];
+    /* 0x0D0 */ float mrMinSmlWhooshPitch[2];
+    /* 0x0D8 */ float mrSmlWhooshPitchRange[2];
+    /* 0x0E0 */ float mrSmlPitchVariance[2];
+    /* 0x0E8 */ float mrMedPitchVariance[2];
+    /* 0x0F0 */ float mrBigPitchVariance[2];
+    /* 0x0F8 */ float mrSmlVolVariance[2];
+    /* 0x100 */ float mrMedVolVariance[2];
+    /* 0x108 */ float mrBigVolVariance[2];
+    /* 0x110 */ RwReal mrPitchAtEndOfSideRay;
+    /* 0x114 */ RwReal mrBigInitialOverHeadDamper;
+    /* 0x118 */ RwReal mrSmallInitialOverHeadDamper;
+    /* 0x11C */ RwReal mrIntialLoudSmallDamper;
+    /* 0x120 */ eIsInBoost meIsInBoost;
+    /* 0x124 */ RwReal mrBigStereoWhooshDamper;
+    /* 0x128 */ RwReal mrSmlStereoWhooshDamper;
+    // methods
+    // CB4SoundStaticPassManager(const CB4SoundStaticPassManager &);
+    // CB4SoundStaticPassManager();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void AddWhoosh(GtMathPs2::CGtV3d, ESoundStaticPassType);
+    // void TriggerPass(GtMathPs2::CGtV3d, float, float, ESoundStaticPassType);
+    // bool CheckSoup(CGtPolygonIntersectionResult *);
+    // void CheckSideRays(EPlayerCarIndex, int, float);
+    // void UpdateRush(int, GtMathPs2::CGtV3d, float, float);
+    // void StartRush(int);
+    // void StopRush(int);
+};
+```
 
 ## Notes
 

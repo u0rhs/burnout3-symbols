@@ -11,12 +11,12 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetIdentity()` | `0x0019BF90` 56 | `0x001D0E10` 56 | `0x001CA200` 56 | `0x001DA5D0` 128 | `0x001D5DC0` proven |  |
-| `operator =(const CGt2dFrame::CGt2dFrameSpace&)` |  |  |  | `0x001DAA60` 92 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetIdentity()` | `0x0019BF90` 56 | `0x001D0E10` 56 | `0x001CA200` 56 | `0x001DA5D0` 128 | `0x001D5DC0` proven |  | `void CGt2dFrame::CGt2dFrameSpace::SetIdentity()` |
+| `operator =(const CGt2dFrame::CGt2dFrameSpace&)` |  |  |  | `0x001DAA60` 92 |  |  |  |
 
 ## Notes
 

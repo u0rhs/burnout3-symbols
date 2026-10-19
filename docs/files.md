@@ -67,6 +67,20 @@ Two review discs nine days before the final US build: US `SLUS_210.50` (11:11) a
 | [`SLES_525.84.headers.txt`](../data/burnout3-review-pal-2004-07-20/disc/SLES_525.84.headers.txt) | PAL review: ELF and program headers | 782 bytes | 21 |
 | [`files.csv`](../data/burnout3-review-pal-2004-07-20/disc/files.csv) | PAL review: every file on the disc | 40.9 KB | 831 |
 
+## Burnout Revenge prototype: symbols and debug information
+
+The Burnout Revenge July 14, 2005 PS2 prototype kept its symbol table and GCC debug information: types with members, offsets and methods, signatures with parameter names, globals and source paths. Revenge was built on Burnout 3's code ([classes](reference/revenge-class-lineage.md), [functions](reference/revenge-function-lineage.md), [source files](reference/revenge-source-file-lineage.md)). Format: [GCC stabs in .mdebug](formats/gcc-stabs-mdebug.md).
+
+| File | Contents | Size | Lines / rows |
+|---|---|---:|---:|
+| [`types.h`](../data/burnout-revenge-prototype/SLUS_212.42/types.h) | Every class, struct, union and enum with member offsets and methods, as C | 2.2 MB | 54,089 |
+| [`functions.csv`](../data/burnout-revenge-prototype/SLUS_212.42/functions.csv) | Every linked function with signature, parameter names and source file | 2.3 MB | 9,416 |
+| [`functions.txt`](../data/burnout-revenge-prototype/SLUS_212.42/functions.txt) | The same, as text | 1.5 MB | 18,835 |
+| [`unlinked_functions.csv`](../data/burnout-revenge-prototype/SLUS_212.42/unlinked_functions.csv) | Functions in the debug information that the linker dropped | 550.9 KB | 3,402 |
+| [`symbols.csv`](../data/burnout-revenge-prototype/SLUS_212.42/symbols.csv) | The full symbol table, demangled where the link map has the name | 1.9 MB | 21,798 |
+| [`globals.txt`](../data/burnout-revenge-prototype/SLUS_212.42/globals.txt) | Global and static variables with types and addresses | 483.2 KB | 4,224 |
+| [`source_files.txt`](../data/burnout-revenge-prototype/SLUS_212.42/source_files.txt) | Every source file with its function count and code size | 57.6 KB | 864 |
+
 ## Burnout 2 prototype: symbols and debug information
 
 The Burnout 2 prototype (29 July 2002) kept its symbols and full DWARF 1 debug information: types, signatures with parameter names, locals and line numbers. Most useful as the ancestor of Burnout 3's code ([class ancestors](reference/class-ancestors.md)). Format: [DWARF 1](formats/codewarrior-dwarf1.md).

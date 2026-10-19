@@ -12,21 +12,21 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateLoadingBar()` | `0x002DAF40` 320 | `0x00324990` 336 | `0x00356B30` 320 | `0x003576C0` 544 |  |  |
-| `GetLoadingTipStringID()` | `0x002DB080` 284 | `0x00324AE0` 284 | `0x00356C70` 284 | `0x003574F0` 428 |  |  |
-| `ReleaseObjects()` | `0x002DB1B0` 484 | `0x00324C10` 484 | `0x00356DA0` 484 | `0x00357140` 944 | `0x0031CDA0` unverified |  |
-| `Release()` | `0x002DB3A0` 44 | `0x00324E00` 44 | `0x00356F90` 44 | `0x00357100` 52 | `0x0031CF00` proven |  |
-| `Update(float)` | `0x002DB3D0` 732 | `0x00324E30` 860 | `0x00356FC0` 860 | `0x00356E20` 724 | `0x0031CF30` unverified |  |
-| `PrepareBorders(float)` | `0x002DB6B0` 676 | `0x00325190` 676 | `0x00357320` 676 | `0x00356810` 1112 | `0x0031D660` likely |  |
-| `Prepare(EB3BackgroundType)` | `0x002DB960` 2716 | `0x00325440` 2952 | `0x003575D0` 2948 | `0x00355460` 4384 | `0x0031D930` unverified |  |
-| `Construct()` | `0x002DC400` 180 | `0x00325FD0` 180 | `0x00358160` 180 | `0x00355340` 288 | `0x0031E0D0` likely |  |
-| `CB3BackgroundComponent()` |  |  |  | `0x0033CA40` 76 |  |  |
-| `PrepareFullScreenBorder(bool)` |  |  |  | `0x00356600` 516 |  |  |
-| `PrepareGrid()` |  |  |  | `0x00356C70` 420 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateLoadingBar()` | `0x002DAF40` 320 | `0x00324990` 336 | `0x00356B30` 320 | `0x003576C0` 544 |  |  |  |
+| `GetLoadingTipStringID()` | `0x002DB080` 284 | `0x00324AE0` 284 | `0x00356C70` 284 | `0x003574F0` 428 |  |  |  |
+| `ReleaseObjects()` | `0x002DB1B0` 484 | `0x00324C10` 484 | `0x00356DA0` 484 | `0x00357140` 944 | `0x0031CDA0` unverified |  |  |
+| `Release()` | `0x002DB3A0` 44 | `0x00324E00` 44 | `0x00356F90` 44 | `0x00357100` 52 | `0x0031CF00` proven |  |  |
+| `Update(float)` | `0x002DB3D0` 732 | `0x00324E30` 860 | `0x00356FC0` 860 | `0x00356E20` 724 | `0x0031CF30` unverified |  |  |
+| `PrepareBorders(float)` | `0x002DB6B0` 676 | `0x00325190` 676 | `0x00357320` 676 | `0x00356810` 1112 | `0x0031D660` likely |  |  |
+| `Prepare(EB3BackgroundType)` | `0x002DB960` 2716 | `0x00325440` 2952 | `0x003575D0` 2948 | `0x00355460` 4384 | `0x0031D930` unverified |  |  |
+| `Construct()` | `0x002DC400` 180 | `0x00325FD0` 180 | `0x00358160` 180 | `0x00355340` 288 | `0x0031E0D0` likely |  |  |
+| `CB3BackgroundComponent()` |  |  |  | `0x0033CA40` 76 |  |  |  |
+| `PrepareFullScreenBorder(bool)` |  |  |  | `0x00356600` 516 |  |  |  |
+| `PrepareGrid()` |  |  |  | `0x00356C70` 420 |  |  |  |
 
 ## Notes
 

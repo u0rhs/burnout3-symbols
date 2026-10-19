@@ -11,17 +11,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x00355B10` 492 | `0x003C0240` 492 | `0x003E9A70` 492 | `0x003F6EC0` 812 |  |  |
-| `Update(float)` | `0x00355D00` 92 | `0x003C0430` 92 | `0x003E9C60` 92 | `0x003F6DE0` 156 |  |  |
-| `PrepareOnlineWaitForPlayers(bool,bool)` | `0x00355D60` 952 | `0x003C0490` 1200 | `0x003E9CC0` 1200 | `0x003F6730` 1708 |  |  |
-| `Prepare(EResultsPageType)` | `0x00356120` 908 | `0x003C0940` 1232 | `0x003EA170` 948 | `0x003F60C0` 1544 |  |  |
-| `PrepareEventEntry(int,const unsigned short*,const unsigned short*)` | `0x003564B0` 796 | `0x003C0E10` 828 | `0x003EA530` 828 | `0x003F5BF0` 1220 |  |  |
-| `Construct()` | `0x003567D0` 144 | `0x003C1150` 144 | `0x003EA870` 144 | `0x003F5B10` 220 |  |  |
-| `CB3EventSummaryComponent()` |  |  |  | `0x0033BEA0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x00355B10` 492 | `0x003C0240` 492 | `0x003E9A70` 492 | `0x003F6EC0` 812 |  |  |  |
+| `Update(float)` | `0x00355D00` 92 | `0x003C0430` 92 | `0x003E9C60` 92 | `0x003F6DE0` 156 |  |  |  |
+| `PrepareOnlineWaitForPlayers(bool,bool)` | `0x00355D60` 952 | `0x003C0490` 1200 | `0x003E9CC0` 1200 | `0x003F6730` 1708 |  |  |  |
+| `Prepare(EResultsPageType)` | `0x00356120` 908 | `0x003C0940` 1232 | `0x003EA170` 948 | `0x003F60C0` 1544 |  |  |  |
+| `PrepareEventEntry(int,const unsigned short*,const unsigned short*)` | `0x003564B0` 796 | `0x003C0E10` 828 | `0x003EA530` 828 | `0x003F5BF0` 1220 |  |  |  |
+| `Construct()` | `0x003567D0` 144 | `0x003C1150` 144 | `0x003EA870` 144 | `0x003F5B10` 220 |  |  |  |
+| `CB3EventSummaryComponent()` |  |  |  | `0x0033BEA0` 60 |  |  |  |
 
 ## Notes
 

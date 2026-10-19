@@ -6,14 +6,32 @@
 
 - **Area:** [Libraries](../systems/libraries.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `sceInsockSockaddrIn`, size 0x010 ([layout](#burnout-revenge-layout-of-sceinsocksockaddrin))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `operator =(const sceInsockSockaddrIn&)` |  |  |  | `0x00239940` 156 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `operator =(const sceInsockSockaddrIn&)` |  |  |  | `0x00239940` 156 |  |  |  |
+
+## Burnout Revenge layout of `sceInsockSockaddrIn`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 36 file(s), e.g. `GameShared/GameClasses/System/Networking/Packeting/Ps2/GtPS2LibNet.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class sceInsockSockaddrIn {  // size 0x010
+    /* 0x000 */ u_char sin_len;
+    /* 0x001 */ u_char sin_family;
+    /* 0x002 */ u_short sin_port;
+    /* 0x004 */ sceInsockInAddr_t sin_addr;
+    /* 0x008 */ char sin_zero[8];
+    // methods
+    // sceInsockSockaddrIn(const sceInsockSockaddrIn &);
+    // sceInsockSockaddrIn();
+};
+```
 
 ## Notes
 

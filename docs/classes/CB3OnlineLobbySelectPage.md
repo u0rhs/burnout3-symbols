@@ -11,17 +11,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x00340440` 8 | `0x003A35A0` 8 | `0x003CD7C0` 8 | `0x003D6480` 16 |  |  |
-| `Update()` | `0x00340450` 1412 | `0x003A35B0` 1412 | `0x003CD7D0` 1412 | `0x003D5F30` 1356 |  |  |
-| `ForEachLobby(int,char*,int,int,bool,void*)` | `0x003409E0` 596 | `0x003A3B40` 668 | `0x003CDD60` 668 | `0x003D5CE0` 372 |  |  |
-| `Prepare(char*)` | `0x00340C40` 484 | `0x003A3DE0` 484 | `0x003CE000` 484 | `0x003D5A40` 664 |  |  |
-| `CB3OnlineLobbySelectPage()` |  |  |  | `0x00341690` 60 |  |  |
-| `DisplayNumPlayersInLobby()` |  |  |  | `0x003D6490` 248 |  |  |
-| `JoinLobby(int)` |  |  |  | `0x003D5E60` 196 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x00340440` 8 | `0x003A35A0` 8 | `0x003CD7C0` 8 | `0x003D6480` 16 |  |  |  |
+| `Update()` | `0x00340450` 1412 | `0x003A35B0` 1412 | `0x003CD7D0` 1412 | `0x003D5F30` 1356 |  |  |  |
+| `ForEachLobby(int,char*,int,int,bool,void*)` | `0x003409E0` 596 | `0x003A3B40` 668 | `0x003CDD60` 668 | `0x003D5CE0` 372 |  |  |  |
+| `Prepare(char*)` | `0x00340C40` 484 | `0x003A3DE0` 484 | `0x003CE000` 484 | `0x003D5A40` 664 |  |  |  |
+| `CB3OnlineLobbySelectPage()` |  |  |  | `0x00341690` 60 |  |  |  |
+| `DisplayNumPlayersInLobby()` |  |  |  | `0x003D6490` 248 |  |  |  |
+| `JoinLobby(int)` |  |  |  | `0x003D5E60` 196 |  |  |  |
 
 ## Notes
 

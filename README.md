@@ -45,6 +45,8 @@ The most-used files, one click away. **All of them, with sizes: [Symbols and map
 | [`memory-map.csv`](data/burnout3-retail/memory-map.csv) | Named addresses in the retail game (SLUS-21050): save data, race state, tuning, display, controls |
 | [`types.h`](data/burnout2-prototype/SLUS_204.97/types.h) | 969 Burnout 2 types with member offsets: the ancestors of many Burnout 3 classes |
 | [`functions.csv`](data/burnout2-prototype/SLUS_204.97/functions.csv) | 2,309 Burnout 2 functions with parameter names, source files and lines |
+| [Revenge `types.h`](data/burnout-revenge-prototype/SLUS_212.42/types.h) | 2,717 Burnout Revenge types with members, offsets and methods: many are Burnout 3 classes a year later |
+| [Revenge `functions.csv`](data/burnout-revenge-prototype/SLUS_212.42/functions.csv) | 9,416 Burnout Revenge functions with parameter names and source paths |
 | [`b3-functions-by-build.csv`](docs/reference/data/b3-functions-by-build.csv) | Every Burnout 3 function's address and size in each of the four prototype builds |
 
 ## Highlights
@@ -60,6 +62,9 @@ The most-used files, one click away. **All of them, with sizes: [Symbols and map
 - **The retail game, located.** About 150 addresses in the shipping executable: the save profile, boost,
   the 1/60 s simulation step, the game's own widescreen flag, every HUD layout value, the button mapping
   ([retail memory map](docs/reference/retail-memory-map.md)).
+- **Burnout Revenge, a year later.** The July 2005 Revenge prototype kept GCC debug information: layouts with
+  member names and methods, parameter names, Criterion's folders. 444 Burnout 3 classes and 2,805 functions have
+  a Revenge counterpart, shown on every class page ([Revenge lineage](docs/reference/revenge-class-lineage.md)).
 - **Burnout 2's source structure.** Criterion's original file tree, with every function's parameters,
   locals and line numbers ([source outlines](data/burnout2-prototype/SLUS_204.97/source_outline/README.md)).
 - **How it draws.** The 22 VU microcode programs behind the cars, world, glass, water, sky and effects
@@ -85,12 +90,14 @@ Every part of the documentation, in the same groups as the website's sidebar.
   [Assert expressions](docs/reference/asserts.md) · [Burnout 3 global data](docs/reference/b3-globals.md) · [Burnout 3 prototype builds compared](docs/reference/build-comparison.md) · [Debug and development features](docs/reference/debug-features.md) · [File hashes](docs/reference/hashes.md) · [IOP modules with symbols](docs/reference/iop-modules.md) · [Memory layout](docs/reference/memory-layout.md) · [Code that was written but not linked](docs/reference/unlinked-code.md) · [The value database (VDB.XML)](docs/reference/value-database.md) · [VU microcode programs](docs/reference/vu-programs.md)
 - **[Reference: Burnout 2 lineage](docs/reference/class-ancestors.md)**
   [Burnout 3 classes and their Burnout 2 ancestors](docs/reference/class-ancestors.md) · [Burnout 2 → Burnout 3 class lineage](docs/reference/class-lineage.md) · [Burnout 2 → Burnout 3 function lineage](docs/reference/function-lineage.md) · [Burnout 2 → Burnout 3 source files](docs/reference/source-file-lineage.md) · [Burnout 2 classes and structs](docs/reference/b2-classes.md) · [Class hierarchy (Burnout 2)](docs/reference/class-hierarchy.md) · [Enums (Burnout 2)](docs/reference/enums.md) · [RenderWare and library functions](docs/reference/renderware-api.md)
+- **[Reference: Burnout Revenge lineage](docs/reference/revenge-class-lineage.md)**
+  [Burnout 3 → Burnout Revenge classes](docs/reference/revenge-class-lineage.md) · [Burnout 3 → Burnout Revenge function lineage](docs/reference/revenge-function-lineage.md) · [Burnout 3 → Burnout Revenge source files](docs/reference/revenge-source-file-lineage.md)
 - **[Uses](docs/avenues/README.md)**
   [Using this data for a decompilation](docs/avenues/decompilation.md) · [Using this data for a remake](docs/avenues/remake.md) · [Using this data for a remaster](docs/avenues/remaster.md)
 - **[Formats](docs/formats/README.md)**
-  [CodeWarrior C++ name mangling](docs/formats/codewarrior-demangling.md) · [CodeWarrior PS2 DWARF 1](docs/formats/codewarrior-dwarf1.md) · [CodeWarrior link maps and assert files](docs/formats/codewarrior-maps.md)
+  [CodeWarrior C++ name mangling](docs/formats/codewarrior-demangling.md) · [CodeWarrior PS2 DWARF 1](docs/formats/codewarrior-dwarf1.md) · [CodeWarrior link maps and assert files](docs/formats/codewarrior-maps.md) · [GCC stabs in .mdebug (Burnout Revenge)](docs/formats/gcc-stabs-mdebug.md)
 - **[Data and tools](data/README.md)**
-  [Burnout 3 prototype data](data/burnout3-prototype/README.md) · [Burnout 3 retail data](data/burnout3-retail/README.md) · [Burnout 3 US review build data](data/burnout3-review-us-2004-07-20/README.md) · [Burnout 3 PAL review build data](data/burnout3-review-pal-2004-07-20/README.md) · [Burnout 2 prototype data](data/burnout2-prototype/README.md) · [Burnout 2 source outlines](data/burnout2-prototype/SLUS_204.97/source_outline/README.md) · [Reference tables (CSV)](docs/reference/data/README.md) · [Tools](docs/tools.md)
+  [Burnout 3 prototype data](data/burnout3-prototype/README.md) · [Burnout 3 retail data](data/burnout3-retail/README.md) · [Burnout 3 US review build data](data/burnout3-review-us-2004-07-20/README.md) · [Burnout 3 PAL review build data](data/burnout3-review-pal-2004-07-20/README.md) · [Burnout 2 prototype data](data/burnout2-prototype/README.md) · [Burnout Revenge prototype data](data/burnout-revenge-prototype/README.md) · [Burnout 2 source outlines](data/burnout2-prototype/SLUS_204.97/source_outline/README.md) · [Reference tables (CSV)](docs/reference/data/README.md) · [Tools](docs/tools.md)
 - **[Project](docs/related-projects.md)**
   [Related resources](docs/related-projects.md) · [Open questions](docs/open-questions.md) · [Changelog](docs/changelog.md) · [GitHub repository](https://github.com/u0rhs/burnout3-symbols)
 <!-- contents:end -->
@@ -102,7 +109,8 @@ Every part of the documentation, in the same groups as the website's sidebar.
 | Burnout 3 prototype | 4 link maps (one text, three binary) · 8,301 functions in the DNAT_200 build, 11,020 in the unoptimised build · 890 classes · 312 vtables · 595 game source files · 3,383 named variables · 22 VU microcode programs · 2,243 assert expressions · 3,056 unlinked symbols |
 | Burnout 3 retail | 5,054 functions with the prototype's names (3,008 proven against the code) · Nahelam's 1,146 names, each checked (634 agree) · 1,480 addresses from Nahelam's mods · 775 files listed · 2,255 strings with addresses · 7,525 tuning values (1,949 changed since the prototype) · about 150 named memory addresses, 67 vehicle IDs, 139 event medal bytes |
 | Burnout 3 review builds (20 July 2004) | US and PAL review discs: stripped like retail; 34 tuning values changed before release |
-| Burnout Revenge prototypes | July 14, 2005 PS2 build: 12,023 functions in its symbol table, GCC debug information for 1,899 types, a link map of 20,023 symbols · February 7, 2006 Xbox 360 build: a PDB ([builds](docs/builds.md#burnout-revenge-prototypes-2005-to-2006)) |
+| Burnout Revenge prototypes | July 14, 2005 PS2 build: 12,023 functions in its symbol table · 9,416 with signatures and parameter names · 2,717 types with members and methods · 4,220 globals · 861 source files at their paths · February 7, 2006 Xbox 360 build: a PDB, not decoded yet ([builds](docs/builds.md#burnout-revenge-prototypes-2005-to-2006)) |
+| Burnout 3 → Revenge | 444 classes · 2,805 functions (2,391 with the same parameter types) · 300 source files |
 | Burnout 2 prototype | 12,023 symbols · 2,309 functions with full debug info · 969 types · 168 enums · 288 source files · 76,449 line entries |
 | Burnout 2 → 3 | 62 class ancestors · 704 function counterparts · 25 source-file counterparts |
 | Compiler, all three executables | Metrowerks CodeWarrior for PS2, MW MIPS C Compiler 2.4.1.01 |

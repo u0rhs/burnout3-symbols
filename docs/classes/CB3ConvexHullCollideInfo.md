@@ -6,15 +6,46 @@
 
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Methods per build:** B3O0PCH 2
+- **Burnout Revenge counterpart:** `CB4ConvexHullCollideInfo`, size 0x12D0, methods in `GameSource/Physics/B4CollisionDetectorConvex.cpp` ([layout](#burnout-revenge-layout-of-cb4convexhullcollideinfo))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3ConvexHullCollideInfo()` |  |  |  | `0x002E4430` 336 |  |  |
-| `Clear()` |  |  |  | `0x002E3610` 56 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3ConvexHullCollideInfo()` |  |  |  | `0x002E4430` 336 |  |  | `CB4ConvexHullCollideInfo * CB4ConvexHullCollideInfo::CB4ConvexHullCollideInfo()` |
+| `Clear()` |  |  |  | `0x002E3610` 56 |  |  |  |
+
+## Burnout Revenge layout of `CB4ConvexHullCollideInfo`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Physics/B4CollisionDetectorConvex.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ConvexHullCollideInfo {  // size 0x12D0
+    /* 0x000 */ CGtMatrix3x4 mAtoBMat;
+    /* 0x040 */ CGtMatrix3x4 mBtoAMat;
+    /* 0x080 */ CGtV3d maHullAVerts[16];
+    /* 0x180 */ CGtV3d maHullBVerts[16];
+    /* 0x280 */ CGtV3d mAToBVec;
+    /* 0x290 */ CGtV3d mBToAVec;
+    /* 0x2A0 */ CB4ConvexHullCollideHit maHits[64];
+    /* 0x12A0 */ EB4HullCollideType meType;
+    /* 0x12A4 */ RwUInt32 mnNumHits;
+    /* 0x12A8 */ CB4HullWorldTriCollideParams *mpHullTriParams;
+    /* 0x12AC */ CB4HullCollideParams *mpHullParams;
+    /* 0x12B0 */ CB4HullCollideHullParams *mpHullAInf;
+    /* 0x12B4 */ CB4HullCollideHullParams *mpHullBInf;
+    /* 0x12B8 */ CB4ConvexHull *mpHullA;
+    /* 0x12BC */ CB4ConvexHull *mpHullB;
+    /* 0x12C0 */ RwBool mbPenetrating;
+    /* 0x12C4 */ RwInt32 mnBiggestPenHit;
+    // methods
+    // CB4ConvexHullCollideInfo(const CB4ConvexHullCollideInfo &);
+    // CB4ConvexHullCollideInfo();
+    // void Clear();
+};
+```
 
 ## Notes
 

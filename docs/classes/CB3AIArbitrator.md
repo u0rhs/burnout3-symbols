@@ -8,23 +8,24 @@
 - **Source file:** `B3AIArbitrator.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 9
 - **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4AIArbitrator`, size 0x7E0, methods in `GameSource/World/B4AIArbitrator.cpp` ([layout](#burnout-revenge-layout-of-cb4aiarbitrator))
 - **Burnout 2 ancestor (by name):** `CAIArbitrator`, size 0x048, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CalculateSpeedMatch()` | `0x0016A410` 152 | `0x001837C0` 152 | `0x0017E620` 152 | `0x00194630` 224 | `0x0019D4D0` unverified |  |
-| `CalculateCatchup()` | `0x0016A4B0` 172 | `0x00183860` 212 | `0x0017E6C0` 212 | `0x00194520` 264 | `0x0019D5E0` strong |  |
-| `Release()` | `0x0016A560` 44 | `0x00183940` 44 | `0x0017E7A0` 44 | `0x00194420` 56 | `0x0019D6A0` proven |  |
-| `Update(bool)` | `0x0016A590` 1364 | `0x00183970` 3288 | `0x0017E7D0` 3288 | `0x00193D70` 1712 | `0x0019D6D0` proven | `void CAIArbitrator::Update(int lbForceTarget)` (same name, different parameters) |
-| `Prepare()` | `0x0016AAF0` 104 | `0x00184650` 104 | `0x0017F4B0` 104 | `0x00193CB0` 192 | `0x0019DC40` proven |  |
-| `Construct()` | `0x0016AB60` 72 | `0x001846C0` 100 | `0x0017F520` 100 | `0x00193C40` 108 | `0x0019DCB0` proven |  |
-| `CB3AIArbitrator()` |  |  |  | `0x00191200` 76 |  |  |
-| `UseAvoidanceData()` |  |  |  | `0x00194460` 84 |  |  |
-| `UseTargetData()` |  |  |  | `0x001944C0` 84 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CalculateSpeedMatch()` | `0x0016A410` 152 | `0x001837C0` 152 | `0x0017E620` 152 | `0x00194630` 224 | `0x0019D4D0` unverified |  | `void CB4AIArbitrator::CalculateSpeedMatch()` |
+| `CalculateCatchup()` | `0x0016A4B0` 172 | `0x00183860` 212 | `0x0017E6C0` 212 | `0x00194520` 264 | `0x0019D5E0` strong |  | `void CB4AIArbitrator::CalculateCatchup()` |
+| `Release()` | `0x0016A560` 44 | `0x00183940` 44 | `0x0017E7A0` 44 | `0x00194420` 56 | `0x0019D6A0` proven |  | `void CB4AIArbitrator::Release()` |
+| `Update(bool)` | `0x0016A590` 1364 | `0x00183970` 3288 | `0x0017E7D0` 3288 | `0x00193D70` 1712 | `0x0019D6D0` proven | `void CAIArbitrator::Update(int lbForceTarget)` (same name, different parameters) | `void CB4AIArbitrator::Update(bool lbForceTarget)` |
+| `Prepare()` | `0x0016AAF0` 104 | `0x00184650` 104 | `0x0017F4B0` 104 | `0x00193CB0` 192 | `0x0019DC40` proven |  | `bool CB4AIArbitrator::Prepare()` |
+| `Construct()` | `0x0016AB60` 72 | `0x001846C0` 100 | `0x0017F520` 100 | `0x00193C40` 108 | `0x0019DCB0` proven |  | `void CB4AIArbitrator::Construct()` |
+| `CB3AIArbitrator()` |  |  |  | `0x00191200` 76 |  |  | `CB4AIArbitrator * CB4AIArbitrator::CB4AIArbitrator()` |
+| `UseAvoidanceData()` |  |  |  | `0x00194460` 84 |  |  | `void CB4AIArbitrator::UseAvoidanceData()` |
+| `UseTargetData()` |  |  |  | `0x001944C0` 84 |  |  | `void CB4AIArbitrator::UseTargetData()` |
 
 ## Burnout 2 layout of `CAIArbitrator`
 
@@ -52,6 +53,40 @@ public:
     // void CAIArbitrator::Update(int lbForceTarget)  [0x00216F20]
     // void CAIArbitrator::Reset()  [0x00217620]
     // int CAIArbitrator::Init()  [0x00217690]
+};
+```
+
+## Burnout Revenge layout of `CB4AIArbitrator`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 305 file(s), e.g. `GameShared/GameClasses/System/MemoryCard/NewMemoryCard/GtMemoryCardManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AIArbitrator {  // size 0x7E0
+    /* 0x000 */ CB4AITarget mTarget;
+    /* 0x2F0 */ CB4AIAvoidance mAvoidance;
+    /* 0x7A0 */ CB4AICar *mpCar;
+    /* 0x7A4 */ CB4AIDriver *mpDriver;
+    /* 0x7B0 */ CGtV3d mDesiredDirection;
+    /* 0x7C0 */ RwReal mrDesiredSpeed;
+    /* 0x7C4 */ RwReal mrTimeToDesiredDirection;
+    /* 0x7C8 */ bool mbWantToDrift;
+    /* 0x7C9 */ bool mbUseTargetData;
+    /* 0x7CC */ EAIArbitratorCatchup meCatchup;
+    /* 0x7D0 */ EAIArbitratorSpeedMatch meSpeedMatch;
+    /* 0x7D4 */ CB4AICar *mpSpeedMatchTarget;
+    /* 0x7D8 */ bool mbIgnoreAvoidanceSpeed;
+    // methods
+    // CB4AIArbitrator(const CB4AIArbitrator &);
+    // CB4AIArbitrator();
+    // void Construct();
+    // bool Prepare();
+    // void Update(bool);
+    // void Release();
+    // void Destruct();
+    // void CalculateCatchup();
+    // void CalculateSpeedMatch();
+    // void UseAvoidanceData();
+    // void UseTargetData();
 };
 ```
 

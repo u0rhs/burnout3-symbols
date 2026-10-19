@@ -8,16 +8,35 @@
 - **Source file:** `B3NetworkMessage.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 3
 - **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4NetworkMessage`, size 0x008, methods in `GameSource/Network/Messages/B4NetworkMessage.cpp` ([layout](#burnout-revenge-layout-of-cb4networkmessage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Prepare(int,bool)` | `0x00173E60` 156 | `0x00190040` 320 | `0x0018A340` 320 | `0x001A3CF0` 68 | `0x001A84A0` strong |  |
-| `Construct()` | `0x00173F00` 8 | `0x00190180` 8 | `0x0018A480` 8 | `0x001A3CC0` 40 | `0x001A8540` likely |  |
-| `Release()` |  |  |  | `0x001A3FC0` 40 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Prepare(int,bool)` | `0x00173E60` 156 | `0x00190040` 320 | `0x0018A340` 320 | `0x001A3CF0` 68 | `0x001A84A0` strong |  | `void CB4NetworkMessage::Prepare(int lnType, bool lbReliable)` |
+| `Construct()` | `0x00173F00` 8 | `0x00190180` 8 | `0x0018A480` 8 | `0x001A3CC0` 40 | `0x001A8540` likely |  | `void CB4NetworkMessage::Construct()` |
+| `Release()` |  |  |  | `0x001A3FC0` 40 |  |  |  |
+
+## Burnout Revenge layout of `CB4NetworkMessage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 101 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkMessage : public CGtNetworkMessage {  // size 0x008
+    // base CGtNetworkMessage at 0x000
+    // methods
+    // CB4NetworkMessage(const CB4NetworkMessage &);
+    // CB4NetworkMessage();
+    // void Construct();
+    // void Prepare(int, bool);
+    // void Update();
+    // void Release();
+    // void Destruct();
+};
+```
 
 ## Notes
 

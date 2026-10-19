@@ -8,20 +8,51 @@
 - **Source file:** `B3CrashPickup.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 6
 - **Retail (SLUS-21050):** 2 of its 6 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CrashPickup`, size 0x018, methods in `GameSource/World/B4CrashPickup.cpp` ([layout](#burnout-revenge-layout-of-cb4crashpickup))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Draw()` | `0x00359EF0` 1148 |  | `0x003ED4F0` 1412 |  |  |  |
-| `Destruct()` | `0x0035A370` 8 | `0x003C4F80` 8 | `0x003EDA80` 8 | `0x003FBBF0` 16 |  |  |
-| `Release()` | `0x0035A380` 24 | `0x003C4F90` 24 | `0x003EDA90` 24 | `0x003FBBB0` 56 |  |  |
-| `Update(float)` | `0x0035A3A0` 1612 | `0x003C4FB0` 2212 | `0x003EDAB0` 1700 | `0x003FB360` 2088 |  |  |
-| `Prepare(CB3CrashModePickupStruct*,CGtTexture**)` | `0x0035A9F0` 52 | `0x003C5860` 52 | `0x003EE160` 52 | `0x003FB2F0` 112 | `0x003A17A0` proven |  |
-| `Construct()` | `0x0035AA30` 24 | `0x003C58A0` 24 | `0x003EE1A0` 24 | `0x003FB2B0` 56 | `0x003A17E0` likely |  |
-| `Draw(int)` |  | `0x003C49E0` 1436 |  | `0x003FBC00` 840 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Draw()` | `0x00359EF0` 1148 |  | `0x003ED4F0` 1412 |  |  |  | `void CB4CrashPickup::Draw(EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `Destruct()` | `0x0035A370` 8 | `0x003C4F80` 8 | `0x003EDA80` 8 | `0x003FBBF0` 16 |  |  | `void CB4CrashPickup::Destruct()` |
+| `Release()` | `0x0035A380` 24 | `0x003C4F90` 24 | `0x003EDA90` 24 | `0x003FBBB0` 56 |  |  | `void CB4CrashPickup::Release()` |
+| `Update(float)` | `0x0035A3A0` 1612 | `0x003C4FB0` 2212 | `0x003EDAB0` 1700 | `0x003FB360` 2088 |  |  | `void CB4CrashPickup::Update(float lrRaceTime)` |
+| `Prepare(CB3CrashModePickupStruct*,CGtTexture**)` | `0x0035A9F0` 52 | `0x003C5860` 52 | `0x003EE160` 52 | `0x003FB2F0` 112 | `0x003A17A0` proven |  |  |
+| `Construct()` | `0x0035AA30` 24 | `0x003C58A0` 24 | `0x003EE1A0` 24 | `0x003FB2B0` 56 | `0x003A17E0` likely |  | `void CB4CrashPickup::Construct()` |
+| `Draw(int)` |  | `0x003C49E0` 1436 |  | `0x003FBC00` 840 |  |  | `void CB4CrashPickup::Draw(EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+
+## Burnout Revenge layout of `CB4CrashPickup`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 7 file(s), e.g. `GameSource/Game/Challenge/B4Challenge.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CrashPickup {  // size 0x018
+    /* 0x000 */ CB4CrashModePickupStruct *mpPickupData;
+    /* 0x004 */ RwReal mrPickupTime;
+    /* 0x008 */ bool mbPlayersInRange[6];
+    /* 0x00E */ bool mbHasBeenPickedUp;
+    /* 0x00F */ bool mbWantPickupEffect;
+    /* 0x010 */ RwInt8 mn8RaceCarIndex;
+    /* 0x011 */ RwUInt8 pad;
+    /* 0x014 */ CGtTexture *mpTexture;
+    // methods
+    // CB4CrashPickup(const CB4CrashPickup &);
+    // CB4CrashPickup();
+    // void Construct();
+    // bool Prepare(CB4CrashModePickupStruct *, CGtTexture **);
+    // void Reset();
+    // void Update(float);
+    // void Release();
+    // void Destruct();
+    // void Draw(EPlayerCarIndex);
+    // CGtV3d GetPosition();
+    // ECrashModePickupType GetType();
+    // bool IsAvailable();
+};
+```
 
 ## Notes
 

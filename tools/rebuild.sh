@@ -15,6 +15,7 @@
 #             folder name below is a local one and holds the Jun 8 build
 #   B3_REVIEW_US, B3_REVIEW_PAL  disc images of the Jul 20, 2004 11.11 and 11.14 review builds
 #   B3_RETAIL the Burnout 3 NTSC-U retail disc (SLUS-21050)
+#   REVENGE_PROTO the Burnout Revenge July 14, 2005 PS2 prototype, extracted (SLUS_212.42 and B4EXTERN.MAP)
 set -e
 cd "$(dirname "$0")/.."
 
@@ -57,6 +58,13 @@ if have "$B2_DISC"; then
     python3 -I tools/export_disc.py "$B2_DISC" "$B2/disc" "Burnout 2 prototype, 29 July 2002"
 else
     echo "Burnout 2 disc not found at $B2_DISC: keeping $B2/SLUS_204.97 and $B2/disc"
+fi
+if [ -n "${REVENGE_PROTO:-}" ] && [ -f "$REVENGE_PROTO/SLUS_212.42" ]; then
+    rm -rf data/burnout-revenge-prototype/SLUS_212.42
+    python3 -I tools/export_revenge.py "$REVENGE_PROTO/SLUS_212.42" "$REVENGE_PROTO/B4EXTERN.MAP" \
+        data/burnout-revenge-prototype/SLUS_212.42
+else
+    echo "Burnout Revenge prototype not set (REVENGE_PROTO): keeping data/burnout-revenge-prototype"
 fi
 if have "$B3_PROTO"; then
     rm -rf "$B3/disc"

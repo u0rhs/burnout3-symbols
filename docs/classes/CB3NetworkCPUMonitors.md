@@ -8,14 +8,48 @@
 - **Source file:** `B3CPUMonitors.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4NetworkCPUMonitors`, size 0x04C, methods in `GameSource/Game/B4CPUMonitors.cpp` ([layout](#burnout-revenge-layout-of-cb4networkcpumonitors))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` | `0x002AEFB0` 88 | `0x002ED810` 88 | `0x00322B90` 88 | `0x0031ABF0` 260 | `0x002F03A0` unverified |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` | `0x002AEFB0` 88 | `0x002ED810` 88 | `0x00322B90` 88 | `0x0031ABF0` 260 | `0x002F03A0` unverified |  | `void CB4NetworkCPUMonitors::Construct()` |
+
+## Burnout Revenge layout of `CB4NetworkCPUMonitors`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Game/B4CPUMonitors.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkCPUMonitors {  // size 0x04C
+    /* 0x000 */ RwInt32 mnNetCarPhysicsUpdate;
+    /* 0x004 */ RwInt32 mnB4NetManagerUpdate;
+    /* 0x008 */ RwInt32 mnB4NetManagerPostUpdate;
+    /* 0x00C */ RwInt32 mnGtNetPlayerManagerUpdate;
+    /* 0x010 */ RwInt32 mnGtNetAdapterUpdate;
+    /* 0x014 */ RwInt32 mnB4NetPlayersUpdate;
+    /* 0x018 */ RwInt32 mnGtLobbyUpdate;
+    /* 0x01C */ RwInt32 mnGtBuddiesUpdate;
+    /* 0x020 */ RwInt32 mnVoIPUpdate;
+    /* 0x024 */ RwInt32 mnNATUpdate;
+    /* 0x028 */ RwInt32 mnAddCrashTrafficMonitor;
+    /* 0x02C */ RwInt32 mnCheckForMessagesMonitor;
+    /* 0x030 */ RwInt32 mnApplyDataMonitor;
+    /* 0x034 */ RwInt32 mnApplyTrafficMonitor;
+    /* 0x038 */ RwInt32 mnGtNetPlayerMonitor;
+    /* 0x03C */ RwInt32 mnApplyNetCarDataMonitor;
+    /* 0x040 */ RwInt32 mnApplyTrafficDataMonitor;
+    /* 0x044 */ RwInt32 mnCalcTrafficDiffsMonitor;
+    /* 0x048 */ RwInt32 mnApplyTrafficDiffsMonitor;
+    // methods
+    // CB4NetworkCPUMonitors(const CB4NetworkCPUMonitors &);
+    // CB4NetworkCPUMonitors();
+    // void Construct();
+    // void Destruct();
+};
+```
 
 ## Notes
 

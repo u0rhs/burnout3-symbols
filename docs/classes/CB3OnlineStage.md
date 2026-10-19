@@ -9,23 +9,60 @@
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 10
 - **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FC70`, 40 bytes = 10 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 8 virtual functions)
+- **Burnout Revenge counterpart:** `CB4OnlineStage`, size 0x030, methods in `GameSource/Game/B4OnlineStage.cpp` ([layout](#burnout-revenge-layout-of-cb4onlinestage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetNumLaps()` | `0x00134570` 8 | `0x0013C090` 8 | `0x00139AA0` 8 | `0x001424C0` 28 | `0x001353B0` proven |  |
-| `StartReplay()` | `0x00134580` 68 | `0x0013C0A0` 68 | `0x00139AB0` 68 | `0x00142460` 96 | `0x001353C0` proven |  |
-| `Destruct()` | `0x001345D0` 12 | `0x0013C0F0` 12 | `0x00139B00` 12 | `0x00142440` 32 | `0x00135410` proven |  |
-| `Release()` | `0x001345E0` 236 | `0x0013C100` 236 | `0x00139B10` 260 | `0x001422F0` 296 | `0x00135420` proven |  |
-| `Render()` | `0x001346D0` 292 | `0x0013C1F0` 388 | `0x00139C20` 452 | `0x00142130` 440 | `0x001354E0` proven |  |
-| `Update()` | `0x00134800` 488 | `0x0013C380` 612 | `0x00139F70` 612 | `0x00141C60` 536 | `0x00135620` unverified |  |
-| `Prepare()` | `0x001349F0` 792 | `0x0013C5F0` 1076 | `0x0013A1E0` 1064 | `0x001416F0` 1032 | `0x00135740` proven |  |
-| `Construct()` | `0x00134D10` 44 | `0x0013CA30` 44 | `0x0013A610` 68 | `0x001416B0` 52 | `0x00135A60` proven |  |
-| `CB3OnlineStage()` |  |  |  | `0x0013E1F0` 60 |  |  |
-| `SetNumLaps(int)` |  |  |  | `0x0034E450` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetNumLaps()` | `0x00134570` 8 | `0x0013C090` 8 | `0x00139AA0` 8 | `0x001424C0` 28 | `0x001353B0` proven |  | `RwInt32 CB4OnlineStage::GetNumLaps()` |
+| `StartReplay()` | `0x00134580` 68 | `0x0013C0A0` 68 | `0x00139AB0` 68 | `0x00142460` 96 | `0x001353C0` proven |  | `bool CB4OnlineStage::StartReplay()` |
+| `Destruct()` | `0x001345D0` 12 | `0x0013C0F0` 12 | `0x00139B00` 12 | `0x00142440` 32 | `0x00135410` proven |  | `void CB4OnlineStage::Destruct()` |
+| `Release()` | `0x001345E0` 236 | `0x0013C100` 236 | `0x00139B10` 260 | `0x001422F0` 296 | `0x00135420` proven |  | `void CB4OnlineStage::Release()` |
+| `Render()` | `0x001346D0` 292 | `0x0013C1F0` 388 | `0x00139C20` 452 | `0x00142130` 440 | `0x001354E0` proven |  | `void CB4OnlineStage::Render()` |
+| `Update()` | `0x00134800` 488 | `0x0013C380` 612 | `0x00139F70` 612 | `0x00141C60` 536 | `0x00135620` unverified |  | `void CB4OnlineStage::Update()` |
+| `Prepare()` | `0x001349F0` 792 | `0x0013C5F0` 1076 | `0x0013A1E0` 1064 | `0x001416F0` 1032 | `0x00135740` proven |  | `bool CB4OnlineStage::Prepare()` |
+| `Construct()` | `0x00134D10` 44 | `0x0013CA30` 44 | `0x0013A610` 68 | `0x001416B0` 52 | `0x00135A60` proven |  | `void CB4OnlineStage::Construct()` |
+| `CB3OnlineStage()` |  |  |  | `0x0013E1F0` 60 |  |  |  |
+| `SetNumLaps(int)` |  |  |  | `0x0034E450` 36 |  |  |  |
+
+## Burnout Revenge layout of `CB4OnlineStage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameSource/Game/B4Game.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4OnlineStage : public CB4GameMode {  // size 0x030
+    // base CB4GameMode at 0x000
+    /* 0x010 */ RwInt32 mnNumNATedPlayers;
+    /* 0x014 */ RwInt32 mnNumLaps;
+    /* 0x018 */ RwInt32 mnCurrentTopScore;
+    /* 0x01C */ RwInt32 mnTopScorePlayerIndex;
+    /* 0x020 */ RwInt32 mnCurrentTotalTopScore;
+    /* 0x024 */ RwInt32 mnTotalTopScorePlayerIndex;
+    /* 0x028 */ bool mbFirstScore;
+    /* 0x02C */ EGtPrepareState mePrepareState;
+    // methods
+    // CB4OnlineStage(const CB4OnlineStage &);
+    // CB4OnlineStage();
+    // virtual void Construct();
+    // virtual bool Prepare();
+    // virtual void Update();
+    // virtual void Render();
+    // virtual void Release();
+    // virtual void Destruct();
+    // virtual bool StartReplay();
+    // virtual RwInt32 GetNumLaps();
+    // void SetNumLaps(int);
+    // void FindHighestScore(int, int);
+    // void FindHighestTotalScore(int, int);
+    // void ShowNetworkGameModeScore();
+    // void ShowTotalScore();
+    // bool CheckToSeeIfAllPlayersHaveFinished();
+    // void ShowRacePositions();
+};
+```
 
 ## Notes
 

@@ -8,27 +8,50 @@
 - **Source file:** `B3SoundDistPS2.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 10, B3INTERN 9, B3O0PCH 14
 - **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundDistortion`, size 0x2A80, methods in `GameSource/Sound/Dsp/B4SoundDistPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4sounddistortion))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetDSPSends(CGtSoundRealVoiceDSPSend**,int*)` | `0x002BB2F0` 24 | `0x002FD860` 24 | `0x003312D0` 24 | `0x0032B5E0` 52 | `0x002FC1C0` proven |  |
-| `CalculateGainPair(float,float,bool,float*,float*)` | `0x002BB310` 812 | `0x002FD880` 812 | `0x003312F0` 812 | `0x0032B140` 1184 | `0x002FC1E0` proven |  |
-| `Update()` | `0x002BBB80` 836 | `0x002FE0F0` 896 | `0x00331B60` 940 | `0x0032A930` 700 | `0x002FCA60` proven |  |
-| `CalculateDistance(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*)` | `0x002BBED0` 328 | `0x002FE7A0` 328 | `0x00332100` 328 | `0x0032A5E0` 500 | `0x002FCDB0` proven |  |
-| `StopDistortion()` | `0x002BC020` 196 | `0x002FEB00` 144 | `0x00332250` 252 | `0x0032A2B0` 100 | `0x002FCF00` proven |  |
-| `StartDistortion()` | `0x002BC0F0` 212 | `0x002FEB90` 244 | `0x00332350` 320 | `0x0032A1E0` 200 | `0x002FCFC0` proven |  |
-| `SetChannels(int)` | `0x002BC1D0` 72 | `0x002FEC90` 164 | `0x00332490` 164 | `0x0032A180` 88 | `0x002FD090` proven |  |
-| `Construct(RwaSPU2Output*,int)` | `0x002BC220` 424 | `0x002FED40` 552 | `0x00332540` 476 | `0x00329E80` 764 | `0x002FD0E0` strong |  |
-| `CalculatePanning(GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d,float*,float*)` |  | `0x002FE470` 816 | `0x00331F10` 496 | `0x0032A7E0` 336 |  |  |
-| `DispatchCommands(bool)` |  | `0x002FE8F0` 524 |  | `0x0032A320` 432 |  |  |
-| `B3DistAddCommand(int,int)` |  |  |  | `0x0032A4D0` 168 |  |  |
-| `CB3SoundDistortion()` |  |  |  | `0x002B19B0` 80 |  |  |
-| `SetMaxDistance(float)` |  |  |  | `0x0032A580` 36 |  |  |
-| `SetMinDistance(float)` |  |  |  | `0x0032A5B0` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetDSPSends(CGtSoundRealVoiceDSPSend**,int*)` | `0x002BB2F0` 24 | `0x002FD860` 24 | `0x003312D0` 24 | `0x0032B5E0` 52 | `0x002FC1C0` proven |  |  |
+| `CalculateGainPair(float,float,bool,float*,float*)` | `0x002BB310` 812 | `0x002FD880` 812 | `0x003312F0` 812 | `0x0032B140` 1184 | `0x002FC1E0` proven |  |  |
+| `Update()` | `0x002BBB80` 836 | `0x002FE0F0` 896 | `0x00331B60` 940 | `0x0032A930` 700 | `0x002FCA60` proven |  |  |
+| `CalculateDistance(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*)` | `0x002BBED0` 328 | `0x002FE7A0` 328 | `0x00332100` 328 | `0x0032A5E0` 500 | `0x002FCDB0` proven |  |  |
+| `StopDistortion()` | `0x002BC020` 196 | `0x002FEB00` 144 | `0x00332250` 252 | `0x0032A2B0` 100 | `0x002FCF00` proven |  |  |
+| `StartDistortion()` | `0x002BC0F0` 212 | `0x002FEB90` 244 | `0x00332350` 320 | `0x0032A1E0` 200 | `0x002FCFC0` proven |  |  |
+| `SetChannels(int)` | `0x002BC1D0` 72 | `0x002FEC90` 164 | `0x00332490` 164 | `0x0032A180` 88 | `0x002FD090` proven |  |  |
+| `Construct(RwaSPU2Output*,int)` | `0x002BC220` 424 | `0x002FED40` 552 | `0x00332540` 476 | `0x00329E80` 764 | `0x002FD0E0` strong |  |  |
+| `CalculatePanning(GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d,float*,float*)` |  | `0x002FE470` 816 | `0x00331F10` 496 | `0x0032A7E0` 336 |  |  |  |
+| `DispatchCommands(bool)` |  | `0x002FE8F0` 524 |  | `0x0032A320` 432 |  |  |  |
+| `B3DistAddCommand(int,int)` |  |  |  | `0x0032A4D0` 168 |  |  |  |
+| `CB3SoundDistortion()` |  |  |  | `0x002B19B0` 80 |  |  |  |
+| `SetMaxDistance(float)` |  |  |  | `0x0032A580` 36 |  |  |  |
+| `SetMinDistance(float)` |  |  |  | `0x0032A5B0` 36 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundDistortion`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 14 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundDistortion : public CGtSoundDSPManagerPS2 {  // size 0x2A80
+    // base CGtSoundDSPManagerPS2 at 0x000
+    /* static */ RwInt32 mnNumGinsus;
+    /* static */ CGtSoundGinsu *mapGinsu[8];
+    // methods
+    // CB4SoundDistortion(const CB4SoundDistortion &);
+    // CB4SoundDistortion();
+    // bool Prepare();
+    // void SetDSPForRace();
+    // static void RegisterGinsu(CGtSoundGinsu *);
+    // void DeRegisterGinsus();
+    // static void ProcessDSPBlockL(short *, short *, void *);
+    // static void ProcessDSPBlockR(short *, short *, void *);
+    // static void MixInGinsu(short *, short *, void *);
+};
+```
 
 ## Notes
 

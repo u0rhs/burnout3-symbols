@@ -8,20 +8,54 @@
 - **Source file:** `B3SoundESMManager.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
 - **Retail (SLUS-21050):** 5 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundESMManager`, size 0x2EB18, methods in `GameSource/Sound/Esm/B4SoundESMManager.cpp` ([layout](#burnout-revenge-layout-of-cb4soundesmmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RelinquishESM(CB3SoundESM*)` | `0x002BA090` 20 | `0x002FBE40` 96 | `0x0032FB10` 96 | `0x00327C60` 80 | `0x002FAE70` strong |  |
-| `RequestESM(bool)` | `0x002BA0B0` 144 | `0x002FBEA0` 144 | `0x0032FB70` 144 | `0x00327AD0` 312 | `0x002FAE90` likely |  |
-| `Release()` | `0x002BA140` 8 | `0x002FBF30` 8 | `0x0032FC00` 8 | `0x00327AC0` 16 | `0x002FAF30` strong |  |
-| `Update()` | `0x002BA150` 8 | `0x002FBF40` 8 | `0x0032FC10` 8 | `0x00327AB0` 16 |  |  |
-| `Prepare()` | `0x002BA160` 8 | `0x002FBF50` 8 | `0x0032FC20` 8 | `0x00327A90` 20 | `0x002FAF40` strong |  |
-| `Construct()` | `0x002BA170` 80 | `0x002FBF60` 80 | `0x0032FC30` 80 | `0x003279F0` 148 | `0x002FAF50` likely |  |
-| `CB3SoundESMManager()` |  |  |  | `0x002B1B40` 124 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RelinquishESM(CB3SoundESM*)` | `0x002BA090` 20 | `0x002FBE40` 96 | `0x0032FB10` 96 | `0x00327C60` 80 | `0x002FAE70` strong |  | `void CB4SoundESMManager::RelinquishESM(CB4SoundESM *lpEsm)` |
+| `RequestESM(bool)` | `0x002BA0B0` 144 | `0x002FBEA0` 144 | `0x0032FB70` 144 | `0x00327AD0` 312 | `0x002FAE90` likely |  | `CB4SoundESM * CB4SoundESMManager::RequestESM(bool lbHighDetail)` |
+| `Release()` | `0x002BA140` 8 | `0x002FBF30` 8 | `0x0032FC00` 8 | `0x00327AC0` 16 | `0x002FAF30` strong |  | `void CB4SoundESMManager::Release()` |
+| `Update()` | `0x002BA150` 8 | `0x002FBF40` 8 | `0x0032FC10` 8 | `0x00327AB0` 16 |  |  | `void CB4SoundESMManager::Update()` |
+| `Prepare()` | `0x002BA160` 8 | `0x002FBF50` 8 | `0x0032FC20` 8 | `0x00327A90` 20 | `0x002FAF40` strong |  | `bool CB4SoundESMManager::Prepare()` |
+| `Construct()` | `0x002BA170` 80 | `0x002FBF60` 80 | `0x0032FC30` 80 | `0x003279F0` 148 | `0x002FAF50` likely |  | `void CB4SoundESMManager::Construct()` |
+| `CB3SoundESMManager()` |  |  |  | `0x002B1B40` 124 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundESMManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 14 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundESMManager {  // size 0x2EB18
+    /* static */ RwUInt32 kun32MaxHighDetailESMs;
+    /* static */ RwUInt32 kun32MaxLowDetailESMs;
+    /* 0x000 */ bool mbIsPaused;
+    /* 0x008 */ CB4SoundESMHigh maHighPool[1];
+    /* 0x7298 */ CB4SoundESMLow maLowPool[5];
+    /* 0x2AEC8 */ CB4SoundDistillerStruct *mpGinsuDistillerBuffer;
+    /* 0x2AECC */ CGinsuDistiller mPlayerDistiller;
+    /* 0x2AED0 */ CGtSoundGinsuMixMaster mGinsuMixMaster;
+    // methods
+    // CB4SoundESMManager(const CB4SoundESMManager &);
+    // CB4SoundESMManager();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void PauseAll(bool);
+    // CB4SoundESM * RequestESM(bool);
+    // void RelinquishESM(CB4SoundESM *);
+    // CB4SoundDistillerStruct * GetDistillerBuffer();
+    // CGinsuDistiller * GetPlayerDistiller();
+    // CGtSoundGinsuMixMaster * GetGinsuMixMaster();
+    // CB4SoundESMHigh GetHighESM(int);
+    // void SetMasterPitchScalar(float);
+};
+```
 
 ## Notes
 

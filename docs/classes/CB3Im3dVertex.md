@@ -7,17 +7,38 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `B3DebugManager.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 4
+- **Burnout Revenge counterpart:** `CB4Im3dVertex`, size 0x020 ([layout](#burnout-revenge-layout-of-cb4im3dvertex))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3Im3dVertex()` | `0x00130710` 36 | `0x00131960` 36 | `0x00133C70` 36 | `0x00134B20` 64 |  |  |
-| `Construct()` |  |  |  | `0x003319F0` 44 |  |  |
-| `SetADC()` |  |  |  | `0x00192700` 44 |  |  |
-| `SetColour(GtMathPs2::CGtV4d)` |  |  |  | `0x002EBF20` 68 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3Im3dVertex()` | `0x00130710` 36 | `0x00131960` 36 | `0x00133C70` 36 | `0x00134B20` 64 |  |  |  |
+| `Construct()` |  |  |  | `0x003319F0` 44 |  |  |  |
+| `SetADC()` |  |  |  | `0x00192700` 44 |  |  |  |
+| `SetColour(GtMathPs2::CGtV4d)` |  |  |  | `0x002EBF20` 68 |  |  |  |
+
+## Burnout Revenge layout of `CB4Im3dVertex`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 241 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Im3dVertex {  // size 0x020
+    /* 0x000 */ CGtV3dPlus mPosition;
+    /* 0x010 */ CGtV2d mUV;
+    /* 0x018 */ RwRGBA mColour;
+    /* 0x01C */ RwInt32 mPadding;
+    // methods
+    // CB4Im3dVertex(const CB4Im3dVertex &);
+    // void Construct();
+    // void SetColour(GtMathPs2::CGtV3d);
+    // void SetColour(GtMathPs2::CGtV4d);
+    // CB4Im3dVertex();
+    // void SetADC();
+};
+```
 
 ## Notes
 

@@ -8,21 +8,52 @@
 - **Source file:** `B3TrailSystem.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 2, B3INTERN 2, B3O0PCH 8
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrailEmitter`, size 0x018, methods in `GameSource/Graphics/Trails/B4TrailSystem.cpp` ([layout](#burnout-revenge-layout-of-cb4trailemitter))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `AddTrailSegment(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,const GtMathPs2::CGtMatrix3x4*)` | `0x0027CC70` 964 | `0x002B1A20` 1144 | `0x002E8BC0` 1040 | `0x002E9CD0` 1008 | `0x002BCF60` strong |  |
-| `Update()` |  | `0x002B1EA0` 296 | `0x002E8FD0` 296 | `0x002E9B50` 384 |  |  |
-| `Construct()` |  |  |  | `0x002E9AB0` 36 |  |  |
-| `Destruct()` |  |  |  | `0x002E9AE0` 16 |  |  |
-| `GetTrailType()` |  |  |  | `0x002E9A80` 36 |  |  |
-| `PostRender()` |  |  |  | `0x002E9490` 164 |  |  |
-| `Prepare(CB3TrailParams*)` |  |  |  | `0x002E9AF0` 80 |  |  |
-| `Release()` |  |  |  | `0x002E9B40` 16 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `AddTrailSegment(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,const GtMathPs2::CGtMatrix3x4*)` | `0x0027CC70` 964 | `0x002B1A20` 1144 | `0x002E8BC0` 1040 | `0x002E9CD0` 1008 | `0x002BCF60` strong |  | `bool CB4TrailEmitter::AddTrailSegment(GtMathPs2::CGtV3d lContactPoint, GtMathPs2::CGtV3d lContactNormal, const GtMathPs2::CGtMatrix3x4 *lpTransform)` |
+| `Update()` |  | `0x002B1EA0` 296 | `0x002E8FD0` 296 | `0x002E9B50` 384 |  |  | `EB4EmitterState CB4TrailEmitter::Update()` |
+| `Construct()` |  |  |  | `0x002E9AB0` 36 |  |  | `void CB4TrailEmitter::Construct()` |
+| `Destruct()` |  |  |  | `0x002E9AE0` 16 |  |  | `void CB4TrailEmitter::Destruct()` |
+| `GetTrailType()` |  |  |  | `0x002E9A80` 36 |  |  |  |
+| `PostRender()` |  |  |  | `0x002E9490` 164 |  |  | `void CB4TrailEmitter::PostRender()` |
+| `Prepare(CB3TrailParams*)` |  |  |  | `0x002E9AF0` 80 |  |  | `bool CB4TrailEmitter::Prepare(CB4TrailParams *lpParams)` |
+| `Release()` |  |  |  | `0x002E9B40` 16 |  |  | `void CB4TrailEmitter::Release()` |
+
+## Burnout Revenge layout of `CB4TrailEmitter`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 330 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrailEmitter {  // size 0x018
+    /* 0x000 */ RwReal mrTimeLastSegmentAdded;
+    /* 0x004 */ CB4TrailParams *mpParams;
+    /* 0x008 */ CB4TrailSegmentCollection *mpCurrentSegments;
+    /* 0x00C */ CB4TrailSegmentCollection *mpOldSegments;
+    /* 0x010 */ RwInt8 mn8NumSegments;
+    /* 0x011 */ RwInt8 meTrailType;
+    /* 0x012 */ RwUInt8 mx8Flags;
+    /* 0x013 */ RwInt8 mn8TextureIndex;
+    /* 0x014 */ CB4TrailEmitterData *mpOwner;
+    // methods
+    // CB4TrailEmitter(const CB4TrailEmitter &);
+    // CB4TrailEmitter();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare(CB4TrailParams *);
+    // bool Prepare();
+    // void Release();
+    // EB4EmitterState Update();
+    // bool AddTrailSegment(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, const GtMathPs2::CGtMatrix3x4 *);
+    // void PostRender();
+    // EB4TrailType GetTrailType();
+};
+```
 
 ## Notes
 

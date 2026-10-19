@@ -6,14 +6,43 @@
 
 - **Area:** [Audio and music](../systems/audio.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4SoundRaceCarAttribs`, size 0x040, methods in `GameSource/Sound/Cars/B4SoundRaceCar.cpp` ([layout](#burnout-revenge-layout-of-cb4soundracecarattribs))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` |  |  |  | `0x002B5120` 196 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` |  |  |  | `0x002B5120` 196 |  |  | `void CB4SoundRaceCarAttribs::Construct()` |
+
+## Burnout Revenge layout of `CB4SoundRaceCarAttribs`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 279 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundRaceCarAttribs {  // size 0x040
+    /* 0x000 */ RwInt32 mn32WaveAttackOffset;
+    /* 0x004 */ RwReal mrRpmFalloffLag;
+    /* 0x008 */ RwReal mrRpmRisingLag;
+    /* 0x00C */ RwReal mrDumpValveMinFalloff;
+    /* 0x010 */ RwReal mrDumpValveMaxFalloff;
+    /* 0x014 */ RwReal mrTurbineRpmMin;
+    /* 0x018 */ RwReal mrTurbineRpmMax;
+    /* 0x01C */ RwReal mrDumpValveVolumeMin;
+    /* 0x020 */ RwReal mrDumpValveVolumeMax;
+    /* 0x024 */ RwReal mrRaceCarMasterGain;
+    /* 0x028 */ RwReal mrRaceCarMasterGinsuGain;
+    /* 0x02C */ RwReal mrGearChangeVolume;
+    /* 0x030 */ bool mbLocked;
+    /* 0x031 */ bool mbPlayerCar;
+    /* 0x038 */ GtID mCarID;
+    // methods
+    // CB4SoundRaceCarAttribs(const CB4SoundRaceCarAttribs &);
+    // CB4SoundRaceCarAttribs();
+    // void Construct();
+};
+```
 
 ## Notes
 

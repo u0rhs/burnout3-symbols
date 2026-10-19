@@ -11,13 +11,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x0035C100` 8 | `0x003C7410` 8 | `0x003EFD20` 8 | `0x003FDE80` 16 |  |  |
-| `Update()` | `0x0035C110` 272 | `0x003C7420` 356 | `0x003EFD30` 356 | `0x003FDD30` 324 |  |  |
-| `CB3OnlineVehicleSelectPage()` |  |  |  | `0x003413A0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x0035C100` 8 | `0x003C7410` 8 | `0x003EFD20` 8 | `0x003FDE80` 16 |  |  |  |
+| `Update()` | `0x0035C110` 272 | `0x003C7420` 356 | `0x003EFD30` 356 | `0x003FDD30` 324 |  |  |  |
+| `CB3OnlineVehicleSelectPage()` |  |  |  | `0x003413A0` 60 |  |  |  |
 
 ## Notes
 

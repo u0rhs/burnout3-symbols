@@ -8,17 +8,35 @@
 - **Source file:** `B3Strings.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 4
 - **Retail (SLUS-21050):** 3 of its 4 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4Strings`, size 0x004 ([layout](#burnout-revenge-layout-of-cb4strings))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetString(int)` | `0x00232280` 8 | `0x0024F5A0` 100 | `0x0028B430` 100 | `0x0028A490` 72 |  |  |
-| `Destruct()` | `0x00232290` 8 | `0x0024F610` 8 | `0x0028B4A0` 8 | `0x0028A470` 28 | `0x00271A10` likely |  |
-| `Prepare(void*,const char*,int)` | `0x002322A0` 36 | `0x0024F620` 340 | `0x0028B4B0` 208 | `0x0028A330` 276 | `0x00271A20` proven |  |
-| `Construct()` | `0x002322D0` 8 | `0x0024F780` 8 | `0x0028B580` 8 | `0x0028A310` 28 | `0x00271A50` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetString(int)` | `0x00232280` 8 | `0x0024F5A0` 100 | `0x0028B430` 100 | `0x0028A490` 72 |  |  |  |
+| `Destruct()` | `0x00232290` 8 | `0x0024F610` 8 | `0x0028B4A0` 8 | `0x0028A470` 28 | `0x00271A10` likely |  |  |
+| `Prepare(void*,const char*,int)` | `0x002322A0` 36 | `0x0024F620` 340 | `0x0028B4B0` 208 | `0x0028A330` 276 | `0x00271A20` proven |  |  |
+| `Construct()` | `0x002322D0` 8 | `0x0024F780` 8 | `0x0028B580` 8 | `0x0028A310` 28 | `0x00271A50` proven |  |  |
+
+## Burnout Revenge layout of `CB4Strings`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Game/B4Strings.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Strings {  // size 0x004
+    /* 0x000 */ CGtStringArrayUnicode *mpStringsArray;
+    // methods
+    // CB4Strings(const CB4Strings &);
+    // CB4Strings();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare(void *, const char *, int);
+    // GtUTF16 * GetString(int);
+};
+```
 
 ## Notes
 

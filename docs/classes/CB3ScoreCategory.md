@@ -6,17 +6,43 @@
 
 - **Area:** [Crashes, takedowns and scoring](../systems/crash-scoring.md)
 - **Methods per build:** B3DEBUG 1, B3INTERN 1, B3O0PCH 4
+- **Burnout Revenge counterpart:** `CB4ScoreCategory`, size 0x01C, methods in `GameSource/World/B4OffensiveDrivingManager.cpp` ([layout](#burnout-revenge-layout-of-cb4scorecategory))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateValue(float)` |  | `0x0016CB60` 184 | `0x00168390` 184 | `0x00172020` 276 |  |  |
-| `GetOwner()` |  |  |  | `0x003EE830` 28 |  |  |
-| `Prepare(EScoreCategoryType,const CB3Score*,const float*,int)` |  |  |  | `0x00171E50` 188 |  |  |
-| `Stopped()` |  |  |  | `0x00171F10` 260 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateValue(float)` |  | `0x0016CB60` 184 | `0x00168390` 184 | `0x00172020` 276 |  |  | `void CB4ScoreCategory::UpdateValue(float lrValue)` |
+| `GetOwner()` |  |  |  | `0x003EE830` 28 |  |  |  |
+| `Prepare(EScoreCategoryType,const CB3Score*,const float*,int)` |  |  |  | `0x00171E50` 188 |  |  | `void CB4ScoreCategory::Prepare(EScoreCategoryType leType, const float *lprCategoryArray, int lnCategoryCount, const CB4LapManager *lpLapManager)` (same name, different parameters) |
+| `Stopped()` |  |  |  | `0x00171F10` 260 |  |  | `void CB4ScoreCategory::Stopped()` |
+
+## Burnout Revenge layout of `CB4ScoreCategory`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 314 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ScoreCategory {  // size 0x01C
+    /* 0x000 */ CB4LapManager *mpLapManager;
+    /* 0x004 */ RwReal mrValue;
+    /* 0x008 */ RwReal mrPrevTime;
+    /* 0x00C */ RwReal mrPrevValue;
+    /* 0x010 */ RwReal *mprCategoryArray;
+    /* 0x014 */ bool mbActive;
+    /* 0x015 */ RwInt8 mn8Category;
+    /* 0x016 */ RwInt8 mn8PrevCategory;
+    /* 0x017 */ RwInt8 mn8MaxCategory;
+    /* 0x018 */ EScoreCategoryType meType;
+    // methods
+    // CB4ScoreCategory(const CB4ScoreCategory &);
+    // CB4ScoreCategory();
+    // void Prepare(EScoreCategoryType, const float *, int, const CB4LapManager *);
+    // void Stopped();
+    // void UpdateValue(float);
+};
+```
 
 ## Notes
 

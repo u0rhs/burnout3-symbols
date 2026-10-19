@@ -6,15 +6,16 @@
 
 - **Area:** [Libraries](../systems/libraries.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `RwV3d`, size 0x00C ([layout](#burnout-revenge-layout-of-rwv3d))
 - **Burnout 2 ancestor (by name):** `RwV3d`, size 0x00C, declared in 211 file(s), e.g. `C:/dev/rwaudio/source/objects/src/rwalistenerobj.c`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `operator =(const RwV3d&)` |  |  |  | `0x002A5B20` 76 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `operator =(const RwV3d&)` |  |  |  | `0x002A5B20` 76 |  |  |  |
 
 ## Burnout 2 layout of `RwV3d`
 
@@ -26,6 +27,21 @@ public:
     /* 0x000 */ float x;
     /* 0x004 */ float y;
     /* 0x008 */ float z;
+};
+```
+
+## Burnout Revenge layout of `RwV3d`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 389 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Ps2/Gt2dRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class RwV3d {  // size 0x00C
+    /* 0x000 */ RwReal x;
+    /* 0x004 */ RwReal y;
+    /* 0x008 */ RwReal z;
+    // methods
+    // RwV3d(const RwV3d &);
+    // RwV3d();
 };
 ```
 

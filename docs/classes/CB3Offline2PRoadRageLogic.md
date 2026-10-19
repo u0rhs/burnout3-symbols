@@ -11,16 +11,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetHUDType()` | `0x00371510` 8 | `0x003E0550` 8 | `0x00409060` 8 | `0x0041DB20` 20 |  |  |
-| `CarsBecomeFragileAfterBeingSlammed()` | `0x00371520` 8 | `0x003E0560` 8 | `0x00409070` 8 | `0x0041DB40` 20 |  |  |
-| `UpdatePlayingState()` | `0x00371530` 368 | `0x003E0570` 588 | `0x00409080` 588 | `0x0041D870` 640 |  |  |
-| `UseTakedownCamera(CB3RaceCar*,CB3RaceCar*)` | `0x003716A0` 40 | `0x003E07C0` 40 | `0x004092D0` 40 | `0x0041D810` 96 |  |  |
-| `ClearUpCrash(int)` | `0x003716D0` 208 | `0x003E07F0` 424 | `0x00409300` 424 | `0x0041D6B0` 352 |  |  |
-| `CB3Offline2PRoadRageLogic()` |  |  |  | `0x0013DF30` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetHUDType()` | `0x00371510` 8 | `0x003E0550` 8 | `0x00409060` 8 | `0x0041DB20` 20 |  |  |  |
+| `CarsBecomeFragileAfterBeingSlammed()` | `0x00371520` 8 | `0x003E0560` 8 | `0x00409070` 8 | `0x0041DB40` 20 |  |  |  |
+| `UpdatePlayingState()` | `0x00371530` 368 | `0x003E0570` 588 | `0x00409080` 588 | `0x0041D870` 640 |  |  |  |
+| `UseTakedownCamera(CB3RaceCar*,CB3RaceCar*)` | `0x003716A0` 40 | `0x003E07C0` 40 | `0x004092D0` 40 | `0x0041D810` 96 |  |  |  |
+| `ClearUpCrash(int)` | `0x003716D0` 208 | `0x003E07F0` 424 | `0x00409300` 424 | `0x0041D6B0` 352 |  |  |  |
+| `CB3Offline2PRoadRageLogic()` |  |  |  | `0x0013DF30` 60 |  |  |  |
 
 ## Notes
 

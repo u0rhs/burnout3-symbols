@@ -8,15 +8,31 @@
 - **Source file:** `B3ServerDisconnectState.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 2
 - **vtable (DNAT_200):** `0x00442140`, 12 bytes = 3 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 1 virtual functions)
+- **Burnout Revenge counterpart:** `CB4ServerDisconnectState`, size 0x010, methods in `GameSource/Menu/States/Online/B4ServerDisconnectState.cpp` ([layout](#burnout-revenge-layout-of-cb4serverdisconnectstate))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x003C4720` 696 | `0x004416B0` 696 | `0x004697C0` 696 | `0x00480240` 416 |  |  |
-| `CB3ServerDisconnectState()` |  |  |  | `0x003448A0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x003C4720` 696 | `0x004416B0` 696 | `0x004697C0` 696 | `0x00480240` 416 |  |  | `void CB4ServerDisconnectState::Action(EGtStateAction leAction, void *lpOwner, void *lpActionData, void *lpUserData)` |
+| `CB3ServerDisconnectState()` |  |  |  | `0x003448A0` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4ServerDisconnectState`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Menu/States/B4MenuFlowManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ServerDisconnectState : public CGtState {  // size 0x010
+    // base CGtState at 0x000
+    // methods
+    // CB4ServerDisconnectState(const CB4ServerDisconnectState &);
+    // CB4ServerDisconnectState();
+    // virtual void Action(EGtStateAction, void *, void *, void *);
+    // static void ConfirmDashboardPopupCallback(EB4PopupButton, void *);
+};
+```
 
 ## Notes
 

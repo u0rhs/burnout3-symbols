@@ -8,20 +8,54 @@
 - **Source file:** `B3ReplaySystem.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 7, B3INTERN 6, B3O0PCH 7
 - **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ReplaySystem`, size 0x0F0, methods in `GameSource/World/B4ReplaySystem.cpp` ([layout](#burnout-revenge-layout-of-cb4replaysystem))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UnpackHeader()` | `0x00151010` 144 | `0x00164140` 220 | `0x0015F020` 220 | `0x0016F8E0` 268 | `0x00154DC0` proven |  |
-| `PackHeader()` | `0x001510A0` 372 | `0x00164220` 596 | `0x0015F100` 596 | `0x0016F5B0` 708 | `0x00154E60` proven |  |
-| `Destruct()` | `0x00151220` 20 | `0x001644C0` 52 | `0x0015F360` 20 | `0x0016F510` 64 | `0x00155000` proven |  |
-| `NextFrame(CDrivingControls*,bool)` | `0x00151240` 380 | `0x00164500` 576 | `0x0015F380` 400 | `0x0016F210` 764 | `0x00155020` proven |  |
-| `Prepare(bool)` | `0x001513C0` 96 | `0x00164740` 124 | `0x0015F510` 96 | `0x0016F140` 148 | `0x001551B0` proven |  |
-| `Construct()` | `0x00151420` 104 | `0x001647C0` 152 | `0x0015F570` 140 | `0x0016F090` 172 | `0x00155210` proven |  |
-| `SaveToDisk(char*)` |  | `0x00164480` 64 |  | `0x0016F550` 96 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UnpackHeader()` | `0x00151010` 144 | `0x00164140` 220 | `0x0015F020` 220 | `0x0016F8E0` 268 | `0x00154DC0` proven |  |  |
+| `PackHeader()` | `0x001510A0` 372 | `0x00164220` 596 | `0x0015F100` 596 | `0x0016F5B0` 708 | `0x00154E60` proven |  | `bool CB4ReplaySystem::PackHeader()` |
+| `Destruct()` | `0x00151220` 20 | `0x001644C0` 52 | `0x0015F360` 20 | `0x0016F510` 64 | `0x00155000` proven |  | `void CB4ReplaySystem::Destruct()` |
+| `NextFrame(CDrivingControls*,bool)` | `0x00151240` 380 | `0x00164500` 576 | `0x0015F380` 400 | `0x0016F210` 764 | `0x00155020` proven |  | `bool CB4ReplaySystem::NextFrame(CDrivingControls *lpDrivingControls, bool lbIsCrashFrame)` |
+| `Prepare(bool)` | `0x001513C0` 96 | `0x00164740` 124 | `0x0015F510` 96 | `0x0016F140` 148 | `0x001551B0` proven |  | `bool CB4ReplaySystem::Prepare(bool lbPlay)` |
+| `Construct()` | `0x00151420` 104 | `0x001647C0` 152 | `0x0015F570` 140 | `0x0016F090` 172 | `0x00155210` proven |  | `void CB4ReplaySystem::Construct()` |
+| `SaveToDisk(char*)` |  | `0x00164480` 64 |  | `0x0016F550` 96 |  |  |  |
+
+## Burnout Revenge layout of `CB4ReplaySystem`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 4 file(s), e.g. `GameSource/World/B4RacePosition.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ReplaySystem {  // size 0x0F0
+    /* 0x000 */ CB4ReplayFileHeader mHeader;
+    /* 0x060 */ CGtByteStream mReplayByteStream;
+    /* 0x078 */ void *mpReplayBuffer;
+    /* 0x07C */ RwInt32 mnCurrentFrame;
+    /* 0x080 */ RwInt32 mnFramesArchived;
+    /* 0x084 */ bool mbReplayPlaying;
+    /* 0x085 */ bool mbFreeze;
+    /* 0x088 */ CB4ReplayFileHeader mNetworkReplayHeader;
+    /* 0x0E8 */ void *mpNetworkReplayBuffer;
+    // methods
+    // CB4ReplaySystem(const CB4ReplaySystem &);
+    // CB4ReplaySystem();
+    // void Construct();
+    // bool Prepare(bool);
+    // bool NextFrame(CDrivingControls *, bool);
+    // void Release();
+    // void Destruct();
+    // bool SaveToDisk(char *);
+    // bool LoadFromDisk(char *);
+    // bool PackHeader();
+    // bool UnpackHeader();
+    // bool ConfigureMenuChoices();
+    // void AcquireNetworkReplayBuffer();
+    // void ReleaseNetworkReplayBuffer();
+};
+```
 
 ## Notes
 

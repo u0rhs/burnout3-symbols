@@ -11,14 +11,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x003C80B0` 8 | `0x00445260` 8 | `0x0046DC40` 8 | `0x00484390` 16 |  |  |
-| `Update()` | `0x003C80C0` 464 | `0x00445270` 464 | `0x0046DC50` 464 | `0x00484160` 556 |  |  |
-| `Prepare(EB3Video,bool)` | `0x003C8290` 184 | `0x00445440` 184 | `0x0046DE20` 184 | `0x00484060` 172 |  |  |
-| `CB3PlayVideoPage()` |  |  |  | `0x00341F80` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x003C80B0` 8 | `0x00445260` 8 | `0x0046DC40` 8 | `0x00484390` 16 |  |  |  |
+| `Update()` | `0x003C80C0` 464 | `0x00445270` 464 | `0x0046DC50` 464 | `0x00484160` 556 |  |  |  |
+| `Prepare(EB3Video,bool)` | `0x003C8290` 184 | `0x00445440` 184 | `0x0046DE20` 184 | `0x00484060` 172 |  |  |  |
+| `CB3PlayVideoPage()` |  |  |  | `0x00341F80` 60 |  |  |  |
 
 ## Notes
 

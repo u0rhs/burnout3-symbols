@@ -8,16 +8,37 @@
 - **Source file:** `B3HUDSpeedo.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 3
 - **vtable (DNAT_200):** `0x0043FDB0`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
+- **Burnout Revenge counterpart:** `CB4HUDSpeedo`, size 0x040, methods in `GameSource/Hud/B4HUDSpeedo.cpp` ([layout](#burnout-revenge-layout-of-cb4hudspeedo))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update(float)` | `0x0016FC60` 240 | `0x0018B6E0` 240 | `0x001860E0` 240 | `0x0019D330` 316 |  |  |
-| `Prepare(int,EHUDAlign,int)` | `0x0016FD50` 592 | `0x0018B7D0` 668 | `0x001861D0` 676 | `0x0019CE90` 888 |  |  |
-| `CB3HUDSpeedo()` |  |  |  | `0x001999F0` 76 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update(float)` | `0x0016FC60` 240 | `0x0018B6E0` 240 | `0x001860E0` 240 | `0x0019D330` 316 |  |  | `void CB4HUDSpeedo::Update(float lrTimeStep)` |
+| `Prepare(int,EHUDAlign,int)` | `0x0016FD50` 592 | `0x0018B7D0` 668 | `0x001861D0` 676 | `0x0019CE90` 888 |  |  | `bool CB4HUDSpeedo::Prepare(EPlayerCarIndex lePlayer, EHUDAlign leAlign, int lxFlags)` (same name, different parameters) |
+| `CB3HUDSpeedo()` |  |  |  | `0x001999F0` 76 |  |  |  |
+
+## Burnout Revenge layout of `CB4HUDSpeedo`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Hud/B4HUDManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HUDSpeedo : public CB4HUDComponent {  // size 0x040
+    // base CB4HUDComponent at 0x000
+    /* static */ RwInt32 knSpeedStringLength;
+    /* 0x020 */ CGt2dObject *mapObjects[3];
+    /* 0x02C */ CB4PlayerCarPhysics *mpPlayerCarPhysics;
+    /* 0x030 */ short unsigned int maSpeedString[6];
+    /* 0x03C */ RwReal mrSpeed;
+    // methods
+    // CB4HUDSpeedo(const CB4HUDSpeedo &);
+    // CB4HUDSpeedo();
+    // bool Prepare(EPlayerCarIndex, EHUDAlign, int);
+    // virtual void Update(float);
+};
+```
 
 ## Notes
 

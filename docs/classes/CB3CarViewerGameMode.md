@@ -12,32 +12,32 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x0020DC70` 72 | `0x0021A200` 72 | `0x00259E80` 72 | `0x00260140` 92 | `0x0024D4D0` proven |  |
-| `Render()` | `0x0020DCC0` 1108 | `0x0021A250` 1312 | `0x00259ED0` 1312 | `0x0025FB80` 1460 | `0x0024D520` strong |  |
-| `SetArrowVertices(CB3Im3dVertex*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,G` | `0x0020E120` 292 | `0x0021A770` 536 | `0x0025A3F0` 536 | `0x0025FA00` 380 | `0x0024D980` strong |  |
-| `Update()` | `0x0020E250` 8036 | `0x0021A990` 12488 | `0x0025A610` 11404 | `0x0025E500` 3440 | `0x0024DAB0` unverified |  |
-| `UpdateHinges(CB3VehicleEssentialParams*,CB3VehicleParams*)` | `0x002101C0` 444 | `0x0021DA60` 528 | `0x0025D2A0` 528 | `0x0025E2B0` 540 | `0x0024FA40` strong |  |
-| `Prepare()` | `0x00210380` 368 | `0x0021DC70` 368 | `0x0025D4B0` 368 | `0x0025E070` 564 | `0x0024FC20` strong |  |
-| `Construct()` | `0x002104F0` 60 | `0x0021DDE0` 60 | `0x0025D620` 60 | `0x0025E020` 76 | `0x0024FDA0` proven |  |
-| `CB3CarViewerGameMode()` |  |  |  | `0x0013E2E0` 172 |  |  |
-| `GetBoneDeformationButton()` |  |  |  | `0x0025F950` 52 |  |  |
-| `GetBoneDeformationSecondButton()` |  |  |  | `0x0025F6A0` 52 |  |  |
-| `GetBoneRenderButton()` |  |  |  | `0x0025F990` 52 |  |  |
-| `GetButton(EGtPS2DualShockDeviceControl,bool*)` |  |  |  | `0x0025DE10` 180 |  |  |
-| `GetHingeButton()` |  |  |  | `0x0025E4D0` 48 |  |  |
-| `GetPadBrakeLights()` |  |  |  | `0x0025F370` 48 |  |  |
-| `GetPadColourChangeButton()` |  |  |  | `0x0025F2A0` 52 |  |  |
-| `GetPadHeadLights()` |  |  |  | `0x0025F3D0` 48 |  |  |
-| `GetPadLeftIndicator()` |  |  |  | `0x0025F340` 48 |  |  |
-| `GetPadQuitButton()` |  |  |  | `0x0025F270` 48 |  |  |
-| `GetPadRearLights()` |  |  |  | `0x0025F3A0` 48 |  |  |
-| `GetPadReverseLights()` |  |  |  | `0x0025F2E0` 48 |  |  |
-| `GetPadRightIndicator()` |  |  |  | `0x0025F310` 48 |  |  |
-| `SetCarRenderFlag(unsigned char,bool)` |  |  |  | `0x002601A0` 144 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x0020DC70` 72 | `0x0021A200` 72 | `0x00259E80` 72 | `0x00260140` 92 | `0x0024D4D0` proven |  |  |
+| `Render()` | `0x0020DCC0` 1108 | `0x0021A250` 1312 | `0x00259ED0` 1312 | `0x0025FB80` 1460 | `0x0024D520` strong |  |  |
+| `SetArrowVertices(CB3Im3dVertex*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,G` | `0x0020E120` 292 | `0x0021A770` 536 | `0x0025A3F0` 536 | `0x0025FA00` 380 | `0x0024D980` strong |  |  |
+| `Update()` | `0x0020E250` 8036 | `0x0021A990` 12488 | `0x0025A610` 11404 | `0x0025E500` 3440 | `0x0024DAB0` unverified |  |  |
+| `UpdateHinges(CB3VehicleEssentialParams*,CB3VehicleParams*)` | `0x002101C0` 444 | `0x0021DA60` 528 | `0x0025D2A0` 528 | `0x0025E2B0` 540 | `0x0024FA40` strong |  |  |
+| `Prepare()` | `0x00210380` 368 | `0x0021DC70` 368 | `0x0025D4B0` 368 | `0x0025E070` 564 | `0x0024FC20` strong |  |  |
+| `Construct()` | `0x002104F0` 60 | `0x0021DDE0` 60 | `0x0025D620` 60 | `0x0025E020` 76 | `0x0024FDA0` proven |  |  |
+| `CB3CarViewerGameMode()` |  |  |  | `0x0013E2E0` 172 |  |  |  |
+| `GetBoneDeformationButton()` |  |  |  | `0x0025F950` 52 |  |  |  |
+| `GetBoneDeformationSecondButton()` |  |  |  | `0x0025F6A0` 52 |  |  |  |
+| `GetBoneRenderButton()` |  |  |  | `0x0025F990` 52 |  |  |  |
+| `GetButton(EGtPS2DualShockDeviceControl,bool*)` |  |  |  | `0x0025DE10` 180 |  |  |  |
+| `GetHingeButton()` |  |  |  | `0x0025E4D0` 48 |  |  |  |
+| `GetPadBrakeLights()` |  |  |  | `0x0025F370` 48 |  |  |  |
+| `GetPadColourChangeButton()` |  |  |  | `0x0025F2A0` 52 |  |  |  |
+| `GetPadHeadLights()` |  |  |  | `0x0025F3D0` 48 |  |  |  |
+| `GetPadLeftIndicator()` |  |  |  | `0x0025F340` 48 |  |  |  |
+| `GetPadQuitButton()` |  |  |  | `0x0025F270` 48 |  |  |  |
+| `GetPadRearLights()` |  |  |  | `0x0025F3A0` 48 |  |  |  |
+| `GetPadReverseLights()` |  |  |  | `0x0025F2E0` 48 |  |  |  |
+| `GetPadRightIndicator()` |  |  |  | `0x0025F310` 48 |  |  |  |
+| `SetCarRenderFlag(unsigned char,bool)` |  |  |  | `0x002601A0` 144 |  |  |  |
 
 ## Notes
 

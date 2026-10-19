@@ -8,14 +8,35 @@
 - **Source file:** `B3ProgressionDataStruct.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ProgressionDataStruct`, size 0x018, methods in `SharedClasses/ProgressionData/B4ProgressionDataStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4progressiondatastruct))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Fixup(unsigned int)` | `0x0031D940` 208 | `0x00378D20` 208 | `0x003A7900` 208 | `0x003A83A0` 152 | `0x00367E70` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Fixup(unsigned int)` | `0x0031D940` 208 | `0x00378D20` 208 | `0x003A7900` 208 | `0x003A83A0` 152 | `0x00367E70` proven |  |  |
+
+## Burnout Revenge layout of `CB4ProgressionDataStruct`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 7 file(s), e.g. `GameSource/Game/B4Game.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ProgressionDataStruct {  // size 0x018
+    /* 0x000 */ RwUInt32 mu32VersionNumber;
+    /* 0x004 */ CB4ChampionshipDataStruct *mpChampionships;
+    /* 0x008 */ RwUInt32 muNumChampionships;
+    /* 0x00C */ CB4RevengeMeterDataStruct mRevengeMeter;
+    /* 0x014 */ RwUInt32 muProgresionDataSize;
+    // methods
+    // CB4ProgressionDataStruct(const CB4ProgressionDataStruct &);
+    // CB4ProgressionDataStruct();
+    // void FixUp();
+    // void GetStagePath(CB4StageDataStruct *, char *);
+    // CB4StageDataStruct * GetStageDataForModeAndIndex(unsigned long, ENormalOfflineGameModes, unsigned int);
+};
+```
 
 ## Notes
 

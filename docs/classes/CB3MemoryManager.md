@@ -8,23 +8,104 @@
 - **Source file:** `B3MemoryManager.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
 - **Retail (SLUS-21050):** 1 of its 7 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4MemoryManager`, size 0xE9C, methods in `GameSource/Game/B4MemoryManager.cpp` ([layout](#burnout-revenge-layout-of-cb4memorymanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetBlockSize(EB3MemoryBlock) const` | `0x00398F10` 504 |  |  |  |  |  |
-| `QueryBlock(EB3MemoryBlock,int) const` | `0x00399110` 124 |  |  |  |  |  |
-| `ReleaseBlock(EB3MemoryBlock,int)` | `0x00399190` 588 | `0x00410040` 2584 | `0x004360E0` 2328 | `0x0044FB10` 1604 |  |  |
-| `AcquireBlock(EB3MemoryBlock,int)` | `0x003993E0` 2364 | `0x00410A60` 3532 | `0x00436A00` 3196 | `0x0044F4C0` 1608 |  |  |
-| `ReleaseMemoryLayout()` | `0x00399D20` 12 | `0x00411830` 12 | `0x00437680` 12 | `0x0044F4A0` 32 | `0x003E8750` strong |  |
-| `AcquireMemoryLayout(EB3MemoryLayout)` | `0x00399D30` 56 | `0x00411840` 132 | `0x00437690` 132 | `0x0044F420` 124 |  |  |
-| `Update()` | `0x00399D70` 780 | `0x004118D0` 3132 | `0x00437720` 2828 | `0x0044EFC0` 1112 |  |  |
-| `GetBlockSize(EB3MemoryBlock)` |  | `0x0040FD00` 588 | `0x00435DC0` 556 | `0x00450200` 1180 |  |  |
-| `QueryBlock(EB3MemoryBlock,int)` |  | `0x0040FF50` 228 | `0x00435FF0` 228 | `0x00450160` 152 |  |  |
-| `CB3MemoryManager()` |  |  |  | `0x0022EA60` 40 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetBlockSize(EB3MemoryBlock) const` | `0x00398F10` 504 |  |  |  |  |  | `RwInt32 CB4MemoryManager::GetBlockSize(EB4MemoryBlock leBlock) const` |
+| `QueryBlock(EB3MemoryBlock,int) const` | `0x00399110` 124 |  |  |  |  |  | `void * CB4MemoryManager::QueryBlock(EB4MemoryBlock leBlock, int lnBlockIndex) const` |
+| `ReleaseBlock(EB3MemoryBlock,int)` | `0x00399190` 588 | `0x00410040` 2584 | `0x004360E0` 2328 | `0x0044FB10` 1604 |  |  | `void CB4MemoryManager::ReleaseBlock(EB4MemoryBlock leBlock, int lnBlockIndex)` |
+| `AcquireBlock(EB3MemoryBlock,int)` | `0x003993E0` 2364 | `0x00410A60` 3532 | `0x00436A00` 3196 | `0x0044F4C0` 1608 |  |  | `void * CB4MemoryManager::AcquireBlock(EB4MemoryBlock leBlock, int lnBlockIndex)` |
+| `ReleaseMemoryLayout()` | `0x00399D20` 12 | `0x00411830` 12 | `0x00437680` 12 | `0x0044F4A0` 32 | `0x003E8750` strong |  | `void CB4MemoryManager::ReleaseMemoryLayout()` |
+| `AcquireMemoryLayout(EB3MemoryLayout)` | `0x00399D30` 56 | `0x00411840` 132 | `0x00437690` 132 | `0x0044F420` 124 |  |  | `bool CB4MemoryManager::AcquireMemoryLayout(EB4MemoryLayout leLayoutType)` |
+| `Update()` | `0x00399D70` 780 | `0x004118D0` 3132 | `0x00437720` 2828 | `0x0044EFC0` 1112 |  |  | `void CB4MemoryManager::Update()` |
+| `GetBlockSize(EB3MemoryBlock)` |  | `0x0040FD00` 588 | `0x00435DC0` 556 | `0x00450200` 1180 |  |  | `RwInt32 CB4MemoryManager::GetBlockSize(EB4MemoryBlock leBlock) const` (same name, different parameters) |
+| `QueryBlock(EB3MemoryBlock,int)` |  | `0x0040FF50` 228 | `0x00435FF0` 228 | `0x00450160` 152 |  |  | `void * CB4MemoryManager::QueryBlock(EB4MemoryBlock leBlock, int lnBlockIndex) const` (same name, different parameters) |
+| `CB3MemoryManager()` |  |  |  | `0x0022EA60` 40 |  |  |  |
+
+## Burnout Revenge layout of `CB4MemoryManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameSource/Game/B4MemoryManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4MemoryManager {  // size 0xE9C
+    /* 0x000 */ CB4ManagedMemoryBlock mGlobalTexdicDataBuffer;
+    /* 0x010 */ CB4ManagedMemoryBlock mMainStringsBuffer;
+    /* 0x020 */ CB4ManagedMemoryBlock mProgressionDataBuffer;
+    /* 0x030 */ CB4ManagedMemoryBlock mSoundWaveObjectBuffer;
+    /* 0x040 */ CB4ManagedMemoryBlock mSoundRwaBuffer;
+    /* 0x050 */ CB4ManagedMemoryBlock mCameraBuffer;
+    /* 0x060 */ CB4ManagedMemoryBlock maCarIconsBuffer[6];
+    /* 0x0C0 */ CB4ManagedMemoryBlock mLoadingBackgroundBuffer;
+    /* 0x0D0 */ CB4ManagedMemoryBlock mGinsuDistillerBuffer;
+    /* 0x0E0 */ CB4ManagedMemoryBlock mBigFontBuffer;
+    /* 0x0F0 */ CB4ManagedMemoryBlock mSmallFontBuffer;
+    /* 0x100 */ CB4ManagedMemoryBlock mDigitalFontBuffer;
+    /* 0x110 */ CB4ManagedMemoryBlock mFlashMoviesLoadingScreensBuffer;
+    /* 0x120 */ CB4ManagedMemoryBlock mPersistentLobbyBuffer;
+    /* 0x130 */ CB4ManagedMemoryBlock ma1PRaceCarBuffer[6];
+    /* 0x190 */ CB4ManagedMemoryBlock m1PSunCoronaBuffer;
+    /* 0x1A0 */ CB4ManagedMemoryBlock m1PStaticTrackBuffer;
+    /* 0x1B0 */ CB4ManagedMemoryBlock m1PStreamedTrackHighBuffer[10];
+    /* 0x250 */ CB4ManagedMemoryBlock m1PStreamedTrackLODColBuffer[18];
+    /* 0x370 */ CB4ManagedMemoryBlock m1PGameDataBuffer;
+    /* 0x380 */ CB4ManagedMemoryBlock m1PPropManagerBuffer;
+    /* 0x390 */ CB4ManagedMemoryBlock ma1PTrafficCarBuffer[12];
+    /* 0x450 */ CB4ManagedMemoryBlock m1PInGameFlashMoviesBuffer;
+    /* 0x460 */ CB4ManagedMemoryBlock m1PInGameAptDataBuffer;
+    /* 0x470 */ CB4ManagedMemoryBlock ma2PRaceCarBuffer[2];
+    /* 0x490 */ CB4ManagedMemoryBlock m2PSunCoronaBuffer;
+    /* 0x4A0 */ CB4ManagedMemoryBlock m2PStaticTrackBuffer;
+    /* 0x4B0 */ CB4ManagedMemoryBlock m2PStreamedTrackHighBuffer[19];
+    /* 0x5E0 */ CB4ManagedMemoryBlock m2PStreamedTrackLODColBuffer[35];
+    /* 0x810 */ CB4ManagedMemoryBlock m2PGameDataBuffer;
+    /* 0x820 */ CB4ManagedMemoryBlock m2PPropManagerBuffer;
+    /* 0x830 */ CB4ManagedMemoryBlock ma2PTrafficCarBuffer[12];
+    /* 0x8F0 */ CB4ManagedMemoryBlock m2PInGameFlashMoviesBuffer;
+    /* 0x900 */ CB4ManagedMemoryBlock m2PInGameAptDataBuffer;
+    /* 0x910 */ CB4ManagedMemoryBlock ma2PCrashRaceCarBuffer[3];
+    /* 0x940 */ CB4ManagedMemoryBlock m2PCrashSunCoronaBuffer;
+    /* 0x950 */ CB4ManagedMemoryBlock m2PCrashStaticTrackBuffer;
+    /* 0x960 */ CB4ManagedMemoryBlock m2PCrashStreamedTrackHighBuffer[19];
+    /* 0xA90 */ CB4ManagedMemoryBlock m2PCrashStreamedTrackLODColBuffer[35];
+    /* 0xCC0 */ CB4ManagedMemoryBlock m2PCrashGameDataBuffer;
+    /* 0xCD0 */ CB4ManagedMemoryBlock m2PCrashPropManagerBuffer;
+    /* 0xCE0 */ CB4ManagedMemoryBlock ma2PCrashTrafficCarBuffer[12];
+    /* 0xDA0 */ CB4ManagedMemoryBlock m2PCrashInGameFlashMoviesBuffer;
+    /* 0xDB0 */ CB4ManagedMemoryBlock m2PCrashInGameAptDataBuffer;
+    /* 0xDC0 */ CB4ManagedMemoryBlock maFERaceCarBuffer[3];
+    /* 0xDF0 */ CB4ManagedMemoryBlock mFESunCoronaBuffer;
+    /* 0xE00 */ CB4ManagedMemoryBlock mFEEnvironmentDataBuffer;
+    /* 0xE10 */ CB4ManagedMemoryBlock mFEStaticWorldBuffer;
+    /* 0xE20 */ CB4ManagedMemoryBlock mFEFlashMoviesCafeCommonBuffer;
+    /* 0xE30 */ CB4ManagedMemoryBlock mFEFlashMoviesBuffer;
+    /* 0xE40 */ CB4ManagedMemoryBlock mFEFlashTextureDicBuffer;
+    /* 0xE50 */ CB4ManagedMemoryBlock mFESaveGameBuffer;
+    /* 0xE60 */ CB4ManagedMemoryBlock mFEAptDataBuffer;
+    /* 0xE70 */ CB4ManagedMemoryBlock mMPEGBuffer;
+    /* 0xE80 */ CB4ManagedMemoryBlock mStageHeadersBuffer;
+    /* 0xE90 */ EB4MemoryLayout meCurrentMemoryLayout;
+    /* 0xE94 */ RwInt32 mnMemoryLayoutCount;
+    /* 0xE98 */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CB4MemoryManager(const CB4MemoryManager &);
+    // CB4MemoryManager();
+    // virtual void Construct();
+    // virtual void Destruct();
+    // virtual void Update();
+    // bool AcquireMemoryLayout(EB4MemoryLayout);
+    // void ReleaseMemoryLayout();
+    // virtual void * AcquireBlock(EB4MemoryBlock, int);
+    // virtual void ReleaseBlock(EB4MemoryBlock, int);
+    // virtual void * QueryBlock(EB4MemoryBlock, int) const;
+    // virtual RwInt32 GetBlockSize(EB4MemoryBlock) const;
+    // EB4MemoryBlock GetRaceCarMemoryBlockEnum();
+};
+```
 
 ## Notes
 

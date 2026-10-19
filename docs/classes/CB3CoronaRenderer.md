@@ -8,21 +8,22 @@
 - **Source file:** `B3CoronaRendererPS2.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 8
 - **Retail (SLUS-21050):** 6 of its 8 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CoronaRenderer`, size 0x001, methods in `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4coronarenderer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RestoreRenderstates()` | `0x002C7B70` 100 | `0x0030EE70` 100 | `0x00340C80` 100 | `0x00336D00` 136 | `0x00306D90` proven |  |
-| `SetRenderstates()` | `0x002C7BE0` 116 | `0x0030EEE0` 116 | `0x00340CF0` 116 | `0x00336C60` 152 | `0x00306E00` proven |  |
-| `UploadCodeAndStaticData(float)` | `0x002C7C60` 560 | `0x0030EF60` 560 | `0x00340D70` 560 | `0x00336860` 1012 | `0x00306E80` strong |  |
-| `EndRender()` | `0x002C7E90` 736 | `0x0030F190` 780 | `0x00340FA0` 780 | `0x00336450` 1036 | `0x003070B0` strong |  |
-| `RenderDynamicArray(CB3CoronaDynamicArray*,CGtTexture*)` | `0x002C8170` 132 | `0x0030F4A0` 324 | `0x003412B0` 324 | `0x00336320` 292 | `0x003073A0` strong |  |
-| `BeginRender(int,float)` | `0x002C8200` 12 | `0x0030F5F0` 144 | `0x00341400` 144 | `0x003362C0` 88 |  |  |
-| `Destruct()` | `0x002C8210` 8 | `0x0030F680` 8 | `0x00341490` 8 | `0x003362B0` 8 |  |  |
-| `Construct()` | `0x002C8220` 8 | `0x0030F690` 8 | `0x003414A0` 8 | `0x003362A0` 8 | `0x00307430` unverified |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RestoreRenderstates()` | `0x002C7B70` 100 | `0x0030EE70` 100 | `0x00340C80` 100 | `0x00336D00` 136 | `0x00306D90` proven |  | `void CB4CoronaRenderer::RestoreRenderstates()` |
+| `SetRenderstates()` | `0x002C7BE0` 116 | `0x0030EEE0` 116 | `0x00340CF0` 116 | `0x00336C60` 152 | `0x00306E00` proven |  | `void CB4CoronaRenderer::SetRenderstates()` |
+| `UploadCodeAndStaticData(float)` | `0x002C7C60` 560 | `0x0030EF60` 560 | `0x00340D70` 560 | `0x00336860` 1012 | `0x00306E80` strong |  | `void CB4CoronaRenderer::UploadCodeAndStaticData(float lrCurrentTime)` |
+| `EndRender()` | `0x002C7E90` 736 | `0x0030F190` 780 | `0x00340FA0` 780 | `0x00336450` 1036 | `0x003070B0` strong |  | `void CB4CoronaRenderer::EndRender()` |
+| `RenderDynamicArray(CB3CoronaDynamicArray*,CGtTexture*)` | `0x002C8170` 132 | `0x0030F4A0` 324 | `0x003412B0` 324 | `0x00336320` 292 | `0x003073A0` strong |  | `void CB4CoronaRenderer::RenderDynamicArray(CB4CoronaDynamicArray *lpArray, CGtTexture *lpTexture)` |
+| `BeginRender(int,float)` | `0x002C8200` 12 | `0x0030F5F0` 144 | `0x00341400` 144 | `0x003362C0` 88 |  |  | `void CB4CoronaRenderer::BeginRender(int lnPlayer, float lrCurrentTime)` |
+| `Destruct()` | `0x002C8210` 8 | `0x0030F680` 8 | `0x00341490` 8 | `0x003362B0` 8 |  |  |  |
+| `Construct()` | `0x002C8220` 8 | `0x0030F690` 8 | `0x003414A0` 8 | `0x003362A0` 8 | `0x00307430` unverified |  |  |
 
 ## Static data (DNAT_200)
 
@@ -34,6 +35,36 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `0x01D956C0` | 32 | .bss | `CB3CoronaRenderer::mapDMAPackets` |
 | `0x01D956E0` | 32 | .bss | `CB3CoronaRenderer::mapTextures` |
 | `0x01D95700` | 16 | .bss | `CB3CoronaRenderer::mau16Counts` |
+
+## Burnout Revenge layout of `CB4CoronaRenderer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 4 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CoronaRenderer : public CB4CoronaRendererBase {  // size 0x001
+    // base CB4CoronaRendererBase at 0x000
+    /* static */ RwReal mrCurrentTime;
+    /* static */ RwInt32 mnPlayer;
+    /* static */ RwInt32 mnNumPackets;
+    /* static */ void *mapDMAPackets[48];
+    /* static */ CGtTexture *mapTextures[48];
+    /* static */ short unsigned int mau16Counts[48];
+    // methods
+    // CB4CoronaRenderer(const CB4CoronaRenderer &);
+    // CB4CoronaRenderer();
+    // static void Construct();
+    // static void Destruct();
+    // static void BeginRender(int, float);
+    // static void RenderStaticArray(CB4CoronaStaticArray *, CGtTexture *);
+    // static void RenderDynamicArray(CB4CoronaDynamicArray *, CGtTexture *);
+    // static void RenderStaticCoronaArrayEnhanced(CB4CoronaStaticArray *, CGtTexture *, CGtTexture *);
+    // static void EndRender();
+    // static void UploadCodeAndStaticData(float);
+    // static void SetRenderstates();
+    // static void RestoreRenderstates();
+    // static RwReal DoFlashing(const CB4Corona *, float);
+};
+```
 
 ## Notes
 

@@ -6,18 +6,35 @@
 
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Methods per build:** B3O0PCH 5
+- **Burnout Revenge counterpart:** `CB4Tensor`, size 0x030 ([layout](#burnout-revenge-layout-of-cb4tensor))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3Tensor()` |  |  |  | `0x00191B30` 44 |  |  |
-| `CB3Tensor(const CB3Tensor&)` |  |  |  | `0x001A5360` 52 |  |  |
-| `GetTranspose()` |  |  |  | `0x001A5230` 300 |  |  |
-| `Set(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001A60A0` 144 |  |  |
-| `Set(float,float,float,float,float,float,float,float,float)` |  |  |  | `0x001A5550` 140 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3Tensor()` |  |  |  | `0x00191B30` 44 |  |  |  |
+| `CB3Tensor(const CB3Tensor&)` |  |  |  | `0x001A5360` 52 |  |  |  |
+| `GetTranspose()` |  |  |  | `0x001A5230` 300 |  |  |  |
+| `Set(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001A60A0` 144 |  |  |  |
+| `Set(float,float,float,float,float,float,float,float,float)` |  |  |  | `0x001A5550` 140 |  |  |  |
+
+## Burnout Revenge layout of `CB4Tensor`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 326 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Tensor {  // size 0x030
+    /* 0x000 */ CGtMatrix3x3 mTensor;
+    // methods
+    // CB4Tensor(const CB4Tensor &);
+    // CB4Tensor();
+    // void Set(float, float, float, float, float, float, float, float, float);
+    // void Set(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d);
+    // CB4Tensor GetTranspose();
+};
+```
 
 ## Notes
 

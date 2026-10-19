@@ -8,32 +8,33 @@
 - **Source file:** `B3GameData.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 13, B3INTERN 13, B3O0PCH 18
 - **Retail (SLUS-21050):** 4 of its 13 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4GameData`, size 0x690, methods in `GameSource/World/B4GameData.cpp` ([layout](#burnout-revenge-layout-of-cb4gamedata))
 - **Burnout 2 ancestor (by name):** `CGameData`, size 0x008, declared in 68 file(s), e.g. `gamesource/Game/CGrandPrixTable.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetGameDataThreshold(int*,int*,int*)` | `0x0014B220` 72 | `0x0015C2B0` 72 | `0x00157D30` 72 | `0x00167200` 116 | `0x0014E7E0` proven |  |
-| `GetGameDataThreshold(float*,float*,float*)` | `0x0014B270` 40 | `0x0015C300` 40 | `0x00157D80` 40 | `0x001671A0` 92 | `0x0014E830` proven |  |
-| `GetNumLaps()` | `0x0014B2A0` 28 | `0x0015C330` 28 | `0x00157DB0` 28 | `0x00167160` 64 | `0x0014E860` strong |  |
-| `GetNumSplitTimeCheckpoints()` | `0x0014B2C0` 28 | `0x0015C350` 28 | `0x00157DD0` 28 | `0x00167120` 64 | `0x0014E880` strong |  |
-| `GetNumStartLines()` | `0x0014B2E0` 28 | `0x0015C370` 28 | `0x00157DF0` 28 | `0x001670A0` 64 |  |  |
-| `Draw(int)` | `0x0014B300` 744 | `0x0015C390` 816 | `0x00157E10` 804 | `0x00166D10` 908 |  |  |
-| `SetStageID(unsigned long)` | `0x0014B5F0` 16 | `0x0015C6C0` 16 | `0x00158140` 16 | `0x00166C50` 48 |  |  |
-| `SetGameDataFileName(char*)` | `0x0014B600` 52 | `0x0015C6D0` 112 | `0x00158150` 112 | `0x00166BF0` 96 |  |  |
-| `Destruct()` | `0x0014B640` 268 | `0x0015C740` 268 | `0x001581C0` 268 | `0x00166A80` 368 |  |  |
-| `Release()` | `0x0014B750` 400 | `0x0015C850` 400 | `0x001582D0` 400 | `0x00166860` 532 |  |  |
-| `Update()` | `0x0014B8E0` 236 | `0x0015C9E0` 236 | `0x00158460` 232 | `0x00166710` 328 |  |  |
-| `Prepare()` | `0x0014B9D0` 3668 | `0x0015CAD0` 4176 | `0x00158550` 3768 | `0x00165750` 3800 |  |  |
-| `Construct()` | `0x0014C830` 280 | `0x0015DB20` 280 | `0x00159410` 280 | `0x001655C0` 388 |  |  |
-| `CB3GameData()` |  |  |  | `0x00191550` 80 |  |  |
-| `GetCoopNumCrashBreakerVehicles()` |  |  |  | `0x003F66F0` 32 |  |  |
-| `GetNormalNumCrashBreakerVehicles()` |  |  |  | `0x003F66D0` 32 |  |  |
-| `GetNumFinishLines()` |  |  |  | `0x001670E0` 64 |  |  |
-| `IsFileStreamReady()` |  |  |  | `0x00166C80` 132 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetGameDataThreshold(int*,int*,int*)` | `0x0014B220` 72 | `0x0015C2B0` 72 | `0x00157D30` 72 | `0x00167200` 116 | `0x0014E7E0` proven |  | `void CB4GameData::GetGameDataThreshold(int *lpnBronze, int *lpnSilver, int *lpnGold)` |
+| `GetGameDataThreshold(float*,float*,float*)` | `0x0014B270` 40 | `0x0015C300` 40 | `0x00157D80` 40 | `0x001671A0` 92 | `0x0014E830` proven |  | `void CB4GameData::GetGameDataThreshold(float *lprBronze, float *lprSilver, float *lprGold)` |
+| `GetNumLaps()` | `0x0014B2A0` 28 | `0x0015C330` 28 | `0x00157DB0` 28 | `0x00167160` 64 | `0x0014E860` strong |  | `RwInt32 CB4GameData::GetNumLaps()` |
+| `GetNumSplitTimeCheckpoints()` | `0x0014B2C0` 28 | `0x0015C350` 28 | `0x00157DD0` 28 | `0x00167120` 64 | `0x0014E880` strong |  | `RwInt32 CB4GameData::GetNumSplitTimeCheckpoints()` |
+| `GetNumStartLines()` | `0x0014B2E0` 28 | `0x0015C370` 28 | `0x00157DF0` 28 | `0x001670A0` 64 |  |  | `RwInt32 CB4GameData::GetNumStartLines()` |
+| `Draw(int)` | `0x0014B300` 744 | `0x0015C390` 816 | `0x00157E10` 804 | `0x00166D10` 908 |  |  | `void CB4GameData::Draw(EPlayerCarIndex lePlayer)` (same name, different parameters) |
+| `SetStageID(unsigned long)` | `0x0014B5F0` 16 | `0x0015C6C0` 16 | `0x00158140` 16 | `0x00166C50` 48 |  |  | `void CB4GameData::SetStageID(unsigned long lStageID)` |
+| `SetGameDataFileName(char*)` | `0x0014B600` 52 | `0x0015C6D0` 112 | `0x00158150` 112 | `0x00166BF0` 96 |  |  | `void CB4GameData::SetGameDataFileName(char *lpacGameDataFileName)` |
+| `Destruct()` | `0x0014B640` 268 | `0x0015C740` 268 | `0x001581C0` 268 | `0x00166A80` 368 |  |  | `void CB4GameData::Destruct()` |
+| `Release()` | `0x0014B750` 400 | `0x0015C850` 400 | `0x001582D0` 400 | `0x00166860` 532 |  |  | `void CB4GameData::Release()` |
+| `Update()` | `0x0014B8E0` 236 | `0x0015C9E0` 236 | `0x00158460` 232 | `0x00166710` 328 |  |  | `void CB4GameData::Update()` |
+| `Prepare()` | `0x0014B9D0` 3668 | `0x0015CAD0` 4176 | `0x00158550` 3768 | `0x00165750` 3800 |  |  | `bool CB4GameData::Prepare()` |
+| `Construct()` | `0x0014C830` 280 | `0x0015DB20` 280 | `0x00159410` 280 | `0x001655C0` 388 |  |  | `void CB4GameData::Construct()` |
+| `CB3GameData()` |  |  |  | `0x00191550` 80 |  |  |  |
+| `GetCoopNumCrashBreakerVehicles()` |  |  |  | `0x003F66F0` 32 |  |  |  |
+| `GetNormalNumCrashBreakerVehicles()` |  |  |  | `0x003F66D0` 32 |  |  |  |
+| `GetNumFinishLines()` |  |  |  | `0x001670E0` 64 |  |  | `RwInt32 CB4GameData::GetNumFinishLines()` |
+| `IsFileStreamReady()` |  |  |  | `0x00166C80` 132 |  |  | `bool CB4GameData::IsFileStreamReady()` |
 
 ## Burnout 2 layout of `CGameData`
 
@@ -48,6 +49,71 @@ public:
     // functions of this class with code in this build:
     // int CGameData::Reset()  [0x0022B640]
     // int CGameData::Setup(EGameModeUniqueTypes leType, signed char lnVariant8, void *lpBuffer)  [0x0022C500]
+};
+```
+
+## Burnout Revenge layout of `CB4GameData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 5 file(s), e.g. `GameSource/Game/Challenge/B4Challenge.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4GameData {  // size 0x690
+    /* 0x000 */ CB4CrashPickup maCrashPickups[20];
+    /* 0x1E0 */ CB4CrashRamp maCrashRamps[5];
+    /* 0x410 */ CB4StartPoint maStartPoints[6];
+    /* 0x428 */ CB4StartFinishLine maStartLine[4];
+    /* 0x468 */ CB4StartFinishLine maFinishLine[4];
+    /* 0x4A8 */ CB4SplitTimeCheckpoint maSplitTimeCheckpoints[12];
+    /* 0x508 */ ECrashModeRampType maeActiveRamps[2];
+    /* 0x510 */ CGtTexture *mapPickupTextures[10];
+    /* 0x538 */ CGtTexture *mpRampTexture;
+    /* 0x53C */ bool mbIsSingleRace;
+    /* 0x540 */ CB4CameraMovieManager mMovieManager;
+    /* 0x54C */ char macGameDataFilePath[256];
+    /* 0x650 */ GtID mStageID;
+    /* 0x658 */ CB4GameDataStruct *mpGameDataStruct;
+    /* 0x65C */ CB4GameStageDataStruct *mpStageDataStruct;
+    /* 0x660 */ CB4SingleRaceDataStruct *mpSingleDataStruct;
+    /* 0x664 */ CB4TrackDataStruct *mpTrackDataStruct;
+    /* 0x668 */ CB4TrafficLanesStruct *mpTrafficLanesData;
+    /* 0x66C */ CB4AILanesDataStruct *mpAILanesData;
+    /* 0x670 */ CGTFile *mpInStream;
+    /* 0x674 */ RwInt32 mnGameDataMemoryUsed;
+    /* 0x678 */ EGameDataAISet meSingleRaceAIData;
+    /* 0x67C */ EGameDataDifficulty meSingleRaceTrafficDifficulty;
+    /* 0x680 */ EGtPrepareState mePrepareState;
+    /* 0x684 */ bool mbGameDataLoaded;
+    /* 0x685 */ bool mbFilePathSetup;
+    /* 0x686 */ bool mbStageDataIDSetup;
+    /* 0x687 */ RwUInt8 mu8NumActivePickups;
+    // methods
+    // CB4GameData(const CB4GameData &);
+    // CB4GameData();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void Draw(EPlayerCarIndex);
+    // void SetGameDataFileName(char *);
+    // void SetStageID(unsigned long);
+    // RwInt32 GetNumStartLines();
+    // RwInt32 GetNumFinishLines();
+    // RwInt32 GetNumSplitTimeCheckpoints();
+    // RwInt32 GetNumLaps();
+    // void GetGameDataThreshold(float *, float *, float *);
+    // void GetGameDataThreshold(int *, int *, int *);
+    // void GetWindGameData(float *, float *, signed char);
+    // void GetCrashThreshold(signed char *, int *);
+    // RwInt32 GetIntroSequence(signed char) const;
+    // RwReal GetTimeLimit() const;
+    // RwUInt8 GetNumPickups();
+    // RwUInt8 GetDifficultyIndex();
+    // RwInt32 GetNumSignatureTakedownZones();
+    // CB4SignatureTakedownStruct * GetSignatureTakedownData(int);
+    // EB4SignatureTakedownType GetSignatureTakedownType(GtMathPs2::CGtV3d);
+    // CB4GameStageDataStruct * GetGameStageData();
+    // bool IsFileStreamReady();
 };
 ```
 

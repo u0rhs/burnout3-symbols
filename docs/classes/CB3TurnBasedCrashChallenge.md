@@ -8,32 +8,63 @@
 - **Source file:** `B3TurnBasedCrashChallenge.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 9, B3INTERN 9, B3O0PCH 19
 - **vtable (DNAT_200):** `0x00441940`, 40 bytes = 10 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 8 virtual functions)
+- **Burnout Revenge counterpart:** `CB4TurnBasedCrashChallenge`, size 0xB170, methods in `GameSource/Game/Challenge/B4TurnBasedCrashChallenge.cpp` ([layout](#burnout-revenge-layout-of-cb4turnbasedcrashchallenge))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `OnChallengeRestart()` | `0x00374960` 8 | `0x003E5370` 8 | `0x0040D1F0` 8 | `0x004226D0` 40 |  |  |
-| `OnEndOfChallenge()` | `0x00374970` 748 | `0x003E5380` 132 | `0x0040D200` 132 | `0x00422610` 192 |  |  |
-| `OnChallengeFinishDriving()` | `0x00374C60` 240 | `0x003E5410` 364 | `0x0040D290` 364 | `0x00422420` 488 |  |  |
-| `Update()` | `0x00374D50` 8 | `0x003E5580` 8 | `0x0040D400` 8 | `0x00422410` 16 |  |  |
-| `Destruct()` | `0x00374D60` 8 | `0x003E5590` 8 | `0x0040D410` 8 | `0x004223E0` 40 |  |  |
-| `Release()` | `0x00374D70` 144 | `0x003E55A0` 144 | `0x0040D420` 144 | `0x004222F0` 236 |  |  |
-| `Prepare()` | `0x00374E00` 132 | `0x003E5630` 132 | `0x0040D4B0` 132 | `0x00422210` 220 |  |  |
-| `Construct()` | `0x00374E90` 144 | `0x003E56C0` 144 | `0x0040D540` 144 | `0x00422120` 236 |  |  |
-| `NextStage()` |  | `0x003E5150` 536 | `0x0040CFD0` 536 | `0x00422700` 392 |  |  |
-| `AddCrashZone(CB3StageDataStruct*)` |  |  |  | `0x0033E490` 100 |  |  |
-| `CB3TurnBasedCrashChallenge()` |  |  |  | `0x0013DC90` 60 |  |  |
-| `GetCurrentPlayer()` |  |  |  | `0x00382110` 28 |  |  |
-| `GetCurrentStandingsCar(int)` |  |  |  | `0x004143B0` 48 |  |  |
-| `GetNumPlayers()` |  |  |  | `0x003821D0` 28 |  |  |
-| `GetTotalCarsHitByPlayer(int)` |  |  |  | `0x00382180` 72 |  |  |
-| `GetTotalPlayerScore(int)` |  |  |  | `0x00382130` 76 |  |  |
-| `IsLastStageInZone()` |  |  |  | `0x00427D50` 56 |  |  |
-| `IsLastZoneInParty()` |  |  |  | `0x004143E0` 56 |  |  |
-| `SetNumPlayers(unsigned char)` |  |  |  | `0x0033E460` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `OnChallengeRestart()` | `0x00374960` 8 | `0x003E5370` 8 | `0x0040D1F0` 8 | `0x004226D0` 40 |  |  |  |
+| `OnEndOfChallenge()` | `0x00374970` 748 | `0x003E5380` 132 | `0x0040D200` 132 | `0x00422610` 192 |  |  |  |
+| `OnChallengeFinishDriving()` | `0x00374C60` 240 | `0x003E5410` 364 | `0x0040D290` 364 | `0x00422420` 488 |  |  |  |
+| `Update()` | `0x00374D50` 8 | `0x003E5580` 8 | `0x0040D400` 8 | `0x00422410` 16 |  |  | `void CB4TurnBasedCrashChallenge::Update()` |
+| `Destruct()` | `0x00374D60` 8 | `0x003E5590` 8 | `0x0040D410` 8 | `0x004223E0` 40 |  |  | `void CB4TurnBasedCrashChallenge::Destruct()` |
+| `Release()` | `0x00374D70` 144 | `0x003E55A0` 144 | `0x0040D420` 144 | `0x004222F0` 236 |  |  | `void CB4TurnBasedCrashChallenge::Release()` |
+| `Prepare()` | `0x00374E00` 132 | `0x003E5630` 132 | `0x0040D4B0` 132 | `0x00422210` 220 |  |  | `bool CB4TurnBasedCrashChallenge::Prepare()` |
+| `Construct()` | `0x00374E90` 144 | `0x003E56C0` 144 | `0x0040D540` 144 | `0x00422120` 236 |  |  | `void CB4TurnBasedCrashChallenge::Construct()` |
+| `NextStage()` |  | `0x003E5150` 536 | `0x0040CFD0` 536 | `0x00422700` 392 |  |  |  |
+| `AddCrashZone(CB3StageDataStruct*)` |  |  |  | `0x0033E490` 100 |  |  |  |
+| `CB3TurnBasedCrashChallenge()` |  |  |  | `0x0013DC90` 60 |  |  |  |
+| `GetCurrentPlayer()` |  |  |  | `0x00382110` 28 |  |  |  |
+| `GetCurrentStandingsCar(int)` |  |  |  | `0x004143B0` 48 |  |  |  |
+| `GetNumPlayers()` |  |  |  | `0x003821D0` 28 |  |  |  |
+| `GetTotalCarsHitByPlayer(int)` |  |  |  | `0x00382180` 72 |  |  |  |
+| `GetTotalPlayerScore(int)` |  |  |  | `0x00382130` 76 |  |  |  |
+| `IsLastStageInZone()` |  |  |  | `0x00427D50` 56 |  |  |  |
+| `IsLastZoneInParty()` |  |  |  | `0x004143E0` 56 |  |  |  |
+| `SetNumPlayers(unsigned char)` |  |  |  | `0x0033E460` 36 |  |  |  |
+
+## Burnout Revenge layout of `CB4TurnBasedCrashChallenge`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 6 file(s), e.g. `GameSource/Game/B4Game.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TurnBasedCrashChallenge : public CB4Challenge {  // size 0xB170
+    // base CB4Challenge at 0x000
+    /* 0xB160 */ ERaceCarIndex meCurrentPlayer;
+    /* 0xB164 */ RwInt32 mnNumPlayers;
+    /* 0xB168 */ bool mbForcedExit;
+    // methods
+    // CB4TurnBasedCrashChallenge(const CB4TurnBasedCrashChallenge &);
+    // CB4TurnBasedCrashChallenge();
+    // virtual void Construct();
+    // virtual bool Prepare();
+    // virtual void Release();
+    // virtual void Destruct();
+    // virtual void Update();
+    // virtual void OnFinishCurrentStage();
+    // virtual bool ShouldWeUseNextRaceSetupConfig();
+    // void SetNumPlayers(int);
+    // ERaceCarIndex GetCurrentPlayer();
+    // RwInt32 GetNumPlayers();
+    // void Finish();
+    // virtual bool ShouldShowFinalResults();
+    // virtual RwInt32 GetPlayerRank(int);
+    // bool NeedToSelectCar();
+};
+```
 
 ## Notes
 

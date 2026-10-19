@@ -8,33 +8,34 @@
 - **Source file:** `B3AIDriver.cpp`
 - **Methods per build:** DNAT_200 14, B3DEBUG 14, B3INTERN 14, B3O0PCH 19
 - **Retail (SLUS-21050):** 13 of its 14 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4AIDriver`, size 0xA80, methods in `GameSource/World/B4AIDriver.cpp` ([layout](#burnout-revenge-layout-of-cb4aidriver))
 - **Burnout 2 ancestor (by name):** `CAIDriver`, size 0x058, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CalcCatchupSpeed(float)` | `0x00140D60` 460 | `0x0014CAF0` 556 | `0x00149650` 556 | `0x00156C50` 664 | `0x00143FA0` strong |  |
-| `CalcSpeedMatchSpeed(float)` | `0x00140F30` 1292 | `0x0014CD20` 1996 | `0x00149880` 1996 | `0x001563F0` 2064 | `0x00144180` strong |  |
-| `GetCurrentMaxSpeed()` | `0x00141440` 296 | `0x0014D4F0` 368 | `0x0014A050` 368 | `0x00156110` 408 | `0x001446B0` likely |  |
-| `GetCurrentMinSpeed()` | `0x00141570` 296 | `0x0014D660` 368 | `0x0014A1C0` 368 | `0x00155F70` 408 | `0x00144810` likely |  |
-| `GenerateProfile()` | `0x001416A0` 880 | `0x0014D7D0` 1232 | `0x0014A330` 1052 | `0x00155920` 1604 | `0x00144970` unverified |  |
-| `CalcDifficultyIndex()` | `0x00141A10` 280 | `0x0014DCA0` 392 | `0x0014A750` 392 | `0x00155780` 412 | `0x00144D00` strong |  |
-| `_CalcDifficultyIndexQSortCallback(const void*,const void*)` | `0x00141B30` 76 | `0x0014DE30` 76 | `0x0014A8E0` 76 | `0x001556E0` 156 |  |  |
-| `CalculateDesiredSpeed()` | `0x00141B80` 456 | `0x0014DE80` 468 | `0x0014A930` 456 | `0x001554B0` 556 | `0x00144E70` unverified | `void CAIDriver::CalculateDesiredSpeed()` |
-| `CalculateSteerAngle()` | `0x00141D50` 1588 | `0x0014E060` 2112 | `0x0014AB00` 1792 | `0x00154B50` 2112 | `0x001450C0` strong | `void CAIDriver::CalculateSteerAngle()` |
-| `CheckForDrift()` | `0x00142390` 728 | `0x0014E8A0` 728 | `0x0014B200` 728 | `0x00154640` 984 | `0x00145700` strong | `void CAIDriver::CheckForDrift()` |
-| `Release()` | `0x00142670` 44 | `0x0014EB80` 44 | `0x0014B4E0` 44 | `0x00154600` 52 | `0x001459E0` strong |  |
-| `Update()` | `0x001426A0` 612 | `0x0014EBB0` 1012 | `0x0014B510` 932 | `0x00154350` 680 | `0x00145A10` likely | `void CAIDriver::Update()` |
-| `Prepare()` | `0x00142910` 280 | `0x0014EFB0` 280 | `0x0014B8C0` 280 | `0x00154110` 564 | `0x00145D10` strong |  |
-| `Construct()` | `0x00142A30` 56 | `0x0014F0D0` 92 | `0x0014B9E0` 92 | `0x001540B0` 92 | `0x00145E30` proven |  |
-| `CB3AIDriver()` |  |  |  | `0x001911C0` 60 |  |  |
-| `CalculateDefaultRacingSpeed()` |  |  |  | `0x00156EF0` 156 |  |  |
-| `CatchupHasTailedOff()` |  |  |  | `0x00367060` 28 |  |  |
-| `CheckForBoost()` |  |  |  | `0x00154A20` 264 |  |  |
-| `GetCornerSpeed(float)` |  |  |  | `0x001562B0` 308 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CalcCatchupSpeed(float)` | `0x00140D60` 460 | `0x0014CAF0` 556 | `0x00149650` 556 | `0x00156C50` 664 | `0x00143FA0` strong |  | `RwReal CB4AIDriver::CalcCatchupSpeed(float lrDefault)` |
+| `CalcSpeedMatchSpeed(float)` | `0x00140F30` 1292 | `0x0014CD20` 1996 | `0x00149880` 1996 | `0x001563F0` 2064 | `0x00144180` strong |  | `RwReal CB4AIDriver::CalcSpeedMatchSpeed(float lrDefault)` |
+| `GetCurrentMaxSpeed()` | `0x00141440` 296 | `0x0014D4F0` 368 | `0x0014A050` 368 | `0x00156110` 408 | `0x001446B0` likely |  | `RwReal CB4AIDriver::GetCurrentMaxSpeed()` |
+| `GetCurrentMinSpeed()` | `0x00141570` 296 | `0x0014D660` 368 | `0x0014A1C0` 368 | `0x00155F70` 408 | `0x00144810` likely |  | `RwReal CB4AIDriver::GetCurrentMinSpeed()` |
+| `GenerateProfile()` | `0x001416A0` 880 | `0x0014D7D0` 1232 | `0x0014A330` 1052 | `0x00155920` 1604 | `0x00144970` unverified |  | `void CB4AIDriver::GenerateProfile(int lnRaceCarPos)` (same name, different parameters) |
+| `CalcDifficultyIndex()` | `0x00141A10` 280 | `0x0014DCA0` 392 | `0x0014A750` 392 | `0x00155780` 412 | `0x00144D00` strong |  | `RwInt32 CB4AIDriver::CalcDifficultyIndex()` |
+| `_CalcDifficultyIndexQSortCallback(const void*,const void*)` | `0x00141B30` 76 | `0x0014DE30` 76 | `0x0014A8E0` 76 | `0x001556E0` 156 |  |  | `RwInt32 CB4AIDriver::_CalcDifficultyIndexQSortCallback(const void *lpData1, const void *lpData2)` |
+| `CalculateDesiredSpeed()` | `0x00141B80` 456 | `0x0014DE80` 468 | `0x0014A930` 456 | `0x001554B0` 556 | `0x00144E70` unverified | `void CAIDriver::CalculateDesiredSpeed()` | `void CB4AIDriver::CalculateDesiredSpeed()` |
+| `CalculateSteerAngle()` | `0x00141D50` 1588 | `0x0014E060` 2112 | `0x0014AB00` 1792 | `0x00154B50` 2112 | `0x001450C0` strong | `void CAIDriver::CalculateSteerAngle()` | `void CB4AIDriver::CalculateSteerAngle()` |
+| `CheckForDrift()` | `0x00142390` 728 | `0x0014E8A0` 728 | `0x0014B200` 728 | `0x00154640` 984 | `0x00145700` strong | `void CAIDriver::CheckForDrift()` | `void CB4AIDriver::CheckForDrift()` |
+| `Release()` | `0x00142670` 44 | `0x0014EB80` 44 | `0x0014B4E0` 44 | `0x00154600` 52 | `0x001459E0` strong |  | `void CB4AIDriver::Release()` |
+| `Update()` | `0x001426A0` 612 | `0x0014EBB0` 1012 | `0x0014B510` 932 | `0x00154350` 680 | `0x00145A10` likely | `void CAIDriver::Update()` | `void CB4AIDriver::Update()` |
+| `Prepare()` | `0x00142910` 280 | `0x0014EFB0` 280 | `0x0014B8C0` 280 | `0x00154110` 564 | `0x00145D10` strong |  | `bool CB4AIDriver::Prepare()` |
+| `Construct()` | `0x00142A30` 56 | `0x0014F0D0` 92 | `0x0014B9E0` 92 | `0x001540B0` 92 | `0x00145E30` proven |  | `void CB4AIDriver::Construct()` |
+| `CB3AIDriver()` |  |  |  | `0x001911C0` 60 |  |  |  |
+| `CalculateDefaultRacingSpeed()` |  |  |  | `0x00156EF0` 156 |  |  | `void CB4AIDriver::CalculateDefaultRacingSpeed()` |
+| `CatchupHasTailedOff()` |  |  |  | `0x00367060` 28 |  |  |  |
+| `CheckForBoost()` |  |  |  | `0x00154A20` 264 |  |  | `void CB4AIDriver::CheckForBoost()` |
+| `GetCornerSpeed(float)` |  |  |  | `0x001562B0` 308 |  |  | `RwReal CB4AIDriver::GetCornerSpeed(float lrDefault)` |
 
 ## Burnout 2 layout of `CAIDriver`
 
@@ -68,6 +69,87 @@ public:
     // void CAIDriver::Update()  [0x00224F10]
     // void CAIDriver::Reset()  [0x002251F0]
     // int CAIDriver::Init()  [0x002253E0]
+};
+```
+
+## Burnout Revenge layout of `CB4AIDriver`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 305 file(s), e.g. `GameShared/GameClasses/System/MemoryCard/NewMemoryCard/GtMemoryCardManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AIDriver {  // size 0xA80
+    /* 0x000 */ CB4AIArbitrator mArbitrator;
+    /* 0x7E0 */ CB4AICar *mpCar;
+    /* 0x7F0 */ CGtV3d mDesiredDirection;
+    /* 0x800 */ float maarMinTime[8][8];
+    /* 0x900 */ float maarMaxTime[8][8];
+    /* 0xA00 */ RwReal mrCurrentSteerAngle;
+    /* 0xA04 */ RwReal mrDesiredSpeed;
+    /* 0xA08 */ RwReal mrTimeToDesiredDirection;
+    /* 0xA0C */ RwReal mrPrevSteerAngle;
+    /* 0xA10 */ RwReal mrCurrentCornerSpeed;
+    /* 0xA14 */ RwReal mrCurrentDriftSteerError;
+    /* 0xA18 */ RwReal mrStickySpeedMatchSpeed;
+    /* 0xA1C */ RwReal mrCatchupExtraSpeed;
+    /* 0xA20 */ RwReal mrAggression;
+    /* 0xA24 */ RwReal mrDifficulty;
+    /* 0xA28 */ RwReal mrCatchupTailoff;
+    /* 0xA2C */ RwReal mrAggressionInitial;
+    /* 0xA30 */ RwReal mrAggressionDelta;
+    /* 0xA34 */ RwReal mrAggressionMax;
+    /* 0xA38 */ RwReal mrMaxTime;
+    /* 0xA3C */ RwReal mrMinTime;
+    /* 0xA40 */ RwReal mrLastCheckpointTimeBias;
+    /* 0xA44 */ RwReal mrDefaultRaceSpeed;
+    /* 0xA48 */ RwReal mrIgnoreCatchupTime;
+    /* 0xA4C */ RwInt8 mnCurrentCheckpoint;
+    /* 0xA4D */ RwInt8 mnDifficultyIndex;
+    /* 0xA4E */ bool mbBoostStart;
+    /* 0xA4F */ bool mbWantToDriftFacingLeft;
+    /* 0xA50 */ bool mbWantToDriftFacingRight;
+    /* 0xA51 */ bool mbForceDrift;
+    /* 0xA52 */ bool mbDriftOverride;
+    /* 0xA53 */ bool mbWantToBoost;
+    /* 0xA54 */ bool mbForceBoost;
+    /* 0xA55 */ bool mbBoost;
+    /* 0xA58 */ CB4AICar *mpPrevSpeedMatchTarget;
+    /* 0xA5C */ RwReal mrLastSpeed;
+    /* 0xA60 */ RwReal mrLastSpeedTarget;
+    /* 0xA64 */ RwReal mrReboostTime;
+    /* 0xA68 */ RwReal mrFakeBoostDuration;
+    /* 0xA6C */ bool mbStartedBehind;
+    /* 0xA6D */ bool mbCatchupHasTailedOff;
+    /* 0xA6E */ bool mbRoadRagePushingAhead;
+    /* 0xA70 */ EDriverTakedownDifficulty meTakedownDifficulty;
+    // methods
+    // CB4AIDriver(const CB4AIDriver &);
+    // CB4AIDriver();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // EDriverTakedownDifficulty GetTakedownDifficulty() const;
+    // void SetTakedownDifficulty(EDriverTakedownDifficulty);
+    // void OnTakenDown();
+    // RwReal GetCurrentMinSpeed();
+    // RwReal GetCurrentMaxSpeed();
+    // bool CatchupHasTailedOff();
+    // void GenerateProfile(int);
+    // void GenerateSplitTimes(EAISplitTimeType);
+    // bool IsDrivingToGetAheadInRoadRage() const;
+    // void ResetRoadRageStatus();
+    // void CalculateSteerAngle();
+    // void CalculateDesiredSpeed();
+    // void CheckForDrift();
+    // void CheckForBoost();
+    // RwInt32 CalcDifficultyIndex();
+    // bool WantToBoost();
+    // void CalculateDefaultRacingSpeed();
+    // RwReal GetCornerSpeed(float);
+    // RwReal CalcSpeedMatchSpeed(float);
+    // RwReal CalcCatchupSpeed(float);
+    // static RwInt32 _CalcDifficultyIndexQSortCallback(const void *, const void *);
 };
 ```
 

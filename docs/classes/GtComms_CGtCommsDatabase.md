@@ -11,27 +11,27 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `AddEntryCore(void*,const char*,const char*,const char*,int)` |  | `0x001E0AF0` 896 | `0x002137F0` 896 | `0x00224670` 584 |  |  |
-| `RemoveEntryCore(GtComms::CGtCommsDatabaseEntry*)` | `0x001E0B10` 20 | `0x001E0610` 20 | `0x00213310` 20 | `0x00225080` 48 | `0x0021B8F0` proven |  |
-| `RemoveEntry(void*)` | `0x001E0B30` 152 | `0x001E0630` 152 | `0x00213330` 152 | `0x00225020` 92 | `0x0021B910` strong |  |
-| `AddEntry(GtMathPs2::CGtV3d*,const char*,const char*,const char*)` | `0x001E0BD0` 424 | `0x001E06D0` 192 | `0x002133D0` 192 | `0x00224CC0` 216 | `0x0021B9B0` strong |  |
-| `AddEntry(float*,const char*,const char*,const char*,int,float,float,int)` | `0x001E0D80` 528 | `0x001E0790` 320 | `0x00213490` 320 | `0x00224B70` 332 | `0x0021BB60` strong |  |
-| `AddEntry(bool*,const char*,const char*,const char*,int)` | `0x001E0F90` 440 | `0x001E08D0` 240 | `0x002135D0` 240 | `0x00224A70` 252 |  |  |
-| `AddEntry(int*,const char*,const char*,const char*,int,int,int,int)` | `0x001E1150` 500 | `0x001E09C0` 300 | `0x002136C0` 300 | `0x00224920` 312 | `0x0021BD80` strong |  |
-| `Construct(GtComms::CGtCommsDatabaseEntry*,int)` | `0x001E1350` 28 | `0x001E0E70` 28 | `0x00213B70` 28 | `0x00224520` 96 | `0x0021BF80` proven |  |
-| `CGtCommsDatabase()` |  |  |  | `0x0013EE10` 40 |  |  |
-| `CalculateGtID(int)` |  |  |  | `0x00224620` 80 |  |  |
-| `CheckFileValid(const char*)` |  |  |  | `0x002250C0` 20 |  |  |
-| `GetDatabaseEntryByData(void*)` |  |  |  | `0x00224F50` 208 |  |  |
-| `GetDatabaseEntryByHash(int)` |  |  |  | `0x00224E80` 208 |  |  |
-| `GetFreeElement()` |  |  |  | `0x00224580` 148 |  |  |
-| `HashName(const char*,const char*,const char*)` |  |  |  | `0x00224DA0` 224 |  |  |
-| `SetDefaultElementValue(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x002250B0` 16 |  |  |
-| `TransmitElement(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x00224A60` 16 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `AddEntryCore(void*,const char*,const char*,const char*,int)` |  | `0x001E0AF0` 896 | `0x002137F0` 896 | `0x00224670` 584 |  |  | `CGtCommsDatabaseEntry * GtComms::CGtCommsDatabase::AddEntryCore(void *lpData, const char *lpcName, const char *lpcPath, const char *lpcFileName, int lxFlags)` |
+| `RemoveEntryCore(GtComms::CGtCommsDatabaseEntry*)` | `0x001E0B10` 20 | `0x001E0610` 20 | `0x00213310` 20 | `0x00225080` 48 | `0x0021B8F0` proven |  | `void GtComms::CGtCommsDatabase::RemoveEntryCore(GtComms::CGtCommsDatabaseEntry *lpEntry)` |
+| `RemoveEntry(void*)` | `0x001E0B30` 152 | `0x001E0630` 152 | `0x00213330` 152 | `0x00225020` 92 | `0x0021B910` strong |  | `void GtComms::CGtCommsDatabase::RemoveEntry(void *lpData)` |
+| `AddEntry(GtMathPs2::CGtV3d*,const char*,const char*,const char*)` | `0x001E0BD0` 424 | `0x001E06D0` 192 | `0x002133D0` 192 | `0x00224CC0` 216 | `0x0021B9B0` strong |  | `void GtComms::CGtCommsDatabase::AddEntry(GtMathPs2::CGtV3d *lpVec, const char *lpcName, const char *lpcPath, const char *lpcFileName)` |
+| `AddEntry(float*,const char*,const char*,const char*,int,float,float,int)` | `0x001E0D80` 528 | `0x001E0790` 320 | `0x00213490` 320 | `0x00224B70` 332 | `0x0021BB60` strong |  | `void GtComms::CGtCommsDatabase::AddEntry(float *lprReal, const char *lpcName, const char *lpcPath, const char *lpcFileName, int lxFlags, float lrMin, float lrMax, int lnArraySize)` |
+| `AddEntry(bool*,const char*,const char*,const char*,int)` | `0x001E0F90` 440 | `0x001E08D0` 240 | `0x002135D0` 240 | `0x00224A70` 252 |  |  | `void GtComms::CGtCommsDatabase::AddEntry(bool *lpbBool, const char *lpcName, const char *lpcPath, const char *lpcFileName, int lnArraySize)` |
+| `AddEntry(int*,const char*,const char*,const char*,int,int,int,int)` | `0x001E1150` 500 | `0x001E09C0` 300 | `0x002136C0` 300 | `0x00224920` 312 | `0x0021BD80` strong |  | `void GtComms::CGtCommsDatabase::AddEntry(int *lpnInt32, const char *lpcName, const char *lpcPath, const char *lpcFileName, int lxFlags, int lnMin, int lnMax, int lnArraySize)` |
+| `Construct(GtComms::CGtCommsDatabaseEntry*,int)` | `0x001E1350` 28 | `0x001E0E70` 28 | `0x00213B70` 28 | `0x00224520` 96 | `0x0021BF80` proven |  | `void GtComms::CGtCommsDatabase::Construct(GtComms::CGtCommsDatabaseEntry *lpElements, int lnDatabaseSize)` |
+| `CGtCommsDatabase()` |  |  |  | `0x0013EE10` 40 |  |  |  |
+| `CalculateGtID(int)` |  |  |  | `0x00224620` 80 |  |  |  |
+| `CheckFileValid(const char*)` |  |  |  | `0x002250C0` 20 |  |  |  |
+| `GetDatabaseEntryByData(void*)` |  |  |  | `0x00224F50` 208 |  |  | `CGtCommsDatabaseEntry * GtComms::CGtCommsDatabase::GetDatabaseEntryByData(void *lpDataPtr)` |
+| `GetDatabaseEntryByHash(int)` |  |  |  | `0x00224E80` 208 |  |  |  |
+| `GetFreeElement()` |  |  |  | `0x00224580` 148 |  |  | `RwInt32 GtComms::CGtCommsDatabase::GetFreeElement()` |
+| `HashName(const char*,const char*,const char*)` |  |  |  | `0x00224DA0` 224 |  |  | `RwInt32 GtComms::CGtCommsDatabase::HashName(const char *lpcName, const char *lpcPath, const char *lpcFileName)` |
+| `SetDefaultElementValue(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x002250B0` 16 |  |  |  |
+| `TransmitElement(GtComms::CGtCommsDatabaseEntry*)` |  |  |  | `0x00224A60` 16 |  |  |  |
 
 ## Notes
 

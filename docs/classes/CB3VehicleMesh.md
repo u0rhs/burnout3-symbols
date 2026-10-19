@@ -6,16 +6,43 @@
 
 - **Area:** [Rendering](../systems/rendering.md)
 - **Methods per build:** B3O0PCH 3
+- **Burnout Revenge counterpart:** `CB4VehicleMesh`, size 0x010 ([layout](#burnout-revenge-layout-of-cb4vehiclemesh))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `FixUp()` |  |  |  | `0x0022BE90` 88 |  |  |
-| `GetTextureIndex()` |  |  |  | `0x00229E50` 32 |  |  |
-| `SetTextureIndex(EB3VehicleMeshTextureIndex)` |  |  |  | `0x0022BC10` 40 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `FixUp()` |  |  |  | `0x0022BE90` 88 |  |  |  |
+| `GetTextureIndex()` |  |  |  | `0x00229E50` 32 |  |  |  |
+| `SetTextureIndex(EB3VehicleMeshTextureIndex)` |  |  |  | `0x0022BC10` 40 |  |  |  |
+
+## Burnout Revenge layout of `CB4VehicleMesh`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 324 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4VehicleMesh {  // size 0x010
+    /* 0x000 */ RwUInt8 *mpRenderDataFirst;
+    /* 0x004 */ RwUInt8 *mpRenderDataRest;
+    /* 0x008 */ RwUInt16 mx16MeshFlags;
+    /* 0x00A */ RwUInt8 mu8Alpha1;
+    /* 0x00B */ RwUInt8 mu8TextureIndex;
+    /* 0x00C */ RwUInt8 mu8SourceOpacity;
+    /* 0x00D */ RwUInt8 mu8CurrentOpacity;
+    /* 0x00E */ RwUInt8 mu8Shininess;
+    /* 0x00F */ RwUInt8 mu8UNUSED;
+    // methods
+    // CB4VehicleMesh(const CB4VehicleMesh &);
+    // CB4VehicleMesh();
+    // void SetTextureIndex(EB4VehicleMeshTextureIndex);
+    // EB4VehicleMeshTextureIndex GetTextureIndex() const;
+    // void SetMeshFlags(unsigned short);
+    // RwUInt16 GetMeshFlags() const;
+    // void FixUp();
+};
+```
 
 ## Notes
 

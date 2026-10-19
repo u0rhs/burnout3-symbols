@@ -8,30 +8,88 @@
 - **Source file:** `GtInputDevicePS2DualShock.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 13, B3INTERN 13, B3O0PCH 17
 - **Retail (SLUS-21050):** 13 of its 13 DNAT_200 methods found, 8 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtInputDevicePS2DualShock`, size 0x0F0, methods in `GameShared/GameClasses/System/Input/Ps2/GtInputDevicePS2DualShock.cpp` ([layout](#burnout-revenge-layout-of-cgtinputdeviceps2dualshock))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `DeadzoneAxis(float,float)` | `0x001DC490` 204 | `0x001D8C90` 204 | `0x0020B990` 204 | `0x0021E270` 384 | `0x00216E40` proven |  |
-| `DeadzoneTrigger(float)` | `0x001DC560` 104 | `0x001D8D60` 104 | `0x0020BA60` 104 | `0x0021E1C0` 168 | `0x00216F10` proven |  |
-| `DeadzoneButton(float)` | `0x001DC5D0` 104 | `0x001D8DD0` 104 | `0x0020BAD0` 104 | `0x0021E110` 168 | `0x00216F80` proven |  |
-| `UnbindFromPort()` | `0x001DC640` 28 | `0x001D8E40` 28 | `0x0020BB40` 28 | `0x0021E0D0` 56 | `0x00216FF0` strong |  |
-| `BindToPort(CGtInputManagerPS2Pad2*,EGtPS2InputPort)` | `0x001DC660` 80 | `0x001D8E60` 216 | `0x0020BB60` 216 | `0x0021E000` 196 | `0x00217010` strong |  |
-| `SetPause(bool)` | `0x001DC6B0` 28 | `0x001D8F40` 28 | `0x0020BC40` 28 | `0x0021DFC0` 60 | `0x00217060` unverified |  |
-| `UpdateVibration()` | `0x001DC6D0` 324 | `0x001D8F60` 324 | `0x0020BC60` 324 | `0x0021DDA0` 536 | `0x00217070` strong |  |
-| `GetPort()` | `0x001DC820` 8 | `0x001D90B0` 8 | `0x0020BDB0` 8 | `0x0021D060` 28 | `0x002172B0` proven |  |
-| `IsControlJustPressed(int)` | `0x001DC830` 76 | `0x001D90C0` 172 | `0x0020BDC0` 172 | `0x0021CF80` 212 | `0x002172C0` proven |  |
-| `GetControlValue(int)` | `0x001DC880` 64 | `0x001D9170` 144 | `0x0020BE70` 144 | `0x0021CEF0` 140 | `0x00217310` proven |  |
-| `Prepare()` | `0x001DC8C0` 144 | `0x001D9200` 240 | `0x0020BF00` 240 | `0x0021CE00` 228 | `0x00217350` proven |  |
-| `IsConnected()` | `0x001DC950` 8 | `0x001D92F0` 8 | `0x0020BFF0` 8 | `0x0021CDE0` 28 | `0x002173E0` proven |  |
-| `Construct()` | `0x001DC960` 176 | `0x001D9300` 176 | `0x0020C000` 176 | `0x0021CC90` 332 | `0x002173F0` strong |  |
-| `CGtInputDevicePS2DualShock()` |  |  |  | `0x0013EED0` 60 |  |  |
-| `SetLargeVibration(float)` |  |  |  | `0x0021D080` 264 |  |  |
-| `SetSmallVibration(bool)` |  |  |  | `0x0021D190` 104 |  |  |
-| `Update()` |  |  |  | `0x0021D200` 2964 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `DeadzoneAxis(float,float)` | `0x001DC490` 204 | `0x001D8C90` 204 | `0x0020B990` 204 | `0x0021E270` 384 | `0x00216E40` proven |  | `RwReal CGtInputDevicePS2DualShock::DeadzoneAxis(float lrAxisValue, float lrAxisZeroThreshold)` |
+| `DeadzoneTrigger(float)` | `0x001DC560` 104 | `0x001D8D60` 104 | `0x0020BA60` 104 | `0x0021E1C0` 168 | `0x00216F10` proven |  | `RwReal CGtInputDevicePS2DualShock::DeadzoneTrigger(float lrTriggerValue)` |
+| `DeadzoneButton(float)` | `0x001DC5D0` 104 | `0x001D8DD0` 104 | `0x0020BAD0` 104 | `0x0021E110` 168 | `0x00216F80` proven |  | `RwReal CGtInputDevicePS2DualShock::DeadzoneButton(float lrButtonValue)` |
+| `UnbindFromPort()` | `0x001DC640` 28 | `0x001D8E40` 28 | `0x0020BB40` 28 | `0x0021E0D0` 56 | `0x00216FF0` strong |  | `void CGtInputDevicePS2DualShock::UnbindFromPort()` |
+| `BindToPort(CGtInputManagerPS2Pad2*,EGtPS2InputPort)` | `0x001DC660` 80 | `0x001D8E60` 216 | `0x0020BB60` 216 | `0x0021E000` 196 | `0x00217010` strong |  | `bool CGtInputDevicePS2DualShock::BindToPort(CGtInputManagerPS2Pad2 *lpManager, EGtPS2InputPort lePort)` |
+| `SetPause(bool)` | `0x001DC6B0` 28 | `0x001D8F40` 28 | `0x0020BC40` 28 | `0x0021DFC0` 60 | `0x00217060` unverified |  | `void CGtInputDevicePS2DualShock::SetPause(bool lbPaused)` |
+| `UpdateVibration()` | `0x001DC6D0` 324 | `0x001D8F60` 324 | `0x0020BC60` 324 | `0x0021DDA0` 536 | `0x00217070` strong |  | `void CGtInputDevicePS2DualShock::UpdateVibration()` |
+| `GetPort()` | `0x001DC820` 8 | `0x001D90B0` 8 | `0x0020BDB0` 8 | `0x0021D060` 28 | `0x002172B0` proven |  | `EGtPS2InputPort CGtInputDevicePS2DualShock::GetPort()` |
+| `IsControlJustPressed(int)` | `0x001DC830` 76 | `0x001D90C0` 172 | `0x0020BDC0` 172 | `0x0021CF80` 212 | `0x002172C0` proven |  | `bool CGtInputDevicePS2DualShock::IsControlJustPressed(int lnControlID)` |
+| `GetControlValue(int)` | `0x001DC880` 64 | `0x001D9170` 144 | `0x0020BE70` 144 | `0x0021CEF0` 140 | `0x00217310` proven |  | `RwReal CGtInputDevicePS2DualShock::GetControlValue(int lnControlID)` |
+| `Prepare()` | `0x001DC8C0` 144 | `0x001D9200` 240 | `0x0020BF00` 240 | `0x0021CE00` 228 | `0x00217350` proven |  | `bool CGtInputDevicePS2DualShock::Prepare()` |
+| `IsConnected()` | `0x001DC950` 8 | `0x001D92F0` 8 | `0x0020BFF0` 8 | `0x0021CDE0` 28 | `0x002173E0` proven |  | `bool CGtInputDevicePS2DualShock::IsConnected()` |
+| `Construct()` | `0x001DC960` 176 | `0x001D9300` 176 | `0x0020C000` 176 | `0x0021CC90` 332 | `0x002173F0` strong |  | `void CGtInputDevicePS2DualShock::Construct()` |
+| `CGtInputDevicePS2DualShock()` |  |  |  | `0x0013EED0` 60 |  |  |  |
+| `SetLargeVibration(float)` |  |  |  | `0x0021D080` 264 |  |  | `void CGtInputDevicePS2DualShock::SetLargeVibration(float lrAmount)` |
+| `SetSmallVibration(bool)` |  |  |  | `0x0021D190` 104 |  |  | `void CGtInputDevicePS2DualShock::SetSmallVibration(bool lbEnabled)` |
+| `Update()` |  |  |  | `0x0021D200` 2964 |  |  |  |
+
+## Burnout Revenge layout of `CGtInputDevicePS2DualShock`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 281 file(s), e.g. `GameShared/GameClasses/Development/AutomaticTest/GtAutoTestMgr.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtInputDevicePS2DualShock : public CGtInputDevicePS2Pad2 {  // size 0x0F0
+    // base CGtInputDevicePS2Pad2 at 0x000
+    /* 0x00C */ bool mbIsConnected;
+    /* 0x00D */ bool mbAreAxisZeroThresholdsSet;
+    /* 0x00E */ bool mabPreviouslyPressedButtons[28];
+    /* 0x02A */ bool mabCurrentlyPressedButtons[28];
+    /* 0x046 */ RwUInt8 muCurrentLargeVibration;
+    /* 0x047 */ RwUInt8 muDesiredLargeVibration;
+    /* 0x048 */ bool mbCurrentSmallVibration;
+    /* 0x049 */ bool mbDesiredSmallVibration;
+    /* 0x04A */ bool mbVibrationActive;
+    /* 0x04C */ float marControlStates[28];
+    /* 0x0BC */ float marAxisZeroThreshold[4];
+    /* 0x0CC */ RwReal mrButtonThreshold;
+    /* 0x0D0 */ RwReal mrButtonActivezoneThreshold;
+    /* 0x0D4 */ RwReal mrButtonDeadzoneThreshold;
+    /* 0x0D8 */ RwReal mrTriggerActivezoneThreshold;
+    /* 0x0DC */ RwReal mrTriggerDeadzoneThreshold;
+    /* 0x0E0 */ RwReal mrAxisActivezoneThreshold;
+    /* 0x0E4 */ RwReal mrAxisDeadzoneThreshold;
+    /* 0x0E8 */ CGtInputManagerPS2Pad2 *mpManager;
+    /* 0x0EC */ EGtPS2InputPort mePort;
+    // methods
+    // CGtInputDevicePS2DualShock(const CGtInputDevicePS2DualShock &);
+    // CGtInputDevicePS2DualShock();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // bool IsConnected();
+    // RwReal GetControlValue(int);
+    // bool IsControlJustPressed(int);
+    // bool IsControlJustReleased(int);
+    // bool IsControlPressed(int);
+    // void SetButtonThreshold(float);
+    // RwReal GetButtonThreshold();
+    // EGtPS2InputPort GetPort();
+    // RwReal GetLargeVibration();
+    // bool GetSmallVibration();
+    // void SetLargeVibration(float);
+    // void SetSmallVibration(bool);
+    // virtual void Update();
+    // virtual void UpdateVibration();
+    // virtual void SetPause(bool);
+    // virtual bool BindToPort(CGtInputManagerPS2Pad2 *, EGtPS2InputPort);
+    // virtual void UnbindFromPort();
+    // RwReal DeadzoneButton(float);
+    // RwReal DeadzoneTrigger(float);
+    // RwReal DeadzoneAxis(float, float);
+};
+```
 
 ## Notes
 

@@ -11,26 +11,26 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `IsTalking()` | `0x003C49E0` 8 | `0x00441970` 8 | `0x00469A80` 8 | `0x00480760` 52 |  |  |
-| `IsRequestingTalk()` | `0x003C49F0` 8 | `0x00441980` 8 | `0x00469A90` 8 | `0x00480720` 52 |  |  |
-| `GetTimeTillRequestTalkAvailable()` | `0x003C4A00` 8 | `0x00441990` 8 | `0x00469AA0` 8 | `0x004806E0` 52 |  |  |
-| `GetTalkTimeLeft()` | `0x003C4A10` 8 | `0x004419A0` 8 | `0x00469AB0` 8 | `0x004806A0` 52 |  |  |
-| `GetMaximumTalkTime()` | `0x003C4A20` 8 | `0x004419B0` 8 | `0x00469AC0` 8 | `0x00480660` 52 |  |  |
-| `GetIDOfTalkingNetworkPlayer(int*)` | `0x003C4A30` 8 | `0x004419C0` 8 | `0x00469AD0` 8 | `0x00480620` 60 |  |  |
-| `GetHeadsetStatus()` | `0x003C4A40` 8 | `0x004419D0` 8 | `0x00469AE0` 8 | `0x004805C0` 52 |  |  |
-| `GetTalkingPlayerID()` | `0x003C4A50` 100 | `0x004419E0` 100 | `0x00469AF0` 100 | `0x00480510` 120 |  |  |
-| `StopTalking()` | `0x003C4AC0` 28 | `0x00441A50` 28 | `0x00469B60` 28 | `0x004804D0` 52 |  |  |
-| `RequestTalk()` | `0x003C4AE0` 28 | `0x00441A70` 28 | `0x00469B80` 28 | `0x00480490` 52 |  |  |
-| `Release()` | `0x003C4B00` 8 | `0x00441A90` 8 | `0x00469BA0` 8 | `0x00480460` 40 |  |  |
-| `Update()` | `0x003C4B10` 56 |  | `0x00469BB0` 56 |  |  |  |
-| `Prepare()` | `0x003C4B50` 32 | `0x00441AA0` 32 | `0x00469BF0` 32 | `0x00480430` 44 |  |  |
-| `Construct(CGtNetworkPlayerManager*)` | `0x003C4B70` 24 | `0x00441AC0` 24 | `0x00469C10` 24 | `0x004803E0` 68 | `0x0041EAD0` strong |  |
-| `CB3NetworkVoIPManager()` |  |  |  | `0x0028A0A0` 52 |  |  |
-| `GetHeadset()` |  |  |  | `0x00480600` 24 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `IsTalking()` | `0x003C49E0` 8 | `0x00441970` 8 | `0x00469A80` 8 | `0x00480760` 52 |  |  |  |
+| `IsRequestingTalk()` | `0x003C49F0` 8 | `0x00441980` 8 | `0x00469A90` 8 | `0x00480720` 52 |  |  |  |
+| `GetTimeTillRequestTalkAvailable()` | `0x003C4A00` 8 | `0x00441990` 8 | `0x00469AA0` 8 | `0x004806E0` 52 |  |  |  |
+| `GetTalkTimeLeft()` | `0x003C4A10` 8 | `0x004419A0` 8 | `0x00469AB0` 8 | `0x004806A0` 52 |  |  |  |
+| `GetMaximumTalkTime()` | `0x003C4A20` 8 | `0x004419B0` 8 | `0x00469AC0` 8 | `0x00480660` 52 |  |  |  |
+| `GetIDOfTalkingNetworkPlayer(int*)` | `0x003C4A30` 8 | `0x004419C0` 8 | `0x00469AD0` 8 | `0x00480620` 60 |  |  |  |
+| `GetHeadsetStatus()` | `0x003C4A40` 8 | `0x004419D0` 8 | `0x00469AE0` 8 | `0x004805C0` 52 |  |  |  |
+| `GetTalkingPlayerID()` | `0x003C4A50` 100 | `0x004419E0` 100 | `0x00469AF0` 100 | `0x00480510` 120 |  |  |  |
+| `StopTalking()` | `0x003C4AC0` 28 | `0x00441A50` 28 | `0x00469B60` 28 | `0x004804D0` 52 |  |  |  |
+| `RequestTalk()` | `0x003C4AE0` 28 | `0x00441A70` 28 | `0x00469B80` 28 | `0x00480490` 52 |  |  |  |
+| `Release()` | `0x003C4B00` 8 | `0x00441A90` 8 | `0x00469BA0` 8 | `0x00480460` 40 |  |  |  |
+| `Update()` | `0x003C4B10` 56 |  | `0x00469BB0` 56 |  |  |  |  |
+| `Prepare()` | `0x003C4B50` 32 | `0x00441AA0` 32 | `0x00469BF0` 32 | `0x00480430` 44 |  |  |  |
+| `Construct(CGtNetworkPlayerManager*)` | `0x003C4B70` 24 | `0x00441AC0` 24 | `0x00469C10` 24 | `0x004803E0` 68 | `0x0041EAD0` strong |  |  |
+| `CB3NetworkVoIPManager()` |  |  |  | `0x0028A0A0` 52 |  |  |  |
+| `GetHeadset()` |  |  |  | `0x00480600` 24 |  |  |  |
 
 ## Notes
 

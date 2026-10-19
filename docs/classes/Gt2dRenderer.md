@@ -11,39 +11,39 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `EnableZTest(bool)` | `0x001DCDC0` 36 | `0x001D97A0` 112 | `0x0020C4A0` 112 | `0x00222590` 84 | `0x00217850` proven |  |
-| `SetZ(float,float,float)` | `0x001DCDF0` 92 | `0x001D9810` 212 | `0x0020C510` 212 | `0x00222500` 144 | `0x00217880` proven |  |
-| `ResetClipRegion()` | `0x001DCE50` 308 | `0x001D98F0` 620 | `0x0020C5F0` 620 | `0x002223E0` 280 | `0x002178E0` proven |  |
-| `SetClipRegion(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x001DCF90` 532 | `0x001D9B60` 848 | `0x0020C860` 848 | `0x00222170` 624 | `0x00217A20` proven |  |
-| `SetTextureAddressMode(Gt2dRenderer::EGt2dRendererTexAddress)` | `0x001DD1B0` 252 | `0x001D9EB0` 564 | `0x0020CBB0` 564 | `0x002220A0` 204 | `0x00217C40` proven |  |
-| `SetTextureFilterMode(Gt2dRenderer::EGt2dRendererFilter)` | `0x001DD2B0` 296 | `0x001DA0F0` 644 | `0x0020CDF0` 644 | `0x00221F90` 268 | `0x00217D40` proven |  |
-| `SetBlendMode(Gt2dRenderer::EGt2dRendererBlend)` | `0x001DD3E0` 324 | `0x001DA380` 812 | `0x0020D080` 812 | `0x00221E60` 300 | `0x00217E70` proven |  |
-| `RenderTriStripGouraudUntex(const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*,const GtMathPs2::CGtV4d*)` | `0x001DD530` 1072 | `0x001DA6B0` 1864 | `0x0020D3B0` 1864 | `0x00221980` 1240 | `0x00217FC0` proven |  |
-| `RenderTriStripFlatUntex(GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*)` | `0x001DD960` 928 | `0x001DAE00` 1580 | `0x0020DB00` 1580 | `0x00221580` 1012 | `0x00218400` proven |  |
-| `RenderTriStripGouraudTex(const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*,const GtMathPs2::CGtV2d*,const GtM` | `0x001DDD00` 1344 | `0x001DB430` 2944 | `0x0020E130` 2944 | `0x00220E90` 1612 | `0x002187B0` proven |  |
-| `RenderTriStripFlatTex(GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*,const GtMathPs2::CG` | `0x001DE240` 1100 | `0x001DBFB0` 1744 | `0x0020ECB0` 1744 | `0x002208A0` 1344 | `0x00218D00` proven |  |
-| `RenderTriListFlatTex(GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*,const GtMathPs2::CGt` | `0x001DE690` 988 | `0x001DC680` 1636 | `0x0020F380` 1636 | `0x00220310` 1268 | `0x00219150` proven |  |
-| `RenderSpritesUntex(GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*)` | `0x001DEA70` 760 | `0x001DCCF0` 1096 | `0x0020F9F0` 1096 | `0x0021FF40` 844 | `0x00219530` proven |  |
-| `RenderSpritesTex(GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*,const GtMathPs2::CGtV2d*` | `0x001DED70` 492 | `0x001DD140` 676 | `0x0020FE40` 676 | `0x0021FB40` 624 | `0x00219830` proven |  |
-| `SetTexture(CGtTexture*,int)` | `0x001DEF60` 616 | `0x001DD3F0` 1584 | `0x002100F0` 1584 | `0x0021F820` 384 | `0x00219A20` proven |  |
-| `SetTexture(CGtTexture*)` | `0x001DF1D0` 8 | `0x001DDA20` 8 | `0x00210720` 8 | `0x0021F7F0` 44 | `0x00219C90` proven |  |
-| `Resume()` | `0x001DF1E0` 168 | `0x001DDA30` 1316 | `0x00210730` 1316 | `0x0021F620` 460 | `0x00219CA0` proven |  |
-| `Suspend()` | `0x001DF290` 460 | `0x001DDF60` 1556 | `0x00210C60` 1556 | `0x0021F420` 500 | `0x00219D50` proven |  |
-| `End()` | `0x001DF460` 460 | `0x001DE580` 1540 | `0x00211280` 1540 | `0x0021F000` 484 | `0x00219F20` proven |  |
-| `Begin()` | `0x001DF630` 408 | `0x001DEB90` 508 | `0x00211890` 508 | `0x0021EDD0` 556 | `0x0021A0F0` proven |  |
-| `Construct()` | `0x001DF7D0` 600 | `0x001DED90` 600 | `0x00211A90` 600 | `0x0021EAF0` 724 | `0x0021A290` proven |  |
-| `_Dispatch()` | `0x001DFA30` 244 | `0x001DEFF0` 352 | `0x00211CF0` 352 | `0x0021E8E0` 528 | `0x0021A4F0` proven |  |
-| `_AddDW(unsigned long)` |  |  |  | `0x00220840` 84 |  |  |
-| `_DuplicateDW(int)` |  |  |  | `0x002214E0` 156 |  |  |
-| `_DuplicateQW(int)` |  |  |  | `0x00220DE0` 176 |  |  |
-| `_GetFloatBits(float)` |  |  |  | `0x00220810` 48 |  |  |
-| `_NumQWFree()` |  |  |  | `0x0021F3F0` 40 |  |  |
-| `_SetPrimType(int)` |  |  |  | `0x0021F280` 356 |  |  |
-| `_SetPrimTypeAndRGBAQ(int,unsigned long)` |  |  |  | `0x0021FDB0` 400 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `EnableZTest(bool)` | `0x001DCDC0` 36 | `0x001D97A0` 112 | `0x0020C4A0` 112 | `0x00222590` 84 | `0x00217850` proven |  | `void Gt2dRenderer::EnableZTest(bool lbEnable)` |
+| `SetZ(float,float,float)` | `0x001DCDF0` 92 | `0x001D9810` 212 | `0x0020C510` 212 | `0x00222500` 144 | `0x00217880` proven |  | `void Gt2dRenderer::SetZ(float lrZ, float lrNearClip, float lrFarClip)` |
+| `ResetClipRegion()` | `0x001DCE50` 308 | `0x001D98F0` 620 | `0x0020C5F0` 620 | `0x002223E0` 280 | `0x002178E0` proven |  | `void Gt2dRenderer::ResetClipRegion()` |
+| `SetClipRegion(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x001DCF90` 532 | `0x001D9B60` 848 | `0x0020C860` 848 | `0x00222170` 624 | `0x00217A20` proven |  | `void Gt2dRenderer::SetClipRegion(const GtMathPs2::CGtV2d &lTopLeft, const GtMathPs2::CGtV2d &lBottomRight)` |
+| `SetTextureAddressMode(Gt2dRenderer::EGt2dRendererTexAddress)` | `0x001DD1B0` 252 | `0x001D9EB0` 564 | `0x0020CBB0` 564 | `0x002220A0` 204 | `0x00217C40` proven |  | `void Gt2dRenderer::SetTextureAddressMode(Gt2dRenderer::EGt2dRendererTexAddress leTexAddressMode)` |
+| `SetTextureFilterMode(Gt2dRenderer::EGt2dRendererFilter)` | `0x001DD2B0` 296 | `0x001DA0F0` 644 | `0x0020CDF0` 644 | `0x00221F90` 268 | `0x00217D40` proven |  | `void Gt2dRenderer::SetTextureFilterMode(Gt2dRenderer::EGt2dRendererFilter leFilterMode)` |
+| `SetBlendMode(Gt2dRenderer::EGt2dRendererBlend)` | `0x001DD3E0` 324 | `0x001DA380` 812 | `0x0020D080` 812 | `0x00221E60` 300 | `0x00217E70` proven |  | `void Gt2dRenderer::SetBlendMode(Gt2dRenderer::EGt2dRendererBlend leBlendMode)` |
+| `RenderTriStripGouraudUntex(const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*,const GtMathPs2::CGtV4d*)` | `0x001DD530` 1072 | `0x001DA6B0` 1864 | `0x0020D3B0` 1864 | `0x00221980` 1240 | `0x00217FC0` proven |  | `void Gt2dRenderer::RenderTriStripGouraudUntex(const GtMathPs2::CGtV2d &lPixelOffset, int lnNumVerts, const GtMathPs2::CGtV2d *lpPositions, const GtMathPs2::CGtV4d *lpColours)` |
+| `RenderTriStripFlatUntex(GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*)` | `0x001DD960` 928 | `0x001DAE00` 1580 | `0x0020DB00` 1580 | `0x00221580` 1012 | `0x00218400` proven |  | `void Gt2dRenderer::RenderTriStripFlatUntex(GtMathPs2::CGtV4d lColour, const GtMathPs2::CGtV2d &lPixelOffset, int lnNumVerts, const GtMathPs2::CGtV2d *lpPositions)` |
+| `RenderTriStripGouraudTex(const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*,const GtMathPs2::CGtV2d*,const GtM` | `0x001DDD00` 1344 | `0x001DB430` 2944 | `0x0020E130` 2944 | `0x00220E90` 1612 | `0x002187B0` proven |  | `void Gt2dRenderer::RenderTriStripGouraudTex(const GtMathPs2::CGtV2d &lPixelOffset, int lnNumVerts, const GtMathPs2::CGtV2d *lpPositions, const GtMathPs2::CGtV2d *lpUVs, const GtMathPs2::CGtV4d *lpColours)` (same name, different parameters) |
+| `RenderTriStripFlatTex(GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*,const GtMathPs2::CG` | `0x001DE240` 1100 | `0x001DBFB0` 1744 | `0x0020ECB0` 1744 | `0x002208A0` 1344 | `0x00218D00` proven |  | `void Gt2dRenderer::RenderTriStripFlatTex(GtMathPs2::CGtV4d lColour, const GtMathPs2::CGtV2d &lPixelOffset, int lnNumVerts, const GtMathPs2::CGtV2d *lpPositions, const GtMathPs2::CGtV2d *lpUVs)` (same name, different parameters) |
+| `RenderTriListFlatTex(GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*,const GtMathPs2::CGt` | `0x001DE690` 988 | `0x001DC680` 1636 | `0x0020F380` 1636 | `0x00220310` 1268 | `0x00219150` proven |  | `void Gt2dRenderer::RenderTriListFlatTex(GtMathPs2::CGtV4d lColour, const GtMathPs2::CGtV2d &lPixelOffset, int lnNumTriangles, const GtMathPs2::CGtV2d *lpPositions, const GtMathPs2::CGtV2d *lpUVs)` (same name, different parameters) |
+| `RenderSpritesUntex(GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*)` | `0x001DEA70` 760 | `0x001DCCF0` 1096 | `0x0020F9F0` 1096 | `0x0021FF40` 844 | `0x00219530` proven |  | `void Gt2dRenderer::RenderSpritesUntex(GtMathPs2::CGtV4d lColour, const GtMathPs2::CGtV2d &lPixelOffset, int lnNumSprites, const GtMathPs2::CGtV2d *lpPositions)` |
+| `RenderSpritesTex(GtMathPs2::CGtV4d,const GtMathPs2::CGtV2d&,int,const GtMathPs2::CGtV2d*,const GtMathPs2::CGtV2d*` | `0x001DED70` 492 | `0x001DD140` 676 | `0x0020FE40` 676 | `0x0021FB40` 624 | `0x00219830` proven |  | `void Gt2dRenderer::RenderSpritesTex(GtMathPs2::CGtV4d lColour, const GtMathPs2::CGtV2d &lPixelOffset, int lnNumSprites, const GtMathPs2::CGtV2d *lpPositions, const GtMathPs2::CGtV2d *lpUVs)` (same name, different parameters) |
+| `SetTexture(CGtTexture*,int)` | `0x001DEF60` 616 | `0x001DD3F0` 1584 | `0x002100F0` 1584 | `0x0021F820` 384 | `0x00219A20` proven |  | `void Gt2dRenderer::SetTexture(CGtTexture *lpTexture, int lnPalette)` |
+| `SetTexture(CGtTexture*)` | `0x001DF1D0` 8 | `0x001DDA20` 8 | `0x00210720` 8 | `0x0021F7F0` 44 | `0x00219C90` proven |  | `void Gt2dRenderer::SetTexture(CGtTexture *lpTexture)` |
+| `Resume()` | `0x001DF1E0` 168 | `0x001DDA30` 1316 | `0x00210730` 1316 | `0x0021F620` 460 | `0x00219CA0` proven |  | `void Gt2dRenderer::Resume()` |
+| `Suspend()` | `0x001DF290` 460 | `0x001DDF60` 1556 | `0x00210C60` 1556 | `0x0021F420` 500 | `0x00219D50` proven |  | `void Gt2dRenderer::Suspend()` |
+| `End()` | `0x001DF460` 460 | `0x001DE580` 1540 | `0x00211280` 1540 | `0x0021F000` 484 | `0x00219F20` proven |  | `void Gt2dRenderer::End()` |
+| `Begin()` | `0x001DF630` 408 | `0x001DEB90` 508 | `0x00211890` 508 | `0x0021EDD0` 556 | `0x0021A0F0` proven |  | `void Gt2dRenderer::Begin()` |
+| `Construct()` | `0x001DF7D0` 600 | `0x001DED90` 600 | `0x00211A90` 600 | `0x0021EAF0` 724 | `0x0021A290` proven |  | `void Gt2dRenderer::Construct()` |
+| `_Dispatch()` | `0x001DFA30` 244 | `0x001DEFF0` 352 | `0x00211CF0` 352 | `0x0021E8E0` 528 | `0x0021A4F0` proven |  | `static void Gt2dRenderer::_Dispatch()` |
+| `_AddDW(unsigned long)` |  |  |  | `0x00220840` 84 |  |  |  |
+| `_DuplicateDW(int)` |  |  |  | `0x002214E0` 156 |  |  |  |
+| `_DuplicateQW(int)` |  |  |  | `0x00220DE0` 176 |  |  |  |
+| `_GetFloatBits(float)` |  |  |  | `0x00220810` 48 |  |  |  |
+| `_NumQWFree()` |  |  |  | `0x0021F3F0` 40 |  |  |  |
+| `_SetPrimType(int)` |  |  |  | `0x0021F280` 356 |  |  |  |
+| `_SetPrimTypeAndRGBAQ(int,unsigned long)` |  |  |  | `0x0021FDB0` 400 |  |  |  |
 
 ## Static data (DNAT_200)
 

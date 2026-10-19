@@ -10,13 +10,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Retrieve(EHeadsetTalkControlStatus*,unsigned short*)` | `0x00281A90` 68 | `0x002B95D0` 68 | `0x002F0AC0` 68 | `0x002F0F10` 116 |  |  |
-| `Prepare(unsigned short,EHeadsetTalkControlStatus,unsigned short)` | `0x00281AE0` 120 |  | `0x002F0B10` 328 |  |  |  |
-| `Construct()` | `0x00281B60` 40 |  | `0x002F0C60` 40 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Retrieve(EHeadsetTalkControlStatus*,unsigned short*)` | `0x00281A90` 68 | `0x002B95D0` 68 | `0x002F0AC0` 68 | `0x002F0F10` 116 |  |  |  |
+| `Prepare(unsigned short,EHeadsetTalkControlStatus,unsigned short)` | `0x00281AE0` 120 |  | `0x002F0B10` 328 |  |  |  |  |
+| `Construct()` | `0x00281B60` 40 |  | `0x002F0C60` 40 |  |  |  |  |
 
 ## Notes
 

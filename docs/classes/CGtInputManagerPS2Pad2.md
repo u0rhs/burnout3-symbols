@@ -8,23 +8,59 @@
 - **Source file:** `GtInputManagerPS2Pad2.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 10, B3INTERN 10, B3O0PCH 10
 - **Retail (SLUS-21050):** 10 of its 10 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtInputManagerPS2Pad2`, size 0x2C0, methods in `GameShared/GameClasses/System/Input/Ps2/GtInputManagerPS2Pad2.cpp` ([layout](#burnout-revenge-layout-of-cgtinputmanagerps2pad2))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdatePort(EGtPS2InputPort)` | `0x001D9C60` 452 | `0x001D6250` 452 | `0x00208F50` 452 | `0x0021A5A0` 604 | `0x00214610` strong |  |
-| `UnbindFromPort(CGtInputDevicePS2Pad2*,EGtPS2InputPort)` | `0x001D9E30` 140 | `0x001D6420` 268 | `0x00209120` 268 | `0x0021A480` 280 | `0x002147E0` strong |  |
-| `BindToPort(CGtInputDevicePS2Pad2*,EGtPS2InputPort)` | `0x001D9EC0` 200 | `0x001D6530` 360 | `0x00209230` 360 | `0x0021A2D0` 388 | `0x00214870` strong |  |
-| `SetPause(bool)` | `0x001D9F90` 116 | `0x001D66A0` 116 | `0x002093A0` 116 | `0x0021A220` 176 | `0x00214940` strong |  |
-| `GetPadControls(EGtPS2InputPort)` | `0x001DA010` 60 | `0x001D6720` 140 | `0x00209420` 140 | `0x0021A190` 140 | `0x002149C0` proven |  |
-| `GetSocketNumber(EGtPS2InputPort)` | `0x001DA050` 60 | `0x001D67B0` 140 | `0x002094B0` 140 | `0x0021A100` 140 | `0x00214A00` proven |  |
-| `GetConnectedDeviceID(EGtPS2InputPort)` | `0x001DA090` 60 | `0x001D6840` 140 | `0x00209540` 140 | `0x0021A070` 140 | `0x00214A40` proven |  |
-| `Update()` | `0x001DA0D0` 228 | `0x001D68D0` 228 | `0x002095D0` 228 | `0x00219F40` 300 | `0x00214A80` proven |  |
-| `Prepare()` | `0x001DA1C0` 12 | `0x001D69C0` 12 | `0x002096C0` 12 | `0x00219F20` 32 | `0x00214B60` proven |  |
-| `Construct(bool)` | `0x001DA1D0` 336 | `0x001D69D0` 336 | `0x002096D0` 336 | `0x00219DB0` 360 | `0x00214B70` strong |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdatePort(EGtPS2InputPort)` | `0x001D9C60` 452 | `0x001D6250` 452 | `0x00208F50` 452 | `0x0021A5A0` 604 | `0x00214610` strong |  | `void CGtInputManagerPS2Pad2::UpdatePort(EGtPS2InputPort lePort)` |
+| `UnbindFromPort(CGtInputDevicePS2Pad2*,EGtPS2InputPort)` | `0x001D9E30` 140 | `0x001D6420` 268 | `0x00209120` 268 | `0x0021A480` 280 | `0x002147E0` strong |  | `void CGtInputManagerPS2Pad2::UnbindFromPort(CGtInputDevicePS2Pad2 *lpPad, EGtPS2InputPort lePort)` |
+| `BindToPort(CGtInputDevicePS2Pad2*,EGtPS2InputPort)` | `0x001D9EC0` 200 | `0x001D6530` 360 | `0x00209230` 360 | `0x0021A2D0` 388 | `0x00214870` strong |  | `bool CGtInputManagerPS2Pad2::BindToPort(CGtInputDevicePS2Pad2 *lpPad, EGtPS2InputPort lePort)` |
+| `SetPause(bool)` | `0x001D9F90` 116 | `0x001D66A0` 116 | `0x002093A0` 116 | `0x0021A220` 176 | `0x00214940` strong |  | `void CGtInputManagerPS2Pad2::SetPause(bool lbPaused)` |
+| `GetPadControls(EGtPS2InputPort)` | `0x001DA010` 60 | `0x001D6720` 140 | `0x00209420` 140 | `0x0021A190` 140 | `0x002149C0` proven |  | `RwUInt8 * CGtInputManagerPS2Pad2::GetPadControls(EGtPS2InputPort lePort)` |
+| `GetSocketNumber(EGtPS2InputPort)` | `0x001DA050` 60 | `0x001D67B0` 140 | `0x002094B0` 140 | `0x0021A100` 140 | `0x00214A00` proven |  | `RwInt32 CGtInputManagerPS2Pad2::GetSocketNumber(EGtPS2InputPort lePort)` |
+| `GetConnectedDeviceID(EGtPS2InputPort)` | `0x001DA090` 60 | `0x001D6840` 140 | `0x00209540` 140 | `0x0021A070` 140 | `0x00214A40` proven |  | `EGtPS2InputDeviceID CGtInputManagerPS2Pad2::GetConnectedDeviceID(EGtPS2InputPort lePort)` |
+| `Update()` | `0x001DA0D0` 228 | `0x001D68D0` 228 | `0x002095D0` 228 | `0x00219F40` 300 | `0x00214A80` proven |  | `void CGtInputManagerPS2Pad2::Update()` |
+| `Prepare()` | `0x001DA1C0` 12 | `0x001D69C0` 12 | `0x002096C0` 12 | `0x00219F20` 32 | `0x00214B60` proven |  | `void CGtInputManagerPS2Pad2::Prepare()` |
+| `Construct(bool)` | `0x001DA1D0` 336 | `0x001D69D0` 336 | `0x002096D0` 336 | `0x00219DB0` 360 | `0x00214B70` strong |  | `void CGtInputManagerPS2Pad2::Construct(bool lbLimitToSinglePad)` |
+
+## Burnout Revenge layout of `CGtInputManagerPS2Pad2`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 307 file(s), e.g. `GameShared/GameClasses/Development/AutomaticTest/GtAutoTestMgr.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtInputManagerPS2Pad2 : public CGtInputManager {  // size 0x2C0
+    // base CGtInputManager at 0x000
+    /* 0x040 */ long long unsigned int maauPadCommands[2][16];
+    /* 0x240 */ CGtInputDevicePS2Pad2 *mapBoundPads[2];
+    /* 0x248 */ RwInt32 mnNumOfPads;
+    /* 0x24C */ bool mbIsPaused;
+    /* 0x250 */ EGtPS2InputDeviceID maePortPads[2];
+    /* 0x258 */ unsigned char mauPadControls[2][32];
+    /* 0x298 */ int manPadSocketNumber[2];
+    /* 0x2A0 */ bool mbIsLimitedToSinglePad;
+    /* 0x2A4 */ EGtPS2InputPort meLastVibrationUpdatedPort;
+    // methods
+    // CGtInputManagerPS2Pad2(const CGtInputManagerPS2Pad2 &);
+    // CGtInputManagerPS2Pad2();
+    // void Construct(bool);
+    // void Destruct();
+    // void Prepare();
+    // void Release();
+    // void Update();
+    // EGtPS2InputDeviceID GetConnectedDeviceID(EGtPS2InputPort);
+    // void SetPause(bool);
+    // bool IsPaused();
+    // bool BindToPort(CGtInputDevicePS2Pad2 *, EGtPS2InputPort);
+    // void UnbindFromPort(CGtInputDevicePS2Pad2 *, EGtPS2InputPort);
+    // void UpdatePort(EGtPS2InputPort);
+    // RwInt32 GetSocketNumber(EGtPS2InputPort);
+    // RwUInt8 * GetPadControls(EGtPS2InputPort);
+};
+```
 
 ## Notes
 

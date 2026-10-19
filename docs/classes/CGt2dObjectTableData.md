@@ -6,14 +6,34 @@
 
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CGt2dObjectTableData`, size 0x020 ([layout](#burnout-revenge-layout-of-cgt2dobjecttabledata))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CGt2dObjectTableData()` |  |  |  | `0x0033C160` 44 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CGt2dObjectTableData()` |  |  |  | `0x0033C160` 44 |  |  |  |
+
+## Burnout Revenge layout of `CGt2dObjectTableData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dObjectTable.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dObjectTableData {  // size 0x020
+    /* 0x000 */ CGtV2d mMaxSize;
+    /* 0x008 */ RwInt32 mNumberRows;
+    /* 0x00C */ RwInt32 mNumberColumns;
+    /* 0x010 */ CGt2dObjectTableRowData *mpaRowData;
+    /* 0x014 */ CGt2dObjectTableColumnData *mpaColumnData;
+    /* 0x018 */ CGt2dObjectTableCellData *mpaCellData;
+    /* 0x01C */ GtUTF16 *mpaDisplayString;
+    // methods
+    // CGt2dObjectTableData(const CGt2dObjectTableData &);
+    // CGt2dObjectTableData();
+};
+```
 
 ## Notes
 

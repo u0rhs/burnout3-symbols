@@ -9,24 +9,55 @@
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 11
 - **Retail (SLUS-21050):** 7 of its 8 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440820`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
+- **Burnout Revenge counterpart:** `CB4BehaviourCluster`, size 0x210, methods in `GameSource/Camera/Behaviours/B4BehaviourCluster.cpp` ([layout](#burnout-revenge-layout-of-cb4behaviourcluster))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Destruct()` | `0x0030E480` 8 | `0x00365480` 8 | `0x00394DD0` 8 | `0x0039BCE0` 16 | `0x00357B70` likely |  |
-| `Release(void*)` | `0x0030E490` 8 | `0x00365490` 8 | `0x00394DE0` 8 | `0x0039BCD0` 16 | `0x00357B80` likely |  |
-| `Update(CGtCamera*,float)` | `0x0030E4A0` 1976 | `0x003654A0` 2684 | `0x00394DF0` 2684 | `0x0039BBE0` 232 | `0x00357B90` unverified |  |
-| `Interpolate(float)` | `0x0030EC60` 1008 | `0x00365F20` 1008 | `0x00395870` 1008 | `0x0039B4F0` 1776 |  |  |
-| `Prepare(void*)` | `0x0030F050` 1032 | `0x00366310` 1764 | `0x00395C60` 1764 | `0x0039B3D0` 276 | `0x003582A0` strong |  |
-| `SetInterpRig(CB3ClusterRig*)` | `0x0030F460` 188 | `0x00366A00` 188 | `0x00396350` 188 | `0x0039B390` 64 | `0x003586B0` strong |  |
-| `SetRig(CB3ClusterRig*)` | `0x0030F520` 180 | `0x00366AC0` 180 | `0x00396410` 180 | `0x0039B350` 52 | `0x00358780` strong |  |
-| `Construct()` | `0x0030F5E0` 8 | `0x00366B80` 8 | `0x003964D0` 8 | `0x0039B320` 40 | `0x00358840` likely |  |
-| `CB3BehaviourCluster()` |  |  |  | `0x0013E880` 92 |  |  |
-| `GetRig()` |  |  |  | `0x00398280` 28 |  |  |
-| `IsIntersecting()` |  |  |  | `0x003987D0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Destruct()` | `0x0030E480` 8 | `0x00365480` 8 | `0x00394DD0` 8 | `0x0039BCE0` 16 | `0x00357B70` likely |  | `void CB4BehaviourCluster::Destruct()` |
+| `Release(void*)` | `0x0030E490` 8 | `0x00365490` 8 | `0x00394DE0` 8 | `0x0039BCD0` 16 | `0x00357B80` likely |  | `void CB4BehaviourCluster::Release(void *lpData)` |
+| `Update(CGtCamera*,float)` | `0x0030E4A0` 1976 | `0x003654A0` 2684 | `0x00394DF0` 2684 | `0x0039BBE0` 232 | `0x00357B90` unverified |  | `void CB4BehaviourCluster::Update(CGtCamera *lpCamera, float lrTimeStep)` |
+| `Interpolate(float)` | `0x0030EC60` 1008 | `0x00365F20` 1008 | `0x00395870` 1008 | `0x0039B4F0` 1776 |  |  | `void CB4BehaviourCluster::Interpolate(float lrTimeStep)` |
+| `Prepare(void*)` | `0x0030F050` 1032 | `0x00366310` 1764 | `0x00395C60` 1764 | `0x0039B3D0` 276 | `0x003582A0` strong |  | `bool CB4BehaviourCluster::Prepare(void *lpData)` |
+| `SetInterpRig(CB3ClusterRig*)` | `0x0030F460` 188 | `0x00366A00` 188 | `0x00396350` 188 | `0x0039B390` 64 | `0x003586B0` strong |  | `void CB4BehaviourCluster::SetInterpRig(CB4ClusterRig *lpInterpRig)` |
+| `SetRig(CB3ClusterRig*)` | `0x0030F520` 180 | `0x00366AC0` 180 | `0x00396410` 180 | `0x0039B350` 52 | `0x00358780` strong |  | `void CB4BehaviourCluster::SetRig(CB4ClusterRig *lpRig)` |
+| `Construct()` | `0x0030F5E0` 8 | `0x00366B80` 8 | `0x003964D0` 8 | `0x0039B320` 40 | `0x00358840` likely |  | `void CB4BehaviourCluster::Construct(CB4PlayerCameraManager *lpManager)` (same name, different parameters) |
+| `CB3BehaviourCluster()` |  |  |  | `0x0013E880` 92 |  |  | `CB4BehaviourCluster * CB4BehaviourCluster::CB4BehaviourCluster()` |
+| `GetRig()` |  |  |  | `0x00398280` 28 |  |  |  |
+| `IsIntersecting()` |  |  |  | `0x003987D0` 28 |  |  |  |
+
+## Burnout Revenge layout of `CB4BehaviourCluster`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 318 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4BehaviourCluster : public CB4CameraBehaviourMoveable {  // size 0x210
+    // base CB4CameraBehaviourMoveable at 0x000
+    /* 0x030 */ CB4ClusterRig mRig;
+    /* 0x110 */ CB4ClusterRig mInterpRig;
+    /* 0x1F0 */ CGtV4d mVelocity;
+    /* 0x200 */ bool mbIsIntersecting;
+    /* 0x201 */ bool mbInterpThisFrame;
+    // methods
+    // CB4BehaviourCluster(const CB4BehaviourCluster &);
+    // CB4BehaviourCluster();
+    // virtual void Construct(CB4PlayerCameraManager *);
+    // virtual void Destruct();
+    // virtual bool Prepare(void *);
+    // virtual void Release(void *);
+    // virtual void Update(CGtCamera *, float);
+    // void SetRig(CB4ClusterRig *);
+    // CB4ClusterRig * GetRig();
+    // void SetInterpRig(CB4ClusterRig *);
+    // CB4ClusterRig * GetInterpRig();
+    // bool IsIntersecting();
+    // static bool SphereCallback(const CGtPolygonIntersectionResult &, void *);
+    // void Interpolate(float);
+};
+```
 
 ## Notes
 

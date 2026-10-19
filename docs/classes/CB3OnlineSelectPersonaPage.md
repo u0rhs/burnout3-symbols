@@ -12,17 +12,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `OnKeyboardShow()` | `0x002F9A70` 8 | `0x0034D2E0` 8 | `0x0037E930` 8 | `0x003802B0` 16 | `0x00340450` proven |  |
-| `OnKeyboardCancel()` | `0x002F9A80` 72 | `0x0034D2F0` 72 | `0x0037E940` 72 | `0x00380260` 80 | `0x00340460` proven |  |
-| `OnKeyboardDone()` | `0x002F9AD0` 348 | `0x0034D340` 348 | `0x0037E990` 348 | `0x00380090` 452 | `0x003404B0` unverified |  |
-| `Release()` | `0x002F9C30` 12 | `0x0034D4A0` 12 | `0x0037EAF0` 12 | `0x00380060` 40 | `0x003406B0` likely |  |
-| `Update()` | `0x002F9C40` 4012 | `0x0034D4B0` 4012 | `0x0037EB00` 4012 | `0x0037E880` 6068 | `0x003406C0` unverified |  |
-| `Prepare(char*)` | `0x002FABF0` 860 | `0x0034E460` 860 | `0x0037FAB0` 860 | `0x0037E400` 1140 | `0x003418F0` unverified |  |
-| `CB3OnlineSelectPersonaPage()` |  |  |  | `0x00341220` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `OnKeyboardShow()` | `0x002F9A70` 8 | `0x0034D2E0` 8 | `0x0037E930` 8 | `0x003802B0` 16 | `0x00340450` proven |  |  |
+| `OnKeyboardCancel()` | `0x002F9A80` 72 | `0x0034D2F0` 72 | `0x0037E940` 72 | `0x00380260` 80 | `0x00340460` proven |  |  |
+| `OnKeyboardDone()` | `0x002F9AD0` 348 | `0x0034D340` 348 | `0x0037E990` 348 | `0x00380090` 452 | `0x003404B0` unverified |  |  |
+| `Release()` | `0x002F9C30` 12 | `0x0034D4A0` 12 | `0x0037EAF0` 12 | `0x00380060` 40 | `0x003406B0` likely |  |  |
+| `Update()` | `0x002F9C40` 4012 | `0x0034D4B0` 4012 | `0x0037EB00` 4012 | `0x0037E880` 6068 | `0x003406C0` unverified |  |  |
+| `Prepare(char*)` | `0x002FABF0` 860 | `0x0034E460` 860 | `0x0037FAB0` 860 | `0x0037E400` 1140 | `0x003418F0` unverified |  |  |
+| `CB3OnlineSelectPersonaPage()` |  |  |  | `0x00341220` 60 |  |  |  |
 
 ## Notes
 

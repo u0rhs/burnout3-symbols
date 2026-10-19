@@ -8,18 +8,38 @@
 - **Source file:** `B3SpatialTrigger.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 5
 - **Retail (SLUS-21050):** 3 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SpatialTrigger`, size 0x004, methods in `GameSource/World/B4SpatialTrigger.cpp` ([layout](#burnout-revenge-layout-of-cb4spatialtrigger))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `TestLine(const CGtLine&)` | `0x002332B0` 332 | `0x002507C0` 332 | `0x0028C5C0` 332 | `0x0028BC20` 504 | `0x00272A30` strong |  |
-| `Destruct()` | `0x00233400` 8 | `0x00250910` 8 | `0x0028C710` 8 | `0x0028BC10` 16 | `0x00272B80` likely |  |
-| `Release()` | `0x00233410` 8 | `0x00250920` 8 | `0x0028C720` 8 | `0x0028BBF0` 28 |  |  |
-| `Prepare(CB3PlanarTriggerStruct*)` | `0x00233420` 12 | `0x00250930` 12 | `0x0028C730` 12 | `0x0028BBC0` 40 | `0x00272BA0` proven |  |
-| `Construct()` | `0x00233430` 8 | `0x00250940` 8 | `0x0028C740` 8 | `0x0028BBA0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `TestLine(const CGtLine&)` | `0x002332B0` 332 | `0x002507C0` 332 | `0x0028C5C0` 332 | `0x0028BC20` 504 | `0x00272A30` strong |  | `bool CB4SpatialTrigger::TestLine(const CGtLine &lLine)` |
+| `Destruct()` | `0x00233400` 8 | `0x00250910` 8 | `0x0028C710` 8 | `0x0028BC10` 16 | `0x00272B80` likely |  | `void CB4SpatialTrigger::Destruct()` |
+| `Release()` | `0x00233410` 8 | `0x00250920` 8 | `0x0028C720` 8 | `0x0028BBF0` 28 |  |  | `void CB4SpatialTrigger::Release()` |
+| `Prepare(CB3PlanarTriggerStruct*)` | `0x00233420` 12 | `0x00250930` 12 | `0x0028C730` 12 | `0x0028BBC0` 40 | `0x00272BA0` proven |  | `bool CB4SpatialTrigger::Prepare(CB4PlanarTriggerStruct *lpPlanarTriggerData)` |
+| `Construct()` | `0x00233430` 8 | `0x00250940` 8 | `0x0028C740` 8 | `0x0028BBA0` 28 |  |  | `void CB4SpatialTrigger::Construct()` |
+
+## Burnout Revenge layout of `CB4SpatialTrigger`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 239 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SpatialTrigger {  // size 0x004
+    /* 0x000 */ CB4PlanarTriggerStruct *mpPlanarTriggerData;
+    // methods
+    // CB4SpatialTrigger(const CB4SpatialTrigger &);
+    // CB4SpatialTrigger();
+    // void Construct();
+    // bool Prepare(CB4PlanarTriggerStruct *);
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // bool TestLine(const CGtLine &);
+};
+```
 
 ## Notes
 

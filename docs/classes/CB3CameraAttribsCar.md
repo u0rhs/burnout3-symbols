@@ -8,18 +8,42 @@
 - **Source file:** `B3CameraAttribs.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 5
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CameraAttribsCar`, size 0x1B0, methods in `GameSource/Camera/B4CameraAttribs.cpp` ([layout](#burnout-revenge-layout-of-cb4cameraattribscar))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RegisterVariables()` | `0x002B7C00` 556 | `0x002F8940` 596 | `0x0032CAD0` 596 | `0x00322AB0` 552 | `0x002F8870` proven |  |
-| `Release(unsigned long)` | `0x002B7E30` 300 | `0x002F8BA0` 332 | `0x0032CD30` 332 | `0x00322970` 156 | `0x002F8AA0` strong |  |
-| `Prepare(unsigned long)` | `0x002B7F60` 132 | `0x002F8CF0` 140 | `0x0032CE80` 140 | `0x00322890` 212 | `0x002F8BD0` strong |  |
-| `SetRaceCarPath()` |  |  |  | `0x00322A10` 148 |  |  |
-| `UnregisterVariables()` |  |  |  | `0x00322CE0` 168 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RegisterVariables()` | `0x002B7C00` 556 | `0x002F8940` 596 | `0x0032CAD0` 596 | `0x00322AB0` 552 | `0x002F8870` proven |  | `void CB4CameraAttribsCar::RegisterVariables()` |
+| `Release(unsigned long)` | `0x002B7E30` 300 | `0x002F8BA0` 332 | `0x0032CD30` 332 | `0x00322970` 156 | `0x002F8AA0` strong |  | `void CB4CameraAttribsCar::Release(unsigned long lCarID)` |
+| `Prepare(unsigned long)` | `0x002B7F60` 132 | `0x002F8CF0` 140 | `0x0032CE80` 140 | `0x00322890` 212 | `0x002F8BD0` strong |  | `CB4CameraAttribsCar * CB4CameraAttribsCar::Prepare(unsigned long lCarID)` |
+| `SetRaceCarPath()` |  |  |  | `0x00322A10` 148 |  |  | `void CB4CameraAttribsCar::SetRaceCarPath()` |
+| `UnregisterVariables()` |  |  |  | `0x00322CE0` 168 |  |  | `void CB4CameraAttribsCar::UnregisterVariables()` |
+
+## Burnout Revenge layout of `CB4CameraAttribsCar`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 319 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CameraAttribsCar {  // size 0x1B0
+    /* 0x000 */ CB4AttribsOffset mLookBack;
+    /* 0x030 */ CB4AttribsOffset mBumper;
+    /* 0x060 */ CB4AttribsRaceCarFollow mInGameFollow;
+    /* 0x0A0 */ GtID mCarID;
+    /* 0x0A8 */ char macCarPath[256];
+    // methods
+    // CB4CameraAttribsCar(const CB4CameraAttribsCar &);
+    // CB4CameraAttribsCar();
+    // static CB4CameraAttribsCar * Prepare(unsigned long);
+    // static void Release(unsigned long);
+    // static void Destruct();
+    // void RegisterVariables();
+    // void UnregisterVariables();
+    // void SetRaceCarPath();
+};
+```
 
 ## Notes
 

@@ -9,6 +9,7 @@
 | Prefix | Meaning |
 |---|---|
 | `CB3…` / `B3….cpp` | Burnout 3 game code |
+| `CB4…` / `B4….cpp` | Burnout Revenge game code: the same classes renamed (`CB3HUDComponent` → `CB4HUDComponent`) |
 | `CGt…` / `Gt….cpp` | Criterion's shared game toolkit (file system, sound, 2D, maths, network). Burnout 2 has `CGT…` for the same role |
 | `C…` (B2) | Burnout 2 game classes; many reappear in B3 as `CB3…` |
 | `Rw…`, `Rp…`, `Rt…`, `_rw…` | RenderWare: core, plugins, toolkits, internals |

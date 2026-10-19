@@ -8,58 +8,219 @@
 - **Source file:** `B3PhysicsManager.cpp`
 - **Methods per build:** DNAT_200 28, B3DEBUG 29, B3INTERN 28, B3O0PCH 45
 - **Retail (SLUS-21050):** 25 of its 28 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4PhysicsManager`, size 0x127240, methods in `GameSource/Physics/B4PhysicsManager.cpp` ([layout](#burnout-revenge-layout-of-cb4physicsmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `StopRaceCarBodyPartsCrashing(int)` | `0x0017CD30` 272 | `0x00199EE0` 528 | `0x00197510` 528 | `0x001B9E90` 300 | `0x001B2A40` likely |  |
-| `DoCrashBreaker(CB3VehiclePhysics*)` | `0x0017CE40` 1384 | `0x0019A0F0` 1576 | `0x00197720` 1396 | `0x001B98F0` 1440 |  |  |
-| `WorldSafeBodyTranslations(CB3CollidingPair*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*)` | `0x0017D3B0` 852 | `0x0019A720` 1332 | `0x00197CA0` 1140 | `0x001B9640` 688 | `0x001B3B40` strong |  |
-| `UpdateNearMissArray()` | `0x0017D710` 236 | `0x0019AC60` 236 | `0x00198120` 236 | `0x001B94A0` 404 | `0x001B3EA0` strong |  |
-| `ClearCrashingBodies(int)` | `0x0017D800` 548 | `0x0019AD50` 1156 | `0x00198210` 1156 | `0x001B9100` 924 | `0x001B3F90` strong |  |
-| `CrashTrafficBody(CB3ActiveBody*,int,int,bool,bool,bool)` | `0x0017DA30` 876 | `0x0019B1E0` 1964 | `0x001986A0` 1964 | `0x001B8AF0` 1540 | `0x001B41D0` strong |  |
-| `DynamisePropBody(CB3ActiveBody*)` | `0x0017DDA0` 684 | `0x0019B990` 1012 | `0x00198E50` 1012 | `0x001B8600` 1176 | `0x001B4530` strong |  |
-| `AllowCollision(CB3ActiveBody&,CB3ActiveBody&)` | `0x0017E050` 548 | `0x0019BD90` 1208 | `0x00199250` 1208 | `0x001B8330` 668 | `0x001B4810` unverified |  |
-| `GetIntervals(CB3ActiveBody*)` | `0x0017E280` 308 | `0x0019C250` 548 | `0x00199710` 548 | `0x001B7B60` 1988 | `0x001B4AB0` proven |  |
-| `BodyBodyResponse(CB3CollidingPair*)` | `0x0017E3C0` 2628 | `0x0019C480` 11416 | `0x00199940` 11400 | `0x001B6C00` 3892 |  |  |
-| `BodyTrafficResponse(CB3CollidingPair*)` | `0x0017EE10` 868 | `0x0019F120` 2400 | `0x0019C5D0` 2400 | `0x001B66F0` 992 | `0x001B5730` strong |  |
-| `VehicleTrafficResponse(CB3CollidingPair*)` | `0x0017F180` 2088 | `0x0019FA80` 4188 | `0x0019CF30` 4056 | `0x001B5240` 4556 |  |  |
-| `RaceCarRaceCarResponse(CB3CollidingPair*)` | `0x0017F9B0` 3744 | `0x001A0AE0` 7164 | `0x0019DF10` 6944 | `0x001B3780` 5840 | `0x001B6380` strong |  |
-| `CollideAndRespondPair(CB3CollidingPair*)` | `0x00180850` 2052 | `0x001A26E0` 7000 | `0x0019FA30` 3964 | `0x001B2900` 2480 | `0x001B7220` unverified |  |
-| `ExtractActiveBody(int)` | `0x00181060` 508 | `0x001A4240` 508 | `0x001A09B0` 508 | `0x001B2630` 716 | `0x001B7C00` strong |  |
-| `InsertActiveBody(int)` | `0x00181260` 632 | `0x001A4440` 632 | `0x001A0BB0` 632 | `0x001B21D0` 1032 | `0x001B7E10` unverified |  |
-| `UpdateActiveBodyList()` | `0x001814E0` 852 | `0x001A46C0` 1988 | `0x001A0E30` 1800 | `0x001B1B80` 1604 | `0x001B7F30` strong |  |
-| `InduceTrafficVehicleCrash(CB3TrafficVehicle*,CB3VehiclePhysics*,bool)` | `0x00181860` 416 | `0x001A4EB0` 924 | `0x001A1560` 924 | `0x001B1760` 652 | `0x001B82F0` strong |  |
-| `RemoveTrafficVehicle(CB3TrafficVehicle*)` | `0x00181A00` 316 | `0x001A5250` 836 | `0x001A1900` 828 | `0x001B1390` 788 | `0x001B84A0` likely |  |
-| `AddTrafficVehicle(CB3TrafficVehicle*)` | `0x00181B40` 164 | `0x001A55A0` 276 | `0x001A1C40` 276 | `0x001B1270` 276 | `0x001B85F0` strong |  |
-| `AddBodyPart(CB3VehiclePhysics*,int,EBodyPartType)` | `0x00181BF0` 356 | `0x001A56C0` 432 | `0x001A1D60` 432 | `0x001B1070` 500 | `0x001B86A0` unverified |  |
-| `AddRaceCar(CB3RaceCar*,int)` | `0x00181D60` 408 | `0x001A5AF0` 864 | `0x001A1F10` 864 | `0x001B0B00` 592 | `0x001B89D0` strong |  |
-| `Destruct()` | `0x00181F00` 412 | `0x001A5E50` 412 | `0x001A2270` 412 | `0x001B08B0` 444 | `0x001B8B70` unverified |  |
-| `Release()` | `0x001820A0` 444 | `0x001A5FF0` 444 | `0x001A2410` 444 | `0x001B06A0` 524 | `0x001B8D20` unverified |  |
-| `PostEffectsUpdate()` | `0x00182260` 8 | `0x001A61B0` 8 | `0x001A25D0` 8 | `0x001B0670` 40 | `0x001B8EF0` strong |  |
-| `Update(float)` | `0x00182270` 2292 | `0x001A61C0` 7220 | `0x001A25E0` 7220 | `0x001AF7C0` 3720 | `0x001B8F00` likely |  |
-| `Prepare()` | `0x00182B70` 2076 | `0x001A7E00` 2700 | `0x001A4220` 2904 | `0x001AEB50` 3040 | `0x001B9850` unverified |  |
-| `Construct()` | `0x00183390` 556 | `0x001A8890` 2120 | `0x001A4D80` 2120 | `0x001AE490` 1584 | `0x001BA280` unverified |  |
-| `AddProp(CB3Prop*)` |  | `0x001A5870` 628 |  | `0x001B0D50` 788 |  |  |
-| `BodyPropResponse(CB3CollidingPair*)` |  |  |  | `0x001B6AD0` 300 |  |  |
-| `CB3PhysicsManager()` |  |  |  | `0x001915F0` 532 |  |  |
-| `GetActiveBodyArray()` |  |  |  | `0x00271BF0` 28 |  |  |
-| `GetBodyPartPhysics(int)` |  |  |  | `0x0022B530` 124 |  |  |
-| `GetCollidingPairArray()` |  |  |  | `0x00271C40` 36 |  |  |
-| `GetNetworkCarPhysics(int)` |  |  |  | `0x003E4C60` 100 |  |  |
-| `GetNumActiveBodies()` |  |  |  | `0x00271C10` 36 |  |  |
-| `GetNumCollidingPairs()` |  |  |  | `0x00271C70` 36 |  |  |
-| `GetNumTrafficBodies()` |  |  |  | `0x0014E170` 36 |  |  |
-| `GetPlayerCarPhysics(int)` |  |  |  | `0x001420C0` 100 |  |  |
-| `GetRaceCarPhysics(int)` |  |  |  | `0x00130450` 116 |  |  |
-| `GetTrafficPhysics(int)` |  |  |  | `0x0014E1D0` 52 |  |  |
-| `HandleTrafficBodyImpact(CB3TrafficPhysics*,CB3VehicleParams*,bool)` |  |  |  | `0x001B3670` 236 |  |  |
-| `IsPlayerLookingBack(int)` |  |  |  | `0x003ECE00` 76 |  |  |
-| `SortIntervalArray(CB3Interval*,int)` |  |  |  | `0x001B1A50` 88 |  |  |
-| `SortIntervals()` |  |  |  | `0x001B1AB0` 204 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `StopRaceCarBodyPartsCrashing(int)` | `0x0017CD30` 272 | `0x00199EE0` 528 | `0x00197510` 528 | `0x001B9E90` 300 | `0x001B2A40` likely |  | `void CB4PhysicsManager::StopRaceCarBodyPartsCrashing(ERaceCarIndex leRaceCarIndex)` (same name, different parameters) |
+| `DoCrashBreaker(CB3VehiclePhysics*)` | `0x0017CE40` 1384 | `0x0019A0F0` 1576 | `0x00197720` 1396 | `0x001B98F0` 1440 |  |  | `void CB4PhysicsManager::DoCrashBreaker(CB4VehiclePhysics *lpCrashingPlayer, float lrPower, bool lbIsTankerExplosion, bool lbIsPickup)` (same name, different parameters) |
+| `WorldSafeBodyTranslations(CB3CollidingPair*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*)` | `0x0017D3B0` 852 | `0x0019A720` 1332 | `0x00197CA0` 1140 | `0x001B9640` 688 | `0x001B3B40` strong |  | `void CB4PhysicsManager::WorldSafeBodyTranslations(CB4CollidingPair *lpPair, GtMathPs2::CGtV3d *lpTransA, GtMathPs2::CGtV3d *lpTransB)` |
+| `UpdateNearMissArray()` | `0x0017D710` 236 | `0x0019AC60` 236 | `0x00198120` 236 | `0x001B94A0` 404 | `0x001B3EA0` strong |  | `void CB4PhysicsManager::UpdateNearMissArray()` |
+| `ClearCrashingBodies(int)` | `0x0017D800` 548 | `0x0019AD50` 1156 | `0x00198210` 1156 | `0x001B9100` 924 | `0x001B3F90` strong |  |  |
+| `CrashTrafficBody(CB3ActiveBody*,int,int,bool,bool,bool)` | `0x0017DA30` 876 | `0x0019B1E0` 1964 | `0x001986A0` 1964 | `0x001B8AF0` 1540 | `0x001B41D0` strong |  | `bool CB4PhysicsManager::CrashTrafficBody(CB4ActiveBody *lpTrafficBody, ERaceCarIndex leNetworkOwnerIndex, unsigned char lu8CrashIndex, bool lbRegisterCrashScore, bool lbCheckCab, bool lbCheckTrailer)` (same name, different parameters) |
+| `DynamisePropBody(CB3ActiveBody*)` | `0x0017DDA0` 684 | `0x0019B990` 1012 | `0x00198E50` 1012 | `0x001B8600` 1176 | `0x001B4530` strong |  |  |
+| `AllowCollision(CB3ActiveBody&,CB3ActiveBody&)` | `0x0017E050` 548 | `0x0019BD90` 1208 | `0x00199250` 1208 | `0x001B8330` 668 | `0x001B4810` unverified |  |  |
+| `GetIntervals(CB3ActiveBody*)` | `0x0017E280` 308 | `0x0019C250` 548 | `0x00199710` 548 | `0x001B7B60` 1988 | `0x001B4AB0` proven |  |  |
+| `BodyBodyResponse(CB3CollidingPair*)` | `0x0017E3C0` 2628 | `0x0019C480` 11416 | `0x00199940` 11400 | `0x001B6C00` 3892 |  |  | `void CB4PhysicsManager::BodyBodyResponse(CB4CollidingPair *lpPair, bool lbFirstHit)` (same name, different parameters) |
+| `BodyTrafficResponse(CB3CollidingPair*)` | `0x0017EE10` 868 | `0x0019F120` 2400 | `0x0019C5D0` 2400 | `0x001B66F0` 992 | `0x001B5730` strong |  | `void CB4PhysicsManager::BodyTrafficResponse(CB4CollidingPair *lpPair)` |
+| `VehicleTrafficResponse(CB3CollidingPair*)` | `0x0017F180` 2088 | `0x0019FA80` 4188 | `0x0019CF30` 4056 | `0x001B5240` 4556 |  |  | `void CB4PhysicsManager::VehicleTrafficResponse(CB4CollidingPair *lpPair)` |
+| `RaceCarRaceCarResponse(CB3CollidingPair*)` | `0x0017F9B0` 3744 | `0x001A0AE0` 7164 | `0x0019DF10` 6944 | `0x001B3780` 5840 | `0x001B6380` strong |  | `void CB4PhysicsManager::RaceCarRaceCarResponse(CB4CollidingPair *lpPair)` |
+| `CollideAndRespondPair(CB3CollidingPair*)` | `0x00180850` 2052 | `0x001A26E0` 7000 | `0x0019FA30` 3964 | `0x001B2900` 2480 | `0x001B7220` unverified |  | `void CB4PhysicsManager::CollideAndRespondPair(CB4CollidingPair *lpPair)` |
+| `ExtractActiveBody(int)` | `0x00181060` 508 | `0x001A4240` 508 | `0x001A09B0` 508 | `0x001B2630` 716 | `0x001B7C00` strong |  |  |
+| `InsertActiveBody(int)` | `0x00181260` 632 | `0x001A4440` 632 | `0x001A0BB0` 632 | `0x001B21D0` 1032 | `0x001B7E10` unverified |  |  |
+| `UpdateActiveBodyList()` | `0x001814E0` 852 | `0x001A46C0` 1988 | `0x001A0E30` 1800 | `0x001B1B80` 1604 | `0x001B7F30` strong |  |  |
+| `InduceTrafficVehicleCrash(CB3TrafficVehicle*,CB3VehiclePhysics*,bool)` | `0x00181860` 416 | `0x001A4EB0` 924 | `0x001A1560` 924 | `0x001B1760` 652 | `0x001B82F0` strong |  | `CB4TrafficPhysics * CB4PhysicsManager::InduceTrafficVehicleCrash(CB4TrafficVehicle *lpVehicle, CB4VehiclePhysics *lpCrashingVehicle, bool lbDoHomingBehaviour)` |
+| `RemoveTrafficVehicle(CB3TrafficVehicle*)` | `0x00181A00` 316 | `0x001A5250` 836 | `0x001A1900` 828 | `0x001B1390` 788 | `0x001B84A0` likely |  | `void CB4PhysicsManager::RemoveTrafficVehicle(CB4TrafficVehicle *lpVehicle)` |
+| `AddTrafficVehicle(CB3TrafficVehicle*)` | `0x00181B40` 164 | `0x001A55A0` 276 | `0x001A1C40` 276 | `0x001B1270` 276 | `0x001B85F0` strong |  | `void CB4PhysicsManager::AddTrafficVehicle(CB4TrafficVehicle *lpVehicle)` |
+| `AddBodyPart(CB3VehiclePhysics*,int,EBodyPartType)` | `0x00181BF0` 356 | `0x001A56C0` 432 | `0x001A1D60` 432 | `0x001B1070` 500 | `0x001B86A0` unverified |  | `CB4BodyPartPhysics * CB4PhysicsManager::AddBodyPart(CB4VehiclePhysics *lpVehicle, int lnPartIndex, EBodyPartType leType)` |
+| `AddRaceCar(CB3RaceCar*,int)` | `0x00181D60` 408 | `0x001A5AF0` 864 | `0x001A1F10` 864 | `0x001B0B00` 592 | `0x001B89D0` strong |  | `void CB4PhysicsManager::AddRaceCar(CB4RaceCar *lpRaceCar, int lnTypeIndex)` |
+| `Destruct()` | `0x00181F00` 412 | `0x001A5E50` 412 | `0x001A2270` 412 | `0x001B08B0` 444 | `0x001B8B70` unverified |  | `void CB4PhysicsManager::Destruct()` |
+| `Release()` | `0x001820A0` 444 | `0x001A5FF0` 444 | `0x001A2410` 444 | `0x001B06A0` 524 | `0x001B8D20` unverified |  | `void CB4PhysicsManager::Release()` |
+| `PostEffectsUpdate()` | `0x00182260` 8 | `0x001A61B0` 8 | `0x001A25D0` 8 | `0x001B0670` 40 | `0x001B8EF0` strong |  | `void CB4PhysicsManager::PostEffectsUpdate()` |
+| `Update(float)` | `0x00182270` 2292 | `0x001A61C0` 7220 | `0x001A25E0` 7220 | `0x001AF7C0` 3720 | `0x001B8F00` likely |  | `void CB4PhysicsManager::Update(float lrTimeStep)` |
+| `Prepare()` | `0x00182B70` 2076 | `0x001A7E00` 2700 | `0x001A4220` 2904 | `0x001AEB50` 3040 | `0x001B9850` unverified |  | `bool CB4PhysicsManager::Prepare()` |
+| `Construct()` | `0x00183390` 556 | `0x001A8890` 2120 | `0x001A4D80` 2120 | `0x001AE490` 1584 | `0x001BA280` unverified |  | `void CB4PhysicsManager::Construct()` |
+| `AddProp(CB3Prop*)` |  | `0x001A5870` 628 |  | `0x001B0D50` 788 |  |  |  |
+| `BodyPropResponse(CB3CollidingPair*)` |  |  |  | `0x001B6AD0` 300 |  |  | `void CB4PhysicsManager::BodyPropResponse(CB4CollidingPair *lpPair)` |
+| `CB3PhysicsManager()` |  |  |  | `0x001915F0` 532 |  |  | `CB4PhysicsManager * CB4PhysicsManager::CB4PhysicsManager()` |
+| `GetActiveBodyArray()` |  |  |  | `0x00271BF0` 28 |  |  |  |
+| `GetBodyPartPhysics(int)` |  |  |  | `0x0022B530` 124 |  |  |  |
+| `GetCollidingPairArray()` |  |  |  | `0x00271C40` 36 |  |  |  |
+| `GetNetworkCarPhysics(int)` |  |  |  | `0x003E4C60` 100 |  |  |  |
+| `GetNumActiveBodies()` |  |  |  | `0x00271C10` 36 |  |  |  |
+| `GetNumCollidingPairs()` |  |  |  | `0x00271C70` 36 |  |  |  |
+| `GetNumTrafficBodies()` |  |  |  | `0x0014E170` 36 |  |  |  |
+| `GetPlayerCarPhysics(int)` |  |  |  | `0x001420C0` 100 |  |  |  |
+| `GetRaceCarPhysics(int)` |  |  |  | `0x00130450` 116 |  |  | `CB4RaceCarPhysics * CB4PhysicsManager::GetRaceCarPhysics(ERaceCarIndex leRaceCarIndex)` (same name, different parameters) |
+| `GetTrafficPhysics(int)` |  |  |  | `0x0014E1D0` 52 |  |  |  |
+| `HandleTrafficBodyImpact(CB3TrafficPhysics*,CB3VehicleParams*,bool)` |  |  |  | `0x001B3670` 236 |  |  | `void CB4PhysicsManager::HandleTrafficBodyImpact(CB4TrafficPhysics *lpTrafficPhysics, CB4VehicleParams *lpVehicleParams, CB4RaceCarPhysics *lpRaceCarPhysics, bool lbIsCrashMode)` (same name, different parameters) |
+| `IsPlayerLookingBack(int)` |  |  |  | `0x003ECE00` 76 |  |  |  |
+| `SortIntervalArray(CB3Interval*,int)` |  |  |  | `0x001B1A50` 88 |  |  |  |
+| `SortIntervals()` |  |  |  | `0x001B1AB0` 204 |  |  |  |
+
+## Burnout Revenge layout of `CB4PhysicsManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 11 file(s), e.g. `GameSource/Camera/Crash/B4CrashAnalyser.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4PhysicsManager {  // size 0x127240
+    /* 0x000 */ CB4VehicleWorldTriangleCacheManager mVehicleWorldManager;
+    /* 0x22350 */ RwInt32 mnNumCacheHits;
+    /* 0x22354 */ RwInt32 mnNumCacheTotal;
+    /* 0x22358 */ bool mabDeadlyProp[15];
+    /* 0x22370 */ CB4ActiveBodyManager mActiveBodyManager;
+    /* 0x3A340 */ unsigned char maau8NearMisses[6][16];
+    /* 0x3A3A0 */ unsigned char mau8NumNearMisses[6];
+    /* 0x3A3A8 */ RwReal mrTakedownTimestepMultiplier;
+    /* 0x3A3B0 */ CB4PlayerCarPhysics maPlayerCarBodies[2];
+    /* 0x45690 */ CB4AICarPhysics maAICarBodies[5];
+    /* 0x4C260 */ CB4NetworkCarPhysics maNetworkCarBodies[5];
+    /* 0x52D40 */ CB4TrafficPhysics maTrafficBodies[48];
+    /* 0xF8640 */ CB4CheckedTrafficPhysics maCheckedTrafficBodies[5];
+    /* 0x10A7A0 */ CB4PropPhysics maPropBodies[32];
+    /* 0x1189A0 */ CB4BodyPartPhysics maBodyPartBodies[48];
+    /* 0x125EA0 */ CB4CameraPhysics maCameraBodies[2];
+    /* 0x126CA0 */ CB4RaceCarPhysics *mapRaceCarPhysics[6];
+    /* 0x126CB8 */ CB4TrafficPhysics *mapCrashingTraffic[48];
+    /* 0x126D78 */ CB4CheckedTrafficPhysics *mapCheckedTraffic[5];
+    /* 0x126D8C */ RwInt32 mnNumPlayerCarBodies;
+    /* 0x126D90 */ RwInt32 mnNumAICarBodies;
+    /* 0x126D94 */ RwInt32 mnNumNetworkCarBodies;
+    /* 0x126D98 */ RwInt32 mnNumTrafficBodies;
+    /* 0x126D9C */ RwInt32 mnNumCheckedTrafficBodies;
+    /* 0x126DA0 */ bool mbInCollisionCode;
+    /* 0x126DA1 */ bool mbAllowObjectCollisions;
+    /* 0x126DA8 */ RwUInt64 mxActiveBodyParts;
+    /* 0x126DB0 */ RwUInt64 mxActiveProps;
+    /* 0x126DC0 */ CB4ShockwaveManager mShockwaveManager;
+    /* 0x127230 */ unsigned char mau8AlreadyCrashBreakeredTrafficIndices[4];
+    /* 0x127234 */ bool mbLastCheckedVehicleExploded;
+    // methods
+    // CB4PhysicsManager(const CB4PhysicsManager &);
+    // CB4PhysicsManager();
+    // void Construct();
+    // bool Prepare();
+    // void Update(float);
+    // void NetworkCatchupUpdate(float);
+    // void Release();
+    // void Destruct();
+    // CB4ActiveBody * AddStaticProp(CB4PropInstance *, GtMathPs2::CGtMatrix3x4 *);
+    // void AddRaceCar(CB4RaceCar *, int);
+    // CB4BodyPartPhysics * AddBodyPart(CB4VehiclePhysics *, int, EBodyPartType);
+    // void AddTrafficVehicle(CB4TrafficVehicle *);
+    // void RemoveTrafficVehicle(CB4TrafficVehicle *);
+    // CB4CameraPhysics * AddCamera(EPlayerCarIndex, CB4CameraBehaviour *, GtMathPs2::CGtMatrix3x4 *, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d);
+    // void RemoveCamera(CB4CameraPhysics *);
+    // void UpdateStaticPropsList();
+    // CB4TrafficPhysics * InduceTrafficVehicleCrash(CB4TrafficVehicle *, CB4VehiclePhysics *, bool);
+    // void DoTrafficHomingBehaviour(CB4VehiclePhysics *, bool, bool);
+    // RwInt32 FindFreeTrafficBody();
+    // bool CanCrashTrafficBody();
+    // bool CrashTrafficBody(CB4ActiveBody *, ERaceCarIndex, unsigned char, bool, bool, bool);
+    // CB4CheckedTrafficPhysics * CheckTrafficBody(CB4ActiveBody *, ERaceCarIndex, GtMathPs2::CGtV3d, bool);
+    // bool ClearSpaceForCheckedTraffic(const GtMathPs2::CGtMatrix3x4 *, const GtMathPs2::CGtMatrix3x4 *);
+    // bool CrashCheckedTrafficBody(CB4CheckedTrafficPhysics *, unsigned char);
+    // bool NetworkCrashCheckedTrafficBody(CB4CheckedTrafficPhysics *, unsigned char);
+    // bool MakePropDynamic(CB4ActiveBody *, ERaceCarIndex);
+    // void MakePropStatic(CB4PropPhysics *);
+    // bool MakeCheckedTrafficNormalTraffic(CB4ActiveBody *, CB4TrafficVehicle *);
+    // bool Remove(CB4ActiveBody *, bool);
+    // bool RemoveProp(CB4PropInstance *);
+    // CB4RaceCarPhysics * GetRaceCarPhysics(ERaceCarIndex);
+    // CB4PlayerCarPhysics * GetPlayerCarPhysics(EPlayerCarIndex);
+    // CB4NetworkCarPhysics * GetNetworkCarPhysics(ENetworkCarIndex);
+    // CB4AICarPhysics * GetAICarPhysics(EAICarIndex);
+    // CB4TrafficPhysics * GetTrafficPhysics(int) const;
+    // CB4CheckedTrafficPhysics * GetCheckedTrafficPhysics(int) const;
+    // RwInt32 GetNumTrafficBodies() const;
+    // RwInt32 GetNumCheckedTraffic() const;
+    // RwInt32 GetNumCollidingPairs();
+    // CB4CollidingPair * GetCollidingPairArray();
+    // RwUInt8 GetNumNearMisses(ERaceCarIndex);
+    // RwUInt8 GetNearMiss(ERaceCarIndex, int);
+    // void PostEffectsUpdate();
+    // void ActivatePlayerCarAirRams(bool);
+    // void DoCrashBreaker(CB4VehiclePhysics *, float, bool, bool);
+    // void ApplyShuntOrSlamReaction(CB4CollidingPair *, float *, float *, float *);
+    // void ApplySlamReaction(CB4DrivableVehiclePhysics *, CB4DrivableVehiclePhysics *, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, ESlamShuntComboState);
+    // void ApplyShuntReaction(CB4DrivableVehiclePhysics *, CB4DrivableVehiclePhysics *, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, ESlamShuntComboState);
+    // bool DetectTBoneTakeDown(CB4RaceCarPhysics *, CB4RaceCarPhysics *, float, float);
+    // bool DetectAerialTakeDown(CB4RaceCarPhysics *, CB4RaceCarPhysics *, GtMathPs2::CGtV3d);
+    // CB4BodyPartPhysics * GetBodyPartPhysics(int);
+    // CB4PropPhysics * GetPropPhysics(int);
+    // CB4CameraPhysics * GetCameraPhysics(EPlayerCarIndex);
+    // bool IsPlayerLookingBack(EPlayerCarIndex);
+    // void StopRaceCarBodyPartsCrashing(ERaceCarIndex);
+    // RwReal GetTakedownTimestepMultiplier();
+    // void SetTakedownTimestepMultiplier(float);
+    // CB4ActiveBody * GetActiveBody(int);
+    // RwInt32 GetMaxNumBodies();
+    // CB4Interval * GetDynamicIntervalRange(float, float, int *) const;
+    // CB4Interval * GetStaticIntervalRange(float, float, int *) const;
+    // void ValidatePhysicsDEBUG();
+    // bool IsInCollisionCode();
+    // RwInt32 GetActiveBodyIndex(const CB4ActiveBody *) const;
+    // bool IsActiveBodyValid(int);
+    // CB4ShockwaveManager * GetShockwaveManager() const;
+    // void RemoveOrphanBodyParts();
+    // void RemoveVehiclesDetachedBodyParts(CB4VehiclePhysics *);
+    // bool IsInCollidingPairs(CB4ActiveBody *);
+    // void AllowObjectCollisions(bool);
+    // void CheckBodyPartMatrixIsNotUsed(GtMathPs2::CGtMatrix3x4 *);
+    // void ResetCollisionBools();
+    // void CollideAndRespondPair(CB4CollidingPair *);
+    // void UpdatePhysicsObjects(float);
+    // void TranslatePhysicsObjects();
+    // void UpdateSphereTree();
+    // void RaceCarRaceCarResponse(CB4CollidingPair *);
+    // void VehicleTrafficResponse(CB4CollidingPair *);
+    // void RaceCarWithCheckableTraffic(CB4CollidingPair *, CB4HullCollideParams *);
+    // void CalculateAndApplyCheckingImpulse(CB4VehiclePhysics *, CB4VehiclePhysics *, CB4CollidingPair *, CB4HullCollideParams *, bool);
+    // void CheckedTrafficWithTrafficResponse(CB4CollidingPair *, CB4HullCollideParams *);
+    // void CheckedTrafficWithCheckedTrafficResponse(CB4CollidingPair *);
+    // void CheckedTrafficWithCrashingTrafficResponse(CB4CollidingPair *);
+    // void VehicleTrafficResponseWithoutChecking(CB4CollidingPair *, CB4HullCollideParams *);
+    // void RaceCarWithCheckedTrafficResponse(CB4CollidingPair *);
+    // void RaceCarWithTrafficResponse(CB4CollidingPair *);
+    // void BodyTrafficResponse(CB4CollidingPair *);
+    // void BodyCameraResponse(CB4CollidingPair *);
+    // bool IsBodyPartCollidingWithOwnerVehicle(CB4ActiveBody *, CB4ActiveBody *);
+    // bool BodyBodyResponse_CanCollide(CB4ActiveBody *, CB4ActiveBody *, EPhysicsInteractionType, EPhysicsInteractionType);
+    // bool BodyBodyResponse_Collision(CB4CollidingPair *, CB4HullCollideParams *);
+    // void BodyBodyResponse_CheckForPropHitEvent(CB4ActiveBody *, CB4ActiveBody *, CB4CollidingBody *, CB4CollidingBody *);
+    // void BodyBodyResponse_CheckForUnpausing(CB4ActiveBody *, CB4ActiveBody *);
+    // bool BodyBodyResponse_ModifyInteraction(CB4ActiveBody *, CB4ActiveBody *, EPhysicsInteractionType *, EPhysicsInteractionType *);
+    // void BodyBodyResponse_Translation(CB4CollidingPair *, CB4HullCollideParams *, CB4ActiveBody *, CB4ActiveBody *, CB4CollidingBody *, CB4CollidingBody *, EPhysicsInteractionType, EPhysicsInteractionType);
+    // void BodyBodyResponse_CalculateImpulse(GtMathPs2::CGtV3d *, CB4CollidingPair *, CB4HullCollideParams *, CB4ActiveBody *, CB4ActiveBody *, CB4CollidingBody *, CB4CollidingBody *);
+    // bool BodyBodyResponse_RaceCarShouldCrash(CB4ActiveBody *, CB4ActiveBody *, CB4CollidingBody *, CB4CollidingBody *, float, GtMathPs2::CGtV3d, bool);
+    // void BodyBodyResponse_CheckForDynamicPropCrash(CB4ActiveBody *, CB4ActiveBody *);
+    // RwReal BodyBodyResponse_DeformVehicle(CB4ActiveBody *, CB4ActiveBody *, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, float, float *);
+    // void BodyBodyResponse_CrashRaceCar(CB4ActiveBody *, CB4ActiveBody *, GtMathPs2::CGtV3d *, bool);
+    // void BodyBodyResponse_DeformTwoVehicles(CB4CollidingPair *, CB4HullCollideParams *, CB4ActiveBody *, CB4ActiveBody *, GtMathPs2::CGtV3d *);
+    // void BodyBodyResponse_ApplyImpulse(CB4HullCollideParams *, CB4ActiveBody *, CB4ActiveBody *, CB4CollidingBody *, CB4CollidingBody *, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, EPhysicsInteractionType, EPhysicsInteractionType);
+    // void ApplySafePositionedImpulse(CB4CollidingBody *, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, EB4ForceType);
+    // void BodyPropResponse(CB4CollidingPair *);
+    // void BodyBodyResponse(CB4CollidingPair *, bool);
+    // bool ResolvePenetration(CB4CollidingPair *, CB4HullCollideParams *, float *, float *);
+    // bool CalculateAndApplyImpulse(CB4CollidingPair *, CB4HullCollideParams *, float *, float *);
+    // bool AllowCollision(CB4ActiveBody &, CB4ActiveBody &);
+    // void UpdateNearMissArray();
+    // void WorldSafeBodyTranslations(CB4CollidingPair *, GtMathPs2::CGtV3d *, GtMathPs2::CGtV3d *);
+    // void HandleTrafficBodyImpact(CB4TrafficPhysics *, CB4VehicleParams *, CB4RaceCarPhysics *, bool);
+    // bool CrashFurthestAwayCheckedTraffic(const GtMathPs2::CGtMatrix3x4 *, const GtMathPs2::CGtMatrix3x4 *);
+    // bool CanCheckTraffic(CB4CollidingPair *, CB4RaceCarPhysics *, CB4TrafficVehicle *);
+    // bool CanCheckCheckedTraffic(CB4RaceCarPhysics *, CB4CheckedTrafficPhysics *);
+    // EShuntSlamType CalculateShuntOrSlam(CB4CollidingPair *, float, float, float, float &, bool &, bool &);
+    // void GetBodyProjectionsOfCollisionPoint(CB4CollidingPair *, float *, float *);
+    // void RemoveFromCheckedTrafficArray(CB4CheckedTrafficPhysics *);
+    // bool ActuallyCrashCheckedTrafficBody(CB4CheckedTrafficPhysics *, unsigned char);
+    // void InheritBodyParts(CB4VehiclePhysics *, CB4VehiclePhysics *);
+};
+```
 
 ## Notes
 

@@ -8,20 +8,59 @@
 - **Source file:** `B3VehiclePhysicsAttribs.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 7
 - **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4VehiclePhysicsAttribs`, size 0x0F8, methods in `GameSource/Physics/B4VehiclePhysicsAttribs.cpp` ([layout](#burnout-revenge-layout-of-cb4vehiclephysicsattribs))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CopyToPhysics(CB3VehiclePhysics*)` | `0x00212440` 168 | `0x00221090` 168 | `0x00260610` 168 | `0x00263CC0` 304 | `0x00252050` strong |  |
-| `Register(unsigned long)` | `0x002124F0` 800 | `0x00221140` 960 | `0x002606C0` 960 | `0x002637D0` 1008 | `0x00252100` proven |  |
-| `Destruct()` | `0x00212810` 8 | `0x00221500` 8 | `0x00260A80` 8 | `0x002637C0` 16 | `0x00252420` proven |  |
-| `Release()` | `0x00212820` 176 | `0x00221510` 176 | `0x00260A90` 176 | `0x00263790` 40 | `0x00252430` proven |  |
-| `Construct()` | `0x002128D0` 80 | `0x002215C0` 80 | `0x00260B40` 80 | `0x002636D0` 188 | `0x002524E0` proven |  |
-| `GetAttribs()` |  |  |  | `0x00189B60` 28 |  |  |
-| `Unregister()` |  |  |  | `0x00263BC0` 244 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CopyToPhysics(CB3VehiclePhysics*)` | `0x00212440` 168 | `0x00221090` 168 | `0x00260610` 168 | `0x00263CC0` 304 | `0x00252050` strong |  | `void CB4VehiclePhysicsAttribs::CopyToPhysics(CB4VehiclePhysics *lpPhysics)` |
+| `Register(unsigned long)` | `0x002124F0` 800 | `0x00221140` 960 | `0x002606C0` 960 | `0x002637D0` 1008 | `0x00252100` proven |  | `void CB4VehiclePhysicsAttribs::Register(unsigned long lVehicleID)` |
+| `Destruct()` | `0x00212810` 8 | `0x00221500` 8 | `0x00260A80` 8 | `0x002637C0` 16 | `0x00252420` proven |  |  |
+| `Release()` | `0x00212820` 176 | `0x00221510` 176 | `0x00260A90` 176 | `0x00263790` 40 | `0x00252430` proven |  | `void CB4VehiclePhysicsAttribs::Release()` |
+| `Construct()` | `0x002128D0` 80 | `0x002215C0` 80 | `0x00260B40` 80 | `0x002636D0` 188 | `0x002524E0` proven |  | `void CB4VehiclePhysicsAttribs::Construct()` |
+| `GetAttribs()` |  |  |  | `0x00189B60` 28 |  |  |  |
+| `Unregister()` |  |  |  | `0x00263BC0` 244 |  |  | `void CB4VehiclePhysicsAttribs::Unregister()` |
+
+## Burnout Revenge layout of `CB4VehiclePhysicsAttribs`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 319 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4VehiclePhysicsAttribs {  // size 0x0F8
+    /* 0x000 */ GtID mVehicleID;
+    /* 0x008 */ RwReal mrDrivingMass;
+    /* 0x00C */ RwReal mrCrashingMass;
+    /* 0x010 */ RwReal mrFrontAttachHeight;
+    /* 0x014 */ RwReal mrFrontSpringConstant;
+    /* 0x018 */ RwReal mrFrontDampingConstant;
+    /* 0x01C */ RwReal mrFrontSpringLength;
+    /* 0x020 */ RwReal mrRearSpringConstant;
+    /* 0x024 */ RwReal mrRearDampingConstant;
+    /* 0x028 */ RwReal mrRearSpringLength;
+    /* 0x02C */ RwReal mrRearAttachHeight;
+    /* 0x030 */ RwReal mrRandomCrumpleFactor;
+    /* 0x034 */ RwReal mrBouncyness;
+    /* 0x038 */ float marTotalDeformationRegionScalar[7];
+    /* 0x054 */ float marEnergyRegionScalar[7];
+    /* 0x070 */ CB4VehicleBodyPartParams *mpBodyPartStrengths;
+    /* 0x074 */ RwReal mrVehicleVehicleDeformationFactor;
+    /* 0x078 */ char macPath[128];
+    // methods
+    // CB4VehiclePhysicsAttribs(const CB4VehiclePhysicsAttribs &);
+    // CB4VehiclePhysicsAttribs();
+    // void Construct();
+    // bool Prepare(CB4VehiclePhysics *);
+    // void Release();
+    // void Destruct();
+    // void Register(unsigned long);
+    // void Unregister();
+    // void CopyToPhysics(CB4VehiclePhysics *);
+    // RwChar * GetPath() const;
+};
+```
 
 ## Notes
 

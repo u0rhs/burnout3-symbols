@@ -6,19 +6,42 @@
 
 - **Area:** [Effects](../systems/effects.md)
 - **Methods per build:** B3O0PCH 6
+- **Burnout Revenge counterpart:** `CB4TrailSegmentCollection`, size 0x130 ([layout](#burnout-revenge-layout-of-cb4trailsegmentcollection))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CopySegmentFromCollection(int,const CB3TrailSegmentCollection*,int)` |  |  |  | `0x002E99A0` 136 |  |  |
-| `ReadSegmentPosition(int)` |  |  |  | `0x002EA270` 68 |  |  |
-| `ReadSegmentTime(int)` |  |  |  | `0x002E9950` 72 |  |  |
-| `WriteSegmentPosition(GtMathPs2::CGtV3d,int)` |  |  |  | `0x002EA100` 80 |  |  |
-| `WriteSegmentTangent(GtMathPs2::CGtV3d,int)` |  |  |  | `0x002EA150` 284 |  |  |
-| `WriteSegmentTime(float,int)` |  |  |  | `0x002EA0C0` 64 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CopySegmentFromCollection(int,const CB3TrailSegmentCollection*,int)` |  |  |  | `0x002E99A0` 136 |  |  |  |
+| `ReadSegmentPosition(int)` |  |  |  | `0x002EA270` 68 |  |  |  |
+| `ReadSegmentTime(int)` |  |  |  | `0x002E9950` 72 |  |  |  |
+| `WriteSegmentPosition(GtMathPs2::CGtV3d,int)` |  |  |  | `0x002EA100` 80 |  |  |  |
+| `WriteSegmentTangent(GtMathPs2::CGtV3d,int)` |  |  |  | `0x002EA150` 284 |  |  |  |
+| `WriteSegmentTime(float,int)` |  |  |  | `0x002EA0C0` 64 |  |  |  |
+
+## Burnout Revenge layout of `CB4TrailSegmentCollection`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 330 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrailSegmentCollection {  // size 0x130
+    /* 0x000 */ CGtV3dPlus maPositionsAndTimes[16];
+    /* 0x100 */ CPackedTangent maTangents[16];
+    // methods
+    // CB4TrailSegmentCollection(const CB4TrailSegmentCollection &);
+    // CB4TrailSegmentCollection();
+    // void WriteSegmentPosition(GtMathPs2::CGtV3d, int);
+    // CGtV3d ReadSegmentPosition(int) const;
+    // void WriteSegmentTangent(GtMathPs2::CGtV3d, int);
+    // CGtV3d ReadSegmentTangent(int) const;
+    // void WriteSegmentTime(float, int);
+    // RwReal ReadSegmentTime(int) const;
+    // void CopySegmentFromCollection(int, const CB4TrailSegmentCollection *, int);
+    // void CopyTangentToSegmentFromSegment(int, int);
+};
+```
 
 ## Notes
 

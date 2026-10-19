@@ -11,13 +11,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetupRandomCrashJunctions(ECrashSetupHSelectRegions,int)` | `0x0037BC60` 612 | `0x003ED130` 704 | `0x00415370` 692 | `0x0042BB70` 760 |  |  |
-| `Action(EGtStateAction,void*,void*,void*)` | `0x0037BED0` 760 | `0x003ED3F0` 760 | `0x00415630` 760 | `0x0042B960` 516 |  |  |
-| `CB3PartyCrashSetupState()` |  |  |  | `0x00345220` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetupRandomCrashJunctions(ECrashSetupHSelectRegions,int)` | `0x0037BC60` 612 | `0x003ED130` 704 | `0x00415370` 692 | `0x0042BB70` 760 |  |  |  |
+| `Action(EGtStateAction,void*,void*,void*)` | `0x0037BED0` 760 | `0x003ED3F0` 760 | `0x00415630` 760 | `0x0042B960` 516 |  |  |  |
+| `CB3PartyCrashSetupState()` |  |  |  | `0x00345220` 60 |  |  |  |
 
 ## Notes
 

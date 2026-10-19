@@ -11,13 +11,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CalcVolumeOutput(float,float&) const` | `0x0024F330` 212 |  |  |  | `0x0028E120` strong |  |
-| `CalcVolumeOutput(float,float&)` |  | `0x00281550` 212 | `0x002B83D0` 212 | `0x002B7560` 372 |  |  |
-| `CalcFrequencyOutput(float,float&,signed char)` |  |  |  | `0x002B76E0` 572 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CalcVolumeOutput(float,float&) const` | `0x0024F330` 212 |  |  |  | `0x0028E120` strong |  |  |
+| `CalcVolumeOutput(float,float&)` |  | `0x00281550` 212 | `0x002B83D0` 212 | `0x002B7560` 372 |  |  |  |
+| `CalcFrequencyOutput(float,float&,signed char)` |  |  |  | `0x002B76E0` 572 |  |  |  |
 
 ## Notes
 

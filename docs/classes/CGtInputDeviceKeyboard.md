@@ -6,19 +6,56 @@
 
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Methods per build:** B3O0PCH 6
+- **Burnout Revenge counterpart:** `CGtInputDeviceKeyboard`, size 0x014 ([layout](#burnout-revenge-layout-of-cgtinputdevicekeyboard))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` |  |  |  | `0x003321A0` 52 |  |  |
-| `IsCapsLockOn(int)` |  |  |  | `0x0038D380` 36 |  |  |
-| `RegisterCharacterCallback(void (*)` |  |  |  | `0x00391EF0` 52 |  |  |
-| `RegisterEventCallback(void (*)` |  |  |  | `0x00392000` 52 |  |  |
-| `UnregisterCharacterCallback()` |  |  |  | `0x00392130` 36 |  |  |
-| `UnregisterEventCallback()` |  |  |  | `0x00392210` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` |  |  |  | `0x003321A0` 52 |  |  |  |
+| `IsCapsLockOn(int)` |  |  |  | `0x0038D380` 36 |  |  |  |
+| `RegisterCharacterCallback(void (*)` |  |  |  | `0x00391EF0` 52 |  |  |  |
+| `RegisterEventCallback(void (*)` |  |  |  | `0x00392000` 52 |  |  |  |
+| `UnregisterCharacterCallback()` |  |  |  | `0x00392130` 36 |  |  |  |
+| `UnregisterEventCallback()` |  |  |  | `0x00392210` 36 |  |  |  |
+
+## Burnout Revenge layout of `CGtInputDeviceKeyboard`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 188 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtInputDeviceKeyboard : public CGtInputDevice {  // size 0x014
+    // base CGtInputDevice at 0x000
+    /* 0x004 */ GtKeyboardEventCallback mpEventCallback;
+    /* 0x008 */ void *mpEventCallbackUserData;
+    /* 0x00C */ GtKeyboardCharacterCallback mpCharacterCallback;
+    /* 0x010 */ void *mpCharacterCallbackUserData;
+    // methods
+    // CGtInputDeviceKeyboard(const CGtInputDeviceKeyboard &);
+    // CGtInputDeviceKeyboard();
+    // void Construct(EGtLanguage);
+    // void RegisterEventCallback(void (*)(int, int, int, int, void *), void *);
+    // void UnregisterEventCallback();
+    // void RegisterCharacterCallback(void (*)(unsigned short, void *), void *);
+    // void UnregisterCharacterCallback();
+    // bool IsControlJustPressed(EGtVirtualKeyCodes);
+    // bool IsControlJustReleased(EGtVirtualKeyCodes);
+    // bool IsControlPressed(EGtVirtualKeyCodes);
+    // RwUInt8 GetLEDState();
+    // static bool IsNumLockOn(int);
+    // static bool IsCapsLockOn(int);
+    // static bool IsScrollLockOn(int);
+    // static bool IsComposeOn(int);
+    // static bool IsKanaOn(int);
+    // static RwInt32 IsCtrlKeyPressed(int);
+    // static RwInt32 IsShiftKeyPressed(int);
+    // static RwInt32 IsAltKeyPressed(int);
+    // static RwInt32 IsWinKeyPressed(int);
+    // void SetLocale(EGtLanguage);
+};
+```
 
 ## Notes
 

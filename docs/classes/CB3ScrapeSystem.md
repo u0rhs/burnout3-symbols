@@ -8,27 +8,53 @@
 - **Source file:** `B3ScrapeSystem.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
 - **Retail (SLUS-21050):** 2 of its 7 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ScrapeSystem`, size 0x8B20, methods in `GameSource/Graphics/Scrapes/B4ScrapeSystem.cpp` ([layout](#burnout-revenge-layout-of-cb4scrapesystem))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `AddScrapeSegment(CB3ScrapeEmitterData*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EB3ScrapeType,const GtMathPs2::CGtM` | `0x00334760` 592 | `0x00396520` 844 | `0x003C0900` 844 | `0x003C5140` 536 |  |  |
-| `Render()` | `0x003349B0` 328 | `0x00396870` 692 | `0x003C0C50` 692 | `0x003C4E90` 472 | `0x00375AA0` proven |  |
-| `Update()` | `0x00334B00` 388 | `0x00396B30` 632 | `0x003C0F10` 632 | `0x003C4A80` 320 |  |  |
-| `Release()` | `0x00334C90` 8 | `0x00396DB0` 8 | `0x003C1190` 8 | `0x003C4A10` 100 |  |  |
-| `Prepare()` | `0x00334CA0` 236 | `0x00396DC0` 344 | `0x003C11A0` 344 | `0x003C47E0` 328 |  |  |
-| `Destruct()` | `0x00334D90` 8 | `0x00396F20` 8 | `0x003C1300` 8 | `0x003C4750` 120 |  |  |
-| `Construct()` | `0x00334DA0` 256 | `0x00396F30` 256 | `0x003C1310` 256 | `0x003C45C0` 328 | `0x00375E90` proven |  |
-| `AttachScrapeEmitter(EB3ScrapeType)` |  |  |  | `0x003C4D00` 192 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `AddScrapeSegment(CB3ScrapeEmitterData*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EB3ScrapeType,const GtMathPs2::CGtM` | `0x00334760` 592 | `0x00396520` 844 | `0x003C0900` 844 | `0x003C5140` 536 |  |  |  |
+| `Render()` | `0x003349B0` 328 | `0x00396870` 692 | `0x003C0C50` 692 | `0x003C4E90` 472 | `0x00375AA0` proven |  | `void CB4ScrapeSystem::Render()` |
+| `Update()` | `0x00334B00` 388 | `0x00396B30` 632 | `0x003C0F10` 632 | `0x003C4A80` 320 |  |  | `void CB4ScrapeSystem::Update()` |
+| `Release()` | `0x00334C90` 8 | `0x00396DB0` 8 | `0x003C1190` 8 | `0x003C4A10` 100 |  |  | `void CB4ScrapeSystem::Release()` |
+| `Prepare()` | `0x00334CA0` 236 | `0x00396DC0` 344 | `0x003C11A0` 344 | `0x003C47E0` 328 |  |  | `bool CB4ScrapeSystem::Prepare()` |
+| `Destruct()` | `0x00334D90` 8 | `0x00396F20` 8 | `0x003C1300` 8 | `0x003C4750` 120 |  |  | `void CB4ScrapeSystem::Destruct()` |
+| `Construct()` | `0x00334DA0` 256 | `0x00396F30` 256 | `0x003C1310` 256 | `0x003C45C0` 328 | `0x00375E90` proven |  | `void CB4ScrapeSystem::Construct()` |
+| `AttachScrapeEmitter(EB3ScrapeType)` |  |  |  | `0x003C4D00` 192 |  |  |  |
 
 ## Static data (DNAT_200)
 
 | Address | Size | Section | Name |
 |---|---:|---|---|
 | `0x01DC5340` | 64 | .bss | `CB3ScrapeSystem::mgaDefaultParams` |
+
+## Burnout Revenge layout of `CB4ScrapeSystem`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 6 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ScrapeSystem {  // size 0x8B20
+    /* static */ CB4ScrapeParams mgaDefaultParams[1];
+    /* 0x000 */ CB4ScrapeEmitter maEmitterPool[32];
+    /* 0x8A00 */ CGtStaticStack<CB4ScrapeEmitter *,32> mFreeEmitters;
+    /* 0x8A8C */ B4ScrapeEmitterArray maActiveEmitters[1];
+    /* 0x8B14 */ RwInt32 mnMyMonitorID;
+    // methods
+    // CB4ScrapeSystem(const CB4ScrapeSystem &);
+    // CB4ScrapeSystem();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void Update();
+    // void Render();
+    // void AddScrapeSegment(CB4ScrapeEmitterData *, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, EB4ScrapeType, const GtMathPs2::CGtMatrix3x4 *);
+    // CB4ScrapeEmitter * AttachScrapeEmitter(EB4ScrapeType);
+};
+```
 
 ## Notes
 

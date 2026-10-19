@@ -6,19 +6,42 @@
 
 - **Area:** [Effects](../systems/effects.md)
 - **Methods per build:** B3O0PCH 6
+- **Burnout Revenge counterpart:** `B4EmitterArray`, size 0x208 ([layout](#burnout-revenge-layout-of-b4emitterarray))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `AddEntry(CB3TrailEmitter*)` |  |  |  | `0x002E93C0` 92 |  |  |
-| `GetSize()` |  |  |  | `0x002E91A0` 28 |  |  |
-| `Prepare()` |  |  |  | `0x002E8EF0` 72 |  |  |
-| `RemoveEntry(int)` |  |  |  | `0x002E91C0` 196 |  |  |
-| `operator CB3TrailEmitter**()` |  |  |  | `0x002E96C0` 24 |  |  |
-| `operator [](int)` |  |  |  | `0x002E9290` 72 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `AddEntry(CB3TrailEmitter*)` |  |  |  | `0x002E93C0` 92 |  |  |  |
+| `GetSize()` |  |  |  | `0x002E91A0` 28 |  |  |  |
+| `Prepare()` |  |  |  | `0x002E8EF0` 72 |  |  |  |
+| `RemoveEntry(int)` |  |  |  | `0x002E91C0` 196 |  |  |  |
+| `operator CB3TrailEmitter**()` |  |  |  | `0x002E96C0` 24 |  |  |  |
+| `operator [](int)` |  |  |  | `0x002E9290` 72 |  |  |  |
+
+## Burnout Revenge layout of `B4EmitterArray`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 7 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class B4EmitterArray {  // size 0x208
+    /* 0x000 */ CB4TrailEmitter *mapEmitters[128];
+    /* 0x200 */ RwInt32 mnCurrentSize;
+    /* 0x204 */ RwInt32 mnMaxSize;
+    // methods
+    // B4EmitterArray(const B4EmitterArray &);
+    // B4EmitterArray();
+    // bool Prepare();
+    // void AddEntry(CB4TrailEmitter *);
+    // void RemoveEntry(CB4TrailEmitter *);
+    // void RemoveEntry(int);
+    // CB4TrailEmitter * __vc(int);
+    // RwInt32 GetSize();
+    // CB4TrailEmitter ** __opPP15CB4TrailEmitter();
+};
+```
 
 ## Notes
 

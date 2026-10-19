@@ -11,18 +11,18 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `EnterFirstResultsPage()` | `0x002FBF30` 892 | `0x00350070` 1228 | `0x003816D0` 1228 | `0x003823A0` 1440 |  |  |
-| `Action(EGtStateAction,void*,void*,void*)` | `0x002FC2B0` 736 | `0x00350540` 312 | `0x00381BA0` 312 | `0x00382210` 392 |  |  |
-| `AddRaceTimes(CB3ResultsPage*,bool)` | `0x002FC590` 1088 | `0x00350680` 2020 | `0x00381CE0` 2020 | `0x00381A60` 1700 |  |  |
-| `DealWithSecondResultsPageEvent(EGtStateAction,void*,void*,void*)` |  | `0x0034FD70` 524 | `0x003813D0` 524 | `0x00382A80` 376 |  |  |
-| `DealWithFirstResultsPageEvent(EGtStateAction,void*,void*,void*)` |  | `0x0034FF90` 220 | `0x003815F0` 220 | `0x00382980` 252 |  |  |
-| `CB3EndOfRaceState()` |  |  |  | `0x003451E0` 60 |  |  |
-| `DealWithReplayPageEvent(EGtStateAction,void*,void*,void*)` |  |  |  | `0x00382C00` 96 |  |  |
-| `EnterReplayPage()` |  |  |  | `0x00382940` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `EnterFirstResultsPage()` | `0x002FBF30` 892 | `0x00350070` 1228 | `0x003816D0` 1228 | `0x003823A0` 1440 |  |  |  |
+| `Action(EGtStateAction,void*,void*,void*)` | `0x002FC2B0` 736 | `0x00350540` 312 | `0x00381BA0` 312 | `0x00382210` 392 |  |  |  |
+| `AddRaceTimes(CB3ResultsPage*,bool)` | `0x002FC590` 1088 | `0x00350680` 2020 | `0x00381CE0` 2020 | `0x00381A60` 1700 |  |  |  |
+| `DealWithSecondResultsPageEvent(EGtStateAction,void*,void*,void*)` |  | `0x0034FD70` 524 | `0x003813D0` 524 | `0x00382A80` 376 |  |  |  |
+| `DealWithFirstResultsPageEvent(EGtStateAction,void*,void*,void*)` |  | `0x0034FF90` 220 | `0x003815F0` 220 | `0x00382980` 252 |  |  |  |
+| `CB3EndOfRaceState()` |  |  |  | `0x003451E0` 60 |  |  |  |
+| `DealWithReplayPageEvent(EGtStateAction,void*,void*,void*)` |  |  |  | `0x00382C00` 96 |  |  |  |
+| `EnterReplayPage()` |  |  |  | `0x00382940` 60 |  |  |  |
 
 ## Notes
 

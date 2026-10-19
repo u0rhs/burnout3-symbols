@@ -8,27 +8,28 @@
 - **Source file:** `B3Transmission.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 13
 - **Retail (SLUS-21050):** 1 of its 4 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4Transmission`, size 0x088, methods in `GameSource/Physics/B4Transmission.cpp` ([layout](#burnout-revenge-layout-of-cb4transmission))
 - **Burnout 2 ancestor (by name):** `CTransmission`, size 0x170, declared in 88 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetDesiredGear(float,float)` | `0x0018F430` 88 | `0x001BCAE0` 88 | `0x001B7830` 88 | `0x001CB720` 200 |  |  |
-| `Update(float,float,int,int)` | `0x0018F490` 2216 | `0x001BCB40` 2216 | `0x001B7890` 2216 | `0x001CABE0` 2840 |  |  |
-| `Prepare(CB3RaceCarPhysics*)` | `0x0018FD40` 228 | `0x001BD3F0` 228 | `0x001B8140` 228 | `0x001CAA60` 380 |  |  |
-| `RPMToRadPerSec(float)` | `0x00212BD0` 12 | `0x002218F0` 12 | `0x00260E70` 12 | `0x001CB700` 32 | `0x002527F0` proven |  |
-| `ChangeDown()` |  |  |  | `0x001C7EA0` 80 |  |  |
-| `ChangeUp()` |  |  |  | `0x001C7EF0` 104 |  |  |
-| `GetGear()` |  |  |  | `0x001BAD00` 28 |  |  |
-| `GetRPM()` |  |  |  | `0x001C2D50` 44 |  |  |
-| `InTopGear()` |  |  |  | `0x001C6B40` 48 |  |  |
-| `RadPerSecToRPM(float)` |  |  |  | `0x001C2D80` 32 |  |  |
-| `SelectFirst()` |  |  |  | `0x001C7F60` 56 |  |  |
-| `SelectGear(int)` |  |  |  | `0x001C2750` 60 |  |  |
-| `SelectReverse()` |  |  |  | `0x001C7FA0` 56 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetDesiredGear(float,float)` | `0x0018F430` 88 | `0x001BCAE0` 88 | `0x001B7830` 88 | `0x001CB720` 200 |  |  | `RwInt32 CB4Transmission::GetDesiredGear(float lrWheelRadius, float lrSpeed)` |
+| `Update(float,float,int,int)` | `0x0018F490` 2216 | `0x001BCB40` 2216 | `0x001B7890` 2216 | `0x001CABE0` 2840 |  |  | `RwReal CB4Transmission::Update(float lrGas, float lrMaxWheelAngularVel, float lrMPH, bool lbBoost, bool lbOnStartLine)` (same name, different parameters) |
+| `Prepare(CB3RaceCarPhysics*)` | `0x0018FD40` 228 | `0x001BD3F0` 228 | `0x001B8140` 228 | `0x001CAA60` 380 |  |  | `bool CB4Transmission::Prepare()` (same name, different parameters) |
+| `RPMToRadPerSec(float)` | `0x00212BD0` 12 | `0x002218F0` 12 | `0x00260E70` 12 | `0x001CB700` 32 | `0x002527F0` proven |  |  |
+| `ChangeDown()` |  |  |  | `0x001C7EA0` 80 |  |  |  |
+| `ChangeUp()` |  |  |  | `0x001C7EF0` 104 |  |  |  |
+| `GetGear()` |  |  |  | `0x001BAD00` 28 |  |  |  |
+| `GetRPM()` |  |  |  | `0x001C2D50` 44 |  |  |  |
+| `InTopGear()` |  |  |  | `0x001C6B40` 48 |  |  |  |
+| `RadPerSecToRPM(float)` |  |  |  | `0x001C2D80` 32 |  |  | `RwReal CB4Transmission::RadPerSecToRPM(float lrAngVel)` |
+| `SelectFirst()` |  |  |  | `0x001C7F60` 56 |  |  |  |
+| `SelectGear(int)` |  |  |  | `0x001C2750` 60 |  |  |  |
+| `SelectReverse()` |  |  |  | `0x001C7FA0` 56 |  |  |  |
 
 ## Burnout 2 layout of `CTransmission`
 
@@ -63,6 +64,65 @@ public:
     /* 0x164 */ int mnTopGear;
     /* 0x168 */ float mrLastChangeDownTime;
     /* 0x16C */ float mrLastChangeUpTime;
+};
+```
+
+## Burnout Revenge layout of `CB4Transmission`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 319 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Transmission {  // size 0x088
+    /* 0x000 */ RwReal mnGearRatioReverseValue;
+    /* 0x004 */ float maGearRatioValues[7];
+    /* 0x020 */ RwReal mnGearRatioFinalValue;
+    /* 0x024 */ RwReal mrEngineIdleRPMValue;
+    /* 0x028 */ RwReal mrChangeUpRPMValue;
+    /* 0x02C */ RwReal mrChangeDownRPMValue;
+    /* 0x030 */ RwReal mrEngineMomentOfInertiaValue;
+    /* 0x034 */ RwReal mrEngineFrictionTorqueValue;
+    /* 0x038 */ RwReal mrEngineMaxRPMValue;
+    /* 0x03C */ RwReal mrEngineTorqueValue;
+    /* 0x040 */ RwReal mrGearChangeTime;
+    /* 0x044 */ RwReal mrMaxRevs;
+    /* 0x048 */ RwReal mMaxRevsRadPerSec;
+    /* 0x04C */ RwReal mrPeakTorqueRevs;
+    /* 0x050 */ RwReal mrFallOffTorqueRevs;
+    /* 0x054 */ RwReal mrBoostKickTorque;
+    /* 0x058 */ RwReal mrBoostKickTime;
+    /* 0x05C */ RwReal mrEngineAngularVel;
+    /* 0x060 */ RwReal mrClutchReleaseTime;
+    /* 0x064 */ bool mbClutchDown;
+    /* 0x065 */ bool mbLockInGear;
+    /* 0x068 */ CGtRandom mRandom;
+    /* 0x070 */ bool mbManual;
+    /* 0x071 */ bool mbManualSwitched;
+    /* 0x072 */ bool mbGearUpSwitched;
+    /* 0x073 */ bool mbGearDownSwitched;
+    /* 0x074 */ RwInt32 mnGear;
+    /* 0x078 */ RwInt32 mnTopGear;
+    /* 0x07C */ RwReal mrLastChangeDownTime;
+    /* 0x080 */ RwReal mrLastChangeUpTime;
+    // methods
+    // CB4Transmission(const CB4Transmission &);
+    // CB4Transmission();
+    // void Construct();
+    // bool Prepare();
+    // RwReal Update(float, float, float, bool, bool);
+    // void Release();
+    // void Destruct();
+    // int GetGear();
+    // RwReal GetRPM();
+    // bool InTopGear();
+    // void SelectReverse();
+    // void SelectFirst();
+    // void SelectGear(int);
+    // void ChangeUp();
+    // void ChangeDown();
+    // static RwReal RadPerSecToRPM(float);
+    // static RwReal RPMToRadPerSec(float);
+    // RwInt32 GetDesiredGear(float, float);
+    // RwReal GetEngineTorque(float, bool);
 };
 ```
 

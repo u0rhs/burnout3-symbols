@@ -8,15 +8,45 @@
 - **Source file:** `B3TrackMaterialPS2.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 2
 - **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrackMaterial`, size 0x028, methods in `GameSource/Graphics/TrackRenderer/Ps2/B4TrackMaterialPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4trackmaterial))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Prepare()` | `0x0022C4F0` 16 | `0x00244630` 16 | `0x00281050` 16 | `0x00282450` 44 | `0x0026A160` proven |  |
-| `FixUp()` | `0x0022C500` 80 | `0x00244640` 80 | `0x00281060` 80 | `0x002823A0` 164 | `0x0026A170` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Prepare()` | `0x0022C4F0` 16 | `0x00244630` 16 | `0x00281050` 16 | `0x00282450` 44 | `0x0026A160` proven |  | `bool CB4TrackMaterial::Prepare()` |
+| `FixUp()` | `0x0022C500` 80 | `0x00244640` 80 | `0x00281060` 80 | `0x002823A0` 164 | `0x0026A170` proven |  | `void CB4TrackMaterial::FixUp()` |
+
+## Burnout Revenge layout of `CB4TrackMaterial`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 15 file(s), e.g. `GameSource/Graphics/PropParticleRenderer/B4PropParticleRenderer.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrackMaterial {  // size 0x028
+    /* 0x000 */ EB4TrackShader meShaderID;
+    /* 0x004 */ RwReal mrSpecularity;
+    /* 0x008 */ RwReal mrGlossiness;
+    /* 0x00C */ CGtTexture **mpapTextures;
+    /* 0x010 */ RwInt8 mn8CurrentTexture;
+    /* 0x011 */ RwInt8 mn8NumTextures;
+    /* 0x012 */ RwInt8 mn8NextTexID;
+    /* 0x013 */ RwInt8 mn8TexAnimDirection;
+    /* 0x014 */ RwReal mrAnimRate;
+    /* 0x018 */ RwReal mrAnimStep;
+    /* 0x01C */ RwReal mrCurrentTime;
+    /* 0x020 */ RwUInt32 muTest1;
+    /* 0x024 */ RwUInt16 mx16Properties;
+    /* 0x026 */ RwUInt8 mu8Alpha_1ABCD;
+    /* 0x027 */ RwUInt8 mu8Alpha_1FIX;
+    // methods
+    // CB4TrackMaterial(const CB4TrackMaterial &);
+    // CB4TrackMaterial();
+    // void FixUp();
+    // bool Prepare();
+};
+```
 
 ## Notes
 

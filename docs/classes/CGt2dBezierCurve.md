@@ -8,20 +8,41 @@
 - **Source file:** `Gt2dBezierCurve.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
 - **Retail (SLUS-21050):** 5 of its 6 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGt2dBezierCurve`, size 0x040 ([layout](#burnout-revenge-layout-of-cgt2dbeziercurve))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_RenderCurveSection(const CGt2dObject::CGt2dObjectSpace&,const void*,CGtBezierSection*,CGtTexture*,GtMathPs2:` | `0x003C3E00` 728 | `0x00440D20` 728 | `0x00468E30` 728 | `0x0047FB80` 1724 | `0x0041DA20` likely |  |
-| `_SubdivideCurveSection(CGtBezierSection*,CGtBezierSection*,CGtBezierSection*)` | `0x003C40E0` 544 | `0x00441000` 544 | `0x00469110` 544 | `0x0047F6E0` 1184 | `0x0041DD70` proven |  |
-| `_DrawBezierSpline(const CGt2dObject::CGt2dObjectSpace&,const void*,CGtBezierSection*,CGtTexture*,GtMathPs2::C` | `0x003C4300` 396 | `0x00441220` 512 | `0x00469330` 512 | `0x0047F3C0` 332 | `0x0041DF90` proven |  |
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x003C4490` 144 | `0x00441420` 144 | `0x00469530` 144 | `0x0047F300` 184 | `0x0041E120` proven |  |
-| `_ComputeSize(CGtBezierCurveRenderData*,GtMathPs2::CGtV2d*)` | `0x003C4520` 160 | `0x004414B0` 160 | `0x004695C0` 160 | `0x0047F170` 396 | `0x0041E1B0` strong |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CGtBezierCurveRenderData*,float,C` | `0x003C45C0` 348 | `0x00441550` 348 | `0x00469660` 348 | `0x0047F020` 336 |  |  |
-| `_IsCurveSectionStraight(CGtBezierSection*,float)` |  |  |  | `0x0047F510` 452 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_RenderCurveSection(const CGt2dObject::CGt2dObjectSpace&,const void*,CGtBezierSection*,CGtTexture*,GtMathPs2:` | `0x003C3E00` 728 | `0x00440D20` 728 | `0x00468E30` 728 | `0x0047FB80` 1724 | `0x0041DA20` likely |  |  |
+| `_SubdivideCurveSection(CGtBezierSection*,CGtBezierSection*,CGtBezierSection*)` | `0x003C40E0` 544 | `0x00441000` 544 | `0x00469110` 544 | `0x0047F6E0` 1184 | `0x0041DD70` proven |  |  |
+| `_DrawBezierSpline(const CGt2dObject::CGt2dObjectSpace&,const void*,CGtBezierSection*,CGtTexture*,GtMathPs2::C` | `0x003C4300` 396 | `0x00441220` 512 | `0x00469330` 512 | `0x0047F3C0` 332 | `0x0041DF90` proven |  |  |
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x003C4490` 144 | `0x00441420` 144 | `0x00469530` 144 | `0x0047F300` 184 | `0x0041E120` proven |  |  |
+| `_ComputeSize(CGtBezierCurveRenderData*,GtMathPs2::CGtV2d*)` | `0x003C4520` 160 | `0x004414B0` 160 | `0x004695C0` 160 | `0x0047F170` 396 | `0x0041E1B0` strong |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CGtBezierCurveRenderData*,float,C` | `0x003C45C0` 348 | `0x00441550` 348 | `0x00469660` 348 | `0x0047F020` 336 |  |  |  |
+| `_IsCurveSectionStraight(CGtBezierSection*,float)` |  |  |  | `0x0047F510` 452 |  |  |  |
+
+## Burnout Revenge layout of `CGt2dBezierCurve`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dBezierCurve.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dBezierCurve : public CGt2dObject {  // size 0x040
+    // base CGt2dObject at 0x000
+    // methods
+    // CGt2dBezierCurve(const CGt2dBezierCurve &);
+    // CGt2dBezierCurve();
+    // void Prepare(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, GtMathPs2::CGtV4d, CGtBezierCurveRenderData *, float, CGtTexture *);
+    // static void _Render(const CGt2dObject::CGt2dObjectSpace &, const void *);
+    // static void _ComputeSize(CGtBezierCurveRenderData *, GtMathPs2::CGtV2d *);
+    // static void _DrawBezierSpline(const CGt2dObject::CGt2dObjectSpace &, const void *, CGtBezierSection *, CGtTexture *, GtMathPs2::CGtV4d, float, float);
+    // static bool _IsCurveSectionStraight(CGtBezierSection *, float);
+    // static void _SubdivideCurveSection(CGtBezierSection *, CGtBezierSection *, CGtBezierSection *);
+    // static void _RenderCurveSection(const CGt2dObject::CGt2dObjectSpace &, const void *, CGtBezierSection *, CGtTexture *, GtMathPs2::CGtV4d, float);
+};
+```
 
 ## Notes
 

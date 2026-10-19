@@ -10,13 +10,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update()` | `0x0017C5A0` 1232 | `0x001992E0` 1972 | `0x001969F0` 1972 | `0x001A8B50` 1676 |  |  |
-| `CalculateInterest(CB3VehiclePhysics*,CB3VehiclePhysics*)` | `0x0017CA70` 592 | `0x00199AA0` 968 | `0x001971B0` 752 | `0x001A8930` 512 |  |  |
-| `Prepare(int)` |  |  |  | `0x001A88A0` 144 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update()` | `0x0017C5A0` 1232 | `0x001992E0` 1972 | `0x001969F0` 1972 | `0x001A8B50` 1676 |  |  |  |
+| `CalculateInterest(CB3VehiclePhysics*,CB3VehiclePhysics*)` | `0x0017CA70` 592 | `0x00199AA0` 968 | `0x001971B0` 752 | `0x001A8930` 512 |  |  |  |
+| `Prepare(int)` |  |  |  | `0x001A88A0` 144 |  |  |  |
 
 ## Notes
 

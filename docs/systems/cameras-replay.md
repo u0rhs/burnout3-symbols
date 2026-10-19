@@ -16,36 +16,38 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 **Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
 
-| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
-|---|---:|---:|---|---:|---|
-| `B3ReplayFrame.cpp` | 4 | 740 | `0x00150D10` | 4 (2) | `0x00154AC0`–`0x00154D20` |
-| `B3ReplaySystem.cpp` | 6 | 1,116 | `0x00151010` | 6 (6) | `0x00154DC0`–`0x00155210` |
-| `GtCameraBehaviour.cpp` | 1 | 8 | `0x001E0510` | 1 (1) | `0x0021AFF0`–`0x0021AFF0` |
-| `GtCamera.cpp` | 6 | 1,188 | `0x001E0520` | 6 (6) | `0x0021B000`–`0x0021B4D0` |
-| `B3BehaviourOffset.cpp` | 7 | 2,228 | `0x002A2220` | 6 (1) | `0x002E2700`–`0x002E3350` |
-| `B3BehaviourRaceCarFollow.cpp` | 6 | 10,552 | `0x002A2B10` | 6 (5) | `0x002E3410`–`0x002E5D90` |
-| `B3BehaviourRotate.cpp` | 7 | 3,796 | `0x002A5480` | 6 (0) | `0x002E5E20`–`0x002E6F30` |
-| `B3PlayerCameraManager.cpp` | 17 | 4,104 | `0x002A6380` | 15 (1) | `0x002E6F40`–`0x002E7D20` |
-| `B3PlayerCameraStateDebug.cpp` | 1 | 376 | `0x002A7400` | 1 (0) | `0x002E7F00`–`0x002E7F00` |
-| `B3PlayerCameraStateInactive.cpp` | 1 | 332 | `0x002A7580` | 1 (0) | `0x002E80A0`–`0x002E80A0` |
-| `B3PlayerCameraStateInGame.cpp` | 1 | 1,644 | `0x002A76D0` | 1 (0) | `0x002E8250`–`0x002E8250` |
-| `B3PlayerCameraStateIntro.cpp` | 1 | 900 | `0x002A7D40` | 1 (0) | `0x002E8BD0`–`0x002E8BD0` |
-| `B3BehaviourFlyAround.cpp` | 12 | 16,312 | `0x002A80D0` | 11 (3) | `0x002E90B0`–`0x002ED310` |
-| `B3CameraUtils.cpp` | 15 | 8,320 | `0x002B47C0` | 9 (2) | `0x002F5D30`–`0x002F7390` |
-| `B3CameraAttribs.cpp` | 5 | 6,028 | `0x002B6840` | 4 (1) | `0x002F7E70`–`0x002F8BD0` |
-| `B3BehaviourTrackSide.cpp` | 11 | 20,348 | `0x002BC3D0` | 9 (0) | `0x002F5AC0`–`0x00300BD0` |
-| `B3PlayerCameraStateCrash.cpp` | 1 | 1,016 | `0x002C1390` |  |  |
-| `B3PlayerCameraStateReplay.cpp` | 3 | 1,664 | `0x002C1790` | 1 (0) | `0x00300BF0`–`0x00300BF0` |
-| `B3BehaviourEffect.cpp` | 6 | 6,236 | `0x002E6340` | 4 (0) | `0x0032D1E0`–`0x0032ED90` |
-| `B3PlayerCameraStateCrashMode.cpp` | 1 | 1,136 | `0x0030E010` | 1 (0) | `0x00357600`–`0x00357600` |
-| `B3BehaviourCluster.cpp` | 14 | 17,440 | `0x0030E480` | 11 (0) | `0x00357B70`–`0x0035BC10` |
-| `B3BehaviourInterpolate.cpp` | 12 | 3,088 | `0x0032F3A0` | 10 (1) | `0x003736C0`–`0x00374240` |
-| `B3CameraBehaviour.cpp` | 1 | 40 | `0x0032FF50` | 1 (1) | `0x00374290`–`0x00374290` |
-| `B3CameraEditor.cpp` | 14 | 2,056 | `0x00332650` | 12 (6) | `0x003744F0`–`0x00446FE0` |
-| `B3PlayerCameraStateEditor.cpp` | 1 | 344 | `0x00332EB0` |  |  |
-| `B3PlayerCameraStatePlayer.cpp` | 5 | 1,960 | `0x00333010` | 1 (0) | `0x00447000`–`0x00447000` |
-| `B3BehaviourKeyFrame.cpp` | 6 | 2,480 | `0x003337D0` |  |  |
-| `B3BehaviourAftermath.cpp` | 10 | 4,252 | `0x0037C5F0` |  |  |
+**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source paths ([source files](../reference/revenge-source-file-lineage.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |
+|---|---:|---:|---|---:|---|---|
+| `B3ReplayFrame.cpp` | 4 | 740 | `0x00150D10` | 4 (2) | `0x00154AC0`–`0x00154D20` | `GameSource/World/B4ReplayFrame.cpp` |
+| `B3ReplaySystem.cpp` | 6 | 1,116 | `0x00151010` | 6 (6) | `0x00154DC0`–`0x00155210` | `GameSource/World/B4ReplaySystem.cpp` |
+| `GtCameraBehaviour.cpp` | 1 | 8 | `0x001E0510` | 1 (1) | `0x0021AFF0`–`0x0021AFF0` | `GameShared/GameClasses/Graphical/Camera/GtCameraBehaviour.cpp` |
+| `GtCamera.cpp` | 6 | 1,188 | `0x001E0520` | 6 (6) | `0x0021B000`–`0x0021B4D0` | `GameShared/GameClasses/Graphical/Camera/GtCamera.cpp` |
+| `B3BehaviourOffset.cpp` | 7 | 2,228 | `0x002A2220` | 6 (1) | `0x002E2700`–`0x002E3350` | `GameSource/Camera/Behaviours/B4BehaviourOffset.cpp` |
+| `B3BehaviourRaceCarFollow.cpp` | 6 | 10,552 | `0x002A2B10` | 6 (5) | `0x002E3410`–`0x002E5D90` | `GameSource/Camera/Behaviours/B4BehaviourRaceCarFollow.cpp` |
+| `B3BehaviourRotate.cpp` | 7 | 3,796 | `0x002A5480` | 6 (0) | `0x002E5E20`–`0x002E6F30` | `GameSource/Camera/Behaviours/B4BehaviourRotate.cpp` |
+| `B3PlayerCameraManager.cpp` | 17 | 4,104 | `0x002A6380` | 15 (1) | `0x002E6F40`–`0x002E7D20` | `GameSource/Camera/B4PlayerCameraManager.cpp` |
+| `B3PlayerCameraStateDebug.cpp` | 1 | 376 | `0x002A7400` | 1 (0) | `0x002E7F00`–`0x002E7F00` | `GameSource/Camera/States/B4PlayerCameraStateDebug.cpp` |
+| `B3PlayerCameraStateInactive.cpp` | 1 | 332 | `0x002A7580` | 1 (0) | `0x002E80A0`–`0x002E80A0` | `GameSource/Camera/States/B4PlayerCameraStateInactive.cpp` |
+| `B3PlayerCameraStateInGame.cpp` | 1 | 1,644 | `0x002A76D0` | 1 (0) | `0x002E8250`–`0x002E8250` | `GameSource/Camera/States/B4PlayerCameraStateInGame.cpp` |
+| `B3PlayerCameraStateIntro.cpp` | 1 | 900 | `0x002A7D40` | 1 (0) | `0x002E8BD0`–`0x002E8BD0` |  |
+| `B3BehaviourFlyAround.cpp` | 12 | 16,312 | `0x002A80D0` | 11 (3) | `0x002E90B0`–`0x002ED310` | `GameSource/Camera/Behaviours/B4BehaviourFlyAround.cpp` |
+| `B3CameraUtils.cpp` | 15 | 8,320 | `0x002B47C0` | 9 (2) | `0x002F5D30`–`0x002F7390` | `GameSource/Camera/CameraUtils/B4CameraUtils.cpp` |
+| `B3CameraAttribs.cpp` | 5 | 6,028 | `0x002B6840` | 4 (1) | `0x002F7E70`–`0x002F8BD0` | `GameSource/Camera/B4CameraAttribs.cpp` |
+| `B3BehaviourTrackSide.cpp` | 11 | 20,348 | `0x002BC3D0` | 9 (0) | `0x002F5AC0`–`0x00300BD0` |  |
+| `B3PlayerCameraStateCrash.cpp` | 1 | 1,016 | `0x002C1390` |  |  |  |
+| `B3PlayerCameraStateReplay.cpp` | 3 | 1,664 | `0x002C1790` | 1 (0) | `0x00300BF0`–`0x00300BF0` |  |
+| `B3BehaviourEffect.cpp` | 6 | 6,236 | `0x002E6340` | 4 (0) | `0x0032D1E0`–`0x0032ED90` | `GameSource/Camera/Behaviours/B4BehaviourEffect.cpp` |
+| `B3PlayerCameraStateCrashMode.cpp` | 1 | 1,136 | `0x0030E010` | 1 (0) | `0x00357600`–`0x00357600` | `GameSource/Camera/States/B4PlayerCameraStateCrashMode.cpp` |
+| `B3BehaviourCluster.cpp` | 14 | 17,440 | `0x0030E480` | 11 (0) | `0x00357B70`–`0x0035BC10` | `GameSource/Camera/Behaviours/B4BehaviourCluster.cpp` |
+| `B3BehaviourInterpolate.cpp` | 12 | 3,088 | `0x0032F3A0` | 10 (1) | `0x003736C0`–`0x00374240` | `GameSource/Camera/Behaviours/B4BehaviourInterpolate.cpp` |
+| `B3CameraBehaviour.cpp` | 1 | 40 | `0x0032FF50` | 1 (1) | `0x00374290`–`0x00374290` | `GameSource/Camera/Behaviours/B4CameraBehaviour.cpp` |
+| `B3CameraEditor.cpp` | 14 | 2,056 | `0x00332650` | 12 (6) | `0x003744F0`–`0x00446FE0` | `GameSource/Camera/Movie/B4CameraEditor.cpp` |
+| `B3PlayerCameraStateEditor.cpp` | 1 | 344 | `0x00332EB0` |  |  | `GameSource/Camera/States/B4PlayerCameraStateEditor.cpp` |
+| `B3PlayerCameraStatePlayer.cpp` | 5 | 1,960 | `0x00333010` | 1 (0) | `0x00447000`–`0x00447000` |  |
+| `B3BehaviourKeyFrame.cpp` | 6 | 2,480 | `0x003337D0` |  |  | `GameSource/Camera/Behaviours/B4BehaviourKeyFrame.cpp` |
+| `B3BehaviourAftermath.cpp` | 10 | 4,252 | `0x0037C5F0` |  |  |  |
 
 ## Classes
 

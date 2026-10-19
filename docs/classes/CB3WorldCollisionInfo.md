@@ -6,16 +6,37 @@
 
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Methods per build:** B3O0PCH 3
+- **Burnout Revenge counterpart:** `CB4WorldCollisionInfo`, size 0x060 ([layout](#burnout-revenge-layout-of-cb4worldcollisioninfo))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3WorldCollisionInfo()` |  |  |  | `0x00191AC0` 108 |  |  |
-| `CB3WorldCollisionInfo(const CB3WorldCollisionInfo&)` |  |  |  | `0x00275FB0` 204 |  |  |
-| `operator =(const CB3WorldCollisionInfo&)` |  |  |  | `0x001AC9F0` 196 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3WorldCollisionInfo()` |  |  |  | `0x00191AC0` 108 |  |  |  |
+| `CB3WorldCollisionInfo(const CB3WorldCollisionInfo&)` |  |  |  | `0x00275FB0` 204 |  |  |  |
+| `operator =(const CB3WorldCollisionInfo&)` |  |  |  | `0x001AC9F0` 196 |  |  |  |
+
+## Burnout Revenge layout of `CB4WorldCollisionInfo`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 325 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4WorldCollisionInfo {  // size 0x060
+    /* 0x000 */ CGtV3d mPoint;
+    /* 0x010 */ CGtV3d mNormal;
+    /* 0x020 */ CGtV3d mTranslate;
+    /* 0x030 */ CB4CollisionTag meTag;
+    /* 0x034 */ RwReal mrImpulse;
+    /* 0x038 */ EB4WorldCollisionType meWCType;
+    /* 0x040 */ CGtV3d mWorldColAreaMin;
+    /* 0x050 */ CGtV3d mWorldColAreaMax;
+    // methods
+    // CB4WorldCollisionInfo(const CB4WorldCollisionInfo &);
+    // CB4WorldCollisionInfo();
+};
+```
 
 ## Notes
 

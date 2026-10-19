@@ -9,23 +9,74 @@
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 10
 - **Retail (SLUS-21050):** 7 of its 8 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440100`, 32 bytes = 8 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 6 virtual functions)
+- **Burnout Revenge counterpart:** `CB4SoundPlayerCar`, size 0x37C, methods in `GameSource/Sound/Cars/B4SoundPlayerCar.cpp` ([layout](#burnout-revenge-layout-of-cb4soundplayercar))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateRoadNoise(const CB3RaceCar*)` | `0x0024D9E0` 1132 | `0x0027F6C0` 1632 | `0x002B6540` 1632 | `0x002B3310` 2564 | `0x0028C0F0` likely |  |
-| `Unregister()` | `0x0024DE50` 244 | `0x0027FD20` 276 | `0x002B6BA0` 276 | `0x002B31A0` 356 | `0x0028C670` unverified |  |
-| `Register(unsigned long)` | `0x0024DF50` 656 | `0x0027FE40` 684 | `0x002B6CC0` 684 | `0x002B2E70` 808 | `0x0028C780` unverified |  |
-| `Destruct()` | `0x0024E1E0` 48 | `0x002800F0` 48 | `0x002B6F70` 48 | `0x002B2E30` 56 | `0x0028CA50` strong |  |
-| `Release()` | `0x0024E210` 120 | `0x00280120` 120 | `0x002B6FA0` 120 | `0x002B2D80` 172 | `0x0028CA80` strong |  |
-| `Update(const CB3RaceCar*)` | `0x0024E290` 200 | `0x002801A0` 232 | `0x002B7020` 232 | `0x002B2C60` 288 |  |  |
-| `Prepare(unsigned long,int)` | `0x0024E360` 308 | `0x00280290` 380 | `0x002B7110` 380 | `0x002B2A30` 528 | `0x0028CB60` likely |  |
-| `Construct()` | `0x0024E4A0` 128 | `0x00280410` 128 | `0x002B7290` 128 | `0x002B29A0` 140 | `0x0028CD10` unverified |  |
-| `CB3SoundPlayerCar()` |  |  |  | `0x002B1D60` 60 |  |  |
-| `GetTurboModel()` |  |  |  | `0x00318B70` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateRoadNoise(const CB3RaceCar*)` | `0x0024D9E0` 1132 | `0x0027F6C0` 1632 | `0x002B6540` 1632 | `0x002B3310` 2564 | `0x0028C0F0` likely |  | `void CB4SoundPlayerCar::UpdateRoadNoise(const CB4RaceCar *lpRaceCar)` |
+| `Unregister()` | `0x0024DE50` 244 | `0x0027FD20` 276 | `0x002B6BA0` 276 | `0x002B31A0` 356 | `0x0028C670` unverified |  | `void CB4SoundPlayerCar::Unregister()` |
+| `Register(unsigned long)` | `0x0024DF50` 656 | `0x0027FE40` 684 | `0x002B6CC0` 684 | `0x002B2E70` 808 | `0x0028C780` unverified |  | `void CB4SoundPlayerCar::Register(unsigned long lID)` |
+| `Destruct()` | `0x0024E1E0` 48 | `0x002800F0` 48 | `0x002B6F70` 48 | `0x002B2E30` 56 | `0x0028CA50` strong |  | `void CB4SoundPlayerCar::Destruct()` |
+| `Release()` | `0x0024E210` 120 | `0x00280120` 120 | `0x002B6FA0` 120 | `0x002B2D80` 172 | `0x0028CA80` strong |  | `void CB4SoundPlayerCar::Release()` |
+| `Update(const CB3RaceCar*)` | `0x0024E290` 200 | `0x002801A0` 232 | `0x002B7020` 232 | `0x002B2C60` 288 |  |  | `void CB4SoundPlayerCar::Update(const CB4RaceCar *lpRaceCar)` |
+| `Prepare(unsigned long,int)` | `0x0024E360` 308 | `0x00280290` 380 | `0x002B7110` 380 | `0x002B2A30` 528 | `0x0028CB60` likely |  | `bool CB4SoundPlayerCar::Prepare(unsigned long lID, ERaceCarIndex leRaceCarIndex)` (same name, different parameters) |
+| `Construct()` | `0x0024E4A0` 128 | `0x00280410` 128 | `0x002B7290` 128 | `0x002B29A0` 140 | `0x0028CD10` unverified |  | `void CB4SoundPlayerCar::Construct()` |
+| `CB3SoundPlayerCar()` |  |  |  | `0x002B1D60` 60 |  |  | `CB4SoundPlayerCar * CB4SoundPlayerCar::CB4SoundPlayerCar()` |
+| `GetTurboModel()` |  |  |  | `0x00318B70` 28 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundPlayerCar`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 14 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundPlayerCar : public CB4SoundRaceCar {  // size 0x37C
+    // base CB4SoundRaceCar at 0x000
+    /* 0x288 */ RwInt32 mnPreviousGear;
+    /* 0x28C */ CB4SoundTurboModel mTurboModel;
+    /* 0x2AC */ CGtSoundVoiceHandle maRoadNoiseVoices[4];
+    /* 0x2EC */ int manRoadNoisePreviousSurface[4];
+    /* 0x2FC */ float marRoadNoisePreviousSlipSpin[2];
+    /* 0x304 */ CGtSoundWave *mpGearChangeWave;
+    /* 0x308 */ CGtSoundVoiceHandle mGearChangeVoice;
+    /* 0x318 */ CGtSoundVoiceHandle mFireVoice;
+    /* 0x328 */ CGtSoundWave *mpAirWave;
+    /* 0x32C */ CGtSoundVoiceHandle mAirVoice;
+    /* 0x33C */ RwReal mrAir2Volume;
+    /* 0x340 */ CGtSoundWave *mpWindWave;
+    /* 0x344 */ CGtSoundVoiceHandle mWindVoiceL;
+    /* 0x354 */ CGtSoundVoiceHandle mWindVoiceR;
+    /* 0x364 */ RwReal mrCurrentWindVol;
+    /* 0x368 */ CGtSoundVoiceHandle mFuseVoice;
+    /* 0x378 */ bool mbAdjustedGearChangeGainForSurround;
+    // methods
+    // CB4SoundPlayerCar(const CB4SoundPlayerCar &);
+    // CB4SoundPlayerCar();
+    // virtual bool Prepare(unsigned long, ERaceCarIndex);
+    // virtual void Update(const CB4RaceCar *);
+    // virtual void Release();
+    // CB4SoundTurboModel & GetTurboModel() const;
+    // void StopFuse();
+    // void Construct();
+    // virtual void Destruct();
+    // virtual void Register(unsigned long);
+    // virtual void Unregister();
+    // void UpdateRoadNoise(const CB4RaceCar *);
+    // void UpdateGearChange(const CB4RaceCar *);
+    // void UpdateFire(const CB4PlayerCar *);
+    // void StartWind();
+    // void StopWind();
+    // void UpdateWind(const CB4RaceCar *);
+    // void StartAir();
+    // void StopAir();
+    // void UpdateAir(const CB4RaceCar *);
+    // void UpdateCrashbreakerCountdown(const CB4RaceCar *);
+    // void StartFuse();
+};
+```
 
 ## Notes
 

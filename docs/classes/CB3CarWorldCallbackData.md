@@ -6,14 +6,40 @@
 
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4CarWorldCallbackData`, size 0x0E0 ([layout](#burnout-revenge-layout-of-cb4carworldcallbackdata))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3CarWorldCallbackData()` |  |  |  | `0x001C11A0` 172 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3CarWorldCallbackData()` |  |  |  | `0x001C11A0` 172 |  |  |  |
+
+## Burnout Revenge layout of `CB4CarWorldCallbackData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 317 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CarWorldCallbackData {  // size 0x0E0
+    /* 0x000 */ CGtMatrix3x4 mInvertedMatrix;
+    /* 0x040 */ CGtV3d mLocalAverageHorizCollisionPoint;
+    /* 0x050 */ CGtV3d mLocalAverageVertCollisionPoint;
+    /* 0x060 */ CGtV3d mWorldVertNormal;
+    /* 0x070 */ CGtV3d mWorldHorizDirectionMin;
+    /* 0x080 */ CGtV3d mWorldHorizDirectionMax;
+    /* 0x090 */ CGtV3d mLocalForceFromWorld;
+    /* 0x0A0 */ CGtV3d mLocalTorqueFromWorld;
+    /* 0x0B0 */ CGtAxisAlignedBox mBox;
+    /* 0x0D0 */ RwInt32 mnNumHorizCollisions;
+    /* 0x0D4 */ RwInt32 mnNumVertCollisions;
+    /* 0x0D8 */ CB4DrivableVehiclePhysics *mpBody;
+    /* 0x0DC */ CB4CollisionTag meSurface;
+    // methods
+    // CB4CarWorldCallbackData(const CB4CarWorldCallbackData &);
+    // CB4CarWorldCallbackData();
+};
+```
 
 ## Notes
 

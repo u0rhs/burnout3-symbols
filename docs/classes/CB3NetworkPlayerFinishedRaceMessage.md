@@ -7,16 +7,39 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3NetworkPlayerFinishedRaceMessage.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 2, B3INTERN 3, B3O0PCH 2
+- **Burnout Revenge counterpart:** `CB4NetworkPlayerFinishedRaceMessage`, size 0x178, methods in `GameSource/Network/Messages/B4NetworkPlayerFinishedRaceMessage.cpp` ([layout](#burnout-revenge-layout-of-cb4networkplayerfinishedracemessage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Retrieve(CB3ResultsData*)` | `0x00233440` 196 | `0x00250950` 1184 | `0x0028C750` 1184 | `0x0028BFB0` 380 |  |  |
-| `Prepare(const CB3ResultsData*)` | `0x00233510` 180 | `0x00250DF0` 180 | `0x0028CBF0` 180 | `0x0028BE20` 76 |  |  |
-| `Construct()` | `0x002335D0` 8 |  | `0x0028CCB0` 8 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Retrieve(CB3ResultsData*)` | `0x00233440` 196 | `0x00250950` 1184 | `0x0028C750` 1184 | `0x0028BFB0` 380 |  |  | `bool CB4NetworkPlayerFinishedRaceMessage::Retrieve(CB4RaceCarResults *lpResultsData)` (same name, different parameters) |
+| `Prepare(const CB3ResultsData*)` | `0x00233510` 180 | `0x00250DF0` 180 | `0x0028CBF0` 180 | `0x0028BE20` 76 |  |  | `bool CB4NetworkPlayerFinishedRaceMessage::Prepare(const CB4RaceCarResults *lpResultsData)` (same name, different parameters) |
+| `Construct()` | `0x002335D0` 8 |  | `0x0028CCB0` 8 |  |  |  | `void CB4NetworkPlayerFinishedRaceMessage::Construct()` |
+
+## Burnout Revenge layout of `CB4NetworkPlayerFinishedRaceMessage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 92 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkPlayerFinishedRaceMessage : public CB4NetworkMessageWithPlayerIDs {  // size 0x178
+    // base CB4NetworkMessageWithPlayerIDs at 0x000
+    /* 0x010 */ RwUInt8 mu8RoundNumber;
+    /* 0x014 */ CB4RaceCarTotalResults mTotals;
+    /* 0x034 */ CB4RaceCarRoundResults mLastRound;
+    // methods
+    // CB4NetworkPlayerFinishedRaceMessage(const CB4NetworkPlayerFinishedRaceMessage &);
+    // CB4NetworkPlayerFinishedRaceMessage();
+    // void Construct();
+    // bool Prepare(const CB4RaceCarResults *);
+    // void Release();
+    // void Destruct();
+    // bool Retrieve(CB4RaceCarResults *);
+    // RwUInt8 GetRoundNumber();
+};
+```
 
 ## Notes
 

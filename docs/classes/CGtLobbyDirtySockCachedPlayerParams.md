@@ -8,16 +8,33 @@
 - **Source file:** `GtLobbyDirtySock.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 3
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtLobbyDirtySockCachedPlayerParams`, size 0x00C, methods in `GameShared/GameClasses/System/Networking/LobbyService/PlatformIndependent/DirtySock/GtLobbyDirtySock.cpp` ([layout](#burnout-revenge-layout-of-cgtlobbydirtysockcachedplayerparams))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `LoadFromString(char*)` | `0x002F68D0` 192 | `0x00349910` 192 | `0x0037AF60` 192 | `0x00370D30` 232 | `0x0033C8D0` strong |  |
-| `ConvertToString(char*,unsigned int)` |  |  |  | `0x00370C80` 164 |  |  |
-| `Prepare()` |  |  |  | `0x00374E40` 48 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `LoadFromString(char*)` | `0x002F68D0` 192 | `0x00349910` 192 | `0x0037AF60` 192 | `0x00370D30` 232 | `0x0033C8D0` strong |  | `bool CGtLobbyDirtySockCachedPlayerParams::LoadFromString(char *lpString)` |
+| `ConvertToString(char*,unsigned int)` |  |  |  | `0x00370C80` 164 |  |  |  |
+| `Prepare()` |  |  |  | `0x00374E40` 48 |  |  |  |
+
+## Burnout Revenge layout of `CGtLobbyDirtySockCachedPlayerParams`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 10 file(s), e.g. `GameShared/GameClasses/System/Networking/LobbyService/PlatformIndependent/DirtySock/GtLobbyDirtySock.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtLobbyDirtySockCachedPlayerParams {  // size 0x00C
+    /* 0x000 */ int mnaValues[3];
+    // methods
+    // CGtLobbyDirtySockCachedPlayerParams(const CGtLobbyDirtySockCachedPlayerParams &);
+    // CGtLobbyDirtySockCachedPlayerParams();
+    // void ConvertToString(char *, unsigned int);
+    // bool LoadFromString(char *);
+    // void Prepare();
+};
+```
 
 ## Notes
 

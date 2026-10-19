@@ -8,15 +8,42 @@
 - **Source file:** `B3TrafficSystemLoadAndRender.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 2
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CDrawnTrafficCache`, size 0xDC0, methods in `GameSource/World/B4TrafficSystemLoadAndRender.cpp` ([layout](#burnout-revenge-layout-of-cdrawntrafficcache))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `TestPosition(GtMathPs2::CGtV3d)` | `0x002C9F00` 140 | `0x00311A80` 140 | `0x00343690` 140 | `0x00337290` 300 | `0x00309300` strong |  |
-| `IsUnitVisibleToMainCamera(int)` |  |  |  | `0x003373C0` 120 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `TestPosition(GtMathPs2::CGtV3d)` | `0x002C9F00` 140 | `0x00311A80` 140 | `0x00343690` 140 | `0x00337290` 300 | `0x00309300` strong |  | `RwInt32 CDrawnTrafficCache::TestPosition(GtMathPs2::CGtV3d lPos)` |
+| `IsUnitVisibleToMainCamera(int)` |  |  |  | `0x003373C0` 120 |  |  | `bool CDrawnTrafficCache::IsUnitVisibleToMainCamera(int lnHull)` |
+
+## Burnout Revenge layout of `CDrawnTrafficCache`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/World/B4TrafficSystemLoadAndRender.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CDrawnTrafficCache {  // size 0xDC0
+    /* 0x000 */ CSortedTrafficVehicle maSortedNonCrashing[64];
+    /* 0x300 */ RwInt32 mnNonCrashingCount;
+    /* 0x304 */ CSortedCheckedTrafficPhysics maSortedChecked[64];
+    /* 0x704 */ RwInt32 mnCheckedCount;
+    /* 0x708 */ CSortedTrafficVehicle maSortedNonCrashingSpecial[16];
+    /* 0x7C8 */ RwInt32 mnNonCrashingSpecialCount;
+    /* 0x7CC */ CSortedTrafficPhysics maSortedCrashing[64];
+    /* 0xBCC */ RwInt32 mnCrashingCount;
+    /* 0xBD0 */ CB4StreamedTrackHull maHulls[9];
+    /* 0xD80 */ int manHullIds[9];
+    /* 0xDA4 */ bool mabHullVisible[9];
+    /* 0xDB0 */ RwInt32 mnHullCount;
+    // methods
+    // CDrawnTrafficCache(const CDrawnTrafficCache &);
+    // CDrawnTrafficCache();
+    // RwInt32 TestPosition(GtMathPs2::CGtV3d);
+    // bool IsUnitVisibleToMainCamera(int);
+};
+```
 
 ## Notes
 

@@ -108,7 +108,7 @@ Revenge was built on Burnout 3's code: its classes are Burnout 3's renamed `CB4*
 
 | Build | Executable | Symbols |
 |---|---|---|
-| 14 July 2005 (`0713B4PN`), PS2 NTSC | `SLUS_212.42` (108 MB) | **Full symbol table** (12,023 functions) and **GCC debug information** (stabs in `.mdebug`): 1,899 named types with members and offsets, parameters, source paths and lines; the link map `B4EXTERN.MAP` on the disc (20,023 symbols, 1,230 objects) |
+| 14 July 2005 (`0713B4PN`), PS2 NTSC | `SLUS_212.42` (108 MB) | **Full symbol table** (12,023 functions) and **GCC debug information** (stabs in `.mdebug`): 2,717 types with members, offsets and methods, 9,416 functions with parameter names, 861 source files with their paths; the link map `B4EXTERN.MAP` on the disc (20,023 symbols, 1,230 objects). [Exported](../data/burnout-revenge-prototype/README.md) |
 | 4 August 2005, PS2 PAL | `SLES_535.06` | stripped |
 | 9 August 2005, PS2 PAL | `SLES_535.07` | stripped |
 | 7 February 2006 ("Beta 5"), Xbox 360 | `default.xex` | `B4Extern.pdb` (12.4 MB) on the disc: Microsoft debug information for the 360 build |
@@ -116,13 +116,18 @@ Revenge was built on Burnout 3's code: its classes are Burnout 3's renamed `CB4*
 - The July 14 build was compiled with **GCC** (SN Systems, `__gnu_compiled_cplusplus`), not CodeWarrior:
   its code can't be byte-compared with Burnout 3's. Its value is names, parameter lists, class layouts and
   Criterion's folder tree (`GameShared/GameClasses/Graphical/2d/Gt2dFont.cpp`, `GameSource/Hud/...`).
-- 3,832 of the Burnout 3 prototype's 7,425 function names exist there with the same parameter list,
-  293 more with another one.
+- Against Burnout 3 ([class](reference/revenge-class-lineage.md), [function](reference/revenge-function-lineage.md)
+  and [source-file](reference/revenge-source-file-lineage.md) lineage): 444 of the 890 Burnout 3 classes have a
+  Revenge class of the same name, 2,805 Burnout 3 functions a Revenge function (2,391 with the same parameter
+  types), and 300 of 598 game and engine source files a Revenge file, which gives their folders.
 - Many layouts carry over unchanged: `CGt2dScene` (52 bytes: `mObjectListPool` +0x18, `mpLayers` +0x2C,
   `mnNumLayers` +0x30) and `CGt2dObject` (64 bytes: `mpFrame` +0x38, `mpfRender` +0x3C) are exactly
   what Burnout 3's retail code uses. Others changed: Burnout 3's `CGt2dFont` has one more word before
   its character table. Check each member against Burnout 3 code before using its name.
-- Not exported here yet.
+- Provenance of these four discs isn't recorded here yet (no hashes compared).
+- Exported: [`data/burnout-revenge-prototype/`](../data/burnout-revenge-prototype/README.md) (types, functions
+  with parameter names, globals, symbols, source files). Every class page shows its Revenge counterpart, layout
+  and methods next to the Burnout 2 ones. The Xbox 360 PDB is not decoded yet.
 
 ## Provenance
 

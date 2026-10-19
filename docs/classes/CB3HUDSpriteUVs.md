@@ -8,16 +8,35 @@
 - **Source file:** `B3HUDComponent.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 3
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4HUDSpriteUVs`, size 0x010 ([layout](#burnout-revenge-layout-of-cb4hudspriteuvs))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned int)` | `0x0016C330` 236 | `0x001873E0` 236 | `0x00181DF0` 236 | `0x001964C0` 316 | `0x0019FE40` proven |  |
-| `CB3HUDSpriteUVs()` |  |  |  | `0x001966B0` 60 |  |  |
-| `CB3HUDSpriteUVs(const CB3HUDSpriteUVs&)` |  |  |  | `0x00196600` 76 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned int)` | `0x0016C330` 236 | `0x001873E0` 236 | `0x00181DF0` 236 | `0x001964C0` 316 | `0x0019FE40` proven |  |  |
+| `CB3HUDSpriteUVs()` |  |  |  | `0x001966B0` 60 |  |  |  |
+| `CB3HUDSpriteUVs(const CB3HUDSpriteUVs&)` |  |  |  | `0x00196600` 76 |  |  |  |
+
+## Burnout Revenge layout of `CB4HUDSpriteUVs`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Hud/B4HUDComponent.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HUDSpriteUVs {  // size 0x010
+    /* static */ RwUInt32 kxConstructFlagNormal;
+    /* static */ RwUInt32 kxConstructFlagFlipU;
+    /* static */ RwUInt32 kxConstructFlagFlipV;
+    /* 0x000 */ CGtV2d mTopLeft;
+    /* 0x008 */ CGtV2d mBottomRight;
+    // methods
+    // CB4HUDSpriteUVs(const CB4HUDSpriteUVs &);
+    // CB4HUDSpriteUVs();
+    // static CB4HUDSpriteUVs Construct(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, unsigned int);
+};
+```
 
 ## Notes
 

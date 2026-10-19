@@ -8,16 +8,35 @@
 - **Source file:** `B3TextureCollectionPS2.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 3
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TextureCollectionPS2`, size 0x030, methods in `GameSource/Graphics/Ps2/B4TextureCollectionPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4texturecollectionps2))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Upload()` | `0x00337D20` 228 | `0x0039A640` 388 | `0x003C4860` 388 | `0x003CA340` 288 | `0x00378EA0` strong |  |
-| `AddTexture(CGtTexture*)` | `0x00337E10` 92 | `0x0039A7D0` 216 | `0x003C49F0` 216 | `0x003CA260` 212 | `0x00378F90` strong |  |
-| `Initialise()` | `0x00337E70` 12 | `0x0039A8B0` 12 | `0x003C4AD0` 12 | `0x003CA230` 36 | `0x00378FF0` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Upload()` | `0x00337D20` 228 | `0x0039A640` 388 | `0x003C4860` 388 | `0x003CA340` 288 | `0x00378EA0` strong |  | `void CB4TextureCollectionPS2::Upload()` |
+| `AddTexture(CGtTexture*)` | `0x00337E10` 92 | `0x0039A7D0` 216 | `0x003C49F0` 216 | `0x003CA260` 212 | `0x00378F90` strong |  | `void CB4TextureCollectionPS2::AddTexture(CGtTexture *lpTexture)` |
+| `Initialise()` | `0x00337E70` 12 | `0x0039A8B0` 12 | `0x003C4AD0` 12 | `0x003CA230` 36 | `0x00378FF0` proven |  | `void CB4TextureCollectionPS2::Initialise()` |
+
+## Burnout Revenge layout of `CB4TextureCollectionPS2`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TextureCollectionPS2 {  // size 0x030
+    /* 0x000 */ RwInt32 mnNumTextures;
+    /* 0x004 */ RwInt32 mnTotalSizeInTextureCache;
+    /* 0x008 */ CGtTexture *mapTextures[10];
+    // methods
+    // CB4TextureCollectionPS2(const CB4TextureCollectionPS2 &);
+    // CB4TextureCollectionPS2();
+    // void Initialise();
+    // void AddTexture(CGtTexture *);
+    // void Upload();
+};
+```
 
 ## Notes
 

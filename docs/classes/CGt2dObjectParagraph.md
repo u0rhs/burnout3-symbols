@@ -8,18 +8,19 @@
 - **Source file:** `Gt2dObjectParagraph.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 5
 - **Retail (SLUS-21050):** 2 of its 5 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGt2dObjectParagraph`, size 0x040, methods in `GameShared/GameClasses/Graphical/2d/Gt2dObjectParagraph.cpp` ([layout](#burnout-revenge-layout-of-cgt2dobjectparagraph))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_RenderOutline(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002B7FF0` 620 | `0x002F8ED0` 620 | `0x0032D5A0` 620 | `0x00325260` 664 | `0x002F8C50` strong |  |
-| `_RenderDropShadow(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002B8260` 512 | `0x002F9140` 512 | `0x0032D810` 512 | `0x00325040` 544 | `0x002F8ED0` likely |  |
-| `_RenderPlain(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002B8460` 344 | `0x002F9340` 344 | `0x0032DA10` 344 | `0x00324EA0` 408 |  |  |
-| `_BuildLineOfText(const CGt2dObject::CGt2dObjectSpace&,const unsigned short**,const CGt2dFont*,float,float` | `0x002B85C0` 876 | `0x002F94A0` 1080 | `0x0032DB70` 1080 | `0x00324AA0` 1016 |  |  |
-| `Prepare(const GtMathPs2::CGtV2d&,float,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,const unsigned short*,c` | `0x002B8930` 476 | `0x002F98E0` 700 | `0x0032DFB0` 700 | `0x00324840` 600 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_RenderOutline(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002B7FF0` 620 | `0x002F8ED0` 620 | `0x0032D5A0` 620 | `0x00325260` 664 | `0x002F8C50` strong |  | `void CGt2dObjectParagraph::_RenderOutline(const CGt2dObject::CGt2dObjectSpace &lObjectSpace, const void *lpData)` |
+| `_RenderDropShadow(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002B8260` 512 | `0x002F9140` 512 | `0x0032D810` 512 | `0x00325040` 544 | `0x002F8ED0` likely |  | `void CGt2dObjectParagraph::_RenderDropShadow(const CGt2dObject::CGt2dObjectSpace &lObjectSpace, const void *lpData)` |
+| `_RenderPlain(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002B8460` 344 | `0x002F9340` 344 | `0x0032DA10` 344 | `0x00324EA0` 408 |  |  | `void CGt2dObjectParagraph::_RenderPlain(const CGt2dObject::CGt2dObjectSpace &lObjectSpace, const void *lpData)` |
+| `_BuildLineOfText(const CGt2dObject::CGt2dObjectSpace&,const unsigned short**,const CGt2dFont*,float,float` | `0x002B85C0` 876 | `0x002F94A0` 1080 | `0x0032DB70` 1080 | `0x00324AA0` 1016 |  |  | `RwInt32 CGt2dObjectParagraph::_BuildLineOfText(const CGt2dObject::CGt2dObjectSpace &lObjectSpace, const unsigned short **lppString, const CGt2dFont *lpFont, float lrTextHeight, float lrMaxStringWidth, float lrAlignXHandle, const GtMathPs2::CGtV2d &lScale, unsigned int lxFlags)` (same name, different parameters) |
+| `Prepare(const GtMathPs2::CGtV2d&,float,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,const unsigned short*,c` | `0x002B8930` 476 | `0x002F98E0` 700 | `0x0032DFB0` 700 | `0x00324840` 600 |  |  | `void CGt2dObjectParagraph::Prepare(const GtMathPs2::CGtV2d &lPos, float lrWidth, const GtMathPs2::CGtV2d &lHandle, GtMathPs2::CGtV4d lColour, const unsigned short *lpString, const CGtStaticParagraphSettings *lpSettings, unsigned int lxFlags, CGt2dObjectParagraph::ETextType leTextType)` (same name, different parameters) |
 
 ## Static data (DNAT_200)
 
@@ -27,6 +28,35 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 |---|---:|---|---|
 | `0x0042C260` | 16 | .rodata | `CGt2dObjectParagraph::mgarAlignHandles` |
 | `0x0042C270` | 12 | .rodata | `CGt2dObjectParagraph::mgapfRenderFunctions` |
+
+## Burnout Revenge layout of `CGt2dObjectParagraph`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dObjectParagraph.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dObjectParagraph : public CGt2dObject {  // size 0x040
+    // base CGt2dObject at 0x000
+    /* static */ RwUInt32 kxAlignLeft;
+    /* static */ RwUInt32 kxAlignCenter;
+    /* static */ RwUInt32 kxAlignRight;
+    /* static */ RwUInt32 kxForceWrap;
+    /* static */ RwUInt32 kxAlignMask;
+    /* static */ RwUInt32 kuTextSpriteSize;
+    /* static */ RwUInt32 kuMaxTextSprites;
+    /* static */ RwUInt32 kuBatchDataUVStart;
+    /* static */ float mgarAlignHandles[4];
+    /* static */ void (*mgapfRenderFunctions[3])();
+    // methods
+    // CGt2dObjectParagraph(const CGt2dObjectParagraph &);
+    // CGt2dObjectParagraph();
+    // void Prepare(const GtMathPs2::CGtV2d &, float, const GtMathPs2::CGtV2d &, GtMathPs2::CGtV4d, const unsigned short *, const CGtStaticParagraphSettings *, unsigned int, CGt2dObjectParagraph::ETextType);
+    // void PrepareCommonData(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, GtMathPs2::CGtV4d, const unsigned short *, const CGtStaticParagraphSettings *, unsigned int, void (*)(const CGt2dObject::CGt2dObjectSpace &, const void *));
+    // static RwInt32 _BuildLineOfText(const CGt2dObject::CGt2dObjectSpace &, const unsigned short **, const CGt2dFont *, float, float, float, const GtMathPs2::CGtV2d &, unsigned int);
+    // static void _RenderPlain(const CGt2dObject::CGt2dObjectSpace &, const void *);
+    // static void _RenderDropShadow(const CGt2dObject::CGt2dObjectSpace &, const void *);
+    // static void _RenderOutline(const CGt2dObject::CGt2dObjectSpace &, const void *);
+};
+```
 
 ## Notes
 

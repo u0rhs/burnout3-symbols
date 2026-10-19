@@ -8,30 +8,80 @@
 - **Source file:** `B3PhysicsManager.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 15
 - **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ActiveBody`, size 0x030, methods in `GameSource/Physics/B4ActiveBody.cpp` ([layout](#burnout-revenge-layout-of-cb4activebody))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetInteractionTypeAgainst(CB3ActiveBody*) const` | `0x00183A50` 216 |  |  |  | `0x001BA950` strong |  |
-| `GetNetworkCollBodyType() const` | `0x00183B30` 120 |  |  |  | `0x001BAA30` strong |  |
-| `GetInteractionTypeAgainst(CB3ActiveBody*)` |  | `0x001A95B0` 728 | `0x001A5AA0` 728 | `0x001ADD40` 424 |  |  |
-| `GetNetworkCollBodyType()` |  | `0x001A9890` 220 | `0x001A5D80` 220 | `0x001ADBC0` 244 |  |  |
-| `CB3ActiveBody()` |  |  |  | `0x001921D0` 64 |  |  |
-| `CanFatalAgainst(CB3ActiveBody*)` |  |  |  | `0x001ADCC0` 124 |  |  |
-| `GetBox()` |  |  |  | `0x001ACBC0` 28 |  |  |
-| `GetConvexHull()` |  |  |  | `0x001B65D0` 172 |  |  |
-| `GetMatrix()` |  |  |  | `0x00271BD0` 28 |  |  |
-| `GetPhysicsData()` |  |  |  | `0x001304D0` 60 |  |  |
-| `GetPointVelocity(GtMathPs2::CGtV3d)` |  |  |  | `0x002730F0` 252 |  |  |
-| `GetTrafficData()` |  |  |  | `0x001ACB80` 60 |  |  |
-| `HasPhysics()` |  |  |  | `0x00130510` 212 |  |  |
-| `IsCrashing()` |  |  |  | `0x001B3620` 76 |  |  |
-| `IsRaceCar()` |  |  |  | `0x001305F0` 152 |  |  |
-| `IsVehicle()` |  |  |  | `0x001AD910` 100 |  |  |
-| `operator =(const CB3ActiveBody&)` |  |  |  | `0x001B16B0` 172 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetInteractionTypeAgainst(CB3ActiveBody*) const` | `0x00183A50` 216 |  |  |  | `0x001BA950` strong |  | `EPhysicsInteractionType CB4ActiveBody::GetInteractionTypeAgainst(CB4ActiveBody *lpBodyB) const` |
+| `GetNetworkCollBodyType() const` | `0x00183B30` 120 |  |  |  | `0x001BAA30` strong |  | `ENetworkCollBodyType CB4ActiveBody::GetNetworkCollBodyType() const` |
+| `GetInteractionTypeAgainst(CB3ActiveBody*)` |  | `0x001A95B0` 728 | `0x001A5AA0` 728 | `0x001ADD40` 424 |  |  | `EPhysicsInteractionType CB4ActiveBody::GetInteractionTypeAgainst(CB4ActiveBody *lpBodyB) const` (same name, different parameters) |
+| `GetNetworkCollBodyType()` |  | `0x001A9890` 220 | `0x001A5D80` 220 | `0x001ADBC0` 244 |  |  | `ENetworkCollBodyType CB4ActiveBody::GetNetworkCollBodyType() const` (same name, different parameters) |
+| `CB3ActiveBody()` |  |  |  | `0x001921D0` 64 |  |  |  |
+| `CanFatalAgainst(CB3ActiveBody*)` |  |  |  | `0x001ADCC0` 124 |  |  | `bool CB4ActiveBody::CanFatalAgainst(CB4ActiveBody *lpBodyB) const` (same name, different parameters) |
+| `GetBox()` |  |  |  | `0x001ACBC0` 28 |  |  |  |
+| `GetConvexHull()` |  |  |  | `0x001B65D0` 172 |  |  | `CB4ConvexHull * CB4ActiveBody::GetConvexHull()` |
+| `GetMatrix()` |  |  |  | `0x00271BD0` 28 |  |  |  |
+| `GetPhysicsData()` |  |  |  | `0x001304D0` 60 |  |  | `CB4CollidingBody * CB4ActiveBody::GetPhysicsData() const` (same name, different parameters) |
+| `GetPointVelocity(GtMathPs2::CGtV3d)` |  |  |  | `0x002730F0` 252 |  |  | `CGtV3d CB4ActiveBody::GetPointVelocity(GtMathPs2::CGtV3d lPoint)` |
+| `GetTrafficData()` |  |  |  | `0x001ACB80` 60 |  |  |  |
+| `HasPhysics()` |  |  |  | `0x00130510` 212 |  |  |  |
+| `IsCrashing()` |  |  |  | `0x001B3620` 76 |  |  |  |
+| `IsRaceCar()` |  |  |  | `0x001305F0` 152 |  |  |  |
+| `IsVehicle()` |  |  |  | `0x001AD910` 100 |  |  |  |
+| `operator =(const CB3ActiveBody&)` |  |  |  | `0x001B16B0` 172 |  |  |  |
+
+## Burnout Revenge layout of `CB4ActiveBody`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 316 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ActiveBody {  // size 0x030
+    /* 0x000 */ CGtV3d maExtent[2];
+    /* 0x020 */ CGtMatrix3x4 *mpMatrix;
+    /* 0x024 */ CGtAxisAlignedBox *mpBox;
+    /* 0x028 */ void *mpBodyData;
+    /* 0x02C */ RwInt8 meType;
+    /* 0x02D */ RwUInt8 mu8Index;
+    /* 0x02E */ bool mbRemove;
+    // methods
+    // CB4ActiveBody(const CB4ActiveBody &);
+    // CB4ActiveBody();
+    // bool CanFatalAgainst(CB4ActiveBody *) const;
+    // EPhysicsInteractionType GetInteractionTypeAgainst(CB4ActiveBody *) const;
+    // void GetIntervals();
+    // bool HasPhysics() const;
+    // bool IsRaceCar() const;
+    // bool IsVehicle() const;
+    // bool IsCrashing() const;
+    // RwUInt8 GetIndex() const;
+    // CB4CollidingBody * GetPhysicsData() const;
+    // CB4PropInstance * GetStaticPropData() const;
+    // CB4PropPhysics * GetDynamicPropData() const;
+    // CB4TrafficVehicle * GetTrafficData() const;
+    // CB4CheckedTrafficPhysics * GetCheckedTrafficData() const;
+    // CB4TrafficPhysics * GetCrashingTrafficData() const;
+    // CB4CameraPhysics * GetCameraData();
+    // CGtMatrix3x4 * GetMatrix();
+    // CGtMatrix3x4 * GetMatrix() const;
+    // CGtV3d GetPosition() const;
+    // CB4ConvexHull * GetConvexHull();
+    // CGtAxisAlignedBox * GetBox();
+    // CGtV3d GetPointVelocity(GtMathPs2::CGtV3d);
+    // CB4VehicleEssentialParams * GetEssentialParams() const;
+    // RwReal GetSpeedInMPS() const;
+    // RwReal GetSpeedInMPH() const;
+    // void SetMatrixPointer(GtMathPs2::CGtMatrix3x4 *);
+    // EB4ActiveBodyType GetType() const;
+    // bool IsRemoved() const;
+    // ENetworkCollBodyType GetNetworkCollBodyType() const;
+    // CGtV3d * GetMin();
+    // CGtV3d * GetMax();
+};
+```
 
 ## Notes
 

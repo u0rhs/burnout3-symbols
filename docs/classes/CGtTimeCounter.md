@@ -6,23 +6,46 @@
 
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Methods per build:** B3O0PCH 10
+- **Burnout Revenge counterpart:** `CGtTimeCounter`, size 0x008 ([layout](#burnout-revenge-layout-of-cgttimecounter))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CGtTimeCounter()` |  |  |  | `0x0013DC70` 24 |  |  |
-| `CGtTimeCounter(const CGtTimeCounter&)` |  |  |  | `0x003C68B0` 44 |  |  |
-| `CGtTimeCounter(long)` |  |  |  | `0x003C3F90` 40 |  |  |
-| `GetCounterCycles()` |  |  |  | `0x003C68E0` 28 |  |  |
-| `GetCounterFrequency()` |  |  |  | `0x003C6300` 20 |  |  |
-| `SetCounterCycles(long)` |  |  |  | `0x003C6390` 36 |  |  |
-| `operator +=(CGtTimeCounter)` |  |  |  | `0x003C6900` 76 |  |  |
-| `operator -(CGtTimeCounter)` |  |  |  | `0x003C6950` 76 |  |  |
-| `operator -=(CGtTimeCounter)` |  |  |  | `0x003C6860` 76 |  |  |
-| `operator =(const CGtTimeCounter&)` |  |  |  | `0x003C69A0` 44 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CGtTimeCounter()` |  |  |  | `0x0013DC70` 24 |  |  |  |
+| `CGtTimeCounter(const CGtTimeCounter&)` |  |  |  | `0x003C68B0` 44 |  |  |  |
+| `CGtTimeCounter(long)` |  |  |  | `0x003C3F90` 40 |  |  |  |
+| `GetCounterCycles()` |  |  |  | `0x003C68E0` 28 |  |  |  |
+| `GetCounterFrequency()` |  |  |  | `0x003C6300` 20 |  |  |  |
+| `SetCounterCycles(long)` |  |  |  | `0x003C6390` 36 |  |  |  |
+| `operator +=(CGtTimeCounter)` |  |  |  | `0x003C6900` 76 |  |  |  |
+| `operator -(CGtTimeCounter)` |  |  |  | `0x003C6950` 76 |  |  |  |
+| `operator -=(CGtTimeCounter)` |  |  |  | `0x003C6860` 76 |  |  |  |
+| `operator =(const CGtTimeCounter&)` |  |  |  | `0x003C69A0` 44 |  |  |  |
+
+## Burnout Revenge layout of `CGtTimeCounter`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 5 file(s), e.g. `GameShared/GameClasses/System/Timer/GtFramerateManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtTimeCounter {  // size 0x008
+    /* 0x000 */ RwInt64 mn64TimeCounter;
+    // methods
+    // CGtTimeCounter(const CGtTimeCounter &);
+    // CGtTimeCounter();
+    // CGtTimeCounter(long);
+    // RwReal GetTimeMilliseconds();
+    // void SetCounterCycles(long);
+    // RwInt64 GetCounterCycles();
+    // RwInt64 GetCounterFrequency();
+    // CGtTimeCounter __apl(/* T0 */);
+    // CGtTimeCounter __pl(/* T0 */);
+    // CGtTimeCounter __ami(/* T0 */);
+    // CGtTimeCounter __mi(/* T0 */);
+};
+```
 
 ## Notes
 

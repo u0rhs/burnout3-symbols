@@ -7,37 +7,77 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `GtTexturePS2.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 6, B3INTERN 6, B3O0PCH 18
+- **Burnout Revenge counterpart:** `CGtTexture`, size 0x0C8, methods in `GameShared/GameClasses/Graphical/TextureClasses/Ps2/GtTexturePS2.cpp` ([layout](#burnout-revenge-layout-of-cgttexture))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `FixUp()` | `0x00211650` 208 | `0x0021FBE0` 528 | `0x0025F3E0` 528 | `0x002623C0` 528 |  |  |
-| `FixDown()` | `0x00211720` 216 | `0x0021FDF0` 340 | `0x0025F5F0` 340 | `0x00262220` 404 |  |  |
-| `AttachPlugins()` | `0x00211800` 52 | `0x00220040` 192 | `0x0025F840` 192 | `0x00261FC0` 140 |  |  |
-| `CreateCopy(unsigned int)` | `0x00211840` 120 | `0x00220100` 244 | `0x0025F900` 244 | `0x00261F00` 184 |  |  |
-| `SetMipMapSharpness(float)` |  | `0x0021FF50` 140 | `0x0025F750` 140 | `0x00262110` 268 |  |  |
-| `GetMipMapSharpness()` |  | `0x0021FFE0` 92 | `0x0025F7E0` 92 | `0x00262050` 156 |  |  |
-| `GetDepth()` |  |  |  | `0x00231490` 28 |  |  |
-| `GetHeight()` |  |  |  | `0x002314B0` 28 |  |  |
-| `GetName()` |  |  |  | `0x001666D0` 56 |  |  |
-| `GetNumMipLevels()` |  |  |  | `0x0022D3E0` 48 |  |  |
-| `GetNumPalettes()` |  |  |  | `0x00168870` 60 |  |  |
-| `GetSizeInMemory()` |  |  |  | `0x0025ACB0` 56 |  |  |
-| `GetSkyRasterExt()` |  |  |  | `0x002620F0` 28 |  |  |
-| `GetTex0()` |  |  |  | `0x0021FA10` 68 |  |  |
-| `GetTex0(int)` |  |  |  | `0x0021FA60` 224 |  |  |
-| `GetTextureExt()` |  |  |  | `0x00261E80` 44 |  |  |
-| `GetWidth()` |  |  |  | `0x002314D0` 28 |  |  |
-| `SetAsCurrent()` |  |  |  | `0x0021F9A0` 104 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `FixUp()` | `0x00211650` 208 | `0x0021FBE0` 528 | `0x0025F3E0` 528 | `0x002623C0` 528 |  |  | `void CGtTexture::FixUp()` |
+| `FixDown()` | `0x00211720` 216 | `0x0021FDF0` 340 | `0x0025F5F0` 340 | `0x00262220` 404 |  |  | `void CGtTexture::FixDown()` |
+| `AttachPlugins()` | `0x00211800` 52 | `0x00220040` 192 | `0x0025F840` 192 | `0x00261FC0` 140 |  |  | `bool CGtTexture::AttachPlugins()` |
+| `CreateCopy(unsigned int)` | `0x00211840` 120 | `0x00220100` 244 | `0x0025F900` 244 | `0x00261F00` 184 |  |  | `CGtTexture * CGtTexture::CreateCopy(unsigned int luDestinationAddress, unsigned int luDestinationSize)` (same name, different parameters) |
+| `SetMipMapSharpness(float)` |  | `0x0021FF50` 140 | `0x0025F750` 140 | `0x00262110` 268 |  |  |  |
+| `GetMipMapSharpness()` |  | `0x0021FFE0` 92 | `0x0025F7E0` 92 | `0x00262050` 156 |  |  |  |
+| `GetDepth()` |  |  |  | `0x00231490` 28 |  |  |  |
+| `GetHeight()` |  |  |  | `0x002314B0` 28 |  |  |  |
+| `GetName()` |  |  |  | `0x001666D0` 56 |  |  |  |
+| `GetNumMipLevels()` |  |  |  | `0x0022D3E0` 48 |  |  |  |
+| `GetNumPalettes()` |  |  |  | `0x00168870` 60 |  |  |  |
+| `GetSizeInMemory()` |  |  |  | `0x0025ACB0` 56 |  |  |  |
+| `GetSkyRasterExt()` |  |  |  | `0x002620F0` 28 |  |  |  |
+| `GetTex0()` |  |  |  | `0x0021FA10` 68 |  |  |  |
+| `GetTex0(int)` |  |  |  | `0x0021FA60` 224 |  |  |  |
+| `GetTextureExt()` |  |  |  | `0x00261E80` 44 |  |  |  |
+| `GetWidth()` |  |  |  | `0x002314D0` 28 |  |  |  |
+| `SetAsCurrent()` |  |  |  | `0x0021F9A0` 104 |  |  |  |
 
 ## Static data (DNAT_200)
 
 | Address | Size | Section | Name |
 |---|---:|---|---|
 | `0x00443E24` | 4 | .sbss | `CGtTexture::mgnTextureExtPluginOffset` |
+
+## Burnout Revenge layout of `CGtTexture`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 486 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dBezierCurve.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtTexture {  // size 0x0C8
+    /* 0x000 */ RwRaster mRwRaster;
+    /* 0x034 */ GtSkyRasterExt mSkyRasterExt;
+    /* 0x090 */ GtTextureExt mTextureExt;
+    /* static */ RwInt32 mgnTextureExtPluginOffset;
+    // methods
+    // CGtTexture(const CGtTexture &);
+    // CGtTexture();
+    // static bool AttachPlugins();
+    // void Destroy(CGtLinearMalloc *);
+    // RwChar * GetName() const;
+    // RwInt32 GetWidth() const;
+    // RwInt32 GetHeight() const;
+    // RwInt32 GetDepth() const;
+    // RwInt32 GetNumMipLevels() const;
+    // RwInt32 GetNumPalettes() const;
+    // RwReal GetMipMapSharpness() const;
+    // void SetMipMapSharpness(float);
+    // void FixDown();
+    // void FixUp();
+    // static CGtTexture * Create(const char *, int, int, int, int, int, int, CGtLinearMalloc *);
+    // CGtTexture * CreateCopy(unsigned int, unsigned int);
+    // static RwUInt32 GetMemoryAlignment();
+    // RwUInt32 GetSizeInMemory();
+    // GtTextureExt * GetTextureExt();
+    // GtTextureExt * GetTextureExt() const;
+    // GtSkyRasterExt * GetSkyRasterExt();
+    // GtSkyRasterExt * GetSkyRasterExt() const;
+    // bool SetAsCurrent();
+    // RwUInt64 GetTex0() const;
+    // RwUInt64 GetTex0(int) const;
+};
+```
 
 ## Notes
 

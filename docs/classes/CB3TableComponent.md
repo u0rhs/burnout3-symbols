@@ -12,25 +12,25 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RecalculateSize()` | `0x002F8E10` 364 | `0x0034C650` 364 | `0x0037DCA0` 364 | `0x0037E170` 644 | `0x0033F260` strong |  |
-| `GetCarIconSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002F8F80` 20 | `0x0034C7C0` 20 | `0x0037DE10` 20 | `0x0037E100` 100 |  |  |
-| `GetConnectionSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002F8FA0` 20 | `0x0034C7E0` 20 | `0x0037DE30` 20 | `0x0037E0C0` 56 |  |  |
-| `GetImageAndTextSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002F8FC0` 128 | `0x0034C800` 128 | `0x0037DE50` 128 | `0x0037DFD0` 228 | `0x0033F420` proven |  |
-| `RenderConnection(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const v` | `0x002F9040` 372 | `0x0034C880` 372 | `0x0037DED0` 372 | `0x0037DDB0` 540 | `0x0033F4A0` proven |  |
-| `RenderCarIcon(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const void` | `0x002F91C0` 360 | `0x0034CA00` 404 | `0x0037E050` 404 | `0x0037DBA0` 476 | `0x0033F620` proven |  |
-| `RenderImageAndText(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const` | `0x002F9330` 148 | `0x0034CBA0` 148 | `0x0037E1F0` 148 | `0x0037DAD0` 208 | `0x0033F8B0` proven |  |
-| `Release()` | `0x002F93D0` 276 | `0x0034CC40` 276 | `0x0037E290` 276 | `0x0037D900` 460 | `0x0033F950` unverified |  |
-| `Update(float)` | `0x002F94F0` 20 | `0x0034CD60` 20 | `0x0037E3B0` 20 | `0x0037D8D0` 44 | `0x0033FB40` likely |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const CGt2dObjectTableDat` | `0x002F9510` 380 | `0x0034CD80` 380 | `0x0037E3D0` 380 | `0x0037D6E0` 484 | `0x0033FB60` strong |  |
-| `PrepareRowBackgrounds(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,bool,const` | `0x002F9690` 484 | `0x0034CF00` 484 | `0x0037E550` 484 | `0x0037D410` 720 |  |  |
-| `PrepareSplitBackground(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const CGt2` | `0x002F9880` 444 | `0x0034D0F0` 444 | `0x0037E740` 444 | `0x0037D120` 740 | `0x00340270` strong |  |
-| `Construct()` | `0x002F9A40` 44 | `0x0034D2B0` 44 | `0x0037E900` 44 | `0x0037D0E0` 52 | `0x00340420` proven |  |
-| `CB3TableComponent()` |  |  |  | `0x0033C350` 76 |  |  |
-| `GetTableObject()` |  |  |  | `0x00348E20` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RecalculateSize()` | `0x002F8E10` 364 | `0x0034C650` 364 | `0x0037DCA0` 364 | `0x0037E170` 644 | `0x0033F260` strong |  |  |
+| `GetCarIconSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002F8F80` 20 | `0x0034C7C0` 20 | `0x0037DE10` 20 | `0x0037E100` 100 |  |  |  |
+| `GetConnectionSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002F8FA0` 20 | `0x0034C7E0` 20 | `0x0037DE30` 20 | `0x0037E0C0` 56 |  |  |  |
+| `GetImageAndTextSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002F8FC0` 128 | `0x0034C800` 128 | `0x0037DE50` 128 | `0x0037DFD0` 228 | `0x0033F420` proven |  |  |
+| `RenderConnection(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const v` | `0x002F9040` 372 | `0x0034C880` 372 | `0x0037DED0` 372 | `0x0037DDB0` 540 | `0x0033F4A0` proven |  |  |
+| `RenderCarIcon(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const void` | `0x002F91C0` 360 | `0x0034CA00` 404 | `0x0037E050` 404 | `0x0037DBA0` 476 | `0x0033F620` proven |  |  |
+| `RenderImageAndText(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const` | `0x002F9330` 148 | `0x0034CBA0` 148 | `0x0037E1F0` 148 | `0x0037DAD0` 208 | `0x0033F8B0` proven |  |  |
+| `Release()` | `0x002F93D0` 276 | `0x0034CC40` 276 | `0x0037E290` 276 | `0x0037D900` 460 | `0x0033F950` unverified |  |  |
+| `Update(float)` | `0x002F94F0` 20 | `0x0034CD60` 20 | `0x0037E3B0` 20 | `0x0037D8D0` 44 | `0x0033FB40` likely |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const CGt2dObjectTableDat` | `0x002F9510` 380 | `0x0034CD80` 380 | `0x0037E3D0` 380 | `0x0037D6E0` 484 | `0x0033FB60` strong |  |  |
+| `PrepareRowBackgrounds(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,bool,const` | `0x002F9690` 484 | `0x0034CF00` 484 | `0x0037E550` 484 | `0x0037D410` 720 |  |  |  |
+| `PrepareSplitBackground(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const CGt2` | `0x002F9880` 444 | `0x0034D0F0` 444 | `0x0037E740` 444 | `0x0037D120` 740 | `0x00340270` strong |  |  |
+| `Construct()` | `0x002F9A40` 44 | `0x0034D2B0` 44 | `0x0037E900` 44 | `0x0037D0E0` 52 | `0x00340420` proven |  |  |
+| `CB3TableComponent()` |  |  |  | `0x0033C350` 76 |  |  |  |
+| `GetTableObject()` |  |  |  | `0x00348E20` 28 |  |  |  |
 
 ## Notes
 

@@ -11,22 +11,22 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `DrawGlobeHalo(GtMathPs2::CGtV3d,RwRGBA,float)` | `0x00365910` 4188 | `0x003D1C40` 4320 | `0x003FA990` 4240 | `0x0040FCD0` 6048 | `0x003B17F0` strong |  |
-| `DrawInvisiblePolys(GtMathPs2::CGtV3d)` | `0x00366970` 1700 | `0x003D2D20` 1740 | `0x003FBA20` 1740 | `0x0040F2D0` 2548 | `0x003B2830` proven |  |
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00367020` 8952 | `0x003D33F0` 10932 | `0x003FC0F0` 10728 | `0x0040CB20` 10152 | `0x003B2EE0` unverified |  |
-| `Release()` | `0x00369320` 52 | `0x003D5EB0` 52 | `0x003FEAE0` 52 | `0x0040CAE0` 64 |  |  |
-| `SetShape(float,float)` | `0x00369360` 52 | `0x003D5EF0` 52 | `0x003FEB20` 52 | `0x0040CA40` 148 | `0x003B5460` proven |  |
-| `SetHighlight(signed char,float)` | `0x003693A0` 36 | `0x003D5F30` 36 | `0x003FEB60` 36 | `0x0040C9D0` 104 | `0x003B54A0` proven |  |
-| `SetGlobeReveal(float)` | `0x003693D0` 32 | `0x003D5F60` 32 | `0x003FEB90` 32 | `0x0040C970` 92 | `0x003B54D0` proven |  |
-| `SetGlobeAlpha(float)` | `0x003693F0` 32 | `0x003D5F80` 32 | `0x003FEBB0` 32 | `0x0040C910` 92 | `0x003B54F0` proven |  |
-| `SetGlobeLocation(float,float)` | `0x00369410` 76 | `0x003D5FA0` 76 | `0x003FEBD0` 76 | `0x0040C860` 172 | `0x003B5510` proven |  |
-| `SetPos(GtMathPs2::CGtV3d)` | `0x00369460` 52 | `0x003D5FF0` 52 | `0x003FEC20` 52 | `0x0040C7B0` 168 | `0x003B5560` proven |  |
-| `Prepare()` | `0x003694A0` 3180 | `0x003D6030` 3504 | `0x003FEC60` 3272 | `0x0040C690` 276 |  |  |
-| `Construct()` | `0x0036A110` 8 | `0x003D6DE0` 8 | `0x003FF930` 8 | `0x0040C680` 8 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `DrawGlobeHalo(GtMathPs2::CGtV3d,RwRGBA,float)` | `0x00365910` 4188 | `0x003D1C40` 4320 | `0x003FA990` 4240 | `0x0040FCD0` 6048 | `0x003B17F0` strong |  |  |
+| `DrawInvisiblePolys(GtMathPs2::CGtV3d)` | `0x00366970` 1700 | `0x003D2D20` 1740 | `0x003FBA20` 1740 | `0x0040F2D0` 2548 | `0x003B2830` proven |  |  |
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00367020` 8952 | `0x003D33F0` 10932 | `0x003FC0F0` 10728 | `0x0040CB20` 10152 | `0x003B2EE0` unverified |  |  |
+| `Release()` | `0x00369320` 52 | `0x003D5EB0` 52 | `0x003FEAE0` 52 | `0x0040CAE0` 64 |  |  |  |
+| `SetShape(float,float)` | `0x00369360` 52 | `0x003D5EF0` 52 | `0x003FEB20` 52 | `0x0040CA40` 148 | `0x003B5460` proven |  |  |
+| `SetHighlight(signed char,float)` | `0x003693A0` 36 | `0x003D5F30` 36 | `0x003FEB60` 36 | `0x0040C9D0` 104 | `0x003B54A0` proven |  |  |
+| `SetGlobeReveal(float)` | `0x003693D0` 32 | `0x003D5F60` 32 | `0x003FEB90` 32 | `0x0040C970` 92 | `0x003B54D0` proven |  |  |
+| `SetGlobeAlpha(float)` | `0x003693F0` 32 | `0x003D5F80` 32 | `0x003FEBB0` 32 | `0x0040C910` 92 | `0x003B54F0` proven |  |  |
+| `SetGlobeLocation(float,float)` | `0x00369410` 76 | `0x003D5FA0` 76 | `0x003FEBD0` 76 | `0x0040C860` 172 | `0x003B5510` proven |  |  |
+| `SetPos(GtMathPs2::CGtV3d)` | `0x00369460` 52 | `0x003D5FF0` 52 | `0x003FEC20` 52 | `0x0040C7B0` 168 | `0x003B5560` proven |  |  |
+| `Prepare()` | `0x003694A0` 3180 | `0x003D6030` 3504 | `0x003FEC60` 3272 | `0x0040C690` 276 |  |  |  |
+| `Construct()` | `0x0036A110` 8 | `0x003D6DE0` 8 | `0x003FF930` 8 | `0x0040C680` 8 |  |  |  |
 
 ## Static data (DNAT_200)
 

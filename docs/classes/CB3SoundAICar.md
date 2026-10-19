@@ -9,24 +9,55 @@
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 11
 - **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004400E0`, 32 bytes = 8 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 6 virtual functions)
+- **Burnout Revenge counterpart:** `CB4SoundAICar`, size 0x2B8, methods in `GameSource/Sound/Cars/B4SoundAICar.cpp` ([layout](#burnout-revenge-layout-of-cb4soundaicar))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateBassVoices(const CB3RaceCar*)` | `0x0024D1D0` 420 | `0x0027EAF0` 804 | `0x002B5970` 804 | `0x002B2760` 564 | `0x0028B720` strong |  |
-| `StartBassVoices()` | `0x0024D380` 248 | `0x0027EE20` 380 | `0x002B5CA0` 380 | `0x002B25D0` 400 | `0x0028B8D0` strong |  |
-| `Unregister()` | `0x0024D480` 68 | `0x0027EFA0` 100 | `0x002B5E20` 100 | `0x002B24C0` 108 | `0x0028B9D0` strong |  |
-| `Register(unsigned long)` | `0x0024D4D0` 156 | `0x0027F010` 184 | `0x002B5E90` 184 | `0x002B23D0` 200 | `0x0028BA20` strong |  |
-| `Destruct()` | `0x0024D570` 108 | `0x0027F0D0` 108 | `0x002B5F50` 108 | `0x002B23A0` 40 | `0x0028BAC0` strong |  |
-| `Release()` | `0x0024D5E0` 124 | `0x0027F140` 124 | `0x002B5FC0` 124 | `0x002B2340` 96 | `0x0028BB30` strong |  |
-| `Update(const CB3RaceCar*)` | `0x0024D660` 488 | `0x0027F1C0` 736 | `0x002B6040` 736 | `0x002B2140` 504 | `0x0028BBC0` unverified |  |
-| `Prepare(unsigned long,int)` | `0x0024D850` 348 | `0x0027F4A0` 492 | `0x002B6320` 492 | `0x002B1F20` 500 | `0x0028BDD0` strong |  |
-| `Construct()` | `0x0024D9B0` 48 | `0x0027F690` 48 | `0x002B6510` 48 | `0x002B1EE0` 64 | `0x0028BF40` likely |  |
-| `CB3SoundAICar()` |  |  |  | `0x002B1CF0` 60 |  |  |
-| `ReleaseBassVoices()` |  |  |  | `0x002B2530` 148 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateBassVoices(const CB3RaceCar*)` | `0x0024D1D0` 420 | `0x0027EAF0` 804 | `0x002B5970` 804 | `0x002B2760` 564 | `0x0028B720` strong |  | `void CB4SoundAICar::UpdateBassVoices(const CB4RaceCar *lpRaceCar)` |
+| `StartBassVoices()` | `0x0024D380` 248 | `0x0027EE20` 380 | `0x002B5CA0` 380 | `0x002B25D0` 400 | `0x0028B8D0` strong |  | `void CB4SoundAICar::StartBassVoices()` |
+| `Unregister()` | `0x0024D480` 68 | `0x0027EFA0` 100 | `0x002B5E20` 100 | `0x002B24C0` 108 | `0x0028B9D0` strong |  | `void CB4SoundAICar::Unregister()` |
+| `Register(unsigned long)` | `0x0024D4D0` 156 | `0x0027F010` 184 | `0x002B5E90` 184 | `0x002B23D0` 200 | `0x0028BA20` strong |  | `void CB4SoundAICar::Register(unsigned long lID)` |
+| `Destruct()` | `0x0024D570` 108 | `0x0027F0D0` 108 | `0x002B5F50` 108 | `0x002B23A0` 40 | `0x0028BAC0` strong |  | `void CB4SoundAICar::Destruct()` |
+| `Release()` | `0x0024D5E0` 124 | `0x0027F140` 124 | `0x002B5FC0` 124 | `0x002B2340` 96 | `0x0028BB30` strong |  | `void CB4SoundAICar::Release()` |
+| `Update(const CB3RaceCar*)` | `0x0024D660` 488 | `0x0027F1C0` 736 | `0x002B6040` 736 | `0x002B2140` 504 | `0x0028BBC0` unverified |  | `void CB4SoundAICar::Update(const CB4RaceCar *lpRaceCar)` |
+| `Prepare(unsigned long,int)` | `0x0024D850` 348 | `0x0027F4A0` 492 | `0x002B6320` 492 | `0x002B1F20` 500 | `0x0028BDD0` strong |  | `bool CB4SoundAICar::Prepare(unsigned long lID, ERaceCarIndex leRaceCarIndex)` (same name, different parameters) |
+| `Construct()` | `0x0024D9B0` 48 | `0x0027F690` 48 | `0x002B6510` 48 | `0x002B1EE0` 64 | `0x0028BF40` likely |  | `void CB4SoundAICar::Construct()` |
+| `CB3SoundAICar()` |  |  |  | `0x002B1CF0` 60 |  |  |  |
+| `ReleaseBassVoices()` |  |  |  | `0x002B2530` 148 |  |  | `void CB4SoundAICar::ReleaseBassVoices()` |
+
+## Burnout Revenge layout of `CB4SoundAICar`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 15 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundAICar : public CB4SoundRaceCar {  // size 0x2B8
+    // base CB4SoundRaceCar at 0x000
+    /* 0x288 */ RwInt32 mnInAirTimer;
+    /* 0x28C */ CGtSoundBank *mpGenericBank;
+    /* 0x290 */ CGtSoundWave *mpBassWave;
+    /* 0x294 */ CGtSoundWave *mpBassWaveFlange;
+    /* 0x298 */ CGtSoundVoiceHandle mBassVoice;
+    /* 0x2A8 */ CGtSoundVoiceHandle mBassVoiceFlange;
+    // methods
+    // CB4SoundAICar(const CB4SoundAICar &);
+    // CB4SoundAICar();
+    // virtual bool Prepare(unsigned long, ERaceCarIndex);
+    // virtual void Update(const CB4RaceCar *);
+    // virtual void Release();
+    // virtual void Register(unsigned long);
+    // virtual void Unregister();
+    // void Construct();
+    // virtual void Destruct();
+    // void UpdateCrashEscape();
+    // void ReleaseBassVoices();
+    // void StartBassVoices();
+    // void UpdateBassVoices(const CB4RaceCar *);
+};
+```
 
 ## Notes
 

@@ -8,16 +8,36 @@
 - **Source file:** `B3TrackRendererRuntimePS2.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 3
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrackRendererSPRCache`, size 0x150, methods in `GameSource/Graphics/TrackRenderer/Ps2/B4TrackRendererRuntimePS2.cpp` ([layout](#burnout-revenge-layout-of-cb4trackrenderersprcache))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Flush()` | `0x0022D3E0` 240 | `0x00245B20` 280 | `0x002824C0` 280 | `0x00283500` 500 | `0x0026B1C0` proven |  |
-| `OpenCachedPacket(int)` |  |  |  | `0x00283A00` 96 |  |  |
-| `Prepare()` |  |  |  | `0x00282E30` 52 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Flush()` | `0x0022D3E0` 240 | `0x00245B20` 280 | `0x002824C0` 280 | `0x00283500` 500 | `0x0026B1C0` proven |  | `void CB4TrackRendererSPRCache::Flush()` |
+| `OpenCachedPacket(int)` |  |  |  | `0x00283A00` 96 |  |  |  |
+| `Prepare()` |  |  |  | `0x00282E30` 52 |  |  |  |
+
+## Burnout Revenge layout of `CB4TrackRendererSPRCache`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Graphics/TrackRenderer/Ps2/B4TrackRendererRuntimePS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrackRendererSPRCache {  // size 0x150
+    /* 0x000 */ RwInt32 mnNumBatchedCameraQW;
+    /* 0x004 */ u_long128 *mpData;
+    /* 0x008 */ u_long128 *mpDataStart;
+    /* 0x010 */ long long unsigned int mau128BatchedCameraQW[20];
+    // methods
+    // CB4TrackRendererSPRCache(const CB4TrackRendererSPRCache &);
+    // CB4TrackRendererSPRCache();
+    // void Prepare();
+    // void Flush();
+    // void OpenCachedPacket(int);
+};
+```
 
 ## Notes
 

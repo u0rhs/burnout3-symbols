@@ -16,36 +16,38 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 **Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
 
-| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
-|---|---:|---:|---|---:|---|
-| `B3PlayerCar.cpp` | 8 | 1,048 | `0x0014CB40` | 2 (0) | `0x00150BE0`–`0x00150CB0` |
-| `B3RaceCar.cpp` | 19 | 9,768 | `0x0014CF90` | 17 (0) | `0x00150D50`–`0x00153160` |
-| `B3CollidingBody.cpp` | 17 | 9,928 | `0x00176800` | 15 (0) | `0x001AB010`–`0x001AD850` |
-| `B3PhysicsManager.cpp` | 32 | 28,060 | `0x0017CD30` | 27 (1) | `0x001B2A40`–`0x001BAA30` |
-| `B3PlayerCarPhysics.cpp` | 13 | 11,196 | `0x00183BB0` | 9 (0) | `0x001BAAF0`–`0x001BDF10` |
-| `B3PropPhysics.cpp` | 6 | 1,760 | `0x001867D0` | 5 (0) | `0x001BDF60`–`0x001BE8F0` |
-| `B3RaceCarPhysics.cpp` | 29 | 33,944 | `0x00186ED0` | 18 (0) | `0x001BEA60`–`0x001C44E0` |
-| `B3Transmission.cpp` | 3 | 2,532 | `0x0018F430` |  |  |
-| `B3VehiclePhysics.cpp` | 26 | 32,280 | `0x0018FE30` | 23 (2) | `0x001C8870`–`0x001CFD20` |
-| `B3AICarPhysics.cpp` | 12 | 5,760 | `0x00197C90` | 11 (1) | `0x001D1670`–`0x001D2D70` |
-| `B3TrafficPhysics.cpp` | 7 | 3,424 | `0x00210890` | 3 (1) | `0x002502D0`–`0x00250310` |
-| `B3VehiclePhysicsAttribs.cpp` | 5 | 1,232 | `0x00212440` | 5 (4) | `0x00252050`–`0x002524E0` |
-| `B3RaceCarPhysicsAttribs.cpp` | 8 | 7,652 | `0x00212920` | 8 (6) | `0x00252530`–`0x002540E0` |
-| `GtIntersectionPS2.cpp` | 12 | 11,968 | `0x002335E0` | 6 (0) | `0x00274C90`–`0x00275D20` |
-| `B3ConvexHullCollide.cpp` | 11 | 6,932 | `0x00278790` | 10 (9) | `0x002B78A0`–`0x002B9520` |
-| `B3ConvexHull.cpp` | 13 | 6,032 | `0x0027A280` | 13 (11) | `0x002B9640`–`0x002BAEF0` |
-| `B3PhysicsManagerDebug.cpp` | 12 | 4,828 | `0x0027D7D0` | 11 (5) | `0x002BDA00`–`0x002BED00` |
-| `GtIntersection.cpp` | 7 | 2,344 | `0x0027EAF0` | 5 (0) | `0x002BF0F0`–`0x002BF5F0` |
-| `GtPolygonSoup.cpp` | 2 | 56 | `0x0027F450` | 2 (2) | `0x002BF7B0`–`0x002BF7D0` |
-| `B3BoundingBox.cpp` | 5 | 15,872 | `0x002AF010` | 3 (0) | `0x002BEDC0`–`0x002F2E70` |
-| `B3BodyPartPhysics.cpp` | 9 | 5,200 | `0x002EBC50` | 7 (0) | `0x00333140`–`0x00334010` |
-| `B3RumbleAttribs.cpp` | 2 | 16 | `0x002FDA50` |  |  |
-| `GtSphereTree.cpp` | 14 | 12,440 | `0x00312810` | 14 (14) | `0x0035BD80`–`0x0035EE50` |
-| `GtCollisionKDTree.cpp` | 5 | 5,916 | `0x003717A0` | 3 (1) | `0x003BE8D0`–`0x003BF720` |
-| `GtSimpleOrientedBox.cpp` | 1 | 256 | `0x00388610` | 1 (1) | `0x003D7F70`–`0x003D7F70` |
-| `B3ConvexHullMaker.cpp` | 4 | 3,444 | `0x003892F0` | 3 (1) | `0x003D8D60`–`0x003D9740` |
-| `B3VehicleDeform.cpp` | 44 | 60,964 | `0x0038A070` | 33 (0) | `0x003D9C50`–`0x00461440` |
-| `B3PhysicsConstants.cpp` | 1 | 92 | `0x0043DFD0` |  |  |
+**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source paths ([source files](../reference/revenge-source-file-lineage.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |
+|---|---:|---:|---|---:|---|---|
+| `B3PlayerCar.cpp` | 8 | 1,048 | `0x0014CB40` | 2 (0) | `0x00150BE0`–`0x00150CB0` | `GameSource/World/B4PlayerCar.cpp` |
+| `B3RaceCar.cpp` | 19 | 9,768 | `0x0014CF90` | 17 (0) | `0x00150D50`–`0x00153160` | `GameSource/World/B4RaceCar.cpp` |
+| `B3CollidingBody.cpp` | 17 | 9,928 | `0x00176800` | 15 (0) | `0x001AB010`–`0x001AD850` | `GameSource/Physics/B4CollidingBody.cpp` |
+| `B3PhysicsManager.cpp` | 32 | 28,060 | `0x0017CD30` | 27 (1) | `0x001B2A40`–`0x001BAA30` | `GameSource/Physics/B4PhysicsManager.cpp` |
+| `B3PlayerCarPhysics.cpp` | 13 | 11,196 | `0x00183BB0` | 9 (0) | `0x001BAAF0`–`0x001BDF10` | `GameSource/Physics/B4PlayerCarPhysics.cpp` |
+| `B3PropPhysics.cpp` | 6 | 1,760 | `0x001867D0` | 5 (0) | `0x001BDF60`–`0x001BE8F0` | `GameSource/Physics/B4PropPhysics.cpp` |
+| `B3RaceCarPhysics.cpp` | 29 | 33,944 | `0x00186ED0` | 18 (0) | `0x001BEA60`–`0x001C44E0` | `GameSource/Physics/B4RaceCarPhysics.cpp` |
+| `B3Transmission.cpp` | 3 | 2,532 | `0x0018F430` |  |  | `GameSource/Physics/B4Transmission.cpp` |
+| `B3VehiclePhysics.cpp` | 26 | 32,280 | `0x0018FE30` | 23 (2) | `0x001C8870`–`0x001CFD20` | `GameSource/Physics/B4VehiclePhysics.cpp` |
+| `B3AICarPhysics.cpp` | 12 | 5,760 | `0x00197C90` | 11 (1) | `0x001D1670`–`0x001D2D70` | `GameSource/Physics/B4AICarPhysics.cpp` |
+| `B3TrafficPhysics.cpp` | 7 | 3,424 | `0x00210890` | 3 (1) | `0x002502D0`–`0x00250310` | `GameSource/Physics/B4TrafficPhysics.cpp` |
+| `B3VehiclePhysicsAttribs.cpp` | 5 | 1,232 | `0x00212440` | 5 (4) | `0x00252050`–`0x002524E0` | `GameSource/Physics/B4VehiclePhysicsAttribs.cpp` |
+| `B3RaceCarPhysicsAttribs.cpp` | 8 | 7,652 | `0x00212920` | 8 (6) | `0x00252530`–`0x002540E0` |  |
+| `GtIntersectionPS2.cpp` | 12 | 11,968 | `0x002335E0` | 6 (0) | `0x00274C90`–`0x00275D20` | `GameShared/GameClasses/Geometric/Intersection/Ps2/GtIntersectionPS2.cpp` |
+| `B3ConvexHullCollide.cpp` | 11 | 6,932 | `0x00278790` | 10 (9) | `0x002B78A0`–`0x002B9520` |  |
+| `B3ConvexHull.cpp` | 13 | 6,032 | `0x0027A280` | 13 (11) | `0x002B9640`–`0x002BAEF0` | `SharedClasses/PhysicsData/B4ConvexHull.cpp` |
+| `B3PhysicsManagerDebug.cpp` | 12 | 4,828 | `0x0027D7D0` | 11 (5) | `0x002BDA00`–`0x002BED00` | `GameSource/Physics/B4PhysicsManagerDebug.cpp` |
+| `GtIntersection.cpp` | 7 | 2,344 | `0x0027EAF0` | 5 (0) | `0x002BF0F0`–`0x002BF5F0` | `GameShared/GameClasses/Geometric/Intersection/GtIntersection.cpp` |
+| `GtPolygonSoup.cpp` | 2 | 56 | `0x0027F450` | 2 (2) | `0x002BF7B0`–`0x002BF7D0` | `GameShared/GameClasses/Geometric/Primitives/GtPolygonSoup.cpp` |
+| `B3BoundingBox.cpp` | 5 | 15,872 | `0x002AF010` | 3 (0) | `0x002BEDC0`–`0x002F2E70` | `GameSource/Physics/B4BoundingBox.cpp` |
+| `B3BodyPartPhysics.cpp` | 9 | 5,200 | `0x002EBC50` | 7 (0) | `0x00333140`–`0x00334010` | `GameSource/Physics/B4BodyPartPhysics.cpp` |
+| `B3RumbleAttribs.cpp` | 2 | 16 | `0x002FDA50` |  |  | `GameSource/Game/B4RumbleAttribs.cpp` |
+| `GtSphereTree.cpp` | 14 | 12,440 | `0x00312810` | 14 (14) | `0x0035BD80`–`0x0035EE50` | `GameShared/GameClasses/Containers/GtSphereTree.cpp` |
+| `GtCollisionKDTree.cpp` | 5 | 5,916 | `0x003717A0` | 3 (1) | `0x003BE8D0`–`0x003BF720` | `GameShared/GameClasses/Geometric/Intersection/GtCollisionKDTree.cpp` |
+| `GtSimpleOrientedBox.cpp` | 1 | 256 | `0x00388610` | 1 (1) | `0x003D7F70`–`0x003D7F70` | `GameShared/GameClasses/Geometric/Primitives/GtSimpleOrientedBox.cpp` |
+| `B3ConvexHullMaker.cpp` | 4 | 3,444 | `0x003892F0` | 3 (1) | `0x003D8D60`–`0x003D9740` |  |
+| `B3VehicleDeform.cpp` | 44 | 60,964 | `0x0038A070` | 33 (0) | `0x003D9C50`–`0x00461440` | `GameSource/Physics/Deformation/B4VehicleDeform.cpp` |
+| `B3PhysicsConstants.cpp` | 1 | 92 | `0x0043DFD0` |  |  | `SharedClasses/PhysicsData/B4PhysicsConstants.cpp` |
 
 ## Classes
 

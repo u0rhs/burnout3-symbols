@@ -12,50 +12,50 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetAllowableCharacters(EGlobalStrings)` | `0x003050B0` 32 | `0x00359F20` 32 | `0x0038B350` 32 | `0x00392E20` 112 | `0x0034CED0` proven |  |
-| `SetDisplayText(unsigned short*,bool)` | `0x003050D0` 128 | `0x00359F40` 128 | `0x0038B370` 128 | `0x00392D70` 176 | `0x0034CEF0` proven |  |
-| `SetDisplayText(char*,bool)` | `0x00305150` 144 | `0x00359FC0` 144 | `0x0038B3F0` 144 | `0x00392D20` 80 | `0x0034CF90` proven |  |
-| `MoveCursorRight()` | `0x003051E0` 424 | `0x0035A050` 424 | `0x0038B480` 424 | `0x00392990` 600 | `0x0034D040` proven |  |
-| `MoveCursorLeft()` | `0x00305390` 360 | `0x0035A200` 360 | `0x0038B630` 360 | `0x00392780` 528 | `0x0034D1F0` proven |  |
-| `GetTableCellSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x00305500` 64 | `0x0035A370` 64 | `0x0038B7A0` 64 | `0x00392700` 128 | `0x0034D360` proven |  |
-| `UnHighlightKeys()` | `0x00305540` 808 | `0x0035A3B0` 808 | `0x0038B7E0` 808 | `0x00392400` 760 | `0x0034D3A0` proven |  |
-| `FindKey(unsigned short,CB3OnScreenKeyboardCell*)` | `0x00305870` 396 | `0x0035A6E0` 396 | `0x0038BB10` 396 | `0x00392240` 440 | `0x0034D6F0` proven |  |
-| `UnRegisterKeyboardCallbacks()` | `0x00305A00` 36 | `0x0035A870` 36 | `0x0038BCA0` 36 | `0x00392040` 64 | `0x0034D8A0` proven |  |
-| `RegisterKeyboardCallbacks()` | `0x00305A30` 52 | `0x0035A8A0` 52 | `0x0038BCD0` 52 | `0x00391DC0` 92 | `0x0034D8D0` proven |  |
-| `AddCharToString(unsigned short)` | `0x00305A70` 436 | `0x0035A8E0` 436 | `0x0038BD10` 436 | `0x00391B20` 664 | `0x0034D910` proven |  |
-| `RenderCellWithTriangle(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CG` | `0x00305C30` 1052 | `0x0035AAA0` 1096 | `0x0038BED0` 1096 | `0x00391700` 1056 | `0x0034DAD0` proven |  |
-| `RenderCell(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,co` | `0x00306050` 940 | `0x0035AEF0` 976 | `0x0038C320` 976 | `0x00391160` 440 | `0x0034DEF0` proven |  |
-| `KeyboardCharacterCallback(char,void*)` | `0x00306400` 280 | `0x0035B2C0` 280 | `0x0038C6F0` 280 | `0x00391000` 352 | `0x0034E2A0` likely |  |
-| `KeyboardEventCallback(int,int,int,int,void*)` | `0x00306520` 1412 | `0x0035B3E0` 1412 | `0x0038C810` 1412 | `0x00390AB0` 1356 | `0x0034E3D0` strong |  |
-| `PressKey(CB3OnScreenKeyboardCell)` | `0x00306AB0` 1352 | `0x0035B970` 1352 | `0x0038CDA0` 1352 | `0x00390450` 1620 | `0x0034E960` strong |  |
-| `HighlightKey(CB3OnScreenKeyboardCell,bool)` | `0x00307000` 1092 | `0x0035BEC0` 1092 | `0x0038D2F0` 1092 | `0x0038FD50` 1784 | `0x0034EEB0` strong |  |
-| `SetupKeys(bool,bool,bool)` | `0x00307450` 1164 | `0x0035C310` 1164 | `0x0038D740` 1164 | `0x0038F660` 1772 | `0x0034F300` likely |  |
-| `SetupTable()` | `0x003078E0` 3636 | `0x0035C7A0` 3768 | `0x0038DBD0` 3732 | `0x0038DC70` 6636 | `0x0034F860` unverified |  |
-| `SelectNextDown()` | `0x00308720` 200 | `0x0035D660` 200 | `0x0038EA70` 200 | `0x0038DB90` 216 | `0x00350830` likely |  |
-| `SelectNextUp()` | `0x003087F0` 176 | `0x0035D730` 176 | `0x0038EB40` 176 | `0x0038DAD0` 184 | `0x00350900` strong |  |
-| `SelectNextRight()` | `0x003088A0` 392 | `0x0035D7E0` 392 | `0x0038EBF0` 392 | `0x0038D8C0` 528 | `0x003509C0` likely |  |
-| `SelectNextLeft()` | `0x00308A30` 376 | `0x0035D970` 376 | `0x0038ED80` 376 | `0x0038D660` 508 | `0x00350B60` strong |  |
-| `SelectSymbols()` | `0x00308BB0` 148 | `0x0035DAF0` 148 | `0x0038EF00` 148 | `0x0038D5E0` 128 | `0x00350D90` strong |  |
-| `SelectCapsLock()` | `0x00308C50` 148 | `0x0035DB90` 148 | `0x0038EFA0` 148 | `0x0038D560` 128 | `0x00350E30` strong |  |
-| `SelectShift()` | `0x00308CF0` 148 | `0x0035DC30` 148 | `0x0038F040` 148 | `0x0038D480` 128 | `0x00350ED0` strong |  |
-| `Select()` | `0x00308D90` 12 | `0x0035DCD0` 12 | `0x0038F0E0` 12 | `0x0038D440` 52 | `0x00350F70` proven |  |
-| `Show(bool,bool)` | `0x00308DA0` 556 | `0x0035DCE0` 556 | `0x0038F0F0` 556 | `0x0038D0F0` 444 | `0x00350F80` unverified |  |
-| `Release()` | `0x00308FD0` 108 | `0x0035DF10` 108 | `0x0038F320` 108 | `0x0038CFF0` 52 | `0x00351390` strong |  |
-| `Update(float)` | `0x00309040` 444 | `0x0035DF80` 444 | `0x0038F390` 444 | `0x0038CE00` 484 | `0x00351410` strong |  |
-| `PrepareObjects(bool)` | `0x00309200` 528 | `0x0035E140` 528 | `0x0038F550` 528 | `0x0038CA60` 924 | `0x003515D0` strong |  |
-| `Prepare()` | `0x00309410` 184 | `0x0035E350` 184 | `0x0038F760` 184 | `0x0038C980` 212 |  |  |
-| `Construct()` | `0x003094D0` 360 | `0x0035E410` 360 | `0x0038F820` 48 | `0x0038C6B0` 628 | `0x003517F0` unverified |  |
-| `CB3OnScreenKeyboardComponent()` |  |  |  | `0x0033C490` 220 |  |  |
-| `CalculateCursorPosition()` |  |  |  | `0x00392BF0` 300 |  |  |
-| `GetInput()` |  |  |  | `0x0034D170` 28 |  |  |
-| `RemoveObjects()` |  |  |  | `0x0038D030` 180 |  |  |
-| `RenderBox(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,con` |  |  |  | `0x003914F0` 476 |  |  |
-| `SetMaximumInputLength(int)` |  |  |  | `0x0034D370` 200 |  |  |
-| `ShowPasswordChar(bool)` |  |  |  | `0x003889D0` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetAllowableCharacters(EGlobalStrings)` | `0x003050B0` 32 | `0x00359F20` 32 | `0x0038B350` 32 | `0x00392E20` 112 | `0x0034CED0` proven |  |  |
+| `SetDisplayText(unsigned short*,bool)` | `0x003050D0` 128 | `0x00359F40` 128 | `0x0038B370` 128 | `0x00392D70` 176 | `0x0034CEF0` proven |  |  |
+| `SetDisplayText(char*,bool)` | `0x00305150` 144 | `0x00359FC0` 144 | `0x0038B3F0` 144 | `0x00392D20` 80 | `0x0034CF90` proven |  |  |
+| `MoveCursorRight()` | `0x003051E0` 424 | `0x0035A050` 424 | `0x0038B480` 424 | `0x00392990` 600 | `0x0034D040` proven |  |  |
+| `MoveCursorLeft()` | `0x00305390` 360 | `0x0035A200` 360 | `0x0038B630` 360 | `0x00392780` 528 | `0x0034D1F0` proven |  |  |
+| `GetTableCellSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x00305500` 64 | `0x0035A370` 64 | `0x0038B7A0` 64 | `0x00392700` 128 | `0x0034D360` proven |  |  |
+| `UnHighlightKeys()` | `0x00305540` 808 | `0x0035A3B0` 808 | `0x0038B7E0` 808 | `0x00392400` 760 | `0x0034D3A0` proven |  |  |
+| `FindKey(unsigned short,CB3OnScreenKeyboardCell*)` | `0x00305870` 396 | `0x0035A6E0` 396 | `0x0038BB10` 396 | `0x00392240` 440 | `0x0034D6F0` proven |  |  |
+| `UnRegisterKeyboardCallbacks()` | `0x00305A00` 36 | `0x0035A870` 36 | `0x0038BCA0` 36 | `0x00392040` 64 | `0x0034D8A0` proven |  |  |
+| `RegisterKeyboardCallbacks()` | `0x00305A30` 52 | `0x0035A8A0` 52 | `0x0038BCD0` 52 | `0x00391DC0` 92 | `0x0034D8D0` proven |  |  |
+| `AddCharToString(unsigned short)` | `0x00305A70` 436 | `0x0035A8E0` 436 | `0x0038BD10` 436 | `0x00391B20` 664 | `0x0034D910` proven |  |  |
+| `RenderCellWithTriangle(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CG` | `0x00305C30` 1052 | `0x0035AAA0` 1096 | `0x0038BED0` 1096 | `0x00391700` 1056 | `0x0034DAD0` proven |  |  |
+| `RenderCell(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,co` | `0x00306050` 940 | `0x0035AEF0` 976 | `0x0038C320` 976 | `0x00391160` 440 | `0x0034DEF0` proven |  |  |
+| `KeyboardCharacterCallback(char,void*)` | `0x00306400` 280 | `0x0035B2C0` 280 | `0x0038C6F0` 280 | `0x00391000` 352 | `0x0034E2A0` likely |  |  |
+| `KeyboardEventCallback(int,int,int,int,void*)` | `0x00306520` 1412 | `0x0035B3E0` 1412 | `0x0038C810` 1412 | `0x00390AB0` 1356 | `0x0034E3D0` strong |  |  |
+| `PressKey(CB3OnScreenKeyboardCell)` | `0x00306AB0` 1352 | `0x0035B970` 1352 | `0x0038CDA0` 1352 | `0x00390450` 1620 | `0x0034E960` strong |  |  |
+| `HighlightKey(CB3OnScreenKeyboardCell,bool)` | `0x00307000` 1092 | `0x0035BEC0` 1092 | `0x0038D2F0` 1092 | `0x0038FD50` 1784 | `0x0034EEB0` strong |  |  |
+| `SetupKeys(bool,bool,bool)` | `0x00307450` 1164 | `0x0035C310` 1164 | `0x0038D740` 1164 | `0x0038F660` 1772 | `0x0034F300` likely |  |  |
+| `SetupTable()` | `0x003078E0` 3636 | `0x0035C7A0` 3768 | `0x0038DBD0` 3732 | `0x0038DC70` 6636 | `0x0034F860` unverified |  |  |
+| `SelectNextDown()` | `0x00308720` 200 | `0x0035D660` 200 | `0x0038EA70` 200 | `0x0038DB90` 216 | `0x00350830` likely |  |  |
+| `SelectNextUp()` | `0x003087F0` 176 | `0x0035D730` 176 | `0x0038EB40` 176 | `0x0038DAD0` 184 | `0x00350900` strong |  |  |
+| `SelectNextRight()` | `0x003088A0` 392 | `0x0035D7E0` 392 | `0x0038EBF0` 392 | `0x0038D8C0` 528 | `0x003509C0` likely |  |  |
+| `SelectNextLeft()` | `0x00308A30` 376 | `0x0035D970` 376 | `0x0038ED80` 376 | `0x0038D660` 508 | `0x00350B60` strong |  |  |
+| `SelectSymbols()` | `0x00308BB0` 148 | `0x0035DAF0` 148 | `0x0038EF00` 148 | `0x0038D5E0` 128 | `0x00350D90` strong |  |  |
+| `SelectCapsLock()` | `0x00308C50` 148 | `0x0035DB90` 148 | `0x0038EFA0` 148 | `0x0038D560` 128 | `0x00350E30` strong |  |  |
+| `SelectShift()` | `0x00308CF0` 148 | `0x0035DC30` 148 | `0x0038F040` 148 | `0x0038D480` 128 | `0x00350ED0` strong |  |  |
+| `Select()` | `0x00308D90` 12 | `0x0035DCD0` 12 | `0x0038F0E0` 12 | `0x0038D440` 52 | `0x00350F70` proven |  |  |
+| `Show(bool,bool)` | `0x00308DA0` 556 | `0x0035DCE0` 556 | `0x0038F0F0` 556 | `0x0038D0F0` 444 | `0x00350F80` unverified |  |  |
+| `Release()` | `0x00308FD0` 108 | `0x0035DF10` 108 | `0x0038F320` 108 | `0x0038CFF0` 52 | `0x00351390` strong |  |  |
+| `Update(float)` | `0x00309040` 444 | `0x0035DF80` 444 | `0x0038F390` 444 | `0x0038CE00` 484 | `0x00351410` strong |  |  |
+| `PrepareObjects(bool)` | `0x00309200` 528 | `0x0035E140` 528 | `0x0038F550` 528 | `0x0038CA60` 924 | `0x003515D0` strong |  |  |
+| `Prepare()` | `0x00309410` 184 | `0x0035E350` 184 | `0x0038F760` 184 | `0x0038C980` 212 |  |  |  |
+| `Construct()` | `0x003094D0` 360 | `0x0035E410` 360 | `0x0038F820` 48 | `0x0038C6B0` 628 | `0x003517F0` unverified |  |  |
+| `CB3OnScreenKeyboardComponent()` |  |  |  | `0x0033C490` 220 |  |  |  |
+| `CalculateCursorPosition()` |  |  |  | `0x00392BF0` 300 |  |  |  |
+| `GetInput()` |  |  |  | `0x0034D170` 28 |  |  |  |
+| `RemoveObjects()` |  |  |  | `0x0038D030` 180 |  |  |  |
+| `RenderBox(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,con` |  |  |  | `0x003914F0` 476 |  |  |  |
+| `SetMaximumInputLength(int)` |  |  |  | `0x0034D370` 200 |  |  |  |
+| `ShowPasswordChar(bool)` |  |  |  | `0x003889D0` 36 |  |  |  |
 
 ## Notes
 

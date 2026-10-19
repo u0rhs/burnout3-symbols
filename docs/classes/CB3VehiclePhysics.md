@@ -9,55 +9,56 @@
 - **Methods per build:** DNAT_200 25, B3DEBUG 25, B3INTERN 25, B3O0PCH 41
 - **Retail (SLUS-21050):** 23 of its 25 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FE60`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
+- **Burnout Revenge counterpart:** `CB4VehiclePhysics`, size 0x12D0, methods in `GameSource/Physics/B4VehiclePhysics.cpp` ([layout](#burnout-revenge-layout-of-cb4vehiclephysics))
 - **Burnout 2 ancestor (by name):** `CVehiclePhysics`, size 0xAA0, declared in 89 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CollideHingedPartWithWorld(int)` | `0x0018FE30` 1600 | `0x001BD4E0` 1920 | `0x001B8230` 1716 | `0x001D5E50` 1144 |  |  |
-| `UpdateHingedPart(int,float)` | `0x00190470` 11888 | `0x001BDC60` 29516 | `0x001B88F0` 26700 | `0x001D2540` 12488 | `0x001C8870` unverified |  |
-| `UpdateCrashSteering(float)` | `0x001932E0` 2300 | `0x001C4FB0` 3524 | `0x001BF140` 3428 | `0x001D1B10` 2452 | `0x001CAD30` likely |  |
-| `IsVehicleTouchingHorizontalSurface(bool,float)` | `0x00193BE0` 692 | `0x001C5D80` 1300 | `0x001BFEB0` 920 | `0x001D19B0` 348 | `0x001CB780` strong |  |
-| `StopCrashing()` | `0x00193EA0` 160 | `0x001C62A0` 160 | `0x001C0250` 160 | `0x001D1740` 236 |  |  |
-| `StartCrashing(int,CB3CrashStartInfo*)` | `0x00193F40` 108 | `0x001C6340` 224 | `0x001C02F0` 224 | `0x001D1670` 200 | `0x001CBC70` strong |  |
-| `ReleasePayload()` | `0x00193FB0` 148 | `0x001C6420` 148 | `0x001C03D0` 148 | `0x001D15A0` 208 | `0x001CBCE0` strong |  |
-| `DetachBodyPart(int)` | `0x00194050` 196 | `0x001C64C0` 196 | `0x001C0470` 196 | `0x001D14A0` 256 | `0x001CBD80` strong |  |
-| `FlapBodyPart(int)` | `0x00194120` 52 | `0x001C6590` 52 | `0x001C0540` 52 | `0x001D1420` 124 | `0x001CBE50` likely |  |
-| `ApplyCrashRamp(GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d*,bool)` | `0x00194160` 872 | `0x001C65D0` 1644 | `0x001C0580` 872 | `0x001D0C90` 1556 | `0x001CBE90` strong |  |
-| `ApplyRamp(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x001944D0` 420 | `0x001C6C40` 556 | `0x001C08F0` 420 | `0x001D0740` 1348 | `0x001CC200` strong |  |
-| `DetachAll(bool)` | `0x00194680` 260 | `0x001C6E70` 260 | `0x001C0AA0` 260 | `0x001D0620` 284 | `0x001CC3B0` strong |  |
-| `FireAirRamUpwards(unsigned int,float,bool)` | `0x00194790` 84 | `0x001C6F80` 84 | `0x001C0BB0` 84 | `0x001D0580` 160 | `0x001CC4C0` proven |  |
-| `FireAirRam(unsigned int,float,bool)` | `0x001947F0` 92 | `0x001C6FE0` 92 | `0x001C0C10` 92 | `0x001D04D0` 172 | `0x001CC520` strong |  |
-| `FireAirRamWithDirection(unsigned int,float,GtMathPs2::CGtV3d,bool)` | `0x00194850` 868 | `0x001C7040` 1476 | `0x001C0C70` 1476 | `0x001CFF10` 1460 | `0x001CC580` strong |  |
-| `UpdateSuspension(float)` | `0x00194BC0` 4848 | `0x001C7610` 6700 | `0x001C1240` 6516 | `0x001CE580` 6212 | `0x001CC900` unverified | `void CVehiclePhysics::UpdateSuspension(float lrTimeStep)` |
-| `CollideWheels()` | `0x00195EB0` 1600 | `0x001C9040` 1816 | `0x001C2BC0` 1816 | `0x001CD9B0` 2864 | `0x001CDB70` strong | `void CVehiclePhysics::CollideWheels()` |
-| `DoWheelLineCollision(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,int*,float*)` | `0x001964F0` 584 | `0x001C9760` 624 | `0x001C32E0` 624 | `0x001CD5B0` 872 | `0x001CE1A0` likely |  |
-| `Destruct()` | `0x00196740` 8 | `0x001C99D0` 8 | `0x001C3550` 8 | `0x001CD580` 40 | `0x001CE450` likely |  |
-| `Release()` | `0x00196750` 8 | `0x001C99E0` 8 | `0x001C3560` 8 | `0x001CD550` 40 | `0x001CE460` proven |  |
-| `Update(float)` | `0x00196760` 1584 | `0x001C99F0` 3236 | `0x001C3570` 3236 | `0x001CCE50` 1780 | `0x001CE470` unverified | `void CVehiclePhysics::Update(float lrTimeStep)` |
-| `CollideWithWorld()` | `0x00196D90` 736 | `0x001CA6A0` 1192 | `0x001C4220` 764 | `0x001CCAD0` 892 | `0x001CEE10` unverified |  |
-| `Prepare(CB3VehicleEssentialParams*,CB3VehicleParams*)` | `0x00197070` 2556 | `0x001CAB50` 2556 | `0x001C4520` 2556 | `0x001CBBB0` 1344 | `0x001CF2B0` strong |  |
-| `Prepare()` | `0x00197A70` 268 | `0x001CB550` 268 | `0x001C4F20` 268 | `0x001CBA10` 412 | `0x001CFC00` strong |  |
-| `Construct()` | `0x00197B80` 260 | `0x001CB660` 260 | `0x001C5030` 260 | `0x001CB7F0` 464 | `0x001CFD20` likely |  |
-| `CB3VehiclePhysics()` |  |  |  | `0x00191D70` 284 |  |  |
-| `CollapseSuspension(int)` |  |  |  | `0x001D12B0` 124 |  |  |
-| `DetachWheel(int)` |  |  |  | `0x001D1330` 228 |  | `CPropPhysics *CVehiclePhysics::DetachWheel(int lnWheelIndex)` |
-| `GetLocalWheelPosition(int)` |  |  |  | `0x001C4020` 48 |  |  |
-| `IgnoreAllCollisionThisFrame()` |  |  |  | `0x001B85D0` 44 |  |  |
-| `IgnoreTrafficCollisionThisFrame()` |  |  |  | `0x001B66C0` 44 |  |  |
-| `IgnoreWallCollisionThisFrame()` |  |  |  | `0x001C1170` 44 |  |  |
-| `IsVehicleTouchingWorld(bool)` |  |  |  | `0x001D1830` 288 |  |  |
-| `ResetCollisionBools()` |  |  |  | `0x001B0650` 28 |  |  |
-| `SetDisableTrafficCrashesThisFrame()` |  |  |  | `0x00168DD0` 36 |  |  |
-| `SetDisableWallCrashesThisFrame()` |  |  |  | `0x00168DA0` 36 |  |  |
-| `SetIgnoreAllCollisionThisFrame()` |  |  |  | `0x00168D70` 36 |  |  |
-| `SetIgnoreTrafficCollisionThisFrame()` |  |  |  | `0x001BD5C0` 36 |  |  |
-| `SetIgnoreWallCollisionThisFrame()` |  |  |  | `0x001D6E60` 36 |  |  |
-| `TrafficCrashesDisabledThisFrame()` |  |  |  | `0x00142060` 44 |  |  |
-| `WallCrashesDisabledThisFrame()` |  |  |  | `0x00142090` 44 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CollideHingedPartWithWorld(int)` | `0x0018FE30` 1600 | `0x001BD4E0` 1920 | `0x001B8230` 1716 | `0x001D5E50` 1144 |  |  | `void CB4VehiclePhysics::CollideHingedPartWithWorld(int lnPartIndex)` |
+| `UpdateHingedPart(int,float)` | `0x00190470` 11888 | `0x001BDC60` 29516 | `0x001B88F0` 26700 | `0x001D2540` 12488 | `0x001C8870` unverified |  | `void CB4VehiclePhysics::UpdateHingedPart(int lnPartIndex, float lrTimeStep)` |
+| `UpdateCrashSteering(float)` | `0x001932E0` 2300 | `0x001C4FB0` 3524 | `0x001BF140` 3428 | `0x001D1B10` 2452 | `0x001CAD30` likely |  | `void CB4VehiclePhysics::UpdateCrashSteering(float lrTimeStep)` |
+| `IsVehicleTouchingHorizontalSurface(bool,float)` | `0x00193BE0` 692 | `0x001C5D80` 1300 | `0x001BFEB0` 920 | `0x001D19B0` 348 | `0x001CB780` strong |  | `bool CB4VehiclePhysics::IsVehicleTouchingHorizontalSurface(bool lbIncludeWheels, float lrThreshold) const` (same name, different parameters) |
+| `StopCrashing()` | `0x00193EA0` 160 | `0x001C62A0` 160 | `0x001C0250` 160 | `0x001D1740` 236 |  |  | `void CB4VehiclePhysics::StopCrashing()` |
+| `StartCrashing(int,CB3CrashStartInfo*)` | `0x00193F40` 108 | `0x001C6340` 224 | `0x001C02F0` 224 | `0x001D1670` 200 | `0x001CBC70` strong |  | `void CB4VehiclePhysics::StartCrashing(unsigned char lu8CrashIndex, CB4CrashStartInfo *lpSCI)` (same name, different parameters) |
+| `ReleasePayload()` | `0x00193FB0` 148 | `0x001C6420` 148 | `0x001C03D0` 148 | `0x001D15A0` 208 | `0x001CBCE0` strong |  | `void CB4VehiclePhysics::ReleasePayload()` |
+| `DetachBodyPart(int)` | `0x00194050` 196 | `0x001C64C0` 196 | `0x001C0470` 196 | `0x001D14A0` 256 | `0x001CBD80` strong |  | `CB4BodyPartPhysics * CB4VehiclePhysics::DetachBodyPart(int lnPartIndex)` |
+| `FlapBodyPart(int)` | `0x00194120` 52 | `0x001C6590` 52 | `0x001C0540` 52 | `0x001D1420` 124 | `0x001CBE50` likely |  | `void CB4VehiclePhysics::FlapBodyPart(int lnPartIndex)` |
+| `ApplyCrashRamp(GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d*,bool)` | `0x00194160` 872 | `0x001C65D0` 1644 | `0x001C0580` 872 | `0x001D0C90` 1556 | `0x001CBE90` strong |  | `void CB4VehiclePhysics::ApplyCrashRamp(GtMathPs2::CGtMatrix3x4 *lpMatrix, GtMathPs2::CGtV3d *laVertices, bool lbIsLeftScrew)` |
+| `ApplyRamp(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x001944D0` 420 | `0x001C6C40` 556 | `0x001C08F0` 420 | `0x001D0740` 1348 | `0x001CC200` strong |  | `void CB4VehiclePhysics::ApplyRamp(GtMathPs2::CGtV3d lPosition, GtMathPs2::CGtV3d lDirection, GtMathPs2::CGtV3d lDimensions)` |
+| `DetachAll(bool)` | `0x00194680` 260 | `0x001C6E70` 260 | `0x001C0AA0` 260 | `0x001D0620` 284 | `0x001CC3B0` strong |  |  |
+| `FireAirRamUpwards(unsigned int,float,bool)` | `0x00194790` 84 | `0x001C6F80` 84 | `0x001C0BB0` 84 | `0x001D0580` 160 | `0x001CC4C0` proven |  | `void CB4VehiclePhysics::FireAirRamUpwards(unsigned int lxPositionFlags, float lrMagnitude, bool lbDoSmoke)` |
+| `FireAirRam(unsigned int,float,bool)` | `0x001947F0` 92 | `0x001C6FE0` 92 | `0x001C0C10` 92 | `0x001D04D0` 172 | `0x001CC520` strong |  | `void CB4VehiclePhysics::FireAirRam(unsigned int lxPositionFlags, float lrMagnitude, bool lbDoSmoke)` |
+| `FireAirRamWithDirection(unsigned int,float,GtMathPs2::CGtV3d,bool)` | `0x00194850` 868 | `0x001C7040` 1476 | `0x001C0C70` 1476 | `0x001CFF10` 1460 | `0x001CC580` strong |  | `void CB4VehiclePhysics::FireAirRamWithDirection(unsigned int lxPositionFlags, float lrMagnitude, GtMathPs2::CGtV3d lDirection, bool lbDoSmoke)` |
+| `UpdateSuspension(float)` | `0x00194BC0` 4848 | `0x001C7610` 6700 | `0x001C1240` 6516 | `0x001CE580` 6212 | `0x001CC900` unverified | `void CVehiclePhysics::UpdateSuspension(float lrTimeStep)` | `void CB4VehiclePhysics::UpdateSuspension(float lrTimeStep)` |
+| `CollideWheels()` | `0x00195EB0` 1600 | `0x001C9040` 1816 | `0x001C2BC0` 1816 | `0x001CD9B0` 2864 | `0x001CDB70` strong | `void CVehiclePhysics::CollideWheels()` | `void CB4VehiclePhysics::CollideWheels()` |
+| `DoWheelLineCollision(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,int*,float*)` | `0x001964F0` 584 | `0x001C9760` 624 | `0x001C32E0` 624 | `0x001CD5B0` 872 | `0x001CE1A0` likely |  | `bool CB4VehiclePhysics::DoWheelLineCollision(GtMathPs2::CGtV3d lStart, GtMathPs2::CGtV3d lEnd, int *lpnIndexOut, float *lprDistanceOut)` |
+| `Destruct()` | `0x00196740` 8 | `0x001C99D0` 8 | `0x001C3550` 8 | `0x001CD580` 40 | `0x001CE450` likely |  | `void CB4VehiclePhysics::Destruct()` |
+| `Release()` | `0x00196750` 8 | `0x001C99E0` 8 | `0x001C3560` 8 | `0x001CD550` 40 | `0x001CE460` proven |  | `void CB4VehiclePhysics::Release()` |
+| `Update(float)` | `0x00196760` 1584 | `0x001C99F0` 3236 | `0x001C3570` 3236 | `0x001CCE50` 1780 | `0x001CE470` unverified | `void CVehiclePhysics::Update(float lrTimeStep)` | `void CB4VehiclePhysics::Update(float lrTimeStep)` |
+| `CollideWithWorld()` | `0x00196D90` 736 | `0x001CA6A0` 1192 | `0x001C4220` 764 | `0x001CCAD0` 892 | `0x001CEE10` unverified |  | `void CB4VehiclePhysics::CollideWithWorld(int lnActiveBodyIndex)` (same name, different parameters) |
+| `Prepare(CB3VehicleEssentialParams*,CB3VehicleParams*)` | `0x00197070` 2556 | `0x001CAB50` 2556 | `0x001C4520` 2556 | `0x001CBBB0` 1344 | `0x001CF2B0` strong |  | `bool CB4VehiclePhysics::Prepare(CB4VehicleEssentialParams *lpEssentialParams, CB4VehicleParams *lpVehicleParams)` |
+| `Prepare()` | `0x00197A70` 268 | `0x001CB550` 268 | `0x001C4F20` 268 | `0x001CBA10` 412 | `0x001CFC00` strong |  | `bool CB4VehiclePhysics::Prepare()` |
+| `Construct()` | `0x00197B80` 260 | `0x001CB660` 260 | `0x001C5030` 260 | `0x001CB7F0` 464 | `0x001CFD20` likely |  | `void CB4VehiclePhysics::Construct()` |
+| `CB3VehiclePhysics()` |  |  |  | `0x00191D70` 284 |  |  | `CB4VehiclePhysics * CB4VehiclePhysics::CB4VehiclePhysics()` |
+| `CollapseSuspension(int)` |  |  |  | `0x001D12B0` 124 |  |  | `void CB4VehiclePhysics::CollapseSuspension(int lnWheelIndex)` |
+| `DetachWheel(int)` |  |  |  | `0x001D1330` 228 |  | `CPropPhysics *CVehiclePhysics::DetachWheel(int lnWheelIndex)` | `CB4BodyPartPhysics * CB4VehiclePhysics::DetachWheel(int lnWheelIndex)` |
+| `GetLocalWheelPosition(int)` |  |  |  | `0x001C4020` 48 |  |  |  |
+| `IgnoreAllCollisionThisFrame()` |  |  |  | `0x001B85D0` 44 |  |  |  |
+| `IgnoreTrafficCollisionThisFrame()` |  |  |  | `0x001B66C0` 44 |  |  |  |
+| `IgnoreWallCollisionThisFrame()` |  |  |  | `0x001C1170` 44 |  |  |  |
+| `IsVehicleTouchingWorld(bool)` |  |  |  | `0x001D1830` 288 |  |  | `bool CB4VehiclePhysics::IsVehicleTouchingWorld(bool lbIncludeWheels)` |
+| `ResetCollisionBools()` |  |  |  | `0x001B0650` 28 |  |  |  |
+| `SetDisableTrafficCrashesThisFrame()` |  |  |  | `0x00168DD0` 36 |  |  |  |
+| `SetDisableWallCrashesThisFrame()` |  |  |  | `0x00168DA0` 36 |  |  |  |
+| `SetIgnoreAllCollisionThisFrame()` |  |  |  | `0x00168D70` 36 |  |  |  |
+| `SetIgnoreTrafficCollisionThisFrame()` |  |  |  | `0x001BD5C0` 36 |  |  |  |
+| `SetIgnoreWallCollisionThisFrame()` |  |  |  | `0x001D6E60` 36 |  |  |  |
+| `TrafficCrashesDisabledThisFrame()` |  |  |  | `0x00142060` 44 |  |  |  |
+| `WallCrashesDisabledThisFrame()` |  |  |  | `0x00142090` 44 |  |  |  |
 
 ## Burnout 2 layout of `CVehiclePhysics`
 
@@ -97,6 +98,125 @@ public:
     // void CVehiclePhysics::Reset()  [0x001CF370]
     // void CVehiclePhysics::Setup()  [0x001CF560]
     // void CVehiclePhysics::Init()  [0x001CF5B0]
+};
+```
+
+## Burnout Revenge layout of `CB4VehiclePhysics`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 321 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4VehiclePhysics : public CB4CollidingBody {  // size 0x12D0
+    // base CB4CollidingBody at 0x000
+    /* 0x210 */ CB4ConvexHullVehicle mBoundingHull;
+    /* 0x550 */ CB4Wheel maWheels[6];
+    /* 0x9D0 */ CSuspension mSuspension;
+    /* 0x9F4 */ CB4VehicleEssentialParams *mpEssentialParams;
+    /* 0x9F8 */ CB4VehicleParams *mpVehicleParams;
+    /* 0x9FC */ CGtMatrix3x4 *mapWheelMatrices[6];
+    /* 0xA20 */ CB4HingedPartPhysics maHingedParts[8];
+    /* 0x10A0 */ CB4CollisionTag meWholeCarColTag;
+    /* 0x10A4 */ RwReal mrSteeringAngle;
+    /* 0x10A8 */ bool mbVehicleHasAir;
+    /* 0x10A9 */ bool mbVehicleFarFromGround;
+    /* 0x10AA */ RwInt8 mnNumWheels;
+    /* 0x10AB */ RwInt8 mnNumAttachedWheels;
+    /* 0x10AC */ bool mbCrashSteering;
+    /* 0x10B0 */ RwReal mrRandomCrumpleFactor;
+    /* 0x10B4 */ RwReal mrCrashPositionY;
+    /* 0x10C0 */ CB4TrailEmitterData mTrailEmitterData[2];
+    /* 0x1100 */ CB4ScrapeEmitterData mScrapeEmitterData;
+    /* 0x1120 */ RwReal mrVehicleVehicleDeformationFactor;
+    /* 0x1124 */ RwReal mrDrivingMass;
+    /* 0x1128 */ RwReal mrCrashingMass;
+    /* 0x112C */ RwReal mrRemainingOnFireTime;
+    /* 0x1130 */ RwReal mrExplosionSize;
+    /* 0x1134 */ RwReal mrGraphicalExplosionSize;
+    /* 0x1138 */ RwReal mrContagiousExplosionTime;
+    /* 0x113C */ bool mbIsOnContagiousFire;
+    /* 0x1140 */ CCacheFriendlyTriangle maRampTriangles[6];
+    /* 0x12C0 */ bool mbRampIsActive;
+    /* 0x12C1 */ bool mbCrashRampIsActive;
+    /* 0x12C2 */ bool mbIsAboveWorld;
+    /* 0x12C3 */ RwUInt8 mx8CollisionFlags;
+    /* 0x12C4 */ RwInt8 mn8StopDeadCounter;
+    // methods
+    // CB4VehiclePhysics(const CB4VehiclePhysics &);
+    // CB4VehiclePhysics();
+    // void Construct();
+    // bool Prepare();
+    // bool Prepare(CB4VehicleEssentialParams *, CB4VehicleParams *);
+    // virtual void Update(float);
+    // virtual void Release();
+    // void Destruct();
+    // bool IsInAir();
+    // bool HasAllWheelsOnGround();
+    // bool HasAWheelOnGround();
+    // bool HasUnreleasedPayload();
+    // bool IsFrontWheel(int);
+    // bool IsRearWheel(int);
+    // bool IsLeftWheel(int);
+    // bool IsRightWheel(int);
+    // virtual void CollideWithWorld(int);
+    // void CacheWorldTriangles(float);
+    // bool DoWheelLineCollision(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, int *, float *);
+    // void CollideWheels();
+    // void UpdateSuspension(float);
+    // CGtV3d * GetLocalWheelPosition(int);
+    // virtual void StartCrashing(unsigned char, CB4CrashStartInfo *);
+    // virtual void StopCrashing();
+    // void FireAirRamWithDirection(unsigned int, float, GtMathPs2::CGtV3d, bool);
+    // void FireAirRam(unsigned int, float, bool);
+    // void FireAirRamUpwards(unsigned int, float, bool);
+    // void ApplyRamp(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d);
+    // void ApplyCrashRamp(GtMathPs2::CGtMatrix3x4 *, GtMathPs2::CGtV3d *, bool);
+    // void CollapseSuspension(int);
+    // CB4BodyPartPhysics * DetachWheel(int);
+    // void FlapBodyPart(int);
+    // CB4BodyPartPhysics * DetachBodyPart(int);
+    // void ReleasePayload();
+    // void UpdateCrashSteering(float);
+    // bool IsVehicleTouchingWorld(bool);
+    // bool IsVehicleTouchingHorizontalSurface(bool, float) const;
+    // void UpdateHingedPart(int, float);
+    // void CollideHingedPartWithWorld(int);
+    // void ResetCollisionBools();
+    // void SetIgnoreWallCollisionThisFrame();
+    // bool IgnoreWallCollisionThisFrame();
+    // void SetIgnoreTrafficCollisionThisFrame();
+    // bool IgnoreTrafficCollisionThisFrame();
+    // void SetIgnoreAllCollisionThisFrame();
+    // bool IgnoreAllCollisionThisFrame();
+    // void SetDisableWallCrashesThisFrame();
+    // bool WallCrashesDisabledThisFrame();
+    // void SetDisableTrafficCrashesThisFrame();
+    // bool TrafficCrashesDisabledThisFrame();
+    // void SetDisableRaceCarCrashesThisFrame();
+    // bool RaceCarCrashesDisabledThisFrame();
+    // bool IsOutsideCollision();
+    // void DoCrashBreakerDeformation(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float);
+    // void DoDeformTankerExplosion();
+    // virtual GtID GetVehicleID();
+    // virtual ETrafficVehicleCategories GetVehicleCategory();
+    // CB4BackdropObject * GetNearestActiveDetourChevron(int);
+    // bool IsLargeVehicle() const;
+    // void ExplodeVehicle(float, bool, bool, float);
+    // void ExplodeVehicle(GtMathPs2::CGtV3d, float, bool, bool, float);
+    // void IgniteVehicle(bool);
+    // bool IsOnFire() const;
+    // bool IsOnContagiousFire() const;
+    // RwReal GetTimeToContagiousExplosion() const;
+    // RwReal GetRemainingTimeOnFire() const;
+    // RwReal GetTimeSinceExploded() const;
+    // bool HasExploded() const;
+    // RwReal GetExplosionSize() const;
+    // RwReal GetGraphicalExplosionSize() const;
+    // bool HandleCarStandingOnEnd();
+    // RwReal CalculateExplosionSize() const;
+    // RwReal CalculateExplosionSize(float) const;
+    // virtual GtID GetCarID();
+    // void ApplyPhysicalExplosionEffect(float);
+    // void IntegrateCollidingBody(float);
 };
 ```
 

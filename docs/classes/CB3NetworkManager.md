@@ -8,105 +8,285 @@
 - **Source file:** `B3NetworkManager.cpp`
 - **Methods per build:** DNAT_200 50, B3DEBUG 47, B3INTERN 47, B3O0PCH 83
 - **Retail (SLUS-21050):** 17 of its 50 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4NetworkManager`, size 0x232B0, methods in `GameSource/Network/B4NetworkManager.cpp` ([layout](#burnout-revenge-layout-of-cb4networkmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ABecomesHostBeforeB(int,int)` | `0x0022E030` 84 | `0x00246AA0` 120 |  | `0x00289DD0` 168 |  |  |
-| `HostMigrationEnterGame()` | `0x0022E090` 292 | `0x00246B20` 292 |  | `0x00289C20` 324 | `0x0026CAB0` strong |  |
-| `_QSortCallback(const void*,const void*)` | `0x0022E1C0` 124 | `0x00246C50` 200 |  | `0x00289AF0` 292 |  |  |
-| `ShouldWeEncryptMessageContents(int)` | `0x0022E240` 68 | `0x00246D20` 276 | `0x00283230` 276 | `0x00289A00` 228 |  |  |
-| `GetBuddyErrorString(EGtBuddyErrorCodes)` | `0x0022E290` 196 | `0x00246E40` 196 | `0x00283350` 196 | `0x002898E0` 284 | `0x0026CCC0` strong |  |
-| `GetDirtySockErrorString(int)` | `0x0022E360` 548 | `0x00246F10` 548 | `0x00283420` 548 | `0x002895B0` 816 | `0x0026CD90` strong |  |
-| `GetErrorString(int)` | `0x0022E590` 532 | `0x00247140` 532 | `0x00283650` 532 | `0x00289290` 796 | `0x0026CFC0` strong |  |
-| `GetAdapterErrorString(int)` | `0x0022E7B0` 108 | `0x00247360` 108 | `0x00283870` 108 | `0x002891F0` 152 | `0x0026D1E0` likely |  |
-| `ResetDNASStatus()` | `0x0022E820` 228 | `0x002473D0` 228 | `0x002838E0` 228 | `0x002890D0` 284 |  |  |
-| `UpdateDNASStatus()` | `0x0022E910` 996 |  | `0x002839D0` 1608 |  |  |  |
-| `TimeIsSynchronised()` | `0x0022ED00` 232 | `0x002474C0` 8 | `0x00284020` 212 | `0x00289070` 20 |  |  |
-| `ConnectionDropped(int,void*)` | `0x0022EDF0` 624 | `0x002474D0` 624 | `0x00284100` 616 | `0x00288E70` 420 |  |  |
-| `RegisterPlayerCarCrash()` | `0x0022F060` 96 | `0x00247740` 96 | `0x00284370` 96 | `0x00288DC0` 136 | `0x0026DD00` strong |  |
-| `GetEmptyPlayerRecord()` | `0x0022F0C0` 84 | `0x002477A0` 168 | `0x002843D0` 168 | `0x00288D30` 144 | `0x0026DD70` strong |  |
-| `GetPlayerRecordByID(int)` | `0x0022F120` 100 | `0x00247850` 172 | `0x00284480` 172 | `0x00288C60` 196 | `0x0026DDC0` likely |  |
-| `SetPlayerRecordsNotAdded()` | `0x0022F190` 76 | `0x00247900` 76 | `0x00284530` 76 | `0x00288BF0` 112 | `0x0026DE30` likely |  |
-| `OnGameStart()` | `0x0022F1E0` 276 | `0x00247950` 276 | `0x00284580` 276 | `0x00288980` 136 | `0x0026DE80` unverified |  |
-| `PrepareForGameStart()` | `0x0022F300` 492 | `0x00247A70` 492 | `0x002846A0` 496 | `0x002887D0` 432 | `0x0026DF70` likely |  |
-| `GameModeStatusMessageDeliveredCallback(bool,CGtNetworkMessage*,void*)` | `0x0022F4F0` 80 | `0x00247C60` 1028 | `0x00284890` 1028 | `0x002885C0` 528 | `0x0026E130` likely |  |
-| `GameModeStatusMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F540` 104 | `0x00248070` 1292 | `0x00284CA0` 1036 | `0x00288390` 548 | `0x0026E1A0` likely |  |
-| `NATDataMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F5B0` 64 | `0x00248580` 2920 | `0x002850B0` 2672 | `0x00287F20` 1132 | `0x0026E230` strong |  |
-| `ReplayBodyMessageDeliveredCallback(bool,CGtNetworkMessage*,void*)` | `0x0022F5F0` 196 | `0x002490F0` 2024 | `0x00285B20` 2024 | `0x00287CA0` 640 | `0x0026E280` strong |  |
-| `ReplayHeaderMessageDeliveredCallback(bool,CGtNetworkMessage*,void*)` | `0x0022F6C0` 44 | `0x002498E0` 1036 | `0x00286310` 1036 | `0x00287A90` 520 | `0x0026E350` strong |  |
-| `ReplayBodyMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F6F0` 128 | `0x00249CF0` 1944 | `0x00286720` 1696 | `0x002876E0` 904 | `0x0026E380` strong |  |
-| `ReplayHeaderMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F770` 92 | `0x0024A490` 1964 | `0x00286DC0` 1584 | `0x00287430` 676 |  |  |
-| `StartCountdownMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F7D0` 480 | `0x0024AC40` 1740 | `0x002873F0` 1164 | `0x00287020` 748 |  |  |
-| `RaceFinishedMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F9B0` 368 | `0x0024B310` 1008 | `0x00287880` 884 | `0x00286EC0` 344 |  |  |
-| `RaceReadyMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022FB20` 96 | `0x0024B700` 676 | `0x00287C00` 552 | `0x00286DB0` 260 |  |  |
-| `RestNATStatusData()` | `0x0022FB80` 128 | `0x0024B9B0` 140 | `0x00287E30` 140 | `0x00286CF0` 192 |  |  |
-| `AllNATDataIsFinalised()` | `0x0022FC00` 116 | `0x0024BA40` 328 | `0x00287EC0` 116 | `0x00286BD0` 284 |  |  |
-| `FinaliseNATData()` | `0x0022FC80` 224 |  | `0x00287F40` 716 |  |  |  |
-| `ProcessNATData()` | `0x0022FD60` 484 |  | `0x00288210` 696 |  |  |  |
-| `PlayerBootedCallback(ELobbyKickReason,void*)` | `0x0022FF50` 116 | `0x0024BB90` 116 | `0x002884D0` 96 | `0x00286A30` 124 |  |  |
-| `PlayerListChangedCallback(int,void*)` | `0x0022FFD0` 340 | `0x0024BC10` 420 | `0x00288530` 420 | `0x002869F0` 56 |  |  |
-| `RebuildPlayerList()` | `0x00230130` 340 | `0x0024BDC0` 416 | `0x002886E0` 416 | `0x00286970` 124 |  |  |
-| `GetHostPlayer()` | `0x00230290` 116 | `0x0024BF60` 116 | `0x00288880` 96 | `0x002868E0` 140 |  |  |
-| `AmIHost()` | `0x00230310` 172 | `0x0024BFE0` 172 | `0x002888E0` 160 | `0x00286800` 212 |  |  |
-| `ForEachNetworkOpponent(char*,int,bool,int,int,int,char*,bool,void*)` | `0x002303C0` 1012 | `0x0024C090` 1172 | `0x00288980` 1160 | `0x00286430` 888 |  |  |
-| `BootNetGui()` | `0x002307C0` 136 | `0x0024C530` 136 | `0x00288E10` 136 | `0x00286390` 156 |  |  |
-| `ResetNumFramesDropped()` | `0x00230850` 280 | `0x0024C5C0` 1852 | `0x00288EA0` 1852 | `0x002862B0` 224 |  |  |
-| `UpdateHostKeepAlive()` | `0x00230970` 2292 | `0x0024CD00` 6592 | `0x002895E0` 8 | `0x00285A00` 2020 |  |  |
-| `SyncTime(bool)` | `0x00231270` 308 | `0x0024E6C0` 8 | `0x002895F0` 288 | `0x00285640` 16 |  |  |
-| `PostPlayerRegPrepare()` | `0x002313B0` 448 | `0x0024E6D0` 104 | `0x00289710` 496 | `0x00285540` 136 |  |  |
-| `Destruct()` | `0x00231570` 104 | `0x0024E740` 8 | `0x00289900` 120 | `0x00285510` 48 |  |  |
-| `Release()` | `0x002315E0` 400 | `0x0024E750` 248 | `0x00289980` 388 | `0x002854D0` 56 |  |  |
-| `PostUpdate()` | `0x00231770` 144 | `0x0024E850` 24 | `0x00289B10` 144 | `0x002854A0` 40 |  |  |
-| `GetLobbyStatus()` | `0x00231800` 24 | `0x0024E870` 24 | `0x00289BA0` 24 | `0x00285460` 56 |  |  |
-| `Update()` | `0x00231820` 1352 | `0x0024E890` 1992 | `0x00289BC0` 3936 | `0x00284EE0` 384 |  |  |
-| `Prepare(bool)` | `0x00231D70` 548 | `0x0024F060` 184 | `0x0028AB20` 780 | `0x00284E80` 96 |  |  |
-| `Construct()` | `0x00231FA0` 484 | `0x0024F120` 204 | `0x0028AE30` 552 | `0x00284D60` 276 |  |  |
-| `AllPlayersReadyToRace()` |  |  |  | `0x003E7EB0` 64 |  |  |
-| `CB3NetworkManager()` |  |  |  | `0x00289E80` 148 |  |  |
-| `ClearPlayerRecords()` |  |  |  | `0x00288A10` 292 |  |  |
-| `GetDNASErrorMessage()` |  |  |  | `0x003954B0` 36 |  |  |
-| `GetDNASStatus()` |  |  |  | `0x00386100` 36 |  |  |
-| `GetFrameCount()` |  |  |  | `0x001A3F10` 12 |  |  |
-| `GetHostPlayerID()` |  |  |  | `0x00289D70` 96 |  |  |
-| `GetNetworkTime()` |  |  |  | `0x00287400` 36 |  |  |
-| `GetStartCountdown(int*,float*)` |  |  |  | `0x003E7EF0` 144 |  |  |
-| `GetU16FrameCount()` |  |  |  | `0x001A3EC0` 72 |  |  |
-| `IsHostAvailable()` |  |  |  | `0x002857C0` 216 |  |  |
-| `IsInOnlineMenus()` |  |  |  | `0x0013D070` 36 |  |  |
-| `IsNetworkOpen()` |  |  |  | `0x00368C30` 36 |  |  |
-| `IsOnline()` |  |  |  | `0x0013D040` 36 |  |  |
-| `NetworkAdapterBusy()` |  |  |  | `0x00387010` 56 |  |  |
-| `NetworkAdapterFinished()` |  |  |  | `0x00387540` 52 |  |  |
-| `NextFrame()` |  |  |  | `0x0013C450` 20 |  |  |
-| `RegisterLocalPlayerUsedCrashBreaker()` |  |  |  | `0x001BDFC0` 124 |  |  |
-| `RegisterNetCarGroundPlayer(int)` |  |  |  | `0x00179880` 132 |  |  |
-| `RegisterNetCarSlammedPlayer(int,bool)` |  |  |  | `0x00179160` 140 |  |  |
-| `RegisterNetCarTookDownPlayer(int)` |  |  |  | `0x00178000` 132 |  |  |
-| `RegisterNetCarTradedPaintWithPlayer(int,bool)` |  |  |  | `0x00179540` 140 |  |  |
-| `RegisterPlayerGroundNetCar(int)` |  |  |  | `0x001797C0` 132 |  |  |
-| `RegisterPlayerSlammedNetCar(int,bool)` |  |  |  | `0x00179070` 140 |  |  |
-| `RegisterPlayerTookDownNetCar(int)` |  |  |  | `0x00177F40` 132 |  |  |
-| `RegisterPlayerTradedPaintWithNetCar(int,bool)` |  |  |  | `0x00179480` 140 |  |  |
-| `ReleaseSyncTime()` |  |  |  | `0x002855D0` 104 |  |  |
-| `ResetNetworkTime()` |  |  |  | `0x00141B00` 40 |  |  |
-| `SendHostKeepAlive()` |  |  |  | `0x00285650` 320 |  |  |
-| `SetBootNetGui()` |  |  |  | `0x00385CD0` 40 |  |  |
-| `SetInitialFrame()` |  |  |  | `0x003E8450` 172 |  |  |
-| `SetMyNATData()` |  |  |  | `0x00286AB0` 164 |  |  |
-| `SetNewHost(int)` |  |  |  | `0x002858A0` 340 |  |  |
-| `SetOnline(bool)` |  |  |  | `0x0013FCF0` 44 |  |  |
-| `SetOnlineMenus(bool)` |  |  |  | `0x00141C30` 44 |  |  |
-| `SetStartCountdown(int,float)` |  |  |  | `0x00287310` 208 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ABecomesHostBeforeB(int,int)` | `0x0022E030` 84 | `0x00246AA0` 120 |  | `0x00289DD0` 168 |  |  | `bool CB4NetworkManager::ABecomesHostBeforeB(int lnPlayerIDa, int lnPlayerIDb)` |
+| `HostMigrationEnterGame()` | `0x0022E090` 292 | `0x00246B20` 292 |  | `0x00289C20` 324 | `0x0026CAB0` strong |  | `void CB4NetworkManager::HostMigrationEnterGame()` |
+| `_QSortCallback(const void*,const void*)` | `0x0022E1C0` 124 | `0x00246C50` 200 |  | `0x00289AF0` 292 |  |  | `RwInt32 CB4NetworkManager::_QSortCallback(const void *lpData1, const void *lpData2)` |
+| `ShouldWeEncryptMessageContents(int)` | `0x0022E240` 68 | `0x00246D20` 276 | `0x00283230` 276 | `0x00289A00` 228 |  |  | `bool CB4NetworkManager::ShouldWeEncryptMessageContents(int lnMessageType)` |
+| `GetBuddyErrorString(EGtBuddyErrorCodes)` | `0x0022E290` 196 | `0x00246E40` 196 | `0x00283350` 196 | `0x002898E0` 284 | `0x0026CCC0` strong |  | `RwChar * CB4NetworkManager::GetBuddyErrorString(EGtBuddyErrorCodes leErrorCode)` |
+| `GetDirtySockErrorString(int)` | `0x0022E360` 548 | `0x00246F10` 548 | `0x00283420` 548 | `0x002895B0` 816 | `0x0026CD90` strong |  | `RwChar * CB4NetworkManager::GetDirtySockErrorString(int lnErrorCode)` |
+| `GetErrorString(int)` | `0x0022E590` 532 | `0x00247140` 532 | `0x00283650` 532 | `0x00289290` 796 | `0x0026CFC0` strong |  | `RwChar * CB4NetworkManager::GetErrorString(int lnErrorCode)` |
+| `GetAdapterErrorString(int)` | `0x0022E7B0` 108 | `0x00247360` 108 | `0x00283870` 108 | `0x002891F0` 152 | `0x0026D1E0` likely |  | `RwChar * CB4NetworkManager::GetAdapterErrorString(int lnErrorCode)` |
+| `ResetDNASStatus()` | `0x0022E820` 228 | `0x002473D0` 228 | `0x002838E0` 228 | `0x002890D0` 284 |  |  |  |
+| `UpdateDNASStatus()` | `0x0022E910` 996 |  | `0x002839D0` 1608 |  |  |  |  |
+| `TimeIsSynchronised()` | `0x0022ED00` 232 | `0x002474C0` 8 | `0x00284020` 212 | `0x00289070` 20 |  |  | `bool CB4NetworkManager::TimeIsSynchronised()` |
+| `ConnectionDropped(int,void*)` | `0x0022EDF0` 624 | `0x002474D0` 624 | `0x00284100` 616 | `0x00288E70` 420 |  |  | `bool CB4NetworkManager::ConnectionDropped(int lnReason, void *lpUserData)` |
+| `RegisterPlayerCarCrash()` | `0x0022F060` 96 | `0x00247740` 96 | `0x00284370` 96 | `0x00288DC0` 136 | `0x0026DD00` strong |  |  |
+| `GetEmptyPlayerRecord()` | `0x0022F0C0` 84 | `0x002477A0` 168 | `0x002843D0` 168 | `0x00288D30` 144 | `0x0026DD70` strong |  |  |
+| `GetPlayerRecordByID(int)` | `0x0022F120` 100 | `0x00247850` 172 | `0x00284480` 172 | `0x00288C60` 196 | `0x0026DDC0` likely |  |  |
+| `SetPlayerRecordsNotAdded()` | `0x0022F190` 76 | `0x00247900` 76 | `0x00284530` 76 | `0x00288BF0` 112 | `0x0026DE30` likely |  |  |
+| `OnGameStart()` | `0x0022F1E0` 276 | `0x00247950` 276 | `0x00284580` 276 | `0x00288980` 136 | `0x0026DE80` unverified |  | `void CB4NetworkManager::OnGameStart(bool lbClearRecordOfReliableMessagesWeHaveReceived)` (same name, different parameters) |
+| `PrepareForGameStart()` | `0x0022F300` 492 | `0x00247A70` 492 | `0x002846A0` 496 | `0x002887D0` 432 | `0x0026DF70` likely |  |  |
+| `GameModeStatusMessageDeliveredCallback(bool,CGtNetworkMessage*,void*)` | `0x0022F4F0` 80 | `0x00247C60` 1028 | `0x00284890` 1028 | `0x002885C0` 528 | `0x0026E130` likely |  |  |
+| `GameModeStatusMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F540` 104 | `0x00248070` 1292 | `0x00284CA0` 1036 | `0x00288390` 548 | `0x0026E1A0` likely |  |  |
+| `NATDataMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F5B0` 64 | `0x00248580` 2920 | `0x002850B0` 2672 | `0x00287F20` 1132 | `0x0026E230` strong |  | `void CB4NetworkManager::NATDataMessageArrivedCallback(CGtNetworkMessage *lpMessage, int lnSendingPlayerID, void *lpUserData)` |
+| `ReplayBodyMessageDeliveredCallback(bool,CGtNetworkMessage*,void*)` | `0x0022F5F0` 196 | `0x002490F0` 2024 | `0x00285B20` 2024 | `0x00287CA0` 640 | `0x0026E280` strong |  |  |
+| `ReplayHeaderMessageDeliveredCallback(bool,CGtNetworkMessage*,void*)` | `0x0022F6C0` 44 | `0x002498E0` 1036 | `0x00286310` 1036 | `0x00287A90` 520 | `0x0026E350` strong |  |  |
+| `ReplayBodyMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F6F0` 128 | `0x00249CF0` 1944 | `0x00286720` 1696 | `0x002876E0` 904 | `0x0026E380` strong |  |  |
+| `ReplayHeaderMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F770` 92 | `0x0024A490` 1964 | `0x00286DC0` 1584 | `0x00287430` 676 |  |  |  |
+| `StartCountdownMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F7D0` 480 | `0x0024AC40` 1740 | `0x002873F0` 1164 | `0x00287020` 748 |  |  | `void CB4NetworkManager::StartCountdownMessageArrivedCallback(CGtNetworkMessage *lpMessage, int lnSendingPlayerID, void *lpUserData)` |
+| `RaceFinishedMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F9B0` 368 | `0x0024B310` 1008 | `0x00287880` 884 | `0x00286EC0` 344 |  |  | `void CB4NetworkManager::RaceFinishedMessageArrivedCallback(CGtNetworkMessage *lpMessage, int lnSendingPlayerID, void *lpUserData)` |
+| `RaceReadyMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022FB20` 96 | `0x0024B700` 676 | `0x00287C00` 552 | `0x00286DB0` 260 |  |  | `void CB4NetworkManager::RaceReadyMessageArrivedCallback(CGtNetworkMessage *lpMessage, int lnSendingPlayerID, void *lpUserData)` |
+| `RestNATStatusData()` | `0x0022FB80` 128 | `0x0024B9B0` 140 | `0x00287E30` 140 | `0x00286CF0` 192 |  |  |  |
+| `AllNATDataIsFinalised()` | `0x0022FC00` 116 | `0x0024BA40` 328 | `0x00287EC0` 116 | `0x00286BD0` 284 |  |  |  |
+| `FinaliseNATData()` | `0x0022FC80` 224 |  | `0x00287F40` 716 |  |  |  |  |
+| `ProcessNATData()` | `0x0022FD60` 484 |  | `0x00288210` 696 |  |  |  | `bool CB4NetworkManager::ProcessNATData(void *lpData, int lnSize, void *lpUserData)` (same name, different parameters) |
+| `PlayerBootedCallback(ELobbyKickReason,void*)` | `0x0022FF50` 116 | `0x0024BB90` 116 | `0x002884D0` 96 | `0x00286A30` 124 |  |  | `bool CB4NetworkManager::PlayerBootedCallback(ELobbyKickReason leReason, void *lpData)` |
+| `PlayerListChangedCallback(int,void*)` | `0x0022FFD0` 340 | `0x0024BC10` 420 | `0x00288530` 420 | `0x002869F0` 56 |  |  | `bool CB4NetworkManager::PlayerListChangedCallback(bool lbInGame, void *lpData)` (same name, different parameters) |
+| `RebuildPlayerList()` | `0x00230130` 340 | `0x0024BDC0` 416 | `0x002886E0` 416 | `0x00286970` 124 |  |  | `void CB4NetworkManager::RebuildPlayerList(bool lbIsInAGame)` (same name, different parameters) |
+| `GetHostPlayer()` | `0x00230290` 116 | `0x0024BF60` 116 | `0x00288880` 96 | `0x002868E0` 140 |  |  |  |
+| `AmIHost()` | `0x00230310` 172 | `0x0024BFE0` 172 | `0x002888E0` 160 | `0x00286800` 212 |  |  | `bool CB4NetworkManager::AmIHost()` |
+| `ForEachNetworkOpponent(char*,int,bool,int,int,int,char*,bool,void*)` | `0x002303C0` 1012 | `0x0024C090` 1172 | `0x00288980` 1160 | `0x00286430` 888 |  |  | `bool CB4NetworkManager::ForEachNetworkOpponent(int lnPlayerID, const char *lpcPlayerName, CGtLobbyGenericInteface *lpPlayerParams, bool lbIsLocalPlayer, char *lpClientIPString, bool lbFinalEntry, void *lpData)` (same name, different parameters) |
+| `BootNetGui()` | `0x002307C0` 136 | `0x0024C530` 136 | `0x00288E10` 136 | `0x00286390` 156 |  |  | `void CB4NetworkManager::BootNetGui()` |
+| `ResetNumFramesDropped()` | `0x00230850` 280 | `0x0024C5C0` 1852 | `0x00288EA0` 1852 | `0x002862B0` 224 |  |  | `void CB4NetworkManager::ResetNumFramesDropped()` |
+| `UpdateHostKeepAlive()` | `0x00230970` 2292 | `0x0024CD00` 6592 | `0x002895E0` 8 | `0x00285A00` 2020 |  |  | `void CB4NetworkManager::UpdateHostKeepAlive(bool lbLoading)` (same name, different parameters) |
+| `SyncTime(bool)` | `0x00231270` 308 | `0x0024E6C0` 8 | `0x002895F0` 288 | `0x00285640` 16 |  |  | `void CB4NetworkManager::SyncTime(bool lbUpdate)` |
+| `PostPlayerRegPrepare()` | `0x002313B0` 448 | `0x0024E6D0` 104 | `0x00289710` 496 | `0x00285540` 136 |  |  | `bool CB4NetworkManager::PostPlayerRegPrepare()` |
+| `Destruct()` | `0x00231570` 104 | `0x0024E740` 8 | `0x00289900` 120 | `0x00285510` 48 |  |  | `void CB4NetworkManager::Destruct()` |
+| `Release()` | `0x002315E0` 400 | `0x0024E750` 248 | `0x00289980` 388 | `0x002854D0` 56 |  |  | `void CB4NetworkManager::Release()` |
+| `PostUpdate()` | `0x00231770` 144 | `0x0024E850` 24 | `0x00289B10` 144 | `0x002854A0` 40 |  |  | `void CB4NetworkManager::PostUpdate()` |
+| `GetLobbyStatus()` | `0x00231800` 24 | `0x0024E870` 24 | `0x00289BA0` 24 | `0x00285460` 56 |  |  | `ELobbyStatus CB4NetworkManager::GetLobbyStatus()` |
+| `Update()` | `0x00231820` 1352 | `0x0024E890` 1992 | `0x00289BC0` 3936 | `0x00284EE0` 384 |  |  | `void CB4NetworkManager::Update()` |
+| `Prepare(bool)` | `0x00231D70` 548 | `0x0024F060` 184 | `0x0028AB20` 780 | `0x00284E80` 96 |  |  | `bool CB4NetworkManager::Prepare(bool lbUpInterface)` |
+| `Construct()` | `0x00231FA0` 484 | `0x0024F120` 204 | `0x0028AE30` 552 | `0x00284D60` 276 |  |  | `void CB4NetworkManager::Construct()` |
+| `AllPlayersReadyToRace()` |  |  |  | `0x003E7EB0` 64 |  |  |  |
+| `CB3NetworkManager()` |  |  |  | `0x00289E80` 148 |  |  | `CB4NetworkManager * CB4NetworkManager::CB4NetworkManager()` |
+| `ClearPlayerRecords()` |  |  |  | `0x00288A10` 292 |  |  |  |
+| `GetDNASErrorMessage()` |  |  |  | `0x003954B0` 36 |  |  |  |
+| `GetDNASStatus()` |  |  |  | `0x00386100` 36 |  |  |  |
+| `GetFrameCount()` |  |  |  | `0x001A3F10` 12 |  |  |  |
+| `GetHostPlayerID()` |  |  |  | `0x00289D70` 96 |  |  |  |
+| `GetNetworkTime()` |  |  |  | `0x00287400` 36 |  |  |  |
+| `GetStartCountdown(int*,float*)` |  |  |  | `0x003E7EF0` 144 |  |  |  |
+| `GetU16FrameCount()` |  |  |  | `0x001A3EC0` 72 |  |  |  |
+| `IsHostAvailable()` |  |  |  | `0x002857C0` 216 |  |  | `bool CB4NetworkManager::IsHostAvailable(bool lbLoading)` (same name, different parameters) |
+| `IsInOnlineMenus()` |  |  |  | `0x0013D070` 36 |  |  |  |
+| `IsNetworkOpen()` |  |  |  | `0x00368C30` 36 |  |  |  |
+| `IsOnline()` |  |  |  | `0x0013D040` 36 |  |  |  |
+| `NetworkAdapterBusy()` |  |  |  | `0x00387010` 56 |  |  |  |
+| `NetworkAdapterFinished()` |  |  |  | `0x00387540` 52 |  |  |  |
+| `NextFrame()` |  |  |  | `0x0013C450` 20 |  |  |  |
+| `RegisterLocalPlayerUsedCrashBreaker()` |  |  |  | `0x001BDFC0` 124 |  |  |  |
+| `RegisterNetCarGroundPlayer(int)` |  |  |  | `0x00179880` 132 |  |  |  |
+| `RegisterNetCarSlammedPlayer(int,bool)` |  |  |  | `0x00179160` 140 |  |  |  |
+| `RegisterNetCarTookDownPlayer(int)` |  |  |  | `0x00178000` 132 |  |  |  |
+| `RegisterNetCarTradedPaintWithPlayer(int,bool)` |  |  |  | `0x00179540` 140 |  |  |  |
+| `RegisterPlayerGroundNetCar(int)` |  |  |  | `0x001797C0` 132 |  |  |  |
+| `RegisterPlayerSlammedNetCar(int,bool)` |  |  |  | `0x00179070` 140 |  |  |  |
+| `RegisterPlayerTookDownNetCar(int)` |  |  |  | `0x00177F40` 132 |  |  |  |
+| `RegisterPlayerTradedPaintWithNetCar(int,bool)` |  |  |  | `0x00179480` 140 |  |  |  |
+| `ReleaseSyncTime()` |  |  |  | `0x002855D0` 104 |  |  | `void CB4NetworkManager::ReleaseSyncTime()` |
+| `ResetNetworkTime()` |  |  |  | `0x00141B00` 40 |  |  |  |
+| `SendHostKeepAlive()` |  |  |  | `0x00285650` 320 |  |  | `void CB4NetworkManager::SendHostKeepAlive()` |
+| `SetBootNetGui()` |  |  |  | `0x00385CD0` 40 |  |  |  |
+| `SetInitialFrame()` |  |  |  | `0x003E8450` 172 |  |  |  |
+| `SetMyNATData()` |  |  |  | `0x00286AB0` 164 |  |  | `void CB4NetworkManager::SetMyNATData()` |
+| `SetNewHost(int)` |  |  |  | `0x002858A0` 340 |  |  | `void CB4NetworkManager::SetNewHost(int lnNewHostID)` |
+| `SetOnline(bool)` |  |  |  | `0x0013FCF0` 44 |  |  |  |
+| `SetOnlineMenus(bool)` |  |  |  | `0x00141C30` 44 |  |  |  |
+| `SetStartCountdown(int,float)` |  |  |  | `0x00287310` 208 |  |  |  |
 
 ## Static data (DNAT_200)
 
 | Address | Size | Section | Name |
 |---|---:|---|---|
 | `0x00443E68` | 4 | .sbss | `CB3NetworkManager::muFrameCount` |
+
+## Burnout Revenge layout of `CB4NetworkManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Game/Logic/B4StageLogic.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkManager {  // size 0x232B0
+    /* 0x000 */ CGtNetworkPlayerManager mNetworkPlayerManager;
+    /* 0x1148 */ CGtVoIPManagerPS2<CGtLogitechHeadsetManager,CGtNellyMoserCodec,1,5,4,12> mNetworkVoiceManager;
+    /* 0x3098 */ CGtPS2LibNet mNetworkAdapter;
+    /* 0x3830 */ CGtLobbyDirtySockPS2 mNetworkLobby;
+    /* 0x4B30 */ CGtBuddiesDirtySock mBuddies;
+    /* 0x4C44 */ CGtPortTest mPortTest;
+    /* 0x4CAC */ EPortTestStatus mePortTestResult;
+    /* 0x4CB0 */ CB4RecentPlayers mRecentPlayers;
+    /* 0x4D60 */ CB4NetworkMenuPlayerData mLocalPlayerMenuSelections;
+    /* 0x4DA0 */ EPlayerNATState meLocalPlayerNatState;
+    /* 0x4DA4 */ bool mbHaveShownFrameRateWarning;
+    /* 0x4DA5 */ bool mbUpdateGameRank;
+    /* 0x4DA8 */ CB4NetworkDownloadableConfigData mGetConfigurationData;
+    /* 0x4E94 */ CB4DNASManager mDNASManager;
+    /* 0x4ECC */ CB4Rankings mRankings;
+    /* 0x5678 */ CNetworkPlayerStandingsScore maStandingsScore[2];
+    /* 0x5738 */ bool mbNetworkAdapterPresent;
+    /* static */ RwInt32 mnRagerCount;
+    /* static */ RwInt32 mnPlayerCount;
+    /* 0x573A */ RwUInt16 mu16SendNATFrame;
+    /* 0x5740 */ CB4NetworkPlayer maNetworkPlayers[5];
+    /* 0x21F80 */ CB4NetworkPlayer *mapNetworkPlayers[5];
+    /* 0x21F94 */ EGtPrepareState mePrepareState;
+    /* 0x21F98 */ CB4MatchMaking mMatchMaking;
+    /* 0x2200C */ CB4PreLaunchManager mPreLaunchManager;
+    /* 0x2201C */ CB4UserSets mUserSets;
+    /* 0x22104 */ CB4ArbitaryMessaging mArbitaryMessaging;
+    /* 0x22140 */ CB4PlayListManager mPlayListManager;
+    /* 0x22B50 */ CB4NetworkingService mNetworkingService;
+    /* 0x22E94 */ CB4BuddiesService mBuddiesService;
+    /* 0x230B8 */ CB4OptionService mOptionService;
+    /* 0x230BC */ CB4RecordService mRecordsService;
+    /* 0x230CC */ CB4PostNetworkRaceManager mPostRaceManger;
+    /* 0x230D8 */ CB4InGameOnlineResultsService mInGameOnlineResultsService;
+    /* 0x230E4 */ CB4PostLoginManager mPostLoginManager;
+    /* 0x230F0 */ CGtSyncTime maHostSyncTime[5];
+    /* 0x231E0 */ CGtSyncTimeClient mSyncTimeClient;
+    /* 0x23240 */ CGtSyncTimeHost mSyncTimeHost;
+    /* 0x23248 */ RwReal mrNetworkTime;
+    /* 0x2324C */ RwInt32 mnOpponentIndex;
+    /* 0x23250 */ int manHostMigrationPlayerIDs[6];
+    /* 0x23268 */ GtNetworkPlayerID mnOriginalHostID;
+    /* 0x2326C */ RwUInt16 mun16LastHostKeepAliveSendTime;
+    /* 0x2326E */ RwUInt16 mun16LastHostKeepAliveReceivedTime;
+    /* 0x23270 */ bool mbInitHostKeepAliveReceivedTime;
+    /* 0x23271 */ bool mbUppingInterface;
+    /* 0x23272 */ bool mbNetworkOpen;
+    /* 0x23273 */ bool mbBootNetGui;
+    /* 0x23274 */ bool mbBootEAConnect;
+    /* 0x23275 */ bool mbConnectedToLobbyServer;
+    /* 0x23278 */ RwInt32 mnInitialCountDiff;
+    /* 0x2327C */ RwInt32 mnCurrentFramesOut;
+    /* 0x23280 */ bool mbCountFramesDropped;
+    /* 0x23281 */ bool mbIsOnline;
+    /* 0x23282 */ bool mbIsOnlineMenus;
+    /* static */ RwUInt32 muFrameCount;
+    /* 0x23284 */ RwInt32 mnNumPlayerReady;
+    /* 0x23288 */ RwUInt32 muInitialFrame;
+    /* 0x2328C */ RwUInt32 muInitialFrameWrapCount;
+    /* 0x23290 */ RwReal mrCountdownStartTime;
+    /* 0x23294 */ GtNetworkPlayerID mnStartCountdownHostID;
+    /* 0x23298 */ bool mbReceivedStartCountdown;
+    /* 0x2329C */ RwReal mrTimeOfLastDisconnectMessage;
+    /* 0x232A0 */ GtLobbyPlayerListChangeCallback mpPlayerlistCallback;
+    /* 0x232A4 */ void *mpPlayerlistCallbackData;
+    // methods
+    // CB4NetworkManager(const CB4NetworkManager &);
+    // CB4NetworkManager();
+    // void Construct();
+    // bool Prepare(bool);
+    // void Update();
+    // void NetworkCatchupUpdate();
+    // void PostUpdate();
+    // void Release();
+    // void Destruct();
+    // bool PostPlayerRegPrepare();
+    // void SyncTime(bool);
+    // RwReal GetNetworkTime();
+    // bool IsUppingInterface();
+    // void SendHostKeepAlive();
+    // bool IsHostAvailable(bool);
+    // bool CurrentHostIsLastChoice();
+    // void SetNewHost(int);
+    // void UpdateHostKeepAlive(bool);
+    // void PrepareSyncTime();
+    // void ReleaseSyncTime();
+    // RwInt32 GetCurrentFramesOut();
+    // void ResetNumFramesDropped();
+    // bool IsOnline();
+    // bool IsInOnlineMenus();
+    // void SetOnline(bool);
+    // void SetOnlineMenus(bool);
+    // void CheckNetworkCatchupUpdate();
+    // void BootNetGui();
+    // void SetBootNetGui();
+    // void SetBootEAConnect();
+    // bool IsFullyPrepared();
+    // void ResetNATStatusData();
+    // bool MyNATDataIsFinalised();
+    // bool EveryonesNATDataIsFinalised();
+    // static void NextFrame();
+    // static RwUInt32 GetFrameCount();
+    // static RwUInt16 GetU16FrameCount();
+    // ELobbyStatus GetLobbyStatus();
+    // void SetNetworkOpen();
+    // bool IsNetworkOpen();
+    // bool AllPlayersReadyToRace();
+    // bool GetStartCountdown(int *, float *);
+    // void SetStartCountdown(int, float);
+    // void OnGroupJoin();
+    // void OnGameStart(bool);
+    // bool NetworkAdapterBusy();
+    // bool NetworkAdapterFinished();
+    // void SkipForwardAFrame();
+    // void RegisterNetworkEvent(ENetworkEventType, int, float);
+    // void SetPlayerListChangedCallback(bool (*)(bool, void *), void *);
+    // void RebuildPlayerList(bool);
+    // static bool ConnectionDropped(int, void *);
+    // bool IsConnectedToLobby();
+    // bool LobbyConnectionMade();
+    // bool CheckNetworkConnection();
+    // bool TimeIsSynchronised();
+    // void ResetNetworkTime();
+    // void SetInitialFrame(EInitialFrame);
+    // RwUInt32 GetInitialFrame() const;
+    // RwUInt16 GetAdjustedFrame() const;
+    // RwInt32 GetFrameCountU16NumWraps() const;
+    // RwInt32 GetAdjustedFrameWrapCount() const;
+    // void SetInitialFrameWrapCount(EInitialFrame);
+    // RwUInt32 GetInitialFrameWrapCount() const;
+    // GtNetworkPlayerID GetHostPlayerID();
+    // bool AmIHost();
+    // void HostMigrationEnterGame();
+    // bool ABecomesHostBeforeB(int, int);
+    // void SignOut();
+    // bool AllNetworkCarsAreFinished();
+    // GtNetworkPlayerID GetOriginalLobbyHostID();
+    // void SetOriginalLobbyHostID(int);
+    // static void PlayerNatCompleteCallback(bool, int, int, int);
+    // static void AddPlayerCallback(bool, int, int, int);
+    // CB4LobbySearchResults * GetGameSearchResult(int);
+    // void GenerateAndSetEncryptionKey();
+    // RwChar * GetAdapterErrorString(int);
+    // void ShowNetworkError(int, bool);
+    // RwChar * GetErrorString(int);
+    // RwChar * GetDirtySockErrorString(int);
+    // void ShowBuddyError(EGtBuddyErrorCodes);
+    // RwChar * GetBuddyErrorString(EGtBuddyErrorCodes);
+    // static bool NatManagerResetCallback(void *);
+    // static bool PlayerListChangedCallback(bool, void *);
+    // static bool PlayerBootedCallback(ELobbyKickReason, void *);
+    // static bool PlayerBootedUserSetCallback(ELobbyKickReason, void *);
+    // static bool ForEachNetworkOpponent(int, const char *, CGtLobbyGenericInteface *, bool, char *, bool, void *);
+    // static bool ForEachUserSetMember(int, char *, CGtLobbyGenericInteface *, int, bool, char *, bool, void *);
+    // static bool ResetNetworkOpponentMenuData(int, const char *, CGtLobbyGenericInteface *, bool, char *, bool, void *);
+    // static bool ResetUserSetMemberMenuData(int, char *, CGtLobbyGenericInteface *, int, bool, char *, bool, void *);
+    // void SetMenuData(int, CB4NetworkMenuPlayerData *, const CB4BaseNetworkPlayerParams *);
+    // void SetMyNATData();
+    // void SendMyNATData();
+    // void GenerateEncryptionKey(char *);
+    // static bool ProcessNATData(void *, int, void *);
+    // static void RaceReadyMessageArrivedCallback(CGtNetworkMessage *, int, void *);
+    // static void RaceFinishedMessageArrivedCallback(CGtNetworkMessage *, int, void *);
+    // static void RaceFinishedMessageDeliveredCallback(bool, bool, CGtNetworkMessage *, int, void *);
+    // static void StartCountdownMessageArrivedCallback(CGtNetworkMessage *, int, void *);
+    // static void NATDataMessageArrivedCallback(CGtNetworkMessage *, int, void *);
+    // static void NATDataMessageDeliveredCallback(bool, bool, CGtNetworkMessage *, int, void *);
+    // static bool ShouldWeEncryptMessageContents(int);
+    // static RwInt32 _QSortCallback(const void *, const void *);
+    // static void PlayerVoIPStatusChangedCallback(int, void *);
+};
+```
 
 ## Notes
 

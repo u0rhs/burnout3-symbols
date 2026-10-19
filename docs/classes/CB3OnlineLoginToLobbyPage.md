@@ -12,15 +12,15 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x003047C0` 8 | `0x00359630` 8 | `0x0038AA60` 8 | `0x0038C6A0` 16 | `0x0034BEA0` unverified |  |
-| `Update()` | `0x003047D0` 1796 | `0x00359640` 1796 | `0x0038AA70` 1796 | `0x0038BE40` 2140 |  |  |
-| `ForAllPersonas(char*,void*)` | `0x00304EE0` 72 | `0x00359D50` 72 | `0x0038B180` 72 | `0x0038BDE0` 96 | `0x0034CD00` proven |  |
-| `Prepare(char*,char*,bool)` | `0x00304F30` 372 | `0x00359DA0` 372 | `0x0038B1D0` 372 | `0x0038BC30` 428 | `0x0034CD50` proven |  |
-| `CB3OnlineLoginToLobbyPage()` |  |  |  | `0x00341900` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x003047C0` 8 | `0x00359630` 8 | `0x0038AA60` 8 | `0x0038C6A0` 16 | `0x0034BEA0` unverified |  |  |
+| `Update()` | `0x003047D0` 1796 | `0x00359640` 1796 | `0x0038AA70` 1796 | `0x0038BE40` 2140 |  |  |  |
+| `ForAllPersonas(char*,void*)` | `0x00304EE0` 72 | `0x00359D50` 72 | `0x0038B180` 72 | `0x0038BDE0` 96 | `0x0034CD00` proven |  |  |
+| `Prepare(char*,char*,bool)` | `0x00304F30` 372 | `0x00359DA0` 372 | `0x0038B1D0` 372 | `0x0038BC30` 428 | `0x0034CD50` proven |  |  |
+| `CB3OnlineLoginToLobbyPage()` |  |  |  | `0x00341900` 60 |  |  |  |
 
 ## Notes
 

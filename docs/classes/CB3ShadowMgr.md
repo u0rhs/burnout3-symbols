@@ -8,17 +8,47 @@
 - **Source file:** `B3Shadows.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ShadowMgr`, size 0x030, methods in `GameSource/World/B4Shadows.cpp` ([layout](#burnout-revenge-layout-of-cb4shadowmgr))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RenderAmbientShadow(CB3VehicleEssentialParams*,GtMathPs2::CGtV3d,float,float)` | `0x002C3A00` 572 | `0x0030A790` 1156 | `0x0033C9A0` 1024 | `0x00331250` 812 | `0x00303170` proven |  |
-| `RenderShadows(int)` | `0x002C3C40` 780 | `0x0030AC20` 884 | `0x0033CDA0` 884 | `0x00330E40` 1040 | `0x003033F0` proven |  |
-| `RenderFrontEndShadow(int)` | `0x002C3F50` 500 | `0x0030AFA0` 1100 | `0x0033D120` 216 | `0x00330BD0` 560 | `0x00303750` proven |  |
-| `CB3ShadowMgr()` |  |  |  | `0x00331580` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RenderAmbientShadow(CB3VehicleEssentialParams*,GtMathPs2::CGtV3d,float,float)` | `0x002C3A00` 572 | `0x0030A790` 1156 | `0x0033C9A0` 1024 | `0x00331250` 812 | `0x00303170` proven |  | `void CB4ShadowMgr::RenderAmbientShadow(CB4VehicleEssentialParams *lpEssential, GtMathPs2::CGtV3d lWorldNormal, float lrDistanceToWorld, float lrHeightAboveGround)` |
+| `RenderShadows(int)` | `0x002C3C40` 780 | `0x0030AC20` 884 | `0x0033CDA0` 884 | `0x00330E40` 1040 | `0x003033F0` proven |  | `void CB4ShadowMgr::RenderShadows(EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `RenderFrontEndShadow(int)` | `0x002C3F50` 500 | `0x0030AFA0` 1100 | `0x0033D120` 216 | `0x00330BD0` 560 | `0x00303750` proven |  | `void CB4ShadowMgr::RenderFrontEndShadow(ERaceCarIndex leRaceCarIndex)` (same name, different parameters) |
+| `CB3ShadowMgr()` |  |  |  | `0x00331580` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4ShadowMgr`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/World/B4Shadows.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ShadowMgr {  // size 0x030
+    /* 0x000 */ CGtV3d mCameraPosition;
+    /* 0x010 */ CB4StreamedTrack *mpTrack;
+    /* 0x014 */ EB4ShadowProjectionType meProjectionType;
+    /* 0x018 */ EB4WorkBufferSize meShadowRasterSize;
+    /* 0x01C */ RwReal mrProjectedShadowIntensity;
+    /* 0x020 */ CGtV3d mLightDirection;
+    // methods
+    // CB4ShadowMgr(const CB4ShadowMgr &);
+    // CB4ShadowMgr();
+    // void Construct();
+    // bool Prepare();
+    // void RenderShadows(EPlayerCarIndex);
+    // void RenderFrontEndShadow(ERaceCarIndex);
+    // void Release();
+    // void Destruct();
+    // bool DecideDrawnShadowType(CB4VehicleEssentialParams *, CB4VehicleParams *);
+    // void ProjectShadowToPlane(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, const GtMathPs2::CGtMatrix3x4 &, const GtMathPs2::CGtV2d &);
+    // void RenderProjectedShadow(CB4VehicleEssentialParams *, CB4VehicleParams *);
+    // void RenderAmbientShadow(CB4VehicleEssentialParams *, GtMathPs2::CGtV3d, float, float);
+    // static void CalculateCameraMatrixAndViewWindow(GtMathPs2::CGtV3d, const GtMathPs2::CGtMatrix3x4 &, const CGtAxisAlignedBox &, GtMathPs2::CGtMatrix3x4 *, GtMathPs2::CGtV2d *);
+};
+```
 
 ## Notes
 

@@ -7,38 +7,91 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `GtNetworkPlayer.cpp`
 - **Methods per build:** DNAT_200 17, B3DEBUG 9, B3INTERN 17, B3O0PCH 15
+- **Burnout Revenge counterpart:** `CGtNetworkPlayer`, size 0x4B4, methods in `GameShared/GameClasses/System/Networking/Players/GtNetworkPlayer.cpp` ([layout](#burnout-revenge-layout-of-cgtnetworkplayer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetRegisteredRecvMessage(int)` | `0x001F0C70` 72 | `0x001F9080` 284 | `0x0022AA50` 284 | `0x0023F800` 276 |  |  |
-| `GetRegisteredSendMessage(int)` | `0x001F0CC0` 72 | `0x001F91A0` 284 | `0x0022AB70` 284 | `0x0023F6E0` 276 |  |  |
-| `RegisterMessages()` | `0x001F0D10` 8 | `0x001F92C0` 8 | `0x0022AC90` 8 | `0x0023F6D0` 16 |  |  |
-| `ApplyNATData(const CGtNATData*)` | `0x001F0D20` 580 |  | `0x0022ACA0` 2004 |  |  |  |
-| `GetPlayerID() const` | `0x001F0F70` 8 |  |  |  |  |  |
-| `UpdateSendMessageLength(int,int)` | `0x001F0F80` 76 |  | `0x0022B490` 236 |  |  |  |
-| `MessageTypeIsRegistered(int)` | `0x001F0FD0` 64 | `0x001F92E0` 128 | `0x0022B580` 128 | `0x0023F540` 160 |  |  |
-| `UnRegisterMessageType(int)` | `0x001F1010` 424 | `0x001F9360` 560 | `0x0022B600` 560 | `0x0023F270` 584 |  |  |
-| `RegisterMessageType(int,int,CGtNetworkMessage*,CGtNetworkMessage*,void (*)(CGtNetworkMessage*, int, void*),vo` | `0x001F11C0` 216 |  |  |  |  |  |
-| `ReceiveAckOrNack(CGtNetworkMessage*)` | `0x001F12A0` 160 |  | `0x0022BA20` 1380 |  |  |  |
-| `ReceiveMessage(CGtNetworkMessage*,int)` | `0x001F1340` 264 |  | `0x0022BF90` 916 |  |  |  |
-| `SendMessages()` | `0x001F1450` 720 |  | `0x0022C330` 4132 |  |  |  |
-| `Update(int)` | `0x001F1720` 8 |  | `0x0022D360` 8 |  |  |  |
-| `Release()` | `0x001F1730` 184 | `0x001F97D0` 184 | `0x0022D370` 184 | `0x0023EC70` 112 |  |  |
-| `Prepare(const char*,int,CGtNetworkAdapter*,int,void*)` | `0x001F17F0` 212 | `0x001F9890` 872 | `0x0022D430` 872 | `0x0023E980` 328 |  |  |
-| `Destruct()` | `0x001F18D0` 12 |  | `0x0022D7A0` 12 |  |  |  |
-| `Construct(CGtNetworkPlayerManager*)` | `0x001F18E0` 140 |  | `0x0022D7B0` 192 |  |  |  |
-| `GetPlayerID()` |  | `0x001F92D0` 8 | `0x0022B480` 8 | `0x0023F6B0` 28 |  |  |
-| `RegisterMessageType(int,int,CGtNetworkMessage*,CGtNetworkMessage*,void (*)` |  | `0x001F9590` 576 | `0x0022B830` 488 | `0x0023F060` 516 |  |  |
-| `CGtNetworkPlayer()` |  |  |  | `0x00289F90` 40 |  |  |
-| `IsNatFinalised()` |  |  |  | `0x0024EBC0` 28 |  |  |
-| `ResetAllMessages()` |  |  |  | `0x00245EE0` 204 |  |  |
-| `SetNatFinalised(bool)` |  |  |  | `0x0023EAD0` 212 |  |  |
-| `SetPort(int)` |  |  |  | `0x0023EBB0` 36 |  |  |
-| `UnregisterAllMessages()` |  |  |  | `0x0023F5E0` 208 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetRegisteredRecvMessage(int)` | `0x001F0C70` 72 | `0x001F9080` 284 | `0x0022AA50` 284 | `0x0023F800` 276 |  |  | `CGtNetworkMessage * CGtNetworkPlayer::GetRegisteredRecvMessage(int lnMessageType)` |
+| `GetRegisteredSendMessage(int)` | `0x001F0CC0` 72 | `0x001F91A0` 284 | `0x0022AB70` 284 | `0x0023F6E0` 276 |  |  | `CGtNetworkMessage * CGtNetworkPlayer::GetRegisteredSendMessage(int lnMessageType)` |
+| `RegisterMessages()` | `0x001F0D10` 8 | `0x001F92C0` 8 | `0x0022AC90` 8 | `0x0023F6D0` 16 |  |  | `void CGtNetworkPlayer::RegisterMessages()` |
+| `ApplyNATData(const CGtNATData*)` | `0x001F0D20` 580 |  | `0x0022ACA0` 2004 |  |  |  |  |
+| `GetPlayerID() const` | `0x001F0F70` 8 |  |  |  |  |  | `GtNetworkPlayerID CGtNetworkPlayer::GetPlayerID() const` |
+| `UpdateSendMessageLength(int,int)` | `0x001F0F80` 76 |  | `0x0022B490` 236 |  |  |  | `void CGtNetworkPlayer::UpdateSendMessageLength(int lnType, int lnLength)` |
+| `MessageTypeIsRegistered(int)` | `0x001F0FD0` 64 | `0x001F92E0` 128 | `0x0022B580` 128 | `0x0023F540` 160 |  |  | `bool CGtNetworkPlayer::MessageTypeIsRegistered(int lnType)` |
+| `UnRegisterMessageType(int)` | `0x001F1010` 424 | `0x001F9360` 560 | `0x0022B600` 560 | `0x0023F270` 584 |  |  | `void CGtNetworkPlayer::UnRegisterMessageType(int lnType)` |
+| `RegisterMessageType(int,int,CGtNetworkMessage*,CGtNetworkMessage*,void (*)(CGtNetworkMessage*, int, void*),vo` | `0x001F11C0` 216 |  |  |  |  |  | `void CGtNetworkPlayer::RegisterMessageType(int lnType, int lnLength, CGtNetworkMessage *lpSendMsg, CGtNetworkMessage *lpRecvMsg, void (*lpfMsgArrivedCallback)(CGtNetworkMessage *, int, void *), void (*lpfMsgDeliveredCallback)(bool, bool, CGtNetworkMessage *, int, void *), void *lpCallbackUserData)` (same name, different parameters) |
+| `ReceiveAckOrNack(CGtNetworkMessage*)` | `0x001F12A0` 160 |  | `0x0022BA20` 1380 |  |  |  | `void CGtNetworkPlayer::ReceiveAckOrNack(CGtNetworkMessageWithPlayerIDs *lpMessage, bool lbFakeNack)` (same name, different parameters) |
+| `ReceiveMessage(CGtNetworkMessage*,int)` | `0x001F1340` 264 |  | `0x0022BF90` 916 |  |  |  | `void CGtNetworkPlayer::ReceiveMessage(CGtNetworkMessage *lpMessage, int lnLength, int lnSendingPlayerID)` (same name, different parameters) |
+| `SendMessages()` | `0x001F1450` 720 |  | `0x0022C330` 4132 |  |  |  | `void CGtNetworkPlayer::SendMessages()` |
+| `Update(int)` | `0x001F1720` 8 |  | `0x0022D360` 8 |  |  |  | `void CGtNetworkPlayer::Update(int lnCurrentFrame)` |
+| `Release()` | `0x001F1730` 184 | `0x001F97D0` 184 | `0x0022D370` 184 | `0x0023EC70` 112 |  |  | `void CGtNetworkPlayer::Release()` |
+| `Prepare(const char*,int,CGtNetworkAdapter*,int,void*)` | `0x001F17F0` 212 | `0x001F9890` 872 | `0x0022D430` 872 | `0x0023E980` 328 |  |  | `bool CGtNetworkPlayer::Prepare(const char *lacIPAddress, int lnPort, CGtNetworkAdapter *lpNetworkAdapter, int lnPlayerID, void *lpUserData)` |
+| `Destruct()` | `0x001F18D0` 12 |  | `0x0022D7A0` 12 |  |  |  | `void CGtNetworkPlayer::Destruct()` |
+| `Construct(CGtNetworkPlayerManager*)` | `0x001F18E0` 140 |  | `0x0022D7B0` 192 |  |  |  | `void CGtNetworkPlayer::Construct(CGtNetworkPlayerManager *lpPlayerManager)` |
+| `GetPlayerID()` |  | `0x001F92D0` 8 | `0x0022B480` 8 | `0x0023F6B0` 28 |  |  | `GtNetworkPlayerID CGtNetworkPlayer::GetPlayerID() const` (same name, different parameters) |
+| `RegisterMessageType(int,int,CGtNetworkMessage*,CGtNetworkMessage*,void (*)` |  | `0x001F9590` 576 | `0x0022B830` 488 | `0x0023F060` 516 |  |  | `void CGtNetworkPlayer::RegisterMessageType(int lnType, int lnLength, CGtNetworkMessage *lpSendMsg, CGtNetworkMessage *lpRecvMsg, void (*lpfMsgArrivedCallback)(CGtNetworkMessage *, int, void *), void (*lpfMsgDeliveredCallback)(bool, bool, CGtNetworkMessage *, int, void *), void *lpCallbackUserData)` (same name, different parameters) |
+| `CGtNetworkPlayer()` |  |  |  | `0x00289F90` 40 |  |  |  |
+| `IsNatFinalised()` |  |  |  | `0x0024EBC0` 28 |  |  |  |
+| `ResetAllMessages()` |  |  |  | `0x00245EE0` 204 |  |  | `void CGtNetworkPlayer::ResetAllMessages()` |
+| `SetNatFinalised(bool)` |  |  |  | `0x0023EAD0` 212 |  |  |  |
+| `SetPort(int)` |  |  |  | `0x0023EBB0` 36 |  |  |  |
+| `UnregisterAllMessages()` |  |  |  | `0x0023F5E0` 208 |  |  | `void CGtNetworkPlayer::UnregisterAllMessages()` |
+
+## Burnout Revenge layout of `CGtNetworkPlayer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 99 file(s), e.g. `GameShared/GameClasses/System/Networking/Players/GtNATDataManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtNetworkPlayer {  // size 0x4B4
+    /* 0x000 */ CGtNetworkAdapter *mpNetworkAdapter;
+    /* 0x004 */ GtNetworkPlayerID mnPlayerID;
+    /* 0x008 */ CGtNetworkPlayerManager *mpNetworkPlayerManager;
+    /* 0x00C */ RwInt32 mnCurrentFrame;
+    /* 0x010 */ char macIPAddress[16];
+    /* 0x020 */ RwInt32 mnIPAddress;
+    /* 0x024 */ RwInt32 mnPort;
+    /* 0x028 */ CGtNetMessageData maSendMessageData[24];
+    /* 0x268 */ CGtNetMessageData maRecvMessageData[24];
+    /* 0x4A8 */ RwInt32 mnNumberMessagesRegistered;
+    /* 0x4AC */ bool mbNATIsFinalised;
+    /* 0x4B0 */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CGtNetworkPlayer(const CGtNetworkPlayer &);
+    // CGtNetworkPlayer();
+    // void Construct(CGtNetworkPlayerManager *);
+    // void Destruct();
+    // virtual bool Prepare(const char *, int, CGtNetworkAdapter *, int, void *);
+    // virtual void Release();
+    // void Update(int);
+    // void SendMessages();
+    // void ReceiveMessage(CGtNetworkMessage *, int, int);
+    // void ReceiveAckOrNack(CGtNetworkMessageWithPlayerIDs *, bool);
+    // void RegisterMessageType(int, int, CGtNetworkMessage *, CGtNetworkMessage *, void (*)(CGtNetworkMessage *, int, void *), void (*)(bool, bool, CGtNetworkMessage *, int, void *), void *);
+    // void UnRegisterMessageType(int);
+    // void RegisterReliableMessageCallback(int, void (*)(CGtNetworkMessage *, int, void *), void *);
+    // bool MessageTypeIsRegistered(int);
+    // void UpdateSendMessageLength(int, int);
+    // GtNetworkPlayerID GetPlayerID() const;
+    // void SetIPAddress(int);
+    // RwInt32 GetIPAddress() const;
+    // RwChar * GetIPAddressAsString() const;
+    // RwInt32 GetPort() const;
+    // void SetPort(int);
+    // void SetNatFinalised(bool);
+    // bool IsNatFinalised();
+    // virtual RwChar * GetName() const;
+    // void PrepareToResetAllMessages();
+    // void ResetAllMessages();
+    // void RegisterMessages();
+    // CGtNetworkMessage * GetRegisteredSendMessage(int);
+    // CGtNetworkMessage * GetRegisteredRecvMessage(int);
+    // void UnregisterAllMessages();
+};
+```
 
 ## Notes
 

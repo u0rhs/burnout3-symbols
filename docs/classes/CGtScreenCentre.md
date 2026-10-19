@@ -8,17 +8,38 @@
 - **Source file:** `GtScreenCentre.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 4
 - **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtScreenCentre`, size 0x010, methods in `GameShared/GameClasses/Graphical/GtScreenCentre.cpp` ([layout](#burnout-revenge-layout-of-cgtscreencentre))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetPositionY()` | `0x001E5BB0` 8 | `0x001E66C0` 8 | `0x00219260` 8 | `0x0022C590` 28 | `0x00221080` proven |  |
-| `GetPositionX()` | `0x001E5BC0` 8 | `0x001E66D0` 8 | `0x00219270` 8 | `0x0022C570` 28 | `0x00221090` proven |  |
-| `MoveScreen(float,float)` | `0x001E5BD0` 848 | `0x001E66E0` 848 | `0x00219280` 848 | `0x0022C210` 864 | `0x002210A0` proven |  |
-| `Construct()` | `0x001E5F20` 48 | `0x001E6A30` 48 | `0x002195D0` 48 | `0x0022C1B0` 88 | `0x002213F0` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetPositionY()` | `0x001E5BB0` 8 | `0x001E66C0` 8 | `0x00219260` 8 | `0x0022C590` 28 | `0x00221080` proven |  | `RwReal CGtScreenCentre::GetPositionY()` |
+| `GetPositionX()` | `0x001E5BC0` 8 | `0x001E66D0` 8 | `0x00219270` 8 | `0x0022C570` 28 | `0x00221090` proven |  | `RwReal CGtScreenCentre::GetPositionX()` |
+| `MoveScreen(float,float)` | `0x001E5BD0` 848 | `0x001E66E0` 848 | `0x00219280` 848 | `0x0022C210` 864 | `0x002210A0` proven |  | `void CGtScreenCentre::MoveScreen(float lrShiftX, float lrShiftY)` |
+| `Construct()` | `0x001E5F20` 48 | `0x001E6A30` 48 | `0x002195D0` 48 | `0x0022C1B0` 88 | `0x002213F0` proven |  | `void CGtScreenCentre::Construct()` |
+
+## Burnout Revenge layout of `CGtScreenCentre`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 87 file(s), e.g. `GameShared/GameClasses/Graphical/GtScreenCentre.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtScreenCentre {  // size 0x010
+    /* 0x000 */ RwReal mrOffsetX;
+    /* 0x004 */ RwReal mrOffsetY;
+    /* 0x008 */ RwInt32 mnPSOffsetX;
+    /* 0x00C */ RwInt32 mnPSOffsetY;
+    // methods
+    // CGtScreenCentre(const CGtScreenCentre &);
+    // CGtScreenCentre();
+    // void Construct();
+    // void MoveScreen(float, float);
+    // RwReal GetPositionX();
+    // RwReal GetPositionY();
+};
+```
 
 ## Notes
 

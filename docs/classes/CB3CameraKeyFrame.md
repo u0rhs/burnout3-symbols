@@ -8,30 +8,81 @@
 - **Source file:** `B3CameraEditor.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 17
 - **Retail (SLUS-21050):** 6 of its 8 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CameraKeyFrame`, size 0x020, methods in `SharedClasses/Camera/B4CameraKeyFrame.cpp` ([layout](#burnout-revenge-layout-of-cb4camerakeyframe))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetFOV()` | `0x00332920` 92 | `0x003933C0` 92 | `0x003BD810` 92 | `0x003C07D0` 136 |  |  |
-| `GetMatrix()` | `0x00332980` 1204 | `0x00393420` 1516 | `0x003BD870` 1516 | `0x003C0720` 176 |  |  |
-| `GetEventRecord()` | `0x00332E40` 16 | `0x00393A10` 16 | `0x003BDE60` 16 | `0x003C06D0` 68 | `0x00446F90` proven |  |
-| `GetEventPause()` | `0x00332E50` 16 | `0x00393A20` 16 | `0x003BDE70` 16 | `0x003C0680` 68 | `0x00446FA0` proven |  |
-| `GetTypeTransition()` | `0x00332E60` 16 | `0x00393A30` 16 | `0x003BDE80` 16 | `0x003C0630` 68 | `0x00446FB0` proven |  |
-| `GetTypeBehaviour()` | `0x00332E70` 12 | `0x00393A40` 12 | `0x003BDE90` 12 | `0x003C05E0` 68 | `0x00446FC0` proven |  |
-| `GetRaceCarIndex()` | `0x00332E80` 8 | `0x00393A50` 8 | `0x003BDEA0` 8 | `0x003C05C0` 32 | `0x00446FD0` proven |  |
-| `GetIsSetup()` | `0x00332E90` 28 | `0x00393A60` 28 | `0x003BDEB0` 28 | `0x003C0570` 80 | `0x00446FE0` proven |  |
-| `SetEventPause(EB3KeyFrameEventPause)` |  |  |  | `0x003C0D40` 84 |  |  |
-| `SetEventRecord(EB3KeyFrameEventRecord)` |  |  |  | `0x003C0DA0` 84 |  |  |
-| `SetFOV(float)` |  |  |  | `0x003C0ED0` 96 |  |  |
-| `SetIsSetup(bool)` |  |  |  | `0x003C0BD0` 120 |  |  |
-| `SetMatrix(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x003C0E00` 200 |  |  |
-| `SetRaceCarIndex(int)` |  |  |  | `0x003C0C50` 40 |  |  |
-| `SetTypeBehaviour(EB3KeyFrameTypeBehaviour)` |  |  |  | `0x003C0C80` 84 |  |  |
-| `SetTypeTransition(EB3KeyFrameTypeTransition)` |  |  |  | `0x003C0CE0` 84 |  |  |
-| `operator =(const CB3CameraKeyFrame&)` |  |  |  | `0x003C1CA0` 188 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetFOV()` | `0x00332920` 92 | `0x003933C0` 92 | `0x003BD810` 92 | `0x003C07D0` 136 |  |  | `RwReal CB4CameraKeyFrame::GetFOV() const` (same name, different parameters) |
+| `GetMatrix()` | `0x00332980` 1204 | `0x00393420` 1516 | `0x003BD870` 1516 | `0x003C0720` 176 |  |  | `CGtMatrix3x4 CB4CameraKeyFrame::GetMatrix() const` (same name, different parameters) |
+| `GetEventRecord()` | `0x00332E40` 16 | `0x00393A10` 16 | `0x003BDE60` 16 | `0x003C06D0` 68 | `0x00446F90` proven |  |  |
+| `GetEventPause()` | `0x00332E50` 16 | `0x00393A20` 16 | `0x003BDE70` 16 | `0x003C0680` 68 | `0x00446FA0` proven |  | `EB4KeyFrameEventPause CB4CameraKeyFrame::GetEventPause()` |
+| `GetTypeTransition()` | `0x00332E60` 16 | `0x00393A30` 16 | `0x003BDE80` 16 | `0x003C0630` 68 | `0x00446FB0` proven |  | `EB4KeyFrameTypeTransition CB4CameraKeyFrame::GetTypeTransition() const` (same name, different parameters) |
+| `GetTypeBehaviour()` | `0x00332E70` 12 | `0x00393A40` 12 | `0x003BDE90` 12 | `0x003C05E0` 68 | `0x00446FC0` proven |  | `EB4KeyFrameTypeBehaviour CB4CameraKeyFrame::GetTypeBehaviour() const` (same name, different parameters) |
+| `GetRaceCarIndex()` | `0x00332E80` 8 | `0x00393A50` 8 | `0x003BDEA0` 8 | `0x003C05C0` 32 | `0x00446FD0` proven |  | `ERaceCarIndex CB4CameraKeyFrame::GetRaceCarIndex() const` (same name, different parameters) |
+| `GetIsSetup()` | `0x00332E90` 28 | `0x00393A60` 28 | `0x003BDEB0` 28 | `0x003C0570` 80 | `0x00446FE0` proven |  | `bool CB4CameraKeyFrame::GetIsSetup() const` (same name, different parameters) |
+| `SetEventPause(EB3KeyFrameEventPause)` |  |  |  | `0x003C0D40` 84 |  |  |  |
+| `SetEventRecord(EB3KeyFrameEventRecord)` |  |  |  | `0x003C0DA0` 84 |  |  |  |
+| `SetFOV(float)` |  |  |  | `0x003C0ED0` 96 |  |  | `void CB4CameraKeyFrame::SetFOV(float lrFOV)` |
+| `SetIsSetup(bool)` |  |  |  | `0x003C0BD0` 120 |  |  | `void CB4CameraKeyFrame::SetIsSetup(bool lbIsSetup)` |
+| `SetMatrix(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x003C0E00` 200 |  |  | `void CB4CameraKeyFrame::SetMatrix(const GtMathPs2::CGtMatrix3x4 &lMatrix)` |
+| `SetRaceCarIndex(int)` |  |  |  | `0x003C0C50` 40 |  |  | `void CB4CameraKeyFrame::SetRaceCarIndex(ERaceCarIndex leIndex)` (same name, different parameters) |
+| `SetTypeBehaviour(EB3KeyFrameTypeBehaviour)` |  |  |  | `0x003C0C80` 84 |  |  | `void CB4CameraKeyFrame::SetTypeBehaviour(EB4KeyFrameTypeBehaviour leBehaviour)` |
+| `SetTypeTransition(EB3KeyFrameTypeTransition)` |  |  |  | `0x003C0CE0` 84 |  |  |  |
+| `operator =(const CB3CameraKeyFrame&)` |  |  |  | `0x003C1CA0` 188 |  |  |  |
+
+## Burnout Revenge layout of `CB4CameraKeyFrame`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 323 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CameraKeyFrame {  // size 0x020
+    /* 0x000 */ RwReal mrStartTime;
+    /* 0x004 */ RwReal mrX;
+    /* 0x008 */ RwReal mrY;
+    /* 0x00C */ RwReal mrZ;
+    /* 0x010 */ RwUInt32 muQuat;
+    /* 0x014 */ RwUInt32 mxFlags;
+    /* 0x018 */ RwUInt8 me8RaceCar;
+    /* 0x019 */ RwUInt8 mu8FOV;
+    /* 0x01A */ RwUInt16 muCatMullVelocity;
+    /* 0x01C */ RwReal mrCatMullSegmentLength;
+    // methods
+    // CB4CameraKeyFrame(const CB4CameraKeyFrame &);
+    // CB4CameraKeyFrame();
+    // void Clear();
+    // void SetIsSetup(bool);
+    // void SetRejected(bool);
+    // void SetRaceCarIndex(ERaceCarIndex);
+    // void SetTypeBehaviour(EB4KeyFrameTypeBehaviour);
+    // void SetTypeTransition(EB4KeyFrameTypeTransition);
+    // void SetEventPause(EB4KeyFrameEventPause);
+    // void SetEventRecord(EB4KeyFrameEventRecord);
+    // void SetMatrix(const GtMathPs2::CGtMatrix3x4 &);
+    // void SetFOV(float);
+    // void SetCatMullRomLength(float);
+    // void SetCatMullVelocity(float);
+    // void SetTime(float);
+    // void SetPosition(GtMathPs2::CGtV3d);
+    // bool GetIsSetup() const;
+    // bool IsRejected() const;
+    // ERaceCarIndex GetRaceCarIndex() const;
+    // EB4KeyFrameTypeBehaviour GetTypeBehaviour() const;
+    // EB4KeyFrameTypeTransition GetTypeTransition() const;
+    // EB4KeyFrameEventPause GetEventPause();
+    // EB4KeyFrameEventRecord GetEventRecord();
+    // CGtMatrix3x4 GetMatrix() const;
+    // CGtV3d GetPosition() const;
+    // RwReal GetFOV() const;
+    // RwReal GetTime() const;
+    // RwReal GetCatMullRomLength() const;
+    // RwReal GetCatMullVelocity() const;
+    // void FixUp();
+};
+```
 
 ## Notes
 

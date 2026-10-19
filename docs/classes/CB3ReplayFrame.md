@@ -8,15 +8,34 @@
 - **Source file:** `B3ReplayFrame.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 2
 - **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ReplayFrame`, size 0x003, methods in `GameSource/World/B4ReplayFrame.cpp` ([layout](#burnout-revenge-layout-of-cb4replayframe))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RetrieveDrivingControls(CDrivingControls*)` | `0x00150EE0` 136 | `0x00163EF0` 136 | `0x0015EDD0` 136 | `0x0016EE70` 256 | `0x00154C90` proven |  |
-| `ArchiveDrivingControls(CDrivingControls*,unsigned char)` | `0x00150F70` 156 | `0x00163F80` 448 | `0x0015EE60` 448 | `0x0016ED20` 332 | `0x00154D20` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RetrieveDrivingControls(CDrivingControls*)` | `0x00150EE0` 136 | `0x00163EF0` 136 | `0x0015EDD0` 136 | `0x0016EE70` 256 | `0x00154C90` proven |  | `RwUInt8 CB4ReplayFrame::RetrieveDrivingControls(CDrivingControls *lpOutDrivingControls)` |
+| `ArchiveDrivingControls(CDrivingControls*,unsigned char)` | `0x00150F70` 156 | `0x00163F80` 448 | `0x0015EE60` 448 | `0x0016ED20` 332 | `0x00154D20` proven |  | `void CB4ReplayFrame::ArchiveDrivingControls(CDrivingControls *lpDrivingControls, unsigned char lu4HashValue)` |
+
+## Burnout Revenge layout of `CB4ReplayFrame`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/World/B4ReplayFrame.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ReplayFrame {  // size 0x003
+    /* 0x000 */ RwInt8 mn8Steering;
+    /* 0x001 */ RwUInt8 mu8AccelAndBrake;
+    /* 0x002 */ RwUInt8 mx8HashAndFlags;
+    // methods
+    // CB4ReplayFrame(const CB4ReplayFrame &);
+    // CB4ReplayFrame();
+    // void Construct();
+    // void ArchiveDrivingControls(CDrivingControls *, unsigned char);
+    // RwUInt8 RetrieveDrivingControls(CDrivingControls *);
+};
+```
 
 ## Notes
 

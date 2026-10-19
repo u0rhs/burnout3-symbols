@@ -8,18 +8,47 @@
 - **Source file:** `GtFramerateManager.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 5
 - **Retail (SLUS-21050):** 3 of its 4 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtFramerateManager`, size 0x038, methods in `GameShared/GameClasses/System/Timer/GtFramerateManager.cpp` ([layout](#burnout-revenge-layout-of-cgtframeratemanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdatePostRenderWait(int,int)` | `0x00335440` 576 | `0x00397710` 808 | `0x003C1AF0` 808 | `0x003C6400` 1116 | `0x00376570` likely |  |
-| `StartUpdateFrame(EGtFramerateType,bool)` | `0x00335680` 12 | `0x00397A40` 12 | `0x003C1E20` 12 | `0x003C63C0` 52 |  |  |
-| `Prepare()` | `0x00335690` 28 | `0x00397A50` 28 | `0x003C1E30` 28 | `0x003C6320` 100 | `0x003767C0` proven |  |
-| `Construct(float,float)` | `0x003356B0` 160 | `0x00397A70` 160 | `0x003C1E50` 160 | `0x003C6220` 220 | `0x003767E0` proven |  |
-| `CGtFramerateManager()` |  |  |  | `0x0013DC30` 64 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdatePostRenderWait(int,int)` | `0x00335440` 576 | `0x00397710` 808 | `0x003C1AF0` 808 | `0x003C6400` 1116 | `0x00376570` likely |  | `RwInt32 CGtFramerateManager::UpdatePostRenderWait(int lnMinSimulationSteps, int lnMaxSimulationSteps)` |
+| `StartUpdateFrame(EGtFramerateType,bool)` | `0x00335680` 12 | `0x00397A40` 12 | `0x003C1E20` 12 | `0x003C63C0` 52 |  |  | `void CGtFramerateManager::StartUpdateFrame(EGtFramerateType leFramerateType, bool lbPaused)` |
+| `Prepare()` | `0x00335690` 28 | `0x00397A50` 28 | `0x003C1E30` 28 | `0x003C6320` 100 | `0x003767C0` proven |  | `void CGtFramerateManager::Prepare()` |
+| `Construct(float,float)` | `0x003356B0` 160 | `0x00397A70` 160 | `0x003C1E50` 160 | `0x003C6220` 220 | `0x003767E0` proven |  | `void CGtFramerateManager::Construct(float lrSimulationTimeStep, float lrFramerateToleranceTimeMs)` |
+| `CGtFramerateManager()` |  |  |  | `0x0013DC30` 64 |  |  |  |
+
+## Burnout Revenge layout of `CGtFramerateManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 4 file(s), e.g. `GameShared/GameClasses/System/Timer/GtFramerateManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtFramerateManager {  // size 0x038
+    /* 0x000 */ EGtFramerateType meFramerateType;
+    /* 0x008 */ CGtTimeCounter mPrevFrameTime;
+    /* 0x010 */ CGtTimeCounter mTotalTime;
+    /* 0x018 */ RwInt64 mn64FramerateToleranceCycles;
+    /* 0x020 */ RwInt64 mn64SimulationTimeStepCycles;
+    /* 0x028 */ RwInt32 mnPrevNumSimulationStepsRequired;
+    /* 0x02C */ RwInt32 mnNumSimulationSteps;
+    /* 0x030 */ RwInt32 mnNumExtraSimulationUpdatesRequested;
+    /* 0x034 */ bool mbPaused;
+    // methods
+    // CGtFramerateManager(const CGtFramerateManager &);
+    // CGtFramerateManager();
+    // void Construct(float, float);
+    // void Prepare();
+    // void StartUpdateFrame(EGtFramerateType, bool);
+    // RwInt32 UpdatePostRenderWait(int, int);
+    // void AttemptToInsertExtraSimulationUpdates(int);
+    // void Destroy();
+    // void SetNumSimulationStepsAchieved(int);
+};
+```
 
 ## Notes
 

@@ -8,28 +8,29 @@
 - **Source file:** `B3MenuChoices.cpp`
 - **Methods per build:** DNAT_200 14, B3DEBUG 14, B3INTERN 14, B3O0PCH 15
 - **Retail (SLUS-21050):** 10 of its 14 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4MenuChoices`, size 0x280, methods in `GameSource/Menu/B4MenuChoices.cpp` ([layout](#burnout-revenge-layout-of-cb4menuchoices))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `IsCurrentStageCrashMode()` | `0x002CC1D0` 44 | `0x00314540` 44 | `0x00346130` 44 | `0x0033F590` 88 |  |  |
-| `RequestOPMDemoGameMode()` | `0x002CC200` 352 | `0x00314570` 352 | `0x00346160` 352 | `0x0033F3C0` 460 |  |  |
-| `RequestMShowDemoGameMode()` | `0x002CC360` 352 | `0x003146D0` 352 | `0x003462C0` 352 | `0x0033F1F0` 460 |  |  |
-| `RequestPeriodicalGameMode()` | `0x002CC4C0` 1668 | `0x00314830` 1696 | `0x00346420` 1696 | `0x0033E9B0` 2100 |  |  |
-| `RequestOnlineGameMode()` | `0x002CCB50` 608 | `0x00314ED0` 776 | `0x00346AC0` 776 | `0x0033E500` 988 | `0x0030BB70` likely |  |
-| `RequestCrashPartyGameMode()` | `0x002CCDB0` 380 | `0x003151E0` 440 | `0x00346DD0` 440 | `0x0033E290` 464 | `0x0030BE20` unverified |  |
-| `RequestTwoPlayerGameMode(int)` | `0x002CCF30` 580 | `0x003153A0` 604 | `0x00346F90` 648 | `0x0033DF50` 820 | `0x0030BFF0` unverified |  |
-| `RequestOnePlayerGameMode(int)` | `0x002CD180` 532 | `0x00315600` 556 | `0x00347220` 556 | `0x0033DBE0` 792 | `0x0030C2C0` likely |  |
-| `RequestChampionshipGameMode(int)` | `0x002CD3A0` 1016 | `0x00315830` 1020 | `0x00347450` 996 | `0x0033D5D0` 1404 | `0x0030C560` unverified |  |
-| `GetDriverCarID(CB3GameStageDataStruct*,int,int)` | `0x002CD7A0` 896 | `0x00315C30` 1012 | `0x00347840` 960 | `0x0033D110` 1208 | `0x0030CA10` unverified |  |
-| `GetGameStageData(CB3StageDataStruct*)` | `0x002CDB20` 96 | `0x00316030` 412 | `0x00347C00` 412 | `0x0033CF30` 388 | `0x0030CE20` proven |  |
-| `IsCurrentSelectionCrashMode()` | `0x002CDB80` 92 | `0x003161D0` 92 | `0x00347DA0` 92 | `0x0033CE60` 196 | `0x0030CE80` unverified |  |
-| `RequestNewGameMode()` | `0x002CDBE0` 484 | `0x00316230` 520 | `0x00347E00` 520 | `0x0033CC70` 464 | `0x0030D1B0` likely |  |
-| `Prepare()` | `0x002CDDD0` 228 | `0x00316440` 228 | `0x00348010` 228 | `0x0033CA90` 472 | `0x0030D3B0` strong |  |
-| `RequestCarViewerGameMode()` |  |  |  | `0x0033E930` 124 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `IsCurrentStageCrashMode()` | `0x002CC1D0` 44 | `0x00314540` 44 | `0x00346130` 44 | `0x0033F590` 88 |  |  |  |
+| `RequestOPMDemoGameMode()` | `0x002CC200` 352 | `0x00314570` 352 | `0x00346160` 352 | `0x0033F3C0` 460 |  |  |  |
+| `RequestMShowDemoGameMode()` | `0x002CC360` 352 | `0x003146D0` 352 | `0x003462C0` 352 | `0x0033F1F0` 460 |  |  |  |
+| `RequestPeriodicalGameMode()` | `0x002CC4C0` 1668 | `0x00314830` 1696 | `0x00346420` 1696 | `0x0033E9B0` 2100 |  |  |  |
+| `RequestOnlineGameMode()` | `0x002CCB50` 608 | `0x00314ED0` 776 | `0x00346AC0` 776 | `0x0033E500` 988 | `0x0030BB70` likely |  | `CB4GameMode * CB4MenuChoices::RequestOnlineGameMode()` |
+| `RequestCrashPartyGameMode()` | `0x002CCDB0` 380 | `0x003151E0` 440 | `0x00346DD0` 440 | `0x0033E290` 464 | `0x0030BE20` unverified |  | `CB4GameMode * CB4MenuChoices::RequestCrashPartyGameMode()` |
+| `RequestTwoPlayerGameMode(int)` | `0x002CCF30` 580 | `0x003153A0` 604 | `0x00346F90` 648 | `0x0033DF50` 820 | `0x0030BFF0` unverified |  | `CB4GameMode * CB4MenuChoices::RequestTwoPlayerGameMode()` (same name, different parameters) |
+| `RequestOnePlayerGameMode(int)` | `0x002CD180` 532 | `0x00315600` 556 | `0x00347220` 556 | `0x0033DBE0` 792 | `0x0030C2C0` likely |  | `CB4GameMode * CB4MenuChoices::RequestOnePlayerGameMode()` (same name, different parameters) |
+| `RequestChampionshipGameMode(int)` | `0x002CD3A0` 1016 | `0x00315830` 1020 | `0x00347450` 996 | `0x0033D5D0` 1404 | `0x0030C560` unverified |  | `CB4GameMode * CB4MenuChoices::RequestChampionshipGameMode()` (same name, different parameters) |
+| `GetDriverCarID(CB3GameStageDataStruct*,int,int)` | `0x002CD7A0` 896 | `0x00315C30` 1012 | `0x00347840` 960 | `0x0033D110` 1208 | `0x0030CA10` unverified |  | `GtID CB4MenuChoices::GetDriverCarID(CB4GameStageDataStruct *lpStage, unsigned long lPlayerCarID, int lnDriverIndex, int lnAICarIndex, unsigned long *lpaCarIDs, int lnIDArraySize)` (same name, different parameters) |
+| `GetGameStageData(CB3StageDataStruct*)` | `0x002CDB20` 96 | `0x00316030` 412 | `0x00347C00` 412 | `0x0033CF30` 388 | `0x0030CE20` proven |  | `CB4GameStageDataStruct * CB4MenuChoices::GetGameStageData(CB4StageDataStruct *lpChampionshipStage)` |
+| `IsCurrentSelectionCrashMode()` | `0x002CDB80` 92 | `0x003161D0` 92 | `0x00347DA0` 92 | `0x0033CE60` 196 | `0x0030CE80` unverified |  |  |
+| `RequestNewGameMode()` | `0x002CDBE0` 484 | `0x00316230` 520 | `0x00347E00` 520 | `0x0033CC70` 464 | `0x0030D1B0` likely |  | `void CB4MenuChoices::RequestNewGameMode()` |
+| `Prepare()` | `0x002CDDD0` 228 | `0x00316440` 228 | `0x00348010` 228 | `0x0033CA90` 472 | `0x0030D3B0` strong |  | `bool CB4MenuChoices::Prepare()` |
+| `RequestCarViewerGameMode()` |  |  |  | `0x0033E930` 124 |  |  |  |
 
 ## Static data (DNAT_200)
 
@@ -37,6 +38,103 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 |---|---:|---|---|
 | `0x0042C900` | 36 | .rodata | `CB3MenuChoices::maCarClassIDs` |
 | `0x0042C940` | 12 | .rodata | `CB3MenuChoices::maTrackRegionIDs` |
+
+## Burnout Revenge layout of `CB4MenuChoices`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 36 file(s), e.g. `GameSource/Game/Challenge/B4Challenge.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4MenuChoices {  // size 0x280
+    /* 0x000 */ GtID mTrackID;
+    /* 0x008 */ long unsigned int maCrashPartyStages[18];
+    /* 0x098 */ long unsigned int maCrashPartyTracks[18];
+    /* 0x128 */ GtID mStageID;
+    /* 0x130 */ GtID mBootSequencePreviousStateID;
+    /* 0x138 */ EB4LoadingScreenTypes meB4LoadingScreenType;
+    /* 0x13C */ EB4MenuChoicesMain meMainChoice;
+    /* 0x140 */ EB4MenuChoicesOnePlayer meOnePlayerChoice;
+    /* 0x144 */ EB4MenuChoicesMultiPlayer meMultiPlayerChoice;
+    /* 0x148 */ EB4MenuChoicesOnline meOnlineChoice;
+    /* 0x14C */ RwInt32 mnNumPlayerCars;
+    /* 0x150 */ RwInt32 mnNumAICars;
+    /* 0x154 */ RwInt32 mnNumNetworkPlayers;
+    /* 0x158 */ RwInt32 mnNumCrashPartyPlayersPerTeam;
+    /* 0x15C */ RwInt32 mnNumCrashPartyPlayers;
+    /* 0x160 */ RwInt32 mnNumCrashPartyZones;
+    /* 0x164 */ ECrashSetupHSelectRegions meCrashRegionSelection;
+    /* 0x168 */ RwUInt32 muRandomNumberSeed;
+    /* 0x16C */ RwInt32 mnNumCarsSelected;
+    /* 0x170 */ RwInt32 mnNumCrashZonesSelected;
+    /* 0x174 */ RwInt32 mnInitialDamage;
+    /* 0x178 */ EB4MenuCarClasses maePlayerCarClasses[6];
+    /* 0x190 */ int manPlayerCarIndex[6];
+    /* 0x1A8 */ long unsigned int maCarID[6];
+    /* 0x1D8 */ int manCarColour[6];
+    /* 0x1F0 */ EB4TrackRegion meTrackRegion;
+    /* 0x1F4 */ RwInt32 mnTrackIndex;
+    /* 0x1F8 */ EB4TrafficDifficulty meTrafficDifficulty;
+    /* 0x1FC */ EB4DemoRace meB4DemoRace;
+    /* 0x200 */ EB4DemoGameMode meDemoGameMode;
+    /* 0x204 */ EB4TrackLocale meChosenCity;
+    /* 0x208 */ EEventSelectOption meChosenEvent;
+    /* 0x20C */ ETrackSelectOption meChosenTrack;
+    /* 0x210 */ ERevengeMeterRank meChosenRank;
+    /* 0x214 */ EB4Video meVideo;
+    /* 0x218 */ RwReal mrVideoLength;
+    /* 0x21C */ RwReal mrMusicVolume;
+    /* 0x220 */ RwReal mrSFXVolume;
+    /* 0x224 */ RwReal mrMasterVolume;
+    /* 0x228 */ CB4ChallengeDataStruct *mpCurrentChallenge;
+    /* 0x22C */ CB4StageDataStruct *mapChampionshipStage[18];
+    /* 0x274 */ RwUInt8 mn82PRoadRageTakedownLimit;
+    /* 0x275 */ RwInt8 mn8TrafficOn;
+    /* 0x276 */ RwInt8 mn8ContrastFilterOn;
+    /* 0x277 */ bool mbRestrictedCrashPartyCarSelection;
+    /* 0x278 */ bool mbIsTeamCrashParty;
+    /* 0x279 */ bool mbRagersHaveInfiniteBoost;
+    /* 0x27A */ bool mbCrashbreakerInRaceOn;
+    /* 0x27B */ bool mbLockCars;
+    /* 0x27C */ bool mbLanguageSelected;
+    /* 0x27D */ bool mbIsWorldInCitySelect;
+    /* 0x27E */ RwInt8 mnNumberOfTracks;
+    /* static */ char *maCarClassIDs[9];
+    /* static */ char *maTrackRegionIDs[3];
+    // methods
+    // CB4MenuChoices(const CB4MenuChoices &);
+    // CB4MenuChoices();
+    // bool Prepare();
+    // void RequestNewGameMode();
+    // void SelectRandomAICarsInClass(EB4MenuCarClasses);
+    // bool AllowHeavyweightsInCurrentSelection();
+    // bool AllowSpecialsInCurrentSelection();
+    // CB4GameStageDataStruct * GetGameStageData(CB4StageDataStruct *);
+    // GtID GetDriverCarID(CB4GameStageDataStruct *, unsigned long, int, int, unsigned long *, int);
+    // void GetRoadRageCarsFromWaveData(unsigned long, CB4RaceSetupConfig *);
+    // void SetChosenCity(EB4TrackLocale);
+    // EB4TrackLocale GetChosenCity() const;
+    // void SetChosenRank(ERevengeMeterRank);
+    // ERevengeMeterRank GetChosenRank() const;
+    // void SetChosenEvent(EEventSelectOption);
+    // EEventSelectOption GetChosenEvent() const;
+    // CB4GameMode * SetupOnlineGameData();
+    // CB4GameMode * RequestChampionshipGameMode();
+    // CB4GameMode * RequestOnePlayerGameMode();
+    // CB4GameMode * RequestSinglePlayerCrashTour();
+    // CB4GameMode * RequestTwoPlayerGameMode();
+    // CB4GameMode * RequestCrashPartyGameMode();
+    // CB4GameMode * RequestOnlineGameMode();
+    // CB4GameMode * RequestCustomOnlineGameMode();
+    // CB4GameMode * RequestGrandPrix();
+    // void SetUpOnlineRoundStructure();
+    // void SetUp2POnlineRoundStructure();
+    // void SetUp4POnlineRoundStructure();
+    // void SetUp6POnlineRoundStructure();
+    // void CopyCarIcons(CB4GameMode *);
+    // bool DoesCarMatchCarClass(unsigned long, EB4MenuCarClasses);
+    // GtID PickRandomCarInClass(EB4MenuCarClasses);
+    // bool IDIsInArray(unsigned long *, unsigned long, int);
+};
+```
 
 ## Notes
 

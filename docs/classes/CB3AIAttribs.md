@@ -8,14 +8,102 @@
 - **Source file:** `B3AIAttribs.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4AIAttribs`, size 0x124, methods in `GameSource/World/B4AIAttribs.cpp` ([layout](#burnout-revenge-layout-of-cb4aiattribs))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Register()` | `0x00232300` 4016 | `0x0024F810` 4016 | `0x0028B610` 4016 | `0x0028A540` 5716 | `0x00271A80` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Register()` | `0x00232300` 4016 | `0x0024F810` 4016 | `0x0028B610` 4016 | `0x0028A540` 5716 | `0x00271A80` proven |  | `void CB4AIAttribs::Register()` |
+
+## Burnout Revenge layout of `CB4AIAttribs`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/World/B4AIAttribs.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AIAttribs {  // size 0x124
+    /* 0x000 */ RwReal mrMaxOutRangeDecreaseSpeed;
+    /* 0x004 */ RwReal mrMaxDiffAngleDesDir;
+    /* 0x008 */ RwReal mrSpeedSteerAngleCutOff;
+    /* 0x00C */ RwReal mrMaxSpeed;
+    /* 0x010 */ RwReal mrMinSpeed;
+    /* 0x014 */ RwReal mrCarAtFrac;
+    /* 0x018 */ RwReal mrDriftStartSteerAngle;
+    /* 0x01C */ RwReal mrSteeringFactor;
+    /* 0x020 */ RwReal mrDriftSteeringFactor;
+    /* 0x024 */ RwReal mrRiskThreshold;
+    /* 0x028 */ RwReal mrTotalRiskThreshold;
+    /* 0x02C */ RwReal mrCurrentRiskThreshold;
+    /* 0x030 */ RwReal mrCornerRiskThreshold;
+    /* 0x034 */ RwReal mrCornerTotalRiskThreshold;
+    /* 0x038 */ RwReal mrCornerCurrentRiskThreshold;
+    /* 0x03C */ RwReal mrAvoidRaceCarLookAheadDist;
+    /* 0x040 */ RwReal mrSoftNoGoTime;
+    /* 0x044 */ RwReal mrSoftNoGoDistance;
+    /* 0x048 */ RwReal mrHardNoGoTime;
+    /* 0x04C */ RwReal mrHardNoGoDistance;
+    /* 0x050 */ RwReal mrDistToDiscardFatallyCollidingRacecar;
+    /* 0x054 */ RwReal mrVertDistDiscard;
+    /* 0x058 */ RwReal mrAvoidTimeGap;
+    /* 0x05C */ RwReal mrAvoid10mDesiredSpeed;
+    /* 0x060 */ RwReal mrAvoid20mDesiredSpeed;
+    /* 0x064 */ RwReal mrAvoid30mDesiredSpeed;
+    /* 0x068 */ RwReal mrAvoidVBigRiskDesiredSpeed;
+    /* 0x06C */ RwReal mrAvoidBigRiskDesiredSpeed;
+    /* 0x070 */ RwReal mrAvoidSteeringFactor;
+    /* 0x074 */ RwReal mrSoftNoGoDistMultiplier;
+    /* 0x078 */ RwReal mrSoftNoGoTimeMultiplier;
+    /* 0x07C */ RwReal mrAggressionTimeFactor;
+    /* 0x080 */ RwReal mrAggressionDistFactor;
+    /* 0x084 */ RwReal mrAggressionTimeOffset;
+    /* 0x088 */ RwReal mrAggressionDistOffset;
+    /* 0x08C */ RwReal mrDistToBrakeSpeedFactor;
+    /* 0x090 */ RwReal mrMinDistToTargetPos;
+    /* 0x094 */ RwReal mrMinDpToTargetPos;
+    /* 0x098 */ RwReal mrMinDriftSpeed;
+    /* 0x09C */ RwReal mrMaxCornerRacingLineRadius;
+    /* 0x0A0 */ RwReal mrApexApproachDriftTime;
+    /* 0x0A4 */ RwInt32 mnBaseCornerSegmentsForSpeed;
+    /* 0x0A8 */ RwInt32 mnBaseCornerSegmentsForSpeedDrifting;
+    /* 0x0AC */ RwInt32 mnMaxExtraCornerSegmentsForSpeed;
+    /* 0x0B0 */ RwInt32 mnMaxExtraCornerSegmentsForSpeedDrifting;
+    /* 0x0B4 */ RwReal mrApexShiftDistance;
+    /* 0x0B8 */ RwReal mrSpeedMatchNearRadius;
+    /* 0x0BC */ RwReal mrStickySpeedMatchMaxDistance;
+    /* 0x0C0 */ RwReal mrStickySpeedMatchMaxSpeedDifference;
+    /* 0x0C4 */ RwReal mrAggressionMinAttackAggression;
+    /* 0x0C8 */ RwReal mrAggressionWaitTimeMin;
+    /* 0x0CC */ RwReal mrAggressionWaitTimeMax;
+    /* 0x0D0 */ RwReal mrAggressionMaxAttackDistanceAhead;
+    /* 0x0D4 */ RwReal mrAggressionMaxAttackDistanceBehind;
+    /* 0x0D8 */ RwReal mrAggressionMinTargetSpeedMPH;
+    /* 0x0DC */ RwReal mrAggressionSpeedMatchSlowdown;
+    /* 0x0E0 */ RwReal mrAggressionBoostInFrontDistance;
+    /* 0x0E4 */ RwReal mrAggressionBoostInFrontDistanceExtra;
+    /* 0x0E8 */ RwReal mrAggressiveRaceStartNoAttackTime;
+    /* 0x0EC */ RwReal mrAggressiveNoImmunityTime;
+    /* 0x0F0 */ RwReal mrAggressiveBlockTimeMin;
+    /* 0x0F4 */ RwReal mrAggressiveBlockTimeMax;
+    /* 0x0F8 */ RwReal mrAggressiveBlockMaxDistance;
+    /* 0x0FC */ RwReal mrSlamPreferredSeparation;
+    /* 0x100 */ RwReal mrSlamMaxMoveToPositionTime;
+    /* 0x104 */ RwReal mrSlamMaxDistanceWhenAhead;
+    /* 0x108 */ RwReal mrSlamMaxSpeedDifferenceMPH;
+    /* 0x10C */ RwReal mrSlamSteerOutDistance;
+    /* 0x110 */ RwReal mrSlamSteerOutTime;
+    /* 0x114 */ RwReal mrSlamTime;
+    /* 0x118 */ RwReal mrSlamMaxCosTurnAngle;
+    /* 0x11C */ RwReal mrSlamCommitWindow;
+    /* 0x120 */ RwReal mrPostRubBlindnessTime;
+    // methods
+    // CB4AIAttribs(const CB4AIAttribs &);
+    // CB4AIAttribs();
+    // void Register();
+    // void Unregister();
+};
+```
 
 ## Notes
 

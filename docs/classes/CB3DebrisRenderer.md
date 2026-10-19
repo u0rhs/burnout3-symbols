@@ -11,18 +11,18 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UploadCodeAndCameraData()` | `0x002B33C0` 280 | `0x002F2480` 280 | `0x003277B0` 280 | `0x0031EE20` 392 | `0x002F3B60` proven |  |
-| `DispatchBuffer()` | `0x002B34E0` 1596 | `0x002F25A0` 1936 | `0x003278D0` 1820 | `0x0031E8D0` 1352 | `0x002F3C80` proven |  |
-| `EndRender()` | `0x002B3B20` 92 | `0x002F2D30` 136 | `0x00327FF0` 136 | `0x0031E710` 116 | `0x002F42C0` proven |  |
-| `RenderDebrisArray(CB3DebrisArray*,float)` | `0x002B3B80` 720 | `0x002F2DC0` 780 | `0x00328080` 780 | `0x0031E3C0` 840 | `0x002F4320` proven |  |
-| `BeginRender()` | `0x002B3E50` 20 | `0x002F30D0` 84 | `0x00328390` 84 | `0x0031E390` 44 | `0x002F4600` proven |  |
-| `Destruct()` | `0x002B3E70` 8 | `0x002F3130` 8 | `0x003283F0` 8 | `0x0031E380` 8 | `0x002F4620` strong |  |
-| `Construct()` | `0x002B3E80` 28 | `0x002F3140` 28 | `0x00328400` 28 | `0x0031E360` 32 | `0x002F4630` proven |  |
-| `AddParticleToBuffer(GtMathPs2::CGtV3d,GtMathPs2::CGtV3dPlus,unsigned int,EGtIntersectionResult)` |  |  |  | `0x0031E790` 316 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UploadCodeAndCameraData()` | `0x002B33C0` 280 | `0x002F2480` 280 | `0x003277B0` 280 | `0x0031EE20` 392 | `0x002F3B60` proven |  | `void CB4DebrisRenderer::UploadCodeAndCameraData()` |
+| `DispatchBuffer()` | `0x002B34E0` 1596 | `0x002F25A0` 1936 | `0x003278D0` 1820 | `0x0031E8D0` 1352 | `0x002F3C80` proven |  | `void CB4DebrisRenderer::DispatchBuffer()` |
+| `EndRender()` | `0x002B3B20` 92 | `0x002F2D30` 136 | `0x00327FF0` 136 | `0x0031E710` 116 | `0x002F42C0` proven |  | `void CB4DebrisRenderer::EndRender()` |
+| `RenderDebrisArray(CB3DebrisArray*,float)` | `0x002B3B80` 720 | `0x002F2DC0` 780 | `0x00328080` 780 | `0x0031E3C0` 840 | `0x002F4320` proven |  | `void CB4DebrisRenderer::RenderDebrisArray(CB4DebrisArray *lpArray, float lrCurrentTime)` |
+| `BeginRender()` | `0x002B3E50` 20 | `0x002F30D0` 84 | `0x00328390` 84 | `0x0031E390` 44 | `0x002F4600` proven |  | `void CB4DebrisRenderer::BeginRender()` |
+| `Destruct()` | `0x002B3E70` 8 | `0x002F3130` 8 | `0x003283F0` 8 | `0x0031E380` 8 | `0x002F4620` strong |  | `void CB4DebrisRenderer::Destruct()` |
+| `Construct()` | `0x002B3E80` 28 | `0x002F3140` 28 | `0x00328400` 28 | `0x0031E360` 32 | `0x002F4630` proven |  | `void CB4DebrisRenderer::Construct()` |
+| `AddParticleToBuffer(GtMathPs2::CGtV3d,GtMathPs2::CGtV3dPlus,unsigned int,EGtIntersectionResult)` |  |  |  | `0x0031E790` 316 |  |  | `void CB4DebrisRenderer::AddParticleToBuffer(GtMathPs2::CGtV3d lPos, GtMathPs2::CGtV3dPlus lAxisAngle, unsigned int lPackedRGBA, float lrSizeScale, EGtIntersectionResult leFrustumTestResult)` (same name, different parameters) |
 
 ## Static data (DNAT_200)
 

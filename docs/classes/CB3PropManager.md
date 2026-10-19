@@ -8,22 +8,78 @@
 - **Source file:** `B3PropManager.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 9
 - **Retail (SLUS-21050):** 3 of its 8 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4PropManager`, size 0x8F20, methods in `GameSource/World/B4PropManager.cpp` ([layout](#burnout-revenge-layout-of-cb4propmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `KillProp(CB3Prop*,bool)` | `0x002780B0` 132 | `0x002AB900` 252 | `0x002E2BA0` 252 | `0x002E1930` 236 |  |  |
-| `DynamiseProp(CB3Prop*)` | `0x00278140` 80 | `0x002ABA00` 168 | `0x002E2CA0` 168 | `0x002E1880` 164 |  |  |
-| `Destruct()` | `0x00278190` 8 | `0x002ABAB0` 8 | `0x002E2D50` 8 | `0x002E1870` 16 |  |  |
-| `Release()` | `0x002781A0` 84 | `0x002ABAC0` 84 | `0x002E2D60` 84 | `0x002E17F0` 116 |  |  |
-| `Update()` | `0x00278200` 8 | `0x002ABB20` 8 | `0x002E2DC0` 8 | `0x002E17E0` 16 | `0x002B72F0` strong |  |
-| `Prepare()` | `0x00278210` 1356 | `0x002ABB30` 1448 | `0x002E2DD0` 1448 | `0x002E0F90` 2128 | `0x002B7300` strong |  |
-| `Construct()` | `0x00278760` 36 | `0x002AC0E0` 36 | `0x002E3380` 36 | `0x002E0F30` 84 | `0x002B7870` proven |  |
-| `Render(signed char,short,signed char*)` | `0x002B8C50` 632 | `0x002FA490` 932 | `0x0032E290` 632 | `0x00325980` 1260 |  |  |
-| `GetPropType(const CB3Prop*)` |  |  |  | `0x001BE3C0` 56 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `KillProp(CB3Prop*,bool)` | `0x002780B0` 132 | `0x002AB900` 252 | `0x002E2BA0` 252 | `0x002E1930` 236 |  |  |  |
+| `DynamiseProp(CB3Prop*)` | `0x00278140` 80 | `0x002ABA00` 168 | `0x002E2CA0` 168 | `0x002E1880` 164 |  |  |  |
+| `Destruct()` | `0x00278190` 8 | `0x002ABAB0` 8 | `0x002E2D50` 8 | `0x002E1870` 16 |  |  | `void CB4PropManager::Destruct()` |
+| `Release()` | `0x002781A0` 84 | `0x002ABAC0` 84 | `0x002E2D60` 84 | `0x002E17F0` 116 |  |  | `void CB4PropManager::Release()` |
+| `Update()` | `0x00278200` 8 | `0x002ABB20` 8 | `0x002E2DC0` 8 | `0x002E17E0` 16 | `0x002B72F0` strong |  | `void CB4PropManager::Update()` |
+| `Prepare()` | `0x00278210` 1356 | `0x002ABB30` 1448 | `0x002E2DD0` 1448 | `0x002E0F90` 2128 | `0x002B7300` strong |  | `bool CB4PropManager::Prepare()` |
+| `Construct()` | `0x00278760` 36 | `0x002AC0E0` 36 | `0x002E3380` 36 | `0x002E0F30` 84 | `0x002B7870` proven |  | `void CB4PropManager::Construct()` |
+| `Render(signed char,short,signed char*)` | `0x002B8C50` 632 | `0x002FA490` 932 | `0x0032E290` 632 | `0x00325980` 1260 |  |  | `void CB4PropManager::Render(signed char ln8VisisbleUnitCount, short ln16CurrentHull, signed char *lan8UnitOffset)` |
+| `GetPropType(const CB3Prop*)` |  |  |  | `0x001BE3C0` 56 |  |  |  |
+
+## Burnout Revenge layout of `CB4PropManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 13 file(s), e.g. `GameSource/Game/Logic/B4CarViewerLogic.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4PropManager {  // size 0x8F20
+    /* 0x000 */ CGtLinearMalloc mLinearAllocator;
+    /* 0x01C */ void *mpMemoryBlock;
+    /* 0x020 */ RwUInt32 muLoadId;
+    /* 0x024 */ bool mbDataLoaded;
+    /* 0x028 */ EGtPrepareState mePrepareState;
+    /* 0x02C */ CB4TrackPropData *mpPropData;
+    /* 0x030 */ CB4InstanceData *mpaCachedPropMatrices;
+    /* 0x034 */ CB4PropType *mpaPropTypes;
+    /* 0x038 */ RwUInt16 mu16NumTrackProps;
+    /* 0x03A */ RwUInt16 mu16NumDetourProps;
+    /* 0x03C */ RwUInt8 mu8NumPropTypes;
+    /* 0x040 */ CGtSoundVoiceHandle mDetourVoice[8];
+    /* 0x0C0 */ CGtSoundVoiceHandle mDetourVoice2[8];
+    /* 0x140 */ CGtSoundVoiceHandle mDetourVoiceExtra[8];
+    /* 0x1C0 */ CGtSoundVoiceHandle mDetourVoice2Extra[8];
+    /* 0x240 */ RwInt32 mnNextProp;
+    /* 0x244 */ int mnChevronIndex[8];
+    /* 0x264 */ CGtSphereTree mSphereTree;
+    /* 0x2C0 */ CGtSphereTreeSphere maParents[500];
+    /* 0x7FC0 */ float marPropLastHitTimes[915];
+    /* 0x8E0C */ RwUInt16 mu16DetourStartIndex;
+    /* static */ CB4PropInstance *maapVisibleProps[128][200];
+    /* static */ short unsigned int mau16NumVisibleProps[128];
+    /* 0x8E10 */ CB4VehiclePayloadSet *mapPayloadSet[32];
+    /* 0x8E90 */ CGtMatrix3x4 *mapPayloadSetMatrix[32];
+    /* 0x8F10 */ RwUInt32 munNumPayloadSets;
+    // methods
+    // CB4PropManager(const CB4PropManager &);
+    // CB4PropManager();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Render(signed char, short, signed char *);
+    // void Release();
+    // void Destruct();
+    // void HitProp(CB4PropInstance *);
+    // void AddProps();
+    // void RemoveProp(CB4PropInstance *);
+    // RwInt16 GetNumTrackProps();
+    // RwReal GetPropLastHitTime(int);
+    // void SetPropLastHitTime(int, float);
+    // CB4PropType * GetPropType(const CB4PropInstance *) const;
+    // bool RenderPayloadSet(CB4VehiclePayloadSet *, GtMathPs2::CGtMatrix3x4 *);
+    // void AddProp(CB4PropInstance *, GtMathPs2::CGtV3d, float, GtMathPs2::CGtMatrix3x4 *, bool, ERaceCarIndex);
+    // void RenderSphereTree();
+    // static bool GetVisiblePropsCallback(const CGtSphereTreeSphere *, EGtIntersectionResult, void *);
+};
+```
 
 ## Notes
 

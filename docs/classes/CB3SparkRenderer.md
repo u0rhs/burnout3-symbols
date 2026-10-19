@@ -8,23 +8,24 @@
 - **Source file:** `B3SparkRendererPS2.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 10
 - **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 8 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SparkRenderer`, size 0x001, methods in `GameSource/Graphics/SparkRenderer/Ps2/B4SparkRendererPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4sparkrenderer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RestoreRenderstates()` | `0x00225250` 68 | `0x0023B910` 68 | `0x002784D0` 68 | `0x0027A700` 88 | `0x00263350` proven |  |
-| `SetRenderstates()` | `0x002252A0` 120 | `0x0023B960` 120 | `0x00278520` 120 | `0x0027A650` 164 | `0x002633A0` proven |  |
-| `UploadStaticDataAndCallCode(const CB3SparkArray*,bool)` | `0x00225320` 652 | `0x0023B9E0` 724 | `0x002785A0` 724 | `0x0027A1A0` 1200 | `0x00263420` proven |  |
-| `EndRender()` | `0x002255B0` 304 | `0x0023BCC0` 356 | `0x00278880` 304 | `0x0027A040` 268 | `0x002636B0` proven |  |
-| `RenderSparkArray(CB3SparkArray*)` | `0x002256E0` 196 | `0x0023BE30` 300 | `0x002789B0` 260 | `0x00279EC0` 380 | `0x002637F0` proven |  |
-| `BeginRender(int,bool)` | `0x002257B0` 704 | `0x0023BF60` 760 | `0x00278AC0` 704 | `0x00279960` 1044 | `0x002638C0` proven |  |
-| `Prepare()` | `0x00225A70` 120 | `0x0023C260` 120 | `0x00278D80` 120 | `0x002798A0` 184 | `0x00263B80` proven |  |
-| `Destruct()` | `0x00225AF0` 8 | `0x0023C2E0` 8 | `0x00278E00` 8 | `0x00279890` 8 | `0x00263C00` strong |  |
-| `Construct()` | `0x00225B00` 40 | `0x0023C2F0` 40 | `0x00278E10` 40 | `0x00279860` 44 | `0x00263C10` proven |  |
-| `UploadVUCode()` |  |  |  | `0x0027A150` 80 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RestoreRenderstates()` | `0x00225250` 68 | `0x0023B910` 68 | `0x002784D0` 68 | `0x0027A700` 88 | `0x00263350` proven |  | `void CB4SparkRenderer::RestoreRenderstates()` |
+| `SetRenderstates()` | `0x002252A0` 120 | `0x0023B960` 120 | `0x00278520` 120 | `0x0027A650` 164 | `0x002633A0` proven |  | `void CB4SparkRenderer::SetRenderstates()` |
+| `UploadStaticDataAndCallCode(const CB3SparkArray*,bool)` | `0x00225320` 652 | `0x0023B9E0` 724 | `0x002785A0` 724 | `0x0027A1A0` 1200 | `0x00263420` proven |  | `void CB4SparkRenderer::UploadStaticDataAndCallCode(const CB4SparkArray *lpArray, bool lbUploadCameraData)` |
+| `EndRender()` | `0x002255B0` 304 | `0x0023BCC0` 356 | `0x00278880` 304 | `0x0027A040` 268 | `0x002636B0` proven |  | `void CB4SparkRenderer::EndRender()` |
+| `RenderSparkArray(CB3SparkArray*)` | `0x002256E0` 196 | `0x0023BE30` 300 | `0x002789B0` 260 | `0x00279EC0` 380 | `0x002637F0` proven |  | `void CB4SparkRenderer::RenderSparkArray(CB4SparkArray *lpSparkArray)` |
+| `BeginRender(int,bool)` | `0x002257B0` 704 | `0x0023BF60` 760 | `0x00278AC0` 704 | `0x00279960` 1044 | `0x002638C0` proven |  | `void CB4SparkRenderer::BeginRender(int lnPlayer, bool lbIsCrash)` |
+| `Prepare()` | `0x00225A70` 120 | `0x0023C260` 120 | `0x00278D80` 120 | `0x002798A0` 184 | `0x00263B80` proven |  | `bool CB4SparkRenderer::Prepare()` |
+| `Destruct()` | `0x00225AF0` 8 | `0x0023C2E0` 8 | `0x00278E00` 8 | `0x00279890` 8 | `0x00263C00` strong |  | `void CB4SparkRenderer::Destruct()` |
+| `Construct()` | `0x00225B00` 40 | `0x0023C2F0` 40 | `0x00278E10` 40 | `0x00279860` 44 | `0x00263C10` proven |  | `void CB4SparkRenderer::Construct()` |
+| `UploadVUCode()` |  |  |  | `0x0027A150` 80 |  |  | `void CB4SparkRenderer::UploadVUCode()` |
 
 ## Static data (DNAT_200)
 
@@ -37,6 +38,36 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `0x01D4AC80` | 16 | .bss | `CB3SparkRenderer::mu128GifTag` |
 | `0x01D4AC90` | 3456 | .bss | `CB3SparkRenderer::maFrameQueue` |
 | `0x01D4BA10` | 24 | .bss | `CB3SparkRenderer::mpaRenderableArrays` |
+
+## Burnout Revenge layout of `CB4SparkRenderer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Graphics/SparkRenderer/Ps2/B4SparkRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SparkRenderer {  // size 0x001
+    /* static */ u_long128 mu128GifTag;
+    /* static */ CSparkFrameData maFrameQueue[2][18];
+    /* static */ CB4SparkArray *mpaRenderableArrays[6];
+    /* static */ RwInt32 mnNumRenderableArrays;
+    /* static */ RwInt32 mnRenderPlayer;
+    /* static */ RwReal mrMaxMotionBlurTime;
+    /* static */ bool mbIsCrash;
+    // methods
+    // CB4SparkRenderer(const CB4SparkRenderer &);
+    // CB4SparkRenderer();
+    // static void Construct();
+    // static void Destruct();
+    // static bool Prepare();
+    // static void Release();
+    // static void BeginRender(int, bool);
+    // static void RenderSparkArray(CB4SparkArray *);
+    // static void EndRender();
+    // static void UploadVUCode();
+    // static void UploadStaticDataAndCallCode(const CB4SparkArray *, bool);
+    // static void SetRenderstates();
+    // static void RestoreRenderstates();
+};
+```
 
 ## Notes
 

@@ -11,14 +11,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetupGameModeSelect()` | `0x00379C70` 240 | `0x003EAC50` 240 |  | `0x00428C00` 292 |  |  |
-| `Action(EGtStateAction,void*,void*,void*)` | `0x00379D60` 880 | `0x003EAD40` 880 | `0x00412D90` 1308 | `0x00428920` 728 |  |  |
-| `CB3TwoPlayerModeSelectState()` |  |  |  | `0x00345420` 60 |  |  |
-| `SetupGameOptionsSelect()` |  |  |  | `0x00428D30` 64 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetupGameModeSelect()` | `0x00379C70` 240 | `0x003EAC50` 240 |  | `0x00428C00` 292 |  |  |  |
+| `Action(EGtStateAction,void*,void*,void*)` | `0x00379D60` 880 | `0x003EAD40` 880 | `0x00412D90` 1308 | `0x00428920` 728 |  |  |  |
+| `CB3TwoPlayerModeSelectState()` |  |  |  | `0x00345420` 60 |  |  |  |
+| `SetupGameOptionsSelect()` |  |  |  | `0x00428D30` 64 |  |  |  |
 
 ## Notes
 

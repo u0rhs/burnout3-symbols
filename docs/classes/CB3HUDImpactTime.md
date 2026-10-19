@@ -9,16 +9,35 @@
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 3
 - **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00441DD0`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
+- **Burnout Revenge counterpart:** `CB4HUDImpactTime`, size 0x02C, methods in `GameSource/Hud/B4HUDImpactTime.cpp` ([layout](#burnout-revenge-layout-of-cb4hudimpacttime))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update(float)` | `0x00386E80` 804 | `0x003FA2E0` 1008 | `0x00421F10` 1044 | `0x0043AD70` 1076 |  |  |
-| `Prepare(int,EHUDAlign,int)` | `0x003871B0` 184 | `0x003FA6D0` 272 | `0x00422330` 272 | `0x0043AC80` 232 | `0x003D6AB0` unverified |  |
-| `CB3HUDImpactTime()` |  |  |  | `0x00199700` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update(float)` | `0x00386E80` 804 | `0x003FA2E0` 1008 | `0x00421F10` 1044 | `0x0043AD70` 1076 |  |  | `void CB4HUDImpactTime::Update(float lrTimeStep)` |
+| `Prepare(int,EHUDAlign,int)` | `0x003871B0` 184 | `0x003FA6D0` 272 | `0x00422330` 272 | `0x0043AC80` 232 | `0x003D6AB0` unverified |  | `bool CB4HUDImpactTime::Prepare(EPlayerCarIndex lePlayer, EHUDAlign leAlign, int lxFlags)` (same name, different parameters) |
+| `CB3HUDImpactTime()` |  |  |  | `0x00199700` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4HUDImpactTime`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Hud/B4HUDImpactTime.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HUDImpactTime : public CB4HUDComponent {  // size 0x02C
+    // base CB4HUDComponent at 0x000
+    /* static */ RwInt32 knMaxObjects;
+    /* 0x020 */ CGt2dObject *mapObjects[2];
+    /* 0x028 */ EB4HUDString mLastHudString;
+    // methods
+    // CB4HUDImpactTime(const CB4HUDImpactTime &);
+    // CB4HUDImpactTime();
+    // bool Prepare(EPlayerCarIndex, EHUDAlign, int);
+    // virtual void Update(float);
+};
+```
 
 ## Notes
 

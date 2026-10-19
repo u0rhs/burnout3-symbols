@@ -7,21 +7,51 @@
 - **Area:** [Effects](../systems/effects.md)
 - **Source file:** `B3ScrapeSystem.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 8
+- **Burnout Revenge counterpart:** `CB4ScrapeEmitter`, size 0x450, methods in `GameSource/Graphics/Scrapes/B4ScrapeSystem.cpp` ([layout](#burnout-revenge-layout-of-cb4scrapeemitter))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `AddScrapeSegment(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,const GtMathPs2::CGtMatrix3x4*)` | `0x00334510` 592 | `0x00396200` 792 | `0x003C0650` 680 | `0x003C5690` 832 |  |  |
-| `Construct()` |  |  |  | `0x003C5420` 16 |  |  |
-| `Destruct()` |  |  |  | `0x003C5430` 16 |  |  |
-| `GetScrapeType()` |  |  |  | `0x003C5400` 28 |  |  |
-| `PostRender()` |  |  |  | `0x003C5070` 164 |  |  |
-| `Prepare(CB3ScrapeParams*)` |  |  |  | `0x003C5440` 172 |  |  |
-| `Release()` |  |  |  | `0x003C5510` 16 |  |  |
-| `Update()` |  |  |  | `0x003C5520` 280 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `AddScrapeSegment(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,const GtMathPs2::CGtMatrix3x4*)` | `0x00334510` 592 | `0x00396200` 792 | `0x003C0650` 680 | `0x003C5690` 832 |  |  |  |
+| `Construct()` |  |  |  | `0x003C5420` 16 |  |  | `void CB4ScrapeEmitter::Construct()` |
+| `Destruct()` |  |  |  | `0x003C5430` 16 |  |  | `void CB4ScrapeEmitter::Destruct()` |
+| `GetScrapeType()` |  |  |  | `0x003C5400` 28 |  |  |  |
+| `PostRender()` |  |  |  | `0x003C5070` 164 |  |  |  |
+| `Prepare(CB3ScrapeParams*)` |  |  |  | `0x003C5440` 172 |  |  |  |
+| `Release()` |  |  |  | `0x003C5510` 16 |  |  | `void CB4ScrapeEmitter::Release()` |
+| `Update()` |  |  |  | `0x003C5520` 280 |  |  | `EB4ScrapeEmitterState CB4ScrapeEmitter::Update()` |
+
+## Burnout Revenge layout of `CB4ScrapeEmitter`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 322 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ScrapeEmitter {  // size 0x450
+    /* 0x000 */ RwInt32 mnTextureIndex;
+    /* 0x004 */ RwReal mrTimeLastSegmentAdded;
+    /* 0x008 */ EB4ScrapeType meScrapeType;
+    /* 0x00C */ CB4ScrapeParams *mpParams;
+    /* 0x010 */ RwInt16 mx16Flags;
+    /* 0x012 */ RwInt16 mx16FrameIndex;
+    /* 0x020 */ CB4ScrapeSegmentCollection mSegments[2];
+    /* 0x440 */ CB4ScrapeSegmentCollection *mpReadSegments;
+    /* 0x444 */ CB4ScrapeSegmentCollection *mpWriteSegments;
+    // methods
+    // CB4ScrapeEmitter(const CB4ScrapeEmitter &);
+    // CB4ScrapeEmitter();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare(CB4ScrapeParams *);
+    // void Release();
+    // EB4ScrapeEmitterState Update();
+    // bool AddScrapeSegment(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, const GtMathPs2::CGtMatrix3x4 *);
+    // void PostRender();
+    // EB4ScrapeType GetScrapeType();
+};
+```
 
 ## Notes
 

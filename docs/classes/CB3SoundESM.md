@@ -8,23 +8,84 @@
 - **Source file:** `B3SoundESM.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 10
 - **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundESM`, size 0x7230, methods in `GameSource/Sound/Esm/B4SoundESM.cpp` ([layout](#burnout-revenge-layout-of-cb4soundesm))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ModulateRpm(CB3SoundESMGraphInputs&,const CB3RaceCar*)` | `0x0024AE20` 488 | `0x0027B760` 664 | `0x002B2E40` 664 | `0x002AD650` 516 | `0x00288770` strong |  |
-| `Prepare(unsigned long,int)` | `0x0024B010` 528 | `0x0027BA00` 1264 | `0x002B30E0` 712 | `0x002ACE00` 1604 |  |  |
-| `Construct()` | `0x0024B220` 240 | `0x0027BEF0` 312 | `0x002B33B0` 240 | `0x002ACC80` 384 |  |  |
-| `CB3SoundESM()` |  |  |  | `0x002B1C00` 40 |  |  |
-| `GetBank()` |  |  |  | `0x002B2C40` 28 |  |  |
-| `GetLock()` |  |  |  | `0x00327C40` 28 |  |  |
-| `Release()` |  |  |  | `0x002AD4D0` 196 |  |  |
-| `SetLock(bool)` |  |  |  | `0x00327C10` 36 |  |  |
-| `Update(const CB3RaceCar*,float,float,float)` |  |  |  | `0x002AD470` 84 |  |  |
-| `_CreateESMPathFromID(unsigned long,bool,char*)` |  |  |  | `0x002AD5A0` 172 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ModulateRpm(CB3SoundESMGraphInputs&,const CB3RaceCar*)` | `0x0024AE20` 488 | `0x0027B760` 664 | `0x002B2E40` 664 | `0x002AD650` 516 | `0x00288770` strong |  |  |
+| `Prepare(unsigned long,int)` | `0x0024B010` 528 | `0x0027BA00` 1264 | `0x002B30E0` 712 | `0x002ACE00` 1604 |  |  | `bool CB4SoundESM::Prepare(bool lbIsPlayerCar, unsigned long lCarID, ERaceCarIndex leRaceCarIndex)` (same name, different parameters) |
+| `Construct()` | `0x0024B220` 240 | `0x0027BEF0` 312 | `0x002B33B0` 240 | `0x002ACC80` 384 |  |  | `void CB4SoundESM::Construct()` |
+| `CB3SoundESM()` |  |  |  | `0x002B1C00` 40 |  |  |  |
+| `GetBank()` |  |  |  | `0x002B2C40` 28 |  |  |  |
+| `GetLock()` |  |  |  | `0x00327C40` 28 |  |  |  |
+| `Release()` |  |  |  | `0x002AD4D0` 196 |  |  | `void CB4SoundESM::Release()` |
+| `SetLock(bool)` |  |  |  | `0x00327C10` 36 |  |  |  |
+| `Update(const CB3RaceCar*,float,float,float)` |  |  |  | `0x002AD470` 84 |  |  | `void CB4SoundESM::Update(CB4RaceCar *lpRaceCar)` (same name, different parameters) |
+| `_CreateESMPathFromID(unsigned long,bool,char*)` |  |  |  | `0x002AD5A0` 172 |  |  | `void CB4SoundESM::_CreateESMPathFromID(unsigned long lCarID, bool lbHighDetail, char *lacFilePath)` |
+
+## Burnout Revenge layout of `CB4SoundESM`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 280 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundESM {  // size 0x7230
+    /* 0x000 */ CGtSoundGinsu maGinsu[3];
+    /* 0x6E4C */ CB4SoundESMGraphInputs mPreviousInputs;
+    /* 0x6E68 */ GtID mCarId;
+    /* 0x6E70 */ CGtSoundBank *mpSoundBank;
+    /* 0x6E74 */ CB4SoundESMStruct *mpStreamedData;
+    /* 0x6E78 */ EB4SoundESMPreparedState mePreparedState;
+    /* 0x6E7C */ ERaceCarIndex meRaceCarIndex;
+    /* 0x6E80 */ RwReal mrTimeChangedUp;
+    /* 0x6E84 */ RwReal mrTimeInAir;
+    /* 0x6E88 */ RwReal mrTimeOnGround;
+    /* 0x6E8C */ RwReal mrTimeOffroad;
+    /* 0x6E90 */ RwReal mrOffroadRandomPeriod;
+    /* 0x6E94 */ RwReal mrOffroadRandomPeriodOld;
+    /* 0x6E98 */ RwReal mrOffroadLerpTime;
+    /* 0x6E9C */ RwInt8 mn8PreviousGear;
+    /* 0x6E9D */ bool mbLocked;
+    /* 0x6E9E */ bool mbHighDetail;
+    /* 0x6E9F */ bool mbStartedPlaying;
+    /* 0x6EA0 */ bool mbPaused;
+    /* 0x6EA1 */ bool mbEnginePeakedInAir;
+    /* 0x6EA2 */ bool mbWasInBoost;
+    /* 0x6EA4 */ RwReal mrAccelPedalOverride;
+    /* 0x6EA8 */ RwReal mrRPMOverride;
+    /* 0x6EAC */ RwReal mrAirVolumeScalar;
+    /* 0x6EB0 */ bool mbLoadComplete;
+    /* 0x6EB4 */ RwUInt32 mun32LoadID;
+    /* 0x6EB8 */ bool mabGinsuAvailable[8];
+    /* 0x6EC0 */ CB4SoundGinsuEngine mGinsuEngine;
+    /* 0x722C */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CB4SoundESM(const CB4SoundESM &);
+    // virtual bool Prepare(bool, unsigned long, ERaceCarIndex);
+    // virtual void Update(const CB4RaceCar *, float, float, float, float);
+    // virtual void Release();
+    // CGtSoundBank * GetBank() const;
+    // GtID GetVehicleId() const;
+    // bool IsFullyPrepared() const;
+    // bool IsHighDetail() const;
+    // virtual void Start();
+    // virtual void Stop();
+    // RwInt32 GetCurrentGear();
+    // CB4SoundESM();
+    // void Construct();
+    // void Destruct();
+    // void ModulateRpmGear(CB4SoundESMGraphInputs &, const CB4RaceCar *);
+    // void ModulateRpmAir(CB4SoundESMGraphInputs &, const CB4RaceCar *);
+    // void ModulateRpmOffroad(CB4SoundESMGraphInputs &, const CB4RaceCar *);
+    // void SetLock(bool);
+    // bool GetLock() const;
+    // void Pause(bool);
+    // static void _CreateESMPathFromID(unsigned long, bool, char *);
+};
+```
 
 ## Notes
 

@@ -8,32 +8,77 @@
 - **Source file:** `B3VehicleRendererRuntimePS2.cpp`
 - **Methods per build:** DNAT_200 17, B3DEBUG 17, B3INTERN 17, B3O0PCH 19
 - **Retail (SLUS-21050):** 12 of its 17 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4VehicleRenderer`, size 0x110, methods in `GameSource/Graphics/VehicleRenderer/Ps2/B4VehicleRendererRuntimePS2.cpp` ([layout](#burnout-revenge-layout-of-cb4vehiclerenderer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RenderDeformedObject(EB3VehicleRenderType,const GtMathPs2::CGtMatrix3x4&,CB3VehicleObject*,float,unsigned s` | `0x001E3750` 444 | `0x001E3510` 984 | `0x002161B0` 984 | `0x0022A010` 648 |  |  |
-| `RenderObject(EB3VehicleRenderType,const GtMathPs2::CGtMatrix3x4&,CB3VehicleObject*,float,unsigned short,uns` | `0x001E3910` 288 | `0x001E38F0` 836 | `0x00216590` 836 | `0x00229E70` 404 |  |  |
-| `RenderMesh(EB3VehicleRenderType,float,CB3VehicleMesh&,unsigned short)` | `0x001E3A30` 732 | `0x001E3C40` 824 | `0x002168E0` 796 | `0x002299F0` 1116 |  |  |
-| `ComputePerObjectData(const GtMathPs2::CGtMatrix3x4&,float,bool)` | `0x001E3D10` 184 | `0x001E3F80` 288 | `0x00216C00` 288 | `0x002298D0` 280 |  |  |
-| `SetTexture(CGtTexture*,int)` | `0x001E3DD0` 212 | `0x001E40A0` 424 | `0x00216D20` 424 | `0x00229800` 208 | `0x0021FF60` proven |  |
-| `EndRenderingSingleVehicle()` | `0x001E3EB0` 8 | `0x001E4250` 8 | `0x00216ED0` 8 | `0x002297F0` 16 |  |  |
-| `BeginRenderingSingleVehicle(const CB3VehicleEssentialParams*,CB3VehicleLODData*,float,float)` | `0x001E3EC0` 304 | `0x001E4260` 304 | `0x00216EE0` 304 | `0x002295C0` 512 | `0x00220040` unverified |  |
-| `EndVehicleRendering()` | `0x001E3FF0` 120 | `0x001E4390` 120 | `0x00217010` 120 | `0x00229530` 136 | `0x002204C0` proven |  |
-| `BeginVehicleRendering()` | `0x001E4070` 800 | `0x001E4410` 800 | `0x00217090` 800 | `0x00228FB0` 1032 | `0x00220540` proven |  |
-| `SetupCameraData()` | `0x001E4390` 592 | `0x001E4730` 808 | `0x002173B0` 592 | `0x00228DB0` 512 | `0x002208E0` proven |  |
-| `FrustumTestDamagedVehicle(CB3VehicleEssentialParams*,CB3VehicleParams*)` | `0x001E45E0` 248 | `0x001E4A60` 248 | `0x00217600` 248 | `0x00228C20` 392 | `0x00220170` strong |  |
-| `FrustumTestUndamagedVehicle(CB3VehicleEssentialParams*)` | `0x001E46E0` 88 | `0x001E4B60` 88 | `0x00217700` 88 | `0x00228B40` 160 | `0x00220270` likely |  |
-| `Destruct()` | `0x001E4740` 8 | `0x001E4BC0` 8 | `0x00217760` 8 | `0x00228B30` 16 | `0x00220B30` strong |  |
-| `Construct()` | `0x001E4750` 36 | `0x001E4BD0` 36 | `0x00217770` 36 | `0x00228AC0` 100 | `0x00220B40` proven |  |
-| `FixUpVehicleData(CB3VehicleData*)` | `0x001E4780` 508 | `0x001E4C00` 680 | `0x002177A0` 680 | `0x0022BEF0` 696 | `0x00220B70` strong |  |
-| `RenderVehicle(const CB3VehicleEssentialParams*,const CB3VehicleParams*,EVehicleLOD)` | `0x001E4BA0` 3932 | `0x001E50D0` 5244 | `0x00217C70` 5244 | `0x0022A490` 4140 | `0x0021E6F0` unverified |  |
-| `Prepare()` | `0x001E5B00` 164 | `0x001E6550` 356 | `0x002190F0` 356 | `0x0022A2E0` 432 | `0x00220FD0` proven |  |
-| `CB3VehicleRenderer()` |  |  |  | `0x0022A2A0` 64 |  |  |
-| `SetBackfaceCulling(bool)` |  |  |  | `0x0022B5B0` 16 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RenderDeformedObject(EB3VehicleRenderType,const GtMathPs2::CGtMatrix3x4&,CB3VehicleObject*,float,unsigned s` | `0x001E3750` 444 | `0x001E3510` 984 | `0x002161B0` 984 | `0x0022A010` 648 |  |  | `void CB4VehicleRenderer::RenderDeformedObject(EB4VehicleRenderType leRenderType, const GtMathPs2::CGtMatrix3x4 &lLTMMatrix, CB4VehicleObject *lpObject, float lrOpacity, unsigned short lxMeshesToDraw, unsigned short lxMeshesToIlluminate, const GtMathPs2::CGtMatrix3x4 *lpaBoneMatrices, int lnNumBones, bool lbPerformSHTransform, bool lbForceChrome)` (same name, different parameters) |
+| `RenderObject(EB3VehicleRenderType,const GtMathPs2::CGtMatrix3x4&,CB3VehicleObject*,float,unsigned short,uns` | `0x001E3910` 288 | `0x001E38F0` 836 | `0x00216590` 836 | `0x00229E70` 404 |  |  | `void CB4VehicleRenderer::RenderObject(EB4VehicleRenderType leRenderType, const GtMathPs2::CGtMatrix3x4 &lLTMMatrix, CB4VehicleObject *lpObject, float lrOpacity, unsigned short lxMeshesToDraw, unsigned short lxMeshesToIlluminate, bool lbPerformSHTransform, bool lbForceChrome)` (same name, different parameters) |
+| `RenderMesh(EB3VehicleRenderType,float,CB3VehicleMesh&,unsigned short)` | `0x001E3A30` 732 | `0x001E3C40` 824 | `0x002168E0` 796 | `0x002299F0` 1116 |  |  | `void CB4VehicleRenderer::RenderMesh(CB4VehicleMesh &lMesh, bool lbForceChrome)` (same name, different parameters) |
+| `ComputePerObjectData(const GtMathPs2::CGtMatrix3x4&,float,bool)` | `0x001E3D10` 184 | `0x001E3F80` 288 | `0x00216C00` 288 | `0x002298D0` 280 |  |  |  |
+| `SetTexture(CGtTexture*,int)` | `0x001E3DD0` 212 | `0x001E40A0` 424 | `0x00216D20` 424 | `0x00229800` 208 | `0x0021FF60` proven |  | `void CB4VehicleRenderer::SetTexture(CGtTexture *lpTexture, int lnPaletteIndex)` |
+| `EndRenderingSingleVehicle()` | `0x001E3EB0` 8 | `0x001E4250` 8 | `0x00216ED0` 8 | `0x002297F0` 16 |  |  | `void CB4VehicleRenderer::EndRenderingSingleVehicle()` |
+| `BeginRenderingSingleVehicle(const CB3VehicleEssentialParams*,CB3VehicleLODData*,float,float)` | `0x001E3EC0` 304 | `0x001E4260` 304 | `0x00216EE0` 304 | `0x002295C0` 512 | `0x00220040` unverified |  | `void CB4VehicleRenderer::BeginRenderingSingleVehicle(const CB4VehicleEssentialParams *lpEssential, CB4VehicleLODData *lpLOD, float lrShininessScale, float lrLightingScale)` |
+| `EndVehicleRendering()` | `0x001E3FF0` 120 | `0x001E4390` 120 | `0x00217010` 120 | `0x00229530` 136 | `0x002204C0` proven |  | `void CB4VehicleRenderer::EndVehicleRendering()` |
+| `BeginVehicleRendering()` | `0x001E4070` 800 | `0x001E4410` 800 | `0x00217090` 800 | `0x00228FB0` 1032 | `0x00220540` proven |  | `void CB4VehicleRenderer::BeginVehicleRendering()` |
+| `SetupCameraData()` | `0x001E4390` 592 | `0x001E4730` 808 | `0x002173B0` 592 | `0x00228DB0` 512 | `0x002208E0` proven |  | `void CB4VehicleRenderer::SetupCameraData()` |
+| `FrustumTestDamagedVehicle(CB3VehicleEssentialParams*,CB3VehicleParams*)` | `0x001E45E0` 248 | `0x001E4A60` 248 | `0x00217600` 248 | `0x00228C20` 392 | `0x00220170` strong |  | `void CB4VehicleRenderer::FrustumTestDamagedVehicle(CB4VehicleEssentialParams *lpEssential, CB4VehicleParams *lpParams)` |
+| `FrustumTestUndamagedVehicle(CB3VehicleEssentialParams*)` | `0x001E46E0` 88 | `0x001E4B60` 88 | `0x00217700` 88 | `0x00228B40` 160 | `0x00220270` likely |  | `void CB4VehicleRenderer::FrustumTestUndamagedVehicle(CB4VehicleEssentialParams *lpEssential)` |
+| `Destruct()` | `0x001E4740` 8 | `0x001E4BC0` 8 | `0x00217760` 8 | `0x00228B30` 16 | `0x00220B30` strong |  | `void CB4VehicleRenderer::Destruct()` |
+| `Construct()` | `0x001E4750` 36 | `0x001E4BD0` 36 | `0x00217770` 36 | `0x00228AC0` 100 | `0x00220B40` proven |  | `void CB4VehicleRenderer::Construct()` |
+| `FixUpVehicleData(CB3VehicleData*)` | `0x001E4780` 508 | `0x001E4C00` 680 | `0x002177A0` 680 | `0x0022BEF0` 696 | `0x00220B70` strong |  |  |
+| `RenderVehicle(const CB3VehicleEssentialParams*,const CB3VehicleParams*,EVehicleLOD)` | `0x001E4BA0` 3932 | `0x001E50D0` 5244 | `0x00217C70` 5244 | `0x0022A490` 4140 | `0x0021E6F0` unverified |  | `void CB4VehicleRenderer::RenderVehicle(const CB4VehicleEssentialParams *lpEssentialParams, const CB4VehicleParams *lpVehicleParams, EVehicleLOD leVehicleLOD, float lrHowShiny, bool lbForceChrome)` (same name, different parameters) |
+| `Prepare()` | `0x001E5B00` 164 | `0x001E6550` 356 | `0x002190F0` 356 | `0x0022A2E0` 432 | `0x00220FD0` proven |  | `bool CB4VehicleRenderer::Prepare()` |
+| `CB3VehicleRenderer()` |  |  |  | `0x0022A2A0` 64 |  |  |  |
+| `SetBackfaceCulling(bool)` |  |  |  | `0x0022B5B0` 16 |  |  |  |
+
+## Burnout Revenge layout of `CB4VehicleRenderer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameSource/Game/B4CarViewerDebug.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4VehicleRenderer : public CB4VehicleRendererBase {  // size 0x110
+    // base CB4VehicleRendererBase at 0x000
+    /* 0x020 */ long long unsigned int mauTex0Registers[5];
+    /* 0x070 */ CGtMatrix3x4 mEnvMapCameraMatrixInverted;
+    /* 0x0B0 */ CGtMatrix3x4 mCurrentCameraMatrix;
+    /* 0x0F0 */ RwUInt32 muOldAlpha1;
+    /* 0x0F4 */ RwUInt32 muOldTest1;
+    /* 0x0F8 */ CB4VehicleReflectivityData *mpReflectivityData;
+    /* 0x0FC */ RwInt8 mn8CarColourIndex;
+    /* 0x100 */ CB4VehicleRendererSPRCache *mpCache;
+    // methods
+    // CB4VehicleRenderer(const CB4VehicleRenderer &);
+    // CB4VehicleRenderer();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void BeginVehicleRendering();
+    // void EndVehicleRendering();
+    // void BeginVehicleShadowRendering();
+    // void EndVehicleShadowRendering();
+    // void SetupCameraData();
+    // void SetupCameraFrustum();
+    // void FrustumTestUndamagedVehicle(CB4VehicleEssentialParams *);
+    // void FrustumTestDamagedVehicle(CB4VehicleEssentialParams *, CB4VehicleParams *);
+    // void RenderVehicle(const CB4VehicleEssentialParams *, const CB4VehicleParams *, EVehicleLOD, float, bool);
+    // bool RenderVehicleShadow(const CB4VehicleEssentialParams *, const CB4VehicleParams *);
+    // void SetBackfaceCulling(bool);
+    // void BeginRenderingSingleVehicle(const CB4VehicleEssentialParams *, CB4VehicleLODData *, float, float);
+    // void EndRenderingSingleVehicle();
+    // void SetTexture(CGtTexture *, int);
+    // void RenderMesh(CB4VehicleMesh &, bool);
+    // void RenderObject(EB4VehicleRenderType, const GtMathPs2::CGtMatrix3x4 &, CB4VehicleObject *, float, unsigned short, unsigned short, bool, bool);
+    // void RenderDeformedObject(EB4VehicleRenderType, const GtMathPs2::CGtMatrix3x4 &, CB4VehicleObject *, float, unsigned short, unsigned short, const GtMathPs2::CGtMatrix3x4 *, int, bool, bool);
+    // void RenderObjectShadow(EB4VehicleRenderType, const GtMathPs2::CGtMatrix3x4 &, CB4VehicleObject *, float, unsigned short);
+    // void RenderDeformedObjectShadow(EB4VehicleRenderType, const GtMathPs2::CGtMatrix3x4 &, CB4VehicleObject *, float, unsigned short, const GtMathPs2::CGtMatrix3x4 *, int);
+};
+```
 
 ## Notes
 

@@ -8,30 +8,90 @@
 - **Source file:** `GtTextureCachePS2.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 10, B3INTERN 10, B3O0PCH 17
 - **Retail (SLUS-21050):** 10 of its 10 DNAT_200 methods found, 8 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtTextureCache`, size 0x240, methods in `GameShared/GameClasses/Graphical/TextureCachePS2/GtTextureCachePS2.cpp` ([layout](#burnout-revenge-layout-of-cgttexturecache))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `FlushCache()` | `0x001E5F50` 216 | `0x001E6A60` 264 | `0x00219600` 264 | `0x0022DBE0` 328 | `0x00221490` proven |  |
-| `InvalidateCurrentTexture()` | `0x001E6030` 8 | `0x001E6B70` 8 | `0x00219710` 8 | `0x0022DBC0` 28 | `0x00221570` proven |  |
-| `ForceBufferSwap()` | `0x001E6040` 200 | `0x001E6B80` 200 | `0x00219720` 200 | `0x0022DAA0` 288 | `0x00221580` proven |  |
-| `AddRasterToCache(RwRaster*,int)` | `0x001E6110` 496 | `0x001E6C50` 596 | `0x002197F0` 712 | `0x0022D710` 912 | `0x00221650` proven |  |
-| `AddRasterToCurrentDoubleBuffer(RwRaster*)` | `0x001E6300` 544 | `0x001E6EB0` 576 | `0x00219AC0` 576 | `0x0022D410` 768 | `0x00221850` proven |  |
-| `AccessTexture(CGtTexture*,float,EGtTextureCachePS2_FilterMode,bool,bool)` | `0x001E6520` 1032 | `0x001E70F0` 1368 | `0x00219D00` 1032 | `0x0022CE40` 1440 | `0x00221A70` strong |  |
-| `BuildPacketToSendRasterToGS(RwRaster*,unsigned int)` | `0x001E6930` 436 | `0x001E7650` 1156 | `0x0021A110` 608 | `0x0022CAE0` 852 | `0x00221E80` strong |  |
-| `RemoveRasterFromCache(RwRaster*)` | `0x001E6AF0` 164 | `0x001E7AE0` 236 | `0x0021A370` 236 | `0x0022C940` 296 | `0x00222030` proven |  |
-| `Destruct()` | `0x001E6BA0` 60 | `0x001E7BD0` 60 | `0x0021A460` 60 | `0x0022C8F0` 76 | `0x002220E0` proven |  |
-| `Construct(unsigned int,int,int)` | `0x001E6BE0` 316 | `0x001E7C10` 428 | `0x0021A4A0` 428 | `0x0022C720` 452 | `0x00222120` proven |  |
-| `CalculateMipMapLodBias(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` |  |  |  | `0x00282AE0` 100 |  |  |
-| `CalculateMipMapLodBias(float)` |  |  |  | `0x00282B50` 64 |  |  |
-| `EndFrame()` |  |  |  | `0x0022CA70` 104 |  |  |
-| `GetCurrentBufferFreeSpace()` |  |  |  | `0x003CA4A0` 56 |  |  |
-| `GetCurrentBufferNumFreeTextures()` |  |  |  | `0x003CA460` 56 |  |  |
-| `RecomputeTextureCacheSizes()` |  |  |  | `0x0022C690` 132 |  |  |
-| `SetPostUploadDebugCallback(bool (*)` |  |  |  | `0x0037ADF0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `FlushCache()` | `0x001E5F50` 216 | `0x001E6A60` 264 | `0x00219600` 264 | `0x0022DBE0` 328 | `0x00221490` proven |  | `void CGtTextureCache::FlushCache()` |
+| `InvalidateCurrentTexture()` | `0x001E6030` 8 | `0x001E6B70` 8 | `0x00219710` 8 | `0x0022DBC0` 28 | `0x00221570` proven |  | `void CGtTextureCache::InvalidateCurrentTexture()` |
+| `ForceBufferSwap()` | `0x001E6040` 200 | `0x001E6B80` 200 | `0x00219720` 200 | `0x0022DAA0` 288 | `0x00221580` proven |  | `void CGtTextureCache::ForceBufferSwap()` |
+| `AddRasterToCache(RwRaster*,int)` | `0x001E6110` 496 | `0x001E6C50` 596 | `0x002197F0` 712 | `0x0022D710` 912 | `0x00221650` proven |  | `bool CGtTextureCache::AddRasterToCache(RwRaster *lpRaster, int lbSpeculative)` |
+| `AddRasterToCurrentDoubleBuffer(RwRaster*)` | `0x001E6300` 544 | `0x001E6EB0` 576 | `0x00219AC0` 576 | `0x0022D410` 768 | `0x00221850` proven |  | `void CGtTextureCache::AddRasterToCurrentDoubleBuffer(RwRaster *lpRaster)` |
+| `AccessTexture(CGtTexture*,float,EGtTextureCachePS2_FilterMode,bool,bool)` | `0x001E6520` 1032 | `0x001E70F0` 1368 | `0x00219D00` 1032 | `0x0022CE40` 1440 | `0x00221A70` strong |  | `void CGtTextureCache::AccessTexture(CGtTexture *lpTexture, float lrMipMapLodBias, EGtTextureCachePS2_FilterMode leFilterMode, bool lbUseContext2, bool lbCacheRenderstates)` |
+| `BuildPacketToSendRasterToGS(RwRaster*,unsigned int)` | `0x001E6930` 436 | `0x001E7650` 1156 | `0x0021A110` 608 | `0x0022CAE0` 852 | `0x00221E80` strong |  | `void CGtTextureCache::BuildPacketToSendRasterToGS(RwRaster *lpRaster, unsigned int luAddress)` |
+| `RemoveRasterFromCache(RwRaster*)` | `0x001E6AF0` 164 | `0x001E7AE0` 236 | `0x0021A370` 236 | `0x0022C940` 296 | `0x00222030` proven |  | `void CGtTextureCache::RemoveRasterFromCache(RwRaster *lpRaster)` |
+| `Destruct()` | `0x001E6BA0` 60 | `0x001E7BD0` 60 | `0x0021A460` 60 | `0x0022C8F0` 76 | `0x002220E0` proven |  | `void CGtTextureCache::Destruct()` |
+| `Construct(unsigned int,int,int)` | `0x001E6BE0` 316 | `0x001E7C10` 428 | `0x0021A4A0` 428 | `0x0022C720` 452 | `0x00222120` proven |  | `void CGtTextureCache::Construct(unsigned int luTexCacheStart, int lnNumRastersPerBuffer, int lnTypicalTexturesUploadedPerFrame)` |
+| `CalculateMipMapLodBias(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` |  |  |  | `0x00282AE0` 100 |  |  |  |
+| `CalculateMipMapLodBias(float)` |  |  |  | `0x00282B50` 64 |  |  |  |
+| `EndFrame()` |  |  |  | `0x0022CA70` 104 |  |  | `void CGtTextureCache::EndFrame()` |
+| `GetCurrentBufferFreeSpace()` |  |  |  | `0x003CA4A0` 56 |  |  |  |
+| `GetCurrentBufferNumFreeTextures()` |  |  |  | `0x003CA460` 56 |  |  |  |
+| `RecomputeTextureCacheSizes()` |  |  |  | `0x0022C690` 132 |  |  | `void CGtTextureCache::RecomputeTextureCacheSizes()` |
+| `SetPostUploadDebugCallback(bool (*)` |  |  |  | `0x0037ADF0` 28 |  |  |  |
+
+## Burnout Revenge layout of `CGtTextureCache`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 7 file(s), e.g. `GameShared/GameClasses/Graphical/TextureCachePS2/GtTextureCachePS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtTextureCache {  // size 0x240
+    /* 0x000 */ RwInt32 mnNumDeferredRegisters;
+    /* 0x010 */ long long unsigned int mau128DeferredRegisters[8];
+    /* 0x0C0 */ CDoubleBuffer maDoubleBuffers[2];
+    /* 0x1C0 */ RwInt32 mnCurrentBuffer;
+    /* 0x1C4 */ bool mbCacheEmpty;
+    /* 0x1C5 */ bool mbAsynchronousUpload;
+    /* 0x1C8 */ u_long128 *mpLastEOPLocation;
+    /* 0x1CC */ RwRaster *mpCurrentRaster;
+    /* 0x1D0 */ RwInt32 mnNumAsyncQWAdded;
+    /* 0x1D4 */ RwInt32 mnMaxTexturesUploaded;
+    /* 0x1D8 */ RwUInt32 muDoubleBufferSize;
+    /* 0x1DC */ unsigned int mauDoubleBufferStart[2];
+    /* 0x1E4 */ RwInt32 mnMaxRastersInEachBuffer;
+    /* 0x1E8 */ RwUInt32 muTexCacheSize;
+    /* 0x1EC */ RwUInt32 muTexCacheStart;
+    /* 0x1F0 */ RwInt32 mnTexturesPerFrame;
+    /* 0x1F4 */ RwInt32 mnTexturesThisFrame;
+    /* 0x1F8 */ RwInt32 mnNumLockedRasters;
+    /* 0x1FC */ RwUInt32 muLockedRasterSize;
+    /* 0x200 */ RwUInt32 muLockedRasterStart;
+    /* 0x204 */ RwRaster *mpLockedRasters[8];
+    /* 0x224 */ bool mbCacheLockedAsWorkArea;
+    /* 0x225 */ bool mbHalfCacheLockedAsWorkArea;
+    // methods
+    // CGtTextureCache(const CGtTextureCache &);
+    // CGtTextureCache();
+    // void Construct(unsigned int, int, int);
+    // void Destruct();
+    // void AccessTexture(CGtTexture *, float, EGtTextureCachePS2_FilterMode, bool, bool);
+    // void AccessTextures(CGtTexture *, CGtTexture *, float, EGtTextureCachePS2_FilterMode);
+    // bool AddRasterToCache(RwRaster *, int);
+    // void RemoveRasterFromCache(RwRaster *);
+    // void EndFrame();
+    // void ForceBufferSwap();
+    // void FlushCache();
+    // bool LockRaster(RwRaster *);
+    // void FreeLockedRasters();
+    // void InvalidateCurrentTexture();
+    // RwUInt32 LockCacheForUseAsWorkArea(bool, unsigned int *);
+    // RwUInt32 LockHalfCacheForUseAsWorkArea(bool, unsigned int *);
+    // RwInt32 GetCurrentBufferNumFreeTextures();
+    // RwInt32 GetCurrentBufferFreeSpace();
+    // void SetPreUploadDebugCallback(bool (*)(RwRaster *));
+    // void SetPostUploadDebugCallback(bool (*)(RwRaster *));
+    // static RwReal CalculateMipMapLodBias(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &);
+    // static RwReal CalculateMipMapLodBias(float);
+    // void RecomputeTextureCacheSizes();
+    // void BuildPacketToSendRasterToGS(RwRaster *, unsigned int);
+    // void BuildAndDMATextureRegisters(GtSkyRasterExtTag *, int, EGtTextureCachePS2_FilterMode, float, bool, bool);
+    // void AddRasterToCurrentDoubleBuffer(RwRaster *);
+};
+```
 
 ## Notes
 

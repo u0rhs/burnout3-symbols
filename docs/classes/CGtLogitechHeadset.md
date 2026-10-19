@@ -9,29 +9,52 @@
 - **Methods per build:** DNAT_200 14, B3DEBUG 14, B3INTERN 14, B3O0PCH 16
 - **Retail (SLUS-21050):** 10 of its 14 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440120`, 60 bytes = 15 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 13 virtual functions)
+- **Burnout Revenge counterpart:** `CGtLogitechHeadset`, size 0x00C, methods in `GameShared/GameClasses/System/Headset/Source/Ps2/GtLogitechHeadset.cpp` ([layout](#burnout-revenge-layout-of-cgtlogitechheadset))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetNumAttachedHeadsets()` | `0x00281C00` 68 | `0x002B9620` 68 | `0x002F0D00` 68 | `0x002F17F0` 80 |  |  |
-| `DoDecode(int,int)` | `0x00281C50` 128 | `0x002B9670` 164 | `0x002F0D50` 164 | `0x002F1730` 192 |  |  |
-| `EndDecodeFrame()` | `0x00281CD0` 8 | `0x002B9720` 8 | `0x002F0E00` 8 | `0x002F1720` 16 |  |  |
-| `DoEncode()` | `0x00281CE0` 152 | `0x002B9730` 152 | `0x002F0E10` 152 | `0x002F1650` 204 |  |  |
-| `BeginDecodeFrame()` | `0x00281D80` 8 | `0x002B97D0` 8 | `0x002F0EB0` 8 | `0x002F1640` 16 | `0x002C2260` likely |  |
-| `OpenHeadset(int)` | `0x00281D90` 432 | `0x002B97E0` 432 | `0x002F0EC0` 432 | `0x002F1490` 336 | `0x002C2270` strong |  |
-| `SetHeadsetCodec(int)` | `0x00281F40` 288 | `0x002B9990` 288 | `0x002F1070` 288 | `0x002F13E0` 176 | `0x002C2420` strong |  |
-| `GetHeadsetCodecDesc(int)` | `0x00282060` 112 | `0x002B9AB0` 112 | `0x002F1190` 112 | `0x002F1350` 136 | `0x002C2540` proven |  |
-| `GetNumCodecs()` | `0x002820D0` 68 | `0x002B9B20` 68 | `0x002F1200` 68 | `0x002F1300` 80 | `0x002C25B0` proven |  |
-| `HaveHeadsetsChanged()` | `0x00282120` 180 | `0x002B9B70` 180 | `0x002F1250` 180 | `0x002F1270` 140 | `0x002C2600` strong |  |
-| `GetStatus()` | `0x002821E0` 8 | `0x002B9C30` 8 | `0x002F1310` 8 | `0x002F11C0` 28 | `0x002C26C0` likely |  |
-| `Prepare(int,int)` | `0x002821F0` 340 | `0x002B9C40` 340 | `0x002F1320` 340 | `0x002F1060` 340 | `0x002C26D0` strong |  |
-| `Destruct()` | `0x00282350` 8 | `0x002B9DA0` 8 | `0x002F1480` 8 | `0x002F1050` 16 | `0x002C2830` likely |  |
-| `Construct(char*,int,char*,int)` | `0x00282360` 128 | `0x002B9DB0` 284 | `0x002F1490` 284 | `0x002F0F90` 180 | `0x002C2840` strong |  |
-| `CGtLogitechHeadset()` |  |  |  | `0x0028A0E0` 60 |  |  |
-| `SetStatus()` |  |  |  | `0x002F11E0` 140 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetNumAttachedHeadsets()` | `0x00281C00` 68 | `0x002B9620` 68 | `0x002F0D00` 68 | `0x002F17F0` 80 |  |  |  |
+| `DoDecode(int,int)` | `0x00281C50` 128 | `0x002B9670` 164 | `0x002F0D50` 164 | `0x002F1730` 192 |  |  |  |
+| `EndDecodeFrame()` | `0x00281CD0` 8 | `0x002B9720` 8 | `0x002F0E00` 8 | `0x002F1720` 16 |  |  |  |
+| `DoEncode()` | `0x00281CE0` 152 | `0x002B9730` 152 | `0x002F0E10` 152 | `0x002F1650` 204 |  |  |  |
+| `BeginDecodeFrame()` | `0x00281D80` 8 | `0x002B97D0` 8 | `0x002F0EB0` 8 | `0x002F1640` 16 | `0x002C2260` likely |  |  |
+| `OpenHeadset(int)` | `0x00281D90` 432 | `0x002B97E0` 432 | `0x002F0EC0` 432 | `0x002F1490` 336 | `0x002C2270` strong |  | `bool CGtLogitechHeadset::OpenHeadset(int lnHeadsetIndex)` |
+| `SetHeadsetCodec(int)` | `0x00281F40` 288 | `0x002B9990` 288 | `0x002F1070` 288 | `0x002F13E0` 176 | `0x002C2420` strong |  |  |
+| `GetHeadsetCodecDesc(int)` | `0x00282060` 112 | `0x002B9AB0` 112 | `0x002F1190` 112 | `0x002F1350` 136 | `0x002C2540` proven |  |  |
+| `GetNumCodecs()` | `0x002820D0` 68 | `0x002B9B20` 68 | `0x002F1200` 68 | `0x002F1300` 80 | `0x002C25B0` proven |  |  |
+| `HaveHeadsetsChanged()` | `0x00282120` 180 | `0x002B9B70` 180 | `0x002F1250` 180 | `0x002F1270` 140 | `0x002C2600` strong |  |  |
+| `GetStatus()` | `0x002821E0` 8 | `0x002B9C30` 8 | `0x002F1310` 8 | `0x002F11C0` 28 | `0x002C26C0` likely |  |  |
+| `Prepare(int,int)` | `0x002821F0` 340 | `0x002B9C40` 340 | `0x002F1320` 340 | `0x002F1060` 340 | `0x002C26D0` strong |  | `bool CGtLogitechHeadset::Prepare()` (same name, different parameters) |
+| `Destruct()` | `0x00282350` 8 | `0x002B9DA0` 8 | `0x002F1480` 8 | `0x002F1050` 16 | `0x002C2830` likely |  | `void CGtLogitechHeadset::Destruct()` |
+| `Construct(char*,int,char*,int)` | `0x00282360` 128 | `0x002B9DB0` 284 | `0x002F1490` 284 | `0x002F0F90` 180 | `0x002C2840` strong |  | `void CGtLogitechHeadset::Construct()` (same name, different parameters) |
+| `CGtLogitechHeadset()` |  |  |  | `0x0028A0E0` 60 |  |  |  |
+| `SetStatus()` |  |  |  | `0x002F11E0` 140 |  |  |  |
+
+## Burnout Revenge layout of `CGtLogitechHeadset`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 9 file(s), e.g. `GameShared/GameClasses/System/Headset/Source/Ps2/GtLogitechHeadset.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtLogitechHeadset : public CGtHeadsetBase {  // size 0x00C
+    // base CGtHeadsetBase at 0x000
+    /* 0x008 */ RwInt32 mnHeadsetDevice;
+    // methods
+    // CGtLogitechHeadset(const CGtLogitechHeadset &);
+    // CGtLogitechHeadset();
+    // virtual void Construct();
+    // virtual bool Prepare();
+    // virtual void Release();
+    // virtual void Destruct();
+    // virtual RwInt32 ReadData(char *, int);
+    // virtual RwInt32 WriteData(char *, int);
+    // virtual bool OpenHeadset(int);
+    // virtual bool CloseHeadset();
+};
+```
 
 ## Notes
 

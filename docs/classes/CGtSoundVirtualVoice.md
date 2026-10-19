@@ -8,31 +8,72 @@
 - **Source file:** `GtSoundVirtualVoice.cpp`
 - **Methods per build:** DNAT_200 12, B3DEBUG 12, B3INTERN 11, B3O0PCH 18
 - **Retail (SLUS-21050):** 12 of its 12 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtSoundVirtualVoice`, size 0x038, methods in `GameShared/GameClasses/Sound/GtSoundVirtualVoice.cpp` ([layout](#burnout-revenge-layout-of-cgtsoundvirtualvoice))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `IgnoreGlobalPitch()` | `0x003440B0` 16 | `0x003A8370` 16 | `0x003D2520` 16 | `0x003DDAF0` 36 | `0x003872D0` strong |  |
-| `ForgetMe(float)` | `0x003440C0` 24 | `0x003A8380` 24 | `0x003D2530` 24 | `0x003DDAB0` 64 | `0x003872E0` proven |  |
-| `SetBias(float)` | `0x003440E0` 92 | `0x003A83A0` 172 |  | `0x003DDA20` 132 | `0x00387300` strong |  |
-| `SetPriority(float)` | `0x00344140` 92 | `0x003A8450` 172 | `0x003D2550` 172 | `0x003DD990` 132 | `0x00387360` strong |  |
-| `UpdatePause()` | `0x003441A0` 1248 | `0x003A8500` 1300 | `0x003D2600` 1300 | `0x003DD380` 1544 | `0x003873C0` likely |  |
-| `Pause()` | `0x00344680` 124 | `0x003A8A20` 160 | `0x003D2B20` 160 | `0x003DD2A0` 224 | `0x003878D0` unverified |  |
-| `IsPlaying()` | `0x00344700` 180 | `0x003A8AC0` 212 | `0x003D2BC0` 212 | `0x003DD140` 352 | `0x00387980` strong |  |
-| `Stop()` | `0x003447C0` 76 | `0x003A8BA0` 76 | `0x003D2CA0` 76 | `0x003DD040` 148 | `0x00387A40` proven |  |
-| `Start(const CGtSoundVoiceParams*)` | `0x00344810` 1324 | `0x003A8BF0` 1704 | `0x003D2CF0` 1704 | `0x003DC7A0` 2208 | `0x00387A90` proven |  |
-| `Update(float,float,float,float)` | `0x00344D40` 1028 | `0x003A92A0` 1280 | `0x003D33A0` 1280 | `0x003DC230` 1304 | `0x00388080` proven |  |
-| `Update(const CGtSoundVoiceParams*)` | `0x00345150` 1212 | `0x003A97A0` 1460 | `0x003D38A0` 1460 | `0x003DBC00` 1584 | `0x003884D0` proven |  |
-| `Construct(RwaSPU2Output*)` | `0x00345610` 128 | `0x003A9D60` 172 | `0x003D3E60` 172 | `0x003DBB20` 224 | `0x00388A10` proven |  |
-| `CGtSoundVirtualVoice()` |  |  |  | `0x002B1EC0` 24 |  |  |
-| `GetUniquePlayId()` |  |  |  | `0x0029ED70` 28 |  |  |
-| `IsAvailable()` |  |  |  | `0x003DE050` 108 |  |  |
-| `IsLocked()` |  |  |  | `0x003DE0C0` 40 |  |  |
-| `Lock(bool)` |  |  |  | `0x003DC750` 76 |  |  |
-| `SetWave(const CGtSoundWave*)` |  |  |  | `0x003DD0E0` 92 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `IgnoreGlobalPitch()` | `0x003440B0` 16 | `0x003A8370` 16 | `0x003D2520` 16 | `0x003DDAF0` 36 | `0x003872D0` strong |  |  |
+| `ForgetMe(float)` | `0x003440C0` 24 | `0x003A8380` 24 | `0x003D2530` 24 | `0x003DDAB0` 64 | `0x003872E0` proven |  |  |
+| `SetBias(float)` | `0x003440E0` 92 | `0x003A83A0` 172 |  | `0x003DDA20` 132 | `0x00387300` strong |  |  |
+| `SetPriority(float)` | `0x00344140` 92 | `0x003A8450` 172 | `0x003D2550` 172 | `0x003DD990` 132 | `0x00387360` strong |  |  |
+| `UpdatePause()` | `0x003441A0` 1248 | `0x003A8500` 1300 | `0x003D2600` 1300 | `0x003DD380` 1544 | `0x003873C0` likely |  | `RwReal CGtSoundVirtualVoice::UpdatePause()` |
+| `Pause()` | `0x00344680` 124 | `0x003A8A20` 160 | `0x003D2B20` 160 | `0x003DD2A0` 224 | `0x003878D0` unverified |  | `void CGtSoundVirtualVoice::Pause(bool lbPause)` (same name, different parameters) |
+| `IsPlaying()` | `0x00344700` 180 | `0x003A8AC0` 212 | `0x003D2BC0` 212 | `0x003DD140` 352 | `0x00387980` strong |  | `bool CGtSoundVirtualVoice::IsPlaying() const` (same name, different parameters) |
+| `Stop()` | `0x003447C0` 76 | `0x003A8BA0` 76 | `0x003D2CA0` 76 | `0x003DD040` 148 | `0x00387A40` proven |  | `bool CGtSoundVirtualVoice::Stop()` |
+| `Start(const CGtSoundVoiceParams*)` | `0x00344810` 1324 | `0x003A8BF0` 1704 | `0x003D2CF0` 1704 | `0x003DC7A0` 2208 | `0x00387A90` proven |  | `bool CGtSoundVirtualVoice::Start(const CGtSoundVoiceParams &lParams)` (same name, different parameters) |
+| `Update(float,float,float,float)` | `0x00344D40` 1028 | `0x003A92A0` 1280 | `0x003D33A0` 1280 | `0x003DC230` 1304 | `0x00388080` proven |  | `void CGtSoundVirtualVoice::Update(float lrUserVolumeScalar, float lrGlobalPitchScalar, float lrCurrentTime, float lrCurrentTimeStep)` |
+| `Update(const CGtSoundVoiceParams*)` | `0x00345150` 1212 | `0x003A97A0` 1460 | `0x003D38A0` 1460 | `0x003DBC00` 1584 | `0x003884D0` proven |  |  |
+| `Construct(RwaSPU2Output*)` | `0x00345610` 128 | `0x003A9D60` 172 | `0x003D3E60` 172 | `0x003DBB20` 224 | `0x00388A10` proven |  | `void CGtSoundVirtualVoice::Construct(CGtSoundVirtualVoiceConstructParams *lpConstructParams)` (same name, different parameters) |
+| `CGtSoundVirtualVoice()` |  |  |  | `0x002B1EC0` 24 |  |  |  |
+| `GetUniquePlayId()` |  |  |  | `0x0029ED70` 28 |  |  |  |
+| `IsAvailable()` |  |  |  | `0x003DE050` 108 |  |  |  |
+| `IsLocked()` |  |  |  | `0x003DE0C0` 40 |  |  |  |
+| `Lock(bool)` |  |  |  | `0x003DC750` 76 |  |  |  |
+| `SetWave(const CGtSoundWave*)` |  |  |  | `0x003DD0E0` 92 |  |  | `void CGtSoundVirtualVoice::SetWave(const CGtSoundWave *lpWave)` |
+
+## Burnout Revenge layout of `CGtSoundVirtualVoice`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 285 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundBankManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSoundVirtualVoice : public CGtSoundVoice {  // size 0x038
+    // base CGtSoundVoice at 0x000
+    /* 0x034 */ RwaVirtualVoice *mpVirtualVoice;
+    // methods
+    // CGtSoundVirtualVoice(const CGtSoundVirtualVoice &);
+    // virtual bool Update(const CGtSoundVoiceParams &);
+    // virtual bool Start(const CGtSoundVoiceParams &);
+    // virtual bool Stop();
+    // virtual bool IsPlaying() const;
+    // bool NvUpdate(const CGtSoundVoiceParams &);
+    // bool NvStart(const CGtSoundVoiceParams &, CGtSoundListenerManager *);
+    // bool NvStop();
+    // bool NvIsPlaying() const;
+    // void Pause(bool);
+    // void SetSurroundGains(float, float, float, float, float, float, bool);
+    // void SetPosition(GtMathPs2::CGtV3d);
+    // void SetVelocity(GtMathPs2::CGtV3d);
+    // void SetWave(const CGtSoundWave *);
+    // void SetReverb(float);
+    // void SetPan(float);
+    // void SetMinDistance(float);
+    // void SetMaxDistance(float);
+    // void SetWaveStartPosition(unsigned int);
+    // void SetLooped(bool);
+    // void SetBias(float);
+    // void SetPriority(float);
+    // void Update(float, float, float, float);
+    // bool IsAvailable() const;
+    // void Construct(CGtSoundVirtualVoiceConstructParams *);
+    // void Destruct();
+    // RwReal UpdatePause();
+    // CGtSoundVirtualVoice();
+};
+```
 
 ## Notes
 

@@ -11,45 +11,45 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetFirstResultsPageContinuePressed()` | `0x00346AC0` 12 | `0x003AB590` 12 | `0x003D59D0` 12 | `0x003E0180` 32 |  |  |
-| `SetSecondResultsPageContinuePressed()` | `0x00346AD0` 12 | `0x003AB5A0` 12 | `0x003D59E0` 12 | `0x003E01A0` 32 |  |  |
-| `PlayerCarShouldResetAtFrontOfPack()` | `0x0034AA50` 8 | `0x003B1EF0` 8 | `0x003DBA70` 8 | `0x003E9CE0` 20 |  |  |
-| `ClearUpCrash(int)` | `0x0034AA60` 8 | `0x003B1F00` 8 | `0x003DBA80` 8 | `0x003E9CC0` 20 |  |  |
-| `StartReplay()` | `0x0034AA70` 68 | `0x003B1F10` 68 | `0x003DBA90` 68 | `0x003E9C70` 72 | `0x003906A0` strong |  |
-| `FinishSyncReplay()` | `0x0034AAC0` 372 | `0x003B1F60` 996 | `0x003DBAE0` 996 | `0x003E9920` 844 |  |  |
-| `UpdateSyncReplay()` | `0x0034AC40` 540 | `0x003B2350` 1064 | `0x003DBED0` 1064 | `0x003E9340` 1316 | `0x00390990` strong |  |
-| `PrepareToSyncReplay()` | `0x0034AE60` 380 | `0x003B2780` 2096 | `0x003DC300` 2096 | `0x003E8E10` 1328 |  |  |
-| `UpdateAftermath()` | `0x0034AFE0` 72 | `0x003B2FB0` 72 | `0x003DCB30` 72 | `0x003E8DB0` 96 |  |  |
-| `PrepareAftermath()` | `0x0034B030` 16 | `0x003B3000` 16 | `0x003DCB80` 16 | `0x003E8D70` 52 |  |  |
-| `UpdateSyncResults()` | `0x0034B040` 196 | `0x003B3010` 348 | `0x003DCB90` 348 | `0x003E8BB0` 444 |  |  |
-| `UpdateSendResults()` | `0x0034B110` 324 | `0x003B3170` 848 | `0x003DCCF0` 848 | `0x003E8800` 620 |  |  |
-| `UpdateCrashing()` | `0x0034B260` 8 | `0x003B34C0` 8 | `0x003DD040` 8 | `0x003E87D0` 40 |  |  |
-| `UpdateRacing()` | `0x0034B270` 620 | `0x003B34D0` 900 | `0x003DD050` 888 | `0x003E8500` 720 |  |  |
-| `UpdateWaitCountdown()` | `0x0034B4E0` 368 | `0x003B3860` 1224 | `0x003DD3D0` 820 | `0x003E8130` 796 |  |  |
-| `UpdateWaitInitCountdownClient()` | `0x0034B650` 240 | `0x003B3D30` 344 | `0x003DD710` 344 | `0x003E7F80` 396 |  |  |
-| `UpdateWaitInitCountdownHost()` | `0x0034B740` 660 | `0x003B3E90` 1576 | `0x003DD870` 1248 | `0x003E7A00` 1200 |  |  |
-| `PrepareWaitInitCountdown()` | `0x0034B9E0` 64 | `0x003B44C0` 128 | `0x003DDD50` 128 | `0x003E7980` 128 |  |  |
-| `UpdateLaunch()` | `0x0034BA20` 48 | `0x003B4540` 48 | `0x003DDDD0` 48 | `0x003E7930` 72 |  |  |
-| `UpdateWelcomePan(bool)` | `0x0034BA50` 284 | `0x003B4570` 464 | `0x003DDE00` 464 | `0x003E7700` 440 |  |  |
-| `LeaveLobby()` | `0x0034BB70` 8 | `0x003B4740` 8 | `0x003DDFD0` 8 | `0x003E76D0` 40 |  |  |
-| `OnRaceCarCollision(ERaceCarCollisionType,CB3RaceCarPhysics*,CB3RaceCarPhysics*,float)` | `0x0034BB80` 252 | `0x003B4750` 252 | `0x003DDFE0` 252 | `0x003E7570` 344 |  |  |
-| `OnBoostStart(CB3RaceCarPhysics*)` | `0x0034BC80` 8 | `0x003B4850` 8 | `0x003DE0E0` 8 | `0x003E7560` 16 |  |  |
-| `OnTakedown(CB3RaceCar*,CB3RaceCar*)` | `0x0034BC90` 116 | `0x003B4860` 116 | `0x003DE0F0` 116 | `0x003E7470` 208 | `0x00391F10` likely |  |
-| `OnPropHit(CB3RaceCarPhysics*)` | `0x0034BD10` 8 | `0x003B48E0` 8 | `0x003DE170` 8 | `0x003E7460` 16 |  |  |
-| `OnNonFatalCollision(CB3RaceCarPhysics*,CB3TrafficVehicle*)` | `0x0034BD20` 16 | `0x003B48F0` 16 | `0x003DE180` 16 | `0x003E7420` 56 |  |  |
-| `OnPostCrashReset(CB3RaceCarPhysics*)` | `0x0034BD30` 76 | `0x003B4900` 76 | `0x003DE190` 76 | `0x003E73B0` 112 |  |  |
-| `OnPreCrashReset(CB3RaceCarPhysics*)` | `0x0034BD80` 12 | `0x003B4950` 12 | `0x003DE1E0` 12 | `0x003E7380` 48 |  |  |
-| `OnCrashStart(CB3RaceCarPhysics*,CB3CrashStartInfo*)` | `0x0034BD90` 16 | `0x003B4960` 16 | `0x003DE1F0` 16 | `0x003E7340` 56 |  |  |
-| `Destruct()` | `0x0034BDA0` 16 | `0x003B4970` 16 | `0x003DE200` 16 | `0x003E7310` 48 |  |  |
-| `Release()` | `0x0034BDB0` 16 | `0x003B4980` 16 | `0x003DE210` 16 | `0x003E72E0` 48 |  |  |
-| `Prepare()` | `0x0034BDC0` 52 | `0x003B4990` 52 | `0x003DE220` 52 | `0x003E72A0` 60 |  |  |
-| `Construct()` | `0x0034BE00` 84 | `0x003B49D0` 84 | `0x003DE260` 84 | `0x003E71E0` 184 |  |  |
-| `CB3OnlineStageLogic()` |  |  |  | `0x0013DDC0` 60 |  |  |
-| `CopyReplay()` |  |  |  | `0x003E9870` 172 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetFirstResultsPageContinuePressed()` | `0x00346AC0` 12 | `0x003AB590` 12 | `0x003D59D0` 12 | `0x003E0180` 32 |  |  |  |
+| `SetSecondResultsPageContinuePressed()` | `0x00346AD0` 12 | `0x003AB5A0` 12 | `0x003D59E0` 12 | `0x003E01A0` 32 |  |  |  |
+| `PlayerCarShouldResetAtFrontOfPack()` | `0x0034AA50` 8 | `0x003B1EF0` 8 | `0x003DBA70` 8 | `0x003E9CE0` 20 |  |  |  |
+| `ClearUpCrash(int)` | `0x0034AA60` 8 | `0x003B1F00` 8 | `0x003DBA80` 8 | `0x003E9CC0` 20 |  |  |  |
+| `StartReplay()` | `0x0034AA70` 68 | `0x003B1F10` 68 | `0x003DBA90` 68 | `0x003E9C70` 72 | `0x003906A0` strong |  |  |
+| `FinishSyncReplay()` | `0x0034AAC0` 372 | `0x003B1F60` 996 | `0x003DBAE0` 996 | `0x003E9920` 844 |  |  |  |
+| `UpdateSyncReplay()` | `0x0034AC40` 540 | `0x003B2350` 1064 | `0x003DBED0` 1064 | `0x003E9340` 1316 | `0x00390990` strong |  |  |
+| `PrepareToSyncReplay()` | `0x0034AE60` 380 | `0x003B2780` 2096 | `0x003DC300` 2096 | `0x003E8E10` 1328 |  |  |  |
+| `UpdateAftermath()` | `0x0034AFE0` 72 | `0x003B2FB0` 72 | `0x003DCB30` 72 | `0x003E8DB0` 96 |  |  |  |
+| `PrepareAftermath()` | `0x0034B030` 16 | `0x003B3000` 16 | `0x003DCB80` 16 | `0x003E8D70` 52 |  |  |  |
+| `UpdateSyncResults()` | `0x0034B040` 196 | `0x003B3010` 348 | `0x003DCB90` 348 | `0x003E8BB0` 444 |  |  |  |
+| `UpdateSendResults()` | `0x0034B110` 324 | `0x003B3170` 848 | `0x003DCCF0` 848 | `0x003E8800` 620 |  |  |  |
+| `UpdateCrashing()` | `0x0034B260` 8 | `0x003B34C0` 8 | `0x003DD040` 8 | `0x003E87D0` 40 |  |  |  |
+| `UpdateRacing()` | `0x0034B270` 620 | `0x003B34D0` 900 | `0x003DD050` 888 | `0x003E8500` 720 |  |  |  |
+| `UpdateWaitCountdown()` | `0x0034B4E0` 368 | `0x003B3860` 1224 | `0x003DD3D0` 820 | `0x003E8130` 796 |  |  |  |
+| `UpdateWaitInitCountdownClient()` | `0x0034B650` 240 | `0x003B3D30` 344 | `0x003DD710` 344 | `0x003E7F80` 396 |  |  |  |
+| `UpdateWaitInitCountdownHost()` | `0x0034B740` 660 | `0x003B3E90` 1576 | `0x003DD870` 1248 | `0x003E7A00` 1200 |  |  |  |
+| `PrepareWaitInitCountdown()` | `0x0034B9E0` 64 | `0x003B44C0` 128 | `0x003DDD50` 128 | `0x003E7980` 128 |  |  |  |
+| `UpdateLaunch()` | `0x0034BA20` 48 | `0x003B4540` 48 | `0x003DDDD0` 48 | `0x003E7930` 72 |  |  |  |
+| `UpdateWelcomePan(bool)` | `0x0034BA50` 284 | `0x003B4570` 464 | `0x003DDE00` 464 | `0x003E7700` 440 |  |  |  |
+| `LeaveLobby()` | `0x0034BB70` 8 | `0x003B4740` 8 | `0x003DDFD0` 8 | `0x003E76D0` 40 |  |  |  |
+| `OnRaceCarCollision(ERaceCarCollisionType,CB3RaceCarPhysics*,CB3RaceCarPhysics*,float)` | `0x0034BB80` 252 | `0x003B4750` 252 | `0x003DDFE0` 252 | `0x003E7570` 344 |  |  |  |
+| `OnBoostStart(CB3RaceCarPhysics*)` | `0x0034BC80` 8 | `0x003B4850` 8 | `0x003DE0E0` 8 | `0x003E7560` 16 |  |  |  |
+| `OnTakedown(CB3RaceCar*,CB3RaceCar*)` | `0x0034BC90` 116 | `0x003B4860` 116 | `0x003DE0F0` 116 | `0x003E7470` 208 | `0x00391F10` likely |  |  |
+| `OnPropHit(CB3RaceCarPhysics*)` | `0x0034BD10` 8 | `0x003B48E0` 8 | `0x003DE170` 8 | `0x003E7460` 16 |  |  |  |
+| `OnNonFatalCollision(CB3RaceCarPhysics*,CB3TrafficVehicle*)` | `0x0034BD20` 16 | `0x003B48F0` 16 | `0x003DE180` 16 | `0x003E7420` 56 |  |  |  |
+| `OnPostCrashReset(CB3RaceCarPhysics*)` | `0x0034BD30` 76 | `0x003B4900` 76 | `0x003DE190` 76 | `0x003E73B0` 112 |  |  |  |
+| `OnPreCrashReset(CB3RaceCarPhysics*)` | `0x0034BD80` 12 | `0x003B4950` 12 | `0x003DE1E0` 12 | `0x003E7380` 48 |  |  |  |
+| `OnCrashStart(CB3RaceCarPhysics*,CB3CrashStartInfo*)` | `0x0034BD90` 16 | `0x003B4960` 16 | `0x003DE1F0` 16 | `0x003E7340` 56 |  |  |  |
+| `Destruct()` | `0x0034BDA0` 16 | `0x003B4970` 16 | `0x003DE200` 16 | `0x003E7310` 48 |  |  |  |
+| `Release()` | `0x0034BDB0` 16 | `0x003B4980` 16 | `0x003DE210` 16 | `0x003E72E0` 48 |  |  |  |
+| `Prepare()` | `0x0034BDC0` 52 | `0x003B4990` 52 | `0x003DE220` 52 | `0x003E72A0` 60 |  |  |  |
+| `Construct()` | `0x0034BE00` 84 | `0x003B49D0` 84 | `0x003DE260` 84 | `0x003E71E0` 184 |  |  |  |
+| `CB3OnlineStageLogic()` |  |  |  | `0x0013DDC0` 60 |  |  |  |
+| `CopyReplay()` |  |  |  | `0x003E9870` 172 |  |  |  |
 
 ## Notes
 

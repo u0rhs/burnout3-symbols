@@ -11,15 +11,15 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `LoadXMLFile(const char*,CGTFileSystem*)` |  | `0x001E0410` 352 | `0x00213110` 352 | `0x00224350` 388 |  |  |
-| `Update()` | `0x001E0A40` 8 | `0x001E0570` 8 | `0x00213270` 8 | `0x00224340` 16 | `0x0021B820` strong |  |
-| `Prepare(const char*,CGTFileSystem*,const char*)` | `0x001E0A50` 136 | `0x001E0580` 36 | `0x00213280` 36 | `0x002242F0` 72 | `0x0021B830` proven |  |
-| `Construct(const char*)` | `0x001E0AE0` 48 | `0x001E05B0` 92 | `0x002132B0` 92 | `0x002242A0` 80 | `0x0021B8C0` proven |  |
-| `CGtCommsToolBase()` |  |  |  | `0x0013EDA0` 48 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `LoadXMLFile(const char*,CGTFileSystem*)` |  | `0x001E0410` 352 | `0x00213110` 352 | `0x00224350` 388 |  |  | `bool GtComms::CGtCommsToolBase::LoadXMLFile(const char *lpcXMLFileName, int lnBufferIndex, CGTFileSystem *lpCSVFileSystem)` (same name, different parameters) |
+| `Update()` | `0x001E0A40` 8 | `0x001E0570` 8 | `0x00213270` 8 | `0x00224340` 16 | `0x0021B820` strong |  | `void GtComms::CGtCommsToolBase::Update()` |
+| `Prepare(const char*,CGTFileSystem*,const char*)` | `0x001E0A50` 136 | `0x001E0580` 36 | `0x00213280` 36 | `0x002242F0` 72 | `0x0021B830` proven |  | `bool GtComms::CGtCommsToolBase::Prepare(CGTFileSystem *lpCSVFileSystem, const char *lpcIPAddress)` (same name, different parameters) |
+| `Construct(const char*)` | `0x001E0AE0` 48 | `0x001E05B0` 92 | `0x002132B0` 92 | `0x002242A0` 80 | `0x0021B8C0` proven |  | `void GtComms::CGtCommsToolBase::Construct(const char *lpcFileServerRoot)` |
+| `CGtCommsToolBase()` |  |  |  | `0x0013EDA0` 48 |  |  |  |
 
 ## Static data (DNAT_200)
 

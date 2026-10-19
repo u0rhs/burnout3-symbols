@@ -8,16 +8,32 @@
 - **Source file:** `Gt2dObjectBox.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 3
 - **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGt2dObjectBox`, size 0x040, methods in `GameShared/GameClasses/Graphical/2d/Gt2dObjectBox.cpp` ([layout](#burnout-revenge-layout-of-cgt2dobjectbox))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C070` 120 | `0x001D0FC0` 120 | `0x001CA340` 120 | `0x001DADF0` 156 | `0x001D5EA0` proven |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d)` | `0x0019C0F0` 144 | `0x001D1040` 144 | `0x001CA3C0` 144 | `0x001DAD60` 140 | `0x001D5F20` proven |  |
-| `CGt2dObjectBox()` |  |  |  | `0x0037C7B0` 44 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C070` 120 | `0x001D0FC0` 120 | `0x001CA340` 120 | `0x001DADF0` 156 | `0x001D5EA0` proven |  | `void CGt2dObjectBox::_Render(const CGt2dObject::CGt2dObjectSpace &lObjectSpace, const void *lpData)` |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d)` | `0x0019C0F0` 144 | `0x001D1040` 144 | `0x001CA3C0` 144 | `0x001DAD60` 140 | `0x001D5F20` proven |  | `void CGt2dObjectBox::Prepare(const GtMathPs2::CGtV2d &lPos, const GtMathPs2::CGtV2d &lHandle, const GtMathPs2::CGtV2d &lSize, GtMathPs2::CGtV4d lColour)` |
+| `CGt2dObjectBox()` |  |  |  | `0x0037C7B0` 44 |  |  |  |
+
+## Burnout Revenge layout of `CGt2dObjectBox`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dObjectBox.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dObjectBox : public CGt2dObject {  // size 0x040
+    // base CGt2dObject at 0x000
+    // methods
+    // CGt2dObjectBox(const CGt2dObjectBox &);
+    // CGt2dObjectBox();
+    // void Prepare(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, GtMathPs2::CGtV4d);
+    // static void _Render(const CGt2dObject::CGt2dObjectSpace &, const void *);
+};
+```
 
 ## Notes
 

@@ -8,33 +8,95 @@
 - **Source file:** `B3CrashActionDirector.cpp`
 - **Methods per build:** DNAT_200 16, B3DEBUG 16, B3INTERN 16, B3O0PCH 20
 - **Retail (SLUS-21050):** 16 of its 16 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CrashActionDirector`, size 0x3F8, methods in `GameSource/Physics/B4CrashActionDirector.cpp` ([layout](#burnout-revenge-layout-of-cb4crashactiondirector))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `HandleCrashingVehicleWorldCollision(CB3VehiclePhysics*)` | `0x00178EE0` 364 | `0x001948C0` 648 | `0x00192390` 648 | `0x001AD980` 488 | `0x001AD890` strong |  |
-| `HandleCrashingVehicleVehicleCollision(CB3CollidingPair*)` | `0x00179050` 1708 | `0x00194B50` 2924 | `0x00192620` 2924 | `0x001AD040` 2068 | `0x001ADC70` unverified |  |
-| `ExplodeVehicle(GtMathPs2::CGtV3d,CB3VehiclePhysics*)` | `0x00179700` 136 | `0x001956C0` 308 | `0x00193190` 308 | `0x001ACE80` 284 | `0x001AE3F0` strong |  |
-| `GetRaceCarCrashTime(int)` | `0x00179790` 24 | `0x00195800` 24 | `0x001932D0` 24 | `0x001ACE10` 52 | `0x001AE480` proven |  |
-| `SetSympatheticTraffic(int,CB3VehiclePhysics*)` | `0x001797B0` 84 | `0x00195820` 84 | `0x001932F0` 84 | `0x001ACD50` 188 | `0x001AE4A0` strong |  |
-| `StartTrafficCrashing(CB3TrafficPhysics*,int)` | `0x00179810` 288 | `0x00195880` 288 | `0x00193350` 288 | `0x001ACC60` 232 | `0x001AE500` strong |  |
-| `StopRaceCarCrashing(int)` | `0x00179930` 36 | `0x001959A0` 36 | `0x00193470` 36 | `0x001ACC00` 88 | `0x001AE660` strong |  |
-| `StartRaceCarCrashing(CB3RaceCarPhysics*,int,CB3CollidingPair*,CB3CrashStartInfo*)` | `0x00179960` 3412 | `0x001959D0` 4280 | `0x001934A0` 4056 | `0x001AB9E0` 4104 | `0x001AF450` unverified |  |
-| `DebugCrashEffect(CB3RaceCarPhysics*,CGtAxisAlignedBox*,GtMathPs2::CGtMatrix3x4*,unsigned int)` | `0x0017A6C0` 512 | `0x00196A90` 512 | `0x00194480` 512 | `0x001AB6B0` 812 | `0x001B0E10` proven |  |
-| `GetCrashZoneAndCorner(GtMathPs2::CGtV3d*,CGtAxisAlignedBox*,EB3CADZone*,EB3CADCorner*)` | `0x0017A8C0` 556 | `0x00196C90` 556 | `0x00194680` 556 | `0x001AB170` 1252 | `0x001B1010` strong |  |
-| `UpdateTraffic(CB3CADTrafficData*,CB3TrafficPhysics*,float)` | `0x0017AAF0` 2700 | `0x00196EC0` 3688 | `0x001948B0` 3152 | `0x001AA6B0` 2368 | `0x001B1240` strong |  |
-| `Update(float)` | `0x0017B580` 1024 | `0x00197D30` 1596 | `0x00195500` 1596 | `0x001AA080` 1496 | `0x001B1CC0` unverified |  |
-| `RenderDebugData()` | `0x0017B980` 664 | `0x00198370` 852 | `0x00195B40` 852 | `0x001A9CC0` 920 | `0x001B20C0` unverified |  |
-| `UpdateRaceCar(int,CB3RaceCarPhysics*,float)` | `0x0017BC20` 1680 | `0x001986D0` 2328 | `0x00195EA0` 2132 | `0x001A96F0` 1488 | `0x001B20D0` strong |  |
-| `Prepare()` | `0x0017C2B0` 752 | `0x00198FF0` 752 | `0x00196700` 752 | `0x001A9200` 1252 | `0x001B2760` strong |  |
-| `Construct()` | `0x0017CCC0` 100 | `0x00199E70` 100 | `0x001974A0` 100 | `0x001A87B0` 232 | `0x001B2A00` unverified |  |
-| `ExplodeTanker(CB3VehiclePhysics*)` |  |  |  | `0x001ACFA0` 156 |  |  |
-| `IgniteVehicle(CB3VehiclePhysics*)` |  |  |  | `0x001ACE50` 40 |  |  |
-| `IsCornerImpact(CB3CADRaceCarData*)` |  |  |  | `0x001ACAE0` 76 |  |  |
-| `IsTBoneLargeVehicle(CB3CADRaceCarData*)` |  |  |  | `0x001ACB30` 76 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `HandleCrashingVehicleWorldCollision(CB3VehiclePhysics*)` | `0x00178EE0` 364 | `0x001948C0` 648 | `0x00192390` 648 | `0x001AD980` 488 | `0x001AD890` strong |  | `void CB4CrashActionDirector::HandleCrashingVehicleWorldCollision(CB4VehiclePhysics *lpVehiclePhysics)` |
+| `HandleCrashingVehicleVehicleCollision(CB3CollidingPair*)` | `0x00179050` 1708 | `0x00194B50` 2924 | `0x00192620` 2924 | `0x001AD040` 2068 | `0x001ADC70` unverified |  | `void CB4CrashActionDirector::HandleCrashingVehicleVehicleCollision(CB4CollidingPair *lpPair)` |
+| `ExplodeVehicle(GtMathPs2::CGtV3d,CB3VehiclePhysics*)` | `0x00179700` 136 | `0x001956C0` 308 | `0x00193190` 308 | `0x001ACE80` 284 | `0x001AE3F0` strong |  |  |
+| `GetRaceCarCrashTime(int)` | `0x00179790` 24 | `0x00195800` 24 | `0x001932D0` 24 | `0x001ACE10` 52 | `0x001AE480` proven |  |  |
+| `SetSympatheticTraffic(int,CB3VehiclePhysics*)` | `0x001797B0` 84 | `0x00195820` 84 | `0x001932F0` 84 | `0x001ACD50` 188 | `0x001AE4A0` strong |  | `void CB4CrashActionDirector::SetSympatheticTraffic(int lnTrafficIndex, CB4VehiclePhysics *lpTargetVehicle, bool lbIsCheckedTraffic)` (same name, different parameters) |
+| `StartTrafficCrashing(CB3TrafficPhysics*,int)` | `0x00179810` 288 | `0x00195880` 288 | `0x00193350` 288 | `0x001ACC60` 232 | `0x001AE500` strong |  | `void CB4CrashActionDirector::StartTrafficCrashing(CB4TrafficPhysics *lpTrafficPhysics, unsigned char lu8CrashIndex)` (same name, different parameters) |
+| `StopRaceCarCrashing(int)` | `0x00179930` 36 | `0x001959A0` 36 | `0x00193470` 36 | `0x001ACC00` 88 | `0x001AE660` strong |  | `void CB4CrashActionDirector::StopRaceCarCrashing(unsigned char lu8CrashIndex)` (same name, different parameters) |
+| `StartRaceCarCrashing(CB3RaceCarPhysics*,int,CB3CollidingPair*,CB3CrashStartInfo*)` | `0x00179960` 3412 | `0x001959D0` 4280 | `0x001934A0` 4056 | `0x001AB9E0` 4104 | `0x001AF450` unverified |  | `void CB4CrashActionDirector::StartRaceCarCrashing(CB4RaceCarPhysics *lpPhysics, unsigned char lu8CrashIndex, CB4ActiveBody *lpBodyA, CB4ActiveBody *lpBodyB, GtMathPs2::CGtV3d *lpPointA, CB4CrashStartInfo *lpCSI)` (same name, different parameters) |
+| `DebugCrashEffect(CB3RaceCarPhysics*,CGtAxisAlignedBox*,GtMathPs2::CGtMatrix3x4*,unsigned int)` | `0x0017A6C0` 512 | `0x00196A90` 512 | `0x00194480` 512 | `0x001AB6B0` 812 | `0x001B0E10` proven |  | `bool CB4CrashActionDirector::DebugCrashEffect(CB4RaceCarPhysics *lpPhysics, CGtAxisAlignedBox *lpAABoxB, GtMathPs2::CGtMatrix3x4 *lpMatrixB, unsigned int lxDirection)` |
+| `GetCrashZoneAndCorner(GtMathPs2::CGtV3d*,CGtAxisAlignedBox*,EB3CADZone*,EB3CADCorner*)` | `0x0017A8C0` 556 | `0x00196C90` 556 | `0x00194680` 556 | `0x001AB170` 1252 | `0x001B1010` strong |  | `void CB4CrashActionDirector::GetCrashZoneAndCorner(GtMathPs2::CGtV3d *lpPos, CGtAxisAlignedBox *lpAABox, EB4CADZone *lpeCrashZone, EB4CADCorner *lpeCorner)` |
+| `UpdateTraffic(CB3CADTrafficData*,CB3TrafficPhysics*,float)` | `0x0017AAF0` 2700 | `0x00196EC0` 3688 | `0x001948B0` 3152 | `0x001AA6B0` 2368 | `0x001B1240` strong |  | `void CB4CrashActionDirector::UpdateTraffic(CB4CADTrafficData *lpCADData, CB4TrafficPhysics *lpPhysics, float lrTimeStep)` |
+| `Update(float)` | `0x0017B580` 1024 | `0x00197D30` 1596 | `0x00195500` 1596 | `0x001AA080` 1496 | `0x001B1CC0` unverified |  | `void CB4CrashActionDirector::Update(float lrTimeStep)` |
+| `RenderDebugData()` | `0x0017B980` 664 | `0x00198370` 852 | `0x00195B40` 852 | `0x001A9CC0` 920 | `0x001B20C0` unverified |  | `void CB4CrashActionDirector::RenderDebugData()` |
+| `UpdateRaceCar(int,CB3RaceCarPhysics*,float)` | `0x0017BC20` 1680 | `0x001986D0` 2328 | `0x00195EA0` 2132 | `0x001A96F0` 1488 | `0x001B20D0` strong |  | `void CB4CrashActionDirector::UpdateRaceCar(ERaceCarIndex leRaceCar, float lrTimeStep)` (same name, different parameters) |
+| `Prepare()` | `0x0017C2B0` 752 | `0x00198FF0` 752 | `0x00196700` 752 | `0x001A9200` 1252 | `0x001B2760` strong |  | `bool CB4CrashActionDirector::Prepare()` |
+| `Construct()` | `0x0017CCC0` 100 | `0x00199E70` 100 | `0x001974A0` 100 | `0x001A87B0` 232 | `0x001B2A00` unverified |  | `void CB4CrashActionDirector::Construct()` |
+| `ExplodeTanker(CB3VehiclePhysics*)` |  |  |  | `0x001ACFA0` 156 |  |  | `void CB4CrashActionDirector::ExplodeTanker(CB4VehiclePhysics *lpVehiclePhysics)` |
+| `IgniteVehicle(CB3VehiclePhysics*)` |  |  |  | `0x001ACE50` 40 |  |  |  |
+| `IsCornerImpact(CB3CADRaceCarData*)` |  |  |  | `0x001ACAE0` 76 |  |  |  |
+| `IsTBoneLargeVehicle(CB3CADRaceCarData*)` |  |  |  | `0x001ACB30` 76 |  |  |  |
+
+## Burnout Revenge layout of `CB4CrashActionDirector`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 4 file(s), e.g. `GameSource/Physics/B4CrashActionDirector.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CrashActionDirector : public CB4CrashManager {  // size 0x3F8
+    // base CB4CrashManager at 0x000
+    /* 0x0F8 */ CGtRandom mRandom;
+    /* 0x100 */ RwInt32 mnDebugCrashEffect;
+    /* 0x104 */ bool mbDebugShowMessages;
+    /* 0x105 */ bool mbCrashShutterStarted;
+    /* 0x106 */ char macMessage[256];
+    /* 0x208 */ CB4CADRaceCarData maRaceCarData[6];
+    /* 0x3D0 */ bool mbVariablesRegistered;
+    /* 0x3D4 */ RwReal mrRamMagnitudeFrontCorner;
+    /* 0x3D8 */ RwReal mrRamMagnitudeBackCorner;
+    /* 0x3DC */ RwReal mrRamMagnitudeSide;
+    /* 0x3E0 */ RwReal mrRamMagnitudeFront;
+    /* 0x3E4 */ RwReal mrRamMagnitudeBack;
+    /* 0x3E8 */ RwReal mrRamMagnitudeWorld;
+    /* 0x3EC */ RwReal mrRamMagnitudeLowSpeedMultiplier;
+    /* 0x3F0 */ RwBool mbDebugManagedVariablesRegistered;
+    // methods
+    // CB4CrashActionDirector(const CB4CrashActionDirector &);
+    // CB4CrashActionDirector();
+    // void Construct();
+    // bool Prepare();
+    // void Update(float);
+    // void Release();
+    // void Destruct();
+    // void StartRaceCarCrashing(CB4RaceCarPhysics *, unsigned char, CB4ActiveBody *, CB4ActiveBody *, GtMathPs2::CGtV3d *, CB4CrashStartInfo *);
+    // void StopRaceCarCrashing(unsigned char);
+    // void StopNetworkCarCrashing(unsigned char);
+    // void StopNetworkTrafficCrashing(unsigned char);
+    // void StartNetworkCarCrashing(CB4RaceCarPhysics *, unsigned char, CB4CrashStartInfo *);
+    // void StartTrafficCrashing(CB4TrafficPhysics *, unsigned char);
+    // void SetSympatheticTraffic(int, CB4VehiclePhysics *, bool);
+    // void RenderDebugData();
+    // RwReal GetRaceCarCrashTime(ERaceCarIndex);
+    // void ExplodeTanker(CB4VehiclePhysics *);
+    // void HandleCrashingVehicleVehicleCollision(CB4CollidingPair *);
+    // void ExplodeSmallestVehicle(CB4VehiclePhysics *, CB4VehiclePhysics *, GtMathPs2::CGtV3d, float);
+    // void CheckForTankerExplosion(CB4VehiclePhysics *, CB4VehiclePhysics *, float, bool, bool, bool);
+    // void HandleCrashingVehicleWorldCollision(CB4VehiclePhysics *);
+    // void DoTankerExplosion(CB4TrafficPhysics *, float, CGtAxisAlignedBox *, bool);
+    // bool CameraIsLookingAtCarInCrash(unsigned char);
+    // CB4CADRaceCarData * GetRaceCarCADData(int) const;
+    // CB4CADRaceCarData * GetRaceCarCADData(int);
+    // RwReal CalculateInterest(CB4VehiclePhysics *, CB4VehiclePhysics *);
+    // void UpdateRaceCar(ERaceCarIndex, float);
+    // void UpdateTraffic(CB4CADTrafficData *, CB4TrafficPhysics *, float);
+    // void DoInterestingFlipOutBehaviour(CB4CADTrafficData *, CB4TrafficPhysics *);
+    // void GetCrashZoneAndCorner(GtMathPs2::CGtV3d *, CGtAxisAlignedBox *, EB4CADZone *, EB4CADCorner *);
+    // bool DebugCrashEffect(CB4RaceCarPhysics *, CGtAxisAlignedBox *, GtMathPs2::CGtMatrix3x4 *, unsigned int);
+    // bool IsTBoneLargeVehicle(CB4CADRaceCarData *);
+    // bool IsCornerImpact(CB4CADRaceCarData *);
+    // void ActuallyStartRaceCarCrashing(CB4RaceCarPhysics *, unsigned char, CB4ActiveBody *, CB4ActiveBody *, GtMathPs2::CGtV3d *, CB4CrashStartInfo *);
+    // RwReal GetRandomAirRamTime();
+};
+```
 
 ## Notes
 

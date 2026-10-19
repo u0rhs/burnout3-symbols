@@ -7,24 +7,79 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `GtNetworkAdapter.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 4, B3INTERN 6, B3O0PCH 7
+- **Burnout Revenge counterpart:** `CGtNetworkAdapter`, size 0x04C, methods in `GameShared/GameClasses/System/Networking/Packeting/GtNetworkAdapter.cpp` ([layout](#burnout-revenge-layout-of-cgtnetworkadapter))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetMessageSentCallback(void (*)(void*))` | `0x001EE770` 12 |  |  |  |  |  |
-| `RegisterBuffer(void*,int,int)` | `0x001EE780` 28 |  | `0x00222E60` 280 |  |  |  |
-| `GetLastError() const` | `0x001EE7A0` 8 |  |  |  |  |  |
-| `Update(int)` | `0x001EE7B0` 52 | `0x001F0DD0` 52 | `0x00222F90` 52 | `0x00237430` 76 |  |  |
-| `Destruct()` | `0x001EE7F0` 8 |  | `0x00222FD0` 8 |  |  |  |
-| `Construct()` | `0x001EE800` 100 | `0x001F0E10` 100 | `0x00222FE0` 100 | `0x002373A0` 144 |  |  |
-| `SetMessageSentCallback(void (*)` |  | `0x001F0DB0` 12 | `0x00222E50` 12 | `0x002374A0` 88 |  |  |
-| `GetLastError()` |  | `0x001F0DC0` 8 | `0x00222F80` 8 | `0x00237480` 28 |  |  |
-| `CGtNetworkAdapter()` |  |  |  | `0x0028A070` 40 |  |  |
-| `GetMyInternalIPAddress()` |  |  |  | `0x0023FF70` 64 |  |  |
-| `InterfaceIsUp()` |  |  |  | `0x001354B0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetMessageSentCallback(void (*)(void*))` | `0x001EE770` 12 |  |  |  |  |  | `MessageSentCallback * CGtNetworkAdapter::SetMessageSentCallback(void (*lpfMessageSentCallback)(void *))` |
+| `RegisterBuffer(void*,int,int)` | `0x001EE780` 28 |  | `0x00222E60` 280 |  |  |  | `void CGtNetworkAdapter::RegisterBuffer(void *lpBuffer, int lnBufferSize, int lnMaxMessageSize)` |
+| `GetLastError() const` | `0x001EE7A0` 8 |  |  |  |  |  | `ENetworkAdaptorError CGtNetworkAdapter::GetLastError() const` |
+| `Update(int)` | `0x001EE7B0` 52 | `0x001F0DD0` 52 | `0x00222F90` 52 | `0x00237430` 76 |  |  | `ENetworkStatus CGtNetworkAdapter::Update(int lnCurrentFrame, float lrTimeStep)` (same name, different parameters) |
+| `Destruct()` | `0x001EE7F0` 8 |  | `0x00222FD0` 8 |  |  |  | `void CGtNetworkAdapter::Destruct()` |
+| `Construct()` | `0x001EE800` 100 | `0x001F0E10` 100 | `0x00222FE0` 100 | `0x002373A0` 144 |  |  | `void CGtNetworkAdapter::Construct()` |
+| `SetMessageSentCallback(void (*)` |  | `0x001F0DB0` 12 | `0x00222E50` 12 | `0x002374A0` 88 |  |  | `MessageSentCallback * CGtNetworkAdapter::SetMessageSentCallback(void (*lpfMessageSentCallback)(void *))` (same name, different parameters) |
+| `GetLastError()` |  | `0x001F0DC0` 8 | `0x00222F80` 8 | `0x00237480` 28 |  |  | `ENetworkAdaptorError CGtNetworkAdapter::GetLastError() const` (same name, different parameters) |
+| `CGtNetworkAdapter()` |  |  |  | `0x0028A070` 40 |  |  |  |
+| `GetMyInternalIPAddress()` |  |  |  | `0x0023FF70` 64 |  |  |  |
+| `InterfaceIsUp()` |  |  |  | `0x001354B0` 28 |  |  |  |
+
+## Burnout Revenge layout of `CGtNetworkAdapter`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 129 file(s), e.g. `GameShared/GameClasses/Development/AutomaticTest/GtAutoTestComms.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtNetworkAdapter {  // size 0x04C
+    /* 0x000 */ void *mpBuffer;
+    /* 0x004 */ RwInt32 mnBufferSize;
+    /* 0x008 */ RwInt32 mnMaxMessageSize;
+    /* 0x00C */ RwInt32 mnCurrentFrame;
+    /* 0x010 */ ENetworkStatus meStatus;
+    /* 0x014 */ ENetworkAdaptorError meLastError;
+    /* 0x018 */ char macMyLocalIPAddress[16];
+    /* 0x028 */ char macMyMACAddress[16];
+    /* 0x038 */ MessageSentCallback *mpfMessageSentCallback;
+    /* 0x03C */ bool mbInterfaceUp;
+    /* 0x040 */ ENetworkCableStatus meNetworkCableStatus;
+    /* 0x044 */ CGtNetworkConditions mNetworkConditions;
+    /* 0x048 */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CGtNetworkAdapter(const CGtNetworkAdapter &);
+    // CGtNetworkAdapter();
+    // void Construct();
+    // void Destruct();
+    // virtual ENetworkStatus Prepare();
+    // virtual void Release();
+    // ENetworkStatus Update(int, float);
+    // virtual ENetworkStatus UpInterface(int);
+    // ENetworkAdaptorError GetLastError() const;
+    // void RegisterBuffer(void *, int, int);
+    // virtual void SendTo(void *, int, int, int);
+    // virtual RwInt32 ReceiveFrom(void **, int *, int *);
+    // virtual void SuspendSocket();
+    // virtual void ResumeSocket(int);
+    // virtual bool SocketIsSuspended();
+    // virtual void TCPCreate();
+    // virtual void TCPDestroy();
+    // virtual ETCPThreadState Connect(int, int);
+    // virtual ETCPThreadState Disconnect();
+    // virtual void Send(void *, int);
+    // virtual RwInt32 Receive(void *, int);
+    // MessageSentCallback * SetMessageSentCallback(void (*)(void *));
+    // RwChar * GetMyInternalIPAddress() const;
+    // RwChar * GetMyMACAddress() const;
+    // virtual void ChangePort(int);
+    // virtual RwInt32 GetUDPSocketPort();
+    // virtual void ClearSendBuffer();
+    // bool InterfaceIsUp();
+    // virtual ENetworkCableStatus GetNetworkCableStatus(float);
+    // virtual void StartGetHostByName(const char *);
+    // virtual bool UpdateGetHostByName(sceInsockHostent *, bool *);
+};
+```
 
 ## Notes
 

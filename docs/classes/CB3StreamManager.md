@@ -8,22 +8,56 @@
 - **Source file:** `B3StreamManager.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 9
 - **Retail (SLUS-21050):** 5 of its 8 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4StreamManager`, size 0x0F8, methods in `GameSource/World/B4StreamManager.cpp` ([layout](#burnout-revenge-layout-of-cb4streammanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ReleaseLODUnit(CB3StreamedTrackLODAndCollisionData*)` | `0x00374FE0` 76 | `0x003E58D0` 76 | `0x0040D750` 76 | `0x004230D0` 152 | `0x003C30E0` unverified |  |
-| `AcquireLODUnit()` | `0x00375030` 76 | `0x003E5920` 76 | `0x0040D7A0` 76 | `0x00423050` 128 |  |  |
-| `ReleaseHighDetailUnit(CB3StreamedTrackHighData*)` | `0x00375080` 76 | `0x003E5970` 76 | `0x0040D7F0` 76 | `0x00422FB0` 152 | `0x003C31E0` unverified |  |
-| `AcquireHighDetailUnit()` | `0x003750D0` 76 | `0x003E59C0` 76 | `0x0040D840` 76 | `0x00422F30` 128 |  |  |
-| `Release()` | `0x00375120` 236 | `0x003E5A10` 236 | `0x0040D890` 236 | `0x00422DF0` 320 |  |  |
-| `Prepare(unsigned long)` | `0x00375210` 588 | `0x003E5B00` 652 | `0x0040D980` 652 | `0x00422AB0` 828 | `0x003C3430` unverified |  |
-| `Destruct()` | `0x00375460` 12 | `0x003E5D90` 12 | `0x0040DC10` 12 | `0x00422A90` 32 | `0x003C3560` strong |  |
-| `Construct()` | `0x00375470` 116 | `0x003E5DA0` 116 | `0x0040DC20` 116 | `0x004229E0` 164 | `0x003C3570` likely |  |
-| `ResetAll()` |  |  |  | `0x0032F1A0` 32 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ReleaseLODUnit(CB3StreamedTrackLODAndCollisionData*)` | `0x00374FE0` 76 | `0x003E58D0` 76 | `0x0040D750` 76 | `0x004230D0` 152 | `0x003C30E0` unverified |  | `void CB4StreamManager::ReleaseLODUnit(CB4StreamedTrackLODAndCollisionData *lpUnit)` |
+| `AcquireLODUnit()` | `0x00375030` 76 | `0x003E5920` 76 | `0x0040D7A0` 76 | `0x00423050` 128 |  |  | `CB4StreamedTrackLODAndCollisionData * CB4StreamManager::AcquireLODUnit()` |
+| `ReleaseHighDetailUnit(CB3StreamedTrackHighData*)` | `0x00375080` 76 | `0x003E5970` 76 | `0x0040D7F0` 76 | `0x00422FB0` 152 | `0x003C31E0` unverified |  | `void CB4StreamManager::ReleaseHighDetailUnit(CB4StreamedTrackHighData *lpUnit)` |
+| `AcquireHighDetailUnit()` | `0x003750D0` 76 | `0x003E59C0` 76 | `0x0040D840` 76 | `0x00422F30` 128 |  |  | `CB4StreamedTrackHighData * CB4StreamManager::AcquireHighDetailUnit()` |
+| `Release()` | `0x00375120` 236 | `0x003E5A10` 236 | `0x0040D890` 236 | `0x00422DF0` 320 |  |  | `void CB4StreamManager::Release()` |
+| `Prepare(unsigned long)` | `0x00375210` 588 | `0x003E5B00` 652 | `0x0040D980` 652 | `0x00422AB0` 828 | `0x003C3430` unverified |  | `bool CB4StreamManager::Prepare(unsigned long lTrackID)` |
+| `Destruct()` | `0x00375460` 12 | `0x003E5D90` 12 | `0x0040DC10` 12 | `0x00422A90` 32 | `0x003C3560` strong |  | `void CB4StreamManager::Destruct()` |
+| `Construct()` | `0x00375470` 116 | `0x003E5DA0` 116 | `0x0040DC20` 116 | `0x004229E0` 164 | `0x003C3570` likely |  | `void CB4StreamManager::Construct()` |
+| `ResetAll()` |  |  |  | `0x0032F1A0` 32 |  |  |  |
+
+## Burnout Revenge layout of `CB4StreamManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 11 file(s), e.g. `GameSource/Physics/B4RaceCarPhysics.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4StreamManager {  // size 0x0F8
+    /* 0x000 */ CGTFile *mpInStream;
+    /* 0x004 */ bool mbResetAll;
+    /* 0x005 */ bool mbStreamPaused;
+    /* 0x008 */ GtID mTrackID;
+    /* 0x010 */ CB4StreamedTrackData *mapStreamHighDetail[19];
+    /* 0x05C */ CB4StreamedTrackData *mapStreamLOD[35];
+    /* 0x0E8 */ RwInt32 mnNumUnitsH;
+    /* 0x0EC */ RwInt32 mnNumUnitsL;
+    /* 0x0F0 */ EGtPrepareState mePrepareState;
+    // methods
+    // CB4StreamManager(const CB4StreamManager &);
+    // CB4StreamManager();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare(unsigned long);
+    // void Release();
+    // CB4StreamedTrackHighData * AcquireHighDetailUnit();
+    // void ReleaseHighDetailUnit(CB4StreamedTrackHighData *);
+    // CB4StreamedTrackLODAndCollisionData * AcquireLODUnit();
+    // void ReleaseLODUnit(CB4StreamedTrackLODAndCollisionData *);
+    // void PauseStream();
+    // void UnpauseStream();
+    // bool OpenInStream();
+    // void CloseInStream();
+};
+```
 
 ## Notes
 

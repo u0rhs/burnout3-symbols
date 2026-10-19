@@ -70,6 +70,20 @@ SECTIONS = [
          ('data/burnout3-review-pal-2004-07-20/disc/SLES_525.84.headers.txt', 'PAL review: ELF and program headers'),
          ('data/burnout3-review-pal-2004-07-20/disc/files.csv', 'PAL review: every file on the disc'),
      ]),
+    ('Burnout Revenge prototype: symbols and debug information',
+     'The Burnout Revenge July 14, 2005 PS2 prototype kept its symbol table and GCC debug information: types with '
+     'members, offsets and methods, signatures with parameter names, globals and source paths. Revenge was built on '
+     'Burnout 3\'s code ([classes](reference/revenge-class-lineage.md), [functions](reference/revenge-function-lineage.md), '
+     '[source files](reference/revenge-source-file-lineage.md)). Format: [GCC stabs in .mdebug](formats/gcc-stabs-mdebug.md).',
+     [
+         ('data/burnout-revenge-prototype/SLUS_212.42/types.h', 'Every class, struct, union and enum with member offsets and methods, as C'),
+         ('data/burnout-revenge-prototype/SLUS_212.42/functions.csv', 'Every linked function with signature, parameter names and source file'),
+         ('data/burnout-revenge-prototype/SLUS_212.42/functions.txt', 'The same, as text'),
+         ('data/burnout-revenge-prototype/SLUS_212.42/unlinked_functions.csv', 'Functions in the debug information that the linker dropped'),
+         ('data/burnout-revenge-prototype/SLUS_212.42/symbols.csv', 'The full symbol table, demangled where the link map has the name'),
+         ('data/burnout-revenge-prototype/SLUS_212.42/globals.txt', 'Global and static variables with types and addresses'),
+         ('data/burnout-revenge-prototype/SLUS_212.42/source_files.txt', 'Every source file with its function count and code size'),
+     ]),
     ('Burnout 2 prototype: symbols and debug information',
      'The Burnout 2 prototype (29 July 2002) kept its symbols and full DWARF 1 debug information: types, '
      'signatures with parameter names, locals and line numbers. Most useful as the ancestor of Burnout 3\'s '

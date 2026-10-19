@@ -8,59 +8,60 @@
 - **Source file:** `B3Game.cpp`
 - **Methods per build:** DNAT_200 20, B3DEBUG 20, B3INTERN 20, B3O0PCH 45
 - **Retail (SLUS-21050):** 9 of its 20 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4Game`, size 0x64480, methods in `GameSource/Game/B4Game.cpp` ([layout](#burnout-revenge-layout-of-cb4game))
 - **Burnout 2 ancestor (by name):** `CGame`, size 0x4DD0, declared in 72 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Is2PlayerSplitScreen()` | `0x00131380` 56 | `0x00132980` 56 | `0x00134C80` 56 | `0x0013D820` 92 | `0x00131CA0` likely |  |
-| `IsInChampionship()` | `0x001313C0` 64 | `0x001329C0` 64 | `0x00134CC0` 64 | `0x0013D7B0` 112 | `0x00131CE0` strong |  |
-| `IsTurnBasedCrash()` | `0x00131400` 64 | `0x00132A00` 64 | `0x00134D00` 64 | `0x0013D720` 112 | `0x00131E00` likely |  |
-| `IsCrashMode()` | `0x00131440` 200 | `0x00132A40` 200 | `0x00134D40` 200 | `0x0013D610` 264 | `0x00131E40` strong |  |
-| `RequestNewGameMode(CB3GameMode*)` | `0x00131510` 68 | `0x00132B10` 104 | `0x00134E10` 104 | `0x0013D5A0` 104 | `0x00131F10` strong |  |
-| `IsSimulationPaused()` | `0x00131560` 44 | `0x00132B80` 44 | `0x00134E80` 44 | `0x0013D530` 100 | `0x00131F60` proven |  |
-| `UpdatePostSimulation()` | `0x00131590` 304 | `0x00132BB0` 1116 | `0x00134EB0` 1120 | `0x0013D0A0` 660 | `0x00131F90` likely |  |
-| `UpdateSimulation()` | `0x001316C0` 412 | `0x00133010` 1248 | `0x00135310` 1304 | `0x0013CCF0` 620 |  |  |
-| `UpdatePreSimulation()` | `0x00131860` 536 | `0x001334F0` 1036 | `0x00135830` 1036 | `0x0013C820` 1004 |  |  |
-| `Destruct()` | `0x00131A80` 288 | `0x00133900` 288 | `0x00135C40` 288 | `0x0013C510` 372 |  |  |
-| `Release()` | `0x00131BA0` 128 | `0x00133A20` 128 | `0x00135D60` 128 | `0x0013C470` 156 |  |  |
-| `Update()` | `0x00131C20` 3228 | `0x00133AA0` 5848 | `0x00135DE0` 5784 | `0x0013B6E0` 3268 |  |  |
-| `Prepare()` | `0x001328C0` 1824 | `0x00135180` 2088 | `0x00137480` 2172 | `0x0013ACC0` 2512 |  |  |
-| `Construct()` | `0x00132FE0` 1536 | `0x001359B0` 21044 | `0x00137D00` 1844 | `0x00135E80` 19620 |  |  |
-| `~CB3Game()` | `0x001337E0` 144 | `0x0013AE10` 144 | `0x00138650` 144 | `0x0013D880` 108 | `0x001344D0` likely |  |
-| `SetFrontendFrameRate(bool)` | `0x0019A1C0` 180 | `0x001CEEA0` 180 | `0x001C8110` 180 | `0x001DA3C0` 264 | `0x001D3EE0` strong |  |
-| `PreparePowerOff()` | `0x0019A280` 24 | `0x001CEF60` 8 | `0x001C81D0` 24 | `0x001DA3B0` 16 |  |  |
-| `CheckPowerOff()` | `0x0019A2B0` 388 | `0x001CEF70` 8 | `0x001C8200` 612 | `0x001DA3A0` 16 |  |  |
-| `PrepareHardware()` | `0x0019A440` 1012 | `0x001CEF80` 840 | `0x001C8470` 1240 | `0x001D9FA0` 980 |  |  |
-| `ConstructHardware()` | `0x0019A840` 200 | `0x001CF2D0` 192 | `0x001C8950` 192 | `0x001D9E80` 232 |  |  |
-| `CB3Game()` |  |  |  | `0x0013D970` 704 |  |  |
-| `GetCameraTimeStep()` |  |  |  | `0x00279E70` 36 |  |  |
-| `GetCurrentGameMode()` |  |  |  | `0x00130840` 36 |  |  |
-| `GetHalfFramerate()` |  |  |  | `0x0013FEE0` 36 |  |  |
-| `GetNumSimulationUpdatesRequired()` |  |  |  | `0x0013D390` 144 |  |  |
-| `GetNumSimulationUpdatesThisRenderFrame()` |  |  |  | `0x00313FA0` 36 |  |  |
-| `GetPausePlayerIndex()` |  |  |  | `0x0036E040` 36 |  |  |
-| `GetSimulationUpdateCount()` |  |  |  | `0x002AFCA0` 36 |  |  |
-| `IsPaused()` |  |  |  | `0x00140AA0` 44 |  |  |
-| `IsResumeRequested()` |  |  |  | `0x0035BB30` 44 |  |  |
-| `IsWorldPrepared()` |  |  |  | `0x002AF700` 36 |  |  |
-| `PrepareWorld()` |  |  |  | `0x0013C7E0` 56 |  |  |
-| `Render()` |  |  |  | `0x0013D420` 76 |  |  |
-| `RequestFramerateType(EGtFramerateType)` |  |  |  | `0x00135390` 44 |  |  |
-| `RequestGameUpdateState(EGameUpdateState)` |  |  |  | `0x0013FF10` 204 |  |  |
-| `RequestHalfFramerate(bool)` |  |  |  | `0x00135360` 44 |  |  |
-| `RequestPause(int)` |  |  |  | `0x00142650` 140 |  |  |
-| `RequestResume(int)` |  |  |  | `0x0036E290` 140 |  |  |
-| `RequestSimulationPause()` |  |  |  | `0x003982F0` 40 |  |  |
-| `RequestSimulationUnpause()` |  |  |  | `0x003982C0` 40 |  |  |
-| `RequestWorldPrepare()` |  |  |  | `0x003DF360` 56 |  |  |
-| `ResetGameMode()` |  |  |  | `0x0013C690` 328 |  |  |
-| `RestartGameModeUpdateCode()` |  |  |  | `0x0013D470` 184 |  |  |
-| `SetQuitNow()` |  |  |  | `0x00385D00` 40 |  |  |
-| `WillQuitNow()` |  |  |  | `0x0012ECC0` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Is2PlayerSplitScreen()` | `0x00131380` 56 | `0x00132980` 56 | `0x00134C80` 56 | `0x0013D820` 92 | `0x00131CA0` likely |  | `bool CB4Game::Is2PlayerSplitScreen()` |
+| `IsInChampionship()` | `0x001313C0` 64 | `0x001329C0` 64 | `0x00134CC0` 64 | `0x0013D7B0` 112 | `0x00131CE0` strong |  |  |
+| `IsTurnBasedCrash()` | `0x00131400` 64 | `0x00132A00` 64 | `0x00134D00` 64 | `0x0013D720` 112 | `0x00131E00` likely |  | `bool CB4Game::IsTurnBasedCrash()` |
+| `IsCrashMode()` | `0x00131440` 200 | `0x00132A40` 200 | `0x00134D40` 200 | `0x0013D610` 264 | `0x00131E40` strong |  |  |
+| `RequestNewGameMode(CB3GameMode*)` | `0x00131510` 68 | `0x00132B10` 104 | `0x00134E10` 104 | `0x0013D5A0` 104 | `0x00131F10` strong |  | `void CB4Game::RequestNewGameMode(CB4GameMode *lpNewGameMode)` |
+| `IsSimulationPaused()` | `0x00131560` 44 | `0x00132B80` 44 | `0x00134E80` 44 | `0x0013D530` 100 | `0x00131F60` proven |  | `bool CB4Game::IsSimulationPaused()` |
+| `UpdatePostSimulation()` | `0x00131590` 304 | `0x00132BB0` 1116 | `0x00134EB0` 1120 | `0x0013D0A0` 660 | `0x00131F90` likely |  | `void CB4Game::UpdatePostSimulation()` |
+| `UpdateSimulation()` | `0x001316C0` 412 | `0x00133010` 1248 | `0x00135310` 1304 | `0x0013CCF0` 620 |  |  | `void CB4Game::UpdateSimulation()` |
+| `UpdatePreSimulation()` | `0x00131860` 536 | `0x001334F0` 1036 | `0x00135830` 1036 | `0x0013C820` 1004 |  |  | `void CB4Game::UpdatePreSimulation()` |
+| `Destruct()` | `0x00131A80` 288 | `0x00133900` 288 | `0x00135C40` 288 | `0x0013C510` 372 |  |  | `void CB4Game::Destruct()` |
+| `Release()` | `0x00131BA0` 128 | `0x00133A20` 128 | `0x00135D60` 128 | `0x0013C470` 156 |  |  | `void CB4Game::Release()` |
+| `Update()` | `0x00131C20` 3228 | `0x00133AA0` 5848 | `0x00135DE0` 5784 | `0x0013B6E0` 3268 |  |  | `void CB4Game::Update()` |
+| `Prepare()` | `0x001328C0` 1824 | `0x00135180` 2088 | `0x00137480` 2172 | `0x0013ACC0` 2512 |  |  | `bool CB4Game::Prepare()` |
+| `Construct()` | `0x00132FE0` 1536 | `0x001359B0` 21044 | `0x00137D00` 1844 | `0x00135E80` 19620 |  |  | `void CB4Game::Construct()` |
+| `~CB3Game()` | `0x001337E0` 144 | `0x0013AE10` 144 | `0x00138650` 144 | `0x0013D880` 108 | `0x001344D0` likely |  |  |
+| `SetFrontendFrameRate(bool)` | `0x0019A1C0` 180 | `0x001CEEA0` 180 | `0x001C8110` 180 | `0x001DA3C0` 264 | `0x001D3EE0` strong |  | `void CB4Game::SetFrontendFrameRate(bool lbSetFrontendFrameRate)` |
+| `PreparePowerOff()` | `0x0019A280` 24 | `0x001CEF60` 8 | `0x001C81D0` 24 | `0x001DA3B0` 16 |  |  | `void CB4Game::PreparePowerOff()` |
+| `CheckPowerOff()` | `0x0019A2B0` 388 | `0x001CEF70` 8 | `0x001C8200` 612 | `0x001DA3A0` 16 |  |  | `void CB4Game::CheckPowerOff()` |
+| `PrepareHardware()` | `0x0019A440` 1012 | `0x001CEF80` 840 | `0x001C8470` 1240 | `0x001D9FA0` 980 |  |  | `bool CB4Game::PrepareHardware()` |
+| `ConstructHardware()` | `0x0019A840` 200 | `0x001CF2D0` 192 | `0x001C8950` 192 | `0x001D9E80` 232 |  |  | `void CB4Game::ConstructHardware()` |
+| `CB3Game()` |  |  |  | `0x0013D970` 704 |  |  | `CB4Game * CB4Game::CB4Game()` |
+| `GetCameraTimeStep()` |  |  |  | `0x00279E70` 36 |  |  |  |
+| `GetCurrentGameMode()` |  |  |  | `0x00130840` 36 |  |  |  |
+| `GetHalfFramerate()` |  |  |  | `0x0013FEE0` 36 |  |  |  |
+| `GetNumSimulationUpdatesRequired()` |  |  |  | `0x0013D390` 144 |  |  | `RwInt32 CB4Game::GetNumSimulationUpdatesRequired()` |
+| `GetNumSimulationUpdatesThisRenderFrame()` |  |  |  | `0x00313FA0` 36 |  |  |  |
+| `GetPausePlayerIndex()` |  |  |  | `0x0036E040` 36 |  |  |  |
+| `GetSimulationUpdateCount()` |  |  |  | `0x002AFCA0` 36 |  |  |  |
+| `IsPaused()` |  |  |  | `0x00140AA0` 44 |  |  |  |
+| `IsResumeRequested()` |  |  |  | `0x0035BB30` 44 |  |  |  |
+| `IsWorldPrepared()` |  |  |  | `0x002AF700` 36 |  |  |  |
+| `PrepareWorld()` |  |  |  | `0x0013C7E0` 56 |  |  | `bool CB4Game::PrepareWorld()` |
+| `Render()` |  |  |  | `0x0013D420` 76 |  |  | `void CB4Game::Render()` |
+| `RequestFramerateType(EGtFramerateType)` |  |  |  | `0x00135390` 44 |  |  |  |
+| `RequestGameUpdateState(EGameUpdateState)` |  |  |  | `0x0013FF10` 204 |  |  |  |
+| `RequestHalfFramerate(bool)` |  |  |  | `0x00135360` 44 |  |  |  |
+| `RequestPause(int)` |  |  |  | `0x00142650` 140 |  |  |  |
+| `RequestResume(int)` |  |  |  | `0x0036E290` 140 |  |  |  |
+| `RequestSimulationPause()` |  |  |  | `0x003982F0` 40 |  |  |  |
+| `RequestSimulationUnpause()` |  |  |  | `0x003982C0` 40 |  |  |  |
+| `RequestWorldPrepare()` |  |  |  | `0x003DF360` 56 |  |  |  |
+| `ResetGameMode()` |  |  |  | `0x0013C690` 328 |  |  | `bool CB4Game::ResetGameMode()` |
+| `RestartGameModeUpdateCode()` |  |  |  | `0x0013D470` 184 |  |  | `bool CB4Game::RestartGameModeUpdateCode()` |
+| `SetQuitNow()` |  |  |  | `0x00385D00` 40 |  |  |  |
+| `WillQuitNow()` |  |  |  | `0x0012ECC0` 36 |  |  |  |
 
 ## Burnout 2 layout of `CGame`
 
@@ -85,6 +86,180 @@ public:
     /* 0x4DA4 */ CText mText;
     /* 0x4DC4 */ int mApplicationInstance;
     /* 0x4DC8 */ void *mWindowHandle;
+};
+```
+
+## Burnout Revenge layout of `CB4Game`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Game/B4Game.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Game {  // size 0x64480
+    /* 0x000 */ CB4Settings mSettings;
+    /* 0x05C */ CB4Timer mTimer;
+    /* 0x0C0 */ CB4InputManager mInputManager;
+    /* 0x1A40 */ CGTFileSystem *mpFileSystem;
+    /* 0x1A44 */ CGtValueDatabase mValueDatabase;
+    /* 0x1A80 */ CB4AsyncDataLoader mAsyncDataLoader;
+    /* 0x2214 */ CGtCommsToolBase mCommsManager;
+    /* 0x22334 */ CB4Player maPlayers[2];
+    /* 0x22380 */ CB4PlayerCameraManager maPlayerCamera[2];
+    /* 0x26200 */ CMemoryDevicePS2 mMemoryCard;
+    /* 0x262E0 */ CGtRandom mNonDeterministicRNG;
+    /* 0x262E8 */ CGtTextureDictionary *mpGlobalTextureDictionary;
+    /* 0x262EC */ bool mbGlobalTextureDictionaryLoaded;
+    /* 0x262F0 */ CB4ProgressionDataStruct *mpProgressionData;
+    /* 0x262F4 */ bool mbProgressionDataLoaded;
+    /* 0x26300 */ CB4VehicleList mVehicleList;
+    /* 0x27300 */ CB4TrackList mTrackList;
+    /* 0x28300 */ bool mbVehicleListLoaded;
+    /* 0x28301 */ bool mbTrackListLoaded;
+    /* 0x28302 */ bool mbInputManagerPrepared;
+    /* 0x28308 */ CB4FrontEnd mGameModeFrontEnd;
+    /* 0x28338 */ CB4OnePlayerStage mGameModeOnePlayerRace;
+    /* 0x2834C */ CB4TwoPlayerSplitScreenStage mGameModeTwoPlayerRace;
+    /* 0x28368 */ CB4OnlineStage mGameModeOnlineRace;
+    /* 0x28398 */ CB4SingleRaceLogic mOfflineSingleRaceLogic;
+    /* 0x284A0 */ CB4CrashModeLogic mOfflineCrashModeLogic;
+    /* 0x289C0 */ CB4SingleRevengeLogic mOfflineSingleRevengeLogic;
+    /* 0x28AD4 */ CB4SingleRoadRageLogic mOfflineSingleRoadRageLogic;
+    /* 0x28D50 */ CB4MultiplayerRoadRageLogic mOfflineMultiplayerRoadRageLogic;
+    /* 0x28EA8 */ CB4BurningLapLogic mOfflineSingleBurningLapLogic;
+    /* 0x28FBC */ CB4EliminatorLogic mOfflineSingleEliminatorLogic;
+    /* 0x290D0 */ CB4CompCrashModeLogic mOfflineCompCrashModeLogic;
+    /* 0x295F0 */ CB4PartyCrashModeLogic mOfflinePartyCrashModeLogic;
+    /* 0x29B10 */ CB4TourCrashModeLogic mOfflineTourCrashModeLogic;
+    /* 0x2A030 */ CB4OnlineSingleRaceLogic mOnlineSingleRaceLogic;
+    /* 0x2A234 */ CB4OnlineRevengeLogic mOnlineRevengeLogic;
+    /* 0x2A350 */ CB4OnlineRoadRageLogic mOnlineRoadRageModeLogic;
+    /* 0x2A460 */ CB4OnlineGolfCrashModeLogic mOnlineGolfCrashModeLogic;
+    /* 0x2A990 */ CB4OnlineCompCrashModeLogic mOnlineCompCrashModeLogic;
+    /* 0x2AEC0 */ CB4OnlinePartyCrashModeLogic mOnlinePartyCrashModeLogic;
+    /* 0x2B3F0 */ CB4CarViewerLogic mCarViewerLogic;
+    /* 0x2B4D0 */ CB4SingleChallenge mSingleChallenge;
+    /* 0x36630 */ CB4ChampionshipChallenge mChampionshipChallenge;
+    /* 0x41790 */ CB4TurnBasedCrashParty mTurnBasedCrashPartyChallenge;
+    /* 0x4C900 */ CB4TurnBasedCrashTour mTurnBasedCrashTourChallenge;
+    /* 0x57A78 */ CB4SecondaryRewardsManager mSecondaryRewardsManager;
+    /* 0x57ACC */ bool mbShutterClosed;
+    /* 0x57ACD */ bool mbProgressionPage;
+    /* 0x57ACE */ bool mbFrontEndFlow;
+    /* 0x57ACF */ bool mbLaunchedDemo;
+    /* 0x57AD0 */ CGtRGBA mClearFrameBufferColour;
+    /* 0x57AE0 */ CGtFramerateManager mFramerateManager;
+    /* 0x57B18 */ char mpacDemoPath[256];
+    /* 0x57C18 */ CB4GameMode *mpCurrentGameMode;
+    /* 0x57C1C */ CB4GameMode *mpRequestedGameMode;
+    /* 0x57C20 */ bool mbQuitNow;
+    /* 0x57C24 */ RwInt32 mnGamePausedByPlayer;
+    /* 0x57C28 */ RwInt32 mnRequestPause;
+    /* 0x57C2C */ RwInt32 mnRequestResume;
+    /* 0x57C30 */ EGtPrepareState mePrepareState;
+    /* 0x57C34 */ bool mbWorldPrepared;
+    /* 0x57C35 */ bool mbQuickWorldPrepare;
+    /* 0x57C36 */ bool mbClearFrameBufferDuringWorldPrepare;
+    /* 0x57C37 */ bool mbRequestForceHalfFramerate;
+    /* 0x57C38 */ bool mbForceHalfFramerate;
+    /* 0x57C3C */ EGtFramerateType meFramerateType;
+    /* 0x57C40 */ EGtFramerateType meDebugFramerateType;
+    /* 0x57C44 */ EGtPrepareState meHardwarePrepareState;
+    /* 0x57C48 */ void *mpProgressionDataBuffer;
+    /* 0x57C4C */ bool mbPowerOffTriggered;
+    /* 0x57C4D */ bool mbDev9Loaded;
+    /* 0x57C4E */ bool mbRequestRestartGameModeWithNewConfig;
+    /* 0x57C4F */ bool mbIsCrashMode;
+    /* 0x57C50 */ bool mbIsLapEliminatorMode;
+    /* 0x57C51 */ bool mbIsTrafficAttackMode;
+    /* 0x57C52 */ bool mbIsRoadRageMode;
+    /* 0x57C54 */ RwInt32 mnSimulationUpdateCount;
+    /* 0x57C58 */ RwReal mrCameraTimeStep;
+    /* 0x57C5C */ EGameUpdateState meRequestedUpdateState;
+    /* 0x57C60 */ EGameUpdateState meUpdateState;
+    /* 0x57C64 */ bool mbPlay;
+    /* 0x57C65 */ bool mbRequestSimulationPause;
+    /* 0x57C66 */ bool mbRequestSimulationUnpause;
+    /* 0x57C67 */ bool mbBootNFLStreet2Demo;
+    /* 0x57C70 */ char macMainVDBBuffer[51200];
+    /* 0x64470 */ RwReal mrGamePlayTime;
+    /* 0x64474 */ RwReal mrMaxGamePlayTime;
+    // methods
+    // CB4Game(const CB4Game &);
+    // CB4Game();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void SetQuitNow();
+    // bool WillQuitNow();
+    // void SetBootNFLStreet2DemoNow();
+    // bool WillBootNFLStreet2DemoNow();
+    // CB4GameMode * GetCurrentGameMode();
+    // void RequestNewGameMode(CB4GameMode *);
+    // CB4StageLogic * GetCurrentStageLogic();
+    // CB4GameMode * GetRequestedGameMode();
+    // void RequestPause(int);
+    // void RequestResume(int);
+    // bool IsPaused();
+    // bool IsPauseRequested();
+    // bool IsResumeRequested();
+    // RwInt32 GetPausePlayerIndex();
+    // void CheckPowerOff();
+    // void PreparePowerOff();
+    // bool CheckFatalDiskError();
+    // void RequestWorldPrepare(bool);
+    // void ClearFrameBufferDuringWorldPrepare(GtMathPs2::CGtV4d);
+    // bool IsWorldPrepared();
+    // void SetFrontendFrameRate(bool);
+    // void RequestHalfFramerate(bool);
+    // bool GetHalfFramerate();
+    // void RequestFramerateType(EGtFramerateType);
+    // EGtFramerateType GetFramerateType();
+    // bool OnlineUpdate();
+    // bool OfflineUpdate();
+    // RwInt32 GetNumSimulationUpdatesThisRenderFrame();
+    // void RequestGameUpdateState(EGameUpdateState);
+    // EGameUpdateState GetRequestedGameUpdateState();
+    // EGameUpdateState GetCurrentGameUpdateState();
+    // bool IsNewRequestedGameUpdateState();
+    // bool IsCrashMode();
+    // void SetIsCrashMode(bool);
+    // void SetIsLapEliminatorMode(bool);
+    // bool IsTrafficAttackMode();
+    // void SetIsTrafficAttackMode(bool);
+    // bool IsRoadRageMode();
+    // void SetIsRoadRageMode(bool);
+    // bool IsLapEliminatorMode();
+    // bool IsInChampionship();
+    // bool IsTurnBasedCrash();
+    // bool Is2PlayerSplitScreen();
+    // bool IsMultiplayerMode();
+    // RwReal GetCameraTimeStep() const;
+    // RwReal GetCameraTimeStepNoSlowMo() const;
+    // RwInt32 GetSimulationUpdateCount() const;
+    // void AttemptToInsertExtraSimulationUpdates(int);
+    // void RequestSimulationPause();
+    // void RequestSimulationUnpause();
+    // bool IsSimulationPaused();
+    // void BootNFLStreet2Demo();
+    // void DrawQuickLoadScreen();
+    // void SetDemoPath(char *);
+    // RwChar * GetDemoPath();
+    // void GetSendRecvFigures(int *, int *, int *, int *, int **, int **);
+    // void ConstructHardware();
+    // bool PrepareHardware();
+    // bool PrepareWorld();
+    // void UpdatePreSimulation();
+    // void UpdateSimulation();
+    // void UpdatePostSimulation();
+    // bool ResetGameMode();
+    // RwInt32 GetNumSimulationUpdatesRequired();
+    // void Render();
+    // void UpdateVideoCapture();
+    // bool RestartGameModeUpdateCode();
+    // void SleepToAllowWorkerThreadsToRun();
+    // void DisplayInsertControllerMessage();
+    // void CalculateSendRecvFigures();
 };
 ```
 

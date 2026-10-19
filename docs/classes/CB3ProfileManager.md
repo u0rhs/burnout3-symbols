@@ -8,19 +8,44 @@
 - **Source file:** `B3Profile.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 6
 - **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ProfileManager`, size 0x1D08, methods in `GameSource/Game/B4ProfileManager.cpp` ([layout](#burnout-revenge-layout-of-cb4profilemanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `LockAll()` | `0x00134E50` 12 | `0x0013CCC0` 84 | `0x0013A8C0` 84 | `0x00147E10` 76 | `0x00136480` likely |  |
-| `UnlockAll()` | `0x00134E60` 12 | `0x0013CD20` 84 | `0x0013A920` 84 | `0x00147DC0` 76 | `0x00136490` likely |  |
-| `UpdateProfile(EChallengeMedal,int)` | `0x00134E70` 12 | `0x0013CD80` 116 | `0x0013A980` 116 | `0x00147D40` 92 | `0x001364A0` likely |  |
-| `Prepare()` | `0x00134E80` 1728 | `0x0013CE00` 1728 | `0x0013AA00` 2320 | `0x00147CD0` 112 | `0x001364B0` unverified |  |
-| `Construct()` | `0x00135540` 8 | `0x0013D4C0` 8 | `0x0013B310` 8 | `0x00147C60` 108 | `0x00136E00` likely |  |
-| `GetActiveProfile()` |  |  |  | `0x00147DA0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `LockAll()` | `0x00134E50` 12 | `0x0013CCC0` 84 | `0x0013A8C0` 84 | `0x00147E10` 76 | `0x00136480` likely |  | `void CB4ProfileManager::LockAll()` |
+| `UnlockAll()` | `0x00134E60` 12 | `0x0013CD20` 84 | `0x0013A920` 84 | `0x00147DC0` 76 | `0x00136490` likely |  | `void CB4ProfileManager::UnlockAll()` |
+| `UpdateProfile(EChallengeMedal,int)` | `0x00134E70` 12 | `0x0013CD80` 116 | `0x0013A980` 116 | `0x00147D40` 92 | `0x001364A0` likely |  |  |
+| `Prepare()` | `0x00134E80` 1728 | `0x0013CE00` 1728 | `0x0013AA00` 2320 | `0x00147CD0` 112 | `0x001364B0` unverified |  | `bool CB4ProfileManager::Prepare()` |
+| `Construct()` | `0x00135540` 8 | `0x0013D4C0` 8 | `0x0013B310` 8 | `0x00147C60` 108 | `0x00136E00` likely |  | `void CB4ProfileManager::Construct()` |
+| `GetActiveProfile()` |  |  |  | `0x00147DA0` 28 |  |  |  |
+
+## Burnout Revenge layout of `CB4ProfileManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Game/B4ProfileManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ProfileManager {  // size 0x1D08
+    /* 0x000 */ CB4Profile maProfiles[1];
+    /* 0x1D00 */ CB4Profile *mpActiveProfile;
+    // methods
+    // CB4ProfileManager(const CB4ProfileManager &);
+    // CB4ProfileManager();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void UnlockAll();
+    // void LockAll();
+    // void CompleteAll();
+    // void SetProfileToActive(int);
+    // CB4Profile * GetActiveProfile();
+};
+```
 
 ## Notes
 

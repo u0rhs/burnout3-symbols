@@ -8,16 +8,56 @@
 - **Source file:** `B3CarSelectState.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 3
 - **vtable (DNAT_200):** `0x004402E8`, 12 bytes = 3 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 1 virtual functions)
+- **Burnout Revenge counterpart:** `CB4CarSelectState`, size 0x080, methods in `GameSource/Menu/States/Offline/B4CarSelectState.cpp` ([layout](#burnout-revenge-layout-of-cb4carselectstate))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x002D15E0` 1836 | `0x00319FC0` 1888 | `0x0034C3A0` 1384 | `0x00346A00` 988 |  |  |
-| `CB3CarSelectState()` |  |  |  | `0x00345360` 60 |  |  |
-| `CarSelectPrepare()` |  |  |  | `0x00346DE0` 204 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x002D15E0` 1836 | `0x00319FC0` 1888 | `0x0034C3A0` 1384 | `0x00346A00` 988 |  |  | `void CB4CarSelectState::Action(EGtStateAction leAction, void *lpOwner, void *lpActionData, void *lpUserData)` |
+| `CB3CarSelectState()` |  |  |  | `0x00345360` 60 |  |  |  |
+| `CarSelectPrepare()` |  |  |  | `0x00346DE0` 204 |  |  |  |
+
+## Burnout Revenge layout of `CB4CarSelectState`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 83 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CarSelectState : public CGtState {  // size 0x080
+    // base CGtState at 0x000
+    /* 0x010 */ CB4CarSelectService mCarSelectService;
+    /* 0x014 */ RwInt32 mnCarIndex;
+    /* 0x018 */ bool mabRecievedFinalChoice[6];
+    /* 0x020 */ long unsigned int maCarIDs[6];
+    /* 0x050 */ int manCarColours[6];
+    /* 0x068 */ RwReal mrTimeLeft;
+    /* 0x06C */ bool mbReadyToRender;
+    /* 0x06D */ bool mbCachedVideoRendering;
+    /* 0x06E */ bool mbDiferStartup;
+    /* 0x06F */ bool mbFillInAllCars;
+    /* 0x070 */ EB4CarSelectStage meStage;
+    /* 0x074 */ EB4CarSelectEnterStage meEnterStage;
+    /* 0x078 */ EB4MenuChoicesOnline meOnlineChoices;
+    /* 0x07C */ CB4UnlockedVehicleInfo *mpUnlockedVehicleInfo;
+    // methods
+    // CB4CarSelectState(const CB4CarSelectState &);
+    // CB4CarSelectState();
+    // virtual void Action(EGtStateAction, void *, void *, void *);
+    // bool IsReadyToRender() const;
+    // RwReal GetOnlineTimeLeft() const;
+    // GtID GetNetworkPlayerCarID(int) const;
+    // void EnterUnlockedState() const;
+    // bool DoEnter(EGtStateAction, void *, void *, void *);
+    // bool DoMain(EGtStateAction, void *, void *, void *);
+    // void SendSelectedCar();
+    // void SelectedCarReceived();
+    // void SendFinalChoiceSelectedCar();
+    // static void CarSelectedFinalChoiceMessageArrivedCallback(CGtNetworkMessage *, int, void *);
+    // void FillInCar(int);
+};
+```
 
 ## Notes
 

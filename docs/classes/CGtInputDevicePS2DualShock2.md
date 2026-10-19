@@ -9,18 +9,36 @@
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 5
 - **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FF00`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
+- **Burnout Revenge counterpart:** `CGtInputDevicePS2DualShock2`, size 0x0F0, methods in `GameShared/GameClasses/System/Input/Ps2/GtInputDevicePS2DualShock2.cpp` ([layout](#burnout-revenge-layout-of-cgtinputdeviceps2dualshock2))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update()` | `0x001DA320` 2384 | `0x001D6B20` 2384 | `0x00209820` 2384 | `0x0021A970` 2876 | `0x00214CD0` strong |  |
-| `Prepare()` | `0x001DAC70` 60 | `0x001D7470` 60 | `0x0020A170` 60 | `0x0021A800` 76 | `0x00215620` strong |  |
-| `CGtInputDevicePS2DualShock2()` |  |  |  | `0x0013EE90` 60 |  |  |
-| `GetAnalogueButtonState(EGtPS2DualShockDeviceControl,int,int,unsigned char*)` |  |  |  | `0x0021A850` 136 |  |  |
-| `GetAnalogueTriggerState(EGtPS2DualShockDeviceControl,int,int,unsigned char*)` |  |  |  | `0x0021A8E0` 136 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update()` | `0x001DA320` 2384 | `0x001D6B20` 2384 | `0x00209820` 2384 | `0x0021A970` 2876 | `0x00214CD0` strong |  | `void CGtInputDevicePS2DualShock2::Update()` |
+| `Prepare()` | `0x001DAC70` 60 | `0x001D7470` 60 | `0x0020A170` 60 | `0x0021A800` 76 | `0x00215620` strong |  | `bool CGtInputDevicePS2DualShock2::Prepare()` |
+| `CGtInputDevicePS2DualShock2()` |  |  |  | `0x0013EE90` 60 |  |  |  |
+| `GetAnalogueButtonState(EGtPS2DualShockDeviceControl,int,int,unsigned char*)` |  |  |  | `0x0021A850` 136 |  |  | `void CGtInputDevicePS2DualShock2::GetAnalogueButtonState(EGtPS2DualShockDeviceControl leControl, int lnSceControl, int lnSocketNumber, unsigned char *lpuPadControls)` |
+| `GetAnalogueTriggerState(EGtPS2DualShockDeviceControl,int,int,unsigned char*)` |  |  |  | `0x0021A8E0` 136 |  |  | `void CGtInputDevicePS2DualShock2::GetAnalogueTriggerState(EGtPS2DualShockDeviceControl leControl, int lnSceControl, int lnSocketNumber, unsigned char *lpuPadControls)` |
+
+## Burnout Revenge layout of `CGtInputDevicePS2DualShock2`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 276 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtInputDevicePS2DualShock2 : public CGtInputDevicePS2DualShock {  // size 0x0F0
+    // base CGtInputDevicePS2DualShock at 0x000
+    // methods
+    // CGtInputDevicePS2DualShock2(const CGtInputDevicePS2DualShock2 &);
+    // CGtInputDevicePS2DualShock2();
+    // bool Prepare();
+    // virtual void Update();
+    // void GetAnalogueButtonState(EGtPS2DualShockDeviceControl, int, int, unsigned char *);
+    // void GetAnalogueTriggerState(EGtPS2DualShockDeviceControl, int, int, unsigned char *);
+};
+```
 
 ## Notes
 

@@ -6,14 +6,37 @@
 
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4ReplayFileHeader`, size 0x060 ([layout](#burnout-revenge-layout-of-cb4replayfileheader))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `operator =(const CB3ReplayFileHeader&)` |  |  |  | `0x003C4080` 268 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `operator =(const CB3ReplayFileHeader&)` |  |  |  | `0x003C4080` 268 |  |  |  |
+
+## Burnout Revenge layout of `CB4ReplayFileHeader`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 73 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ReplayFileHeader {  // size 0x060
+    /* 0x000 */ ENormalOfflineGameModes meType;
+    /* 0x004 */ RwInt32 mnVersion;
+    /* 0x008 */ RwInt32 mnFrames;
+    /* 0x00C */ RwInt32 mnNumPlayerCars;
+    /* 0x010 */ RwInt32 mnNumAICars;
+    /* 0x014 */ RwInt32 mnFileSize;
+    /* 0x018 */ GtID mTrackID;
+    /* 0x020 */ GtID mStageID;
+    /* 0x028 */ long unsigned int maCarIDs[6];
+    /* 0x058 */ signed char man8CarColours[6];
+    // methods
+    // CB4ReplayFileHeader(const CB4ReplayFileHeader &);
+    // CB4ReplayFileHeader();
+};
+```
 
 ## Notes
 

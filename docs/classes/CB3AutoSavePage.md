@@ -11,16 +11,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x003C5330` 8 | `0x00442350` 8 | `0x0046ACA0` 12 | `0x004813E0` 16 |  |  |
-| `Update()` | `0x003C5340` 56 | `0x00442360` 56 | `0x0046ACB0` 692 | `0x00481390` 72 |  |  |
-| `Prepare()` | `0x003C5380` 128 | `0x004423A0` 128 | `0x0046AF70` 212 | `0x004812E0` 164 |  |  |
-| `CB3AutoSavePage()` |  |  |  | `0x00342380` 60 |  |  |
-| `ProcessMemoryCardEvent(EB3MenuFlowFSMEvents)` |  |  | `0x0046AB80` 276 |  |  |  |
-| `ShowMessage(EAutoSaveProfilePageMessages)` |  |  | `0x0046A620` 1364 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x003C5330` 8 | `0x00442350` 8 | `0x0046ACA0` 12 | `0x004813E0` 16 |  |  |  |
+| `Update()` | `0x003C5340` 56 | `0x00442360` 56 | `0x0046ACB0` 692 | `0x00481390` 72 |  |  |  |
+| `Prepare()` | `0x003C5380` 128 | `0x004423A0` 128 | `0x0046AF70` 212 | `0x004812E0` 164 |  |  |  |
+| `CB3AutoSavePage()` |  |  |  | `0x00342380` 60 |  |  |  |
+| `ProcessMemoryCardEvent(EB3MenuFlowFSMEvents)` |  |  | `0x0046AB80` 276 |  |  |  |  |
+| `ShowMessage(EAutoSaveProfilePageMessages)` |  |  | `0x0046A620` 1364 |  |  |  |  |
 
 ## Notes
 

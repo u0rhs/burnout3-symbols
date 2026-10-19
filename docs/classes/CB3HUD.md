@@ -8,26 +8,74 @@
 - **Source file:** `B3HUDManager.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 13
 - **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4HUD`, size 0x2E8, methods in `GameSource/Hud/B4HUDManager.cpp` ([layout](#burnout-revenge-layout-of-cb4hud))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetHUDMode(EHUDMode)` | `0x0016C5A0` 376 | `0x001878A0` 532 | `0x001822C0` 532 | `0x00199290` 524 | `0x001A00B0` strong |  |
-| `GetHandlePosition(const GtMathPs2::CGtV2d&)` | `0x0016C720` 124 | `0x00187AC0` 124 | `0x001824E0` 124 | `0x001991A0` 124 | `0x001A0240` strong |  |
-| `GetAlignPos(EHUDAlign)` | `0x0016C7A0` 164 | `0x00187B40` 164 | `0x00182560` 164 | `0x001990D0` 196 | `0x001A02C0` strong |  |
-| `IsDoingTransition()` | `0x0016C850` 40 | `0x00187BF0` 40 | `0x00182610` 40 | `0x00198EE0` 56 | `0x001A0370` proven |  |
-| `Update(float)` | `0x0016C880` 444 | `0x00187C20` 444 | `0x00182640` 428 | `0x00198DA0` 316 | `0x001A03A0` strong |  |
-| `CB3HUD()` |  |  |  | `0x00199D40` 80 |  |  |
-| `Construct(int)` |  |  |  | `0x00198C00` 184 |  |  |
-| `GetHUDMode()` |  |  |  | `0x0043D840` 28 |  |  |
-| `GetScene()` |  |  |  | `0x00196F90` 28 |  |  |
-| `Prepare()` |  |  |  | `0x00198CC0` 224 |  |  |
-| `Release()` |  |  |  | `0x001990A0` 40 |  |  |
-| `RemoveAllComponents()` |  |  |  | `0x00199220` 112 |  |  |
-| `UpdateHUDSwitch(float)` |  |  |  | `0x00198F20` 344 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetHUDMode(EHUDMode)` | `0x0016C5A0` 376 | `0x001878A0` 532 | `0x001822C0` 532 | `0x00199290` 524 | `0x001A00B0` strong |  | `void CB4HUD::SetHUDMode(EHUDMode leMode)` |
+| `GetHandlePosition(const GtMathPs2::CGtV2d&)` | `0x0016C720` 124 | `0x00187AC0` 124 | `0x001824E0` 124 | `0x001991A0` 124 | `0x001A0240` strong |  |  |
+| `GetAlignPos(EHUDAlign)` | `0x0016C7A0` 164 | `0x00187B40` 164 | `0x00182560` 164 | `0x001990D0` 196 | `0x001A02C0` strong |  | `CGtV2d CB4HUD::GetAlignPos(EHUDAlign leAlign)` |
+| `IsDoingTransition()` | `0x0016C850` 40 | `0x00187BF0` 40 | `0x00182610` 40 | `0x00198EE0` 56 | `0x001A0370` proven |  |  |
+| `Update(float)` | `0x0016C880` 444 | `0x00187C20` 444 | `0x00182640` 428 | `0x00198DA0` 316 | `0x001A03A0` strong |  | `void CB4HUD::Update(float lrTimeStep)` |
+| `CB3HUD()` |  |  |  | `0x00199D40` 80 |  |  |  |
+| `Construct(int)` |  |  |  | `0x00198C00` 184 |  |  | `void CB4HUD::Construct(EPlayerCarIndex lePlayer)` (same name, different parameters) |
+| `GetHUDMode()` |  |  |  | `0x0043D840` 28 |  |  |  |
+| `GetScene()` |  |  |  | `0x00196F90` 28 |  |  |  |
+| `Prepare()` |  |  |  | `0x00198CC0` 224 |  |  | `void CB4HUD::Prepare()` |
+| `Release()` |  |  |  | `0x001990A0` 40 |  |  | `void CB4HUD::Release()` |
+| `RemoveAllComponents()` |  |  |  | `0x00199220` 112 |  |  | `void CB4HUD::RemoveAllComponents()` |
+| `UpdateHUDSwitch(float)` |  |  |  | `0x00198F20` 344 |  |  | `void CB4HUD::UpdateHUDSwitch(float lrInterp)` |
+
+## Burnout Revenge layout of `CB4HUD`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 36 file(s), e.g. `GameSource/Game/B4OnePlayerStage.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HUD {  // size 0x2E8
+    /* 0x000 */ CB4HUDMessageManager mMessageManager;
+    /* 0x270 */ RwReal mrTimer;
+    /* 0x274 */ EHUDMode meMode;
+    /* 0x278 */ EHUDMode mePrevMode;
+    /* 0x27C */ EHUDMode meNextMode;
+    /* 0x280 */ bool mbShouldSetMessagesOnHold;
+    /* 0x284 */ EPlayerCarIndex mePlayer;
+    /* 0x288 */ CGt2dScene mScene;
+    /* 0x2C0 */ CGtV2d mMinPos;
+    /* 0x2C8 */ CGtV2d mMaxPos;
+    /* 0x2D0 */ RwInt32 mnLayerCount;
+    /* 0x2D4 */ RwInt32 mnObjectCount;
+    /* 0x2D8 */ RwInt32 mnChildFrameCount;
+    /* 0x2DC */ CGt2dFrame *mpClipFrame;
+    /* 0x2E0 */ CB4HUDComponent *mpFirstComponent;
+    // methods
+    // CB4HUD(const CB4HUD &);
+    // CB4HUD();
+    // void Construct(EPlayerCarIndex);
+    // void Prepare();
+    // void Update(float);
+    // void Release();
+    // void Destruct();
+    // EHUDMode GetHUDMode();
+    // void SetHUDMode(EHUDMode);
+    // bool IsDoingTransition();
+    // CGt2dFrame * GetFrame();
+    // CGtV2d GetAlignPos(EHUDAlign);
+    // CGtV2d GetHandlePosition(const GtMathPs2::CGtV2d &);
+    // CGt2dScene * GetScene();
+    // CGt2dFrame * GetClipFrame();
+    // bool AreMessagesOnHold();
+    // void SetMessagesOnHold(bool);
+    // bool ShouldSetMessagesOnHold();
+    // void UpdateHUDSwitch(float);
+    // void CreateClipFrame(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &);
+    // void DestroyClipFrame();
+    // void RemoveAllComponents();
+};
+```
 
 ## Notes
 

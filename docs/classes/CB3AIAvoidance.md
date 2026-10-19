@@ -8,20 +8,21 @@
 - **Source file:** `B3AIAvoidance.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 6
 - **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4AIAvoidance`, size 0x4B0, methods in `GameSource/World/B4AIAvoidance.cpp` ([layout](#burnout-revenge-layout-of-cb4aiavoidance))
 - **Burnout 2 ancestor (by name):** `CAIAvoidance`, size 0xE98, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GenerateTarget()` | `0x0013D750` 3540 | `0x00147120` 3632 | `0x001450C0` 3540 | `0x00149330` 5344 | `0x00140A30` strong | `void CAIAvoidance::GenerateTarget()` |
-| `Release()` | `0x0013E530` 8 | `0x00147F50` 8 | `0x00145EA0` 8 | `0x00149300` 40 | `0x00141880` proven |  |
-| `Update()` | `0x0013E540` 80 | `0x00147F60` 560 | `0x00145EB0` 560 | `0x00149250` 168 | `0x00141890` likely | `void CAIAvoidance::Update(int lbForceUpdate)` (same name, different parameters) |
-| `Prepare()` | `0x0013E590` 136 | `0x00148190` 172 | `0x001460E0` 172 | `0x00149140` 272 | `0x001418F0` strong |  |
-| `Construct()` | `0x0013E620` 40 | `0x00148240` 76 | `0x00146190` 76 | `0x001490E0` 92 | `0x00141980` proven |  |
-| `CB3AIAvoidance()` |  |  |  | `0x00191250` 76 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GenerateTarget()` | `0x0013D750` 3540 | `0x00147120` 3632 | `0x001450C0` 3540 | `0x00149330` 5344 | `0x00140A30` strong | `void CAIAvoidance::GenerateTarget()` | `void CB4AIAvoidance::GenerateTarget()` |
+| `Release()` | `0x0013E530` 8 | `0x00147F50` 8 | `0x00145EA0` 8 | `0x00149300` 40 | `0x00141880` proven |  | `void CB4AIAvoidance::Release()` |
+| `Update()` | `0x0013E540` 80 | `0x00147F60` 560 | `0x00145EB0` 560 | `0x00149250` 168 | `0x00141890` likely | `void CAIAvoidance::Update(int lbForceUpdate)` (same name, different parameters) | `void CB4AIAvoidance::Update()` |
+| `Prepare()` | `0x0013E590` 136 | `0x00148190` 172 | `0x001460E0` 172 | `0x00149140` 272 | `0x001418F0` strong |  | `bool CB4AIAvoidance::Prepare()` |
+| `Construct()` | `0x0013E620` 40 | `0x00148240` 76 | `0x00146190` 76 | `0x001490E0` 92 | `0x00141980` proven |  | `void CB4AIAvoidance::Construct()` |
+| `CB3AIAvoidance()` |  |  |  | `0x00191250` 76 |  |  |  |
 
 ## Burnout 2 layout of `CAIAvoidance`
 
@@ -118,6 +119,42 @@ public:
     // void CAIAvoidance::CheckRaceCar()  [0x0021E3C0]
     // void CAIAvoidance::Reset()  [0x0021EAB0]
     // int CAIAvoidance::Init()  [0x0021EF10]
+};
+```
+
+## Burnout Revenge layout of `CB4AIAvoidance`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 305 file(s), e.g. `GameShared/GameClasses/System/MemoryCard/NewMemoryCard/GtMemoryCardManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AIAvoidance {  // size 0x4B0
+    /* 0x000 */ CB4AIAvoidanceMap mMap;
+    /* 0x460 */ CGtV3d mDesiredPosition;
+    /* 0x470 */ CGtV3d mDesiredDirection;
+    /* 0x480 */ RwReal mrCurrentSteerAngle;
+    /* 0x484 */ RwReal mrTimeToDesiredDirection;
+    /* 0x488 */ RwReal mrDesiredSpeed;
+    /* 0x48C */ RwReal mrAggression;
+    /* 0x490 */ RwReal mrLeftRisk;
+    /* 0x494 */ RwReal mrRightRisk;
+    /* 0x498 */ RwReal mrTotalLeftRisk;
+    /* 0x49C */ RwReal mrTotalRightRisk;
+    /* 0x4A0 */ CB4AIArbitrator *mpArbitrator;
+    /* 0x4A4 */ CB4AICar *mpCar;
+    /* 0x4A8 */ CB4AIDriver *mpDriver;
+    /* 0x4AC */ RwInt8 mxDecision;
+    /* 0x4AD */ RwUInt8 mu8RightAvoidChannel;
+    /* 0x4AE */ RwUInt8 mu8LeftAvoidChannel;
+    /* 0x4AF */ RwUInt8 mu8UpdateTimer;
+    // methods
+    // CB4AIAvoidance(const CB4AIAvoidance &);
+    // CB4AIAvoidance();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void GenerateTarget();
 };
 ```
 

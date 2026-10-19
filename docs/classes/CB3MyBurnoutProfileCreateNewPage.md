@@ -11,21 +11,21 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetMenuOptions(CB3MyBurnoutProfileCreateNewPage::EMenuOptions,int)` | `0x003A4140` 948 | `0x0041DB50` 1148 | `0x004437D0` 1148 | `0x0045D9C0` 1012 |  |  |
-| `OnKeyboardShow()` | `0x003A4500` 8 | `0x0041DFD0` 8 | `0x00443C50` 8 | `0x0045D8A0` 16 |  |  |
-| `OnKeyboardCancel()` | `0x003A4510` 120 | `0x0041DFE0` 120 | `0x00443C60` 120 | `0x0045D810` 144 |  |  |
-| `OnKeyboardDone()` | `0x003A4590` 116 | `0x0041E060` 116 | `0x00443CE0` 116 | `0x0045D770` 160 |  |  |
-| `ProcessMemoryCardEvent(EB3MenuFlowFSMEvents)` | `0x003A4610` 676 | `0x0041E0E0` 676 | `0x00443D60` 676 | `0x0045D390` 980 |  |  |
-| `ShowMessage(ENewProfilePageMessages)` | `0x003A48C0` 1228 | `0x0041E390` 1228 | `0x00444010` 1228 | `0x0045CE00` 1416 |  |  |
-| `Release()` | `0x003A4D90` 44 | `0x0041E860` 44 | `0x004444E0` 44 | `0x0045CDC0` 56 |  |  |
-| `Update()` | `0x003A4DC0` 3668 | `0x0041E890` 3840 | `0x00444510` 3840 | `0x0045BD80` 4124 |  |  |
-| `Prepare()` | `0x003A5C20` 352 | `0x0041F790` 352 | `0x00445410` 352 | `0x0045BBC0` 448 |  |  |
-| `CB3MyBurnoutProfileCreateNewPage()` |  |  |  | `0x00342600` 60 |  |  |
-| `ShowProfileSummary(CB3Profile*)` |  |  |  | `0x0045D8B0` 260 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetMenuOptions(CB3MyBurnoutProfileCreateNewPage::EMenuOptions,int)` | `0x003A4140` 948 | `0x0041DB50` 1148 | `0x004437D0` 1148 | `0x0045D9C0` 1012 |  |  |  |
+| `OnKeyboardShow()` | `0x003A4500` 8 | `0x0041DFD0` 8 | `0x00443C50` 8 | `0x0045D8A0` 16 |  |  |  |
+| `OnKeyboardCancel()` | `0x003A4510` 120 | `0x0041DFE0` 120 | `0x00443C60` 120 | `0x0045D810` 144 |  |  |  |
+| `OnKeyboardDone()` | `0x003A4590` 116 | `0x0041E060` 116 | `0x00443CE0` 116 | `0x0045D770` 160 |  |  |  |
+| `ProcessMemoryCardEvent(EB3MenuFlowFSMEvents)` | `0x003A4610` 676 | `0x0041E0E0` 676 | `0x00443D60` 676 | `0x0045D390` 980 |  |  |  |
+| `ShowMessage(ENewProfilePageMessages)` | `0x003A48C0` 1228 | `0x0041E390` 1228 | `0x00444010` 1228 | `0x0045CE00` 1416 |  |  |  |
+| `Release()` | `0x003A4D90` 44 | `0x0041E860` 44 | `0x004444E0` 44 | `0x0045CDC0` 56 |  |  |  |
+| `Update()` | `0x003A4DC0` 3668 | `0x0041E890` 3840 | `0x00444510` 3840 | `0x0045BD80` 4124 |  |  |  |
+| `Prepare()` | `0x003A5C20` 352 | `0x0041F790` 352 | `0x00445410` 352 | `0x0045BBC0` 448 |  |  |  |
+| `CB3MyBurnoutProfileCreateNewPage()` |  |  |  | `0x00342600` 60 |  |  |  |
+| `ShowProfileSummary(CB3Profile*)` |  |  |  | `0x0045D8B0` 260 |  |  |  |
 
 ## Notes
 

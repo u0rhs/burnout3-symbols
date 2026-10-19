@@ -8,21 +8,55 @@
 - **Source file:** `B3DataLists.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 8
 - **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrackList`, size 0x1000, methods in `SharedClasses/DataLists/B4DataLists.cpp` ([layout](#burnout-revenge-layout-of-cb4tracklist))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetTrackRegion(unsigned long)` | `0x002119F0` 96 | `0x00220330` 128 | `0x0025FB30` 128 | `0x00263640` 144 | `0x00251870` proven |  |
-| `GetTrackIndexFromID(unsigned long)` | `0x00211A50` 56 | `0x002203B0` 56 | `0x0025FBB0` 56 | `0x002635D0` 112 | `0x002518E0` proven |  |
-| `IsTrackRightHandDrive(unsigned long)` | `0x00211A90` 140 | `0x002203F0` 196 | `0x0025FBF0` 196 | `0x00263550` 128 | `0x00251920` proven |  |
-| `IsTrackPointToPoint(unsigned long)` | `0x00211B20` 72 | `0x002204C0` 108 | `0x0025FCC0` 108 | `0x002634C0` 132 | `0x002519B0` proven |  |
-| `IsTrackMarathon(unsigned long)` | `0x00211B70` 44 | `0x00220530` 44 | `0x0025FD30` 44 | `0x00263480` 64 | `0x00251A00` proven |  |
-| `CreateTrackPathFromIndex(int,char*,int)` | `0x00211BA0` 176 | `0x00220560` 364 | `0x0025FD60` 364 | `0x00263400` 124 | `0x00251A30` proven |  |
-| `CreateTrackPathFromID(unsigned long,char*,int)` | `0x00211C50` 168 | `0x002206D0` 248 | `0x0025FED0` 248 | `0x00263310` 228 | `0x00251AE0` proven |  |
-| `DoesTrackExist(unsigned long)` | `0x00212210` 68 | `0x00220D10` 68 | `0x00260290` 68 | `0x00262B50` 56 | `0x00251E10` strong |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetTrackRegion(unsigned long)` | `0x002119F0` 96 | `0x00220330` 128 | `0x0025FB30` 128 | `0x00263640` 144 | `0x00251870` proven |  | `EB4TrackRegion CB4TrackList::GetTrackRegion(unsigned long lTrackID)` |
+| `GetTrackIndexFromID(unsigned long)` | `0x00211A50` 56 | `0x002203B0` 56 | `0x0025FBB0` 56 | `0x002635D0` 112 | `0x002518E0` proven |  | `RwInt32 CB4TrackList::GetTrackIndexFromID(unsigned long lTrackID)` |
+| `IsTrackRightHandDrive(unsigned long)` | `0x00211A90` 140 | `0x002203F0` 196 | `0x0025FBF0` 196 | `0x00263550` 128 | `0x00251920` proven |  | `bool CB4TrackList::IsTrackRightHandDrive(unsigned long lTrackID)` |
+| `IsTrackPointToPoint(unsigned long)` | `0x00211B20` 72 | `0x002204C0` 108 | `0x0025FCC0` 108 | `0x002634C0` 132 | `0x002519B0` proven |  | `bool CB4TrackList::IsTrackPointToPoint(unsigned long lTrackID)` |
+| `IsTrackMarathon(unsigned long)` | `0x00211B70` 44 | `0x00220530` 44 | `0x0025FD30` 44 | `0x00263480` 64 | `0x00251A00` proven |  | `bool CB4TrackList::IsTrackMarathon(unsigned long lTrackID)` |
+| `CreateTrackPathFromIndex(int,char*,int)` | `0x00211BA0` 176 | `0x00220560` 364 | `0x0025FD60` 364 | `0x00263400` 124 | `0x00251A30` proven |  | `void CB4TrackList::CreateTrackPathFromIndex(int lnTrackIndex, char *lpacDestString, int lnDestStringSize)` |
+| `CreateTrackPathFromID(unsigned long,char*,int)` | `0x00211C50` 168 | `0x002206D0` 248 | `0x0025FED0` 248 | `0x00263310` 228 | `0x00251AE0` proven |  | `void CB4TrackList::CreateTrackPathFromID(unsigned long lTrackID, char *lpacDestString, int lnDestStringSize)` |
+| `DoesTrackExist(unsigned long)` | `0x00212210` 68 | `0x00220D10` 68 | `0x00260290` 68 | `0x00262B50` 56 | `0x00251E10` strong |  | `bool CB4TrackList::DoesTrackExist(unsigned long lTrackID)` |
+
+## Burnout Revenge layout of `CB4TrackList`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 266 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrackList {  // size 0x1000
+    /* 0x000 */ RwInt32 mnVersionNumber;
+    /* 0x004 */ RwInt32 mnTrackCount;
+    /* 0x008 */ int mabTrackIsPointToPoint[52];
+    /* 0x0D8 */ int mabTrackIsRightHandDrive[52];
+    /* 0x1A8 */ int mabTrackArePlayerHeadlightsOn[52];
+    /* 0x278 */ long unsigned int maTrackIDs[52];
+    /* 0x418 */ CB4Strings *mapTrackStrings[52];
+    /* 0x4E8 */ unsigned char mau8Pad[2840];
+    // methods
+    // CB4TrackList(const CB4TrackList &);
+    // CB4TrackList();
+    // bool DoesTrackExist(unsigned long);
+    // void CreateTrackPathFromIndex(int, char *, int);
+    // bool IsTrackMarathon(unsigned long);
+    // bool IsTrackLongCourse(unsigned long);
+    // bool IsTrackPointToPoint(unsigned long);
+    // bool IsTrackRightHandDrive(unsigned long);
+    // bool IsTrackCrashJunction(unsigned long);
+    // bool ArePlayerHeadlightsOn(unsigned long);
+    // bool IsTrackReverse(unsigned long);
+    // RwInt32 GetTrackIndexFromID(unsigned long);
+    // EB4TrackRegion GetTrackRegion(unsigned long);
+    // EB4TrackLocale GetTrackLocale(unsigned long);
+    // void CreateTrackPathFromID(unsigned long, char *, int);
+};
+```
 
 ## Notes
 

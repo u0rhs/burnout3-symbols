@@ -6,19 +6,20 @@
 
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Methods per build:** B3DEBUG 5
+- **Burnout Revenge counterpart:** `CGtFileSystemPS2Host`, size 0x11C ([layout](#burnout-revenge-layout-of-cgtfilesystemps2host))
 - **Burnout 2 ancestor (by shared methods: `FileExists`, `GetFileObject`, `GetStatus`):** `CGTFileSystemPS2DVD`, size 0x018, declared in 1 file(s), e.g. `I:/GameShared/GameClasses/FileSystem/ps2/GTFileSystemPS2DVD.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetStatus()` |  | `0x001CE3E0` 8 |  |  |  |  |
-| `FileExists(const char*)` |  | `0x001CE3F0` 8 |  |  |  |  |
-| `GetSCEDeviceName()` |  | `0x001CE400` 12 |  |  |  |  |
-| `GetFileObject(unsigned int)` |  | `0x001CE9D0` 24 |  |  |  |  |
-| `Init(unsigned int,CGtFilePS2Host*,CGtFileBufferPS2Host*,const char*)` |  | `0x001CE9F0` 76 |  |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetStatus()` |  | `0x001CE3E0` 8 |  |  |  |  |  |
+| `FileExists(const char*)` |  | `0x001CE3F0` 8 |  |  |  |  |  |
+| `GetSCEDeviceName()` |  | `0x001CE400` 12 |  |  |  |  |  |
+| `GetFileObject(unsigned int)` |  | `0x001CE9D0` 24 |  |  |  |  |  |
+| `Init(unsigned int,CGtFilePS2Host*,CGtFileBufferPS2Host*,const char*)` |  | `0x001CE9F0` 76 |  |  |  |  |  |
 
 ## Burnout 2 layout of `CGTFileSystemPS2DVD`
 
@@ -38,6 +39,27 @@ public:
     // int CGTFileSystemPS2DVD::FileExists()  [0x001FBB60]
     // CGTFile *CGTFileSystemPS2DVD::GetFileObject(unsigned int nIndex)  [0x001FC3A0]
     // int CGTFileSystemPS2DVD::Init(unsigned int nMaxOpenFiles, CGTFilePS2DVD *pFileArray, CGTFileBufferPS2DVD *pBufferArray, char *sRWName, GtsConfigTag *lpConfig)  [0x001FC3C0]
+};
+```
+
+## Burnout Revenge layout of `CGtFileSystemPS2Host`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameShared/GameClasses/System/FileSystem/ps2/GtFileSystemPS2ATMon.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtFileSystemPS2Host : public CGTFileSystem {  // size 0x11C
+    // base CGTFileSystem at 0x000
+    /* 0x114 */ CGtFilePS2Host *maFileArray;
+    /* 0x118 */ CGtFileBufferPS2Host *maBufferArray;
+    /* static */ RwInt32 kMAX_PATH;
+    // methods
+    // CGtFileSystemPS2Host(const CGtFileSystemPS2Host &);
+    // CGtFileSystemPS2Host();
+    // virtual CGTFile * GetFileObject(unsigned int);
+    // virtual RwBool FileExists(const char *);
+    // virtual EFileSystemStatus GetStatus();
+    // RwBool Init(unsigned int, CGtFilePS2Host *, CGtFileBufferPS2Host *, CGTRtFile *, const char *);
+    // virtual RwChar * GetSCEDeviceName();
 };
 ```
 

@@ -8,23 +8,164 @@
 - **Source file:** `B3SoundTrafficManager.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 10
 - **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundTrafficManager`, size 0x40C0, methods in `GameSource/Sound/Traffic/B4SoundTrafficManager.cpp` ([layout](#burnout-revenge-layout-of-cb4soundtrafficmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `IsBoostPassPlaying()` | `0x00236F60` 196 | `0x00260AB0` 196 | `0x00299980` 196 | `0x0029E180` 312 | `0x00276A30` strong |  |
-| `GetNextHornVariant(bool)` | `0x00237030` 268 | `0x00260B80` 292 | `0x00299A50` 268 | `0x0029DFE0` 412 | `0x00276B00` strong |  |
-| `CanStartHorning()` | `0x00237140` 12 | `0x00260CB0` 12 | `0x00299B60` 12 | `0x0029DFC0` 32 | `0x00276C10` proven |  |
-| `CrashingTraffic(CB3VehiclePhysics*)` | `0x00237150` 224 | `0x00260CC0` 224 | `0x00299B70` 224 | `0x0029DE70` 324 | `0x00276C20` proven |  |
-| `Release()` | `0x00237230` 124 | `0x00260DA0` 124 | `0x00299C50` 124 | `0x0029DD00` 144 | `0x00276D00` proven |  |
-| `Update(bool)` | `0x002372B0` 1328 | `0x00260E20` 1488 | `0x00299CD0` 1452 | `0x0029D690` 1608 | `0x00276D80` proven |  |
-| `Prepare()` | `0x002377E0` 136 | `0x002613F0` 136 | `0x0029A280` 136 | `0x0029D5E0` 164 | `0x002772D0` proven |  |
-| `Construct()` | `0x00237870` 3004 | `0x00261480` 3028 | `0x0029A310` 3028 | `0x0029C570` 4208 | `0x00277360` proven |  |
-| `CB3SoundTrafficManager()` |  |  |  | `0x002B1A00` 80 |  |  |
-| `FindTrafficID(int,signed char)` |  |  |  | `0x0029DD90` 216 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `IsBoostPassPlaying()` | `0x00236F60` 196 | `0x00260AB0` 196 | `0x00299980` 196 | `0x0029E180` 312 | `0x00276A30` strong |  | `bool CB4SoundTrafficManager::IsBoostPassPlaying()` |
+| `GetNextHornVariant(bool)` | `0x00237030` 268 | `0x00260B80` 292 | `0x00299A50` 268 | `0x0029DFE0` 412 | `0x00276B00` strong |  | `GtID CB4SoundTrafficManager::GetNextHornVariant(bool lbIsCar)` |
+| `CanStartHorning()` | `0x00237140` 12 | `0x00260CB0` 12 | `0x00299B60` 12 | `0x0029DFC0` 32 | `0x00276C10` proven |  | `bool CB4SoundTrafficManager::CanStartHorning()` |
+| `CrashingTraffic(CB3VehiclePhysics*)` | `0x00237150` 224 | `0x00260CC0` 224 | `0x00299B70` 224 | `0x0029DE70` 324 | `0x00276C20` proven |  | `void CB4SoundTrafficManager::CrashingTraffic(CB4VehiclePhysics *lpVehiclePhysics)` |
+| `Release()` | `0x00237230` 124 | `0x00260DA0` 124 | `0x00299C50` 124 | `0x0029DD00` 144 | `0x00276D00` proven |  | `void CB4SoundTrafficManager::Release()` |
+| `Update(bool)` | `0x002372B0` 1328 | `0x00260E20` 1488 | `0x00299CD0` 1452 | `0x0029D690` 1608 | `0x00276D80` proven |  | `void CB4SoundTrafficManager::Update()` |
+| `Prepare()` | `0x002377E0` 136 | `0x002613F0` 136 | `0x0029A280` 136 | `0x0029D5E0` 164 | `0x002772D0` proven |  | `bool CB4SoundTrafficManager::Prepare()` |
+| `Construct()` | `0x00237870` 3004 | `0x00261480` 3028 | `0x0029A310` 3028 | `0x0029C570` 4208 | `0x00277360` proven |  | `void CB4SoundTrafficManager::Construct()` |
+| `CB3SoundTrafficManager()` |  |  |  | `0x002B1A00` 80 |  |  | `CB4SoundTrafficManager * CB4SoundTrafficManager::CB4SoundTrafficManager()` |
+| `FindTrafficID(int,signed char)` |  |  |  | `0x0029DD90` 216 |  |  | `RwInt32 CB4SoundTrafficManager::FindTrafficID(int lnTrafficID, signed char lnPlayerIndex)` |
+
+## Burnout Revenge layout of `CB4SoundTrafficManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 14 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundTrafficManager {  // size 0x40C0
+    /* 0x000 */ CGtSoundBank *mHornBank;
+    /* 0x008 */ CGtRandom mRandomGen;
+    /* 0x010 */ RwReal mrBusVolume;
+    /* 0x014 */ RwReal mrLorryVolume;
+    /* 0x018 */ RwReal mrVanVolume;
+    /* 0x01C */ RwReal mrCarVolume;
+    /* 0x020 */ RwReal mrBusPitch;
+    /* 0x024 */ RwReal mrLorryPitch;
+    /* 0x028 */ RwReal mrVanPitch;
+    /* 0x02C */ RwReal mrCarPitch;
+    /* 0x030 */ RwReal mrBusEnginePitch;
+    /* 0x034 */ RwReal mrBusEngineVolume;
+    /* 0x038 */ RwReal mrLorryEnginePitch;
+    /* 0x03C */ RwReal mrLorryEngineVolume;
+    /* 0x040 */ RwReal mrBoostPassMinSpeed;
+    /* 0x044 */ RwReal mrBoostPassMaxSpeed;
+    /* 0x048 */ RwReal mrBoostPassMinPitch;
+    /* 0x04C */ RwReal mrBoostPassMaxPitch;
+    /* 0x050 */ RwReal mrBoostPassSampleMidPoint;
+    /* 0x054 */ RwReal mrBoostPassLengthOfCar;
+    /* 0x058 */ RwInt32 mnBoostPassDampTime;
+    /* 0x05C */ RwReal mrBoostPassMinVolume;
+    /* 0x060 */ RwReal mrBoostPassMaxVolume;
+    /* 0x064 */ RwReal mrBoostPlaneWidth;
+    /* 0x068 */ RwReal mrBoostCentrePitch;
+    /* 0x06C */ RwReal mrBoostEdgePitch;
+    /* 0x070 */ RwReal mrBigPassScalar;
+    /* 0x074 */ RwReal mrLittlePassScalar;
+    /* 0x078 */ RwReal mrSmallCrashingTrafficSkidMinSpeed;
+    /* 0x07C */ RwReal mrSmallCrashingTrafficSkidMaxSpeed;
+    /* 0x080 */ RwReal mrSmallCrashingTrafficSkidMinVol;
+    /* 0x084 */ RwReal mrSmallCrashingTrafficSkidMaxVol;
+    /* 0x088 */ RwReal mrSmallCrashingTrafficSkidMinPitch;
+    /* 0x08C */ RwReal mrSmallCrashingTrafficSkidMaxPitch;
+    /* 0x090 */ RwReal mrLargeCrashingTrafficSkidMinSpeed;
+    /* 0x094 */ RwReal mrLargeCrashingTrafficSkidMaxSpeed;
+    /* 0x098 */ RwReal mrLargeCrashingTrafficSkidMinVol;
+    /* 0x09C */ RwReal mrLargeCrashingTrafficSkidMaxVol;
+    /* 0x0A0 */ RwReal mrLargeCrashingTrafficSkidMinPitch;
+    /* 0x0A4 */ RwReal mrLargeCrashingTrafficSkidMaxPitch;
+    /* 0x0A8 */ RwReal mrDMHVolume;
+    /* 0x0AC */ RwReal mrAlarmVolume;
+    /* 0x0B0 */ RwReal mrSteamVolume;
+    /* 0x0B4 */ RwReal mrCrashingTrafficSkidPeriod;
+    /* 0x0B8 */ RwReal mrCrashingTrafficSkidDepth;
+    /* 0x0BC */ RwReal mrCrashingTrafficSkidDepthDecay;
+    /* 0x0C0 */ RwReal mrCrashingTrafficSkidPeriodDecay;
+    /* 0x0C4 */ RwReal mrCrashingTrafficMinSkidSpeed;
+    /* 0x0C8 */ RwReal mrCrashingTrafficMaxSkidSpeed;
+    /* 0x0CC */ RwReal mrCrashingTrafficMinSkidVol;
+    /* 0x0D0 */ RwReal mrCrashingTrafficMaxSkidVol;
+    /* 0x0D4 */ RwReal mrCrashingTrafficMinSkidPitch;
+    /* 0x0D8 */ RwReal mrCrashingTrafficMaxSkidPitch;
+    /* 0x0DC */ RwReal mrCrashingTrafficInitialVolume;
+    /* 0x0E0 */ RwReal mrCrashingTrafficInitialPitch;
+    /* 0x0E4 */ RwReal mrCrashingTrafficVolumeDecay;
+    /* 0x0E8 */ RwReal mrCrashingTrafficPitchDecay;
+    /* 0x0EC */ RwReal mrCrashingtrafficBassThreshold;
+    /* 0x0F0 */ RwReal mrHornSpeedOfSound;
+    /* 0x0F4 */ RwReal mrHornMaxDist;
+    /* 0x0F8 */ RwReal mrHornPitchVariance;
+    /* 0x0FC */ RwReal mrHornCarVolume;
+    /* 0x100 */ RwReal mrHornTruckVolume;
+    /* 0x104 */ RwReal mrHornLinearVol;
+    /* 0x108 */ RwInt32 mnHornMinOnTime;
+    /* 0x10C */ RwInt32 mnHornMinOffTime;
+    /* 0x110 */ RwInt32 mnHornMaxOnTime;
+    /* 0x114 */ RwInt32 mnHornMaxOffTime;
+    /* 0x118 */ CGtSoundVoiceHandle mDebrisVoice;
+    /* 0x128 */ CGtSoundWave *mpDebrisWave;
+    /* 0x12C */ CGtSoundVoiceHandle mJellyRotorVoice;
+    /* 0x13C */ CGtSoundVoiceHandle mJellyTurbineVoice;
+    /* 0x150 */ CGtV3d mCameraPosLastFrame;
+    /* 0x160 */ RwReal mrCopterMinSpeed;
+    /* 0x164 */ RwReal mrCopterMaxSpeed;
+    /* 0x168 */ RwReal mrCopterRotorMinPitch;
+    /* 0x16C */ RwReal mrCopterRotorMaxPitch;
+    /* 0x170 */ RwReal mrCopterRotorMinVol;
+    /* 0x174 */ RwReal mrCopterRotorMaxVol;
+    /* 0x178 */ RwReal mrCopterTurbineMinPitch;
+    /* 0x17C */ RwReal mrCopterTurbineMaxPitch;
+    /* 0x180 */ RwReal mrCopterTurbineMinVol;
+    /* 0x184 */ RwReal mrCopterTurbineMaxVol;
+    /* 0x188 */ RwReal mrDebrisLoopVol;
+    /* 0x18C */ RwReal mrDebrisLoopDefaultVol;
+    /* 0x190 */ CGtSoundFlipFlopBank *mpTrafficFFBank;
+    /* 0x194 */ CGtSoundFlipFlopBank *mpPassesFFBank;
+    /* 0x198 */ RwInt32 mnHornCount;
+    /* 0x19C */ float mrBoostLevel[2];
+    /* 0x1A4 */ RwInt32 mnNumActiveTraffic;
+    /* 0x1A8 */ RwInt32 mnPeakActiveTraffic;
+    /* 0x1B0 */ CB4SoundTrafficVehicle maTraffic[16];
+    /* 0x18B0 */ CB4SoundCrashedTraffic maCrashingTraffic[48];
+    /* 0x38F0 */ CB4SoundCheckedTraffic maCheckedTraffic[16];
+    /* 0x40B0 */ bool mbSilenceTraffic;
+    /* 0x40B1 */ RwUInt8 mnNextCarID;
+    /* 0x40B2 */ RwUInt8 mnNextTruckID;
+    /* 0x40B4 */ RwInt32 mnTrafficUsageTarget;
+    /* 0x40B8 */ RwInt32 mnPassesUsageTarget;
+    // methods
+    // CB4SoundTrafficManager(const CB4SoundTrafficManager &);
+    // CB4SoundTrafficManager();
+    // void Construct();
+    // bool Prepare();
+    // void Update(bool);
+    // void Release();
+    // void Destruct();
+    // void EnterBoost();
+    // void ExitBoost();
+    // void CrashingTraffic(CB4VehiclePhysics *);
+    // void CheckedTraffic(CB4CheckedTrafficPhysics *);
+    // bool CanStartHorning();
+    // GtID GetNextHornVariant(bool);
+    // bool IsBoostPassPlaying();
+    // void DisableTrafficSound();
+    // void EnableTrafficSound();
+    // bool IsAnyCrashedTrafficInteresting();
+    // CGtSoundFlipFlopBank * GetTrafficBank();
+    // CGtSoundFlipFlopBank * GetPassesBank();
+    // void StartJellycopter();
+    // void UpdateJellycopter();
+    // void StopJellycopter();
+    // void AddNewTraffic(bool);
+    // void RemoveOldTraffic(bool);
+    // void UpdateActive();
+    // void UpdateChecked();
+    // void UpdateCrashing();
+    // void StartDebrisLoop();
+    // void StopDebrisLoop();
+    // void UpdateDebrisLoop(GtMathPs2::CGtV3d);
+    // RwInt32 FindTrafficID(int, signed char);
+};
+```
 
 ## Notes
 

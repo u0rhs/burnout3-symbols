@@ -6,14 +6,33 @@
 
 - **Area:** [Audio and music](../systems/audio.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CGtSoundVoiceGroupTransition`, size 0x014 ([layout](#burnout-revenge-layout-of-cgtsoundvoicegrouptransition))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update(float,CGtSoundVoiceGroup&)` |  |  |  | `0x003DEBF0` 224 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update(float,CGtSoundVoiceGroup&)` |  |  |  | `0x003DEBF0` 224 |  |  |  |
+
+## Burnout Revenge layout of `CGtSoundVoiceGroupTransition`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 5 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundBankManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSoundVoiceGroupTransition {  // size 0x014
+    /* 0x000 */ CGtSoundVoiceGroup mStartGroup;
+    /* 0x008 */ CGtSoundVoiceGroup *mpEndGroup;
+    /* 0x00C */ RwReal mrInitialTime;
+    /* 0x010 */ RwReal mrCurrentTime;
+    // methods
+    // CGtSoundVoiceGroupTransition(const CGtSoundVoiceGroupTransition &);
+    // CGtSoundVoiceGroupTransition();
+    // void Construct();
+    // void Update(float, CGtSoundVoiceGroup &);
+};
+```
 
 ## Notes
 

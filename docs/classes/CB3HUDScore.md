@@ -12,19 +12,19 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateScoreObject(float)` | `0x0016DBD0` 924 | `0x001891D0` 1084 | `0x00183BC0` 1104 | `0x0019C650` 1544 | `0x001A1CD0` likely |  |
-| `ShowScore(CB3HUDScore::EScoreEvent,int)` | `0x0016DF70` 208 | `0x00189610` 348 | `0x00184010` 348 | `0x0019C4B0` 408 | `0x001A2030` strong |  |
-| `UpdateMessageAnimation(CB3HUDScore::CScoreMessage*)` | `0x0016E040` 324 | `0x00189770` 324 | `0x00184170` 324 | `0x0019C260` 588 | `0x001A2100` likely |  |
-| `Update(float)` | `0x0016E190` 60 | `0x001898C0` 60 | `0x001842C0` 60 | `0x0019C220` 64 |  |  |
-| `UpdateMessageGeneric(CB3HUDScore::CScoreMessage*,CB3HUDPrimaryMessage::EMessageType,int,const unsigned short*,floa` | `0x0016E1D0` 1768 | `0x00189900` 2016 | `0x00184300` 2048 | `0x0019B630` 3004 |  |  |
-| `UpdateSmallMessage(float)` | `0x0016E8C0` 3972 | `0x0018A0E0` 4328 | `0x00184B00` 4324 | `0x0019A270` 4680 |  |  |
-| `Prepare(int,EHUDAlign,int,int)` | `0x0016F850` 700 | `0x0018B1D0` 948 | `0x00185BF0` 916 | `0x00199D90` 1124 |  |  |
-| `CB3HUDScore()` |  |  |  | `0x00199A40` 60 |  |  |
-| `DisplayMessageTest(CB3HUDScore::CScoreMessage*,float,float)` |  |  |  | `0x0019B4C0` 128 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateScoreObject(float)` | `0x0016DBD0` 924 | `0x001891D0` 1084 | `0x00183BC0` 1104 | `0x0019C650` 1544 | `0x001A1CD0` likely |  |  |
+| `ShowScore(CB3HUDScore::EScoreEvent,int)` | `0x0016DF70` 208 | `0x00189610` 348 | `0x00184010` 348 | `0x0019C4B0` 408 | `0x001A2030` strong |  |  |
+| `UpdateMessageAnimation(CB3HUDScore::CScoreMessage*)` | `0x0016E040` 324 | `0x00189770` 324 | `0x00184170` 324 | `0x0019C260` 588 | `0x001A2100` likely |  |  |
+| `Update(float)` | `0x0016E190` 60 | `0x001898C0` 60 | `0x001842C0` 60 | `0x0019C220` 64 |  |  |  |
+| `UpdateMessageGeneric(CB3HUDScore::CScoreMessage*,CB3HUDPrimaryMessage::EMessageType,int,const unsigned short*,floa` | `0x0016E1D0` 1768 | `0x00189900` 2016 | `0x00184300` 2048 | `0x0019B630` 3004 |  |  |  |
+| `UpdateSmallMessage(float)` | `0x0016E8C0` 3972 | `0x0018A0E0` 4328 | `0x00184B00` 4324 | `0x0019A270` 4680 |  |  |  |
+| `Prepare(int,EHUDAlign,int,int)` | `0x0016F850` 700 | `0x0018B1D0` 948 | `0x00185BF0` 916 | `0x00199D90` 1124 |  |  |  |
+| `CB3HUDScore()` |  |  |  | `0x00199A40` 60 |  |  |  |
+| `DisplayMessageTest(CB3HUDScore::CScoreMessage*,float,float)` |  |  |  | `0x0019B4C0` 128 |  |  |  |
 
 ## Notes
 

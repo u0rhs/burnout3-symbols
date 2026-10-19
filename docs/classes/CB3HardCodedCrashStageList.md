@@ -11,23 +11,23 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetCrashStageTrackID(unsigned long)` | `0x0039A120` 112 | `0x00412660` 112 | `0x00438380` 112 | `0x00451010` 140 |  |  |
-| `GetNumUnlockedVariantsOnThisJunction(EB3TrackRegion,int,int)` | `0x0039A190` 196 | `0x004126D0` 196 | `0x004383F0` 196 | `0x00450E40` 204 |  |  |
-| `GetNumVariantsOnThisJunction(EB3TrackRegion,int,int)` | `0x0039A260` 160 | `0x004127A0` 160 | `0x004384C0` 160 | `0x00450DA0` 148 |  |  |
-| `GetNumStagesOnThisTrack(EB3TrackRegion,int)` | `0x0039A300` 100 | `0x00412840` 168 | `0x00438560` 168 | `0x00450CF0` 168 |  |  |
-| `IsVariantOnThisJunction(EB3TrackRegion,int,int)` | `0x0039A370` 36 | `0x004128F0` 36 | `0x00438610` 36 | `0x00450CB0` 64 |  |  |
-| `IsChallengeOnThisCircuit(EB3TrackRegion,int,int)` | `0x0039A3A0` 232 | `0x00412920` 268 | `0x00438640` 268 | `0x00450B70` 320 | `0x003E9150` proven |  |
-| `IsCorrectRegion(EB3TrackRegion,int)` | `0x0039A490` 140 | `0x00412A30` 168 | `0x00438750` 168 | `0x00450A50` 276 |  |  |
-| `GetCrashStageName(int,bool)` | `0x0039A520` 28 | `0x00412AE0` 120 | `0x00438800` 120 | `0x004509E0` 104 |  |  |
-| `FindCrashStageName(unsigned long)` | `0x0039A540` 84 | `0x00412B60` 84 | `0x00438880` 84 | `0x00450990` 76 |  |  |
-| `GetCrashStageGtID(int)` | `0x0039A5A0` 24 | `0x00412BC0` 176 | `0x004388E0` 176 | `0x00450920` 112 |  |  |
-| `FindCrashStage(unsigned long)` | `0x0039A5C0` 60 | `0x00412C70` 60 | `0x00438990` 60 | `0x004508B0` 104 |  |  |
-| `Prepare()` | `0x0039A600` 256 | `0x00412CB0` 780 | `0x004389D0` 780 | `0x004506A0` 528 |  |  |
-| `GetProgressionStageID(int)` |  |  |  | `0x00450F10` 244 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetCrashStageTrackID(unsigned long)` | `0x0039A120` 112 | `0x00412660` 112 | `0x00438380` 112 | `0x00451010` 140 |  |  |  |
+| `GetNumUnlockedVariantsOnThisJunction(EB3TrackRegion,int,int)` | `0x0039A190` 196 | `0x004126D0` 196 | `0x004383F0` 196 | `0x00450E40` 204 |  |  |  |
+| `GetNumVariantsOnThisJunction(EB3TrackRegion,int,int)` | `0x0039A260` 160 | `0x004127A0` 160 | `0x004384C0` 160 | `0x00450DA0` 148 |  |  |  |
+| `GetNumStagesOnThisTrack(EB3TrackRegion,int)` | `0x0039A300` 100 | `0x00412840` 168 | `0x00438560` 168 | `0x00450CF0` 168 |  |  |  |
+| `IsVariantOnThisJunction(EB3TrackRegion,int,int)` | `0x0039A370` 36 | `0x004128F0` 36 | `0x00438610` 36 | `0x00450CB0` 64 |  |  |  |
+| `IsChallengeOnThisCircuit(EB3TrackRegion,int,int)` | `0x0039A3A0` 232 | `0x00412920` 268 | `0x00438640` 268 | `0x00450B70` 320 | `0x003E9150` proven |  |  |
+| `IsCorrectRegion(EB3TrackRegion,int)` | `0x0039A490` 140 | `0x00412A30` 168 | `0x00438750` 168 | `0x00450A50` 276 |  |  |  |
+| `GetCrashStageName(int,bool)` | `0x0039A520` 28 | `0x00412AE0` 120 | `0x00438800` 120 | `0x004509E0` 104 |  |  |  |
+| `FindCrashStageName(unsigned long)` | `0x0039A540` 84 | `0x00412B60` 84 | `0x00438880` 84 | `0x00450990` 76 |  |  |  |
+| `GetCrashStageGtID(int)` | `0x0039A5A0` 24 | `0x00412BC0` 176 | `0x004388E0` 176 | `0x00450920` 112 |  |  |  |
+| `FindCrashStage(unsigned long)` | `0x0039A5C0` 60 | `0x00412C70` 60 | `0x00438990` 60 | `0x004508B0` 104 |  |  |  |
+| `Prepare()` | `0x0039A600` 256 | `0x00412CB0` 780 | `0x004389D0` 780 | `0x004506A0` 528 |  |  |  |
+| `GetProgressionStageID(int)` |  |  |  | `0x00450F10` 244 |  |  |  |
 
 ## Notes
 

@@ -17,6 +17,7 @@ The `originals/` folders keep the two text link maps from the discs, for referen
 | [`burnout3-review-us-2004-07-20/`](burnout3-review-us-2004-07-20/README.md) | The US review build of 20 July 2004 (disc listing, strings, headers, value database; no symbols) |
 | [`burnout3-review-pal-2004-07-20/`](burnout3-review-pal-2004-07-20/README.md) | The PAL review build of 20 July 2004 (the same) |
 | [`burnout2-prototype/`](burnout2-prototype/README.md) | The Burnout 2 prototype of 29 July 2002 (symbols and DWARF 1 debug info) |
+| [`burnout-revenge-prototype/`](burnout-revenge-prototype/README.md) | The Burnout Revenge PS2 prototype of 14 July 2005 (symbols and GCC debug info) |
 | `*/originals/` | The original text link maps (see below) |
 | [`hashes.tsv`](hashes.tsv) | Size, CRC32, MD5 and SHA-1 of every source file ([as a table](../docs/reference/hashes.md)) |
 
@@ -86,6 +87,26 @@ The Burnout 2 executable kept its symbol table and its **DWARF 1** debug informa
 
 CodeWarrior did not record `const`, typedefs or member-function declarations; `bool` appears as
 `int` or `unsigned char`; `u_long128` is the EE's 128-bit integer.
+
+## burnout-revenge-prototype/SLUS_212.42/
+
+The Burnout Revenge July 14, 2005 PS2 executable kept its symbol table and its **GCC stabs** debug information
+([format](../docs/formats/gcc-stabs-mdebug.md)). Revenge was built on Burnout 3's code (`CB3X` became `CB4X`);
+the [Revenge lineage pages](../docs/reference/revenge-class-lineage.md) connect the two. Written by
+`tools/export_revenge.py`; neither the executable nor its link map (`B4EXTERN.MAP`, used for demangled names)
+is copied.
+
+| File | Contents |
+|---|---|
+| `symbols.csv` | All 21,798 named symbols (12,023 functions), demangled where the link map has the name |
+| `types.h` | 2,789 layouts of 2,717 classes, structs, unions and enums: every member with its offset, base classes, enum values, and each class's **methods** (return type, parameters, virtual/static/const). 62 names have more than one layout (`VARIANT`) |
+| `functions.txt` / `.csv` | 9,416 linked functions with debug info: address range, signature with parameter names, source file (`demangled`: the types-only name) |
+| `unlinked_functions.csv` | 3,402 functions the debug info describes but the linker dropped |
+| `globals.txt` | 4,220 global and file-static variables with type, and address and size where the symbol table has them |
+| `source_files.txt` | The 861 source files with code, at Criterion's paths (`GameSource/Hud/…`, `GameShared/GameClasses/Graphical/2d/…`), with function counts and code sizes |
+
+Unlike Burnout 2's CodeWarrior debug info, GCC records `const`, typedef names and member functions. It drops
+`const` on pointer parameters, so signatures take parameter types from the mangled names. No line numbers yet.
 
 ## burnout3-retail/: memory map and third-party patches
 

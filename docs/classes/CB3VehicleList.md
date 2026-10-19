@@ -8,24 +8,69 @@
 - **Source file:** `B3DataLists.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 11, B3INTERN 9, B3O0PCH 11
 - **Retail (SLUS-21050):** 8 of its 10 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4VehicleList`, size 0x1000, methods in `SharedClasses/DataLists/B4DataLists.cpp` ([layout](#burnout-revenge-layout-of-cb4vehiclelist))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Sort()` | `0x00211D00` 264 | `0x002207D0` 264 |  | `0x00263110` 504 |  |  |
-| `CompareEntries(int,int)` | `0x00211E10` 360 | `0x002208E0` 360 |  | `0x00262ED0` 576 |  |  |
-| `GetCarCount(EB3MenuCarClasses)` | `0x00211F80` 144 | `0x00220A50` 144 | `0x0025FFD0` 144 | `0x00262E20` 168 | `0x00251B90` likely |  |
-| `GetCarID(EB3MenuCarClasses,int)` | `0x00212010` 164 | `0x00220AE0` 204 | `0x00260060` 204 | `0x00262D50` 208 | `0x00251C10` likely |  |
-| `GetClassFromID(unsigned long)` | `0x002120C0` 324 | `0x00220BB0` 348 | `0x00260130` 348 | `0x00262B90` 448 | `0x00251CB0` likely |  |
-| `GetVehicleIndexFromID(unsigned long)` | `0x00212260` 56 | `0x00220D60` 92 | `0x002602E0` 92 | `0x00262AD0` 116 | `0x00251E60` strong |  |
-| `GetVehicleBoostBarSize(unsigned long)` | `0x002122A0` 68 | `0x00220DC0` 104 | `0x00260340` 104 | `0x00262A50` 128 | `0x00251EA0` strong |  |
-| `IsVehicleDriveable(unsigned long)` | `0x002122F0` 72 | `0x00220E30` 108 | `0x002603B0` 108 | `0x002629C0` 132 | `0x00251EF0` likely |  |
-| `CreateVehiclePathFromIndex(int,char*,int)` | `0x00212340` 180 | `0x00220EA0` 176 | `0x00260420` 176 | `0x00262940` 124 | `0x00251F40` strong |  |
-| `DoesVehicleExist(unsigned long)` | `0x00212400` 56 | `0x00221050` 56 | `0x002605D0` 56 | `0x002627D0` 112 | `0x00252000` likely |  |
-| `CreateVehiclePathFromID(unsigned long,char*,int)` |  | `0x00220F50` 248 | `0x002604D0` 248 | `0x00262840` 244 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Sort()` | `0x00211D00` 264 | `0x002207D0` 264 |  | `0x00263110` 504 |  |  |  |
+| `CompareEntries(int,int)` | `0x00211E10` 360 | `0x002208E0` 360 |  | `0x00262ED0` 576 |  |  |  |
+| `GetCarCount(EB3MenuCarClasses)` | `0x00211F80` 144 | `0x00220A50` 144 | `0x0025FFD0` 144 | `0x00262E20` 168 | `0x00251B90` likely |  |  |
+| `GetCarID(EB3MenuCarClasses,int)` | `0x00212010` 164 | `0x00220AE0` 204 | `0x00260060` 204 | `0x00262D50` 208 | `0x00251C10` likely |  |  |
+| `GetClassFromID(unsigned long)` | `0x002120C0` 324 | `0x00220BB0` 348 | `0x00260130` 348 | `0x00262B90` 448 | `0x00251CB0` likely |  |  |
+| `GetVehicleIndexFromID(unsigned long)` | `0x00212260` 56 | `0x00220D60` 92 | `0x002602E0` 92 | `0x00262AD0` 116 | `0x00251E60` strong |  | `RwInt32 CB4VehicleList::GetVehicleIndexFromID(unsigned long lVehicleID)` |
+| `GetVehicleBoostBarSize(unsigned long)` | `0x002122A0` 68 | `0x00220DC0` 104 | `0x00260340` 104 | `0x00262A50` 128 | `0x00251EA0` strong |  |  |
+| `IsVehicleDriveable(unsigned long)` | `0x002122F0` 72 | `0x00220E30` 108 | `0x002603B0` 108 | `0x002629C0` 132 | `0x00251EF0` likely |  | `bool CB4VehicleList::IsVehicleDriveable(unsigned long lVehicleID)` |
+| `CreateVehiclePathFromIndex(int,char*,int)` | `0x00212340` 180 | `0x00220EA0` 176 | `0x00260420` 176 | `0x00262940` 124 | `0x00251F40` strong |  | `void CB4VehicleList::CreateVehiclePathFromIndex(int lnVehicleIndex, char *lpacDestString, int lnDestStringSize)` |
+| `DoesVehicleExist(unsigned long)` | `0x00212400` 56 | `0x00221050` 56 | `0x002605D0` 56 | `0x002627D0` 112 | `0x00252000` likely |  | `bool CB4VehicleList::DoesVehicleExist(unsigned long lVehicleID)` |
+| `CreateVehiclePathFromID(unsigned long,char*,int)` |  | `0x00220F50` 248 | `0x002604D0` 248 | `0x00262840` 244 |  |  | `void CB4VehicleList::CreateVehiclePathFromID(unsigned long lVehicleID, char *lpacDestString, int lnDestStringSize)` |
+
+## Burnout Revenge layout of `CB4VehicleList`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 267 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4VehicleList {  // size 0x1000
+    /* 0x000 */ RwInt32 mnVersionNumber;
+    /* 0x004 */ RwInt32 mnVehicleCount;
+    /* 0x008 */ int mabVehicleIsDriveable[128];
+    /* 0x208 */ EB4RaceCarRank maeRaceCarRanks[128];
+    /* 0x408 */ long unsigned int maVehicleIDs[128];
+    /* 0x808 */ int manVehicleMaxCrashScore[128];
+    /* 0xA08 */ int manVehicleGrudgePoints[128];
+    /* 0xC08 */ int manVehiclePrice[128];
+    /* 0xE08 */ signed char man8VehicleDefaultColour[128];
+    /* 0xE88 */ unsigned char mau8Pad[376];
+    // methods
+    // CB4VehicleList(const CB4VehicleList &);
+    // CB4VehicleList();
+    // bool DoesVehicleExist(unsigned long);
+    // void CreateVehiclePathFromIndex(int, char *, int);
+    // bool IsVehicleDriveable(unsigned long);
+    // RwInt32 GetNumDriveableVehicles();
+    // EB4RaceCarRank GetRaceCarRank(unsigned long) const;
+    // RwInt32 GetVehicleIndexFromID(unsigned long);
+    // EB4RaceCarRank GetVehicleRankFromID(unsigned long);
+    // GtID GetVehicleIDFromClassRankAndIndex(EB4PlayerVehicleClass, EB4RaceCarRank, int);
+    // RwInt32 GetNumVehiclesInClassRank(EB4PlayerVehicleClass, EB4RaceCarRank) const;
+    // RwInt32 GetGrudgePointsFromVehicleID(unsigned long);
+    // RwInt32 GetPriceFromVehicleID(unsigned long);
+    // RwInt8 GetDefaultColourFromVehicleID(unsigned long);
+    // static EB4MenuCarClasses GetClassFromID(unsigned long);
+    // static EB4PlayerVehicleClass GetPlayerCarClassFromID(unsigned long);
+    // GtID GetCarID(EB4MenuCarClasses, int);
+    // RwInt32 GetCarCount(EB4MenuCarClasses);
+    // void Sort();
+    // EB4TrackLocale GetTrackLocaleForID(unsigned long);
+    // EB4TrackRegion GetTrackRegionForID(unsigned long);
+    // bool IsSpecial(unsigned long);
+    // void CreateVehiclePathFromID(unsigned long, char *, int);
+    // RwInt32 CompareEntries(int, int);
+};
+```
 
 ## Notes
 

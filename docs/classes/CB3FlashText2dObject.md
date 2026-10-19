@@ -11,14 +11,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0032C9E0` 1068 | `0x003884E0` 1068 | `0x003B7090` 1068 | `0x003B8400` 1272 | `0x00371BE0` strong |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dFont*,const` | `0x0032CE10` 128 | `0x00388910` 128 | `0x003B74C0` 128 | `0x003B8300` 256 | `0x00372010` proven |  |
-| `SetVFlashTimeScale(float)` | `0x0032CE90` 68 | `0x00388990` 148 | `0x003B7540` 148 | `0x003B8260` 156 | `0x00372090` proven |  |
-| `SetHFlashTimeScale(float)` | `0x0032CEE0` 8 | `0x00388A30` 100 | `0x003B75E0` 100 | `0x003B8200` 92 | `0x003720E0` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0032C9E0` 1068 | `0x003884E0` 1068 | `0x003B7090` 1068 | `0x003B8400` 1272 | `0x00371BE0` strong |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dFont*,const` | `0x0032CE10` 128 | `0x00388910` 128 | `0x003B74C0` 128 | `0x003B8300` 256 | `0x00372010` proven |  |  |
+| `SetVFlashTimeScale(float)` | `0x0032CE90` 68 | `0x00388990` 148 | `0x003B7540` 148 | `0x003B8260` 156 | `0x00372090` proven |  |  |
+| `SetHFlashTimeScale(float)` | `0x0032CEE0` 8 | `0x00388A30` 100 | `0x003B75E0` 100 | `0x003B8200` 92 | `0x003720E0` proven |  |  |
 
 ## Notes
 

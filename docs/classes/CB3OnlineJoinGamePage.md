@@ -12,29 +12,29 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `OnKeyboardShow()` | `0x002E2F10` 8 | `0x0032D860` 8 | `0x0035FB90` 8 | `0x00363A80` 16 | `0x00327540` strong |  |
-| `OnKeyboardCancel()` | `0x002E2F20` 68 | `0x0032D870` 68 | `0x0035FBA0` 68 | `0x00363A30` 80 | `0x00327550` strong |  |
-| `OnKeyboardDone()` | `0x002E2F70` 560 | `0x0032D8C0` 560 | `0x0035FBF0` 560 | `0x003637A0` 648 | `0x003275A0` strong |  |
-| `SetMode(int,EB3MenuChoicesOnline)` | `0x002E31A0` 516 | `0x0032DAF0` 732 | `0x0035FE20` 732 | `0x00362EB0` 916 | `0x003277E0` unverified |  |
-| `SetupTable()` | `0x002E33B0` 1028 | `0x0032DDD0` 1028 | `0x00360100` 1028 | `0x00362340` 2340 | `0x00327AF0` strong |  |
-| `Release()` | `0x002E37C0` 12 | `0x0032E1E0` 12 | `0x00360510` 12 | `0x00362310` 40 | `0x00327F00` likely |  |
-| `Update()` | `0x002E37D0` 3868 | `0x0032E1F0` 3956 | `0x00360520` 3956 | `0x00361330` 4064 | `0x00327F10` unverified |  |
-| `JoinGame(int)` | `0x002E46F0` 368 | `0x0032F170` 368 | `0x003614A0` 368 | `0x00361130` 508 | `0x00329210` unverified |  |
-| `BuildListOfGames()` | `0x002E4860` 3036 | `0x0032F2E0` 3280 | `0x00361610` 3280 | `0x003605C0` 2556 | `0x00329330` unverified |  |
-| `ForEachNetworkGame(char*,int,int,int,int,int,int,int,int,int,int,int,int,void*)` | `0x002E5440` 456 | `0x0032FFB0` 556 | `0x003622E0` 556 | `0x003603A0` 544 | `0x0032A5C0` unverified |  |
-| `Prepare(char*,char*,char*,int,bool)` | `0x002E5610` 800 | `0x003301E0` 800 | `0x00362510` 800 | `0x0035FDA0` 1196 | `0x0032AAB0` unverified |  |
-| `CB3OnlineJoinGamePage()` |  |  |  | `0x00341A80` 172 |  |  |
-| `HandleError(int)` |  |  |  | `0x00360250` 328 |  |  |
-| `IsGameSelectable(int)` |  |  |  | `0x00360FC0` 136 |  |  |
-| `SetClassLimit(int,int)` |  |  |  | `0x00363420` 436 |  |  |
-| `SetGameLocked(int,bool)` |  |  |  | `0x00362C70` 336 |  |  |
-| `SetName(int,char*)` |  |  |  | `0x00362DC0` 236 |  |  |
-| `SetNumPlayers(int,int,int)` |  |  |  | `0x003635E0` 440 |  |  |
-| `SetTrack(int,unsigned long)` |  |  |  | `0x00363250` 464 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `OnKeyboardShow()` | `0x002E2F10` 8 | `0x0032D860` 8 | `0x0035FB90` 8 | `0x00363A80` 16 | `0x00327540` strong |  |  |
+| `OnKeyboardCancel()` | `0x002E2F20` 68 | `0x0032D870` 68 | `0x0035FBA0` 68 | `0x00363A30` 80 | `0x00327550` strong |  |  |
+| `OnKeyboardDone()` | `0x002E2F70` 560 | `0x0032D8C0` 560 | `0x0035FBF0` 560 | `0x003637A0` 648 | `0x003275A0` strong |  |  |
+| `SetMode(int,EB3MenuChoicesOnline)` | `0x002E31A0` 516 | `0x0032DAF0` 732 | `0x0035FE20` 732 | `0x00362EB0` 916 | `0x003277E0` unverified |  |  |
+| `SetupTable()` | `0x002E33B0` 1028 | `0x0032DDD0` 1028 | `0x00360100` 1028 | `0x00362340` 2340 | `0x00327AF0` strong |  |  |
+| `Release()` | `0x002E37C0` 12 | `0x0032E1E0` 12 | `0x00360510` 12 | `0x00362310` 40 | `0x00327F00` likely |  |  |
+| `Update()` | `0x002E37D0` 3868 | `0x0032E1F0` 3956 | `0x00360520` 3956 | `0x00361330` 4064 | `0x00327F10` unverified |  |  |
+| `JoinGame(int)` | `0x002E46F0` 368 | `0x0032F170` 368 | `0x003614A0` 368 | `0x00361130` 508 | `0x00329210` unverified |  |  |
+| `BuildListOfGames()` | `0x002E4860` 3036 | `0x0032F2E0` 3280 | `0x00361610` 3280 | `0x003605C0` 2556 | `0x00329330` unverified |  |  |
+| `ForEachNetworkGame(char*,int,int,int,int,int,int,int,int,int,int,int,int,void*)` | `0x002E5440` 456 | `0x0032FFB0` 556 | `0x003622E0` 556 | `0x003603A0` 544 | `0x0032A5C0` unverified |  |  |
+| `Prepare(char*,char*,char*,int,bool)` | `0x002E5610` 800 | `0x003301E0` 800 | `0x00362510` 800 | `0x0035FDA0` 1196 | `0x0032AAB0` unverified |  |  |
+| `CB3OnlineJoinGamePage()` |  |  |  | `0x00341A80` 172 |  |  |  |
+| `HandleError(int)` |  |  |  | `0x00360250` 328 |  |  |  |
+| `IsGameSelectable(int)` |  |  |  | `0x00360FC0` 136 |  |  |  |
+| `SetClassLimit(int,int)` |  |  |  | `0x00363420` 436 |  |  |  |
+| `SetGameLocked(int,bool)` |  |  |  | `0x00362C70` 336 |  |  |  |
+| `SetName(int,char*)` |  |  |  | `0x00362DC0` 236 |  |  |  |
+| `SetNumPlayers(int,int,int)` |  |  |  | `0x003635E0` 440 |  |  |  |
+| `SetTrack(int,unsigned long)` |  |  |  | `0x00363250` 464 |  |  |  |
 
 ## Notes
 

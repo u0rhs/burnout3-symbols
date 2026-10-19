@@ -8,30 +8,91 @@
 - **Source file:** `B3SoundDSPBlock.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 17
 - **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundDSPDataBlock`, size 0x110 ([layout](#burnout-revenge-layout-of-cb4sounddspdatablock))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ProcessHighShelfFilter(short*,short*)` | `0x002BAA00` 624 | `0x002FCC00` 624 | `0x003308D0` 624 | `0x00329910` 1392 | `0x002FB890` unverified |  |
-| `CalculateHighShelfCoefficients(float,float,float)` | `0x002BAC70` 416 | `0x002FCE70` 1112 | `0x00330B40` 508 | `0x00329290` 1656 | `0x002FBB30` proven |  |
-| `SetParam(int,float)` | `0x002BAE10` 324 | `0x002FD2D0` 500 | `0x00330D40` 500 | `0x00328FB0` 316 | `0x002FBCD0` proven |  |
-| `ProcessB2Distortion(short*,short*)` | `0x002BAF60` 584 | `0x002FD4D0` 584 | `0x00330F40` 584 | `0x00328D40` 592 | `0x002FBE20` proven |  |
-| `Process(short*,short*)` | `0x002BB1B0` 96 | `0x002FD720` 96 | `0x00331190` 96 | `0x00328C70` 200 | `0x002FC070` strong |  |
-| `Reset()` | `0x002BB210` 108 | `0x002FD780` 108 | `0x003311F0` 108 | `0x00328BB0` 192 | `0x002FC0E0` proven |  |
-| `SetType(EDSPType)` | `0x002BB280` 8 | `0x002FD7F0` 8 | `0x00331260` 8 | `0x00328B80` 36 | `0x002FC150` strong |  |
-| `Construct()` | `0x002BB290` 92 | `0x002FD800` 92 | `0x00331270` 92 | `0x00328A30` 232 | `0x002FC160` proven |  |
-| `ProcessPassThrough(short*,short*)` |  |  |  | `0x00328FA0` 16 |  |  |
-| `ProcessPipe(short*,short*)` |  |  |  | `0x00328F90` 16 |  |  |
-| `SetB2DistFrequency(int,int)` |  |  |  | `0x003290F0` 260 |  |  |
-| `SetB2DistPeakGain(int,int)` |  |  |  | `0x00329200` 132 |  |  |
-| `SetFrameSize(int)` |  |  |  | `0x00328B50` 36 |  |  |
-| `SetGain(float)` |  |  |  | `0x00328570` 56 |  |  |
-| `SetSampleRate(int)` |  |  |  | `0x00328B20` 36 |  |  |
-| `SetVolume(float)` |  |  |  | `0x00328530` 56 |  |  |
-| `SetWetDryMix(float,float)` |  |  |  | `0x003285B0` 92 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ProcessHighShelfFilter(short*,short*)` | `0x002BAA00` 624 | `0x002FCC00` 624 | `0x003308D0` 624 | `0x00329910` 1392 | `0x002FB890` unverified |  |  |
+| `CalculateHighShelfCoefficients(float,float,float)` | `0x002BAC70` 416 | `0x002FCE70` 1112 | `0x00330B40` 508 | `0x00329290` 1656 | `0x002FBB30` proven |  |  |
+| `SetParam(int,float)` | `0x002BAE10` 324 | `0x002FD2D0` 500 | `0x00330D40` 500 | `0x00328FB0` 316 | `0x002FBCD0` proven |  |  |
+| `ProcessB2Distortion(short*,short*)` | `0x002BAF60` 584 | `0x002FD4D0` 584 | `0x00330F40` 584 | `0x00328D40` 592 | `0x002FBE20` proven |  |  |
+| `Process(short*,short*)` | `0x002BB1B0` 96 | `0x002FD720` 96 | `0x00331190` 96 | `0x00328C70` 200 | `0x002FC070` strong |  |  |
+| `Reset()` | `0x002BB210` 108 | `0x002FD780` 108 | `0x003311F0` 108 | `0x00328BB0` 192 | `0x002FC0E0` proven |  |  |
+| `SetType(EDSPType)` | `0x002BB280` 8 | `0x002FD7F0` 8 | `0x00331260` 8 | `0x00328B80` 36 | `0x002FC150` strong |  |  |
+| `Construct()` | `0x002BB290` 92 | `0x002FD800` 92 | `0x00331270` 92 | `0x00328A30` 232 | `0x002FC160` proven |  |  |
+| `ProcessPassThrough(short*,short*)` |  |  |  | `0x00328FA0` 16 |  |  |  |
+| `ProcessPipe(short*,short*)` |  |  |  | `0x00328F90` 16 |  |  |  |
+| `SetB2DistFrequency(int,int)` |  |  |  | `0x003290F0` 260 |  |  |  |
+| `SetB2DistPeakGain(int,int)` |  |  |  | `0x00329200` 132 |  |  |  |
+| `SetFrameSize(int)` |  |  |  | `0x00328B50` 36 |  |  |  |
+| `SetGain(float)` |  |  |  | `0x00328570` 56 |  |  |  |
+| `SetSampleRate(int)` |  |  |  | `0x00328B20` 36 |  |  |  |
+| `SetVolume(float)` |  |  |  | `0x00328530` 56 |  |  |  |
+| `SetWetDryMix(float,float)` |  |  |  | `0x003285B0` 92 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundDSPDataBlock`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Sound/Dsp/B4SoundDSPBlock.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundDSPDataBlock {  // size 0x110
+    /* 0x000 */ int manUserParam[13];
+    /* 0x034 */ RwInt32 mnActualGain;
+    /* 0x038 */ RwInt32 mnActualvol;
+    /* 0x03C */ RwInt32 mnActualwet;
+    /* 0x040 */ RwInt32 mnActualdry;
+    /* 0x044 */ RwInt32 mnFramesize;
+    /* 0x048 */ RwInt32 mnSamplerate;
+    /* 0x04C */ RwInt32 mnHighShelfCoefficient_b0;
+    /* 0x050 */ RwInt32 mnHighShelfCoefficient_b1;
+    /* 0x054 */ RwInt32 mnHighShelfCoefficient_b2;
+    /* 0x058 */ RwInt32 mnHighShelfCoefficient_a0;
+    /* 0x05C */ RwInt32 mnHighShelfCoefficient_a1;
+    /* 0x060 */ RwInt32 mnHighShelfCoefficient_a2;
+    /* 0x064 */ int maPadding[1];
+    /* 0x068 */ RwInt16 mn16LastFramePenultimateOutputSample;
+    /* 0x06A */ RwInt16 mn16LastFrameLastOutputSample;
+    /* 0x06C */ RwInt16 mn16LastFramePenultimateInputSample;
+    /* 0x06E */ RwInt16 mn16LastFrameLastInputSample;
+    /* 0x070 */ EDSPType meType;
+    /* 0x074 */ CDSP_RLP_Filter mRLP[2];
+    /* 0x0DC */ CDSP_BiQuad maCoefficients[2];
+    // methods
+    // CB4SoundDSPDataBlock(const CB4SoundDSPDataBlock &);
+    // CB4SoundDSPDataBlock();
+    // void Construct();
+    // void Reset();
+    // void SetSampleRate(int);
+    // void SetFrameSize(int);
+    // void SetWetDryMix(float, float);
+    // void SetGain(float);
+    // void SetVolume(float);
+    // void SetType(EDSPType);
+    // void Process(short *, short *);
+    // void SetupMultiEffect(float, float, float, float, float, float, float, float, float, float);
+    // void SetParam(int, float);
+    // void CalculateHighShelfCoefficients(float, float, float);
+    // void ProcessHighShelfFilter(short *, short *);
+    // void SetB2DistFrequency(int, int);
+    // void SetB2DistPeakGain(int, int);
+    // RwInt32 TriangleInt(int);
+    // void ProcessB2Distortion(short *, short *);
+    // void ProcessPipe(short *, short *);
+    // void ProcessPassThrough(short *, short *);
+    // void ProcessMultiEffects(short *, short *);
+    // void SetupRLPCoEfficients(float, float, float);
+    // void ProcessRLP(short *, short *);
+    // void StoZTransform(float *, float *, float *, float *, float *, float *, float, float, float *, int *);
+    // void PreWarp(float *, float *, float *, float, float);
+    // void BiLinear(float, float, float, float, float, float, float *, float, int *);
+    // void SetupMEFilters(float, float, float, float, float);
+    // void SetupMEDistortion(float);
+};
+```
 
 ## Notes
 

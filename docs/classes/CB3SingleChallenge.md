@@ -8,20 +8,38 @@
 - **Source file:** `B3SingleChallenge.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
 - **vtable (DNAT_200):** `0x004416C0`, 40 bytes = 10 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 8 virtual functions)
+- **Burnout Revenge counterpart:** `CB4SingleChallenge`, size 0xB160, methods in `GameSource/Game/Challenge/B4SingleChallenge.cpp` ([layout](#burnout-revenge-layout-of-cb4singlechallenge))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `OnChallengeRestart()` | `0x0036E490` 8 | `0x003DBA00` 8 | `0x00404550` 8 | `0x00417B70` 40 |  |  |
-| `OnEndOfChallenge()` | `0x0036E4A0` 8 | `0x003DBA10` 8 | `0x00404560` 8 | `0x00417B40` 40 |  |  |
-| `Destruct()` | `0x0036E4B0` 8 | `0x003DBA20` 8 | `0x00404570` 8 | `0x00417B10` 40 |  |  |
-| `Release()` | `0x0036E4C0` 8 | `0x003DBA30` 8 | `0x00404580` 8 | `0x00417AE0` 40 |  |  |
-| `Prepare()` | `0x0036E4D0` 8 | `0x003DBA40` 8 | `0x00404590` 8 | `0x00417AA0` 64 |  |  |
-| `Construct()` | `0x0036E4E0` 40 | `0x003DBA50` 40 | `0x004045A0` 40 | `0x00417A70` 48 |  |  |
-| `CB3SingleChallenge()` |  |  |  | `0x0013DD40` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `OnChallengeRestart()` | `0x0036E490` 8 | `0x003DBA00` 8 | `0x00404550` 8 | `0x00417B70` 40 |  |  |  |
+| `OnEndOfChallenge()` | `0x0036E4A0` 8 | `0x003DBA10` 8 | `0x00404560` 8 | `0x00417B40` 40 |  |  |  |
+| `Destruct()` | `0x0036E4B0` 8 | `0x003DBA20` 8 | `0x00404570` 8 | `0x00417B10` 40 |  |  | `void CB4SingleChallenge::Destruct()` |
+| `Release()` | `0x0036E4C0` 8 | `0x003DBA30` 8 | `0x00404580` 8 | `0x00417AE0` 40 |  |  | `void CB4SingleChallenge::Release()` |
+| `Prepare()` | `0x0036E4D0` 8 | `0x003DBA40` 8 | `0x00404590` 8 | `0x00417AA0` 64 |  |  | `bool CB4SingleChallenge::Prepare()` |
+| `Construct()` | `0x0036E4E0` 40 | `0x003DBA50` 40 | `0x004045A0` 40 | `0x00417A70` 48 |  |  | `void CB4SingleChallenge::Construct()` |
+| `CB3SingleChallenge()` |  |  |  | `0x0013DD40` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4SingleChallenge`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 4 file(s), e.g. `GameSource/Game/B4Game.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SingleChallenge : public CB4Challenge {  // size 0xB160
+    // base CB4Challenge at 0x000
+    // methods
+    // CB4SingleChallenge(const CB4SingleChallenge &);
+    // CB4SingleChallenge();
+    // virtual void Construct();
+    // virtual bool Prepare();
+    // virtual void Release();
+    // virtual void Destruct();
+};
+```
 
 ## Notes
 

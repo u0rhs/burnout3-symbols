@@ -14,19 +14,21 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 **Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
 
-| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
-|---|---:|---:|---|---:|---|
-| `B3AIAvoidance.cpp` | 19 | 17,192 | `0x0013A2C0` | 19 (3) | `0x0013D530`–`0x00141980` |
-| `B3AICar.cpp` | 17 | 9,812 | `0x0013E650` | 13 (0) | `0x001419F0`–`0x00143E80` |
-| `B3AIControlData.cpp` | 1 | 68 | `0x00140D10` | 1 (1) | `0x00143F50`–`0x00143F50` |
-| `B3AIDriver.cpp` | 14 | 7,344 | `0x00140D60` | 13 (1) | `0x00143FA0`–`0x00145E30` |
-| `B3AILane.cpp` | 36 | 12,784 | `0x00142A70` | 35 (25) | `0x00145E70`–`0x00148DF0` |
-| `B3AITarget.cpp` | 26 | 19,400 | `0x00145D50` | 25 (11) | `0x00149140`–`0x0014DD40` |
-| `B3AIArbitrator.cpp` | 6 | 1,908 | `0x0016A410` | 6 (4) | `0x0019D4D0`–`0x0019DCB0` |
-| `B3AILaneStruct.cpp` | 1 | 132 | `0x002321A0` |  |  |
-| `B3AIAttribs.cpp` | 1 | 4,016 | `0x00232300` | 1 (1) | `0x00271A80`–`0x00271A80` |
-| `B3AIDebug.cpp` | 5 | 40 | `0x002364D0` | 5 (0) | `0x00275EA0`–`0x00275EE0` |
-| `B3AIAggressionBehaviour.cpp` | 14 | 9,992 | `0x002E7C00` | 13 (4) | `0x0032EE00`–`0x00331DA0` |
+**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source paths ([source files](../reference/revenge-source-file-lineage.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |
+|---|---:|---:|---|---:|---|---|
+| `B3AIAvoidance.cpp` | 19 | 17,192 | `0x0013A2C0` | 19 (3) | `0x0013D530`–`0x00141980` | `GameSource/World/B4AIAvoidance.cpp` |
+| `B3AICar.cpp` | 17 | 9,812 | `0x0013E650` | 13 (0) | `0x001419F0`–`0x00143E80` | `GameSource/World/B4AICar.cpp` |
+| `B3AIControlData.cpp` | 1 | 68 | `0x00140D10` | 1 (1) | `0x00143F50`–`0x00143F50` |  |
+| `B3AIDriver.cpp` | 14 | 7,344 | `0x00140D60` | 13 (1) | `0x00143FA0`–`0x00145E30` | `GameSource/World/B4AIDriver.cpp` |
+| `B3AILane.cpp` | 36 | 12,784 | `0x00142A70` | 35 (25) | `0x00145E70`–`0x00148DF0` | `GameSource/World/B4AILane.cpp` |
+| `B3AITarget.cpp` | 26 | 19,400 | `0x00145D50` | 25 (11) | `0x00149140`–`0x0014DD40` | `GameSource/World/B4AITarget.cpp` |
+| `B3AIArbitrator.cpp` | 6 | 1,908 | `0x0016A410` | 6 (4) | `0x0019D4D0`–`0x0019DCB0` | `GameSource/World/B4AIArbitrator.cpp` |
+| `B3AILaneStruct.cpp` | 1 | 132 | `0x002321A0` |  |  | `SharedClasses/AILaneData/B4AILaneStruct.cpp` |
+| `B3AIAttribs.cpp` | 1 | 4,016 | `0x00232300` | 1 (1) | `0x00271A80`–`0x00271A80` | `GameSource/World/B4AIAttribs.cpp` |
+| `B3AIDebug.cpp` | 5 | 40 | `0x002364D0` | 5 (0) | `0x00275EA0`–`0x00275EE0` | `GameSource/Game/B4AIDebug.cpp` |
+| `B3AIAggressionBehaviour.cpp` | 14 | 9,992 | `0x002E7C00` | 13 (4) | `0x0032EE00`–`0x00331DA0` | `GameSource/World/B4AIAggressionBehaviour.cpp` |
 
 ## Classes
 

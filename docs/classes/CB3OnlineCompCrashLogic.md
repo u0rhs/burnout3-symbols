@@ -11,41 +11,41 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetOfflineGameModeType()` | `0x00348CD0` 8 | `0x003AEA10` 8 | `0x003D8590` 8 | `0x003E5240` 20 |  |  |
-| `GetOnlineGameModeType()` | `0x00348CE0` 8 | `0x003AEA20` 8 | `0x003D85A0` 8 | `0x003E5260` 20 |  |  |
-| `DoAfterTouchNotSlowMo()` | `0x00348CF0` 8 | `0x003AEA30` 8 | `0x003D85B0` 8 | `0x003E5280` 20 |  |  |
-| `GetNumRoundsPlayed()` | `0x00348D00` 8 | `0x003AEA40` 8 | `0x003D85C0` 8 | `0x003E4520` 28 |  |  |
-| `GetTotalScore()` | `0x00348D10` 8 | `0x003AEA50` 8 | `0x003D85D0` 8 | `0x003E47A0` 28 |  |  |
-| `IncrementTotalScore(float)` | `0x00348D20` 16 | `0x003AEA60` 16 | `0x003D85E0` 16 | `0x003E47C0` 44 |  |  |
-| `IsCrashBattle()` | `0x00348D30` 8 | `0x003AEA70` 8 | `0x003D85F0` 8 | `0x003E52A0` 20 |  |  |
-| `UseCrashBattleScoring()` | `0x00348D40` 8 | `0x003AEA80` 8 | `0x003D8600` 8 | `0x003E52C0` 20 |  |  |
-| `IsCrashType()` | `0x00348D50` 8 | `0x003AEA90` 8 | `0x003D8610` 8 | `0x003E52E0` 20 |  |  |
-| `OnWorldPrepared()` | `0x00348D60` 72 | `0x003AEAA0` 224 | `0x003D8620` 224 | `0x003E51A0` 152 |  |  |
-| `GetGameModeScore(int,const CB3FinishedScore*,int*,int*)` | `0x00348DB0` 76 | `0x003AEB80` 768 | `0x003D8700` 768 | `0x003E4F30` 280 |  |  |
-| `AllowRestartButton()` | `0x00348E00` 192 | `0x003AEE80` 192 | `0x003D8A00` 192 | `0x003E4E50` 224 |  |  |
-| `LeaveLobby()` | `0x00348EC0` 52 | `0x003AEF40` 52 | `0x003D8AC0` 52 | `0x003E4DA0` 76 |  |  |
-| `SetGameModeStatusMessageDelivered()` | `0x00348F00` 12 | `0x003AEF80` 12 | `0x003D8B00` 12 | `0x003E4D80` 32 |  |  |
-| `SetGameModeStatusMessageArrived(signed char)` | `0x00348F10` 56 | `0x003AEF90` 160 | `0x003D8B10` 160 | `0x003E4CF0` 144 |  |  |
-| `DisplayDollarValuesAboveTraffic()` | `0x00348F50` 8 | `0x003AF030` 8 | `0x003D8BB0` 8 | `0x003E4CD0` 20 |  |  |
-| `ClearUpCrash(int)` | `0x00348F60` 112 | `0x003AF040` 240 | `0x003D8BC0` 240 | `0x003E4B90` 204 |  |  |
-| `StartReplay()` | `0x00348FD0` 8 | `0x003AF130` 8 | `0x003D8CB0` 8 | `0x003E4B70` 20 |  |  |
-| `GetResultsPageType()` | `0x00348FE0` 8 | `0x003AF140` 8 | `0x003D8CC0` 8 | `0x003E4B50` 20 |  |  |
-| `GetRacePositionType()` | `0x00348FF0` 8 | `0x003AF150` 8 | `0x003D8CD0` 8 | `0x003E4B30` 20 |  |  |
-| `GetHUDType()` | `0x00349000` 8 | `0x003AF160` 8 | `0x003D8CE0` 8 | `0x003E4B10` 20 |  |  |
-| `HasStageFinished()` | `0x00349010` 8 | `0x003AF170` 8 | `0x003D8CF0` 8 | `0x003E4AF0` 28 |  |  |
-| `Destruct()` | `0x00349020` 8 | `0x003AF180` 8 | `0x003D8D00` 8 | `0x003E4AC0` 48 |  |  |
-| `Release()` | `0x00349030` 20 | `0x003AF190` 20 | `0x003D8D10` 20 | `0x003E4A70` 68 |  |  |
-| `UpdateCameras()` | `0x00349050` 224 | `0x003AF410` 280 | `0x003D8F90` 280 | `0x003E47F0` 224 |  |  |
-| `Update()` | `0x00349130` 1592 | `0x003AF530` 3100 | `0x003D90B0` 3100 | `0x003E3C60` 2228 |  |  |
-| `Prepare()` | `0x00349770` 48 | `0x003B0150` 48 | `0x003D9CD0` 48 | `0x003E3C00` 84 |  |  |
-| `Construct()` | `0x003497A0` 32 | `0x003B0180` 32 | `0x003D9D00` 32 | `0x003E3BC0` 60 |  |  |
-| `GetWinningPlayerID()` |  | `0x003AF1B0` 600 | `0x003D8D30` 600 | `0x003E48D0` 404 |  |  |
-| `CB3OnlineCompCrashLogic()` |  |  |  | `0x0013DE30` 60 |  |  |
-| `ResetContinueVars()` |  |  |  | `0x003E5150` 68 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetOfflineGameModeType()` | `0x00348CD0` 8 | `0x003AEA10` 8 | `0x003D8590` 8 | `0x003E5240` 20 |  |  |  |
+| `GetOnlineGameModeType()` | `0x00348CE0` 8 | `0x003AEA20` 8 | `0x003D85A0` 8 | `0x003E5260` 20 |  |  |  |
+| `DoAfterTouchNotSlowMo()` | `0x00348CF0` 8 | `0x003AEA30` 8 | `0x003D85B0` 8 | `0x003E5280` 20 |  |  |  |
+| `GetNumRoundsPlayed()` | `0x00348D00` 8 | `0x003AEA40` 8 | `0x003D85C0` 8 | `0x003E4520` 28 |  |  |  |
+| `GetTotalScore()` | `0x00348D10` 8 | `0x003AEA50` 8 | `0x003D85D0` 8 | `0x003E47A0` 28 |  |  |  |
+| `IncrementTotalScore(float)` | `0x00348D20` 16 | `0x003AEA60` 16 | `0x003D85E0` 16 | `0x003E47C0` 44 |  |  |  |
+| `IsCrashBattle()` | `0x00348D30` 8 | `0x003AEA70` 8 | `0x003D85F0` 8 | `0x003E52A0` 20 |  |  |  |
+| `UseCrashBattleScoring()` | `0x00348D40` 8 | `0x003AEA80` 8 | `0x003D8600` 8 | `0x003E52C0` 20 |  |  |  |
+| `IsCrashType()` | `0x00348D50` 8 | `0x003AEA90` 8 | `0x003D8610` 8 | `0x003E52E0` 20 |  |  |  |
+| `OnWorldPrepared()` | `0x00348D60` 72 | `0x003AEAA0` 224 | `0x003D8620` 224 | `0x003E51A0` 152 |  |  |  |
+| `GetGameModeScore(int,const CB3FinishedScore*,int*,int*)` | `0x00348DB0` 76 | `0x003AEB80` 768 | `0x003D8700` 768 | `0x003E4F30` 280 |  |  |  |
+| `AllowRestartButton()` | `0x00348E00` 192 | `0x003AEE80` 192 | `0x003D8A00` 192 | `0x003E4E50` 224 |  |  |  |
+| `LeaveLobby()` | `0x00348EC0` 52 | `0x003AEF40` 52 | `0x003D8AC0` 52 | `0x003E4DA0` 76 |  |  |  |
+| `SetGameModeStatusMessageDelivered()` | `0x00348F00` 12 | `0x003AEF80` 12 | `0x003D8B00` 12 | `0x003E4D80` 32 |  |  |  |
+| `SetGameModeStatusMessageArrived(signed char)` | `0x00348F10` 56 | `0x003AEF90` 160 | `0x003D8B10` 160 | `0x003E4CF0` 144 |  |  |  |
+| `DisplayDollarValuesAboveTraffic()` | `0x00348F50` 8 | `0x003AF030` 8 | `0x003D8BB0` 8 | `0x003E4CD0` 20 |  |  |  |
+| `ClearUpCrash(int)` | `0x00348F60` 112 | `0x003AF040` 240 | `0x003D8BC0` 240 | `0x003E4B90` 204 |  |  |  |
+| `StartReplay()` | `0x00348FD0` 8 | `0x003AF130` 8 | `0x003D8CB0` 8 | `0x003E4B70` 20 |  |  |  |
+| `GetResultsPageType()` | `0x00348FE0` 8 | `0x003AF140` 8 | `0x003D8CC0` 8 | `0x003E4B50` 20 |  |  |  |
+| `GetRacePositionType()` | `0x00348FF0` 8 | `0x003AF150` 8 | `0x003D8CD0` 8 | `0x003E4B30` 20 |  |  |  |
+| `GetHUDType()` | `0x00349000` 8 | `0x003AF160` 8 | `0x003D8CE0` 8 | `0x003E4B10` 20 |  |  |  |
+| `HasStageFinished()` | `0x00349010` 8 | `0x003AF170` 8 | `0x003D8CF0` 8 | `0x003E4AF0` 28 |  |  |  |
+| `Destruct()` | `0x00349020` 8 | `0x003AF180` 8 | `0x003D8D00` 8 | `0x003E4AC0` 48 |  |  |  |
+| `Release()` | `0x00349030` 20 | `0x003AF190` 20 | `0x003D8D10` 20 | `0x003E4A70` 68 |  |  |  |
+| `UpdateCameras()` | `0x00349050` 224 | `0x003AF410` 280 | `0x003D8F90` 280 | `0x003E47F0` 224 |  |  |  |
+| `Update()` | `0x00349130` 1592 | `0x003AF530` 3100 | `0x003D90B0` 3100 | `0x003E3C60` 2228 |  |  |  |
+| `Prepare()` | `0x00349770` 48 | `0x003B0150` 48 | `0x003D9CD0` 48 | `0x003E3C00` 84 |  |  |  |
+| `Construct()` | `0x003497A0` 32 | `0x003B0180` 32 | `0x003D9D00` 32 | `0x003E3BC0` 60 |  |  |  |
+| `GetWinningPlayerID()` |  | `0x003AF1B0` 600 | `0x003D8D30` 600 | `0x003E48D0` 404 |  |  |  |
+| `CB3OnlineCompCrashLogic()` |  |  |  | `0x0013DE30` 60 |  |  |  |
+| `ResetContinueVars()` |  |  |  | `0x003E5150` 68 |  |  |  |
 
 ## Notes
 

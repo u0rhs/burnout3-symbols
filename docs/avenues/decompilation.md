@@ -82,9 +82,9 @@ Burnout 3 has no debug types. Sources for them:
   bytes with position, size and colour at 0x0–0x1F and the render callback at 0x3C; `C2dScene` keeps its
   layers at 0x74/0x78, `CGt2dScene` at 0x2C/0x30 (worked out from the retail code; see the
   [`CGt2dObject`](../classes/CGt2dObject.md) and [`CGt2dScene`](../classes/CGt2dScene.md) Notes).
-- **Burnout Revenge (July 2005 prototype)** has GCC debug information with real member names and offsets
-  for 1,899 types, many of them Burnout 3 classes renamed `CB4*` and Criterion's `CGt*` engine classes
-  ([builds](../builds.md#burnout-revenge-prototypes-2005-to-2006)). Some layouts are identical to what the
+- **Burnout Revenge (July 2005 prototype)** has GCC debug information with real member names, offsets and
+  methods for 2,717 types, many of them Burnout 3 classes renamed `CB4*` and Criterion's `CGt*` engine classes
+  ([Revenge classes](../reference/revenge-class-lineage.md): 444 of the 890; each class page shows the layout). Some layouts are identical to what the
   Burnout 3 retail code uses (`CGt2dScene`, `CGt2dObject`), others changed (Burnout 3's `CGt2dFont` has
   one more word): check each member against Burnout 3 code before using its name.
 - **Burnout 2 enums** ([enums](../reference/enums.md)) and RenderWare structs (`types.h`), which
@@ -96,7 +96,8 @@ Burnout 3 has no debug types. Sources for them:
 ## Step 3: function by function
 
 - **Parameter names:** for functions with a Burnout 2 counterpart, the Burnout 2 signature has them
-  ([function lineage](../reference/function-lineage.md)).
+  ([function lineage](../reference/function-lineage.md)); so does the Burnout Revenge one, for 2,805 functions
+  ([Revenge function lineage](../reference/revenge-function-lineage.md)). Both are on the class pages.
 - **Source layout:** the maps give the source file of every function, in link order, so functions can
   be placed into files as Criterion had them ([source files](../reference/source-file-lineage.md),
   `*.source_files.txt`). **The files stay whole in retail:** of 361 game and engine `.cpp` files with
@@ -105,7 +106,8 @@ Burnout 3 has no debug types. Sources for them:
   can be one original source file.
 - **Folders:** no Burnout 3 build keeps its source paths. Burnout 2's are `gamesource\<Area>\` and
   `GameShared\GameClasses\<Area>\`; Burnout Revenge's have the same shape (`GameSource/Hud/`,
-  `GameShared/GameClasses/Graphical/2d/`), which suggests Burnout 3's.
+  `GameShared/GameClasses/Graphical/2d/`), which suggests Burnout 3's: 300 Burnout 3 files have a Revenge file
+  of the same name ([Revenge source files](../reference/revenge-source-file-lineage.md)).
 - **Unoptimised build:** `B3O0PCH` has the inlined helpers as separate functions, which helps when
   reading optimised code.
 - **VU microcode** (`*.dsm`) is not C/C++; it is kept as data or disassembled into VU assembly

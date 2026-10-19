@@ -8,22 +8,23 @@
 - **Source file:** `GtLinearMalloc.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 9
 - **Retail (SLUS-21050):** 4 of its 6 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtLinearMalloc`, size 0x01C, methods in `GameShared/GameClasses/Memory/GtLinearMalloc.cpp` ([layout](#burnout-revenge-layout-of-cgtlinearmalloc))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Malloc(unsigned int)` | `0x002B8ED0` 80 | `0x002FA840` 160 | `0x0032E510` 160 | `0x00326160` 176 |  |  |
-| `SetAlignment(unsigned int)` | `0x002B8F20` 8 | `0x002FA8E0` 140 | `0x0032E5B0` 140 | `0x00326100` 92 |  |  |
-| `Destroy()` | `0x002B8F30` 160 | `0x002FA970` 188 | `0x0032E640` 188 | `0x00325FB0` 140 | `0x002F9D00` proven |  |
-| `Create(void*,unsigned int)` | `0x002B8FD0` 36 | `0x002FAA30` 200 | `0x0032E700` 200 | `0x00325F10` 152 | `0x002F9DA0` proven |  |
-| `~CGtLinearMalloc()` | `0x002B9000` 196 | `0x002FAB00` 224 | `0x0032E7D0` 224 | `0x00325EB0` 92 | `0x002F9DD0` proven |  |
-| `CGtLinearMalloc()` | `0x002B90D0` 24 | `0x002FABE0` 24 | `0x0032E8B0` 24 | `0x00325E70` 64 | `0x002F9EA0` proven |  |
-| `GetAlignment()` |  |  |  | `0x00261EB0` 28 |  |  |
-| `IsRWAllocator()` |  |  |  | `0x00261ED0` 36 |  |  |
-| `StopRWAllocation()` |  |  |  | `0x003260A0` 84 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Malloc(unsigned int)` | `0x002B8ED0` 80 | `0x002FA840` 160 | `0x0032E510` 160 | `0x00326160` 176 |  |  | `void * CGtLinearMalloc::Malloc(unsigned int lnSize)` |
+| `SetAlignment(unsigned int)` | `0x002B8F20` 8 | `0x002FA8E0` 140 | `0x0032E5B0` 140 | `0x00326100` 92 |  |  | `void CGtLinearMalloc::SetAlignment(unsigned int lnAlignment)` |
+| `Destroy()` | `0x002B8F30` 160 | `0x002FA970` 188 | `0x0032E640` 188 | `0x00325FB0` 140 | `0x002F9D00` proven |  |  |
+| `Create(void*,unsigned int)` | `0x002B8FD0` 36 | `0x002FAA30` 200 | `0x0032E700` 200 | `0x00325F10` 152 | `0x002F9DA0` proven |  | `void CGtLinearMalloc::Create(void *lpBuffer, unsigned int lnBufferSize)` |
+| `~CGtLinearMalloc()` | `0x002B9000` 196 | `0x002FAB00` 224 | `0x0032E7D0` 224 | `0x00325EB0` 92 | `0x002F9DD0` proven |  |  |
+| `CGtLinearMalloc()` | `0x002B90D0` 24 | `0x002FABE0` 24 | `0x0032E8B0` 24 | `0x00325E70` 64 | `0x002F9EA0` proven |  |  |
+| `GetAlignment()` |  |  |  | `0x00261EB0` 28 |  |  |  |
+| `IsRWAllocator()` |  |  |  | `0x00261ED0` 36 |  |  |  |
+| `StopRWAllocation()` |  |  |  | `0x003260A0` 84 |  |  | `void CGtLinearMalloc::StopRWAllocation()` |
 
 ## Static data (DNAT_200)
 
@@ -31,6 +32,46 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 |---|---:|---|---|
 | `0x00444190` | 4 | .sbss | `CGtLinearMalloc::mpActiveRWAllocator` |
 | `0x01D93AD0` | 16 | .bss | `CGtLinearMalloc::mCachedMemoryFuncs` |
+
+## Burnout Revenge layout of `CGtLinearMalloc`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 17 file(s), e.g. `GameShared/GameClasses/Graphical/TextureClasses/Ps2/GtTexturePS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtLinearMalloc {  // size 0x01C
+    /* 0x000 */ bool mbCreated;
+    /* 0x004 */ void *mpAlloc;
+    /* 0x008 */ size_t mnStartAddress;
+    /* 0x00C */ size_t mnEndAddress;
+    /* 0x010 */ size_t mnNextAddress;
+    /* 0x014 */ size_t mnAlignment;
+    /* 0x018 */ void *mpLastAlloc;
+    /* static */ CGtLinearMalloc *mpActiveRWAllocator;
+    /* static */ RwMemoryFunctions mCachedMemoryFuncs;
+    // methods
+    // CGtLinearMalloc(const CGtLinearMalloc &);
+    // CGtLinearMalloc();
+    // void Construct();
+    // void Create(void *, unsigned int);
+    // void Destruct();
+    // void StartRWAllocation();
+    // void StopRWAllocation();
+    // bool IsRWAllocator();
+    // void SetAlignment(unsigned int);
+    // size_t GetAlignment() const;
+    // size_t GetSize() const;
+    // size_t GetFreeMemory() const;
+    // size_t GetUsage() const;
+    // void * GetStartAddress() const;
+    // void * Malloc(unsigned int);
+    // void FreeAll();
+    // bool IsAddressFromAllocator(const void *) const;
+    // static void * MallocRW(unsigned int, unsigned int);
+    // static void * CallocRW(unsigned int, unsigned int, unsigned int);
+    // static void * ReAllocRW(void *, unsigned int, unsigned int);
+    // static void FreeRW(void *);
+};
+```
 
 ## Notes
 

@@ -9,16 +9,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct(CB3TrailEmitter**,int)` |  |  |  | `0x002E8C10` 52 |  |  |
-| `Destruct()` |  |  |  | `0x002E8CD0` 16 |  |  |
-| `GetSize()` |  |  |  | `0x002E9470` 28 |  |  |
-| `Pop()` |  |  |  | `0x002E9420` 72 |  |  |
-| `Prepare()` |  |  |  | `0x002E8FB0` 32 |  |  |
-| `Push(CB3TrailEmitter*const&)` |  |  |  | `0x002E8F40` 100 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct(CB3TrailEmitter**,int)` |  |  |  | `0x002E8C10` 52 |  |  |  |
+| `Destruct()` |  |  |  | `0x002E8CD0` 16 |  |  |  |
+| `GetSize()` |  |  |  | `0x002E9470` 28 |  |  |  |
+| `Pop()` |  |  |  | `0x002E9420` 72 |  |  |  |
+| `Prepare()` |  |  |  | `0x002E8FB0` 32 |  |  |  |
+| `Push(CB3TrailEmitter*const&)` |  |  |  | `0x002E8F40` 100 |  |  |  |
 
 ## Notes
 

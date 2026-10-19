@@ -9,17 +9,43 @@
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 4
 - **Retail (SLUS-21050):** 3 of its 4 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004400B0`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
+- **Burnout Revenge counterpart:** `CB4SoundListener`, size 0x030, methods in `GameSource/Sound/Core/B4SoundListener.cpp` ([layout](#burnout-revenge-layout-of-cb4soundlistener))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update()` | `0x0024C680` 1488 | `0x0027D750` 1968 | `0x002B4BA0` 1968 | `0x002B0800` 848 | `0x0028A450` likely |  |
-| `Prepare(unsigned int)` | `0x0024CC50` 164 | `0x0027DF00` 216 | `0x002B5350` 216 | `0x002B0740` 188 | `0x0028AB60` unverified |  |
-| `Construct()` | `0x0024CD00` 40 | `0x0027DFE0` 40 | `0x002B5430` 40 | `0x002B0710` 48 | `0x0028AC50` strong |  |
-| `CB3SoundListener()` | `0x0024D1B0` 20 | `0x0027EAD0` 20 | `0x002B5950` 20 | `0x002B1880` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update()` | `0x0024C680` 1488 | `0x0027D750` 1968 | `0x002B4BA0` 1968 | `0x002B0800` 848 | `0x0028A450` likely |  | `void CB4SoundListener::Update()` |
+| `Prepare(unsigned int)` | `0x0024CC50` 164 | `0x0027DF00` 216 | `0x002B5350` 216 | `0x002B0740` 188 | `0x0028AB60` unverified |  | `bool CB4SoundListener::Prepare(unsigned int lunPlayIndex)` |
+| `Construct()` | `0x0024CD00` 40 | `0x0027DFE0` 40 | `0x002B5430` 40 | `0x002B0710` 48 | `0x0028AC50` strong |  | `void CB4SoundListener::Construct()` |
+| `CB3SoundListener()` | `0x0024D1B0` 20 | `0x0027EAD0` 20 | `0x002B5950` 20 | `0x002B1880` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundListener`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameSource/Sound/B4SoundManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundListener : public CGtSoundListener {  // size 0x030
+    // base CGtSoundListener at 0x000
+    /* 0x00C */ bool mbUseDoppler;
+    /* 0x010 */ CB4PlayerCameraManager *mpCameraManager;
+    /* 0x014 */ ERaceCarIndex mePlayerRaceCarIndex;
+    /* 0x018 */ RwReal mrFakeListenerHeight;
+    /* 0x01C */ bool mbIsOnCamera;
+    /* 0x020 */ CGtV3d mPosition;
+    // methods
+    // CB4SoundListener(const CB4SoundListener &);
+    // CB4SoundListener();
+    // void Construct();
+    // void Destruct();
+    // virtual bool Prepare(unsigned int);
+    // virtual void Update();
+    // void Release();
+    // bool IsOnCamera();
+};
+```
 
 ## Notes
 

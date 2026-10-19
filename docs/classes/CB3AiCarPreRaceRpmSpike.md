@@ -8,17 +8,41 @@
 - **Source file:** `B3AICarPhysics.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 4
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4AiCarPreRaceRpmSpike`, size 0x01C, methods in `GameSource/Physics/B4AICarPhysics.cpp` ([layout](#burnout-revenge-layout-of-cb4aicarpreracerpmspike))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update()` | `0x001991F0` 356 | `0x001CD610` 356 | `0x001C6F00` 356 | `0x001D66A0` 448 | `0x001D2D70` proven |  |
-| `IsFinished()` |  |  |  | `0x001D6920` 96 |  |  |
-| `Prepare()` |  |  |  | `0x001D6600` 40 |  |  |
-| `Reset(float,float,float,float)` |  |  |  | `0x001D6630` 108 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update()` | `0x001991F0` 356 | `0x001CD610` 356 | `0x001C6F00` 356 | `0x001D66A0` 448 | `0x001D2D70` proven |  | `void CB4AiCarPreRaceRpmSpike::Update()` |
+| `IsFinished()` |  |  |  | `0x001D6920` 96 |  |  | `bool CB4AiCarPreRaceRpmSpike::IsFinished() const` (same name, different parameters) |
+| `Prepare()` |  |  |  | `0x001D6600` 40 |  |  | `void CB4AiCarPreRaceRpmSpike::Prepare()` |
+| `Reset(float,float,float,float)` |  |  |  | `0x001D6630` 108 |  |  | `void CB4AiCarPreRaceRpmSpike::Reset(float lrHeight, float lrAttackTime, float lrDecayTime, float lrPreDelay)` |
+
+## Burnout Revenge layout of `CB4AiCarPreRaceRpmSpike`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Physics/B4AICarPhysics.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AiCarPreRaceRpmSpike {  // size 0x01C
+    /* 0x000 */ RwReal mrRpmSpike;
+    /* 0x004 */ RwReal mrTime;
+    /* 0x008 */ RwReal mrHeight;
+    /* 0x00C */ RwReal mrAttackTime;
+    /* 0x010 */ RwReal mrDecayTime;
+    /* 0x014 */ RwReal mrPreDelay;
+    /* 0x018 */ bool mbInAttack;
+    // methods
+    // CB4AiCarPreRaceRpmSpike(const CB4AiCarPreRaceRpmSpike &);
+    // CB4AiCarPreRaceRpmSpike();
+    // void Prepare();
+    // void Reset(float, float, float, float);
+    // void Update();
+    // bool IsFinished() const;
+};
+```
 
 ## Notes
 

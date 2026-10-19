@@ -8,44 +8,109 @@
 - **Source file:** `GtViewport.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 31
 - **Retail (SLUS-21050):** 7 of its 8 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtViewport`, size 0x090, methods in `GameShared/GameClasses/Graphical/Camera/GtViewport.cpp` ([layout](#burnout-revenge-layout-of-cgtviewport))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetSubRaster(CGtViewport*,RwRect*)` | `0x001D7D70` 116 | `0x001D3DC0` 160 | `0x00206A20` 160 | `0x00217D50` 196 |  |  |
-| `SetAspectRatio(float)` | `0x001D7DF0` 8 | `0x001D3E60` 8 | `0x00206AC0` 8 | `0x00217D20` 36 | `0x00211CB0` proven |  |
-| `SetFOV(float)` | `0x001D7E00` 136 | `0x001D3E70` 136 | `0x00206AD0` 136 | `0x00217BA0` 264 | `0x00211CC0` proven |  |
-| `SetCamera(CGtCamera*)` | `0x001D7E90` 12 | `0x001D3F00` 12 | `0x00206B60` 12 | `0x00217B70` 48 | `0x00211D50` proven |  |
-| `Prepare()` | `0x001D7EA0` 16 | `0x001D3F10` 16 | `0x00206B70` 16 | `0x00217B40` 40 | `0x00211D60` proven |  |
-| `Destruct()` | `0x001D7EB0` 96 | `0x001D3F20` 96 | `0x00206B80` 96 | `0x00217A90` 168 | `0x00211D70` proven |  |
-| `Construct(int,int,int)` | `0x001D7F10` 248 | `0x001D3F80` 400 | `0x00206BE0` 400 | `0x002178C0` 460 | `0x00211DD0` proven |  |
-| `Update()` | `0x001D8010` 1452 | `0x001D4110` 1620 | `0x00206D70` 1620 | `0x002171A0` 252 | `0x00211ED0` likely |  |
-| `CGtViewport()` |  |  |  | `0x00196230` 92 |  |  |
-| `Clear(bool,bool)` |  |  |  | `0x00135740` 172 |  |  |
-| `FinishDrawing()` |  |  |  | `0x001955E0` 64 |  |  |
-| `GetAspectRatio()` |  |  |  | `0x00321E00` 28 |  |  |
-| `GetCamera()` |  |  |  | `0x00169870` 28 |  |  |
-| `GetFOV()` |  |  |  | `0x00282B90` 28 |  |  |
-| `GetFarClipDistance()` |  |  |  | `0x0016EBA0` 28 |  |  |
-| `GetNearClipDistance()` |  |  |  | `0x0016EBC0` 28 |  |  |
-| `GetRecipViewWindow()` |  |  |  | `0x0016ECA0` 52 |  |  |
-| `GetRwCamera()` |  |  |  | `0x00230C90` 28 |  |  |
-| `GetRwRaster()` |  |  |  | `0x00217E60` 28 |  |  |
-| `GetRwZRaster()` |  |  |  | `0x00217E40` 28 |  |  |
-| `GetScreenDepth()` |  |  |  | `0x00217E20` 28 |  |  |
-| `GetScreenHeight()` |  |  |  | `0x0016EC30` 28 |  |  |
-| `GetScreenWidth()` |  |  |  | `0x0016EC50` 28 |  |  |
-| `GetViewWindow()` |  |  |  | `0x0016ECE0` 52 |  |  |
-| `GetViewWindowScalar()` |  |  |  | `0x00321DE0` 28 |  |  |
-| `GetWorldToViewMatrix()` |  |  |  | `0x0016EC70` 48 |  |  |
-| `SelectForDrawing()` |  |  |  | `0x00195550` 64 |  |  |
-| `SetFarClipDistance(float)` |  |  |  | `0x00194D50` 68 |  |  |
-| `SetNearClipDistance(float)` |  |  |  | `0x00194DA0` 68 |  |  |
-| `SetViewWindowScalar(float)` |  |  |  | `0x00195790` 36 |  |  |
-| `SwapDisplayBuffers()` |  |  |  | `0x00195620` 72 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetSubRaster(CGtViewport*,RwRect*)` | `0x001D7D70` 116 | `0x001D3DC0` 160 | `0x00206A20` 160 | `0x00217D50` 196 |  |  | `void CGtViewport::SetSubRaster(CGtViewport *lpParentViewport, RwRect *lpRect)` |
+| `SetAspectRatio(float)` | `0x001D7DF0` 8 | `0x001D3E60` 8 | `0x00206AC0` 8 | `0x00217D20` 36 | `0x00211CB0` proven |  | `void CGtViewport::SetAspectRatio(float lrAspectRatio)` |
+| `SetFOV(float)` | `0x001D7E00` 136 | `0x001D3E70` 136 | `0x00206AD0` 136 | `0x00217BA0` 264 | `0x00211CC0` proven |  | `void CGtViewport::SetFOV(float lrFOV)` |
+| `SetCamera(CGtCamera*)` | `0x001D7E90` 12 | `0x001D3F00` 12 | `0x00206B60` 12 | `0x00217B70` 48 | `0x00211D50` proven |  | `void CGtViewport::SetCamera(CGtCamera *lpCamera)` |
+| `Prepare()` | `0x001D7EA0` 16 | `0x001D3F10` 16 | `0x00206B70` 16 | `0x00217B40` 40 | `0x00211D60` proven |  | `RwBool CGtViewport::Prepare()` |
+| `Destruct()` | `0x001D7EB0` 96 | `0x001D3F20` 96 | `0x00206B80` 96 | `0x00217A90` 168 | `0x00211D70` proven |  | `void CGtViewport::Destruct()` |
+| `Construct(int,int,int)` | `0x001D7F10` 248 | `0x001D3F80` 400 | `0x00206BE0` 400 | `0x002178C0` 460 | `0x00211DD0` proven |  | `void CGtViewport::Construct(int lnScreenWidth, int lnScreenHeight, int lnScreenDepth)` |
+| `Update()` | `0x001D8010` 1452 | `0x001D4110` 1620 | `0x00206D70` 1620 | `0x002171A0` 252 | `0x00211ED0` likely |  | `void CGtViewport::Update()` |
+| `CGtViewport()` |  |  |  | `0x00196230` 92 |  |  |  |
+| `Clear(bool,bool)` |  |  |  | `0x00135740` 172 |  |  |  |
+| `FinishDrawing()` |  |  |  | `0x001955E0` 64 |  |  |  |
+| `GetAspectRatio()` |  |  |  | `0x00321E00` 28 |  |  |  |
+| `GetCamera()` |  |  |  | `0x00169870` 28 |  |  |  |
+| `GetFOV()` |  |  |  | `0x00282B90` 28 |  |  |  |
+| `GetFarClipDistance()` |  |  |  | `0x0016EBA0` 28 |  |  |  |
+| `GetNearClipDistance()` |  |  |  | `0x0016EBC0` 28 |  |  |  |
+| `GetRecipViewWindow()` |  |  |  | `0x0016ECA0` 52 |  |  |  |
+| `GetRwCamera()` |  |  |  | `0x00230C90` 28 |  |  |  |
+| `GetRwRaster()` |  |  |  | `0x00217E60` 28 |  |  |  |
+| `GetRwZRaster()` |  |  |  | `0x00217E40` 28 |  |  |  |
+| `GetScreenDepth()` |  |  |  | `0x00217E20` 28 |  |  |  |
+| `GetScreenHeight()` |  |  |  | `0x0016EC30` 28 |  |  |  |
+| `GetScreenWidth()` |  |  |  | `0x0016EC50` 28 |  |  |  |
+| `GetViewWindow()` |  |  |  | `0x0016ECE0` 52 |  |  |  |
+| `GetViewWindowScalar()` |  |  |  | `0x00321DE0` 28 |  |  |  |
+| `GetWorldToViewMatrix()` |  |  |  | `0x0016EC70` 48 |  |  |  |
+| `SelectForDrawing()` |  |  |  | `0x00195550` 64 |  |  |  |
+| `SetFarClipDistance(float)` |  |  |  | `0x00194D50` 68 |  |  |  |
+| `SetNearClipDistance(float)` |  |  |  | `0x00194DA0` 68 |  |  |  |
+| `SetViewWindowScalar(float)` |  |  |  | `0x00195790` 36 |  |  |  |
+| `SwapDisplayBuffers()` |  |  |  | `0x00195620` 72 |  |  |  |
+
+## Burnout Revenge layout of `CGtViewport`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 294 file(s), e.g. `GameShared/GameClasses/Graphical/Camera/GtViewport.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtViewport {  // size 0x090
+    /* 0x000 */ CGtMatrix3x4 mWorldToViewMatrix;
+    /* 0x040 */ CGtV2d mViewOffset;
+    /* 0x048 */ CGtV2d mViewWindow;
+    /* 0x050 */ CGtV2d mRecipViewWindow;
+    /* 0x058 */ RwCamera *mpRwCamera;
+    /* 0x05C */ RwFrame *mpRwCameraFrame;
+    /* 0x060 */ RwRaster *mpRaster;
+    /* 0x064 */ RwRaster *mpZRaster;
+    /* 0x068 */ CGtCamera *mpGtCurrentCamera;
+    /* 0x06C */ RwReal mrCurrentFOV;
+    /* 0x070 */ RwReal mrViewWindowScalar;
+    /* 0x074 */ RwReal mrAspectRatio;
+    /* 0x078 */ RwInt32 mnScreenWidth;
+    /* 0x07C */ RwInt32 mnScreenHeight;
+    /* 0x080 */ RwInt32 mnScreenDepth;
+    /* 0x084 */ RwReal mrNearClipDistance;
+    /* 0x088 */ RwReal mrFarClipDistance;
+    // methods
+    // CGtViewport(const CGtViewport &);
+    // CGtViewport();
+    // void Construct(int, int, int);
+    // void Construct(RwRaster *, RwRaster *);
+    // void Destruct();
+    // void SetSubRaster(CGtViewport *, RwRect *);
+    // RwBool Prepare();
+    // void Release();
+    // void Update();
+    // void SetCamera(CGtCamera *);
+    // CGtCamera * GetCamera();
+    // void SetAspectRatio(float);
+    // void Clear(bool, bool);
+    // void SelectForDrawing();
+    // void FinishDrawing();
+    // void SwapDisplayBuffers();
+    // RwCamera * GetRwCamera();
+    // RwReal GetFOV() const;
+    // RwReal GetViewWindowScalar() const;
+    // void SetViewWindowScalar(float);
+    // void SetNearClipDistance(float);
+    // RwReal GetNearClipDistance() const;
+    // void SetFarClipDistance(float);
+    // RwReal GetFarClipDistance() const;
+    // RwReal GetAspectRatio() const;
+    // CGtV2d GetViewWindow() const;
+    // void SetViewWindow(const GtMathPs2::CGtV2d &);
+    // CGtV2d GetRecipViewWindow() const;
+    // void SetRecipViewWindow(const GtMathPs2::CGtV2d &);
+    // RwInt32 GetScreenWidth() const;
+    // RwInt32 GetScreenHeight() const;
+    // RwInt32 GetScreenDepth() const;
+    // CGtV2dArg GetViewOffset() const;
+    // RwRaster * GetRwRaster();
+    // RwRaster * GetRwZRaster();
+    // CGtMatrix3x4Arg GetWorldToViewMatrix() const;
+    // void SetFOV(float);
+};
+```
 
 ## Notes
 

@@ -11,17 +11,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `IsCooperative()` | `0x00374F20` 8 | `0x003E5750` 8 | `0x0040D5D0` 8 | `0x00422980` 20 |  |  |
-| `UseCrashBattleScoring()` | `0x00374F30` 8 | `0x003E5760` 8 | `0x0040D5E0` 8 | `0x004229A0` 20 |  |  |
-| `IsCrashType()` | `0x00374F40` 8 | `0x003E5770` 8 | `0x0040D5F0` 8 | `0x004229C0` 20 |  |  |
-| `OnCrashStart(CB3RaceCarPhysics*,CB3CrashStartInfo*)` | `0x00374F50` 108 | `0x003E5780` 296 | `0x0040D600` 296 | `0x004228D0` 172 |  |  |
-| `GetResultsPageType()` | `0x00374FC0` 8 | `0x003E58B0` 8 | `0x0040D730` 8 | `0x004228B0` 20 |  |  |
-| `GetHUDType()` | `0x00374FD0` 8 | `0x003E58C0` 8 | `0x0040D740` 8 | `0x00422890` 20 |  |  |
-| `CB3OfflineTeamCrashLogic()` |  |  |  | `0x0013E030` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `IsCooperative()` | `0x00374F20` 8 | `0x003E5750` 8 | `0x0040D5D0` 8 | `0x00422980` 20 |  |  |  |
+| `UseCrashBattleScoring()` | `0x00374F30` 8 | `0x003E5760` 8 | `0x0040D5E0` 8 | `0x004229A0` 20 |  |  |  |
+| `IsCrashType()` | `0x00374F40` 8 | `0x003E5770` 8 | `0x0040D5F0` 8 | `0x004229C0` 20 |  |  |  |
+| `OnCrashStart(CB3RaceCarPhysics*,CB3CrashStartInfo*)` | `0x00374F50` 108 | `0x003E5780` 296 | `0x0040D600` 296 | `0x004228D0` 172 |  |  |  |
+| `GetResultsPageType()` | `0x00374FC0` 8 | `0x003E58B0` 8 | `0x0040D730` 8 | `0x004228B0` 20 |  |  |  |
+| `GetHUDType()` | `0x00374FD0` 8 | `0x003E58C0` 8 | `0x0040D740` 8 | `0x00422890` 20 |  |  |  |
+| `CB3OfflineTeamCrashLogic()` |  |  |  | `0x0013E030` 60 |  |  |  |
 
 ## Notes
 

@@ -12,16 +12,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `PrepareStats()` | `0x002DEB10` 920 | `0x00328A30` 956 | `0x0035AB90` 956 | `0x0035AE80` 1896 |  |  |
-| `Release()` | `0x002DEEB0` 8 | `0x00328DF0` 8 | `0x0035AF50` 8 | `0x0035AE70` 16 | `0x00322310` likely |  |
-| `Update()` | `0x002DEEC0` 272 | `0x00328E00` 396 | `0x0035AF60` 396 | `0x0035AD30` 308 | `0x00322320` unverified |  |
-| `Prepare()` | `0x002DEFD0` 320 | `0x00328F90` 428 | `0x0035B0F0` 428 | `0x0035AB20` 516 |  |  |
-| `Construct()` | `0x002DF110` 8 | `0x00329140` 8 | `0x0035B2A0` 8 | `0x0035AB00` 28 | `0x00322610` likely |  |
-| `CB3MyBurnoutPage()` |  |  |  | `0x00342ED0` 124 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `PrepareStats()` | `0x002DEB10` 920 | `0x00328A30` 956 | `0x0035AB90` 956 | `0x0035AE80` 1896 |  |  |  |
+| `Release()` | `0x002DEEB0` 8 | `0x00328DF0` 8 | `0x0035AF50` 8 | `0x0035AE70` 16 | `0x00322310` likely |  |  |
+| `Update()` | `0x002DEEC0` 272 | `0x00328E00` 396 | `0x0035AF60` 396 | `0x0035AD30` 308 | `0x00322320` unverified |  |  |
+| `Prepare()` | `0x002DEFD0` 320 | `0x00328F90` 428 | `0x0035B0F0` 428 | `0x0035AB20` 516 |  |  |  |
+| `Construct()` | `0x002DF110` 8 | `0x00329140` 8 | `0x0035B2A0` 8 | `0x0035AB00` 28 | `0x00322610` likely |  |  |
+| `CB3MyBurnoutPage()` |  |  |  | `0x00342ED0` 124 |  |  |  |
 
 ## Notes
 

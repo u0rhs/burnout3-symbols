@@ -8,14 +8,55 @@
 - **Source file:** `B3TriggerStruct.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TriggerStruct`, size 0x058, methods in `SharedClasses/TrafficData/B4TriggerStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4triggerstruct))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Fixup(unsigned int)` | `0x0022C0B0` 344 | `0x002441F0` 344 | `0x00280C10` 344 | `0x00281BD0` 552 | `0x00269D20` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Fixup(unsigned int)` | `0x0022C0B0` 344 | `0x002441F0` 344 | `0x00280C10` 344 | `0x00281BD0` 552 | `0x00269D20` proven |  | `void CB4TriggerStruct::Fixup(unsigned int lnStartAddress)` |
+
+## Burnout Revenge layout of `CB4TriggerStruct`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 87 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TriggerStruct {  // size 0x058
+    /* 0x000 */ CB4TrafficFillerStruct *mpKillFillers;
+    /* 0x004 */ CB4TrafficValveLaneSpeedStruct *mpValveLaneSpeeds;
+    /* 0x008 */ RwUInt8 *mpu8ValveSpeedChangeIndices;
+    /* 0x00C */ RwUInt8 *mpu8ValveLaneSpeedChangeIndices;
+    /* 0x010 */ CB4TrafficValveLaneFlowStruct *mpValveLaneFlows;
+    /* 0x014 */ RwUInt8 *mpu8ValveFlowChangeIndices;
+    /* 0x018 */ RwUInt8 *mpu8ValveLaneFlowChangeIndices;
+    /* 0x01C */ CB4FormationBehaviourStruct *mpValveLaneFormations;
+    /* 0x020 */ RwUInt8 *mpu8ValveFormationsChangeIndices;
+    /* 0x024 */ RwUInt8 *mpu8ValveLaneFormationChangeIndices;
+    /* 0x028 */ CB4TrafficSplitterFlowStruct *mpSplitterFlows;
+    /* 0x02C */ RwUInt8 *mpu8SplitterFlowChangeIndices;
+    /* 0x030 */ CB4TrafficLightTimingsStruct *mpTrafficLightTimings;
+    /* 0x034 */ RwUInt8 *mpu8TrafficLightIndices;
+    /* 0x038 */ CB4CrashTrafficSequenceStruct *mpCrashJunctionSequences;
+    /* 0x03C */ RwInt32 mnNumCrashJunctionSequences;
+    /* 0x040 */ RwInt32 mnNumValveSpeedChanges;
+    /* 0x044 */ RwInt32 mnNumValveFlowChanges;
+    /* 0x048 */ RwInt32 mnNumValveFormationChanges;
+    /* 0x04C */ RwReal mrTriggerTime;
+    /* 0x050 */ RwUInt16 mu16TriggerSlice;
+    /* 0x052 */ RwUInt8 mu8TriggerLap;
+    /* 0x053 */ RwUInt8 mu8DetourIndex;
+    /* 0x054 */ RwUInt8 mu8IsDetourTrigger;
+    /* 0x055 */ RwUInt8 mu8KillFillerCounts;
+    /* 0x056 */ RwUInt8 mu8NumSplitterFlowChanges;
+    /* 0x057 */ RwUInt8 mu8NumTrafficLightTimingChanges;
+    // methods
+    // CB4TriggerStruct(const CB4TriggerStruct &);
+    // CB4TriggerStruct();
+    // void Fixup(unsigned int);
+};
+```
 
 ## Notes
 

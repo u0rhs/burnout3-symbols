@@ -8,18 +8,45 @@
 - **Source file:** `B3AsyncDataLoader.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 5
 - **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4AsyncDataLoader`, size 0x794, methods in `GameSource/Game/B4AsyncDataLoader.cpp` ([layout](#burnout-revenge-layout-of-cb4asyncdataloader))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Abort(unsigned int)` | `0x00139BF0` 336 | `0x001426F0` 336 | `0x00140C00` 336 | `0x00148ED0` 520 | `0x0013CE20` likely |  |
-| `QueueLoadRequest(const char*,bool*,void*,unsigned int)` | `0x00139D40` 672 | `0x00142840` 892 | `0x00140D50` 892 | `0x00148AA0` 928 | `0x0013CFA0` strong |  |
-| `Destruct()` | `0x00139FE0` 180 | `0x00142BC0` 180 | `0x001410D0` 180 | `0x001489D0` 196 | `0x0013D410` proven |  |
-| `Update()` | `0x0013A0A0` 436 | `0x00142C80` 772 | `0x00141190` 772 | `0x001485B0` 1024 | `0x0013D250` strong |  |
-| `Construct()` | `0x0013A260` 84 | `0x00142F90` 84 | `0x001414A0` 84 | `0x001484C0` 228 | `0x0013D4D0` strong |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Abort(unsigned int)` | `0x00139BF0` 336 | `0x001426F0` 336 | `0x00140C00` 336 | `0x00148ED0` 520 | `0x0013CE20` likely |  | `bool CB4AsyncDataLoader::Abort(unsigned int luId)` |
+| `QueueLoadRequest(const char*,bool*,void*,unsigned int)` | `0x00139D40` 672 | `0x00142840` 892 | `0x00140D50` 892 | `0x00148AA0` 928 | `0x0013CFA0` strong |  | `RwUInt32 CB4AsyncDataLoader::QueueLoadRequest(const char *lpcName, bool *lpbCompletionReturn, void *lpBuffer, unsigned int luReadLen)` |
+| `Destruct()` | `0x00139FE0` 180 | `0x00142BC0` 180 | `0x001410D0` 180 | `0x001489D0` 196 | `0x0013D410` proven |  | `void CB4AsyncDataLoader::Destruct()` |
+| `Update()` | `0x0013A0A0` 436 | `0x00142C80` 772 | `0x00141190` 772 | `0x001485B0` 1024 | `0x0013D250` strong |  | `void CB4AsyncDataLoader::Update()` |
+| `Construct()` | `0x0013A260` 84 | `0x00142F90` 84 | `0x001414A0` 84 | `0x001484C0` 228 | `0x0013D4D0` strong |  | `void CB4AsyncDataLoader::Construct()` |
+
+## Burnout Revenge layout of `CB4AsyncDataLoader`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 34 file(s), e.g. `GameSource/Game/B4AsyncDataLoader.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AsyncDataLoader {  // size 0x794
+    /* 0x000 */ CB4PendingFileRequest maRequests[24];
+    /* 0x780 */ CGTFile *mpCurrentStream;
+    /* 0x784 */ bool mbAbortInProgress;
+    /* 0x785 */ bool mbPendingRead;
+    /* 0x788 */ RwUInt32 muHead;
+    /* 0x78C */ RwUInt32 muTail;
+    /* 0x790 */ RwUInt32 muCurrentId;
+    // methods
+    // CB4AsyncDataLoader(const CB4AsyncDataLoader &);
+    // CB4AsyncDataLoader();
+    // void Construct();
+    // void Destruct();
+    // void Update();
+    // RwUInt32 QueueLoadRequest(const char *, bool *, void *, unsigned int);
+    // bool Abort(unsigned int);
+    // void AbortAll();
+    // bool IsBusy();
+};
+```
 
 ## Notes
 

@@ -6,14 +6,31 @@
 
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4PhysicsManagerDebugHullPlaneEntry`, size 0x070 ([layout](#burnout-revenge-layout-of-cb4physicsmanagerdebughullplaneentry))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3PhysicsManagerDebugHullPlaneEntry()` |  |  |  | `0x00134C70` 44 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3PhysicsManagerDebugHullPlaneEntry()` |  |  |  | `0x00134C70` 44 |  |  |  |
+
+## Burnout Revenge layout of `CB4PhysicsManagerDebugHullPlaneEntry`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 39 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4PhysicsManagerDebugHullPlaneEntry {  // size 0x070
+    /* 0x000 */ CGtMatrix3x4 mMatrix;
+    /* 0x040 */ CB4ConvexHull *mpHull;
+    /* 0x044 */ RwUInt8 mu8NumPlanes;
+    /* 0x045 */ unsigned char mau8Planes[40];
+    // methods
+    // CB4PhysicsManagerDebugHullPlaneEntry(const CB4PhysicsManagerDebugHullPlaneEntry &);
+    // CB4PhysicsManagerDebugHullPlaneEntry();
+};
+```
 
 ## Notes
 

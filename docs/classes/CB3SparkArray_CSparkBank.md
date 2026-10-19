@@ -11,14 +11,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Prepare()` | `0x00225EE0` 140 | `0x0023C810` 240 | `0x00279330` 240 | `0x00279030` 300 | `0x002640E0` proven |  |
-| `Construct(const CB3SparkArrayParams*,bool)` | `0x00225F70` 1940 | `0x0023C900` 2432 | `0x00279420` 2404 | `0x00278580` 2400 | `0x00264170` strong |  |
-| `Destruct()` |  |  |  | `0x00279020` 16 |  |  |
-| `Release()` |  |  |  | `0x00279160` 16 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Prepare()` | `0x00225EE0` 140 | `0x0023C810` 240 | `0x00279330` 240 | `0x00279030` 300 | `0x002640E0` proven |  | `void CB4SparkArray::CSparkBank::Prepare()` |
+| `Construct(const CB3SparkArrayParams*,bool)` | `0x00225F70` 1940 | `0x0023C900` 2432 | `0x00279420` 2404 | `0x00278580` 2400 | `0x00264170` strong |  | `void CB4SparkArray::CSparkBank::Construct(const CB4SparkArrayParams *lpParams, bool lbCrashBank)` |
+| `Destruct()` |  |  |  | `0x00279020` 16 |  |  | `void CB4SparkArray::CSparkBank::Destruct()` |
+| `Release()` |  |  |  | `0x00279160` 16 |  |  | `void CB4SparkArray::CSparkBank::Release()` |
 
 ## Notes
 

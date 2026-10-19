@@ -6,15 +6,41 @@
 
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Methods per build:** B3O0PCH 2
+- **Burnout Revenge counterpart:** `CGtInputDevicePS2Pad2`, size 0x00C ([layout](#burnout-revenge-layout-of-cgtinputdeviceps2pad2))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CGtInputDevicePS2Pad2()` |  |  |  | `0x0013EF10` 40 |  |  |
-| `GetDeviceID()` |  |  |  | `0x0021A460` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CGtInputDevicePS2Pad2()` |  |  |  | `0x0013EF10` 40 |  |  |  |
+| `GetDeviceID()` |  |  |  | `0x0021A460` 28 |  |  |  |
+
+## Burnout Revenge layout of `CGtInputDevicePS2Pad2`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 307 file(s), e.g. `GameShared/GameClasses/Development/AutomaticTest/GtAutoTestMgr.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtInputDevicePS2Pad2 : public CGtInputDeviceGamePad {  // size 0x00C
+    // base CGtInputDeviceGamePad at 0x000
+    /* 0x004 */ EGtPS2InputDeviceID meDeviceID;
+    /* 0x008 */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CGtInputDevicePS2Pad2(const CGtInputDevicePS2Pad2 &);
+    // CGtInputDevicePS2Pad2();
+    // void Construct();
+    // void Destruct();
+    // void Prepare();
+    // void Release();
+    // EGtPS2InputDeviceID GetDeviceID();
+    // virtual void Update();
+    // virtual void UpdateVibration();
+    // virtual void SetPause(bool);
+    // virtual bool BindToPort(CGtInputManagerPS2Pad2 *, EGtPS2InputPort);
+    // virtual void UnbindFromPort();
+};
+```
 
 ## Notes
 

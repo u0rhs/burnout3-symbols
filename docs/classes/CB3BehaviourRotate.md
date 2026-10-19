@@ -9,21 +9,63 @@
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
 - **Retail (SLUS-21050):** 6 of its 7 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004401A0`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
+- **Burnout Revenge counterpart:** `CB4BehaviourRotate`, size 0x090, methods in `GameSource/Camera/Behaviours/B4BehaviourRotate.cpp` ([layout](#burnout-revenge-layout-of-cb4behaviourrotate))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Destruct()` | `0x002A5480` 8 | `0x002DEB60` 8 | `0x00315C00` 8 | `0x003133E0` 16 | `0x002E5E20` likely |  |
-| `Release(void*)` | `0x002A5490` 8 | `0x002DEB70` 8 | `0x00315C10` 8 | `0x003133D0` 16 | `0x002E5E30` likely |  |
-| `Update(CGtCamera*,float)` | `0x002A54A0` 1816 | `0x002DEB80` 3432 | `0x00315C20` 3212 | `0x003130C0` 780 | `0x002E5E40` unverified |  |
-| `Prepare(void*)` | `0x002A5BC0` 1424 | `0x002DF8F0` 3032 | `0x003168B0` 2812 | `0x00312E10` 680 | `0x002E6700` likely |  |
-| `SetParameters(int,int)` | `0x002A6150` 488 | `0x002E04D0` 832 | `0x003173B0` 832 | `0x00312AE0` 816 | `0x002E6CC0` unverified |  |
-| `SetParameters(int,float,float,float,float,float)` | `0x002A6340` 44 | `0x002E0810` 44 | `0x003176F0` 44 | `0x00312A40` 152 |  |  |
-| `Construct()` | `0x002A6370` 8 | `0x002E0840` 8 | `0x00317720` 8 | `0x00312A10` 40 | `0x002E6F30` unverified |  |
-| `CB3BehaviourRotate()` |  |  |  | `0x0013EA60` 76 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Destruct()` | `0x002A5480` 8 | `0x002DEB60` 8 | `0x00315C00` 8 | `0x003133E0` 16 | `0x002E5E20` likely |  | `void CB4BehaviourRotate::Destruct()` |
+| `Release(void*)` | `0x002A5490` 8 | `0x002DEB70` 8 | `0x00315C10` 8 | `0x003133D0` 16 | `0x002E5E30` likely |  | `void CB4BehaviourRotate::Release(void *lpData)` |
+| `Update(CGtCamera*,float)` | `0x002A54A0` 1816 | `0x002DEB80` 3432 | `0x00315C20` 3212 | `0x003130C0` 780 | `0x002E5E40` unverified |  | `void CB4BehaviourRotate::Update(CGtCamera *lpCamera, float lrTimeStep)` |
+| `Prepare(void*)` | `0x002A5BC0` 1424 | `0x002DF8F0` 3032 | `0x003168B0` 2812 | `0x00312E10` 680 | `0x002E6700` likely |  | `bool CB4BehaviourRotate::Prepare(void *lpData)` |
+| `SetParameters(int,int)` | `0x002A6150` 488 | `0x002E04D0` 832 | `0x003173B0` 832 | `0x00312AE0` 816 | `0x002E6CC0` unverified |  |  |
+| `SetParameters(int,float,float,float,float,float)` | `0x002A6340` 44 | `0x002E0810` 44 | `0x003176F0` 44 | `0x00312A40` 152 |  |  |  |
+| `Construct()` | `0x002A6370` 8 | `0x002E0840` 8 | `0x00317720` 8 | `0x00312A10` 40 | `0x002E6F30` unverified |  | `void CB4BehaviourRotate::Construct()` |
+| `CB3BehaviourRotate()` |  |  |  | `0x0013EA60` 76 |  |  |  |
+
+## Burnout Revenge layout of `CB4BehaviourRotate`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 318 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4BehaviourRotate : public CB4CameraBehaviour {  // size 0x090
+    // base CB4CameraBehaviour at 0x000
+    /* 0x020 */ CGtMatrix3x4 mRigMatrix;
+    /* 0x060 */ RwReal mrRotation;
+    /* 0x064 */ RwReal mrStartAngle;
+    /* 0x068 */ RwReal mrDirection;
+    /* 0x06C */ RwReal mrSpeed;
+    /* 0x070 */ RwReal mrHeight;
+    /* 0x074 */ RwReal mrRadius;
+    /* 0x078 */ RwReal mrFocusY;
+    /* 0x07C */ ERaceCarIndex meRaceCarIndex;
+    /* 0x080 */ EPlayerCarIndex mePlayerIndex;
+    /* 0x084 */ bool mbTrackOffset;
+    /* 0x085 */ bool mbPaused;
+    // methods
+    // CB4BehaviourRotate(const CB4BehaviourRotate &);
+    // CB4BehaviourRotate();
+    // virtual void Construct(CB4PlayerCameraManager *);
+    // virtual void Construct();
+    // virtual void Destruct();
+    // virtual bool Prepare(void *);
+    // virtual void Release(void *);
+    // virtual void Update(CGtCamera *, float);
+    // void Takedown(ERaceCarIndex, ERaceCarIndex);
+    // void SignatureTakedownBehind(ERaceCarIndex);
+    // void SignatureTakedownSide(ERaceCarIndex);
+    // void SetParameters(ERaceCarIndex, float, float, float, float, float, float);
+    // void SetSpeed(float);
+    // void ReverseDirection();
+    // void SetPaused(bool);
+    // void SetYFocus(float);
+    // void PlaceForTakedown(ERaceCarIndex, ERaceCarIndex, CB4BehaviourRotate::EB4RotatePlace);
+    // CGtV3d GetCameraPositionFromRotation(float, CB4RaceCarPhysics *);
+};
+```
 
 ## Notes
 

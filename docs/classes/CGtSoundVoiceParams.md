@@ -8,14 +8,111 @@
 - **Source file:** `GtSoundVoice.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtSoundVoiceParams`, size 0x060 ([layout](#burnout-revenge-layout-of-cgtsoundvoiceparams))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` | `0x00345690` 92 | `0x003A9E10` 92 | `0x003D3F10` 92 | `0x003DDB20` 248 | `0x00388A90` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` | `0x00345690` 92 | `0x003A9E10` 92 | `0x003D3F10` 92 | `0x003DDB20` 248 | `0x00388A90` proven |  |  |
+
+## Burnout Revenge layout of `CGtSoundVoiceParams`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 37 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundListenerManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSoundVoiceParams {  // size 0x060
+    /* static */ CGtSoundVoiceParams _mDefaults;
+    /* 0x000 */ CGtV3d mPosition;
+    /* 0x010 */ CGtV3d mVelocity;
+    /* 0x020 */ CGtSoundWave *mpWave;
+    /* 0x024 */ RwReal mrVolume;
+    /* 0x028 */ RwReal mrReverb;
+    /* 0x02C */ RwReal mrBaseFrequency;
+    /* 0x030 */ RwReal mrPan;
+    /* 0x034 */ RwReal mrPitch;
+    /* 0x038 */ RwReal mrTriggerDelay;
+    /* 0x03C */ RwReal mrForgetMeTime;
+    /* 0x040 */ RwReal mrMaxDistance;
+    /* 0x044 */ RwReal mrMinDistance;
+    /* 0x048 */ RwReal mrDspPan;
+    /* 0x04C */ RwReal mrDspGain;
+    /* 0x050 */ RwUInt32 muWaveStartPosition;
+    /* 0x054 */ RwUInt32 mxChangeFlags;
+    /* 0x058 */ RwUInt8 muGroup;
+    /* 0x059 */ bool mbLooped;
+    /* 0x05A */ bool mbIgnoreMasterPitch;
+    /* 0x05B */ bool mbIgnoreMasterVolume;
+    // methods
+    // CGtSoundVoiceParams(const CGtSoundVoiceParams &);
+    // CGtSoundVoiceParams();
+    // static CGtSoundVoiceParams & _GetDefaults();
+    // static void _SetDefaults(const CGtSoundVoiceParams &);
+    // void Construct();
+    // void Construct(const CGtSoundWave *, float, float, unsigned char);
+    // void Construct(const CGtSoundWave *, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, unsigned char);
+    // void SetPosition(GtMathPs2::CGtV3d);
+    // void SetVelocity(GtMathPs2::CGtV3d);
+    // void SetWave(const CGtSoundWave *);
+    // void SetVolume(float);
+    // void SetReverb(float);
+    // void SetBaseFrequency(float);
+    // void SetPan(float);
+    // void SetTriggerDelay(float);
+    // void SetForgetMeTime(float);
+    // void SetMinDistance(float);
+    // void SetMaxDistance(float);
+    // void SetWaveStartPosition(unsigned int);
+    // void SetGroup(unsigned char);
+    // void SetLooped(bool);
+    // void SetPitch(float);
+    // void SetDspGain(float);
+    // void SetDspPan(float);
+    // void SetIgnoreMasterPitch(bool);
+    // void SetIgnoreMasterVolume(bool);
+    // CGtV3d & GetPosition() const;
+    // CGtV3d & GetVelocity() const;
+    // CGtSoundWave * GetWave() const;
+    // RwReal GetVolume() const;
+    // RwReal GetReverb() const;
+    // RwReal GetBaseFrequency() const;
+    // RwReal GetPan() const;
+    // RwReal GetTriggerDelay() const;
+    // RwReal GetForgetMeTime() const;
+    // RwReal GetMinDistance() const;
+    // RwReal GetMaxDistance() const;
+    // RwUInt32 GetWaveStartPosition() const;
+    // RwUInt8 GetGroup() const;
+    // bool GetLooped() const;
+    // RwReal GetPitch() const;
+    // RwReal GetDspGain() const;
+    // RwReal GetDspPan() const;
+    // bool GetIgnoreMasterPitch() const;
+    // bool GetIgnoreMasterVolume() const;
+    // bool HasChanged() const;
+    // bool HasChangedPosition() const;
+    // bool HasChangedVelocity() const;
+    // bool HasChangedWave() const;
+    // bool HasChangedVolume() const;
+    // bool HasChangedReverb() const;
+    // bool HasChangedBaseFrequency() const;
+    // bool HasChangedPan() const;
+    // bool HasChangedTriggerDelay() const;
+    // bool HasChangedForgetMeTime() const;
+    // bool HasChangedMinDistance() const;
+    // bool HasChangedMaxDistance() const;
+    // bool HasChangedWaveStartPosition() const;
+    // bool HasChangedGroup() const;
+    // bool HasChangedLooped() const;
+    // bool HasChangedPitch() const;
+    // bool HasChangedDspGain() const;
+    // bool HasChangedDspPan() const;
+    // bool HasChangedIgnoreMasterPitch() const;
+    // bool HasChangedIgnoreMasterVolume() const;
+};
+```
 
 ## Notes
 

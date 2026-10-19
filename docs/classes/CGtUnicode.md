@@ -8,30 +8,66 @@
 - **Source file:** `GtUnicode.cpp`
 - **Methods per build:** DNAT_200 17, B3DEBUG 17, B3INTERN 17, B3O0PCH 17
 - **Retail (SLUS-21050):** 13 of its 17 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtUnicode`, size 0x001, methods in `GameShared/GameClasses/System/GtUnicode.cpp` ([layout](#burnout-revenge-layout-of-cgtunicode))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `PrintString<i,PUs>(unsigned short*,const unsigned short*,const int&,unsigned short*const&)` | `0x0016FB10` 188 | `0x0018B590` 188 | `0x00185F90` 188 | `0x0019CCB0` 148 |  |  |
-| `PrintString<i>(unsigned short*,const unsigned short*,const int&)` | `0x0016FBD0` 144 | `0x0018B650` 144 | `0x00186050` 144 | `0x0019CD50` 100 |  |  |
-| `_FormatString(unsigned short*,const unsigned short*,const unsigned short*,const unsigned short*,const unsigned shor` | `0x001D8E50` 528 | `0x001D5000` 632 | `0x00207D10` 632 | `0x00219850` 452 | `0x00212E30` strong |  |
-| `PrintReal(unsigned short*,float,int)` | `0x001D9100` 484 | `0x001D5320` 684 | `0x00208030` 676 | `0x002195D0` 356 | `0x00213360` likely |  |
-| `PrintInt(unsigned short*,int,int)` | `0x001D92F0` 204 | `0x001D55D0` 292 | `0x002082E0` 288 | `0x00219560` 112 | `0x002136F0` likely |  |
-| `PrintUInt(unsigned short*,unsigned int,int)` | `0x001D93C0` 180 | `0x001D5700` 268 | `0x00208400` 264 | `0x002193F0` 64 | `0x002137F0` likely |  |
-| `AppendN(unsigned short*,int,const unsigned short*)` | `0x001D9480` 116 | `0x001D5810` 220 | `0x00208510` 220 | `0x002192F0` 252 | `0x002138C0` proven |  |
-| `Append(unsigned short*,const unsigned short*)` | `0x001D9500` 84 | `0x001D58F0` 84 | `0x002085F0` 84 | `0x00219250` 152 | `0x00213940` proven |  |
-| `CopyN(unsigned short*,int,const unsigned short*)` | `0x001D9560` 84 | `0x001D5950` 168 | `0x00208650` 168 | `0x00219190` 192 | `0x002139A0` proven |  |
-| `Copy(unsigned short*,const unsigned short*)` | `0x001D95C0` 48 | `0x001D5A00` 48 | `0x00208700` 48 | `0x00219120` 112 | `0x00213A00` proven |  |
-| `Length(const unsigned short*)` | `0x001D95F0` 44 | `0x001D5A30` 44 | `0x00208730` 44 | `0x002190D0` 76 | `0x00213A30` proven |  |
-| `ConvertUTF8toUTF16(const unsigned char*,unsigned short*,int)` | `0x001D9620` 360 | `0x001D5A60` 432 | `0x00208760` 432 | `0x00218E30` 664 | `0x00213A60` strong |  |
-| `ConvertUTF8toUTF16Fast(const unsigned char*,unsigned short*,int)` | `0x001D9790` 188 | `0x001D5C10` 344 | `0x00208910` 344 | `0x00218CA0` 396 | `0x00213BE0` strong |  |
-| `ConvertUTF16toUTF8Fast(const unsigned short*,unsigned char*,int)` | `0x001D9850` 348 | `0x001D5D70` 548 | `0x00208A70` 548 | `0x00218A40` 604 | `0x00213CB0` strong |  |
-| `PrintString<PUs>(unsigned short*,const unsigned short*,unsigned short*const&)` | `0x002D7770` 68 | `0x00320B60` 68 | `0x00352D40` 68 | `0x0034F460` 100 | `0x003180A0` strong |  |
-| `PrintString<PUs,i>(unsigned short*,const unsigned short*,unsigned short*const&,const int&)` | `0x0035E590` 188 | `0x003C9B60` 188 | `0x003F2980` 188 | `0x00401AB0` 148 |  |  |
-| `PrintString<Ui>(unsigned short*,const unsigned short*,const unsigned int&)` | `0x0039DFA0` 144 | `0x004172C0` 144 | `0x0043CF80` 144 | `0x00454ED0` 100 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `PrintString<i,PUs>(unsigned short*,const unsigned short*,const int&,unsigned short*const&)` | `0x0016FB10` 188 | `0x0018B590` 188 | `0x00185F90` 188 | `0x0019CCB0` 148 |  |  |  |
+| `PrintString<i>(unsigned short*,const unsigned short*,const int&)` | `0x0016FBD0` 144 | `0x0018B650` 144 | `0x00186050` 144 | `0x0019CD50` 100 |  |  |  |
+| `_FormatString(unsigned short*,const unsigned short*,const unsigned short*,const unsigned short*,const unsigned shor` | `0x001D8E50` 528 | `0x001D5000` 632 | `0x00207D10` 632 | `0x00219850` 452 | `0x00212E30` strong |  | `GtUTF16 * CGtUnicode::_FormatString(unsigned short *lpcResult, const unsigned short *lpcFormat, const unsigned short *lpV1, const unsigned short *lpV2, const unsigned short *lpV3, const unsigned short *lpV4, int lnBufferLength)` (same name, different parameters) |
+| `PrintReal(unsigned short*,float,int)` | `0x001D9100` 484 | `0x001D5320` 684 | `0x00208030` 676 | `0x002195D0` 356 | `0x00213360` likely |  |  |
+| `PrintInt(unsigned short*,int,int)` | `0x001D92F0` 204 | `0x001D55D0` 292 | `0x002082E0` 288 | `0x00219560` 112 | `0x002136F0` likely |  | `GtUTF16 * CGtUnicode::PrintInt(unsigned short *lpTargetString, int luValue, int lnPrecision, CGtUnicode::ENumericFormat leFormat)` (same name, different parameters) |
+| `PrintUInt(unsigned short*,unsigned int,int)` | `0x001D93C0` 180 | `0x001D5700` 268 | `0x00208400` 264 | `0x002193F0` 64 | `0x002137F0` likely |  |  |
+| `AppendN(unsigned short*,int,const unsigned short*)` | `0x001D9480` 116 | `0x001D5810` 220 | `0x00208510` 220 | `0x002192F0` 252 | `0x002138C0` proven |  | `GtUTF16 * CGtUnicode::AppendN(unsigned short *lpTargetString, int lnTargetLength, const unsigned short *lpSourceString)` |
+| `Append(unsigned short*,const unsigned short*)` | `0x001D9500` 84 | `0x001D58F0` 84 | `0x002085F0` 84 | `0x00219250` 152 | `0x00213940` proven |  |  |
+| `CopyN(unsigned short*,int,const unsigned short*)` | `0x001D9560` 84 | `0x001D5950` 168 | `0x00208650` 168 | `0x00219190` 192 | `0x002139A0` proven |  | `GtUTF16 * CGtUnicode::CopyN(unsigned short *lpTargetString, int lnTargetLength, const unsigned short *lpSourceString)` |
+| `Copy(unsigned short*,const unsigned short*)` | `0x001D95C0` 48 | `0x001D5A00` 48 | `0x00208700` 48 | `0x00219120` 112 | `0x00213A00` proven |  | `GtUTF16 * CGtUnicode::Copy(unsigned short *lpTargetString, const unsigned short *lpSourceString)` |
+| `Length(const unsigned short*)` | `0x001D95F0` 44 | `0x001D5A30` 44 | `0x00208730` 44 | `0x002190D0` 76 | `0x00213A30` proven |  | `RwInt32 CGtUnicode::Length(const unsigned short *lpSourceString)` |
+| `ConvertUTF8toUTF16(const unsigned char*,unsigned short*,int)` | `0x001D9620` 360 | `0x001D5A60` 432 | `0x00208760` 432 | `0x00218E30` 664 | `0x00213A60` strong |  | `EGtUnicodeConversionResult CGtUnicode::ConvertUTF8toUTF16(const unsigned char *lpaSource, unsigned short *lpaTarget, int lnTargetLength)` |
+| `ConvertUTF8toUTF16Fast(const unsigned char*,unsigned short*,int)` | `0x001D9790` 188 | `0x001D5C10` 344 | `0x00208910` 344 | `0x00218CA0` 396 | `0x00213BE0` strong |  | `void CGtUnicode::ConvertUTF8toUTF16Fast(const unsigned char *lpaSource, unsigned short *lpaTarget, int lnTargetLength)` |
+| `ConvertUTF16toUTF8Fast(const unsigned short*,unsigned char*,int)` | `0x001D9850` 348 | `0x001D5D70` 548 | `0x00208A70` 548 | `0x00218A40` 604 | `0x00213CB0` strong |  | `void CGtUnicode::ConvertUTF16toUTF8Fast(const unsigned short *lpaSource, unsigned char *lpaTarget, int lnTargetLength)` |
+| `PrintString<PUs>(unsigned short*,const unsigned short*,unsigned short*const&)` | `0x002D7770` 68 | `0x00320B60` 68 | `0x00352D40` 68 | `0x0034F460` 100 | `0x003180A0` strong |  |  |
+| `PrintString<PUs,i>(unsigned short*,const unsigned short*,unsigned short*const&,const int&)` | `0x0035E590` 188 | `0x003C9B60` 188 | `0x003F2980` 188 | `0x00401AB0` 148 |  |  |  |
+| `PrintString<Ui>(unsigned short*,const unsigned short*,const unsigned int&)` | `0x0039DFA0` 144 | `0x004172C0` 144 | `0x0043CF80` 144 | `0x00454ED0` 100 |  |  |  |
+
+## Burnout Revenge layout of `CGtUnicode`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 339 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dObjectTable.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtUnicode {  // size 0x001
+    /* static */ RwInt32 knMaxPrintPrecision;
+    /* static */ GtUTF16 mThousandsSeparator;
+    /* static */ GtUTF16 mDecimalPoint;
+    /* static */ GtUTF16 mPositive;
+    /* static */ GtUTF16 mNegative;
+    // methods
+    // CGtUnicode(const CGtUnicode &);
+    // CGtUnicode();
+    // static void ConvertUTF8toUTF16Fast(const unsigned char *, unsigned short *, int);
+    // static EGtUnicodeConversionResult ConvertUTF8toUTF16(const unsigned char *, unsigned short *, int);
+    // static void ConvertUTF16toUTF8Fast(const unsigned short *, unsigned char *, int);
+    // static EGtUnicodeConversionResult ConvertUTF16toUTF8(const unsigned short *, unsigned char *, int);
+    // static RwInt32 Length(const unsigned short *);
+    // static GtUTF16 * Copy(unsigned short *, const unsigned short *);
+    // static GtUTF16 * CopyN(unsigned short *, int, const unsigned short *);
+    // static GtUTF16 * Append(unsigned short *, const unsigned short *);
+    // static GtUTF16 * AppendN(unsigned short *, int, const unsigned short *);
+    // static GtUTF16 * PrintUInt(unsigned short *, unsigned int, int);
+    // static GtUTF16 * PrintSeparatedUInt(unsigned short *, unsigned int, int);
+    // static GtUTF16 * PrintInt(unsigned short *, int, int, CGtUnicode::ENumericFormat);
+    // static GtUTF16 * PrintSeparatedInt(unsigned short *, int, int, CGtUnicode::ENumericFormat);
+    // static GtUTF16 * PrintReal(unsigned short *, float, int, CGtUnicode::ENumericFormat);
+    // static GtUTF16 * PrintSeparatedReal(unsigned short *, float, int, CGtUnicode::ENumericFormat);
+    // static GtUTF16 * _FormatString(unsigned short *, const unsigned short *, const unsigned short *, const unsigned short *, const unsigned short *, const unsigned short *, int);
+    // static void SetNumericSeparators(unsigned short, unsigned short);
+    // static void SetNumericSignSymbols(unsigned short, unsigned short);
+};
+```
 
 ## Notes
 

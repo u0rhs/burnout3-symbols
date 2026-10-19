@@ -8,21 +8,22 @@
 - **Source file:** `B3TrafficLight.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 7
 - **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrafficLight`, size 0x018, methods in `GameSource/World/B4TrafficLight.cpp` ([layout](#burnout-revenge-layout-of-cb4trafficlight))
 - **Burnout 2 ancestor (by name):** `CTrafficLight`, size 0x040, declared in 48 file(s), e.g. `gamesource/Game/CProfile.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UseNewTimingsData(float)` | `0x00227A30` 28 | `0x0023E880` 28 | `0x0027B210` 28 | `0x0027D370` 68 | `0x00265C60` proven |  |
-| `StopCars()` | `0x00227A50` 868 | `0x0023E8A0` 868 | `0x0027B230` 868 | `0x0027CE00` 1376 | `0x00265C80` proven | `void CTrafficLight::StopCars()` |
-| `Update(float)` | `0x00227DC0` 584 | `0x0023EC10` 612 | `0x0027B5A0` 612 | `0x0027C960` 804 | `0x00266010` proven | `void CTrafficLight::Update()` (same name, different parameters) |
-| `Prepare(CB3TrafficLightPositionStruct*)` | `0x00228010` 72 | `0x0023EE80` 72 | `0x0027B810` 72 | `0x0027C910` 80 | `0x00266260` proven |  |
-| `LockSegments(bool)` |  |  |  | `0x0027D360` 16 |  |  |
-| `ResetMemberVariables()` |  |  |  | `0x0027CC90` 96 |  |  |
-| `StartCars()` |  |  |  | `0x0027CCF0` 272 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UseNewTimingsData(float)` | `0x00227A30` 28 | `0x0023E880` 28 | `0x0027B210` 28 | `0x0027D370` 68 | `0x00265C60` proven |  | `void CB4TrafficLight::UseNewTimingsData(float lrRaceTime)` |
+| `StopCars()` | `0x00227A50` 868 | `0x0023E8A0` 868 | `0x0027B230` 868 | `0x0027CE00` 1376 | `0x00265C80` proven | `void CTrafficLight::StopCars()` | `void CB4TrafficLight::StopCars()` |
+| `Update(float)` | `0x00227DC0` 584 | `0x0023EC10` 612 | `0x0027B5A0` 612 | `0x0027C960` 804 | `0x00266010` proven | `void CTrafficLight::Update()` (same name, different parameters) | `void CB4TrafficLight::Update(float lrRaceTime)` |
+| `Prepare(CB3TrafficLightPositionStruct*)` | `0x00228010` 72 | `0x0023EE80` 72 | `0x0027B810` 72 | `0x0027C910` 80 | `0x00266260` proven |  | `bool CB4TrafficLight::Prepare(CB4TrafficLightPositionStruct *lpPositionData)` |
+| `LockSegments(bool)` |  |  |  | `0x0027D360` 16 |  |  | `void CB4TrafficLight::LockSegments(bool lbLock)` |
+| `ResetMemberVariables()` |  |  |  | `0x0027CC90` 96 |  |  | `void CB4TrafficLight::ResetMemberVariables()` |
+| `StartCars()` |  |  |  | `0x0027CCF0` 272 |  |  | `void CB4TrafficLight::StartCars()` |
 
 ## Burnout 2 layout of `CTrafficLight`
 
@@ -51,6 +52,34 @@ public:
     // void CTrafficLight::SetTime(int lnTime)  [0x0024BC20]
     // void CTrafficLight::Reset()  [0x0024BCF0]
     // void CTrafficLight::Setup()  [0x0024BE10]
+};
+```
+
+## Burnout Revenge layout of `CB4TrafficLight`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 86 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficLight {  // size 0x018
+    /* 0x000 */ CB4TrafficLightPositionStruct *mpPositionData;
+    /* 0x004 */ CB4TrafficLightTimingsStruct *mpTimingsData;
+    /* 0x008 */ RwReal mrLastStageChangeTime;
+    /* 0x00C */ RwReal mrCurrentStateTime;
+    /* 0x010 */ unsigned char mau8StoppingTrafficParam[4];
+    /* 0x014 */ RwUInt8 meState;
+    // methods
+    // CB4TrafficLight(const CB4TrafficLight &);
+    // CB4TrafficLight();
+    // void Construct();
+    // bool Prepare(CB4TrafficLightPositionStruct *);
+    // void Update(float);
+    // void Release();
+    // void Destruct();
+    // void ResetMemberVariables();
+    // void StopCars();
+    // void StartCars();
+    // void LockSegments(bool);
+    // void UseNewTimingsData(float);
 };
 ```
 

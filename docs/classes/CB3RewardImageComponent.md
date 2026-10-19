@@ -12,21 +12,21 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ReleaseCache()` | `0x003A6FE0` 8 | `0x00421C20` 8 | `0x00447890` 8 | `0x004606C0` 28 |  |  |
-| `Release()` | `0x003A6FF0` 108 | `0x00421C30` 108 | `0x004478A0` 108 | `0x00460600` 192 | `0x003F6020` proven |  |
-| `Update(float)` | `0x003A7060` 8 | `0x00421CA0` 8 | `0x00447910` 8 | `0x004605F0` 16 |  |  |
-| `Prepare(EB3RewardPageType,EB3RewardImageType,int)` | `0x003A7070` 772 | `0x00421CB0` 900 | `0x00447920` 772 | `0x00460190` 1120 |  |  |
-| `PrepareStrings()` | `0x003A7380` 192 | `0x00422040` 192 |  | `0x004600E0` 168 |  |  |
-| `GetLockedRewardString(EB3RewardImageType,int)` | `0x003A7440` 168 | `0x00422100` 204 |  | `0x0045FFC0` 288 |  |  |
-| `GetUnlockedRewardString(EB3RewardImageType,int)` | `0x003A74F0` 188 | `0x004221D0` 228 |  | `0x0045FE90` 304 |  |  |
-| `Construct()` | `0x003A75B0` 52 | `0x004222C0` 52 | `0x00447D00` 52 | `0x0045FDA0` 68 | `0x003F6590` proven |  |
-| `CB3RewardImageComponent()` |  |  |  | `0x0033BDE0` 60 |  |  |
-| `FormatHeadlineString(unsigned short*,int)` |  |  |  | `0x0045FDF0` 148 |  |  |
-| `GetRewardString(EB3RewardImageType,int)` |  |  | `0x00447C30` 204 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ReleaseCache()` | `0x003A6FE0` 8 | `0x00421C20` 8 | `0x00447890` 8 | `0x004606C0` 28 |  |  |  |
+| `Release()` | `0x003A6FF0` 108 | `0x00421C30` 108 | `0x004478A0` 108 | `0x00460600` 192 | `0x003F6020` proven |  |  |
+| `Update(float)` | `0x003A7060` 8 | `0x00421CA0` 8 | `0x00447910` 8 | `0x004605F0` 16 |  |  |  |
+| `Prepare(EB3RewardPageType,EB3RewardImageType,int)` | `0x003A7070` 772 | `0x00421CB0` 900 | `0x00447920` 772 | `0x00460190` 1120 |  |  |  |
+| `PrepareStrings()` | `0x003A7380` 192 | `0x00422040` 192 |  | `0x004600E0` 168 |  |  |  |
+| `GetLockedRewardString(EB3RewardImageType,int)` | `0x003A7440` 168 | `0x00422100` 204 |  | `0x0045FFC0` 288 |  |  |  |
+| `GetUnlockedRewardString(EB3RewardImageType,int)` | `0x003A74F0` 188 | `0x004221D0` 228 |  | `0x0045FE90` 304 |  |  |  |
+| `Construct()` | `0x003A75B0` 52 | `0x004222C0` 52 | `0x00447D00` 52 | `0x0045FDA0` 68 | `0x003F6590` proven |  |  |
+| `CB3RewardImageComponent()` |  |  |  | `0x0033BDE0` 60 |  |  |  |
+| `FormatHeadlineString(unsigned short*,int)` |  |  |  | `0x0045FDF0` 148 |  |  |  |
+| `GetRewardString(EB3RewardImageType,int)` |  |  | `0x00447C30` 204 |  |  |  |  |
 
 ## Notes
 

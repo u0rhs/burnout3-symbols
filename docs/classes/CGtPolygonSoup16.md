@@ -8,20 +8,55 @@
 - **Source file:** `GtPolygonSoup.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 7
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtPolygonSoup16`, size 0x010, methods in `GameShared/GameClasses/Geometric/Primitives/GtPolygonSoup.cpp` ([layout](#burnout-revenge-layout-of-cgtpolygonsoup16))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `FixUp()` | `0x0027F450` 28 | `0x002B6F20` 28 | `0x002ECE90` 28 | `0x002EE8D0` 72 | `0x002BF7B0` proven |  |
-| `GetOffset()` |  |  |  | `0x0028E8B0` 144 |  |  |
-| `GetPolygonCount()` |  |  |  | `0x0028E9A0` 28 |  |  |
-| `GetPolygonSize()` |  |  |  | `0x0028E980` 28 |  |  |
-| `GetPolygons()` |  |  |  | `0x0028E960` 28 |  |  |
-| `GetVertex(int)` |  |  |  | `0x0028E5C0` 264 |  |  |
-| `GetVertices()` |  |  |  | `0x0028E940` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `FixUp()` | `0x0027F450` 28 | `0x002B6F20` 28 | `0x002ECE90` 28 | `0x002EE8D0` 72 | `0x002BF7B0` proven |  | `void CGtPolygonSoup16::FixUp()` |
+| `GetOffset()` |  |  |  | `0x0028E8B0` 144 |  |  |  |
+| `GetPolygonCount()` |  |  |  | `0x0028E9A0` 28 |  |  |  |
+| `GetPolygonSize()` |  |  |  | `0x0028E980` 28 |  |  |  |
+| `GetPolygons()` |  |  |  | `0x0028E960` 28 |  |  |  |
+| `GetVertex(int)` |  |  |  | `0x0028E5C0` 264 |  |  |  |
+| `GetVertices()` |  |  |  | `0x0028E940` 28 |  |  |  |
+
+## Burnout Revenge layout of `CGtPolygonSoup16`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 246 file(s), e.g. `GameShared/GameClasses/Geometric/Intersection/GtCollisionQuadTree.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtPolygonSoup16 {  // size 0x010
+    /* 0x000 */ void *mpPolygons;
+    /* 0x004 */ CGtPolygonSoupVertex16 *mpVertices;
+    /* 0x008 */ RwUInt16 mu16DataSize;
+    /* 0x00A */ RwInt8 mn8OffsetX;
+    /* 0x00B */ RwInt8 mn8OffsetY;
+    /* 0x00C */ RwInt8 mn8OffsetZ;
+    /* 0x00D */ RwUInt8 mu8PolygonSize;
+    /* 0x00E */ RwUInt8 mu8PolygonCount;
+    /* 0x00F */ RwUInt8 mu8VertexCount;
+    // methods
+    // CGtPolygonSoup16(const CGtPolygonSoup16 &);
+    // CGtPolygonSoup16();
+    // static RwUInt32 _CalculateDataSize(unsigned int, unsigned int, unsigned int, unsigned int);
+    // static CGtPolygonSoup * _Construct(unsigned int, unsigned int, unsigned int, unsigned int, void *, unsigned int);
+    // void Construct(unsigned int, unsigned int, unsigned int, unsigned int, void *, unsigned int);
+    // void FixUp();
+    // void * GetPolygons() const;
+    // CGtPolygonSoupVertex16 * GetVertices() const;
+    // CGtV3d GetVertex(int) const;
+    // RwUInt32 GetDataSize() const;
+    // RwUInt8 GetPolygonCount() const;
+    // RwUInt8 GetPolygonSize() const;
+    // RwUInt8 GetVertexCount() const;
+    // CGtV3d GetOffset() const;
+    // void SetOffset(GtMathPs2::CGtV3d);
+};
+```
 
 ## Notes
 

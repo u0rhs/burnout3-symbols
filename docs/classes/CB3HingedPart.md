@@ -10,18 +10,18 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ApplyPositionedForce(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001D5D80` 196 |  |  |
-| `ApplyPositionedImpulse(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001D62D0` 196 |  |  |
-| `CB3HingedPart()` |  |  |  | `0x00191E90` 140 |  |  |
-| `CalculateCollisionImpulseWithInanimateObject(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,GtMathP` |  |  |  | `0x001D6400` 512 |  |  |
-| `Prepare()` |  |  |  | `0x001CC5E0` 332 |  |  |
-| `SetMomentOfInertia(float,float,float)` |  |  |  | `0x001CC490` 324 |  |  |
-| `SetRealisticMomentsOfInertia(const CGtAxisAlignedBox&)` |  |  |  | `0x001CC0F0` 920 |  |  |
-| `UpdatePhysics(float)` |  |  |  | `0x001D5AA0` 736 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ApplyPositionedForce(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001D5D80` 196 |  |  |  |
+| `ApplyPositionedImpulse(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001D62D0` 196 |  |  |  |
+| `CB3HingedPart()` |  |  |  | `0x00191E90` 140 |  |  |  |
+| `CalculateCollisionImpulseWithInanimateObject(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,GtMathP` |  |  |  | `0x001D6400` 512 |  |  |  |
+| `Prepare()` |  |  |  | `0x001CC5E0` 332 |  |  |  |
+| `SetMomentOfInertia(float,float,float)` |  |  |  | `0x001CC490` 324 |  |  |  |
+| `SetRealisticMomentsOfInertia(const CGtAxisAlignedBox&)` |  |  |  | `0x001CC0F0` 920 |  |  |  |
+| `UpdatePhysics(float)` |  |  |  | `0x001D5AA0` 736 |  |  |  |
 
 ## Notes
 

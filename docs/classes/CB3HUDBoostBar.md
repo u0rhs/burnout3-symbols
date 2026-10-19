@@ -9,25 +9,75 @@
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 6, B3O0PCH 11
 - **Retail (SLUS-21050):** 3 of its 7 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FDD0`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
+- **Burnout Revenge counterpart:** `CB4HUDBoostBar`, size 0x700, methods in `GameSource/Hud/B4HUDBoostBar.cpp` ([layout](#burnout-revenge-layout-of-cb4hudboostbar))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x0016FFA0` 528 | `0x0018BA70` 1112 |  | `0x001A37E0` 268 |  |  |
-| `Update(float)` | `0x001701B0` 80 | `0x0018BED0` 80 | `0x00186480` 80 | `0x001A3790` 80 |  |  |
-| `MessagesUpdate(float)` | `0x00170200` 1056 | `0x0018BF20` 1100 | `0x001864D0` 1108 | `0x001A31C0` 1416 |  |  |
-| `UpdateBoostMessage(CB3HUDBoostBar::EMessageType,const CB3ScoreCategory*,float,float)` | `0x00170620` 804 | `0x0018C370` 980 | `0x00186930` 964 | `0x001A2D60` 1108 |  |  |
-| `BarUpdate(float)` | `0x00170950` 1856 | `0x0018C750` 1900 | `0x00186D00` 1624 | `0x001A2530` 2032 | `0x001A4900` unverified |  |
-| `Prepare(int,EHUDAlign,int,bool,const CB3HUDHeading*)` | `0x00171090` 1028 | `0x0018CEC0` 1236 |  | `0x001A1FF0` 1276 | `0x001A52D0` likely |  |
-| `StaticConstruct()` | `0x00173E50` 8 | `0x00190030` 8 | `0x0018A330` 8 | `0x0019D470` 8 | `0x001A8490` strong |  |
-| `CB3HUDBoostBar()` |  |  |  | `0x00199A80` 124 |  |  |
-| `Prepare(int,EHUDAlign,int,bool)` |  |  | `0x00187360` 1132 |  |  |  |
-| `StartTakedownAnimation()` |  |  |  | `0x001A38F0` 160 |  |  |
-| `StopTakedownAnimation()` |  |  |  | `0x001A3B20` 156 |  |  |
-| `UpdateTakedownAnimation(float)` |  |  |  | `0x001A3BC0` 256 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x0016FFA0` 528 | `0x0018BA70` 1112 |  | `0x001A37E0` 268 |  |  | `void CB4HUDBoostBar::UpdateTransition(float lrInterp, bool lbShow, EHUDMode leNewMode, EHUDMode leOldMode)` |
+| `Update(float)` | `0x001701B0` 80 | `0x0018BED0` 80 | `0x00186480` 80 | `0x001A3790` 80 |  |  | `void CB4HUDBoostBar::Update(float lrTimeStep)` |
+| `MessagesUpdate(float)` | `0x00170200` 1056 | `0x0018BF20` 1100 | `0x001864D0` 1108 | `0x001A31C0` 1416 |  |  | `void CB4HUDBoostBar::MessagesUpdate(float lrTimeStep)` |
+| `UpdateBoostMessage(CB3HUDBoostBar::EMessageType,const CB3ScoreCategory*,float,float)` | `0x00170620` 804 | `0x0018C370` 980 | `0x00186930` 964 | `0x001A2D60` 1108 |  |  | `bool CB4HUDBoostBar::UpdateBoostMessage(CB4HUDBoostBar::EMessageType leMessageType, const CB4ScoreCategory *lpCategory, float lrTimeStep, float lrValueThreshold)` |
+| `BarUpdate(float)` | `0x00170950` 1856 | `0x0018C750` 1900 | `0x00186D00` 1624 | `0x001A2530` 2032 | `0x001A4900` unverified |  | `void CB4HUDBoostBar::BarUpdate(float lrTimeStep)` |
+| `Prepare(int,EHUDAlign,int,bool,const CB3HUDHeading*)` | `0x00171090` 1028 | `0x0018CEC0` 1236 |  | `0x001A1FF0` 1276 | `0x001A52D0` likely |  | `bool CB4HUDBoostBar::Prepare(EPlayerCarIndex lePlayer, EHUDAlign leAlign, int lxFlags, bool lbShowMessages, bool lbCompact)` (same name, different parameters) |
+| `StaticConstruct()` | `0x00173E50` 8 | `0x00190030` 8 | `0x0018A330` 8 | `0x0019D470` 8 | `0x001A8490` strong |  | `void CB4HUDBoostBar::StaticConstruct()` |
+| `CB3HUDBoostBar()` |  |  |  | `0x00199A80` 124 |  |  |  |
+| `Prepare(int,EHUDAlign,int,bool)` |  |  | `0x00187360` 1132 |  |  |  |  |
+| `StartTakedownAnimation()` |  |  |  | `0x001A38F0` 160 |  |  | `void CB4HUDBoostBar::StartTakedownAnimation()` |
+| `StopTakedownAnimation()` |  |  |  | `0x001A3B20` 156 |  |  | `void CB4HUDBoostBar::StopTakedownAnimation()` |
+| `UpdateTakedownAnimation(float)` |  |  |  | `0x001A3BC0` 256 |  |  | `void CB4HUDBoostBar::UpdateTakedownAnimation(float lrTimeStep)` |
+
+## Burnout Revenge layout of `CB4HUDBoostBar`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Hud/B4HUDBoostBar.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HUDBoostBar : public CB4HUDComponent {  // size 0x700
+    // base CB4HUDComponent at 0x000
+    /* 0x020 */ CBoostBarObjectData mBoostBarObjectData;
+    /* 0x558 */ CGtRandom mRandom;
+    /* 0x560 */ CGtV2d mBarPos;
+    /* 0x568 */ RwInt32 mnLastBoostPercentage;
+    /* 0x56C */ C2dObjectBoostBar *mpBoostBarObject;
+    /* 0x570 */ CB4HUDMessagePanel2dObject *mpMessagePanelObject;
+    /* 0x574 */ CB4HUDText2dObject *mpBoostBarPercentageObject;
+    /* 0x578 */ CB4HUDText2dObject *mpTapTextObject;
+    /* 0x57C */ CGt2dObjectImage *mpTapButton;
+    /* 0x580 */ RwReal mrTapButtonTime;
+    /* 0x584 */ RwReal mrBurnoutBarCenterY;
+    /* 0x588 */ CBoostMessage maBoostMessages[8];
+    /* 0x6C8 */ CBoostMessage *mpFirstMessage;
+    /* 0x6CC */ CB4PlayerCar *mpPlayerCar;
+    /* 0x6D0 */ RwReal mrTakedownAnimTime;
+    /* 0x6D4 */ CGt2dFrame *mpBoostBarClipFrame;
+    /* 0x6D8 */ CGt2dFrame *mpMessagePanelClipFrame;
+    /* 0x6E0 */ CGtV2d mBoostBarHomePos;
+    /* 0x6E8 */ short unsigned int maBoostBarPercentageString[8];
+    /* 0x6F8 */ GtUTF16 *mpc16TapText;
+    /* 0x6FC */ bool mbOnScreen;
+    /* 0x6FD */ bool mbShowMessages;
+    /* 0x6FE */ RwUInt8 mu8PrevNumSegments;
+    // methods
+    // CB4HUDBoostBar(const CB4HUDBoostBar &);
+    // CB4HUDBoostBar();
+    // static void StaticConstruct();
+    // bool Prepare(EPlayerCarIndex, EHUDAlign, int, bool, bool);
+    // virtual void Update(float);
+    // virtual void UpdateTransition(float, bool, EHUDMode, EHUDMode);
+    // void UpdateNumSegments();
+    // void BarUpdate(float);
+    // bool UpdateBoostMessage(CB4HUDBoostBar::EMessageType, const CB4ScoreCategory *, float, float);
+    // void MessagesUpdate(float);
+    // void StartTakedownAnimation();
+    // void StopTakedownAnimation();
+    // void UpdateTakedownAnimation(float);
+    // void PrepareBoostBarPercentageObject();
+    // void PrepareTapForCrashbreakerObject(float);
+};
+```
 
 ## Notes
 

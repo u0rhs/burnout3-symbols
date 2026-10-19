@@ -11,41 +11,41 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `OnAttack(EScoreBonusAttackType,CB3RaceCar*,int,EScoreBonusCategory)` | `0x0031EBA0` 1008 | `0x0037A070` 1316 | `0x003A8C50` 1316 | `0x003AAFC0` 1572 | `0x00367F40` strong |  |
-| `SetGamebreakerEvent(EScoreBonusEvent)` | `0x0031EF90` 8 | `0x0037A5A0` 8 | `0x003A9180` 8 | `0x003AAF90` 36 | `0x00368330` strong |  |
-| `GetDuellingCar()` | `0x0031EFA0` 24 | `0x0037A5B0` 24 | `0x003A9190` 24 | `0x003AAF50` 56 | `0x00368340` unverified |  |
-| `OnMedal(EB3ScoreMedalType,int)` | `0x0031EFC0` 120 | `0x0037A5D0` 120 | `0x003A91B0` 112 | `0x003AAE90` 180 | `0x00368360` strong |  |
-| `OnCrashComboResult(ECrashComboEvaluation)` | `0x0031F040` 188 | `0x0037A650` 256 | `0x003A9220` 244 | `0x003AAD60` 292 | `0x003683E0` likely |  |
-| `OnCrashReset()` | `0x0031F100` 8 | `0x0037A750` 8 | `0x003A9320` 8 | `0x003AAD30` 40 | `0x003684A0` likely |  |
-| `OnCrashStart()` | `0x0031F110` 24 | `0x0037A760` 24 | `0x003A9330` 24 | `0x003AACF0` 64 | `0x003684B0` strong |  |
-| `OnBoostLocked()` | `0x0031F130` 20 | `0x0037A780` 20 | `0x003A9350` 20 | `0x003AACB0` 56 | `0x003684D0` strong |  |
-| `OnYouWereLucky(CB3RaceCar*)` | `0x0031F150` 20 | `0x0037A7A0` 20 | `0x003A9370` 20 | `0x003AAC70` 56 | `0x003684F0` strong |  |
-| `OnDenied(CB3RaceCar*)` | `0x0031F170` 20 | `0x0037A7C0` 20 | `0x003A9390` 20 | `0x003AAC30` 56 | `0x00368510` strong |  |
-| `OnCrashEscape(int)` | `0x0031F190` 320 | `0x0037A7E0` 376 | `0x003A93B0` 376 | `0x003AAA50` 476 | `0x00368530` strong |  |
-| `OnTakedown(CB3RaceCar*,const CB3CrashStartInfo*,bool,bool)` | `0x0031F2D0` 1412 | `0x0037A960` 1672 | `0x003A9530` 1596 | `0x003AA2B0` 1948 | `0x00368680` unverified |  |
-| `OnSlam(CB3RaceCar*,EB3ScoreSlamType,bool)` | `0x0031F860` 104 | `0x0037AFF0` 104 | `0x003A9B70` 104 | `0x003AA1D0` 224 | `0x00368CB0` likely |  |
-| `OnTradePaint(CB3RaceCar*,bool)` | `0x0031F8D0` 72 | `0x0037B060` 72 | `0x003A9BE0` 72 | `0x003AA160` 112 | `0x00368D20` unverified |  |
-| `OnTailgate(CB3RaceCar*,CB3ScoreCategory*)` | `0x0031F920` 136 | `0x0037B0B0` 204 | `0x003A9C30` 204 | `0x003AA070` 228 | `0x00368D60` strong |  |
-| `OnGrind(CB3RaceCar*,CB3ScoreCategory*)` | `0x0031F9B0` 80 | `0x0037B180` 176 | `0x003A9D00` 176 | `0x003A9FB0` 188 | `0x00368DF0` strong |  |
-| `OnRub(CB3RaceCar*,CB3ScoreCategory*)` | `0x0031FA00` 80 | `0x0037B230` 176 | `0x003A9DB0` 176 | `0x003A9EF0` 188 | `0x00368E40` proven |  |
-| `OnAward(EScoreBonusEvent,int,const CB3ScoreCategory*)` | `0x0031FA50` 84 | `0x0037B2E0` 84 | `0x003A9E60` 84 | `0x003A9E70` 116 | `0x00368E90` strong |  |
-| `OnEvent(EScoreBonusEvent,int,int,bool)` | `0x0031FAB0` 292 | `0x0037B340` 292 | `0x003A9EC0` 344 | `0x003A9CE0` 400 | `0x00368EF0` likely |  |
-| `OnTrophy(ETrophyAction)` | `0x0031FBE0` 44 | `0x0037B470` 44 | `0x003AA020` 44 | `0x003A9C80` 84 |  |  |
-| `ClearAttackData()` | `0x0031FC10` 224 | `0x0037B4A0` 224 | `0x003AA050` 224 | `0x003A99F0` 472 | `0x00369120` strong |  |
-| `Update()` | `0x0031FCF0` 516 | `0x0037B580` 564 | `0x003AA130` 564 | `0x003A9770` 480 | `0x00369270` unverified |  |
-| `Release()` | `0x0031FF00` 8 | `0x0037B7C0` 8 | `0x003AA370` 8 | `0x003A9760` 16 | `0x00369440` strong |  |
-| `Prepare(CB3RaceCar*)` | `0x0031FF10` 44 | `0x0037B7D0` 44 | `0x003AA380` 44 | `0x003A96E0` 128 |  |  |
-| `Construct()` | `0x0031FF40` 8 | `0x0037B800` 8 | `0x003AA3B0` 8 | `0x003A96C0` 28 | `0x003694B0` strong |  |
-| `AddCurrentTrophyEvent()` |  |  |  | `0x003A9950` 152 |  |  |
-| `ClearEvent()` |  |  |  | `0x0043DA40` 56 |  |  |
-| `EventTimesOut(EScoreBonusEvent)` |  |  |  | `0x003A9BD0` 172 |  |  |
-| `GetEvent()` |  |  |  | `0x0043DBC0` 28 |  |  |
-| `GetEventNumStars()` |  |  |  | `0x0043D7E0` 28 |  |  |
-| `GetEventScore()` |  |  |  | `0x0043D7C0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `OnAttack(EScoreBonusAttackType,CB3RaceCar*,int,EScoreBonusCategory)` | `0x0031EBA0` 1008 | `0x0037A070` 1316 | `0x003A8C50` 1316 | `0x003AAFC0` 1572 | `0x00367F40` strong |  |  |
+| `SetGamebreakerEvent(EScoreBonusEvent)` | `0x0031EF90` 8 | `0x0037A5A0` 8 | `0x003A9180` 8 | `0x003AAF90` 36 | `0x00368330` strong |  |  |
+| `GetDuellingCar()` | `0x0031EFA0` 24 | `0x0037A5B0` 24 | `0x003A9190` 24 | `0x003AAF50` 56 | `0x00368340` unverified |  |  |
+| `OnMedal(EB3ScoreMedalType,int)` | `0x0031EFC0` 120 | `0x0037A5D0` 120 | `0x003A91B0` 112 | `0x003AAE90` 180 | `0x00368360` strong |  |  |
+| `OnCrashComboResult(ECrashComboEvaluation)` | `0x0031F040` 188 | `0x0037A650` 256 | `0x003A9220` 244 | `0x003AAD60` 292 | `0x003683E0` likely |  |  |
+| `OnCrashReset()` | `0x0031F100` 8 | `0x0037A750` 8 | `0x003A9320` 8 | `0x003AAD30` 40 | `0x003684A0` likely |  |  |
+| `OnCrashStart()` | `0x0031F110` 24 | `0x0037A760` 24 | `0x003A9330` 24 | `0x003AACF0` 64 | `0x003684B0` strong |  |  |
+| `OnBoostLocked()` | `0x0031F130` 20 | `0x0037A780` 20 | `0x003A9350` 20 | `0x003AACB0` 56 | `0x003684D0` strong |  |  |
+| `OnYouWereLucky(CB3RaceCar*)` | `0x0031F150` 20 | `0x0037A7A0` 20 | `0x003A9370` 20 | `0x003AAC70` 56 | `0x003684F0` strong |  |  |
+| `OnDenied(CB3RaceCar*)` | `0x0031F170` 20 | `0x0037A7C0` 20 | `0x003A9390` 20 | `0x003AAC30` 56 | `0x00368510` strong |  |  |
+| `OnCrashEscape(int)` | `0x0031F190` 320 | `0x0037A7E0` 376 | `0x003A93B0` 376 | `0x003AAA50` 476 | `0x00368530` strong |  |  |
+| `OnTakedown(CB3RaceCar*,const CB3CrashStartInfo*,bool,bool)` | `0x0031F2D0` 1412 | `0x0037A960` 1672 | `0x003A9530` 1596 | `0x003AA2B0` 1948 | `0x00368680` unverified |  |  |
+| `OnSlam(CB3RaceCar*,EB3ScoreSlamType,bool)` | `0x0031F860` 104 | `0x0037AFF0` 104 | `0x003A9B70` 104 | `0x003AA1D0` 224 | `0x00368CB0` likely |  |  |
+| `OnTradePaint(CB3RaceCar*,bool)` | `0x0031F8D0` 72 | `0x0037B060` 72 | `0x003A9BE0` 72 | `0x003AA160` 112 | `0x00368D20` unverified |  |  |
+| `OnTailgate(CB3RaceCar*,CB3ScoreCategory*)` | `0x0031F920` 136 | `0x0037B0B0` 204 | `0x003A9C30` 204 | `0x003AA070` 228 | `0x00368D60` strong |  |  |
+| `OnGrind(CB3RaceCar*,CB3ScoreCategory*)` | `0x0031F9B0` 80 | `0x0037B180` 176 | `0x003A9D00` 176 | `0x003A9FB0` 188 | `0x00368DF0` strong |  |  |
+| `OnRub(CB3RaceCar*,CB3ScoreCategory*)` | `0x0031FA00` 80 | `0x0037B230` 176 | `0x003A9DB0` 176 | `0x003A9EF0` 188 | `0x00368E40` proven |  |  |
+| `OnAward(EScoreBonusEvent,int,const CB3ScoreCategory*)` | `0x0031FA50` 84 | `0x0037B2E0` 84 | `0x003A9E60` 84 | `0x003A9E70` 116 | `0x00368E90` strong |  |  |
+| `OnEvent(EScoreBonusEvent,int,int,bool)` | `0x0031FAB0` 292 | `0x0037B340` 292 | `0x003A9EC0` 344 | `0x003A9CE0` 400 | `0x00368EF0` likely |  |  |
+| `OnTrophy(ETrophyAction)` | `0x0031FBE0` 44 | `0x0037B470` 44 | `0x003AA020` 44 | `0x003A9C80` 84 |  |  |  |
+| `ClearAttackData()` | `0x0031FC10` 224 | `0x0037B4A0` 224 | `0x003AA050` 224 | `0x003A99F0` 472 | `0x00369120` strong |  |  |
+| `Update()` | `0x0031FCF0` 516 | `0x0037B580` 564 | `0x003AA130` 564 | `0x003A9770` 480 | `0x00369270` unverified |  |  |
+| `Release()` | `0x0031FF00` 8 | `0x0037B7C0` 8 | `0x003AA370` 8 | `0x003A9760` 16 | `0x00369440` strong |  |  |
+| `Prepare(CB3RaceCar*)` | `0x0031FF10` 44 | `0x0037B7D0` 44 | `0x003AA380` 44 | `0x003A96E0` 128 |  |  |  |
+| `Construct()` | `0x0031FF40` 8 | `0x0037B800` 8 | `0x003AA3B0` 8 | `0x003A96C0` 28 | `0x003694B0` strong |  |  |
+| `AddCurrentTrophyEvent()` |  |  |  | `0x003A9950` 152 |  |  |  |
+| `ClearEvent()` |  |  |  | `0x0043DA40` 56 |  |  |  |
+| `EventTimesOut(EScoreBonusEvent)` |  |  |  | `0x003A9BD0` 172 |  |  |  |
+| `GetEvent()` |  |  |  | `0x0043DBC0` 28 |  |  |  |
+| `GetEventNumStars()` |  |  |  | `0x0043D7E0` 28 |  |  |  |
+| `GetEventScore()` |  |  |  | `0x0043D7C0` 28 |  |  |  |
 
 ## Notes
 

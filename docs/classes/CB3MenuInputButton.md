@@ -8,15 +8,34 @@
 - **Source file:** `B3MenuInput.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 2
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4MenuInputButton`, size 0x00C, methods in `GameSource/Game/B4MenuInput.cpp` ([layout](#burnout-revenge-layout-of-cb4menuinputbutton))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update(float,float,int)` | `0x001DFED0` 308 | `0x001DF4F0` 308 | `0x002121F0` 308 | `0x002225F0` 520 | `0x0021A9B0` proven |  |
-| `Debounce()` |  |  |  | `0x003473E0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update(float,float,int)` | `0x001DFED0` 308 | `0x001DF4F0` 308 | `0x002121F0` 308 | `0x002225F0` 520 | `0x0021A9B0` proven |  | `void CB4MenuInputButton::Update(float lrPressure, float lrTimestep, int lbAutoRepeat)` |
+| `Debounce()` |  |  |  | `0x003473E0` 28 |  |  |  |
+
+## Burnout Revenge layout of `CB4MenuInputButton`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 310 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4MenuInputButton {  // size 0x00C
+    /* 0x000 */ RwInt16 mb16GenerateEvent;
+    /* 0x002 */ RwInt16 mb16Pressed;
+    /* 0x004 */ RwReal mrPressure;
+    /* 0x008 */ RwReal mrRepeatTime;
+    // methods
+    // CB4MenuInputButton(const CB4MenuInputButton &);
+    // CB4MenuInputButton();
+    // void Update(float, float, int);
+    // void Debounce();
+};
+```
 
 ## Notes
 

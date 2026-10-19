@@ -11,11 +11,11 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ConstructPerspective(CGtFrustum*,const GtMathPs2::CGtMatrix3x4&,const GtMathPs2::CGtV2d&,const GtMathPs2::CG` | `0x00301EB0` 1128 | `0x003568F0` 1676 | `0x00387F40` 1128 | `0x003893A0` 1936 | `0x00349980` strong |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ConstructPerspective(CGtFrustum*,const GtMathPs2::CGtMatrix3x4&,const GtMathPs2::CGtV2d&,const GtMathPs2::CG` | `0x00301EB0` 1128 | `0x003568F0` 1676 | `0x00387F40` 1128 | `0x003893A0` 1936 | `0x00349980` strong |  | `void CGtFrustumBuilder::ConstructPerspective(CGtFrustum *lpFrustum, const GtMathPs2::CGtMatrix3x4 &lCameraMatrix, const GtMathPs2::CGtV2d &lViewWindow, const GtMathPs2::CGtV2d &lViewOffset, float lrNearClipPlane, float lrFarClipPlane)` (same name, different parameters) |
 
 ## Notes
 

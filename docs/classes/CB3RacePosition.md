@@ -8,23 +8,24 @@
 - **Source file:** `B3RacePosition.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 9
 - **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4RacePosition`, size 0x2160, methods in `GameSource/World/B4RacePosition.cpp` ([layout](#burnout-revenge-layout-of-cb4raceposition))
 - **Burnout 2 ancestor (by name):** `CRacePosition`, size 0x088, declared in 68 file(s), e.g. `gamesource/Game/CGrandPrixTable.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `DrawPositionMarker(GtMathPs2::CGtV3d,const unsigned short*,int,CB3RaceCar*,CB3RaceCar*,float,bool,bool,bool,fl` | `0x0014F630` 3480 | `0x00161DB0` 4240 | `0x0015CDB0` 4240 | `0x0016CD00` 7348 | `0x001531C0` unverified |  |
-| `DrawSingleVehicleValue(CB3VehiclePhysics*,int,int,float,bool)` | `0x001503D0` 392 | `0x00162E40` 432 | `0x0015DE40` 432 | `0x0016C9F0` 612 | `0x001540A0` unverified |  |
-| `DrawTrafficValues()` | `0x00150560` 272 | `0x00162FF0` 312 | `0x0015DFF0` 312 | `0x0016C8B0` 320 | `0x00154230` strong |  |
-| `Draw(int)` | `0x00150670` 844 | `0x00163130` 1412 | `0x0015E130` 1412 | `0x0016C440` 1132 | `0x00154350` unverified | `void CRacePosition::Draw(int camIndex)` |
-| `Destruct()` | `0x001509C0` 8 | `0x001636C0` 8 | `0x0015E6C0` 8 | `0x0016C430` 16 | `0x00154750` strong |  |
-| `Release()` | `0x001509D0` 8 | `0x001636D0` 8 | `0x0015E6D0` 8 | `0x0016C420` 16 | `0x00154760` strong |  |
-| `Update()` | `0x001509E0` 604 | `0x001636E0` 1272 | `0x0015E6E0` 980 | `0x0016C090` 900 | `0x00154770` strong | `void CRacePosition::Update()` |
-| `Prepare()` | `0x00150C80` 120 | `0x00163C20` 252 | `0x0015EB00` 252 | `0x0016BF20` 240 | `0x00154A30` strong |  |
-| `Construct()` | `0x00150D00` 8 | `0x00163D20` 8 | `0x0015EC00` 8 | `0x0016BF10` 16 | `0x00154AB0` strong |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `DrawPositionMarker(GtMathPs2::CGtV3d,const unsigned short*,int,CB3RaceCar*,CB3RaceCar*,float,bool,bool,bool,fl` | `0x0014F630` 3480 | `0x00161DB0` 4240 | `0x0015CDB0` 4240 | `0x0016CD00` 7348 | `0x001531C0` unverified |  | `void CB4RacePosition::DrawPositionMarker(GtMathPs2::CGtV3d lWorldPos, const unsigned short *lpMarkerString, ERaceCarIndex leRaceCarIndex, CB4RaceCar *lpRaceCar, CB4PlayerCar *lpPlayerCar, float lrCrashScoreTime, int lnCrashScore, bool lbDrawingAboveTraffic, float lrVehicleScoreOffset)` (same name, different parameters) |
+| `DrawSingleVehicleValue(CB3VehiclePhysics*,int,int,float,bool)` | `0x001503D0` 392 | `0x00162E40` 432 | `0x0015DE40` 432 | `0x0016C9F0` 612 | `0x001540A0` unverified |  | `void CB4RacePosition::DrawSingleVehicleValue(CB4VehiclePhysics *lpVehiclePhysics, int lnDisplayIndex, int lnScore, float lrDrawTime, bool lbDrawScoreOnly)` |
+| `DrawTrafficValues()` | `0x00150560` 272 | `0x00162FF0` 312 | `0x0015DFF0` 312 | `0x0016C8B0` 320 | `0x00154230` strong |  | `void CB4RacePosition::DrawTrafficValues(EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `Draw(int)` | `0x00150670` 844 | `0x00163130` 1412 | `0x0015E130` 1412 | `0x0016C440` 1132 | `0x00154350` unverified | `void CRacePosition::Draw(int camIndex)` | `void CB4RacePosition::Draw(EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `Destruct()` | `0x001509C0` 8 | `0x001636C0` 8 | `0x0015E6C0` 8 | `0x0016C430` 16 | `0x00154750` strong |  | `void CB4RacePosition::Destruct()` |
+| `Release()` | `0x001509D0` 8 | `0x001636D0` 8 | `0x0015E6D0` 8 | `0x0016C420` 16 | `0x00154760` strong |  | `void CB4RacePosition::Release()` |
+| `Update()` | `0x001509E0` 604 | `0x001636E0` 1272 | `0x0015E6E0` 980 | `0x0016C090` 900 | `0x00154770` strong | `void CRacePosition::Update()` | `void CB4RacePosition::Update()` |
+| `Prepare()` | `0x00150C80` 120 | `0x00163C20` 252 | `0x0015EB00` 252 | `0x0016BF20` 240 | `0x00154A30` strong |  | `bool CB4RacePosition::Prepare()` |
+| `Construct()` | `0x00150D00` 8 | `0x00163D20` 8 | `0x0015EC00` 8 | `0x0016BF10` 16 | `0x00154AB0` strong |  | `void CB4RacePosition::Construct()` |
 
 ## Burnout 2 layout of `CRacePosition`
 
@@ -45,6 +46,49 @@ public:
     // void CRacePosition::Reset()  [0x0023F0E0]
     // void CRacePosition::Setup()  [0x0023F120]
     // int CRacePosition::Init()  [0x0023F130]
+};
+```
+
+## Burnout Revenge layout of `CB4RacePosition`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 126 file(s), e.g. `GameShared/GameClasses/System/MemoryCard/NewMemoryCard/GtMemoryCardManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4RacePosition {  // size 0x2160
+    /* 0x000 */ ERaceCarPosState maeDrawStates[6];
+    /* 0x018 */ RwInt32 mnCounter;
+    /* 0x01C */ ERaceCarIndex meLeadPlayerRaceCarIndex;
+    /* 0x020 */ CGtV4d mColourScale;
+    /* 0x030 */ CGtV2d mSizeScale;
+    /* 0x038 */ ERacePositionType meType;
+    /* 0x03C */ short unsigned int maac16DamageString[66][64];
+    /* 0x213C */ CGtTexture *mpRacePositionTexture;
+    /* 0x2140 */ CGtTexture *mpCrownTexture;
+    /* 0x2144 */ bool mbFlashing;
+    /* 0x2148 */ RwReal mrNormalAlpha;
+    /* 0x214C */ RwReal mrFightingAlpha;
+    /* 0x2150 */ RwReal mrRevengeAlpha;
+    // methods
+    // CB4RacePosition(const CB4RacePosition &);
+    // CB4RacePosition();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void Draw(EPlayerCarIndex);
+    // void DrawTrafficValues(EPlayerCarIndex);
+    // void DrawSingleVehicleValue(CB4VehiclePhysics *, int, int, float, bool);
+    // void DrawSingleVehicleMultiplier(CB4VehiclePhysics *, int, int, float, bool);
+    // void DrawTargetVehicleMarker(CB4TrafficVehicle *, int);
+    // void DrawPositionMarker(GtMathPs2::CGtV3d, const unsigned short *, ERaceCarIndex, CB4RaceCar *, CB4PlayerCar *, float, int, bool, float);
+    // void DrawMoneyMarker(GtMathPs2::CGtV3d, const unsigned short *, float, int);
+    // void DrawMultiplierMarker(GtMathPs2::CGtV3d, const unsigned short *, float, int);
+    // void RenderTexture(CGtTexture *, GtMathPs2::CGtV3d *, GtMathPs2::CGtV4d *, float, float);
+    // void RenderCrown(CGtTexture *, GtMathPs2::CGtV3d *, GtMathPs2::CGtV4d *, float, float);
+    // void RenderRevengeMarkerPulse(GtMathPs2::CGtV3d *, GtMathPs2::CGtV4d *, float, float);
+    // void RenderCarPositionText(GtMathPs2::CGtV3d *, GtMathPs2::CGtV2d *, GtMathPs2::CGtV4d *, const unsigned short *, bool, float, float, float, CB4RaceCar *);
+    // static RwInt32 SortPositionStandingsDecending(const void *, const void *);
 };
 ```
 

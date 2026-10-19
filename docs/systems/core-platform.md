@@ -16,42 +16,44 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 **Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
 
-| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
-|---|---:|---:|---|---:|---|
-| `crt0.s` | 3 | 544 | `0x00100008` |  |  |
-| `mwUtils_PS2.c` | 2 | 44 | `0x00100230` |  |  |
-| `B3MainPS2.cpp` | 1 | 624 | `0x0012EA40` |  |  |
-| `B3ControllerMappingPS2.cpp` | 20 | 3,348 | `0x0012ECB0` | 9 (0) | `0x0012F160`–`0x0012FFB0` |
-| `B3DebugManager.cpp` | 15 | 3,356 | `0x0012FA40` | 11 (2) | `0x00130030`–`0x00130B80` |
-| `GtTimer.cpp` | 8 | 768 | `0x00199EA0` | 8 (8) | `0x001D3A50`–`0x001D3D30` |
-| `GtUnicode.cpp` | 13 | 2,820 | `0x001D8E50` | 13 (5) | `0x00212E30`–`0x00213CB0` |
-| `B3InputManagerPS2.cpp` | 5 | 644 | `0x001D99B0` | 4 (0) | `0x00213EB0`–`0x00214560` |
-| `GtInputManagerPS2Pad2.cpp` | 10 | 1,664 | `0x001D9C60` | 10 (5) | `0x00214610`–`0x00214B70` |
-| `GtInputDevicePS2DualShock2.cpp` | 2 | 2,444 | `0x001DA320` | 2 (0) | `0x00214CD0`–`0x00215620` |
-| `GtInputDevicePS2DualShock.cpp` | 13 | 1,348 | `0x001DC490` | 13 (8) | `0x00216E40`–`0x002173F0` |
-| `GtFSM.cpp` | 7 | 544 | `0x001DCB80` | 7 (7) | `0x00217610`–`0x002177C0` |
-| `GtDictionary.cpp` | 1 | 72 | `0x001E0010` | 1 (1) | `0x0021AAF0`–`0x0021AAF0` |
-| `GtID.cpp` | 5 | 1,156 | `0x001E0060` | 5 (5) | `0x0021AB40`–`0x0021AEF0` |
-| `GtHash.cpp` | 1 | 112 | `0x001E1370` | 1 (1) | `0x0021BFA0`–`0x0021BFA0` |
-| `B3MemoryManagerPS2.cpp` | 8 | 2,020 | `0x001E6DC0` | 7 (1) | `0x00222300`–`0x00222650` |
-| `B3InputManager.cpp` | 27 | 3,200 | `0x001EDA20` | 21 (0) | `0x0022BA70`–`0x0022D070` |
-| `GtThreadMgrPS2.cpp` | 7 | 636 | `0x001F8090` | 5 (2) | `0x00237050`–`0x002372F0` |
-| `B3TriggerStruct.cpp` | 1 | 344 | `0x0022C0B0` | 1 (1) | `0x00269D20`–`0x00269D20` |
-| `GtArray.cpp` | 1 | 80 | `0x00232230` | 1 (1) | `0x002719B0`–`0x002719B0` |
-| `GtPerfMon.cpp` | 1 | 8 | `0x00277B50` | 1 (1) | `0x002B6C30`–`0x002B6C30` |
-| `GtFreeList.cpp` | 8 | 876 | `0x00277B60` | 7 (7) | `0x002B6C40`–`0x002B6EC0` |
-| `B3CPUMonitors.cpp` | 2 | 140 | `0x002AEF70` | 1 (0) | `0x002F03A0`–`0x002F03A0` |
-| `GtLinearMalloc.cpp` | 6 | 504 | `0x002B8ED0` | 4 (4) | `0x002F9D00`–`0x002F9EA0` |
-| `GtInputManagerPS2Keyboard.cpp` | 3 | 320 | `0x002C46C0` |  |  |
-| `GtInputDevicePS2Keyboard.cpp` | 5 | 1,472 | `0x002C4820` | 2 (1) | `0x00303F10`–`0x00303FC0` |
-| `vibuf.c` | 9 | 2,868 | `0x002E1AC0` | 9 (9) | `0x00325DC0`–`0x003268E0` |
-| `GtUnicodeUtils.cpp` | 3 | 224 | `0x00315960` | 1 (0) | `0x0035EFA0`–`0x0035EFA0` |
-| `B3SFIOCallbacksPS2.cpp` | 25 | 2,772 | `0x00316DA0` | 15 (0) | `0x00360B30`–`0x00361810` |
-| `GtHiResSystemTimerPS2.cpp` | 6 | 312 | `0x003341B0` | 3 (3) | `0x00375280`–`0x003753D0` |
-| `GtFramerateManager.cpp` | 4 | 776 | `0x00335440` | 3 (2) | `0x00376570`–`0x003767E0` |
-| `GtFixedPoint.cpp` | 2 | 468 | `0x003461D0` |  |  |
-| `GtMalloc.cpp` | 9 | 4,316 | `0x0036E510` | 7 (1) | `0x003BB2A0`–`0x003BC240` |
-| `B3MemoryManager.cpp` | 12 | 4,560 | `0x00398F10` | 3 (2) | `0x003E8750`–`0x003E8C00` |
+**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source paths ([source files](../reference/revenge-source-file-lineage.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |
+|---|---:|---:|---|---:|---|---|
+| `crt0.s` | 3 | 544 | `0x00100008` |  |  |  |
+| `mwUtils_PS2.c` | 2 | 44 | `0x00100230` |  |  |  |
+| `B3MainPS2.cpp` | 1 | 624 | `0x0012EA40` |  |  | `GameSource/Ps2/B4MainPS2.cpp` |
+| `B3ControllerMappingPS2.cpp` | 20 | 3,348 | `0x0012ECB0` | 9 (0) | `0x0012F160`–`0x0012FFB0` | `GameSource/Game/Ps2/B4ControllerMappingPS2.cpp` |
+| `B3DebugManager.cpp` | 15 | 3,356 | `0x0012FA40` | 11 (2) | `0x00130030`–`0x00130B80` | `GameSource/Game/B4DebugManager.cpp` |
+| `GtTimer.cpp` | 8 | 768 | `0x00199EA0` | 8 (8) | `0x001D3A50`–`0x001D3D30` | `GameShared/GameClasses/System/Timer/GtTimer.cpp` |
+| `GtUnicode.cpp` | 13 | 2,820 | `0x001D8E50` | 13 (5) | `0x00212E30`–`0x00213CB0` | `GameShared/GameClasses/System/GtUnicode.cpp` |
+| `B3InputManagerPS2.cpp` | 5 | 644 | `0x001D99B0` | 4 (0) | `0x00213EB0`–`0x00214560` | `GameSource/Game/Ps2/B4InputManagerPS2.cpp` |
+| `GtInputManagerPS2Pad2.cpp` | 10 | 1,664 | `0x001D9C60` | 10 (5) | `0x00214610`–`0x00214B70` | `GameShared/GameClasses/System/Input/Ps2/GtInputManagerPS2Pad2.cpp` |
+| `GtInputDevicePS2DualShock2.cpp` | 2 | 2,444 | `0x001DA320` | 2 (0) | `0x00214CD0`–`0x00215620` | `GameShared/GameClasses/System/Input/Ps2/GtInputDevicePS2DualShock2.cpp` |
+| `GtInputDevicePS2DualShock.cpp` | 13 | 1,348 | `0x001DC490` | 13 (8) | `0x00216E40`–`0x002173F0` | `GameShared/GameClasses/System/Input/Ps2/GtInputDevicePS2DualShock.cpp` |
+| `GtFSM.cpp` | 7 | 544 | `0x001DCB80` | 7 (7) | `0x00217610`–`0x002177C0` | `GameShared/GameClasses/System/Fsm/GtFSM.cpp` |
+| `GtDictionary.cpp` | 1 | 72 | `0x001E0010` | 1 (1) | `0x0021AAF0`–`0x0021AAF0` | `GameShared/GameClasses/Containers/GtDictionary.cpp` |
+| `GtID.cpp` | 5 | 1,156 | `0x001E0060` | 5 (5) | `0x0021AB40`–`0x0021AEF0` | `GameShared/GameClasses/Core/GtID.cpp` |
+| `GtHash.cpp` | 1 | 112 | `0x001E1370` | 1 (1) | `0x0021BFA0`–`0x0021BFA0` | `GameShared/GameClasses/Development/CommsTool/GtHash.cpp` |
+| `B3MemoryManagerPS2.cpp` | 8 | 2,020 | `0x001E6DC0` | 7 (1) | `0x00222300`–`0x00222650` | `GameSource/Game/Ps2/B4MemoryManagerPS2.cpp` |
+| `B3InputManager.cpp` | 27 | 3,200 | `0x001EDA20` | 21 (0) | `0x0022BA70`–`0x0022D070` | `GameSource/Game/B4InputManager.cpp` |
+| `GtThreadMgrPS2.cpp` | 7 | 636 | `0x001F8090` | 5 (2) | `0x00237050`–`0x002372F0` | `GameShared/GameClasses/System/Threads/ps2/GtThreadMgrPS2.cpp` |
+| `B3TriggerStruct.cpp` | 1 | 344 | `0x0022C0B0` | 1 (1) | `0x00269D20`–`0x00269D20` | `SharedClasses/TrafficData/B4TriggerStruct.cpp` |
+| `GtArray.cpp` | 1 | 80 | `0x00232230` | 1 (1) | `0x002719B0`–`0x002719B0` | `GameShared/GameClasses/Containers/GtArray.cpp` |
+| `GtPerfMon.cpp` | 1 | 8 | `0x00277B50` | 1 (1) | `0x002B6C30`–`0x002B6C30` |  |
+| `GtFreeList.cpp` | 8 | 876 | `0x00277B60` | 7 (7) | `0x002B6C40`–`0x002B6EC0` | `GameShared/GameClasses/Containers/GtFreeList.cpp` |
+| `B3CPUMonitors.cpp` | 2 | 140 | `0x002AEF70` | 1 (0) | `0x002F03A0`–`0x002F03A0` | `GameSource/Game/B4CPUMonitors.cpp` |
+| `GtLinearMalloc.cpp` | 6 | 504 | `0x002B8ED0` | 4 (4) | `0x002F9D00`–`0x002F9EA0` | `GameShared/GameClasses/Memory/GtLinearMalloc.cpp` |
+| `GtInputManagerPS2Keyboard.cpp` | 3 | 320 | `0x002C46C0` |  |  |  |
+| `GtInputDevicePS2Keyboard.cpp` | 5 | 1,472 | `0x002C4820` | 2 (1) | `0x00303F10`–`0x00303FC0` | `GameShared/GameClasses/System/Input/Ps2/GtInputDevicePS2Keyboard.cpp` |
+| `vibuf.c` | 9 | 2,868 | `0x002E1AC0` | 9 (9) | `0x00325DC0`–`0x003268E0` | `GameShared/GameClasses/Graphical/VideoDecoder/Ps2/vibuf.c` |
+| `GtUnicodeUtils.cpp` | 3 | 224 | `0x00315960` | 1 (0) | `0x0035EFA0`–`0x0035EFA0` | `GameShared/GameClasses/System/GtUnicodeUtils.cpp` |
+| `B3SFIOCallbacksPS2.cpp` | 25 | 2,772 | `0x00316DA0` | 15 (0) | `0x00360B30`–`0x00361810` | `GameSource/EASharedLogin/Ps2/B4SFIOCallbacksPS2.cpp` |
+| `GtHiResSystemTimerPS2.cpp` | 6 | 312 | `0x003341B0` | 3 (3) | `0x00375280`–`0x003753D0` | `GameShared/GameClasses/System/Timer/Ps2/GtHiResSystemTimerPS2.cpp` |
+| `GtFramerateManager.cpp` | 4 | 776 | `0x00335440` | 3 (2) | `0x00376570`–`0x003767E0` | `GameShared/GameClasses/System/Timer/GtFramerateManager.cpp` |
+| `GtFixedPoint.cpp` | 2 | 468 | `0x003461D0` |  |  | `GameShared/GameClasses/Numeric/GtFixedPoint.cpp` |
+| `GtMalloc.cpp` | 9 | 4,316 | `0x0036E510` | 7 (1) | `0x003BB2A0`–`0x003BC240` | `GameShared/GameClasses/Memory/GtMalloc.cpp` |
+| `B3MemoryManager.cpp` | 12 | 4,560 | `0x00398F10` | 3 (2) | `0x003E8750`–`0x003E8C00` | `GameSource/Game/B4MemoryManager.cpp` |
 
 ## Classes
 

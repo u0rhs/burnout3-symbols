@@ -7,17 +7,37 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3NetworkHostKeepAliveMessage.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 2, B3INTERN 1, B3O0PCH 3
+- **Burnout Revenge counterpart:** `CB4NetworkHostKeepAliveMessage`, size 0x00C, methods in `GameSource/Network/Messages/B4NetworkHostKeepAliveMessage.cpp` ([layout](#burnout-revenge-layout-of-cb4networkhostkeepalivemessage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Retrieve(int*)` | `0x002B8BC0` 60 | `0x002FA030` 1048 |  | `0x003257D0` 376 |  |  |
-| `Prepare()` | `0x002B8C00` 64 | `0x002FA450` 64 |  | `0x00325780` 72 |  |  |
-| `Construct()` | `0x002B8C40` 8 |  | `0x0032E280` 8 |  |  |  |
-| `Release()` |  |  |  | `0x00325950` 40 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Retrieve(int*)` | `0x002B8BC0` 60 | `0x002FA030` 1048 |  | `0x003257D0` 376 |  |  | `bool CB4NetworkHostKeepAliveMessage::Retrieve(int *lnHostID)` |
+| `Prepare()` | `0x002B8C00` 64 | `0x002FA450` 64 |  | `0x00325780` 72 |  |  | `void CB4NetworkHostKeepAliveMessage::Prepare()` |
+| `Construct()` | `0x002B8C40` 8 |  | `0x0032E280` 8 |  |  |  | `void CB4NetworkHostKeepAliveMessage::Construct()` |
+| `Release()` |  |  |  | `0x00325950` 40 |  |  | `void CB4NetworkHostKeepAliveMessage::Release()` |
+
+## Burnout Revenge layout of `CB4NetworkHostKeepAliveMessage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 92 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkHostKeepAliveMessage : public CB4NetworkMessage {  // size 0x00C
+    // base CB4NetworkMessage at 0x000
+    /* 0x008 */ GtNetworkPlayerID mnHostID;
+    // methods
+    // CB4NetworkHostKeepAliveMessage(const CB4NetworkHostKeepAliveMessage &);
+    // CB4NetworkHostKeepAliveMessage();
+    // void Construct();
+    // void Prepare();
+    // bool Retrieve(int *);
+    // void Release();
+    // void Destruct();
+};
+```
 
 ## Notes
 

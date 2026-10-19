@@ -12,18 +12,18 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x002FAFE0` 8 | `0x0034EC20` 8 | `0x00380280` 8 | `0x00380CA0` 16 |  |  |
-| `Update()` | `0x002FAFF0` 544 | `0x0034EC30` 764 | `0x00380290` 764 | `0x00380B40` 340 |  |  |
-| `UpdateSubStateMakeChoice(CB3ControllerMapping*)` | `0x002FB210` 500 | `0x0034EF30` 564 | `0x00380590` 564 | `0x00380670` 704 | `0x00342090` unverified |  |
-| `Prepare(bool)` | `0x002FB410` 336 | `0x0034F170` 336 | `0x003807D0` 336 | `0x003804D0` 408 |  |  |
-| `CB3PausePage()` |  |  |  | `0x00343110` 60 |  |  |
-| `UpdateConfirmQuitSubState(CB3ControllerMapping*)` |  |  |  | `0x003809E0` 164 |  |  |
-| `UpdateConfirmRestartSubState(CB3ControllerMapping*)` |  |  |  | `0x00380A90` 164 |  |  |
-| `UpdateConfirmRetireSubState(CB3ControllerMapping*)` |  |  |  | `0x00380930` 164 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x002FAFE0` 8 | `0x0034EC20` 8 | `0x00380280` 8 | `0x00380CA0` 16 |  |  |  |
+| `Update()` | `0x002FAFF0` 544 | `0x0034EC30` 764 | `0x00380290` 764 | `0x00380B40` 340 |  |  |  |
+| `UpdateSubStateMakeChoice(CB3ControllerMapping*)` | `0x002FB210` 500 | `0x0034EF30` 564 | `0x00380590` 564 | `0x00380670` 704 | `0x00342090` unverified |  |  |
+| `Prepare(bool)` | `0x002FB410` 336 | `0x0034F170` 336 | `0x003807D0` 336 | `0x003804D0` 408 |  |  |  |
+| `CB3PausePage()` |  |  |  | `0x00343110` 60 |  |  |  |
+| `UpdateConfirmQuitSubState(CB3ControllerMapping*)` |  |  |  | `0x003809E0` 164 |  |  |  |
+| `UpdateConfirmRestartSubState(CB3ControllerMapping*)` |  |  |  | `0x00380A90` 164 |  |  |  |
+| `UpdateConfirmRetireSubState(CB3ControllerMapping*)` |  |  |  | `0x00380930` 164 |  |  |  |
 
 ## Notes
 

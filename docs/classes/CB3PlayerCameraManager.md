@@ -9,38 +9,39 @@
 - **Methods per build:** DNAT_200 17, B3DEBUG 18, B3INTERN 18, B3O0PCH 25
 - **Retail (SLUS-21050):** 15 of its 17 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004401C0`, 32 bytes = 8 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 6 virtual functions)
+- **Burnout Revenge counterpart:** `CB4PlayerCameraManager`, size 0x1F40, methods in `GameSource/Camera/B4PlayerCameraManager.cpp` ([layout](#burnout-revenge-layout-of-cb4playercameramanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct(void*,const CGtStateOffset*,CGtTimer*)` | `0x002A6380` 8 | `0x002E0850` 8 | `0x00317730` 8 | `0x003146F0` 64 | `0x002E6F40` likely |  |
-| `Update()` | `0x002A6390` 8 | `0x002E0860` 8 | `0x00317740` 8 | `0x00314730` 40 | `0x002E6F50` likely |  |
-| `GetTrackTime()` | `0x002A63A0` 84 | `0x002E0870` 280 | `0x00317750` 280 | `0x00314690` 96 | `0x002E7050` strong |  |
-| `GetCurrentUnit()` | `0x002A6400` 160 | `0x002E0990` 160 | `0x00317870` 160 | `0x003145E0` 176 |  |  |
-| `HasIntroFinished()` | `0x002A64A0` 40 | `0x002E0A30` 40 | `0x00317910` 40 | `0x00314580` 88 | `0x002E70B0` proven |  |
-| `HasCrashAftermathFinished()` | `0x002A64D0` 8 | `0x002E0A60` 8 | `0x00317940` 8 | `0x00314550` 44 |  |  |
-| `SetActiveBehaviour(int)` | `0x002A64E0` 248 | `0x002E0A70` 420 | `0x00317950` 420 | `0x003144B0` 148 | `0x002E7150` strong |  |
-| `DeactivateBehaviour(int)` | `0x002A65E0` 116 | `0x002E0C20` 168 | `0x00317B00` 168 | `0x00314410` 152 | `0x002E7250` strong |  |
-| `ActivateBehaviour(int)` | `0x002A6660` 112 | `0x002E0CD0` 192 | `0x00317BB0` 192 | `0x00314360` 164 | `0x002E72D0` strong |  |
-| `IsPlayerVisible()` | `0x002A66D0` 236 | `0x002E0D90` 224 | `0x00317C70` 224 | `0x00314180` 376 | `0x002E7340` likely |  |
-| `Destruct()` | `0x002A67C0` 76 | `0x002E0E80` 76 | `0x00317D60` 76 | `0x003140F0` 88 | `0x002E7430` strong |  |
-| `Release()` | `0x002A6810` 396 | `0x002E0ED0` 500 | `0x00317DB0` 500 | `0x00313FD0` 276 | `0x002E7480` strong |  |
-| `Update(float)` | `0x002A69A0` 604 | `0x002E10D0` 792 | `0x00317FB0` 792 | `0x00313C90` 784 | `0x002E7610` strong |  |
-| `Prepare()` | `0x002A6C00` 1336 | `0x002E13F0` 1516 | `0x003182D0` 1516 | `0x00313710` 1400 | `0x002E7810` unverified |  |
-| `Construct(int)` | `0x002A7140` 292 | `0x002E19E0` 292 | `0x003188C0` 292 | `0x00313620` 232 | `0x002E7BA0` strong |  |
-| `ReleaseBuffer()` | `0x002A7270` 68 | `0x002E1B10` 68 | `0x003189F0` 68 | `0x003135C0` 84 | `0x002E7CD0` likely |  |
-| `PrepareBuffer()` | `0x002A72C0` 312 | `0x002E1B60` 364 | `0x00318A40` 364 | `0x003133F0` 464 | `0x002E7D20` unverified |  |
-| `LockFOV(bool)` |  | `0x002E0E70` 8 | `0x00317D50` 8 | `0x00314150` 36 |  |  |
-| `CB3PlayerCameraManager()` |  |  |  | `0x0013E460` 508 |  |  |
-| `CutThisFrame()` |  |  |  | `0x00279EA0` 28 |  |  |
-| `GetCamera()` |  |  |  | `0x00133E50` 28 |  |  |
-| `GetCameraTime()` |  |  |  | `0x002B0B50` 28 |  |  |
-| `GetCameraTimeNoSlowMo()` |  |  |  | `0x003BC0D0` 28 |  |  |
-| `IsBehaviourActive(int)` |  |  |  | `0x0026D8B0` 84 |  |  |
-| `ResetCutThisFrame()` |  |  |  | `0x0013C3B0` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct(void*,const CGtStateOffset*,CGtTimer*)` | `0x002A6380` 8 | `0x002E0850` 8 | `0x00317730` 8 | `0x003146F0` 64 | `0x002E6F40` likely |  | `void CB4PlayerCameraManager::Construct(void *lpOwner, const CGtStateOffset *lpOffsetTable, CGtTimer *lpStateTimer)` |
+| `Update()` | `0x002A6390` 8 | `0x002E0860` 8 | `0x00317740` 8 | `0x00314730` 40 | `0x002E6F50` likely |  | `void CB4PlayerCameraManager::Update()` |
+| `GetTrackTime()` | `0x002A63A0` 84 | `0x002E0870` 280 | `0x00317750` 280 | `0x00314690` 96 | `0x002E7050` strong |  | `RwReal CB4PlayerCameraManager::GetTrackTime()` |
+| `GetCurrentUnit()` | `0x002A6400` 160 | `0x002E0990` 160 | `0x00317870` 160 | `0x003145E0` 176 |  |  | `RwInt32 CB4PlayerCameraManager::GetCurrentUnit() const` (same name, different parameters) |
+| `HasIntroFinished()` | `0x002A64A0` 40 | `0x002E0A30` 40 | `0x00317910` 40 | `0x00314580` 88 | `0x002E70B0` proven |  |  |
+| `HasCrashAftermathFinished()` | `0x002A64D0` 8 | `0x002E0A60` 8 | `0x00317940` 8 | `0x00314550` 44 |  |  |  |
+| `SetActiveBehaviour(int)` | `0x002A64E0` 248 | `0x002E0A70` 420 | `0x00317950` 420 | `0x003144B0` 148 | `0x002E7150` strong |  | `void CB4PlayerCameraManager::SetActiveBehaviour(int lnBehaviour)` |
+| `DeactivateBehaviour(int)` | `0x002A65E0` 116 | `0x002E0C20` 168 | `0x00317B00` 168 | `0x00314410` 152 | `0x002E7250` strong |  | `void CB4PlayerCameraManager::DeactivateBehaviour(int lnBehaviour)` |
+| `ActivateBehaviour(int)` | `0x002A6660` 112 | `0x002E0CD0` 192 | `0x00317BB0` 192 | `0x00314360` 164 | `0x002E72D0` strong |  | `void CB4PlayerCameraManager::ActivateBehaviour(int lnBehaviour)` |
+| `IsPlayerVisible()` | `0x002A66D0` 236 | `0x002E0D90` 224 | `0x00317C70` 224 | `0x00314180` 376 | `0x002E7340` likely |  | `bool CB4PlayerCameraManager::IsPlayerVisible()` |
+| `Destruct()` | `0x002A67C0` 76 | `0x002E0E80` 76 | `0x00317D60` 76 | `0x003140F0` 88 | `0x002E7430` strong |  | `void CB4PlayerCameraManager::Destruct()` |
+| `Release()` | `0x002A6810` 396 | `0x002E0ED0` 500 | `0x00317DB0` 500 | `0x00313FD0` 276 | `0x002E7480` strong |  | `void CB4PlayerCameraManager::Release()` |
+| `Update(float)` | `0x002A69A0` 604 | `0x002E10D0` 792 | `0x00317FB0` 792 | `0x00313C90` 784 | `0x002E7610` strong |  | `void CB4PlayerCameraManager::Update(float lrTimeStep)` |
+| `Prepare()` | `0x002A6C00` 1336 | `0x002E13F0` 1516 | `0x003182D0` 1516 | `0x00313710` 1400 | `0x002E7810` unverified |  | `bool CB4PlayerCameraManager::Prepare()` |
+| `Construct(int)` | `0x002A7140` 292 | `0x002E19E0` 292 | `0x003188C0` 292 | `0x00313620` 232 | `0x002E7BA0` strong |  |  |
+| `ReleaseBuffer()` | `0x002A7270` 68 | `0x002E1B10` 68 | `0x003189F0` 68 | `0x003135C0` 84 | `0x002E7CD0` likely |  | `void CB4PlayerCameraManager::ReleaseBuffer()` |
+| `PrepareBuffer()` | `0x002A72C0` 312 | `0x002E1B60` 364 | `0x00318A40` 364 | `0x003133F0` 464 | `0x002E7D20` unverified |  | `bool CB4PlayerCameraManager::PrepareBuffer()` |
+| `LockFOV(bool)` |  | `0x002E0E70` 8 | `0x00317D50` 8 | `0x00314150` 36 |  |  |  |
+| `CB3PlayerCameraManager()` |  |  |  | `0x0013E460` 508 |  |  | `CB4PlayerCameraManager * CB4PlayerCameraManager::CB4PlayerCameraManager()` |
+| `CutThisFrame()` |  |  |  | `0x00279EA0` 28 |  |  |  |
+| `GetCamera()` |  |  |  | `0x00133E50` 28 |  |  |  |
+| `GetCameraTime()` |  |  |  | `0x002B0B50` 28 |  |  |  |
+| `GetCameraTimeNoSlowMo()` |  |  |  | `0x003BC0D0` 28 |  |  |  |
+| `IsBehaviourActive(int)` |  |  |  | `0x0026D8B0` 84 |  |  |  |
+| `ResetCutThisFrame()` |  |  |  | `0x0013C3B0` 28 |  |  |  |
 
 ## Static data (DNAT_200)
 
@@ -52,6 +53,152 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `0x00444180` | 1 | .sbss | `CB3PlayerCameraManager::mbLoadedReplay` |
 | `0x00444184` | 4 | .sbss | `CB3PlayerCameraManager::meLoadState` |
 | `0x01D93280` | 92 | .bss | `CB3PlayerCameraManager::mgCameraEditor` |
+
+## Burnout Revenge layout of `CB4PlayerCameraManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 318 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4PlayerCameraManager : public CGtFSM {  // size 0x1F40
+    // base CGtFSM at 0x000
+    /* static */ CB4CameraBuffer *mgpCameraBuffer;
+    /* static */ CB4CameraEditor mgCameraEditor;
+    /* static */ CB4CrashCameraPositionFinder mgCrashCameraPositionFinder;
+    /* 0x020 */ CB4GenericCrashCameraDirector mGenericCrashDirector;
+    /* 0x130 */ CB4CrashModeCrashCameraDirector mCrashModeDirector;
+    /* 0x370 */ CB4KeyFramePlayer mPlayer;
+    /* 0x3B8 */ CB4CameraReelPlayer mReelPlayer;
+    /* static */ bool mgbIsBufferLoaded;
+    /* 0x3D8 */ CB4PlayerCameraStateTakedown mStateTakedown;
+    /* static */ CGtStateOffset maOffsetTable[0];
+    /* 0x480 */ CB4PlayerCameraStateInactive mStateInactive;
+    /* 0x498 */ CB4PlayerCameraStateInGame mStateInGame;
+    /* 0x4B8 */ CB4PlayerCameraStateDebug mStateDebug;
+    /* 0x4D0 */ CB4PlayerCameraStateCrashMode mStateCrashMode;
+    /* 0x4F0 */ CB4PlayerCameraStateGenericCrash mStateGenericCrash;
+    /* 0x510 */ CB4PlayerCameraStateEditor mStateEditor;
+    /* 0x528 */ CB4PlayerCameraStateSignatureTD mStateSignatureTD;
+    /* 0x560 */ CB4PlayerCameraStateRevengeTD mStateRevengeTD;
+    /* 0x598 */ CB4PlayerCameraStateRoadRageAIWave mStateRoadRageWave;
+    /* 0x5D0 */ CGtCamera mCamera;
+    /* 0x620 */ CGtCamera mLastCamera;
+    /* 0x670 */ CB4CameraBehaviour *mapBehaviours[34];
+    /* 0x700 */ CB4BehaviourFlyAround mBehaviourEditorFlyAround;
+    /* 0x7E0 */ CB4BehaviourFlyAround mBehaviourDebugFlyAround;
+    /* 0x8C0 */ CB4BehaviourRotate mBehaviourIntroRotate;
+    /* 0x950 */ CB4BehaviourLooseRotate mBehaviourLooseRotate;
+    /* 0xA10 */ CB4BehaviourPassCam mBehaviourPassCam;
+    /* 0xAC0 */ CB4BehaviourAttachCam mBehaviourAttachCam;
+    /* 0xC70 */ CB4BehaviourCameraCarCam mBehaviourCameraCarCam;
+    /* 0xD60 */ CB4BehaviourHandyCam mBehaviourHandyCam;
+    /* 0xE70 */ CB4BehaviourAftertouch mBehaviourAftertouch;
+    /* 0xF00 */ CB4BehaviourRaceCarFollow mBehaviourInGameFollow;
+    /* 0xF70 */ CB4BehaviourRaceCarFollow mBehaviourInGameFollow2;
+    /* 0xFE0 */ CB4BehaviourOffset mBehaviourInGameLookBack;
+    /* 0x1040 */ CB4BehaviourOffset mBehaviourInGameBumper;
+    /* 0x10A0 */ CB4BehaviourRaceBreaker mBehaviourRaceBreaker;
+    /* 0x10F0 */ CB4BehaviourPeekCamera mBehaviourPeekCamera;
+    /* 0x11D0 */ CB4BehaviourShot mBehaviourShot;
+    /* 0x12E0 */ CB4BehaviourHeliCam mBehaviourHeliCam;
+    /* 0x1330 */ CB4BehaviourCluster mBehaviourCrashCluster;
+    /* 0x1540 */ CB4BehaviourCrashJump mBehaviourCrashJump;
+    /* 0x15A0 */ CB4BehaviourCrashBreakerCamera mBehaviourCrashbreakerCamera;
+    /* 0x1630 */ CB4BehaviourControlled mBehaviourControlled;
+    /* 0x16C0 */ CB4BehaviourCrashHelicopter mBehaviourCrashHelicopter;
+    /* 0x1750 */ CB4BehaviourCluster mBehaviourCrashClusterInterp;
+    /* 0x1960 */ CB4BehaviourInterpolate mBehaviourInterpolate;
+    /* 0x1B40 */ CB4BehaviourInterpolate mBehaviourSecondTearInterpolate;
+    /* 0x1D20 */ CB4BehaviourKeyFrame mBehaviourKeyFrameA;
+    /* 0x1D40 */ CB4BehaviourKeyFrame mBehaviourKeyFrameB;
+    /* 0x1D60 */ CB4BehaviourKeyFrame mBehaviourKeyFrameC;
+    /* 0x1D80 */ CB4BehaviourKeyFrame mBehaviourKeyFrameD;
+    /* 0x1DA0 */ CB4BehaviourKeyFrame mBehaviourKeyFrameE;
+    /* 0x1DC0 */ CB4BehaviourEffect mBehaviourEffect;
+    /* 0x1DF8 */ CB4BehaviourEffect mBehaviourEffectWindPulse;
+    /* 0x1E30 */ CB4BehaviourEffect mBehaviourEffectHighSpeedShake;
+    /* 0x1E70 */ CB4BehaviourLookAt mBehaviourLookAt;
+    /* 0x1EC0 */ CB4CameraKeyFrame mRetryKeyFrame;
+    /* 0x1EE0 */ CGtV3d mPlayerPosition;
+    /* 0x1EF0 */ CGtV3d mCameraPosition;
+    /* 0x1F00 */ RwUInt64 mxActiveBehaviours;
+    /* 0x1F08 */ RwInt32 mnFrame;
+    /* 0x1F0C */ RwInt32 mnSlowMo;
+    /* 0x1F10 */ RwReal mrCameraTime;
+    /* 0x1F14 */ RwReal mrCameraTimeNoSlowMo;
+    /* 0x1F18 */ RwReal mrCurrentFOV;
+    /* 0x1F1C */ RwReal mrDistanceOfCameraFromCar;
+    /* 0x1F20 */ RwReal mrDirectionalBlurMultiplierThisFrame;
+    /* 0x1F24 */ EPlayerCarIndex mePlayerIndex;
+    /* 0x1F28 */ ERaceCarIndex mePlayerRaceCarNumber;
+    /* 0x1F2C */ EB4PlayerCameraBehaviour meForwardBehaviour;
+    /* 0x1F30 */ EB4PlayerCameraBehaviour meMainBehaviour;
+    /* 0x1F34 */ bool mbAIControlled;
+    /* 0x1F35 */ bool mbInvincible;
+    /* 0x1F36 */ bool mbPauseCamera;
+    /* 0x1F37 */ bool mbIsPrepared;
+    /* 0x1F38 */ bool mbIsFOVLocked;
+    /* 0x1F39 */ bool mbCutThisFrame;
+    /* 0x1F3A */ bool mbIsCarSkippingUpdate;
+    /* 0x1F3B */ bool mbForceBlur;
+    /* 0x1F3C */ bool mbIsBlurAllowed;
+    /* 0x1F3D */ bool mbForcedRadialBlur;
+    // methods
+    // CB4PlayerCameraManager(const CB4PlayerCameraManager &);
+    // CB4PlayerCameraManager();
+    // virtual void Construct(void *, const CGtStateOffset *, CGtTimer *);
+    // void Construct(EPlayerCarIndex);
+    // bool Prepare();
+    // virtual void Update();
+    // void Update(float);
+    // void Release();
+    // virtual void Destruct();
+    // void LockFOV(bool);
+    // bool IsPlayerVisible();
+    // bool AfterTouchHUDHint();
+    // CGtCamera * GetCamera();
+    // CGtV3d GetCameraPosition();
+    // bool IsBehaviourActive(int);
+    // void ResetCutThisFrame();
+    // bool CutThisFrame();
+    // RwReal GetCameraTime();
+    // RwReal GetCameraTimeNoSlowMo();
+    // EB4PlayerCameraBehaviour GetMainBehaviour();
+    // RwReal GetTrackTime();
+    // static bool PrepareBuffer();
+    // static void PreparePlayerSlots();
+    // static void ReleaseBuffer();
+    // void SetExternalCamera(bool);
+    // CB4CameraBehaviour * GetCurrentBehaviour();
+    // CB4CameraBehaviour * GetBehaviour(EB4PlayerCameraBehaviour);
+    // RwInt32 GetCurrentUnit() const;
+    // bool IsCarSkippingUpdate() const;
+    // bool IsBlurAllowed() const;
+    // EPlayerCarIndex GetPlayerCarIndex();
+    // ERaceCarIndex GetRaceCarIndex();
+    // bool IsPrepared();
+    // void RenderDebug();
+    // void PauseCamera();
+    // void PlayCamera();
+    // RwReal GetDirectionalBlurMultiplier();
+    // void ApplyDirectionalBlur(float);
+    // void ForceEnableBlur(bool);
+    // bool IsRadialBlurForced();
+    // void SetRadialBlurForced(bool);
+    // bool HasTakedownFinished();
+    // void ConstructBehaviours();
+    // void ActivateBehaviour(int);
+    // void ActivateBehaviourWithoutPrepare(int);
+    // void DeactivateBehaviour(int);
+    // void DeactivateBehaviourWithoutRelease(int);
+    // void SetActiveBehaviour(int);
+    // void DeactivateAllBehavioursWithoutRelease();
+    // void DeactivateAllBehaviours();
+    // EB4PlayerCameraBehaviour GetForwardBehaviour();
+    // void SetForwardBehaviour(EB4PlayerCameraBehaviour);
+    // void SetCutThisFrame(bool);
+    // void MapBehaviours();
+};
+```
 
 ## Notes
 

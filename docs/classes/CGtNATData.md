@@ -6,14 +6,31 @@
 
 - **Area:** [Network and online](../systems/network-online.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CGtNATData`, size 0x008 ([layout](#burnout-revenge-layout-of-cgtnatdata))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` |  |  |  | `0x0023FE60` 80 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` |  |  |  | `0x0023FE60` 80 |  |  |  |
+
+## Burnout Revenge layout of `CGtNATData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 99 file(s), e.g. `GameShared/GameClasses/System/Networking/Players/GtNATDataManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtNATData {  // size 0x008
+    /* 0x000 */ ENATSituation meNATSituation;
+    /* 0x004 */ GtNetworkPlayerID mnPlayerID;
+    // methods
+    // CGtNATData(const CGtNATData &);
+    // CGtNATData();
+    // void Construct();
+    // void Print() const;
+};
+```
 
 ## Notes
 

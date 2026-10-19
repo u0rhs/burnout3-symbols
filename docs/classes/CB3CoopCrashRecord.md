@@ -11,14 +11,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetNewRecordData(unsigned int)` | `0x00382F20` 224 | `0x003F5F70` 224 | `0x0041DBA0` 224 | `0x004347E0` 212 |  |  |
-| `CB3CoopCrashRecord()` |  |  |  | `0x00435BD0` 60 |  |  |
-| `Init(int,const unsigned short*,const unsigned short*)` |  |  |  | `0x00434770` 100 |  |  |
-| `operator =(const CB3CoopCrashRecord&)` |  |  |  | `0x00434D70` 140 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetNewRecordData(unsigned int)` | `0x00382F20` 224 | `0x003F5F70` 224 | `0x0041DBA0` 224 | `0x004347E0` 212 |  |  |  |
+| `CB3CoopCrashRecord()` |  |  |  | `0x00435BD0` 60 |  |  |  |
+| `Init(int,const unsigned short*,const unsigned short*)` |  |  |  | `0x00434770` 100 |  |  |  |
+| `operator =(const CB3CoopCrashRecord&)` |  |  |  | `0x00434D70` 140 |  |  |  |
 
 ## Notes
 

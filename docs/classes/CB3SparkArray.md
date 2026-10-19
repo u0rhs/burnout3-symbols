@@ -8,18 +8,44 @@
 - **Source file:** `B3SparkRendererPS2.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 5
 - **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SparkArray`, size 0x0A8, methods in `GameSource/Graphics/SparkRenderer/Ps2/B4SparkRendererPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4sparkarray))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SpawnBouncySpark(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,bool)` | `0x00225B30` 572 | `0x0023C320` 744 | `0x00278E40` 744 | `0x00279410` 1044 | `0x00263C40` strong |  |
-| `Release()` | `0x00225D70` 8 | `0x0023C610` 8 | `0x00279130` 8 | `0x00279380` 64 | `0x00263F70` proven |  |
-| `Prepare()` | `0x00225D80` 176 | `0x0023C620` 260 | `0x00279140` 260 | `0x00279300` 116 | `0x00263F80` proven |  |
-| `Destruct()` | `0x00225E30` 8 | `0x0023C730` 8 | `0x00279250` 8 | `0x002792C0` 56 | `0x00264030` strong |  |
-| `Construct(ESparkArrayID)` | `0x00225E40` 152 | `0x0023C740` 200 | `0x00279260` 200 | `0x00279170` 244 | `0x00264040` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SpawnBouncySpark(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,bool)` | `0x00225B30` 572 | `0x0023C320` 744 | `0x00278E40` 744 | `0x00279410` 1044 | `0x00263C40` strong |  | `void CB4SparkArray::SpawnBouncySpark(GtMathPs2::CGtV3d lSpawnPosition, GtMathPs2::CGtV3d lSpawnVelocity, float lrSpawnTime, float lrHeightAbovePlane, bool lbCrashBank)` |
+| `Release()` | `0x00225D70` 8 | `0x0023C610` 8 | `0x00279130` 8 | `0x00279380` 64 | `0x00263F70` proven |  | `void CB4SparkArray::Release()` |
+| `Prepare()` | `0x00225D80` 176 | `0x0023C620` 260 | `0x00279140` 260 | `0x00279300` 116 | `0x00263F80` proven |  | `bool CB4SparkArray::Prepare()` |
+| `Destruct()` | `0x00225E30` 8 | `0x0023C730` 8 | `0x00279250` 8 | `0x002792C0` 56 | `0x00264030` strong |  | `void CB4SparkArray::Destruct()` |
+| `Construct(ESparkArrayID)` | `0x00225E40` 152 | `0x0023C740` 200 | `0x00279260` 200 | `0x00279170` 244 | `0x00264040` proven |  | `void CB4SparkArray::Construct(ESparkArrayID leArrayID)` |
+
+## Burnout Revenge layout of `CB4SparkArray`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 6 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SparkArray {  // size 0x0A8
+    /* 0x000 */ CSparkBank mRegularBank;
+    /* 0x04C */ CSparkBank mCrashBank;
+    /* 0x098 */ CB4SparkArrayParams *mpParams;
+    /* 0x09C */ CGtTexture *mpTexture;
+    /* 0x0A0 */ RwReal mrLifetimeScale;
+    /* 0x0A4 */ bool mbRenderCrashBank;
+    /* 0x0A5 */ signed char pad[3];
+    // methods
+    // CB4SparkArray(const CB4SparkArray &);
+    // CB4SparkArray();
+    // void Construct(ESparkArrayID);
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void SpawnSpark(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, bool);
+    // void SpawnBouncySpark(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, float, bool);
+};
+```
 
 ## Notes
 

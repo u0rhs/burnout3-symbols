@@ -16,31 +16,33 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 **Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
 
-| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
-|---|---:|---:|---|---:|---|
-| `B3Burn.cpp` | 16 | 2,344 | `0x0014A880` | 16 (14) | `0x0014DD80`–`0x0014E670` |
-| `B3CrashPresentationDirector.cpp` | 2 | 16 | `0x0014B200` |  |  |
-| `B3Score.cpp` | 56 | 31,924 | `0x00151490` | 40 (2) | `0x001553A0`–`0x0015D0A0` |
-| `B3CrashActionDirector.cpp` | 18 | 15,864 | `0x00178EE0` | 16 (2) | `0x001AD890`–`0x001B2A00` |
-| `B3CrashAnalyser.cpp` | 24 | 5,708 | `0x0030AD60` | 11 (0) | `0x00353980`–`0x00354ED0` |
-| `B3CrashCameraDirector.cpp` | 11 | 7,100 | `0x0030C430` | 8 (0) | `0x00354F60`–`0x00357550` |
-| `B3CrashTrafficGenerationStruct.cpp` | 1 | 16 | `0x003158E0` | 1 (1) | `0x0035EF20`–`0x0035EF20` |
-| `B3CrashCombo.cpp` | 21 | 11,716 | `0x00317910` | 19 (2) | `0x00361900`–`0x00364300` |
-| `B3ScoreBonus.cpp` | 25 | 4,864 | `0x0031EBA0` | 23 (1) | `0x00367F40`–`0x003694B0` |
-| `B3OfflineSingleCrashLogic.cpp` | 22 | 2,272 | `0x0034CB00` |  |  |
-| `B3ExplosionManager.cpp` | 12 | 8,540 | `0x00352B00` | 1 (0) | `0x00399C30`–`0x00399C30` |
-| `B3CrashPickup.cpp` | 7 | 3,008 | `0x00359EF0` | 2 (1) | `0x003A17A0`–`0x003A17E0` |
-| `B3CrashRamp.cpp` | 7 | 2,248 | `0x0035AA50` | 5 (0) | `0x003A1800`–`0x003A20D0` |
-| `B3Challenge.cpp` | 8 | 464 | `0x0036DCA0` |  |  |
-| `B3ChampionshipChallenge.cpp` | 9 | 1,448 | `0x0036DEA0` |  |  |
-| `B3SingleChallenge.cpp` | 6 | 80 | `0x0036E490` |  |  |
-| `B3TurnBasedCrashChallenge.cpp` | 8 | 1,432 | `0x00374960` |  |  |
-| `B3OfflineTeamCrashLogic.cpp` | 6 | 148 | `0x00374F20` |  |  |
-| `B3CrashScore.cpp` | 22 | 4,936 | `0x0037D760` | 2 (0) | `0x003CCE90`–`0x003CD430` |
-| `B3OfflineCrashBattleLogic.cpp` | 6 | 48 | `0x0037F060` |  |  |
-| `B3Records.cpp` | 12 | 4,784 | `0x00381EF0` |  |  |
-| `B3HardCodedCrashStageList.cpp` | 13 | 2,168 | `0x0039A120` | 1 (1) | `0x003E9150`–`0x003E9150` |
-| `B3HardCodedTakedownList.cpp` | 3 | 68 | `0x003A6E70` |  |  |
+**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source paths ([source files](../reference/revenge-source-file-lineage.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |
+|---|---:|---:|---|---:|---|---|
+| `B3Burn.cpp` | 16 | 2,344 | `0x0014A880` | 16 (14) | `0x0014DD80`–`0x0014E670` | `GameSource/World/B4Burn.cpp` |
+| `B3CrashPresentationDirector.cpp` | 2 | 16 | `0x0014B200` |  |  | `GameSource/World/B4CrashPresentationDirector.cpp` |
+| `B3Score.cpp` | 56 | 31,924 | `0x00151490` | 40 (2) | `0x001553A0`–`0x0015D0A0` |  |
+| `B3CrashActionDirector.cpp` | 18 | 15,864 | `0x00178EE0` | 16 (2) | `0x001AD890`–`0x001B2A00` | `GameSource/Physics/B4CrashActionDirector.cpp` |
+| `B3CrashAnalyser.cpp` | 24 | 5,708 | `0x0030AD60` | 11 (0) | `0x00353980`–`0x00354ED0` | `GameSource/Camera/Crash/B4CrashAnalyser.cpp` |
+| `B3CrashCameraDirector.cpp` | 11 | 7,100 | `0x0030C430` | 8 (0) | `0x00354F60`–`0x00357550` |  |
+| `B3CrashTrafficGenerationStruct.cpp` | 1 | 16 | `0x003158E0` | 1 (1) | `0x0035EF20`–`0x0035EF20` | `SharedClasses/TrafficData/B4CrashTrafficGenerationStruct.cpp` |
+| `B3CrashCombo.cpp` | 21 | 11,716 | `0x00317910` | 19 (2) | `0x00361900`–`0x00364300` | `GameSource/World/B4CrashCombo.cpp` |
+| `B3ScoreBonus.cpp` | 25 | 4,864 | `0x0031EBA0` | 23 (1) | `0x00367F40`–`0x003694B0` |  |
+| `B3OfflineSingleCrashLogic.cpp` | 22 | 2,272 | `0x0034CB00` |  |  |  |
+| `B3ExplosionManager.cpp` | 12 | 8,540 | `0x00352B00` | 1 (0) | `0x00399C30`–`0x00399C30` | `GameSource/World/B4ExplosionManager.cpp` |
+| `B3CrashPickup.cpp` | 7 | 3,008 | `0x00359EF0` | 2 (1) | `0x003A17A0`–`0x003A17E0` | `GameSource/World/B4CrashPickup.cpp` |
+| `B3CrashRamp.cpp` | 7 | 2,248 | `0x0035AA50` | 5 (0) | `0x003A1800`–`0x003A20D0` | `GameSource/World/B4CrashRamp.cpp` |
+| `B3Challenge.cpp` | 8 | 464 | `0x0036DCA0` |  |  | `GameSource/Game/Challenge/B4Challenge.cpp` |
+| `B3ChampionshipChallenge.cpp` | 9 | 1,448 | `0x0036DEA0` |  |  | `GameSource/Game/Challenge/B4ChampionshipChallenge.cpp` |
+| `B3SingleChallenge.cpp` | 6 | 80 | `0x0036E490` |  |  | `GameSource/Game/Challenge/B4SingleChallenge.cpp` |
+| `B3TurnBasedCrashChallenge.cpp` | 8 | 1,432 | `0x00374960` |  |  | `GameSource/Game/Challenge/B4TurnBasedCrashChallenge.cpp` |
+| `B3OfflineTeamCrashLogic.cpp` | 6 | 148 | `0x00374F20` |  |  |  |
+| `B3CrashScore.cpp` | 22 | 4,936 | `0x0037D760` | 2 (0) | `0x003CCE90`–`0x003CD430` | `GameSource/World/B4CrashScore.cpp` |
+| `B3OfflineCrashBattleLogic.cpp` | 6 | 48 | `0x0037F060` |  |  |  |
+| `B3Records.cpp` | 12 | 4,784 | `0x00381EF0` |  |  |  |
+| `B3HardCodedCrashStageList.cpp` | 13 | 2,168 | `0x0039A120` | 1 (1) | `0x003E9150`–`0x003E9150` |  |
+| `B3HardCodedTakedownList.cpp` | 3 | 68 | `0x003A6E70` |  |  |  |
 
 ## Classes
 

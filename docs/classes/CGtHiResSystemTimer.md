@@ -11,16 +11,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetTime()` | `0x003341B0` 84 | `0x003955A0` 148 | `0x003BF9F0` 148 | `0x003C3F10` 124 | `0x00375280` proven |  |
-| `Destruct()` | `0x00334210` 8 | `0x00395640` 8 | `0x003BFA90` 8 | `0x003C3F00` 8 |  |  |
-| `Release()` | `0x00334220` 8 | `0x00395650` 8 | `0x003BFAA0` 8 | `0x003C3EF0` 8 |  |  |
-| `Update(int)` | `0x00334230` 164 | `0x00395660` 224 | `0x003BFAB0` 224 | `0x003C3DD0` 280 |  |  |
-| `Prepare(bool,int)` | `0x003342E0` 24 | `0x00395740` 24 | `0x003BFB90` 24 | `0x003C3D90` 52 | `0x003753B0` proven |  |
-| `Construct()` | `0x00334300` 24 | `0x00395760` 24 | `0x003BFBB0` 24 | `0x003C3D70` 28 | `0x003753D0` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetTime()` | `0x003341B0` 84 | `0x003955A0` 148 | `0x003BF9F0` 148 | `0x003C3F10` 124 | `0x00375280` proven |  | `CGtTimeCounter CGtHiResSystemTimer::GetTime()` |
+| `Destruct()` | `0x00334210` 8 | `0x00395640` 8 | `0x003BFA90` 8 | `0x003C3F00` 8 |  |  | `void CGtHiResSystemTimer::Destruct()` |
+| `Release()` | `0x00334220` 8 | `0x00395650` 8 | `0x003BFAA0` 8 | `0x003C3EF0` 8 |  |  | `void CGtHiResSystemTimer::Release()` |
+| `Update(int)` | `0x00334230` 164 | `0x00395660` 224 | `0x003BFAB0` 224 | `0x003C3DD0` 280 |  |  | `void CGtHiResSystemTimer::Update(int lnVsyncCount)` |
+| `Prepare(bool,int)` | `0x003342E0` 24 | `0x00395740` 24 | `0x003BFB90` 24 | `0x003C3D90` 52 | `0x003753B0` proven |  | `bool CGtHiResSystemTimer::Prepare(bool lbVsyncAt60Hz, int lnVsyncCount)` |
+| `Construct()` | `0x00334300` 24 | `0x00395760` 24 | `0x003BFBB0` 24 | `0x003C3D70` 28 | `0x003753D0` proven |  | `void CGtHiResSystemTimer::Construct()` |
 
 ## Static data (DNAT_200)
 

@@ -8,18 +8,19 @@
 - **Source file:** `GtMalloc.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 5
 - **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtMalloc`, size 0x510, methods in `GameShared/GameClasses/Memory/GtMalloc.cpp` ([layout](#burnout-revenge-layout-of-cgtmalloc))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Free(void*)` | `0x0036E510` 56 | `0x003DBA80` 132 | `0x004045D0` 132 | `0x00419EE0` 40 |  |  |
-| `Malloc(unsigned int)` | `0x0036E550` 88 | `0x003DBB10` 236 | `0x00404660` 236 | `0x00419E90` 72 |  |  |
-| `Create(void*,unsigned int)` | `0x0036E5B0` 80 | `0x003DBC00` 120 | `0x00404750` 120 | `0x00419E00` 76 | `0x003BB2A0` proven |  |
-| `GetMoreOfMemoryPool(int)` |  |  |  | `0x00419D80` 120 |  |  |
-| `GetUsage()` |  |  |  | `0x00419E50` 56 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Free(void*)` | `0x0036E510` 56 | `0x003DBA80` 132 | `0x004045D0` 132 | `0x00419EE0` 40 |  |  | `void CGtMalloc::Free(void *lpMemory)` |
+| `Malloc(unsigned int)` | `0x0036E550` 88 | `0x003DBB10` 236 | `0x00404660` 236 | `0x00419E90` 72 |  |  | `void * CGtMalloc::Malloc(int lnSize, int lnAlignment)` (same name, different parameters) |
+| `Create(void*,unsigned int)` | `0x0036E5B0` 80 | `0x003DBC00` 120 | `0x00404750` 120 | `0x00419E00` 76 | `0x003BB2A0` proven |  |  |
+| `GetMoreOfMemoryPool(int)` |  |  |  | `0x00419D80` 120 |  |  |  |
+| `GetUsage()` |  |  |  | `0x00419E50` 56 |  |  |  |
 
 ## Static data (DNAT_200)
 
@@ -28,6 +29,28 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `0x004435B8` | 4 | .sdata | `CGtMalloc::mnPoolSize` |
 | `0x004442B8` | 4 | .sbss | `CGtMalloc::mnPoolOffset` |
 | `0x004442BC` | 4 | .sbss | `CGtMalloc::mpBuffer` |
+
+## Burnout Revenge layout of `CGtMalloc`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 19 file(s), e.g. `GameShared/GameClasses/Memory/GtMalloc.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtMalloc {  // size 0x510
+    /* 0x000 */ GeneralAllocator mAllocator;
+    // methods
+    // CGtMalloc(const CGtMalloc &);
+    // CGtMalloc();
+    // void Construct(void *, int);
+    // void Destruct();
+    // bool Prepare();
+    // void * Malloc(int, int);
+    // void Free(void *);
+    // void * ReAlloc(void *, int);
+    // void * CAlloc(int, int);
+    // void PrintAllocations();
+    // RwInt32 GetLargestFreeBlock(bool);
+};
+```
 
 ## Notes
 

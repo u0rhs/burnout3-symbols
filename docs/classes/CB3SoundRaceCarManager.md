@@ -8,21 +8,63 @@
 - **Source file:** `B3SoundRaceCarManager.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
 - **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundRaceCarManager`, size 0x16AC, methods in `GameSource/Sound/Cars/B4SoundRaceCarManager.cpp` ([layout](#burnout-revenge-layout-of-cb4soundracecarmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Destruct()` | `0x002AC0C0` 8 | `0x002E9CC0` 8 | `0x0031F210` 8 | `0x00318C00` 16 | `0x002ED3C0` strong |  |
-| `Release()` | `0x002AC0D0` 8 | `0x002E9CD0` 8 | `0x0031F220` 8 | `0x00318BF0` 16 | `0x002ED3D0` strong |  |
-| `Update()` | `0x002AC0E0` 568 | `0x002E9CE0` 1292 | `0x0031F230` 1292 | `0x00318810` 828 | `0x002ED3E0` likely |  |
-| `Prepare()` | `0x002AC320` 8 | `0x002EA1F0` 8 | `0x0031F740` 8 | `0x003187F0` 20 | `0x002ED680` strong |  |
-| `Construct()` | `0x002AC330` 6260 | `0x002EA200` 6260 | `0x0031F750` 6260 | `0x00316600` 8676 | `0x002ED690` unverified |  |
-| `RelinquishRaceCar(CB3SoundRaceCar*)` | `0x002ADBB0` 20 | `0x002EBA80` 352 | `0x00320FD0` 352 | `0x003165A0` 92 | `0x002EEFC0` strong |  |
-| `RequestRaceCar(EB3RaceCarType)` | `0x002ADBD0` 264 | `0x002EBBE0` 1104 | `0x00321130` 1104 | `0x003162D0` 636 | `0x002EEFE0` likely |  |
-| `CB3SoundRaceCarManager()` |  |  |  | `0x002B1C70` 128 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Destruct()` | `0x002AC0C0` 8 | `0x002E9CC0` 8 | `0x0031F210` 8 | `0x00318C00` 16 | `0x002ED3C0` strong |  | `void CB4SoundRaceCarManager::Destruct()` |
+| `Release()` | `0x002AC0D0` 8 | `0x002E9CD0` 8 | `0x0031F220` 8 | `0x00318BF0` 16 | `0x002ED3D0` strong |  | `void CB4SoundRaceCarManager::Release()` |
+| `Update()` | `0x002AC0E0` 568 | `0x002E9CE0` 1292 | `0x0031F230` 1292 | `0x00318810` 828 | `0x002ED3E0` likely |  | `void CB4SoundRaceCarManager::Update()` |
+| `Prepare()` | `0x002AC320` 8 | `0x002EA1F0` 8 | `0x0031F740` 8 | `0x003187F0` 20 | `0x002ED680` strong |  | `bool CB4SoundRaceCarManager::Prepare()` |
+| `Construct()` | `0x002AC330` 6260 | `0x002EA200` 6260 | `0x0031F750` 6260 | `0x00316600` 8676 | `0x002ED690` unverified |  | `void CB4SoundRaceCarManager::Construct()` |
+| `RelinquishRaceCar(CB3SoundRaceCar*)` | `0x002ADBB0` 20 | `0x002EBA80` 352 | `0x00320FD0` 352 | `0x003165A0` 92 | `0x002EEFC0` strong |  | `void CB4SoundRaceCarManager::RelinquishRaceCar(CB4SoundRaceCar *lpRaceCarSound)` |
+| `RequestRaceCar(EB3RaceCarType)` | `0x002ADBD0` 264 | `0x002EBBE0` 1104 | `0x00321130` 1104 | `0x003162D0` 636 | `0x002EEFE0` likely |  | `CB4SoundRaceCar * CB4SoundRaceCarManager::RequestRaceCar(EB4RaceCarType leRequestedCarType)` |
+| `CB3SoundRaceCarManager()` |  |  |  | `0x002B1C70` 128 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundRaceCarManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 14 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundRaceCarManager {  // size 0x16AC
+    /* 0x000 */ RwReal mrRaceCarMasterGain;
+    /* 0x004 */ float marTarmacMinSpeed[10];
+    /* 0x02C */ float marTarmacMaxSpeed[10];
+    /* 0x054 */ float marTarmacMinVol[10];
+    /* 0x07C */ float marTarmacMaxVol[10];
+    /* 0x0A4 */ float marTarmacMinPitch[10];
+    /* 0x0CC */ float marTarmacMaxPitch[10];
+    /* 0x0F4 */ float marSpecificMinSpeed[10];
+    /* 0x11C */ float marSpecificMaxSpeed[10];
+    /* 0x144 */ float marSpecificMinVol[10];
+    /* 0x16C */ float marSpecificMaxVol[10];
+    /* 0x194 */ float marSpecificMinPitch[10];
+    /* 0x1BC */ float marSpecificMaxPitch[10];
+    /* 0x1E4 */ float marEngineDropLerp[2];
+    /* 0x1EC */ signed char man8SurfaceTable[41];
+    /* 0x218 */ CGtSoundWave *mpPowerBoostWave;
+    /* 0x21C */ CB4SoundPlayerCar maPlayerCarModels[2];
+    /* 0x914 */ CB4SoundAICar maNonPlayerCarModels[5];
+    // methods
+    // CB4SoundRaceCarManager(const CB4SoundRaceCarManager &);
+    // CB4SoundRaceCarManager();
+    // CB4SoundRaceCar * RequestRaceCar(EB4RaceCarType);
+    // void RelinquishRaceCar(CB4SoundRaceCar *);
+    // void UnpauseHighESM();
+    // void PauseHighESM();
+    // void SetRaceCarMasterGain(float);
+    // void StopRissets();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+};
+```
 
 ## Notes
 

@@ -6,14 +6,135 @@
 
 - **Area:** [Network and online](../systems/network-online.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CGtLobby`, size 0x004 ([layout](#burnout-revenge-layout-of-cgtlobby))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CGtLobby()` |  |  |  | `0x0028A000` 40 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CGtLobby()` |  |  |  | `0x0028A000` 40 |  |  |  |
+
+## Burnout Revenge layout of `CGtLobby`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 97 file(s), e.g. `GameShared/GameClasses/System/Networking/Configuration/GtDownloadableConfig.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtLobby {  // size 0x004
+    /* 0x000 */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CGtLobby(const CGtLobby &);
+    // CGtLobby();
+    // virtual void Construct(int);
+    // virtual void Destruct();
+    // virtual ELobbyStatus Update();
+    // virtual ELobbyStatus GetLobbyStatus();
+    // virtual RwChar * GetCurrentPlayerName() const;
+    // virtual bool Prepare(void *, bool (*)(bool, void *), void *, bool (*)(ELobbyKickReason, void *), void *, EGtLanguage, int);
+    // virtual void Release();
+    // virtual RwInt32 GetMemoryRequirements(int);
+    // virtual void SetMemoryBuffer(ELobbyMemoryPool, void *, int);
+    // virtual void ReleaseMemoryBuffer(ELobbyMemoryPool);
+    // virtual bool HasMemoryBuffer(ELobbyMemoryPool);
+    // virtual ELobbyStatus ConnectToServer(const char *, int);
+    // virtual ELobbyStatus DisconnectFromServer();
+    // virtual ELobbyStatus LogInToServer(const char *, const char *, void *);
+    // virtual RwInt32 GetLastError();
+    // virtual ELobbyStatus GetMyExternalIPAddress(char *);
+    // virtual bool IsLoggedIntoLobby() const;
+    // virtual ELobbyStatus CreateGame(CGtLobbyGameParams *, CGtLobbyGenericInteface *);
+    // virtual ELobbyStatus JoinGame(CGtLobbyGenericInteface *, CGtLobbyJoinGameParams *, CGtLobbySearchResults *);
+    // virtual ELobbyStatus QuickJoinGame(CGtLobbyGenericInteface *, CGtLobbyQuickJoinParams *);
+    // virtual ELobbyStatus LeaveGame();
+    // virtual ELobbyStatus LeaveGameWithUserSet();
+    // virtual ELobbyStatus EndGame();
+    // virtual ELobbyStatus ForAllGames(int, int, bool (*)(CGtLobbySearchResults *, void *), void *);
+    // virtual ELobbyStatus GetGameParams(CGtLobbyGameParams *);
+    // virtual ELobbyStatus UpdateGameParams(CGtLobbyGameParams *);
+    // virtual ELobbyStatus NominateNewGameHost(const char *);
+    // virtual ELobbyStatus LeaveGameImmediately();
+    // virtual ELobbyStatus ForAllPlayersInGame(char *, long, bool (*)(int, const char *, CGtLobbyGenericInteface *, bool, char *, bool, void *), void *, CGtLobbyGenericInteface *);
+    // virtual ELobbyStatus ForAllPlayersInCurrentLobby(int, int, bool (*)(int, const char *, CGtLobbyGenericInteface *, bool, char *, bool, void *), void *);
+    // virtual RwInt32 GetMyGameID();
+    // virtual RwInt32 GetNumFreeSlotsInCurrentGame() const;
+    // virtual RwChar * GetSessionKey();
+    // virtual void BroadcastLaunch();
+    // virtual bool HasLaunched();
+    // virtual void BroadcastArbitraryMessage(CGtLobbyArbitraryMessage *);
+    // virtual void BroadcastArbitraryMessageUserSet(const char *, CGtLobbyArbitraryMessage *);
+    // virtual bool ReceiveArbitraryMessage(CGtLobbyArbitraryMessage *);
+    // virtual RwInt32 GetHostPlayerID();
+    // virtual RwInt32 GetOurPlayerID();
+    // ELobbyStatus LostAccountName(char *);
+    // ELobbyStatus LostPassword(char *);
+    // ELobbyStatus EditAccount(void *);
+    // ELobbyStatus GetAccountDetails(void *);
+    // RwChar * GetAlternateAccountName(int) const;
+    // virtual bool RegisterServerDisconnectCallback(bool (*)(int, void *), void *);
+    // virtual bool RegisterChatMessageCallback(bool (*)(char *, char *, void *), void *);
+    // virtual ELobbyStatus ForAllLobbys(bool (*)(int, char *, int, int, bool, void *), void *);
+    // virtual ELobbyStatus CreateLobby(const char *, const char *, int);
+    // virtual ELobbyStatus JoinLobby(int, const char *);
+    // virtual RwInt32 GetNumPlayersInLobby();
+    // virtual ELobbyStatus GetPlayerInLobby(int, bool (*)(int, const char *, CGtLobbyGenericInteface *, bool, char *, bool, void *), void *);
+    // virtual RwChar * GetCurrentLobbyName();
+    // virtual RwInt32 GetCurrentLobbyID();
+    // virtual RwInt32 GetNumGamesInCurrentLobby();
+    // virtual RwUInt32 GetRandomNumberSeed() const;
+    // virtual ELobbyStatus LeaveCurrentLobby();
+    // virtual ELobbyStatus GetGameNews(int, bool (*)(bool, const char *, void *), void *);
+    // virtual ELobbyStatus GetUserInfo(char *, void (*)(CGtLobbyPlayerInfo *, void *), void *);
+    // virtual bool GetUserMachineAddress(int, char *);
+    // virtual ELobbyStatus UpdatePlayerParams(CGtLobbyGenericInteface *, CGtLobbyJoinGameParams *);
+    // virtual bool GetPlayerParams(CGtLobbyGenericInteface *, CGtLobbyJoinGameParams *);
+    // virtual ELobbyStatus SearchForGames(int, int, char *, bool, CGtLobbySearchParams *, CGtLobbySearchResults *, bool (*)(int, void *), void *);
+    // virtual ELobbyStatus ForAllGamesFound(bool (*)(CGtLobbySearchResults *, void *), void *);
+    // virtual ELobbyStatus SendChatMessage(const char *);
+    // virtual ELobbyStatus SendUserSetChatMessage(const char *, const char *);
+    // virtual ELobbyStatus KickPlayer(const char *, ELobbyKickReason);
+    // virtual bool AmIInGame();
+    // virtual bool IsGameLocked();
+    // virtual ELobbyStatus LockGame();
+    // virtual ELobbyStatus UnlockGame();
+    // virtual bool AmIHost();
+    // virtual ELobbyStatus PrepareRanking(char *);
+    // virtual ELobbyStatus ReleaseRanking();
+    // virtual ELobbyStatus RetrieveRankingList(int, int, int, int, int);
+    // virtual ELobbyStatus RetrieveRankingListUser(int, int, int, int);
+    // virtual ELobbyStatus RetrieveRankingListBuddies(int, int, int, int, const char **, int, int);
+    // virtual ELobbyStatus RetrieveUserRanking(int, int, int);
+    // virtual ELobbyStatus GetRankingData(int, int, char *, int);
+    // virtual ELobbyStatus GetUserRankingData(int, char *, int);
+    // virtual RwInt32 GetUserRankingRow();
+    // virtual RwInt32 GetNumberRankRecords();
+    // virtual RwInt32 GetRankingStartIndex();
+    // virtual bool IsRankingListDownloaded();
+    // virtual bool GetPlayerInLobbyRank(char *, int *);
+    // virtual bool GetLocalPlayerRank(int *);
+    // virtual ELobbyStatus GetUsersStats(const char *);
+    // virtual ELobbyStatus GetUserStatsData(int, char *, int);
+    // virtual bool GetLocalPlayerStats(CGtLobbyUserStatsData *);
+    // virtual ELobbyStatus GiveUserFeedback(char *, EFeedbackTypes, bool (*)(bool, void *), void *);
+    // virtual ELobbyStatus CreateUserSet(CGtLobbyUserSetParams *, CGtLobbyGenericInteface *);
+    // virtual ELobbyStatus DeleteUserSet();
+    // virtual ELobbyStatus JoinUserSet(const char *, const char *, CGtLobbyGenericInteface *, bool (*)(ELobbyKickReason, void *), void *);
+    // virtual ELobbyStatus LeaveUserSet();
+    // virtual ELobbyStatus AdjustUserSet(CGtLobbyUserSetParams *);
+    // virtual ELobbyStatus UpdateUserAuxiliaryInfo(CGtLobbyGenericInteface *);
+    // virtual ELobbyStatus KickUserFromUserSet(const char *, ELobbyKickReason);
+    // virtual ELobbyStatus RequestUserSetUpdates(const char *);
+    // virtual ELobbyStatus LockUserSet();
+    // virtual ELobbyStatus UnLockUserSet();
+    // virtual RwInt32 GetNumUsersInUserSet();
+    // virtual RwChar * GetUserInUserSetName(int);
+    // virtual RwChar * GetUsersetName();
+    // virtual bool AreWeUserSetHost();
+    // virtual bool AmIInUserSet();
+    // virtual ELobbyStatus ForAllMembersInUserSet(bool (*)(int, char *, CGtLobbyGenericInteface *, int, bool, char *, bool, void *), void *, CGtLobbyGenericInteface *);
+    // virtual bool IsGameValid();
+};
+```
 
 ## Notes
 

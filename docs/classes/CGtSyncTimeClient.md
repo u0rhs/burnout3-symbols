@@ -7,18 +7,45 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `GtSyncTimeClient.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 1, B3INTERN 5, B3O0PCH 1
+- **Burnout Revenge counterpart:** `CGtSyncTimeClient`, size 0x060, methods in `GameShared/GameClasses/System/Networking/SyncTime/GtSyncTimeClient.cpp` ([layout](#burnout-revenge-layout-of-cgtsynctimeclient))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `TimeIsSynchronised(float,int)` | `0x00201190` 184 |  | `0x0024CD60` 316 |  |  |  |
-| `Update(unsigned short,float*)` | `0x00201250` 536 |  | `0x0024CEA0` 976 |  |  |  |
-| `Release()` | `0x00201470` 76 | `0x0020D7C0` 164 | `0x0024D270` 52 | `0x002503A0` 144 |  |  |
-| `Prepare()` | `0x002014C0` 172 |  | `0x0024D2B0` 148 |  |  |  |
-| `Construct(CGtNetworkPlayerManager*)` | `0x00201570` 8 |  | `0x0024D350` 8 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `TimeIsSynchronised(float,int)` | `0x00201190` 184 |  | `0x0024CD60` 316 |  |  |  | `bool CGtSyncTimeClient::TimeIsSynchronised(float lrTimeDiffTolerance, int lnMinNumPacketsRecvd)` |
+| `Update(unsigned short,float*)` | `0x00201250` 536 |  | `0x0024CEA0` 976 |  |  |  | `void CGtSyncTimeClient::Update(unsigned short lu16FrameNum, float *lprTime)` |
+| `Release()` | `0x00201470` 76 | `0x0020D7C0` 164 | `0x0024D270` 52 | `0x002503A0` 144 |  |  | `void CGtSyncTimeClient::Release()` |
+| `Prepare()` | `0x002014C0` 172 |  | `0x0024D2B0` 148 |  |  |  | `void CGtSyncTimeClient::Prepare()` |
+| `Construct(CGtNetworkPlayerManager*)` | `0x00201570` 8 |  | `0x0024D350` 8 |  |  |  | `void CGtSyncTimeClient::Construct(CGtNetworkPlayerManager *lpPlayerManager)` |
+
+## Burnout Revenge layout of `CGtSyncTimeClient`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameShared/GameClasses/System/Networking/SyncTime/GtSyncTimeClient.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSyncTimeClient {  // size 0x060
+    /* 0x000 */ CGtSyncTime mSyncTime;
+    /* 0x030 */ float marDelays[4];
+    /* 0x040 */ float marTimeDifference[4];
+    /* 0x050 */ RwInt32 mnNumTimePackets;
+    /* 0x054 */ RwUInt8 mu8NumTimePacketsStored;
+    /* 0x055 */ RwUInt8 mu8NumTimeDifferenceStored;
+    /* 0x056 */ RwUInt16 mu16LastSyncSentFrame;
+    /* 0x058 */ RwUInt8 mu8DelayHead;
+    /* 0x059 */ RwUInt8 mu8TimeDifferenceHead;
+    // methods
+    // CGtSyncTimeClient(const CGtSyncTimeClient &);
+    // CGtSyncTimeClient();
+    // void Construct(CGtNetworkPlayerManager *);
+    // void Prepare();
+    // void Release();
+    // void Update(unsigned short, float *);
+    // bool TimeIsSynchronised(float, int);
+};
+```
 
 ## Notes
 

@@ -8,31 +8,60 @@
 - **Source file:** `B3OnlineSingleRaceLogic.cpp`
 - **Methods per build:** DNAT_200 17, B3DEBUG 17, B3INTERN 17, B3O0PCH 18
 - **vtable (DNAT_200):** `0x00440BC0`, 236 bytes = 59 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 57 virtual functions)
+- **Burnout Revenge counterpart:** `CB4OnlineSingleRaceLogic`, size 0x204, methods in `GameSource/Game/Logic/B4OnlineSingleRaceLogic.cpp` ([layout](#burnout-revenge-layout-of-cb4onlinesingleracelogic))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetOfflineGameModeType()` | `0x00346AA0` 8 | `0x003AB570` 8 | `0x003D59B0` 8 | `0x003E0140` 20 |  |  |
-| `GetOnlineGameModeType()` | `0x00346AB0` 8 | `0x003AB580` 8 | `0x003D59C0` 8 | `0x003E0160` 20 |  |  |
-| `IsGameOver()` | `0x00346AF0` 8 | `0x003AB5C0` 8 | `0x003D5A00` 8 | `0x003E0120` 28 |  |  |
-| `BroadcastGameCountDownStopped()` | `0x00346B00` 88 | `0x003AB5D0` 88 | `0x003D5A10` 88 | `0x003E0090` 144 |  |  |
-| `BroadcastGameIsOver()` | `0x00346B60` 88 | `0x003AB630` 88 | `0x003D5A70` 88 | `0x003E0000` 144 |  |  |
-| `BroadcastGameCountingdown()` | `0x00346BC0` 88 | `0x003AB690` 88 | `0x003D5AD0` 88 | `0x003DFF50` 144 |  |  |
-| `SetGameModeStatusMessageArrived(signed char)` | `0x00346C20` 84 | `0x003AB6F0` 84 | `0x003D5B30` 84 | `0x003DFED0` 128 |  |  |
-| `StartReplay()` | `0x00346C80` 8 | `0x003AB750` 8 | `0x003D5B90` 8 | `0x003DFEB0` 20 |  |  |
-| `GetRacePositionType()` | `0x00346C90` 8 | `0x003AB760` 8 | `0x003D5BA0` 8 | `0x003DFE90` 20 |  |  |
-| `GetHUDType()` | `0x00346CA0` 8 | `0x003AB770` 8 | `0x003D5BB0` 8 | `0x003DFE70` 20 |  |  |
-| `HasStageFinished()` | `0x00346CB0` 8 | `0x003AB780` 8 | `0x003D5BC0` 8 | `0x003DFE50` 28 |  |  |
-| `Destruct()` | `0x00346CC0` 8 | `0x003AB790` 8 | `0x003D5BD0` 8 | `0x003DFE20` 48 |  |  |
-| `Release()` | `0x00346CD0` 20 | `0x003AB7A0` 20 | `0x003D5BE0` 20 | `0x003DFDD0` 68 |  |  |
-| `UpdateCameras()` | `0x00346CF0` 224 | `0x003AB7C0` 280 | `0x003D5C00` 280 | `0x003DFCF0` 224 |  |  |
-| `Update()` | `0x00346DD0` 580 | `0x003AB8E0` 668 | `0x003D5D20` 668 | `0x003DFA80` 564 |  |  |
-| `Prepare()` | `0x00347020` 96 | `0x003ABB80` 96 | `0x003D5FC0` 96 | `0x003DFA00` 120 |  |  |
-| `Construct()` | `0x00347080` 8 | `0x003ABBE0` 8 | `0x003D6020` 8 | `0x003DF9D0` 48 |  |  |
-| `CB3OnlineSingleRaceLogic()` |  |  |  | `0x0013DEF0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetOfflineGameModeType()` | `0x00346AA0` 8 | `0x003AB570` 8 | `0x003D59B0` 8 | `0x003E0140` 20 |  |  |  |
+| `GetOnlineGameModeType()` | `0x00346AB0` 8 | `0x003AB580` 8 | `0x003D59C0` 8 | `0x003E0160` 20 |  |  |  |
+| `IsGameOver()` | `0x00346AF0` 8 | `0x003AB5C0` 8 | `0x003D5A00` 8 | `0x003E0120` 28 |  |  |  |
+| `BroadcastGameCountDownStopped()` | `0x00346B00` 88 | `0x003AB5D0` 88 | `0x003D5A10` 88 | `0x003E0090` 144 |  |  |  |
+| `BroadcastGameIsOver()` | `0x00346B60` 88 | `0x003AB630` 88 | `0x003D5A70` 88 | `0x003E0000` 144 |  |  |  |
+| `BroadcastGameCountingdown()` | `0x00346BC0` 88 | `0x003AB690` 88 | `0x003D5AD0` 88 | `0x003DFF50` 144 |  |  |  |
+| `SetGameModeStatusMessageArrived(signed char)` | `0x00346C20` 84 | `0x003AB6F0` 84 | `0x003D5B30` 84 | `0x003DFED0` 128 |  |  |  |
+| `StartReplay()` | `0x00346C80` 8 | `0x003AB750` 8 | `0x003D5B90` 8 | `0x003DFEB0` 20 |  |  |  |
+| `GetRacePositionType()` | `0x00346C90` 8 | `0x003AB760` 8 | `0x003D5BA0` 8 | `0x003DFE90` 20 |  |  | `ERacePositionType CB4OnlineSingleRaceLogic::GetRacePositionType()` |
+| `GetHUDType()` | `0x00346CA0` 8 | `0x003AB770` 8 | `0x003D5BB0` 8 | `0x003DFE70` 20 |  |  |  |
+| `HasStageFinished()` | `0x00346CB0` 8 | `0x003AB780` 8 | `0x003D5BC0` 8 | `0x003DFE50` 28 |  |  |  |
+| `Destruct()` | `0x00346CC0` 8 | `0x003AB790` 8 | `0x003D5BD0` 8 | `0x003DFE20` 48 |  |  |  |
+| `Release()` | `0x00346CD0` 20 | `0x003AB7A0` 20 | `0x003D5BE0` 20 | `0x003DFDD0` 68 |  |  | `void CB4OnlineSingleRaceLogic::Release()` |
+| `UpdateCameras()` | `0x00346CF0` 224 | `0x003AB7C0` 280 | `0x003D5C00` 280 | `0x003DFCF0` 224 |  |  |  |
+| `Update()` | `0x00346DD0` 580 | `0x003AB8E0` 668 | `0x003D5D20` 668 | `0x003DFA80` 564 |  |  | `void CB4OnlineSingleRaceLogic::Update()` |
+| `Prepare()` | `0x00347020` 96 | `0x003ABB80` 96 | `0x003D5FC0` 96 | `0x003DFA00` 120 |  |  | `bool CB4OnlineSingleRaceLogic::Prepare()` |
+| `Construct()` | `0x00347080` 8 | `0x003ABBE0` 8 | `0x003D6020` 8 | `0x003DF9D0` 48 |  |  |  |
+| `CB3OnlineSingleRaceLogic()` |  |  |  | `0x0013DEF0` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4OnlineSingleRaceLogic`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameSource/Game/B4Game.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4OnlineSingleRaceLogic : public CB4SingleRaceLogic {  // size 0x204
+    // base CB4SingleRaceLogic at 0x000
+    /* 0x0FC */ EOnlineSingleRaceState meState;
+    /* 0x100 */ short unsigned int mac16PlayerFinishedString[128];
+    /* 0x200 */ RwReal mrTimeFirstResultArrived;
+    // methods
+    // CB4OnlineSingleRaceLogic(const CB4OnlineSingleRaceLogic &);
+    // CB4OnlineSingleRaceLogic();
+    // virtual bool Prepare();
+    // virtual void Update();
+    // virtual void Release();
+    // virtual ERacePositionType GetRacePositionType();
+    // virtual void OnHostMigration(int, int);
+    // virtual void OnResultArrived(CB4NetworkPlayer *);
+    // virtual RwReal GetTimeRemaining();
+    // virtual bool CanAdjustCameras();
+    // virtual void OnSplashScreenFinished();
+    // virtual void FillOutResultsStructureForRaceCar(CB4RaceCar *);
+    // virtual void FinaliseResultsStructures();
+    // void FillInPositionPoints();
+};
+```
 
 ## Notes
 

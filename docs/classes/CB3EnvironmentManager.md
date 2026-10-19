@@ -8,35 +8,91 @@
 - **Source file:** `B3EnvironmentManager.cpp`
 - **Methods per build:** DNAT_200 16, B3DEBUG 16, B3INTERN 16, B3O0PCH 22
 - **Retail (SLUS-21050):** 16 of its 16 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4EnvironmentManager`, size 0x170, methods in `GameSource/World/B4EnvironmentManager.cpp` ([layout](#burnout-revenge-layout-of-cb4environmentmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SunPos2BearingAndAltitude(float*,float*,GtMathPs2::CGtV3d)` | `0x0027BA50` 840 | `0x002B0290` 1072 | `0x002E74F0` 1072 | `0x002E82F0` 1896 | `0x002BB830` strong |  |
-| `RenderBackdropTexture()` | `0x0027BDA0` 932 | `0x002B06C0` 1136 | `0x002E7920` 1136 | `0x002E7CD0` 1492 | `0x002BBB90` strong |  |
-| `RenderSunCorona()` | `0x0027C150` 68 | `0x002B0B30` 128 | `0x002E7D90` 128 | `0x002E7C70` 92 | `0x002BBF50` strong |  |
-| `SunOcclusionTest()` | `0x0027C1A0` 184 | `0x002B0BB0` 276 | `0x002E7E10` 276 | `0x002E7B50` 276 | `0x002BBFA0` strong |  |
-| `RenderSunToEnvironmentMap()` | `0x0027C260` 196 | `0x002B0CD0` 300 | `0x002E7F30` 300 | `0x002E79E0` 364 | `0x002BC070` strong |  |
-| `RenderSkyToEnvironmentMap()` | `0x0027C330` 76 | `0x002B0E00` 144 | `0x002E8060` 144 | `0x002E7960` 128 | `0x002BC140` strong |  |
-| `BuildEnvmapSunCoronaData()` | `0x0027C380` 212 | `0x002B0E90` 304 | `0x002E80F0` 304 | `0x002E77F0` 356 | `0x002BC190` strong |  |
-| `RenderClouds()` | `0x0027C460` 56 | `0x002B0FC0` 56 | `0x002E8220` 56 | `0x002E77A0` 72 | `0x002BC270` strong |  |
-| `RenderSunBlob()` | `0x0027C4A0` 184 | `0x002B1000` 212 | `0x002E8260` 212 | `0x002E75E0` 252 | `0x002BC2B0` strong |  |
-| `RenderSky()` | `0x0027C560` 164 | `0x002B10E0` 164 | `0x002E8340` 164 | `0x002E74E0` 252 | `0x002BC380` likely |  |
-| `BeginRender(int)` | `0x0027C610` 8 | `0x002B1190` 132 | `0x002E83F0` 132 | `0x002E7480` 92 | `0x002BC450` strong |  |
-| `Update(float)` | `0x0027C620` 360 | `0x002B1220` 516 | `0x002E8480` 516 | `0x002E7170` 252 | `0x002BC460` unverified |  |
-| `Release()` | `0x0027C790` 160 | `0x002B1430` 252 | `0x002E8690` 160 | `0x002E70E0` 144 | `0x002BC970` strong |  |
-| `Prepare()` | `0x0027C830` 872 | `0x002B1530` 948 | `0x002E8730` 948 | `0x002E6BE0` 944 | `0x002BCA20` likely |  |
-| `Destruct()` | `0x0027CBA0` 40 | `0x002B18F0` 40 | `0x002E8AF0` 40 | `0x002E6BA0` 56 | `0x002BCE90` strong |  |
-| `Construct()` | `0x0027CBD0` 152 | `0x002B1920` 244 | `0x002E8B20` 152 | `0x002E6B10` 132 | `0x002BCEC0` strong |  |
-| `CB3EnvironmentManager()` |  |  |  | `0x002E8A60` 92 |  |  |
-| `EndRender()` |  |  |  | `0x0029BCA0` 56 |  |  |
-| `GetRenderEnvironment()` |  |  |  | `0x0029BD00` 76 |  |  |
-| `GetSpecularColour()` |  |  |  | `0x0026AE50` 52 |  |  |
-| `GetSunDirection()` |  |  |  | `0x0026AE00` 52 |  |  |
-| `SkyTexVToAlt(float)` |  |  |  | `0x002E82B0` 64 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SunPos2BearingAndAltitude(float*,float*,GtMathPs2::CGtV3d)` | `0x0027BA50` 840 | `0x002B0290` 1072 | `0x002E74F0` 1072 | `0x002E82F0` 1896 | `0x002BB830` strong |  | `void CB4EnvironmentManager::SunPos2BearingAndAltitude(float *lprBearingOut, float *lprAltitudeOut, GtMathPs2::CGtV3d lSunPos)` |
+| `RenderBackdropTexture()` | `0x0027BDA0` 932 | `0x002B06C0` 1136 | `0x002E7920` 1136 | `0x002E7CD0` 1492 | `0x002BBB90` strong |  | `void CB4EnvironmentManager::RenderBackdropTexture()` |
+| `RenderSunCorona()` | `0x0027C150` 68 | `0x002B0B30` 128 | `0x002E7D90` 128 | `0x002E7C70` 92 | `0x002BBF50` strong |  | `void CB4EnvironmentManager::RenderSunCorona()` |
+| `SunOcclusionTest()` | `0x0027C1A0` 184 | `0x002B0BB0` 276 | `0x002E7E10` 276 | `0x002E7B50` 276 | `0x002BBFA0` strong |  | `void CB4EnvironmentManager::SunOcclusionTest()` |
+| `RenderSunToEnvironmentMap()` | `0x0027C260` 196 | `0x002B0CD0` 300 | `0x002E7F30` 300 | `0x002E79E0` 364 | `0x002BC070` strong |  | `void CB4EnvironmentManager::RenderSunToEnvironmentMap()` |
+| `RenderSkyToEnvironmentMap()` | `0x0027C330` 76 | `0x002B0E00` 144 | `0x002E8060` 144 | `0x002E7960` 128 | `0x002BC140` strong |  | `void CB4EnvironmentManager::RenderSkyToEnvironmentMap(unsigned int lnPlayerID)` (same name, different parameters) |
+| `BuildEnvmapSunCoronaData()` | `0x0027C380` 212 | `0x002B0E90` 304 | `0x002E80F0` 304 | `0x002E77F0` 356 | `0x002BC190` strong |  | `void CB4EnvironmentManager::BuildEnvmapSunCoronaData()` |
+| `RenderClouds()` | `0x0027C460` 56 | `0x002B0FC0` 56 | `0x002E8220` 56 | `0x002E77A0` 72 | `0x002BC270` strong |  | `void CB4EnvironmentManager::RenderClouds(unsigned int luPlayerID)` (same name, different parameters) |
+| `RenderSunBlob()` | `0x0027C4A0` 184 | `0x002B1000` 212 | `0x002E8260` 212 | `0x002E75E0` 252 | `0x002BC2B0` strong |  | `void CB4EnvironmentManager::RenderSunBlob()` |
+| `RenderSky()` | `0x0027C560` 164 | `0x002B10E0` 164 | `0x002E8340` 164 | `0x002E74E0` 252 | `0x002BC380` likely |  | `void CB4EnvironmentManager::RenderSky(unsigned int lnPlayerID)` (same name, different parameters) |
+| `BeginRender(int)` | `0x0027C610` 8 | `0x002B1190` 132 | `0x002E83F0` 132 | `0x002E7480` 92 | `0x002BC450` strong |  | `void CB4EnvironmentManager::BeginRender(EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `Update(float)` | `0x0027C620` 360 | `0x002B1220` 516 | `0x002E8480` 516 | `0x002E7170` 252 | `0x002BC460` unverified |  | `void CB4EnvironmentManager::Update(float lrTimestep)` |
+| `Release()` | `0x0027C790` 160 | `0x002B1430` 252 | `0x002E8690` 160 | `0x002E70E0` 144 | `0x002BC970` strong |  | `void CB4EnvironmentManager::Release()` |
+| `Prepare()` | `0x0027C830` 872 | `0x002B1530` 948 | `0x002E8730` 948 | `0x002E6BE0` 944 | `0x002BCA20` likely |  | `bool CB4EnvironmentManager::Prepare()` |
+| `Destruct()` | `0x0027CBA0` 40 | `0x002B18F0` 40 | `0x002E8AF0` 40 | `0x002E6BA0` 56 | `0x002BCE90` strong |  | `void CB4EnvironmentManager::Destruct()` |
+| `Construct()` | `0x0027CBD0` 152 | `0x002B1920` 244 | `0x002E8B20` 152 | `0x002E6B10` 132 | `0x002BCEC0` strong |  | `void CB4EnvironmentManager::Construct()` |
+| `CB3EnvironmentManager()` |  |  |  | `0x002E8A60` 92 |  |  |  |
+| `EndRender()` |  |  |  | `0x0029BCA0` 56 |  |  |  |
+| `GetRenderEnvironment()` |  |  |  | `0x0029BD00` 76 |  |  |  |
+| `GetSpecularColour()` |  |  |  | `0x0026AE50` 52 |  |  |  |
+| `GetSunDirection()` |  |  |  | `0x0026AE00` 52 |  |  |  |
+| `SkyTexVToAlt(float)` |  |  |  | `0x002E82B0` 64 |  |  |  |
+
+## Burnout Revenge layout of `CB4EnvironmentManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/World/B4EnvironmentManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4EnvironmentManager {  // size 0x170
+    /* 0x000 */ CB4EnvironmentData mStreamedData;
+    /* 0x0B0 */ CB4PlayerEnvironment maRenderEnvironment[2];
+    /* 0x150 */ EPlayerCarIndex meRenderPlayer;
+    /* 0x154 */ RwReal mrCloudRotation;
+    /* 0x158 */ RwReal mrCloudRotationSpeed;
+    /* 0x15C */ bool mbSun;
+    /* 0x160 */ EGtPrepareState mePrepareState;
+    /* 0x164 */ RwUInt32 muLoadId;
+    /* 0x168 */ CB4EnvironmentData *mpStreamingData;
+    /* 0x16C */ bool mbSkyDataLoaded;
+    // methods
+    // CB4EnvironmentManager(const CB4EnvironmentManager &);
+    // CB4EnvironmentManager();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void Update(float);
+    // void BeginRender(EPlayerCarIndex);
+    // void RenderBackdropTexture();
+    // void RenderSky(unsigned int);
+    // void RenderSunBlob();
+    // void RenderClouds(unsigned int);
+    // void RenderSkyToEnvironmentMap(unsigned int);
+    // void RenderSunToEnvironmentMap();
+    // void RenderSkyToReflectionMap(unsigned int);
+    // void BuildEnvmapSunCoronaData();
+    // void SunOcclusionTest();
+    // void RenderSunCorona();
+    // void EndRender();
+    // CGtV3d GetSunDirection();
+    // CGtV3d GetSunColour() const;
+    // RwReal GetSunIntensity();
+    // CGtRGB GetSpecularColour();
+    // void SetSpecularColour(GtMathPs2::CGtV3d);
+    // CB4EnvironmentInfo * GetRenderEnvironment();
+    // RwReal SkyAltToTexV(float);
+    // RwReal SkyTexVToAlt(float);
+    // RwReal SeaAltToTexV(float);
+    // RwReal SeaTexVToAlt(float);
+    // void SunPos2BearingAndAltitude(float *, float *, GtMathPs2::CGtV3d);
+    // void CalculateLocalInfo(EPlayerCarIndex);
+    // static void CalculateLocalInfoUSA(GtMathPs2::CGtV3d, CB4EnvironmentManager::CB4PlayerEnvironment &);
+    // static void CalculateLocalInfoEurope(GtMathPs2::CGtV3d, CB4EnvironmentManager::CB4PlayerEnvironment &);
+    // static void CalculateLocalInfoAsia(GtMathPs2::CGtV3d, CB4EnvironmentManager::CB4PlayerEnvironment &);
+    // static void InterpolateLocalInfo(CB4EnvironmentManager::CB4PlayerEnvironment &, const CB4EnvironmentLocalData *, const CB4EnvironmentLocalData *, float);
+};
+```
 
 ## Notes
 

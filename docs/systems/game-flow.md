@@ -16,34 +16,36 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 **Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
 
-| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
-|---|---:|---:|---|---:|---|
-| `B3Game.cpp` | 47 | 10,216 | `0x00131380` | 10 (1) | `0x00131CA0`–`0x001344D0` |
-| `B3GameMode.cpp` | 7 | 736 | `0x00133870` | 7 (4) | `0x001345D0`–`0x00134910` |
-| `B3OnePlayerStage.cpp` | 10 | 2,468 | `0x00133B80` | 8 (1) | `0x00134940`–`0x001353A0` |
-| `B3Player.cpp` | 4 | 260 | `0x00134D40` | 3 (0) | `0x00135A90`–`0x00135B40` |
-| `B3TwoPlayerSplitScreenStage.cpp` | 8 | 1,008 | `0x001397C0` | 3 (0) | `0x0013CA10`–`0x0013CC70` |
-| `B3GameData.cpp` | 13 | 5,860 | `0x0014B220` |  |  |
-| `B3RacePosition.cpp` | 11 | 5,964 | `0x0014F630` | 10 (0) | `0x001531C0`–`0x00154AB0` |
-| `B3SplitTimeCheckpoint.cpp` | 6 | 952 | `0x001592C0` | 6 (6) | `0x0015E340`–`0x0015E710` |
-| `B3StartFinishLine.cpp` | 5 | 488 | `0x001596A0` | 5 (4) | `0x0015E720`–`0x0015E890` |
-| `B3StartPoint.cpp` | 4 | 36 | `0x001598A0` | 4 (4) | `0x0015E8A0`–`0x0015E8D0` |
-| `B3World.cpp` | 16 | 10,204 | `0x001676E0` | 13 (2) | `0x00199770`–`0x0019B6D0` |
-| `B3WrongWayWall.cpp` | 7 | 4,456 | `0x00169290` | 7 (0) | `0x0019B6E0`–`0x0019D4B0` |
-| `B3GamePS2.cpp` | 7 | 1,852 | `0x0019A1C0` | 1 (0) | `0x001D3EE0`–`0x001D3EE0` |
-| `B3Settings.cpp` | 2 | 64 | `0x001E09F0` | 1 (0) | `0x0021B760`–`0x0021B760` |
-| `B3CarViewerGameMode.cpp` | 8 | 10,444 | `0x0020DC70` | 7 (2) | `0x0024D4D0`–`0x0024FDA0` |
-| `B3SpatialTrigger.cpp` | 5 | 368 | `0x002332B0` | 1 (0) | `0x00272A30`–`0x00272A30` |
-| `B3WorldPS2.cpp` | 4 | 2,460 | `0x00236520` | 4 (0) | `0x00275EF0`–`0x002768F0` |
-| `B3OfflineSingleRaceLogic.cpp` | 22 | 1,648 | `0x003463B0` | 1 (0) | `0x003899E0`–`0x003899E0` |
-| `B3OfflineBurningLapLogic.cpp` | 25 | 1,436 | `0x003473C0` |  |  |
-| `B3OfflineLapEliminatorLogic.cpp` | 9 | 716 | `0x003479F0` |  |  |
-| `B3OfflineRoadRageLogic.cpp` | 20 | 3,904 | `0x00347D00` | 2 (0) | `0x0038C120`–`0x0038C5D0` |
-| `B3OfflineStageLogic.cpp` | 12 | 2,736 | `0x0034DCF0` | 3 (0) | `0x003951A0`–`0x003957D0` |
-| `B3StageLogic.cpp` | 13 | 3,140 | `0x0034E7C0` | 4 (0) | `0x00395800`–`0x00395FC0` |
-| `B3Offline2PRaceLogic.cpp` | 2 | 48 | `0x003714D0` |  |  |
-| `B3Offline2PRoadRageLogic.cpp` | 5 | 632 | `0x00371510` |  |  |
-| `B3HardCodedRaceStageList.cpp` | 15 | 2,508 | `0x0039A700` | 4 (2) | `0x003E9A60`–`0x003EA390` |
+**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source paths ([source files](../reference/revenge-source-file-lineage.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |
+|---|---:|---:|---|---:|---|---|
+| `B3Game.cpp` | 47 | 10,216 | `0x00131380` | 10 (1) | `0x00131CA0`–`0x001344D0` | `GameSource/Game/B4Game.cpp` |
+| `B3GameMode.cpp` | 7 | 736 | `0x00133870` | 7 (4) | `0x001345D0`–`0x00134910` | `GameSource/Game/B4GameMode.cpp` |
+| `B3OnePlayerStage.cpp` | 10 | 2,468 | `0x00133B80` | 8 (1) | `0x00134940`–`0x001353A0` | `GameSource/Game/B4OnePlayerStage.cpp` |
+| `B3Player.cpp` | 4 | 260 | `0x00134D40` | 3 (0) | `0x00135A90`–`0x00135B40` | `GameSource/Game/B4Player.cpp` |
+| `B3TwoPlayerSplitScreenStage.cpp` | 8 | 1,008 | `0x001397C0` | 3 (0) | `0x0013CA10`–`0x0013CC70` | `GameSource/Game/B4TwoPlayerSplitScreenStage.cpp` |
+| `B3GameData.cpp` | 13 | 5,860 | `0x0014B220` |  |  | `GameSource/World/B4GameData.cpp` |
+| `B3RacePosition.cpp` | 11 | 5,964 | `0x0014F630` | 10 (0) | `0x001531C0`–`0x00154AB0` | `GameSource/World/B4RacePosition.cpp` |
+| `B3SplitTimeCheckpoint.cpp` | 6 | 952 | `0x001592C0` | 6 (6) | `0x0015E340`–`0x0015E710` | `GameSource/World/B4SplitTimeCheckpoint.cpp` |
+| `B3StartFinishLine.cpp` | 5 | 488 | `0x001596A0` | 5 (4) | `0x0015E720`–`0x0015E890` | `GameSource/World/B4StartFinishLine.cpp` |
+| `B3StartPoint.cpp` | 4 | 36 | `0x001598A0` | 4 (4) | `0x0015E8A0`–`0x0015E8D0` | `GameSource/World/B4StartPoint.cpp` |
+| `B3World.cpp` | 16 | 10,204 | `0x001676E0` | 13 (2) | `0x00199770`–`0x0019B6D0` | `GameSource/World/B4World.cpp` |
+| `B3WrongWayWall.cpp` | 7 | 4,456 | `0x00169290` | 7 (0) | `0x0019B6E0`–`0x0019D4B0` | `GameSource/World/B4WrongWayWall.cpp` |
+| `B3GamePS2.cpp` | 7 | 1,852 | `0x0019A1C0` | 1 (0) | `0x001D3EE0`–`0x001D3EE0` | `GameSource/Game/Ps2/B4GamePS2.cpp` |
+| `B3Settings.cpp` | 2 | 64 | `0x001E09F0` | 1 (0) | `0x0021B760`–`0x0021B760` | `GameSource/Game/B4Settings.cpp` |
+| `B3CarViewerGameMode.cpp` | 8 | 10,444 | `0x0020DC70` | 7 (2) | `0x0024D4D0`–`0x0024FDA0` |  |
+| `B3SpatialTrigger.cpp` | 5 | 368 | `0x002332B0` | 1 (0) | `0x00272A30`–`0x00272A30` | `GameSource/World/B4SpatialTrigger.cpp` |
+| `B3WorldPS2.cpp` | 4 | 2,460 | `0x00236520` | 4 (0) | `0x00275EF0`–`0x002768F0` | `GameSource/World/Ps2/B4WorldPS2.cpp` |
+| `B3OfflineSingleRaceLogic.cpp` | 22 | 1,648 | `0x003463B0` | 1 (0) | `0x003899E0`–`0x003899E0` |  |
+| `B3OfflineBurningLapLogic.cpp` | 25 | 1,436 | `0x003473C0` |  |  |  |
+| `B3OfflineLapEliminatorLogic.cpp` | 9 | 716 | `0x003479F0` |  |  |  |
+| `B3OfflineRoadRageLogic.cpp` | 20 | 3,904 | `0x00347D00` | 2 (0) | `0x0038C120`–`0x0038C5D0` |  |
+| `B3OfflineStageLogic.cpp` | 12 | 2,736 | `0x0034DCF0` | 3 (0) | `0x003951A0`–`0x003957D0` |  |
+| `B3StageLogic.cpp` | 13 | 3,140 | `0x0034E7C0` | 4 (0) | `0x00395800`–`0x00395FC0` | `GameSource/Game/Logic/B4StageLogic.cpp` |
+| `B3Offline2PRaceLogic.cpp` | 2 | 48 | `0x003714D0` |  |  |  |
+| `B3Offline2PRoadRageLogic.cpp` | 5 | 632 | `0x00371510` |  |  |  |
+| `B3HardCodedRaceStageList.cpp` | 15 | 2,508 | `0x0039A700` | 4 (2) | `0x003E9A60`–`0x003EA390` |  |
 
 ## Classes
 

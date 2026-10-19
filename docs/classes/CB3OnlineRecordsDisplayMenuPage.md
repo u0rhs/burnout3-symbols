@@ -11,31 +11,31 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ScrollUsersCountryAndCarBuffer(int)` | `0x00335750` 356 | `0x00397B10` 356 |  | `0x003C9FA0` 652 |  |  |
-| `CurrentUsersCountryCallback(bool,char*,void*)` | `0x003358C0` 200 | `0x00397C80` 200 | `0x003C1EF0` 200 | `0x003C9EC0` 224 |  |  |
-| `UsersStatsCallback(bool,char*,void*)` | `0x00335990` 108 | `0x00397D50` 108 | `0x003C1FC0` 208 | `0x003C9E20` 152 |  |  |
-| `UsersCountryCallback(bool,char*,void*)` | `0x00335A00` 204 | `0x00397DC0` 204 | `0x003C2090` 332 | `0x003C9D20` 252 |  |  |
-| `SetupRankingData(int)` | `0x00335AD0` 1120 | `0x00397E90` 1368 | `0x003C21E0` 1260 | `0x003C9540` 1812 |  |  |
-| `SetupUserRankingData()` | `0x00335F30` 1020 | `0x003983F0` 1100 | `0x003C26D0` 1100 | `0x003C8E60` 1632 |  |  |
-| `SetupTableData()` | `0x00336330` 952 | `0x00398840` 952 | `0x003C2B20` 952 | `0x003C8600` 2132 |  |  |
-| `Release()` | `0x003366F0` 8 | `0x00398C00` 8 | `0x003C2EE0` 8 | `0x003C85F0` 16 |  |  |
-| `UpdateNormal()` | `0x00336700` 1444 | `0x00398C10` 1996 | `0x003C2EF0` 2424 | `0x003C7C80` 2332 |  |  |
-| `UpdateWaitToRetrieveList()` | `0x00336CB0` 492 | `0x003993E0` 520 |  | `0x003C7A90` 492 |  |  |
-| `UpdateWaitForUserCountry()` | `0x00336EA0` 416 | `0x003995F0` 444 | `0x003C3A10` 508 | `0x003C77B0` 424 |  |  |
-| `UpdateWaitForList()` | `0x00337040` 476 | `0x003997B0` 600 | `0x003C3C10` 500 | `0x003C75A0` 528 |  |  |
-| `UpdateWaitForCurrentUserCountry()` | `0x00337220` 392 | `0x00399A10` 424 | `0x003C3E10` 428 | `0x003C7400` 404 |  |  |
-| `UpdateWaitForUserList()` | `0x003373B0` 372 | `0x00399BC0` 512 |  | `0x003C71F0` 388 |  |  |
-| `UpdateWaitForRankings()` | `0x00337530` 484 | `0x00399DC0` 512 | `0x003C3FC0` 512 | `0x003C7000` 484 |  |  |
-| `Update()` | `0x00337720` 560 | `0x00399FC0` 588 | `0x003C41C0` 664 | `0x003C6ED0` 304 |  |  |
-| `Prepare(EB3SelectedRecord)` | `0x00337950` 976 | `0x0039A210` 1060 | `0x003C4460` 1012 | `0x003C69D0` 1280 |  |  |
-| `CB3OnlineRecordsDisplayMenuPage()` |  |  |  | `0x003416D0` 172 |  |  |
-| `HandleError(int)` |  |  |  | `0x003C9C60` 184 |  |  |
-| `UpdateError()` |  |  |  | `0x003C85A0` 72 |  |  |
-| `UpdateWaitForUserCar()` |  |  | `0x003C3870` 408 | `0x003C7960` 296 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ScrollUsersCountryAndCarBuffer(int)` | `0x00335750` 356 | `0x00397B10` 356 |  | `0x003C9FA0` 652 |  |  |  |
+| `CurrentUsersCountryCallback(bool,char*,void*)` | `0x003358C0` 200 | `0x00397C80` 200 | `0x003C1EF0` 200 | `0x003C9EC0` 224 |  |  |  |
+| `UsersStatsCallback(bool,char*,void*)` | `0x00335990` 108 | `0x00397D50` 108 | `0x003C1FC0` 208 | `0x003C9E20` 152 |  |  |  |
+| `UsersCountryCallback(bool,char*,void*)` | `0x00335A00` 204 | `0x00397DC0` 204 | `0x003C2090` 332 | `0x003C9D20` 252 |  |  |  |
+| `SetupRankingData(int)` | `0x00335AD0` 1120 | `0x00397E90` 1368 | `0x003C21E0` 1260 | `0x003C9540` 1812 |  |  |  |
+| `SetupUserRankingData()` | `0x00335F30` 1020 | `0x003983F0` 1100 | `0x003C26D0` 1100 | `0x003C8E60` 1632 |  |  |  |
+| `SetupTableData()` | `0x00336330` 952 | `0x00398840` 952 | `0x003C2B20` 952 | `0x003C8600` 2132 |  |  |  |
+| `Release()` | `0x003366F0` 8 | `0x00398C00` 8 | `0x003C2EE0` 8 | `0x003C85F0` 16 |  |  |  |
+| `UpdateNormal()` | `0x00336700` 1444 | `0x00398C10` 1996 | `0x003C2EF0` 2424 | `0x003C7C80` 2332 |  |  |  |
+| `UpdateWaitToRetrieveList()` | `0x00336CB0` 492 | `0x003993E0` 520 |  | `0x003C7A90` 492 |  |  |  |
+| `UpdateWaitForUserCountry()` | `0x00336EA0` 416 | `0x003995F0` 444 | `0x003C3A10` 508 | `0x003C77B0` 424 |  |  |  |
+| `UpdateWaitForList()` | `0x00337040` 476 | `0x003997B0` 600 | `0x003C3C10` 500 | `0x003C75A0` 528 |  |  |  |
+| `UpdateWaitForCurrentUserCountry()` | `0x00337220` 392 | `0x00399A10` 424 | `0x003C3E10` 428 | `0x003C7400` 404 |  |  |  |
+| `UpdateWaitForUserList()` | `0x003373B0` 372 | `0x00399BC0` 512 |  | `0x003C71F0` 388 |  |  |  |
+| `UpdateWaitForRankings()` | `0x00337530` 484 | `0x00399DC0` 512 | `0x003C3FC0` 512 | `0x003C7000` 484 |  |  |  |
+| `Update()` | `0x00337720` 560 | `0x00399FC0` 588 | `0x003C41C0` 664 | `0x003C6ED0` 304 |  |  |  |
+| `Prepare(EB3SelectedRecord)` | `0x00337950` 976 | `0x0039A210` 1060 | `0x003C4460` 1012 | `0x003C69D0` 1280 |  |  |  |
+| `CB3OnlineRecordsDisplayMenuPage()` |  |  |  | `0x003416D0` 172 |  |  |  |
+| `HandleError(int)` |  |  |  | `0x003C9C60` 184 |  |  |  |
+| `UpdateError()` |  |  |  | `0x003C85A0` 72 |  |  |  |
+| `UpdateWaitForUserCar()` |  |  | `0x003C3870` 408 | `0x003C7960` 296 |  |  |  |
 
 ## Notes
 

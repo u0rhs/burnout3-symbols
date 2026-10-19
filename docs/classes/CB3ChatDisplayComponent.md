@@ -12,19 +12,19 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CheckTextLengths(int)` | `0x002EA370` 500 | `0x003376B0` 500 | `0x00368FF0` 500 | `0x00368260` 760 | `0x00331DE0` strong |  |
-| `AddNewMessage(char*,const unsigned short*)` | `0x002EA570` 612 | `0x003378B0` 612 | `0x003691F0` 612 | `0x00367F00` 860 | `0x00331FE0` strong |  |
-| `Release()` | `0x002EA7E0` 132 | `0x00337B20` 204 | `0x00369460` 196 | `0x00367E20` 220 | `0x00332240` proven |  |
-| `Update(float)` | `0x002EA870` 20 | `0x00337BF0` 20 | `0x00369530` 20 | `0x00367DF0` 44 | `0x003322D0` proven |  |
-| `PrepareWithoutStrings(EB3ChatDisplayOrientation)` | `0x002EA890` 632 | `0x00337C10` 700 | `0x00369550` 692 | `0x00367830` 1464 | `0x003322F0` proven |  |
-| `Prepare(EB3ChatDisplayOrientation)` | `0x002EAB10` 152 | `0x00337ED0` 152 | `0x00369810` 152 | `0x00367760` 196 | `0x00332570` proven |  |
-| `SetOrientation(EB3ChatDisplayOrientation)` | `0x002EABB0` 628 | `0x00337F70` 660 | `0x003698B0` 660 | `0x00367460` 768 | `0x00332610` proven |  |
-| `Construct()` | `0x002EAE30` 52 | `0x00338210` 52 | `0x00369B50` 52 | `0x00367410` 68 | `0x00332960` proven |  |
-| `CB3ChatDisplayComponent()` |  |  |  | `0x0033C3A0` 236 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CheckTextLengths(int)` | `0x002EA370` 500 | `0x003376B0` 500 | `0x00368FF0` 500 | `0x00368260` 760 | `0x00331DE0` strong |  |  |
+| `AddNewMessage(char*,const unsigned short*)` | `0x002EA570` 612 | `0x003378B0` 612 | `0x003691F0` 612 | `0x00367F00` 860 | `0x00331FE0` strong |  |  |
+| `Release()` | `0x002EA7E0` 132 | `0x00337B20` 204 | `0x00369460` 196 | `0x00367E20` 220 | `0x00332240` proven |  |  |
+| `Update(float)` | `0x002EA870` 20 | `0x00337BF0` 20 | `0x00369530` 20 | `0x00367DF0` 44 | `0x003322D0` proven |  |  |
+| `PrepareWithoutStrings(EB3ChatDisplayOrientation)` | `0x002EA890` 632 | `0x00337C10` 700 | `0x00369550` 692 | `0x00367830` 1464 | `0x003322F0` proven |  |  |
+| `Prepare(EB3ChatDisplayOrientation)` | `0x002EAB10` 152 | `0x00337ED0` 152 | `0x00369810` 152 | `0x00367760` 196 | `0x00332570` proven |  |  |
+| `SetOrientation(EB3ChatDisplayOrientation)` | `0x002EABB0` 628 | `0x00337F70` 660 | `0x003698B0` 660 | `0x00367460` 768 | `0x00332610` proven |  |  |
+| `Construct()` | `0x002EAE30` 52 | `0x00338210` 52 | `0x00369B50` 52 | `0x00367410` 68 | `0x00332960` proven |  |  |
+| `CB3ChatDisplayComponent()` |  |  |  | `0x0033C3A0` 236 |  |  |  |
 
 ## Notes
 

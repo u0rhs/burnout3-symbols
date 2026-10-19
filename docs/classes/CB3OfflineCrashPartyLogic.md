@@ -12,13 +12,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `IsTurnBased()` | `0x001335E0` 20 | `0x0013ABF0` 20 | `0x00138440` 20 | `0x0013EF40` 32 | `0x00134270` likely |  |
-| `IsCrashType()` | `0x00133600` 8 | `0x0013AC10` 8 | `0x00138460` 8 | `0x0013EF60` 20 | `0x001342B0` likely |  |
-| `CB3OfflineCrashPartyLogic()` |  |  |  | `0x0013DFF0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `IsTurnBased()` | `0x001335E0` 20 | `0x0013ABF0` 20 | `0x00138440` 20 | `0x0013EF40` 32 | `0x00134270` likely |  |  |
+| `IsCrashType()` | `0x00133600` 8 | `0x0013AC10` 8 | `0x00138460` 8 | `0x0013EF60` 20 | `0x001342B0` likely |  |  |
+| `CB3OfflineCrashPartyLogic()` |  |  |  | `0x0013DFF0` 60 |  |  |  |
 
 ## Notes
 

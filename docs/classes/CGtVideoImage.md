@@ -8,23 +8,59 @@
 - **Source file:** `GtVideoDecoderPS2.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 2, B3INTERN 2, B3O0PCH 10
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtVideoImage`, size 0x018, methods in `GameShared/GameClasses/Graphical/VideoDecoder/Ps2/GtVideoDecoderPS2.cpp` ([layout](#burnout-revenge-layout-of-cgtvideoimage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetTileTexture(int,int)` | `0x002E18D0` 496 | `0x0032BF60` 620 | `0x0035E2F0` 620 | `0x0035CEC0` 836 | `0x00325BD0` proven |  |
-| `Prepare(CGtLinearMalloc*,int,int,int)` |  | `0x0032C1D0` 456 | `0x0035E560` 456 | `0x0035CCD0` 416 |  |  |
-| `Construct()` |  |  |  | `0x0035CC90` 52 |  |  |
-| `GetImageHeight()` |  |  |  | `0x0035F320` 32 |  |  |
-| `GetImageWidth()` |  |  |  | `0x0035F340` 32 |  |  |
-| `GetNumTilesX()` |  |  |  | `0x0035F690` 28 |  |  |
-| `GetNumTilesY()` |  |  |  | `0x0035F670` 28 |  |  |
-| `GetTileHeight()` |  |  |  | `0x0035F2E0` 20 |  |  |
-| `GetTileWidth()` |  |  |  | `0x0035F300` 20 |  |  |
-| `Release()` |  |  |  | `0x0035CE70` 72 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetTileTexture(int,int)` | `0x002E18D0` 496 | `0x0032BF60` 620 | `0x0035E2F0` 620 | `0x0035CEC0` 836 | `0x00325BD0` proven |  | `void CGtVideoImage::SetTileTexture(int lnX, int lnY)` |
+| `Prepare(CGtLinearMalloc*,int,int,int)` |  | `0x0032C1D0` 456 | `0x0035E560` 456 | `0x0035CCD0` 416 |  |  | `bool CGtVideoImage::Prepare(CGtLinearMalloc *lpLinearMalloc, int lnMacroBlocksX, int lnMacroBlocksY, int lnGSTexAddr)` |
+| `Construct()` |  |  |  | `0x0035CC90` 52 |  |  | `void CGtVideoImage::Construct()` |
+| `GetImageHeight()` |  |  |  | `0x0035F320` 32 |  |  |  |
+| `GetImageWidth()` |  |  |  | `0x0035F340` 32 |  |  |  |
+| `GetNumTilesX()` |  |  |  | `0x0035F690` 28 |  |  |  |
+| `GetNumTilesY()` |  |  |  | `0x0035F670` 28 |  |  |  |
+| `GetTileHeight()` |  |  |  | `0x0035F2E0` 20 |  |  |  |
+| `GetTileWidth()` |  |  |  | `0x0035F300` 20 |  |  |  |
+| `Release()` |  |  |  | `0x0035CE70` 72 |  |  | `void CGtVideoImage::Release()` |
+
+## Burnout Revenge layout of `CGtVideoImage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 295 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dObjectVideoImage.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtVideoImage {  // size 0x018
+    /* static */ RwInt32 knTileWidthPow;
+    /* static */ RwInt32 knTileHeightPow;
+    /* static */ RwInt32 knTileWidth;
+    /* static */ RwInt32 knTileHeight;
+    /* static */ RwInt32 knMBXPerTile;
+    /* static */ RwInt32 knMBYPerTile;
+    /* 0x000 */ sceIpuRGB32 *mpDecodeBuffer;
+    /* 0x004 */ RwInt32 mnNumTilesX;
+    /* 0x008 */ RwInt32 mnNumTilesY;
+    /* 0x00C */ RwInt32 mnMacroBlocksX;
+    /* 0x010 */ RwInt32 mnMacroBlocksY;
+    /* 0x014 */ RwInt32 mnGSTexAddr;
+    // methods
+    // CGtVideoImage(const CGtVideoImage &);
+    // CGtVideoImage();
+    // RwInt32 GetImageWidth() const;
+    // RwInt32 GetImageHeight() const;
+    // RwInt32 GetTileWidth() const;
+    // RwInt32 GetTileHeight() const;
+    // RwInt32 GetNumTilesX() const;
+    // RwInt32 GetNumTilesY() const;
+    // void SetTileTexture(int, int);
+    // void Construct();
+    // bool Prepare(CGtLinearMalloc *, int, int, int);
+    // void Release();
+    // void Destruct();
+};
+```
 
 ## Notes
 

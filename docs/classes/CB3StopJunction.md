@@ -8,23 +8,63 @@
 - **Source file:** `B3StopJunction.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 10
 - **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4StopJunction`, size 0x020, methods in `GameSource/World/B4StopJunction.cpp` ([layout](#burnout-revenge-layout-of-cb4stopjunction))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `IsClearAreaEmpty(EStopJunctionLaneTypes)` | `0x002761F0` 968 | `0x002A8CD0` 1224 | `0x002DF900` 1224 | `0x002DF510` 668 | `0x002B52D0` strong |  |
-| `StopVehiclesIfTurning(EStopJunctionLaneTypes,bool)` | `0x002765C0` 692 | `0x002A91A0` 692 | `0x002DFDD0` 692 | `0x002DF180` 904 | `0x002B56B0` strong |  |
-| `FindFirstTurningParam(EStopJunctionLaneTypes,bool)` | `0x00276880` 488 | `0x002A9460` 488 | `0x002E0090` 488 | `0x002DEE50` 680 | `0x002B5970` strong |  |
-| `FindFirstParam(EStopJunctionLaneTypes)` | `0x00276A70` 552 | `0x002A9650` 636 | `0x002E0280` 636 | `0x002DEBC0` 652 | `0x002B5B70` strong |  |
-| `StopCarsInControlZone(EStopJunctionLaneTypes)` | `0x00276CA0` 1100 | `0x002A98D0` 1100 | `0x002E0500` 1100 | `0x002DE260` 1720 | `0x002B5DA0` strong |  |
-| `Update(bool,float)` | `0x002770F0` 2536 | `0x002A9D20` 2768 | `0x002E0950` 2768 | `0x002DDA30` 2092 | `0x002B61E0` strong |  |
-| `Prepare(CB3StopJunctionStruct*)` | `0x00277AE0` 108 | `0x002AA7F0` 108 | `0x002E1420` 108 | `0x002DD940` 232 | `0x002B6BC0` proven |  |
-| `IsControlZoneEmpty(EStopJunctionLaneTypes)` |  |  |  | `0x002DEA30` 396 |  |  |
-| `IsFirstParamTurning(EStopJunctionLaneTypes)` |  |  |  | `0x002DF100` 116 |  |  |
-| `StartCarsInControlZone(EStopJunctionLaneTypes)` |  |  |  | `0x002DE920` 272 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `IsClearAreaEmpty(EStopJunctionLaneTypes)` | `0x002761F0` 968 | `0x002A8CD0` 1224 | `0x002DF900` 1224 | `0x002DF510` 668 | `0x002B52D0` strong |  | `bool CB4StopJunction::IsClearAreaEmpty(EStopJunctionLaneTypes leLaneType)` |
+| `StopVehiclesIfTurning(EStopJunctionLaneTypes,bool)` | `0x002765C0` 692 | `0x002A91A0` 692 | `0x002DFDD0` 692 | `0x002DF180` 904 | `0x002B56B0` strong |  | `void CB4StopJunction::StopVehiclesIfTurning(EStopJunctionLaneTypes leLaneType, bool lbIsRightSideDriving)` |
+| `FindFirstTurningParam(EStopJunctionLaneTypes,bool)` | `0x00276880` 488 | `0x002A9460` 488 | `0x002E0090` 488 | `0x002DEE50` 680 | `0x002B5970` strong |  | `RwUInt8 CB4StopJunction::FindFirstTurningParam(EStopJunctionLaneTypes leLaneType, bool lbIsRightSideDriving)` |
+| `FindFirstParam(EStopJunctionLaneTypes)` | `0x00276A70` 552 | `0x002A9650` 636 | `0x002E0280` 636 | `0x002DEBC0` 652 | `0x002B5B70` strong |  | `CB4TrafficParam * CB4StopJunction::FindFirstParam(EStopJunctionLaneTypes leLaneType)` |
+| `StopCarsInControlZone(EStopJunctionLaneTypes)` | `0x00276CA0` 1100 | `0x002A98D0` 1100 | `0x002E0500` 1100 | `0x002DE260` 1720 | `0x002B5DA0` strong |  | `void CB4StopJunction::StopCarsInControlZone(EStopJunctionLaneTypes leLaneType)` |
+| `Update(bool,float)` | `0x002770F0` 2536 | `0x002A9D20` 2768 | `0x002E0950` 2768 | `0x002DDA30` 2092 | `0x002B61E0` strong |  | `void CB4StopJunction::Update(bool lbIsRightSideDriving, float lrRaceTime)` |
+| `Prepare(CB3StopJunctionStruct*)` | `0x00277AE0` 108 | `0x002AA7F0` 108 | `0x002E1420` 108 | `0x002DD940` 232 | `0x002B6BC0` proven |  | `bool CB4StopJunction::Prepare(CB4StopJunctionStruct *lpData)` |
+| `IsControlZoneEmpty(EStopJunctionLaneTypes)` |  |  |  | `0x002DEA30` 396 |  |  | `bool CB4StopJunction::IsControlZoneEmpty(EStopJunctionLaneTypes leLaneType)` |
+| `IsFirstParamTurning(EStopJunctionLaneTypes)` |  |  |  | `0x002DF100` 116 |  |  | `bool CB4StopJunction::IsFirstParamTurning(EStopJunctionLaneTypes leLaneType)` |
+| `StartCarsInControlZone(EStopJunctionLaneTypes)` |  |  |  | `0x002DE920` 272 |  |  | `void CB4StopJunction::StartCarsInControlZone(EStopJunctionLaneTypes leLaneType)` |
+
+## Burnout Revenge layout of `CB4StopJunction`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 86 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4StopJunction {  // size 0x020
+    /* 0x000 */ CB4StopJunctionStruct *mpData;
+    /* 0x004 */ RwReal mrFarLaneWaitingStartTime;
+    /* 0x008 */ RwReal mrBranchLaneWaitingStartTime;
+    /* 0x00C */ RwReal mrNearLaneWaitingStartTime;
+    /* 0x010 */ unsigned char mau8StoppingTrafficParam[4];
+    /* 0x014 */ RwUInt8 meState;
+    /* 0x015 */ RwUInt8 mu8FarWaitingParam;
+    /* 0x016 */ RwUInt8 mu8BranchWaitingParam;
+    /* 0x017 */ RwUInt8 mu8TurningParam;
+    /* 0x018 */ RwUInt8 mu8NearLaneTurningParam;
+    /* 0x019 */ bool mbFarLaneWaiting;
+    /* 0x01A */ bool mbBranchLaneWaiting;
+    /* 0x01B */ bool mbNearLaneWaiting;
+    /* 0x01C */ bool mbSecondNearLaneExists;
+    // methods
+    // CB4StopJunction(const CB4StopJunction &);
+    // CB4StopJunction();
+    // void Construct();
+    // bool Prepare(CB4StopJunctionStruct *);
+    // void Update(bool, float);
+    // void Release();
+    // void Destruct();
+    // void StopCarsInControlZone(EStopJunctionLaneTypes);
+    // void StartCarsInControlZone(EStopJunctionLaneTypes);
+    // bool IsControlZoneEmpty(EStopJunctionLaneTypes);
+    // CB4TrafficParam * FindFirstParam(EStopJunctionLaneTypes);
+    // RwUInt8 FindFirstTurningParam(EStopJunctionLaneTypes, bool);
+    // bool IsFirstParamTurning(EStopJunctionLaneTypes);
+    // bool IsClearAreaEmpty(EStopJunctionLaneTypes);
+    // void StopVehiclesIfTurning(EStopJunctionLaneTypes, bool);
+};
+```
 
 ## Notes
 

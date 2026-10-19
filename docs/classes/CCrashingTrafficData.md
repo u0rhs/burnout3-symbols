@@ -6,15 +6,36 @@
 
 - **Area:** [Traffic](../systems/traffic.md)
 - **Methods per build:** B3O0PCH 2
+- **Burnout Revenge counterpart:** `CCrashingTrafficData`, size 0x0C0 ([layout](#burnout-revenge-layout-of-ccrashingtrafficdata))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CCrashingTrafficData()` |  |  |  | `0x0024EFA0` 108 |  |  |
-| `Construct()` |  |  |  | `0x0024EA10` 124 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CCrashingTrafficData()` |  |  |  | `0x0024EFA0` 108 |  |  |  |
+| `Construct()` |  |  |  | `0x0024EA10` 124 |  |  |  |
+
+## Burnout Revenge layout of `CCrashingTrafficData`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 91 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CCrashingTrafficData {  // size 0x0C0
+    /* 0x000 */ CGtMatrix3x4 mMatrix;
+    /* 0x040 */ CGtMatrix3x4 mTransMatrix;
+    /* 0x080 */ CGtV3d mLinearVelocity;
+    /* 0x090 */ CGtV3d mAngularVelocity;
+    /* 0x0A0 */ CGtV3d mPosDiff;
+    /* 0x0B0 */ RwUInt8 mu8TrafficVehicleID;
+    /* 0x0B1 */ bool mbDiffMatrix;
+    // methods
+    // CCrashingTrafficData(const CCrashingTrafficData &);
+    // CCrashingTrafficData();
+    // void Construct();
+};
+```
 
 ## Notes
 

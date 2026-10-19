@@ -11,13 +11,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `EvaluteNewAwards()` | `0x003791D0` 684 | `0x003EA110` 684 | `0x00411FD0` 1316 | `0x00427FA0` 400 |  |  |
-| `Action(EGtStateAction,void*,void*,void*)` | `0x00379480` 108 | `0x003EA3C0` 108 | `0x00412500` 108 | `0x00427EF0` 164 |  |  |
-| `CB3AwardPresentationState()` |  |  |  | `0x00345020` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `EvaluteNewAwards()` | `0x003791D0` 684 | `0x003EA110` 684 | `0x00411FD0` 1316 | `0x00427FA0` 400 |  |  |  |
+| `Action(EGtStateAction,void*,void*,void*)` | `0x00379480` 108 | `0x003EA3C0` 108 | `0x00412500` 108 | `0x00427EF0` 164 |  |  |  |
+| `CB3AwardPresentationState()` |  |  |  | `0x00345020` 60 |  |  |  |
 
 ## Static data (DNAT_200)
 

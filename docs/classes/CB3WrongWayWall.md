@@ -8,22 +8,23 @@
 - **Source file:** `B3WrongWayWall.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
 - **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4WrongWayWall`, size 0x1FD0, methods in `GameSource/World/B4WrongWayWall.cpp` ([layout](#burnout-revenge-layout-of-cb4wrongwaywall))
 - **Burnout 2 ancestor (by name):** `CWrongWayWall`, size 0x038, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Render()` | `0x00169290` 112 | `0x00182530` 112 | `0x0017D210` 112 | `0x00193BA0` 148 | `0x0019B6E0` strong |  |
-| `Destruct()` | `0x00169300` 8 | `0x001825A0` 8 | `0x0017D280` 8 | `0x00193B90` 16 | `0x0019B750` strong |  |
-| `Release()` | `0x00169310` 8 | `0x001825B0` 8 | `0x0017D290` 8 | `0x00193B80` 16 | `0x0019B760` strong |  |
-| `Update(CB3RaceCar*)` | `0x00169320` 3648 | `0x001825C0` 3328 | `0x0017D2A0` 3708 | `0x00192730` 5188 | `0x0019C120` unverified |  |
-| `AddTristrip(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV4d,GtMathPs` | `0x0016A160` 592 | `0x001832C0` 1176 | `0x0017E120` 1176 | `0x00192440` 692 | `0x0019D1C0` unverified |  |
-| `Prepare()` | `0x0016A3B0` 76 | `0x00183760` 76 | `0x0017E5C0` 76 | `0x001923D0` 104 | `0x0019D440` unverified |  |
-| `Construct()` | `0x0016A400` 12 | `0x001837B0` 12 | `0x0017E610` 12 | `0x001923A0` 36 | `0x0019D4B0` unverified |  |
-| `CB3WrongWayWall()` |  |  |  | `0x00192150` 124 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Render()` | `0x00169290` 112 | `0x00182530` 112 | `0x0017D210` 112 | `0x00193BA0` 148 | `0x0019B6E0` strong |  | `void CB4WrongWayWall::Render()` |
+| `Destruct()` | `0x00169300` 8 | `0x001825A0` 8 | `0x0017D280` 8 | `0x00193B90` 16 | `0x0019B750` strong |  | `void CB4WrongWayWall::Destruct()` |
+| `Release()` | `0x00169310` 8 | `0x001825B0` 8 | `0x0017D290` 8 | `0x00193B80` 16 | `0x0019B760` strong |  | `void CB4WrongWayWall::Release()` |
+| `Update(CB3RaceCar*)` | `0x00169320` 3648 | `0x001825C0` 3328 | `0x0017D2A0` 3708 | `0x00192730` 5188 | `0x0019C120` unverified |  | `void CB4WrongWayWall::Update(EPlayerCarIndex lePlayerCarIndex)` (same name, different parameters) |
+| `AddTristrip(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV4d,GtMathPs` | `0x0016A160` 592 | `0x001832C0` 1176 | `0x0017E120` 1176 | `0x00192440` 692 | `0x0019D1C0` unverified |  | `void CB4WrongWayWall::AddTristrip(GtMathPs2::CGtV3d lVertex0, GtMathPs2::CGtV3d lVertex1, GtMathPs2::CGtV3d lVertex2, GtMathPs2::CGtV3d lVertex3, GtMathPs2::CGtV4d lColour0, GtMathPs2::CGtV4d lColour1, GtMathPs2::CGtV4d lColour2, GtMathPs2::CGtV4d lColour3)` (same name, different parameters) |
+| `Prepare()` | `0x0016A3B0` 76 | `0x00183760` 76 | `0x0017E5C0` 76 | `0x001923D0` 104 | `0x0019D440` unverified |  | `bool CB4WrongWayWall::Prepare()` |
+| `Construct()` | `0x0016A400` 12 | `0x001837B0` 12 | `0x0017E610` 12 | `0x001923A0` 36 | `0x0019D4B0` unverified |  | `void CB4WrongWayWall::Construct()` |
+| `CB3WrongWayWall()` |  |  |  | `0x00192150` 124 |  |  | `CB4WrongWayWall * CB4WrongWayWall::CB4WrongWayWall()` |
 
 ## Burnout 2 layout of `CWrongWayWall`
 
@@ -51,6 +52,36 @@ public:
     // void CWrongWayWall::Reset()  [0x00259CA0]
     // void CWrongWayWall::Setup()  [0x00259FC0]
     // void CWrongWayWall::Init()  [0x0025A1E0]
+};
+```
+
+## Burnout Revenge layout of `CB4WrongWayWall`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 237 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4WrongWayWall : public CB4AILaneSegmentManager {  // size 0x1FD0
+    // base CB4AILaneSegmentManager at 0x000
+    /* 0x030 */ CCacheFriendlyTriangle maTriangles[42];
+    /* 0xAB0 */ CCacheFriendlyTriangle maExtraTriangles[42];
+    /* 0x1530 */ CB4Im3dVertex maRenderVerts[84];
+    /* 0x1FB0 */ RwInt32 mnNumTriangles;
+    /* 0x1FB4 */ RwInt32 mnNumRenderVerts;
+    /* 0x1FB8 */ RwInt32 mnNumExtraTriangles;
+    /* 0x1FBC */ RwInt32 mnSliceIndex;
+    /* 0x1FC0 */ bool mbDrawWall;
+    /* 0x1FC1 */ bool mbCollidable;
+    // methods
+    // CB4WrongWayWall(const CB4WrongWayWall &);
+    // CB4WrongWayWall();
+    // void Construct();
+    // bool Prepare();
+    // void Update(EPlayerCarIndex);
+    // void UpdateExtra(EPlayerCarIndex);
+    // void Release();
+    // void Destruct();
+    // void Render();
+    // void AddTristrip(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, GtMathPs2::CGtV4d, GtMathPs2::CGtV4d, GtMathPs2::CGtV4d, GtMathPs2::CGtV4d);
 };
 ```
 

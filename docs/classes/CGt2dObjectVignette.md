@@ -8,23 +8,42 @@
 - **Source file:** `Gt2dObjectVignette.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGt2dObjectVignette`, size 0x040 ([layout](#burnout-revenge-layout-of-cgt2dobjectvignette))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_RenderVertical(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019D030` 636 | `0x001D23B0` 636 | `0x001CB6A0` 636 | `0x001DC6B0` 1000 | `0x001D6E80` proven |  |
-| `_RenderHorizontal(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019D2B0` 636 | `0x001D2630` 636 | `0x001CB920` 636 | `0x001DC2C0` 1000 | `0x001D7100` proven |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,GtMat` | `0x0019D530` 472 | `0x001D28B0` 668 | `0x001CBBA0` 668 | `0x001DBFD0` 552 | `0x001D7380` proven |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,RwRGBA,RwRGBA,CGt2dObje` |  |  |  | `0x001DBEB0` 284 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_RenderVertical(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019D030` 636 | `0x001D23B0` 636 | `0x001CB6A0` 636 | `0x001DC6B0` 1000 | `0x001D6E80` proven |  |  |
+| `_RenderHorizontal(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019D2B0` 636 | `0x001D2630` 636 | `0x001CB920` 636 | `0x001DC2C0` 1000 | `0x001D7100` proven |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,GtMat` | `0x0019D530` 472 | `0x001D28B0` 668 | `0x001CBBA0` 668 | `0x001DBFD0` 552 | `0x001D7380` proven |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,RwRGBA,RwRGBA,CGt2dObje` |  |  |  | `0x001DBEB0` 284 |  |  |  |
 
 ## Static data (DNAT_200)
 
 | Address | Size | Section | Name |
 |---|---:|---|---|
 | `0x00420910` | 8 | .rodata | `CGt2dObjectVignette::mgapfRenderFunctions` |
+
+## Burnout Revenge layout of `CGt2dObjectVignette`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dObjectVignette.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dObjectVignette : public CGt2dObject {  // size 0x040
+    // base CGt2dObject at 0x000
+    /* static */ void (*mgapfRenderFunctions[2])();
+    // methods
+    // CGt2dObjectVignette(const CGt2dObjectVignette &);
+    // CGt2dObjectVignette();
+    // void Prepare(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, RwRGBA, RwRGBA, CGt2dObjectVignette::EVignetteType);
+    // void Prepare(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, GtMathPs2::CGtV4d, GtMathPs2::CGtV4d, CGt2dObjectVignette::EVignetteType);
+    // static void _RenderHorizontal(const CGt2dObject::CGt2dObjectSpace &, const void *);
+    // static void _RenderVertical(const CGt2dObject::CGt2dObjectSpace &, const void *);
+};
+```
 
 ## Notes
 

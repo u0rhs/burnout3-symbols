@@ -7,32 +7,106 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundMusicManager.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 19, B3O0PCH 8
+- **Burnout Revenge counterpart:** `CB4SoundMusicManager`, size 0x0EC, methods in `GameSource/Sound/Radio/B4SoundMusicManager.cpp` ([layout](#burnout-revenge-layout-of-cb4soundmusicmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetSongPlayFlagsByIndex(int,CB3SoundMusicSoundtrack*,unsigned char)` | `0x003A8D10` 36 | `0x00424560` 36 | `0x0044C090` 204 | `0x00462900` 64 |  |  |
-| `GetSongByIndex(int,CB3SoundMusicSoundtrack*,CB3SoundMusicSong*,char*,int)` | `0x003A8D40` 36 | `0x00424590` 36 | `0x0044C160` 284 | `0x004628B0` 76 |  |  |
-| `GetSoundtrackByIndex(int,CB3SoundMusicSoundtrack*)` | `0x003A8D70` 20 | `0x004245C0` 20 | `0x0044C280` 188 | `0x00462870` 52 |  |  |
-| `SetSong(int)` | `0x003A8D90` 8 | `0x004245E0` 8 | `0x0044C3A0` 188 | `0x00462860` 16 |  |  |
-| `GetSoundtrack(CB3SoundMusicSoundtrack**,int*,EB3MusicManagerSoundtrackPlayMode*)` | `0x003A8DA0` 20 | `0x004245F0` 20 | `0x0044C770` 148 | `0x00462830` 48 |  |  |
-| `SetSoundtrack(CB3SoundMusicSoundtrack*,int,EB3MusicManagerSoundtrackPlayMode)` | `0x003A8DC0` 8 | `0x00424610` 8 | `0x0044C810` 600 | `0x00462810` 20 |  |  |
-| `Stop()` | `0x003A8DD0` 8 | `0x00424620` 8 | `0x0044CC10` 132 | `0x00462800` 16 |  |  |
-| `Play()` | `0x003A8DE0` 8 | `0x00424630` 8 | `0x0044CCA0` 348 | `0x004627F0` 16 |  |  |
-| `Construct()` |  |  | `0x0044D500` 136 |  |  |  |
-| `Cue()` |  |  | `0x0044CE00` 200 |  |  |  |
-| `Destruct()` |  |  | `0x0044CED0` 8 |  |  |  |
-| `GetNextSongIndex()` |  |  | `0x0044C460` 776 |  |  |  |
-| `IsCued()` |  |  | `0x0044C340` 32 |  |  |  |
-| `IsPlaying()` |  |  | `0x0044C360` 56 |  |  |  |
-| `Pause()` |  |  | `0x0044CB30` 216 |  |  |  |
-| `Prepare()` |  |  | `0x0044D460` 148 |  |  |  |
-| `Release()` |  |  | `0x0044CEE0` 132 |  |  |  |
-| `Resume()` |  |  | `0x0044CA70` 192 |  |  |  |
-| `Update()` |  |  | `0x0044CF70` 1256 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetSongPlayFlagsByIndex(int,CB3SoundMusicSoundtrack*,unsigned char)` | `0x003A8D10` 36 | `0x00424560` 36 | `0x0044C090` 204 | `0x00462900` 64 |  |  | `void CB4SoundMusicManager::SetSongPlayFlagsByIndex(int lnIndex, CB4SoundMusicSoundtrack *lpSoundtrack, unsigned char lxFlags)` |
+| `GetSongByIndex(int,CB3SoundMusicSoundtrack*,CB3SoundMusicSong*,char*,int)` | `0x003A8D40` 36 | `0x00424590` 36 | `0x0044C160` 284 | `0x004628B0` 76 |  |  | `void CB4SoundMusicManager::GetSongByIndex(int lnIndex, CB4SoundMusicSoundtrack *lpSoundtrack, CB4SoundMusicSong *lpSong, unsigned short *lpNameBuffer, int lnNameBufferSize)` (same name, different parameters) |
+| `GetSoundtrackByIndex(int,CB3SoundMusicSoundtrack*)` | `0x003A8D70` 20 | `0x004245C0` 20 | `0x0044C280` 188 | `0x00462870` 52 |  |  | `void CB4SoundMusicManager::GetSoundtrackByIndex(int lnIndex, CB4SoundMusicSoundtrack *lpSoundtrack)` |
+| `SetSong(int)` | `0x003A8D90` 8 | `0x004245E0` 8 | `0x0044C3A0` 188 | `0x00462860` 16 |  |  | `void CB4SoundMusicManager::SetSong(int lnSongIndex)` |
+| `GetSoundtrack(CB3SoundMusicSoundtrack**,int*,EB3MusicManagerSoundtrackPlayMode*)` | `0x003A8DA0` 20 | `0x004245F0` 20 | `0x0044C770` 148 | `0x00462830` 48 |  |  | `void CB4SoundMusicManager::GetSoundtrack(CB4SoundMusicSoundtrack **lppSoundtrack, int *lpnPlayingSong, EB4MusicManagerSoundtrackPlayMode *lpePlayMode)` |
+| `SetSoundtrack(CB3SoundMusicSoundtrack*,int,EB3MusicManagerSoundtrackPlayMode)` | `0x003A8DC0` 8 | `0x00424610` 8 | `0x0044C810` 600 | `0x00462810` 20 |  |  | `bool CB4SoundMusicManager::SetSoundtrack(CB4SoundMusicSoundtrack *lpSoundtrack, int lnStartingSong, EB4MusicManagerSoundtrackPlayMode lePlayMode)` |
+| `Stop()` | `0x003A8DD0` 8 | `0x00424620` 8 | `0x0044CC10` 132 | `0x00462800` 16 |  |  | `void CB4SoundMusicManager::Stop()` |
+| `Play()` | `0x003A8DE0` 8 | `0x00424630` 8 | `0x0044CCA0` 348 | `0x004627F0` 16 |  |  | `void CB4SoundMusicManager::Play()` |
+| `Construct()` |  |  | `0x0044D500` 136 |  |  |  |  |
+| `Cue()` |  |  | `0x0044CE00` 200 |  |  |  |  |
+| `Destruct()` |  |  | `0x0044CED0` 8 |  |  |  |  |
+| `GetNextSongIndex()` |  |  | `0x0044C460` 776 |  |  |  |  |
+| `IsCued()` |  |  | `0x0044C340` 32 |  |  |  |  |
+| `IsPlaying()` |  |  | `0x0044C360` 56 |  |  |  |  |
+| `Pause()` |  |  | `0x0044CB30` 216 |  |  |  |  |
+| `Prepare()` |  |  | `0x0044D460` 148 |  |  |  |  |
+| `Release()` |  |  | `0x0044CEE0` 132 |  |  |  |  |
+| `Resume()` |  |  | `0x0044CA70` 192 |  |  |  |  |
+| `Update()` |  |  | `0x0044CF70` 1256 |  |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundMusicManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 61 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundMusicManager {  // size 0x0EC
+    /* 0x000 */ RwReal mrMusicVolume;
+    /* 0x004 */ RwReal mrModeSpecificGain;
+    /* 0x008 */ CB4SoundCustomSoundtrack mCustomSoundtrack;
+    /* 0x00C */ bool mbNoMusicToPlay;
+    /* static */ RwInt32 knMaxSongs;
+    /* 0x00D */ unsigned char mauShuffleArray[50];
+    /* 0x040 */ RwInt32 mnShuffleArrayIndex;
+    /* 0x044 */ RwInt32 mnShuffleArrayTop;
+    /* 0x048 */ char macMusicFilePath[32];
+    /* 0x068 */ CB4SoundMusicSoundtrack mSoundtrack;
+    /* 0x0C0 */ CGtSoundStream *mpMusicStream;
+    /* 0x0C4 */ CB4SoundMusicSong *mpPlayingSong;
+    /* 0x0C8 */ EB4MusicManagerState meState;
+    /* 0x0CC */ EB4MusicManagerSoundtrackPlayMode mePlayMode;
+    /* 0x0D0 */ EB4MusicManagerEATraxHUDState meEATraxHUDState;
+    /* 0x0D4 */ RwUInt32 munPosition;
+    /* 0x0D8 */ RwInt32 mnPlayingSongIndex;
+    /* 0x0DC */ RwInt32 mnSoundtrackCount;
+    /* 0x0E0 */ RwInt32 mnFileIndex;
+    /* 0x0E4 */ RwInt32 mnSongHUDPopupEndTimeMS;
+    /* 0x0E8 */ RwUInt8 mxFlags;
+    /* 0x0E9 */ bool mbDisplayedHUDPopup;
+    /* 0x0EA */ bool mbHasPlayedTheSetSong;
+    // methods
+    // CB4SoundMusicManager(const CB4SoundMusicManager &);
+    // CB4SoundMusicManager();
+    // static GtUTF16 * GetEATraxString(EEATraxString, int);
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void Cue();
+    // void Play();
+    // void Stop();
+    // void Pause();
+    // void Resume();
+    // RwInt32 GetSongPlayingTimeMS();
+    // bool SetSoundtrack(CB4SoundMusicSoundtrack *, int, EB4MusicManagerSoundtrackPlayMode);
+    // void GetSoundtrack(CB4SoundMusicSoundtrack **, int *, EB4MusicManagerSoundtrackPlayMode *);
+    // RwInt32 GetSoundtrackCount();
+    // void GetSoundtrackByIndex(int, CB4SoundMusicSoundtrack *);
+    // void GetSongByIndex(int, CB4SoundMusicSoundtrack *, CB4SoundMusicSong *, unsigned short *, int);
+    // void SetSongPlayFlagsByIndex(int, CB4SoundMusicSoundtrack *, unsigned char);
+    // void SetSong(int);
+    // void SetPlayMode(EB4MusicManagerSoundtrackPlayMode);
+    // RwInt32 GetNextSongIndex();
+    // bool IsPlaying();
+    // bool IsCued();
+    // void PlayContinuously(bool);
+    // void EnableDJIntros(bool);
+    // RwInt32 GetPlayingSongIndex();
+    // bool IsEATraxHUDDisplayed();
+    // void TryToPlayThisSongNext(int);
+    // bool HasPlayedTheSetSong();
+    // bool IsSetSongStillSuitable();
+    // void Shuffle(int);
+    // RwInt32 FindShuffleIndexForSong(int);
+    // RwInt32 GetNextRandomSongIndex();
+    // void RefreshDebugStates();
+    // void UpdateEATraxHUD();
+    // void StopEATraxHUDDisplay();
+    // void PauseEATraxHUDDisplay();
+    // void GenerateFilePath(char *, int, bool);
+};
+```
 
 ## Notes
 

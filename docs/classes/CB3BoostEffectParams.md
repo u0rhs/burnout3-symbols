@@ -8,26 +8,74 @@
 - **Source file:** `B3BoostEffectParams.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 10
 - **Retail (SLUS-21050):** 5 of its 8 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4BoostEffectParams`, size 0x030, methods in `GameSource/World/B4BoostEffectParams.cpp` ([layout](#burnout-revenge-layout-of-cb4boosteffectparams))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetCameraFOVInterpAmount() const` | `0x002CB6B0` 72 |  |  |  |  |  |
-| `SetViewportEffects(CB3ViewportParams*,CB3PlayerCar*)` | `0x002CB700` 252 | `0x00313350` 316 | `0x00344F60` 304 | `0x0033B450` 468 | `0x0030A9D0` likely |  |
-| `GetFlameParams(CB3FlameParams*) const` | `0x002CB800` 136 |  |  |  |  |  |
-| `GetRadialBlurParams(CB3RadialBlurParams*,CB3PlayerCar*,CB3PlayerCameraManager*) const` | `0x002CB890` 1308 |  |  |  | `0x0030ABA0` likely |  |
-| `Stop()` | `0x002CBDB0` 8 | `0x00313FD0` 8 | `0x00345BD0` 8 | `0x0033ADE0` 16 | `0x0030B100` strong |  |
-| `Trigger(int)` | `0x002CBDC0` 32 | `0x00313FE0` 32 | `0x00345BE0` 32 | `0x0033ADA0` 52 |  |  |
-| `Update(CB3RaceCar*)` | `0x002CBDE0` 656 | `0x00314000` 904 | `0x00345C00` 884 | `0x0033A800` 1432 | `0x0030B190` unverified |  |
-| `Prepare(CB3Burn*)` | `0x002CC070` 32 | `0x00314390` 112 | `0x00345F80` 112 | `0x0033A780` 116 | `0x0030B530` strong |  |
-| `GetCameraFOVInterpAmount()` |  | `0x00313300` 72 | `0x00344F10` 72 | `0x0033B670` 188 |  |  |
-| `GetFlameParams(CB3FlameParams*)` |  | `0x00313490` 136 | `0x00345090` 136 | `0x0033B350` 220 |  |  |
-| `GetRadialBlurParams(CB3RadialBlurParams*,CB3PlayerCar*,CB3PlayerCameraManager*)` |  | `0x00313520` 2732 | `0x00345120` 2724 | `0x0033ADF0` 1244 |  |  |
-| `GetBloomParams(CB3BloomParams*)` |  |  |  | `0x0033B310` 64 |  |  |
-| `GetMotionBlurAmount()` |  |  |  | `0x0033B430` 20 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetCameraFOVInterpAmount() const` | `0x002CB6B0` 72 |  |  |  |  |  | `RwReal CB4BoostEffectParams::GetCameraFOVInterpAmount() const` |
+| `SetViewportEffects(CB3ViewportParams*,CB3PlayerCar*)` | `0x002CB700` 252 | `0x00313350` 316 | `0x00344F60` 304 | `0x0033B450` 468 | `0x0030A9D0` likely |  | `void CB4BoostEffectParams::SetViewportEffects(CB4ViewportParams *lpViewportParams, const CB4Viewport *lpViewport, CB4PlayerCar *lpCar)` (same name, different parameters) |
+| `GetFlameParams(CB3FlameParams*) const` | `0x002CB800` 136 |  |  |  |  |  | `void CB4BoostEffectParams::GetFlameParams(CB4FlameParams *lpParams, bool lbIsDevilCar, bool lbIsPowerBoost) const` (same name, different parameters) |
+| `GetRadialBlurParams(CB3RadialBlurParams*,CB3PlayerCar*,CB3PlayerCameraManager*) const` | `0x002CB890` 1308 |  |  |  | `0x0030ABA0` likely |  | `void CB4BoostEffectParams::GetRadialBlurParams(CB4RadialBlurParams *lpParams, const CB4Viewport *lpViewport, CB4PlayerCar *lpCar, CB4PlayerCameraManager *lpCamera)` (same name, different parameters) |
+| `Stop()` | `0x002CBDB0` 8 | `0x00313FD0` 8 | `0x00345BD0` 8 | `0x0033ADE0` 16 | `0x0030B100` strong |  | `void CB4BoostEffectParams::Stop()` |
+| `Trigger(int)` | `0x002CBDC0` 32 | `0x00313FE0` 32 | `0x00345BE0` 32 | `0x0033ADA0` 52 |  |  | `void CB4BoostEffectParams::Trigger(int lnChainSize)` |
+| `Update(CB3RaceCar*)` | `0x002CBDE0` 656 | `0x00314000` 904 | `0x00345C00` 884 | `0x0033A800` 1432 | `0x0030B190` unverified |  | `void CB4BoostEffectParams::Update(CB4RaceCar *lpRaceCar)` |
+| `Prepare(CB3Burn*)` | `0x002CC070` 32 | `0x00314390` 112 | `0x00345F80` 112 | `0x0033A780` 116 | `0x0030B530` strong |  | `bool CB4BoostEffectParams::Prepare(CB4Burn *lpBurn)` |
+| `GetCameraFOVInterpAmount()` |  | `0x00313300` 72 | `0x00344F10` 72 | `0x0033B670` 188 |  |  | `RwReal CB4BoostEffectParams::GetCameraFOVInterpAmount() const` (same name, different parameters) |
+| `GetFlameParams(CB3FlameParams*)` |  | `0x00313490` 136 | `0x00345090` 136 | `0x0033B350` 220 |  |  | `void CB4BoostEffectParams::GetFlameParams(CB4FlameParams *lpParams, bool lbIsDevilCar, bool lbIsPowerBoost) const` (same name, different parameters) |
+| `GetRadialBlurParams(CB3RadialBlurParams*,CB3PlayerCar*,CB3PlayerCameraManager*)` |  | `0x00313520` 2732 | `0x00345120` 2724 | `0x0033ADF0` 1244 |  |  | `void CB4BoostEffectParams::GetRadialBlurParams(CB4RadialBlurParams *lpParams, const CB4Viewport *lpViewport, CB4PlayerCar *lpCar, CB4PlayerCameraManager *lpCamera)` (same name, different parameters) |
+| `GetBloomParams(CB3BloomParams*)` |  |  |  | `0x0033B310` 64 |  |  | `void CB4BoostEffectParams::GetBloomParams(CB4BloomParams *lpParams) const` (same name, different parameters) |
+| `GetMotionBlurAmount()` |  |  |  | `0x0033B430` 20 |  |  | `RwReal CB4BoostEffectParams::GetMotionBlurAmount() const` (same name, different parameters) |
+
+## Burnout Revenge layout of `CB4BoostEffectParams`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 314 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4BoostEffectParams {  // size 0x030
+    /* 0x000 */ CB4Burn *mpBurn;
+    /* 0x004 */ RwReal mrBlurIntensity;
+    /* 0x008 */ RwReal mrBloomBlurIntensity;
+    /* 0x00C */ RwReal mrCameraShakeIntensity;
+    /* 0x010 */ RwReal mrCameraFOVInterp;
+    /* 0x014 */ RwReal mrBoostFlameIntensity;
+    /* 0x018 */ RwReal mrTimeSinceBoost;
+    /* 0x01C */ RwReal mrBoostScale;
+    /* 0x020 */ RwReal mrDirectionalBlurOpacity;
+    /* 0x024 */ RwReal mrTintAlpha;
+    /* 0x028 */ RwReal mrTimeBoostStopped;
+    /* 0x02C */ RwReal mrTimeBoostStarted;
+    /* static */ RwReal mrOverridenBloomThrehold;
+    /* static */ RwReal mrOverridenBloomIntensity;
+    /* static */ bool mbOverrideBloomParams;
+    /* static */ RwReal mrSweetSpotFlashTime;
+    /* static */ CGtTexture *mgpBloomMaskTexture;
+    // methods
+    // CB4BoostEffectParams(const CB4BoostEffectParams &);
+    // CB4BoostEffectParams();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare(CB4Burn *);
+    // void Release();
+    // void Trigger(int);
+    // void Stop();
+    // void Update(CB4RaceCar *);
+    // void GetFlameParams(CB4FlameParams *, bool, bool) const;
+    // RwReal GetCameraShakeIntensity() const;
+    // RwReal GetCameraFOVInterpAmount() const;
+    // RwReal GetDirectionalBlurOpacity() const;
+    // RwReal GetBoostScale() const;
+    // static void SetViewportEffects(CB4ViewportParams *, const CB4Viewport *, CB4PlayerCar *);
+    // static void OverrideBloomParams(CB4ViewportParams *, float, float);
+    // void GetRadialBlurParams(CB4RadialBlurParams *, const CB4Viewport *, CB4PlayerCar *, CB4PlayerCameraManager *);
+    // void GetBloomParams(CB4BloomParams *) const;
+    // RwReal GetMotionBlurAmount() const;
+    // void UpdateLightTrails(const CB4RaceCar *);
+};
+```
 
 ## Notes
 

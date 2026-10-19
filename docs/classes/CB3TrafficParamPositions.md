@@ -6,14 +6,29 @@
 
 - **Area:** [Traffic](../systems/traffic.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4TrafficParamPositions`, size 0x050 ([layout](#burnout-revenge-layout-of-cb4trafficparampositions))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CB3TrafficParamPositions()` |  |  |  | `0x001922D0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CB3TrafficParamPositions()` |  |  |  | `0x001922D0` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4TrafficParamPositions`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 85 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficParamPositions {  // size 0x050
+    /* 0x000 */ CGtMatrix3x4 mMatrix;
+    /* 0x040 */ CGtV3d mVehicleTargetPos;
+    // methods
+    // CB4TrafficParamPositions(const CB4TrafficParamPositions &);
+    // CB4TrafficParamPositions();
+};
+```
 
 ## Notes
 

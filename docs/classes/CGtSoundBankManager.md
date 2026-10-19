@@ -8,24 +8,86 @@
 - **Source file:** `GtSoundBankManager.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 10
 - **Retail (SLUS-21050):** 6 of its 7 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtSoundBankManager`, size 0x4380, methods in `GameShared/GameClasses/Sound/GtSoundBankManager.cpp` ([layout](#burnout-revenge-layout-of-cgtsoundbankmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `FindWave(const unsigned long&,bool) const` | `0x003412D0` 124 |  |  |  | `0x00383F60` strong |  |
-| `UnloadBank(CGtSoundBank*)` | `0x00341350` 196 | `0x003A48B0` 296 | `0x003CE800` 284 | `0x003D7790` 196 | `0x00383FF0` strong |  |
-| `LoadBank(const char*,bool,bool,int)` | `0x00341420` 536 | `0x003A49E0` 860 | `0x003CE920` 832 | `0x003D74B0` 704 | `0x003840C0` unverified |  |
-| `Update()` | `0x00341640` 8 | `0x003A4D40` 8 | `0x003CEC60` 8 | `0x003D74A0` 16 | `0x00384320` strong |  |
-| `Prepare(void*)` | `0x00341650` 120 | `0x003A4D50` 176 | `0x003CEC70` 176 | `0x003D73B0` 236 |  |  |
-| `Destruct()` | `0x003416D0` 84 | `0x003A4E00` 92 | `0x003CED20` 84 | `0x003D7320` 140 | `0x00384400` proven |  |
-| `Construct(RwaSPU2Output*,int,CGtSoundWaveObjectBuffer*)` | `0x00341730` 248 | `0x003A4E60` 448 | `0x003CED80` 448 | `0x003D7130` 496 | `0x00384460` proven |  |
-| `FindWave(const unsigned long&,bool)` |  | `0x003A4800` 164 | `0x003CE780` 124 | `0x003D7930` 196 |  |  |
-| `AquireWaveObjectBuffer(int)` |  |  |  | `0x003D7A00` 240 |  |  |
-| `FindBank(const char*)` |  |  |  | `0x003D7880` 168 |  |  |
-| `ReleaseWaveObjectBuffer(void*)` |  |  |  | `0x003D7AF0` 184 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `FindWave(const unsigned long&,bool) const` | `0x003412D0` 124 |  |  |  | `0x00383F60` strong |  | `CGtSoundWave * CGtSoundBankManager::FindWave(const unsigned long &lId, bool lbChooseVariant) const` |
+| `UnloadBank(CGtSoundBank*)` | `0x00341350` 196 | `0x003A48B0` 296 | `0x003CE800` 284 | `0x003D7790` 196 | `0x00383FF0` strong |  | `void CGtSoundBankManager::UnloadBank(CGtSoundBank *lpBank, EGtSoundBankType leBankType)` (same name, different parameters) |
+| `LoadBank(const char*,bool,bool,int)` | `0x00341420` 536 | `0x003A49E0` 860 | `0x003CE920` 832 | `0x003D74B0` 704 | `0x003840C0` unverified |  | `CGtSoundBank * CGtSoundBankManager::LoadBank(const char *lpcPath, bool lbAsychronous, bool lbIsGlobal, int lnObjectBufferSize, EGtSoundBankType leBankType)` (same name, different parameters) |
+| `Update()` | `0x00341640` 8 | `0x003A4D40` 8 | `0x003CEC60` 8 | `0x003D74A0` 16 | `0x00384320` strong |  | `void CGtSoundBankManager::Update(float lrGameTime)` (same name, different parameters) |
+| `Prepare(void*)` | `0x00341650` 120 | `0x003A4D50` 176 | `0x003CEC70` 176 | `0x003D73B0` 236 |  |  | `bool CGtSoundBankManager::Prepare(void *lpWaveObjectBuffer, int lnBufferSize)` (same name, different parameters) |
+| `Destruct()` | `0x003416D0` 84 | `0x003A4E00` 92 | `0x003CED20` 84 | `0x003D7320` 140 | `0x00384400` proven |  | `void CGtSoundBankManager::Destruct()` |
+| `Construct(RwaSPU2Output*,int,CGtSoundWaveObjectBuffer*)` | `0x00341730` 248 | `0x003A4E60` 448 | `0x003CED80` 448 | `0x003D7130` 496 | `0x00384460` proven |  | `void CGtSoundBankManager::Construct(RwaSPU2Output *lpOutput, CGtSoundVoiceManager *lpVoiceManager, CGtSoundWaveObjectBuffer *lpWaveObjectBufferData, CGtSoundWaveObjectBuffer *lpFlipFlopWaveObjectBufferData)` (same name, different parameters) |
+| `FindWave(const unsigned long&,bool)` |  | `0x003A4800` 164 | `0x003CE780` 124 | `0x003D7930` 196 |  |  | `CGtSoundWave * CGtSoundBankManager::FindWave(const unsigned long &lId, bool lbChooseVariant) const` (same name, different parameters) |
+| `AquireWaveObjectBuffer(int)` |  |  |  | `0x003D7A00` 240 |  |  |  |
+| `FindBank(const char*)` |  |  |  | `0x003D7880` 168 |  |  | `CGtSoundBank * CGtSoundBankManager::FindBank(EGtSoundBankType leType, const char *lpcPath)` (same name, different parameters) |
+| `ReleaseWaveObjectBuffer(void*)` |  |  |  | `0x003D7AF0` 184 |  |  | `void CGtSoundBankManager::ReleaseWaveObjectBuffer(EGtSoundBankType leType, void *lpBuffer)` (same name, different parameters) |
+
+## Burnout Revenge layout of `CGtSoundBankManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 4 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundBankManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSoundBankManager {  // size 0x4380
+    /* 0x000 */ CGtSoundBank maSoundBanks[12];
+    /* 0x2CA0 */ CGtSoundFlipFlopBank maFlipFlopBanks[6];
+    /* 0x4320 */ void *mapFlipFlopRAMHandles[7];
+    /* 0x433C */ RwaWaveDictLoader *mpWaveDictLoader;
+    /* 0x4340 */ RwaWaveDict *mpSwapWaveDict;
+    /* 0x4344 */ void *mpSwapWaveDictRAMAddress;
+    /* 0x4348 */ void *mpSwapWaveDictRAMHandle;
+    /* 0x434C */ void *mpUploadBuffer;
+    /* 0x4350 */ void *mpWaveObjectBuffer;
+    /* 0x4354 */ void *mpFlipFlopWaveObjectBuffer;
+    /* 0x4358 */ void *mpLoadingBuffer;
+    /* 0x435C */ CGtSoundWaveObjectBuffer *maWaveObjectBuffers;
+    /* 0x4360 */ CGtSoundWaveObjectBuffer *maFlipFlopWaveObjectBuffers;
+    /* 0x4364 */ RwaOsOutput *mpOutput;
+    /* 0x4368 */ CGtSoundVoiceManager *mpVoiceManager;
+    /* 0x436C */ EGtSoundBankManagerState meState;
+    /* 0x4370 */ RwUInt32 muFlippingBank;
+    /* 0x4374 */ RwReal mrLastBankLoadTime;
+    /* 0x4378 */ RwReal mrGameTime;
+    /* 0x437C */ bool mbFlippingPaused;
+    /* 0x437D */ bool mbBlockedBankWantsUnloading;
+    /* 0x437E */ RwUInt8 mu8FlipAttempts;
+    /* 0x437F */ RwUInt8 mu8UsedFlipFlopRAMHandles;
+    // methods
+    // CGtSoundBankManager(const CGtSoundBankManager &);
+    // CGtSoundBankManager();
+    // void Construct(RwaSPU2Output *, CGtSoundVoiceManager *, CGtSoundWaveObjectBuffer *, CGtSoundWaveObjectBuffer *);
+    // bool Prepare(void *, int);
+    // void Update(float);
+    // void Release();
+    // void Destruct();
+    // CGtSoundBank * LoadBank(const char *, bool, bool, int, EGtSoundBankType);
+    // CGtSoundFlipFlopBank * LoadFlipFlopBank(const char *, bool, bool, int);
+    // bool FlipBank(CGtSoundFlipFlopBank *);
+    // void FlipNow();
+    // void PauseFlip();
+    // void UnloadBank(CGtSoundBank *, EGtSoundBankType);
+    // void UnloadFlipFlopBank(CGtSoundFlipFlopBank *);
+    // CGtSoundWave * FindWave(const unsigned long &, bool) const;
+    // RwaAsyncLoadStatus GetWaveDictLoadStatus();
+    // bool IsFlipInProgress();
+    // void ResetUsageCounters();
+    // GtID GenerateId(const char *) const;
+    // CGtSoundBank * IsLoaderInUse();
+    // CGtSoundBank * FindBank(EGtSoundBankType, const char *);
+    // void * AcquireWaveObjectBuffer(EGtSoundBankType, int);
+    // void ReleaseWaveObjectBuffer(EGtSoundBankType, void *);
+    // CGtSoundBank * AcquireSoundBank(EGtSoundBankType);
+    // void AddRAMHandle(void *);
+    // void ReleaseRAMHandle(void *);
+    // bool SanityCheckFlipFlopHandle(void *);
+    // bool SanityCheckAllHandles();
+};
+```
 
 ## Notes
 

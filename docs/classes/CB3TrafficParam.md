@@ -8,32 +8,33 @@
 - **Source file:** `B3TrafficParam.cpp`
 - **Methods per build:** DNAT_200 16, B3DEBUG 16, B3INTERN 16, B3O0PCH 18
 - **Retail (SLUS-21050):** 11 of its 16 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrafficParam`, size 0x050, methods in `GameSource/World/B4TrafficParam.cpp` ([layout](#burnout-revenge-layout-of-cb4trafficparam))
 - **Burnout 2 ancestor (by name):** `CTrafficParam`, size 0x0A0, declared in 88 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CalcFormationSpeedChange()` | `0x0015B570` 1184 | `0x00171450` 1284 | `0x0016CA80` 1284 | `0x00182260` 1836 | `0x001605C0` strong |  |
-| `GetParamInfoFromSplitter(CB3TrafficLane*,int)` | `0x0015BA10` 220 | `0x00171960` 220 | `0x0016CF90` 220 | `0x00182120` 320 | `0x00160A60` strong |  |
-| `GetParamInfoFromValve(CB3TrafficLane*,bool,bool)` | `0x0015BAF0` 320 | `0x00171A40` 320 | `0x0016D070` 320 | `0x00181F50` 460 | `0x00160C30` unverified |  |
-| `ResetMemberVariables()` | `0x0015BC30` 188 | `0x00171B80` 188 | `0x0016D1B0` 188 | `0x00181DA0` 428 | `0x00160E50` proven |  |
-| `FindLaneChange(CB3TrafficLane**,float*,float*,bool,bool)` | `0x0015BCF0` 968 | `0x00171C40` 1200 | `0x0016D270` 1200 | `0x001817F0` 1456 | `0x00160F10` proven |  |
-| `RemoveFromTrafficLights()` | `0x0015C0C0` 140 | `0x001720F0` 140 | `0x0016D720` 140 | `0x00181700` 228 | `0x00161310` proven | `int CTrafficParam::RemoveFromTrafficLights()` |
-| `Remove()` | `0x0015C150` 472 | `0x00172180` 680 | `0x0016D7B0` 680 | `0x00181300` 1012 | `0x001613B0` proven | `int CTrafficParam::Remove()` |
-| `Insert(CB3TrafficLane*,float,float,ETrafficParamState)` | `0x0015C330` 788 | `0x00172430` 2024 | `0x0016DA60` 1716 | `0x001809B0` 2376 | `0x00161590` proven | `int CTrafficParam::Insert(CLane *lpLane, float lrParamAlong, float lrParamAcross, float lrSpeedModifier, ETrafficParamState leInitialState)` (same name, different parameters) |
-| `CalculateTargetParamMatrix(float,GtMathPs2::CGtMatrix3x4*)` | `0x0015C650` 1300 | `0x00172C20` 1780 | `0x0016E120` 1436 | `0x0017FE50` 1132 | `0x001618C0` unverified |  |
-| `CalculateTargetParamMatrix()` | `0x0015CB70` 48 | `0x00173320` 48 | `0x0016E6C0` 48 | `0x0017FDE0` 108 | `0x00161B20` proven | `void CTrafficParam::CalculateTargetParamMatrix()` |
-| `CalcSpeed(int,bool,bool)` | `0x0015CBA0` 4264 | `0x00173350` 4708 | `0x0016E6F0` 4708 | `0x0017E9D0` 4624 | `0x00161B50` strong | `int CTrafficParam::CalcSpeed()` (same name, different parameters) |
-| `Release()` | `0x0015DC50` 8 | `0x001745C0` 8 | `0x0016F960` 8 | `0x0017E9A0` 40 |  |  |
-| `UpdateNodes()` | `0x0015DC60` 640 | `0x001745D0` 784 | `0x0016F970` 784 | `0x0017E550` 1092 |  | `int CTrafficParam::UpdateNodes()` |
-| `Update(bool)` | `0x0015DEE0` 844 | `0x001748E0` 904 | `0x0016FC80` 904 | `0x0017E130` 1052 |  | `int CTrafficParam::Update()` (same name, different parameters) |
-| `Prepare()` | `0x0015E230` 48 | `0x00174C70` 48 | `0x00170010` 48 | `0x0017E0F0` 56 |  |  |
-| `Construct()` | `0x0015E260` 8 | `0x00174CA0` 8 | `0x00170040` 8 | `0x0017E0C0` 40 |  |  |
-| `GetApproxDistFromBackAxle(CB3TrafficParam*)` |  |  |  | `0x001829C0` 428 |  |  |
-| `GetRandomCrashReaction()` |  |  |  | `0x0017FC30` 184 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CalcFormationSpeedChange()` | `0x0015B570` 1184 | `0x00171450` 1284 | `0x0016CA80` 1284 | `0x00182260` 1836 | `0x001605C0` strong |  | `RwReal CB4TrafficParam::CalcFormationSpeedChange()` |
+| `GetParamInfoFromSplitter(CB3TrafficLane*,int)` | `0x0015BA10` 220 | `0x00171960` 220 | `0x0016CF90` 220 | `0x00182120` 320 | `0x00160A60` strong |  | `void CB4TrafficParam::GetParamInfoFromSplitter(CB4TrafficLane *lpLane, int lnAdditionalLookAhead)` |
+| `GetParamInfoFromValve(CB3TrafficLane*,bool,bool)` | `0x0015BAF0` 320 | `0x00171A40` 320 | `0x0016D070` 320 | `0x00181F50` 460 | `0x00160C30` unverified |  | `void CB4TrafficParam::GetParamInfoFromValve(CB4TrafficLane *lpLane, bool lbIsSpecial, bool lbIsChecked, bool lbIsCrashMode)` (same name, different parameters) |
+| `ResetMemberVariables()` | `0x0015BC30` 188 | `0x00171B80` 188 | `0x0016D1B0` 188 | `0x00181DA0` 428 | `0x00160E50` proven |  | `void CB4TrafficParam::ResetMemberVariables()` |
+| `FindLaneChange(CB3TrafficLane**,float*,float*,bool,bool)` | `0x0015BCF0` 968 | `0x00171C40` 1200 | `0x0016D270` 1200 | `0x001817F0` 1456 | `0x00160F10` proven |  | `bool CB4TrafficParam::FindLaneChange(CB4TrafficLane **lppChangeLane, float *lprChangeLaneParamAlong, float *lprParamAlongMergePoint, bool lbIsLeft, bool lbIsForward)` |
+| `RemoveFromTrafficLights()` | `0x0015C0C0` 140 | `0x001720F0` 140 | `0x0016D720` 140 | `0x00181700` 228 | `0x00161310` proven | `int CTrafficParam::RemoveFromTrafficLights()` | `void CB4TrafficParam::RemoveFromTrafficLights()` |
+| `Remove()` | `0x0015C150` 472 | `0x00172180` 680 | `0x0016D7B0` 680 | `0x00181300` 1012 | `0x001613B0` proven | `int CTrafficParam::Remove()` | `bool CB4TrafficParam::Remove()` |
+| `Insert(CB3TrafficLane*,float,float,ETrafficParamState)` | `0x0015C330` 788 | `0x00172430` 2024 | `0x0016DA60` 1716 | `0x001809B0` 2376 | `0x00161590` proven | `int CTrafficParam::Insert(CLane *lpLane, float lrParamAlong, float lrParamAcross, float lrSpeedModifier, ETrafficParamState leInitialState)` (same name, different parameters) | `bool CB4TrafficParam::Insert(CB4TrafficLane *lpLane, float lrParamAlong, float lrParamAcross, ETrafficParamState leInitialState)` |
+| `CalculateTargetParamMatrix(float,GtMathPs2::CGtMatrix3x4*)` | `0x0015C650` 1300 | `0x00172C20` 1780 | `0x0016E120` 1436 | `0x0017FE50` 1132 | `0x001618C0` unverified |  | `void CB4TrafficParam::CalculateTargetParamMatrix(float lrParamAlong, GtMathPs2::CGtMatrix3x4 *lpResultMatrix)` |
+| `CalculateTargetParamMatrix()` | `0x0015CB70` 48 | `0x00173320` 48 | `0x0016E6C0` 48 | `0x0017FDE0` 108 | `0x00161B20` proven | `void CTrafficParam::CalculateTargetParamMatrix()` | `void CB4TrafficParam::CalculateTargetParamMatrix()` |
+| `CalcSpeed(int,bool,bool)` | `0x0015CBA0` 4264 | `0x00173350` 4708 | `0x0016E6F0` 4708 | `0x0017E9D0` 4624 | `0x00161B50` strong | `int CTrafficParam::CalcSpeed()` (same name, different parameters) | `void CB4TrafficParam::CalcSpeed(int lnNumCrashingVehicles, bool lbIsOnlineMode, bool lbIsCrashMode)` |
+| `Release()` | `0x0015DC50` 8 | `0x001745C0` 8 | `0x0016F960` 8 | `0x0017E9A0` 40 |  |  | `void CB4TrafficParam::Release()` |
+| `UpdateNodes()` | `0x0015DC60` 640 | `0x001745D0` 784 | `0x0016F970` 784 | `0x0017E550` 1092 |  | `int CTrafficParam::UpdateNodes()` | `bool CB4TrafficParam::UpdateNodes()` |
+| `Update(bool)` | `0x0015DEE0` 844 | `0x001748E0` 904 | `0x0016FC80` 904 | `0x0017E130` 1052 |  | `int CTrafficParam::Update()` (same name, different parameters) | `bool CB4TrafficParam::Update(float lrTimeStep, bool lbIsCrashMode)` (same name, different parameters) |
+| `Prepare()` | `0x0015E230` 48 | `0x00174C70` 48 | `0x00170010` 48 | `0x0017E0F0` 56 |  |  | `bool CB4TrafficParam::Prepare()` |
+| `Construct()` | `0x0015E260` 8 | `0x00174CA0` 8 | `0x00170040` 8 | `0x0017E0C0` 40 |  |  | `void CB4TrafficParam::Construct()` |
+| `GetApproxDistFromBackAxle(CB3TrafficParam*)` |  |  |  | `0x001829C0` 428 |  |  | `RwReal CB4TrafficParam::GetApproxDistFromBackAxle(CB4TrafficParam *lpChangeLaneParam)` |
+| `GetRandomCrashReaction()` |  |  |  | `0x0017FC30` 184 |  |  | `RwReal CB4TrafficParam::GetRandomCrashReaction()` |
 
 ## Burnout 2 layout of `CTrafficParam`
 
@@ -82,6 +83,73 @@ public:
     // int CTrafficParam::Update()  [0x0024DF60]
     // int CTrafficParam::CalcSpeed()  [0x0024E080]
     // int CTrafficParam::Reset()  [0x0024EF30]
+};
+```
+
+## Burnout Revenge layout of `CB4TrafficParam`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 316 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficParam {  // size 0x050
+    /* 0x000 */ RwReal mrLastValveSpeed;
+    /* 0x004 */ RwReal mrNextCarDist;
+    /* 0x008 */ RwReal mrFrontDist;
+    /* 0x00C */ RwReal mrBackDist;
+    /* 0x010 */ RwReal mrStopDist;
+    /* 0x014 */ RwReal mrSpeedDiff;
+    /* 0x018 */ RwReal mrCrashReactionSpeedDiff;
+    /* 0x01C */ RwReal mrSectionLength;
+    /* 0x020 */ RwReal mrLastFlowValue;
+    /* 0x024 */ RwReal mrParamSwerveAcross;
+    /* 0x028 */ RwReal mrSpeed;
+    /* 0x02C */ RwReal mrParamAlong;
+    /* 0x030 */ RwReal mrParamAcross;
+    /* 0x034 */ CB4FormationBehaviourStruct *mpCurrentBehaviour;
+    /* 0x038 */ RwUInt16 mu16LeftSegment;
+    /* 0x03A */ RwUInt16 mu16RightSegment;
+    /* 0x03C */ RwUInt8 mu8ChangeLaneVehicleAhead;
+    /* 0x03D */ RwUInt8 mu8LaneIndex;
+    /* 0x03E */ RwUInt8 mu8LeftLane;
+    /* 0x03F */ RwUInt8 mu8RightLane;
+    /* 0x040 */ RwUInt8 mu8NextTrafficParam;
+    /* 0x041 */ RwUInt8 mu8PrevTrafficParam;
+    /* 0x042 */ RwUInt8 meState;
+    /* 0x043 */ RwUInt8 mu8BehaviourIndex;
+    /* 0x044 */ RwUInt8 mu8NumTurningsRemaining;
+    /* 0x045 */ RwUInt8 mu8ParamIndex;
+    /* 0x046 */ RwUInt8 mu8TrafficIndex;
+    /* 0x047 */ RwUInt8 mx8Flags;
+    /* 0x048 */ bool mbIsTurningLeft;
+    /* 0x049 */ RwUInt8 meOwnerClass;
+    /* 0x04C */ RwReal mrSpeedNextDecisionFrame;
+    // methods
+    // CB4TrafficParam(const CB4TrafficParam &);
+    // CB4TrafficParam();
+    // void Construct();
+    // bool Prepare();
+    // bool Update(float, bool);
+    // bool UpdateNodes();
+    // void Release();
+    // void Destruct();
+    // void CalcSpeed(int, bool, bool);
+    // bool DetectSympatheticCrash(CB4TrafficVehicle *, CB4TrafficParamPositions *, CB4VehiclePhysics *, GtMathPs2::CGtV3d, float, bool, bool);
+    // void UpdateSpeed();
+    // void ResetParamForFramerate();
+    // void AdjustSpeedDiffForFramerate();
+    // RwReal GetRandomCrashReaction();
+    // bool Insert(CB4TrafficLane *, float, float, ETrafficParamState);
+    // bool Remove();
+    // void RemoveFromTrafficLights();
+    // bool FindLaneChange(CB4TrafficLane **, float *, float *, bool, bool);
+    // void CalculateTargetParamMatrix();
+    // void CalculateTargetParamMatrix(float, GtMathPs2::CGtMatrix3x4 *);
+    // void ResetMemberVariables();
+    // void GetParamInfoFromValve(CB4TrafficLane *, bool, bool, bool);
+    // void RandomiseSpeed();
+    // void GetParamInfoFromSplitter(CB4TrafficLane *, int);
+    // RwReal CalcFormationSpeedChange();
+    // RwReal GetApproxDistFromBackAxle(CB4TrafficParam *);
 };
 ```
 

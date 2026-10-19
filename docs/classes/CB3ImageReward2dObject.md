@@ -10,15 +10,15 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `PrepareCarSelect(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::` | `0x003CA8D0` 520 | `0x00447DB0` 584 | `0x00470790` 584 | `0x00487860` 332 |  |  |
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x003CAAE0` 1552 | `0x00448000` 1552 | `0x004709E0` 1548 | `0x004879B0` 2124 |  |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,EB` | `0x003CB0F0` 428 | `0x00448610` 564 | `0x00470FF0` 564 | `0x004876F0` 368 |  |  |
-| `GetTexture(EB3RewardImageType,int)` | `0x003CB2A0` 144 | `0x00448850` 220 | `0x00471230` 220 | `0x00487600` 236 |  |  |
-| `GetCarTexture(EB3MenuCarClasses,int)` | `0x003CB330` 220 | `0x00448930` 284 | `0x00471310` 284 | `0x00487520` 220 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `PrepareCarSelect(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::` | `0x003CA8D0` 520 | `0x00447DB0` 584 | `0x00470790` 584 | `0x00487860` 332 |  |  |  |
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x003CAAE0` 1552 | `0x00448000` 1552 | `0x004709E0` 1548 | `0x004879B0` 2124 |  |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,EB` | `0x003CB0F0` 428 | `0x00448610` 564 | `0x00470FF0` 564 | `0x004876F0` 368 |  |  |  |
+| `GetTexture(EB3RewardImageType,int)` | `0x003CB2A0` 144 | `0x00448850` 220 | `0x00471230` 220 | `0x00487600` 236 |  |  |  |
+| `GetCarTexture(EB3MenuCarClasses,int)` | `0x003CB330` 220 | `0x00448930` 284 | `0x00471310` 284 | `0x00487520` 220 |  |  |  |
 
 ## Notes
 

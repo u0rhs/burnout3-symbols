@@ -8,26 +8,56 @@
 - **Source file:** `Gt2dObjectTable.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 13, B3INTERN 13, B3O0PCH 13
 - **Retail (SLUS-21050):** 13 of its 13 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGt2dObjectTable`, size 0x040 ([layout](#burnout-revenge-layout-of-cgt2dobjecttable))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `RecalculateSize()` | `0x002F7870` 900 | `0x0034AFD0` 900 | `0x0037C620` 900 | `0x0037CB70` 1384 | `0x0033D890` strong |  |
-| `GetImageSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002F7C00` 92 | `0x0034B360` 92 | `0x0037C9B0` 92 | `0x0037CAE0` 144 | `0x0033DC20` likely |  |
-| `GetItalicTextSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002F7C60` 268 | `0x0034B3C0` 268 | `0x0037CA10` 268 | `0x0037C960` 380 | `0x0033DD30` strong |  |
-| `GetTextSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002F7D70` 268 | `0x0034B4D0` 268 | `0x0037CB20` 268 | `0x0037C7E0` 380 | `0x0033DE40` strong |  |
-| `RenderBox(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const void*)` | `0x002F7E80` 352 | `0x0034B5E0` 396 | `0x0037CC30` 396 | `0x0037C5D0` 472 | `0x0033DF50` proven |  |
-| `RenderImage(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const void*)` | `0x002F7FE0` 364 | `0x0034B770` 408 | `0x0037CDC0` 408 | `0x0037C3E0` 484 | `0x0033E0B0` strong |  |
-| `RenderItalicTextNoTruncation(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFra` | `0x002F8150` 504 | `0x0034B910` 548 | `0x0037CF60` 548 | `0x0037C140` 668 | `0x0033E4F0` strong |  |
-| `RenderItalicText(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const vo` | `0x002F8350` 796 | `0x0034BB40` 832 | `0x0037D190` 832 | `0x0037BD70` 968 | `0x0033E6F0` proven |  |
-| `RenderText(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const void*)` | `0x002F8670` 800 | `0x0034BE80` 836 | `0x0037D4D0` 836 | `0x0037B9A0` 972 | `0x0033EA10` proven |  |
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002F8990` 484 | `0x0034C1D0` 484 | `0x0037D820` 484 | `0x0037B690` 776 | `0x0033ED30` proven |  |
-| `GetRowSize(int)` | `0x002F8B80` 196 | `0x0034C3C0` 196 | `0x0037DA10` 196 | `0x0037B4E0` 424 | `0x0033EF20` proven |  |
-| `GetRowPos(int)` | `0x002F8C50` 232 | `0x0034C490` 232 | `0x0037DAE0` 232 | `0x0037B2F0` 484 | `0x0033EFF0` proven |  |
-| `Prepare(const CGt2dObjectTableData*,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d` | `0x002F8D40` 208 | `0x0034C580` 208 | `0x0037DBD0` 208 | `0x0037B200` 236 | `0x0033F0E0` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `RecalculateSize()` | `0x002F7870` 900 | `0x0034AFD0` 900 | `0x0037C620` 900 | `0x0037CB70` 1384 | `0x0033D890` strong |  |  |
+| `GetImageSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002F7C00` 92 | `0x0034B360` 92 | `0x0037C9B0` 92 | `0x0037CAE0` 144 | `0x0033DC20` likely |  |  |
+| `GetItalicTextSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002F7C60` 268 | `0x0034B3C0` 268 | `0x0037CA10` 268 | `0x0037C960` 380 | `0x0033DD30` strong |  |  |
+| `GetTextSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x002F7D70` 268 | `0x0034B4D0` 268 | `0x0037CB20` 268 | `0x0037C7E0` 380 | `0x0033DE40` strong |  |  |
+| `RenderBox(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const void*)` | `0x002F7E80` 352 | `0x0034B5E0` 396 | `0x0037CC30` 396 | `0x0037C5D0` 472 | `0x0033DF50` proven |  |  |
+| `RenderImage(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const void*)` | `0x002F7FE0` 364 | `0x0034B770` 408 | `0x0037CDC0` 408 | `0x0037C3E0` 484 | `0x0033E0B0` strong |  |  |
+| `RenderItalicTextNoTruncation(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFra` | `0x002F8150` 504 | `0x0034B910` 548 | `0x0037CF60` 548 | `0x0037C140` 668 | `0x0033E4F0` strong |  |  |
+| `RenderItalicText(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const vo` | `0x002F8350` 796 | `0x0034BB40` 832 | `0x0037D190` 832 | `0x0037BD70` 968 | `0x0033E6F0` proven |  |  |
+| `RenderText(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const void*)` | `0x002F8670` 800 | `0x0034BE80` 836 | `0x0037D4D0` 836 | `0x0037B9A0` 972 | `0x0033EA10` proven |  |  |
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002F8990` 484 | `0x0034C1D0` 484 | `0x0037D820` 484 | `0x0037B690` 776 | `0x0033ED30` proven |  |  |
+| `GetRowSize(int)` | `0x002F8B80` 196 | `0x0034C3C0` 196 | `0x0037DA10` 196 | `0x0037B4E0` 424 | `0x0033EF20` proven |  |  |
+| `GetRowPos(int)` | `0x002F8C50` 232 | `0x0034C490` 232 | `0x0037DAE0` 232 | `0x0037B2F0` 484 | `0x0033EFF0` proven |  |  |
+| `Prepare(const CGt2dObjectTableData*,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d` | `0x002F8D40` 208 | `0x0034C580` 208 | `0x0037DBD0` 208 | `0x0037B200` 236 | `0x0033F0E0` proven |  |  |
+
+## Burnout Revenge layout of `CGt2dObjectTable`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dObjectTable.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dObjectTable : public CGt2dObject {  // size 0x040
+    // base CGt2dObject at 0x000
+    // methods
+    // CGt2dObjectTable(const CGt2dObjectTable &);
+    // CGt2dObjectTable();
+    // void Prepare(const CGt2dObjectTableData *, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, GtMathPs2::CGtV4d);
+    // CGtV2d GetRowPos(int);
+    // CGtV2d GetRowSize(int);
+    // static void RenderText(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, unsigned short *, const CGt2dFrame &, const void *);
+    // static void RenderItalicText(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, unsigned short *, const CGt2dFrame &, const void *);
+    // static void RenderItalicTextNoTruncation(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, unsigned short *, const CGt2dFrame &, const void *);
+    // static void RenderParagraphText(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, unsigned short *, const CGt2dFrame &, const void *);
+    // static void RenderImage(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, unsigned short *, const CGt2dFrame &, const void *);
+    // static void RenderBox(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, unsigned short *, const CGt2dFrame &, const void *);
+    // static void GetTextSize(GtMathPs2::CGtV2d *, const CGt2dFrame &, const void *);
+    // static void GetItalicTextSize(GtMathPs2::CGtV2d *, const CGt2dFrame &, const void *);
+    // static void GetParagraphSize(GtMathPs2::CGtV2d *, const CGt2dFrame &, const void *);
+    // static void GetImageSize(GtMathPs2::CGtV2d *, const CGt2dFrame &, const void *);
+    // static void GetBoxSize(GtMathPs2::CGtV2d *, const CGt2dFrame &, const void *);
+    // void RecalculateSize();
+    // static void _Render(const CGt2dObject::CGt2dObjectSpace &, const void *);
+};
+```
 
 ## Notes
 

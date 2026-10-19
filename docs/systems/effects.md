@@ -14,12 +14,14 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 **Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
 
-| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
-|---|---:|---:|---|---:|---|
-| `B3EffectsManager.cpp` | 48 | 61,144 | `0x00216100` | 36 (1) | `0x00255EE0`–`0x002630F0` |
-| `B3TrailSystem.cpp` | 9 | 2,880 | `0x0027CC70` | 6 (0) | `0x002BCF60`–`0x002BD9A0` |
-| `B3BoostEffectParams.cpp` | 9 | 2,544 | `0x002CB6B0` | 5 (0) | `0x0030A9D0`–`0x0030B530` |
-| `B3ScrapeSystem.cpp` | 9 | 2,416 | `0x00334510` | 2 (2) | `0x00375AA0`–`0x00375E90` |
+**Revenge path** is the file of the same name in the Burnout Revenge prototype, which kept its source paths ([source files](../reference/revenge-source-file-lineage.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses | Revenge path |
+|---|---:|---:|---|---:|---|---|
+| `B3EffectsManager.cpp` | 48 | 61,144 | `0x00216100` | 36 (1) | `0x00255EE0`–`0x002630F0` | `GameSource/World/B4EffectsManager.cpp` |
+| `B3TrailSystem.cpp` | 9 | 2,880 | `0x0027CC70` | 6 (0) | `0x002BCF60`–`0x002BD9A0` | `GameSource/Graphics/Trails/B4TrailSystem.cpp` |
+| `B3BoostEffectParams.cpp` | 9 | 2,544 | `0x002CB6B0` | 5 (0) | `0x0030A9D0`–`0x0030B530` | `GameSource/World/B4BoostEffectParams.cpp` |
+| `B3ScrapeSystem.cpp` | 9 | 2,416 | `0x00334510` | 2 (2) | `0x00375AA0`–`0x00375E90` | `GameSource/Graphics/Scrapes/B4ScrapeSystem.cpp` |
 
 ## Classes
 

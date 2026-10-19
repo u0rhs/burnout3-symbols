@@ -9,27 +9,28 @@
 - **Methods per build:** DNAT_200 12, B3DEBUG 12, B3INTERN 12, B3O0PCH 13
 - **Retail (SLUS-21050):** 8 of its 12 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FE10`, 44 bytes = 11 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 9 virtual functions)
+- **Burnout Revenge counterpart:** `CB4PlayerCarPhysics`, size 0x5970, methods in `GameSource/Physics/B4PlayerCarPhysics.cpp` ([layout](#burnout-revenge-layout-of-cb4playercarphysics))
 - **Burnout 2 ancestor (by name):** `CPlayerCarPhysics`, size 0x1280, declared in 56 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `DoCrashBreaker()` | `0x00183BB0` 388 | `0x001A9970` 404 | `0x001A5E60` 380 | `0x001BDE10` 432 | `0x001BAAF0` unverified |  |
-| `ActiveateCrashBreaker()` | `0x00183D40` 32 | `0x001A9B10` 32 | `0x001A5FE0` 32 | `0x001BDDC0` 76 | `0x001BAD00` unverified |  |
-| `StopCrashing()` | `0x00183D60` 1292 | `0x001A9B30` 1292 | `0x001A6000` 1292 | `0x001BDCA0` 256 | `0x001BAD40` strong |  |
-| `StartCrashing(int,CB3CrashStartInfo*)` | `0x00184270` 1124 | `0x001AA040` 1124 | `0x001A6510` 1124 | `0x001BD5F0` 80 |  |  |
-| `SetUpCollisionBools()` | `0x001846E0` 48 | `0x001AA4B0` 112 | `0x001A6980` 112 | `0x001BD560` 88 |  |  |
-| `GetCrashingDrivingControls()` | `0x00184710` 6340 | `0x001AA520` 8796 | `0x001A69F0` 8208 | `0x001BAD40` 3200 |  |  |
-| `GetDrivingControls()` | `0x00185FE0` 1524 | `0x001AC780` 2384 | `0x001A8A00` 2056 | `0x001BA2E0` 2560 | `0x001BD020` unverified |  |
-| `Destruct()` | `0x001865F0` 44 | `0x001AD0E0` 44 | `0x001A9220` 44 | `0x001BA2A0` 56 | `0x001BD640` strong |  |
-| `Release()` | `0x00186620` 44 | `0x001AD110` 44 | `0x001A9250` 44 | `0x001BA260` 56 | `0x001BD670` strong |  |
-| `Update(float)` | `0x00186650` 116 | `0x001AD140` 1484 | `0x001A9280` 1484 | `0x001BA180` 212 |  |  |
-| `Prepare(CB3RaceCar*)` | `0x001866D0` 168 | `0x001AD710` 316 | `0x001A9850` 316 | `0x001BA020` 348 | `0x001BDE50` strong |  |
-| `Construct()` | `0x00186780` 68 | `0x001AD850` 68 | `0x001A9990` 68 | `0x001B9FC0` 96 | `0x001BDF10` strong |  |
-| `CB3PlayerCarPhysics()` |  |  |  | `0x001920F0` 92 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `DoCrashBreaker()` | `0x00183BB0` 388 | `0x001A9970` 404 | `0x001A5E60` 380 | `0x001BDE10` 432 | `0x001BAAF0` unverified |  | `void CB4PlayerCarPhysics::DoCrashBreaker(float lrPower, bool lbIsPickup)` (same name, different parameters) |
+| `ActiveateCrashBreaker()` | `0x00183D40` 32 | `0x001A9B10` 32 | `0x001A5FE0` 32 | `0x001BDDC0` 76 | `0x001BAD00` unverified |  |  |
+| `StopCrashing()` | `0x00183D60` 1292 | `0x001A9B30` 1292 | `0x001A6000` 1292 | `0x001BDCA0` 256 | `0x001BAD40` strong |  | `void CB4PlayerCarPhysics::StopCrashing()` |
+| `StartCrashing(int,CB3CrashStartInfo*)` | `0x00184270` 1124 | `0x001AA040` 1124 | `0x001A6510` 1124 | `0x001BD5F0` 80 |  |  | `void CB4PlayerCarPhysics::StartCrashing(unsigned char lu8CrashIndex, CB4CrashStartInfo *lpSCI)` (same name, different parameters) |
+| `SetUpCollisionBools()` | `0x001846E0` 48 | `0x001AA4B0` 112 | `0x001A6980` 112 | `0x001BD560` 88 |  |  | `void CB4PlayerCarPhysics::SetUpCollisionBools()` |
+| `GetCrashingDrivingControls()` | `0x00184710` 6340 | `0x001AA520` 8796 | `0x001A69F0` 8208 | `0x001BAD40` 3200 |  |  | `void CB4PlayerCarPhysics::GetCrashingDrivingControls()` |
+| `GetDrivingControls()` | `0x00185FE0` 1524 | `0x001AC780` 2384 | `0x001A8A00` 2056 | `0x001BA2E0` 2560 | `0x001BD020` unverified |  | `void CB4PlayerCarPhysics::GetDrivingControls()` |
+| `Destruct()` | `0x001865F0` 44 | `0x001AD0E0` 44 | `0x001A9220` 44 | `0x001BA2A0` 56 | `0x001BD640` strong |  | `void CB4PlayerCarPhysics::Destruct()` |
+| `Release()` | `0x00186620` 44 | `0x001AD110` 44 | `0x001A9250` 44 | `0x001BA260` 56 | `0x001BD670` strong |  | `void CB4PlayerCarPhysics::Release()` |
+| `Update(float)` | `0x00186650` 116 | `0x001AD140` 1484 | `0x001A9280` 1484 | `0x001BA180` 212 |  |  | `void CB4PlayerCarPhysics::Update(float lrTimeStep)` |
+| `Prepare(CB3RaceCar*)` | `0x001866D0` 168 | `0x001AD710` 316 | `0x001A9850` 316 | `0x001BA020` 348 | `0x001BDE50` strong |  | `bool CB4PlayerCarPhysics::Prepare(CB4RaceCar *lpPlayerCar)` |
+| `Construct()` | `0x00186780` 68 | `0x001AD850` 68 | `0x001A9990` 68 | `0x001B9FC0` 96 | `0x001BDF10` strong |  | `void CB4PlayerCarPhysics::Construct()` |
+| `CB3PlayerCarPhysics()` |  |  |  | `0x001920F0` 92 |  |  |  |
 
 ## Burnout 2 layout of `CPlayerCarPhysics`
 
@@ -47,6 +48,74 @@ public:
     /* 0x1240 */ int mnNumRampTriangles;
     /* 0x1244 */ int mbHornDebounce;
     /* 0x1248 */ int mbDisableBoost;
+};
+```
+
+## Burnout Revenge layout of `CB4PlayerCarPhysics`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 237 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4PlayerCarPhysics : public CB4AICarPhysics {  // size 0x5970
+    // base CB4AICarPhysics at 0x000
+    /* 0x1590 */ CB4PlayerCar *mpPlayerCar;
+    /* 0x15A0 */ CB4WrongWayWall mWrongWayWall;
+    /* 0x3570 */ RwReal mSteeringFinished;
+    /* 0x3574 */ RwReal mrCrashBreakerStartTime;
+    /* 0x3578 */ RwReal mrCrashbreakerPower;
+    /* 0x357C */ RwReal mrGraphicalCrashbreakerPower;
+    /* 0x3580 */ RwReal mrAftertouchRollAngle;
+    /* 0x3584 */ RwInt32 mnNumBoosts;
+    /* 0x3590 */ CB4VehicleParams mStoredVehicleParams;
+    /* 0x5930 */ bool mbHornDebounce;
+    /* 0x5931 */ bool mbBoostStartActivateJolt;
+    /* 0x5932 */ bool mbInstantAirRam;
+    /* 0x5933 */ bool mbAfterTouch;
+    /* 0x5934 */ bool mbForceBoost;
+    /* 0x5935 */ bool mbCrashBreakerAvailable;
+    /* 0x5936 */ bool mbSlowMoLastFrame;
+    /* 0x5937 */ bool mbForceCrashBreaker;
+    /* 0x5938 */ RwInt32 mnOriginalCollisionWorldIndex;
+    /* 0x593C */ CB4CurrentMode<CB4PlayerCarPhysics::EB4AfterTouchMode> mCurrentMode;
+    /* 0x5950 */ RwReal mrCrashBreakerTimeOut;
+    /* 0x5954 */ RwReal mrCrashModeAfterTouchExtensionTimeOut;
+    /* 0x5958 */ RwReal mrTimeInAfterTouchAirState;
+    /* 0x595C */ bool mbCrashCausedByRamp;
+    /* 0x595D */ bool mbCrashModeAfterTouchExtension;
+    /* 0x595E */ bool mbAfterTouchActive;
+    /* 0x595F */ bool mbInRevengeTakedown;
+    /* 0x5960 */ bool mbEnableSteering;
+    // methods
+    // CB4PlayerCarPhysics(const CB4PlayerCarPhysics &);
+    // CB4PlayerCarPhysics();
+    // void Construct();
+    // virtual bool Prepare(CB4RaceCar *);
+    // virtual void Update(float);
+    // virtual void Release();
+    // void Destruct();
+    // virtual void StartCrashing(unsigned char, CB4CrashStartInfo *);
+    // virtual void StopCrashing();
+    // virtual void GetDrivingControls();
+    // void GetCrashingDrivingControls();
+    // virtual void SetUpCollisionBools();
+    // void ActivateCrashBreaker();
+    // void DeactivateCrashBreaker();
+    // virtual void DoCrashBreaker(float, bool);
+    // bool CrashBreakerAvailable();
+    // RwInt32 GetOriginalCollisionWorldIndex();
+    // bool IsCrashBreakerImminent();
+    // bool DoesAvailableAfterTouchRequireSlowMo();
+    // bool IsAfterTouchActive();
+    // void OnRevengeTakenOut();
+    // void FireCrashbreaker(float);
+    // void EnableSteering(bool);
+    // bool DetectCrashBreaker(bool);
+    // void SetCrashBreakerTimeOut(float);
+    // void UpdateCrashBreaker();
+    // void CrashBreakerFiringLogic(const CB4StageLogicGameParams *, bool);
+    // void SlowMoLogic(const CB4StageLogicGameParams *);
+    // void StopSlowMo();
+    // void UpdateAfterTouch();
 };
 ```
 

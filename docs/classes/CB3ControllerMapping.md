@@ -8,53 +8,54 @@
 - **Source file:** `B3ControllerMappingPS2.cpp`
 - **Methods per build:** DNAT_200 20, B3DEBUG 21, B3INTERN 20, B3O0PCH 38
 - **Retail (SLUS-21050):** 12 of its 20 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ControllerMapping`, size 0x16C, methods in `GameSource/Game/Ps2/B4ControllerMappingPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4controllermapping))
 - **Burnout 2 ancestor (by name):** `CControllerMapping`, size 0x090, declared in 81 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `ResetControllerDeadTime()` | `0x0012ECB0` 16 | `0x0012EBA0` 16 | `0x00130FE0` 16 | `0x0012F7E0` 52 | `0x0012EEF0` strong |  |
-| `GetControllerDeadTime()` | `0x0012ECC0` 20 | `0x0012EBB0` 20 | `0x00130FF0` 20 | `0x0012F7A0` 56 | `0x0012EF00` strong |  |
-| `WheelIsValid()` | `0x0012ECE0` 8 | `0x0012EBD0` 8 | `0x00131010` 8 | `0x0012F780` 20 |  |  |
-| `PadIsValid()` | `0x0012ECF0` 36 | `0x0012EBE0` 36 | `0x00131020` 36 | `0x0012F740` 52 | `0x0012EF50` proven |  |
-| `GetBoost()` | `0x0012ED20` 160 | `0x0012EC10` 160 | `0x00131050` 160 | `0x0012F6D0` 100 |  |  |
-| `GetLookBack()` | `0x0012EDC0` 160 | `0x0012ECB0` 160 | `0x001310F0` 160 | `0x0012F660` 100 |  |  |
-| `GetCameraSwitch()` | `0x0012EE60` 188 | `0x0012ED50` 188 | `0x00131190` 188 | `0x0012F5F0` 100 | `0x0012F160` unverified |  |
-| `GetGearDown()` | `0x0012EF20` 188 | `0x0012EE10` 188 | `0x00131250` 188 | `0x0012F580` 100 | `0x0012F240` unverified |  |
-| `GetGearUp()` | `0x0012EFE0` 188 | `0x0012EED0` 188 | `0x00131310` 188 | `0x0012F510` 100 | `0x0012F6B0` unverified |  |
-| `GetHorn()` | `0x0012F0A0` 244 | `0x0012EF90` 244 | `0x001313D0` 244 | `0x0012F480` 136 |  |  |
-| `GetAftertouch()` | `0x0012F1A0` 420 | `0x0012F090` 420 | `0x001314D0` 420 | `0x0012F340` 320 | `0x0012F720` unverified |  |
-| `GetSteering()` | `0x0012F350` 420 | `0x0012F240` 420 | `0x00131680` 420 | `0x0012F200` 320 | `0x0012F850` unverified |  |
-| `GetBrake()` | `0x0012F500` 264 | `0x0012F3F0` 264 | `0x00131830` 264 | `0x0012F130` 200 |  |  |
-| `GetAccelerator()` | `0x0012F610` 264 | `0x0012F500` 264 | `0x00131940` 264 | `0x0012F060` 200 |  |  |
-| `GetSelectButton(bool)` |  | `0x0012F610` 188 |  |  |  |  |
-| `GetStartButton(bool)` | `0x0012F720` 188 | `0x0012F6D0` 188 | `0x00131A50` 188 | `0x0012EFF0` 100 |  |  |
-| `GetPadControl(EGtPS2DualShockDeviceControl,bool)` | `0x0012F7E0` 176 | `0x0012F790` 176 | `0x00131B10` 176 | `0x0012EF20` 196 |  |  |
-| `AnyInput()` | `0x0012F890` 132 | `0x0012F840` 132 | `0x00131BC0` 132 | `0x0012EE70` 152 | `0x0012FDA0` unverified |  |
-| `Update()` | `0x0012F920` 172 | `0x0012F8D0` 172 | `0x00131C50` 172 | `0x0012EDE0` 100 | `0x0012FE90` unverified |  |
-| `Prepare()` | `0x0012F9D0` 8 | `0x0012F980` 8 | `0x00131D00` 8 | `0x0012EDB0` 44 | `0x0012FFA0` strong |  |
-| `Construct(unsigned int)` | `0x0012F9E0` 96 | `0x0012F990` 140 | `0x00131D10` 140 | `0x0012ECF0` 152 | `0x0012FFB0` likely |  |
-| `DebounceMenuConfirm()` |  |  |  | `0x003DFCC0` 48 |  |  |
-| `DebounceMenuTalk()` |  |  |  | `0x00347350` 48 |  |  |
-| `GetMenuBack()` |  |  |  | `0x00235FD0` 48 |  |  |
-| `GetMenuBuddies()` |  |  |  | `0x00236480` 48 |  |  |
-| `GetMenuButton(CB3MenuInput::EMenuControls)` |  |  |  | `0x00236AF0` 52 |  |  |
-| `GetMenuConfirm()` |  |  |  | `0x00235EB0` 48 |  |  |
-| `GetMenuConfirmNotStart()` |  |  |  | `0x00235EE0` 48 |  |  |
-| `GetMenuDeletePersona()` |  |  |  | `0x00236640` 48 |  |  |
-| `GetMenuDown()` |  |  |  | `0x002361B0` 48 |  |  |
-| `GetMenuKeyboardCapsLock()` |  |  |  | `0x00236820` 48 |  |  |
-| `GetMenuKeyboardShift()` |  |  |  | `0x00236730` 48 |  |  |
-| `GetMenuLeft()` |  |  |  | `0x002362A0` 48 |  |  |
-| `GetMenuPageDown()` |  |  |  | `0x00236A00` 48 |  |  |
-| `GetMenuPageUp()` |  |  |  | `0x00236910` 48 |  |  |
-| `GetMenuRight()` |  |  |  | `0x00236390` 48 |  |  |
-| `GetMenuStartRace()` |  |  |  | `0x0034AA00` 48 |  |  |
-| `GetMenuTalk()` |  |  |  | `0x00141E80` 48 |  |  |
-| `GetMenuUp()` |  |  |  | `0x002360C0` 48 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `ResetControllerDeadTime()` | `0x0012ECB0` 16 | `0x0012EBA0` 16 | `0x00130FE0` 16 | `0x0012F7E0` 52 | `0x0012EEF0` strong |  | `void CB4ControllerMapping::ResetControllerDeadTime()` |
+| `GetControllerDeadTime()` | `0x0012ECC0` 20 | `0x0012EBB0` 20 | `0x00130FF0` 20 | `0x0012F7A0` 56 | `0x0012EF00` strong |  |  |
+| `WheelIsValid()` | `0x0012ECE0` 8 | `0x0012EBD0` 8 | `0x00131010` 8 | `0x0012F780` 20 |  |  | `bool CB4ControllerMapping::WheelIsValid()` |
+| `PadIsValid()` | `0x0012ECF0` 36 | `0x0012EBE0` 36 | `0x00131020` 36 | `0x0012F740` 52 | `0x0012EF50` proven |  | `bool CB4ControllerMapping::PadIsValid()` |
+| `GetBoost()` | `0x0012ED20` 160 | `0x0012EC10` 160 | `0x00131050` 160 | `0x0012F6D0` 100 |  |  | `RwReal CB4ControllerMapping::GetBoost()` |
+| `GetLookBack()` | `0x0012EDC0` 160 | `0x0012ECB0` 160 | `0x001310F0` 160 | `0x0012F660` 100 |  |  | `RwReal CB4ControllerMapping::GetLookBack()` |
+| `GetCameraSwitch()` | `0x0012EE60` 188 | `0x0012ED50` 188 | `0x00131190` 188 | `0x0012F5F0` 100 | `0x0012F160` unverified |  | `RwReal CB4ControllerMapping::GetCameraSwitch()` |
+| `GetGearDown()` | `0x0012EF20` 188 | `0x0012EE10` 188 | `0x00131250` 188 | `0x0012F580` 100 | `0x0012F240` unverified |  |  |
+| `GetGearUp()` | `0x0012EFE0` 188 | `0x0012EED0` 188 | `0x00131310` 188 | `0x0012F510` 100 | `0x0012F6B0` unverified |  |  |
+| `GetHorn()` | `0x0012F0A0` 244 | `0x0012EF90` 244 | `0x001313D0` 244 | `0x0012F480` 136 |  |  | `RwReal CB4ControllerMapping::GetHorn()` |
+| `GetAftertouch()` | `0x0012F1A0` 420 | `0x0012F090` 420 | `0x001314D0` 420 | `0x0012F340` 320 | `0x0012F720` unverified |  | `RwReal CB4ControllerMapping::GetAftertouch()` |
+| `GetSteering()` | `0x0012F350` 420 | `0x0012F240` 420 | `0x00131680` 420 | `0x0012F200` 320 | `0x0012F850` unverified |  | `RwReal CB4ControllerMapping::GetSteering()` |
+| `GetBrake()` | `0x0012F500` 264 | `0x0012F3F0` 264 | `0x00131830` 264 | `0x0012F130` 200 |  |  | `RwReal CB4ControllerMapping::GetBrake()` |
+| `GetAccelerator()` | `0x0012F610` 264 | `0x0012F500` 264 | `0x00131940` 264 | `0x0012F060` 200 |  |  | `RwReal CB4ControllerMapping::GetAccelerator()` |
+| `GetSelectButton(bool)` |  | `0x0012F610` 188 |  |  |  |  |  |
+| `GetStartButton(bool)` | `0x0012F720` 188 | `0x0012F6D0` 188 | `0x00131A50` 188 | `0x0012EFF0` 100 |  |  |  |
+| `GetPadControl(EGtPS2DualShockDeviceControl,bool)` | `0x0012F7E0` 176 | `0x0012F790` 176 | `0x00131B10` 176 | `0x0012EF20` 196 |  |  | `RwReal CB4ControllerMapping::GetPadControl(EGtPS2DualShockDeviceControl lePadControl, bool lbDebounced)` |
+| `AnyInput()` | `0x0012F890` 132 | `0x0012F840` 132 | `0x00131BC0` 132 | `0x0012EE70` 152 | `0x0012FDA0` unverified |  | `bool CB4ControllerMapping::AnyInput()` |
+| `Update()` | `0x0012F920` 172 | `0x0012F8D0` 172 | `0x00131C50` 172 | `0x0012EDE0` 100 | `0x0012FE90` unverified |  | `void CB4ControllerMapping::Update()` |
+| `Prepare()` | `0x0012F9D0` 8 | `0x0012F980` 8 | `0x00131D00` 8 | `0x0012EDB0` 44 | `0x0012FFA0` strong |  | `bool CB4ControllerMapping::Prepare()` |
+| `Construct(unsigned int)` | `0x0012F9E0` 96 | `0x0012F990` 140 | `0x00131D10` 140 | `0x0012ECF0` 152 | `0x0012FFB0` likely |  | `void CB4ControllerMapping::Construct(unsigned int luPort)` |
+| `DebounceMenuConfirm()` |  |  |  | `0x003DFCC0` 48 |  |  |  |
+| `DebounceMenuTalk()` |  |  |  | `0x00347350` 48 |  |  |  |
+| `GetMenuBack()` |  |  |  | `0x00235FD0` 48 |  |  |  |
+| `GetMenuBuddies()` |  |  |  | `0x00236480` 48 |  |  |  |
+| `GetMenuButton(CB3MenuInput::EMenuControls)` |  |  |  | `0x00236AF0` 52 |  |  |  |
+| `GetMenuConfirm()` |  |  |  | `0x00235EB0` 48 |  |  |  |
+| `GetMenuConfirmNotStart()` |  |  |  | `0x00235EE0` 48 |  |  |  |
+| `GetMenuDeletePersona()` |  |  |  | `0x00236640` 48 |  |  |  |
+| `GetMenuDown()` |  |  |  | `0x002361B0` 48 |  |  |  |
+| `GetMenuKeyboardCapsLock()` |  |  |  | `0x00236820` 48 |  |  |  |
+| `GetMenuKeyboardShift()` |  |  |  | `0x00236730` 48 |  |  |  |
+| `GetMenuLeft()` |  |  |  | `0x002362A0` 48 |  |  |  |
+| `GetMenuPageDown()` |  |  |  | `0x00236A00` 48 |  |  |  |
+| `GetMenuPageUp()` |  |  |  | `0x00236910` 48 |  |  |  |
+| `GetMenuRight()` |  |  |  | `0x00236390` 48 |  |  |  |
+| `GetMenuStartRace()` |  |  |  | `0x0034AA00` 48 |  |  |  |
+| `GetMenuTalk()` |  |  |  | `0x00141E80` 48 |  |  |  |
+| `GetMenuUp()` |  |  |  | `0x002360C0` 48 |  |  |  |
 
 ## Burnout 2 layout of `CControllerMapping`
 
@@ -69,6 +70,70 @@ public:
     /* 0x02C */ CMenuPad mMenuPad;
     /* 0x088 */ float mrLastStart;
     /* 0x08C */ float mrLastSelect;
+};
+```
+
+## Burnout Revenge layout of `CB4ControllerMapping`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 310 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ControllerMapping {  // size 0x16C
+    /* 0x000 */ RwUInt32 muPort;
+    /* 0x004 */ CGtInputDevicePS2DualShock2 *mpPad;
+    /* 0x008 */ CGtInputDevicePS2LogitechWheel *mpWheel;
+    /* 0x00C */ CGtAutoTestPad *mpAutoTestPad;
+    /* 0x010 */ CB4MenuInput mMenuInput;
+    /* 0x168 */ RwReal mrLastInputTime;
+    // methods
+    // CB4ControllerMapping(const CB4ControllerMapping &);
+    // CB4ControllerMapping();
+    // void Construct(unsigned int);
+    // bool Prepare();
+    // void Update();
+    // void UpdateFE();
+    // void Release();
+    // void Destruct();
+    // RwReal GetAccelerator();
+    // RwReal GetBrake();
+    // RwReal GetSteering();
+    // RwReal GetAftertouch();
+    // RwReal GetHorn();
+    // RwReal GetGearUp();
+    // RwReal GetGearDown();
+    // bool GetMusicTrackSkip();
+    // RwReal GetCameraSwitch();
+    // CGtV2d GetPlayerControlledCamera();
+    // RwReal GetPlayerControlledCameraZoom();
+    // CGtV2d GetPeekCamera();
+    // CGtV2d GetCrashbreakerCamera();
+    // RwReal GetLookBack();
+    // RwReal GetBoost();
+    // RwReal GetImpactTime();
+    // RwReal GetInCrashCrashBreaker();
+    // RwReal GetInRaceCrashBreaker();
+    // bool GetCrashModeIntro();
+    // bool GetCrashLaunchButtonPress();
+    // bool PadIsValid();
+    // bool PadIsConnected();
+    // bool WheelIsValid();
+    // bool WheelIsClassA();
+    // bool AnyInput();
+    // bool AnyButtonPressed();
+    // bool GetStartButton(bool);
+    // bool GetSelectButton(bool);
+    // bool GetMenuButton(CB4MenuInput::EMenuControls);
+    // bool GetMenuButton(EGtPS2DualShockDeviceControl);
+    // bool GetCreditsUnlockCheat();
+    // void DebounceMenuButton(CB4MenuInput::EMenuControls);
+    // RwReal GetPadControl(EGtPS2DualShockDeviceControl, bool);
+    // bool IsControlJustPressed(EGtPS2DualShockDeviceControl);
+    // bool IsControlJustReleased(EGtPS2DualShockDeviceControl);
+    // bool IsRightThumbJustPressed();
+    // RwReal GetControllerDeadTime();
+    // void ResetControllerDeadTime();
+    // CGtInputDevicePS2LogitechWheel * GetWheel();
+    // CGtInputDevicePS2DualShock2 * GetPad();
 };
 ```
 

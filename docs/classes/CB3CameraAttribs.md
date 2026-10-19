@@ -8,15 +8,38 @@
 - **Source file:** `B3CameraAttribs.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 2
 - **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CameraAttribs`, size 0x340, methods in `GameSource/Camera/B4CameraAttribs.cpp` ([layout](#burnout-revenge-layout-of-cb4cameraattribs))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UnregisterVariables()` | `0x002B6840` 1160 | `0x002F7550` 1160 | `0x0032B6E0` 1160 | `0x00324160` 1748 |  |  |
-| `RegisterVariables()` | `0x002B6CD0` 3880 | `0x002F79E0` 3928 | `0x0032BB70` 3928 | `0x00322D90` 5060 | `0x002F7E70` likely |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UnregisterVariables()` | `0x002B6840` 1160 | `0x002F7550` 1160 | `0x0032B6E0` 1160 | `0x00324160` 1748 |  |  | `void CB4CameraAttribs::UnregisterVariables()` |
+| `RegisterVariables()` | `0x002B6CD0` 3880 | `0x002F79E0` 3928 | `0x0032BB70` 3928 | `0x00322D90` 5060 | `0x002F7E70` likely |  | `void CB4CameraAttribs::RegisterVariables()` |
+
+## Burnout Revenge layout of `CB4CameraAttribs`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 319 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CameraAttribs {  // size 0x340
+    /* 0x000 */ CB4AttribsHandyCam mHandyCam;
+    /* 0x030 */ CB4AttribsEffects mEffectBurnout;
+    /* 0x090 */ CB4AttribsEffects mEffectShunt;
+    /* 0x0F0 */ CB4AttribsEffects mEffectShunted;
+    /* 0x150 */ CB4AttribsEffects mEffectSlam;
+    /* 0x1B0 */ CB4AttribsEffects mEffectShake;
+    /* 0x210 */ CB4AttribsOffset maOffset[1];
+    /* 0x240 */ char macCameraPath[256];
+    // methods
+    // CB4CameraAttribs(const CB4CameraAttribs &);
+    // CB4CameraAttribs();
+    // void RegisterVariables();
+    // void UnregisterVariables();
+};
+```
 
 ## Notes
 

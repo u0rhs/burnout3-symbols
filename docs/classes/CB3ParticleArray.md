@@ -8,26 +8,58 @@
 - **Source file:** `B3ParticleRendererPS2.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 13
 - **Retail (SLUS-21050):** 7 of its 8 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ParticleArray`, size 0x160, methods in `GameSource/Graphics/ParticleRenderer/Ps2/B4ParticleRendererPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4particlearray))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SpawnParticle(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,float,float,float,float,bool,bool)` | `0x00214E40` 776 | `0x00223F70` 1436 | `0x00263260` 1380 | `0x00268450` 1636 |  |  |
-| `EndUpdate(float,const GtMathPs2::CGtV2d&)` | `0x00215150` 168 | `0x00224510` 204 | `0x002637D0` 168 | `0x00268310` 320 | `0x00254C90` proven |  |
-| `BeginUpdate(float)` | `0x00215200` 8 | `0x002245E0` 100 | `0x00263880` 8 | `0x002682C0` 68 | `0x00254D40` proven |  |
-| `SetLighting(GtMathPs2::CGtV4d,GtMathPs2::CGtV3d)` | `0x00215210` 448 | `0x00224650` 560 | `0x00263890` 448 | `0x00268010` 684 | `0x00254D50` proven |  |
-| `Release()` | `0x002153D0` 8 | `0x00224880` 8 | `0x00263A50` 8 | `0x00267FD0` 60 | `0x00254F10` strong |  |
-| `Prepare()` | `0x002153E0` 776 | `0x00224890` 920 | `0x00263A60` 904 | `0x00267DD0` 152 | `0x00254F20` proven |  |
-| `Destruct()` | `0x002156F0` 8 | `0x00224C30` 8 | `0x00263DF0` 8 | `0x00267D90` 60 | `0x00255230` strong |  |
-| `Construct(EParticleArrayID)` | `0x00215700` 1180 | `0x00224C40` 1428 | `0x00263E00` 1388 | `0x002676B0` 1428 | `0x00255240` proven |  |
-| `CB3ParticleArray()` |  |  |  | `0x002784E0` 44 |  |  |
-| `ConstructGIFTag()` |  |  |  | `0x00267C50` 252 |  |  |
-| `ConstructTex1()` |  |  |  | `0x00267E70` 348 |  |  |
-| `GetSpawnRateScalarCrash()` |  |  |  | `0x0026F0F0` 28 |  |  |
-| `GetSpawnRateScalarRegular()` |  |  |  | `0x0026F110` 28 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SpawnParticle(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,float,float,float,float,bool,bool)` | `0x00214E40` 776 | `0x00223F70` 1436 | `0x00263260` 1380 | `0x00268450` 1636 |  |  | `bool CB4ParticleArray::SpawnParticle(GtMathPs2::CGtV3d lSpawnPosition, GtMathPs2::CGtV3d lSpawnVelocity, float lrSpawnTime, float lrAmbientIntensity, float lrDirectionalIntensity, float lrSizeScale, float lrAlpha, float lrRotationalVelocity, bool lbDestroyOldParticles, bool lbCrash)` |
+| `EndUpdate(float,const GtMathPs2::CGtV2d&)` | `0x00215150` 168 | `0x00224510` 204 | `0x002637D0` 168 | `0x00268310` 320 | `0x00254C90` proven |  | `void CB4ParticleArray::EndUpdate(float lrCurrentTime, const GtMathPs2::CGtV2d &lWind)` |
+| `BeginUpdate(float)` | `0x00215200` 8 | `0x002245E0` 100 | `0x00263880` 8 | `0x002682C0` 68 | `0x00254D40` proven |  | `void CB4ParticleArray::BeginUpdate(float lrCurrentTime)` |
+| `SetLighting(GtMathPs2::CGtV4d,GtMathPs2::CGtV3d)` | `0x00215210` 448 | `0x00224650` 560 | `0x00263890` 448 | `0x00268010` 684 | `0x00254D50` proven |  | `void CB4ParticleArray::SetLighting(GtMathPs2::CGtV4d lLightColour, GtMathPs2::CGtV3d lDirection)` |
+| `Release()` | `0x002153D0` 8 | `0x00224880` 8 | `0x00263A50` 8 | `0x00267FD0` 60 | `0x00254F10` strong |  | `void CB4ParticleArray::Release()` |
+| `Prepare()` | `0x002153E0` 776 | `0x00224890` 920 | `0x00263A60` 904 | `0x00267DD0` 152 | `0x00254F20` proven |  | `bool CB4ParticleArray::Prepare()` |
+| `Destruct()` | `0x002156F0` 8 | `0x00224C30` 8 | `0x00263DF0` 8 | `0x00267D90` 60 | `0x00255230` strong |  | `void CB4ParticleArray::Destruct()` |
+| `Construct(EParticleArrayID)` | `0x00215700` 1180 | `0x00224C40` 1428 | `0x00263E00` 1388 | `0x002676B0` 1428 | `0x00255240` proven |  | `void CB4ParticleArray::Construct(EParticleArrayID leArrayID)` |
+| `CB3ParticleArray()` |  |  |  | `0x002784E0` 44 |  |  |  |
+| `ConstructGIFTag()` |  |  |  | `0x00267C50` 252 |  |  |  |
+| `ConstructTex1()` |  |  |  | `0x00267E70` 348 |  |  |  |
+| `GetSpawnRateScalarCrash()` |  |  |  | `0x0026F0F0` 28 |  |  |  |
+| `GetSpawnRateScalarRegular()` |  |  |  | `0x0026F110` 28 |  |  |  |
+
+## Burnout Revenge layout of `CB4ParticleArray`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 7 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ParticleArray {  // size 0x160
+    /* 0x000 */ CB4ParticleArrayVUData mVUData;
+    /* 0x0F0 */ CGtTexture *mpTexture;
+    /* 0x0F4 */ CB4ParticleArrayStandardParams *mpStandardParams;
+    /* 0x0F8 */ CB4ParticleBank mBankRegular;
+    /* 0x124 */ CB4ParticleBank mBankCrash;
+    /* 0x150 */ RwReal mrMinLifeTime;
+    /* 0x154 */ RwReal mrMaxLifeTime;
+    // methods
+    // CB4ParticleArray(const CB4ParticleArray &);
+    // CB4ParticleArray();
+    // void Construct(EParticleArrayID);
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void SetLighting(GtMathPs2::CGtV4d, GtMathPs2::CGtV3d);
+    // void BeginUpdate(float);
+    // void EndUpdate(float, const GtMathPs2::CGtV2d &);
+    // RwReal GetSpawnRateScalarRegular();
+    // RwReal GetSpawnRateScalarCrash();
+    // bool SpawnParticle(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, float, float, float, float, float, bool, bool);
+    // void ConstructGIFTag();
+    // void ConstructTex1();
+};
+```
 
 ## Notes
 

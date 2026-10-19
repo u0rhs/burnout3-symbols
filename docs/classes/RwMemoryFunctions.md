@@ -6,15 +6,16 @@
 
 - **Area:** [Libraries](../systems/libraries.md)
 - **Methods per build:** B3O0PCH 1
+- **Burnout Revenge counterpart:** `RwMemoryFunctions`, size 0x010 ([layout](#burnout-revenge-layout-of-rwmemoryfunctions))
 - **Burnout 2 ancestor (by name):** `RwMemoryFunctions`, size 0x010, declared in 4 file(s), e.g. `gamesource/Toolkits/linearmalloc.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `operator =(const RwMemoryFunctions&)` |  |  |  | `0x00326040` 92 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `operator =(const RwMemoryFunctions&)` |  |  |  | `0x00326040` 92 |  |  |  |
 
 ## Burnout 2 layout of `RwMemoryFunctions`
 
@@ -27,6 +28,22 @@ public:
     /* 0x004 */ void (*rwfree)(void *);
     /* 0x008 */ void *(*rwrealloc)(void *, unsigned int);
     /* 0x00C */ void *(*rwcalloc)(unsigned int, unsigned int);
+};
+```
+
+## Burnout Revenge layout of `RwMemoryFunctions`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 44 file(s), e.g. `GameShared/GameClasses/Graphical/TextureClasses/Ps2/GtTexturePS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class RwMemoryFunctions {  // size 0x010
+    /* 0x000 */ void *(*rwmalloc)();
+    /* 0x004 */ void (*rwfree)();
+    /* 0x008 */ void *(*rwrealloc)();
+    /* 0x00C */ void *(*rwcalloc)();
+    // methods
+    // RwMemoryFunctions(const RwMemoryFunctions &);
+    // RwMemoryFunctions();
 };
 ```
 

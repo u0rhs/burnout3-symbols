@@ -8,17 +8,18 @@
 - **Source file:** `B3TrailRenderPS2.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 4
 - **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrailRenderer`, size 0x001, methods in `GameSource/Graphics/Trails/Ps2/B4TrailRenderPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4trailrenderer))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Render(CB3TrailEmitter**,int,CB3TrailParams*,EB3TrailType)` | `0x002B2E40` 632 | `0x002F1E50` 712 | `0x00327180` 712 | `0x0031D870` 680 | `0x002F3600` unverified |  |
-| `EndRender()` | `0x002B30C0` 60 | `0x002F2120` 60 | `0x00327450` 60 | `0x0031D820` 68 | `0x002F3870` proven |  |
-| `BeginRender()` | `0x002B3100` 420 | `0x002F2160` 524 | `0x00327490` 524 | `0x0031D5A0` 632 | `0x002F38B0` proven |  |
-| `Construct()` | `0x002B32B0` 268 | `0x002F2370` 268 | `0x003276A0` 268 | `0x0031D450` 328 | `0x002F3A60` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Render(CB3TrailEmitter**,int,CB3TrailParams*,EB3TrailType)` | `0x002B2E40` 632 | `0x002F1E50` 712 | `0x00327180` 712 | `0x0031D870` 680 | `0x002F3600` unverified |  | `void CB4TrailRenderer::Render(CB4TrailEmitter **lppEmitter, int lnEmitterCount, CB4TrailParams *lpParams, EB4TrailType leTrailType)` |
+| `EndRender()` | `0x002B30C0` 60 | `0x002F2120` 60 | `0x00327450` 60 | `0x0031D820` 68 | `0x002F3870` proven |  | `void CB4TrailRenderer::EndRender()` |
+| `BeginRender()` | `0x002B3100` 420 | `0x002F2160` 524 | `0x00327490` 524 | `0x0031D5A0` 632 | `0x002F38B0` proven |  | `void CB4TrailRenderer::BeginRender()` |
+| `Construct()` | `0x002B32B0` 268 | `0x002F2370` 268 | `0x003276A0` 268 | `0x0031D450` 328 | `0x002F3A60` proven |  | `void CB4TrailRenderer::Construct()` |
 
 ## Static data (DNAT_200)
 
@@ -26,6 +27,24 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 |---|---:|---|---|
 | `0x00444188` | 8 | .sbss | `CB3TrailRenderer::mRandom` |
 | `0x01D93360` | 240 | .bss | `CB3TrailRenderer::maDMAParams` |
+
+## Burnout Revenge layout of `CB4TrailRenderer`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Graphics/Trails/Ps2/B4TrailRenderPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrailRenderer {  // size 0x001
+    /* static */ CB4TrailParamsDMA maDMAParams[4];
+    // methods
+    // CB4TrailRenderer(const CB4TrailRenderer &);
+    // CB4TrailRenderer();
+    // static void Construct();
+    // static void BeginRender();
+    // static void EndRender();
+    // static void Render(CB4TrailEmitter **, int, CB4TrailParams *, EB4TrailType);
+    // static void FastMemcpy(void *, void *, int);
+};
+```
 
 ## Notes
 

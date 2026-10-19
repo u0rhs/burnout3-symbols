@@ -8,16 +8,39 @@
 - **Source file:** `B3HUDBoostBar.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 3
 - **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `C2dObjectBoostBarMessage`, size 0x040, methods in `GameSource/Hud/B4HUDBoostBar.cpp` ([layout](#burnout-revenge-layout-of-c2dobjectboostbarmessage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00171510` 1888 | `0x0018D410` 1936 | `0x00187850` 1936 | `0x001A14B0` 2228 | `0x001A5740` unverified |  |
-| `_BuildBatchData(const CGt2dObject::CGt2dObjectSpace&,const GtMathPs2::CGtV2d&,const C2dObjectBoostBar` | `0x00171C70` 652 | `0x0018DBA0` 892 | `0x00187FE0` 892 | `0x001A10A0` 732 | `0x001A6000` strong |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,CB3HUDBoostBar::CBoostMessage*)` |  |  |  | `0x001A0F90` 268 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00171510` 1888 | `0x0018D410` 1936 | `0x00187850` 1936 | `0x001A14B0` 2228 | `0x001A5740` unverified |  | `void C2dObjectBoostBarMessage::_Render(const CGt2dObject::CGt2dObjectSpace &lObjectSpace, const void *lpData)` |
+| `_BuildBatchData(const CGt2dObject::CGt2dObjectSpace&,const GtMathPs2::CGtV2d&,const C2dObjectBoostBar` | `0x00171C70` 652 | `0x0018DBA0` 892 | `0x00187FE0` 892 | `0x001A10A0` 732 | `0x001A6000` strong |  | `RwInt32 C2dObjectBoostBarMessage::_BuildBatchData(const CGt2dObject::CGt2dObjectSpace &lObjectSpace, const GtMathPs2::CGtV2d &lScale, const C2dObjectBoostBarMessage::C2dObjectBoostBarMessageData *lpBoostBarMessageData)` (same name, different parameters) |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,CB3HUDBoostBar::CBoostMessage*)` |  |  |  | `0x001A0F90` 268 |  |  | `void C2dObjectBoostBarMessage::Prepare(const GtMathPs2::CGtV2d &lPos, const GtMathPs2::CGtV2d &lHandle, CB4HUDBoostBar::CBoostMessage *lpBoostMessage)` |
+
+## Burnout Revenge layout of `C2dObjectBoostBarMessage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Hud/B4HUDBoostBar.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class C2dObjectBoostBarMessage : public CGt2dObject {  // size 0x040
+    // base CGt2dObject at 0x000
+    /* static */ RwUInt32 kuTextSpriteSize;
+    /* static */ RwUInt32 kuMaxTextSprites;
+    /* static */ RwUInt32 kuBatchDataUVStart;
+    /* static */ RwUInt32 kuVertexSize;
+    /* static */ RwUInt32 kuMaxVertices;
+    /* static */ RwUInt32 kuBatchDataUVStartItalic;
+    // methods
+    // C2dObjectBoostBarMessage(const C2dObjectBoostBarMessage &);
+    // C2dObjectBoostBarMessage();
+    // void Prepare(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, CB4HUDBoostBar::CBoostMessage *);
+    // static RwInt32 _BuildBatchData(const CGt2dObject::CGt2dObjectSpace &, const GtMathPs2::CGtV2d &, const C2dObjectBoostBarMessage::C2dObjectBoostBarMessageData *);
+    // static void _Render(const CGt2dObject::CGt2dObjectSpace &, const void *);
+};
+```
 
 ## Notes
 

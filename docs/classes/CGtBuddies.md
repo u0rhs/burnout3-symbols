@@ -8,20 +8,113 @@
 - **Source file:** `GtBuddies.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 7
 - **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtBuddies`, size 0x0F0, methods in `GameShared/GameClasses/System/Networking/Buddies/GtBuddies.cpp` ([layout](#burnout-revenge-layout-of-cgtbuddies))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetPresenceDetail(char*,char*,char*)` | `0x00315A50` 96 | `0x0036F940` 96 | `0x0039E810` 96 | `0x0039DAF0` 108 | `0x0035F0A0` proven |  |
-| `Prepare()` | `0x00315AB0` 128 | `0x0036F9A0` 128 | `0x0039E870` 128 | `0x0039D9F0` 204 | `0x0035F100` strong |  |
-| `GetLastError()` |  |  |  | `0x003AD4C0` 40 |  |  |
-| `IsAppearingOffline()` |  |  |  | `0x003ACCE0` 36 |  |  |
-| `IsLoggingIn()` |  |  |  | `0x00380040` 28 |  |  |
-| `IsNewRosterAvailable()` |  |  |  | `0x003A6EC0` 52 |  |  |
-| `SetLastError(EGtBuddyErrorCodes)` |  |  |  | `0x0039DAC0` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetPresenceDetail(char*,char*,char*)` | `0x00315A50` 96 | `0x0036F940` 96 | `0x0039E810` 96 | `0x0039DAF0` 108 | `0x0035F0A0` proven |  |  |
+| `Prepare()` | `0x00315AB0` 128 | `0x0036F9A0` 128 | `0x0039E870` 128 | `0x0039D9F0` 204 | `0x0035F100` strong |  | `bool CGtBuddies::Prepare()` |
+| `GetLastError()` |  |  |  | `0x003AD4C0` 40 |  |  |  |
+| `IsAppearingOffline()` |  |  |  | `0x003ACCE0` 36 |  |  |  |
+| `IsLoggingIn()` |  |  |  | `0x00380040` 28 |  |  |  |
+| `IsNewRosterAvailable()` |  |  |  | `0x003A6EC0` 52 |  |  |  |
+| `SetLastError(EGtBuddyErrorCodes)` |  |  |  | `0x0039DAC0` 36 |  |  | `void CGtBuddies::SetLastError(EGtBuddyErrorCodes leError)` |
+
+## Burnout Revenge layout of `CGtBuddies`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 9 file(s), e.g. `GameShared/GameClasses/System/Networking/Buddies/GtBuddies.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtBuddies {  // size 0x0F0
+    /* 0x000 */ char macSameProduct[100];
+    /* 0x064 */ char macDiffProduct[100];
+    /* 0x0C8 */ char macDiffLang[3];
+    /* 0x0CC */ RwInt32 mnFoundBuddyIndex;
+    /* 0x0D0 */ bool mbNewRosterAvailable;
+    /* 0x0D1 */ bool mbIsLoggingIn;
+    /* 0x0D2 */ bool mbRequestPending;
+    /* 0x0D4 */ EGtBuddyPresence meCurrentPresence;
+    /* 0x0D8 */ EGtBuddyErrorCodes meLastBuddyError;
+    /* 0x0DC */ GtBuddySortCallback mpSortBuddiesCallback;
+    /* 0x0E0 */ void *mpSortBuddiesUserData;
+    /* 0x0E4 */ GtBuddyStandardCallback mpfBuddyCallback;
+    /* 0x0E8 */ void *mpBuddyUserData;
+    /* 0x0EC */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CGtBuddies(const CGtBuddies &);
+    // CGtBuddies();
+    // virtual void Construct();
+    // virtual bool Prepare(const char *, const char *, const char *, const char *, const char *, void *, EGtLanguage);
+    // virtual void Update();
+    // virtual void Release();
+    // virtual void Destruct();
+    // virtual EGtBuddyErrorCodes Connect(const char *, int, const char *, const char *, const char *, unsigned int, const char *);
+    // virtual EGtBuddyErrorCodes Disconnect();
+    // virtual void SetPresenceDetail(const char *, const char *, const char *);
+    // virtual EGtBuddyErrorCodes SetPresence(EGtBuddyPresence, bool);
+    // virtual EGtBuddyErrorCodes SetIsJoinable(bool);
+    // virtual RwInt32 GetNumBuddies();
+    // virtual RwInt32 GetNumOnlineBuddies();
+    // virtual EGtBuddyErrorCodes GetBuddyName(int, char *);
+    // virtual EGtBuddyErrorCodes GetPresence(const char *, EGtBuddyPresence *);
+    // virtual EGtBuddyErrorCodes GetPresenceText(const char *, char *);
+    // virtual EGtBuddyErrorCodes GetBuddyTitleName(const char *, char **);
+    // virtual EGtBuddyErrorCodes SetSortFunction(int (*)(char *, char *, void *), void *);
+    // virtual EGtBuddyErrorCodes FilterBuddies(EGtBuddyFilterType, void *);
+    // virtual EGtBuddyErrorCodes FindBuddy(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes GetFoundBuddyName(char *);
+    // virtual bool IsLoggedIn();
+    // virtual bool IsLoggingIn();
+    // virtual bool IsNewRosterAvailable();
+    // virtual bool IsAppearingOffline();
+    // virtual bool IsFriendRequestPending();
+    // virtual bool IsGameInvitePending();
+    // EGtBuddyErrorCodes DeleteAllMails(const char *);
+    // virtual RwInt32 GetNumberMailAvailable(const char *);
+    // virtual bool HasSentMailTo(const char *);
+    // virtual EGtBuddyErrorCodes GetAndRemoveMail(const char *, int, char *, char *);
+    // virtual EGtBuddyErrorCodes SendMail(const char *, char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes BlockBuddy(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes UnblockBuddy(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes RemoveBuddy(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes RemoveTempBuddy(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes RemoveBlockedBuddy(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes IsTemporaryBuddy(const char *, bool *);
+    // virtual EGtBuddyErrorCodes IsPermanentBuddy(const char *, bool *);
+    // virtual EGtBuddyErrorCodes IsWannaBeMyBuddy(const char *, bool *);
+    // virtual EGtBuddyErrorCodes IsWannaBeHisBuddy(const char *, bool *);
+    // virtual EGtBuddyErrorCodes IsNoReplyBuddy(const char *, bool *);
+    // virtual EGtBuddyErrorCodes IsBlockedBuddy(const char *, bool *);
+    // virtual EGtBuddyErrorCodes IsBuddyJoinable(const char *, bool *);
+    // virtual EGtBuddyErrorCodes HasCrossGameInvitedMe(const char *, bool *);
+    // virtual EGtBuddyErrorCodes HaveICrossGameInvitedThem(const char *, bool *);
+    // virtual EGtBuddyErrorCodes HaveIAcceptedInviteFromBuddy(const char *, bool *);
+    // virtual EGtBuddyErrorCodes IsBuddyPlayingSameGame(const char *, bool *);
+    // virtual EGtBuddyErrorCodes GetBuddyHeadsetStatus(const char *, EGtBuddyHeadsetStatus *);
+    // virtual EGtBuddyErrorCodes SetMyHeadsetStatus(EGtBuddyHeadsetStatus);
+    // virtual bool IsNewMailAvailable();
+    // virtual EGtBuddyErrorCodes BuddyInvite(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes BuddyInviteAccept(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes BuddyInviteReject(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes BuddyInviteRevoke(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes BuddyInviteBlock(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes BuddyJoinBuddyInOtherTitle(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes BuddyGameInvite(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes BuddyGameInviteAccept(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes BuddyGameInviteReject(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes BuddyGameInviteRevoke(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes BuddyGameInviteBlock(const char *, void (*)(EGtBuddyErrorCodes, void *), void *);
+    // virtual EGtBuddyErrorCodes GetLastError();
+    // bool Prepare();
+    // void SetLastError(EGtBuddyErrorCodes);
+    // void SetBuddyCallback(void (*)(EGtBuddyErrorCodes, void *), void *);
+    // void ExecuteAndClearBuddyCallback(EGtBuddyErrorCodes);
+};
+```
 
 ## Notes
 

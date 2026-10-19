@@ -8,20 +8,58 @@
 - **Source file:** `B3SoundSkidModel.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
 - **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4SoundSkidModel`, size 0x064, methods in `GameSource/Sound/Cars/B4SoundSkidModel.cpp` ([layout](#burnout-revenge-layout-of-cb4soundskidmodel))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Destruct()` | `0x0024F410` 8 | `0x00281630` 8 | `0x002B84B0` 8 | `0x002B7490` 16 | `0x0028E200` likely |  |
-| `Release()` | `0x0024F420` 204 | `0x00281640` 204 | `0x002B84C0` 204 | `0x002B7360` 300 | `0x0028E210` strong |  |
-| `Update(const CB3Wheel**,float,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,CGtSoundVirtualVoice**,GtMathPs2::CGtV3d,b` | `0x0024F4F0` 1596 | `0x00281710` 2040 | `0x002B8590` 1596 | `0x002B6AA0` 2024 | `0x0028E2E0` strong |  |
-| `Update(const CB3RaceCar*)` | `0x0024FB30` 460 | `0x00281F10` 1064 | `0x002B8BD0` 772 | `0x002B6670` 1068 | `0x0028EA10` strong |  |
-| `Prepare()` | `0x0024FD00` 320 | `0x00282340` 412 | `0x002B8EE0` 412 | `0x002B6480` 496 | `0x0028EBE0` strong |  |
-| `Construct()` | `0x0024FE40` 3480 | `0x002824E0` 3480 | `0x002B9080` 3480 | `0x002B5350` 4388 | `0x0028ED30` strong |  |
-| `CalculateSpinSlip(const CB3Wheel*,float)` |  |  |  | `0x002B74A0` 188 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Destruct()` | `0x0024F410` 8 | `0x00281630` 8 | `0x002B84B0` 8 | `0x002B7490` 16 | `0x0028E200` likely |  | `void CB4SoundSkidModel::Destruct()` |
+| `Release()` | `0x0024F420` 204 | `0x00281640` 204 | `0x002B84C0` 204 | `0x002B7360` 300 | `0x0028E210` strong |  | `void CB4SoundSkidModel::Release()` |
+| `Update(const CB3Wheel**,float,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,CGtSoundVirtualVoice**,GtMathPs2::CGtV3d,b` | `0x0024F4F0` 1596 | `0x00281710` 2040 | `0x002B8590` 1596 | `0x002B6AA0` 2024 | `0x0028E2E0` strong |  |  |
+| `Update(const CB3RaceCar*)` | `0x0024FB30` 460 | `0x00281F10` 1064 | `0x002B8BD0` 772 | `0x002B6670` 1068 | `0x0028EA10` strong |  | `void CB4SoundSkidModel::Update(const CB4RaceCar *lpRaceCar)` |
+| `Prepare()` | `0x0024FD00` 320 | `0x00282340` 412 | `0x002B8EE0` 412 | `0x002B6480` 496 | `0x0028EBE0` strong |  | `bool CB4SoundSkidModel::Prepare()` |
+| `Construct()` | `0x0024FE40` 3480 | `0x002824E0` 3480 | `0x002B9080` 3480 | `0x002B5350` 4388 | `0x0028ED30` strong |  | `void CB4SoundSkidModel::Construct()` |
+| `CalculateSpinSlip(const CB3Wheel*,float)` |  |  |  | `0x002B74A0` 188 |  |  |  |
+
+## Burnout Revenge layout of `CB4SoundSkidModel`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 279 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4SoundSkidModel {  // size 0x064
+    /* 0x000 */ CGtSoundWave *mapWaves[3];
+    /* 0x00C */ CGtSoundVirtualVoice *mapVoices[6];
+    /* 0x024 */ CGtSoundBank *mpSkidBank;
+    /* 0x028 */ RwReal mrLfoX;
+    /* 0x02C */ RwReal mrLfoXPeriodMultiplier;
+    /* 0x030 */ RwReal mrFlutterDepth;
+    /* 0x034 */ RwReal mrTargetFreqOffsetL;
+    /* 0x038 */ RwReal mrTargetFreqOffsetR;
+    /* 0x03C */ RwReal mrFreqOffsetL;
+    /* 0x040 */ RwReal mrFreqOffsetR;
+    /* 0x044 */ RwReal mrFreqStepL;
+    /* 0x048 */ RwReal mrFreqStepR;
+    /* 0x04C */ float mrFadeScalar[6];
+    // methods
+    // CB4SoundSkidModel(const CB4SoundSkidModel &);
+    // CB4SoundSkidModel();
+    // void Construct();
+    // bool Prepare();
+    // void Update(const CB4RaceCar *);
+    // void Release();
+    // void Destruct();
+    // static bool _CanWeSkidOnThis(const CB4CollisionTag *);
+    // static RwReal _GetSurfaceMultipler(const CB4CollisionTag *);
+    // void Update(const CB4Wheel **, float, float, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, CGtSoundVirtualVoice **, GtMathPs2::CGtV3d, bool, bool, bool, bool, bool, CB4RaceCarPhysics *);
+    // RwReal CalculateFlutter(float, float);
+    // RwReal CalculateLateral(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d);
+    // void RandomiseFreqOffsets();
+    // RwReal GetFadeScalarIncStep(float, float);
+};
+```
 
 ## Notes
 

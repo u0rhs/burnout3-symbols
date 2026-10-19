@@ -8,15 +8,32 @@
 - **Source file:** `Gt2dObjectVideoImage.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 2
 - **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGt2dObjectVideoImage`, size 0x040 ([layout](#burnout-revenge-layout-of-cgt2dobjectvideoimage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002E2630` 656 | `0x0032CF60` 656 | `0x0035F2A0` 656 | `0x0035F360` 784 | `0x00326960` unverified |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CGt` | `0x002E28C0` 312 | `0x0032D1F0` 352 | `0x0035F530` 352 | `0x0035F150` 388 | `0x00326E70` strong |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002E2630` 656 | `0x0032CF60` 656 | `0x0035F2A0` 656 | `0x0035F360` 784 | `0x00326960` unverified |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CGt` | `0x002E28C0` 312 | `0x0032D1F0` 352 | `0x0035F530` 352 | `0x0035F150` 388 | `0x00326E70` strong |  |  |
+
+## Burnout Revenge layout of `CGt2dObjectVideoImage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dObjectVideoImage.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dObjectVideoImage : public CGt2dObject {  // size 0x040
+    // base CGt2dObject at 0x000
+    // methods
+    // CGt2dObjectVideoImage(const CGt2dObjectVideoImage &);
+    // CGt2dObjectVideoImage();
+    // void Prepare(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, GtMathPs2::CGtV4d, CGtVideoDecoder *);
+    // void Prepare(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, GtMathPs2::CGtV4d, CGtVideoDecoder *);
+    // static void _Render(const CGt2dObject::CGt2dObjectSpace &, const void *);
+};
+```
 
 ## Notes
 

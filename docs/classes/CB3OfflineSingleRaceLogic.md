@@ -12,33 +12,33 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetScoreModeFlags()` | `0x003463B0` 8 | `0x003AAD70` 8 | `0x003D5180` 8 | `0x003DF940` 20 |  |  |
-| `GetOfflineGameModeType()` | `0x003463C0` 8 | `0x003AAD80` 8 | `0x003D5190` 8 | `0x003DF960` 20 |  |  |
-| `GetOnlineGameModeType()` | `0x003463D0` 8 | `0x003AAD90` 8 | `0x003D51A0` 8 | `0x003DF980` 20 |  |  |
-| `CanAdjustCameras()` | `0x003463E0` 16 | `0x003AADA0` 16 | `0x003D51B0` 16 | `0x003DF9A0` 36 |  |  |
-| `ClearUpCrash(int)` | `0x003463F0` 8 | `0x003AADB0` 8 | `0x003D51C0` 8 | `0x003DF920` 20 |  |  |
-| `OnRaceCarCollision(ERaceCarCollisionType,CB3RaceCarPhysics*,CB3RaceCarPhysics*,float)` | `0x00346400` 240 | `0x003AADC0` 240 | `0x003D51D0` 240 | `0x003DF7C0` 352 |  |  |
-| `OnBoostStart(CB3RaceCarPhysics*)` | `0x003464F0` 8 | `0x003AAEB0` 8 | `0x003D52C0` 8 | `0x003DF7B0` 16 |  |  |
-| `OnTakedown(CB3RaceCar*,CB3RaceCar*)` | `0x00346500` 72 | `0x003AAEC0` 72 | `0x003D52D0` 72 | `0x003DF730` 120 | `0x003899E0` likely |  |
-| `OnPropHit(CB3RaceCarPhysics*)` | `0x00346550` 8 | `0x003AAF10` 8 | `0x003D5320` 8 | `0x003DF720` 16 |  |  |
-| `OnNonFatalCollision(CB3RaceCarPhysics*,CB3TrafficVehicle*)` | `0x00346560` 16 | `0x003AAF20` 16 | `0x003D5330` 16 | `0x003DF6E0` 56 |  |  |
-| `OnPostCrashReset(CB3RaceCarPhysics*)` | `0x00346570` 48 | `0x003AAF30` 48 | `0x003D5340` 48 | `0x003DF690` 68 |  |  |
-| `OnPreCrashReset(CB3RaceCarPhysics*)` | `0x003465A0` 12 | `0x003AAF60` 12 | `0x003D5370` 12 | `0x003DF660` 48 |  |  |
-| `OnCrashStart(CB3RaceCarPhysics*,CB3CrashStartInfo*)` | `0x003465B0` 152 | `0x003AAF70` 152 | `0x003D5380` 152 | `0x003DF510` 256 | `0x00389AB0` strong |  |
-| `StartReplay()` | `0x00346650` 116 | `0x003AB010` 116 | `0x003D5420` 116 | `0x003DF480` 144 | `0x0038B2F0` strong |  |
-| `GetRacePositionType()` | `0x003466D0` 8 | `0x003AB090` 8 | `0x003D54A0` 8 | `0x003DF460` 20 |  |  |
-| `GetHUDType()` | `0x003466E0` 8 | `0x003AB0A0` 8 | `0x003D54B0` 8 | `0x003DF440` 20 |  |  |
-| `HasStageFinished()` | `0x003466F0` 8 | `0x003AB0B0` 8 | `0x003D54C0` 8 | `0x003DF420` 28 |  |  |
-| `Destruct()` | `0x00346700` 12 | `0x003AB0C0` 12 | `0x003D54D0` 12 | `0x003DF3E0` 56 |  |  |
-| `Release()` | `0x00346710` 12 | `0x003AB0D0` 12 | `0x003D54E0` 12 | `0x003DF3A0` 56 |  |  |
-| `Update()` | `0x00346720` 740 | `0x003AB0E0` 1072 | `0x003D54F0` 1072 | `0x003DEFA0` 956 |  |  |
-| `Prepare()` | `0x00346A10` 128 | `0x003AB510` 72 | `0x003D5920` 128 | `0x003DEF30` 100 |  |  |
-| `Construct()` | `0x00346A90` 12 | `0x003AB560` 12 | `0x003D59A0` 12 | `0x003DEEF0` 56 |  |  |
-| `CB3OfflineSingleRaceLogic()` |  |  |  | `0x0013E1B0` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetScoreModeFlags()` | `0x003463B0` 8 | `0x003AAD70` 8 | `0x003D5180` 8 | `0x003DF940` 20 |  |  |  |
+| `GetOfflineGameModeType()` | `0x003463C0` 8 | `0x003AAD80` 8 | `0x003D5190` 8 | `0x003DF960` 20 |  |  |  |
+| `GetOnlineGameModeType()` | `0x003463D0` 8 | `0x003AAD90` 8 | `0x003D51A0` 8 | `0x003DF980` 20 |  |  |  |
+| `CanAdjustCameras()` | `0x003463E0` 16 | `0x003AADA0` 16 | `0x003D51B0` 16 | `0x003DF9A0` 36 |  |  |  |
+| `ClearUpCrash(int)` | `0x003463F0` 8 | `0x003AADB0` 8 | `0x003D51C0` 8 | `0x003DF920` 20 |  |  |  |
+| `OnRaceCarCollision(ERaceCarCollisionType,CB3RaceCarPhysics*,CB3RaceCarPhysics*,float)` | `0x00346400` 240 | `0x003AADC0` 240 | `0x003D51D0` 240 | `0x003DF7C0` 352 |  |  |  |
+| `OnBoostStart(CB3RaceCarPhysics*)` | `0x003464F0` 8 | `0x003AAEB0` 8 | `0x003D52C0` 8 | `0x003DF7B0` 16 |  |  |  |
+| `OnTakedown(CB3RaceCar*,CB3RaceCar*)` | `0x00346500` 72 | `0x003AAEC0` 72 | `0x003D52D0` 72 | `0x003DF730` 120 | `0x003899E0` likely |  |  |
+| `OnPropHit(CB3RaceCarPhysics*)` | `0x00346550` 8 | `0x003AAF10` 8 | `0x003D5320` 8 | `0x003DF720` 16 |  |  |  |
+| `OnNonFatalCollision(CB3RaceCarPhysics*,CB3TrafficVehicle*)` | `0x00346560` 16 | `0x003AAF20` 16 | `0x003D5330` 16 | `0x003DF6E0` 56 |  |  |  |
+| `OnPostCrashReset(CB3RaceCarPhysics*)` | `0x00346570` 48 | `0x003AAF30` 48 | `0x003D5340` 48 | `0x003DF690` 68 |  |  |  |
+| `OnPreCrashReset(CB3RaceCarPhysics*)` | `0x003465A0` 12 | `0x003AAF60` 12 | `0x003D5370` 12 | `0x003DF660` 48 |  |  |  |
+| `OnCrashStart(CB3RaceCarPhysics*,CB3CrashStartInfo*)` | `0x003465B0` 152 | `0x003AAF70` 152 | `0x003D5380` 152 | `0x003DF510` 256 | `0x00389AB0` strong |  |  |
+| `StartReplay()` | `0x00346650` 116 | `0x003AB010` 116 | `0x003D5420` 116 | `0x003DF480` 144 | `0x0038B2F0` strong |  |  |
+| `GetRacePositionType()` | `0x003466D0` 8 | `0x003AB090` 8 | `0x003D54A0` 8 | `0x003DF460` 20 |  |  |  |
+| `GetHUDType()` | `0x003466E0` 8 | `0x003AB0A0` 8 | `0x003D54B0` 8 | `0x003DF440` 20 |  |  |  |
+| `HasStageFinished()` | `0x003466F0` 8 | `0x003AB0B0` 8 | `0x003D54C0` 8 | `0x003DF420` 28 |  |  |  |
+| `Destruct()` | `0x00346700` 12 | `0x003AB0C0` 12 | `0x003D54D0` 12 | `0x003DF3E0` 56 |  |  |  |
+| `Release()` | `0x00346710` 12 | `0x003AB0D0` 12 | `0x003D54E0` 12 | `0x003DF3A0` 56 |  |  |  |
+| `Update()` | `0x00346720` 740 | `0x003AB0E0` 1072 | `0x003D54F0` 1072 | `0x003DEFA0` 956 |  |  |  |
+| `Prepare()` | `0x00346A10` 128 | `0x003AB510` 72 | `0x003D5920` 128 | `0x003DEF30` 100 |  |  |  |
+| `Construct()` | `0x00346A90` 12 | `0x003AB560` 12 | `0x003D59A0` 12 | `0x003DEEF0` 56 |  |  |  |
+| `CB3OfflineSingleRaceLogic()` |  |  |  | `0x0013E1B0` 60 |  |  |  |
 
 ## Notes
 

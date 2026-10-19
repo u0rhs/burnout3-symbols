@@ -12,27 +12,27 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateRetrieveLogin()` | `0x003007C0` 480 | `0x003551E0` 480 | `0x00386830` 480 | `0x00389140` 608 | `0x003476B0` unverified |  |
-| `OnKeyboardShow()` | `0x003009A0` 8 | `0x003553C0` 8 | `0x00386A10` 8 | `0x00388FE0` 16 | `0x00347890` strong |  |
-| `OnKeyboardCancel()` | `0x003009B0` 144 | `0x003553D0` 144 | `0x00386A20` 144 | `0x00388FA0` 56 | `0x003478A0` likely |  |
-| `OnKeyboardDone()` | `0x00300A40` 964 | `0x00355460` 964 | `0x00386AB0` 964 | `0x00388C30` 868 |  |  |
-| `UpdateRequestingAccountPassword()` | `0x00300E10` 252 | `0x00355830` 252 | `0x00386E80` 252 | `0x00388B10` 284 | `0x00348490` likely |  |
-| `UpdateExistingAccount()` | `0x00300F10` 1296 | `0x00355930` 1296 | `0x00386F80` 1296 | `0x00388370` 1592 | `0x003486B0` unverified |  |
-| `PrepareExistingAccountControls()` | `0x00301420` 520 | `0x00355E40` 520 | `0x00387490` 520 | `0x00387FF0` 492 | `0x00348D10` unverified |  |
-| `UpdateSelectLogin()` | `0x00301630` 412 | `0x00356050` 412 | `0x003876A0` 412 | `0x00387DC0` 556 | `0x003490C0` unverified |  |
-| `PrepareSelectLoginControls()` | `0x003017D0` 496 | `0x003561F0` 496 | `0x00387840` 496 | `0x00387B50` 620 | `0x00349280` unverified |  |
-| `Release()` | `0x003019C0` 12 | `0x003563E0` 12 | `0x00387A30` 12 | `0x00387B20` 40 |  |  |
-| `Update()` | `0x003019D0` 588 | `0x003563F0` 588 | `0x00387A40` 588 | `0x00387950` 452 | `0x003494F0` unverified |  |
-| `PrepareRetrieveLogin()` | `0x00301C20` 368 | `0x00356640` 392 | `0x00387C90` 392 | `0x003877A0` 424 |  |  |
-| `Prepare()` | `0x00301D90` 276 | `0x003567D0` 276 | `0x00387E20` 276 | `0x00387620` 376 | `0x00349840` unverified |  |
-| `CB3OnlineSelectLoginPage()` |  |  |  | `0x00341A00` 60 |  |  |
-| `HideKeyboard()` |  |  |  | `0x00389080` 180 |  |  |
-| `ShowKeyboard(CB3OnlineSelectLoginPage::ESelectLoginKeyboardMode)` |  |  |  | `0x00388FF0` 132 |  |  |
-| `UpdateRequestingAccountInfo()` |  |  |  | `0x00388A00` 260 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateRetrieveLogin()` | `0x003007C0` 480 | `0x003551E0` 480 | `0x00386830` 480 | `0x00389140` 608 | `0x003476B0` unverified |  |  |
+| `OnKeyboardShow()` | `0x003009A0` 8 | `0x003553C0` 8 | `0x00386A10` 8 | `0x00388FE0` 16 | `0x00347890` strong |  |  |
+| `OnKeyboardCancel()` | `0x003009B0` 144 | `0x003553D0` 144 | `0x00386A20` 144 | `0x00388FA0` 56 | `0x003478A0` likely |  |  |
+| `OnKeyboardDone()` | `0x00300A40` 964 | `0x00355460` 964 | `0x00386AB0` 964 | `0x00388C30` 868 |  |  |  |
+| `UpdateRequestingAccountPassword()` | `0x00300E10` 252 | `0x00355830` 252 | `0x00386E80` 252 | `0x00388B10` 284 | `0x00348490` likely |  |  |
+| `UpdateExistingAccount()` | `0x00300F10` 1296 | `0x00355930` 1296 | `0x00386F80` 1296 | `0x00388370` 1592 | `0x003486B0` unverified |  |  |
+| `PrepareExistingAccountControls()` | `0x00301420` 520 | `0x00355E40` 520 | `0x00387490` 520 | `0x00387FF0` 492 | `0x00348D10` unverified |  |  |
+| `UpdateSelectLogin()` | `0x00301630` 412 | `0x00356050` 412 | `0x003876A0` 412 | `0x00387DC0` 556 | `0x003490C0` unverified |  |  |
+| `PrepareSelectLoginControls()` | `0x003017D0` 496 | `0x003561F0` 496 | `0x00387840` 496 | `0x00387B50` 620 | `0x00349280` unverified |  |  |
+| `Release()` | `0x003019C0` 12 | `0x003563E0` 12 | `0x00387A30` 12 | `0x00387B20` 40 |  |  |  |
+| `Update()` | `0x003019D0` 588 | `0x003563F0` 588 | `0x00387A40` 588 | `0x00387950` 452 | `0x003494F0` unverified |  |  |
+| `PrepareRetrieveLogin()` | `0x00301C20` 368 | `0x00356640` 392 | `0x00387C90` 392 | `0x003877A0` 424 |  |  |  |
+| `Prepare()` | `0x00301D90` 276 | `0x003567D0` 276 | `0x00387E20` 276 | `0x00387620` 376 | `0x00349840` unverified |  |  |
+| `CB3OnlineSelectLoginPage()` |  |  |  | `0x00341A00` 60 |  |  |  |
+| `HideKeyboard()` |  |  |  | `0x00389080` 180 |  |  |  |
+| `ShowKeyboard(CB3OnlineSelectLoginPage::ESelectLoginKeyboardMode)` |  |  |  | `0x00388FF0` 132 |  |  |  |
+| `UpdateRequestingAccountInfo()` |  |  |  | `0x00388A00` 260 |  |  |  |
 
 ## Notes
 

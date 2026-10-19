@@ -8,31 +8,51 @@
 - **Source file:** `B3ChampionshipChallenge.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 10, B3INTERN 10, B3O0PCH 18
 - **vtable (DNAT_200):** `0x00441690`, 40 bytes = 10 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 8 virtual functions)
+- **Burnout Revenge counterpart:** `CB4ChampionshipChallenge`, size 0xB160, methods in `GameSource/Game/Challenge/B4ChampionshipChallenge.cpp` ([layout](#burnout-revenge-layout-of-cb4championshipchallenge))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdatePoints()` | `0x0036DEA0` 252 | `0x003DB320` 460 | `0x00403E70` 460 | `0x00417840` 476 |  |  |
-| `OnChallengeFinishDriving()` | `0x0036DFA0` 164 | `0x003DB710` 228 | `0x00404260` 228 | `0x00417600` 184 |  |  |
-| `OnChallengeRestart()` | `0x0036E050` 340 | `0x003DB800` 60 | `0x00404350` 60 | `0x004175B0` 80 |  |  |
-| `OnEndOfChallenge()` | `0x0036E1B0` 360 | `0x003DB840` 72 | `0x00404390` 72 | `0x00417540` 108 |  |  |
-| `Update()` | `0x0036E320` 8 | `0x003DB890` 8 | `0x004043E0` 8 | `0x00417530` 16 |  |  |
-| `Destruct()` | `0x0036E330` 8 | `0x003DB8A0` 8 | `0x004043F0` 8 | `0x00417500` 40 |  |  |
-| `Release()` | `0x0036E340` 56 | `0x003DB8B0` 56 | `0x00404400` 56 | `0x004174B0` 76 |  |  |
-| `Prepare()` | `0x0036E380` 196 | `0x003DB8F0` 196 | `0x00404440` 196 | `0x00417390` 288 |  |  |
-| `Construct()` | `0x0036E450` 64 | `0x003DB9C0` 64 | `0x00404510` 64 | `0x00417330` 88 |  |  |
-| `StartStage(int)` |  | `0x003DB4F0` 532 | `0x00404040` 532 | `0x004176C0` 372 |  |  |
-| `CB3ChampionshipChallenge()` |  |  |  | `0x0013DD00` 60 |  |  |
-| `GetChallengeType()` |  |  |  | `0x00424C90` 32 |  |  |
-| `GetCurrentPoints(int)` |  |  |  | `0x00414420` 44 |  |  |
-| `GetCurrentStageIndex()` |  |  |  | `0x0048D0E0` 28 |  |  |
-| `GetCurrentStandingsCar(int)` |  |  |  | `0x00414450` 48 |  |  |
-| `GetNumStages()` |  |  |  | `0x0048D0C0` 32 |  |  |
-| `GetPointsForFinishPosition(int)` |  |  |  | `0x00417A20` 80 |  |  |
-| `SetCurrentStageIndex(int)` |  |  |  | `0x0033DB80` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdatePoints()` | `0x0036DEA0` 252 | `0x003DB320` 460 | `0x00403E70` 460 | `0x00417840` 476 |  |  |  |
+| `OnChallengeFinishDriving()` | `0x0036DFA0` 164 | `0x003DB710` 228 | `0x00404260` 228 | `0x00417600` 184 |  |  |  |
+| `OnChallengeRestart()` | `0x0036E050` 340 | `0x003DB800` 60 | `0x00404350` 60 | `0x004175B0` 80 |  |  |  |
+| `OnEndOfChallenge()` | `0x0036E1B0` 360 | `0x003DB840` 72 | `0x00404390` 72 | `0x00417540` 108 |  |  |  |
+| `Update()` | `0x0036E320` 8 | `0x003DB890` 8 | `0x004043E0` 8 | `0x00417530` 16 |  |  | `void CB4ChampionshipChallenge::Update()` |
+| `Destruct()` | `0x0036E330` 8 | `0x003DB8A0` 8 | `0x004043F0` 8 | `0x00417500` 40 |  |  | `void CB4ChampionshipChallenge::Destruct()` |
+| `Release()` | `0x0036E340` 56 | `0x003DB8B0` 56 | `0x00404400` 56 | `0x004174B0` 76 |  |  | `void CB4ChampionshipChallenge::Release()` |
+| `Prepare()` | `0x0036E380` 196 | `0x003DB8F0` 196 | `0x00404440` 196 | `0x00417390` 288 |  |  | `bool CB4ChampionshipChallenge::Prepare()` |
+| `Construct()` | `0x0036E450` 64 | `0x003DB9C0` 64 | `0x00404510` 64 | `0x00417330` 88 |  |  | `void CB4ChampionshipChallenge::Construct()` |
+| `StartStage(int)` |  | `0x003DB4F0` 532 | `0x00404040` 532 | `0x004176C0` 372 |  |  |  |
+| `CB3ChampionshipChallenge()` |  |  |  | `0x0013DD00` 60 |  |  |  |
+| `GetChallengeType()` |  |  |  | `0x00424C90` 32 |  |  |  |
+| `GetCurrentPoints(int)` |  |  |  | `0x00414420` 44 |  |  |  |
+| `GetCurrentStageIndex()` |  |  |  | `0x0048D0E0` 28 |  |  |  |
+| `GetCurrentStandingsCar(int)` |  |  |  | `0x00414450` 48 |  |  |  |
+| `GetNumStages()` |  |  |  | `0x0048D0C0` 32 |  |  |  |
+| `GetPointsForFinishPosition(int)` |  |  |  | `0x00417A20` 80 |  |  |  |
+| `SetCurrentStageIndex(int)` |  |  |  | `0x0033DB80` 36 |  |  |  |
+
+## Burnout Revenge layout of `CB4ChampionshipChallenge`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameSource/Game/B4Game.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ChampionshipChallenge : public CB4Challenge {  // size 0xB160
+    // base CB4Challenge at 0x000
+    // methods
+    // CB4ChampionshipChallenge(const CB4ChampionshipChallenge &);
+    // CB4ChampionshipChallenge();
+    // virtual void Construct();
+    // virtual bool Prepare();
+    // virtual void Release();
+    // virtual void Destruct();
+    // virtual void Update();
+    // virtual bool ShouldWeUseNextRaceSetupConfig();
+};
+```
 
 ## Notes
 

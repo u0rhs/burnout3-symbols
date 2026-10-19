@@ -9,20 +9,20 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetRawData()` |  |  |  | `0x002285C0` 28 |  |  |
-| `GtV3d()` |  |  |  | `0x0014D670` 52 |  |  |
-| `Plus()` |  |  |  | `0x0014A870` 52 |  |  |
-| `SetGtV3d(GtMathPs2::CGtV3d)` |  |  |  | `0x001314C0` 56 |  |  |
-| `SetPlus(GtMathPs2::WAxisType)` |  |  |  | `0x001A77B0` 56 |  |  |
-| `SetPlus(GtMathPs2::YAxisType)` |  |  |  | `0x002793C0` 80 |  |  |
-| `SetPlus(GtMathPs2::ZAxisType)` |  |  |  | `0x00228380` 80 |  |  |
-| `SetPlus(float)` |  |  |  | `0x00134B60` 72 |  |  |
-| `Zero()` |  |  |  | `0x0017C480` 28 |  |  |
-| `operator =(const GtMathPs2::CGtV3dPlus&)` |  |  |  | `0x00279830` 44 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetRawData()` |  |  |  | `0x002285C0` 28 |  |  |  |
+| `GtV3d()` |  |  |  | `0x0014D670` 52 |  |  |  |
+| `Plus()` |  |  |  | `0x0014A870` 52 |  |  |  |
+| `SetGtV3d(GtMathPs2::CGtV3d)` |  |  |  | `0x001314C0` 56 |  |  |  |
+| `SetPlus(GtMathPs2::WAxisType)` |  |  |  | `0x001A77B0` 56 |  |  |  |
+| `SetPlus(GtMathPs2::YAxisType)` |  |  |  | `0x002793C0` 80 |  |  |  |
+| `SetPlus(GtMathPs2::ZAxisType)` |  |  |  | `0x00228380` 80 |  |  |  |
+| `SetPlus(float)` |  |  |  | `0x00134B60` 72 |  |  |  |
+| `Zero()` |  |  |  | `0x0017C480` 28 |  |  |  |
+| `operator =(const GtMathPs2::CGtV3dPlus&)` |  |  |  | `0x00279830` 44 |  |  |  |
 
 ## Notes
 

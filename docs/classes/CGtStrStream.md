@@ -6,24 +6,56 @@
 
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Methods per build:** B3O0PCH 11
+- **Burnout Revenge counterpart:** `CGtStrStream`, size 0x00C ([layout](#burnout-revenge-layout-of-cgtstrstream))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CGtStrStream(char*,int)` |  |  |  | `0x0013AC40` 76 |  |  |
-| `GetBuffer()` |  |  |  | `0x0013AB30` 28 |  |  |
-| `Reset()` |  |  |  | `0x0013AC90` 40 |  |  |
-| `operator <<(EGtPrintMode)` |  |  |  | `0x00237710` 40 |  |  |
-| `operator <<(char)` |  |  |  | `0x002248C0` 92 |  |  |
-| `operator <<(const char*)` |  |  |  | `0x0013AC00` 56 |  |  |
-| `operator <<(float)` |  |  |  | `0x001513B0` 208 |  |  |
-| `operator <<(int)` |  |  |  | `0x0013CC10` 176 |  |  |
-| `operator <<(unsigned int)` |  |  |  | `0x0013AB50` 176 |  |  |
-| `operator <<(unsigned long)` |  |  |  | `0x0033D0C0` 68 |  |  |
-| `operator <<(void*)` |  |  |  | `0x002376A0` 100 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CGtStrStream(char*,int)` |  |  |  | `0x0013AC40` 76 |  |  |  |
+| `GetBuffer()` |  |  |  | `0x0013AB30` 28 |  |  |  |
+| `Reset()` |  |  |  | `0x0013AC90` 40 |  |  |  |
+| `operator <<(EGtPrintMode)` |  |  |  | `0x00237710` 40 |  |  |  |
+| `operator <<(char)` |  |  |  | `0x002248C0` 92 |  |  |  |
+| `operator <<(const char*)` |  |  |  | `0x0013AC00` 56 |  |  |  |
+| `operator <<(float)` |  |  |  | `0x001513B0` 208 |  |  |  |
+| `operator <<(int)` |  |  |  | `0x0013CC10` 176 |  |  |  |
+| `operator <<(unsigned int)` |  |  |  | `0x0013AB50` 176 |  |  |  |
+| `operator <<(unsigned long)` |  |  |  | `0x0033D0C0` 68 |  |  |  |
+| `operator <<(void*)` |  |  |  | `0x002376A0` 100 |  |  |  |
+
+## Burnout Revenge layout of `CGtStrStream`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameShared/GameClasses/Development/GtStrStream.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtStrStream {  // size 0x00C
+    /* 0x000 */ char *mpcCharBuffer;
+    /* 0x004 */ RwInt32 mnBufferSize;
+    /* 0x008 */ EGtPrintMode meCurrentPrintMode;
+    /* static */ char *macInteger;
+    /* static */ char *macUnsigned;
+    /* static */ char *macHex;
+    /* static */ char *macFloat;
+    /* static */ char *macChar;
+    // methods
+    // CGtStrStream(const CGtStrStream &);
+    // CGtStrStream(char *, int);
+    // void Reset();
+    // CGtStrStream & __ls(const char *);
+    // CGtStrStream & __ls(int);
+    // CGtStrStream & __ls(unsigned int);
+    // CGtStrStream & __ls(float);
+    // CGtStrStream & __ls(char);
+    // CGtStrStream & __ls(unsigned long);
+    // CGtStrStream & __ls(void *);
+    // CGtStrStream & __ls(EGtPrintMode);
+    // CGtStrStream & __ls(long);
+    // char * GetBuffer();
+};
+```
 
 ## Notes
 

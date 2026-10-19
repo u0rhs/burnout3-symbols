@@ -12,18 +12,18 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_SentMailCallback(bool,int,void*)` | `0x0032D8F0` 12 | `0x00389580` 12 | `0x003B8130` 12 | `0x003BA200` 48 |  |  |
-| `OnKeyboardShow()` | `0x0032D900` 8 | `0x00389590` 8 | `0x003B8140` 8 | `0x003BA1F0` 16 |  |  |
-| `OnKeyboardCancel()` | `0x0032D910` 72 | `0x003895A0` 72 | `0x003B8150` 72 | `0x003BA190` 88 |  |  |
-| `OnKeyboardDone()` | `0x0032D960` 232 | `0x003895F0` 232 | `0x003B81A0` 232 | `0x003BA070` 284 | `0x00372B20` unverified |  |
-| `Release()` | `0x0032DA50` 12 | `0x003896E0` 12 | `0x003B8290` 12 | `0x003BA040` 40 |  |  |
-| `Update()` | `0x0032DA60` 992 | `0x003896F0` 992 | `0x003B82A0` 992 | `0x003B9B40` 1280 | `0x00372BA0` unverified |  |
-| `Prepare()` | `0x0032DE40` 288 | `0x00389AD0` 288 | `0x003B8680` 288 | `0x003B99D0` 356 |  |  |
-| `CB3OnlineReadMailMenuPage()` |  |  |  | `0x00341840` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_SentMailCallback(bool,int,void*)` | `0x0032D8F0` 12 | `0x00389580` 12 | `0x003B8130` 12 | `0x003BA200` 48 |  |  |  |
+| `OnKeyboardShow()` | `0x0032D900` 8 | `0x00389590` 8 | `0x003B8140` 8 | `0x003BA1F0` 16 |  |  |  |
+| `OnKeyboardCancel()` | `0x0032D910` 72 | `0x003895A0` 72 | `0x003B8150` 72 | `0x003BA190` 88 |  |  |  |
+| `OnKeyboardDone()` | `0x0032D960` 232 | `0x003895F0` 232 | `0x003B81A0` 232 | `0x003BA070` 284 | `0x00372B20` unverified |  |  |
+| `Release()` | `0x0032DA50` 12 | `0x003896E0` 12 | `0x003B8290` 12 | `0x003BA040` 40 |  |  |  |
+| `Update()` | `0x0032DA60` 992 | `0x003896F0` 992 | `0x003B82A0` 992 | `0x003B9B40` 1280 | `0x00372BA0` unverified |  |  |
+| `Prepare()` | `0x0032DE40` 288 | `0x00389AD0` 288 | `0x003B8680` 288 | `0x003B99D0` 356 |  |  |  |
+| `CB3OnlineReadMailMenuPage()` |  |  |  | `0x00341840` 60 |  |  |  |
 
 ## Notes
 

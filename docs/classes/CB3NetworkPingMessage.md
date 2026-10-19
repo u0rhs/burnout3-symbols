@@ -7,16 +7,36 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3NetworkPingMessage.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 1, B3INTERN 3, B3O0PCH 1
+- **Burnout Revenge counterpart:** `CB4NetworkPingMessage`, size 0x00C, methods in `GameSource/Network/Messages/B4NetworkPingMessage.cpp` ([layout](#burnout-revenge-layout-of-cb4networkpingmessage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Retrieve(float*)` | `0x00277F90` 60 |  | `0x002E2620` 1048 |  |  |  |
-| `Prepare(float)` | `0x00277FD0` 56 |  | `0x002E2A40` 120 |  |  |  |
-| `Construct()` | `0x00278010` 8 | `0x002AB820` 8 | `0x002E2AC0` 8 | `0x002E0D90` 40 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Retrieve(float*)` | `0x00277F90` 60 |  | `0x002E2620` 1048 |  |  |  | `bool CB4NetworkPingMessage::Retrieve(float *lrPingTime)` |
+| `Prepare(float)` | `0x00277FD0` 56 |  | `0x002E2A40` 120 |  |  |  | `void CB4NetworkPingMessage::Prepare(float lrGameTime)` |
+| `Construct()` | `0x00278010` 8 | `0x002AB820` 8 | `0x002E2AC0` 8 | `0x002E0D90` 40 |  |  | `void CB4NetworkPingMessage::Construct()` |
+
+## Burnout Revenge layout of `CB4NetworkPingMessage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 92 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkPingMessage : public CB4NetworkMessage {  // size 0x00C
+    // base CB4NetworkMessage at 0x000
+    /* 0x008 */ RwReal mrPingTime;
+    // methods
+    // CB4NetworkPingMessage(const CB4NetworkPingMessage &);
+    // CB4NetworkPingMessage();
+    // void Construct();
+    // void Prepare(float);
+    // bool Retrieve(float *);
+    // void Release();
+    // void Destruct();
+};
+```
 
 ## Notes
 

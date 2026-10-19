@@ -8,48 +8,122 @@
 - **Source file:** `B3CameraEditor.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 33, B3INTERN 7, B3O0PCH 35
 - **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CameraEditor`, size 0x034, methods in `GameSource/Camera/Movie/B4CameraEditor.cpp` ([layout](#burnout-revenge-layout-of-cb4cameraeditor))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update()` | `0x00332650` 8 | `0x0038F010` 60 | `0x003BD540` 8 | `0x003C26B0` 84 | `0x003744F0` likely |  |
-| `Release()` | `0x00332660` 8 | `0x0038E9C0` 144 | `0x003BD550` 8 | `0x003C2E00` 184 | `0x00374500` likely |  |
-| `Prepare(CB3EditorParams*)` | `0x00332670` 8 | `0x0038F050` 424 | `0x003BD560` 8 | `0x003C2450` 608 | `0x00374510` likely |  |
-| `Destruct()` | `0x00332680` 8 | `0x0038E980` 52 | `0x003BD570` 8 | `0x003C2EC0` 64 | `0x00374520` strong |  |
-| `Construct(CB3PlayerCameraManager*)` | `0x00332690` 20 | `0x0038F200` 328 | `0x003BD580` 20 | `0x003C2280` 452 | `0x00374530` strong |  |
-| `LoadMungedKeyFrames(void*,EB3KeyFrameType)` | `0x003326B0` 612 | `0x00393150` 612 | `0x003BD5A0` 612 | `0x003C0860` 880 | `0x00374550` unverified |  |
-| `Unregister(int*)` |  | `0x0038EA50` 288 |  | `0x003C2C90` 360 |  |  |
-| `Register(int*)` |  | `0x0038EB70` 992 |  | `0x003C2820` 1136 |  |  |
-| `Render()` |  | `0x0038EF50` 180 | `0x003BD530` 8 | `0x003C2710` 272 |  |  |
-| `LoadKeyFrames(CB3CameraKeyFrame*,EB3KeyFrameType)` |  | `0x0038F350` 488 |  | `0x003C1EB0` 624 |  |  |
-| `LoadKeyFramesCallback(void*)` |  | `0x0038F540` 48 |  | `0x003C1E70` 60 |  |  |
-| `SaveKeyFramesCallback(void*)` |  | `0x0038F570` 416 |  | `0x003C1E40` 40 |  |  |
-| `DeleteKeyFrameCallback(void*)` |  | `0x0038F710` 240 |  | `0x003C1D60` 224 |  |  |
-| `InsertKeyFrameCallback(void*)` |  | `0x0038F800` 280 |  | `0x003C1BB0` 228 |  |  |
-| `PlayEditedCallback(void*)` |  | `0x0038F920` 104 |  | `0x003C1B30` 120 |  |  |
-| `StepCallback(void*)` |  | `0x0038F990` 8 |  | `0x003C1B00` 36 |  |  |
-| `RestartCallback(void*)` |  | `0x0038F9A0` 828 |  | `0x003C1980` 372 |  |  |
-| `EditCallback(void*)` |  | `0x0038FCE0` 112 |  | `0x003C18D0` 168 |  |  |
-| `PreviewCallback(void*)` |  | `0x0038FD50` 100 |  | `0x003C1850` 124 |  |  |
-| `PlaceCallback(void*)` |  | `0x0038FDC0` 4188 |  | `0x003C1560` 740 |  |  |
-| `InGameCallback(void*)` |  | `0x00390E20` 212 |  | `0x003C14F0` 108 |  |  |
-| `CallbackGetTextEditorType(void*,void*,char*,const char*)` |  | `0x00390F00` 40 |  | `0x003C14A0` 80 |  |  |
-| `CallbackGetTextRecord(void*,void*,char*,const char*)` |  | `0x00390F30` 48 |  | `0x003C1430` 108 |  |  |
-| `CallbackEditRecord(void*,void*,int)` |  | `0x00390F60` 68 |  | `0x003C13C0` 112 |  |  |
-| `CallbackGetTextPause(void*,void*,char*,const char*)` |  | `0x00390FB0` 48 |  | `0x003C1350` 108 |  |  |
-| `CallbackEditPause(void*,void*,int)` |  | `0x00390FE0` 68 |  | `0x003C12E0` 112 |  |  |
-| `CallbackGetTextRaceCar(void*,void*,char*,const char*)` |  | `0x00391030` 24 |  | `0x003C1280` 92 |  |  |
-| `CallbackEditRaceCar(void*,void*,int)` |  | `0x00391050` 4096 |  | `0x003C11C0` 192 |  |  |
-| `CallbackGetTextTransition(void*,void*,char*,const char*)` |  | `0x00392050` 48 |  | `0x003C1150` 108 |  |  |
-| `CallbackEditTransition(void*,void*,int)` |  | `0x00392080` 68 |  | `0x003C10E0` 112 |  |  |
-| `CallbackGetTextBehaviour(void*,void*,char*,const char*)` |  | `0x003920D0` 44 |  | `0x003C1070` 108 |  |  |
-| `CallbackEditBehaviour(void*,void*,int)` |  | `0x00392100` 4036 |  | `0x003C0FF0` 128 |  |  |
-| `KeyFrameChangeCallback(void*,void*)` |  | `0x003930D0` 124 |  | `0x003C0F30` 136 |  |  |
-| `GetCurrentFrame()` |  |  |  | `0x003C0FC0` 44 |  |  |
-| `SetBehaviour()` |  |  |  | `0x003C2120` 348 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update()` | `0x00332650` 8 | `0x0038F010` 60 | `0x003BD540` 8 | `0x003C26B0` 84 | `0x003744F0` likely |  | `void CB4CameraEditor::Update()` |
+| `Release()` | `0x00332660` 8 | `0x0038E9C0` 144 | `0x003BD550` 8 | `0x003C2E00` 184 | `0x00374500` likely |  | `void CB4CameraEditor::Release()` |
+| `Prepare(CB3EditorParams*)` | `0x00332670` 8 | `0x0038F050` 424 | `0x003BD560` 8 | `0x003C2450` 608 | `0x00374510` likely |  | `bool CB4CameraEditor::Prepare()` (same name, different parameters) |
+| `Destruct()` | `0x00332680` 8 | `0x0038E980` 52 | `0x003BD570` 8 | `0x003C2EC0` 64 | `0x00374520` strong |  | `void CB4CameraEditor::Destruct()` |
+| `Construct(CB3PlayerCameraManager*)` | `0x00332690` 20 | `0x0038F200` 328 | `0x003BD580` 20 | `0x003C2280` 452 | `0x00374530` strong |  | `void CB4CameraEditor::Construct(CB4PlayerCameraManager *lpManager)` |
+| `LoadMungedKeyFrames(void*,EB3KeyFrameType)` | `0x003326B0` 612 | `0x00393150` 612 | `0x003BD5A0` 612 | `0x003C0860` 880 | `0x00374550` unverified |  |  |
+| `Unregister(int*)` |  | `0x0038EA50` 288 |  | `0x003C2C90` 360 |  |  |  |
+| `Register(int*)` |  | `0x0038EB70` 992 |  | `0x003C2820` 1136 |  |  |  |
+| `Render()` |  | `0x0038EF50` 180 | `0x003BD530` 8 | `0x003C2710` 272 |  |  |  |
+| `LoadKeyFrames(CB3CameraKeyFrame*,EB3KeyFrameType)` |  | `0x0038F350` 488 |  | `0x003C1EB0` 624 |  |  |  |
+| `LoadKeyFramesCallback(void*)` |  | `0x0038F540` 48 |  | `0x003C1E70` 60 |  |  |  |
+| `SaveKeyFramesCallback(void*)` |  | `0x0038F570` 416 |  | `0x003C1E40` 40 |  |  |  |
+| `DeleteKeyFrameCallback(void*)` |  | `0x0038F710` 240 |  | `0x003C1D60` 224 |  |  |  |
+| `InsertKeyFrameCallback(void*)` |  | `0x0038F800` 280 |  | `0x003C1BB0` 228 |  |  |  |
+| `PlayEditedCallback(void*)` |  | `0x0038F920` 104 |  | `0x003C1B30` 120 |  |  |  |
+| `StepCallback(void*)` |  | `0x0038F990` 8 |  | `0x003C1B00` 36 |  |  |  |
+| `RestartCallback(void*)` |  | `0x0038F9A0` 828 |  | `0x003C1980` 372 |  |  |  |
+| `EditCallback(void*)` |  | `0x0038FCE0` 112 |  | `0x003C18D0` 168 |  |  |  |
+| `PreviewCallback(void*)` |  | `0x0038FD50` 100 |  | `0x003C1850` 124 |  |  |  |
+| `PlaceCallback(void*)` |  | `0x0038FDC0` 4188 |  | `0x003C1560` 740 |  |  |  |
+| `InGameCallback(void*)` |  | `0x00390E20` 212 |  | `0x003C14F0` 108 |  |  |  |
+| `CallbackGetTextEditorType(void*,void*,char*,const char*)` |  | `0x00390F00` 40 |  | `0x003C14A0` 80 |  |  |  |
+| `CallbackGetTextRecord(void*,void*,char*,const char*)` |  | `0x00390F30` 48 |  | `0x003C1430` 108 |  |  |  |
+| `CallbackEditRecord(void*,void*,int)` |  | `0x00390F60` 68 |  | `0x003C13C0` 112 |  |  |  |
+| `CallbackGetTextPause(void*,void*,char*,const char*)` |  | `0x00390FB0` 48 |  | `0x003C1350` 108 |  |  |  |
+| `CallbackEditPause(void*,void*,int)` |  | `0x00390FE0` 68 |  | `0x003C12E0` 112 |  |  |  |
+| `CallbackGetTextRaceCar(void*,void*,char*,const char*)` |  | `0x00391030` 24 |  | `0x003C1280` 92 |  |  |  |
+| `CallbackEditRaceCar(void*,void*,int)` |  | `0x00391050` 4096 |  | `0x003C11C0` 192 |  |  |  |
+| `CallbackGetTextTransition(void*,void*,char*,const char*)` |  | `0x00392050` 48 |  | `0x003C1150` 108 |  |  |  |
+| `CallbackEditTransition(void*,void*,int)` |  | `0x00392080` 68 |  | `0x003C10E0` 112 |  |  |  |
+| `CallbackGetTextBehaviour(void*,void*,char*,const char*)` |  | `0x003920D0` 44 |  | `0x003C1070` 108 |  |  |  |
+| `CallbackEditBehaviour(void*,void*,int)` |  | `0x00392100` 4036 |  | `0x003C0FF0` 128 |  |  |  |
+| `KeyFrameChangeCallback(void*,void*)` |  | `0x003930D0` 124 |  | `0x003C0F30` 136 |  |  |  |
+| `GetCurrentFrame()` |  |  |  | `0x003C0FC0` 44 |  |  |  |
+| `SetBehaviour()` |  |  |  | `0x003C2120` 348 |  |  |  |
+
+## Burnout Revenge layout of `CB4CameraEditor`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 318 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CameraEditor {  // size 0x034
+    /* 0x000 */ EB4CameraEditorMode meMode;
+    /* 0x004 */ bool mbTakeVideo;
+    /* 0x005 */ bool mbVideoMarker;
+    /* 0x006 */ bool mbRenderHUD;
+    /* 0x008 */ CB4PlayerCameraManager *mpManager;
+    /* 0x00C */ CB4CameraKeyFrame *mpKeyFrameArray;
+    /* 0x010 */ CB4CameraReel *mpCheckedOutReel;
+    /* 0x014 */ RwInt32 *mpCurrentNumKeyFrames;
+    /* 0x018 */ RwInt32 mnArraySize;
+    /* 0x01C */ RwInt32 mnKeyFrameBeingEdited;
+    /* 0x020 */ RwInt32 mnLastKeyFrameBeingEdited;
+    /* 0x024 */ RwInt32 mnReelNumber;
+    /* 0x028 */ RwInt32 mnPreviousReelNumber;
+    /* 0x02C */ EB4KeyFrameType meType;
+    /* 0x030 */ bool mbEditorPageRegistered;
+    /* 0x031 */ bool mbKeyFramePageRegistered;
+    // methods
+    // CB4CameraEditor(const CB4CameraEditor &);
+    // CB4CameraEditor();
+    // void Construct(CB4PlayerCameraManager *);
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void Update();
+    // void Render();
+    // CB4CameraKeyFrame * GetCurrentFrame();
+    // static RwInt32 LoadKeyFrames(CB4CameraKeyFrame *, CB4CameraReel *);
+    // void SetBehaviour();
+    // void SetupCatMullRomData(CB4CameraKeyFrame *, int) const;
+    // void OpenReel();
+    // void CloseReel();
+    // void ValidateKeyFrameType() const;
+    // void SetReelNumber(int);
+    // void Register(int *);
+    // void Unregister(int *);
+    // static void EditBehaviourCallback(void *, void *, int);
+    // static void GetTextBehaviourCallback(void *, void *, char *, const char *);
+    // static void EditTransitionCallback(void *, void *, int);
+    // static void GetTextTransitionCallback(void *, void *, char *, const char *);
+    // static void EditRaceCarCallback(void *, void *, int);
+    // static void GetTextRaceCarCallback(void *, void *, char *, const char *);
+    // static void EditPauseCallback(void *, void *, int);
+    // static void GetTextPauseCallback(void *, void *, char *, const char *);
+    // static void EditRecordCallback(void *, void *, int);
+    // static void GetTextEditorTypeCallback(void *, void *, char *, const char *);
+    // static void TypeChangedCallback(void *, void *);
+    // static void InGameCallback(void *);
+    // static void PlayEditedCallback(void *);
+    // static void EditCallback(void *);
+    // static void RestartCallback(void *);
+    // static void StepCallback(void *);
+    // static void KeyFrameChangeCallback(void *, void *);
+    // static void ReelNumberChangeCallback(void *, void *, int);
+    // static void GetTextReelNumberCallback(void *, void *, char *, const char *);
+    // static void AddNewReelCallback(void *);
+    // static void PlaceCallback(void *);
+    // static void RaceCarChangeCallback(void *, void *);
+    // static void PreviewCallback(void *);
+    // static void InsertKeyFrameCallback(void *);
+    // static void DeleteKeyFrameCallback(void *);
+    // static void DeleteAllKeyFramesCallback(void *);
+    // static void SaveKeyFramesCallback(void *);
+    // void RegisterEditorPage();
+    // void UnRegisterEditorPage();
+};
+```
 
 ## Notes
 

@@ -8,55 +8,155 @@
 - **Source file:** `B3InputManager.cpp`
 - **Methods per build:** DNAT_200 32, B3DEBUG 32, B3INTERN 32, B3O0PCH 42
 - **Retail (SLUS-21050):** 25 of its 32 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4InputManager`, size 0x1980, methods in `GameSource/Game/B4InputManager.cpp` ([layout](#burnout-revenge-layout-of-cb4inputmanager))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetPause(bool)` | `0x001D99B0` 56 | `0x001D5FA0` 56 | `0x00208CA0` 56 | `0x00219D70` 60 | `0x00213EB0` strong |  |
-| `Update()` | `0x001D99F0` 308 | `0x001D5FE0` 308 | `0x00208CE0` 308 | `0x00219BC0` 420 | `0x00214050` unverified |  |
-| `PreparePlayerLocks()` | `0x001D9B30` 8 | `0x001D6120` 8 | `0x00208E20` 8 | `0x00219B90` 40 |  |  |
-| `Prepare()` | `0x001D9B40` 132 | `0x001D6130` 132 | `0x00208E30` 132 | `0x00219AE0` 172 | `0x002144B0` likely |  |
-| `Construct()` | `0x001D9BD0` 140 | `0x001D61C0` 140 | `0x00208EC0` 140 | `0x00219A20` 180 | `0x00214560` likely |  |
-| `ResetDeadInputTime(signed char)` | `0x001EDA20` 104 | `0x001EFDD0` 104 | `0x00221EA0` 104 | `0x00237300` 160 | `0x0022BA70` strong |  |
-| `GetDeadInputTime(signed char)` | `0x001EDA90` 148 | `0x001EFE40` 148 | `0x00221F10` 148 | `0x00237220` 220 | `0x0022BAE0` strong |  |
-| `GenericUpdate()` | `0x001EDB30` 108 | `0x001EFEE0` 108 | `0x00221FB0` 108 | `0x002371A0` 128 | `0x0022BB80` likely |  |
-| `GenericPrepare()` | `0x001EDBA0` 112 | `0x001EFF50` 112 | `0x00222020` 112 | `0x00237110` 132 | `0x0022BBF0` strong |  |
-| `GenericConstruct()` | `0x001EDC10` 216 | `0x001EFFC0` 216 | `0x00222090` 216 | `0x00236EF0` 536 | `0x0022BC60` strong |  |
-| `StopRumble()` | `0x001EDCF0` 52 | `0x001F00A0` 52 | `0x00222170` 52 | `0x00236E90` 96 |  |  |
-| `SetRumbling(signed char,float)` | `0x001EDD30` 8 | `0x001F00E0` 8 | `0x002221B0` 8 | `0x00236E80` 16 |  |  |
-| `Jolt(EJoltType,signed char,float,float,float,float)` | `0x001EDD40` 8 | `0x001F00F0` 8 | `0x002221C0` 8 | `0x00236E70` 16 |  |  |
-| `GetAvailableControllers(CB3ControllerMapping**,signed char)` | `0x001EDD50` 360 | `0x001F0100` 620 | `0x002221D0` 576 | `0x00236B30` 828 | `0x0022C610` strong |  |
-| `GetMenuButton(CB3MenuInput::EMenuControls,signed char)` | `0x001EDEC0` 172 | `0x001F0370` 228 | `0x00222410` 228 | `0x00236A30` 192 | `0x0022C810` strong |  |
-| `GetMenuPageDown(signed char)` | `0x001EDF70` 120 | `0x001F0460` 120 | `0x00222500` 120 | `0x00236940` 184 | `0x0022C8C0` strong |  |
-| `GetMenuPageUp(signed char)` | `0x001EDFF0` 120 | `0x001F04E0` 120 | `0x00222580` 120 | `0x00236850` 184 | `0x0022C940` strong |  |
-| `GetMenuKeyboardCapsLock(signed char)` | `0x001EE070` 120 | `0x001F0560` 120 | `0x00222600` 120 | `0x00236760` 184 | `0x0022C9C0` strong |  |
-| `GetMenuKeyboardShift(signed char)` | `0x001EE0F0` 120 | `0x001F05E0` 120 | `0x00222680` 120 | `0x00236670` 184 | `0x0022CA40` strong |  |
-| `GetMenuDeletePersona(signed char)` | `0x001EE170` 120 | `0x001F0660` 120 | `0x00222700` 120 | `0x00236580` 184 | `0x0022CAC0` strong |  |
-| `GetStartButton(bool,signed char)` | `0x001EE1F0` 156 | `0x001F06E0` 156 | `0x00222780` 156 | `0x002364B0` 200 | `0x0022CB40` strong |  |
-| `GetMenuBuddies(signed char)` | `0x001EE290` 120 | `0x001F0780` 120 | `0x00222820` 120 | `0x002363C0` 184 | `0x0022CCE0` strong |  |
-| `GetMenuRight(signed char)` | `0x001EE310` 120 | `0x001F0800` 120 | `0x002228A0` 120 | `0x002362D0` 184 | `0x0022CD60` strong |  |
-| `GetMenuLeft(signed char)` | `0x001EE390` 120 | `0x001F0880` 120 | `0x00222920` 120 | `0x002361E0` 184 | `0x0022CDE0` strong |  |
-| `GetMenuDown(signed char)` | `0x001EE410` 120 | `0x001F0900` 120 | `0x002229A0` 120 | `0x002360F0` 184 | `0x0022CE60` strong |  |
-| `GetMenuUp(signed char)` | `0x001EE490` 120 | `0x001F0980` 120 | `0x00222A20` 120 | `0x00236000` 184 | `0x0022CEE0` strong |  |
-| `GetMenuBack(signed char)` | `0x001EE510` 120 | `0x001F0A00` 120 | `0x00222AA0` 120 | `0x00235F10` 184 | `0x0022CF60` strong |  |
-| `GetMenuConfirm(signed char)` | `0x001EE590` 136 | `0x001F0A80` 136 | `0x00222B20` 136 | `0x00235DF0` 192 | `0x0022CFE0` strong |  |
-| `GetLockedPlayersPort(signed char)` | `0x001EE620` 36 | `0x001F0B10` 148 | `0x00222BB0` 148 | `0x00235D60` 144 | `0x0022D070` likely |  |
-| `AreLockedPlayersConnected()` | `0x001EE650` 180 | `0x001F0BB0` 180 | `0x00222C50` 180 | `0x00235C70` 232 |  |  |
-| `LockPlayerToPort(signed char,signed char)` | `0x001EE710` 28 | `0x001F0C70` 248 | `0x00222D10` 248 | `0x00235BB0` 188 |  |  |
-| `GenericPreparePlayerLocks()` | `0x001EE730` 56 | `0x001F0D70` 56 | `0x00222E10` 56 | `0x00235B40` 112 |  |  |
-| `CB3InputManager()` |  |  |  | `0x0013EE40` 80 |  |  |
-| `GetConfirmPort()` |  |  |  | `0x00340650` 28 |  |  |
-| `GetControllerMappingByPlayer(signed char)` |  |  |  | `0x0013FFE0` 200 |  |  |
-| `GetControllerMappingByPort(signed char)` |  |  |  | `0x001307C0` 120 |  |  |
-| `GetKeyboardLEDState(int)` |  |  |  | `0x0038D3B0` 52 |  |  |
-| `IsKeyboardButtonPressed(int,EGtVirtualKeyCodes)` |  |  |  | `0x0038D2F0` 60 |  |  |
-| `RegisterCharacterCallback(int,void (*)` |  |  |  | `0x00391E20` 88 |  |  |
-| `RegisterEventCallback(int,void (*)` |  |  |  | `0x00391F30` 88 |  |  |
-| `UnregisterCharacterCallback(int)` |  |  |  | `0x00392080` 72 |  |  |
-| `UnregisterEventCallback(int)` |  |  |  | `0x00392160` 72 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetPause(bool)` | `0x001D99B0` 56 | `0x001D5FA0` 56 | `0x00208CA0` 56 | `0x00219D70` 60 | `0x00213EB0` strong |  | `void CB4InputManager::SetPause(bool lbPaused)` |
+| `Update()` | `0x001D99F0` 308 | `0x001D5FE0` 308 | `0x00208CE0` 308 | `0x00219BC0` 420 | `0x00214050` unverified |  | `void CB4InputManager::Update()` |
+| `PreparePlayerLocks()` | `0x001D9B30` 8 | `0x001D6120` 8 | `0x00208E20` 8 | `0x00219B90` 40 |  |  | `void CB4InputManager::PreparePlayerLocks()` |
+| `Prepare()` | `0x001D9B40` 132 | `0x001D6130` 132 | `0x00208E30` 132 | `0x00219AE0` 172 | `0x002144B0` likely |  | `bool CB4InputManager::Prepare()` |
+| `Construct()` | `0x001D9BD0` 140 | `0x001D61C0` 140 | `0x00208EC0` 140 | `0x00219A20` 180 | `0x00214560` likely |  | `void CB4InputManager::Construct()` |
+| `ResetDeadInputTime(signed char)` | `0x001EDA20` 104 | `0x001EFDD0` 104 | `0x00221EA0` 104 | `0x00237300` 160 | `0x0022BA70` strong |  | `void CB4InputManager::ResetDeadInputTime(signed char ln8Player)` |
+| `GetDeadInputTime(signed char)` | `0x001EDA90` 148 | `0x001EFE40` 148 | `0x00221F10` 148 | `0x00237220` 220 | `0x0022BAE0` strong |  |  |
+| `GenericUpdate()` | `0x001EDB30` 108 | `0x001EFEE0` 108 | `0x00221FB0` 108 | `0x002371A0` 128 | `0x0022BB80` likely |  | `void CB4InputManager::GenericUpdate()` |
+| `GenericPrepare()` | `0x001EDBA0` 112 | `0x001EFF50` 112 | `0x00222020` 112 | `0x00237110` 132 | `0x0022BBF0` strong |  | `bool CB4InputManager::GenericPrepare()` |
+| `GenericConstruct()` | `0x001EDC10` 216 | `0x001EFFC0` 216 | `0x00222090` 216 | `0x00236EF0` 536 | `0x0022BC60` strong |  | `bool CB4InputManager::GenericConstruct()` |
+| `StopRumble()` | `0x001EDCF0` 52 | `0x001F00A0` 52 | `0x00222170` 52 | `0x00236E90` 96 |  |  | `void CB4InputManager::StopRumble()` |
+| `SetRumbling(signed char,float)` | `0x001EDD30` 8 | `0x001F00E0` 8 | `0x002221B0` 8 | `0x00236E80` 16 |  |  | `void CB4InputManager::SetRumbling(signed char ln8Player, float lrAmount, int lxControllerTypeMask)` (same name, different parameters) |
+| `Jolt(EJoltType,signed char,float,float,float,float)` | `0x001EDD40` 8 | `0x001F00F0` 8 | `0x002221C0` 8 | `0x00236E70` 16 |  |  | `void CB4InputManager::Jolt(EJoltType leType, signed char ln8Player, float lrTime, float lrDirection, float lrAmount, float lrFadeTime, int lxControllerTypeMask)` (same name, different parameters) |
+| `GetAvailableControllers(CB3ControllerMapping**,signed char)` | `0x001EDD50` 360 | `0x001F0100` 620 | `0x002221D0` 576 | `0x00236B30` 828 | `0x0022C610` strong |  | `void CB4InputManager::GetAvailableControllers(CB4ControllerMapping **lapControllerMappingsOut, signed char ln8Player)` |
+| `GetMenuButton(CB3MenuInput::EMenuControls,signed char)` | `0x001EDEC0` 172 | `0x001F0370` 228 | `0x00222410` 228 | `0x00236A30` 192 | `0x0022C810` strong |  | `bool CB4InputManager::GetMenuButton(CB4MenuInput::EMenuControls leMenuButton, signed char ln8Player)` |
+| `GetMenuPageDown(signed char)` | `0x001EDF70` 120 | `0x001F0460` 120 | `0x00222500` 120 | `0x00236940` 184 | `0x0022C8C0` strong |  |  |
+| `GetMenuPageUp(signed char)` | `0x001EDFF0` 120 | `0x001F04E0` 120 | `0x00222580` 120 | `0x00236850` 184 | `0x0022C940` strong |  |  |
+| `GetMenuKeyboardCapsLock(signed char)` | `0x001EE070` 120 | `0x001F0560` 120 | `0x00222600` 120 | `0x00236760` 184 | `0x0022C9C0` strong |  |  |
+| `GetMenuKeyboardShift(signed char)` | `0x001EE0F0` 120 | `0x001F05E0` 120 | `0x00222680` 120 | `0x00236670` 184 | `0x0022CA40` strong |  |  |
+| `GetMenuDeletePersona(signed char)` | `0x001EE170` 120 | `0x001F0660` 120 | `0x00222700` 120 | `0x00236580` 184 | `0x0022CAC0` strong |  |  |
+| `GetStartButton(bool,signed char)` | `0x001EE1F0` 156 | `0x001F06E0` 156 | `0x00222780` 156 | `0x002364B0` 200 | `0x0022CB40` strong |  |  |
+| `GetMenuBuddies(signed char)` | `0x001EE290` 120 | `0x001F0780` 120 | `0x00222820` 120 | `0x002363C0` 184 | `0x0022CCE0` strong |  |  |
+| `GetMenuRight(signed char)` | `0x001EE310` 120 | `0x001F0800` 120 | `0x002228A0` 120 | `0x002362D0` 184 | `0x0022CD60` strong |  |  |
+| `GetMenuLeft(signed char)` | `0x001EE390` 120 | `0x001F0880` 120 | `0x00222920` 120 | `0x002361E0` 184 | `0x0022CDE0` strong |  |  |
+| `GetMenuDown(signed char)` | `0x001EE410` 120 | `0x001F0900` 120 | `0x002229A0` 120 | `0x002360F0` 184 | `0x0022CE60` strong |  |  |
+| `GetMenuUp(signed char)` | `0x001EE490` 120 | `0x001F0980` 120 | `0x00222A20` 120 | `0x00236000` 184 | `0x0022CEE0` strong |  |  |
+| `GetMenuBack(signed char)` | `0x001EE510` 120 | `0x001F0A00` 120 | `0x00222AA0` 120 | `0x00235F10` 184 | `0x0022CF60` strong |  |  |
+| `GetMenuConfirm(signed char)` | `0x001EE590` 136 | `0x001F0A80` 136 | `0x00222B20` 136 | `0x00235DF0` 192 | `0x0022CFE0` strong |  |  |
+| `GetLockedPlayersPort(signed char)` | `0x001EE620` 36 | `0x001F0B10` 148 | `0x00222BB0` 148 | `0x00235D60` 144 | `0x0022D070` likely |  | `RwInt8 CB4InputManager::GetLockedPlayersPort(signed char ln8Player)` |
+| `AreLockedPlayersConnected()` | `0x001EE650` 180 | `0x001F0BB0` 180 | `0x00222C50` 180 | `0x00235C70` 232 |  |  | `bool CB4InputManager::AreLockedPlayersConnected()` |
+| `LockPlayerToPort(signed char,signed char)` | `0x001EE710` 28 | `0x001F0C70` 248 | `0x00222D10` 248 | `0x00235BB0` 188 |  |  | `void CB4InputManager::LockPlayerToPort(signed char ln8Player, signed char ln8Port)` |
+| `GenericPreparePlayerLocks()` | `0x001EE730` 56 | `0x001F0D70` 56 | `0x00222E10` 56 | `0x00235B40` 112 |  |  | `void CB4InputManager::GenericPreparePlayerLocks()` |
+| `CB3InputManager()` |  |  |  | `0x0013EE40` 80 |  |  |  |
+| `GetConfirmPort()` |  |  |  | `0x00340650` 28 |  |  |  |
+| `GetControllerMappingByPlayer(signed char)` |  |  |  | `0x0013FFE0` 200 |  |  |  |
+| `GetControllerMappingByPort(signed char)` |  |  |  | `0x001307C0` 120 |  |  |  |
+| `GetKeyboardLEDState(int)` |  |  |  | `0x0038D3B0` 52 |  |  |  |
+| `IsKeyboardButtonPressed(int,EGtVirtualKeyCodes)` |  |  |  | `0x0038D2F0` 60 |  |  |  |
+| `RegisterCharacterCallback(int,void (*)` |  |  |  | `0x00391E20` 88 |  |  |  |
+| `RegisterEventCallback(int,void (*)` |  |  |  | `0x00391F30` 88 |  |  |  |
+| `UnregisterCharacterCallback(int)` |  |  |  | `0x00392080` 72 |  |  |  |
+| `UnregisterEventCallback(int)` |  |  |  | `0x00392160` 72 |  |  |  |
+
+## Burnout Revenge layout of `CB4InputManager`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 186 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4InputManager {  // size 0x1980
+    /* static */ RwInt8 kn8MaxPlayers;
+    /* static */ RwInt8 kn8MaxPorts;
+    /* 0x000 */ CGtInputManagerPS2Pad2 mInputManagerPS2Pad2;
+    /* 0x2C0 */ CGtInputDevicePS2DualShock2 maInputDevicesPS2Pad2[2];
+    /* 0x4A0 */ CGtInputManagerPS2Keyboard mInputManagerPS2Keyboard;
+    /* 0x94C */ CGtInputManagerPS2LogitechWheel mInputManagerPS2LogitechWheel;
+    /* 0x9C0 */ CGtInputDevicePS2LogitechWheel maInputDevicesPS2LogitechWheel[2];
+    /* 0x1640 */ CB4ControllerMapping maControllerMappings[2];
+    /* 0x1918 */ RwInt8 mn8ConfirmPort;
+    /* 0x1919 */ signed char man8PlayerPorts[2];
+    /* 0x191B */ bool mabPlayerLocks[2];
+    /* 0x191D */ bool mabPortRumble[2];
+    /* 0x1920 */ float marCurrentSmallActuator[2];
+    /* 0x1928 */ float marCurrentLargeActuator[2];
+    /* 0x1930 */ float marCurrentRumbling[2];
+    /* 0x1938 */ float marCurrentSmallJoltTime[2];
+    /* 0x1940 */ float marCurrentLargeJoltTime[2];
+    /* 0x1948 */ float marCurrentLargeJoltAmount[2];
+    /* 0x1950 */ float marCurrentLargeJoltFadeTime[2];
+    /* 0x1958 */ bool mbIsPaused;
+    /* 0x1959 */ bool mabClearRumble[2];
+    /* 0x195C */ float marTimeStartButton[2];
+    /* 0x1964 */ float marTimeSelectButton[2];
+    // methods
+    // CB4InputManager(const CB4InputManager &);
+    // CB4InputManager();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void UpdateFE();
+    // void Release();
+    // void Destruct();
+    // CB4ControllerMapping * GetControllerMappingByPort(signed char);
+    // CB4ControllerMapping * GetControllerMappingByPlayer(signed char);
+    // RwInt8 GetConfirmPort();
+    // void SetPause(bool);
+    // bool IsPaused();
+    // void ResetState();
+    // RwInt8 CountValidControllers();
+    // void PreparePlayerLocks();
+    // void LockPlayerToPort(signed char, signed char);
+    // void UnlockPlayerPort(signed char);
+    // bool AreLockedPlayersConnected();
+    // RwInt8 GetLockedPlayersPort(signed char);
+    // bool GetMusicTrackSkip();
+    // bool GetMenuButton(CB4MenuInput::EMenuControls, signed char);
+    // bool GetMenuButton(EGtPS2DualShockDeviceControl, signed char);
+    // bool GetCreditsUnlockCheat();
+    // RwReal GetPadControl(EGtPS2DualShockDeviceControl, bool, signed char);
+    // bool IsControlJustPressed(EGtPS2DualShockDeviceControl, signed char);
+    // bool IsControlJustReleased(EGtPS2DualShockDeviceControl, signed char);
+    // bool IsKeyboardButtonJustPressed(int, EGtVirtualKeyCodes);
+    // bool IsKeyboardButtonJustReleased(int, EGtVirtualKeyCodes);
+    // RwUInt8 GetKeyboardLEDState(int);
+    // bool IsKeyboardButtonPressed(int, EGtVirtualKeyCodes);
+    // RwInt32 GetNumAttachedKeyboards();
+    // void RegisterEventCallback(int, void (*)(int, int, int, int, void *), void *);
+    // void UnregisterEventCallback(int);
+    // void RegisterCharacterCallback(int, void (*)(unsigned short, void *), void *);
+    // void UnregisterCharacterCallback(int);
+    // bool AnyInput(signed char);
+    // bool AnyButtonPressed(signed char);
+    // RwReal GetDeadInputTime(signed char);
+    // void ResetDeadInputTime(signed char);
+    // bool IsSoftReset(signed char);
+    // void SetRumbleMode(signed char, ERumbleMode);
+    // ERumbleMode GetRumbleMode(int);
+    // void UpdateRumble();
+    // void Jolt(EJoltType, signed char, float, float, float, float, int);
+    // void MenuTestJolt(signed char, float, float);
+    // void SmallJolt(signed char, float, float, int);
+    // void LargeJolt(signed char, float, float, float, float, int);
+    // void SetRumbling(signed char, float, int);
+    // void StopRumble();
+    // void StopPlayerRumble(signed char);
+    // bool AreAnyControllersConnected();
+    // void SetConfirmPort(bool);
+    // RwInt8 CheckForNewPlayerInput(signed char, bool);
+    // static void ConvertControllerAxisToSquare(GtMathPs2::CGtV2d *);
+    // void GetAvailableControllers(CB4ControllerMapping **, signed char);
+    // RwReal GetRumbleScale();
+    // bool GenericConstruct();
+    // bool GenericPrepare();
+    // void GenericPreparePlayerLocks();
+    // void GenericUnlockPlayerPort(signed char);
+    // void GenericUpdate();
+    // void GenericUpdateFE();
+    // bool GenericUpdateRumble(signed char);
+    // void GenericRelease();
+    // void GenericDestruct();
+};
+```
 
 ## Notes
 

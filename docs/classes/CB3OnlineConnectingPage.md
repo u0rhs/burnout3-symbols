@@ -12,18 +12,18 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Release()` | `0x003000A0` 8 | `0x00354AA0` 8 | `0x00386110` 8 | `0x00387610` 16 | `0x00346DE0` likely |  |
-| `UpdateISP()` | `0x003000B0` 660 | `0x00354AB0` 684 | `0x00386120` 660 | `0x00387380` 448 | `0x00346DF0` unverified |  |
-| `Update()` | `0x00300350` 168 | `0x00354D60` 168 | `0x003863C0` 168 | `0x00387300` 128 | `0x00347120` likely |  |
-| `PrepareLobbyConnect()` | `0x00300400` 500 | `0x00354E10` 524 | `0x00386470` 500 | `0x00387050` 280 | `0x003471E0` unverified |  |
-| `Prepare(int)` | `0x00300600` 440 | `0x00355020` 440 | `0x00386670` 440 | `0x00386DE0` 548 | `0x00347440` unverified |  |
-| `CB3OnlineConnectingPage()` |  |  |  | `0x00341A40` 60 |  |  |
-| `PrepareConnectToServer()` |  |  |  | `0x00387170` 392 |  |  |
-| `UpdateLobby()` |  |  |  | `0x00387580` 132 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Release()` | `0x003000A0` 8 | `0x00354AA0` 8 | `0x00386110` 8 | `0x00387610` 16 | `0x00346DE0` likely |  |  |
+| `UpdateISP()` | `0x003000B0` 660 | `0x00354AB0` 684 | `0x00386120` 660 | `0x00387380` 448 | `0x00346DF0` unverified |  |  |
+| `Update()` | `0x00300350` 168 | `0x00354D60` 168 | `0x003863C0` 168 | `0x00387300` 128 | `0x00347120` likely |  |  |
+| `PrepareLobbyConnect()` | `0x00300400` 500 | `0x00354E10` 524 | `0x00386470` 500 | `0x00387050` 280 | `0x003471E0` unverified |  |  |
+| `Prepare(int)` | `0x00300600` 440 | `0x00355020` 440 | `0x00386670` 440 | `0x00386DE0` 548 | `0x00347440` unverified |  |  |
+| `CB3OnlineConnectingPage()` |  |  |  | `0x00341A40` 60 |  |  |  |
+| `PrepareConnectToServer()` |  |  |  | `0x00387170` 392 |  |  |  |
+| `UpdateLobby()` |  |  |  | `0x00387580` 132 |  |  |  |
 
 ## Notes
 

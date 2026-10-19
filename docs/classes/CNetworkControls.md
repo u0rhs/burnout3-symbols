@@ -6,26 +6,59 @@
 
 - **Area:** [Network and online](../systems/network-online.md)
 - **Methods per build:** B3O0PCH 13
+- **Burnout Revenge counterpart:** `CNetworkControls`, size 0x003, methods in `GameSource/World/B4NetworkCar.cpp` ([layout](#burnout-revenge-layout-of-cnetworkcontrols))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` |  |  |  | `0x001673B0` 124 |  |  |
-| `GetAcceleration()` |  |  |  | `0x002816D0` 128 |  |  |
-| `GetBoost()` |  |  |  | `0x0024EF50` 44 |  |  |
-| `GetBraking()` |  |  |  | `0x00281640` 144 |  |  |
-| `GetGear()` |  |  |  | `0x00280360` 84 |  |  |
-| `GetHorn()` |  |  |  | `0x002815D0` 44 |  |  |
-| `GetSteering()` |  |  |  | `0x00281600` 64 |  |  |
-| `SetAcceleration(float)` |  |  |  | `0x001676D0` 188 |  |  |
-| `SetBoost(bool)` |  |  |  | `0x00167480` 76 |  |  |
-| `SetBraking(float)` |  |  |  | `0x00167610` 180 |  |  |
-| `SetGear(int)` |  |  |  | `0x001674D0` 184 |  |  |
-| `SetHorn(bool)` |  |  |  | `0x00167430` 76 |  |  |
-| `SetSteering(float)` |  |  |  | `0x00167590` 120 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` |  |  |  | `0x001673B0` 124 |  |  |  |
+| `GetAcceleration()` |  |  |  | `0x002816D0` 128 |  |  |  |
+| `GetBoost()` |  |  |  | `0x0024EF50` 44 |  |  |  |
+| `GetBraking()` |  |  |  | `0x00281640` 144 |  |  |  |
+| `GetGear()` |  |  |  | `0x00280360` 84 |  |  |  |
+| `GetHorn()` |  |  |  | `0x002815D0` 44 |  |  |  |
+| `GetSteering()` |  |  |  | `0x00281600` 64 |  |  |  |
+| `SetAcceleration(float)` |  |  |  | `0x001676D0` 188 |  |  | `void CNetworkControls::SetAcceleration(float lrAcc)` |
+| `SetBoost(bool)` |  |  |  | `0x00167480` 76 |  |  | `void CNetworkControls::SetBoost(bool lbBoost)` |
+| `SetBraking(float)` |  |  |  | `0x00167610` 180 |  |  | `void CNetworkControls::SetBraking(float lrBrake)` |
+| `SetGear(int)` |  |  |  | `0x001674D0` 184 |  |  | `void CNetworkControls::SetGear(int lnGear)` |
+| `SetHorn(bool)` |  |  |  | `0x00167430` 76 |  |  | `void CNetworkControls::SetHorn(bool lbHorn)` |
+| `SetSteering(float)` |  |  |  | `0x00167590` 120 |  |  | `void CNetworkControls::SetSteering(float lrSteer)` |
+
+## Burnout Revenge layout of `CNetworkControls`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 307 file(s), e.g. `GameShared/GameClasses/System/MemoryCard/NewMemoryCard/GtMemoryCardManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CNetworkControls {  // size 0x003
+    /* 0x000 */ RwUInt8 mu8AccelAndBrake;
+    /* 0x001 */ RwInt8 m8Steering;
+    /* 0x002 */ RwUInt8 mx8ControlFlags;
+    // methods
+    // CNetworkControls(const CNetworkControls &);
+    // CNetworkControls();
+    // void Construct();
+    // void SetAcceleration(float);
+    // void SetBraking(float);
+    // void SetSteering(float);
+    // void SetGear(int);
+    // void SetBoost(bool);
+    // void SetHorn(bool);
+    // void SetAftertouchX(float);
+    // void SetAftertouchY(float);
+    // RwReal GetAcceleration() const;
+    // RwReal GetBraking() const;
+    // RwReal GetSteering() const;
+    // RwInt32 GetGear() const;
+    // bool GetBoost() const;
+    // bool GetHorn() const;
+    // RwReal GetAftertouchX() const;
+    // RwReal GetAftertouchY() const;
+};
+```
 
 ## Notes
 

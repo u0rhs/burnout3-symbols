@@ -8,20 +8,41 @@
 - **Source file:** `B3CrashRamp.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
 - **Retail (SLUS-21050):** 5 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CrashRamp`, size 0x070, methods in `GameSource/World/B4CrashRamp.cpp` ([layout](#burnout-revenge-layout-of-cb4crashramp))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Draw(CGtTexture*)` | `0x0035AA50` 1248 | `0x003C58C0` 1348 | `0x003EE1C0` 1348 | `0x003FC630` 1392 | `0x003A1800` unverified |  |
-| `Destruct()` | `0x0035AF30` 8 | `0x003C5E10` 8 | `0x003EE710` 8 | `0x003FC620` 16 | `0x003A1CF0` likely |  |
-| `Release()` | `0x0035AF40` 8 | `0x003C5E20` 8 | `0x003EE720` 8 | `0x003FC600` 28 | `0x003A1D00` likely |  |
-| `Update(float*,float*,int)` | `0x0035AF50` 404 | `0x003C5E30` 620 | `0x003EE730` 620 | `0x003FC410` 492 | `0x003A1D10` strong |  |
-| `Prepare(CB3CrashModeRampStruct*)` | `0x0035B0F0` 524 | `0x003C60A0` 524 | `0x003EE9A0` 524 | `0x003FBF70` 1184 |  |  |
-| `Construct()` | `0x0035B300` 8 | `0x003C62B0` 8 | `0x003EEBB0` 8 | `0x003FBF50` 28 | `0x003A20D0` likely |  |
-| `CB3CrashRamp()` |  |  |  | `0x001915A0` 76 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Draw(CGtTexture*)` | `0x0035AA50` 1248 | `0x003C58C0` 1348 | `0x003EE1C0` 1348 | `0x003FC630` 1392 | `0x003A1800` unverified |  | `void CB4CrashRamp::Draw(CGtTexture *lpRampTexture)` |
+| `Destruct()` | `0x0035AF30` 8 | `0x003C5E10` 8 | `0x003EE710` 8 | `0x003FC620` 16 | `0x003A1CF0` likely |  | `void CB4CrashRamp::Destruct()` |
+| `Release()` | `0x0035AF40` 8 | `0x003C5E20` 8 | `0x003EE720` 8 | `0x003FC600` 28 | `0x003A1D00` likely |  | `void CB4CrashRamp::Release()` |
+| `Update(float*,float*,int)` | `0x0035AF50` 404 | `0x003C5E30` 620 | `0x003EE730` 620 | `0x003FC410` 492 | `0x003A1D10` strong |  | `void CB4CrashRamp::Update(float *lprP1Distance, float *lprP2Distance, int lnNumRaceCars)` |
+| `Prepare(CB3CrashModeRampStruct*)` | `0x0035B0F0` 524 | `0x003C60A0` 524 | `0x003EE9A0` 524 | `0x003FBF70` 1184 |  |  | `bool CB4CrashRamp::Prepare(CB4CrashModeRampStruct *lpRampData)` |
+| `Construct()` | `0x0035B300` 8 | `0x003C62B0` 8 | `0x003EEBB0` 8 | `0x003FBF50` 28 | `0x003A20D0` likely |  | `void CB4CrashRamp::Construct()` |
+| `CB3CrashRamp()` |  |  |  | `0x001915A0` 76 |  |  |  |
+
+## Burnout Revenge layout of `CB4CrashRamp`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 6 file(s), e.g. `GameSource/Game/Challenge/B4Challenge.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CrashRamp {  // size 0x070
+    /* 0x000 */ CGtV3d maPoints[6];
+    /* 0x060 */ CB4CrashModeRampStruct *mpRampData;
+    // methods
+    // CB4CrashRamp(const CB4CrashRamp &);
+    // CB4CrashRamp();
+    // void Construct();
+    // bool Prepare(CB4CrashModeRampStruct *);
+    // void Update(float *, float *, int);
+    // void Release();
+    // void Destruct();
+    // void Draw(CGtTexture *);
+};
+```
 
 ## Notes
 

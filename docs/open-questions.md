@@ -28,7 +28,9 @@ What the data doesn't answer yet, and work that would add to it.
 - [ ] Name the July 20 review executables by matching functions against retail (the simple shift does not work: the US review build is 200 KB smaller)
 - [x] Verify the 295 unverified retail names ([check](reference/retail-function-names.md#checked-against-the-code)); name the functions between named ones ([prototype names](reference/retail-prototype-names.md))
 - [x] Carry the prototype names to the retail executable ([prototype names](reference/retail-prototype-names.md)).
-- [ ] Export the Burnout Revenge July 2005 prototype's symbols and types ([builds](builds.md#burnout-revenge-prototypes-2005-to-2006)).
+- [x] Export the Burnout Revenge July 2005 prototype's symbols and types ([data](../data/burnout-revenge-prototype/README.md), [lineage](reference/revenge-class-lineage.md)).
+- [ ] Revenge line numbers (the `$LM` labels) and per-file outlines like Burnout 2's.
+- [ ] Decode the Burnout Revenge Xbox 360 PDB (`B4Extern.pdb`).
 - [ ] Check the prototype names' parameter lists against the retail code.
 - [ ] Turn `types.h` into compilable headers.
 - [ ] Ghidra / IDA import scripts for the names and types.

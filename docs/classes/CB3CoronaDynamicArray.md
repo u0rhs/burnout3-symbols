@@ -8,20 +8,51 @@
 - **Source file:** `B3CoronaRendererPS2.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 7
 - **Retail (SLUS-21050):** 6 of its 7 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4CoronaDynamicArray`, size 0x034, methods in `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4coronadynamicarray))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `EndUpdate()` | `0x002C8230` 164 | `0x0030F6A0` 508 | `0x003414B0` 236 | `0x003360B0` 484 | `0x00307440` likely |  |
-| `AddCorona(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,float)` | `0x002C82E0` 88 | `0x0030F8A0` 228 | `0x003415A0` 208 | `0x00335F90` 284 |  |  |
-| `BeginUpdate(int)` | `0x002C8340` 92 | `0x0030F990` 228 | `0x00341670` 228 | `0x00335E70` 276 | `0x00307500` strong |  |
-| `Prepare()` | `0x002C83A0` 192 | `0x0030FA80` 192 | `0x00341760` 192 | `0x00335D60` 264 | `0x00307560` strong |  |
-| `Destruct()` | `0x002C8460` 8 | `0x0030FB40` 8 | `0x00341820` 8 | `0x00335D50` 16 | `0x00307620` strong |  |
-| `Construct(int)` | `0x002C8470` 152 | `0x0030FB50` 152 | `0x00341830` 152 | `0x00335C90` 192 | `0x00307630` strong |  |
-| `ConstructDMAData(int,int,int)` | `0x002C8510` 564 | `0x0030FBF0` 608 | `0x003418D0` 600 | `0x00335990` 760 | `0x003076D0` likely |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `EndUpdate()` | `0x002C8230` 164 | `0x0030F6A0` 508 | `0x003414B0` 236 | `0x003360B0` 484 | `0x00307440` likely |  | `void CB4CoronaDynamicArray::EndUpdate()` |
+| `AddCorona(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,float)` | `0x002C82E0` 88 | `0x0030F8A0` 228 | `0x003415A0` 208 | `0x00335F90` 284 |  |  |  |
+| `BeginUpdate(int)` | `0x002C8340` 92 | `0x0030F990` 228 | `0x00341670` 228 | `0x00335E70` 276 | `0x00307500` strong |  | `void CB4CoronaDynamicArray::BeginUpdate(EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `Prepare()` | `0x002C83A0` 192 | `0x0030FA80` 192 | `0x00341760` 192 | `0x00335D60` 264 | `0x00307560` strong |  | `bool CB4CoronaDynamicArray::Prepare()` |
+| `Destruct()` | `0x002C8460` 8 | `0x0030FB40` 8 | `0x00341820` 8 | `0x00335D50` 16 | `0x00307620` strong |  | `void CB4CoronaDynamicArray::Destruct()` |
+| `Construct(int)` | `0x002C8470` 152 | `0x0030FB50` 152 | `0x00341830` 152 | `0x00335C90` 192 | `0x00307630` strong |  | `void CB4CoronaDynamicArray::Construct(int lnNumCoronas)` |
+| `ConstructDMAData(int,int,int)` | `0x002C8510` 564 | `0x0030FBF0` 608 | `0x003418D0` 600 | `0x00335990` 760 | `0x003076D0` likely |  | `void CB4CoronaDynamicArray::ConstructDMAData(int lnPlayerIndex, int lnBufferIndex, int lnNumCoronas)` |
+
+## Burnout Revenge layout of `CB4CoronaDynamicArray`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 5 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CoronaDynamicArray {  // size 0x034
+    /* static */ RwInt32 knMaxPlayers;
+    /* 0x000 */ void *maapDMAData[2][2];
+    /* 0x010 */ CB4Corona *maapaCoronas[2][2];
+    /* 0x020 */ CB4Corona *mpNextCorona;
+    /* 0x024 */ CB4Corona *mpMaxCorona;
+    /* 0x028 */ RwInt16 mn16ArraySize;
+    /* 0x02A */ short int man16CoronasSubmitted[2];
+    /* 0x02E */ signed char man8CurrentBuffer[2];
+    /* 0x030 */ RwInt8 mn8CurrentPlayer;
+    // methods
+    // CB4CoronaDynamicArray(const CB4CoronaDynamicArray &);
+    // CB4CoronaDynamicArray();
+    // void Construct(int);
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void BeginUpdate(EPlayerCarIndex);
+    // void AddCorona(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, float, float, float);
+    // void AddFlashingCorona(GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, float, float, float, EB4CoronaFlashType, float, float, float);
+    // void EndUpdate();
+    // void ConstructDMAData(int, int, int);
+};
+```
 
 ## Notes
 

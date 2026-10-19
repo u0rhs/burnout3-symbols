@@ -12,56 +12,56 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `IsCrashJunction()` | `0x0035ECB0` 8 | `0x003CA280` 8 | `0x003F3030` 8 | `0x0040C150` 28 |  |  |
-| `GetCurrentTrackID()` | `0x0035ECC0` 80 | `0x003CA290` 80 | `0x003F3040` 80 | `0x0040C0C0` 136 |  |  |
-| `GetCurrentPanelStageIndex()` | `0x0035ED10` 32 | `0x003CA2E0` 32 | `0x003F3090` 32 | `0x0040C040` 80 |  |  |
-| `MoveSelectorRight()` | `0x0035ED30` 400 | `0x003CA300` 436 | `0x003F30B0` 436 | `0x0040BE20` 544 |  |  |
-| `MoveSelectorLeft()` | `0x0035EEC0` 376 | `0x003CA4C0` 412 | `0x003F3270` 412 | `0x0040BC20` 512 |  |  |
-| `MenuPhaseUpdate(float)` | `0x0035F040` 2772 | `0x003CA660` 2772 | `0x003F3410` 2772 | `0x0040B620` 1532 |  |  |
-| `UpdateTrackOutline(float)` | `0x0035FB20` 460 | `0x003CB140` 532 | `0x003F3EF0` 532 | `0x0040B2B0` 872 |  |  |
-| `UpdateMap(float,bool)` | `0x0035FCF0` 1548 | `0x003CB360` 1548 | `0x003F4110` 1548 | `0x0040AB10` 1656 |  |  |
-| `PanelSelectNext()` | `0x00360300` 60 | `0x003CB970` 60 | `0x003F4720` 60 | `0x0040AAA0` 112 |  |  |
-| `PanelSelectPrev()` | `0x00360340` 60 | `0x003CB9B0` 60 | `0x003F4760` 60 | `0x0040AA30` 112 |  |  |
-| `Panel2Out()` | `0x00360380` 20 | `0x003CB9F0` 20 | `0x003F47A0` 20 | `0x0040A9E0` 72 |  |  |
-| `Panel2In()` | `0x003603A0` 52 | `0x003CBA10` 52 | `0x003F47C0` 52 | `0x0040A960` 120 |  |  |
-| `ZoomOut()` | `0x003603E0` 188 | `0x003CBA50` 228 | `0x003F4800` 228 | `0x0040A8D0` 144 |  |  |
-| `ZoomIn()` | `0x003604A0` 216 | `0x003CBB40` 216 | `0x003F48F0` 216 | `0x0040A790` 320 |  |  |
-| `ReleasePopups()` | `0x00360580` 196 | `0x003CBC20` 196 | `0x003F49D0` 196 | `0x0040A5C0` 276 |  |  |
-| `PrepareZoomedOutPopup()` | `0x00360650` 460 | `0x003CBCF0` 572 | `0x003F4AA0` 572 | `0x0040A060` 728 |  |  |
-| `ReleaseExtraLeadIn()` | `0x00360820` 392 | `0x003CBF30` 528 | `0x003F4CE0` 496 | `0x00409E40` 540 |  |  |
-| `UpdateCustomLeadIn(float)` | `0x003609B0` 4716 | `0x003CC140` 5200 | `0x003F4ED0` 5200 | `0x00408340` 6908 | `0x003A9B70` likely |  |
-| `PrepareCustomLeadIn()` | `0x00361C20` 596 | `0x003CD590` 752 | `0x003F6320` 736 | `0x00407F50` 1008 | `0x003AAE30` strong |  |
-| `ReleasePanel()` | `0x00361E80` 328 | `0x003CD880` 496 | `0x003F6600` 480 | `0x00407D20` 548 |  |  |
-| `UpdatePanel(float)` | `0x00361FD0` 552 | `0x003CDA70` 552 | `0x003F67E0` 552 | `0x00407B40` 480 |  |  |
-| `UpdatePanelEntriesAnim(float)` | `0x00362200` 628 | `0x003CDCA0` 692 | `0x003F6A10` 696 | `0x004078F0` 452 |  |  |
-| `RepreparePanel()` | `0x00362480` 460 | `0x003CDF60` 900 | `0x003F6CD0` 900 | `0x00407340` 952 |  |  |
-| `PreparePanel()` | `0x00362650` 1272 | `0x003CE2F0` 1700 | `0x003F7060` 1684 | `0x00406C50` 1704 |  |  |
-| `UpdateTrackIcons()` | `0x00362B50` 364 | `0x003CE9A0` 400 | `0x003F7700` 400 | `0x004069C0` 516 |  |  |
-| `UpdateTrackIconsAnim(float)` | `0x00362CC0` 664 | `0x003CEB30` 732 | `0x003F7890` 732 | `0x00406620` 924 |  |  |
-| `PrepareTrackIcons()` | `0x00362F60` 1724 | `0x003CEE10` 1760 | `0x003F7B70` 1776 | `0x00405D00` 2332 |  |  |
-| `Release()` | `0x00363620` 600 | `0x003CF4F0` 600 | `0x003F8260` 600 | `0x004058B0` 1092 |  |  |
-| `Update(float)` | `0x00363880` 392 | `0x003CF750` 392 | `0x003F84C0` 392 | `0x004057A0` 260 |  |  |
-| `Prepare(ESatMapLevel,EB3TrackRegion,ESatMapEnterDirection)` | `0x00363A10` 2388 | `0x003CF8E0` 2668 | `0x003F8650` 2652 | `0x00404840` 3924 | `0x003AEFC0` unverified |  |
-| `CalculateNumUnlockedEvents(EB3TrackRegion,int)` | `0x00364370` 360 | `0x003D03F0` 436 | `0x003F9150` 448 | `0x004045C0` 472 |  |  |
-| `Construct()` | `0x003644E0` 332 | `0x003D05B0` 332 | `0x003F9310` 332 | `0x004043C0` 512 |  |  |
-| `CacheAllRacesComplete()` |  | `0x003D0350` 156 | `0x003F90B0` 156 | `0x004047A0` 160 |  |  |
-| `CB3SatNavComponent()` |  |  |  | `0x0033C9C0` 124 |  |  |
-| `FadeOutPopups(float)` |  |  |  | `0x0040A520` 160 |  |  |
-| `GetPanelSelection()` |  |  |  | `0x0040C090` 44 |  |  |
-| `GetRegion()` |  |  |  | `0x00427310` 28 |  |  |
-| `GetScreenPos(const GtMathPs2::CGtV2d&)` |  |  |  | `0x0040A6E0` 172 |  |  |
-| `GetState()` |  |  |  | `0x00424650` 36 |  |  |
-| `PrepareEventIcons()` |  |  |  | `0x00406BD0` 108 |  |  |
-| `UpdateEventIcons()` |  |  |  | `0x00406C40` 16 |  |  |
-| `UpdatePanelAnim(float)` |  |  |  | `0x00407AC0` 120 |  |  |
-| `UpdatePanelSelectionBar(float)` |  |  |  | `0x00407700` 496 |  |  |
-| `UpdateXHair(float)` |  |  |  | `0x0040B190` 284 |  |  |
-| `UpdateZoomedInPopups(float)` |  |  |  | `0x0040A460` 16 |  |  |
-| `UpdateZoomedOutPopup(float)` |  |  |  | `0x0040A340` 276 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `IsCrashJunction()` | `0x0035ECB0` 8 | `0x003CA280` 8 | `0x003F3030` 8 | `0x0040C150` 28 |  |  |  |
+| `GetCurrentTrackID()` | `0x0035ECC0` 80 | `0x003CA290` 80 | `0x003F3040` 80 | `0x0040C0C0` 136 |  |  |  |
+| `GetCurrentPanelStageIndex()` | `0x0035ED10` 32 | `0x003CA2E0` 32 | `0x003F3090` 32 | `0x0040C040` 80 |  |  |  |
+| `MoveSelectorRight()` | `0x0035ED30` 400 | `0x003CA300` 436 | `0x003F30B0` 436 | `0x0040BE20` 544 |  |  |  |
+| `MoveSelectorLeft()` | `0x0035EEC0` 376 | `0x003CA4C0` 412 | `0x003F3270` 412 | `0x0040BC20` 512 |  |  |  |
+| `MenuPhaseUpdate(float)` | `0x0035F040` 2772 | `0x003CA660` 2772 | `0x003F3410` 2772 | `0x0040B620` 1532 |  |  |  |
+| `UpdateTrackOutline(float)` | `0x0035FB20` 460 | `0x003CB140` 532 | `0x003F3EF0` 532 | `0x0040B2B0` 872 |  |  |  |
+| `UpdateMap(float,bool)` | `0x0035FCF0` 1548 | `0x003CB360` 1548 | `0x003F4110` 1548 | `0x0040AB10` 1656 |  |  |  |
+| `PanelSelectNext()` | `0x00360300` 60 | `0x003CB970` 60 | `0x003F4720` 60 | `0x0040AAA0` 112 |  |  |  |
+| `PanelSelectPrev()` | `0x00360340` 60 | `0x003CB9B0` 60 | `0x003F4760` 60 | `0x0040AA30` 112 |  |  |  |
+| `Panel2Out()` | `0x00360380` 20 | `0x003CB9F0` 20 | `0x003F47A0` 20 | `0x0040A9E0` 72 |  |  |  |
+| `Panel2In()` | `0x003603A0` 52 | `0x003CBA10` 52 | `0x003F47C0` 52 | `0x0040A960` 120 |  |  |  |
+| `ZoomOut()` | `0x003603E0` 188 | `0x003CBA50` 228 | `0x003F4800` 228 | `0x0040A8D0` 144 |  |  |  |
+| `ZoomIn()` | `0x003604A0` 216 | `0x003CBB40` 216 | `0x003F48F0` 216 | `0x0040A790` 320 |  |  |  |
+| `ReleasePopups()` | `0x00360580` 196 | `0x003CBC20` 196 | `0x003F49D0` 196 | `0x0040A5C0` 276 |  |  |  |
+| `PrepareZoomedOutPopup()` | `0x00360650` 460 | `0x003CBCF0` 572 | `0x003F4AA0` 572 | `0x0040A060` 728 |  |  |  |
+| `ReleaseExtraLeadIn()` | `0x00360820` 392 | `0x003CBF30` 528 | `0x003F4CE0` 496 | `0x00409E40` 540 |  |  |  |
+| `UpdateCustomLeadIn(float)` | `0x003609B0` 4716 | `0x003CC140` 5200 | `0x003F4ED0` 5200 | `0x00408340` 6908 | `0x003A9B70` likely |  |  |
+| `PrepareCustomLeadIn()` | `0x00361C20` 596 | `0x003CD590` 752 | `0x003F6320` 736 | `0x00407F50` 1008 | `0x003AAE30` strong |  |  |
+| `ReleasePanel()` | `0x00361E80` 328 | `0x003CD880` 496 | `0x003F6600` 480 | `0x00407D20` 548 |  |  |  |
+| `UpdatePanel(float)` | `0x00361FD0` 552 | `0x003CDA70` 552 | `0x003F67E0` 552 | `0x00407B40` 480 |  |  |  |
+| `UpdatePanelEntriesAnim(float)` | `0x00362200` 628 | `0x003CDCA0` 692 | `0x003F6A10` 696 | `0x004078F0` 452 |  |  |  |
+| `RepreparePanel()` | `0x00362480` 460 | `0x003CDF60` 900 | `0x003F6CD0` 900 | `0x00407340` 952 |  |  |  |
+| `PreparePanel()` | `0x00362650` 1272 | `0x003CE2F0` 1700 | `0x003F7060` 1684 | `0x00406C50` 1704 |  |  |  |
+| `UpdateTrackIcons()` | `0x00362B50` 364 | `0x003CE9A0` 400 | `0x003F7700` 400 | `0x004069C0` 516 |  |  |  |
+| `UpdateTrackIconsAnim(float)` | `0x00362CC0` 664 | `0x003CEB30` 732 | `0x003F7890` 732 | `0x00406620` 924 |  |  |  |
+| `PrepareTrackIcons()` | `0x00362F60` 1724 | `0x003CEE10` 1760 | `0x003F7B70` 1776 | `0x00405D00` 2332 |  |  |  |
+| `Release()` | `0x00363620` 600 | `0x003CF4F0` 600 | `0x003F8260` 600 | `0x004058B0` 1092 |  |  |  |
+| `Update(float)` | `0x00363880` 392 | `0x003CF750` 392 | `0x003F84C0` 392 | `0x004057A0` 260 |  |  |  |
+| `Prepare(ESatMapLevel,EB3TrackRegion,ESatMapEnterDirection)` | `0x00363A10` 2388 | `0x003CF8E0` 2668 | `0x003F8650` 2652 | `0x00404840` 3924 | `0x003AEFC0` unverified |  |  |
+| `CalculateNumUnlockedEvents(EB3TrackRegion,int)` | `0x00364370` 360 | `0x003D03F0` 436 | `0x003F9150` 448 | `0x004045C0` 472 |  |  |  |
+| `Construct()` | `0x003644E0` 332 | `0x003D05B0` 332 | `0x003F9310` 332 | `0x004043C0` 512 |  |  |  |
+| `CacheAllRacesComplete()` |  | `0x003D0350` 156 | `0x003F90B0` 156 | `0x004047A0` 160 |  |  |  |
+| `CB3SatNavComponent()` |  |  |  | `0x0033C9C0` 124 |  |  |  |
+| `FadeOutPopups(float)` |  |  |  | `0x0040A520` 160 |  |  |  |
+| `GetPanelSelection()` |  |  |  | `0x0040C090` 44 |  |  |  |
+| `GetRegion()` |  |  |  | `0x00427310` 28 |  |  |  |
+| `GetScreenPos(const GtMathPs2::CGtV2d&)` |  |  |  | `0x0040A6E0` 172 |  |  |  |
+| `GetState()` |  |  |  | `0x00424650` 36 |  |  |  |
+| `PrepareEventIcons()` |  |  |  | `0x00406BD0` 108 |  |  |  |
+| `UpdateEventIcons()` |  |  |  | `0x00406C40` 16 |  |  |  |
+| `UpdatePanelAnim(float)` |  |  |  | `0x00407AC0` 120 |  |  |  |
+| `UpdatePanelSelectionBar(float)` |  |  |  | `0x00407700` 496 |  |  |  |
+| `UpdateXHair(float)` |  |  |  | `0x0040B190` 284 |  |  |  |
+| `UpdateZoomedInPopups(float)` |  |  |  | `0x0040A460` 16 |  |  |  |
+| `UpdateZoomedOutPopup(float)` |  |  |  | `0x0040A340` 276 |  |  |  |
 
 ## Notes
 

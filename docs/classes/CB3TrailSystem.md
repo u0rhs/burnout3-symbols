@@ -8,22 +8,23 @@
 - **Source file:** `B3TrailSystem.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
 - **Retail (SLUS-21050):** 5 of its 7 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrailSystem`, size 0x14680, methods in `GameSource/Graphics/Trails/B4TrailSystem.cpp` ([layout](#burnout-revenge-layout-of-cb4trailsystem))
 - **Burnout 2 ancestor (by name):** `CTrailSystem`, size 0x2C20, declared in 47 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `AddTrailSegment(CB3TrailEmitterData*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EB3TrailType,const GtMathPs2::CGtMatri` | `0x0027D040` 572 | `0x002B1FD0` 824 | `0x002E9100` 824 | `0x002E96E0` 616 | `0x002BD320` strong |  |
-| `Render()` | `0x0027D280` 292 | `0x002B2310` 564 | `0x002E9440` 564 | `0x002E9540` 376 |  |  |
-| `Update()` | `0x0027D3B0` 524 | `0x002B2550` 560 | `0x002E9680` 560 | `0x002E9040` 344 |  |  |
-| `Release()` | `0x0027D5C0` 8 | `0x002B2780` 8 | `0x002E98B0` 8 | `0x002E8FD0` 104 | `0x002BD7E0` strong |  |
-| `Prepare()` | `0x0027D5D0` 388 | `0x002B2790` 496 | `0x002E98C0` 496 | `0x002E8CE0` 520 | `0x002BD7F0` unverified |  |
-| `Destruct()` | `0x0027D760` 8 | `0x002B2980` 8 | `0x002E9AB0` 8 | `0x002E8C50` 128 | `0x002BD990` strong |  |
-| `Construct()` | `0x0027D770` 84 | `0x002B2990` 84 | `0x002E9AC0` 84 | `0x002E8B60` 176 | `0x002BD9A0` likely |  |
-| `AttachTrailEmitter(EB3TrailType)` |  |  |  | `0x002E92E0` 220 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `AddTrailSegment(CB3TrailEmitterData*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EB3TrailType,const GtMathPs2::CGtMatri` | `0x0027D040` 572 | `0x002B1FD0` 824 | `0x002E9100` 824 | `0x002E96E0` 616 | `0x002BD320` strong |  | `void CB4TrailSystem::AddTrailSegment(CB4TrailEmitterData *lpTrailEmitterData, GtMathPs2::CGtV3d lContactPoint, GtMathPs2::CGtV3d lContactNormal, EB4TrailType leTrailType, const GtMathPs2::CGtMatrix3x4 *lpTransform)` (same name, different parameters) |
+| `Render()` | `0x0027D280` 292 | `0x002B2310` 564 | `0x002E9440` 564 | `0x002E9540` 376 |  |  | `void CB4TrailSystem::Render()` |
+| `Update()` | `0x0027D3B0` 524 | `0x002B2550` 560 | `0x002E9680` 560 | `0x002E9040` 344 |  |  | `void CB4TrailSystem::Update()` |
+| `Release()` | `0x0027D5C0` 8 | `0x002B2780` 8 | `0x002E98B0` 8 | `0x002E8FD0` 104 | `0x002BD7E0` strong |  | `void CB4TrailSystem::Release()` |
+| `Prepare()` | `0x0027D5D0` 388 | `0x002B2790` 496 | `0x002E98C0` 496 | `0x002E8CE0` 520 | `0x002BD7F0` unverified |  | `bool CB4TrailSystem::Prepare()` |
+| `Destruct()` | `0x0027D760` 8 | `0x002B2980` 8 | `0x002E9AB0` 8 | `0x002E8C50` 128 | `0x002BD990` strong |  | `void CB4TrailSystem::Destruct()` |
+| `Construct()` | `0x0027D770` 84 | `0x002B2990` 84 | `0x002E9AC0` 84 | `0x002E8B60` 176 | `0x002BD9A0` likely |  | `void CB4TrailSystem::Construct()` |
+| `AttachTrailEmitter(EB3TrailType)` |  |  |  | `0x002E92E0` 220 |  |  | `CB4TrailEmitter * CB4TrailSystem::AttachTrailEmitter(EB4TrailType leTrailType)` |
 
 ## Static data (DNAT_200)
 
@@ -42,6 +43,33 @@ public:
     /* 0x2C00 */ RpAtomic *mpAtomics[3][2];
     /* 0x2C18 */ float mGameTime;
     /* 0x2C1C */ int mRenderBuffer;
+};
+```
+
+## Burnout Revenge layout of `CB4TrailSystem`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 6 file(s), e.g. `GameSource/Graphics/CoronaRenderer/Ps2/B4CoronaRendererPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrailSystem {  // size 0x14680
+    /* static */ CB4TrailParams mgaDefaultParams[4];
+    /* 0x000 */ CB4TrailSegmentCollection maSegments[256];
+    /* 0x13000 */ CB4TrailEmitter maEmitterPool[128];
+    /* 0x13C00 */ CGtStaticStack<CB4TrailEmitter *,128> mFreeEmitters;
+    /* 0x13E0C */ B4EmitterArray maActiveEmitters[4];
+    /* 0x1462C */ RwInt32 mnCurrentBuffer;
+    /* 0x14630 */ RwInt32 mnMyMonitorID;
+    // methods
+    // CB4TrailSystem(const CB4TrailSystem &);
+    // CB4TrailSystem();
+    // void Construct();
+    // void Destruct();
+    // bool Prepare();
+    // void Release();
+    // void Update();
+    // void Render();
+    // void AddTrailSegment(CB4TrailEmitterData *, GtMathPs2::CGtV3d, GtMathPs2::CGtV3d, EB4TrailType, const GtMathPs2::CGtMatrix3x4 *);
+    // CB4TrailEmitter * AttachTrailEmitter(EB4TrailType);
 };
 ```
 

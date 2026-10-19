@@ -11,23 +11,23 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` | `0x0037C5F0` 8 | `0x003EDB50` 8 | `0x00415D90` 8 | `0x0042D7C0` 16 |  |  |
-| `Destruct()` | `0x0037C600` 8 | `0x003EDB60` 8 | `0x00415DA0` 8 | `0x0042D7B0` 16 |  |  |
-| `Release(void*)` | `0x0037C610` 8 | `0x003EDB70` 8 | `0x00415DB0` 8 | `0x0042D7A0` 16 |  |  |
-| `IncrementSegment(CB3AILane**,unsigned short*,EAISegmentLinkType,bool)` | `0x0037C620` 264 | `0x003EDB80` 264 | `0x00415DC0` 264 | `0x0042D5A0` 512 |  |  |
-| `StepForward(float*,CB3AILane**,unsigned short*,EAISegmentLinkType,float)` | `0x0037C730` 344 | `0x003EDC90` 344 | `0x00415ED0` 344 | `0x0042D2B0` 472 |  |  |
-| `IsFinished()` | `0x0037C890` 60 | `0x003EDDF0` 60 | `0x00416030` 60 | `0x0042D250` 84 |  |  |
-| `SetRigPosition(CGtCamera*,GtMathPs2::CGtV3d,float,bool)` | `0x0037C8D0` 1824 | `0x003EDE30` 3328 | `0x00416070` 3000 | `0x0042CE30` 1052 |  |  |
-| `Update(CGtCamera*,float)` | `0x0037CFF0` 796 | `0x003EEB30` 896 | `0x00416C30` 796 | `0x0042CAE0` 836 |  |  |
-| `Prepare(void*)` | `0x0037D310` 804 | `0x003EEEB0` 1136 | `0x00416F50` 1044 | `0x0042C400` 1176 |  |  |
-| `Construct(int)` | `0x0037D640` 136 | `0x003EF320` 196 | `0x00417370` 196 | `0x0042C360` 160 |  |  |
-| `CB3BehaviourAftermath()` |  |  |  | `0x0013E660` 108 |  |  |
-| `ClampParam(float*,CB3AILane**,unsigned short*,EAISegmentLinkType)` |  |  |  | `0x0042D490` 264 |  |  |
-| `SmoothCD(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float)` |  |  |  | `0x0042C8C0` 540 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` | `0x0037C5F0` 8 | `0x003EDB50` 8 | `0x00415D90` 8 | `0x0042D7C0` 16 |  |  |  |
+| `Destruct()` | `0x0037C600` 8 | `0x003EDB60` 8 | `0x00415DA0` 8 | `0x0042D7B0` 16 |  |  |  |
+| `Release(void*)` | `0x0037C610` 8 | `0x003EDB70` 8 | `0x00415DB0` 8 | `0x0042D7A0` 16 |  |  |  |
+| `IncrementSegment(CB3AILane**,unsigned short*,EAISegmentLinkType,bool)` | `0x0037C620` 264 | `0x003EDB80` 264 | `0x00415DC0` 264 | `0x0042D5A0` 512 |  |  |  |
+| `StepForward(float*,CB3AILane**,unsigned short*,EAISegmentLinkType,float)` | `0x0037C730` 344 | `0x003EDC90` 344 | `0x00415ED0` 344 | `0x0042D2B0` 472 |  |  |  |
+| `IsFinished()` | `0x0037C890` 60 | `0x003EDDF0` 60 | `0x00416030` 60 | `0x0042D250` 84 |  |  |  |
+| `SetRigPosition(CGtCamera*,GtMathPs2::CGtV3d,float,bool)` | `0x0037C8D0` 1824 | `0x003EDE30` 3328 | `0x00416070` 3000 | `0x0042CE30` 1052 |  |  |  |
+| `Update(CGtCamera*,float)` | `0x0037CFF0` 796 | `0x003EEB30` 896 | `0x00416C30` 796 | `0x0042CAE0` 836 |  |  |  |
+| `Prepare(void*)` | `0x0037D310` 804 | `0x003EEEB0` 1136 | `0x00416F50` 1044 | `0x0042C400` 1176 |  |  |  |
+| `Construct(int)` | `0x0037D640` 136 | `0x003EF320` 196 | `0x00417370` 196 | `0x0042C360` 160 |  |  |  |
+| `CB3BehaviourAftermath()` |  |  |  | `0x0013E660` 108 |  |  |  |
+| `ClampParam(float*,CB3AILane**,unsigned short*,EAISegmentLinkType)` |  |  |  | `0x0042D490` 264 |  |  |  |
+| `SmoothCD(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float)` |  |  |  | `0x0042C8C0` 540 |  |  |  |
 
 ## Notes
 

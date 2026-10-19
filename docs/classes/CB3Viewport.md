@@ -8,16 +8,34 @@
 - **Source file:** `B3Viewport.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 3
 - **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4Viewport`, size 0x0A0, methods in `GameSource/Graphics/B4Viewport.cpp` ([layout](#burnout-revenge-layout-of-cb4viewport))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Update()` | `0x00211980` 60 | `0x002202C0` 60 | `0x0025FAC0` 60 | `0x00262780` 80 | `0x00251800` proven |  |
-| `Construct(int,int,int)` | `0x002119C0` 44 | `0x00220300` 44 | `0x0025FB00` 44 | `0x00262730` 80 | `0x00251840` proven |  |
-| `CB3Viewport()` |  |  |  | `0x00196200` 44 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Update()` | `0x00211980` 60 | `0x002202C0` 60 | `0x0025FAC0` 60 | `0x00262780` 80 | `0x00251800` proven |  | `void CB4Viewport::Update()` |
+| `Construct(int,int,int)` | `0x002119C0` 44 | `0x00220300` 44 | `0x0025FB00` 44 | `0x00262730` 80 | `0x00251840` proven |  | `void CB4Viewport::Construct(int lnScreenWidth, int lnScreenHeight, int lnScreenDepth)` |
+| `CB3Viewport()` |  |  |  | `0x00196200` 44 |  |  |  |
+
+## Burnout Revenge layout of `CB4Viewport`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 88 file(s), e.g. `GameSource/Camera/B4Spline.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Viewport : public CGtViewport {  // size 0x0A0
+    // base CGtViewport at 0x000
+    /* 0x090 */ RwReal mrLODScalar;
+    // methods
+    // CB4Viewport(const CB4Viewport &);
+    // CB4Viewport();
+    // void Construct(int, int, int);
+    // void Construct(RwRaster *, RwRaster *);
+    // void Update();
+};
+```
 
 ## Notes
 

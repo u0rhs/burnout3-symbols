@@ -9,16 +9,37 @@
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 3
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440200`, 12 bytes = 3 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 1 virtual functions)
+- **Burnout Revenge counterpart:** `CB4PlayerCameraStateInGame`, size 0x020, methods in `GameSource/Camera/States/B4PlayerCameraStateInGame.cpp` ([layout](#burnout-revenge-layout-of-cb4playercamerastateingame))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x002A76D0` 1644 | `0x002E1FA0` 1944 | `0x00318E80` 1816 | `0x00314A90` 1212 | `0x002E8250` unverified |  |
-| `ActivateForwardBehaviour(CB3PlayerCameraManager*)` |  |  |  | `0x00314A30` 96 |  |  |
-| `CB3PlayerCameraStateInGame()` |  |  |  | `0x0013EC60` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x002A76D0` 1644 | `0x002E1FA0` 1944 | `0x00318E80` 1816 | `0x00314A90` 1212 | `0x002E8250` unverified |  | `void CB4PlayerCameraStateInGame::Action(EGtStateAction leAction, void *lpOwner, void *lpActionData, void *lpUserData)` |
+| `ActivateForwardBehaviour(CB3PlayerCameraManager*)` |  |  |  | `0x00314A30` 96 |  |  | `void CB4PlayerCameraStateInGame::ActivateForwardBehaviour(CB4PlayerCameraManager *lpManager)` |
+| `CB3PlayerCameraStateInGame()` |  |  |  | `0x0013EC60` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4PlayerCameraStateInGame`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 318 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4PlayerCameraStateInGame : public CGtState {  // size 0x020
+    // base CGtState at 0x000
+    /* 0x010 */ RwReal mrTime;
+    /* 0x014 */ ERaceCarIndex meTakedownIndex;
+    /* 0x018 */ bool mbLookBackThisFrame;
+    /* 0x01C */ RwReal mrCameraTimePlaying;
+    // methods
+    // CB4PlayerCameraStateInGame(const CB4PlayerCameraStateInGame &);
+    // CB4PlayerCameraStateInGame();
+    // virtual void Action(EGtStateAction, void *, void *, void *);
+    // void RenderDebug();
+    // void ActivateForwardBehaviour(CB4PlayerCameraManager *);
+};
+```
 
 ## Notes
 

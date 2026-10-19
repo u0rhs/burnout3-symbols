@@ -9,24 +9,24 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CGtMatrix3x4()` |  |  |  | `0x00133EC0` 92 |  |  |
-| `CGtMatrix3x4(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x00132430` 124 |  |  |
-| `ConvertToRwMatrix(RwMatrixTag*)` |  |  |  | `0x00217830` 132 |  |  |
-| `Invert()` |  |  |  | `0x001539B0` 524 |  |  |
-| `IsNormal()` |  |  |  | `0x001BD400` 268 |  |  |
-| `IsOrthogonal()` |  |  |  | `0x001BD300` 244 |  |  |
-| `IsValid()` |  |  |  | `0x001A6560` 200 |  |  |
-| `OrthoNormalise()` |  |  |  | `0x001528E0` 1552 |  |  |
-| `Set(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001CFDD0` 184 |  |  |
-| `SetFromRwMatrix(const RwMatrixTag*)` |  |  |  | `0x00233DD0` 140 |  |  |
-| `SetIdentity()` |  |  |  | `0x00134550` 144 |  |  |
-| `operator *(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x001691C0` 340 |  |  |
-| `operator *=(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x001BB9C0` 176 |  |  |
-| `operator =(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x001331F0` 116 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CGtMatrix3x4()` |  |  |  | `0x00133EC0` 92 |  |  |  |
+| `CGtMatrix3x4(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x00132430` 124 |  |  |  |
+| `ConvertToRwMatrix(RwMatrixTag*)` |  |  |  | `0x00217830` 132 |  |  |  |
+| `Invert()` |  |  |  | `0x001539B0` 524 |  |  |  |
+| `IsNormal()` |  |  |  | `0x001BD400` 268 |  |  |  |
+| `IsOrthogonal()` |  |  |  | `0x001BD300` 244 |  |  |  |
+| `IsValid()` |  |  |  | `0x001A6560` 200 |  |  |  |
+| `OrthoNormalise()` |  |  |  | `0x001528E0` 1552 |  |  |  |
+| `Set(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001CFDD0` 184 |  |  |  |
+| `SetFromRwMatrix(const RwMatrixTag*)` |  |  |  | `0x00233DD0` 140 |  |  |  |
+| `SetIdentity()` |  |  |  | `0x00134550` 144 |  |  |  |
+| `operator *(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x001691C0` 340 |  |  |  |
+| `operator *=(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x001BB9C0` 176 |  |  |  |
+| `operator =(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x001331F0` 116 |  |  |  |
 
 ## Notes
 

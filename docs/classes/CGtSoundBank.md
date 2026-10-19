@@ -8,31 +8,80 @@
 - **Source file:** `GtSoundBank.cpp`
 - **Methods per build:** DNAT_200 11, B3DEBUG 12, B3INTERN 11, B3O0PCH 16
 - **Retail (SLUS-21050):** 7 of its 11 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtSoundBank`, size 0x3B8, methods in `GameShared/GameClasses/Sound/GtSoundBank.cpp` ([layout](#burnout-revenge-layout-of-cgtsoundbank))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `FindWave(const unsigned long&,bool) const` | `0x00340E30` 376 |  |  |  | `0x00383A70` strong |  |
-| `GetPath() const` | `0x00340FB0` 8 |  |  |  |  |  |
-| `Unload()` | `0x00340FC0` 108 | `0x003A4400` 128 | `0x003CE3D0` 128 | `0x003D6970` 176 | `0x00383C10` strong |  |
-| `LoadAsync(const char*,RwaSPU2Output*,RwaWaveDictLoader*,void*,int)` | `0x00341030` 532 | `0x003A4480` 768 | `0x003CE450` 684 | `0x003D66A0` 508 | `0x00383C80` likely |  |
-| `IsGlobal()` | `0x00341250` 8 | `0x003A4780` 8 | `0x003CE700` 8 | `0x003D6680` 28 | `0x00383EB0` strong |  |
-| `SetIsGlobal(bool)` | `0x00341260` 8 | `0x003A4790` 8 | `0x003CE710` 8 | `0x003D6650` 36 |  |  |
-| `GetReferenceCount()` | `0x00341270` 8 | `0x003A47A0` 8 | `0x003CE720` 8 | `0x003D6630` 32 | `0x00383ED0` strong |  |
-| `SetReferenceCount(int)` | `0x00341280` 8 | `0x003A47B0` 8 | `0x003CE730` 8 | `0x003D6600` 40 | `0x00383EE0` strong |  |
-| `Destruct()` | `0x00341290` 8 | `0x003A47C0` 8 | `0x003CE740` 8 | `0x003D65F0` 16 | `0x00383EF0` proven |  |
-| `Prepare()` | `0x003412A0` 8 | `0x003A47D0` 8 | `0x003CE750` 8 | `0x003D65D0` 20 |  |  |
-| `Construct()` | `0x003412B0` 28 | `0x003A47E0` 28 | `0x003CE760` 28 | `0x003D6590` 64 |  |  |
-| `SanityCheckVariants()` |  | `0x003A3FD0` 564 |  | `0x003D6E20` 780 |  |  |
-| `FindWave(const unsigned long&,bool)` |  | `0x003A4210` 468 | `0x003CE1F0` 460 | `0x003D6BD0` 580 |  |  |
-| `GetPath()` |  | `0x003A43F0` 8 | `0x003CE3C0` 8 | `0x003D6A20` 28 |  |  |
-| `GetAsyncLoadStatus()` |  |  |  | `0x003D7770` 28 |  |  |
-| `GetWaveObjectBuffer()` |  |  |  | `0x003D7860` 28 |  |  |
-| `SetupWaves()` |  |  |  | `0x003D68A0` 200 |  |  |
-| `Sort()` |  |  |  | `0x003D6A40` 296 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `FindWave(const unsigned long&,bool) const` | `0x00340E30` 376 |  |  |  | `0x00383A70` strong |  | `CGtSoundWave * CGtSoundBank::FindWave(const unsigned long &lId, bool lbChooseVariant) const` |
+| `GetPath() const` | `0x00340FB0` 8 |  |  |  |  |  | `RwChar * CGtSoundBank::GetPath() const` |
+| `Unload()` | `0x00340FC0` 108 | `0x003A4400` 128 | `0x003CE3D0` 128 | `0x003D6970` 176 | `0x00383C10` strong |  | `void CGtSoundBank::Unload()` |
+| `LoadAsync(const char*,RwaSPU2Output*,RwaWaveDictLoader*,void*,int)` | `0x00341030` 532 | `0x003A4480` 768 | `0x003CE450` 684 | `0x003D66A0` 508 | `0x00383C80` likely |  | `bool CGtSoundBank::LoadAsync(const char *lpcPath, RwaSPU2Output *lpOutput, RwaWaveDictLoader *lpWaveDictLoader, void *lpObjectBuffer, int lnObjectBufferSize, void *lpWaveRAMHandle, unsigned int luWaveRAMHandleSize, unsigned int luFlags)` (same name, different parameters) |
+| `IsGlobal()` | `0x00341250` 8 | `0x003A4780` 8 | `0x003CE700` 8 | `0x003D6680` 28 | `0x00383EB0` strong |  |  |
+| `SetIsGlobal(bool)` | `0x00341260` 8 | `0x003A4790` 8 | `0x003CE710` 8 | `0x003D6650` 36 |  |  | `void CGtSoundBank::SetIsGlobal(bool lbIsGlobal)` |
+| `GetReferenceCount()` | `0x00341270` 8 | `0x003A47A0` 8 | `0x003CE720` 8 | `0x003D6630` 32 | `0x00383ED0` strong |  | `RwInt32 CGtSoundBank::GetReferenceCount()` |
+| `SetReferenceCount(int)` | `0x00341280` 8 | `0x003A47B0` 8 | `0x003CE730` 8 | `0x003D6600` 40 | `0x00383EE0` strong |  | `void CGtSoundBank::SetReferenceCount(int lnValue)` |
+| `Destruct()` | `0x00341290` 8 | `0x003A47C0` 8 | `0x003CE740` 8 | `0x003D65F0` 16 | `0x00383EF0` proven |  | `void CGtSoundBank::Destruct()` |
+| `Prepare()` | `0x003412A0` 8 | `0x003A47D0` 8 | `0x003CE750` 8 | `0x003D65D0` 20 |  |  | `bool CGtSoundBank::Prepare()` |
+| `Construct()` | `0x003412B0` 28 | `0x003A47E0` 28 | `0x003CE760` 28 | `0x003D6590` 64 |  |  | `void CGtSoundBank::Construct()` |
+| `SanityCheckVariants()` |  | `0x003A3FD0` 564 |  | `0x003D6E20` 780 |  |  | `bool CGtSoundBank::SanityCheckVariants()` |
+| `FindWave(const unsigned long&,bool)` |  | `0x003A4210` 468 | `0x003CE1F0` 460 | `0x003D6BD0` 580 |  |  | `CGtSoundWave * CGtSoundBank::FindWave(const unsigned long &lId, bool lbChooseVariant) const` (same name, different parameters) |
+| `GetPath()` |  | `0x003A43F0` 8 | `0x003CE3C0` 8 | `0x003D6A20` 28 |  |  | `RwChar * CGtSoundBank::GetPath() const` (same name, different parameters) |
+| `GetAsyncLoadStatus()` |  |  |  | `0x003D7770` 28 |  |  |  |
+| `GetWaveObjectBuffer()` |  |  |  | `0x003D7860` 28 |  |  |  |
+| `SetupWaves()` |  |  |  | `0x003D68A0` 200 |  |  | `void CGtSoundBank::SetupWaves()` |
+| `Sort()` |  |  |  | `0x003D6A40` 296 |  |  | `void CGtSoundBank::Sort()` |
+
+## Burnout Revenge layout of `CGtSoundBank`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 284 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtSoundBank {  // size 0x3B8
+    /* 0x000 */ RwaWaveDict *mpWaveDictionary;
+    /* 0x004 */ void *mpWaveObjectBuffer;
+    /* 0x008 */ RwInt32 mnWaveObjectBufferSize;
+    /* 0x00C */ RwaAsyncLoadStatus meLoadStatus;
+    /* 0x010 */ CGtSoundWave maWaves[55];
+    /* 0x380 */ char macBankPath[40];
+    /* 0x3A8 */ RwUInt8 mnReferenceCount;
+    /* 0x3A9 */ RwInt8 mnNumWavesLoaded;
+    /* 0x3AA */ bool mbIsGlobal;
+    /* 0x3AB */ bool mbAllocated;
+    /* 0x3AC */ bool mbIsLoaded;
+    /* 0x3B0 */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CGtSoundBank(const CGtSoundBank &);
+    // CGtSoundBank();
+    // void Construct();
+    // bool Prepare();
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // void SetReferenceCount(int);
+    // RwInt32 GetReferenceCount();
+    // void SetIsGlobal(bool);
+    // bool IsGlobal();
+    // bool LoadAsync(const char *, RwaSPU2Output *, RwaWaveDictLoader *, void *, int, void *, unsigned int, unsigned int);
+    // void Unload();
+    // RwChar * GetPath() const;
+    // RwaAsyncLoadStatus GetAsyncLoadStatus();
+    // void * GetWaveObjectBuffer();
+    // virtual CGtSoundWave * FindWave(const unsigned long &, bool) const;
+    // void SetAsyncLoadStatus(RwaAsyncLoadStatus);
+    // RwInt32 GetWaveObjectBufferSize();
+    // bool IsLoaded();
+    // void Sort();
+    // bool SanityCheckVariants();
+    // void SetupWaves();
+    // void SetWaveDictionary(RwaWaveDict *);
+    // void SetWaveObjectBuffer(void *, int);
+    // void SetIsLoaded(bool);
+};
+```
 
 ## Notes
 

@@ -8,30 +8,31 @@
 - **Source file:** `B3AITarget.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 9, B3O0PCH 13
 - **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 8 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4AITargetSpline`, size 0x160, methods in `GameSource/World/B4AITarget.cpp` ([layout](#burnout-revenge-layout-of-cb4aitargetspline))
 - **Burnout 2 ancestor (by shared methods: `CalculateInterpolatedPosition`, `CalculateSpline`, `CalculateSplineVectors`, `ClampToWithinDesiredLanes`):** `CAIAvoidance`, size 0xE98, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CalculateSpline(int*,CB3AILane*,float*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::C` | `0x00145D90` 1120 | `0x001545E0` 1288 | `0x00150810` 908 | `0x00163DC0` 2268 | `0x00149180` proven | `void CAIAvoidance::CalculateSpline(int *lanIndices, CLane *lpLane, float *larFrac, RwV3d *lpFwd0, RwV3d *lpFwd1, RwV3d *lpFwd2, RwV3d *lpPos)` (same name, different parameters) |
-| `CalculateSplineVectors()` | `0x001461F0` 1404 | `0x00154AF0` 2108 | `0x00150BA0` 1548 | `0x00163720` 1692 | `0x001495C0` proven | `void CAIAvoidance::CalculateSplineVectors()` |
-| `GetSplineIndices(const CB3AILaneStruct*,unsigned short,int*) const` | `0x00146770` 304 |  |  |  | `0x00149B50` proven |  |
-| `ClampToWithinDesiredLanes(GtMathPs2::CGtV3d,const CB3AILane*,unsigned short,GtMathPs2::CGtV3d*) const` | `0x001468A0` 480 |  |  |  | `0x00149C90` proven | `void CAIAvoidance::ClampToWithinDesiredLanes(RwV3d *lpInputVector, CLane *lpLane, unsigned short lunSegIndex16, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetTargetPosition()` | `0x00146A80` 40 | `0x001558F0` 40 | `0x00151980` 40 | `0x00162EA0` 100 | `0x00149E80` proven |  |
-| `IsSquareCorner()` | `0x00146AB0` 8 | `0x00155920` 8 | `0x001519B0` 8 | `0x00162E80` 28 | `0x00149EB0` proven |  |
-| `GetDesiredDirection(GtMathPs2::CGtV3d*) const` | `0x00146AC0` 616 |  |  |  | `0x00149EC0` proven |  |
-| `Prepare(CB3AICar*)` | `0x00146D30` 132 | `0x00155CA0` 212 | `0x00151CC0` 212 | `0x00162980` 304 | `0x0014A130` proven |  |
-| `GetSplineIndices(const CB3AILaneStruct*,unsigned short,int*)` |  | `0x00155330` 696 | `0x001511B0` 696 | `0x001633C0` 856 |  |  |
-| `ClampToWithinDesiredLanes(GtMathPs2::CGtV3d,const CB3AILane*,unsigned short,GtMathPs2::CGtV3d*)` |  | `0x001555F0` 768 | `0x00151470` 768 | `0x001630E0` 736 |  | `void CAIAvoidance::ClampToWithinDesiredLanes(RwV3d *lpInputVector, CLane *lpLane, unsigned short lunSegIndex16, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetDesiredDirection(GtMathPs2::CGtV3d*)` |  | `0x00155930` 868 | `0x001519C0` 768 | `0x00162AF0` 904 |  |  |
-| `CB3AITargetSpline()` |  |  |  | `0x001913D0` 268 |  |  |
-| `CalculateInterpolatedPosition(const CB3AILane*,unsigned short,float,GtMathPs2::CGtV3d*)` |  |  | `0x00151770` 516 | `0x00162F10` 456 |  | `void CAIAvoidance::CalculateInterpolatedPosition(CLane *lpLane, int lnSegmentIndex, float lrOffset, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `Construct()` |  |  |  | `0x00162970` 16 |  |  |
-| `Release()` |  |  |  | `0x00162AE0` 16 |  |  |
-| `Update()` |  |  |  | `0x00162AB0` 40 |  | `void CAIAvoidance::Update(int lbForceUpdate)` (same name, different parameters) |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CalculateSpline(int*,CB3AILane*,float*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::C` | `0x00145D90` 1120 | `0x001545E0` 1288 | `0x00150810` 908 | `0x00163DC0` 2268 | `0x00149180` proven | `void CAIAvoidance::CalculateSpline(int *lanIndices, CLane *lpLane, float *larFrac, RwV3d *lpFwd0, RwV3d *lpFwd1, RwV3d *lpFwd2, RwV3d *lpPos)` (same name, different parameters) | `void CB4AITargetSpline::CalculateSpline(CB4AILaneSegment *lanIndices, float *larFrac, GtMathPs2::CGtV3d *lpFwd0, GtMathPs2::CGtV3d *lpFwd1, GtMathPs2::CGtV3d *lpFwd2, GtMathPs2::CGtV3d *lpPos)` (same name, different parameters) |
+| `CalculateSplineVectors()` | `0x001461F0` 1404 | `0x00154AF0` 2108 | `0x00150BA0` 1548 | `0x00163720` 1692 | `0x001495C0` proven | `void CAIAvoidance::CalculateSplineVectors()` | `void CB4AITargetSpline::CalculateSplineVectors()` |
+| `GetSplineIndices(const CB3AILaneStruct*,unsigned short,int*) const` | `0x00146770` 304 |  |  |  | `0x00149B50` proven |  | `bool CB4AITargetSpline::GetSplineIndices(const CB4AILaneSegment *lpSegIndex, CB4AILaneSegment *lanIndex) const` (same name, different parameters) |
+| `ClampToWithinDesiredLanes(GtMathPs2::CGtV3d,const CB3AILane*,unsigned short,GtMathPs2::CGtV3d*) const` | `0x001468A0` 480 |  |  |  | `0x00149C90` proven | `void CAIAvoidance::ClampToWithinDesiredLanes(RwV3d *lpInputVector, CLane *lpLane, unsigned short lunSegIndex16, RwV3d *lpResultVector) const` (same name, different parameters) | `void CB4AITargetSpline::ClampToWithinDesiredLanes(GtMathPs2::CGtV3d lInputVector, const CB4AILaneSegment *lpSegIndex, GtMathPs2::CGtV3d *lpResultVector) const` (same name, different parameters) |
+| `GetTargetPosition()` | `0x00146A80` 40 | `0x001558F0` 40 | `0x00151980` 40 | `0x00162EA0` 100 | `0x00149E80` proven |  | `CGtV3d CB4AITargetSpline::GetTargetPosition()` |
+| `IsSquareCorner()` | `0x00146AB0` 8 | `0x00155920` 8 | `0x001519B0` 8 | `0x00162E80` 28 | `0x00149EB0` proven |  | `bool CB4AITargetSpline::IsSquareCorner()` |
+| `GetDesiredDirection(GtMathPs2::CGtV3d*) const` | `0x00146AC0` 616 |  |  |  | `0x00149EC0` proven |  | `RwReal CB4AITargetSpline::GetDesiredDirection(GtMathPs2::CGtV3d *lpDirection) const` |
+| `Prepare(CB3AICar*)` | `0x00146D30` 132 | `0x00155CA0` 212 | `0x00151CC0` 212 | `0x00162980` 304 | `0x0014A130` proven |  | `bool CB4AITargetSpline::Prepare(CB4AICar *lpCar)` |
+| `GetSplineIndices(const CB3AILaneStruct*,unsigned short,int*)` |  | `0x00155330` 696 | `0x001511B0` 696 | `0x001633C0` 856 |  |  | `bool CB4AITargetSpline::GetSplineIndices(const CB4AILaneSegment *lpSegIndex, CB4AILaneSegment *lanIndex) const` (same name, different parameters) |
+| `ClampToWithinDesiredLanes(GtMathPs2::CGtV3d,const CB3AILane*,unsigned short,GtMathPs2::CGtV3d*)` |  | `0x001555F0` 768 | `0x00151470` 768 | `0x001630E0` 736 |  | `void CAIAvoidance::ClampToWithinDesiredLanes(RwV3d *lpInputVector, CLane *lpLane, unsigned short lunSegIndex16, RwV3d *lpResultVector) const` (same name, different parameters) | `void CB4AITargetSpline::ClampToWithinDesiredLanes(GtMathPs2::CGtV3d lInputVector, const CB4AILaneSegment *lpSegIndex, GtMathPs2::CGtV3d *lpResultVector) const` (same name, different parameters) |
+| `GetDesiredDirection(GtMathPs2::CGtV3d*)` |  | `0x00155930` 868 | `0x001519C0` 768 | `0x00162AF0` 904 |  |  | `RwReal CB4AITargetSpline::GetDesiredDirection(GtMathPs2::CGtV3d *lpDirection) const` (same name, different parameters) |
+| `CB3AITargetSpline()` |  |  |  | `0x001913D0` 268 |  |  | `CB4AITargetSpline * CB4AITargetSpline::CB4AITargetSpline()` |
+| `CalculateInterpolatedPosition(const CB3AILane*,unsigned short,float,GtMathPs2::CGtV3d*)` |  |  | `0x00151770` 516 | `0x00162F10` 456 |  | `void CAIAvoidance::CalculateInterpolatedPosition(CLane *lpLane, int lnSegmentIndex, float lrOffset, RwV3d *lpResultVector) const` (same name, different parameters) | `void CB4AITargetSpline::CalculateInterpolatedPosition(const CB4AILaneSegment *lpSegmentIndex, float lrOffset, GtMathPs2::CGtV3d *lpResultVector) const` (same name, different parameters) |
+| `Construct()` |  |  |  | `0x00162970` 16 |  |  | `void CB4AITargetSpline::Construct()` |
+| `Release()` |  |  |  | `0x00162AE0` 16 |  |  | `void CB4AITargetSpline::Release()` |
+| `Update()` |  |  |  | `0x00162AB0` 40 |  | `void CAIAvoidance::Update(int lbForceUpdate)` (same name, different parameters) | `void CB4AITargetSpline::Update()` |
 
 ## Burnout 2 layout of `CAIAvoidance`
 
@@ -128,6 +129,45 @@ public:
     // void CAIAvoidance::CheckRaceCar()  [0x0021E3C0]
     // void CAIAvoidance::Reset()  [0x0021EAB0]
     // int CAIAvoidance::Init()  [0x0021EF10]
+};
+```
+
+## Burnout Revenge layout of `CB4AITargetSpline`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 305 file(s), e.g. `GameShared/GameClasses/System/MemoryCard/NewMemoryCard/GtMemoryCardManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4AITargetSpline {  // size 0x160
+    /* 0x000 */ CGtV3d maPos[6];
+    /* 0x060 */ CGtV3d maSquareCornerPos[6];
+    /* 0x0C0 */ CGtV3d mSplineFwd2;
+    /* 0x0D0 */ CGtV3d mSplineLeft2;
+    /* 0x0E0 */ CGtV3d mSplineFwd;
+    /* 0x0F0 */ CGtV3d mSplineLeft;
+    /* 0x100 */ CGtV3d mSplinePos;
+    /* 0x110 */ CGtV3d mApexSplineFwd2;
+    /* 0x120 */ CGtV3d mApexSplinePos;
+    /* 0x130 */ CGtV3d mSquareCornerSplineFwd2;
+    /* 0x140 */ CGtV3d mSquareCornerSplinePos;
+    /* 0x150 */ bool mbRecordSquareCornerPos;
+    /* 0x151 */ bool mbSquareCornerSplineValid;
+    /* 0x154 */ CB4AICar *mpCar;
+    // methods
+    // CB4AITargetSpline(const CB4AITargetSpline &);
+    // CB4AITargetSpline();
+    // void Construct();
+    // bool Prepare(CB4AICar *);
+    // void Update();
+    // void Release();
+    // void Destruct();
+    // RwReal GetDesiredDirection(GtMathPs2::CGtV3d *) const;
+    // bool IsSquareCorner();
+    // CGtV3d GetTargetPosition();
+    // void CalculateSplineVectors();
+    // void CalculateSpline(CB4AILaneSegment *, float *, GtMathPs2::CGtV3d *, GtMathPs2::CGtV3d *, GtMathPs2::CGtV3d *, GtMathPs2::CGtV3d *);
+    // void CalculateInterpolatedPosition(const CB4AILaneSegment *, float, GtMathPs2::CGtV3d *) const;
+    // void ClampToWithinDesiredLanes(GtMathPs2::CGtV3d, const CB4AILaneSegment *, GtMathPs2::CGtV3d *) const;
+    // bool GetSplineIndices(const CB4AILaneSegment *, CB4AILaneSegment *) const;
 };
 ```
 

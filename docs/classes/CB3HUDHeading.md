@@ -8,19 +8,38 @@
 - **Source file:** `B3HUDHeading.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 6
 - **vtable (DNAT_200):** `0x00441DB0`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
+- **Burnout Revenge counterpart:** `CB4HUDHeading`, size 0x028, methods in `GameSource/Hud/B4HUDHeading.cpp` ([layout](#burnout-revenge-layout-of-cb4hudheading))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x00383250` 1068 | `0x003F62A0` 1068 | `0x0041DED0` 1068 | `0x00436440` 736 |  |  |
-| `Update(float)` | `0x00383680` 8 | `0x003F66D0` 8 | `0x0041E300` 8 | `0x00435FE0` 16 |  |  |
-| `Prepare(int,EHUDAlign,int)` | `0x00383690` 664 | `0x003F66E0` 760 | `0x0041E310` 760 | `0x00435E80` 348 |  |  |
-| `CB3HUDHeading()` |  |  |  | `0x00199740` 60 |  |  |
-| `GetBoostBarTempLayer()` |  |  |  | `0x001A3AF0` 44 |  |  |
-| `PrepareHeadingObjects(EHUDMode)` |  |  |  | `0x00435FF0` 1104 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x00383250` 1068 | `0x003F62A0` 1068 | `0x0041DED0` 1068 | `0x00436440` 736 |  |  | `void CB4HUDHeading::UpdateTransition(float lrInterp, bool lbShow, EHUDMode leNewMode, EHUDMode leOldMode)` |
+| `Update(float)` | `0x00383680` 8 | `0x003F66D0` 8 | `0x0041E300` 8 | `0x00435FE0` 16 |  |  | `void CB4HUDHeading::Update(float lrTimeStep)` |
+| `Prepare(int,EHUDAlign,int)` | `0x00383690` 664 | `0x003F66E0` 760 | `0x0041E310` 760 | `0x00435E80` 348 |  |  | `bool CB4HUDHeading::Prepare(EPlayerCarIndex lePlayer, EHUDAlign leAlign, int lxFlags, bool lbUseTopBorder)` (same name, different parameters) |
+| `CB3HUDHeading()` |  |  |  | `0x00199740` 60 |  |  |  |
+| `GetBoostBarTempLayer()` |  |  |  | `0x001A3AF0` 44 |  |  |  |
+| `PrepareHeadingObjects(EHUDMode)` |  |  |  | `0x00435FF0` 1104 |  |  |  |
+
+## Burnout Revenge layout of `CB4HUDHeading`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 2 file(s), e.g. `GameSource/Hud/B4HUDHeading.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4HUDHeading : public CB4HUDComponent {  // size 0x028
+    // base CB4HUDComponent at 0x000
+    /* 0x020 */ CGt2dObject *mapObjects[2];
+    // methods
+    // CB4HUDHeading(const CB4HUDHeading &);
+    // CB4HUDHeading();
+    // bool Prepare(EPlayerCarIndex, EHUDAlign, int, bool);
+    // virtual void Update(float);
+    // void PrepareBorderObjects(EHUDMode);
+    // virtual void UpdateTransition(float, bool, EHUDMode, EHUDMode);
+};
+```
 
 ## Notes
 

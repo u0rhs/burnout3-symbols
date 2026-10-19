@@ -8,17 +8,37 @@
 - **Source file:** `B3NetworkHasHeadsetMessage.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 2, B3INTERN 3, B3O0PCH 3
 - **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4NetworkHasHeadsetMessage`, size 0x00C, methods in `GameSource/Network/Messages/B4NetworkHasHeadsetMessage.cpp` ([layout](#burnout-revenge-layout-of-cb4networkhasheadsetmessage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Retrieve(unsigned char*)` | `0x002FAF50` 60 | `0x0034E7C0` 1048 | `0x0037FE10` 1048 | `0x00380320` 376 | `0x00341C70` proven |  |
-| `Prepare(unsigned char)` | `0x002FAF90` 56 | `0x0034EBE0` 56 | `0x00380230` 56 | `0x003802C0` 84 | `0x00341CB0` proven |  |
-| `Construct()` | `0x002FAFD0` 8 |  | `0x00380270` 8 |  | `0x00341CF0` unverified |  |
-| `Release()` |  |  |  | `0x003804A0` 40 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Retrieve(unsigned char*)` | `0x002FAF50` 60 | `0x0034E7C0` 1048 | `0x0037FE10` 1048 | `0x00380320` 376 | `0x00341C70` proven |  |  |
+| `Prepare(unsigned char)` | `0x002FAF90` 56 | `0x0034EBE0` 56 | `0x00380230` 56 | `0x003802C0` 84 | `0x00341CB0` proven |  |  |
+| `Construct()` | `0x002FAFD0` 8 |  | `0x00380270` 8 |  | `0x00341CF0` unverified |  | `void CB4NetworkHasHeadsetMessage::Construct()` |
+| `Release()` |  |  |  | `0x003804A0` 40 |  |  |  |
+
+## Burnout Revenge layout of `CB4NetworkHasHeadsetMessage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 92 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkHasHeadsetMessage : public CB4NetworkMessage {  // size 0x00C
+    // base CB4NetworkMessage at 0x000
+    /* 0x008 */ RwUInt8 mun8HasHeadset;
+    // methods
+    // CB4NetworkHasHeadsetMessage(const CB4NetworkHasHeadsetMessage &);
+    // CB4NetworkHasHeadsetMessage();
+    // void Construct();
+    // void Prepare(unsigned char);
+    // bool Retrieve(unsigned char *);
+    // void Release();
+    // void Destruct();
+};
+```
 
 ## Notes
 

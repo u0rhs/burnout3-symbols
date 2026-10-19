@@ -8,20 +8,41 @@
 - **Source file:** `B3FogPS2.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 7
 - **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4Fog`, size 0x001, methods in `GameSource/Graphics/Fog/Ps2/B4FogPS2.cpp` ([layout](#burnout-revenge-layout-of-cb4fog))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `CalculateClipPlanes(float*,float*,float)` | `0x002019E0` 52 | `0x0020D940` 52 | `0x0024D840` 52 | `0x00251610` 104 | `0x00240EF0` proven |  |
-| `RestoreRenderstates(const CB3CameraData*)` | `0x00201A20` 160 | `0x0020D980` 160 | `0x0024D880` 160 | `0x00251520` 232 | `0x00240F30` proven |  |
-| `SetRenderstates()` | `0x00201AC0` 104 | `0x0020DA20` 104 | `0x0024D920` 104 | `0x00251490` 132 | `0x00240FD0` proven |  |
-| `RenderIndexedFog(GtMathPs2::CGtV3d,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsign` | `0x00201B30` 924 | `0x0020DA90` 1000 | `0x0024D990` 1000 | `0x00250F70` 1304 | `0x00241040` proven |  |
-| `GenerateClut(float,float)` | `0x00201ED0` 768 | `0x0020DE80` 804 | `0x0024DD80` 804 | `0x00250BB0` 956 | `0x002413E0` strong |  |
-| `ZGreen2FBAlpha(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int)` | `0x002021D0` 724 | `0x0020E1B0` 756 | `0x0024E0B0` 756 | `0x002507F0` 956 | `0x002416E0` strong |  |
-| `Render(GtMathPs2::CGtV3d,float,float)` | `0x002024B0` 504 | `0x0020E4B0` 632 | `0x0024E3B0` 632 | `0x00250540` 688 | `0x002419C0` strong |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `CalculateClipPlanes(float*,float*,float)` | `0x002019E0` 52 | `0x0020D940` 52 | `0x0024D840` 52 | `0x00251610` 104 | `0x00240EF0` proven |  | `void CB4Fog::CalculateClipPlanes(float *lprNearClipOut, float *lprFarClipOut, float lrFogDistance)` |
+| `RestoreRenderstates(const CB3CameraData*)` | `0x00201A20` 160 | `0x0020D980` 160 | `0x0024D880` 160 | `0x00251520` 232 | `0x00240F30` proven |  | `void CB4Fog::RestoreRenderstates(const CB4CameraData *lpCameraData)` |
+| `SetRenderstates()` | `0x00201AC0` 104 | `0x0020DA20` 104 | `0x0024D920` 104 | `0x00251490` 132 | `0x00240FD0` proven |  | `void CB4Fog::SetRenderstates()` |
+| `RenderIndexedFog(GtMathPs2::CGtV3d,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsign` | `0x00201B30` 924 | `0x0020DA90` 1000 | `0x0024D990` 1000 | `0x00250F70` 1304 | `0x00241040` proven |  | `void CB4Fog::RenderIndexedFog(GtMathPs2::CGtV3d lFogColour, unsigned int lnLeft, unsigned int lnTop, unsigned int lnWidth, unsigned int lnHeight, unsigned int lnFBP, unsigned int lnFBW, unsigned int lnZBP)` (same name, different parameters) |
+| `GenerateClut(float,float)` | `0x00201ED0` 768 | `0x0020DE80` 804 | `0x0024DD80` 804 | `0x00250BB0` 956 | `0x002413E0` strong |  | `void CB4Fog::GenerateClut(float lrWorldFogIntensity, float lrSkyFogIntensity)` |
+| `ZGreen2FBAlpha(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int)` | `0x002021D0` 724 | `0x0020E1B0` 756 | `0x0024E0B0` 756 | `0x002507F0` 956 | `0x002416E0` strong |  | `void CB4Fog::ZGreen2FBAlpha(unsigned int lnFBP, unsigned int lnFBW, unsigned int lnZBP, unsigned int lnOffX, unsigned int lnOffY, unsigned int lnWidth, unsigned int lnHeight)` |
+| `Render(GtMathPs2::CGtV3d,float,float)` | `0x002024B0` 504 | `0x0020E4B0` 632 | `0x0024E3B0` 632 | `0x00250540` 688 | `0x002419C0` strong |  | `void CB4Fog::Render(GtMathPs2::CGtV3d lColour, float lrWorldFogIntensity, float lrSkyFogIntensity)` |
+
+## Burnout Revenge layout of `CB4Fog`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 1 file(s), e.g. `GameSource/Graphics/Ps2/B4GraphicsManagerPS2.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4Fog : public CB4FogBase {  // size 0x001
+    // base CB4FogBase at 0x000
+    // methods
+    // CB4Fog(const CB4Fog &);
+    // CB4Fog();
+    // static void Render(GtMathPs2::CGtV3d, float, float);
+    // static void CalculateClipPlanes(float *, float *, float);
+    // static void ZGreen2FBAlpha(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
+    // static void GenerateClut(float, float);
+    // static void RenderIndexedFog(GtMathPs2::CGtV3d, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
+    // static void SetRenderstates();
+    // static void RestoreRenderstates(const CB4CameraData *);
+};
+```
 
 ## Notes
 

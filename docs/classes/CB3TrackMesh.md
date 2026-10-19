@@ -6,15 +6,48 @@
 
 - **Area:** [Rendering](../systems/rendering.md)
 - **Methods per build:** B3O0PCH 2
+- **Burnout Revenge counterpart:** `CB4TrackMesh`, size 0x040 ([layout](#burnout-revenge-layout-of-cb4trackmesh))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `FixUp()` |  |  |  | `0x0017C0A0` 104 |  |  |
-| `GetBoundingBox()` |  |  |  | `0x00283AB0` 24 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `FixUp()` |  |  |  | `0x0017C0A0` 104 |  |  |  |
+| `GetBoundingBox()` |  |  |  | `0x00283AB0` 24 |  |  |  |
+
+## Burnout Revenge layout of `CB4TrackMesh`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 245 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrackMesh {  // size 0x040
+    /* 0x000 */ RwInt32 reserved1;
+    /* 0x004 */ RwInt32 reserved2;
+    /* 0x008 */ RwInt32 reserved3;
+    /* 0x00C */ RwUInt8 *mpRenderDataFirst;
+    /* 0x010 */ RwInt32 reserved4;
+    /* 0x014 */ RwInt32 reserved5;
+    /* 0x018 */ RwInt32 reserved6;
+    /* 0x01C */ RwUInt8 *mpRenderDataRest;
+    /* 0x020 */ RwInt32 reserved7;
+    /* 0x024 */ RwInt32 reserved8;
+    /* 0x028 */ RwInt32 reserved9;
+    /* 0x02C */ RwInt32 mnChainedMesh;
+    /* 0x030 */ RwInt32 reserved10;
+    /* 0x034 */ RwInt32 reserved11;
+    /* 0x038 */ RwInt32 reserved12;
+    /* 0x03C */ RwInt32 reserved13;
+    // methods
+    // CB4TrackMesh(const CB4TrackMesh &);
+    // CB4TrackMesh();
+    // CGtOrthogonalBox * GetBoundingBox() const;
+    // void FixDown();
+    // void FixUp();
+    // void ByteCheck(unsigned int);
+};
+```
 
 ## Notes
 

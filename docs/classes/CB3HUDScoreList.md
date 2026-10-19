@@ -12,15 +12,15 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `PrepareScoreListObject()` | `0x0037A630` 956 | `0x003EB680` 1372 | `0x004138A0` 1380 | `0x00429C70` 1664 |  |  |
-| `Update(float)` | `0x0037A9F0` 8 | `0x003EBBE0` 72 | `0x00413E10` 72 | `0x00429C30` 60 |  |  |
-| `ActualPrepare()` | `0x0037AA00` 908 | `0x003EBC30` 1200 | `0x00413E60` 1208 | `0x004296B0` 1404 |  |  |
-| `Prepare(EHUDAlign,int)` | `0x0037AD90` 20 | `0x003EC0E0` 20 | `0x00414320` 20 | `0x00429670` 64 | `0x003CB400` proven |  |
-| `CB3HUDScoreList()` |  |  |  | `0x00199870` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `PrepareScoreListObject()` | `0x0037A630` 956 | `0x003EB680` 1372 | `0x004138A0` 1380 | `0x00429C70` 1664 |  |  |  |
+| `Update(float)` | `0x0037A9F0` 8 | `0x003EBBE0` 72 | `0x00413E10` 72 | `0x00429C30` 60 |  |  |  |
+| `ActualPrepare()` | `0x0037AA00` 908 | `0x003EBC30` 1200 | `0x00413E60` 1208 | `0x004296B0` 1404 |  |  |  |
+| `Prepare(EHUDAlign,int)` | `0x0037AD90` 20 | `0x003EC0E0` 20 | `0x00414320` 20 | `0x00429670` 64 | `0x003CB400` proven |  |  |
+| `CB3HUDScoreList()` |  |  |  | `0x00199870` 60 |  |  |  |
 
 ## Notes
 

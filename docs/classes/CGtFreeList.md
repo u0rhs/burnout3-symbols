@@ -8,20 +8,43 @@
 - **Source file:** `GtFreeList.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 5, B3O0PCH 6
 - **Retail (SLUS-21050):** 5 of its 6 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGtFreeList`, size 0x008, methods in `GameShared/GameClasses/Containers/GtFreeList.cpp` ([layout](#burnout-revenge-layout-of-cgtfreelist))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetFirstLink() const` | `0x0019B0F0` 8 |  |  |  |  |  |
-| `GetFirstLink()` |  | `0x001CFCD0` 8 | `0x001C92B0` 8 | `0x001DA8C0` 28 |  |  |
-| `RemoveAllLinks()` | `0x00277B60` 96 | `0x002AABB0` 428 | `0x002E19A0` 260 | `0x002E0C30` 340 | `0x002B6C40` proven |  |
-| `RemoveLink(CGtFreeListLink*)` | `0x00277BC0` 120 | `0x002AAD60` 436 | `0x002E1AB0` 356 | `0x002E0A50` 468 | `0x002B6CA0` proven |  |
-| `TakeLinkFromList(CGtFreeListLink*,CGtFreeList*)` | `0x00277C40` 120 | `0x002AAF20` 456 |  | `0x002E0870` 480 | `0x002B6D20` proven |  |
-| `AddLink()` | `0x00277CC0` 100 | `0x002AB0F0` 260 | `0x002E1C20` 164 | `0x002E0770` 256 | `0x002B6DA0` proven |  |
-| `Construct(CGtFreeListPool*)` | `0x00277D30` 12 | `0x002AB200` 96 | `0x002E1CD0` 92 | `0x002E0720` 68 | `0x002B6E10` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetFirstLink() const` | `0x0019B0F0` 8 |  |  |  |  |  |  |
+| `GetFirstLink()` |  | `0x001CFCD0` 8 | `0x001C92B0` 8 | `0x001DA8C0` 28 |  |  |  |
+| `RemoveAllLinks()` | `0x00277B60` 96 | `0x002AABB0` 428 | `0x002E19A0` 260 | `0x002E0C30` 340 | `0x002B6C40` proven |  | `void CGtFreeList::RemoveAllLinks()` |
+| `RemoveLink(CGtFreeListLink*)` | `0x00277BC0` 120 | `0x002AAD60` 436 | `0x002E1AB0` 356 | `0x002E0A50` 468 | `0x002B6CA0` proven |  | `void CGtFreeList::RemoveLink(CGtFreeListLink *lpLink)` |
+| `TakeLinkFromList(CGtFreeListLink*,CGtFreeList*)` | `0x00277C40` 120 | `0x002AAF20` 456 |  | `0x002E0870` 480 | `0x002B6D20` proven |  |  |
+| `AddLink()` | `0x00277CC0` 100 | `0x002AB0F0` 260 | `0x002E1C20` 164 | `0x002E0770` 256 | `0x002B6DA0` proven |  | `CGtFreeListLink * CGtFreeList::AddLink()` |
+| `Construct(CGtFreeListPool*)` | `0x00277D30` 12 | `0x002AB200` 96 | `0x002E1CD0` 92 | `0x002E0720` 68 | `0x002B6E10` proven |  | `void CGtFreeList::Construct(CGtFreeListPool *lpPool)` |
+
+## Burnout Revenge layout of `CGtFreeList`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 50 file(s), e.g. `GameShared/GameClasses/Containers/GtFreeList.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGtFreeList {  // size 0x008
+    /* 0x000 */ CGtFreeListPool *mpPool;
+    /* 0x004 */ CGtFreeListLink *mpFirstLink;
+    // methods
+    // CGtFreeList(const CGtFreeList &);
+    // CGtFreeList();
+    // void Construct(CGtFreeListPool *);
+    // CGtFreeListLink * GetFirstLink() const;
+    // CGtFreeListLink * AddLink();
+    // CGtFreeListLink * AddLinkAfterLink(CGtFreeListLink *);
+    // CGtFreeListLink * AddLinkBeforeLink(CGtFreeListLink *);
+    // void TakeLinkFromList(CGtFreeListLink *, CGtFreeList *);
+    // void RemoveLink(CGtFreeListLink *);
+    // void RemoveAllLinks();
+};
+```
 
 ## Notes
 

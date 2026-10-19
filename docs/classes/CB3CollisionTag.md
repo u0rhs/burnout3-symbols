@@ -6,31 +6,73 @@
 
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Methods per build:** B3O0PCH 18
+- **Burnout Revenge counterpart:** `CB4CollisionTag`, size 0x002 ([layout](#burnout-revenge-layout-of-cb4collisiontag))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` |  |  |  | `0x001C10F0` 28 |  |  |
-| `GetSurface()` |  |  |  | `0x001A6D10` 64 |  |  |
-| `IsDampSurface()` |  |  |  | `0x002ECAD0` 60 |  |  |
-| `IsFatalOnly()` |  |  |  | `0x001C13F0` 60 |  |  |
-| `IsRealWorldCollidable()` |  |  |  | `0x001D1950` 88 |  |  |
-| `IsSignatureTakedownSurface()` |  |  |  | `0x001C1050` 60 |  |  |
-| `IsSurfaceOffline()` |  |  |  | `0x001CE4E0` 68 |  |  |
-| `IsSurfaceOffline(EB3CollisionSurface)` |  |  |  | `0x001CD920` 68 |  |  |
-| `IsSurfaceOnline()` |  |  |  | `0x001CE530` 68 |  |  |
-| `IsSurfaceOnline(EB3CollisionSurface)` |  |  |  | `0x001CD970` 64 |  |  |
-| `IsSurfaceWall(EB3CollisionSurface)` |  |  |  | `0x001C13A0` 68 |  |  |
-| `IsToReceiveShadow()` |  |  |  | `0x002ECB50` 60 |  |  |
-| `IsTunnel()` |  |  |  | `0x002AF6C0` 60 |  |  |
-| `IsUnderpass()` |  |  |  | `0x0033B2D0` 60 |  |  |
-| `IsWetSurface()` |  |  |  | `0x002ECB10` 60 |  |  |
-| `SetRawData(unsigned short)` |  |  |  | `0x001A4F60` 36 |  |  |
-| `SetSurface(EB3CollisionSurface)` |  |  |  | `0x001C1110` 88 |  |  |
-| `operator =(const CB3CollisionTag&)` |  |  |  | `0x001A7C40` 44 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` |  |  |  | `0x001C10F0` 28 |  |  |  |
+| `GetSurface()` |  |  |  | `0x001A6D10` 64 |  |  |  |
+| `IsDampSurface()` |  |  |  | `0x002ECAD0` 60 |  |  |  |
+| `IsFatalOnly()` |  |  |  | `0x001C13F0` 60 |  |  |  |
+| `IsRealWorldCollidable()` |  |  |  | `0x001D1950` 88 |  |  |  |
+| `IsSignatureTakedownSurface()` |  |  |  | `0x001C1050` 60 |  |  |  |
+| `IsSurfaceOffline()` |  |  |  | `0x001CE4E0` 68 |  |  |  |
+| `IsSurfaceOffline(EB3CollisionSurface)` |  |  |  | `0x001CD920` 68 |  |  |  |
+| `IsSurfaceOnline()` |  |  |  | `0x001CE530` 68 |  |  |  |
+| `IsSurfaceOnline(EB3CollisionSurface)` |  |  |  | `0x001CD970` 64 |  |  |  |
+| `IsSurfaceWall(EB3CollisionSurface)` |  |  |  | `0x001C13A0` 68 |  |  |  |
+| `IsToReceiveShadow()` |  |  |  | `0x002ECB50` 60 |  |  |  |
+| `IsTunnel()` |  |  |  | `0x002AF6C0` 60 |  |  |  |
+| `IsUnderpass()` |  |  |  | `0x0033B2D0` 60 |  |  |  |
+| `IsWetSurface()` |  |  |  | `0x002ECB10` 60 |  |  |  |
+| `SetRawData(unsigned short)` |  |  |  | `0x001A4F60` 36 |  |  |  |
+| `SetSurface(EB3CollisionSurface)` |  |  |  | `0x001C1110` 88 |  |  |  |
+| `operator =(const CB3CollisionTag&)` |  |  |  | `0x001A7C40` 44 |  |  |  |
+
+## Burnout Revenge layout of `CB4CollisionTag`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 329 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4CollisionTag {  // size 0x002
+    /* 0x000 */ RwUInt16 mu16PackedData;
+    // methods
+    // CB4CollisionTag(const CB4CollisionTag &);
+    // CB4CollisionTag();
+    // void Construct();
+    // RwUInt16 GetRawData();
+    // void SetRawData(unsigned short);
+    // EB4CollisionSurface GetSurface() const;
+    // void SetSurface(EB4CollisionSurface);
+    // bool IsToReceiveShadow() const;
+    // bool IsTunnel() const;
+    // bool IsWetSurface() const;
+    // bool IsDampSurface() const;
+    // bool IsFatalOnly() const;
+    // bool IsUnderpass() const;
+    // bool IsOverheadBlurSurface() const;
+    // bool IsSignatureTakedownSurface() const;
+    // bool IsSurfaceOnline(EB4CollisionSurface) const;
+    // bool IsSurfaceOnline() const;
+    // bool IsSurfaceOffline(EB4CollisionSurface) const;
+    // bool IsSurfaceOffline() const;
+    // bool IsSurfaceWall(EB4CollisionSurface) const;
+    // bool IsSurfaceWall() const;
+    // bool IsRealWorldCollidable() const;
+    // void SetReceiveShadow(bool);
+    // void SetTunnel(bool);
+    // void SetWetSurface(bool);
+    // void SetDampSurface(bool);
+    // void SetFatalOnly(bool);
+    // void SetUnderpass(bool);
+    // void SetOverheadBlurSurface(bool);
+    // void SetSignatureTakedownSurface(bool);
+};
+```
 
 ## Notes
 

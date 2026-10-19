@@ -44,6 +44,9 @@ B2_LINEAGE = ['docs/reference/class-ancestors.md', 'docs/reference/class-lineage
               'docs/reference/b2-classes.md', 'docs/reference/class-hierarchy.md', 'docs/reference/enums.md',
               'docs/reference/renderware-api.md']
 
+REVENGE_LINEAGE = ['docs/reference/revenge-class-lineage.md', 'docs/reference/revenge-function-lineage.md',
+                   'docs/reference/revenge-source-file-lineage.md']
+
 # (title or None for the page's own title, path or URL, [children])
 NAV = [
     ('Home', 'README.md', []),
@@ -58,8 +61,9 @@ NAV = [
     ('Renderer overview', 'docs/renderer-overview.md', []),
     ('Retail game', 'docs/reference/retail-function-names.md', [(None, p) for p in RETAIL]),
     ('Reference: Burnout 3', 'docs/reference/README.md',
-     folder('docs/reference/*.md', skip=set(RETAIL + B2_LINEAGE))),
+     folder('docs/reference/*.md', skip=set(RETAIL + B2_LINEAGE + REVENGE_LINEAGE))),
     ('Reference: Burnout 2 lineage', 'docs/reference/class-ancestors.md', [(None, p) for p in B2_LINEAGE]),
+    ('Reference: Burnout Revenge lineage', 'docs/reference/revenge-class-lineage.md', [(None, p) for p in REVENGE_LINEAGE]),
     ('Uses', 'docs/avenues/README.md', folder('docs/avenues/*.md')),
     ('Formats', 'docs/formats/README.md', folder('docs/formats/*.md')),
     ('Data and tools', 'data/README.md', [
@@ -68,6 +72,7 @@ NAV = [
         ('Burnout 3 US review build data', 'data/burnout3-review-us-2004-07-20/README.md'),
         ('Burnout 3 PAL review build data', 'data/burnout3-review-pal-2004-07-20/README.md'),
         ('Burnout 2 prototype data', 'data/burnout2-prototype/README.md'),
+        ('Burnout Revenge prototype data', 'data/burnout-revenge-prototype/README.md'),
         ('Burnout 2 source outlines', 'data/burnout2-prototype/SLUS_204.97/source_outline/README.md'),
         ('Reference tables (CSV)', 'docs/reference/data/README.md'),
         (None, 'docs/tools.md'),

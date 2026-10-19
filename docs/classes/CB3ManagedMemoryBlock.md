@@ -8,20 +8,45 @@
 - **Source file:** `B3MemoryManager.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 6
 - **Retail (SLUS-21050):** 2 of its 5 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4ManagedMemoryBlock`, size 0x010, methods in `GameSource/Game/B4MemoryManager.cpp` ([layout](#burnout-revenge-layout-of-cb4managedmemoryblock))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetBlockSize() const` | `0x0039A080` 8 |  |  |  |  |  |
-| `Update(int)` | `0x0039A090` 28 | `0x00412520` 92 | `0x00438240` 92 | `0x0044EEC0` 116 | `0x003E8B80` proven |  |
-| `ReleaseMemoryBlock(int)` | `0x0039A0B0` 12 | `0x00412580` 68 | `0x004382A0` 68 | `0x0044EE70` 76 |  |  |
-| `GetMemoryBlock(int)` | `0x0039A0C0` 64 | `0x004125D0` 100 | `0x004382F0` 100 | `0x0044EDF0` 124 |  |  |
-| `Construct(void*,int,int)` | `0x0039A100` 20 | `0x00412640` 20 | `0x00438360` 20 | `0x0044EDA0` 76 | `0x003E8C00` proven |  |
-| `GetBlockSize()` |  | `0x00412510` 8 | `0x00438230` 8 | `0x0044EFA0` 28 |  |  |
-| `QueryMemoryBlock(int)` |  |  |  | `0x0044EF40` 84 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetBlockSize() const` | `0x0039A080` 8 |  |  |  |  |  | `RwInt32 CB4ManagedMemoryBlock::GetBlockSize() const` |
+| `Update(int)` | `0x0039A090` 28 | `0x00412520` 92 | `0x00438240` 92 | `0x0044EEC0` 116 | `0x003E8B80` proven |  | `void CB4ManagedMemoryBlock::Update(int lnCurrentMemoryLayout)` |
+| `ReleaseMemoryBlock(int)` | `0x0039A0B0` 12 | `0x00412580` 68 | `0x004382A0` 68 | `0x0044EE70` 76 |  |  | `void CB4ManagedMemoryBlock::ReleaseMemoryBlock(int lnCurrentMemoryLayout)` |
+| `GetMemoryBlock(int)` | `0x0039A0C0` 64 | `0x004125D0` 100 | `0x004382F0` 100 | `0x0044EDF0` 124 |  |  | `void * CB4ManagedMemoryBlock::GetMemoryBlock(int lnCurrentMemoryLayout)` |
+| `Construct(void*,int,int)` | `0x0039A100` 20 | `0x00412640` 20 | `0x00438360` 20 | `0x0044EDA0` 76 | `0x003E8C00` proven |  | `void CB4ManagedMemoryBlock::Construct(void *lpMemoryBlock, int lnMemoryLayout, int lnSize)` |
+| `GetBlockSize()` |  | `0x00412510` 8 | `0x00438230` 8 | `0x0044EFA0` 28 |  |  | `RwInt32 CB4ManagedMemoryBlock::GetBlockSize() const` (same name, different parameters) |
+| `QueryMemoryBlock(int)` |  |  |  | `0x0044EF40` 84 |  |  | `void * CB4ManagedMemoryBlock::QueryMemoryBlock(int lnCurrentMemoryLayout) const` (same name, different parameters) |
+
+## Burnout Revenge layout of `CB4ManagedMemoryBlock`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 6 file(s), e.g. `GameSource/Game/B4MemoryManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4ManagedMemoryBlock {  // size 0x010
+    /* 0x000 */ RwInt32 mnReferenceCount;
+    /* 0x004 */ RwInt32 mnMemoryLayout;
+    /* 0x008 */ RwInt32 mnSize;
+    /* 0x00C */ void *mpMemoryBlock;
+    // methods
+    // CB4ManagedMemoryBlock(const CB4ManagedMemoryBlock &);
+    // CB4ManagedMemoryBlock();
+    // void Construct(void *, int, int);
+    // void Destruct();
+    // void * GetMemoryBlock(int);
+    // void ReleaseMemoryBlock(int);
+    // void Update(int);
+    // void * QueryMemoryBlock(int) const;
+    // RwInt32 GetBlockSize() const;
+    // bool IsAcquired();
+};
+```
 
 ## Notes
 

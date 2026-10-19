@@ -9,13 +9,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `DrawKeyFrame(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,CB3CameraKeyFrame*,float,float,bool,bool)` |  | `0x003ABBF0` 952 |  | `0x003E0B30` 1692 |  |  |
-| `DrawTimeline(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,CB3CameraKeyFrame*,int,float,float,float)` |  | `0x003ABFB0` 1168 |  | `0x003E02D0` 2144 |  |  |
-| `Render(CB3CameraKeyFrame*,int,float,float)` |  | `0x003AC440` 112 |  | `0x003E01E0` 228 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `DrawKeyFrame(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,CB3CameraKeyFrame*,float,float,bool,bool)` |  | `0x003ABBF0` 952 |  | `0x003E0B30` 1692 |  |  |  |
+| `DrawTimeline(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,CB3CameraKeyFrame*,int,float,float,float)` |  | `0x003ABFB0` 1168 |  | `0x003E02D0` 2144 |  |  |  |
+| `Render(CB3CameraKeyFrame*,int,float,float)` |  | `0x003AC440` 112 |  | `0x003E01E0` 228 |  |  |  |
 
 ## Notes
 

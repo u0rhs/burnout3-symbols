@@ -11,21 +11,21 @@
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Construct()` | `0x00277B50` 8 | `0x002AAB70` 56 | `0x002E17A0` 56 | `0x002DF7B0` 64 | `0x002B6C30` proven |  |
-| `DisplayPage(EGtPerfMonPage)` |  | `0x002AA860` 160 | `0x002E1490` 160 | `0x002DFB90` 332 |  |  |
-| `AddMonitor(const char*,EGtPerfMonPage,bool,float)` |  | `0x002AA900` 444 | `0x002E1530` 444 | `0x002DFA00` 396 |  |  |
-| `ResetValuesInActiveMonitors()` |  | `0x002AAAC0` 172 | `0x002E16F0` 172 | `0x002DF900` 248 |  |  |
-| `PrepareActiveMonitorsForUpdate()` |  |  |  | `0x002DF7F0` 260 |  |  |
-| `SetDisplayCallback(void (*)` |  |  |  | `0x0012FBB0` 28 |  |  |
-| `SetGameFrequency(EGtPerfMonGameFrequency)` |  |  |  | `0x001DA4D0` 28 |  |  |
-| `StartMonitor(int)` |  |  |  | `0x0012FFA0` 212 |  |  |
-| `StartProfiling()` |  |  | `0x002E1950` 76 | `0x002DFCE0` 172 |  |  |
-| `StopMonitor(int)` |  |  |  | `0x0012FE80` 216 |  |  |
-| `StopProfiling()` |  |  | `0x002E17E0` 368 | `0x002DFD90` 1028 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Construct()` | `0x00277B50` 8 | `0x002AAB70` 56 | `0x002E17A0` 56 | `0x002DF7B0` 64 | `0x002B6C30` proven |  |  |
+| `DisplayPage(EGtPerfMonPage)` |  | `0x002AA860` 160 | `0x002E1490` 160 | `0x002DFB90` 332 |  |  |  |
+| `AddMonitor(const char*,EGtPerfMonPage,bool,float)` |  | `0x002AA900` 444 | `0x002E1530` 444 | `0x002DFA00` 396 |  |  |  |
+| `ResetValuesInActiveMonitors()` |  | `0x002AAAC0` 172 | `0x002E16F0` 172 | `0x002DF900` 248 |  |  |  |
+| `PrepareActiveMonitorsForUpdate()` |  |  |  | `0x002DF7F0` 260 |  |  |  |
+| `SetDisplayCallback(void (*)` |  |  |  | `0x0012FBB0` 28 |  |  |  |
+| `SetGameFrequency(EGtPerfMonGameFrequency)` |  |  |  | `0x001DA4D0` 28 |  |  |  |
+| `StartMonitor(int)` |  |  |  | `0x0012FFA0` 212 |  |  |  |
+| `StartProfiling()` |  |  | `0x002E1950` 76 | `0x002DFCE0` 172 |  |  |  |
+| `StopMonitor(int)` |  |  |  | `0x0012FE80` 216 |  |  |  |
+| `StopProfiling()` |  |  | `0x002E17E0` 368 | `0x002DFD90` 1028 |  |  |  |
 
 ## Static data (DNAT_200)
 

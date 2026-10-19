@@ -8,50 +8,191 @@
 - **Source file:** `B3World.cpp`
 - **Methods per build:** DNAT_200 15, B3DEBUG 15, B3INTERN 15, B3O0PCH 37
 - **Retail (SLUS-21050):** 14 of its 15 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4World`, size 0x19E520, methods in `GameSource/World/B4World.cpp` ([layout](#burnout-revenge-layout-of-cb4world))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetUpTrackExtents()` | `0x001676E0` 668 | `0x0017F9D0` 2476 | `0x0017A6D0` 2476 | `0x001902E0` 2324 | `0x00199770` strong |  |
-| `RenderRaceCars(int,int)` | `0x00167980` 776 | `0x00180380` 1096 | `0x0017B080` 1096 | `0x0018FDD0` 1288 | `0x00199A20` likely |  |
-| `UpdateSound()` | `0x00167CB0` 60 | `0x001807F0` 60 | `0x0017B4F0` 60 | `0x0018FCF0` 92 | `0x00199DC0` strong |  |
-| `SetTrackID(unsigned long)` | `0x00167CF0` 164 | `0x00180830` 232 | `0x0017B530` 232 | `0x0018FBE0` 268 | `0x00199E00` proven |  |
-| `SetCarNumbers(int,int,int)` | `0x00167DA0` 764 | `0x00180920` 1256 | `0x0017B620` 1256 | `0x0018F6E0` 1272 | `0x00199EB0` strong |  |
-| `Destruct()` | `0x001680A0` 260 | `0x00180E10` 260 | `0x0017BB10` 260 | `0x0018F580` 348 | `0x0019A1D0` strong |  |
-| `Release()` | `0x001681B0` 592 | `0x00180F20` 648 | `0x0017BC20` 648 | `0x0018F260` 796 | `0x0019A2E0` unverified |  |
-| `UpdateTrack()` | `0x00168400` 112 | `0x001811B0` 112 | `0x0017BEB0` 112 | `0x0018F1E0` 128 |  |  |
-| `Update()` | `0x00168470` 536 | `0x00181220` 1252 | `0x0017BF20` 1224 | `0x0018EEC0` 792 | `0x0019A550` unverified |  |
-| `Prepare()` | `0x00168690` 2216 | `0x00181710` 2756 | `0x0017C3F0` 2756 | `0x0018E150` 3228 | `0x0019A950` unverified |  |
-| `Construct()` | `0x00168F40` 792 | `0x001821E0` 792 | `0x0017CEC0` 792 | `0x0018DD10` 1088 | `0x0019B380` strong |  |
-| `RenderFrontEnd(int)` | `0x00236520` 944 | `0x0025E820` 3324 | `0x002978E0` 2944 | `0x0029BD70` 1732 | `0x00275EF0` likely |  |
-| `Render(int)` | `0x002368D0` 1304 | `0x0025F520` 4536 | `0x00298460` 4456 | `0x0029B370` 2352 | `0x00276300` likely |  |
-| `RenderTwoPlayer()` | `0x00236DF0` 112 | `0x002606E0` 316 | `0x002995D0` 316 | `0x0029B2C0` 168 | `0x00276870` strong |  |
-| `RenderOnePlayer()` | `0x00236E60` 100 | `0x00260820` 332 | `0x00299710` 304 | `0x0029B200` 188 | `0x002768F0` unverified |  |
-| `CB3World()` |  |  |  | `0x00190C00` 384 |  |  |
-| `GetAICar(int)` |  |  |  | `0x0013F6E0` 104 |  |  |
-| `GetNetworkCar(int)` |  |  |  | `0x0013F680` 88 |  |  |
-| `GetNumAICars()` |  |  |  | `0x0016F8B0` 36 |  |  |
-| `GetNumActiveRaceCars()` |  |  |  | `0x00179EC0` 36 |  |  |
-| `GetNumNetworkCars()` |  |  |  | `0x001AF760` 36 |  |  |
-| `GetNumPlayerCars()` |  |  |  | `0x001303F0` 36 |  |  |
-| `GetNumRaceCars()` |  |  |  | `0x00131000` 36 |  |  |
-| `GetPlayerCar(int)` |  |  |  | `0x00130750` 104 |  |  |
-| `GetRaceCar(int)` |  |  |  | `0x00130690` 132 |  |  |
-| `GetReplayRequestStatus()` |  |  |  | `0x00168840` 36 |  |  |
-| `GetTrackExtents(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*)` |  |  |  | `0x0016BB90` 92 |  |  |
-| `GetTrackID()` |  |  |  | `0x00130720` 36 |  |  |
-| `IsIntro()` |  |  |  | `0x001880E0` 36 |  |  |
-| `IsPointToPoint()` |  |  |  | `0x00153920` 36 |  |  |
-| `IsReplaying()` |  |  |  | `0x00141440` 36 |  |  |
-| `IsRightHandDrive()` |  |  |  | `0x00151540` 36 |  |  |
-| `PauseForNetworkSync(bool)` |  |  |  | `0x003E78C0` 108 |  |  |
-| `SetIntro(bool)` |  |  |  | `0x003EB2D0` 44 |  |  |
-| `SetNumActiveRaceCars(int)` |  |  |  | `0x00179E90` 44 |  |  |
-| `SetReplayRequestStatus(bool)` |  |  |  | `0x001415A0` 44 |  |  |
-| `WeArePausedForNetworkSync()` |  |  |  | `0x0013CCC0` 36 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetUpTrackExtents()` | `0x001676E0` 668 | `0x0017F9D0` 2476 | `0x0017A6D0` 2476 | `0x001902E0` 2324 | `0x00199770` strong |  | `void CB4World::SetUpTrackExtents()` |
+| `RenderRaceCars(int,int)` | `0x00167980` 776 | `0x00180380` 1096 | `0x0017B080` 1096 | `0x0018FDD0` 1288 | `0x00199A20` likely |  | `void CB4World::RenderRaceCars(EPlayerCarIndex lnPlayerIndex, EPlayerCarIndex lnTrackIndex)` (same name, different parameters) |
+| `UpdateSound()` | `0x00167CB0` 60 | `0x001807F0` 60 | `0x0017B4F0` 60 | `0x0018FCF0` 92 | `0x00199DC0` strong |  | `void CB4World::UpdateSound()` |
+| `SetTrackID(unsigned long)` | `0x00167CF0` 164 | `0x00180830` 232 | `0x0017B530` 232 | `0x0018FBE0` 268 | `0x00199E00` proven |  | `void CB4World::SetTrackID(unsigned long lTrackID)` |
+| `SetCarNumbers(int,int,int)` | `0x00167DA0` 764 | `0x00180920` 1256 | `0x0017B620` 1256 | `0x0018F6E0` 1272 | `0x00199EB0` strong |  | `void CB4World::SetCarNumbers(int lnNumPlayerCars, int lnNumAICars, int lnNumNetworkCars, int lnNumAdjustedAICars)` (same name, different parameters) |
+| `Destruct()` | `0x001680A0` 260 | `0x00180E10` 260 | `0x0017BB10` 260 | `0x0018F580` 348 | `0x0019A1D0` strong |  | `void CB4World::Destruct()` |
+| `Release()` | `0x001681B0` 592 | `0x00180F20` 648 | `0x0017BC20` 648 | `0x0018F260` 796 | `0x0019A2E0` unverified |  | `void CB4World::Release()` |
+| `UpdateTrack()` | `0x00168400` 112 | `0x001811B0` 112 | `0x0017BEB0` 112 | `0x0018F1E0` 128 |  |  | `void CB4World::UpdateTrack()` |
+| `Update()` | `0x00168470` 536 | `0x00181220` 1252 | `0x0017BF20` 1224 | `0x0018EEC0` 792 | `0x0019A550` unverified |  | `void CB4World::Update()` |
+| `Prepare()` | `0x00168690` 2216 | `0x00181710` 2756 | `0x0017C3F0` 2756 | `0x0018E150` 3228 | `0x0019A950` unverified |  | `bool CB4World::Prepare(bool lbQuickPrepare)` (same name, different parameters) |
+| `Construct()` | `0x00168F40` 792 | `0x001821E0` 792 | `0x0017CEC0` 792 | `0x0018DD10` 1088 | `0x0019B380` strong |  | `void CB4World::Construct()` |
+| `RenderFrontEnd(int)` | `0x00236520` 944 | `0x0025E820` 3324 | `0x002978E0` 2944 | `0x0029BD70` 1732 | `0x00275EF0` likely |  | `void CB4World::RenderFrontEnd(ERaceCarIndex leActiveRaceCar)` (same name, different parameters) |
+| `Render(int)` | `0x002368D0` 1304 | `0x0025F520` 4536 | `0x00298460` 4456 | `0x0029B370` 2352 | `0x00276300` likely |  | `void CB4World::Render(EPlayerCarIndex lePlayerIndex)` (same name, different parameters) |
+| `RenderTwoPlayer()` | `0x00236DF0` 112 | `0x002606E0` 316 | `0x002995D0` 316 | `0x0029B2C0` 168 | `0x00276870` strong |  | `void CB4World::RenderTwoPlayer()` |
+| `RenderOnePlayer()` | `0x00236E60` 100 | `0x00260820` 332 | `0x00299710` 304 | `0x0029B200` 188 | `0x002768F0` unverified |  | `void CB4World::RenderOnePlayer()` |
+| `CB3World()` |  |  |  | `0x00190C00` 384 |  |  | `CB4World * CB4World::CB4World()` |
+| `GetAICar(int)` |  |  |  | `0x0013F6E0` 104 |  |  |  |
+| `GetNetworkCar(int)` |  |  |  | `0x0013F680` 88 |  |  |  |
+| `GetNumAICars()` |  |  |  | `0x0016F8B0` 36 |  |  |  |
+| `GetNumActiveRaceCars()` |  |  |  | `0x00179EC0` 36 |  |  |  |
+| `GetNumNetworkCars()` |  |  |  | `0x001AF760` 36 |  |  |  |
+| `GetNumPlayerCars()` |  |  |  | `0x001303F0` 36 |  |  |  |
+| `GetNumRaceCars()` |  |  |  | `0x00131000` 36 |  |  |  |
+| `GetPlayerCar(int)` |  |  |  | `0x00130750` 104 |  |  |  |
+| `GetRaceCar(int)` |  |  |  | `0x00130690` 132 |  |  | `CB4RaceCar * CB4World::GetRaceCar(ERaceCarIndex leIndex)` (same name, different parameters) |
+| `GetReplayRequestStatus()` |  |  |  | `0x00168840` 36 |  |  |  |
+| `GetTrackExtents(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*)` |  |  |  | `0x0016BB90` 92 |  |  |  |
+| `GetTrackID()` |  |  |  | `0x00130720` 36 |  |  |  |
+| `IsIntro()` |  |  |  | `0x001880E0` 36 |  |  |  |
+| `IsPointToPoint()` |  |  |  | `0x00153920` 36 |  |  |  |
+| `IsReplaying()` |  |  |  | `0x00141440` 36 |  |  |  |
+| `IsRightHandDrive()` |  |  |  | `0x00151540` 36 |  |  |  |
+| `PauseForNetworkSync(bool)` |  |  |  | `0x003E78C0` 108 |  |  |  |
+| `SetIntro(bool)` |  |  |  | `0x003EB2D0` 44 |  |  |  |
+| `SetNumActiveRaceCars(int)` |  |  |  | `0x00179E90` 44 |  |  |  |
+| `SetReplayRequestStatus(bool)` |  |  |  | `0x001415A0` 44 |  |  |  |
+| `WeArePausedForNetworkSync()` |  |  |  | `0x0013CCC0` 36 |  |  |  |
+
+## Burnout Revenge layout of `CB4World`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameSource/World/B4RacePosition.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4World {  // size 0x19E520
+    /* 0x000 */ CB4Timer mTimer;
+    /* 0x030 */ CB4AILane maAILanes[128];
+    /* 0x430 */ CB4TrafficLane maTrafficLanes[255];
+    /* 0x4FF0 */ CB4TrafficSystem mTrafficSystem;
+    /* 0x40310 */ CB4CrashPresentationDirector mCrashPresentationDirector;
+    /* 0x40318 */ CB4CrashActionDirector mCrashActionDirector;
+    /* 0x40710 */ CB4ReplaySystem mReplaySystem;
+    /* 0x40800 */ CB4PhysicsManager mPhysicsManager;
+    /* 0x167A40 */ CB4GameData mGameData;
+    /* 0x1680D0 */ CB4RacePosition mRacePositions;
+    /* 0x16A230 */ CB4PropManager mPropManager;
+    /* 0x173150 */ CB4PayloadPropManager mPayloadPropManager;
+    /* 0x1743E0 */ CB4CrashAnalyser maPlayerCrashAnalysers[2];
+    /* 0x176480 */ CB4StaticTrack mStaticTrack;
+    /* 0x176498 */ CB4StreamedTrack mStreamedTrack[2];
+    /* 0x176888 */ CB4StreamManager mStreamManager;
+    /* 0x176980 */ int manStreamStartHull[2];
+    /* 0x176988 */ CB4CrashScore mCrashScore;
+    /* 0x176FC0 */ CB4RevengeScore mRevengeScore;
+    /* 0x1773E0 */ RwInt32 mnNumTrafficLanes;
+    /* 0x1773E4 */ CB4AILanesDataStruct *mpAIData;
+    /* 0x1773E8 */ CB4AILaneStruct *mpAILaneData;
+    /* 0x1773EC */ CB4AICornerStruct *mpAICornersArray;
+    /* 0x1773F0 */ CB4AIDriverStruct *mpAIDriversArray;
+    /* 0x1773F4 */ CGtV3d *mpAINodesArray;
+    /* 0x1773F8 */ RwInt32 mnAILaneCount;
+    /* 0x1773FC */ RwInt32 mnAICornerCount;
+    /* 0x177400 */ RwInt32 mnAIDriverCount;
+    /* 0x177404 */ CB4SliceStruct *mpSlicesArray;
+    /* 0x177408 */ RwInt32 mnSliceCount;
+    /* 0x17740C */ RwInt32 mnNumCarsCrossedLine;
+    /* 0x177410 */ CGtRandom mRaceCarRand;
+    /* 0x177418 */ GtID mTrackID;
+    /* 0x177420 */ bool mbIsPointToPoint;
+    /* 0x177421 */ bool mbIsMarathon;
+    /* 0x177422 */ bool mbIsRightHandDrive;
+    /* 0x177424 */ RwInt32 mnNumRaceCars;
+    /* 0x177428 */ RwInt32 mnNumRaceCarsPrepared;
+    /* 0x17742C */ RwInt32 mnNumActiveRaceCars;
+    /* 0x177430 */ CB4RaceCar *mapRaceCars[6];
+    /* 0x177448 */ RwInt32 mnNumPlayerCars;
+    /* 0x17744C */ RwInt32 mnNumAICars;
+    /* 0x177450 */ RwInt32 mnNumNetworkCars;
+    /* 0x177454 */ RwInt32 mnBaseNumAdjustedAICars;
+    /* 0x177458 */ RwInt32 mnCurrentNumAdjustedAICars;
+    /* 0x17745C */ RwInt32 mnLeadingAdjustedAICar;
+    /* 0x177460 */ CB4PlayerCar maPlayerCars[2];
+    /* 0x17EA80 */ CB4AICar maAICars[5];
+    /* 0x190050 */ CB4NetworkCar maNetworkCars[5];
+    /* 0x19E420 */ RwInt32 mnMaxRaceCarStreams;
+    /* 0x19E428 */ CB4VehicleDataStream maRaceCarStreams[6];
+    /* 0x19E4B8 */ bool mbPausedForNetworkSync;
+    /* 0x19E4B9 */ bool mbPausedForStreamSync;
+    /* 0x19E4BA */ bool mbRequestReplay;
+    /* 0x19E4BB */ bool mbIsReplaying;
+    /* 0x19E4BC */ RwInt32 mnInitialWorldFrame;
+    /* 0x19E4C0 */ RwInt32 mnSkyRenderMonitorID;
+    /* 0x19E4C4 */ RwInt32 mnTrackRenderMonitorID;
+    /* 0x19E4C8 */ RwInt32 mnTrafficRenderMonitorID;
+    /* 0x19E4CC */ RwInt32 mnRaceCarRenderMonitorID;
+    /* 0x19E4D0 */ RwInt32 mnShadowRenderMonitorID;
+    /* 0x19E4D4 */ RwReal mrPulseTime;
+    /* 0x19E4D8 */ RwReal mrPulseDirection;
+    /* 0x19E4E0 */ CGtV3d mTrackCentre;
+    /* 0x19E4F0 */ CGtV3d mMinTrackPos;
+    /* 0x19E500 */ CGtV3d mMaxTrackPos;
+    /* 0x19E510 */ bool mbIsCrashIntro;
+    /* 0x19E511 */ bool mbIsCrashAftermath;
+    /* 0x19E514 */ EGtPrepareState mePrepareState;
+    // methods
+    // CB4World(const CB4World &);
+    // CB4World();
+    // void Construct();
+    // bool Prepare(bool);
+    // void Update();
+    // void UpdateSound();
+    // void NetworkCatchupUpdate();
+    // void RenderOnePlayer();
+    // void RenderTwoPlayer();
+    // void RenderFrontEnd(ERaceCarIndex);
+    // void Release();
+    // void Destruct();
+    // void PauseForNetworkSync(bool);
+    // void PauseForStreamSync(bool);
+    // bool WeArePausedForNetworkOrStreamSync();
+    // void SetReplayRequestStatus(bool);
+    // bool GetReplayRequestStatus();
+    // bool IsReplaying();
+    // void SetTrackID(unsigned long);
+    // GtID GetTrackID();
+    // void SetCarNumbers(int, int, int, int);
+    // ERaceCarIndex GetNumRaceCars();
+    // RwInt32 GetNumActiveRaceCars();
+    // EPlayerCarIndex GetNumPlayerCars();
+    // EAICarIndex GetNumAICars();
+    // ENetworkCarIndex GetNumNetworkCars();
+    // CB4RaceCar * GetRaceCar(ERaceCarIndex);
+    // RwInt32 GetNumAdjustedAICars();
+    // void DecrementNumAdjustedAICars();
+    // RwInt32 GetLeadingAdjustedAICar();
+    // void IncrementLeadingAdjustedAICar();
+    // void DecrementLeadingAdjustedAICar();
+    // void SetNumLeadingCars(int);
+    // CB4PlayerCar * GetPlayerCar(EPlayerCarIndex);
+    // CB4AICar * GetAICar(EAICarIndex);
+    // CB4NetworkCar * GetNetworkCar(ENetworkCarIndex);
+    // bool IsPointToPoint();
+    // bool IsMarathon();
+    // bool IsRightHandDrive();
+    // void SetUpTrackExtents();
+    // CGtV3d GetTrackCentre();
+    // void GetTrackExtents(GtMathPs2::CGtV3d *, GtMathPs2::CGtV3d *);
+    // void SetNumActiveRaceCars(int);
+    // void DecrementNumActiveRaceCars();
+    // bool IsCrashIntro() const;
+    // void SetCrashIntro(bool);
+    // bool IsCrashAftermath() const;
+    // void SetCrashAftermath(bool);
+    // RwReal GetTimeBeforeAutomaticTimeout();
+    // RwInt32 GetInitialWorldFrame();
+    // bool LoadRaceCarData(unsigned long, int);
+    // void UnLoadRaceCarData(unsigned long, int);
+    // CB4VehicleData * GetRaceCarData(unsigned long, int);
+    // RwInt32 GetMaxRaceCarStreams() const;
+    // bool IsMultiPlayer();
+    // bool IsSinglePlayer();
+    // void UpdateTrack();
+    // void Render(EPlayerCarIndex);
+    // void RenderRaceCars(EPlayerCarIndex, EPlayerCarIndex);
+    // void RenderFullScreenPoly(EPlayerCarIndex);
+    // void RenderCarUnlockEffects();
+};
+```
 
 ## Notes
 

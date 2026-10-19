@@ -9,22 +9,50 @@
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 9
 - **Retail (SLUS-21050):** 3 of its 8 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FCA0`, 40 bytes = 10 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 8 virtual functions)
+- **Burnout Revenge counterpart:** `CB4TwoPlayerSplitScreenStage`, size 0x01C, methods in `GameSource/Game/B4TwoPlayerSplitScreenStage.cpp` ([layout](#burnout-revenge-layout-of-cb4twoplayersplitscreenstage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `StartReplay()` | `0x001397C0` 68 | `0x001420B0` 68 | `0x001405C0` 68 | `0x00148460` 96 |  |  |
-| `GetNumLaps()` | `0x00139810` 12 | `0x00142100` 12 | `0x00140610` 12 | `0x00148430` 40 |  |  |
-| `Destruct()` | `0x00139820` 8 | `0x00142110` 8 | `0x00140620` 8 | `0x00148420` 16 |  |  |
-| `Release()` | `0x00139830` 88 | `0x00142120` 88 | `0x00140630` 88 | `0x001483C0` 88 |  |  |
-| `Render()` | `0x00139890` 212 | `0x00142180` 300 | `0x00140690` 300 | `0x00148270` 332 | `0x0013CA10` unverified |  |
-| `Update()` | `0x00139970` 172 | `0x001422B0` 268 | `0x001407C0` 268 | `0x001481B0` 192 | `0x0013CBC0` strong |  |
-| `Prepare()` | `0x00139A20` 440 | `0x001423C0` 556 | `0x001408D0` 556 | `0x00147F80` 552 | `0x0013CC70` unverified |  |
-| `Construct()` | `0x00139BE0` 8 | `0x001425F0` 100 | `0x00140B00` 100 | `0x00147F00` 124 |  |  |
-| `CB3TwoPlayerSplitScreenStage()` |  |  |  | `0x0013E260` 60 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `StartReplay()` | `0x001397C0` 68 | `0x001420B0` 68 | `0x001405C0` 68 | `0x00148460` 96 |  |  | `bool CB4TwoPlayerSplitScreenStage::StartReplay()` |
+| `GetNumLaps()` | `0x00139810` 12 | `0x00142100` 12 | `0x00140610` 12 | `0x00148430` 40 |  |  | `RwInt32 CB4TwoPlayerSplitScreenStage::GetNumLaps()` |
+| `Destruct()` | `0x00139820` 8 | `0x00142110` 8 | `0x00140620` 8 | `0x00148420` 16 |  |  | `void CB4TwoPlayerSplitScreenStage::Destruct()` |
+| `Release()` | `0x00139830` 88 | `0x00142120` 88 | `0x00140630` 88 | `0x001483C0` 88 |  |  | `void CB4TwoPlayerSplitScreenStage::Release()` |
+| `Render()` | `0x00139890` 212 | `0x00142180` 300 | `0x00140690` 300 | `0x00148270` 332 | `0x0013CA10` unverified |  | `void CB4TwoPlayerSplitScreenStage::Render()` |
+| `Update()` | `0x00139970` 172 | `0x001422B0` 268 | `0x001407C0` 268 | `0x001481B0` 192 | `0x0013CBC0` strong |  | `void CB4TwoPlayerSplitScreenStage::Update()` |
+| `Prepare()` | `0x00139A20` 440 | `0x001423C0` 556 | `0x001408D0` 556 | `0x00147F80` 552 | `0x0013CC70` unverified |  | `bool CB4TwoPlayerSplitScreenStage::Prepare()` |
+| `Construct()` | `0x00139BE0` 8 | `0x001425F0` 100 | `0x00140B00` 100 | `0x00147F00` 124 |  |  | `void CB4TwoPlayerSplitScreenStage::Construct()` |
+| `CB3TwoPlayerSplitScreenStage()` |  |  |  | `0x0013E260` 60 |  |  |  |
+
+## Burnout Revenge layout of `CB4TwoPlayerSplitScreenStage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 3 file(s), e.g. `GameSource/Game/B4Game.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TwoPlayerSplitScreenStage : public CB4GameMode {  // size 0x01C
+    // base CB4GameMode at 0x000
+    /* 0x010 */ EGtPrepareState mePrepareState;
+    /* 0x014 */ int manWinPoints[2];
+    // methods
+    // CB4TwoPlayerSplitScreenStage(const CB4TwoPlayerSplitScreenStage &);
+    // CB4TwoPlayerSplitScreenStage();
+    // virtual void Construct();
+    // virtual bool Prepare();
+    // virtual void Update();
+    // virtual void Render();
+    // virtual void Release();
+    // virtual void Destruct();
+    // virtual RwInt32 GetNumLaps();
+    // virtual bool StartReplay();
+    // RwInt32 GetWinPointsForPlayer(EPlayerCarIndex);
+    // void AddWinPointsForPlayer(EPlayerCarIndex, int);
+    // void ResetWinPoints();
+    // bool AreThereAnyWinPoints();
+};
+```
 
 ## Notes
 

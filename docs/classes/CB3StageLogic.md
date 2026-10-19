@@ -8,57 +8,227 @@
 - **Source file:** `B3Game.cpp`
 - **Methods per build:** DNAT_200 42, B3DEBUG 42, B3INTERN 41, B3O0PCH 44
 - **Retail (SLUS-21050):** 14 of its 42 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4StageLogic`, size 0x0D8, methods in `GameSource/Game/Logic/B4StageLogic.cpp` ([layout](#burnout-revenge-layout-of-cb4stagelogic))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `GetAIMode()` | `0x00133660` 8 | `0x0013AC70` 8 | `0x001384B0` 8 | `0x0013F040` 20 | `0x00134340` likely |  |
-| `GetCheckpointMarkerFlags()` | `0x00133670` 8 | `0x0013AC80` 8 | `0x001384C0` 8 | `0x0013F060` 20 | `0x00134350` likely |  |
-| `GetScoreModeFlags()` | `0x00133680` 8 | `0x0013AC90` 8 | `0x001384D0` 8 | `0x0013F080` 20 | `0x00134360` likely |  |
-| `GetResultsPageString()` | `0x00133690` 8 | `0x0013ACA0` 8 | `0x001384E0` 8 | `0x0013F0A0` 20 |  |  |
-| `OnRaceCarStartNewLap(CB3RaceCar*)` | `0x001336A0` 8 | `0x0013ACB0` 8 | `0x001384F0` 8 | `0x0013F0C0` 16 |  |  |
-| `OnPlayerCarDeath(CB3PlayerCar*)` | `0x001336B0` 8 | `0x0013ACC0` 24 | `0x00138500` 24 | `0x0013F0D0` 20 |  |  |
-| `OnNetworkCarDeath(CB3NetworkCar*)` | `0x001336C0` 8 | `0x0013ACE0` 24 | `0x00138520` 24 | `0x0013F0F0` 20 |  |  |
-| `OnRaceCarFinished(CB3RaceCar*,EB3ScoreFinishState)` | `0x001336D0` 8 | `0x0013AD00` 8 | `0x00138540` 8 | `0x0013F110` 16 |  |  |
-| `IsCooperative()` | `0x001336E0` 8 | `0x0013AD10` 8 | `0x00138550` 8 | `0x0013F120` 20 |  |  |
-| `IsCrashBattle()` | `0x001336F0` 8 | `0x0013AD20` 8 | `0x00138560` 8 | `0x0013F140` 20 |  |  |
-| `UseCrashBattleScoring()` | `0x00133700` 8 | `0x0013AD30` 8 | `0x00138570` 8 | `0x0013F160` 20 |  |  |
-| `IsRoadRage()` | `0x00133710` 8 | `0x0013AD40` 8 | `0x00138580` 8 | `0x0013F180` 20 |  |  |
-| `DisplayDollarValuesAboveTraffic()` | `0x00133720` 8 | `0x0013AD50` 8 | `0x00138590` 8 | `0x0013F1A0` 20 |  |  |
-| `DoAfterTouchNotSlowMo()` | `0x00133730` 8 | `0x0013AD60` 8 | `0x001385A0` 8 | `0x0013F1C0` 20 |  |  |
-| `SetGameModeStatusMessageDelivered()` | `0x00133740` 8 | `0x0013AD70` 8 | `0x001385B0` 8 | `0x0013F1E0` 16 |  |  |
-| `SetGameModeStatusMessageArrived(signed char)` | `0x00133750` 8 | `0x0013AD80` 8 | `0x001385C0` 8 | `0x0013F1F0` 16 |  |  |
-| `LeaveLobby()` | `0x00133760` 8 | `0x0013AD90` 8 | `0x001385D0` 8 | `0x0013F200` 16 |  |  |
-| `AllowRestartButton()` | `0x00133770` 8 | `0x0013ADA0` 8 | `0x001385E0` 8 | `0x0013F210` 20 |  |  |
-| `SetFirstResultsPageContinuePressed()` | `0x00133780` 8 | `0x0013ADB0` 8 | `0x001385F0` 8 | `0x0013F230` 16 | `0x001343B0` likely |  |
-| `SetSecondResultsPageContinuePressed()` | `0x00133790` 8 | `0x0013ADC0` 8 | `0x00138600` 8 | `0x0013F240` 16 | `0x001343C0` likely |  |
-| `GetTotalScore()` | `0x001337A0` 12 | `0x0013ADD0` 12 | `0x00138610` 12 | `0x0013F250` 20 | `0x001343E0` likely |  |
-| `IncrementTotalScore(float)` | `0x001337B0` 8 | `0x0013ADE0` 8 | `0x00138620` 8 | `0x0013F270` 16 | `0x001344A0` likely |  |
-| `AllResultsAreIn()` | `0x001337C0` 8 | `0x0013ADF0` 8 | `0x00138630` 8 | `0x0013F280` 20 | `0x001344B0` likely |  |
-| `GetNumRoundsPlayed()` | `0x001337D0` 8 | `0x0013AE00` 8 | `0x00138640` 8 | `0x0013F2A0` 20 | `0x001344C0` likely |  |
-| `IsCrashType()` | `0x001865E0` 8 | `0x001AD0D0` 8 | `0x001A9210` 8 | `0x001BACE0` 20 | `0x001BD630` likely |  |
-| `IsCrashIntroPlaying()` | `0x001E1910` 8 | `0x001E1470` 8 |  | `0x002270C0` 20 |  |  |
-| `GetResultsPageType()` | `0x002DB1A0` 8 | `0x00324C00` 8 | `0x00356D90` 8 | `0x003576A0` 20 |  |  |
-| `IsTurnBased()` | `0x002FBF20` 8 | `0x0034FF80` 8 | `0x003815E0` 8 | `0x003821F0` 20 |  |  |
-| `IsUsingTakedownCamera(int)` | `0x00346AE0` 8 | `0x003AB5B0` 8 | `0x003D59F0` 8 | `0x003E01C0` 20 |  |  |
-| `OnCategoryFinish(CB3ScoreCategory*,EScoreCategoryType)` | `0x0034E7C0` 268 | `0x003B85B0` 320 | `0x003E1E30` 320 | `0x003EE6B0` 376 |  |  |
-| `OnTakedown(CB3RaceCar*,CB3RaceCar*)` | `0x0034E8D0` 248 | `0x003B86F0` 248 | `0x003E1F70` 248 | `0x003EE580` 300 | `0x00395800` likely |  |
-| `AssignStartPositionIndex(int)` | `0x0034E9D0` 8 | `0x003B87F0` 8 | `0x003E2070` 8 | `0x003EE560` 24 |  |  |
-| `OnPostCrashReset(CB3RaceCarPhysics*)` | `0x0034E9E0` 60 | `0x003B8800` 60 | `0x003E2080` 60 | `0x003EE4D0` 144 | `0x00395930` strong |  |
-| `OnWorldPrepared()` | `0x0034EA20` 100 | `0x003B8840` 184 | `0x003E20C0` 184 | `0x003EE3E0` 232 |  |  |
-| `DoRoadRageTooSlowDetection()` | `0x0034EA90` 612 | `0x003B8900` 672 | `0x003E2180` 672 | `0x003EE0F0` 740 |  |  |
-| `GetGameModeScore(int,const CB3FinishedScore*,int*,int*)` | `0x0034ED00` 16 | `0x003B8BA0` 180 | `0x003E2420` 180 | `0x003EE080` 100 |  |  |
-| `ResetCarDamage(CB3RaceCar*)` | `0x0034ED10` 56 | `0x003B8C60` 308 | `0x003E24E0` 308 | `0x003EE000` 124 |  |  |
-| `UpdateCarDamage()` | `0x0034ED50` 760 | `0x003B8DA0` 920 | `0x003E2620` 920 | `0x003EDCB0` 848 |  |  |
-| `FlapNewBodyPart(CB3RaceCar*)` | `0x0034F050` 260 | `0x003B9140` 420 | `0x003E29C0` 420 | `0x003EDB00` 308 | `0x00395E90` strong |  |
-| `DamageRaceCar(CB3RaceCar*,CB3RaceCar*,EB3DamageType)` | `0x0034F160` 248 | `0x003B92F0` 520 | `0x003E2B70` 520 | `0x003ED9F0` 260 | `0x00395FC0` likely |  |
-| `CarsBecomeFragileAfterBeingSlammed()` | `0x0034F260` 8 | `0x003B9500` 8 | `0x003E2D80` 8 | `0x003ED8B0` 20 |  |  |
-| `RequestGameEndMenu()` | `0x0034F270` 496 | `0x003B9510` 592 | `0x003E2D90` 592 | `0x003ED740` 364 |  |  |
-| `CB3StageLogic()` |  |  |  | `0x0013DE00` 40 |  |  |
-| `GetDamage(CB3RaceCar*,EB3DamageType)` |  |  |  | `0x003ED8D0` 284 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `GetAIMode()` | `0x00133660` 8 | `0x0013AC70` 8 | `0x001384B0` 8 | `0x0013F040` 20 | `0x00134340` likely |  | `EAIMode CB4StageLogic::GetAIMode()` |
+| `GetCheckpointMarkerFlags()` | `0x00133670` 8 | `0x0013AC80` 8 | `0x001384C0` 8 | `0x0013F060` 20 | `0x00134350` likely |  | `RwInt32 CB4StageLogic::GetCheckpointMarkerFlags()` |
+| `GetScoreModeFlags()` | `0x00133680` 8 | `0x0013AC90` 8 | `0x001384D0` 8 | `0x0013F080` 20 | `0x00134360` likely |  | `RwInt32 CB4StageLogic::GetScoreModeFlags()` |
+| `GetResultsPageString()` | `0x00133690` 8 | `0x0013ACA0` 8 | `0x001384E0` 8 | `0x0013F0A0` 20 |  |  | `GtUTF16 * CB4StageLogic::GetResultsPageString()` |
+| `OnRaceCarStartNewLap(CB3RaceCar*)` | `0x001336A0` 8 | `0x0013ACB0` 8 | `0x001384F0` 8 | `0x0013F0C0` 16 |  |  | `void CB4StageLogic::OnRaceCarStartNewLap(CB4RaceCar *lpRaceCar)` |
+| `OnPlayerCarDeath(CB3PlayerCar*)` | `0x001336B0` 8 | `0x0013ACC0` 24 | `0x00138500` 24 | `0x0013F0D0` 20 |  |  |  |
+| `OnNetworkCarDeath(CB3NetworkCar*)` | `0x001336C0` 8 | `0x0013ACE0` 24 | `0x00138520` 24 | `0x0013F0F0` 20 |  |  |  |
+| `OnRaceCarFinished(CB3RaceCar*,EB3ScoreFinishState)` | `0x001336D0` 8 | `0x0013AD00` 8 | `0x00138540` 8 | `0x0013F110` 16 |  |  |  |
+| `IsCooperative()` | `0x001336E0` 8 | `0x0013AD10` 8 | `0x00138550` 8 | `0x0013F120` 20 |  |  |  |
+| `IsCrashBattle()` | `0x001336F0` 8 | `0x0013AD20` 8 | `0x00138560` 8 | `0x0013F140` 20 |  |  |  |
+| `UseCrashBattleScoring()` | `0x00133700` 8 | `0x0013AD30` 8 | `0x00138570` 8 | `0x0013F160` 20 |  |  |  |
+| `IsRoadRage()` | `0x00133710` 8 | `0x0013AD40` 8 | `0x00138580` 8 | `0x0013F180` 20 |  |  |  |
+| `DisplayDollarValuesAboveTraffic()` | `0x00133720` 8 | `0x0013AD50` 8 | `0x00138590` 8 | `0x0013F1A0` 20 |  |  |  |
+| `DoAfterTouchNotSlowMo()` | `0x00133730` 8 | `0x0013AD60` 8 | `0x001385A0` 8 | `0x0013F1C0` 20 |  |  |  |
+| `SetGameModeStatusMessageDelivered()` | `0x00133740` 8 | `0x0013AD70` 8 | `0x001385B0` 8 | `0x0013F1E0` 16 |  |  |  |
+| `SetGameModeStatusMessageArrived(signed char)` | `0x00133750` 8 | `0x0013AD80` 8 | `0x001385C0` 8 | `0x0013F1F0` 16 |  |  |  |
+| `LeaveLobby()` | `0x00133760` 8 | `0x0013AD90` 8 | `0x001385D0` 8 | `0x0013F200` 16 |  |  |  |
+| `AllowRestartButton()` | `0x00133770` 8 | `0x0013ADA0` 8 | `0x001385E0` 8 | `0x0013F210` 20 |  |  |  |
+| `SetFirstResultsPageContinuePressed()` | `0x00133780` 8 | `0x0013ADB0` 8 | `0x001385F0` 8 | `0x0013F230` 16 | `0x001343B0` likely |  |  |
+| `SetSecondResultsPageContinuePressed()` | `0x00133790` 8 | `0x0013ADC0` 8 | `0x00138600` 8 | `0x0013F240` 16 | `0x001343C0` likely |  |  |
+| `GetTotalScore()` | `0x001337A0` 12 | `0x0013ADD0` 12 | `0x00138610` 12 | `0x0013F250` 20 | `0x001343E0` likely |  |  |
+| `IncrementTotalScore(float)` | `0x001337B0` 8 | `0x0013ADE0` 8 | `0x00138620` 8 | `0x0013F270` 16 | `0x001344A0` likely |  |  |
+| `AllResultsAreIn()` | `0x001337C0` 8 | `0x0013ADF0` 8 | `0x00138630` 8 | `0x0013F280` 20 | `0x001344B0` likely |  |  |
+| `GetNumRoundsPlayed()` | `0x001337D0` 8 | `0x0013AE00` 8 | `0x00138640` 8 | `0x0013F2A0` 20 | `0x001344C0` likely |  |  |
+| `IsCrashType()` | `0x001865E0` 8 | `0x001AD0D0` 8 | `0x001A9210` 8 | `0x001BACE0` 20 | `0x001BD630` likely |  |  |
+| `IsCrashIntroPlaying()` | `0x001E1910` 8 | `0x001E1470` 8 |  | `0x002270C0` 20 |  |  |  |
+| `GetResultsPageType()` | `0x002DB1A0` 8 | `0x00324C00` 8 | `0x00356D90` 8 | `0x003576A0` 20 |  |  | `EResultsPageType CB4StageLogic::GetResultsPageType()` |
+| `IsTurnBased()` | `0x002FBF20` 8 | `0x0034FF80` 8 | `0x003815E0` 8 | `0x003821F0` 20 |  |  |  |
+| `IsUsingTakedownCamera(int)` | `0x00346AE0` 8 | `0x003AB5B0` 8 | `0x003D59F0` 8 | `0x003E01C0` 20 |  |  | `bool CB4StageLogic::IsUsingTakedownCamera(int lnPlayerIndex)` |
+| `OnCategoryFinish(CB3ScoreCategory*,EScoreCategoryType)` | `0x0034E7C0` 268 | `0x003B85B0` 320 | `0x003E1E30` 320 | `0x003EE6B0` 376 |  |  |  |
+| `OnTakedown(CB3RaceCar*,CB3RaceCar*)` | `0x0034E8D0` 248 | `0x003B86F0` 248 | `0x003E1F70` 248 | `0x003EE580` 300 | `0x00395800` likely |  |  |
+| `AssignStartPositionIndex(int)` | `0x0034E9D0` 8 | `0x003B87F0` 8 | `0x003E2070` 8 | `0x003EE560` 24 |  |  |  |
+| `OnPostCrashReset(CB3RaceCarPhysics*)` | `0x0034E9E0` 60 | `0x003B8800` 60 | `0x003E2080` 60 | `0x003EE4D0` 144 | `0x00395930` strong |  |  |
+| `OnWorldPrepared()` | `0x0034EA20` 100 | `0x003B8840` 184 | `0x003E20C0` 184 | `0x003EE3E0` 232 |  |  | `void CB4StageLogic::OnWorldPrepared()` |
+| `DoRoadRageTooSlowDetection()` | `0x0034EA90` 612 | `0x003B8900` 672 | `0x003E2180` 672 | `0x003EE0F0` 740 |  |  |  |
+| `GetGameModeScore(int,const CB3FinishedScore*,int*,int*)` | `0x0034ED00` 16 | `0x003B8BA0` 180 | `0x003E2420` 180 | `0x003EE080` 100 |  |  |  |
+| `ResetCarDamage(CB3RaceCar*)` | `0x0034ED10` 56 | `0x003B8C60` 308 | `0x003E24E0` 308 | `0x003EE000` 124 |  |  |  |
+| `UpdateCarDamage()` | `0x0034ED50` 760 | `0x003B8DA0` 920 | `0x003E2620` 920 | `0x003EDCB0` 848 |  |  |  |
+| `FlapNewBodyPart(CB3RaceCar*)` | `0x0034F050` 260 | `0x003B9140` 420 | `0x003E29C0` 420 | `0x003EDB00` 308 | `0x00395E90` strong |  |  |
+| `DamageRaceCar(CB3RaceCar*,CB3RaceCar*,EB3DamageType)` | `0x0034F160` 248 | `0x003B92F0` 520 | `0x003E2B70` 520 | `0x003ED9F0` 260 | `0x00395FC0` likely |  |  |
+| `CarsBecomeFragileAfterBeingSlammed()` | `0x0034F260` 8 | `0x003B9500` 8 | `0x003E2D80` 8 | `0x003ED8B0` 20 |  |  |  |
+| `RequestGameEndMenu()` | `0x0034F270` 496 | `0x003B9510` 592 | `0x003E2D90` 592 | `0x003ED740` 364 |  |  |  |
+| `CB3StageLogic()` |  |  |  | `0x0013DE00` 40 |  |  |  |
+| `GetDamage(CB3RaceCar*,EB3DamageType)` |  |  |  | `0x003ED8D0` 284 |  |  |  |
+
+## Burnout Revenge layout of `CB4StageLogic`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 315 file(s), e.g. `GameShared/GameClasses/Sound/GtSoundFlipFlopBank.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4StageLogic {  // size 0x0D8
+    /* 0x000 */ bool mbStageFinished;
+    /* 0x001 */ bool mbIsInDetourZone;
+    /* 0x002 */ bool mabPlayerResultsNeedResending[6];
+    /* 0x008 */ CB4StageLogicGameParams mGameParams;
+    /* 0x074 */ EIntroMessage meCurrentIntroMessage;
+    /* 0x078 */ RwReal mrLaunchTime;
+    /* 0x07C */ RwReal mrRaceStartTime;
+    /* 0x080 */ RwReal mrResultsDisplayFinishTime;
+    /* 0x084 */ CB4TakedownManager maTakedownManagers[2];
+    /* static */ int mganBurnPickupByClass[12];
+    /* 0x0CC */ bool mbRunEventSummary;
+    /* 0x0D0 */ EStageLogicSplashScreenStage meSplashScreenStage;
+    /* 0x0D4 */ __vtbl_ptr_type *__vptr;
+    // methods
+    // CB4StageLogic(const CB4StageLogic &);
+    // CB4StageLogic();
+    // virtual void Construct();
+    // virtual bool Prepare();
+    // virtual void Update();
+    // virtual void UpdateCameras();
+    // virtual void Release();
+    // virtual void Destruct();
+    // static void RegisterStaticVariables();
+    // static void UnRegisterStaticVariables();
+    // virtual bool StartReplay();
+    // virtual void Render(EStageLogicRenderType) const;
+    // virtual void OnCheckedTrafficSwerve(CB4CheckedTrafficPhysics *, float);
+    // virtual void OnDetectedTBoneTakeDown(CB4RaceCar *, CB4RaceCar *);
+    // virtual void OnDetectedAerialTakeDown(CB4RaceCar *, CB4RaceCar *);
+    // virtual void OnGrinding(EPlayerCarIndex, CB4RaceCar *, CB4ScoreCategory *);
+    // virtual void OnRaceCarRaceCarCollision(CB4RaceCarPhysics *, CB4RaceCarPhysics *);
+    // virtual void OnRub(EPlayerCarIndex, CB4RaceCar *, CB4ScoreCategory *);
+    // virtual void OnSlam(CB4RaceCar *, CB4RaceCar *, EB4ScoreSlamType, bool);
+    // virtual void OnTailgating(EPlayerCarIndex, CB4RaceCar *, CB4ScoreCategory *);
+    // virtual void OnTakedownDenied(EPlayerCarIndex);
+    // virtual void OnTakedownFinish(CB4RaceCar *, CB4RaceCar *);
+    // virtual void OnTakedownStart(CB4RaceCar *, CB4RaceCar *, CB4CrashStartInfo *, ETakedownType);
+    // virtual void OnTradePaint(EPlayerCarIndex, CB4RaceCar *, bool);
+    // virtual void OnYouWereLucky(EPlayerCarIndex, CB4RaceCar *);
+    // virtual void OnAir(CB4ScoreCategory *, EPlayerCarIndex);
+    // virtual void OnCrashEscape(EPlayerCarIndex, unsigned char);
+    // virtual void OnDrift(CB4ScoreCategory *, EPlayerCarIndex);
+    // virtual void OnNearMiss(CB4ScoreCategory *, EPlayerCarIndex);
+    // virtual void OnOncoming(CB4ScoreCategory *, EPlayerCarIndex);
+    // virtual void OnCheckedTraffic(CB4CheckedTrafficPhysics *, CB4TrafficVehicle *, ERaceCarIndex);
+    // virtual void OnCheckedTrafficBonus(EPlayerCarIndex, CB4ScoreCategory *);
+    // virtual void OnCrashStart(CB4VehiclePhysics *, CB4CrashStartInfo *);
+    // virtual void OnCrashingVehicleExploded(CB4VehiclePhysics *);
+    // virtual void OnInitialVehicleImpact(CB4VehiclePhysics *, CB4RaceCarPhysics *);
+    // virtual void OnNonFatalTrafficCollision(CB4RaceCarPhysics *, CB4TrafficVehicle *);
+    // virtual void OnPostCrashReset(CB4RaceCarPhysics *);
+    // virtual void OnPreCrashReset(CB4RaceCarPhysics *);
+    // virtual void OnTrafficCarCrash(CB4TrafficPhysics *, CB4TrafficVehicle *, ERaceCarIndex, bool);
+    // virtual void OnPropHit(EPlayerCarIndex, bool, const CB4PropType *, float, GtMathPs2::CGtV3d);
+    // virtual void OnPayloadReleased(CB4VehiclePhysics *);
+    // virtual void OnBoostStart(EPlayerCarIndex);
+    // virtual void OnStartBoosting();
+    // virtual void OnStopBoosting();
+    // virtual void OnRaceCarStartNewLap(CB4RaceCar *);
+    // virtual void OnCheckpoint(CB4RaceCar *);
+    // virtual void OnRaceCarFinish(CB4RaceCar *, EB4ScoreFinishState);
+    // virtual void OnNewBestRacePosition(EPlayerCarIndex, int);
+    // virtual void OnTimeout();
+    // virtual void OnTimeExtension(EPlayerCarIndex);
+    // virtual void OnMedalAwarded(EB4ScoreMedalType, EPlayerCarIndex);
+    // virtual void OnPerfectLap(EPlayerCarIndex);
+    // virtual void OnBurnoutLap(EPlayerCarIndex);
+    // virtual void OnPreCrashbreakerStart(EPlayerCarIndex, ECrashbreakerPower);
+    // virtual void OnPreCrashbreakerFinish(EPlayerCarIndex, ECrashbreakerPower);
+    // virtual void OnCrashbreaker(EPlayerCarIndex, ECrashbreakerPower);
+    // virtual void OnCrashComboItem(EComboEntryType);
+    // virtual void OnLargeVehicleImpact(CB4VehiclePhysics *, bool);
+    // virtual void OnGoneOutOfRangeOfCrashbreaker(EPlayerCarIndex);
+    // virtual void OnComeIntoRangeOfCrashbreaker(EPlayerCarIndex, GtMathPs2::CGtV3d);
+    // virtual void OnMovingAwayFromCrashbreaker(EPlayerCarIndex);
+    // virtual void OnPickupPickedUp(ECrashModePickupType, EPlayerCarIndex);
+    // virtual void OnWorldPrepared();
+    // virtual void OnIntroFinish();
+    // virtual void OnChallengeInfoFinish();
+    // virtual void OnHostMigration(int, int);
+    // virtual void OnLeaveLobby();
+    // virtual void OnLastCutOfTakedownSequence();
+    // virtual void OnIntroCameraFinished();
+    // virtual void OnTakedownSequenceFinished();
+    // virtual void OnResultArrived(CB4NetworkPlayer *);
+    // virtual void OnRetry();
+    // virtual void OnPause();
+    // virtual void OnResume();
+    // virtual void MenuExit(bool);
+    // virtual bool DisplayCrashWindHUD(EPlayerCarIndex);
+    // virtual EHUDType GetHUDType();
+    // virtual ERacePositionType GetRacePositionType();
+    // virtual EResultsPageType GetResultsPageType();
+    // virtual EChallengeInfoType GetChallengeInfoType();
+    // virtual EAIMode GetAIMode();
+    // virtual RwInt32 GetCheckpointMarkerFlags();
+    // virtual RwInt32 GetScoreModeFlags();
+    // virtual RwReal GetForcedAcceleration(EPlayerCarIndex);
+    // virtual RwReal GetForcedSteering(EPlayerCarIndex);
+    // virtual bool GetForcedBoost(EPlayerCarIndex);
+    // virtual RwReal GetFakeProportionOfMaxSpeed(EPlayerCarIndex);
+    // virtual bool IsInCrashBoostStartState();
+    // virtual RwReal GetTimeRemaining();
+    // virtual void AddBurnoutPoints(EPlayerCarIndex, ERaceCarIndex, int, int, EBurnoutPointsType);
+    // virtual RwUInt8 GetPickupTypeToDisplay();
+    // virtual RwInt32 GetNumInitialBoostBarSegments();
+    // bool HasStageFinished();
+    // virtual bool IsIntroPlaying();
+    // virtual bool IsGameCountingDownToForcedExit();
+    // virtual bool IsGameOver();
+    // virtual RwInt32 GetRacePosition(CB4RaceCar *);
+    // virtual RwInt32 GetNumPlayers();
+    // virtual RwInt32 GetNumLaps();
+    // virtual bool CrashShouldBeClearedUp(unsigned char);
+    // virtual bool OfferEndSessionRatherThanQuit();
+    // virtual RwInt32 GetNumCrashBreakerVehicles();
+    // virtual CB4StageLogicGameParams * GetGameControlParams();
+    // virtual GtUTF16 * GetResultsPageString();
+    // virtual void SetCurrentScore(int, int, int);
+    // virtual RwInt32 GetCurrentScore(int) const;
+    // virtual bool IsUsingTakedownCamera(int);
+    // bool IsInDetourZone();
+    // virtual EIntroMessage GetCurrentIntroMessage();
+    // CB4TakedownManager * GetTakedownManager(EPlayerCarIndex);
+    // virtual CB4CrashModeWind * GetCrashWind(ERaceCarIndex);
+    // virtual void TestForPausing();
+    // virtual void PrepareStartPositions();
+    // virtual ERevengeState GetRevengeState(EPlayerCarIndex, ERaceCarIndex) const;
+    // virtual RwInt32 GetRevengePoints(EPlayerCarIndex);
+    // virtual ERoadRageRevengeState GetRoadRageRevengeState(EPlayerCarIndex);
+    // static RwInt32 GetBurnPickup(ETrafficVehicleCategories);
+    // RwReal GetResultsCountdown();
+    // bool DoneEventSummary();
+    // void OnPlayerResultsFailedToSend(int);
+    // virtual void FinaliseResultsStructures();
+    // virtual void FillOutResultsStructureForRaceCar(CB4RaceCar *);
+    // virtual void UpdateProfile(EB4ProgressionRating, EChallengeMedal);
+    // void PrepareWaitInitCountdownHost();
+    // bool UpdateWaitInitCountdownHost(float, float);
+    // void PrepareSyncTimeClient();
+    // bool UpdateSyncTimeClient(float);
+    // bool UpdateWaitInitCountdownClient();
+    // bool UpdateWaitCountdown();
+    // void StartOnlineTime();
+    // void StopOnlineTime();
+    // void PrepareRacing();
+    // bool UpdateRacing();
+    // bool UpdateSendResults();
+    // void CheckForResendResults();
+    // bool ReceivedAllResults();
+    // void PrepareWaitWhileResultsAreDisplayed(int);
+    // bool UpdateWaitWhileResultsAreDisplayed();
+    // virtual bool CanAdjustCameras();
+    // virtual bool UseTakedownCamera(CB4RaceCar *, CB4RaceCar *, ETakedownType);
+    // void StartOnlineResultsPage();
+    // bool RunEventSummary(const char *, const char *, const unsigned short *, const unsigned short *, const unsigned short *, bool, bool);
+    // static bool EventSummaryAptCall(const char *, const char *, const unsigned short *, const unsigned short *, const unsigned short *, bool);
+    // virtual void OnSplashScreenFinished();
+    // virtual void OnRaceCarCrash(CB4RaceCarPhysics *, CB4CrashStartInfo *);
+    // void SetUpDefaultGameParams();
+};
+```
 
 ## Notes
 

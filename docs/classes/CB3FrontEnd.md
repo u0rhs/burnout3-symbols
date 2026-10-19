@@ -9,31 +9,32 @@
 - **Methods per build:** DNAT_200 11, B3DEBUG 11, B3INTERN 11, B3O0PCH 17
 - **Retail (SLUS-21050):** 9 of its 11 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FB10`, 40 bytes = 10 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 8 virtual functions)
+- **Burnout Revenge counterpart:** `CB4FrontEnd`, size 0x030, methods in `GameSource/Game/B4FrontEnd.cpp` ([layout](#burnout-revenge-layout-of-cb4frontend))
 - **Burnout 2 ancestor (by name):** `CFrontEnd`, size 0x04C, declared in 2 file(s), e.g. `gamesource/Race/CAICar.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `SetInitialMenu(unsigned long)` | `0x00130740` 8 | `0x00131990` 8 | `0x00133CA0` 8 | `0x00135DF0` 36 | `0x00130C20` strong |  |
-| `SetCurrentVideo(EB3Video)` | `0x00130750` 8 | `0x001319A0` 8 | `0x00133CB0` 8 | `0x00135DC0` 36 | `0x00130C30` strong |  |
-| `Destruct()` | `0x00130760` 44 | `0x001319B0` 44 | `0x00133CC0` 44 | `0x00135D80` 52 | `0x00130C40` strong |  |
-| `ReleaseVideo()` | `0x00130790` 176 | `0x001319E0` 176 | `0x00133CF0` 176 | `0x00135C90` 232 | `0x00130C70` likely |  |
-| `PrepareVideo()` | `0x00130840` 192 | `0x00131A90` 192 | `0x00133DA0` 192 | `0x00135B70` 276 |  |  |
-| `PrepareAudio()` | `0x00130900` 264 | `0x00131B50` 264 | `0x00133E60` 264 | `0x001359E0` 364 |  |  |
-| `Release()` | `0x00130A10` 412 | `0x00131C60` 460 | `0x00133F70` 460 | `0x001357F0` 428 | `0x00131100` unverified |  |
-| `Render()` | `0x00130BB0` 200 | `0x00131E30` 956 | `0x00134140` 956 | `0x00135610` 188 | `0x001312D0` unverified |  |
-| `Update()` | `0x00130C80` 128 | `0x001321F0` 128 | `0x00134500` 128 | `0x00135560` 164 | `0x001313C0` unverified |  |
-| `Prepare()` | `0x00130D00` 1452 | `0x00132270` 1488 | `0x00134580` 1476 | `0x00134E80` 1244 | `0x00131480` unverified |  |
-| `Construct()` | `0x001312B0` 176 | `0x00132840` 180 | `0x00134B50` 176 | `0x00134D20` 272 | `0x00131990` unverified |  |
-| `CB3FrontEnd()` |  |  |  | `0x0013E410` 76 |  |  |
-| `GetNextStageIndex()` |  |  |  | `0x0033CE40` 28 |  |  |
-| `GetPreparedState()` |  |  |  | `0x0035AAD0` 28 |  |  |
-| `IsReleased()` |  |  |  | `0x00484110` 76 |  |  |
-| `IsVideoDecoderFullyPrepared()` |  |  |  | `0x003565C0` 56 |  |  |
-| `~CB3FrontEnd()` |  |  |  | `0x0013D8F0` 116 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `SetInitialMenu(unsigned long)` | `0x00130740` 8 | `0x00131990` 8 | `0x00133CA0` 8 | `0x00135DF0` 36 | `0x00130C20` strong |  | `void CB4FrontEnd::SetInitialMenu(unsigned long lMenuID)` |
+| `SetCurrentVideo(EB3Video)` | `0x00130750` 8 | `0x001319A0` 8 | `0x00133CB0` 8 | `0x00135DC0` 36 | `0x00130C30` strong |  |  |
+| `Destruct()` | `0x00130760` 44 | `0x001319B0` 44 | `0x00133CC0` 44 | `0x00135D80` 52 | `0x00130C40` strong |  | `void CB4FrontEnd::Destruct()` |
+| `ReleaseVideo()` | `0x00130790` 176 | `0x001319E0` 176 | `0x00133CF0` 176 | `0x00135C90` 232 | `0x00130C70` likely |  |  |
+| `PrepareVideo()` | `0x00130840` 192 | `0x00131A90` 192 | `0x00133DA0` 192 | `0x00135B70` 276 |  |  |  |
+| `PrepareAudio()` | `0x00130900` 264 | `0x00131B50` 264 | `0x00133E60` 264 | `0x001359E0` 364 |  |  |  |
+| `Release()` | `0x00130A10` 412 | `0x00131C60` 460 | `0x00133F70` 460 | `0x001357F0` 428 | `0x00131100` unverified |  | `void CB4FrontEnd::Release()` |
+| `Render()` | `0x00130BB0` 200 | `0x00131E30` 956 | `0x00134140` 956 | `0x00135610` 188 | `0x001312D0` unverified |  | `void CB4FrontEnd::Render()` |
+| `Update()` | `0x00130C80` 128 | `0x001321F0` 128 | `0x00134500` 128 | `0x00135560` 164 | `0x001313C0` unverified |  | `void CB4FrontEnd::Update()` |
+| `Prepare()` | `0x00130D00` 1452 | `0x00132270` 1488 | `0x00134580` 1476 | `0x00134E80` 1244 | `0x00131480` unverified |  | `bool CB4FrontEnd::Prepare()` |
+| `Construct()` | `0x001312B0` 176 | `0x00132840` 180 | `0x00134B50` 176 | `0x00134D20` 272 | `0x00131990` unverified |  | `void CB4FrontEnd::Construct()` |
+| `CB3FrontEnd()` |  |  |  | `0x0013E410` 76 |  |  |  |
+| `GetNextStageIndex()` |  |  |  | `0x0033CE40` 28 |  |  |  |
+| `GetPreparedState()` |  |  |  | `0x0035AAD0` 28 |  |  |  |
+| `IsReleased()` |  |  |  | `0x00484110` 76 |  |  |  |
+| `IsVideoDecoderFullyPrepared()` |  |  |  | `0x003565C0` 56 |  |  |  |
+| `~CB3FrontEnd()` |  |  |  | `0x0013D8F0` 116 |  |  |  |
 
 ## Burnout 2 layout of `CFrontEnd`
 
@@ -47,6 +48,35 @@ public:
     /* 0x040 */ ETrackID meSelectedTrack;
     /* 0x044 */ EGameMode meSelectedGameMode;
     /* 0x048 */ int mnCurrentControl;
+};
+```
+
+## Burnout Revenge layout of `CB4FrontEnd`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 5 file(s), e.g. `GameSource/Game/B4FrontEnd.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4FrontEnd : public CB4GameMode {  // size 0x030
+    // base CB4GameMode at 0x000
+    /* 0x010 */ CB4GameDataStruct *mpStageHeaderList;
+    /* 0x014 */ bool mbIsBootMemoryCardTest;
+    /* 0x015 */ bool mbIsAutoSaving;
+    /* 0x018 */ EGtPrepareState mePrepareState;
+    /* 0x020 */ GtID mInitialMenu;
+    /* 0x028 */ RwInt8 mn8NextStageIndex;
+    /* 0x029 */ bool mbStageHeaderListLoaded;
+    /* 0x02A */ bool mbFirstPass;
+    // methods
+    // CB4FrontEnd(const CB4FrontEnd &);
+    // CB4FrontEnd();
+    // virtual void Construct();
+    // virtual bool Prepare();
+    // virtual void Update();
+    // virtual void Render();
+    // virtual void Release();
+    // virtual void Destruct();
+    // void SetInitialMenu(unsigned long);
+    // GtID GetIntialMenu() const;
 };
 ```
 

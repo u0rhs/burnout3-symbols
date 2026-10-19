@@ -8,14 +8,31 @@
 - **Source file:** `B3TrafficLaneStruct.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4TrafficLanesStruct`, size 0x00C, methods in `SharedClasses/TrafficData/B4TrafficLaneStruct.cpp` ([layout](#burnout-revenge-layout-of-cb4trafficlanesstruct))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Fixup(unsigned int)` | `0x0022C2A0` 132 | `0x002443E0` 132 | `0x00280E00` 132 | `0x00281F30` 196 | `0x00269F10` proven |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Fixup(unsigned int)` | `0x0022C2A0` 132 | `0x002443E0` 132 | `0x00280E00` 132 | `0x00281F30` 196 | `0x00269F10` proven |  | `void CB4TrafficLanesStruct::Fixup(unsigned int lnBase)` |
+
+## Burnout Revenge layout of `CB4TrafficLanesStruct`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 6 file(s), e.g. `GameSource/Game/Challenge/B4Challenge.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4TrafficLanesStruct {  // size 0x00C
+    /* 0x000 */ CB4TrafficLaneStruct *mpLanes;
+    /* 0x004 */ CGtV3d *mpNodes;
+    /* 0x008 */ RwInt32 mnNumLanes;
+    // methods
+    // CB4TrafficLanesStruct(const CB4TrafficLanesStruct &);
+    // CB4TrafficLanesStruct();
+    // void Fixup(unsigned int);
+};
+```
 
 ## Notes
 

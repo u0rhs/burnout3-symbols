@@ -8,15 +8,34 @@
 - **Source file:** `B3NetworkRaceReadyMessage.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 1, B3INTERN 2, B3O0PCH 1
 - **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CB4NetworkRaceReadyMessage`, size 0x010, methods in `GameSource/Network/Messages/B4NetworkRaceReadyMessage.cpp` ([layout](#burnout-revenge-layout-of-cb4networkracereadymessage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `Prepare()` | `0x0022DED0` 12 | `0x002468F0` 12 | `0x00283070` 12 | `0x002847C0` 48 | `0x0026BD30` proven |  |
-| `Construct()` | `0x0022DEE0` 8 |  | `0x00283080` 8 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `Prepare()` | `0x0022DED0` 12 | `0x002468F0` 12 | `0x00283070` 12 | `0x002847C0` 48 | `0x0026BD30` proven |  | `void CB4NetworkRaceReadyMessage::Prepare()` |
+| `Construct()` | `0x0022DEE0` 8 |  | `0x00283080` 8 |  |  |  | `void CB4NetworkRaceReadyMessage::Construct()` |
+
+## Burnout Revenge layout of `CB4NetworkRaceReadyMessage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 92 file(s), e.g. `GameSource/Camera/B4PlayerCameraManager.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CB4NetworkRaceReadyMessage : public CB4NetworkMessageWithPlayerIDs {  // size 0x010
+    // base CB4NetworkMessageWithPlayerIDs at 0x000
+    // methods
+    // CB4NetworkRaceReadyMessage(const CB4NetworkRaceReadyMessage &);
+    // CB4NetworkRaceReadyMessage();
+    // void Construct();
+    // void Prepare();
+    // bool Retrieve();
+    // void Release();
+    // void Destruct();
+};
+```
 
 ## Notes
 

@@ -8,18 +8,36 @@
 - **Source file:** `Gt2dObjectImage.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 2, B3O0PCH 5
 - **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Burnout Revenge counterpart:** `CGt2dObjectImage`, size 0x040, methods in `GameShared/GameClasses/Graphical/2d/Gt2dObjectImage.cpp` ([layout](#burnout-revenge-layout-of-cgt2dobjectimage))
 
 ## Methods
 
-Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **Burnout 2** and **Burnout Revenge** are the functions with the same name in those games, with their parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
-|---|---|---|---|---|---|---|
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C180` 152 | `0x001D10D0` 152 | `0x001CA450` 156 | `0x001DB030` 172 | `0x001D5FB0` proven |  |
-| `SetTexture(CGtTexture*)` | `0x0019C220` 8 | `0x001D1170` 88 |  | `0x001DAFE0` 80 | `0x001D6070` proven |  |
-| `SetUVs(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x0019C230` 36 | `0x001D11D0` 36 |  | `0x001DAF80` 92 | `0x001D6080` proven |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CGtTextu` | `0x0019C260` 180 | `0x001D1200` 316 | `0x001CA4F0` 316 | `0x001DAE90` 232 | `0x001D60B0` proven |  |
-| `CGt2dObjectImage()` |  |  |  | `0x00140530` 44 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 | Burnout Revenge |
+|---|---|---|---|---|---|---|---|
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C180` 152 | `0x001D10D0` 152 | `0x001CA450` 156 | `0x001DB030` 172 | `0x001D5FB0` proven |  | `void CGt2dObjectImage::_Render(const CGt2dObject::CGt2dObjectSpace &lObjectSpace, const void *lpData)` |
+| `SetTexture(CGtTexture*)` | `0x0019C220` 8 | `0x001D1170` 88 |  | `0x001DAFE0` 80 | `0x001D6070` proven |  |  |
+| `SetUVs(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x0019C230` 36 | `0x001D11D0` 36 |  | `0x001DAF80` 92 | `0x001D6080` proven |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CGtTextu` | `0x0019C260` 180 | `0x001D1200` 316 | `0x001CA4F0` 316 | `0x001DAE90` 232 | `0x001D60B0` proven |  | `void CGt2dObjectImage::Prepare(const GtMathPs2::CGtV2d &lPos, const GtMathPs2::CGtV2d &lHandle, const GtMathPs2::CGtV2d &lSize, GtMathPs2::CGtV4d lColour, CGtTexture *lpTexture, const GtMathPs2::CGtV2d &lTopLeftUV, const GtMathPs2::CGtV2d &lBottomRightUV, int lnPalette)` (same name, different parameters) |
+| `CGt2dObjectImage()` |  |  |  | `0x00140530` 44 |  |  |  |
+
+## Burnout Revenge layout of `CGt2dObjectImage`
+
+From the Burnout Revenge July 14, 2005 prototype's GCC debug information (declared in 6 file(s), e.g. `GameShared/GameClasses/Graphical/2d/Gt2dObjectImage.cpp`). A year newer than Burnout 3: some layouts are unchanged, others gained or moved members. Check each member against Burnout 3 code before using its name.
+
+```cpp
+class CGt2dObjectImage : public CGt2dObject {  // size 0x040
+    // base CGt2dObject at 0x000
+    // methods
+    // CGt2dObjectImage(const CGt2dObjectImage &);
+    // CGt2dObjectImage();
+    // void Prepare(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, GtMathPs2::CGtV4d, CGtTexture *, const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &, int);
+    // void SetUVs(const GtMathPs2::CGtV2d &, const GtMathPs2::CGtV2d &);
+    // void SetTexture(CGtTexture *, int);
+    // static void _Render(const CGt2dObject::CGt2dObjectSpace &, const void *);
+};
+```
 
 ## Notes
 
