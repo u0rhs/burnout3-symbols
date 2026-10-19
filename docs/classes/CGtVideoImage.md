@@ -7,7 +7,7 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `GtVideoDecoderPS2.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 2, B3INTERN 2, B3O0PCH 10
-- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -15,7 +15,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
-| `SetTileTexture(int,int)` | `0x002E18D0` 496 | `0x0032BF60` 620 | `0x0035E2F0` 620 | `0x0035CEC0` 836 | `0x00325BD0` strong |  |
+| `SetTileTexture(int,int)` | `0x002E18D0` 496 | `0x0032BF60` 620 | `0x0035E2F0` 620 | `0x0035CEC0` 836 | `0x00325BD0` proven |  |
 | `Prepare(CGtLinearMalloc*,int,int,int)` |  | `0x0032C1D0` 456 | `0x0035E560` 456 | `0x0035CCD0` 416 |  |  |
 | `Construct()` |  |  |  | `0x0035CC90` 52 |  |  |
 | `GetImageHeight()` |  |  |  | `0x0035F320` 32 |  |  |

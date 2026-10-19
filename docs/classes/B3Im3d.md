@@ -7,7 +7,7 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3Im3DPS2.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 13, B3INTERN 13, B3O0PCH 13
-- **Retail (SLUS-21050):** 13 of its 13 DNAT_200 methods found, 8 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 13 of its 13 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -26,7 +26,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `SetZWrite(bool)` | `0x0031B290` 172 | `0x003762E0` 208 | `0x003A4EC0` 208 | `0x003A3BF0` 240 | `0x00365460` proven |  |
 | `SetTexture(CGtTexture*)` | `0x0031B340` 144 | `0x003763B0` 188 | `0x003A4F90` 188 | `0x003A3B30` 180 | `0x00365510` proven |  |
 | `EndRendering()` | `0x0031B3D0` 148 | `0x00376470` 188 | `0x003A5050` 188 | `0x003A3A50` 212 | `0x003655A0` proven |  |
-| `BeginRendering()` | `0x0031B470` 564 | `0x00376530` 604 | `0x003A5110` 604 | `0x003A3700` 844 | `0x00365640` proven |  |
+| `BeginRendering()` | `0x0031B470` 564 | `0x00376530` 604 | `0x003A5110` 604 | `0x003A3700` 844 | `0x00365640` strong |  |
 | `Construct()` | `0x0031B6B0` 12 | `0x00376790` 12 | `0x003A5370` 12 | `0x003A36E0` 20 | `0x00365880` proven |  |
 
 ## Static data (DNAT_200)

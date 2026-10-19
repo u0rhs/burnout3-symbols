@@ -7,7 +7,7 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `GtSoundListenerManager.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 9
-- **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -21,8 +21,8 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `Destruct()` | `0x00341EB0` 120 | `0x003A58B0` 120 | `0x003CF7D0` 120 | `0x003D8610` 160 | `0x00384BF0` proven |  |
 | `Release()` | `0x00341F30` 96 | `0x003A5930` 96 | `0x003CF850` 96 | `0x003D8590` 128 | `0x00384C70` proven |  |
 | `Update()` | `0x00341F90` 96 | `0x003A5990` 136 | `0x003CF8B0` 136 | `0x003D8500` 132 | `0x00384CE0` proven |  |
-| `Prepare(unsigned int)` | `0x00341FF0` 148 | `0x003A5A20` 228 | `0x003CF940` 228 | `0x003D8410` 240 | `0x00384D40` strong |  |
-| `Construct(RwaSPU2Output*)` | `0x00342090` 144 | `0x003A5B10` 188 | `0x003CFA30` 188 | `0x003D8340` 208 | `0x00384DE0` strong |  |
+| `Prepare(unsigned int)` | `0x00341FF0` 148 | `0x003A5A20` 228 | `0x003CF940` 228 | `0x003D8410` 240 | `0x00384D40` proven |  |
+| `Construct(RwaSPU2Output*)` | `0x00342090` 144 | `0x003A5B10` 188 | `0x003CFA30` 188 | `0x003D8340` 208 | `0x00384DE0` proven |  |
 | `GetFixedListener()` |  | `0x003A56C0` 8 | `0x003CF5E0` 8 | `0x003D8970` 44 |  |  |
 | `GetNearestListener(GtMathPs2::CGtV3d)` |  | `0x003A56D0` 288 | `0x003CF5F0` 288 | `0x003D87A0` 452 |  |  |
 | `GetListener(int)` |  |  |  | `0x003D86B0` 80 |  |  |

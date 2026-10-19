@@ -7,7 +7,7 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `GtFileSystemPS2DVD.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 12
-- **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 8 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FED0`, 40 bytes = 10 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 8 virtual functions)
 - **Burnout 2 ancestor (by shared methods: `Abort`, `Close`, `GetStatus`, `Open`, `Read`, `SetPosition`, `Sync`, `Write`):** `CGTFilePS2DVD`, size 0x038, declared in 1 file(s), e.g. `I:/GameShared/GameClasses/FileSystem/ps2/GTFileSystemPS2DVD.cpp`
 
@@ -17,7 +17,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
-| `Abort()` | `0x00199410` 168 | `0x001CD830` 168 | `0x001C7120` 168 | `0x001D95C0` 144 | `0x001D2FA0` strong | `int CGTFilePS2DVD::Abort()` |
+| `Abort()` | `0x00199410` 168 | `0x001CD830` 168 | `0x001C7120` 168 | `0x001D95C0` 144 | `0x001D2FA0` proven | `int CGTFilePS2DVD::Abort()` |
 | `Sync(int)` | `0x001994C0` 96 | `0x001CD8E0` 96 | `0x001C71D0` 96 | `0x001D9560` 96 | `0x001D3050` proven | `EFileStatus CGTFilePS2DVD::Sync(int lbBlock)` |
 | `SetPosition(long,EFileMoveMethod)` | `0x00199520` 436 | `0x001CD940` 436 | `0x001C7230` 436 | `0x001D92E0` 628 | `0x001D30B0` proven | `long long CGTFilePS2DVD::SetPosition(long long lnOffset, EFileMoveMethod ePosition)` (same name, different parameters) |
 | `Write(const void*,unsigned int)` | `0x001996E0` 16 | `0x001CDB00` 16 | `0x001C73F0` 16 | `0x001D92B0` 36 | `0x001D3270` proven | `unsigned int CGTFilePS2DVD::Write()` |

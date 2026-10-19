@@ -25,7 +25,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `Release()` | `0x0034E540` 8 | `0x003B8170` 8 | `0x003E19F0` 8 | `0x003ECAD0` 88 |  |  |
 | `StartReplay()` | `0x0034E550` 288 | `0x003B8180` 508 | `0x003E1A00` 508 | `0x003ECA70` 92 | `0x00395580` strong |  |
 | `Prepare()` | `0x0034E670` 288 | `0x003B8380` 508 | `0x003E1C00` 508 | `0x003ECA10` 92 |  |  |
-| `Construct()` | `0x0034E790` 40 | `0x003B8580` 40 | `0x003E1E00` 40 | `0x003EC9B0` 92 | `0x003957D0` likely |  |
+| `Construct()` | `0x0034E790` 40 | `0x003B8580` 40 | `0x003E1E00` 40 | `0x003EC9B0` 92 | `0x003957D0` strong |  |
 | `CB3OfflineStageLogic()` |  |  |  | `0x0013E0B0` 60 |  |  |
 
 ## Notes

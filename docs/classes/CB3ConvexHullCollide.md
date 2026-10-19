@@ -19,7 +19,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `ClipEdgesByHull(GtMathPs2::CGtV3d*,int,GtMathPs2::CGtV3d*,unsigned int,GtMathPs2::CGtPlane*,unsigned int)` | `0x002788F0` 468 | `0x002AC2E0` 608 | `0x002E3700` 608 | `0x002E3E70` 772 | `0x002B7A00` proven |  |
 | `GetHullPenetration(int*,unsigned char,CB3ConvexHullPlane*,GtMathPs2::CGtPlane*,GtMathPs2::CGtV3d,GtMathPs` | `0x00278AD0` 536 | `0x002AC540` 628 | `0x002E3960` 628 | `0x002E39A0` 840 | `0x002B7BF0` proven |  |
 | `GetHullPenetration(int*,CB3ConvexHull*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x00278CF0` 528 | `0x002AC7C0` 624 | `0x002E3BE0` 624 | `0x002E3650` 844 | `0x002B7DB0` proven |  |
-| `DoCollideHullTriangles(CB3HullWorldTriCollideParams*,CB3ConvexHullCollideInfo*)` | `0x00278F00` 1492 | `0x002ACA30` 2412 | `0x002E3E50` 2368 | `0x002E2C80` 2304 | `0x002B7F70` likely |  |
+| `DoCollideHullTriangles(CB3HullWorldTriCollideParams*,CB3ConvexHullCollideInfo*)` | `0x00278F00` 1492 | `0x002ACA30` 2412 | `0x002E3E50` 2368 | `0x002E2C80` 2304 | `0x002B7F70` unverified |  |
 | `BuildClippedEdgeList(GtMathPs2::CGtV3d*,unsigned int*,GtMathPs2::CGtV3d,const CB3ConvexHull*,GtMathPs2::C` | `0x002794E0` 296 | `0x002AD490` 296 |  | `0x002E27E0` 468 | `0x002B87E0` proven |  |
 | `DoCollideHullToHull(CB3HullCollideParams*)` | `0x00279610` 2568 | `0x002AD5C0` 3688 | `0x002E4790` 3964 | `0x002E1CE0` 2736 | `0x002B8920` proven |  |
 | `CollideHulls(CB3HullCollideParams*)` | `0x0027A020` 144 | `0x002AE430` 144 | `0x002E5710` 144 | `0x002E1C30` 168 | `0x002B9400` proven |  |

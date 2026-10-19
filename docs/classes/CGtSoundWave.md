@@ -16,7 +16,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
 | `GetLength() const` | `0x003460A0` 164 |  |  |  | `0x003894D0` strong |  |
-| `CalcFrequency() const` | `0x00346150` 60 |  |  |  | `0x00389580` strong |  |
+| `CalcFrequency() const` | `0x00346150` 60 |  |  |  | `0x00389580` likely |  |
 | `Destruct()` | `0x00346190` 12 | `0x003AACF0` 12 | `0x003D4DF0` 12 | `0x003DEDA0` 36 | `0x003895C0` proven |  |
 | `Construct(RwaSPU2Wave*)` | `0x003461A0` 48 | `0x003AAD00` 100 | `0x003D4E00` 100 | `0x003DED40` 84 | `0x003895D0` proven |  |
 | `GetLength()` |  | `0x003AAC00` 164 | `0x003D4D00` 164 | `0x003DEE30` 188 |  |  |

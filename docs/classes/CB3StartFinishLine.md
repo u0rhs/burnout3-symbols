@@ -15,7 +15,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
-| `Draw(int)` | `0x001596A0` 220 | `0x0016F170` 220 | `0x0016A910` 220 | `0x0017B4D0` 288 | `0x0015E720` likely |  |
+| `Draw(int)` | `0x001596A0` 220 | `0x0016F170` 220 | `0x0016A910` 220 | `0x0017B4D0` 288 | `0x0015E720` unverified |  |
 | `Destruct()` | `0x00159780` 8 | `0x0016F250` 8 | `0x0016A9F0` 8 | `0x0017B4A0` 40 | `0x0015E780` proven |  |
 | `Release()` | `0x00159790` 44 | `0x0016F260` 44 | `0x0016AA00` 44 | `0x0017B460` 56 | `0x0015E790` proven |  |
 | `Prepare(CB3PlanarTriggerStruct*,bool)` | `0x001597C0` 204 | `0x0016F290` 284 | `0x0016AA30` 284 | `0x0017B3B0` 164 | `0x0015E7C0` proven |  |

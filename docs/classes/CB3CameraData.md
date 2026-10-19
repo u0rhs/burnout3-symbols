@@ -17,7 +17,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
 | `SendRegistersToGS() const` | `0x001E9240` 120 |  |  |  | `0x002253C0` proven |  |
-| `ConstructEnvMap(GtMathPs2::CGtMatrix3x4,EB3RenderableCamera)` | `0x001E92C0` 1488 | `0x001EA810` 1684 | `0x0021CCA0` 1596 | `0x00233EF0` 1932 | `0x00225440` likely |  |
+| `ConstructEnvMap(GtMathPs2::CGtMatrix3x4,EB3RenderableCamera)` | `0x001E92C0` 1488 | `0x001EA810` 1684 | `0x0021CCA0` 1596 | `0x00233EF0` 1932 | `0x00225440` unverified |  |
 | `Construct(RwCamera*)` | `0x001E9890` 1432 | `0x001EAEB0` 1432 | `0x0021D2E0` 1432 | `0x002335B0` 2076 | `0x00225B30` proven |  |
 | `SendRegistersToGS()` |  | `0x001EA790` 120 | `0x0021CC20` 120 | `0x002346A0` 148 |  |  |
 | `CB3CameraData()` |  |  |  | `0x00195E30` 156 |  |  |

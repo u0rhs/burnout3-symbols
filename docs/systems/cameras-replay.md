@@ -21,11 +21,11 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `B3ReplayFrame.cpp` | 4 | 740 | `0x00150D10` | 4 (2) | `0x00154AC0`–`0x00154D20` |
 | `B3ReplaySystem.cpp` | 6 | 1,116 | `0x00151010` | 6 (6) | `0x00154DC0`–`0x00155210` |
 | `GtCameraBehaviour.cpp` | 1 | 8 | `0x001E0510` | 1 (1) | `0x0021AFF0`–`0x0021AFF0` |
-| `GtCamera.cpp` | 6 | 1,188 | `0x001E0520` | 6 (4) | `0x0021B000`–`0x0021B4D0` |
+| `GtCamera.cpp` | 6 | 1,188 | `0x001E0520` | 6 (6) | `0x0021B000`–`0x0021B4D0` |
 | `B3BehaviourOffset.cpp` | 7 | 2,228 | `0x002A2220` | 6 (1) | `0x002E2700`–`0x002E3350` |
 | `B3BehaviourRaceCarFollow.cpp` | 6 | 10,552 | `0x002A2B10` | 6 (5) | `0x002E3410`–`0x002E5D90` |
 | `B3BehaviourRotate.cpp` | 7 | 3,796 | `0x002A5480` | 6 (0) | `0x002E5E20`–`0x002E6F30` |
-| `B3PlayerCameraManager.cpp` | 17 | 4,104 | `0x002A6380` | 15 (0) | `0x002E6F40`–`0x002E7D20` |
+| `B3PlayerCameraManager.cpp` | 17 | 4,104 | `0x002A6380` | 15 (1) | `0x002E6F40`–`0x002E7D20` |
 | `B3PlayerCameraStateDebug.cpp` | 1 | 376 | `0x002A7400` | 1 (0) | `0x002E7F00`–`0x002E7F00` |
 | `B3PlayerCameraStateInactive.cpp` | 1 | 332 | `0x002A7580` | 1 (0) | `0x002E80A0`–`0x002E80A0` |
 | `B3PlayerCameraStateInGame.cpp` | 1 | 1,644 | `0x002A76D0` | 1 (0) | `0x002E8250`–`0x002E8250` |

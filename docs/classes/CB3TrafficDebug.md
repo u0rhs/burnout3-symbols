@@ -18,7 +18,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `RenderSpatialTriggers()` | `0x002ADCE0` 3332 | `0x002EC030` 4000 | `0x00321580` 3592 | `0x00319890` 4952 | `0x002EF0F0` strong |  |
 | `RenderNearMissData()` | `0x002AE9F0` 1176 | `0x002ECFD0` 1220 | `0x00322390` 1220 | `0x00318FB0` 2260 | `0x002EFE00` strong |  |
 | `RenderWorld()` | `0x002AEE90` 112 | `0x002ED4A0` 112 | `0x00322860` 112 | `0x00318F40` 100 | `0x002F02C0` strong |  |
-| `Update()` | `0x002AEF00` 36 | `0x002ED760` 36 | `0x00322AE0` 36 | `0x00318C70` 44 | `0x002F0330` likely |  |
+| `Update()` | `0x002AEF00` 36 | `0x002ED760` 36 | `0x00322AE0` 36 | `0x00318C70` 44 | `0x002F0330` unverified |  |
 | `Prepare()` | `0x002AEF30` 8 | `0x002ED790` 8 | `0x00322B10` 8 | `0x00318C60` 16 | `0x002F0360` strong |  |
 | `Destruct()` | `0x002AEF40` 8 | `0x002ED7A0` 8 | `0x00322B20` 8 | `0x00318C50` 16 | `0x002F0370` strong |  |
 | `Construct()` | `0x002AEF50` 28 | `0x002ED7B0` 28 | `0x00322B30` 28 | `0x00318C10` 64 | `0x002F0380` proven |  |

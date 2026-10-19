@@ -7,7 +7,7 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3NetworkHasHeadsetMessage.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 2, B3INTERN 3, B3O0PCH 3
-- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -16,7 +16,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
 | `Retrieve(unsigned char*)` | `0x002FAF50` 60 | `0x0034E7C0` 1048 | `0x0037FE10` 1048 | `0x00380320` 376 | `0x00341C70` proven |  |
-| `Prepare(unsigned char)` | `0x002FAF90` 56 | `0x0034EBE0` 56 | `0x00380230` 56 | `0x003802C0` 84 | `0x00341CB0` strong |  |
+| `Prepare(unsigned char)` | `0x002FAF90` 56 | `0x0034EBE0` 56 | `0x00380230` 56 | `0x003802C0` 84 | `0x00341CB0` proven |  |
 | `Construct()` | `0x002FAFD0` 8 |  | `0x00380270` 8 |  | `0x00341CF0` unverified |  |
 | `Release()` |  |  |  | `0x003804A0` 40 |  |  |
 

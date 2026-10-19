@@ -62,15 +62,15 @@ way as the [prototype names](retail-prototype-names.md). Table:
 <!-- check:start -->
 | Result | Names |
 |---|---:|
-| Agrees with the prototype map's name | 627 |
-| Same function; the prototype map gives another parameter list | 33 |
-| The prototype map names this function differently (e.g. `Render` where the map says `_Render`) | 20 |
+| Agrees with the prototype map's name | 634 |
+| Same function; the prototype map gives another parameter list | 26 |
+| The prototype map names this function differently (e.g. `Render` where the map says `_Render`) | 19 |
 | A different function; the code matches the prototype map's name | 9 |
-| A different function; open | 7 |
+| A different function; open | 8 |
 | One function off: the prototype map puts the name at a neighbouring address (the PAL to US shift) | 52 |
-| Not in the prototype table; proven against its prototype function | 6 |
-| Not in the prototype table; the prototype has the name, not proven | 201 |
-| No prototype counterpart (e.g. names from the Burnout Revenge prototype) | 191 |
+| Not in the prototype table; proven against its prototype function | 18 |
+| Not in the prototype table; the prototype has the name, not proven | 299 |
+| No prototype counterpart (e.g. names from the Burnout Revenge prototype) | 81 |
 | **total** | **1,146** |
 <!-- check:end -->
 

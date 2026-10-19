@@ -20,7 +20,7 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 |---|---:|---:|---|---:|---|
 | `B3FrontEnd.cpp` | 12 | 3,080 | `0x00130740` | 10 (1) | `0x00130C20`–`0x00131AA0` |
 | `B3MenuInput.cpp` | 4 | 1,208 | `0x001DFB30` | 4 (3) | `0x0021A5F0`–`0x0021A9B0` |
-| `B3Strings.cpp` | 5 | 80 | `0x00232280` | 4 (2) | `0x00271A10`–`0x00271A60` |
+| `B3Strings.cpp` | 5 | 80 | `0x00232280` | 4 (3) | `0x00271A10`–`0x00271A60` |
 | `B3MenuComponents.cpp` | 2 | 888 | `0x002CC090` | 1 (0) | `0x0030B560`–`0x0030B560` |
 | `B3MenuChoices.cpp` | 14 | 7,328 | `0x002CC1D0` | 10 (1) | `0x0030BB70`–`0x0030D3B0` |
 | `B3MenuPageManager.cpp` | 12 | 3,492 | `0x002CDEC0` | 6 (0) | `0x0030D4B0`–`0x0030D6E0` |
@@ -41,7 +41,7 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `B3HelpBarComponent.cpp` | 13 | 3,672 | `0x002D9EC0` | 10 (0) | `0x0031B6A0`–`0x0031CB20` |
 | `B3HSelectComponent.cpp` | 4 | 468 | `0x002DAD50` | 3 (1) | `0x0031CC90`–`0x0031CD90` |
 | `B3BackgroundComponent.cpp` | 12 | 7,676 | `0x002DAF40` | 6 (1) | `0x0031CDA0`–`0x0031E0D0` |
-| `B3PromptsComponent.cpp` | 8 | 3,600 | `0x002DC9A0` | 4 (0) | `0x0031E140`–`0x0031FD30` |
+| `B3PromptsComponent.cpp` | 8 | 3,600 | `0x002DC9A0` | 4 (1) | `0x0031E140`–`0x0031FD30` |
 | `B3VSelectComponent.cpp` | 10 | 4,456 | `0x002DD770` | 8 (0) | `0x0031FDB0`–`0x003214B0` |
 | `B3LoadingScreenPage.cpp` | 3 | 556 | `0x002DE8D0` | 3 (0) | `0x00321680`–`0x00321780` |
 | `B3MyBurnoutPage.cpp` | 5 | 1,528 | `0x002DEB10` | 3 (0) | `0x00322310`–`0x00322610` |
@@ -50,7 +50,7 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `B3VListComponent.cpp` | 3 | 176 | `0x002E5C70` | 3 (3) | `0x0032B200`–`0x0032B2B0` |
 | `B3MessageBoxComponent.cpp` | 6 | 1,688 | `0x002E5D30` | 2 (0) | `0x0032B530`–`0x0032D1B0` |
 | `B3SplashScreenState.cpp` | 1 | 2,892 | `0x002F0600` |  |  |
-| `B3TableComponent.cpp` | 13 | 3,060 | `0x002F8E10` | 10 (2) | `0x0033F260`–`0x00340420` |
+| `B3TableComponent.cpp` | 13 | 3,060 | `0x002F8E10` | 10 (5) | `0x0033F260`–`0x00340420` |
 | `B3PausePage.cpp` | 4 | 1,388 | `0x002FAFE0` | 1 (0) | `0x00342090`–`0x00342090` |
 | `B3PauseState.cpp` | 1 | 792 | `0x002FB560` | 1 (0) | `0x003428D0`–`0x003428D0` |
 | `B3TipComponent.cpp` | 4 | 68 | `0x002FB880` | 1 (0) | `0x00342F60`–`0x00342F60` |
@@ -61,14 +61,14 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `B3TextComponent.cpp` | 7 | 1,020 | `0x00309650` | 5 (0) | `0x00351A90`–`0x00351F00` |
 | `B3ErrorPage.cpp` | 3 | 400 | `0x00309A80` | 3 (0) | `0x00352030`–`0x00352210` |
 | `B3TableSelectComponent.cpp` | 4 | 496 | `0x00309C20` | 4 (4) | `0x003522C0`–`0x00352490` |
-| `B3ConnectionAnimationComponent.cpp` | 3 | 1,496 | `0x00309E20` | 3 (3) | `0x003524C0`–`0x00352990` |
+| `B3ConnectionAnimationComponent.cpp` | 3 | 1,496 | `0x00309E20` | 3 (1) | `0x003524C0`–`0x00352990` |
 | `B3StageSelectPage.cpp` | 4 | 2,220 | `0x0031DA10` |  |  |
 | `B3StageSelectState.cpp` | 1 | 2,228 | `0x0031E2E0` |  |  |
 | `B3MenuImages.cpp` | 4 | 1,840 | `0x0032C750` | 2 (0) | `0x003717A0`–`0x00371870` |
 | `B3MyStatsPage.cpp` | 3 | 1,780 | `0x0032EB80` |  |  |
 | `B3MyStatsState.cpp` | 1 | 264 | `0x0032F290` |  |  |
 | `B3CrashResultsPage.cpp` | 6 | 3,832 | `0x00331730` |  |  |
-| `B3PageTextComponent.cpp` | 11 | 1,676 | `0x00338080` | 6 (4) | `0x00379230`–`0x00379980` |
+| `B3PageTextComponent.cpp` | 11 | 1,676 | `0x00338080` | 6 (5) | `0x00379230`–`0x00379980` |
 | `B3PromptBarComponent.cpp` | 4 | 780 | `0x00347090` | 1 (0) | `0x0038AD80`–`0x0038AD80` |
 | `B3ScrollVSelectComponent.cpp` | 7 | 3,760 | `0x00354CB0` |  |  |
 | `B3EventSummaryComponent.cpp` | 7 | 3,408 | `0x00355B10` |  |  |
@@ -89,7 +89,7 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `B3PostEventPage.cpp` | 6 | 1,612 | `0x00376470` |  |  |
 | `B3PostEventRecordsPage.cpp` | 3 | 364 | `0x00376AF0` |  |  |
 | `B3PostEventRewardsPage.cpp` | 3 | 344 | `0x00376C70` |  |  |
-| `B3ReplayPage.cpp` | 3 | 352 | `0x00376DE0` | 1 (0) | `0x003C5FB0`–`0x003C5FB0` |
+| `B3ReplayPage.cpp` | 3 | 352 | `0x00376DE0` | 1 (1) | `0x003C5FB0`–`0x003C5FB0` |
 | `B3AwardPresentationPage.cpp` | 5 | 2,252 | `0x00376F50` |  |  |
 | `B3ReplayState.cpp` | 1 | 496 | `0x00377830` |  |  |
 | `B3CrashNavState.cpp` | 1 | 2,564 | `0x00377A20` |  |  |

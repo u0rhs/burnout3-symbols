@@ -7,7 +7,7 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundCrashedTraffic.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 10, B3INTERN 10, B3O0PCH 13
-- **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 8 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -22,7 +22,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `SetOwner(CB3VehiclePhysics*)` | `0x00251570` 8 | `0x002840C0` 8 | `0x002BAC60` 8 | `0x002B8760` 36 | `0x00290440` strong |  |
 | `Release()` | `0x00251580` 172 | `0x002840D0` 172 | `0x002BAC70` 172 | `0x002B86B0` 172 | `0x00290450` proven |  |
 | `Update()` | `0x00251630` 1004 | `0x00284180` 864 | `0x002BAD20` 864 | `0x002B8360` 836 | `0x00290510` proven |  |
-| `Prepare()` | `0x00251A20` 452 | `0x002844E0` 492 | `0x002BB080` 492 | `0x002B80C0` 672 | `0x00290900` likely |  |
+| `Prepare()` | `0x00251A20` 452 | `0x002844E0` 492 | `0x002BB080` 492 | `0x002B80C0` 672 | `0x00290900` proven |  |
 | `Construct()` | `0x00251BF0` 60 | `0x002846D0` 60 | `0x002BB270` 60 | `0x002B8020` 152 | `0x00290AD0` proven |  |
 | `UpdateBassVoices()` |  | `0x00283D80` 448 | `0x002BA920` 448 | `0x002B89E0` 388 |  |  |
 | `GetOwner()` |  |  |  | `0x0029DCE0` 28 |  |  |

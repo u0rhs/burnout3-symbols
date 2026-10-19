@@ -7,7 +7,7 @@
 - **Area:** [AI drivers](../systems/ai.md)
 - **Source file:** `B3AIAvoidance.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 6
-- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CAIAvoidance`, size 0xE98, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
@@ -16,10 +16,10 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
-| `GenerateTarget()` | `0x0013D750` 3540 | `0x00147120` 3632 | `0x001450C0` 3540 | `0x00149330` 5344 | `0x00140A30` proven | `void CAIAvoidance::GenerateTarget()` |
+| `GenerateTarget()` | `0x0013D750` 3540 | `0x00147120` 3632 | `0x001450C0` 3540 | `0x00149330` 5344 | `0x00140A30` strong | `void CAIAvoidance::GenerateTarget()` |
 | `Release()` | `0x0013E530` 8 | `0x00147F50` 8 | `0x00145EA0` 8 | `0x00149300` 40 | `0x00141880` proven |  |
-| `Update()` | `0x0013E540` 80 | `0x00147F60` 560 | `0x00145EB0` 560 | `0x00149250` 168 | `0x00141890` proven | `void CAIAvoidance::Update(int lbForceUpdate)` (same name, different parameters) |
-| `Prepare()` | `0x0013E590` 136 | `0x00148190` 172 | `0x001460E0` 172 | `0x00149140` 272 | `0x001418F0` proven |  |
+| `Update()` | `0x0013E540` 80 | `0x00147F60` 560 | `0x00145EB0` 560 | `0x00149250` 168 | `0x00141890` likely | `void CAIAvoidance::Update(int lbForceUpdate)` (same name, different parameters) |
+| `Prepare()` | `0x0013E590` 136 | `0x00148190` 172 | `0x001460E0` 172 | `0x00149140` 272 | `0x001418F0` strong |  |
 | `Construct()` | `0x0013E620` 40 | `0x00148240` 76 | `0x00146190` 76 | `0x001490E0` 92 | `0x00141980` proven |  |
 | `CB3AIAvoidance()` |  |  |  | `0x00191250` 76 |  |  |
 

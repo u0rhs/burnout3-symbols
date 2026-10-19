@@ -32,7 +32,7 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `B3WrongWayWall.cpp` | 7 | 4,456 | `0x00169290` | 7 (0) | `0x0019B6E0`–`0x0019D4B0` |
 | `B3GamePS2.cpp` | 7 | 1,852 | `0x0019A1C0` | 1 (0) | `0x001D3EE0`–`0x001D3EE0` |
 | `B3Settings.cpp` | 2 | 64 | `0x001E09F0` | 1 (0) | `0x0021B760`–`0x0021B760` |
-| `B3CarViewerGameMode.cpp` | 8 | 10,444 | `0x0020DC70` | 7 (5) | `0x0024D4D0`–`0x0024FDA0` |
+| `B3CarViewerGameMode.cpp` | 8 | 10,444 | `0x0020DC70` | 7 (2) | `0x0024D4D0`–`0x0024FDA0` |
 | `B3SpatialTrigger.cpp` | 5 | 368 | `0x002332B0` | 1 (0) | `0x00272A30`–`0x00272A30` |
 | `B3WorldPS2.cpp` | 4 | 2,460 | `0x00236520` | 4 (0) | `0x00275EF0`–`0x002768F0` |
 | `B3OfflineSingleRaceLogic.cpp` | 22 | 1,648 | `0x003463B0` | 1 (0) | `0x003899E0`–`0x003899E0` |

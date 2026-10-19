@@ -87,6 +87,13 @@ if [ -n "${NAHELAM_PAL_NAMES:-}" ] && [ -f "$NAHELAM_PAL_NAMES" ] && have "$B3_R
     python3 -I tools/map_pal_names.py "$NAHELAM_PAL_NAMES" "$B3_RETAIL/SLUS_210.50" "$R/function-names.csv"
 fi
 
+# --- Retail names checked against the code (needs both executables; B3PC_FUNCTIONS = burnout3-pc's
+# games/burnout3/config/functions.csv for the independent start check) ---------------------------------
+if [ -f "$B3_RETAIL/SLUS_210.50" ] && [ -f "$B3_PROTO/DNAT_200.45" ]; then
+    python3 -I tools/verify_retail_names.py "$B3_RETAIL/SLUS_210.50" "$B3_PROTO/DNAT_200.45" \
+        ${B3PC_FUNCTIONS:+--starts "$B3PC_FUNCTIONS"}
+fi
+
 python3 -I tools/annotate_retail.py
 
 # --- Generated documentation, then the navigation line on every page ----------------------------------

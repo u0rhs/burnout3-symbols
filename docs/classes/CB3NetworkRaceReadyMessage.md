@@ -7,7 +7,7 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3NetworkRaceReadyMessage.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 1, B3INTERN 2, B3O0PCH 1
-- **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -15,7 +15,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
-| `Prepare()` | `0x0022DED0` 12 | `0x002468F0` 12 | `0x00283070` 12 | `0x002847C0` 48 | `0x0026BD30` strong |  |
+| `Prepare()` | `0x0022DED0` 12 | `0x002468F0` 12 | `0x00283070` 12 | `0x002847C0` 48 | `0x0026BD30` proven |  |
 | `Construct()` | `0x0022DEE0` 8 |  | `0x00283080` 8 |  |  |  |
 
 ## Notes

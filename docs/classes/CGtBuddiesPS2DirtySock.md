@@ -7,7 +7,7 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `GtBuddiesPS2DirtySock.cpp`
 - **Methods per build:** DNAT_200 37, B3DEBUG 37, B3INTERN 38, B3O0PCH 41
-- **Retail (SLUS-21050):** 28 of its 37 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 28 of its 37 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -15,7 +15,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
-| `_InviteBuddyCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x00315B30` 64 | `0x0036FA20` 128 | `0x0039E8F0` 128 | `0x0039F570` 148 | `0x0035F490` strong |  |
+| `_InviteBuddyCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x00315B30` 64 | `0x0036FA20` 128 | `0x0039E8F0` 128 | `0x0039F570` 148 | `0x0035F490` proven |  |
 | `BuddyInviteBlock(char*,void (*)(bool, void*),void*)` | `0x00315B70` 76 |  |  |  |  |  |
 | `BuddyInviteRevoke(char*,void (*)(bool, void*),void*)` | `0x00315BC0` 76 |  |  |  |  |  |
 | `BuddyInviteReject(char*,void (*)(bool, void*),void*)` | `0x00315C10` 76 |  |  |  |  |  |

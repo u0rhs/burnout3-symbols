@@ -15,7 +15,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
-| `SetStatusToSend(EHeadsetTalkControlStatus,int)` | `0x0027F490` 400 | `0x002B6F60` 436 | `0x002ECED0` 436 | `0x002F0C70` 660 | `0x002BF7F0` likely |  |
+| `SetStatusToSend(EHeadsetTalkControlStatus,int)` | `0x0027F490` 400 | `0x002B6F60` 436 | `0x002ECED0` 436 | `0x002F0C70` 660 | `0x002BF7F0` strong |  |
 | `ChangeControlStateToOtherPlayerTalking(int,unsigned short)` | `0x0027F620` 340 | `0x002B7120` 496 | `0x002ED090` 304 | `0x002F0A00` 464 | `0x002BF9A0` strong |  |
 | `CheckForStateTimeouts()` | `0x0027F780` 420 |  | `0x002ED1C0` 472 |  |  |  |
 | `ReceiveStatusMessageOtherPlayerTalking(int,int,EHeadsetTalkControlStatus,unsigned short)` | `0x0027F930` 224 | `0x002B7460` 2132 | `0x002ED550` 468 | `0x002F0200` 1356 | `0x002BFCC0` strong |  |

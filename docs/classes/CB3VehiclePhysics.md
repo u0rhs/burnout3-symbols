@@ -20,7 +20,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `CollideHingedPartWithWorld(int)` | `0x0018FE30` 1600 | `0x001BD4E0` 1920 | `0x001B8230` 1716 | `0x001D5E50` 1144 |  |  |
 | `UpdateHingedPart(int,float)` | `0x00190470` 11888 | `0x001BDC60` 29516 | `0x001B88F0` 26700 | `0x001D2540` 12488 | `0x001C8870` unverified |  |
 | `UpdateCrashSteering(float)` | `0x001932E0` 2300 | `0x001C4FB0` 3524 | `0x001BF140` 3428 | `0x001D1B10` 2452 | `0x001CAD30` likely |  |
-| `IsVehicleTouchingHorizontalSurface(bool,float)` | `0x00193BE0` 692 | `0x001C5D80` 1300 | `0x001BFEB0` 920 | `0x001D19B0` 348 | `0x001CB780` likely |  |
+| `IsVehicleTouchingHorizontalSurface(bool,float)` | `0x00193BE0` 692 | `0x001C5D80` 1300 | `0x001BFEB0` 920 | `0x001D19B0` 348 | `0x001CB780` strong |  |
 | `StopCrashing()` | `0x00193EA0` 160 | `0x001C62A0` 160 | `0x001C0250` 160 | `0x001D1740` 236 |  |  |
 | `StartCrashing(int,CB3CrashStartInfo*)` | `0x00193F40` 108 | `0x001C6340` 224 | `0x001C02F0` 224 | `0x001D1670` 200 | `0x001CBC70` strong |  |
 | `ReleasePayload()` | `0x00193FB0` 148 | `0x001C6420` 148 | `0x001C03D0` 148 | `0x001D15A0` 208 | `0x001CBCE0` strong |  |

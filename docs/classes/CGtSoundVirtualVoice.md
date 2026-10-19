@@ -7,7 +7,7 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `GtSoundVirtualVoice.cpp`
 - **Methods per build:** DNAT_200 12, B3DEBUG 12, B3INTERN 11, B3O0PCH 18
-- **Retail (SLUS-21050):** 12 of its 12 DNAT_200 methods found, 11 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 12 of its 12 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -17,11 +17,11 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 |---|---|---|---|---|---|---|
 | `IgnoreGlobalPitch()` | `0x003440B0` 16 | `0x003A8370` 16 | `0x003D2520` 16 | `0x003DDAF0` 36 | `0x003872D0` strong |  |
 | `ForgetMe(float)` | `0x003440C0` 24 | `0x003A8380` 24 | `0x003D2530` 24 | `0x003DDAB0` 64 | `0x003872E0` proven |  |
-| `SetBias(float)` | `0x003440E0` 92 | `0x003A83A0` 172 |  | `0x003DDA20` 132 | `0x00387300` proven |  |
-| `SetPriority(float)` | `0x00344140` 92 | `0x003A8450` 172 | `0x003D2550` 172 | `0x003DD990` 132 | `0x00387360` proven |  |
-| `UpdatePause()` | `0x003441A0` 1248 | `0x003A8500` 1300 | `0x003D2600` 1300 | `0x003DD380` 1544 | `0x003873C0` proven |  |
-| `Pause()` | `0x00344680` 124 | `0x003A8A20` 160 | `0x003D2B20` 160 | `0x003DD2A0` 224 | `0x003878D0` proven |  |
-| `IsPlaying()` | `0x00344700` 180 | `0x003A8AC0` 212 | `0x003D2BC0` 212 | `0x003DD140` 352 | `0x00387980` proven |  |
+| `SetBias(float)` | `0x003440E0` 92 | `0x003A83A0` 172 |  | `0x003DDA20` 132 | `0x00387300` strong |  |
+| `SetPriority(float)` | `0x00344140` 92 | `0x003A8450` 172 | `0x003D2550` 172 | `0x003DD990` 132 | `0x00387360` strong |  |
+| `UpdatePause()` | `0x003441A0` 1248 | `0x003A8500` 1300 | `0x003D2600` 1300 | `0x003DD380` 1544 | `0x003873C0` likely |  |
+| `Pause()` | `0x00344680` 124 | `0x003A8A20` 160 | `0x003D2B20` 160 | `0x003DD2A0` 224 | `0x003878D0` unverified |  |
+| `IsPlaying()` | `0x00344700` 180 | `0x003A8AC0` 212 | `0x003D2BC0` 212 | `0x003DD140` 352 | `0x00387980` strong |  |
 | `Stop()` | `0x003447C0` 76 | `0x003A8BA0` 76 | `0x003D2CA0` 76 | `0x003DD040` 148 | `0x00387A40` proven |  |
 | `Start(const CGtSoundVoiceParams*)` | `0x00344810` 1324 | `0x003A8BF0` 1704 | `0x003D2CF0` 1704 | `0x003DC7A0` 2208 | `0x00387A90` proven |  |
 | `Update(float,float,float,float)` | `0x00344D40` 1028 | `0x003A92A0` 1280 | `0x003D33A0` 1280 | `0x003DC230` 1304 | `0x00388080` proven |  |

@@ -7,7 +7,7 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `GtTextureCachePS2.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 10, B3INTERN 10, B3O0PCH 17
-- **Retail (SLUS-21050):** 10 of its 10 DNAT_200 methods found, 10 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 10 of its 10 DNAT_200 methods found, 8 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -20,8 +20,8 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `ForceBufferSwap()` | `0x001E6040` 200 | `0x001E6B80` 200 | `0x00219720` 200 | `0x0022DAA0` 288 | `0x00221580` proven |  |
 | `AddRasterToCache(RwRaster*,int)` | `0x001E6110` 496 | `0x001E6C50` 596 | `0x002197F0` 712 | `0x0022D710` 912 | `0x00221650` proven |  |
 | `AddRasterToCurrentDoubleBuffer(RwRaster*)` | `0x001E6300` 544 | `0x001E6EB0` 576 | `0x00219AC0` 576 | `0x0022D410` 768 | `0x00221850` proven |  |
-| `AccessTexture(CGtTexture*,float,EGtTextureCachePS2_FilterMode,bool,bool)` | `0x001E6520` 1032 | `0x001E70F0` 1368 | `0x00219D00` 1032 | `0x0022CE40` 1440 | `0x00221A70` proven |  |
-| `BuildPacketToSendRasterToGS(RwRaster*,unsigned int)` | `0x001E6930` 436 | `0x001E7650` 1156 | `0x0021A110` 608 | `0x0022CAE0` 852 | `0x00221E80` proven |  |
+| `AccessTexture(CGtTexture*,float,EGtTextureCachePS2_FilterMode,bool,bool)` | `0x001E6520` 1032 | `0x001E70F0` 1368 | `0x00219D00` 1032 | `0x0022CE40` 1440 | `0x00221A70` strong |  |
+| `BuildPacketToSendRasterToGS(RwRaster*,unsigned int)` | `0x001E6930` 436 | `0x001E7650` 1156 | `0x0021A110` 608 | `0x0022CAE0` 852 | `0x00221E80` strong |  |
 | `RemoveRasterFromCache(RwRaster*)` | `0x001E6AF0` 164 | `0x001E7AE0` 236 | `0x0021A370` 236 | `0x0022C940` 296 | `0x00222030` proven |  |
 | `Destruct()` | `0x001E6BA0` 60 | `0x001E7BD0` 60 | `0x0021A460` 60 | `0x0022C8F0` 76 | `0x002220E0` proven |  |
 | `Construct(unsigned int,int,int)` | `0x001E6BE0` 316 | `0x001E7C10` 428 | `0x0021A4A0` 428 | `0x0022C720` 452 | `0x00222120` proven |  |

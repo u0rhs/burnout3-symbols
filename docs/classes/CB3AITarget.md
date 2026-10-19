@@ -7,7 +7,7 @@
 - **Area:** [AI drivers](../systems/ai.md)
 - **Source file:** `B3AITarget.cpp`
 - **Methods per build:** DNAT_200 17, B3DEBUG 18, B3INTERN 18, B3O0PCH 27
-- **Retail (SLUS-21050):** 17 of its 17 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 17 of its 17 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CAITarget`, size 0x0DC, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
@@ -30,8 +30,8 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `UpdateCurrentSegment()` | `0x001495C0` 2080 | `0x00159C10` 3100 | `0x001556F0` 3100 | `0x0015D470` 4320 | `0x0014CA20` strong | `int CAITarget::UpdateCurrentSegment()` |
 | `ResetCornerStatus()` | `0x00149DE0` 140 | `0x0015A830` 140 | `0x00156310` 140 | `0x0015D1C0` 324 | `0x0014D380` strong | `void CAITarget::ResetCornerStatus()` |
 | `Release()` | `0x00149E70` 8 | `0x0015A8C0` 8 | `0x001563A0` 8 | `0x0015D180` 60 | `0x0014D410` proven |  |
-| `Update()` | `0x00149E80` 2276 | `0x0015A8D0` 3516 | `0x001563B0` 3416 | `0x0015C430` 3396 | `0x0014D420` proven | `void CAITarget::Update()` |
-| `Prepare()` | `0x0014A770` 204 | `0x0015B690` 236 | `0x00157110` 236 | `0x0015C280` 424 | `0x0014DC70` proven |  |
+| `Update()` | `0x00149E80` 2276 | `0x0015A8D0` 3516 | `0x001563B0` 3416 | `0x0015C430` 3396 | `0x0014D420` unverified | `void CAITarget::Update()` |
+| `Prepare()` | `0x0014A770` 204 | `0x0015B690` 236 | `0x00157110` 236 | `0x0015C280` 424 | `0x0014DC70` strong |  |
 | `Construct()` | `0x0014A840` 56 | `0x0015B780` 92 | `0x00157200` 92 | `0x0015C210` 112 | `0x0014DD40` proven |  |
 | `GetDesiredDirection(GtMathPs2::CGtV3d*)` |  | `0x00155D80` 332 | `0x00151DA0` 204 | `0x00162870` 244 |  |  |
 | `LanesAreSideBySide(const CB3AILane*,const CB3AILane*,unsigned short,unsigned short)` |  | `0x00155ED0` 856 | `0x00151E70` 856 | `0x001623A0` 996 |  | `int CAITarget::LanesAreSideBySide(CLane *lpLaneA, CLane *lpLaneB, int lnStartIndexA, int lnNumSegsToCheck) const` (same name, different parameters) |

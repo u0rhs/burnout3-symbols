@@ -7,7 +7,7 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `B3FlashText2dObject.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 4
-- **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -16,7 +16,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
 | `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0032C9E0` 1068 | `0x003884E0` 1068 | `0x003B7090` 1068 | `0x003B8400` 1272 | `0x00371BE0` strong |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dFont*,const` | `0x0032CE10` 128 | `0x00388910` 128 | `0x003B74C0` 128 | `0x003B8300` 256 | `0x00372010` strong |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dFont*,const` | `0x0032CE10` 128 | `0x00388910` 128 | `0x003B74C0` 128 | `0x003B8300` 256 | `0x00372010` proven |  |
 | `SetVFlashTimeScale(float)` | `0x0032CE90` 68 | `0x00388990` 148 | `0x003B7540` 148 | `0x003B8260` 156 | `0x00372090` proven |  |
 | `SetHFlashTimeScale(float)` | `0x0032CEE0` 8 | `0x00388A30` 100 | `0x003B75E0` 100 | `0x003B8200` 92 | `0x003720E0` proven |  |
 

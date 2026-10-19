@@ -7,7 +7,7 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `GtViewport.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 31
-- **Retail (SLUS-21050):** 7 of its 8 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 7 of its 8 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -21,7 +21,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `SetCamera(CGtCamera*)` | `0x001D7E90` 12 | `0x001D3F00` 12 | `0x00206B60` 12 | `0x00217B70` 48 | `0x00211D50` proven |  |
 | `Prepare()` | `0x001D7EA0` 16 | `0x001D3F10` 16 | `0x00206B70` 16 | `0x00217B40` 40 | `0x00211D60` proven |  |
 | `Destruct()` | `0x001D7EB0` 96 | `0x001D3F20` 96 | `0x00206B80` 96 | `0x00217A90` 168 | `0x00211D70` proven |  |
-| `Construct(int,int,int)` | `0x001D7F10` 248 | `0x001D3F80` 400 | `0x00206BE0` 400 | `0x002178C0` 460 | `0x00211DD0` strong |  |
+| `Construct(int,int,int)` | `0x001D7F10` 248 | `0x001D3F80` 400 | `0x00206BE0` 400 | `0x002178C0` 460 | `0x00211DD0` proven |  |
 | `Update()` | `0x001D8010` 1452 | `0x001D4110` 1620 | `0x00206D70` 1620 | `0x002171A0` 252 | `0x00211ED0` likely |  |
 | `CGtViewport()` |  |  |  | `0x00196230` 92 |  |  |
 | `Clear(bool,bool)` |  |  |  | `0x00135740` 172 |  |  |

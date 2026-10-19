@@ -7,7 +7,7 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `GtCamera.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 8
-- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FF20`, 32 bytes = 8 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 6 virtual functions)
 - **Burnout 2 ancestor (by name):** `CCamera`, size 0x3F0, declared in 92 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
@@ -18,8 +18,8 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
 | `SetBehaviours(CGtCameraBehaviourDef*,int)` | `0x001E0520` 12 | `0x001DFB40` 108 | `0x00212840` 108 | `0x00223680` 76 | `0x0021B000` proven |  |
-| `Release()` | `0x001E0530` 104 | `0x001DFBB0` 104 | `0x002128B0` 104 | `0x002235F0` 136 | `0x0021B010` strong |  |
-| `Prepare()` | `0x001E05A0` 932 | `0x001DFC20` 1752 | `0x00212920` 1752 | `0x002234D0` 276 | `0x0021B080` strong |  |
+| `Release()` | `0x001E0530` 104 | `0x001DFBB0` 104 | `0x002128B0` 104 | `0x002235F0` 136 | `0x0021B010` proven |  |
+| `Prepare()` | `0x001E05A0` 932 | `0x001DFC20` 1752 | `0x00212920` 1752 | `0x002234D0` 276 | `0x0021B080` proven |  |
 | `Update(float)` | `0x001E0950` 116 | `0x001E0300` 160 | `0x00213000` 160 | `0x00223440` 144 | `0x0021B440` proven |  |
 | `Destruct()` | `0x001E09D0` 8 | `0x001E03A0` 8 | `0x002130A0` 8 | `0x00223420` 28 | `0x0021B4C0` proven |  |
 | `Construct()` | `0x001E09E0` 16 | `0x001E03B0` 16 | `0x002130B0` 16 | `0x002233F0` 44 | `0x0021B4D0` proven |  |

@@ -28,7 +28,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `Release()` | `0x002E90C0` 8 | `0x00335900` 8 | `0x003672D0` 8 | `0x00365960` 16 |  |  |
 | `Update()` | `0x002E90D0` 4056 | `0x00335910` 6384 | `0x003672E0` 6284 | `0x00365100` 2132 | `0x00330370` unverified |  |
 | `Prepare(CB3AICar*)` | `0x002EA0B0` 628 | `0x00337200` 1128 | `0x00368B70` 1088 | `0x00364FD0` 296 | `0x00331B30` strong |  |
-| `Construct()` | `0x002EA330` 60 | `0x00337670` 60 | `0x00368FB0` 60 | `0x00364F90` 60 | `0x00331DA0` strong |  |
+| `Construct()` | `0x002EA330` 60 | `0x00337670` 60 | `0x00368FB0` 60 | `0x00364F90` 60 | `0x00331DA0` likely |  |
 | `CanStickySpeedMatch()` |  | `0x003336E0` 1228 | `0x00365170` 1228 | `0x00366D50` 780 |  |  |
 | `GetAttackTarget()` |  | `0x00333BB0` 8 | `0x00365640` 8 | `0x003667B0` 28 |  |  |
 | `CB3AIAggressionBehaviour()` |  |  |  | `0x001913A0` 48 |  |  |

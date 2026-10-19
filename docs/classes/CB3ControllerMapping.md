@@ -7,7 +7,7 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `B3ControllerMappingPS2.cpp`
 - **Methods per build:** DNAT_200 20, B3DEBUG 21, B3INTERN 20, B3O0PCH 38
-- **Retail (SLUS-21050):** 12 of its 20 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 12 of its 20 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CControllerMapping`, size 0x090, declared in 81 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
@@ -19,7 +19,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `ResetControllerDeadTime()` | `0x0012ECB0` 16 | `0x0012EBA0` 16 | `0x00130FE0` 16 | `0x0012F7E0` 52 | `0x0012EEF0` strong |  |
 | `GetControllerDeadTime()` | `0x0012ECC0` 20 | `0x0012EBB0` 20 | `0x00130FF0` 20 | `0x0012F7A0` 56 | `0x0012EF00` strong |  |
 | `WheelIsValid()` | `0x0012ECE0` 8 | `0x0012EBD0` 8 | `0x00131010` 8 | `0x0012F780` 20 |  |  |
-| `PadIsValid()` | `0x0012ECF0` 36 | `0x0012EBE0` 36 | `0x00131020` 36 | `0x0012F740` 52 | `0x0012EF50` strong |  |
+| `PadIsValid()` | `0x0012ECF0` 36 | `0x0012EBE0` 36 | `0x00131020` 36 | `0x0012F740` 52 | `0x0012EF50` proven |  |
 | `GetBoost()` | `0x0012ED20` 160 | `0x0012EC10` 160 | `0x00131050` 160 | `0x0012F6D0` 100 |  |  |
 | `GetLookBack()` | `0x0012EDC0` 160 | `0x0012ECB0` 160 | `0x001310F0` 160 | `0x0012F660` 100 |  |  |
 | `GetCameraSwitch()` | `0x0012EE60` 188 | `0x0012ED50` 188 | `0x00131190` 188 | `0x0012F5F0` 100 | `0x0012F160` unverified |  |

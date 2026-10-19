@@ -31,7 +31,7 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `B3HardCodedTrophyList.cpp` | 8 | 208 | `0x003A6ED0` |  |  |
 | `B3MemoryCardControllerPS2.cpp` | 2 | 528 | `0x003AA170` |  |  |
 | `B3MemoryCardFSMPS2.cpp` | 7 | 6,472 | `0x003AA390` |  |  |
-| `B3MemoryCardController.cpp` | 17 | 6,728 | `0x003C5400` | 1 (0) | `0x004216A0`–`0x004216A0` |
+| `B3MemoryCardController.cpp` | 17 | 6,728 | `0x003C5400` | 1 (1) | `0x004216A0`–`0x004216A0` |
 | `B3MemoryCardFSMSlavePS2.cpp` | 8 | 4,692 | `0x003C6DF0` |  |  |
 
 ## Classes

@@ -7,7 +7,7 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `B3PlayerCameraManager.cpp`
 - **Methods per build:** DNAT_200 17, B3DEBUG 18, B3INTERN 18, B3O0PCH 25
-- **Retail (SLUS-21050):** 15 of its 17 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 15 of its 17 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004401C0`, 32 bytes = 8 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 6 virtual functions)
 
 ## Methods
@@ -20,7 +20,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `Update()` | `0x002A6390` 8 | `0x002E0860` 8 | `0x00317740` 8 | `0x00314730` 40 | `0x002E6F50` likely |  |
 | `GetTrackTime()` | `0x002A63A0` 84 | `0x002E0870` 280 | `0x00317750` 280 | `0x00314690` 96 | `0x002E7050` strong |  |
 | `GetCurrentUnit()` | `0x002A6400` 160 | `0x002E0990` 160 | `0x00317870` 160 | `0x003145E0` 176 |  |  |
-| `HasIntroFinished()` | `0x002A64A0` 40 | `0x002E0A30` 40 | `0x00317910` 40 | `0x00314580` 88 | `0x002E70B0` strong |  |
+| `HasIntroFinished()` | `0x002A64A0` 40 | `0x002E0A30` 40 | `0x00317910` 40 | `0x00314580` 88 | `0x002E70B0` proven |  |
 | `HasCrashAftermathFinished()` | `0x002A64D0` 8 | `0x002E0A60` 8 | `0x00317940` 8 | `0x00314550` 44 |  |  |
 | `SetActiveBehaviour(int)` | `0x002A64E0` 248 | `0x002E0A70` 420 | `0x00317950` 420 | `0x003144B0` 148 | `0x002E7150` strong |  |
 | `DeactivateBehaviour(int)` | `0x002A65E0` 116 | `0x002E0C20` 168 | `0x00317B00` 168 | `0x00314410` 152 | `0x002E7250` strong |  |

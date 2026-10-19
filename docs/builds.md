@@ -90,7 +90,7 @@ What they add:
 - Fully stripped: no symbols, and a single program segment with no section headers separating code
   from data.
 - PCSX2 identifies the executable by CRC `BEBF8793`.
-- **5,054 functions carry the prototype's names**, 2,903 proven against the code
+- **5,054 functions carry the prototype's names**, 3,007 proven against the code
   ([prototype names](reference/retail-prototype-names.md)).
 - **Nahelam's 1,146 PAL names** carried to US addresses (851 on a function start), each checked against
   the code: the PAL and US executables share their code layout with small shifts

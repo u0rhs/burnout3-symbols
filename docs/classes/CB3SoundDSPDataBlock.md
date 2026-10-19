@@ -15,11 +15,11 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
-| `ProcessHighShelfFilter(short*,short*)` | `0x002BAA00` 624 | `0x002FCC00` 624 | `0x003308D0` 624 | `0x00329910` 1392 | `0x002FB890` likely |  |
+| `ProcessHighShelfFilter(short*,short*)` | `0x002BAA00` 624 | `0x002FCC00` 624 | `0x003308D0` 624 | `0x00329910` 1392 | `0x002FB890` unverified |  |
 | `CalculateHighShelfCoefficients(float,float,float)` | `0x002BAC70` 416 | `0x002FCE70` 1112 | `0x00330B40` 508 | `0x00329290` 1656 | `0x002FBB30` proven |  |
-| `SetParam(int,float)` | `0x002BAE10` 324 | `0x002FD2D0` 500 | `0x00330D40` 500 | `0x00328FB0` 316 | `0x002FBCD0` strong |  |
+| `SetParam(int,float)` | `0x002BAE10` 324 | `0x002FD2D0` 500 | `0x00330D40` 500 | `0x00328FB0` 316 | `0x002FBCD0` proven |  |
 | `ProcessB2Distortion(short*,short*)` | `0x002BAF60` 584 | `0x002FD4D0` 584 | `0x00330F40` 584 | `0x00328D40` 592 | `0x002FBE20` proven |  |
-| `Process(short*,short*)` | `0x002BB1B0` 96 | `0x002FD720` 96 | `0x00331190` 96 | `0x00328C70` 200 | `0x002FC070` proven |  |
+| `Process(short*,short*)` | `0x002BB1B0` 96 | `0x002FD720` 96 | `0x00331190` 96 | `0x00328C70` 200 | `0x002FC070` strong |  |
 | `Reset()` | `0x002BB210` 108 | `0x002FD780` 108 | `0x003311F0` 108 | `0x00328BB0` 192 | `0x002FC0E0` proven |  |
 | `SetType(EDSPType)` | `0x002BB280` 8 | `0x002FD7F0` 8 | `0x00331260` 8 | `0x00328B80` 36 | `0x002FC150` strong |  |
 | `Construct()` | `0x002BB290` 92 | `0x002FD800` 92 | `0x00331270` 92 | `0x00328A30` 232 | `0x002FC160` proven |  |

@@ -45,8 +45,8 @@ address,width,area,meaning,in_function,nearest_named_function_before,values_seen
 0x00665FC0,32 float,camera,Chase camera distance multiplier,,,1.0 normal; 0.25 closer; 2.0 further; 4.0 furthest,Code Master Camera Modifier Codes
 0x00134B08,instruction,code,Patched to nop with 0x00134C44 to show the world time on screen (a debug display),CB3OnePlayerStage::Render(),CB3OnePlayerStage::Render(),nop,Display World Time (Code Master; Codejunkies)
 0x00134C44,instruction,code,See 0x00134B08,CB3OnePlayerStage::Render(),CB3OnePlayerStage::Render(),nop,Display World Time
-0x0014E07C,instruction,code,Boost meter growth when crashing (li v1;3 gives a x4 meter),,CB3Burn::RemoveSegment(),0x24030003,Code Master
-0x0014E084,instruction,code,Removing it keeps the extra max boost after a crash,,CB3Burn::RemoveSegment(),nop,Code Master
+0x0014E07C,instruction,code,Boost meter growth when crashing (li v1;3 gives a x4 meter),CB3Burn::RemoveSegment(),CB3Burn::RemoveSegment(),0x24030003,Code Master
+0x0014E084,instruction,code,Removing it keeps the extra max boost after a crash,CB3Burn::RemoveSegment(),CB3Burn::RemoveSegment(),nop,Code Master
 0x0015BB80,instruction,code,Crash Breaker availability check (li v0;0 makes it always available),,CB3Score::Update(void),0x24020000,Codejunkies
 0x0015BB88,instruction,code,Crash Breaker wait after wrecking (nop makes it instant),,CB3Score::Update(void),nop,Code Master
 0x001B7220,instruction,code,Start of a vehicle-vehicle collision function (jr ra; nop turns collisions off),,CB3PhysicsManager::CollideAndRespondPair(CB3CollidingPair *),0x03E00008,Code Master Drive Through Cars

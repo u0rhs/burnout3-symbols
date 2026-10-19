@@ -7,7 +7,7 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `GtFileSystem.cpp`
 - **Methods per build:** DNAT_200 18, B3DEBUG 18, B3INTERN 19, B3O0PCH 19
-- **Retail (SLUS-21050):** 17 of its 18 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 17 of its 18 DNAT_200 methods found, 9 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CGTFileSystem`, size 0x010, declared in 98 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
@@ -18,11 +18,11 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 |---|---|---|---|---|---|---|
 | `FTell(void*)` | `0x001D85C0` 8 | `0x001D4770` 8 | `0x002073D0` 8 | `0x00218A10` 44 |  |  |
 | `FExist(const char*)` | `0x001D85D0` 72 | `0x001D4780` 72 | `0x002073E0` 72 | `0x002189B0` 96 | `0x00212590` proven | `int CGTFileSystem::FExist(char *name)` |
-| `FFlush(void*)` | `0x001D8620` 8 | `0x001D47D0` 8 | `0x00207430` 8 | `0x00218990` 20 | `0x002125E0` unverified | `int CGTFileSystem::FFlush()` |
+| `FFlush(void*)` | `0x001D8620` 8 | `0x001D47D0` 8 | `0x00207430` 8 | `0x00218990` 20 | `0x002125E0` proven | `int CGTFileSystem::FFlush()` |
 | `FSeek(void*,long,int)` | `0x001D8630` 124 | `0x001D47E0` 124 | `0x00207440` 124 | `0x002188B0` 216 | `0x002125F0` proven | `int CGTFileSystem::FSeek(void *fptr, long offset, int origin)` |
-| `FEof(void*)` | `0x001D86B0` 20 | `0x001D4860` 20 | `0x002074C0` 20 | `0x00218870` 52 | `0x00212670` unverified | `int CGTFileSystem::FEof(void *fptr)` |
+| `FEof(void*)` | `0x001D86B0` 20 | `0x001D4860` 20 | `0x002074C0` 20 | `0x00218870` 52 | `0x00212670` proven | `int CGTFileSystem::FEof(void *fptr)` |
 | `FPuts(const char*,void*)` | `0x001D86D0` 72 | `0x001D4880` 72 | `0x002074E0` 72 | `0x00218800` 112 | `0x00212690` proven | `int CGTFileSystem::FPuts()` |
-| `FGets(char*,int,void*)` | `0x001D8720` 8 | `0x001D48D0` 8 | `0x00207530` 8 | `0x002187E0` 20 | `0x002126E0` unverified | `char *CGTFileSystem::FGets()` |
+| `FGets(char*,int,void*)` | `0x001D8720` 8 | `0x001D48D0` 8 | `0x00207530` 8 | `0x002187E0` 20 | `0x002126E0` proven | `char *CGTFileSystem::FGets()` |
 | `FWrite(const void*,unsigned int,unsigned int,void*)` | `0x001D8730` 68 | `0x001D48E0` 76 | `0x00207540` 68 | `0x00218770` 112 | `0x002126F0` proven | `unsigned int CGTFileSystem::FWrite(void *addr, unsigned int size, unsigned int count, void *fptr)` |
 | `FRead(void*,unsigned int,unsigned int,void*)` | `0x001D8780` 68 | `0x001D4930` 76 | `0x00207590` 68 | `0x00218700` 112 | `0x00212730` proven | `unsigned int CGTFileSystem::FRead(void *addr, unsigned int size, unsigned int count, void *fptr)` |
 | `FClose(void*)` | `0x001D87D0` 40 | `0x001D4980` 40 | `0x002075E0` 40 | `0x002186C0` 64 | `0x00212770` proven | `int CGTFileSystem::FClose(void *fptr)` |

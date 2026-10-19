@@ -7,7 +7,7 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dObjectItalicText.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
-- **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -21,7 +21,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `_RenderPlain(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002F6F80` 132 | `0x00349FC0` 132 | `0x0037B610` 132 | `0x0037A680` 156 | `0x0033CF80` strong |  |
 | `_BuildBatchData(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002F7010` 840 | `0x0034A050` 1156 | `0x0037B6A0` 1156 | `0x0037A130` 1356 | `0x0033D010` likely |  |
 | `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dFont*,const` | `0x002F7630` 276 | `0x0034A920` 408 | `0x0037BF70` 408 | `0x0037A030` 248 | `0x0033D650` strong |  |
-| `PrepareCommonData(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dF` | `0x002F7750` 284 | `0x0034AAC0` 416 | `0x0037C110` 416 | `0x00379D90` 296 | `0x0033D770` strong |  |
+| `PrepareCommonData(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dF` | `0x002F7750` 284 | `0x0034AAC0` 416 | `0x0037C110` 416 | `0x00379D90` 296 | `0x0033D770` proven |  |
 | `CGt2dObjectItalicText()` |  |  |  | `0x00140560` 44 |  |  |
 
 ## Static data (DNAT_200)

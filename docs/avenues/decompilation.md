@@ -30,14 +30,14 @@ A whole retail build made this way (splat, build 119, these flags) reproduces th
 
 The retail executable (`SLUS_210.50`) has no symbols. The prototype maps name about 8,300 functions
 of a build seven weeks older. **This has been done for 5,054 of them**
-([prototype names](../reference/retail-prototype-names.md)), 2,903 proven against the code. The methods,
+([prototype names](../reference/retail-prototype-names.md)), 3,007 proven against the code. The methods,
 for the rest and for other builds:
 
 1. **Masked byte signatures.** Compare functions with call targets, `lui`/`addiu` address pairs and
    `$gp` offsets masked out. With the same compiler, unchanged functions match exactly. The
    libraries (RenderWare, Sony, MSL) match best. **Trap:** with call targets masked, every short wrapper
    (a few instructions and a `jal`) looks alike. Pairing retail functions with *wrong* prototype functions of
-   the same size passes an exact masked comparison 67 times in 4,880. Accept an exact match only if the code
+   the same size passes an exact masked comparison 61 times in 4,885 (none of them unique). Accept an exact match only if the code
    is unique in both executables, or the called functions' names agree.
 2. **Call-graph propagation.** When function A matches A', the functions they call at the same
    positions match too. This also catches small functions that are ambiguous on their own.

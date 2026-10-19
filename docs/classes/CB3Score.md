@@ -16,7 +16,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
-| `GetLastContactCar(float)` | `0x00151490` 68 | `0x00164860` 184 | `0x0015F600` 184 | `0x0017AD00` 164 | `0x001553A0` likely |  |
+| `GetLastContactCar(float)` | `0x00151490` 68 | `0x00164860` 184 | `0x0015F600` 184 | `0x0017AD00` 164 | `0x001553A0` unverified |  |
 | `OnTakeDown(CB3RaceCar*)` | `0x001514E0` 324 | `0x00164920` 372 | `0x0015F6C0` 372 | `0x0017AA70` 584 | `0x001553F0` unverified |  |
 | `OnSlam(CB3RaceCarPhysics*,CB3RaceCarPhysics*,float,bool)` | `0x00151630` 892 | `0x00164AA0` 892 | `0x0015F840` 892 | `0x0017A5C0` 1200 | `0x00155580` strong |  |
 | `OnTradePaint(CB3RaceCarPhysics*,CB3RaceCarPhysics*,float,bool)` | `0x001519B0` 300 | `0x00164E20` 300 | `0x0015FBC0` 300 | `0x0017A380` 460 | `0x00155910` strong |  |
@@ -64,7 +64,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `IsAheadOfIgnoringLaps(CB3Score*)` | `0x00156330` 204 | `0x0016B140` 204 | `0x00166950` 204 | `0x00173B10` 372 | `0x0015ACC0` likely |  |
 | `IsAheadOfRoadRage(CB3Score*)` | `0x00156400` 140 | `0x0016B210` 212 | `0x00166A20` 212 | `0x00173930` 376 | `0x0015ADB0` strong |  |
 | `IsAheadOf(CB3Score*)` | `0x00156490` 320 | `0x0016B2F0` 392 | `0x00166B00` 392 | `0x001736B0` 636 | `0x0015AE40` strong |  |
-| `CheckIfNeedRevenge(const CB3Score*) const` | `0x001565D0` 56 |  |  |  | `0x0015AF80` likely |  |
+| `CheckIfNeedRevenge(const CB3Score*) const` | `0x001565D0` 56 |  |  |  | `0x0015AF80` unverified |  |
 | `Release()` | `0x00156610` 72 | `0x0016B4C0` 72 | `0x00166CD0` 72 | `0x001735B0` 108 | `0x0015AFC0` strong |  |
 | `Update()` | `0x00156660` 3508 | `0x0016B510` 3992 | `0x00166D20` 3992 | `0x00172BC0` 2500 | `0x0015B000` unverified | `void CScore::Update()` |
 | `Prepare(int)` | `0x00157420` 1368 | `0x0016C4B0` 1440 | `0x00167CC0` 1468 | `0x00172360` 2088 | `0x0015C340` unverified |  |

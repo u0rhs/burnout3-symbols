@@ -18,7 +18,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `RenderAfterSpecular()` | `0x001E13E0` 1328 | `0x001E0F00` 1384 | `0x00213C00` 1316 | `0x00226880` 2108 | `0x0021C120` likely |  |
 | `RenderAfterVehicles()` | `0x001E1920` 464 | `0x001E1480` 464 | `0x00214130` 464 | `0x00226650` 556 | `0x0021C590` likely |  |
 | `RenderBeforeVehicles()` | `0x001E1AF0` 2124 | `0x001E1650` 2164 | `0x00214300` 2164 | `0x002258A0` 3124 | `0x0021C780` strong |  |
-| `IsUnitVisibleToMainCamera(int)` | `0x001E2340` 124 | `0x001E1ED0` 124 | `0x00214B80` 124 | `0x002257A0` 248 | `0x0021CFF0` likely |  |
+| `IsUnitVisibleToMainCamera(int)` | `0x001E2340` 124 | `0x001E1ED0` 124 | `0x00214B80` 124 | `0x002257A0` 248 | `0x0021CFF0` unverified |  |
 | `DoUnitFrustumTesting()` | `0x001E23C0` 604 | `0x001E1F50` 604 | `0x00214C00` 604 | `0x002251C0` 780 | `0x0021D080` strong |  |
 | `TestPosition(GtMathPs2::CGtV3d)` | `0x002118C0` 184 | `0x00220200` 192 | `0x0025FA00` 184 | `0x002625D0` 352 |  |  |
 | `ForEveryUnitInSafeArea(void (*)(CB3StreamedTrackLODAndCollisionData*, int, void*),void*)` | `0x002C1E10` 176 |  |  |  | `0x00301220` strong |  |

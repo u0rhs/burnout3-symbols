@@ -43,7 +43,7 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `GtSphereTree.cpp` | 14 | 12,440 | `0x00312810` | 14 (14) | `0x0035BD80`–`0x0035EE50` |
 | `GtCollisionKDTree.cpp` | 5 | 5,916 | `0x003717A0` | 3 (1) | `0x003BE8D0`–`0x003BF720` |
 | `GtSimpleOrientedBox.cpp` | 1 | 256 | `0x00388610` | 1 (1) | `0x003D7F70`–`0x003D7F70` |
-| `B3ConvexHullMaker.cpp` | 4 | 3,444 | `0x003892F0` | 3 (0) | `0x003D8D60`–`0x003D9740` |
+| `B3ConvexHullMaker.cpp` | 4 | 3,444 | `0x003892F0` | 3 (1) | `0x003D8D60`–`0x003D9740` |
 | `B3VehicleDeform.cpp` | 44 | 60,964 | `0x0038A070` | 33 (0) | `0x003D9C50`–`0x00461440` |
 | `B3PhysicsConstants.cpp` | 1 | 92 | `0x0043DFD0` |  |  |
 

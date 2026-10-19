@@ -37,14 +37,14 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `GtCommsDatabaseGame.cpp` | 6 | 836 | `0x00210530` | 6 (6) | `0x0024FDE0`–`0x00250120` |
 | `GtNetworkConditions.cpp` | 3 | 24 | `0x00211620` |  |  |
 | `B3NetworkCarPhysics.cpp` | 9 | 7,036 | `0x0022A500` | 8 (0) | `0x00268620`–`0x00269CF0` |
-| `B3NetworkRaceReadyMessage.cpp` | 2 | 20 | `0x0022DED0` | 1 (0) | `0x0026BD30`–`0x0026BD30` |
+| `B3NetworkRaceReadyMessage.cpp` | 2 | 20 | `0x0022DED0` | 1 (1) | `0x0026BD30`–`0x0026BD30` |
 | `B3NetworkManager.cpp` | 52 | 16,516 | `0x0022E030` | 17 (0) | `0x0026CAB0`–`0x0026E380` |
 | `B3NetworkPlayerFinishedRaceMessage.cpp` | 3 | 384 | `0x00233440` |  |  |
 | `B3NetworkPingMessage.cpp` | 6 | 248 | `0x00277F00` |  |  |
 | `GtNetworkHeadset.cpp` | 28 | 9,576 | `0x0027F490` | 10 (0) | `0x002BF7F0`–`0x002C0380` |
 | `GtHeadsetMessage.cpp` | 4 | 296 | `0x00281A90` |  |  |
 | `GtHeadset.cpp` | 2 | 16 | `0x00281BE0` |  |  |
-| `GtLogitechHeadset.cpp` | 14 | 1,928 | `0x00281C00` | 10 (7) | `0x002C2260`–`0x002C2840` |
+| `GtLogitechHeadset.cpp` | 14 | 1,928 | `0x00281C00` | 10 (2) | `0x002C2260`–`0x002C2840` |
 | `B3NetworkNewHostMessage.cpp` | 3 | 152 | `0x002B8B10` |  |  |
 | `B3NetworkHostKeepAliveMessage.cpp` | 3 | 132 | `0x002B8BC0` |  |  |
 | `B3OnlineLobbyState.cpp` | 4 | 4,164 | `0x002D0580` | 3 (0) | `0x0030F010`–`0x0030F620` |
@@ -57,9 +57,9 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `B3OnlineJoinGameState.cpp` | 1 | 824 | `0x002E5930` | 1 (0) | `0x0032ADF0`–`0x0032ADF0` |
 | `B3ChatDisplayComponent.cpp` | 9 | 2,968 | `0x002EA370` | 8 (6) | `0x00331DE0`–`0x00332960` |
 | `B3NetworkAllNATDataFinalisedMessage.cpp` | 3 | 164 | `0x002ED9B0` |  |  |
-| `GtLobbyDirtySock.cpp` | 111 | 21,460 | `0x002F1330` | 95 (2) | `0x00335DE0`–`0x0033C8D0` |
-| `B3OnlineSelectPersonaPage.cpp` | 7 | 5,524 | `0x002F9A70` | 6 (6) | `0x00340450`–`0x003418F0` |
-| `B3NetworkHasHeadsetMessage.cpp` | 3 | 124 | `0x002FAF50` | 3 (1) | `0x00341C70`–`0x00341CF0` |
+| `GtLobbyDirtySock.cpp` | 111 | 21,460 | `0x002F1330` | 95 (4) | `0x00335DE0`–`0x0033C8D0` |
+| `B3OnlineSelectPersonaPage.cpp` | 7 | 5,524 | `0x002F9A70` | 6 (2) | `0x00340450`–`0x003418F0` |
+| `B3NetworkHasHeadsetMessage.cpp` | 3 | 124 | `0x002FAF50` | 3 (2) | `0x00341C70`–`0x00341CF0` |
 | `B3OnlineOpenConnectionState.cpp` | 5 | 3,220 | `0x002FEC30` | 2 (0) | `0x00345D00`–`0x00346200` |
 | `B3OnlineSelNetConfigPage.cpp` | 4 | 2,028 | `0x002FF8E0` | 3 (0) | `0x003464A0`–`0x00346950` |
 | `B3OnlineConnectingPage.cpp` | 6 | 1,896 | `0x003000A0` | 5 (0) | `0x00346DE0`–`0x00347440` |
@@ -69,7 +69,7 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `B3OnlineLoginToLobbyPage.cpp` | 5 | 2,368 | `0x003047C0` | 3 (2) | `0x0034BEA0`–`0x0034CD50` |
 | `B3DNASPage.cpp` | 4 | 892 | `0x0030AA40` | 2 (0) | `0x003530E0`–`0x00353520` |
 | `GtBuddies.cpp` | 2 | 224 | `0x00315A50` | 2 (1) | `0x0035F0A0`–`0x0035F100` |
-| `GtBuddiesPS2DirtySock.cpp` | 37 | 4,388 | `0x00315B30` | 28 (5) | `0x0035F490`–`0x003608F0` |
+| `GtBuddiesPS2DirtySock.cpp` | 37 | 4,388 | `0x00315B30` | 28 (6) | `0x0035F490`–`0x003608F0` |
 | `B3SharedLoginExtPS2.cpp` | 2 | 44 | `0x00316D60` |  |  |
 | `B3BuddyDisplayComponent.cpp` | 11 | 6,012 | `0x0031C210` | 7 (2) | `0x00366400`–`0x00367E40` |
 | `B3OnlineNewsState.cpp` | 1 | 264 | `0x0031FF50` | 1 (0) | `0x003694C0`–`0x003694C0` |

@@ -42,7 +42,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `RegisterPlayer(const char*,int,int,void*)` | `0x001F7820` 324 | `0x00201450` 356 | `0x0023BED0` 356 | `0x002462C0` 428 | `0x002367F0` strong |  |
 | `ClearAllPlayers()` | `0x001F7970` 180 | `0x002015C0` 180 | `0x0023C040` 180 | `0x002461B0` 264 | `0x00236940` strong |  |
 | `SetGameID(int)` | `0x001F7A30` 336 | `0x00201680` 440 | `0x0023C100` 440 | `0x00245FB0` 504 | `0x00236A00` strong |  |
-| `PostUpdate(int)` | `0x001F7B80` 140 |  | `0x0023C2C0` 196 |  | `0x00236C50` likely |  |
+| `PostUpdate(int)` | `0x001F7B80` 140 |  | `0x0023C2C0` 196 |  | `0x00236C50` unverified |  |
 | `Update(int)` | `0x001F7C10` 60 |  | `0x0023C390` 60 |  |  |  |
 | `Release()` | `0x001F7C50` 84 |  | `0x0023C3D0` 84 |  |  |  |
 | `Prepare(CGtNetworkAdapter*,void (*)(int, int, int),float)` | `0x001F7CB0` 440 |  |  |  |  |  |

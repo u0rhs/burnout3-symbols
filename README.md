@@ -40,7 +40,7 @@ The most-used files, one click away. **All of them, with sizes: [Symbols and map
 | [`classes.txt`](data/burnout3-prototype/maps/classes.txt) | All 890 Burnout 3 classes and their methods, with addresses in four builds |
 | [`B3O0PCH.symbols.csv`](data/burnout3-prototype/maps/B3O0PCH.symbols.csv) | The unoptimised build's symbols: 11,020 functions, including the small inline ones |
 | [`DNAT_200.MAP`](data/burnout3-prototype/originals/DNAT_200.MAP) | The original text link map of the prototype executable |
-| [`prototype-names.csv`](data/burnout3-retail/prototype-names.csv) | 5,054 functions in the retail game (SLUS-21050) with the prototype's names, 2,903 proven against the code |
+| [`prototype-names.csv`](data/burnout3-retail/prototype-names.csv) | 5,054 functions in the retail game (SLUS-21050) with the prototype's names, 3,007 proven against the code |
 | [`function-names.csv`](data/burnout3-retail/function-names.csv) | 1,146 named functions in the retail game (SLUS-21050), 851 verified |
 | [`memory-map.csv`](data/burnout3-retail/memory-map.csv) | Named addresses in the retail game (SLUS-21050): save data, race state, tuning, display, controls |
 | [`types.h`](data/burnout2-prototype/SLUS_204.97/types.h) | 969 Burnout 2 types with member offsets: the ancestors of many Burnout 3 classes |
@@ -54,7 +54,7 @@ The most-used files, one click away. **All of them, with sizes: [Symbols and map
 - **The game by system.** Physics, AI, traffic, crashes, cameras, HUD, menus, audio, rendering, network,
   progression: every source file and class, sorted ([game systems](docs/systems/README.md)).
 - **The retail game, named.** 5,054 functions in the shipping executable carry Criterion's own names from
-  the prototype map, 2,903 of them proven against the code ([prototype names](docs/reference/retail-prototype-names.md));
+  the prototype map, 3,007 of them proven against the code ([prototype names](docs/reference/retail-prototype-names.md));
   Nahelam's 1,146 PAL names, each checked against the code ([retail function names](docs/reference/retail-function-names.md)), plus every address Nahelam's mods
   touch: a hidden development menu, debug views, a car viewer ([Nahelam's mods](docs/reference/nahelam-mods.md)).
 - **The retail game, located.** About 150 addresses in the shipping executable: the save profile, boost,
@@ -100,7 +100,7 @@ Every part of the documentation, in the same groups as the website's sidebar.
 | | |
 |---|---|
 | Burnout 3 prototype | 4 link maps (one text, three binary) · 8,301 functions in the DNAT_200 build, 11,020 in the unoptimised build · 890 classes · 312 vtables · 595 game source files · 3,383 named variables · 22 VU microcode programs · 2,243 assert expressions · 3,056 unlinked symbols |
-| Burnout 3 retail | 5,054 functions with the prototype's names (2,903 proven against the code) · Nahelam's 1,146 names, each checked (627 agree) · 1,480 addresses from Nahelam's mods · 775 files listed · 2,255 strings with addresses · 7,525 tuning values (1,949 changed since the prototype) · about 150 named memory addresses, 67 vehicle IDs, 139 event medal bytes |
+| Burnout 3 retail | 5,054 functions with the prototype's names (3,007 proven against the code) · Nahelam's 1,146 names, each checked (634 agree) · 1,480 addresses from Nahelam's mods · 775 files listed · 2,255 strings with addresses · 7,525 tuning values (1,949 changed since the prototype) · about 150 named memory addresses, 67 vehicle IDs, 139 event medal bytes |
 | Burnout 3 review builds (20 July 2004) | US and PAL review discs: stripped like retail; 34 tuning values changed before release |
 | Burnout Revenge prototypes | July 14, 2005 PS2 build: 12,023 functions in its symbol table, GCC debug information for 1,899 types, a link map of 20,023 symbols · February 7, 2006 Xbox 360 build: a PDB ([builds](docs/builds.md#burnout-revenge-prototypes-2005-to-2006)) |
 | Burnout 2 prototype | 12,023 symbols · 2,309 functions with full debug info · 969 types · 168 enums · 288 source files · 76,449 line entries |

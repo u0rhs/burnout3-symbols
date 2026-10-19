@@ -7,7 +7,7 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3PromptsComponent.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 16
-- **Retail (SLUS-21050):** 4 of its 7 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 4 of its 7 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004403B0`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
@@ -16,7 +16,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
-| `SetCurrentPrompts(unsigned int,unsigned int)` | `0x002DC9A0` 96 | `0x003266B0` 96 | `0x00358840` 96 | `0x00358F40` 96 | `0x0031E140` strong |  |
+| `SetCurrentPrompts(unsigned int,unsigned int)` | `0x002DC9A0` 96 | `0x003266B0` 96 | `0x00358840` 96 | `0x00358F40` 96 | `0x0031E140` proven |  |
 | `Release()` | `0x002DCA00` 308 | `0x00326710` 308 | `0x003588A0` 308 | `0x00358D30` 524 | `0x0031E1A0` strong |  |
 | `Update(float)` | `0x002DCB40` 864 | `0x00326850` 864 | `0x003589E0` 864 | `0x00358850` 1244 |  |  |
 | `Prepare(unsigned int,unsigned int)` | `0x002DCEA0` 1232 | `0x00326BB0` 1444 | `0x00358D40` 1424 | `0x00358310` 1344 |  |  |

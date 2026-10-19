@@ -32,7 +32,7 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `B3SoundRaceCar.cpp` | 13 | 3,492 | `0x0024E520` | 10 (1) | `0x0028CD60`–`0x0028DD80` |
 | `B3SoundSkidModel.cpp` | 7 | 6,280 | `0x0024F330` | 7 (0) | `0x0028E120`–`0x0028ED30` |
 | `B3SoundTurboModel.cpp` | 5 | 1,108 | `0x00250BE0` | 5 (1) | `0x0028FAD0`–`0x0028FF20` |
-| `B3SoundCrashedTraffic.cpp` | 9 | 2,992 | `0x00251050` | 9 (7) | `0x0028FF30`–`0x00290AD0` |
+| `B3SoundCrashedTraffic.cpp` | 9 | 2,992 | `0x00251050` | 9 (8) | `0x0028FF30`–`0x00290AD0` |
 | `B3SoundRaceCarManager.cpp` | 7 | 7,136 | `0x002AC0C0` | 7 (0) | `0x002ED3C0`–`0x002EEFE0` |
 | `B3SoundDoppler.cpp` | 8 | 976 | `0x002B43C0` | 8 (7) | `0x002F4B70`–`0x002F4F80` |
 | `B3SoundESMManager.cpp` | 6 | 268 | `0x002BA090` | 5 (0) | `0x002FAE70`–`0x002FAF50` |
@@ -42,13 +42,13 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `GtSoundBank.cpp` | 11 | 1,100 | `0x00340E30` | 7 (1) | `0x00383A70`–`0x00383EF0` |
 | `GtSoundBankManager.cpp` | 7 | 1,316 | `0x003412D0` | 6 (2) | `0x00383F60`–`0x00384460` |
 | `GtSoundListener.cpp` | 12 | 1,188 | `0x00341830` | 12 (11) | `0x00384550`–`0x003849F0` |
-| `GtSoundListenerManager.cpp` | 8 | 1,008 | `0x00341D10` | 8 (5) | `0x00384A50`–`0x00384DE0` |
+| `GtSoundListenerManager.cpp` | 8 | 1,008 | `0x00341D10` | 8 (7) | `0x00384A50`–`0x00384DE0` |
 | `GtSoundManager.cpp` | 10 | 728 | `0x00342120` | 6 (0) | `0x00384E70`–`0x00385160` |
 | `GtSoundRealVoice.cpp` | 10 | 2,868 | `0x00342430` | 9 (6) | `0x00385240`–`0x00385E20` |
 | `GtSoundStream.cpp` | 15 | 2,112 | `0x00342FA0` | 9 (1) | `0x00385F20`–`0x003868C0` |
 | `GtSoundStreamManager.cpp` | 9 | 1,192 | `0x00343820` | 7 (2) | `0x003869D0`–`0x00386D50` |
 | `GtSoundUtils.cpp` | 5 | 924 | `0x00343CF0` | 4 (1) | `0x00386E70`–`0x00386FD0` |
-| `GtSoundVirtualVoice.cpp` | 12 | 5,544 | `0x003440B0` | 12 (11) | `0x003872D0`–`0x00388A10` |
+| `GtSoundVirtualVoice.cpp` | 12 | 5,544 | `0x003440B0` | 12 (6) | `0x003872D0`–`0x00388A10` |
 | `GtSoundVoice.cpp` | 1 | 92 | `0x00345690` | 1 (1) | `0x00388A90`–`0x00388A90` |
 | `GtSoundVoiceManager.cpp` | 12 | 2,416 | `0x003456F0` | 11 (7) | `0x00388AF0`–`0x00389380` |
 | `GtSoundWave.cpp` | 4 | 284 | `0x003460A0` | 4 (2) | `0x003894D0`–`0x003895D0` |

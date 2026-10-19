@@ -7,7 +7,7 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3CarViewerGameMode.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 22
-- **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FFD0`, 36 bytes = 9 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 7 virtual functions)
 
 ## Methods
@@ -17,11 +17,11 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
 | `Release()` | `0x0020DC70` 72 | `0x0021A200` 72 | `0x00259E80` 72 | `0x00260140` 92 | `0x0024D4D0` proven |  |
-| `Render()` | `0x0020DCC0` 1108 | `0x0021A250` 1312 | `0x00259ED0` 1312 | `0x0025FB80` 1460 | `0x0024D520` proven |  |
+| `Render()` | `0x0020DCC0` 1108 | `0x0021A250` 1312 | `0x00259ED0` 1312 | `0x0025FB80` 1460 | `0x0024D520` strong |  |
 | `SetArrowVertices(CB3Im3dVertex*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,G` | `0x0020E120` 292 | `0x0021A770` 536 | `0x0025A3F0` 536 | `0x0025FA00` 380 | `0x0024D980` strong |  |
-| `Update()` | `0x0020E250` 8036 | `0x0021A990` 12488 | `0x0025A610` 11404 | `0x0025E500` 3440 | `0x0024DAB0` likely |  |
-| `UpdateHinges(CB3VehicleEssentialParams*,CB3VehicleParams*)` | `0x002101C0` 444 | `0x0021DA60` 528 | `0x0025D2A0` 528 | `0x0025E2B0` 540 | `0x0024FA40` proven |  |
-| `Prepare()` | `0x00210380` 368 | `0x0021DC70` 368 | `0x0025D4B0` 368 | `0x0025E070` 564 | `0x0024FC20` proven |  |
+| `Update()` | `0x0020E250` 8036 | `0x0021A990` 12488 | `0x0025A610` 11404 | `0x0025E500` 3440 | `0x0024DAB0` unverified |  |
+| `UpdateHinges(CB3VehicleEssentialParams*,CB3VehicleParams*)` | `0x002101C0` 444 | `0x0021DA60` 528 | `0x0025D2A0` 528 | `0x0025E2B0` 540 | `0x0024FA40` strong |  |
+| `Prepare()` | `0x00210380` 368 | `0x0021DC70` 368 | `0x0025D4B0` 368 | `0x0025E070` 564 | `0x0024FC20` strong |  |
 | `Construct()` | `0x002104F0` 60 | `0x0021DDE0` 60 | `0x0025D620` 60 | `0x0025E020` 76 | `0x0024FDA0` proven |  |
 | `CB3CarViewerGameMode()` |  |  |  | `0x0013E2E0` 172 |  |  |
 | `GetBoneDeformationButton()` |  |  |  | `0x0025F950` 52 |  |  |

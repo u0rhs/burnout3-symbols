@@ -7,7 +7,7 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3ConvexHullMaker.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 6
-- **Retail (SLUS-21050):** 3 of its 4 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 3 of its 4 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -15,7 +15,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
-| `MakeConvexHull(CB3ConvexHull*,float*,CB3ConvexHullVertex*)` | `0x003892F0` 72 | `0x003FD100` 72 | `0x00424B20` 72 | `0x00440000` 160 | `0x003D8D60` strong |  |
+| `MakeConvexHull(CB3ConvexHull*,float*,CB3ConvexHullVertex*)` | `0x003892F0` 72 | `0x003FD100` 72 | `0x00424B20` 72 | `0x00440000` 160 | `0x003D8D60` proven |  |
 | `MakeVerticesIntoHull(GtMathPs2::CGtV3d*)` | `0x00389340` 1104 | `0x003FD150` 2084 | `0x00424B70` 2004 | `0x0043F750` 2224 | `0x003D8DB0` likely |  |
 | `GetRoofPoints(GtMathPs2::CGtV3d*)` | `0x00389790` 988 | `0x003FD980` 1464 | `0x00425350` 1464 | `0x0043F190` 1472 |  |  |
 | `GetBasePoints(GtMathPs2::CGtV3d*,float*)` | `0x00389B70` 1280 | `0x003FDF40` 1544 | `0x00425910` 1544 | `0x0043E5F0` 2968 | `0x003D9740` strong |  |

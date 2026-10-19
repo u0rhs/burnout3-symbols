@@ -3,7 +3,7 @@
 # Retail names from the prototype (SLUS-21050)
 
 **5,054 functions in the NTSC-U retail executable named from the June 8, 2004 prototype's link map,
-2,903 of them proven against the code.** Table:
+3,007 of them proven against the code.** Table:
 [`prototype-names.csv`](../../data/burnout3-retail/prototype-names.csv).
 
 These are Criterion's own names: the prototype map (`DNAT_200.MAP`) names the prototype's functions, and
@@ -16,13 +16,13 @@ its `proof` column, so a reader can tell a proven name from a likely one.
 <!-- counts:start -->
 | Proof | Names | What was shown |
 |---|---:|---|
-| proven: same code, unique | 2,258 | The retail and prototype functions are the same code, instruction for instruction, and that code occurs only once in each executable |
-| proven: same code, same callers | 102 | The same code (not unique, e.g. a small getter), and a proven function calls it in both executables |
-| proven: same place between proven functions | 543 | It sits between two proven functions, and the retail and prototype hold the same functions there in the same order (source files keep their function order) |
-| **proven, total** | **2,903** | |
-| strong | 1,196 | The code is at least 90% alike and the functions it calls have the same names |
-| likely | 447 | At least 75% alike, same called functions |
-| unverified | 508 | Rewritten between June and September 2004, calls that differ, or other gaps: check before relying on it |
+| proven: same code, unique | 2,456 | The retail and prototype functions are the same code, instruction for instruction, and that code occurs only once in each executable |
+| proven: same code, same callers | 123 | The same code (not unique, e.g. a small getter), and a function proven unique calls it in both executables |
+| proven: same place between proven functions | 428 | It sits between two functions proven unique, and the retail and prototype hold the same functions there in the same order (source files keep their function order); at least 60% alike |
+| **proven, total** | **3,007** | |
+| strong | 1,101 | The code is at least 90% alike and the functions it calls have the same names |
+| likely | 428 | At least 75% alike, same called functions |
+| unverified | 518 | Rewritten between June and September 2004, calls that differ, or other gaps: check before relying on it |
 | **total** | **5,054** | |
 <!-- counts:end -->
 
@@ -35,8 +35,27 @@ analysis and [burnout3-pc](https://github.com/danielgomesvieira2000/burnout3-pc)
 `games/burnout3/config/functions.csv` (5,015 of the 5,054 in burnout3-pc's list).
 
 **Control.** Pairing each retail function with a *wrong* prototype function of the same size passes the
-same-code test 67 times in 4,880, all tiny generic functions. The "unique" and "same callers" conditions
-exclude exactly those: if the code is unique in the prototype, no other prototype function has it.
+same-code test 61 times in 4,885, all tiny generic functions, and **none** of those 61 is unique. The
+"unique" and "same callers" conditions exclude exactly those: if the code is unique in the prototype, no other
+prototype function has it.
+
+**Called functions.** A called function is compared by name only when its name is placed in retail too;
+otherwise it counts as unknown on both sides, like an unnamed retail function.
+
+## Reproduce or extend it
+
+[`tools/verify_retail_names.py`](../../tools/verify_retail_names.py) (standard library only) recomputes the
+`proof` column and [`function-names-check.csv`](../../data/burnout3-retail/function-names-check.csv) from
+your own executables:
+
+```bash
+python3 tools/verify_retail_names.py <SLUS_210.50> <DNAT_200.45> --starts <burnout3-pc>/games/burnout3/config/functions.csv
+```
+
+`--compare` reports the differences against the files here without writing, `--control` runs the
+wrong-pair control above. `tools/rebuild.sh` runs it when it finds both executables (set `B3PC_FUNCTIONS`
+for the start check). To test new names, add rows to `prototype-names.csv` (retail address and size, name,
+prototype map and executable addresses) and run it: each gets a proof level.
 
 ## What the names do not prove
 

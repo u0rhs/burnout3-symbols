@@ -7,7 +7,7 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3OnlineSelectPersonaPage.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
-- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004406D0`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
@@ -18,10 +18,10 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 |---|---|---|---|---|---|---|
 | `OnKeyboardShow()` | `0x002F9A70` 8 | `0x0034D2E0` 8 | `0x0037E930` 8 | `0x003802B0` 16 | `0x00340450` proven |  |
 | `OnKeyboardCancel()` | `0x002F9A80` 72 | `0x0034D2F0` 72 | `0x0037E940` 72 | `0x00380260` 80 | `0x00340460` proven |  |
-| `OnKeyboardDone()` | `0x002F9AD0` 348 | `0x0034D340` 348 | `0x0037E990` 348 | `0x00380090` 452 | `0x003404B0` proven |  |
-| `Release()` | `0x002F9C30` 12 | `0x0034D4A0` 12 | `0x0037EAF0` 12 | `0x00380060` 40 | `0x003406B0` proven |  |
-| `Update()` | `0x002F9C40` 4012 | `0x0034D4B0` 4012 | `0x0037EB00` 4012 | `0x0037E880` 6068 | `0x003406C0` proven |  |
-| `Prepare(char*)` | `0x002FABF0` 860 | `0x0034E460` 860 | `0x0037FAB0` 860 | `0x0037E400` 1140 | `0x003418F0` proven |  |
+| `OnKeyboardDone()` | `0x002F9AD0` 348 | `0x0034D340` 348 | `0x0037E990` 348 | `0x00380090` 452 | `0x003404B0` unverified |  |
+| `Release()` | `0x002F9C30` 12 | `0x0034D4A0` 12 | `0x0037EAF0` 12 | `0x00380060` 40 | `0x003406B0` likely |  |
+| `Update()` | `0x002F9C40` 4012 | `0x0034D4B0` 4012 | `0x0037EB00` 4012 | `0x0037E880` 6068 | `0x003406C0` unverified |  |
+| `Prepare(char*)` | `0x002FABF0` 860 | `0x0034E460` 860 | `0x0037FAB0` 860 | `0x0037E400` 1140 | `0x003418F0` unverified |  |
 | `CB3OnlineSelectPersonaPage()` |  |  |  | `0x00341220` 60 |  |  |
 
 ## Notes

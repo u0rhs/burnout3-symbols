@@ -24,7 +24,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `RemoveFromTrafficLights()` | `0x0015C0C0` 140 | `0x001720F0` 140 | `0x0016D720` 140 | `0x00181700` 228 | `0x00161310` proven | `int CTrafficParam::RemoveFromTrafficLights()` |
 | `Remove()` | `0x0015C150` 472 | `0x00172180` 680 | `0x0016D7B0` 680 | `0x00181300` 1012 | `0x001613B0` proven | `int CTrafficParam::Remove()` |
 | `Insert(CB3TrafficLane*,float,float,ETrafficParamState)` | `0x0015C330` 788 | `0x00172430` 2024 | `0x0016DA60` 1716 | `0x001809B0` 2376 | `0x00161590` proven | `int CTrafficParam::Insert(CLane *lpLane, float lrParamAlong, float lrParamAcross, float lrSpeedModifier, ETrafficParamState leInitialState)` (same name, different parameters) |
-| `CalculateTargetParamMatrix(float,GtMathPs2::CGtMatrix3x4*)` | `0x0015C650` 1300 | `0x00172C20` 1780 | `0x0016E120` 1436 | `0x0017FE50` 1132 | `0x001618C0` likely |  |
+| `CalculateTargetParamMatrix(float,GtMathPs2::CGtMatrix3x4*)` | `0x0015C650` 1300 | `0x00172C20` 1780 | `0x0016E120` 1436 | `0x0017FE50` 1132 | `0x001618C0` unverified |  |
 | `CalculateTargetParamMatrix()` | `0x0015CB70` 48 | `0x00173320` 48 | `0x0016E6C0` 48 | `0x0017FDE0` 108 | `0x00161B20` proven | `void CTrafficParam::CalculateTargetParamMatrix()` |
 | `CalcSpeed(int,bool,bool)` | `0x0015CBA0` 4264 | `0x00173350` 4708 | `0x0016E6F0` 4708 | `0x0017E9D0` 4624 | `0x00161B50` strong | `int CTrafficParam::CalcSpeed()` (same name, different parameters) |
 | `Release()` | `0x0015DC50` 8 | `0x001745C0` 8 | `0x0016F960` 8 | `0x0017E9A0` 40 |  |  |

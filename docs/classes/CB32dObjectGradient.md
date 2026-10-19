@@ -7,7 +7,7 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `B32dObjectGradient.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 2
-- **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -16,7 +16,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
 | `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0030A410` 1176 | `0x0035F3C0` 1176 | `0x00390680` 1176 | `0x003949A0` 1884 | `0x00352AB0` proven |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,GtMat` | `0x0030A8B0` 400 | `0x0035F860` 400 | `0x00390B20` 400 | `0x00394670` 816 | `0x00352F50` strong |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,GtMat` | `0x0030A8B0` 400 | `0x0035F860` 400 | `0x00390B20` 400 | `0x00394670` 816 | `0x00352F50` proven |  |
 
 ## Notes
 

@@ -7,7 +7,7 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dRendererPS2.cpp`
 - **Methods per build:** DNAT_200 22, B3DEBUG 22, B3INTERN 22, B3O0PCH 29
-- **Retail (SLUS-21050):** 22 of its 22 DNAT_200 methods found, 19 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 22 of its 22 DNAT_200 methods found, 22 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
@@ -34,9 +34,9 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `Resume()` | `0x001DF1E0` 168 | `0x001DDA30` 1316 | `0x00210730` 1316 | `0x0021F620` 460 | `0x00219CA0` proven |  |
 | `Suspend()` | `0x001DF290` 460 | `0x001DDF60` 1556 | `0x00210C60` 1556 | `0x0021F420` 500 | `0x00219D50` proven |  |
 | `End()` | `0x001DF460` 460 | `0x001DE580` 1540 | `0x00211280` 1540 | `0x0021F000` 484 | `0x00219F20` proven |  |
-| `Begin()` | `0x001DF630` 408 | `0x001DEB90` 508 | `0x00211890` 508 | `0x0021EDD0` 556 | `0x0021A0F0` strong |  |
-| `Construct()` | `0x001DF7D0` 600 | `0x001DED90` 600 | `0x00211A90` 600 | `0x0021EAF0` 724 | `0x0021A290` strong |  |
-| `_Dispatch()` | `0x001DFA30` 244 | `0x001DEFF0` 352 | `0x00211CF0` 352 | `0x0021E8E0` 528 | `0x0021A4F0` strong |  |
+| `Begin()` | `0x001DF630` 408 | `0x001DEB90` 508 | `0x00211890` 508 | `0x0021EDD0` 556 | `0x0021A0F0` proven |  |
+| `Construct()` | `0x001DF7D0` 600 | `0x001DED90` 600 | `0x00211A90` 600 | `0x0021EAF0` 724 | `0x0021A290` proven |  |
+| `_Dispatch()` | `0x001DFA30` 244 | `0x001DEFF0` 352 | `0x00211CF0` 352 | `0x0021E8E0` 528 | `0x0021A4F0` proven |  |
 | `_AddDW(unsigned long)` |  |  |  | `0x00220840` 84 |  |  |
 | `_DuplicateDW(int)` |  |  |  | `0x002214E0` 156 |  |  |
 | `_DuplicateQW(int)` |  |  |  | `0x00220DE0` 176 |  |  |

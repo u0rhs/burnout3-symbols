@@ -7,7 +7,7 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dFont.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 11
-- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `C2dFont`, size 0x119C, declared in 38 file(s), e.g. `gamesource/Hud/CHud.cpp`
 
 ## Methods
@@ -21,7 +21,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `GetStringStartAndEnd(const unsigned short*,float,const unsigned short**,const unsigned short**,bool) const` | `0x0019DFB0` 552 |  |  |  | `0x001D7E10` proven |  |
 | `GetStringWidthIncludingLRKern(const unsigned short*) const` | `0x0019E1E0` 164 |  |  |  | `0x001D80A0` proven |  |
 | `GetStringWidth(const unsigned short*) const` | `0x0019E290` 184 |  |  |  | `0x001D8150` proven |  |
-| `Prepare(CGtTexture*)` | `0x0019E350` 80 | `0x001D3CE0` 212 | `0x001CCF70` 212 | `0x002237F0` 132 | `0x001D8210` strong |  |
+| `Prepare(CGtTexture*)` | `0x0019E350` 80 | `0x001D3CE0` 212 | `0x001CCF70` 212 | `0x002237F0` 132 | `0x001D8210` proven |  |
 | `RenderString(const unsigned short*,float,float,float,GtMathPs2::CGtV4d)` |  | `0x001D3410` 724 | `0x001CC6A0` 724 | `0x00223E60` 632 |  |  |
 | `GetStringStartAndEnd(const unsigned short*,float,const unsigned short**,const unsigned short**,bool)` |  | `0x001D36F0` 884 | `0x001CC980` 884 | `0x00223A20` 1076 |  |  |
 | `GetStringWidthIncludingLRKern(const unsigned short*)` |  | `0x001D3A70` 296 | `0x001CCD00` 296 | `0x00223970` 172 |  |  |

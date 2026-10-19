@@ -7,7 +7,7 @@
 - **Area:** [Crashes, takedowns and scoring](../systems/crash-scoring.md)
 - **Source file:** `B3Burn.cpp`
 - **Methods per build:** DNAT_200 16, B3DEBUG 16, B3INTERN 16, B3O0PCH 30
-- **Retail (SLUS-21050):** 16 of its 16 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 16 of its 16 DNAT_200 methods found, 14 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CBurn`, size 0x02C, declared in 87 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
@@ -16,19 +16,19 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 
 | Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
 |---|---|---|---|---|---|---|
-| `GetCurrentBurnDuration(const CB3RaceCar*)` | `0x0014A880` 40 | `0x0015B7E0` 112 | `0x00157260` 112 | `0x00165530` 96 | `0x0014DD80` strong |  |
-| `GetSegmentSizeInBurn()` | `0x0014A8B0` 48 | `0x0015B850` 48 | `0x001572D0` 48 | `0x001654F0` 64 | `0x0014DDB0` strong |  |
-| `SetInfiniteBoost(bool)` | `0x0014A8E0` 152 | `0x0015B880` 152 | `0x00157300` 152 | `0x001654A0` 80 | `0x0014DDE0` likely |  |
-| `StopBurn()` | `0x0014A980` 56 | `0x0015B920` 56 | `0x001573A0` 56 | `0x00165450` 68 | `0x0014DEB0` strong |  |
-| `StartBurn(CB3RaceCarPhysics*)` | `0x0014A9C0` 160 | `0x0015B960` 160 | `0x001573E0` 160 | `0x00165370` 216 | `0x0014DEF0` unverified |  |
-| `SetNumExtraBoostBarSegments(int)` | `0x0014AA60` 108 | `0x0015BA00` 200 | `0x00157480` 200 | `0x001652A0` 200 | `0x0014DFF0` strong |  |
-| `RemoveSegment()` | `0x0014AAD0` 312 | `0x0015BAD0` 368 | `0x00157550` 368 | `0x00165200` 156 | `0x0014E060` likely |  |
-| `AddSegment()` | `0x0014AC10` 168 | `0x0015BC40` 232 | `0x001576C0` 232 | `0x00165190` 100 | `0x0014E1C0` likely |  |
-| `RemoveBurn(float)` | `0x0014ACC0` 120 | `0x0015BD30` 120 | `0x001577B0` 120 | `0x001650D0` 184 | `0x0014E250` strong |  |
-| `AddBurn(float)` | `0x0014AD40` 140 | `0x0015BDB0` 140 | `0x00157830` 140 | `0x00165020` 172 | `0x0014E2D0` unverified | `void CBurn::AddBurn(float lrPoints)` |
+| `GetCurrentBurnDuration(const CB3RaceCar*)` | `0x0014A880` 40 | `0x0015B7E0` 112 | `0x00157260` 112 | `0x00165530` 96 | `0x0014DD80` proven |  |
+| `GetSegmentSizeInBurn()` | `0x0014A8B0` 48 | `0x0015B850` 48 | `0x001572D0` 48 | `0x001654F0` 64 | `0x0014DDB0` proven |  |
+| `SetInfiniteBoost(bool)` | `0x0014A8E0` 152 | `0x0015B880` 152 | `0x00157300` 152 | `0x001654A0` 80 | `0x0014DDE0` proven |  |
+| `StopBurn()` | `0x0014A980` 56 | `0x0015B920` 56 | `0x001573A0` 56 | `0x00165450` 68 | `0x0014DEB0` proven |  |
+| `StartBurn(CB3RaceCarPhysics*)` | `0x0014A9C0` 160 | `0x0015B960` 160 | `0x001573E0` 160 | `0x00165370` 216 | `0x0014DEF0` proven |  |
+| `SetNumExtraBoostBarSegments(int)` | `0x0014AA60` 108 | `0x0015BA00` 200 | `0x00157480` 200 | `0x001652A0` 200 | `0x0014DFF0` proven |  |
+| `RemoveSegment()` | `0x0014AAD0` 312 | `0x0015BAD0` 368 | `0x00157550` 368 | `0x00165200` 156 | `0x0014E060` proven |  |
+| `AddSegment()` | `0x0014AC10` 168 | `0x0015BC40` 232 | `0x001576C0` 232 | `0x00165190` 100 | `0x0014E1C0` proven |  |
+| `RemoveBurn(float)` | `0x0014ACC0` 120 | `0x0015BD30` 120 | `0x001577B0` 120 | `0x001650D0` 184 | `0x0014E250` proven |  |
+| `AddBurn(float)` | `0x0014AD40` 140 | `0x0015BDB0` 140 | `0x00157830` 140 | `0x00165020` 172 | `0x0014E2D0` proven | `void CBurn::AddBurn(float lrPoints)` |
 | `Release()` | `0x0014ADD0` 8 | `0x0015BE40` 8 | `0x001578C0` 8 | `0x00165010` 16 | `0x0014E390` strong |  |
-| `Update(CB3RaceCar*)` | `0x0014ADE0` 348 | `0x0015BE50` 348 | `0x001578D0` 348 | `0x00164E20` 492 | `0x0014E3A0` likely | `void CBurn::Update(CRaceCar *pRaceCar)` (same name, different parameters) |
-| `Prepare(EB3BoostBarSize)` | `0x0014AF40` 240 | `0x0015BFB0` 272 | `0x00157A30` 272 | `0x00164CB0` 368 | `0x0014E500` strong |  |
+| `Update(CB3RaceCar*)` | `0x0014ADE0` 348 | `0x0015BE50` 348 | `0x001578D0` 348 | `0x00164E20` 492 | `0x0014E3A0` proven | `void CBurn::Update(CRaceCar *pRaceCar)` (same name, different parameters) |
+| `Prepare(EB3BoostBarSize)` | `0x0014AF40` 240 | `0x0015BFB0` 272 | `0x00157A30` 272 | `0x00164CB0` 368 | `0x0014E500` proven |  |
 | `Construct()` | `0x0014B030` 8 | `0x0015C0C0` 8 | `0x00157B40` 8 | `0x00164CA0` 16 | `0x0014E5F0` strong |  |
 | `UnregisterStaticVariables()` | `0x0014B040` 112 | `0x0015C0D0` 112 | `0x00157B50` 112 | `0x00164C10` 136 | `0x0014E600` proven |  |
 | `RegisterStaticVariables()` | `0x0014B0B0` 324 | `0x0015C140` 324 | `0x00157BC0` 324 | `0x00164AB0` 348 | `0x0014E670` proven |  |

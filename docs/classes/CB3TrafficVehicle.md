@@ -28,10 +28,10 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `InitaliseTrailerPosition()` | `0x001649A0` 1496 | `0x0017BFE0` 1992 | `0x00177210` 1624 | `0x0018B1F0` 1968 | `0x00172860` proven | `void CTrafficVehicle::InitaliseTrailerPosition()` |
 | `UpdatePosition()` | `0x00164F80` 2796 | `0x0017C7B0` 3700 | `0x00177870` 3180 | `0x0018A170` 4140 | `0x00172E40` proven | `void CTrafficVehicle::UpdatePosition()` |
 | `InitalisePosition()` | `0x00165A70` 992 | `0x0017D630` 1360 | `0x001784E0` 992 | `0x00189C30` 1344 | `0x00173950` proven | `void CTrafficVehicle::InitalisePosition()` |
-| `Remove()` | `0x00165E50` 1264 | `0x0017DB80` 1656 | `0x001788C0` 1656 | `0x00189B80` 168 | `0x00173D30` likely |  |
+| `Remove()` | `0x00165E50` 1264 | `0x0017DB80` 1656 | `0x001788C0` 1656 | `0x00189B80` 168 | `0x00173D30` unverified |  |
 | `Create(ETrafficVehicleCategories,unsigned char)` | `0x00166340` 756 | `0x0017E200` 844 | `0x00178F40` 772 | `0x001895F0` 1380 | `0x001864F0` proven | `int CTrafficVehicle::Create(EB2VehicleType leNewVehicleType, int lbHotspotGenerated)` (same name, different parameters) |
 | `Release()` | `0x00166640` 52 | `0x0017E550` 52 | `0x00179250` 52 | `0x001895A0` 68 | `0x00186810` strong |  |
-| `Update(CB3TrafficRaceCarInfo*,int)` | `0x00166680` 4056 | `0x0017E590` 5052 | `0x00179290` 5052 | `0x001889D0` 3020 | `0x00186850` likely | `void CTrafficVehicle::Update(TrafficRaceCarInfo *lpTrafficRaceCarInfo)` (same name, different parameters) |
+| `Update(CB3TrafficRaceCarInfo*,int)` | `0x00166680` 4056 | `0x0017E590` 5052 | `0x00179290` 5052 | `0x001889D0` 3020 | `0x00186850` unverified | `void CTrafficVehicle::Update(TrafficRaceCarInfo *lpTrafficRaceCarInfo)` (same name, different parameters) |
 | `Prepare()` | `0x00167660` 56 | `0x0017F950` 56 | `0x0017A650` 56 | `0x00188980` 72 | `0x001996D0` proven |  |
 | `Construct()` | `0x001676A0` 52 | `0x0017F990` 52 | `0x0017A690` 52 | `0x00188930` 68 | `0x00199710` strong |  |
 | `CB3TrafficVehicle()` |  |  |  | `0x00192310` 92 |  |  |

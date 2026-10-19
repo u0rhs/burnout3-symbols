@@ -6,9 +6,9 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-19
 
-- **5,054 retail functions named from the June 2004 prototype map, 2,903 proven against the code**
+- **5,054 retail functions named from the June 2004 prototype map, 3,007 proven against the code**
   ([prototype names](reference/retail-prototype-names.md), `prototype-names.csv`). Each of Nahelam's
-  1,146 names checked the same way (`function-names-check.csv`): 627 agree, 9 corrected by the code,
+  1,146 names checked the same way (`function-names-check.csv`): 634 agree, 9 corrected by the code,
   52 one function off.
 - Compilers corrected: the `2.4.1.01` string is the linker's fixed tag; the prototype's code generation
   is CodeWarrior PS2 3.0 build 38 to 3.0.1 build 103, retail's 3.0.1 build 119 ([builds](builds.md)).
@@ -22,6 +22,9 @@ Changes to the data and documentation. Newest first.
   names; corrections: the race timer store `0x001D3D2C` is in `CGtTimer::NextFrame`; the crash camera list
   backing (`0x003D70BC` is a jump to a code cave, the width is the `lui` at `0x003D7238` in
   `CB3HUDCrashCombo::Prepare`); added the menu frame-rate branch `0x001D3F2C` (`CB3Game::SetFrontendFrameRate`).
+- `tools/verify_retail_names.py`: the code check behind `proof` and `function-names-check.csv`, standard library
+  only; run by `rebuild.sh` when both executables are present. Results regenerated with it (3,007 proven;
+  a called function counts by name only when its name is placed in retail too).
 - Decompilation guide: compiler build and flags (`-O4 -Cpp_exceptions off`), the masked-match trap, source files
   staying whole in retail (356 of 361), Burnout 2 matching works for libraries only, Revenge layouts.
 - Added the two July 20, 2004 review builds (US 11.11, PAL 11.14): disc listings, strings, headers and value

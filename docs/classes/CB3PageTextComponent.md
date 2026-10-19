@@ -7,7 +7,7 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3PageTextComponent.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 10, B3INTERN 10, B3O0PCH 11
-- **Retail (SLUS-21050):** 6 of its 10 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
+- **Retail (SLUS-21050):** 6 of its 10 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440A30`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
@@ -24,7 +24,7 @@ Addresses and sizes in each build. **Retail** is the same function in SLUS-21050
 | `Release()` | `0x003383A0` 164 | `0x0039ADE0` 236 | `0x003C5000` 228 | `0x003CABF0` 284 | `0x003795C0` proven |  |
 | `Update(float)` | `0x00338450` 20 | `0x0039AED0` 20 | `0x003C50F0` 20 | `0x003CABC0` 44 |  |  |
 | `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const unsigned short*,unsigned int)` | `0x00338470` 568 | `0x0039AEF0` 664 | `0x003C5110` 656 | `0x003CA7C0` 1024 | `0x00379690` unverified |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,EGlobalStrings,unsigned int)` | `0x003386B0` 108 | `0x0039B190` 108 | `0x003C53A0` 108 | `0x003CA760` 92 | `0x00379910` strong |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,EGlobalStrings,unsigned int)` | `0x003386B0` 108 | `0x0039B190` 108 | `0x003C53A0` 108 | `0x003CA760` 92 | `0x00379910` proven |  |
 | `Construct()` | `0x00338720` 16 | `0x0039B200` 16 | `0x003C5410` 16 | `0x003CA720` 60 | `0x00379980` proven |  |
 | `CB3PageTextComponent()` |  |  |  | `0x0033C280` 76 |  |  |
 

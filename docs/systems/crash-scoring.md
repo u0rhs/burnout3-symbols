@@ -18,7 +18,7 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 
 | File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
 |---|---:|---:|---|---:|---|
-| `B3Burn.cpp` | 16 | 2,344 | `0x0014A880` | 16 (2) | `0x0014DD80`–`0x0014E670` |
+| `B3Burn.cpp` | 16 | 2,344 | `0x0014A880` | 16 (14) | `0x0014DD80`–`0x0014E670` |
 | `B3CrashPresentationDirector.cpp` | 2 | 16 | `0x0014B200` |  |  |
 | `B3Score.cpp` | 56 | 31,924 | `0x00151490` | 40 (2) | `0x001553A0`–`0x0015D0A0` |
 | `B3CrashActionDirector.cpp` | 18 | 15,864 | `0x00178EE0` | 16 (2) | `0x001AD890`–`0x001B2A00` |

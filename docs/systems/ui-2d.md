@@ -25,15 +25,15 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `Gt2dObjectText.cpp` | 9 | 3,284 | `0x0019C320` | 9 (6) | `0x001D6170`–`0x001D6D60` |
 | `Gt2dObjectVignette.cpp` | 3 | 1,744 | `0x0019D030` | 3 (3) | `0x001D6E80`–`0x001D7380` |
 | `Gt2dScene.cpp` | 5 | 1,264 | `0x0019D710` | 5 (5) | `0x001D7560`–`0x001D7960` |
-| `Gt2dFont.cpp` | 6 | 1,884 | `0x0019DC10` | 6 (5) | `0x001D7A70`–`0x001D8210` |
-| `Gt2dRendererPS2.cpp` | 23 | 11,536 | `0x001DCDC0` | 22 (19) | `0x00217850`–`0x0021A4F0` |
+| `Gt2dFont.cpp` | 6 | 1,884 | `0x0019DC10` | 6 (6) | `0x001D7A70`–`0x001D8210` |
+| `Gt2dRendererPS2.cpp` | 23 | 11,536 | `0x001DCDC0` | 22 (22) | `0x00217850`–`0x0021A4F0` |
 | `Gt2dObjectParagraph.cpp` | 5 | 2,828 | `0x002B7FF0` | 2 (0) | `0x002F8C50`–`0x002F8ED0` |
 | `Gt2dObjectVideoImage.cpp` | 2 | 968 | `0x002E2630` | 2 (0) | `0x00326960`–`0x00326E70` |
-| `Gt2dObjectItalicText.cpp` | 9 | 3,748 | `0x002F6990` | 9 (1) | `0x0033C990`–`0x0033D770` |
+| `Gt2dObjectItalicText.cpp` | 9 | 3,748 | `0x002F6990` | 9 (2) | `0x0033C990`–`0x0033D770` |
 | `Gt2dObjectTable.cpp` | 13 | 5,464 | `0x002F7870` | 13 (7) | `0x0033D890`–`0x0033F0E0` |
-| `B32dObjectGradient.cpp` | 2 | 1,576 | `0x0030A410` | 2 (1) | `0x00352AB0`–`0x00352F50` |
+| `B32dObjectGradient.cpp` | 2 | 1,576 | `0x0030A410` | 2 (2) | `0x00352AB0`–`0x00352F50` |
 | `B3BurningText2dObject.cpp` | 2 | 844 | `0x00325630` |  |  |
-| `B3FlashText2dObject.cpp` | 5 | 1,336 | `0x0032C9E0` | 4 (2) | `0x00371BE0`–`0x003720E0` |
+| `B3FlashText2dObject.cpp` | 5 | 1,336 | `0x0032C9E0` | 4 (3) | `0x00371BE0`–`0x003720E0` |
 | `B3SelectionBar2dObject.cpp` | 3 | 1,152 | `0x0032CEF0` | 2 (1) | `0x003720F0`–`0x00372400` |
 | `B3Panel2dObject.cpp` | 4 | 2,200 | `0x0033EDA0` | 2 (2) | `0x003808A0`–`0x00380970` |
 | `B3DPad2dObject.cpp` | 3 | 1,892 | `0x0033F5A0` |  |  |
