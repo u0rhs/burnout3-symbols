@@ -38,7 +38,7 @@ The retail executable is stripped. These are the named addresses known so far, a
 
 | File | Contents | Size | Lines / rows |
 |---|---|---:|---:|
-| [`prototype-names.csv`](../data/burnout3-retail/prototype-names.csv) | 5,054 retail functions named from the June 2004 prototype map, 3,007 proven against the code | 587.7 KB | 5,054 |
+| [`prototype-names.csv`](../data/burnout3-retail/prototype-names.csv) | 5,054 retail functions named from the June 2004 prototype map, 3,008 proven against the code | 587.7 KB | 5,054 |
 | [`function-names.csv`](../data/burnout3-retail/function-names.csv) | 1,146 named functions in the retail executable (851 verified) | 149.9 KB | 1,214 |
 | [`function-names-check.csv`](../data/burnout3-retail/function-names-check.csv) | Each of those 1,146 names tested against the code | 149.9 KB | 1,146 |
 | [`nahelam-mods.csv`](../data/burnout3-retail/nahelam-mods.csv) | Every address Nahelam's mods change, with the function it is in (or the nearest named one before it) | 387.8 KB | 1,480 |

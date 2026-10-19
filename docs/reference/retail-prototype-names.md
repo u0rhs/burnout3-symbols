@@ -3,7 +3,7 @@
 # Retail names from the prototype (SLUS-21050)
 
 **5,054 functions in the NTSC-U retail executable named from the June 8, 2004 prototype's link map,
-3,007 of them proven against the code.** Table:
+3,008 of them proven against the code.** Table:
 [`prototype-names.csv`](../../data/burnout3-retail/prototype-names.csv).
 
 These are Criterion's own names: the prototype map (`DNAT_200.MAP`) names the prototype's functions, and
@@ -18,11 +18,11 @@ its `proof` column, so a reader can tell a proven name from a likely one.
 |---|---:|---|
 | proven: same code, unique | 2,456 | The retail and prototype functions are the same code, instruction for instruction, and that code occurs only once in each executable |
 | proven: same code, same callers | 123 | The same code (not unique, e.g. a small getter), and a function proven unique calls it in both executables |
-| proven: same place between proven functions | 428 | It sits between two functions proven unique, and the retail and prototype hold the same functions there in the same order (source files keep their function order); at least 60% alike |
-| **proven, total** | **3,007** | |
+| proven: same place between proven functions | 429 | It sits between two functions proven unique, and the retail and prototype hold the same functions there in the same order (source files keep their function order); at least 60% alike |
+| **proven, total** | **3,008** | |
 | strong | 1,101 | The code is at least 90% alike and the functions it calls have the same names |
 | likely | 428 | At least 75% alike, same called functions |
-| unverified | 518 | Rewritten between June and September 2004, calls that differ, or other gaps: check before relying on it |
+| unverified | 517 | Rewritten between June and September 2004, calls that differ, or other gaps: check before relying on it |
 | **total** | **5,054** | |
 <!-- counts:end -->
 

@@ -6,6 +6,8 @@ Changes to the data and documentation. Newest first.
 
 ## 2026-10-19
 
+- `_FinalMix` (`0x002FC820`, `B3SoundDistPS2.cpp`) regenerated with `verify_retail_names.py` as proven (same place
+  between proven functions): now 3,008 proven, 517 unverified.
 - **5,054 retail functions named from the June 2004 prototype map, 3,007 proven against the code**
   ([prototype names](reference/retail-prototype-names.md), `prototype-names.csv`). Each of Nahelam's
   1,146 names checked the same way (`function-names-check.csv`): 634 agree, 9 corrected by the code,

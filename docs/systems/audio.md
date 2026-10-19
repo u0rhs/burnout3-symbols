@@ -38,7 +38,7 @@ In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_20
 | `B3SoundESMManager.cpp` | 6 | 268 | `0x002BA090` | 5 (0) | `0x002FAE70`–`0x002FAF50` |
 | `B3SoundESMStruct.cpp` | 8 | 2,068 | `0x002BA1C0` | 8 (7) | `0x002FAFB0`–`0x002FB770` |
 | `B3SoundDSPBlock.cpp` | 8 | 2,252 | `0x002BAA00` | 8 (5) | `0x002FB890`–`0x002FC160` |
-| `B3SoundDistPS2.cpp` | 10 | 4,244 | `0x002BB2F0` | 10 (8) | `0x002FC1C0`–`0x002FD0E0` |
+| `B3SoundDistPS2.cpp` | 10 | 4,244 | `0x002BB2F0` | 10 (9) | `0x002FC1C0`–`0x002FD0E0` |
 | `GtSoundBank.cpp` | 11 | 1,100 | `0x00340E30` | 7 (1) | `0x00383A70`–`0x00383EF0` |
 | `GtSoundBankManager.cpp` | 7 | 1,316 | `0x003412D0` | 6 (2) | `0x00383F60`–`0x00384460` |
 | `GtSoundListener.cpp` | 12 | 1,188 | `0x00341830` | 12 (11) | `0x00384550`–`0x003849F0` |

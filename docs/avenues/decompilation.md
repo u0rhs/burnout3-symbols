@@ -30,7 +30,7 @@ A whole retail build made this way (splat, build 119, these flags) reproduces th
 
 The retail executable (`SLUS_210.50`) has no symbols. The prototype maps name about 8,300 functions
 of a build seven weeks older. **This has been done for 5,054 of them**
-([prototype names](../reference/retail-prototype-names.md)), 3,007 proven against the code. The methods,
+([prototype names](../reference/retail-prototype-names.md)), 3,008 proven against the code. The methods,
 for the rest and for other builds:
 
 1. **Masked byte signatures.** Compare functions with call targets, `lui`/`addiu` address pairs and

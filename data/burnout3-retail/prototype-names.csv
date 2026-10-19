@@ -3603,7 +3603,7 @@ us_address,size,name,source_file,proof,prototype_map_address,prototype_elf_addre
 0x002FC1C0,24,"CB3SoundDistortion::GetDSPSends(CGtSoundRealVoiceDSPSend**,int*)",B3SoundDistPS2.cpp,"proven: same code, unique",0x002BB2F0,0x002AEC60,,
 0x002FC1E0,840,"CB3SoundDistortion::CalculateGainPair(float,float,bool,float*,float*)",B3SoundDistPS2.cpp,proven: same place between proven functions,0x002BB310,0x002AEC80,,
 0x002FC530,748,"_B3DIST_EE_CmdHandler(void*,void*)",B3SoundDistPS2.cpp,"proven: same code, unique",0x002BB640,0x002AEFB0,,
-0x002FC820,564,"_FinalMix(int,short*,short*,int,int,int)",B3SoundDistPS2.cpp,unverified,0x002BB930,0x002AF2A0,,
+0x002FC820,564,"_FinalMix(int,short*,short*,int,int,int)",B3SoundDistPS2.cpp,proven: same place between proven functions,0x002BB930,0x002AF2A0,,
 0x002FCA60,836,CB3SoundDistortion::Update(),B3SoundDistPS2.cpp,proven: same place between proven functions,0x002BBB80,0x002AF4F0,,
 0x002FCDB0,332,"CB3SoundDistortion::CalculateDistance(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*)",B3SoundDistPS2.cpp,proven: same place between proven functions,0x002BBED0,0x002AF840,,
 0x002FCF00,192,CB3SoundDistortion::StopDistortion(),B3SoundDistPS2.cpp,proven: same place between proven functions,0x002BC020,0x002AF990,,

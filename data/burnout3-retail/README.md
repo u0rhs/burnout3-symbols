@@ -18,5 +18,5 @@ Exports from the NTSC-U retail disc: the disc listing, strings, executable heade
 - [function-names.csv](function-names.csv) (153,498 bytes)
 - [memory-map.csv](memory-map.csv) (14,273 bytes)
 - [nahelam-mods.csv](nahelam-mods.csv) (397,121 bytes)
-- [prototype-names.csv](prototype-names.csv) (601,783 bytes)
+- [prototype-names.csv](prototype-names.csv) (601,816 bytes)
 - [vehicle-ids.csv](vehicle-ids.csv) (4,366 bytes)
