@@ -11,13 +11,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x003A3D30` 8 | `0x0041D690` 8 | `0x00443310` 8 | `0x0045B730` 16 |  |
-| `Update()` | `0x003A3D40` 128 | `0x0041D6A0` 128 | `0x00443320` 128 | `0x0045B690` 156 |  |
-| `CB3MyBurnoutSettingsPlaylistEditPage()` |  |  |  | `0x00342480` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x003A3D30` 8 | `0x0041D690` 8 | `0x00443310` 8 | `0x0045B730` 16 |  |  |
+| `Update()` | `0x003A3D40` 128 | `0x0041D6A0` 128 | `0x00443320` 128 | `0x0045B690` 156 |  |  |
+| `CB3MyBurnoutSettingsPlaylistEditPage()` |  |  |  | `0x00342480` 60 |  |  |
 
 ## Notes
 

@@ -7,19 +7,20 @@
 - **Area:** [HUD](../systems/hud.md)
 - **Source file:** `B3HUDEscapeDistance.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 5
+- **Retail (SLUS-21050):** 1 of its 4 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00441E30`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PrepareEscapeDistanceObject()` | `0x00388F40` 468 | `0x003FCC20` 616 | `0x00424630` 616 | `0x0043E0D0` 800 |  |
-| `Update(float)` | `0x00389120` 8 | `0x003FCE90` 72 | `0x004248A0` 72 | `0x0043E090` 60 |  |
-| `ActualPrepare()` | `0x00389130` 408 | `0x003FCEE0` 508 | `0x004248F0` 516 | `0x0043DDF0` 672 |  |
-| `Prepare(int,EHUDAlign,int)` | `0x003892D0` 20 | `0x003FD0E0` 20 | `0x00424B00` 20 | `0x0043DDB0` 64 |  |
-| `CB3HUDEscapeDistance()` |  |  |  | `0x00199780` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PrepareEscapeDistanceObject()` | `0x00388F40` 468 | `0x003FCC20` 616 | `0x00424630` 616 | `0x0043E0D0` 800 |  |  |
+| `Update(float)` | `0x00389120` 8 | `0x003FCE90` 72 | `0x004248A0` 72 | `0x0043E090` 60 |  |  |
+| `ActualPrepare()` | `0x00389130` 408 | `0x003FCEE0` 508 | `0x004248F0` 516 | `0x0043DDF0` 672 |  |  |
+| `Prepare(int,EHUDAlign,int)` | `0x003892D0` 20 | `0x003FD0E0` 20 | `0x00424B00` 20 | `0x0043DDB0` 64 | `0x003D8D40` strong |  |
+| `CB3HUDEscapeDistance()` |  |  |  | `0x00199780` 60 |  |  |
 
 ## Notes
 

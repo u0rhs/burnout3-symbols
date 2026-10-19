@@ -7,21 +7,22 @@
 - **Area:** [HUD](../systems/hud.md)
 - **Source file:** `B3HUDCrashStyle.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 7
+- **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004415D0`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Update(float)` | `0x0035CBC0` 856 | `0x003C7F30` 932 | `0x003F0D40` 968 | `0x003FF510` 576 |  |
-| `Prepare(int,EHUDAlign,int)` | `0x0035CF20` 988 | `0x003C82E0` 1204 | `0x003F1110` 1212 | `0x003FF260` 680 |  |
-| `CB3HUDCrashStyle()` |  |  |  | `0x00199930` 60 |  |
-| `PrepareCrashActiveatorObject()` |  |  |  | `0x003FFBB0` 344 |  |
-| `PrepareCrashHeadingObject(bool)` |  |  |  | `0x003FF750` 412 |  |
-| `PrepareCrashIconObject()` |  |  |  | `0x003FFA80` 296 |  |
-| `PrepareCrashStyleObject()` |  |  |  | `0x003FF8F0` 400 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Update(float)` | `0x0035CBC0` 856 | `0x003C7F30` 932 | `0x003F0D40` 968 | `0x003FF510` 576 |  |  |
+| `Prepare(int,EHUDAlign,int)` | `0x0035CF20` 988 | `0x003C82E0` 1204 | `0x003F1110` 1212 | `0x003FF260` 680 | `0x003A3890` unverified |  |
+| `CB3HUDCrashStyle()` |  |  |  | `0x00199930` 60 |  |  |
+| `PrepareCrashActiveatorObject()` |  |  |  | `0x003FFBB0` 344 |  |  |
+| `PrepareCrashHeadingObject(bool)` |  |  |  | `0x003FF750` 412 |  |  |
+| `PrepareCrashIconObject()` |  |  |  | `0x003FFA80` 296 |  |  |
+| `PrepareCrashStyleObject()` |  |  |  | `0x003FF8F0` 400 |  |  |
 
 ## Notes
 

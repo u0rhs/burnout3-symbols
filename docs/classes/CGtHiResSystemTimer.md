@@ -7,19 +7,20 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `GtHiResSystemTimerPS2.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 6
+- **Retail (SLUS-21050):** 3 of its 6 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetTime()` | `0x003341B0` 84 | `0x003955A0` 148 | `0x003BF9F0` 148 | `0x003C3F10` 124 |  |
-| `Destruct()` | `0x00334210` 8 | `0x00395640` 8 | `0x003BFA90` 8 | `0x003C3F00` 8 |  |
-| `Release()` | `0x00334220` 8 | `0x00395650` 8 | `0x003BFAA0` 8 | `0x003C3EF0` 8 |  |
-| `Update(int)` | `0x00334230` 164 | `0x00395660` 224 | `0x003BFAB0` 224 | `0x003C3DD0` 280 |  |
-| `Prepare(bool,int)` | `0x003342E0` 24 | `0x00395740` 24 | `0x003BFB90` 24 | `0x003C3D90` 52 |  |
-| `Construct()` | `0x00334300` 24 | `0x00395760` 24 | `0x003BFBB0` 24 | `0x003C3D70` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetTime()` | `0x003341B0` 84 | `0x003955A0` 148 | `0x003BF9F0` 148 | `0x003C3F10` 124 | `0x00375280` proven |  |
+| `Destruct()` | `0x00334210` 8 | `0x00395640` 8 | `0x003BFA90` 8 | `0x003C3F00` 8 |  |  |
+| `Release()` | `0x00334220` 8 | `0x00395650` 8 | `0x003BFAA0` 8 | `0x003C3EF0` 8 |  |  |
+| `Update(int)` | `0x00334230` 164 | `0x00395660` 224 | `0x003BFAB0` 224 | `0x003C3DD0` 280 |  |  |
+| `Prepare(bool,int)` | `0x003342E0` 24 | `0x00395740` 24 | `0x003BFB90` 24 | `0x003C3D90` 52 | `0x003753B0` proven |  |
+| `Construct()` | `0x00334300` 24 | `0x00395760` 24 | `0x003BFBB0` 24 | `0x003C3D70` 28 | `0x003753D0` proven |  |
 
 ## Static data (DNAT_200)
 

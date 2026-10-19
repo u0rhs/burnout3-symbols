@@ -7,20 +7,21 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundESMStruct.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Apply(CGtSoundVirtualVoice*,const CB3RaceCar*,float) const` | `0x002BA450` 244 |  |  |  |  |
-| `Apply(unsigned int) const` | `0x002BA550` 208 |  |  |  |  |
-| `Apply(CGtSoundRealVoice*,const CB3RaceCar*,float,float) const` | `0x002BA620` 388 |  |  |  |  |
-| `Apply(CGtSoundVirtualVoice*,const CB3RaceCar*,float)` |  | `0x002FC340` 532 | `0x00330010` 532 | `0x00328610` 260 |  |
-| `Apply(unsigned int)` |  | `0x002FC560` 208 | `0x00330230` 208 | `0x00328420` 264 |  |
-| `Apply(CGtSoundRealVoice*,const CB3RaceCar*,float,float)` |  | `0x002FC630` 680 | `0x00330300` 680 | `0x00328200` 540 |  |
-| `Construct()` |  |  |  | `0x00327D80` 340 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Apply(CGtSoundVirtualVoice*,const CB3RaceCar*,float) const` | `0x002BA450` 244 |  |  |  | `0x002FB2E0` strong |  |
+| `Apply(unsigned int) const` | `0x002BA550` 208 |  |  |  | `0x002FB3E0` proven |  |
+| `Apply(CGtSoundRealVoice*,const CB3RaceCar*,float,float) const` | `0x002BA620` 388 |  |  |  | `0x002FB4B0` proven |  |
+| `Apply(CGtSoundVirtualVoice*,const CB3RaceCar*,float)` |  | `0x002FC340` 532 | `0x00330010` 532 | `0x00328610` 260 |  |  |
+| `Apply(unsigned int)` |  | `0x002FC560` 208 | `0x00330230` 208 | `0x00328420` 264 |  |  |
+| `Apply(CGtSoundRealVoice*,const CB3RaceCar*,float,float)` |  | `0x002FC630` 680 | `0x00330300` 680 | `0x00328200` 540 |  |  |
+| `Construct()` |  |  |  | `0x00327D80` 340 |  |  |
 
 ## Notes
 

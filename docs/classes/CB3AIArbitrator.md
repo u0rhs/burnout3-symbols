@@ -7,23 +7,24 @@
 - **Area:** [AI drivers](../systems/ai.md)
 - **Source file:** `B3AIArbitrator.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 9
+- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CAIArbitrator`, size 0x048, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CalculateSpeedMatch()` | `0x0016A410` 152 | `0x001837C0` 152 | `0x0017E620` 152 | `0x00194630` 224 |  |
-| `CalculateCatchup()` | `0x0016A4B0` 172 | `0x00183860` 212 | `0x0017E6C0` 212 | `0x00194520` 264 |  |
-| `Release()` | `0x0016A560` 44 | `0x00183940` 44 | `0x0017E7A0` 44 | `0x00194420` 56 |  |
-| `Update(bool)` | `0x0016A590` 1364 | `0x00183970` 3288 | `0x0017E7D0` 3288 | `0x00193D70` 1712 | `void CAIArbitrator::Update(int lbForceTarget)` (same name, different parameters) |
-| `Prepare()` | `0x0016AAF0` 104 | `0x00184650` 104 | `0x0017F4B0` 104 | `0x00193CB0` 192 |  |
-| `Construct()` | `0x0016AB60` 72 | `0x001846C0` 100 | `0x0017F520` 100 | `0x00193C40` 108 |  |
-| `CB3AIArbitrator()` |  |  |  | `0x00191200` 76 |  |
-| `UseAvoidanceData()` |  |  |  | `0x00194460` 84 |  |
-| `UseTargetData()` |  |  |  | `0x001944C0` 84 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CalculateSpeedMatch()` | `0x0016A410` 152 | `0x001837C0` 152 | `0x0017E620` 152 | `0x00194630` 224 | `0x0019D4D0` unverified |  |
+| `CalculateCatchup()` | `0x0016A4B0` 172 | `0x00183860` 212 | `0x0017E6C0` 212 | `0x00194520` 264 | `0x0019D5E0` strong |  |
+| `Release()` | `0x0016A560` 44 | `0x00183940` 44 | `0x0017E7A0` 44 | `0x00194420` 56 | `0x0019D6A0` proven |  |
+| `Update(bool)` | `0x0016A590` 1364 | `0x00183970` 3288 | `0x0017E7D0` 3288 | `0x00193D70` 1712 | `0x0019D6D0` proven | `void CAIArbitrator::Update(int lbForceTarget)` (same name, different parameters) |
+| `Prepare()` | `0x0016AAF0` 104 | `0x00184650` 104 | `0x0017F4B0` 104 | `0x00193CB0` 192 | `0x0019DC40` proven |  |
+| `Construct()` | `0x0016AB60` 72 | `0x001846C0` 100 | `0x0017F520` 100 | `0x00193C40` 108 | `0x0019DCB0` proven |  |
+| `CB3AIArbitrator()` |  |  |  | `0x00191200` 76 |  |  |
+| `UseAvoidanceData()` |  |  |  | `0x00194460` 84 |  |  |
+| `UseTargetData()` |  |  |  | `0x001944C0` 84 |  |  |
 
 ## Burnout 2 layout of `CAIArbitrator`
 

@@ -7,16 +7,17 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3OnlineNewsState.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 2
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440870`, 12 bytes = 3 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 1 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x0031FF50` 264 | `0x0037B810` 264 | `0x003AA3C0` 264 | `0x003AB5F0` 188 |  |
-| `CB3OnlineNewsState()` |  |  |  | `0x00344A20` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x0031FF50` 264 | `0x0037B810` 264 | `0x003AA3C0` 264 | `0x003AB5F0` 188 | `0x003694C0` unverified |  |
+| `CB3OnlineNewsState()` |  |  |  | `0x00344A20` 60 |  |  |
 
 ## Notes
 

@@ -7,17 +7,18 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3DirectionalBlur.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
+- **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `UpdateCamera(int)` | `0x003C8890` 2012 | `0x00445AF0` 2428 | `0x0046E4D0` 2428 | `0x00484910` 2076 |  |
-| `Prepare()` | `0x003C9070` 56 | `0x00446470` 56 | `0x0046EE50` 56 | `0x00484880` 136 |  |
-| `Construct()` | `0x003C90B0` 8 | `0x004464B0` 8 | `0x0046EE90` 8 | `0x00484870` 16 |  |
-| `CB3DirectionalBlurBase()` |  |  |  | `0x001960F0` 76 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `UpdateCamera(int)` | `0x003C8890` 2012 | `0x00445AF0` 2428 | `0x0046E4D0` 2428 | `0x00484910` 2076 |  |  |
+| `Prepare()` | `0x003C9070` 56 | `0x00446470` 56 | `0x0046EE50` 56 | `0x00484880` 136 | `0x00426030` proven |  |
+| `Construct()` | `0x003C90B0` 8 | `0x004464B0` 8 | `0x0046EE90` 8 | `0x00484870` 16 |  |  |
+| `CB3DirectionalBlurBase()` |  |  |  | `0x001960F0` 76 |  |  |
 
 ## Notes
 

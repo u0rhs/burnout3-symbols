@@ -7,34 +7,35 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dObject.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 1, B3O0PCH 19
+- **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `C2dObject`, size 0x0A0, declared in 48 file(s), e.g. `gamesource/Hud/CHud.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetPos(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x0019BFD0` 108 | `0x001D0E50` 108 |  | `0x001DAD00` 96 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,void (*)(const CGt2dObject::CGt2dObjec` | `0x0019C040` 48 |  |  |  |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,void (*)` |  | `0x001D0EC0` 252 | `0x001CA240` 252 | `0x001DAC40` 192 |  |
-| `CGt2dObject()` |  |  |  | `0x001403E0` 44 |  |
-| `Colour()` |  |  |  | `0x0016E9F0` 52 |  |
-| `DebugClearRenderFunction()` |  |  |  | `0x001DD710` 28 |  |
-| `GetBottomEdge()` |  |  |  | `0x0019D230` 80 |  |
-| `GetDataBlock()` |  |  |  | `0x0019D550` 28 |  |
-| `GetFrame()` |  |  |  | `0x001DD1A0` 28 |  |
-| `GetLeftEdge()` |  |  |  | `0x0019D300` 40 |  |
-| `GetRightEdge()` |  |  |  | `0x0019D280` 80 |  |
-| `GetTopEdge()` |  |  |  | `0x0019D2D0` 40 |  |
-| `ObjectSpace()` |  |  |  | `0x001402A0` 24 |  |
-| `Pos()` |  |  |  | `0x00140510` 24 |  |
-| `Render(const CGt2dObject::CGt2dObjectSpace&)` |  |  |  | `0x001400B0` 80 |  |
-| `SetColour(GtMathPs2::CGtV4d)` |  |  |  | `0x0019CC60` 68 |  |
-| `SetFrame(CGt2dFrame*)` |  |  |  | `0x001A3990` 52 |  |
-| `SetPos(const GtMathPs2::CGtV2d&)` |  |  |  | `0x00140450` 48 |  |
-| `SetSize(const GtMathPs2::CGtV2d&)` |  |  |  | `0x001A3750` 52 |  |
-| `Size()` |  |  |  | `0x001404F0` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetPos(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x0019BFD0` 108 | `0x001D0E50` 108 |  | `0x001DAD00` 96 | `0x001D5E00` proven |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,void (*)(const CGt2dObject::CGt2dObjec` | `0x0019C040` 48 |  |  |  | `0x001D5E70` proven |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,void (*)` |  | `0x001D0EC0` 252 | `0x001CA240` 252 | `0x001DAC40` 192 |  |  |
+| `CGt2dObject()` |  |  |  | `0x001403E0` 44 |  |  |
+| `Colour()` |  |  |  | `0x0016E9F0` 52 |  |  |
+| `DebugClearRenderFunction()` |  |  |  | `0x001DD710` 28 |  |  |
+| `GetBottomEdge()` |  |  |  | `0x0019D230` 80 |  |  |
+| `GetDataBlock()` |  |  |  | `0x0019D550` 28 |  |  |
+| `GetFrame()` |  |  |  | `0x001DD1A0` 28 |  |  |
+| `GetLeftEdge()` |  |  |  | `0x0019D300` 40 |  |  |
+| `GetRightEdge()` |  |  |  | `0x0019D280` 80 |  |  |
+| `GetTopEdge()` |  |  |  | `0x0019D2D0` 40 |  |  |
+| `ObjectSpace()` |  |  |  | `0x001402A0` 24 |  |  |
+| `Pos()` |  |  |  | `0x00140510` 24 |  |  |
+| `Render(const CGt2dObject::CGt2dObjectSpace&)` |  |  |  | `0x001400B0` 80 |  |  |
+| `SetColour(GtMathPs2::CGtV4d)` |  |  |  | `0x0019CC60` 68 |  |  |
+| `SetFrame(CGt2dFrame*)` |  |  |  | `0x001A3990` 52 |  |  |
+| `SetPos(const GtMathPs2::CGtV2d&)` |  |  |  | `0x00140450` 48 |  |  |
+| `SetSize(const GtMathPs2::CGtV2d&)` |  |  |  | `0x001A3750` 52 |  |  |
+| `Size()` |  |  |  | `0x001404F0` 28 |  |  |
 
 ## Static data (DNAT_200)
 

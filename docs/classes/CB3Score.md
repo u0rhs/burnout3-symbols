@@ -7,89 +7,90 @@
 - **Area:** [Crashes, takedowns and scoring](../systems/crash-scoring.md)
 - **Source file:** `B3Score.cpp`
 - **Methods per build:** DNAT_200 55, B3DEBUG 51, B3INTERN 55, B3O0PCH 70
+- **Retail (SLUS-21050):** 39 of its 55 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CScore`, size 0x674, declared in 87 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetLastContactCar(float)` | `0x00151490` 68 | `0x00164860` 184 | `0x0015F600` 184 | `0x0017AD00` 164 |  |
-| `OnTakeDown(CB3RaceCar*)` | `0x001514E0` 324 | `0x00164920` 372 | `0x0015F6C0` 372 | `0x0017AA70` 584 |  |
-| `OnSlam(CB3RaceCarPhysics*,CB3RaceCarPhysics*,float,bool)` | `0x00151630` 892 | `0x00164AA0` 892 | `0x0015F840` 892 | `0x0017A5C0` 1200 |  |
-| `OnTradePaint(CB3RaceCarPhysics*,CB3RaceCarPhysics*,float,bool)` | `0x001519B0` 300 | `0x00164E20` 300 | `0x0015FBC0` 300 | `0x0017A380` 460 |  |
-| `SetFinished(EB3ScoreFinishState)` | `0x00151AE0` 448 | `0x00164F50` 448 | `0x0015FCF0` 484 | `0x0017A0F0` 648 |  |
-| `WasResetWithinTime(float)` | `0x00151CA0` 60 | `0x00165110` 60 | `0x0015FEE0` 60 | `0x0017A070` 128 |  |
-| `WasTradingPaintWithinTime(float)` | `0x00151CE0` 60 | `0x00165150` 60 | `0x0015FF20` 60 | `0x00179FF0` 128 |  |
-| `SlammedSomeoneWithinTime(float)` | `0x00151D20` 60 | `0x00165190` 60 | `0x0015FF60` 60 | `0x00179F70` 128 |  |
-| `WasSlammedWithinTime(float)` | `0x00151D60` 60 | `0x001651D0` 60 | `0x0015FFA0` 60 | `0x00179EF0` 128 |  |
-| `SetNumLives(int)` | `0x00151DA0` 92 | `0x00165210` 92 | `0x0015FFE0` 92 | `0x00179DD0` 192 |  |
-| `DecrementHealth(float)` | `0x00151E00` 52 | `0x00165270` 124 | `0x00160040` 124 | `0x00179D40` 104 |  |
-| `AddScore(int,int)` | `0x00151E40` 140 | `0x001652F0` 140 | `0x001600C0` 140 | `0x00179CA0` 156 |  |
-| `CalculateSlamType(CB3RaceCarPhysics*,CB3RaceCarPhysics*,float)` | `0x00151ED0` 940 | `0x00165380` 1772 | `0x00160150` 1252 | `0x001799F0` 652 |  |
-| `GetCarAtRelativeRacePosition(int)` | `0x00152280` 88 | `0x00165A70` 184 | `0x00160640` 184 | `0x00179940` 168 |  |
-| `ConfirmGrinding(CB3RaceCar*,CB3RaceCar*)` | `0x001522E0` 440 | `0x00165B30` 900 | `0x00160700` 900 | `0x00179600` 436 |  |
-| `ConfirmTradePaint(CB3RaceCarPhysics*,CB3RaceCarPhysics*,float,bool)` | `0x001524A0` 756 | `0x00165EC0` 992 | `0x00160A90` 992 | `0x00179250` 560 |  |
-| `ConfirmSlam(CB3RaceCarPhysics*,CB3RaceCarPhysics*,float,bool)` | `0x001527A0` 564 | `0x001662A0` 1680 | `0x00160E70` 1680 | `0x00178C70` 1012 |  |
-| `HandleBoostStart()` | `0x001529E0` 168 | `0x00166930` 168 | `0x00161500` 168 | `0x00178B60` 88 |  |
-| `HandlePropHit()` | `0x00152A90` 248 | `0x001669E0` 248 | `0x001615B0` 248 | `0x00178A80` 212 |  |
-| `HandleNonFatalCollision(CB3RaceCar*)` | `0x00152B90` 84 | `0x00166AE0` 84 | `0x001616B0` 84 | `0x001789E0` 152 |  |
-| `HandleNonFatalCollision(CB3TrafficVehicle*)` | `0x00152BF0` 292 | `0x00166B40` 420 | `0x00161710` 420 | `0x00178850` 388 |  |
-| `HandleCrashReset()` | `0x00152D20` 192 | `0x00166CF0` 192 | `0x001618C0` 192 | `0x001786F0` 348 | `void CScore::HandleCrashReset()` |
-| `HandleCrashStart(CB3CrashStartInfo*)` | `0x00152DE0` 236 | `0x00166DB0` 236 | `0x00161980` 236 | `0x001785C0` 292 |  |
-| `RegisterNetworkGrinding(CB3RaceCar*)` | `0x00152ED0` 32 |  | `0x00161A70` 688 |  |  |
-| `RegisterNetworkTradingPaint(CB3RaceCar*,float,bool)` | `0x00152EF0` 64 |  | `0x00161D20` 1128 |  |  |
-| `RegisterNetworkSlam(CB3RaceCar*,float,bool)` | `0x00152F30` 64 |  | `0x00162190` 1128 |  |  |
-| `RegisterNetworkTakedown(CB3RaceCar*)` | `0x00152F70` 8 |  | `0x00162600` 688 |  |  |
-| `UpdateTakeDownStats(CB3CrashStartInfo*)` | `0x00152F80` 708 | `0x00166EA0` 920 | `0x001628B0` 920 | `0x00178270` 732 |  |
-| `CalculateScoreForTakedowns()` | `0x00153250` 520 | `0x00167240` 980 | `0x00162C50` 980 | `0x00177BE0` 860 |  |
-| `CalculateScoreForDrift(float)` | `0x00153460` 648 | `0x00167620` 700 | `0x00163030` 700 | `0x001779B0` 548 |  |
-| `CalculateScoreForOncoming(float)` | `0x001536F0` 648 | `0x001678E0` 700 | `0x001632F0` 700 | `0x00177780` 548 |  |
-| `CalculateScoreForAir(float)` | `0x00153980` 696 | `0x00167BA0` 748 | `0x001635B0` 748 | `0x001774F0` 644 |  |
-| `DetectCrashNearMiss(const GtMathPs2::CGtMatrix3x4*,const CGtAxisAlignedBox*,int)` | `0x00153C40` 1112 | `0x00167E90` 1580 | `0x001638A0` 1380 | `0x00176DE0` 1800 |  |
-| `DetectNormalNearMiss(CB3TrafficVehicle*)` | `0x001540A0` 2024 | `0x001684C0` 2244 | `0x00163E10` 2244 | `0x00175C60` 3556 |  |
-| `DetectAndScoreTailgating()` | `0x00154890` 1408 | `0x00168D90` 2420 | `0x001646E0` 2104 | `0x001757B0` 1036 |  |
-| `DetectAndScoreCrashEscape()` | `0x00154E10` 1332 | `0x00169710` 1584 | `0x00164F20` 1584 | `0x00175030` 1912 |  |
-| `DetectAndScoreNearMiss()` | `0x00155350` 1172 | `0x00169D40` 1228 | `0x00165550` 1228 | `0x00174AE0` 1356 |  |
-| `DetectNonSlamTakedowns()` | `0x001557F0` 1108 | `0x0016A210` 1880 | `0x00165A20` 1880 | `0x00174700` 992 |  |
-| `IncrementLapCount()` | `0x00155C50` 928 | `0x0016A970` 968 | `0x00166180` 968 | `0x00174290` 1136 |  |
-| `GetRaceCheckpointTime(int)` | `0x00155FF0` 120 | `0x0016AD40` 216 | `0x00166550` 216 | `0x00173F50` 208 |  |
-| `GetRaceCheckpoint(int,int)` | `0x00156070` 20 | `0x0016AE20` 120 | `0x00166630` 120 | `0x00173EF0` 96 |  |
-| `GetTotalRaceAmount()` | `0x00156090` 280 | `0x0016AEA0` 280 | `0x001666B0` 280 | `0x00173E70` 128 |  |
-| `GetTotalRaceLength()` | `0x001561B0` 44 | `0x0016AFC0` 44 | `0x001667D0` 44 | `0x00173E10` 92 |  |
-| `GetTotalRaceDistFromStartPos()` | `0x001561E0` 184 | `0x0016AFF0` 184 | `0x00166800` 184 | `0x00173DB0` 96 |  |
-| `GetTotalRaceDistFromAILaneStart()` | `0x001562A0` 136 | `0x0016B0B0` 136 | `0x001668C0` 136 | `0x00173C90` 288 |  |
-| `IsAheadOfIgnoringLaps(CB3Score*)` | `0x00156330` 204 | `0x0016B140` 204 | `0x00166950` 204 | `0x00173B10` 372 |  |
-| `IsAheadOfRoadRage(CB3Score*)` | `0x00156400` 140 | `0x0016B210` 212 | `0x00166A20` 212 | `0x00173930` 376 |  |
-| `IsAheadOf(CB3Score*)` | `0x00156490` 320 | `0x0016B2F0` 392 | `0x00166B00` 392 | `0x001736B0` 636 |  |
-| `CheckIfNeedRevenge(const CB3Score*) const` | `0x001565D0` 56 |  |  |  |  |
-| `Release()` | `0x00156610` 72 | `0x0016B4C0` 72 | `0x00166CD0` 72 | `0x001735B0` 108 |  |
-| `Update()` | `0x00156660` 3508 | `0x0016B510` 3992 | `0x00166D20` 3992 | `0x00172BC0` 2500 | `void CScore::Update()` |
-| `Prepare(int)` | `0x00157420` 1368 | `0x0016C4B0` 1440 | `0x00167CC0` 1468 | `0x00172360` 2088 |  |
-| `Construct()` | `0x00157A40` 72 | `0x0016CB10` 72 | `0x00168340` 72 | `0x00172140` 108 |  |
-| `UnregisterStaticVariables()` | `0x00157A90` 1416 | `0x0016CC20` 1416 | `0x00168450` 1416 | `0x00171770` 1748 |  |
-| `RegisterStaticVariables()` | `0x00158020` 4756 | `0x0016D1B0` 6816 | `0x001689E0` 6816 | `0x0016F9F0` 7548 |  |
-| `CheckIfNeedRevenge(const CB3Score*)` |  | `0x0016B480` 56 | `0x00166C90` 56 | `0x00173620` 140 |  |
-| `CB3Score()` |  |  |  | `0x00190E90` 64 |  |
-| `CalculateScoreForGrinding()` |  |  |  | `0x00178190` 220 |  |
-| `CalculateScoreForRacePosition()` |  |  |  | `0x001780C0` 196 |  |
-| `DetectAndScoreDenied()` |  |  |  | `0x00175BC0` 152 |  |
-| `GetHealth()` |  |  |  | `0x00142040` 28 |  |
-| `GetNextMedal(EB3ScoreMedalType)` |  |  |  | `0x0019B5D0` 84 |  |
-| `GetScoreScale()` |  |  |  | `0x00179C80` 24 |  |
-| `HandleTakedown(CB3RaceCar*,bool,bool)` |  |  |  | `0x00178BC0` 172 |  |
-| `IsDead()` |  |  |  | `0x00151360` 36 |  |
-| `IsHealthEmpty()` |  |  |  | `0x0024EEE0` 56 |  |
-| `OnGrinding(CB3RaceCar*,CB3RaceCar*)` |  |  |  | `0x0017A550` 100 |  |
-| `RemoveLife()` |  |  |  | `0x003E3900` 88 |  |
-| `SetFullHealth()` |  |  |  | `0x00172B90` 36 |  |
-| `SetHealth(float)` |  |  |  | `0x0024EF20` 36 |  |
-| `SetLastContactCar(CB3RaceCar*)` |  |  |  | `0x0017ACC0` 52 |  |
-| `UpdateCheckpointTimes()` |  |  |  | `0x001740F0` 144 |  |
-| `UpdateFinishLine()` |  |  |  | `0x00174180` 116 |  |
-| `UpdateSplitTimeCheckpoints()` |  |  |  | `0x00174200` 136 |  |
-| `UpdateStartLine()` |  |  |  | `0x00174020` 196 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetLastContactCar(float)` | `0x00151490` 68 | `0x00164860` 184 | `0x0015F600` 184 | `0x0017AD00` 164 | `0x001553A0` likely |  |
+| `OnTakeDown(CB3RaceCar*)` | `0x001514E0` 324 | `0x00164920` 372 | `0x0015F6C0` 372 | `0x0017AA70` 584 | `0x001553F0` unverified |  |
+| `OnSlam(CB3RaceCarPhysics*,CB3RaceCarPhysics*,float,bool)` | `0x00151630` 892 | `0x00164AA0` 892 | `0x0015F840` 892 | `0x0017A5C0` 1200 | `0x00155580` strong |  |
+| `OnTradePaint(CB3RaceCarPhysics*,CB3RaceCarPhysics*,float,bool)` | `0x001519B0` 300 | `0x00164E20` 300 | `0x0015FBC0` 300 | `0x0017A380` 460 | `0x00155910` strong |  |
+| `SetFinished(EB3ScoreFinishState)` | `0x00151AE0` 448 | `0x00164F50` 448 | `0x0015FCF0` 484 | `0x0017A0F0` 648 |  |  |
+| `WasResetWithinTime(float)` | `0x00151CA0` 60 | `0x00165110` 60 | `0x0015FEE0` 60 | `0x0017A070` 128 | `0x00156080` likely |  |
+| `WasTradingPaintWithinTime(float)` | `0x00151CE0` 60 | `0x00165150` 60 | `0x0015FF20` 60 | `0x00179FF0` 128 | `0x001560D0` likely |  |
+| `SlammedSomeoneWithinTime(float)` | `0x00151D20` 60 | `0x00165190` 60 | `0x0015FF60` 60 | `0x00179F70` 128 | `0x00156120` likely |  |
+| `WasSlammedWithinTime(float)` | `0x00151D60` 60 | `0x001651D0` 60 | `0x0015FFA0` 60 | `0x00179EF0` 128 | `0x00156170` likely |  |
+| `SetNumLives(int)` | `0x00151DA0` 92 | `0x00165210` 92 | `0x0015FFE0` 92 | `0x00179DD0` 192 | `0x001561C0` strong |  |
+| `DecrementHealth(float)` | `0x00151E00` 52 | `0x00165270` 124 | `0x00160040` 124 | `0x00179D40` 104 | `0x00156220` strong |  |
+| `AddScore(int,int)` | `0x00151E40` 140 | `0x001652F0` 140 | `0x001600C0` 140 | `0x00179CA0` 156 | `0x00156260` likely |  |
+| `CalculateSlamType(CB3RaceCarPhysics*,CB3RaceCarPhysics*,float)` | `0x00151ED0` 940 | `0x00165380` 1772 | `0x00160150` 1252 | `0x001799F0` 652 | `0x00156320` strong |  |
+| `GetCarAtRelativeRacePosition(int)` | `0x00152280` 88 | `0x00165A70` 184 | `0x00160640` 184 | `0x00179940` 168 |  |  |
+| `ConfirmGrinding(CB3RaceCar*,CB3RaceCar*)` | `0x001522E0` 440 | `0x00165B30` 900 | `0x00160700` 900 | `0x00179600` 436 | `0x001566F0` likely |  |
+| `ConfirmTradePaint(CB3RaceCarPhysics*,CB3RaceCarPhysics*,float,bool)` | `0x001524A0` 756 | `0x00165EC0` 992 | `0x00160A90` 992 | `0x00179250` 560 | `0x001568C0` strong |  |
+| `ConfirmSlam(CB3RaceCarPhysics*,CB3RaceCarPhysics*,float,bool)` | `0x001527A0` 564 | `0x001662A0` 1680 | `0x00160E70` 1680 | `0x00178C70` 1012 | `0x00156BD0` likely |  |
+| `HandleBoostStart()` | `0x001529E0` 168 | `0x00166930` 168 | `0x00161500` 168 | `0x00178B60` 88 |  |  |
+| `HandlePropHit()` | `0x00152A90` 248 | `0x001669E0` 248 | `0x001615B0` 248 | `0x00178A80` 212 |  |  |
+| `HandleNonFatalCollision(CB3RaceCar*)` | `0x00152B90` 84 | `0x00166AE0` 84 | `0x001616B0` 84 | `0x001789E0` 152 |  |  |
+| `HandleNonFatalCollision(CB3TrafficVehicle*)` | `0x00152BF0` 292 | `0x00166B40` 420 | `0x00161710` 420 | `0x00178850` 388 |  |  |
+| `HandleCrashReset()` | `0x00152D20` 192 | `0x00166CF0` 192 | `0x001618C0` 192 | `0x001786F0` 348 |  | `void CScore::HandleCrashReset()` |
+| `HandleCrashStart(CB3CrashStartInfo*)` | `0x00152DE0` 236 | `0x00166DB0` 236 | `0x00161980` 236 | `0x001785C0` 292 |  |  |
+| `RegisterNetworkGrinding(CB3RaceCar*)` | `0x00152ED0` 32 |  | `0x00161A70` 688 |  |  |  |
+| `RegisterNetworkTradingPaint(CB3RaceCar*,float,bool)` | `0x00152EF0` 64 |  | `0x00161D20` 1128 |  |  |  |
+| `RegisterNetworkSlam(CB3RaceCar*,float,bool)` | `0x00152F30` 64 |  | `0x00162190` 1128 |  |  |  |
+| `RegisterNetworkTakedown(CB3RaceCar*)` | `0x00152F70` 8 |  | `0x00162600` 688 |  |  |  |
+| `UpdateTakeDownStats(CB3CrashStartInfo*)` | `0x00152F80` 708 | `0x00166EA0` 920 | `0x001628B0` 920 | `0x00178270` 732 |  |  |
+| `CalculateScoreForTakedowns()` | `0x00153250` 520 | `0x00167240` 980 | `0x00162C50` 980 | `0x00177BE0` 860 |  |  |
+| `CalculateScoreForDrift(float)` | `0x00153460` 648 | `0x00167620` 700 | `0x00163030` 700 | `0x001779B0` 548 | `0x00157B00` strong |  |
+| `CalculateScoreForOncoming(float)` | `0x001536F0` 648 | `0x001678E0` 700 | `0x001632F0` 700 | `0x00177780` 548 | `0x00157D50` strong |  |
+| `CalculateScoreForAir(float)` | `0x00153980` 696 | `0x00167BA0` 748 | `0x001635B0` 748 | `0x001774F0` 644 | `0x00157FA0` likely |  |
+| `DetectCrashNearMiss(const GtMathPs2::CGtMatrix3x4*,const CGtAxisAlignedBox*,int)` | `0x00153C40` 1112 | `0x00167E90` 1580 | `0x001638A0` 1380 | `0x00176DE0` 1800 | `0x00158260` strong |  |
+| `DetectNormalNearMiss(CB3TrafficVehicle*)` | `0x001540A0` 2024 | `0x001684C0` 2244 | `0x00163E10` 2244 | `0x00175C60` 3556 | `0x001586D0` strong |  |
+| `DetectAndScoreTailgating()` | `0x00154890` 1408 | `0x00168D90` 2420 | `0x001646E0` 2104 | `0x001757B0` 1036 | `0x00158EB0` strong |  |
+| `DetectAndScoreCrashEscape()` | `0x00154E10` 1332 | `0x00169710` 1584 | `0x00164F20` 1584 | `0x00175030` 1912 | `0x00159390` strong |  |
+| `DetectAndScoreNearMiss()` | `0x00155350` 1172 | `0x00169D40` 1228 | `0x00165550` 1228 | `0x00174AE0` 1356 | `0x001598F0` likely |  |
+| `DetectNonSlamTakedowns()` | `0x001557F0` 1108 | `0x0016A210` 1880 | `0x00165A20` 1880 | `0x00174700` 992 | `0x00159DF0` likely |  |
+| `IncrementLapCount()` | `0x00155C50` 928 | `0x0016A970` 968 | `0x00166180` 968 | `0x00174290` 1136 |  |  |
+| `GetRaceCheckpointTime(int)` | `0x00155FF0` 120 | `0x0016AD40` 216 | `0x00166550` 216 | `0x00173F50` 208 | `0x0015A750` likely |  |
+| `GetRaceCheckpoint(int,int)` | `0x00156070` 20 | `0x0016AE20` 120 | `0x00166630` 120 | `0x00173EF0` 96 | `0x0015A7D0` strong |  |
+| `GetTotalRaceAmount()` | `0x00156090` 280 | `0x0016AEA0` 280 | `0x001666B0` 280 | `0x00173E70` 128 | `0x0015A9C0` unverified |  |
+| `GetTotalRaceLength()` | `0x001561B0` 44 | `0x0016AFC0` 44 | `0x001667D0` 44 | `0x00173E10` 92 |  |  |
+| `GetTotalRaceDistFromStartPos()` | `0x001561E0` 184 | `0x0016AFF0` 184 | `0x00166800` 184 | `0x00173DB0` 96 | `0x0015AB10` unverified |  |
+| `GetTotalRaceDistFromAILaneStart()` | `0x001562A0` 136 | `0x0016B0B0` 136 | `0x001668C0` 136 | `0x00173C90` 288 | `0x0015AC00` unverified |  |
+| `IsAheadOfIgnoringLaps(CB3Score*)` | `0x00156330` 204 | `0x0016B140` 204 | `0x00166950` 204 | `0x00173B10` 372 | `0x0015ACC0` likely |  |
+| `IsAheadOfRoadRage(CB3Score*)` | `0x00156400` 140 | `0x0016B210` 212 | `0x00166A20` 212 | `0x00173930` 376 | `0x0015ADB0` strong |  |
+| `IsAheadOf(CB3Score*)` | `0x00156490` 320 | `0x0016B2F0` 392 | `0x00166B00` 392 | `0x001736B0` 636 | `0x0015AE40` strong |  |
+| `CheckIfNeedRevenge(const CB3Score*) const` | `0x001565D0` 56 |  |  |  | `0x0015AF80` likely |  |
+| `Release()` | `0x00156610` 72 | `0x0016B4C0` 72 | `0x00166CD0` 72 | `0x001735B0` 108 | `0x0015AFC0` strong |  |
+| `Update()` | `0x00156660` 3508 | `0x0016B510` 3992 | `0x00166D20` 3992 | `0x00172BC0` 2500 | `0x0015B000` unverified | `void CScore::Update()` |
+| `Prepare(int)` | `0x00157420` 1368 | `0x0016C4B0` 1440 | `0x00167CC0` 1468 | `0x00172360` 2088 | `0x0015C340` unverified |  |
+| `Construct()` | `0x00157A40` 72 | `0x0016CB10` 72 | `0x00168340` 72 | `0x00172140` 108 | `0x0015CAC0` strong |  |
+| `UnregisterStaticVariables()` | `0x00157A90` 1416 | `0x0016CC20` 1416 | `0x00168450` 1416 | `0x00171770` 1748 | `0x0015CB10` proven |  |
+| `RegisterStaticVariables()` | `0x00158020` 4756 | `0x0016D1B0` 6816 | `0x001689E0` 6816 | `0x0016F9F0` 7548 | `0x0015D0A0` proven |  |
+| `CheckIfNeedRevenge(const CB3Score*)` |  | `0x0016B480` 56 | `0x00166C90` 56 | `0x00173620` 140 |  |  |
+| `CB3Score()` |  |  |  | `0x00190E90` 64 |  |  |
+| `CalculateScoreForGrinding()` |  |  |  | `0x00178190` 220 |  |  |
+| `CalculateScoreForRacePosition()` |  |  |  | `0x001780C0` 196 |  |  |
+| `DetectAndScoreDenied()` |  |  |  | `0x00175BC0` 152 |  |  |
+| `GetHealth()` |  |  |  | `0x00142040` 28 |  |  |
+| `GetNextMedal(EB3ScoreMedalType)` |  |  |  | `0x0019B5D0` 84 |  |  |
+| `GetScoreScale()` |  |  |  | `0x00179C80` 24 |  |  |
+| `HandleTakedown(CB3RaceCar*,bool,bool)` |  |  |  | `0x00178BC0` 172 |  |  |
+| `IsDead()` |  |  |  | `0x00151360` 36 |  |  |
+| `IsHealthEmpty()` |  |  |  | `0x0024EEE0` 56 |  |  |
+| `OnGrinding(CB3RaceCar*,CB3RaceCar*)` |  |  |  | `0x0017A550` 100 |  |  |
+| `RemoveLife()` |  |  |  | `0x003E3900` 88 |  |  |
+| `SetFullHealth()` |  |  |  | `0x00172B90` 36 |  |  |
+| `SetHealth(float)` |  |  |  | `0x0024EF20` 36 |  |  |
+| `SetLastContactCar(CB3RaceCar*)` |  |  |  | `0x0017ACC0` 52 |  |  |
+| `UpdateCheckpointTimes()` |  |  |  | `0x001740F0` 144 |  |  |
+| `UpdateFinishLine()` |  |  |  | `0x00174180` 116 |  |  |
+| `UpdateSplitTimeCheckpoints()` |  |  |  | `0x00174200` 136 |  |  |
+| `UpdateStartLine()` |  |  |  | `0x00174020` 196 |  |  |
 
 ## Static data (DNAT_200)
 

@@ -7,24 +7,25 @@
 - **Area:** [Traffic](../systems/traffic.md)
 - **Source file:** `B3TrafficAxle.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 10
+- **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CTrafficAxle`, size 0x028, declared in 88 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `MoveToSegmentCentre(GtMathPs2::CGtV3d)` | `0x0015A270` 400 | `0x0016FDD0` 676 | `0x0016B570` 420 | `0x0017CF90` 920 |  |
-| `IntersectLineSegment()` | `0x0015A400` 572 | `0x00170080` 880 | `0x0016B720` 768 | `0x0017CA50` 1180 |  |
-| `AdjustAxleHeight(CB3TrafficLane*,int)` | `0x0015A640` 728 | `0x001703F0` 728 | `0x0016BA20` 728 | `0x0017C5D0` 1140 | `int CTrafficAxle::AdjustAxleHeight(CLane *lpMergeLane, int lnMergeSegment)` (same name, different parameters) |
-| `InitalisePosition(CB3TrafficVehicle*)` | `0x0015A920` 180 | `0x001706D0` 244 | `0x0016BD00` 244 | `0x0017C4A0` 304 |  |
-| `Release()` | `0x0015A9E0` 92 | `0x001707D0` 92 | `0x0016BE00` 92 | `0x0017C380` 40 |  |
-| `Prepare()` | `0x0015AA40` 96 | `0x00170830` 96 | `0x0016BE60` 96 | `0x0017C350` 44 |  |
-| `Construct()` | `0x0015AAA0` 8 | `0x00170890` 8 | `0x0016BEC0` 8 | `0x0017C340` 16 |  |
-| `CB3TrafficAxle()` |  |  |  | `0x00192370` 48 |  |
-| `ResetMemberVariables()` |  |  |  | `0x0017C3B0` 200 |  |
-| `operator =(const CB3TrafficAxle&)` |  |  |  | `0x0018C460` 180 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `MoveToSegmentCentre(GtMathPs2::CGtV3d)` | `0x0015A270` 400 | `0x0016FDD0` 676 | `0x0016B570` 420 | `0x0017CF90` 920 | `0x0015F270` proven |  |
+| `IntersectLineSegment()` | `0x0015A400` 572 | `0x00170080` 880 | `0x0016B720` 768 | `0x0017CA50` 1180 | `0x0015F410` proven |  |
+| `AdjustAxleHeight(CB3TrafficLane*,int)` | `0x0015A640` 728 | `0x001703F0` 728 | `0x0016BA20` 728 | `0x0017C5D0` 1140 | `0x0015F650` proven | `int CTrafficAxle::AdjustAxleHeight(CLane *lpMergeLane, int lnMergeSegment)` (same name, different parameters) |
+| `InitalisePosition(CB3TrafficVehicle*)` | `0x0015A920` 180 | `0x001706D0` 244 | `0x0016BD00` 244 | `0x0017C4A0` 304 | `0x0015F940` proven |  |
+| `Release()` | `0x0015A9E0` 92 | `0x001707D0` 92 | `0x0016BE00` 92 | `0x0017C380` 40 | `0x0015FA00` proven |  |
+| `Prepare()` | `0x0015AA40` 96 | `0x00170830` 96 | `0x0016BE60` 96 | `0x0017C350` 44 | `0x0015FA60` proven |  |
+| `Construct()` | `0x0015AAA0` 8 | `0x00170890` 8 | `0x0016BEC0` 8 | `0x0017C340` 16 | `0x0015FAC0` strong |  |
+| `CB3TrafficAxle()` |  |  |  | `0x00192370` 48 |  |  |
+| `ResetMemberVariables()` |  |  |  | `0x0017C3B0` 200 |  |  |
+| `operator =(const CB3TrafficAxle&)` |  |  |  | `0x0018C460` 180 |  |  |
 
 ## Burnout 2 layout of `CTrafficAxle`
 

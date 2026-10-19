@@ -7,22 +7,23 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3WrongWayWall.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
+- **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CWrongWayWall`, size 0x038, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Render()` | `0x00169290` 112 | `0x00182530` 112 | `0x0017D210` 112 | `0x00193BA0` 148 |  |
-| `Destruct()` | `0x00169300` 8 | `0x001825A0` 8 | `0x0017D280` 8 | `0x00193B90` 16 |  |
-| `Release()` | `0x00169310` 8 | `0x001825B0` 8 | `0x0017D290` 8 | `0x00193B80` 16 |  |
-| `Update(CB3RaceCar*)` | `0x00169320` 3648 | `0x001825C0` 3328 | `0x0017D2A0` 3708 | `0x00192730` 5188 |  |
-| `AddTristrip(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV4d,GtMathPs` | `0x0016A160` 592 | `0x001832C0` 1176 | `0x0017E120` 1176 | `0x00192440` 692 |  |
-| `Prepare()` | `0x0016A3B0` 76 | `0x00183760` 76 | `0x0017E5C0` 76 | `0x001923D0` 104 |  |
-| `Construct()` | `0x0016A400` 12 | `0x001837B0` 12 | `0x0017E610` 12 | `0x001923A0` 36 |  |
-| `CB3WrongWayWall()` |  |  |  | `0x00192150` 124 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Render()` | `0x00169290` 112 | `0x00182530` 112 | `0x0017D210` 112 | `0x00193BA0` 148 | `0x0019B6E0` strong |  |
+| `Destruct()` | `0x00169300` 8 | `0x001825A0` 8 | `0x0017D280` 8 | `0x00193B90` 16 | `0x0019B750` strong |  |
+| `Release()` | `0x00169310` 8 | `0x001825B0` 8 | `0x0017D290` 8 | `0x00193B80` 16 | `0x0019B760` strong |  |
+| `Update(CB3RaceCar*)` | `0x00169320` 3648 | `0x001825C0` 3328 | `0x0017D2A0` 3708 | `0x00192730` 5188 | `0x0019C120` unverified |  |
+| `AddTristrip(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV4d,GtMathPs` | `0x0016A160` 592 | `0x001832C0` 1176 | `0x0017E120` 1176 | `0x00192440` 692 | `0x0019D1C0` unverified |  |
+| `Prepare()` | `0x0016A3B0` 76 | `0x00183760` 76 | `0x0017E5C0` 76 | `0x001923D0` 104 | `0x0019D440` unverified |  |
+| `Construct()` | `0x0016A400` 12 | `0x001837B0` 12 | `0x0017E610` 12 | `0x001923A0` 36 | `0x0019D4B0` unverified |  |
+| `CB3WrongWayWall()` |  |  |  | `0x00192150` 124 |  |  |
 
 ## Burnout 2 layout of `CWrongWayWall`
 

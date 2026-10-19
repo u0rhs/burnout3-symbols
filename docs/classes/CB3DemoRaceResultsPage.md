@@ -11,23 +11,23 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PrepareTable()` | `0x002EEFE0` 1012 | `0x0033E0E0` 1012 | `0x0036F780` 1012 | `0x0036FFD0` 1400 |  |
-| `_QSortCallback(const void*,const void*)` | `0x002EF3E0` 84 | `0x0033E4E0` 84 | `0x0036FB80` 84 | `0x0036FF20` 164 |  |
-| `AddRaceTime(const CB3ResultsData*)` | `0x002EF440` 1972 | `0x0033E540` 2132 | `0x0036FBE0` 2132 | `0x0036F1F0` 3176 |  |
-| `Release()` | `0x002EFC00` 8 | `0x0033EDA0` 8 | `0x00370440` 8 | `0x0036F1E0` 16 |  |
-| `Update()` | `0x002EFC10` 376 | `0x0033EDB0` 476 | `0x00370450` 476 | `0x0036F0F0` 232 |  |
-| `UpdateLeaveCountdown(CB3ControllerMapping*)` | `0x002EFD90` 532 | `0x0033EF90` 532 | `0x00370630` 532 | `0x0036EEA0` 592 |  |
-| `UpdateConfirmLeave(CB3ControllerMapping*)` | `0x002EFFB0` 568 | `0x0033F1B0` 568 | `0x00370850` 568 | `0x0036EB90` 588 |  |
-| `UpdateDisplayResults(CB3ControllerMapping*)` | `0x002F01F0` 712 | `0x0033F3F0` 712 | `0x00370A90` 712 | `0x0036E700` 844 |  |
-| `Prepare(CB3DemoRaceResultsPage::ERaceResultsPageType)` | `0x002F04C0` 316 | `0x0033F6C0` 316 | `0x00370D60` 316 | `0x0036E4F0` 328 |  |
-| `AreAllCarsFinished()` |  |  |  | `0x0036E640` 180 |  |
-| `BuildCountdownString(unsigned short*,EGlobalStrings,float)` |  |  |  | `0x0036EDE0` 180 |  |
-| `CB3DemoRaceResultsPage()` |  |  |  | `0x00342120` 60 |  |
-| `UpdateConfirmQuit(CB3ControllerMapping*)` |  |  |  | `0x0036EA50` 312 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PrepareTable()` | `0x002EEFE0` 1012 | `0x0033E0E0` 1012 | `0x0036F780` 1012 | `0x0036FFD0` 1400 |  |  |
+| `_QSortCallback(const void*,const void*)` | `0x002EF3E0` 84 | `0x0033E4E0` 84 | `0x0036FB80` 84 | `0x0036FF20` 164 |  |  |
+| `AddRaceTime(const CB3ResultsData*)` | `0x002EF440` 1972 | `0x0033E540` 2132 | `0x0036FBE0` 2132 | `0x0036F1F0` 3176 |  |  |
+| `Release()` | `0x002EFC00` 8 | `0x0033EDA0` 8 | `0x00370440` 8 | `0x0036F1E0` 16 |  |  |
+| `Update()` | `0x002EFC10` 376 | `0x0033EDB0` 476 | `0x00370450` 476 | `0x0036F0F0` 232 |  |  |
+| `UpdateLeaveCountdown(CB3ControllerMapping*)` | `0x002EFD90` 532 | `0x0033EF90` 532 | `0x00370630` 532 | `0x0036EEA0` 592 |  |  |
+| `UpdateConfirmLeave(CB3ControllerMapping*)` | `0x002EFFB0` 568 | `0x0033F1B0` 568 | `0x00370850` 568 | `0x0036EB90` 588 |  |  |
+| `UpdateDisplayResults(CB3ControllerMapping*)` | `0x002F01F0` 712 | `0x0033F3F0` 712 | `0x00370A90` 712 | `0x0036E700` 844 |  |  |
+| `Prepare(CB3DemoRaceResultsPage::ERaceResultsPageType)` | `0x002F04C0` 316 | `0x0033F6C0` 316 | `0x00370D60` 316 | `0x0036E4F0` 328 |  |  |
+| `AreAllCarsFinished()` |  |  |  | `0x0036E640` 180 |  |  |
+| `BuildCountdownString(unsigned short*,EGlobalStrings,float)` |  |  |  | `0x0036EDE0` 180 |  |  |
+| `CB3DemoRaceResultsPage()` |  |  |  | `0x00342120` 60 |  |  |
+| `UpdateConfirmQuit(CB3ControllerMapping*)` |  |  |  | `0x0036EA50` 312 |  |  |
 
 ## Static data (DNAT_200)
 

@@ -7,33 +7,34 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3GraphicsManager.cpp`
 - **Methods per build:** DNAT_200 11, B3DEBUG 13, B3INTERN 12, B3O0PCH 18
+- **Retail (SLUS-21050):** 10 of its 11 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `DrawBootLoadingScreen(float)` | `0x0016ABB0` 864 | `0x00184900` 1080 | `0x0017F590` 1080 | `0x001959C0` 980 |  |
-| `SetViewportsSplitScreen()` | `0x0016AF10` 340 | `0x00184E40` 340 | `0x0017F9D0` 340 | `0x001957C0` 504 |  |
-| `SetViewportsSinglePlayer()` | `0x0016B070` 136 | `0x00184FA0` 136 | `0x0017FB30` 136 | `0x001956D0` 188 |  |
-| `SetDefaultLODSwitchDistances()` | `0x0016B100` 52 | `0x00185030` 52 | `0x0017FBC0` 52 | `0x00195670` 92 |  |
-| `CloseViewport()` | `0x0016B140` 52 | `0x001850E0` 144 | `0x0017FC70` 144 | `0x00195590` 80 |  |
-| `AttachCameraToViewport(EB3ViewportSelection,CGtCamera*)` | `0x0016B180` 68 | `0x00185170` 132 | `0x0017FD00` 132 | `0x001954B0` 156 |  |
-| `UpdateViewport(EB3ViewportSelection)` | `0x0016B1D0` 64 | `0x00185200` 116 | `0x0017FD90` 116 | `0x00195410` 148 |  |
-| `Destruct()` | `0x0016B210` 80 | `0x00185280` 80 | `0x0017FE10` 80 | `0x001953A0` 108 |  |
-| `Update()` | `0x0016B260` 140 | `0x001852D0` 192 | `0x0017FE60` 192 | `0x00195290` 260 |  |
-| `Prepare()` | `0x0016B2F0` 592 | `0x00185390` 1684 | `0x0017FF20` 1520 | `0x00194DF0` 1184 |  |
-| `Construct()` | `0x0016B540` 908 | `0x00185A30` 1372 | `0x00180510` 1180 | `0x00194960` 1004 |  |
-| `TakeScreenGrab()` |  | `0x00184D40` 248 |  |  |  |
-| `GetViewport(EB3ViewportSelection)` |  | `0x00185070` 104 | `0x0017FC00` 104 |  |  |
-| `CB3GraphicsManagerBase()` |  |  |  | `0x00195FD0` 176 |  |
-| `GetB3LogoTexDic()` |  |  |  | `0x00195DA0` 20 |  |
-| `GetCurrentViewport()` |  |  |  | `0x00169890` 28 |  |
-| `GetCurrentViewportParams()` |  |  |  | `0x0029BCE0` 28 |  |
-| `GetPlayerViewportParams(int)` |  |  |  | `0x001414A0` 84 |  |
-| `GetScaledLODDistanceSquared(EB3LodSwitchDistances)` |  |  |  | `0x00169820` 76 |  |
-| `SetupPlayerViewportFog(int,float)` |  |  |  | `0x002E7270` 92 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `DrawBootLoadingScreen(float)` | `0x0016ABB0` 864 | `0x00184900` 1080 | `0x0017F590` 1080 | `0x001959C0` 980 |  |  |
+| `SetViewportsSplitScreen()` | `0x0016AF10` 340 | `0x00184E40` 340 | `0x0017F9D0` 340 | `0x001957C0` 504 | `0x0019E760` likely |  |
+| `SetViewportsSinglePlayer()` | `0x0016B070` 136 | `0x00184FA0` 136 | `0x0017FB30` 136 | `0x001956D0` 188 | `0x0019E8C0` unverified |  |
+| `SetDefaultLODSwitchDistances()` | `0x0016B100` 52 | `0x00185030` 52 | `0x0017FBC0` 52 | `0x00195670` 92 | `0x0019E9A0` strong |  |
+| `CloseViewport()` | `0x0016B140` 52 | `0x001850E0` 144 | `0x0017FC70` 144 | `0x00195590` 80 | `0x0019EA30` strong |  |
+| `AttachCameraToViewport(EB3ViewportSelection,CGtCamera*)` | `0x0016B180` 68 | `0x00185170` 132 | `0x0017FD00` 132 | `0x001954B0` 156 | `0x0019EA70` strong |  |
+| `UpdateViewport(EB3ViewportSelection)` | `0x0016B1D0` 64 | `0x00185200` 116 | `0x0017FD90` 116 | `0x00195410` 148 | `0x0019EAC0` strong |  |
+| `Destruct()` | `0x0016B210` 80 | `0x00185280` 80 | `0x0017FE10` 80 | `0x001953A0` 108 | `0x0019EB10` strong |  |
+| `Update()` | `0x0016B260` 140 | `0x001852D0` 192 | `0x0017FE60` 192 | `0x00195290` 260 | `0x0019EB60` strong |  |
+| `Prepare()` | `0x0016B2F0` 592 | `0x00185390` 1684 | `0x0017FF20` 1520 | `0x00194DF0` 1184 | `0x0019EBF0` strong |  |
+| `Construct()` | `0x0016B540` 908 | `0x00185A30` 1372 | `0x00180510` 1180 | `0x00194960` 1004 | `0x0019EE40` unverified |  |
+| `TakeScreenGrab()` |  | `0x00184D40` 248 |  |  |  |  |
+| `GetViewport(EB3ViewportSelection)` |  | `0x00185070` 104 | `0x0017FC00` 104 |  |  |  |
+| `CB3GraphicsManagerBase()` |  |  |  | `0x00195FD0` 176 |  |  |
+| `GetB3LogoTexDic()` |  |  |  | `0x00195DA0` 20 |  |  |
+| `GetCurrentViewport()` |  |  |  | `0x00169890` 28 |  |  |
+| `GetCurrentViewportParams()` |  |  |  | `0x0029BCE0` 28 |  |  |
+| `GetPlayerViewportParams(int)` |  |  |  | `0x001414A0` 84 |  |  |
+| `GetScaledLODDistanceSquared(EB3LodSwitchDistances)` |  |  |  | `0x00169820` 76 |  |  |
+| `SetupPlayerViewportFog(int,float)` |  |  |  | `0x002E7270` 92 |  |  |
 
 ## Static data (DNAT_200)
 

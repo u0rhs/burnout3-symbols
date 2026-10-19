@@ -10,44 +10,44 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetEncryptMessageContentsFunction(bool (*)(int))` | `0x001EE870` 8 |  |  |  |  |
-| `EncryptionKeyIsValid()` | `0x001EE880` 8 | `0x001F0E90` 8 | `0x00223060` 8 | `0x00237F50` 12 |  |
-| `GetEncryptionKey()` | `0x001EE890` 28 |  | `0x00223070` 28 |  |  |
-| `UnsetEncryptionKey()` | `0x001EE8B0` 8 | `0x001F0EA0` 8 | `0x00223090` 8 | `0x00237F40` 12 |  |
-| `SetEncryptionKey(char*)` | `0x001EE8C0` 48 | `0x001F0EB0` 48 | `0x002230A0` 48 | `0x00237F00` 60 |  |
-| `DecryptData(int,int)` | `0x001EE8F0` 336 | `0x001F0EE0` 460 |  | `0x00237C70` 428 |  |
-| `EncryptData(int,int)` | `0x001EEA40` 368 |  |  |  |  |
-| `IsNewerThan(unsigned short) const` | `0x001EEBB0` 108 |  |  |  |  |
-| `DecryptBody(int)` | `0x001EEC20` 104 | `0x001F10B0` 148 | `0x00223440` 584 | `0x00237930` 124 |  |
-| `DecryptHeader()` | `0x001EEC90` 60 | `0x001F1150` 156 | `0x00223690` 588 | `0x002378C0` 112 |  |
-| `Encrypt(int)` | `0x001EECD0` 140 |  | `0x002238E0` 1068 |  |  |
-| `CheckCRC(int)` | `0x001EED60` 80 |  | `0x00223D10` 876 |  |  |
-| `CalculateCRC(int)` | `0x001EEDB0` 116 |  | `0x00224080` 652 |  |  |
-| `Clear()` | `0x001EEE30` 44 | `0x001F11F0` 688 | `0x00224310` 264 | `0x00237740` 232 |  |
-| `Construct()` | `0x001EEE60` 44 | `0x001F14A0` 476 | `0x00224420` 560 | `0x00237520` 372 |  |
-| `SetEncryptMessageContentsFunction(bool (*)` |  | `0x001F0E80` 8 | `0x00223050` 8 | `0x00237F60` 28 |  |
-| `GetCRC()` |  |  |  | `0x0023B1C0` 28 |  |
-| `GetFrame()` |  |  |  | `0x00237830` 28 |  |
-| `GetGameID()` |  |  |  | `0x001A4260` 236 |  |
-| `GetRecvingPlayerID()` |  |  |  | `0x0023B220` 240 |  |
-| `GetSendingPlayerID()` |  |  |  | `0x0023B310` 280 |  |
-| `GetType()` |  |  |  | `0x001A4350` 36 |  |
-| `IsAck()` |  |  |  | `0x0023F020` 60 |  |
-| `IsEncrypted()` |  |  |  | `0x001A3E60` 44 |  |
-| `IsNack()` |  |  |  | `0x0023EFE0` 60 |  |
-| `IsNewerThan(unsigned short)` |  |  | `0x002230D0` 876 |  |  |
-| `IsReliable()` |  |  |  | `0x0023B1E0` 60 |  |
-| `MessageIsValid()` |  |  |  | `0x001A3E90` 44 |  |
-| `Prepare(int,unsigned short,bool)` |  |  |  | `0x001A3D40` 240 |  |
-| `Release()` |  |  |  | `0x001A3FF0` 40 |  |
-| `SetDealtWith()` |  |  |  | `0x001A4020` 52 |  |
-| `SetEncrypted(bool)` |  |  |  | `0x00237850` 104 |  |
-| `SetGameID(unsigned char)` |  |  |  | `0x0023EF60` 128 |  |
-| `SetReadyToSend()` |  |  |  | `0x001A3E30` 48 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetEncryptMessageContentsFunction(bool (*)(int))` | `0x001EE870` 8 |  |  |  |  |  |
+| `EncryptionKeyIsValid()` | `0x001EE880` 8 | `0x001F0E90` 8 | `0x00223060` 8 | `0x00237F50` 12 |  |  |
+| `GetEncryptionKey()` | `0x001EE890` 28 |  | `0x00223070` 28 |  |  |  |
+| `UnsetEncryptionKey()` | `0x001EE8B0` 8 | `0x001F0EA0` 8 | `0x00223090` 8 | `0x00237F40` 12 |  |  |
+| `SetEncryptionKey(char*)` | `0x001EE8C0` 48 | `0x001F0EB0` 48 | `0x002230A0` 48 | `0x00237F00` 60 |  |  |
+| `DecryptData(int,int)` | `0x001EE8F0` 336 | `0x001F0EE0` 460 |  | `0x00237C70` 428 |  |  |
+| `EncryptData(int,int)` | `0x001EEA40` 368 |  |  |  |  |  |
+| `IsNewerThan(unsigned short) const` | `0x001EEBB0` 108 |  |  |  |  |  |
+| `DecryptBody(int)` | `0x001EEC20` 104 | `0x001F10B0` 148 | `0x00223440` 584 | `0x00237930` 124 |  |  |
+| `DecryptHeader()` | `0x001EEC90` 60 | `0x001F1150` 156 | `0x00223690` 588 | `0x002378C0` 112 |  |  |
+| `Encrypt(int)` | `0x001EECD0` 140 |  | `0x002238E0` 1068 |  |  |  |
+| `CheckCRC(int)` | `0x001EED60` 80 |  | `0x00223D10` 876 |  |  |  |
+| `CalculateCRC(int)` | `0x001EEDB0` 116 |  | `0x00224080` 652 |  |  |  |
+| `Clear()` | `0x001EEE30` 44 | `0x001F11F0` 688 | `0x00224310` 264 | `0x00237740` 232 |  |  |
+| `Construct()` | `0x001EEE60` 44 | `0x001F14A0` 476 | `0x00224420` 560 | `0x00237520` 372 |  |  |
+| `SetEncryptMessageContentsFunction(bool (*)` |  | `0x001F0E80` 8 | `0x00223050` 8 | `0x00237F60` 28 |  |  |
+| `GetCRC()` |  |  |  | `0x0023B1C0` 28 |  |  |
+| `GetFrame()` |  |  |  | `0x00237830` 28 |  |  |
+| `GetGameID()` |  |  |  | `0x001A4260` 236 |  |  |
+| `GetRecvingPlayerID()` |  |  |  | `0x0023B220` 240 |  |  |
+| `GetSendingPlayerID()` |  |  |  | `0x0023B310` 280 |  |  |
+| `GetType()` |  |  |  | `0x001A4350` 36 |  |  |
+| `IsAck()` |  |  |  | `0x0023F020` 60 |  |  |
+| `IsEncrypted()` |  |  |  | `0x001A3E60` 44 |  |  |
+| `IsNack()` |  |  |  | `0x0023EFE0` 60 |  |  |
+| `IsNewerThan(unsigned short)` |  |  | `0x002230D0` 876 |  |  |  |
+| `IsReliable()` |  |  |  | `0x0023B1E0` 60 |  |  |
+| `MessageIsValid()` |  |  |  | `0x001A3E90` 44 |  |  |
+| `Prepare(int,unsigned short,bool)` |  |  |  | `0x001A3D40` 240 |  |  |
+| `Release()` |  |  |  | `0x001A3FF0` 40 |  |  |
+| `SetDealtWith()` |  |  |  | `0x001A4020` 52 |  |  |
+| `SetEncrypted(bool)` |  |  |  | `0x00237850` 104 |  |  |
+| `SetGameID(unsigned char)` |  |  |  | `0x0023EF60` 128 |  |  |
+| `SetReadyToSend()` |  |  |  | `0x001A3E30` 48 |  |  |
 
 ## Notes
 

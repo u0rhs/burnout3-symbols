@@ -12,23 +12,25 @@ The civilian traffic: lanes, junctions and lights, valves and splitters that spa
 
 In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_200.symbols.txt](../../data/burnout3-prototype/maps/DNAT_200.symbols.txt) (search for `==== <file>`).
 
-| File | Functions | Code bytes | First function |
-|---|---:|---:|---|
-| `B3TrafficAxle.cpp` | 7 | 2,076 | `0x0015A270` |
-| `B3TrafficLane.cpp` | 9 | 2,708 | `0x0015AAB0` |
-| `B3TrafficParam.cpp` | 17 | 11,724 | `0x0015B570` |
-| `B3TrafficSystem.cpp` | 16 | 19,188 | `0x0015E270` |
-| `B3TrafficVehicle.cpp` | 18 | 18,584 | `0x00162DC0` |
-| `B3TrafficLight.cpp` | 4 | 1,552 | `0x00227A30` |
-| `B3TrafficValve.cpp` | 16 | 9,276 | `0x00228060` |
-| `B3TrafficLightStruct.cpp` | 1 | 52 | `0x0022C210` |
-| `B3TrafficValveStruct.cpp` | 2 | 68 | `0x0022C250` |
-| `B3TrafficLaneStruct.cpp` | 1 | 132 | `0x0022C2A0` |
-| `B3TrafficDataStruct.cpp` | 1 | 444 | `0x0022C330` |
-| `B3TrafficSplitter.cpp` | 2 | 304 | `0x0022DEF0` |
-| `B3StopJunction.cpp` | 7 | 6,444 | `0x002761F0` |
-| `B3TrafficDebug.cpp` | 7 | 4,700 | `0x002ADCE0` |
-| `B3TrafficHullStruct.cpp` | 1 | 40 | `0x002E7BD0` |
+**Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
+|---|---:|---:|---|---:|---|
+| `B3TrafficAxle.cpp` | 7 | 2,076 | `0x0015A270` | 7 (6) | `0x0015F270`–`0x0015FAC0` |
+| `B3TrafficLane.cpp` | 9 | 2,708 | `0x0015AAB0` | 9 (9) | `0x0015FAD0`–`0x00160590` |
+| `B3TrafficParam.cpp` | 17 | 11,724 | `0x0015B570` | 11 (6) | `0x001605C0`–`0x00161B50` |
+| `B3TrafficSystem.cpp` | 16 | 19,188 | `0x0015E270` | 9 (0) | `0x00164510`–`0x00167B90` |
+| `B3TrafficVehicle.cpp` | 18 | 18,584 | `0x00162DC0` | 18 (7) | `0x00167D10`–`0x00199710` |
+| `B3TrafficLight.cpp` | 4 | 1,552 | `0x00227A30` | 4 (4) | `0x00265C60`–`0x00266260` |
+| `B3TrafficValve.cpp` | 16 | 9,276 | `0x00228060` | 16 (16) | `0x002662B0`–`0x002685B0` |
+| `B3TrafficLightStruct.cpp` | 1 | 52 | `0x0022C210` | 1 (1) | `0x00269E80`–`0x00269E80` |
+| `B3TrafficValveStruct.cpp` | 2 | 68 | `0x0022C250` | 2 (2) | `0x00269EC0`–`0x00269EF0` |
+| `B3TrafficLaneStruct.cpp` | 1 | 132 | `0x0022C2A0` | 1 (1) | `0x00269F10`–`0x00269F10` |
+| `B3TrafficDataStruct.cpp` | 1 | 444 | `0x0022C330` | 1 (1) | `0x00269FA0`–`0x00269FA0` |
+| `B3TrafficSplitter.cpp` | 2 | 304 | `0x0022DEF0` |  |  |
+| `B3StopJunction.cpp` | 7 | 6,444 | `0x002761F0` | 7 (1) | `0x002B52D0`–`0x002B6BC0` |
+| `B3TrafficDebug.cpp` | 7 | 4,700 | `0x002ADCE0` | 7 (1) | `0x002EF0F0`–`0x002F0380` |
+| `B3TrafficHullStruct.cpp` | 1 | 40 | `0x002E7BD0` | 1 (1) | `0x0032EDD0`–`0x0032EDD0` |
 
 ## Classes
 

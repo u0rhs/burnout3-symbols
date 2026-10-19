@@ -10,14 +10,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Init()` |  |  |  | `0x00188620` 48 |  |
-| `Random()` |  |  |  | `0x0017FD60` 116 |  |
-| `RandomReal()` |  |  |  | `0x0017FCF0` 112 |  |
-| `SetSeed(unsigned int)` |  |  |  | `0x00188650` 52 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Init()` |  |  |  | `0x00188620` 48 |  |  |
+| `Random()` |  |  |  | `0x0017FD60` 116 |  |  |
+| `RandomReal()` |  |  |  | `0x0017FCF0` 112 |  |  |
+| `SetSeed(unsigned int)` |  |  |  | `0x00188650` 52 |  |  |
 
 ## Burnout 2 layout of `CRandom`
 

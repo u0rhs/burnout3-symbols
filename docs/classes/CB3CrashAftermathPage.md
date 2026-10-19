@@ -11,14 +11,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `UpdateCrashScore(int)` | `0x003C8000` 12 | `0x00445150` 12 | `0x0046DB30` 12 | `0x00484030` 48 |  |
-| `Release()` | `0x003C8010` 8 | `0x00445160` 8 | `0x0046DB40` 8 | `0x00484020` 16 |  |
-| `Update()` | `0x003C8020` 140 | `0x00445170` 232 | `0x0046DB50` 232 | `0x00483F80` 148 |  |
-| `CB3CrashAftermathPage()` |  |  |  | `0x00342A00` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `UpdateCrashScore(int)` | `0x003C8000` 12 | `0x00445150` 12 | `0x0046DB30` 12 | `0x00484030` 48 |  |  |
+| `Release()` | `0x003C8010` 8 | `0x00445160` 8 | `0x0046DB40` 8 | `0x00484020` 16 |  |  |
+| `Update()` | `0x003C8020` 140 | `0x00445170` 232 | `0x0046DB50` 232 | `0x00483F80` 148 |  |  |
+| `CB3CrashAftermathPage()` |  |  |  | `0x00342A00` 60 |  |  |
 
 ## Notes
 

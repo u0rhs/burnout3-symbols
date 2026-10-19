@@ -7,56 +7,57 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3VehiclePhysics.cpp`
 - **Methods per build:** DNAT_200 25, B3DEBUG 25, B3INTERN 25, B3O0PCH 41
+- **Retail (SLUS-21050):** 23 of its 25 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FE60`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
 - **Burnout 2 ancestor (by name):** `CVehiclePhysics`, size 0xAA0, declared in 89 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CollideHingedPartWithWorld(int)` | `0x0018FE30` 1600 | `0x001BD4E0` 1920 | `0x001B8230` 1716 | `0x001D5E50` 1144 |  |
-| `UpdateHingedPart(int,float)` | `0x00190470` 11888 | `0x001BDC60` 29516 | `0x001B88F0` 26700 | `0x001D2540` 12488 |  |
-| `UpdateCrashSteering(float)` | `0x001932E0` 2300 | `0x001C4FB0` 3524 | `0x001BF140` 3428 | `0x001D1B10` 2452 |  |
-| `IsVehicleTouchingHorizontalSurface(bool,float)` | `0x00193BE0` 692 | `0x001C5D80` 1300 | `0x001BFEB0` 920 | `0x001D19B0` 348 |  |
-| `StopCrashing()` | `0x00193EA0` 160 | `0x001C62A0` 160 | `0x001C0250` 160 | `0x001D1740` 236 |  |
-| `StartCrashing(int,CB3CrashStartInfo*)` | `0x00193F40` 108 | `0x001C6340` 224 | `0x001C02F0` 224 | `0x001D1670` 200 |  |
-| `ReleasePayload()` | `0x00193FB0` 148 | `0x001C6420` 148 | `0x001C03D0` 148 | `0x001D15A0` 208 |  |
-| `DetachBodyPart(int)` | `0x00194050` 196 | `0x001C64C0` 196 | `0x001C0470` 196 | `0x001D14A0` 256 |  |
-| `FlapBodyPart(int)` | `0x00194120` 52 | `0x001C6590` 52 | `0x001C0540` 52 | `0x001D1420` 124 |  |
-| `ApplyCrashRamp(GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d*,bool)` | `0x00194160` 872 | `0x001C65D0` 1644 | `0x001C0580` 872 | `0x001D0C90` 1556 |  |
-| `ApplyRamp(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x001944D0` 420 | `0x001C6C40` 556 | `0x001C08F0` 420 | `0x001D0740` 1348 |  |
-| `DetachAll(bool)` | `0x00194680` 260 | `0x001C6E70` 260 | `0x001C0AA0` 260 | `0x001D0620` 284 |  |
-| `FireAirRamUpwards(unsigned int,float,bool)` | `0x00194790` 84 | `0x001C6F80` 84 | `0x001C0BB0` 84 | `0x001D0580` 160 |  |
-| `FireAirRam(unsigned int,float,bool)` | `0x001947F0` 92 | `0x001C6FE0` 92 | `0x001C0C10` 92 | `0x001D04D0` 172 |  |
-| `FireAirRamWithDirection(unsigned int,float,GtMathPs2::CGtV3d,bool)` | `0x00194850` 868 | `0x001C7040` 1476 | `0x001C0C70` 1476 | `0x001CFF10` 1460 |  |
-| `UpdateSuspension(float)` | `0x00194BC0` 4848 | `0x001C7610` 6700 | `0x001C1240` 6516 | `0x001CE580` 6212 | `void CVehiclePhysics::UpdateSuspension(float lrTimeStep)` |
-| `CollideWheels()` | `0x00195EB0` 1600 | `0x001C9040` 1816 | `0x001C2BC0` 1816 | `0x001CD9B0` 2864 | `void CVehiclePhysics::CollideWheels()` |
-| `DoWheelLineCollision(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,int*,float*)` | `0x001964F0` 584 | `0x001C9760` 624 | `0x001C32E0` 624 | `0x001CD5B0` 872 |  |
-| `Destruct()` | `0x00196740` 8 | `0x001C99D0` 8 | `0x001C3550` 8 | `0x001CD580` 40 |  |
-| `Release()` | `0x00196750` 8 | `0x001C99E0` 8 | `0x001C3560` 8 | `0x001CD550` 40 |  |
-| `Update(float)` | `0x00196760` 1584 | `0x001C99F0` 3236 | `0x001C3570` 3236 | `0x001CCE50` 1780 | `void CVehiclePhysics::Update(float lrTimeStep)` |
-| `CollideWithWorld()` | `0x00196D90` 736 | `0x001CA6A0` 1192 | `0x001C4220` 764 | `0x001CCAD0` 892 |  |
-| `Prepare(CB3VehicleEssentialParams*,CB3VehicleParams*)` | `0x00197070` 2556 | `0x001CAB50` 2556 | `0x001C4520` 2556 | `0x001CBBB0` 1344 |  |
-| `Prepare()` | `0x00197A70` 268 | `0x001CB550` 268 | `0x001C4F20` 268 | `0x001CBA10` 412 |  |
-| `Construct()` | `0x00197B80` 260 | `0x001CB660` 260 | `0x001C5030` 260 | `0x001CB7F0` 464 |  |
-| `CB3VehiclePhysics()` |  |  |  | `0x00191D70` 284 |  |
-| `CollapseSuspension(int)` |  |  |  | `0x001D12B0` 124 |  |
-| `DetachWheel(int)` |  |  |  | `0x001D1330` 228 | `CPropPhysics *CVehiclePhysics::DetachWheel(int lnWheelIndex)` |
-| `GetLocalWheelPosition(int)` |  |  |  | `0x001C4020` 48 |  |
-| `IgnoreAllCollisionThisFrame()` |  |  |  | `0x001B85D0` 44 |  |
-| `IgnoreTrafficCollisionThisFrame()` |  |  |  | `0x001B66C0` 44 |  |
-| `IgnoreWallCollisionThisFrame()` |  |  |  | `0x001C1170` 44 |  |
-| `IsVehicleTouchingWorld(bool)` |  |  |  | `0x001D1830` 288 |  |
-| `ResetCollisionBools()` |  |  |  | `0x001B0650` 28 |  |
-| `SetDisableTrafficCrashesThisFrame()` |  |  |  | `0x00168DD0` 36 |  |
-| `SetDisableWallCrashesThisFrame()` |  |  |  | `0x00168DA0` 36 |  |
-| `SetIgnoreAllCollisionThisFrame()` |  |  |  | `0x00168D70` 36 |  |
-| `SetIgnoreTrafficCollisionThisFrame()` |  |  |  | `0x001BD5C0` 36 |  |
-| `SetIgnoreWallCollisionThisFrame()` |  |  |  | `0x001D6E60` 36 |  |
-| `TrafficCrashesDisabledThisFrame()` |  |  |  | `0x00142060` 44 |  |
-| `WallCrashesDisabledThisFrame()` |  |  |  | `0x00142090` 44 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CollideHingedPartWithWorld(int)` | `0x0018FE30` 1600 | `0x001BD4E0` 1920 | `0x001B8230` 1716 | `0x001D5E50` 1144 |  |  |
+| `UpdateHingedPart(int,float)` | `0x00190470` 11888 | `0x001BDC60` 29516 | `0x001B88F0` 26700 | `0x001D2540` 12488 | `0x001C8870` unverified |  |
+| `UpdateCrashSteering(float)` | `0x001932E0` 2300 | `0x001C4FB0` 3524 | `0x001BF140` 3428 | `0x001D1B10` 2452 | `0x001CAD30` likely |  |
+| `IsVehicleTouchingHorizontalSurface(bool,float)` | `0x00193BE0` 692 | `0x001C5D80` 1300 | `0x001BFEB0` 920 | `0x001D19B0` 348 | `0x001CB780` likely |  |
+| `StopCrashing()` | `0x00193EA0` 160 | `0x001C62A0` 160 | `0x001C0250` 160 | `0x001D1740` 236 |  |  |
+| `StartCrashing(int,CB3CrashStartInfo*)` | `0x00193F40` 108 | `0x001C6340` 224 | `0x001C02F0` 224 | `0x001D1670` 200 | `0x001CBC70` strong |  |
+| `ReleasePayload()` | `0x00193FB0` 148 | `0x001C6420` 148 | `0x001C03D0` 148 | `0x001D15A0` 208 | `0x001CBCE0` strong |  |
+| `DetachBodyPart(int)` | `0x00194050` 196 | `0x001C64C0` 196 | `0x001C0470` 196 | `0x001D14A0` 256 | `0x001CBD80` strong |  |
+| `FlapBodyPart(int)` | `0x00194120` 52 | `0x001C6590` 52 | `0x001C0540` 52 | `0x001D1420` 124 | `0x001CBE50` likely |  |
+| `ApplyCrashRamp(GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d*,bool)` | `0x00194160` 872 | `0x001C65D0` 1644 | `0x001C0580` 872 | `0x001D0C90` 1556 | `0x001CBE90` strong |  |
+| `ApplyRamp(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x001944D0` 420 | `0x001C6C40` 556 | `0x001C08F0` 420 | `0x001D0740` 1348 | `0x001CC200` strong |  |
+| `DetachAll(bool)` | `0x00194680` 260 | `0x001C6E70` 260 | `0x001C0AA0` 260 | `0x001D0620` 284 | `0x001CC3B0` strong |  |
+| `FireAirRamUpwards(unsigned int,float,bool)` | `0x00194790` 84 | `0x001C6F80` 84 | `0x001C0BB0` 84 | `0x001D0580` 160 | `0x001CC4C0` proven |  |
+| `FireAirRam(unsigned int,float,bool)` | `0x001947F0` 92 | `0x001C6FE0` 92 | `0x001C0C10` 92 | `0x001D04D0` 172 | `0x001CC520` strong |  |
+| `FireAirRamWithDirection(unsigned int,float,GtMathPs2::CGtV3d,bool)` | `0x00194850` 868 | `0x001C7040` 1476 | `0x001C0C70` 1476 | `0x001CFF10` 1460 | `0x001CC580` strong |  |
+| `UpdateSuspension(float)` | `0x00194BC0` 4848 | `0x001C7610` 6700 | `0x001C1240` 6516 | `0x001CE580` 6212 | `0x001CC900` unverified | `void CVehiclePhysics::UpdateSuspension(float lrTimeStep)` |
+| `CollideWheels()` | `0x00195EB0` 1600 | `0x001C9040` 1816 | `0x001C2BC0` 1816 | `0x001CD9B0` 2864 | `0x001CDB70` strong | `void CVehiclePhysics::CollideWheels()` |
+| `DoWheelLineCollision(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,int*,float*)` | `0x001964F0` 584 | `0x001C9760` 624 | `0x001C32E0` 624 | `0x001CD5B0` 872 | `0x001CE1A0` likely |  |
+| `Destruct()` | `0x00196740` 8 | `0x001C99D0` 8 | `0x001C3550` 8 | `0x001CD580` 40 | `0x001CE450` likely |  |
+| `Release()` | `0x00196750` 8 | `0x001C99E0` 8 | `0x001C3560` 8 | `0x001CD550` 40 | `0x001CE460` proven |  |
+| `Update(float)` | `0x00196760` 1584 | `0x001C99F0` 3236 | `0x001C3570` 3236 | `0x001CCE50` 1780 | `0x001CE470` unverified | `void CVehiclePhysics::Update(float lrTimeStep)` |
+| `CollideWithWorld()` | `0x00196D90` 736 | `0x001CA6A0` 1192 | `0x001C4220` 764 | `0x001CCAD0` 892 | `0x001CEE10` unverified |  |
+| `Prepare(CB3VehicleEssentialParams*,CB3VehicleParams*)` | `0x00197070` 2556 | `0x001CAB50` 2556 | `0x001C4520` 2556 | `0x001CBBB0` 1344 | `0x001CF2B0` strong |  |
+| `Prepare()` | `0x00197A70` 268 | `0x001CB550` 268 | `0x001C4F20` 268 | `0x001CBA10` 412 | `0x001CFC00` strong |  |
+| `Construct()` | `0x00197B80` 260 | `0x001CB660` 260 | `0x001C5030` 260 | `0x001CB7F0` 464 | `0x001CFD20` likely |  |
+| `CB3VehiclePhysics()` |  |  |  | `0x00191D70` 284 |  |  |
+| `CollapseSuspension(int)` |  |  |  | `0x001D12B0` 124 |  |  |
+| `DetachWheel(int)` |  |  |  | `0x001D1330` 228 |  | `CPropPhysics *CVehiclePhysics::DetachWheel(int lnWheelIndex)` |
+| `GetLocalWheelPosition(int)` |  |  |  | `0x001C4020` 48 |  |  |
+| `IgnoreAllCollisionThisFrame()` |  |  |  | `0x001B85D0` 44 |  |  |
+| `IgnoreTrafficCollisionThisFrame()` |  |  |  | `0x001B66C0` 44 |  |  |
+| `IgnoreWallCollisionThisFrame()` |  |  |  | `0x001C1170` 44 |  |  |
+| `IsVehicleTouchingWorld(bool)` |  |  |  | `0x001D1830` 288 |  |  |
+| `ResetCollisionBools()` |  |  |  | `0x001B0650` 28 |  |  |
+| `SetDisableTrafficCrashesThisFrame()` |  |  |  | `0x00168DD0` 36 |  |  |
+| `SetDisableWallCrashesThisFrame()` |  |  |  | `0x00168DA0` 36 |  |  |
+| `SetIgnoreAllCollisionThisFrame()` |  |  |  | `0x00168D70` 36 |  |  |
+| `SetIgnoreTrafficCollisionThisFrame()` |  |  |  | `0x001BD5C0` 36 |  |  |
+| `SetIgnoreWallCollisionThisFrame()` |  |  |  | `0x001D6E60` 36 |  |  |
+| `TrafficCrashesDisabledThisFrame()` |  |  |  | `0x00142060` 44 |  |  |
+| `WallCrashesDisabledThisFrame()` |  |  |  | `0x00142090` 44 |  |  |
 
 ## Burnout 2 layout of `CVehiclePhysics`
 

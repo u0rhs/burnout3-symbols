@@ -7,19 +7,20 @@
 - **Area:** [Progression, profiles and saves](../systems/progression-saves.md)
 - **Source file:** `B3Profile.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 6
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `LockAll()` | `0x00134E50` 12 | `0x0013CCC0` 84 | `0x0013A8C0` 84 | `0x00147E10` 76 |  |
-| `UnlockAll()` | `0x00134E60` 12 | `0x0013CD20` 84 | `0x0013A920` 84 | `0x00147DC0` 76 |  |
-| `UpdateProfile(EChallengeMedal,int)` | `0x00134E70` 12 | `0x0013CD80` 116 | `0x0013A980` 116 | `0x00147D40` 92 |  |
-| `Prepare()` | `0x00134E80` 1728 | `0x0013CE00` 1728 | `0x0013AA00` 2320 | `0x00147CD0` 112 |  |
-| `Construct()` | `0x00135540` 8 | `0x0013D4C0` 8 | `0x0013B310` 8 | `0x00147C60` 108 |  |
-| `GetActiveProfile()` |  |  |  | `0x00147DA0` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `LockAll()` | `0x00134E50` 12 | `0x0013CCC0` 84 | `0x0013A8C0` 84 | `0x00147E10` 76 | `0x00136480` likely |  |
+| `UnlockAll()` | `0x00134E60` 12 | `0x0013CD20` 84 | `0x0013A920` 84 | `0x00147DC0` 76 | `0x00136490` likely |  |
+| `UpdateProfile(EChallengeMedal,int)` | `0x00134E70` 12 | `0x0013CD80` 116 | `0x0013A980` 116 | `0x00147D40` 92 | `0x001364A0` likely |  |
+| `Prepare()` | `0x00134E80` 1728 | `0x0013CE00` 1728 | `0x0013AA00` 2320 | `0x00147CD0` 112 | `0x001364B0` unverified |  |
+| `Construct()` | `0x00135540` 8 | `0x0013D4C0` 8 | `0x0013B310` 8 | `0x00147C60` 108 | `0x00136E00` likely |  |
+| `GetActiveProfile()` |  |  |  | `0x00147DA0` 28 |  |  |
 
 ## Notes
 

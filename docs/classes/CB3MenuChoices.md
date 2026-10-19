@@ -7,28 +7,29 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3MenuChoices.cpp`
 - **Methods per build:** DNAT_200 14, B3DEBUG 14, B3INTERN 14, B3O0PCH 15
+- **Retail (SLUS-21050):** 10 of its 14 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `IsCurrentStageCrashMode()` | `0x002CC1D0` 44 | `0x00314540` 44 | `0x00346130` 44 | `0x0033F590` 88 |  |
-| `RequestOPMDemoGameMode()` | `0x002CC200` 352 | `0x00314570` 352 | `0x00346160` 352 | `0x0033F3C0` 460 |  |
-| `RequestMShowDemoGameMode()` | `0x002CC360` 352 | `0x003146D0` 352 | `0x003462C0` 352 | `0x0033F1F0` 460 |  |
-| `RequestPeriodicalGameMode()` | `0x002CC4C0` 1668 | `0x00314830` 1696 | `0x00346420` 1696 | `0x0033E9B0` 2100 |  |
-| `RequestOnlineGameMode()` | `0x002CCB50` 608 | `0x00314ED0` 776 | `0x00346AC0` 776 | `0x0033E500` 988 |  |
-| `RequestCrashPartyGameMode()` | `0x002CCDB0` 380 | `0x003151E0` 440 | `0x00346DD0` 440 | `0x0033E290` 464 |  |
-| `RequestTwoPlayerGameMode(int)` | `0x002CCF30` 580 | `0x003153A0` 604 | `0x00346F90` 648 | `0x0033DF50` 820 |  |
-| `RequestOnePlayerGameMode(int)` | `0x002CD180` 532 | `0x00315600` 556 | `0x00347220` 556 | `0x0033DBE0` 792 |  |
-| `RequestChampionshipGameMode(int)` | `0x002CD3A0` 1016 | `0x00315830` 1020 | `0x00347450` 996 | `0x0033D5D0` 1404 |  |
-| `GetDriverCarID(CB3GameStageDataStruct*,int,int)` | `0x002CD7A0` 896 | `0x00315C30` 1012 | `0x00347840` 960 | `0x0033D110` 1208 |  |
-| `GetGameStageData(CB3StageDataStruct*)` | `0x002CDB20` 96 | `0x00316030` 412 | `0x00347C00` 412 | `0x0033CF30` 388 |  |
-| `IsCurrentSelectionCrashMode()` | `0x002CDB80` 92 | `0x003161D0` 92 | `0x00347DA0` 92 | `0x0033CE60` 196 |  |
-| `RequestNewGameMode()` | `0x002CDBE0` 484 | `0x00316230` 520 | `0x00347E00` 520 | `0x0033CC70` 464 |  |
-| `Prepare()` | `0x002CDDD0` 228 | `0x00316440` 228 | `0x00348010` 228 | `0x0033CA90` 472 |  |
-| `RequestCarViewerGameMode()` |  |  |  | `0x0033E930` 124 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `IsCurrentStageCrashMode()` | `0x002CC1D0` 44 | `0x00314540` 44 | `0x00346130` 44 | `0x0033F590` 88 |  |  |
+| `RequestOPMDemoGameMode()` | `0x002CC200` 352 | `0x00314570` 352 | `0x00346160` 352 | `0x0033F3C0` 460 |  |  |
+| `RequestMShowDemoGameMode()` | `0x002CC360` 352 | `0x003146D0` 352 | `0x003462C0` 352 | `0x0033F1F0` 460 |  |  |
+| `RequestPeriodicalGameMode()` | `0x002CC4C0` 1668 | `0x00314830` 1696 | `0x00346420` 1696 | `0x0033E9B0` 2100 |  |  |
+| `RequestOnlineGameMode()` | `0x002CCB50` 608 | `0x00314ED0` 776 | `0x00346AC0` 776 | `0x0033E500` 988 | `0x0030BB70` likely |  |
+| `RequestCrashPartyGameMode()` | `0x002CCDB0` 380 | `0x003151E0` 440 | `0x00346DD0` 440 | `0x0033E290` 464 | `0x0030BE20` unverified |  |
+| `RequestTwoPlayerGameMode(int)` | `0x002CCF30` 580 | `0x003153A0` 604 | `0x00346F90` 648 | `0x0033DF50` 820 | `0x0030BFF0` unverified |  |
+| `RequestOnePlayerGameMode(int)` | `0x002CD180` 532 | `0x00315600` 556 | `0x00347220` 556 | `0x0033DBE0` 792 | `0x0030C2C0` likely |  |
+| `RequestChampionshipGameMode(int)` | `0x002CD3A0` 1016 | `0x00315830` 1020 | `0x00347450` 996 | `0x0033D5D0` 1404 | `0x0030C560` unverified |  |
+| `GetDriverCarID(CB3GameStageDataStruct*,int,int)` | `0x002CD7A0` 896 | `0x00315C30` 1012 | `0x00347840` 960 | `0x0033D110` 1208 | `0x0030CA10` unverified |  |
+| `GetGameStageData(CB3StageDataStruct*)` | `0x002CDB20` 96 | `0x00316030` 412 | `0x00347C00` 412 | `0x0033CF30` 388 | `0x0030CE20` proven |  |
+| `IsCurrentSelectionCrashMode()` | `0x002CDB80` 92 | `0x003161D0` 92 | `0x00347DA0` 92 | `0x0033CE60` 196 | `0x0030CE80` unverified |  |
+| `RequestNewGameMode()` | `0x002CDBE0` 484 | `0x00316230` 520 | `0x00347E00` 520 | `0x0033CC70` 464 | `0x0030D1B0` likely |  |
+| `Prepare()` | `0x002CDDD0` 228 | `0x00316440` 228 | `0x00348010` 228 | `0x0033CA90` 472 | `0x0030D3B0` strong |  |
+| `RequestCarViewerGameMode()` |  |  |  | `0x0033E930` 124 |  |  |
 
 ## Static data (DNAT_200)
 

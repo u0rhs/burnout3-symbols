@@ -11,21 +11,21 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x00354CB0` 216 | `0x003BF190` 216 | `0x003E89C0` 216 | `0x003F59C0` 328 |  |
-| `Update(float)` | `0x00354D90` 1912 | `0x003BF270` 1976 | `0x003E8AA0` 1976 | `0x003F5060` 2392 |  |
-| `PrepareItem(int)` | `0x00355510` 344 | `0x003BFA30` 476 | `0x003E9260` 476 | `0x003F4970` 604 |  |
-| `Prepare(const CB3MenuComponentSelectionData*,const CB3ScrollVSelectComponentEntryData*,CB3ScrollVSel` | `0x00355670` 1084 | `0x003BFC10` 1480 | `0x003E9440` 1480 | `0x003F4550` 1052 |  |
-| `Prepare(const CB3MenuComponentSelectionData*,const CB3ScrollVSelectComponentEntryData*)` | `0x00355AB0` 8 | `0x003C01E0` 8 | `0x003E9A10` 8 | `0x003F4510` 60 |  |
-| `Construct()` | `0x00355AC0` 76 | `0x003C01F0` 76 | `0x003E9A20` 76 | `0x003F44A0` 112 |  |
-| `CB3ScrollVSelectComponent()` |  |  |  | `0x0033C7C0` 60 |  |
-| `GetArrowAlignY(int)` |  |  |  | `0x003F4E20` 188 |  |
-| `GetItemAlignY(int)` |  |  |  | `0x003F4BD0` 80 |  |
-| `PrepareArrow(CB3ScrollVSelectComponent::EScrollVSelectArrows)` |  |  |  | `0x003F4C20` 508 |  |
-| `PrepareBar(float)` |  |  |  | `0x003F4EE0` 376 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x00354CB0` 216 | `0x003BF190` 216 | `0x003E89C0` 216 | `0x003F59C0` 328 |  |  |
+| `Update(float)` | `0x00354D90` 1912 | `0x003BF270` 1976 | `0x003E8AA0` 1976 | `0x003F5060` 2392 |  |  |
+| `PrepareItem(int)` | `0x00355510` 344 | `0x003BFA30` 476 | `0x003E9260` 476 | `0x003F4970` 604 |  |  |
+| `Prepare(const CB3MenuComponentSelectionData*,const CB3ScrollVSelectComponentEntryData*,CB3ScrollVSel` | `0x00355670` 1084 | `0x003BFC10` 1480 | `0x003E9440` 1480 | `0x003F4550` 1052 |  |  |
+| `Prepare(const CB3MenuComponentSelectionData*,const CB3ScrollVSelectComponentEntryData*)` | `0x00355AB0` 8 | `0x003C01E0` 8 | `0x003E9A10` 8 | `0x003F4510` 60 |  |  |
+| `Construct()` | `0x00355AC0` 76 | `0x003C01F0` 76 | `0x003E9A20` 76 | `0x003F44A0` 112 |  |  |
+| `CB3ScrollVSelectComponent()` |  |  |  | `0x0033C7C0` 60 |  |  |
+| `GetArrowAlignY(int)` |  |  |  | `0x003F4E20` 188 |  |  |
+| `GetItemAlignY(int)` |  |  |  | `0x003F4BD0` 80 |  |  |
+| `PrepareArrow(CB3ScrollVSelectComponent::EScrollVSelectArrows)` |  |  |  | `0x003F4C20` 508 |  |  |
+| `PrepareBar(float)` |  |  |  | `0x003F4EE0` 376 |  |  |
 
 ## Notes
 

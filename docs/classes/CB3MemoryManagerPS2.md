@@ -7,24 +7,25 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `B3MemoryManagerPS2.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
+- **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FF40`, 36 bytes = 9 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 7 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetBlockSize(EB3MemoryBlock) const` | `0x001E6DC0` 132 |  |  |  |  |
-| `QueryBlock(EB3MemoryBlock,int) const` | `0x001E6E50` 8 |  |  |  |  |
-| `ReleaseBlock(EB3MemoryBlock,int)` | `0x001E6E60` 216 | `0x001E7F50` 244 | `0x0021A790` 216 | `0x0022E760` 388 |  |
-| `AcquireBlock(EB3MemoryBlock,int)` | `0x001E6F40` 208 | `0x001E8050` 236 | `0x0021A870` 208 | `0x0022E5D0` 388 |  |
-| `Update()` | `0x001E7010` 72 | `0x001E8140` 72 | `0x0021A940` 72 | `0x0022E560` 112 |  |
-| `Destruct()` | `0x001E7060` 48 | `0x001E8190` 48 | `0x0021A990` 48 | `0x0022E520` 56 |  |
-| `Construct()` | `0x001E7090` 1316 | `0x001E81C0` 1448 | `0x0021A9C0` 1340 | `0x0022DD30` 2024 |  |
-| `GetBlockSize(EB3MemoryBlock)` |  | `0x001E7EA0` 160 | `0x0021A6F0` 132 | `0x0022E930` 228 |  |
-| `QueryBlock(EB3MemoryBlock,int)` |  | `0x001E7F40` 8 | `0x0021A780` 8 | `0x0022E8F0` 56 |  |
-| `CB3MemoryManagerPS2()` |  |  |  | `0x0022EA20` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetBlockSize(EB3MemoryBlock) const` | `0x001E6DC0` 132 |  |  |  | `0x00222300` likely |  |
+| `QueryBlock(EB3MemoryBlock,int) const` | `0x001E6E50` 8 |  |  |  | `0x002223B0` likely |  |
+| `ReleaseBlock(EB3MemoryBlock,int)` | `0x001E6E60` 216 | `0x001E7F50` 244 | `0x0021A790` 216 | `0x0022E760` 388 | `0x002223C0` likely |  |
+| `AcquireBlock(EB3MemoryBlock,int)` | `0x001E6F40` 208 | `0x001E8050` 236 | `0x0021A870` 208 | `0x0022E5D0` 388 | `0x002224C0` likely |  |
+| `Update()` | `0x001E7010` 72 | `0x001E8140` 72 | `0x0021A940` 72 | `0x0022E560` 112 | `0x002225C0` unverified |  |
+| `Destruct()` | `0x001E7060` 48 | `0x001E8190` 48 | `0x0021A990` 48 | `0x0022E520` 56 | `0x00222620` proven |  |
+| `Construct()` | `0x001E7090` 1316 | `0x001E81C0` 1448 | `0x0021A9C0` 1340 | `0x0022DD30` 2024 | `0x00222650` unverified |  |
+| `GetBlockSize(EB3MemoryBlock)` |  | `0x001E7EA0` 160 | `0x0021A6F0` 132 | `0x0022E930` 228 |  |  |
+| `QueryBlock(EB3MemoryBlock,int)` |  | `0x001E7F40` 8 | `0x0021A780` 8 | `0x0022E8F0` 56 |  |  |
+| `CB3MemoryManagerPS2()` |  |  |  | `0x0022EA20` 60 |  |  |
 
 ## Notes
 

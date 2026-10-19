@@ -7,99 +7,100 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3NetworkManager.cpp`
 - **Methods per build:** DNAT_200 50, B3DEBUG 47, B3INTERN 47, B3O0PCH 83
+- **Retail (SLUS-21050):** 17 of its 50 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ABecomesHostBeforeB(int,int)` | `0x0022E030` 84 | `0x00246AA0` 120 |  | `0x00289DD0` 168 |  |
-| `HostMigrationEnterGame()` | `0x0022E090` 292 | `0x00246B20` 292 |  | `0x00289C20` 324 |  |
-| `_QSortCallback(const void*,const void*)` | `0x0022E1C0` 124 | `0x00246C50` 200 |  | `0x00289AF0` 292 |  |
-| `ShouldWeEncryptMessageContents(int)` | `0x0022E240` 68 | `0x00246D20` 276 | `0x00283230` 276 | `0x00289A00` 228 |  |
-| `GetBuddyErrorString(EGtBuddyErrorCodes)` | `0x0022E290` 196 | `0x00246E40` 196 | `0x00283350` 196 | `0x002898E0` 284 |  |
-| `GetDirtySockErrorString(int)` | `0x0022E360` 548 | `0x00246F10` 548 | `0x00283420` 548 | `0x002895B0` 816 |  |
-| `GetErrorString(int)` | `0x0022E590` 532 | `0x00247140` 532 | `0x00283650` 532 | `0x00289290` 796 |  |
-| `GetAdapterErrorString(int)` | `0x0022E7B0` 108 | `0x00247360` 108 | `0x00283870` 108 | `0x002891F0` 152 |  |
-| `ResetDNASStatus()` | `0x0022E820` 228 | `0x002473D0` 228 | `0x002838E0` 228 | `0x002890D0` 284 |  |
-| `UpdateDNASStatus()` | `0x0022E910` 996 |  | `0x002839D0` 1608 |  |  |
-| `TimeIsSynchronised()` | `0x0022ED00` 232 | `0x002474C0` 8 | `0x00284020` 212 | `0x00289070` 20 |  |
-| `ConnectionDropped(int,void*)` | `0x0022EDF0` 624 | `0x002474D0` 624 | `0x00284100` 616 | `0x00288E70` 420 |  |
-| `RegisterPlayerCarCrash()` | `0x0022F060` 96 | `0x00247740` 96 | `0x00284370` 96 | `0x00288DC0` 136 |  |
-| `GetEmptyPlayerRecord()` | `0x0022F0C0` 84 | `0x002477A0` 168 | `0x002843D0` 168 | `0x00288D30` 144 |  |
-| `GetPlayerRecordByID(int)` | `0x0022F120` 100 | `0x00247850` 172 | `0x00284480` 172 | `0x00288C60` 196 |  |
-| `SetPlayerRecordsNotAdded()` | `0x0022F190` 76 | `0x00247900` 76 | `0x00284530` 76 | `0x00288BF0` 112 |  |
-| `OnGameStart()` | `0x0022F1E0` 276 | `0x00247950` 276 | `0x00284580` 276 | `0x00288980` 136 |  |
-| `PrepareForGameStart()` | `0x0022F300` 492 | `0x00247A70` 492 | `0x002846A0` 496 | `0x002887D0` 432 |  |
-| `GameModeStatusMessageDeliveredCallback(bool,CGtNetworkMessage*,void*)` | `0x0022F4F0` 80 | `0x00247C60` 1028 | `0x00284890` 1028 | `0x002885C0` 528 |  |
-| `GameModeStatusMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F540` 104 | `0x00248070` 1292 | `0x00284CA0` 1036 | `0x00288390` 548 |  |
-| `NATDataMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F5B0` 64 | `0x00248580` 2920 | `0x002850B0` 2672 | `0x00287F20` 1132 |  |
-| `ReplayBodyMessageDeliveredCallback(bool,CGtNetworkMessage*,void*)` | `0x0022F5F0` 196 | `0x002490F0` 2024 | `0x00285B20` 2024 | `0x00287CA0` 640 |  |
-| `ReplayHeaderMessageDeliveredCallback(bool,CGtNetworkMessage*,void*)` | `0x0022F6C0` 44 | `0x002498E0` 1036 | `0x00286310` 1036 | `0x00287A90` 520 |  |
-| `ReplayBodyMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F6F0` 128 | `0x00249CF0` 1944 | `0x00286720` 1696 | `0x002876E0` 904 |  |
-| `ReplayHeaderMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F770` 92 | `0x0024A490` 1964 | `0x00286DC0` 1584 | `0x00287430` 676 |  |
-| `StartCountdownMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F7D0` 480 | `0x0024AC40` 1740 | `0x002873F0` 1164 | `0x00287020` 748 |  |
-| `RaceFinishedMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F9B0` 368 | `0x0024B310` 1008 | `0x00287880` 884 | `0x00286EC0` 344 |  |
-| `RaceReadyMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022FB20` 96 | `0x0024B700` 676 | `0x00287C00` 552 | `0x00286DB0` 260 |  |
-| `RestNATStatusData()` | `0x0022FB80` 128 | `0x0024B9B0` 140 | `0x00287E30` 140 | `0x00286CF0` 192 |  |
-| `AllNATDataIsFinalised()` | `0x0022FC00` 116 | `0x0024BA40` 328 | `0x00287EC0` 116 | `0x00286BD0` 284 |  |
-| `FinaliseNATData()` | `0x0022FC80` 224 |  | `0x00287F40` 716 |  |  |
-| `ProcessNATData()` | `0x0022FD60` 484 |  | `0x00288210` 696 |  |  |
-| `PlayerBootedCallback(ELobbyKickReason,void*)` | `0x0022FF50` 116 | `0x0024BB90` 116 | `0x002884D0` 96 | `0x00286A30` 124 |  |
-| `PlayerListChangedCallback(int,void*)` | `0x0022FFD0` 340 | `0x0024BC10` 420 | `0x00288530` 420 | `0x002869F0` 56 |  |
-| `RebuildPlayerList()` | `0x00230130` 340 | `0x0024BDC0` 416 | `0x002886E0` 416 | `0x00286970` 124 |  |
-| `GetHostPlayer()` | `0x00230290` 116 | `0x0024BF60` 116 | `0x00288880` 96 | `0x002868E0` 140 |  |
-| `AmIHost()` | `0x00230310` 172 | `0x0024BFE0` 172 | `0x002888E0` 160 | `0x00286800` 212 |  |
-| `ForEachNetworkOpponent(char*,int,bool,int,int,int,char*,bool,void*)` | `0x002303C0` 1012 | `0x0024C090` 1172 | `0x00288980` 1160 | `0x00286430` 888 |  |
-| `BootNetGui()` | `0x002307C0` 136 | `0x0024C530` 136 | `0x00288E10` 136 | `0x00286390` 156 |  |
-| `ResetNumFramesDropped()` | `0x00230850` 280 | `0x0024C5C0` 1852 | `0x00288EA0` 1852 | `0x002862B0` 224 |  |
-| `UpdateHostKeepAlive()` | `0x00230970` 2292 | `0x0024CD00` 6592 | `0x002895E0` 8 | `0x00285A00` 2020 |  |
-| `SyncTime(bool)` | `0x00231270` 308 | `0x0024E6C0` 8 | `0x002895F0` 288 | `0x00285640` 16 |  |
-| `PostPlayerRegPrepare()` | `0x002313B0` 448 | `0x0024E6D0` 104 | `0x00289710` 496 | `0x00285540` 136 |  |
-| `Destruct()` | `0x00231570` 104 | `0x0024E740` 8 | `0x00289900` 120 | `0x00285510` 48 |  |
-| `Release()` | `0x002315E0` 400 | `0x0024E750` 248 | `0x00289980` 388 | `0x002854D0` 56 |  |
-| `PostUpdate()` | `0x00231770` 144 | `0x0024E850` 24 | `0x00289B10` 144 | `0x002854A0` 40 |  |
-| `GetLobbyStatus()` | `0x00231800` 24 | `0x0024E870` 24 | `0x00289BA0` 24 | `0x00285460` 56 |  |
-| `Update()` | `0x00231820` 1352 | `0x0024E890` 1992 | `0x00289BC0` 3936 | `0x00284EE0` 384 |  |
-| `Prepare(bool)` | `0x00231D70` 548 | `0x0024F060` 184 | `0x0028AB20` 780 | `0x00284E80` 96 |  |
-| `Construct()` | `0x00231FA0` 484 | `0x0024F120` 204 | `0x0028AE30` 552 | `0x00284D60` 276 |  |
-| `AllPlayersReadyToRace()` |  |  |  | `0x003E7EB0` 64 |  |
-| `CB3NetworkManager()` |  |  |  | `0x00289E80` 148 |  |
-| `ClearPlayerRecords()` |  |  |  | `0x00288A10` 292 |  |
-| `GetDNASErrorMessage()` |  |  |  | `0x003954B0` 36 |  |
-| `GetDNASStatus()` |  |  |  | `0x00386100` 36 |  |
-| `GetFrameCount()` |  |  |  | `0x001A3F10` 12 |  |
-| `GetHostPlayerID()` |  |  |  | `0x00289D70` 96 |  |
-| `GetNetworkTime()` |  |  |  | `0x00287400` 36 |  |
-| `GetStartCountdown(int*,float*)` |  |  |  | `0x003E7EF0` 144 |  |
-| `GetU16FrameCount()` |  |  |  | `0x001A3EC0` 72 |  |
-| `IsHostAvailable()` |  |  |  | `0x002857C0` 216 |  |
-| `IsInOnlineMenus()` |  |  |  | `0x0013D070` 36 |  |
-| `IsNetworkOpen()` |  |  |  | `0x00368C30` 36 |  |
-| `IsOnline()` |  |  |  | `0x0013D040` 36 |  |
-| `NetworkAdapterBusy()` |  |  |  | `0x00387010` 56 |  |
-| `NetworkAdapterFinished()` |  |  |  | `0x00387540` 52 |  |
-| `NextFrame()` |  |  |  | `0x0013C450` 20 |  |
-| `RegisterLocalPlayerUsedCrashBreaker()` |  |  |  | `0x001BDFC0` 124 |  |
-| `RegisterNetCarGroundPlayer(int)` |  |  |  | `0x00179880` 132 |  |
-| `RegisterNetCarSlammedPlayer(int,bool)` |  |  |  | `0x00179160` 140 |  |
-| `RegisterNetCarTookDownPlayer(int)` |  |  |  | `0x00178000` 132 |  |
-| `RegisterNetCarTradedPaintWithPlayer(int,bool)` |  |  |  | `0x00179540` 140 |  |
-| `RegisterPlayerGroundNetCar(int)` |  |  |  | `0x001797C0` 132 |  |
-| `RegisterPlayerSlammedNetCar(int,bool)` |  |  |  | `0x00179070` 140 |  |
-| `RegisterPlayerTookDownNetCar(int)` |  |  |  | `0x00177F40` 132 |  |
-| `RegisterPlayerTradedPaintWithNetCar(int,bool)` |  |  |  | `0x00179480` 140 |  |
-| `ReleaseSyncTime()` |  |  |  | `0x002855D0` 104 |  |
-| `ResetNetworkTime()` |  |  |  | `0x00141B00` 40 |  |
-| `SendHostKeepAlive()` |  |  |  | `0x00285650` 320 |  |
-| `SetBootNetGui()` |  |  |  | `0x00385CD0` 40 |  |
-| `SetInitialFrame()` |  |  |  | `0x003E8450` 172 |  |
-| `SetMyNATData()` |  |  |  | `0x00286AB0` 164 |  |
-| `SetNewHost(int)` |  |  |  | `0x002858A0` 340 |  |
-| `SetOnline(bool)` |  |  |  | `0x0013FCF0` 44 |  |
-| `SetOnlineMenus(bool)` |  |  |  | `0x00141C30` 44 |  |
-| `SetStartCountdown(int,float)` |  |  |  | `0x00287310` 208 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ABecomesHostBeforeB(int,int)` | `0x0022E030` 84 | `0x00246AA0` 120 |  | `0x00289DD0` 168 |  |  |
+| `HostMigrationEnterGame()` | `0x0022E090` 292 | `0x00246B20` 292 |  | `0x00289C20` 324 | `0x0026CAB0` strong |  |
+| `_QSortCallback(const void*,const void*)` | `0x0022E1C0` 124 | `0x00246C50` 200 |  | `0x00289AF0` 292 |  |  |
+| `ShouldWeEncryptMessageContents(int)` | `0x0022E240` 68 | `0x00246D20` 276 | `0x00283230` 276 | `0x00289A00` 228 |  |  |
+| `GetBuddyErrorString(EGtBuddyErrorCodes)` | `0x0022E290` 196 | `0x00246E40` 196 | `0x00283350` 196 | `0x002898E0` 284 | `0x0026CCC0` strong |  |
+| `GetDirtySockErrorString(int)` | `0x0022E360` 548 | `0x00246F10` 548 | `0x00283420` 548 | `0x002895B0` 816 | `0x0026CD90` strong |  |
+| `GetErrorString(int)` | `0x0022E590` 532 | `0x00247140` 532 | `0x00283650` 532 | `0x00289290` 796 | `0x0026CFC0` strong |  |
+| `GetAdapterErrorString(int)` | `0x0022E7B0` 108 | `0x00247360` 108 | `0x00283870` 108 | `0x002891F0` 152 | `0x0026D1E0` likely |  |
+| `ResetDNASStatus()` | `0x0022E820` 228 | `0x002473D0` 228 | `0x002838E0` 228 | `0x002890D0` 284 |  |  |
+| `UpdateDNASStatus()` | `0x0022E910` 996 |  | `0x002839D0` 1608 |  |  |  |
+| `TimeIsSynchronised()` | `0x0022ED00` 232 | `0x002474C0` 8 | `0x00284020` 212 | `0x00289070` 20 |  |  |
+| `ConnectionDropped(int,void*)` | `0x0022EDF0` 624 | `0x002474D0` 624 | `0x00284100` 616 | `0x00288E70` 420 |  |  |
+| `RegisterPlayerCarCrash()` | `0x0022F060` 96 | `0x00247740` 96 | `0x00284370` 96 | `0x00288DC0` 136 | `0x0026DD00` strong |  |
+| `GetEmptyPlayerRecord()` | `0x0022F0C0` 84 | `0x002477A0` 168 | `0x002843D0` 168 | `0x00288D30` 144 | `0x0026DD70` strong |  |
+| `GetPlayerRecordByID(int)` | `0x0022F120` 100 | `0x00247850` 172 | `0x00284480` 172 | `0x00288C60` 196 | `0x0026DDC0` likely |  |
+| `SetPlayerRecordsNotAdded()` | `0x0022F190` 76 | `0x00247900` 76 | `0x00284530` 76 | `0x00288BF0` 112 | `0x0026DE30` likely |  |
+| `OnGameStart()` | `0x0022F1E0` 276 | `0x00247950` 276 | `0x00284580` 276 | `0x00288980` 136 | `0x0026DE80` unverified |  |
+| `PrepareForGameStart()` | `0x0022F300` 492 | `0x00247A70` 492 | `0x002846A0` 496 | `0x002887D0` 432 | `0x0026DF70` likely |  |
+| `GameModeStatusMessageDeliveredCallback(bool,CGtNetworkMessage*,void*)` | `0x0022F4F0` 80 | `0x00247C60` 1028 | `0x00284890` 1028 | `0x002885C0` 528 | `0x0026E130` likely |  |
+| `GameModeStatusMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F540` 104 | `0x00248070` 1292 | `0x00284CA0` 1036 | `0x00288390` 548 | `0x0026E1A0` likely |  |
+| `NATDataMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F5B0` 64 | `0x00248580` 2920 | `0x002850B0` 2672 | `0x00287F20` 1132 | `0x0026E230` strong |  |
+| `ReplayBodyMessageDeliveredCallback(bool,CGtNetworkMessage*,void*)` | `0x0022F5F0` 196 | `0x002490F0` 2024 | `0x00285B20` 2024 | `0x00287CA0` 640 | `0x0026E280` strong |  |
+| `ReplayHeaderMessageDeliveredCallback(bool,CGtNetworkMessage*,void*)` | `0x0022F6C0` 44 | `0x002498E0` 1036 | `0x00286310` 1036 | `0x00287A90` 520 | `0x0026E350` strong |  |
+| `ReplayBodyMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F6F0` 128 | `0x00249CF0` 1944 | `0x00286720` 1696 | `0x002876E0` 904 | `0x0026E380` strong |  |
+| `ReplayHeaderMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F770` 92 | `0x0024A490` 1964 | `0x00286DC0` 1584 | `0x00287430` 676 |  |  |
+| `StartCountdownMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F7D0` 480 | `0x0024AC40` 1740 | `0x002873F0` 1164 | `0x00287020` 748 |  |  |
+| `RaceFinishedMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022F9B0` 368 | `0x0024B310` 1008 | `0x00287880` 884 | `0x00286EC0` 344 |  |  |
+| `RaceReadyMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0022FB20` 96 | `0x0024B700` 676 | `0x00287C00` 552 | `0x00286DB0` 260 |  |  |
+| `RestNATStatusData()` | `0x0022FB80` 128 | `0x0024B9B0` 140 | `0x00287E30` 140 | `0x00286CF0` 192 |  |  |
+| `AllNATDataIsFinalised()` | `0x0022FC00` 116 | `0x0024BA40` 328 | `0x00287EC0` 116 | `0x00286BD0` 284 |  |  |
+| `FinaliseNATData()` | `0x0022FC80` 224 |  | `0x00287F40` 716 |  |  |  |
+| `ProcessNATData()` | `0x0022FD60` 484 |  | `0x00288210` 696 |  |  |  |
+| `PlayerBootedCallback(ELobbyKickReason,void*)` | `0x0022FF50` 116 | `0x0024BB90` 116 | `0x002884D0` 96 | `0x00286A30` 124 |  |  |
+| `PlayerListChangedCallback(int,void*)` | `0x0022FFD0` 340 | `0x0024BC10` 420 | `0x00288530` 420 | `0x002869F0` 56 |  |  |
+| `RebuildPlayerList()` | `0x00230130` 340 | `0x0024BDC0` 416 | `0x002886E0` 416 | `0x00286970` 124 |  |  |
+| `GetHostPlayer()` | `0x00230290` 116 | `0x0024BF60` 116 | `0x00288880` 96 | `0x002868E0` 140 |  |  |
+| `AmIHost()` | `0x00230310` 172 | `0x0024BFE0` 172 | `0x002888E0` 160 | `0x00286800` 212 |  |  |
+| `ForEachNetworkOpponent(char*,int,bool,int,int,int,char*,bool,void*)` | `0x002303C0` 1012 | `0x0024C090` 1172 | `0x00288980` 1160 | `0x00286430` 888 |  |  |
+| `BootNetGui()` | `0x002307C0` 136 | `0x0024C530` 136 | `0x00288E10` 136 | `0x00286390` 156 |  |  |
+| `ResetNumFramesDropped()` | `0x00230850` 280 | `0x0024C5C0` 1852 | `0x00288EA0` 1852 | `0x002862B0` 224 |  |  |
+| `UpdateHostKeepAlive()` | `0x00230970` 2292 | `0x0024CD00` 6592 | `0x002895E0` 8 | `0x00285A00` 2020 |  |  |
+| `SyncTime(bool)` | `0x00231270` 308 | `0x0024E6C0` 8 | `0x002895F0` 288 | `0x00285640` 16 |  |  |
+| `PostPlayerRegPrepare()` | `0x002313B0` 448 | `0x0024E6D0` 104 | `0x00289710` 496 | `0x00285540` 136 |  |  |
+| `Destruct()` | `0x00231570` 104 | `0x0024E740` 8 | `0x00289900` 120 | `0x00285510` 48 |  |  |
+| `Release()` | `0x002315E0` 400 | `0x0024E750` 248 | `0x00289980` 388 | `0x002854D0` 56 |  |  |
+| `PostUpdate()` | `0x00231770` 144 | `0x0024E850` 24 | `0x00289B10` 144 | `0x002854A0` 40 |  |  |
+| `GetLobbyStatus()` | `0x00231800` 24 | `0x0024E870` 24 | `0x00289BA0` 24 | `0x00285460` 56 |  |  |
+| `Update()` | `0x00231820` 1352 | `0x0024E890` 1992 | `0x00289BC0` 3936 | `0x00284EE0` 384 |  |  |
+| `Prepare(bool)` | `0x00231D70` 548 | `0x0024F060` 184 | `0x0028AB20` 780 | `0x00284E80` 96 |  |  |
+| `Construct()` | `0x00231FA0` 484 | `0x0024F120` 204 | `0x0028AE30` 552 | `0x00284D60` 276 |  |  |
+| `AllPlayersReadyToRace()` |  |  |  | `0x003E7EB0` 64 |  |  |
+| `CB3NetworkManager()` |  |  |  | `0x00289E80` 148 |  |  |
+| `ClearPlayerRecords()` |  |  |  | `0x00288A10` 292 |  |  |
+| `GetDNASErrorMessage()` |  |  |  | `0x003954B0` 36 |  |  |
+| `GetDNASStatus()` |  |  |  | `0x00386100` 36 |  |  |
+| `GetFrameCount()` |  |  |  | `0x001A3F10` 12 |  |  |
+| `GetHostPlayerID()` |  |  |  | `0x00289D70` 96 |  |  |
+| `GetNetworkTime()` |  |  |  | `0x00287400` 36 |  |  |
+| `GetStartCountdown(int*,float*)` |  |  |  | `0x003E7EF0` 144 |  |  |
+| `GetU16FrameCount()` |  |  |  | `0x001A3EC0` 72 |  |  |
+| `IsHostAvailable()` |  |  |  | `0x002857C0` 216 |  |  |
+| `IsInOnlineMenus()` |  |  |  | `0x0013D070` 36 |  |  |
+| `IsNetworkOpen()` |  |  |  | `0x00368C30` 36 |  |  |
+| `IsOnline()` |  |  |  | `0x0013D040` 36 |  |  |
+| `NetworkAdapterBusy()` |  |  |  | `0x00387010` 56 |  |  |
+| `NetworkAdapterFinished()` |  |  |  | `0x00387540` 52 |  |  |
+| `NextFrame()` |  |  |  | `0x0013C450` 20 |  |  |
+| `RegisterLocalPlayerUsedCrashBreaker()` |  |  |  | `0x001BDFC0` 124 |  |  |
+| `RegisterNetCarGroundPlayer(int)` |  |  |  | `0x00179880` 132 |  |  |
+| `RegisterNetCarSlammedPlayer(int,bool)` |  |  |  | `0x00179160` 140 |  |  |
+| `RegisterNetCarTookDownPlayer(int)` |  |  |  | `0x00178000` 132 |  |  |
+| `RegisterNetCarTradedPaintWithPlayer(int,bool)` |  |  |  | `0x00179540` 140 |  |  |
+| `RegisterPlayerGroundNetCar(int)` |  |  |  | `0x001797C0` 132 |  |  |
+| `RegisterPlayerSlammedNetCar(int,bool)` |  |  |  | `0x00179070` 140 |  |  |
+| `RegisterPlayerTookDownNetCar(int)` |  |  |  | `0x00177F40` 132 |  |  |
+| `RegisterPlayerTradedPaintWithNetCar(int,bool)` |  |  |  | `0x00179480` 140 |  |  |
+| `ReleaseSyncTime()` |  |  |  | `0x002855D0` 104 |  |  |
+| `ResetNetworkTime()` |  |  |  | `0x00141B00` 40 |  |  |
+| `SendHostKeepAlive()` |  |  |  | `0x00285650` 320 |  |  |
+| `SetBootNetGui()` |  |  |  | `0x00385CD0` 40 |  |  |
+| `SetInitialFrame()` |  |  |  | `0x003E8450` 172 |  |  |
+| `SetMyNATData()` |  |  |  | `0x00286AB0` 164 |  |  |
+| `SetNewHost(int)` |  |  |  | `0x002858A0` 340 |  |  |
+| `SetOnline(bool)` |  |  |  | `0x0013FCF0` 44 |  |  |
+| `SetOnlineMenus(bool)` |  |  |  | `0x00141C30` 44 |  |  |
+| `SetStartCountdown(int,float)` |  |  |  | `0x00287310` 208 |  |  |
 
 ## Static data (DNAT_200)
 

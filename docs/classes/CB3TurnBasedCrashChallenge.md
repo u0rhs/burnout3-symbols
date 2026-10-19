@@ -11,29 +11,29 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `OnChallengeRestart()` | `0x00374960` 8 | `0x003E5370` 8 | `0x0040D1F0` 8 | `0x004226D0` 40 |  |
-| `OnEndOfChallenge()` | `0x00374970` 748 | `0x003E5380` 132 | `0x0040D200` 132 | `0x00422610` 192 |  |
-| `OnChallengeFinishDriving()` | `0x00374C60` 240 | `0x003E5410` 364 | `0x0040D290` 364 | `0x00422420` 488 |  |
-| `Update()` | `0x00374D50` 8 | `0x003E5580` 8 | `0x0040D400` 8 | `0x00422410` 16 |  |
-| `Destruct()` | `0x00374D60` 8 | `0x003E5590` 8 | `0x0040D410` 8 | `0x004223E0` 40 |  |
-| `Release()` | `0x00374D70` 144 | `0x003E55A0` 144 | `0x0040D420` 144 | `0x004222F0` 236 |  |
-| `Prepare()` | `0x00374E00` 132 | `0x003E5630` 132 | `0x0040D4B0` 132 | `0x00422210` 220 |  |
-| `Construct()` | `0x00374E90` 144 | `0x003E56C0` 144 | `0x0040D540` 144 | `0x00422120` 236 |  |
-| `NextStage()` |  | `0x003E5150` 536 | `0x0040CFD0` 536 | `0x00422700` 392 |  |
-| `AddCrashZone(CB3StageDataStruct*)` |  |  |  | `0x0033E490` 100 |  |
-| `CB3TurnBasedCrashChallenge()` |  |  |  | `0x0013DC90` 60 |  |
-| `GetCurrentPlayer()` |  |  |  | `0x00382110` 28 |  |
-| `GetCurrentStandingsCar(int)` |  |  |  | `0x004143B0` 48 |  |
-| `GetNumPlayers()` |  |  |  | `0x003821D0` 28 |  |
-| `GetTotalCarsHitByPlayer(int)` |  |  |  | `0x00382180` 72 |  |
-| `GetTotalPlayerScore(int)` |  |  |  | `0x00382130` 76 |  |
-| `IsLastStageInZone()` |  |  |  | `0x00427D50` 56 |  |
-| `IsLastZoneInParty()` |  |  |  | `0x004143E0` 56 |  |
-| `SetNumPlayers(unsigned char)` |  |  |  | `0x0033E460` 36 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `OnChallengeRestart()` | `0x00374960` 8 | `0x003E5370` 8 | `0x0040D1F0` 8 | `0x004226D0` 40 |  |  |
+| `OnEndOfChallenge()` | `0x00374970` 748 | `0x003E5380` 132 | `0x0040D200` 132 | `0x00422610` 192 |  |  |
+| `OnChallengeFinishDriving()` | `0x00374C60` 240 | `0x003E5410` 364 | `0x0040D290` 364 | `0x00422420` 488 |  |  |
+| `Update()` | `0x00374D50` 8 | `0x003E5580` 8 | `0x0040D400` 8 | `0x00422410` 16 |  |  |
+| `Destruct()` | `0x00374D60` 8 | `0x003E5590` 8 | `0x0040D410` 8 | `0x004223E0` 40 |  |  |
+| `Release()` | `0x00374D70` 144 | `0x003E55A0` 144 | `0x0040D420` 144 | `0x004222F0` 236 |  |  |
+| `Prepare()` | `0x00374E00` 132 | `0x003E5630` 132 | `0x0040D4B0` 132 | `0x00422210` 220 |  |  |
+| `Construct()` | `0x00374E90` 144 | `0x003E56C0` 144 | `0x0040D540` 144 | `0x00422120` 236 |  |  |
+| `NextStage()` |  | `0x003E5150` 536 | `0x0040CFD0` 536 | `0x00422700` 392 |  |  |
+| `AddCrashZone(CB3StageDataStruct*)` |  |  |  | `0x0033E490` 100 |  |  |
+| `CB3TurnBasedCrashChallenge()` |  |  |  | `0x0013DC90` 60 |  |  |
+| `GetCurrentPlayer()` |  |  |  | `0x00382110` 28 |  |  |
+| `GetCurrentStandingsCar(int)` |  |  |  | `0x004143B0` 48 |  |  |
+| `GetNumPlayers()` |  |  |  | `0x003821D0` 28 |  |  |
+| `GetTotalCarsHitByPlayer(int)` |  |  |  | `0x00382180` 72 |  |  |
+| `GetTotalPlayerScore(int)` |  |  |  | `0x00382130` 76 |  |  |
+| `IsLastStageInZone()` |  |  |  | `0x00427D50` 56 |  |  |
+| `IsLastZoneInParty()` |  |  |  | `0x004143E0` 56 |  |  |
+| `SetNumPlayers(unsigned char)` |  |  |  | `0x0033E460` 36 |  |  |
 
 ## Notes
 

@@ -7,26 +7,27 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3GlobeComponent.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 12
+- **Retail (SLUS-21050):** 1 of its 8 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00441620`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SelectCurrentRegion()` | `0x0036A120` 16 | `0x003D6DF0` 16 | `0x003FF940` 16 | `0x00413050` 44 |  |
-| `PrevRegion()` | `0x0036A130` 68 | `0x003D6E00` 148 | `0x003FF950` 148 | `0x00412FA0` 168 |  |
-| `NextRegion()` | `0x0036A180` 68 | `0x003D6EA0` 148 | `0x003FF9F0` 148 | `0x00412EF0` 168 |  |
-| `Release()` | `0x0036A1D0` 68 | `0x003D6F40` 68 | `0x003FFA90` 68 | `0x00412E70` 128 |  |
-| `Update(float)` | `0x0036A220` 3084 | `0x003D6F90` 3180 | `0x003FFAE0` 3180 | `0x00411720` 5876 |  |
-| `PrepareSpinning()` | `0x0036AE30` 156 | `0x003D7C00` 156 | `0x00400750` 156 | `0x004115E0` 312 |  |
-| `Prepare(EB3TrackRegion)` | `0x0036AED0` 156 | `0x003D7CA0` 156 | `0x004007F0` 156 | `0x004114B0` 300 |  |
-| `Construct()` | `0x0036AF70` 44 | `0x003D7D40` 44 | `0x00400890` 44 | `0x00411470` 52 |  |
-| `CB3GlobeComponent()` |  |  |  | `0x0033BD90` 76 |  |
-| `GetCurrentRegion()` |  |  |  | `0x00350880` 28 |  |
-| `GetState()` |  |  |  | `0x003508E0` 28 |  |
-| `UpdateBar(float)` |  |  |  | `0x00412E20` 68 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SelectCurrentRegion()` | `0x0036A120` 16 | `0x003D6DF0` 16 | `0x003FF940` 16 | `0x00413050` 44 |  |  |
+| `PrevRegion()` | `0x0036A130` 68 | `0x003D6E00` 148 | `0x003FF950` 148 | `0x00412FA0` 168 |  |  |
+| `NextRegion()` | `0x0036A180` 68 | `0x003D6EA0` 148 | `0x003FF9F0` 148 | `0x00412EF0` 168 |  |  |
+| `Release()` | `0x0036A1D0` 68 | `0x003D6F40` 68 | `0x003FFA90` 68 | `0x00412E70` 128 |  |  |
+| `Update(float)` | `0x0036A220` 3084 | `0x003D6F90` 3180 | `0x003FFAE0` 3180 | `0x00411720` 5876 | `0x003B63F0` unverified |  |
+| `PrepareSpinning()` | `0x0036AE30` 156 | `0x003D7C00` 156 | `0x00400750` 156 | `0x004115E0` 312 |  |  |
+| `Prepare(EB3TrackRegion)` | `0x0036AED0` 156 | `0x003D7CA0` 156 | `0x004007F0` 156 | `0x004114B0` 300 |  |  |
+| `Construct()` | `0x0036AF70` 44 | `0x003D7D40` 44 | `0x00400890` 44 | `0x00411470` 52 |  |  |
+| `CB3GlobeComponent()` |  |  |  | `0x0033BD90` 76 |  |  |
+| `GetCurrentRegion()` |  |  |  | `0x00350880` 28 |  |  |
+| `GetState()` |  |  |  | `0x003508E0` 28 |  |  |
+| `UpdateBar(float)` |  |  |  | `0x00412E20` 68 |  |  |
 
 ## Notes
 

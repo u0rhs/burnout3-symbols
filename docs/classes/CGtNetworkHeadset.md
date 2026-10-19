@@ -7,50 +7,51 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `GtNetworkHeadset.cpp`
 - **Methods per build:** DNAT_200 28, B3DEBUG 23, B3INTERN 31, B3O0PCH 28
+- **Retail (SLUS-21050):** 10 of its 28 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetStatusToSend(EHeadsetTalkControlStatus,int)` | `0x0027F490` 400 | `0x002B6F60` 436 | `0x002ECED0` 436 | `0x002F0C70` 660 |  |
-| `ChangeControlStateToOtherPlayerTalking(int,unsigned short)` | `0x0027F620` 340 | `0x002B7120` 496 | `0x002ED090` 304 | `0x002F0A00` 464 |  |
-| `CheckForStateTimeouts()` | `0x0027F780` 420 |  | `0x002ED1C0` 472 |  |  |
-| `ReceiveStatusMessageOtherPlayerTalking(int,int,EHeadsetTalkControlStatus,unsigned short)` | `0x0027F930` 224 | `0x002B7460` 2132 | `0x002ED550` 468 | `0x002F0200` 1356 |  |
-| `ReceiveStatusMessageOtherPlayerRequestingTalk(int,int,EHeadsetTalkControlStatus,unsigned short)` | `0x0027FA10` 188 | `0x002B7CC0` 1704 | `0x002ED730` 508 | `0x002EFD80` 1140 |  |
-| `ReceiveStatusMessageRequestingTalk(int,int,EHeadsetTalkControlStatus,unsigned short)` | `0x0027FAD0` 508 | `0x002B8520` 1340 | `0x002ED930` 780 | `0x002EF5E0` 1376 |  |
-| `HeadsetControlMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0027FCD0` 476 | `0x002B8CD0` 496 | `0x002EDD80` 356 | `0x002EF270` 148 |  |
-| `GetHeadsetStatus()` | `0x0027FEB0` 20 | `0x002B8FE0` 20 | `0x002EE010` 20 | `0x002EF120` 52 |  |
-| `GetTimeTillRequestTalkAvailable()` | `0x0027FED0` 16 | `0x002B9000` 16 | `0x002EE030` 16 | `0x002EF0F0` 36 |  |
-| `GetMaximumTalkTime()` | `0x0027FEE0` 16 | `0x002B9010` 16 | `0x002EE040` 16 | `0x002EF0C0` 36 |  |
-| `GetTalkTimeLeft()` | `0x0027FEF0` 16 | `0x002B9020` 16 | `0x002EE050` 16 | `0x002EF090` 36 |  |
-| `GetIDOfTalkingNetworkPlayer(int*)` | `0x0027FF00` 120 | `0x002B9030` 120 | `0x002EE060` 120 | `0x002EEFD0` 180 |  |
-| `IsRequestingTalk()` | `0x0027FF80` 16 | `0x002B90B0` 16 | `0x002EE0E0` 16 | `0x002EEFA0` 36 |  |
-| `IsTalking()` | `0x0027FF90` 16 | `0x002B90C0` 16 | `0x002EE0F0` 16 | `0x002EEF70` 36 |  |
-| `ReleaseTalk(unsigned short)` | `0x0027FFA0` 116 | `0x002B90D0` 176 | `0x002EE100` 116 | `0x002EEE80` 236 |  |
-| `RequestTalk(unsigned short)` | `0x00280020` 196 | `0x002B9180` 240 | `0x002EE180` 196 | `0x002EED40` 316 |  |
-| `ReceiveBroadcastMessage(unsigned short,int,CGtNetworkHeadsetMessage*,char**)` | `0x002800F0` 1088 |  | `0x002EE250` 1764 |  |  |
-| `SpeakerBroadcastMessage(unsigned short)` | `0x00280530` 1108 |  | `0x002EE940` 2368 |  |  |
-| `UpdateHeadsetControl(unsigned short,float)` | `0x00280990` 1164 |  | `0x002EF280` 1992 |  |  |
-| `SendControlMessageToSelectPlayers(int*,int,EHeadsetTalkControlStatus,unsigned short,unsigned short)` | `0x00280E20` 308 |  | `0x002EFA50` 340 |  |  |
-| `RemoveOldPlayersFromAcceptList()` | `0x00280F60` 352 |  | `0x002EFBB0` 448 |  |  |
-| `GetNewPlayerIDs(int*,int*)` | `0x002810C0` 316 |  | `0x002EFD70` 316 |  |  |
-| `Update(int,float)` | `0x00281200` 1336 |  | `0x002EFEB0` 2160 |  |  |
-| `Release()` | `0x00281740` 36 | `0x002B9270` 36 | `0x002F0720` 36 | `0x002EED00` 60 |  |
-| `UnregisterMessages(CGtNetworkPlayer*)` | `0x00281770` 56 |  | `0x002F0750` 56 |  |  |
-| `RegisterMessages(CGtNetworkPlayer*,CGtHeadsetMessage*,CGtHeadsetMessage*,CGtHeadsetTalkControlMessage*)` | `0x002817B0` 132 | `0x002B92A0` 132 | `0x002F0790` 132 | `0x002EEC80` 128 |  |
-| `Prepare()` | `0x00281840` 416 | `0x002B9330` 416 | `0x002F0820` 416 | `0x002EEA20` 604 |  |
-| `Construct(CGtHeadset*,int,int,CGtNetworkPlayerManager*)` | `0x002819E0` 176 | `0x002B94D0` 252 | `0x002F09C0` 252 | `0x002EE920` 252 |  |
-| `ReceiveStatusMessage(int,int,EHeadsetTalkControlStatus,unsigned short)` |  | `0x002B7310` 332 | `0x002ED3A0` 432 | `0x002F0750` 344 |  |
-| `ReceiveStatusMessageTalking(int,int,EHeadsetTalkControlStatus,unsigned short)` |  | `0x002B8370` 432 |  | `0x002EFB40` 564 |  |
-| `ReceiveStatusMessageIdle(int,int,EHeadsetTalkControlStatus,unsigned short)` |  | `0x002B8A60` 624 | `0x002EDC40` 316 | `0x002EF310` 712 |  |
-| `ReleaseAllMessages()` |  | `0x002B8EC0` 280 | `0x002EDEF0` 280 | `0x002EF160` 264 |  |
-| `ChangeControlState(EHeadsetControlState)` |  |  |  | `0x002F0C30` 56 |  |
-| `ChangeControlStateToOtherPlayerRequestingTalk(int)` |  |  |  | `0x002F0BD0` 88 |  |
-| `ChangeControlStateToRequestingTalk()` |  |  |  | `0x002F09D0` 44 |  |
-| `ChangeControlStateToTalking()` |  |  |  | `0x002F08B0` 276 |  |
-| `GetPlayerManager()` |  |  |  | `0x00480590` 36 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetStatusToSend(EHeadsetTalkControlStatus,int)` | `0x0027F490` 400 | `0x002B6F60` 436 | `0x002ECED0` 436 | `0x002F0C70` 660 | `0x002BF7F0` likely |  |
+| `ChangeControlStateToOtherPlayerTalking(int,unsigned short)` | `0x0027F620` 340 | `0x002B7120` 496 | `0x002ED090` 304 | `0x002F0A00` 464 | `0x002BF9A0` strong |  |
+| `CheckForStateTimeouts()` | `0x0027F780` 420 |  | `0x002ED1C0` 472 |  |  |  |
+| `ReceiveStatusMessageOtherPlayerTalking(int,int,EHeadsetTalkControlStatus,unsigned short)` | `0x0027F930` 224 | `0x002B7460` 2132 | `0x002ED550` 468 | `0x002F0200` 1356 | `0x002BFCC0` strong |  |
+| `ReceiveStatusMessageOtherPlayerRequestingTalk(int,int,EHeadsetTalkControlStatus,unsigned short)` | `0x0027FA10` 188 | `0x002B7CC0` 1704 | `0x002ED730` 508 | `0x002EFD80` 1140 | `0x002BFDA0` strong |  |
+| `ReceiveStatusMessageRequestingTalk(int,int,EHeadsetTalkControlStatus,unsigned short)` | `0x0027FAD0` 508 | `0x002B8520` 1340 | `0x002ED930` 780 | `0x002EF5E0` 1376 | `0x002BFE70` likely |  |
+| `HeadsetControlMessageArrivedCallback(CGtNetworkMessage*,int,void*)` | `0x0027FCD0` 476 | `0x002B8CD0` 496 | `0x002EDD80` 356 | `0x002EF270` 148 | `0x002C00C0` strong |  |
+| `GetHeadsetStatus()` | `0x0027FEB0` 20 | `0x002B8FE0` 20 | `0x002EE010` 20 | `0x002EF120` 52 |  |  |
+| `GetTimeTillRequestTalkAvailable()` | `0x0027FED0` 16 | `0x002B9000` 16 | `0x002EE030` 16 | `0x002EF0F0` 36 |  |  |
+| `GetMaximumTalkTime()` | `0x0027FEE0` 16 | `0x002B9010` 16 | `0x002EE040` 16 | `0x002EF0C0` 36 | `0x002C02E0` likely |  |
+| `GetTalkTimeLeft()` | `0x0027FEF0` 16 | `0x002B9020` 16 | `0x002EE050` 16 | `0x002EF090` 36 |  |  |
+| `GetIDOfTalkingNetworkPlayer(int*)` | `0x0027FF00` 120 | `0x002B9030` 120 | `0x002EE060` 120 | `0x002EEFD0` 180 | `0x002C02F0` strong |  |
+| `IsRequestingTalk()` | `0x0027FF80` 16 | `0x002B90B0` 16 | `0x002EE0E0` 16 | `0x002EEFA0` 36 | `0x002C0370` strong |  |
+| `IsTalking()` | `0x0027FF90` 16 | `0x002B90C0` 16 | `0x002EE0F0` 16 | `0x002EEF70` 36 | `0x002C0380` strong |  |
+| `ReleaseTalk(unsigned short)` | `0x0027FFA0` 116 | `0x002B90D0` 176 | `0x002EE100` 116 | `0x002EEE80` 236 |  |  |
+| `RequestTalk(unsigned short)` | `0x00280020` 196 | `0x002B9180` 240 | `0x002EE180` 196 | `0x002EED40` 316 |  |  |
+| `ReceiveBroadcastMessage(unsigned short,int,CGtNetworkHeadsetMessage*,char**)` | `0x002800F0` 1088 |  | `0x002EE250` 1764 |  |  |  |
+| `SpeakerBroadcastMessage(unsigned short)` | `0x00280530` 1108 |  | `0x002EE940` 2368 |  |  |  |
+| `UpdateHeadsetControl(unsigned short,float)` | `0x00280990` 1164 |  | `0x002EF280` 1992 |  |  |  |
+| `SendControlMessageToSelectPlayers(int*,int,EHeadsetTalkControlStatus,unsigned short,unsigned short)` | `0x00280E20` 308 |  | `0x002EFA50` 340 |  |  |  |
+| `RemoveOldPlayersFromAcceptList()` | `0x00280F60` 352 |  | `0x002EFBB0` 448 |  |  |  |
+| `GetNewPlayerIDs(int*,int*)` | `0x002810C0` 316 |  | `0x002EFD70` 316 |  |  |  |
+| `Update(int,float)` | `0x00281200` 1336 |  | `0x002EFEB0` 2160 |  |  |  |
+| `Release()` | `0x00281740` 36 | `0x002B9270` 36 | `0x002F0720` 36 | `0x002EED00` 60 |  |  |
+| `UnregisterMessages(CGtNetworkPlayer*)` | `0x00281770` 56 |  | `0x002F0750` 56 |  |  |  |
+| `RegisterMessages(CGtNetworkPlayer*,CGtHeadsetMessage*,CGtHeadsetMessage*,CGtHeadsetTalkControlMessage*)` | `0x002817B0` 132 | `0x002B92A0` 132 | `0x002F0790` 132 | `0x002EEC80` 128 |  |  |
+| `Prepare()` | `0x00281840` 416 | `0x002B9330` 416 | `0x002F0820` 416 | `0x002EEA20` 604 |  |  |
+| `Construct(CGtHeadset*,int,int,CGtNetworkPlayerManager*)` | `0x002819E0` 176 | `0x002B94D0` 252 | `0x002F09C0` 252 | `0x002EE920` 252 |  |  |
+| `ReceiveStatusMessage(int,int,EHeadsetTalkControlStatus,unsigned short)` |  | `0x002B7310` 332 | `0x002ED3A0` 432 | `0x002F0750` 344 |  |  |
+| `ReceiveStatusMessageTalking(int,int,EHeadsetTalkControlStatus,unsigned short)` |  | `0x002B8370` 432 |  | `0x002EFB40` 564 |  |  |
+| `ReceiveStatusMessageIdle(int,int,EHeadsetTalkControlStatus,unsigned short)` |  | `0x002B8A60` 624 | `0x002EDC40` 316 | `0x002EF310` 712 |  |  |
+| `ReleaseAllMessages()` |  | `0x002B8EC0` 280 | `0x002EDEF0` 280 | `0x002EF160` 264 |  |  |
+| `ChangeControlState(EHeadsetControlState)` |  |  |  | `0x002F0C30` 56 |  |  |
+| `ChangeControlStateToOtherPlayerRequestingTalk(int)` |  |  |  | `0x002F0BD0` 88 |  |  |
+| `ChangeControlStateToRequestingTalk()` |  |  |  | `0x002F09D0` 44 |  |  |
+| `ChangeControlStateToTalking()` |  |  |  | `0x002F08B0` 276 |  |  |
+| `GetPlayerManager()` |  |  |  | `0x00480590` 36 |  |  |
 
 ## Notes
 

@@ -7,22 +7,23 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3OnlineConnectingPage.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 8
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440760`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x003000A0` 8 | `0x00354AA0` 8 | `0x00386110` 8 | `0x00387610` 16 |  |
-| `UpdateISP()` | `0x003000B0` 660 | `0x00354AB0` 684 | `0x00386120` 660 | `0x00387380` 448 |  |
-| `Update()` | `0x00300350` 168 | `0x00354D60` 168 | `0x003863C0` 168 | `0x00387300` 128 |  |
-| `PrepareLobbyConnect()` | `0x00300400` 500 | `0x00354E10` 524 | `0x00386470` 500 | `0x00387050` 280 |  |
-| `Prepare(int)` | `0x00300600` 440 | `0x00355020` 440 | `0x00386670` 440 | `0x00386DE0` 548 |  |
-| `CB3OnlineConnectingPage()` |  |  |  | `0x00341A40` 60 |  |
-| `PrepareConnectToServer()` |  |  |  | `0x00387170` 392 |  |
-| `UpdateLobby()` |  |  |  | `0x00387580` 132 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x003000A0` 8 | `0x00354AA0` 8 | `0x00386110` 8 | `0x00387610` 16 | `0x00346DE0` likely |  |
+| `UpdateISP()` | `0x003000B0` 660 | `0x00354AB0` 684 | `0x00386120` 660 | `0x00387380` 448 | `0x00346DF0` unverified |  |
+| `Update()` | `0x00300350` 168 | `0x00354D60` 168 | `0x003863C0` 168 | `0x00387300` 128 | `0x00347120` likely |  |
+| `PrepareLobbyConnect()` | `0x00300400` 500 | `0x00354E10` 524 | `0x00386470` 500 | `0x00387050` 280 | `0x003471E0` unverified |  |
+| `Prepare(int)` | `0x00300600` 440 | `0x00355020` 440 | `0x00386670` 440 | `0x00386DE0` 548 | `0x00347440` unverified |  |
+| `CB3OnlineConnectingPage()` |  |  |  | `0x00341A40` 60 |  |  |
+| `PrepareConnectToServer()` |  |  |  | `0x00387170` 392 |  |  |
+| `UpdateLobby()` |  |  |  | `0x00387580` 132 |  |  |
 
 ## Notes
 

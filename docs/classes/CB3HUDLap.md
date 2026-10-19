@@ -11,14 +11,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Update(float)` | `0x002EDA60` 792 | `0x0033C7A0` 792 | `0x0036DE30` 792 | `0x0036CEB0` 224 |  |
-| `Prepare(int,EHUDAlign,int)` | `0x002EDD80` 900 | `0x0033CAC0` 992 | `0x0036E150` 1000 | `0x0036CAF0` 952 |  |
-| `CB3HUDLap()` |  |  |  | `0x00199BC0` 60 |  |
-| `PrepareLapObject()` |  |  |  | `0x0036CF90` 628 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Update(float)` | `0x002EDA60` 792 | `0x0033C7A0` 792 | `0x0036DE30` 792 | `0x0036CEB0` 224 |  |  |
+| `Prepare(int,EHUDAlign,int)` | `0x002EDD80` 900 | `0x0033CAC0` 992 | `0x0036E150` 1000 | `0x0036CAF0` 952 |  |  |
+| `CB3HUDLap()` |  |  |  | `0x00199BC0` 60 |  |  |
+| `PrepareLapObject()` |  |  |  | `0x0036CF90` 628 |  |  |
 
 ## Notes
 

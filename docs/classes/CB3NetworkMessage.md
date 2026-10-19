@@ -7,16 +7,17 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3NetworkMessage.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 3
+- **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Prepare(int,bool)` | `0x00173E60` 156 | `0x00190040` 320 | `0x0018A340` 320 | `0x001A3CF0` 68 |  |
-| `Construct()` | `0x00173F00` 8 | `0x00190180` 8 | `0x0018A480` 8 | `0x001A3CC0` 40 |  |
-| `Release()` |  |  |  | `0x001A3FC0` 40 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Prepare(int,bool)` | `0x00173E60` 156 | `0x00190040` 320 | `0x0018A340` 320 | `0x001A3CF0` 68 | `0x001A84A0` strong |  |
+| `Construct()` | `0x00173F00` 8 | `0x00190180` 8 | `0x0018A480` 8 | `0x001A3CC0` 40 | `0x001A8540` likely |  |
+| `Release()` |  |  |  | `0x001A3FC0` 40 |  |  |
 
 ## Notes
 

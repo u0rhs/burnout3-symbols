@@ -7,21 +7,22 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `B3BehaviourEffect.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
+- **Retail (SLUS-21050):** 4 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440490`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Construct()` | `0x002E6340` 8 | `0x00330F30` 8 | `0x00363260` 8 | `0x00364F20` 16 |  |
-| `Destruct()` | `0x002E6350` 8 | `0x00330F40` 8 | `0x00363270` 8 | `0x00364F10` 16 |  |
-| `Release(void*)` | `0x002E6360` 8 | `0x00330F50` 8 | `0x00363280` 8 | `0x00364F00` 16 |  |
-| `Update(CGtCamera*,float)` | `0x002E6370` 6116 | `0x00330F60` 9224 | `0x00363290` 7016 | `0x003649B0` 1360 |  |
-| `Prepare(void*)` | `0x002E7B60` 44 | `0x00333370` 44 | `0x00364E00` 44 | `0x00364940` 108 |  |
-| `Construct(CB3PlayerCameraManager*)` | `0x002E7B90` 52 | `0x003333A0` 52 | `0x00364E30` 52 | `0x00364900` 56 |  |
-| `CB3BehaviourEffect()` |  |  |  | `0x0013E930` 156 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Construct()` | `0x002E6340` 8 | `0x00330F30` 8 | `0x00363260` 8 | `0x00364F20` 16 |  |  |
+| `Destruct()` | `0x002E6350` 8 | `0x00330F40` 8 | `0x00363270` 8 | `0x00364F10` 16 | `0x0032D1E0` likely |  |
+| `Release(void*)` | `0x002E6360` 8 | `0x00330F50` 8 | `0x00363280` 8 | `0x00364F00` 16 | `0x0032D1F0` likely |  |
+| `Update(CGtCamera*,float)` | `0x002E6370` 6116 | `0x00330F60` 9224 | `0x00363290` 7016 | `0x003649B0` 1360 | `0x0032D200` unverified |  |
+| `Prepare(void*)` | `0x002E7B60` 44 | `0x00333370` 44 | `0x00364E00` 44 | `0x00364940` 108 |  |  |
+| `Construct(CB3PlayerCameraManager*)` | `0x002E7B90` 52 | `0x003333A0` 52 | `0x00364E30` 52 | `0x00364900` 56 | `0x0032ED90` strong |  |
+| `CB3BehaviourEffect()` |  |  |  | `0x0013E930` 156 |  |  |
 
 ## Notes
 

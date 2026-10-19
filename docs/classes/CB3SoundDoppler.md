@@ -7,21 +7,22 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundDoppler.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 8
+- **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetMaxVolBoost(float)` | `0x002B43C0` 8 | `0x002F46F0` 8 | `0x00328AB0` 8 | `0x00320920` 36 |  |
-| `SetMaxVolToPower(float)` | `0x002B43D0` 8 | `0x002F4700` 8 | `0x00328AC0` 8 | `0x003208F0` 36 |  |
-| `SetMaxVolLinear(float)` | `0x002B43E0` 8 | `0x002F4710` 8 | `0x00328AD0` 8 | `0x003208C0` 36 |  |
-| `CalculatePitch(float,float)` | `0x002B43F0` 524 | `0x002F4720` 524 | `0x00328AE0` 524 | `0x003204C0` 1016 |  |
-| `CalculateVolume(float,float)` | `0x002B4600` 224 | `0x002F4930` 224 | `0x00328CF0` 224 | `0x00320320` 416 |  |
-| `Update(float,float,float,float,float*,float*)` | `0x002B46E0` 112 | `0x002F4A10` 112 | `0x00328DD0` 112 | `0x00320280` 156 |  |
-| `Prepare()` | `0x002B4750` 84 | `0x002F4A80` 84 | `0x00328E40` 84 | `0x003201D0` 164 |  |
-| `Construct()` | `0x002B47B0` 8 | `0x002F4AE0` 8 | `0x00328EA0` 8 | `0x003201C0` 16 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetMaxVolBoost(float)` | `0x002B43C0` 8 | `0x002F46F0` 8 | `0x00328AB0` 8 | `0x00320920` 36 | `0x002F4B70` proven |  |
+| `SetMaxVolToPower(float)` | `0x002B43D0` 8 | `0x002F4700` 8 | `0x00328AC0` 8 | `0x003208F0` 36 | `0x002F4B80` proven |  |
+| `SetMaxVolLinear(float)` | `0x002B43E0` 8 | `0x002F4710` 8 | `0x00328AD0` 8 | `0x003208C0` 36 | `0x002F4B90` proven |  |
+| `CalculatePitch(float,float)` | `0x002B43F0` 524 | `0x002F4720` 524 | `0x00328AE0` 524 | `0x003204C0` 1016 | `0x002F4BA0` proven |  |
+| `CalculateVolume(float,float)` | `0x002B4600` 224 | `0x002F4930` 224 | `0x00328CF0` 224 | `0x00320320` 416 | `0x002F4DC0` proven |  |
+| `Update(float,float,float,float,float*,float*)` | `0x002B46E0` 112 | `0x002F4A10` 112 | `0x00328DD0` 112 | `0x00320280` 156 | `0x002F4EA0` proven |  |
+| `Prepare()` | `0x002B4750` 84 | `0x002F4A80` 84 | `0x00328E40` 84 | `0x003201D0` 164 | `0x002F4F10` unverified |  |
+| `Construct()` | `0x002B47B0` 8 | `0x002F4AE0` 8 | `0x00328EA0` 8 | `0x003201C0` 16 | `0x002F4F80` proven |  |
 
 ## Static data (DNAT_200)
 

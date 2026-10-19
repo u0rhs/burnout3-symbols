@@ -38,9 +38,11 @@ The retail executable is stripped. These are the named addresses known so far, a
 
 | File | Contents | Size | Lines / rows |
 |---|---|---:|---:|
+| [`prototype-names.csv`](../data/burnout3-retail/prototype-names.csv) | 5,054 retail functions named from the June 2004 prototype map, 2,903 proven against the code | 587.2 KB | 5,054 |
 | [`function-names.csv`](../data/burnout3-retail/function-names.csv) | 1,146 named functions in the retail executable (851 verified) | 149.9 KB | 1,214 |
-| [`nahelam-mods.csv`](../data/burnout3-retail/nahelam-mods.csv) | Every address Nahelam's mods change, with the nearest named function | 378.5 KB | 1,480 |
-| [`memory-map.csv`](../data/burnout3-retail/memory-map.csv) | Named retail addresses: save profile, race state, tuning, display, controls, code | 13.2 KB | 95 |
+| [`function-names-check.csv`](../data/burnout3-retail/function-names-check.csv) | Each of those 1,146 names tested against the code | 145.0 KB | 1,146 |
+| [`nahelam-mods.csv`](../data/burnout3-retail/nahelam-mods.csv) | Every address Nahelam's mods change, with the function it is in (or the nearest named one before it) | 387.8 KB | 1,480 |
+| [`memory-map.csv`](../data/burnout3-retail/memory-map.csv) | Named retail addresses: save profile, race state, tuning, display, controls, code | 13.9 KB | 96 |
 | [`vehicle-ids.csv`](../data/burnout3-retail/vehicle-ids.csv) | The 67 vehicles and their IDs | 4.3 KB | 67 |
 | [`event-medals.csv`](../data/burnout3-retail/event-medals.csv) | The medal byte of each World Tour event in the save profile | 7.7 KB | 139 |
 | [`SLUS_210.50.strings.txt`](../data/burnout3-retail/disc/strings/SLUS_210.50.strings.txt) | Every string in the executable, with its address | 76.1 KB | 2,284 |

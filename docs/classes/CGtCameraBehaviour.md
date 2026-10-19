@@ -7,18 +7,19 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `GtCameraBehaviour.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 5
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Construct()` | `0x001E0510` 8 | `0x001DFB30` 8 | `0x00212830` 8 | `0x002233A0` 16 |  |
-| `CGtCameraBehaviour()` |  |  |  | `0x0013E710` 40 |  |
-| `Destruct()` |  |  |  | `0x002233B0` 16 |  |
-| `Prepare(void*)` |  |  |  | `0x002233C0` 20 |  |
-| `Release(void*)` |  |  |  | `0x002233E0` 16 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Construct()` | `0x001E0510` 8 | `0x001DFB30` 8 | `0x00212830` 8 | `0x002233A0` 16 | `0x0021AFF0` proven |  |
+| `CGtCameraBehaviour()` |  |  |  | `0x0013E710` 40 |  |  |
+| `Destruct()` |  |  |  | `0x002233B0` 16 |  |  |
+| `Prepare(void*)` |  |  |  | `0x002233C0` 20 |  |  |
+| `Release(void*)` |  |  |  | `0x002233E0` 16 |  |  |
 
 ## Notes
 

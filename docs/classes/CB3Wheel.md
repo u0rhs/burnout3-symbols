@@ -10,16 +10,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ApplyDriveTorque(float)` |  |  |  | `0x001C6A70` 44 |  |
-| `ApplyReactionTorque(float)` |  |  |  | `0x001C6950` 44 |  |
-| `CB3Wheel()` |  |  |  | `0x00191F20` 124 |  |
-| `Construct()` |  |  |  | `0x001CB9C0` 68 |  |
-| `Prepare()` |  |  |  | `0x001CC930` 304 |  |
-| `Update(float)` |  |  |  | `0x001C6A10` 88 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ApplyDriveTorque(float)` |  |  |  | `0x001C6A70` 44 |  |  |
+| `ApplyReactionTorque(float)` |  |  |  | `0x001C6950` 44 |  |  |
+| `CB3Wheel()` |  |  |  | `0x00191F20` 124 |  |  |
+| `Construct()` |  |  |  | `0x001CB9C0` 68 |  |  |
+| `Prepare()` |  |  |  | `0x001CC930` 304 |  |  |
+| `Update(float)` |  |  |  | `0x001C6A10` 88 |  |  |
 
 ## Burnout 2 layout of `CWheel`
 

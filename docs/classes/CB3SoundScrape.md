@@ -7,21 +7,22 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundScrape.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
+- **Retail (SLUS-21050):** 2 of its 7 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetInfo(ESoundWorldCrashSurfaceType,float,float,GtMathPs2::CGtV3d*)` | `0x002485E0` 64 | `0x00278890` 64 | `0x002B0260` 64 | `0x002ACBF0` 144 |  |
-| `Release()` | `0x00248620` 88 | `0x002788D0` 88 | `0x002B02A0` 88 | `0x002ACB60` 132 |  |
-| `UpdateScrape(int)` | `0x00248680` 580 | `0x00278930` 672 | `0x002B0300` 672 | `0x002AC6F0` 1128 |  |
-| `StartScrape(int,const CGtSoundWave*)` | `0x002488D0` 276 | `0x00278BD0` 316 | `0x002B05A0` 316 | `0x002AC560` 396 |  |
-| `Update(bool)` | `0x002489F0` 288 | `0x00278D10` 288 | `0x002B06E0` 288 | `0x002AC3F0` 360 |  |
-| `Prepare()` | `0x00248B10` 192 | `0x00278E30` 272 | `0x002B0800` 272 | `0x002AC290` 340 |  |
-| `Construct()` | `0x00248BD0` 12 | `0x00278F40` 12 | `0x002B0910` 12 | `0x002AC260` 36 |  |
-| `CB3SoundScrape()` |  |  |  | `0x002B1B10` 44 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetInfo(ESoundWorldCrashSurfaceType,float,float,GtMathPs2::CGtV3d*)` | `0x002485E0` 64 | `0x00278890` 64 | `0x002B0260` 64 | `0x002ACBF0` 144 | `0x00283510` strong |  |
+| `Release()` | `0x00248620` 88 | `0x002788D0` 88 | `0x002B02A0` 88 | `0x002ACB60` 132 | `0x00283560` proven |  |
+| `UpdateScrape(int)` | `0x00248680` 580 | `0x00278930` 672 | `0x002B0300` 672 | `0x002AC6F0` 1128 |  |  |
+| `StartScrape(int,const CGtSoundWave*)` | `0x002488D0` 276 | `0x00278BD0` 316 | `0x002B05A0` 316 | `0x002AC560` 396 |  |  |
+| `Update(bool)` | `0x002489F0` 288 | `0x00278D10` 288 | `0x002B06E0` 288 | `0x002AC3F0` 360 |  |  |
+| `Prepare()` | `0x00248B10` 192 | `0x00278E30` 272 | `0x002B0800` 272 | `0x002AC290` 340 |  |  |
+| `Construct()` | `0x00248BD0` 12 | `0x00278F40` 12 | `0x002B0910` 12 | `0x002AC260` 36 |  |  |
+| `CB3SoundScrape()` |  |  |  | `0x002B1B10` 44 |  |  |
 
 ## Notes
 

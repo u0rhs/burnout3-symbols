@@ -7,21 +7,22 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `B3DataLists.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 8
+- **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetTrackRegion(unsigned long)` | `0x002119F0` 96 | `0x00220330` 128 | `0x0025FB30` 128 | `0x00263640` 144 |  |
-| `GetTrackIndexFromID(unsigned long)` | `0x00211A50` 56 | `0x002203B0` 56 | `0x0025FBB0` 56 | `0x002635D0` 112 |  |
-| `IsTrackRightHandDrive(unsigned long)` | `0x00211A90` 140 | `0x002203F0` 196 | `0x0025FBF0` 196 | `0x00263550` 128 |  |
-| `IsTrackPointToPoint(unsigned long)` | `0x00211B20` 72 | `0x002204C0` 108 | `0x0025FCC0` 108 | `0x002634C0` 132 |  |
-| `IsTrackMarathon(unsigned long)` | `0x00211B70` 44 | `0x00220530` 44 | `0x0025FD30` 44 | `0x00263480` 64 |  |
-| `CreateTrackPathFromIndex(int,char*,int)` | `0x00211BA0` 176 | `0x00220560` 364 | `0x0025FD60` 364 | `0x00263400` 124 |  |
-| `CreateTrackPathFromID(unsigned long,char*,int)` | `0x00211C50` 168 | `0x002206D0` 248 | `0x0025FED0` 248 | `0x00263310` 228 |  |
-| `DoesTrackExist(unsigned long)` | `0x00212210` 68 | `0x00220D10` 68 | `0x00260290` 68 | `0x00262B50` 56 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetTrackRegion(unsigned long)` | `0x002119F0` 96 | `0x00220330` 128 | `0x0025FB30` 128 | `0x00263640` 144 | `0x00251870` proven |  |
+| `GetTrackIndexFromID(unsigned long)` | `0x00211A50` 56 | `0x002203B0` 56 | `0x0025FBB0` 56 | `0x002635D0` 112 | `0x002518E0` proven |  |
+| `IsTrackRightHandDrive(unsigned long)` | `0x00211A90` 140 | `0x002203F0` 196 | `0x0025FBF0` 196 | `0x00263550` 128 | `0x00251920` proven |  |
+| `IsTrackPointToPoint(unsigned long)` | `0x00211B20` 72 | `0x002204C0` 108 | `0x0025FCC0` 108 | `0x002634C0` 132 | `0x002519B0` proven |  |
+| `IsTrackMarathon(unsigned long)` | `0x00211B70` 44 | `0x00220530` 44 | `0x0025FD30` 44 | `0x00263480` 64 | `0x00251A00` proven |  |
+| `CreateTrackPathFromIndex(int,char*,int)` | `0x00211BA0` 176 | `0x00220560` 364 | `0x0025FD60` 364 | `0x00263400` 124 | `0x00251A30` proven |  |
+| `CreateTrackPathFromID(unsigned long,char*,int)` | `0x00211C50` 168 | `0x002206D0` 248 | `0x0025FED0` 248 | `0x00263310` 228 | `0x00251AE0` proven |  |
+| `DoesTrackExist(unsigned long)` | `0x00212210` 68 | `0x00220D10` 68 | `0x00260290` 68 | `0x00262B50` 56 | `0x00251E10` strong |  |
 
 ## Notes
 

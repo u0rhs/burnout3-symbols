@@ -7,39 +7,40 @@
 - **Area:** [Progression, profiles and saves](../systems/progression-saves.md)
 - **Source file:** `GTMemoryDevicePS2_MC2.cpp`
 - **Methods per build:** DNAT_200 16, B3DEBUG 16, B3INTERN 16, B3O0PCH 25
+- **Retail (SLUS-21050):** 16 of its 16 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CMemoryDevicePS2`, size 0x0C0, declared in 3 file(s), e.g. `gamesource/Menu/CMenuPageMemoryCard.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetFinishStatus(int,int,int*)` | `0x002CA4C0` 1528 | `0x00312110` 1528 | `0x00343D20` 1528 | `0x0033A570` 432 | `EMemDevStatus CMemoryDevicePS2::GetFinishStatus(int lnSyncCmd, int lnSyncResult, int *lpnSyncInfo)` |
-| `FinishedGetFileSize(int,int*)` | `0x002CAAC0` 384 | `0x00312710` 384 | `0x00344320` 384 | `0x0033A260` 384 |  |
-| `FinishedGetInfo(int)` | `0x002CAC40` 408 | `0x00312890` 408 | `0x003444A0` 408 | `0x0033A110` 336 | `EMemDevStatus CMemoryDevicePS2::FinishedGetInfo(int lnSyncResult)` |
-| `GetRunStatus(int)` | `0x002CADE0` 228 | `0x00312A30` 228 | `0x00344640` 228 | `0x00339C30` 276 | `EMemDevStatus CMemoryDevicePS2::GetRunStatus(int lnSyncCmd)` |
-| `Sync(EMemDevPollOrWait,int*)` | `0x002CAED0` 416 | `0x00312B20` 416 | `0x00344730` 416 | `0x00339A30` 380 | `EMemDevStatus CMemoryDevicePS2::Sync(EMemDevPollOrWait lePollOrWait, int *lpnSyncInfo)` |
-| `MkDir(const char*)` | `0x002CB070` 100 | `0x00312CC0` 100 | `0x003448D0` 100 | `0x003399D0` 92 | `int CMemoryDevicePS2::MkDir(char *lpacDirname)` |
-| `Format()` | `0x002CB0E0` 156 | `0x00312D30` 156 | `0x00344940` 156 | `0x00339950` 128 | `int CMemoryDevicePS2::Format()` |
-| `Write(const char*,unsigned int,unsigned int)` | `0x002CB180` 172 | `0x00312DD0` 172 | `0x003449E0` 172 | `0x003398B0` 160 | `int CMemoryDevicePS2::Write(char *lpacBuffer, unsigned int lunLengthInBytes, unsigned int lunOffsetInBytes)` |
-| `Read(char*,unsigned int,unsigned int)` | `0x002CB230` 172 | `0x00312E80` 172 | `0x00344A90` 172 | `0x00339810` 160 | `int CMemoryDevicePS2::Read(char *lpacBuffer, unsigned int lunLengthInBytes, unsigned int lunOffsetInBytes)` |
-| `CloseFile()` | `0x002CB2E0` 84 | `0x00312F30` 84 | `0x00344B40` 84 | `0x003397B0` 96 | `int CMemoryDevicePS2::CloseFile()` |
-| `OpenFile(const char*,unsigned int,unsigned int)` | `0x002CB340` 444 | `0x00312F90` 444 | `0x00344BA0` 444 | `0x00339660` 324 | `int CMemoryDevicePS2::OpenFile(char *lpacFilename, unsigned int lunMode)` (same name, different parameters) |
-| `GetFreeSpace()` | `0x002CB500` 32 | `0x00313150` 32 | `0x00344D60` 32 | `0x00339620` 60 | `int CMemoryDevicePS2::GetFreeSpace()` |
-| `GetFileSize(const char*)` | `0x002CB520` 116 | `0x00313170` 116 | `0x00344D80` 116 | `0x003395A0` 116 | `int CMemoryDevicePS2::GetFileSize(char *lpacFilename)` |
-| `FileExists(const char*)` | `0x002CB5A0` 104 | `0x003131F0` 104 | `0x00344E00` 104 | `0x00339530` 100 |  |
-| `GetError()` | `0x002CB610` 8 | `0x00313260` 8 | `0x00344E70` 8 | `0x00339510` 28 | `EMemDevError CMemoryDevicePS2::GetError()` |
-| `Init()` | `0x002CB620` 140 | `0x00313270` 140 | `0x00344E80` 140 | `0x00339470` 156 | `int CMemoryDevicePS2::Init()` |
-| `FinishedCreateFile(int)` |  |  |  | `0x00339D50` 216 |  |
-| `FinishedDelete(int)` |  |  |  | `0x0033A3E0` 192 |  |
-| `FinishedFileExists(int)` |  |  |  | `0x0033A4A0` 204 |  |
-| `FinishedFormat(int)` |  |  |  | `0x00339FC0` 144 |  |
-| `FinishedMkDir(int)` |  |  |  | `0x0033A050` 180 |  |
-| `FinishedRead(int,int*)` |  |  |  | `0x00339E30` 176 |  |
-| `FinishedWrite(int,int*)` |  |  |  | `0x00339EE0` 212 |  |
-| `GetInfo()` |  |  |  | `0x0033A720` 92 |  |
-| `SetLastError(EMemDevError)` |  |  |  | `0x00339BB0` 120 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetFinishStatus(int,int,int*)` | `0x002CA4C0` 1528 | `0x00312110` 1528 | `0x00343D20` 1528 | `0x0033A570` 432 | `0x003096E0` strong | `EMemDevStatus CMemoryDevicePS2::GetFinishStatus(int lnSyncCmd, int lnSyncResult, int *lpnSyncInfo)` |
+| `FinishedGetFileSize(int,int*)` | `0x002CAAC0` 384 | `0x00312710` 384 | `0x00344320` 384 | `0x0033A260` 384 | `0x00309D20` strong |  |
+| `FinishedGetInfo(int)` | `0x002CAC40` 408 | `0x00312890` 408 | `0x003444A0` 408 | `0x0033A110` 336 | `0x00309EB0` strong | `EMemDevStatus CMemoryDevicePS2::FinishedGetInfo(int lnSyncResult)` |
+| `GetRunStatus(int)` | `0x002CADE0` 228 | `0x00312A30` 228 | `0x00344640` 228 | `0x00339C30` 276 | `0x0030A050` unverified | `EMemDevStatus CMemoryDevicePS2::GetRunStatus(int lnSyncCmd)` |
+| `Sync(EMemDevPollOrWait,int*)` | `0x002CAED0` 416 | `0x00312B20` 416 | `0x00344730` 416 | `0x00339A30` 380 | `0x0030A130` likely | `EMemDevStatus CMemoryDevicePS2::Sync(EMemDevPollOrWait lePollOrWait, int *lpnSyncInfo)` |
+| `MkDir(const char*)` | `0x002CB070` 100 | `0x00312CC0` 100 | `0x003448D0` 100 | `0x003399D0` 92 | `0x0030A310` strong | `int CMemoryDevicePS2::MkDir(char *lpacDirname)` |
+| `Format()` | `0x002CB0E0` 156 | `0x00312D30` 156 | `0x00344940` 156 | `0x00339950` 128 | `0x0030A380` strong | `int CMemoryDevicePS2::Format()` |
+| `Write(const char*,unsigned int,unsigned int)` | `0x002CB180` 172 | `0x00312DD0` 172 | `0x003449E0` 172 | `0x003398B0` 160 | `0x0030A420` strong | `int CMemoryDevicePS2::Write(char *lpacBuffer, unsigned int lunLengthInBytes, unsigned int lunOffsetInBytes)` |
+| `Read(char*,unsigned int,unsigned int)` | `0x002CB230` 172 | `0x00312E80` 172 | `0x00344A90` 172 | `0x00339810` 160 | `0x0030A4D0` strong | `int CMemoryDevicePS2::Read(char *lpacBuffer, unsigned int lunLengthInBytes, unsigned int lunOffsetInBytes)` |
+| `CloseFile()` | `0x002CB2E0` 84 | `0x00312F30` 84 | `0x00344B40` 84 | `0x003397B0` 96 | `0x0030A580` strong | `int CMemoryDevicePS2::CloseFile()` |
+| `OpenFile(const char*,unsigned int,unsigned int)` | `0x002CB340` 444 | `0x00312F90` 444 | `0x00344BA0` 444 | `0x00339660` 324 | `0x0030A5E0` strong | `int CMemoryDevicePS2::OpenFile(char *lpacFilename, unsigned int lunMode)` (same name, different parameters) |
+| `GetFreeSpace()` | `0x002CB500` 32 | `0x00313150` 32 | `0x00344D60` 32 | `0x00339620` 60 | `0x0030A7B0` strong | `int CMemoryDevicePS2::GetFreeSpace()` |
+| `GetFileSize(const char*)` | `0x002CB520` 116 | `0x00313170` 116 | `0x00344D80` 116 | `0x003395A0` 116 | `0x0030A7D0` strong | `int CMemoryDevicePS2::GetFileSize(char *lpacFilename)` |
+| `FileExists(const char*)` | `0x002CB5A0` 104 | `0x003131F0` 104 | `0x00344E00` 104 | `0x00339530` 100 | `0x0030A850` strong |  |
+| `GetError()` | `0x002CB610` 8 | `0x00313260` 8 | `0x00344E70` 8 | `0x00339510` 28 | `0x0030A8D0` likely | `EMemDevError CMemoryDevicePS2::GetError()` |
+| `Init()` | `0x002CB620` 140 | `0x00313270` 140 | `0x00344E80` 140 | `0x00339470` 156 | `0x0030A8E0` strong | `int CMemoryDevicePS2::Init()` |
+| `FinishedCreateFile(int)` |  |  |  | `0x00339D50` 216 |  |  |
+| `FinishedDelete(int)` |  |  |  | `0x0033A3E0` 192 |  |  |
+| `FinishedFileExists(int)` |  |  |  | `0x0033A4A0` 204 |  |  |
+| `FinishedFormat(int)` |  |  |  | `0x00339FC0` 144 |  |  |
+| `FinishedMkDir(int)` |  |  |  | `0x0033A050` 180 |  |  |
+| `FinishedRead(int,int*)` |  |  |  | `0x00339E30` 176 |  |  |
+| `FinishedWrite(int,int*)` |  |  |  | `0x00339EE0` 212 |  |  |
+| `GetInfo()` |  |  |  | `0x0033A720` 92 |  |  |
+| `SetLastError(EMemDevError)` |  |  |  | `0x00339BB0` 120 |  |  |
 
 ## Burnout 2 layout of `CMemoryDevicePS2`
 

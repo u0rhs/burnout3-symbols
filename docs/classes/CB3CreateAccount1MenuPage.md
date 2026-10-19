@@ -11,19 +11,19 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `OnKeyboardShow()` | `0x0033D330` 8 | `0x003A0430` 8 | `0x003CA640` 8 | `0x003D3780` 16 |  |
-| `OnKeyboardCancel()` | `0x0033D340` 248 | `0x003A0440` 248 | `0x003CA650` 248 | `0x003D3700` 116 |  |
-| `OnKeyboardDone()` | `0x0033D440` 2836 | `0x003A0540` 2836 | `0x003CA750` 2836 | `0x003D2F50` 1956 |  |
-| `Release()` | `0x0033DF60` 12 | `0x003A1060` 12 | `0x003CB270` 12 | `0x003D2F20` 40 |  |
-| `Update()` | `0x0033DF70` 1732 | `0x003A1070` 1732 | `0x003CB280` 1732 | `0x003D2720` 2044 |  |
-| `Prepare()` | `0x0033E640` 952 | `0x003A1740` 952 | `0x003CB950` 952 | `0x003D23B0` 880 |  |
-| `CB3CreateAccount1MenuPage()` |  |  |  | `0x00341520` 60 |  |
-| `EnableContinue()` |  |  |  | `0x003D37D0` 236 |  |
-| `SetContinueEnabledState()` |  |  |  | `0x003D3790` 64 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `OnKeyboardShow()` | `0x0033D330` 8 | `0x003A0430` 8 | `0x003CA640` 8 | `0x003D3780` 16 |  |  |
+| `OnKeyboardCancel()` | `0x0033D340` 248 | `0x003A0440` 248 | `0x003CA650` 248 | `0x003D3700` 116 |  |  |
+| `OnKeyboardDone()` | `0x0033D440` 2836 | `0x003A0540` 2836 | `0x003CA750` 2836 | `0x003D2F50` 1956 |  |  |
+| `Release()` | `0x0033DF60` 12 | `0x003A1060` 12 | `0x003CB270` 12 | `0x003D2F20` 40 |  |  |
+| `Update()` | `0x0033DF70` 1732 | `0x003A1070` 1732 | `0x003CB280` 1732 | `0x003D2720` 2044 |  |  |
+| `Prepare()` | `0x0033E640` 952 | `0x003A1740` 952 | `0x003CB950` 952 | `0x003D23B0` 880 |  |  |
+| `CB3CreateAccount1MenuPage()` |  |  |  | `0x00341520` 60 |  |  |
+| `EnableContinue()` |  |  |  | `0x003D37D0` 236 |  |  |
+| `SetContinueEnabledState()` |  |  |  | `0x003D3790` 64 |  |  |
 
 ## Notes
 

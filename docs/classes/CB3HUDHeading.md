@@ -11,16 +11,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x00383250` 1068 | `0x003F62A0` 1068 | `0x0041DED0` 1068 | `0x00436440` 736 |  |
-| `Update(float)` | `0x00383680` 8 | `0x003F66D0` 8 | `0x0041E300` 8 | `0x00435FE0` 16 |  |
-| `Prepare(int,EHUDAlign,int)` | `0x00383690` 664 | `0x003F66E0` 760 | `0x0041E310` 760 | `0x00435E80` 348 |  |
-| `CB3HUDHeading()` |  |  |  | `0x00199740` 60 |  |
-| `GetBoostBarTempLayer()` |  |  |  | `0x001A3AF0` 44 |  |
-| `PrepareHeadingObjects(EHUDMode)` |  |  |  | `0x00435FF0` 1104 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x00383250` 1068 | `0x003F62A0` 1068 | `0x0041DED0` 1068 | `0x00436440` 736 |  |  |
+| `Update(float)` | `0x00383680` 8 | `0x003F66D0` 8 | `0x0041E300` 8 | `0x00435FE0` 16 |  |  |
+| `Prepare(int,EHUDAlign,int)` | `0x00383690` 664 | `0x003F66E0` 760 | `0x0041E310` 760 | `0x00435E80` 348 |  |  |
+| `CB3HUDHeading()` |  |  |  | `0x00199740` 60 |  |  |
+| `GetBoostBarTempLayer()` |  |  |  | `0x001A3AF0` 44 |  |  |
+| `PrepareHeadingObjects(EHUDMode)` |  |  |  | `0x00435FF0` 1104 |  |  |
 
 ## Notes
 

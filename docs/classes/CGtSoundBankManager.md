@@ -7,24 +7,25 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `GtSoundBankManager.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 10
+- **Retail (SLUS-21050):** 6 of its 7 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `FindWave(const unsigned long&,bool) const` | `0x003412D0` 124 |  |  |  |  |
-| `UnloadBank(CGtSoundBank*)` | `0x00341350` 196 | `0x003A48B0` 296 | `0x003CE800` 284 | `0x003D7790` 196 |  |
-| `LoadBank(const char*,bool,bool,int)` | `0x00341420` 536 | `0x003A49E0` 860 | `0x003CE920` 832 | `0x003D74B0` 704 |  |
-| `Update()` | `0x00341640` 8 | `0x003A4D40` 8 | `0x003CEC60` 8 | `0x003D74A0` 16 |  |
-| `Prepare(void*)` | `0x00341650` 120 | `0x003A4D50` 176 | `0x003CEC70` 176 | `0x003D73B0` 236 |  |
-| `Destruct()` | `0x003416D0` 84 | `0x003A4E00` 92 | `0x003CED20` 84 | `0x003D7320` 140 |  |
-| `Construct(RwaSPU2Output*,int,CGtSoundWaveObjectBuffer*)` | `0x00341730` 248 | `0x003A4E60` 448 | `0x003CED80` 448 | `0x003D7130` 496 |  |
-| `FindWave(const unsigned long&,bool)` |  | `0x003A4800` 164 | `0x003CE780` 124 | `0x003D7930` 196 |  |
-| `AquireWaveObjectBuffer(int)` |  |  |  | `0x003D7A00` 240 |  |
-| `FindBank(const char*)` |  |  |  | `0x003D7880` 168 |  |
-| `ReleaseWaveObjectBuffer(void*)` |  |  |  | `0x003D7AF0` 184 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `FindWave(const unsigned long&,bool) const` | `0x003412D0` 124 |  |  |  | `0x00383F60` strong |  |
+| `UnloadBank(CGtSoundBank*)` | `0x00341350` 196 | `0x003A48B0` 296 | `0x003CE800` 284 | `0x003D7790` 196 | `0x00383FF0` strong |  |
+| `LoadBank(const char*,bool,bool,int)` | `0x00341420` 536 | `0x003A49E0` 860 | `0x003CE920` 832 | `0x003D74B0` 704 | `0x003840C0` unverified |  |
+| `Update()` | `0x00341640` 8 | `0x003A4D40` 8 | `0x003CEC60` 8 | `0x003D74A0` 16 | `0x00384320` strong |  |
+| `Prepare(void*)` | `0x00341650` 120 | `0x003A4D50` 176 | `0x003CEC70` 176 | `0x003D73B0` 236 |  |  |
+| `Destruct()` | `0x003416D0` 84 | `0x003A4E00` 92 | `0x003CED20` 84 | `0x003D7320` 140 | `0x00384400` proven |  |
+| `Construct(RwaSPU2Output*,int,CGtSoundWaveObjectBuffer*)` | `0x00341730` 248 | `0x003A4E60` 448 | `0x003CED80` 448 | `0x003D7130` 496 | `0x00384460` proven |  |
+| `FindWave(const unsigned long&,bool)` |  | `0x003A4800` 164 | `0x003CE780` 124 | `0x003D7930` 196 |  |  |
+| `AquireWaveObjectBuffer(int)` |  |  |  | `0x003D7A00` 240 |  |  |
+| `FindBank(const char*)` |  |  |  | `0x003D7880` 168 |  |  |
+| `ReleaseWaveObjectBuffer(void*)` |  |  |  | `0x003D7AF0` 184 |  |  |
 
 ## Notes
 

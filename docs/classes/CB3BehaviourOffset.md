@@ -7,22 +7,23 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `B3BehaviourOffset.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
+- **Retail (SLUS-21050):** 6 of its 7 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440160`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Construct()` | `0x002A2220` 8 | `0x002D9D10` 8 | `0x003113F0` 8 | `0x00311CD0` 40 |  |
-| `Destruct()` | `0x002A2230` 8 | `0x002D9D20` 8 | `0x00311400` 8 | `0x00311CA0` 44 |  |
-| `Release(void*)` | `0x002A2240` 8 | `0x002D9D30` 8 | `0x00311410` 8 | `0x00311C90` 16 |  |
-| `Update(CGtCamera*,float)` | `0x002A2250` 1896 | `0x002D9D40` 4108 | `0x00311420` 3636 | `0x003118C0` 796 |  |
-| `Prepare(void*)` | `0x002A29C0` 56 | `0x002DAD50` 304 | `0x00312260` 304 | `0x00311830` 132 |  |
-| `SetParameters(EB3BehaviourType,CB3AttribsOffset*,int)` | `0x002A2A00` 116 | `0x002DAE80` 228 | `0x00312390` 228 | `0x00311770` 184 |  |
-| `Construct(EB3BehaviourType,int)` | `0x002A2A80` 136 | `0x002DAF70` 284 | `0x00312480` 284 | `0x00311680` 232 |  |
-| `CB3BehaviourOffset()` |  |  |  | `0x0013E9D0` 76 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Construct()` | `0x002A2220` 8 | `0x002D9D10` 8 | `0x003113F0` 8 | `0x00311CD0` 40 | `0x002E2700` likely |  |
+| `Destruct()` | `0x002A2230` 8 | `0x002D9D20` 8 | `0x00311400` 8 | `0x00311CA0` 44 | `0x002E2710` proven |  |
+| `Release(void*)` | `0x002A2240` 8 | `0x002D9D30` 8 | `0x00311410` 8 | `0x00311C90` 16 | `0x002E2720` likely |  |
+| `Update(CGtCamera*,float)` | `0x002A2250` 1896 | `0x002D9D40` 4108 | `0x00311420` 3636 | `0x003118C0` 796 | `0x002E2730` unverified |  |
+| `Prepare(void*)` | `0x002A29C0` 56 | `0x002DAD50` 304 | `0x00312260` 304 | `0x00311830` 132 | `0x002E32E0` unverified |  |
+| `SetParameters(EB3BehaviourType,CB3AttribsOffset*,int)` | `0x002A2A00` 116 | `0x002DAE80` 228 | `0x00312390` 228 | `0x00311770` 184 |  |  |
+| `Construct(EB3BehaviourType,int)` | `0x002A2A80` 136 | `0x002DAF70` 284 | `0x00312480` 284 | `0x00311680` 232 | `0x002E3350` likely |  |
+| `CB3BehaviourOffset()` |  |  |  | `0x0013E9D0` 76 |  |  |
 
 ## Notes
 

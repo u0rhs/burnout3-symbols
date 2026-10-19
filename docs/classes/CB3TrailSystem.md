@@ -7,22 +7,23 @@
 - **Area:** [Effects](../systems/effects.md)
 - **Source file:** `B3TrailSystem.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
+- **Retail (SLUS-21050):** 5 of its 7 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CTrailSystem`, size 0x2C20, declared in 47 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `AddTrailSegment(CB3TrailEmitterData*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EB3TrailType,const GtMathPs2::CGtMatri` | `0x0027D040` 572 | `0x002B1FD0` 824 | `0x002E9100` 824 | `0x002E96E0` 616 |  |
-| `Render()` | `0x0027D280` 292 | `0x002B2310` 564 | `0x002E9440` 564 | `0x002E9540` 376 |  |
-| `Update()` | `0x0027D3B0` 524 | `0x002B2550` 560 | `0x002E9680` 560 | `0x002E9040` 344 |  |
-| `Release()` | `0x0027D5C0` 8 | `0x002B2780` 8 | `0x002E98B0` 8 | `0x002E8FD0` 104 |  |
-| `Prepare()` | `0x0027D5D0` 388 | `0x002B2790` 496 | `0x002E98C0` 496 | `0x002E8CE0` 520 |  |
-| `Destruct()` | `0x0027D760` 8 | `0x002B2980` 8 | `0x002E9AB0` 8 | `0x002E8C50` 128 |  |
-| `Construct()` | `0x0027D770` 84 | `0x002B2990` 84 | `0x002E9AC0` 84 | `0x002E8B60` 176 |  |
-| `AttachTrailEmitter(EB3TrailType)` |  |  |  | `0x002E92E0` 220 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `AddTrailSegment(CB3TrailEmitterData*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EB3TrailType,const GtMathPs2::CGtMatri` | `0x0027D040` 572 | `0x002B1FD0` 824 | `0x002E9100` 824 | `0x002E96E0` 616 | `0x002BD320` strong |  |
+| `Render()` | `0x0027D280` 292 | `0x002B2310` 564 | `0x002E9440` 564 | `0x002E9540` 376 |  |  |
+| `Update()` | `0x0027D3B0` 524 | `0x002B2550` 560 | `0x002E9680` 560 | `0x002E9040` 344 |  |  |
+| `Release()` | `0x0027D5C0` 8 | `0x002B2780` 8 | `0x002E98B0` 8 | `0x002E8FD0` 104 | `0x002BD7E0` strong |  |
+| `Prepare()` | `0x0027D5D0` 388 | `0x002B2790` 496 | `0x002E98C0` 496 | `0x002E8CE0` 520 | `0x002BD7F0` unverified |  |
+| `Destruct()` | `0x0027D760` 8 | `0x002B2980` 8 | `0x002E9AB0` 8 | `0x002E8C50` 128 | `0x002BD990` strong |  |
+| `Construct()` | `0x0027D770` 84 | `0x002B2990` 84 | `0x002E9AC0` 84 | `0x002E8B60` 176 | `0x002BD9A0` likely |  |
+| `AttachTrailEmitter(EB3TrailType)` |  |  |  | `0x002E92E0` 220 |  |  |
 
 ## Static data (DNAT_200)
 

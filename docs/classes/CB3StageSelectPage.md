@@ -11,15 +11,15 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x0031DA10` 8 | `0x00378DF0` 8 | `0x003A79D0` 8 | `0x003A8F70` 16 |  |
-| `Update()` | `0x0031DA20` 840 | `0x00378E00` 840 | `0x003A79E0` 840 | `0x003A8B40` 1068 |  |
-| `PrepareChampionshipSelection(int)` | `0x0031DD70` 1172 | `0x00379150` 1376 | `0x003A7D30` 1376 | `0x003A8550` 1512 |  |
-| `Prepare(bool)` | `0x0031E210` 200 | `0x003796B0` 200 | `0x003A8290` 200 | `0x003A8440` 268 |  |
-| `CB3StageSelectPage()` |  |  |  | `0x00343050` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x0031DA10` 8 | `0x00378DF0` 8 | `0x003A79D0` 8 | `0x003A8F70` 16 |  |  |
+| `Update()` | `0x0031DA20` 840 | `0x00378E00` 840 | `0x003A79E0` 840 | `0x003A8B40` 1068 |  |  |
+| `PrepareChampionshipSelection(int)` | `0x0031DD70` 1172 | `0x00379150` 1376 | `0x003A7D30` 1376 | `0x003A8550` 1512 |  |  |
+| `Prepare(bool)` | `0x0031E210` 200 | `0x003796B0` 200 | `0x003A8290` 200 | `0x003A8440` 268 |  |  |
+| `CB3StageSelectPage()` |  |  |  | `0x00343050` 60 |  |  |
 
 ## Notes
 

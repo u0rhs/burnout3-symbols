@@ -7,36 +7,37 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundRaceCar.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 13, B3INTERN 13, B3O0PCH 23
+- **Retail (SLUS-21050):** 10 of its 13 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `UpdateHorn(CB3RaceCar*)` | `0x0024E520` 208 | `0x00280490` 208 | `0x002B7310` 208 | `0x002B51F0` 268 |  |
-| `UpdateBoostIn(const CB3RaceCar*)` | `0x0024E5F0` 212 | `0x00280560` 212 | `0x002B73E0` 212 | `0x002B5000` 276 |  |
-| `UpdateBoostOut(const CB3RaceCar*)` | `0x0024E6D0` 212 | `0x00280640` 212 | `0x002B74C0` 212 | `0x002B4EE0` 276 |  |
-| `StopBoost(const CB3RaceCar*)` | `0x0024E7B0` 196 | `0x00280720` 244 | `0x002B75A0` 244 | `0x002B4C50` 316 |  |
-| `DoBoostIn(const CB3RaceCar*)` | `0x0024E880` 216 | `0x00280820` 248 | `0x002B76A0` 248 | `0x002B4A10` 536 |  |
-| `StartBoost(const CB3RaceCar*)` | `0x0024E960` 200 | `0x00280920` 236 | `0x002B77A0` 236 | `0x002B48C0` 332 |  |
-| `Destruct()` | `0x0024EA30` 8 | `0x00280A10` 8 | `0x002B7890` 8 | `0x002B4890` 44 |  |
-| `Release()` | `0x0024EA40` 100 | `0x00280A20` 100 | `0x002B78A0` 100 | `0x002B47F0` 160 |  |
-| `Update(const CB3RaceCar*)` | `0x0024EAB0` 824 | `0x00280A90` 1232 | `0x002B7910` 1232 | `0x002B4530` 692 |  |
-| `Unregister()` | `0x0024EDF0` 60 | `0x00280F60` 60 | `0x002B7DE0` 60 | `0x002B44E0` 76 |  |
-| `Register(unsigned long)` | `0x0024EE30` 356 | `0x00280FA0` 376 | `0x002B7E20` 376 | `0x002B42B0` 516 |  |
-| `Prepare(unsigned long,int)` | `0x0024EFA0` 356 | `0x00281120` 472 | `0x002B7FA0` 472 | `0x002B4050` 608 |  |
-| `Construct()` | `0x0024F110` 544 | `0x00281300` 588 | `0x002B8180` 588 | `0x002B3D40` 780 |  |
-| `BoostReady()` |  |  |  | `0x002B4ED0` 16 |  |
-| `CB3SoundRaceCar()` |  |  |  | `0x002B1D30` 40 |  |
-| `GetAttribs()` |  |  |  | `0x00318B90` 28 |  |
-| `GetESM()` |  |  |  | `0x00318BB0` 28 |  |
-| `GetLock()` |  |  |  | `0x00316580` 28 |  |
-| `IsPlayerCar()` |  |  |  | `0x002B44C0` 28 |  |
-| `IsRegistered()` |  |  |  | `0x002B24A0` 28 |  |
-| `SetLock(bool)` |  |  |  | `0x00316550` 36 |  |
-| `StopHorn()` |  |  |  | `0x002B5300` 72 |  |
-| `UpdateBoost(const CB3RaceCar*)` |  |  |  | `0x002B4D90` 308 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `UpdateHorn(CB3RaceCar*)` | `0x0024E520` 208 | `0x00280490` 208 | `0x002B7310` 208 | `0x002B51F0` 268 | `0x0028CD60` strong |  |
+| `UpdateBoostIn(const CB3RaceCar*)` | `0x0024E5F0` 212 | `0x00280560` 212 | `0x002B73E0` 212 | `0x002B5000` 276 | `0x0028CE30` strong |  |
+| `UpdateBoostOut(const CB3RaceCar*)` | `0x0024E6D0` 212 | `0x00280640` 212 | `0x002B74C0` 212 | `0x002B4EE0` 276 |  |  |
+| `StopBoost(const CB3RaceCar*)` | `0x0024E7B0` 196 | `0x00280720` 244 | `0x002B75A0` 244 | `0x002B4C50` 316 | `0x0028D1A0` unverified |  |
+| `DoBoostIn(const CB3RaceCar*)` | `0x0024E880` 216 | `0x00280820` 248 | `0x002B76A0` 248 | `0x002B4A10` 536 |  |  |
+| `StartBoost(const CB3RaceCar*)` | `0x0024E960` 200 | `0x00280920` 236 | `0x002B77A0` 236 | `0x002B48C0` 332 | `0x0028D660` unverified |  |
+| `Destruct()` | `0x0024EA30` 8 | `0x00280A10` 8 | `0x002B7890` 8 | `0x002B4890` 44 | `0x0028D7B0` strong |  |
+| `Release()` | `0x0024EA40` 100 | `0x00280A20` 100 | `0x002B78A0` 100 | `0x002B47F0` 160 | `0x0028D7C0` proven |  |
+| `Update(const CB3RaceCar*)` | `0x0024EAB0` 824 | `0x00280A90` 1232 | `0x002B7910` 1232 | `0x002B4530` 692 |  |  |
+| `Unregister()` | `0x0024EDF0` 60 | `0x00280F60` 60 | `0x002B7DE0` 60 | `0x002B44E0` 76 | `0x0028DA00` strong |  |
+| `Register(unsigned long)` | `0x0024EE30` 356 | `0x00280FA0` 376 | `0x002B7E20` 376 | `0x002B42B0` 516 | `0x0028DA40` strong |  |
+| `Prepare(unsigned long,int)` | `0x0024EFA0` 356 | `0x00281120` 472 | `0x002B7FA0` 472 | `0x002B4050` 608 | `0x0028DBB0` unverified |  |
+| `Construct()` | `0x0024F110` 544 | `0x00281300` 588 | `0x002B8180` 588 | `0x002B3D40` 780 | `0x0028DD80` strong |  |
+| `BoostReady()` |  |  |  | `0x002B4ED0` 16 |  |  |
+| `CB3SoundRaceCar()` |  |  |  | `0x002B1D30` 40 |  |  |
+| `GetAttribs()` |  |  |  | `0x00318B90` 28 |  |  |
+| `GetESM()` |  |  |  | `0x00318BB0` 28 |  |  |
+| `GetLock()` |  |  |  | `0x00316580` 28 |  |  |
+| `IsPlayerCar()` |  |  |  | `0x002B44C0` 28 |  |  |
+| `IsRegistered()` |  |  |  | `0x002B24A0` 28 |  |  |
+| `SetLock(bool)` |  |  |  | `0x00316550` 36 |  |  |
+| `StopHorn()` |  |  |  | `0x002B5300` 72 |  |  |
+| `UpdateBoost(const CB3RaceCar*)` |  |  |  | `0x002B4D90` 308 |  |  |
 
 ## Notes
 

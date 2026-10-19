@@ -7,18 +7,19 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3ReplayPage.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
+- **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00441AC0`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x00376DE0` 8 | `0x003E7AE0` 8 | `0x0040F8F0` 8 | `0x00425890` 16 |  |
-| `Update()` | `0x00376DF0` 208 | `0x003E7AF0` 292 | `0x0040F900` 292 | `0x00425750` 316 |  |
-| `Prepare(bool)` | `0x00376EC0` 136 | `0x003E7C20` 136 | `0x0040FA30` 136 | `0x00425690` 180 |  |
-| `CB3ReplayPage()` |  |  |  | `0x00342BB0` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x00376DE0` 8 | `0x003E7AE0` 8 | `0x0040F8F0` 8 | `0x00425890` 16 |  |  |
+| `Update()` | `0x00376DF0` 208 | `0x003E7AF0` 292 | `0x0040F900` 292 | `0x00425750` 316 |  |  |
+| `Prepare(bool)` | `0x00376EC0` 136 | `0x003E7C20` 136 | `0x0040FA30` 136 | `0x00425690` 180 | `0x003C5FB0` strong |  |
+| `CB3ReplayPage()` |  |  |  | `0x00342BB0` 60 |  |  |
 
 ## Notes
 

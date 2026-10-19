@@ -7,23 +7,24 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundTrafficManager.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 10
+- **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `IsBoostPassPlaying()` | `0x00236F60` 196 | `0x00260AB0` 196 | `0x00299980` 196 | `0x0029E180` 312 |  |
-| `GetNextHornVariant(bool)` | `0x00237030` 268 | `0x00260B80` 292 | `0x00299A50` 268 | `0x0029DFE0` 412 |  |
-| `CanStartHorning()` | `0x00237140` 12 | `0x00260CB0` 12 | `0x00299B60` 12 | `0x0029DFC0` 32 |  |
-| `CrashingTraffic(CB3VehiclePhysics*)` | `0x00237150` 224 | `0x00260CC0` 224 | `0x00299B70` 224 | `0x0029DE70` 324 |  |
-| `Release()` | `0x00237230` 124 | `0x00260DA0` 124 | `0x00299C50` 124 | `0x0029DD00` 144 |  |
-| `Update(bool)` | `0x002372B0` 1328 | `0x00260E20` 1488 | `0x00299CD0` 1452 | `0x0029D690` 1608 |  |
-| `Prepare()` | `0x002377E0` 136 | `0x002613F0` 136 | `0x0029A280` 136 | `0x0029D5E0` 164 |  |
-| `Construct()` | `0x00237870` 3004 | `0x00261480` 3028 | `0x0029A310` 3028 | `0x0029C570` 4208 |  |
-| `CB3SoundTrafficManager()` |  |  |  | `0x002B1A00` 80 |  |
-| `FindTrafficID(int,signed char)` |  |  |  | `0x0029DD90` 216 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `IsBoostPassPlaying()` | `0x00236F60` 196 | `0x00260AB0` 196 | `0x00299980` 196 | `0x0029E180` 312 | `0x00276A30` strong |  |
+| `GetNextHornVariant(bool)` | `0x00237030` 268 | `0x00260B80` 292 | `0x00299A50` 268 | `0x0029DFE0` 412 | `0x00276B00` strong |  |
+| `CanStartHorning()` | `0x00237140` 12 | `0x00260CB0` 12 | `0x00299B60` 12 | `0x0029DFC0` 32 | `0x00276C10` proven |  |
+| `CrashingTraffic(CB3VehiclePhysics*)` | `0x00237150` 224 | `0x00260CC0` 224 | `0x00299B70` 224 | `0x0029DE70` 324 | `0x00276C20` proven |  |
+| `Release()` | `0x00237230` 124 | `0x00260DA0` 124 | `0x00299C50` 124 | `0x0029DD00` 144 | `0x00276D00` proven |  |
+| `Update(bool)` | `0x002372B0` 1328 | `0x00260E20` 1488 | `0x00299CD0` 1452 | `0x0029D690` 1608 | `0x00276D80` proven |  |
+| `Prepare()` | `0x002377E0` 136 | `0x002613F0` 136 | `0x0029A280` 136 | `0x0029D5E0` 164 | `0x002772D0` proven |  |
+| `Construct()` | `0x00237870` 3004 | `0x00261480` 3028 | `0x0029A310` 3028 | `0x0029C570` 4208 | `0x00277360` proven |  |
+| `CB3SoundTrafficManager()` |  |  |  | `0x002B1A00` 80 |  |  |
+| `FindTrafficID(int,signed char)` |  |  |  | `0x0029DD90` 216 |  |  |
 
 ## Notes
 

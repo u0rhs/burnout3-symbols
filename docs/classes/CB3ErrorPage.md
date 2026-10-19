@@ -7,18 +7,19 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3ErrorPage.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004407D0`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x00309A80` 8 | `0x0035EA00` 8 | `0x0038FCC0` 8 | `0x003937D0` 16 |  |
-| `Update()` | `0x00309A90` 236 | `0x0035EA10` 236 | `0x0038FCD0` 236 | `0x003934F0` 736 |  |
-| `Prepare(EGlobalStrings,EGlobalStrings,EB3MessageBoxType)` | `0x00309B80` 156 | `0x0035EB00` 156 | `0x0038FDC0` 156 | `0x00393420` 208 |  |
-| `CB3ErrorPage()` |  |  |  | `0x003429C0` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x00309A80` 8 | `0x0035EA00` 8 | `0x0038FCC0` 8 | `0x003937D0` 16 | `0x00352030` likely |  |
+| `Update()` | `0x00309A90` 236 | `0x0035EA10` 236 | `0x0038FCD0` 236 | `0x003934F0` 736 | `0x00352040` unverified |  |
+| `Prepare(EGlobalStrings,EGlobalStrings,EB3MessageBoxType)` | `0x00309B80` 156 | `0x0035EB00` 156 | `0x0038FDC0` 156 | `0x00393420` 208 | `0x00352210` strong |  |
+| `CB3ErrorPage()` |  |  |  | `0x003429C0` 60 |  |  |
 
 ## Notes
 

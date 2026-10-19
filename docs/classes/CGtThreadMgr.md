@@ -7,23 +7,24 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `GtThreadMgrPS2.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 9
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SleepThread(int)` | `0x001F8090` 64 | `0x00201AA0` 104 | `0x0023C9A0` 104 | `0x00246DB0` 108 |  |
-| `SleepThreadTillVBlank()` | `0x001F8160` 204 | `0x00201BE0` 284 | `0x0023CAE0` 284 | `0x00246B50` 268 |  |
-| `EnableVBlankWait()` | `0x001F8230` 108 | `0x00201D00` 188 | `0x0023CC00` 188 | `0x00246AA0` 176 |  |
-| `CreateThread(int (*)(void*),void*,int,CGtThreadMgr::EThreadPriorities)` | `0x001F82A0` 120 |  |  |  |  |
-| `Open()` | `0x001F8320` 8 | `0x00201EC0` 8 | `0x0023CDC0` 8 | `0x002469C0` 32 |  |
-| `CreateThread(int (*)` |  | `0x00201DC0` 244 | `0x0023CCC0` 244 | `0x002469E0` 184 |  |
-| `ConvertToSleepTime(CGtThreadMgr::ERefreshRate,float)` |  |  |  | `0x0013CF60` 216 |  |
-| `GetCurrentThreadID()` |  |  |  | `0x00246CA0` 32 |  |
-| `GetThreadID(int)` |  |  |  | `0x00246C80` 24 |  |
-| `SleepThread()` |  |  |  | `0x00246C60` 32 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SleepThread(int)` | `0x001F8090` 64 | `0x00201AA0` 104 | `0x0023C9A0` 104 | `0x00246DB0` 108 | `0x00237050` proven |  |
+| `SleepThreadTillVBlank()` | `0x001F8160` 204 | `0x00201BE0` 284 | `0x0023CAE0` 284 | `0x00246B50` 268 | `0x00237120` strong |  |
+| `EnableVBlankWait()` | `0x001F8230` 108 | `0x00201D00` 188 | `0x0023CC00` 188 | `0x00246AA0` 176 | `0x00237200` strong |  |
+| `CreateThread(int (*)(void*),void*,int,CGtThreadMgr::EThreadPriorities)` | `0x001F82A0` 120 |  |  |  | `0x00237270` strong |  |
+| `Open()` | `0x001F8320` 8 | `0x00201EC0` 8 | `0x0023CDC0` 8 | `0x002469C0` 32 | `0x002372F0` likely |  |
+| `CreateThread(int (*)` |  | `0x00201DC0` 244 | `0x0023CCC0` 244 | `0x002469E0` 184 |  |  |
+| `ConvertToSleepTime(CGtThreadMgr::ERefreshRate,float)` |  |  |  | `0x0013CF60` 216 |  |  |
+| `GetCurrentThreadID()` |  |  |  | `0x00246CA0` 32 |  |  |
+| `GetThreadID(int)` |  |  |  | `0x00246C80` 24 |  |  |
+| `SleepThread()` |  |  |  | `0x00246C60` 32 |  |  |
 
 ## Notes
 

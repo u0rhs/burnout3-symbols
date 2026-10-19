@@ -7,17 +7,18 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `GtScreenCentre.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 4
+- **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetPositionY()` | `0x001E5BB0` 8 | `0x001E66C0` 8 | `0x00219260` 8 | `0x0022C590` 28 |  |
-| `GetPositionX()` | `0x001E5BC0` 8 | `0x001E66D0` 8 | `0x00219270` 8 | `0x0022C570` 28 |  |
-| `MoveScreen(float,float)` | `0x001E5BD0` 848 | `0x001E66E0` 848 | `0x00219280` 848 | `0x0022C210` 864 |  |
-| `Construct()` | `0x001E5F20` 48 | `0x001E6A30` 48 | `0x002195D0` 48 | `0x0022C1B0` 88 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetPositionY()` | `0x001E5BB0` 8 | `0x001E66C0` 8 | `0x00219260` 8 | `0x0022C590` 28 | `0x00221080` proven |  |
+| `GetPositionX()` | `0x001E5BC0` 8 | `0x001E66D0` 8 | `0x00219270` 8 | `0x0022C570` 28 | `0x00221090` proven |  |
+| `MoveScreen(float,float)` | `0x001E5BD0` 848 | `0x001E66E0` 848 | `0x00219280` 848 | `0x0022C210` 864 | `0x002210A0` proven |  |
+| `Construct()` | `0x001E5F20` 48 | `0x001E6A30` 48 | `0x002195D0` 48 | `0x0022C1B0` 88 | `0x002213F0` proven |  |
 
 ## Notes
 

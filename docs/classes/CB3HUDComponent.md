@@ -7,37 +7,38 @@
 - **Area:** [HUD](../systems/hud.md)
 - **Source file:** `B3HUDComponent.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 24
+- **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 9 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `AdjustScalingForSplitScreen()` | `0x0016B8D0` 68 | `0x00186050` 68 | `0x00180A50` 68 | `0x00197460` 124 |  |
-| `SetAllLayerVisible(bool)` | `0x0016B920` 116 | `0x001860A0` 544 | `0x00180AA0` 544 | `0x00197250` 260 |  |
-| `StartTransition(bool,EHUDMode,EHUDMode)` | `0x0016B9A0` 8 | `0x001862C0` 8 | `0x00180CC0` 8 | `0x00197240` 16 |  |
-| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x0016B9B0` 480 | `0x001862D0` 932 | `0x00180CD0` 940 | `0x00196FB0` 508 |  |
-| `Prepare(int,int,int,int,EHUDAlign,int)` | `0x0016BB90` 208 | `0x00186680` 372 | `0x00181080` 388 | `0x00196D00` 388 |  |
-| `Construct(CB3HUDManager*)` | `0x0016BC60` 12 | `0x00186800` 92 | `0x00181210` 92 | `0x00196CC0` 60 |  |
-| `Update()` | `0x0016BC70` 8 | `0x00186860` 8 | `0x00181270` 8 | `0x00196CB0` 8 |  |
-| `Prepare()` | `0x0016BC80` 1372 | `0x00186870` 2584 | `0x00181280` 2584 | `0x001968D0` 980 |  |
-| `Construct()` | `0x0016C1E0` 336 | `0x00187290` 336 | `0x00181CA0` 336 | `0x001966F0` 472 |  |
-| `CB3HUDComponent()` |  |  |  | `0x001996D0` 40 |  |
-| `GetBoostBitsTexture()` |  |  |  | `0x001A0F80` 12 |  |
-| `GetBoostBlueFlameTexture()` |  |  |  | `0x001A0280` 12 |  |
-| `GetBoostFireCoreTexture(int)` |  |  |  | `0x0019F910` 76 |  |
-| `GetBoostFireEdgeTexture(int)` |  |  |  | `0x0019F380` 76 |  |
-| `GetBoostFireOverTexture(int)` |  |  |  | `0x0019EC30` 76 |  |
-| `GetBoostStarsTexture()` |  |  |  | `0x001A1D70` 12 |  |
-| `GetFlags()` |  |  |  | `0x00199080` 28 |  |
-| `GetFrame()` |  |  |  | `0x001971B0` 28 |  |
-| `GetHUDAftertouchTexture()` |  |  |  | `0x0043B680` 12 |  |
-| `GetHUDBackgroundTexture()` |  |  |  | `0x0042FD40` 12 |  |
-| `GetIconTexture(CB3HUDComponent::EIconTexture)` |  |  |  | `0x00140410` 64 |  |
-| `GetOutlineDropShadow(CB3HUDComponent::EOutlineDropShadow)` |  |  |  | `0x0019C1F0` 40 |  |
-| `GetScene()` |  |  |  | `0x00196F30` 88 |  |
-| `GetSceneLayer(int)` |  |  |  | `0x0019A230` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `AdjustScalingForSplitScreen()` | `0x0016B8D0` 68 | `0x00186050` 68 | `0x00180A50` 68 | `0x00197460` 124 | `0x0019F3D0` proven |  |
+| `SetAllLayerVisible(bool)` | `0x0016B920` 116 | `0x001860A0` 544 | `0x00180AA0` 544 | `0x00197250` 260 | `0x0019F420` proven |  |
+| `StartTransition(bool,EHUDMode,EHUDMode)` | `0x0016B9A0` 8 | `0x001862C0` 8 | `0x00180CC0` 8 | `0x00197240` 16 | `0x0019F4A0` proven |  |
+| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x0016B9B0` 480 | `0x001862D0` 932 | `0x00180CD0` 940 | `0x00196FB0` 508 | `0x0019F4B0` proven |  |
+| `Prepare(int,int,int,int,EHUDAlign,int)` | `0x0016BB90` 208 | `0x00186680` 372 | `0x00181080` 388 | `0x00196D00` 388 | `0x0019F6A0` proven |  |
+| `Construct(CB3HUDManager*)` | `0x0016BC60` 12 | `0x00186800` 92 | `0x00181210` 92 | `0x00196CC0` 60 | `0x0019F770` proven |  |
+| `Update()` | `0x0016BC70` 8 | `0x00186860` 8 | `0x00181270` 8 | `0x00196CB0` 8 | `0x0019F780` proven |  |
+| `Prepare()` | `0x0016BC80` 1372 | `0x00186870` 2584 | `0x00181280` 2584 | `0x001968D0` 980 | `0x0019F790` proven |  |
+| `Construct()` | `0x0016C1E0` 336 | `0x00187290` 336 | `0x00181CA0` 336 | `0x001966F0` 472 | `0x0019FCF0` proven |  |
+| `CB3HUDComponent()` |  |  |  | `0x001996D0` 40 |  |  |
+| `GetBoostBitsTexture()` |  |  |  | `0x001A0F80` 12 |  |  |
+| `GetBoostBlueFlameTexture()` |  |  |  | `0x001A0280` 12 |  |  |
+| `GetBoostFireCoreTexture(int)` |  |  |  | `0x0019F910` 76 |  |  |
+| `GetBoostFireEdgeTexture(int)` |  |  |  | `0x0019F380` 76 |  |  |
+| `GetBoostFireOverTexture(int)` |  |  |  | `0x0019EC30` 76 |  |  |
+| `GetBoostStarsTexture()` |  |  |  | `0x001A1D70` 12 |  |  |
+| `GetFlags()` |  |  |  | `0x00199080` 28 |  |  |
+| `GetFrame()` |  |  |  | `0x001971B0` 28 |  |  |
+| `GetHUDAftertouchTexture()` |  |  |  | `0x0043B680` 12 |  |  |
+| `GetHUDBackgroundTexture()` |  |  |  | `0x0042FD40` 12 |  |  |
+| `GetIconTexture(CB3HUDComponent::EIconTexture)` |  |  |  | `0x00140410` 64 |  |  |
+| `GetOutlineDropShadow(CB3HUDComponent::EOutlineDropShadow)` |  |  |  | `0x0019C1F0` 40 |  |  |
+| `GetScene()` |  |  |  | `0x00196F30` 88 |  |  |
+| `GetSceneLayer(int)` |  |  |  | `0x0019A230` 60 |  |  |
 
 ## Static data (DNAT_200)
 

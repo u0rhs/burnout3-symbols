@@ -7,24 +7,25 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3OnlineLobbyState.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 7, B3O0PCH 8
+- **Retail (SLUS-21050):** 3 of its 4 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004402D8`, 12 bytes = 3 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 1 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PrepareClassSelect()` | `0x002D0580` 620 | `0x00318EF0` 620 | `0x0034ADA0` 620 | `0x003466B0` 744 |  |
-| `HandleInLobbyEvents(EB3MenuFlowFSMEvents)` | `0x002D07F0` 1532 | `0x00319160` 1640 | `0x0034B550` 1640 | `0x00345DB0` 1736 |  |
-| `HandleSelectCarEvents(EB3MenuFlowFSMEvents)` | `0x002D0DF0` 276 | `0x003197D0` 276 | `0x0034BBC0` 276 | `0x00345C60` 328 |  |
-| `Action(EGtStateAction,void*,void*,void*)` | `0x002D0F10` 1736 | `0x003198F0` 1736 | `0x0034BCE0` 1724 | `0x00345620` 1240 |  |
-| `CB3OnlineLobbyState()` |  |  |  | `0x00344BA0` 60 |  |
-| `HandleBootedOutOfGameEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x00346620` 132 |  |
-| `HandleOptionsEvents(EB3MenuFlowFSMEvents)` |  |  | `0x0034B300` 580 | `0x003464A0` 288 |  |
-| `HandleSelectClassEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x00345B20` 320 |  |
-| `HandleSelectCrashJunctionEvents(EB3MenuFlowFSMEvents)` |  |  | `0x0034B1E0` 284 |  |  |
-| `HandleSelectTrackEvents(EB3MenuFlowFSMEvents)` |  |  | `0x0034B010` 464 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PrepareClassSelect()` | `0x002D0580` 620 | `0x00318EF0` 620 | `0x0034ADA0` 620 | `0x003466B0` 744 |  |  |
+| `HandleInLobbyEvents(EB3MenuFlowFSMEvents)` | `0x002D07F0` 1532 | `0x00319160` 1640 | `0x0034B550` 1640 | `0x00345DB0` 1736 | `0x0030F010` likely |  |
+| `HandleSelectCarEvents(EB3MenuFlowFSMEvents)` | `0x002D0DF0` 276 | `0x003197D0` 276 | `0x0034BBC0` 276 | `0x00345C60` 328 | `0x0030F490` unverified |  |
+| `Action(EGtStateAction,void*,void*,void*)` | `0x002D0F10` 1736 | `0x003198F0` 1736 | `0x0034BCE0` 1724 | `0x00345620` 1240 | `0x0030F620` unverified |  |
+| `CB3OnlineLobbyState()` |  |  |  | `0x00344BA0` 60 |  |  |
+| `HandleBootedOutOfGameEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x00346620` 132 |  |  |
+| `HandleOptionsEvents(EB3MenuFlowFSMEvents)` |  |  | `0x0034B300` 580 | `0x003464A0` 288 |  |  |
+| `HandleSelectClassEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x00345B20` 320 |  |  |
+| `HandleSelectCrashJunctionEvents(EB3MenuFlowFSMEvents)` |  |  | `0x0034B1E0` 284 |  |  |  |
+| `HandleSelectTrackEvents(EB3MenuFlowFSMEvents)` |  |  | `0x0034B010` 464 |  |  |  |
 
 ## Notes
 

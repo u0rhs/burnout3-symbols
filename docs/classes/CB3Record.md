@@ -12,23 +12,23 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetNewRecordData(unsigned int)` | `0x00383000` 136 | `0x003F6050` 136 | `0x0041DC80` 136 | `0x00434690` 212 |  |
-| `Update(int,unsigned int,ERecordTestTypes)` | `0x00383090` 128 | `0x003F60E0` 128 | `0x0041DD10` 128 | `0x00434590` 116 |  |
-| `CB3Record()` |  |  |  | `0x00435C10` 40 |  |
-| `GetValueInt()` |  |  |  | `0x003C94E0` 28 |  |
-| `GetValueReal()` |  |  |  | `0x003C94C0` 28 |  |
-| `Init(float,const unsigned short*)` |  |  |  | `0x00434410` 100 | `void CRecord::Init()` (same name, different parameters) |
-| `Init(int,const unsigned short*)` |  |  |  | `0x00434370` 100 | `void CRecord::Init()` (same name, different parameters) |
-| `SetValueInt(int)` |  |  |  | `0x004343E0` 36 |  |
-| `SetValueReal(float)` |  |  |  | `0x00434480` 36 |  |
-| `Test(float)` |  |  |  | `0x00434520` 100 |  |
-| `Test(int)` |  |  |  | `0x004344B0` 100 |  |
-| `Update(float,unsigned int,ERecordTestTypes)` |  |  |  | `0x00434610` 116 |  |
-| `operator =(const CB3Record&)` |  |  |  | `0x004349E0` 148 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetNewRecordData(unsigned int)` | `0x00383000` 136 | `0x003F6050` 136 | `0x0041DC80` 136 | `0x00434690` 212 |  |  |
+| `Update(int,unsigned int,ERecordTestTypes)` | `0x00383090` 128 | `0x003F60E0` 128 | `0x0041DD10` 128 | `0x00434590` 116 |  |  |
+| `CB3Record()` |  |  |  | `0x00435C10` 40 |  |  |
+| `GetValueInt()` |  |  |  | `0x003C94E0` 28 |  |  |
+| `GetValueReal()` |  |  |  | `0x003C94C0` 28 |  |  |
+| `Init(float,const unsigned short*)` |  |  |  | `0x00434410` 100 |  | `void CRecord::Init()` (same name, different parameters) |
+| `Init(int,const unsigned short*)` |  |  |  | `0x00434370` 100 |  | `void CRecord::Init()` (same name, different parameters) |
+| `SetValueInt(int)` |  |  |  | `0x004343E0` 36 |  |  |
+| `SetValueReal(float)` |  |  |  | `0x00434480` 36 |  |  |
+| `Test(float)` |  |  |  | `0x00434520` 100 |  |  |
+| `Test(int)` |  |  |  | `0x004344B0` 100 |  |  |
+| `Update(float,unsigned int,ERecordTestTypes)` |  |  |  | `0x00434610` 116 |  |  |
+| `operator =(const CB3Record&)` |  |  |  | `0x004349E0` 148 |  |  |
 
 ## Burnout 2 layout of `CRecord`
 

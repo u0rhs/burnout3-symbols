@@ -10,14 +10,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Retrieve(int*,int*)` | `0x002B8B10` 92 | `0x002F9BA0` 1104 |  | `0x00325590` 448 |  |
-| `Prepare(int,int*)` | `0x002B8B70` 52 | `0x002F9FF0` 52 |  | `0x00325500` 136 |  |
-| `Construct()` | `0x002B8BB0` 8 |  | `0x0032E270` 8 |  |  |
-| `Release()` |  |  |  | `0x00325750` 40 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Retrieve(int*,int*)` | `0x002B8B10` 92 | `0x002F9BA0` 1104 |  | `0x00325590` 448 |  |  |
+| `Prepare(int,int*)` | `0x002B8B70` 52 | `0x002F9FF0` 52 |  | `0x00325500` 136 |  |  |
+| `Construct()` | `0x002B8BB0` 8 |  | `0x0032E270` 8 |  |  |  |
+| `Release()` |  |  |  | `0x00325750` 40 |  |  |
 
 ## Notes
 

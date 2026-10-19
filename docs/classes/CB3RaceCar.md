@@ -7,58 +7,59 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3RaceCar.cpp`
 - **Methods per build:** DNAT_200 19, B3DEBUG 20, B3INTERN 19, B3O0PCH 43
+- **Retail (SLUS-21050):** 17 of its 19 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FD60`, 36 bytes = 9 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 7 virtual functions)
 - **Burnout 2 ancestor (by name):** `CRaceCar`, size 0x2E00, declared in 87 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `UpdateLastPositions()` | `0x0014CF90` 208 | `0x0015E260` 208 | `0x00159B70` 208 | `0x0016BDC0` 336 |  |
-| `OnSetActive(bool)` | `0x0014D060` 272 | `0x0015E330` 504 | `0x00159C40` 504 | `0x0016BCA0` 184 |  |
-| `SetActive(bool)` | `0x0014D170` 56 | `0x0015E530` 176 | `0x00159E40` 176 | `0x0016BC00` 152 |  |
-| `Register()` | `0x0014D1B0` 472 | `0x0015ECD0` 520 | `0x00159EF0` 520 | `0x0016B210` 720 |  |
-| `SetCarID(unsigned long)` | `0x0014D390` 84 | `0x0015EEE0` 84 | `0x0015A100` 84 | `0x0016B190` 120 |  |
-| `ResetCarInAILanes(bool,int,int)` | `0x0014D3F0` 1268 | `0x0015EF40` 1880 | `0x0015A160` 1880 | `0x0016A920` 1976 |  |
-| `RepositionCarInLane()` | `0x0014D8F0` 652 | `0x0015F6A0` 1428 | `0x0015A8C0` 1212 | `0x0016A390` 868 |  |
-| `FindResetPointInSlice(bool,CB3AILane*,int,CB3AILane**,unsigned short*)` | `0x0014DB80` 392 | `0x0015FC40` 624 | `0x0015AD80` 624 | `0x0016A0E0` 632 |  |
-| `CalcRaceDistFromRaceCars()` | `0x0014DD10` 380 | `0x0015FEB0` 540 | `0x0015AFF0` 540 | `0x00169D90` 516 |  |
-| `PrepareSound()` | `0x0014DE90` 8 | `0x001600D0` 8 | `0x0015B210` 8 | `0x00169D70` 20 |  |
-| `SetFinished(EB3ScoreFinishState)` | `0x0014DEA0` 460 | `0x001600E0` 596 | `0x0015B220` 604 | `0x001699B0` 252 | `void CRaceCar::SetFinished()` (same name, different parameters) |
-| `StopCrashing()` | `0x0014E070` 16 | `0x00160340` 88 | `0x0015B480` 88 | `0x00169930` 120 |  |
-| `StartCrashing(CB3CrashStartInfo*)` | `0x0014E080` 36 | `0x001603A0` 108 | `0x0015B4E0` 108 | `0x001698B0` 116 |  |
-| `Draw()` | `0x0014E0B0` 516 | `0x00160410` 656 | `0x0015B550` 656 | `0x00169500` 704 | `int CRaceCar::Draw()` |
-| `Release()` | `0x0014E2C0` 364 | `0x001606A0` 364 | `0x0015B7E0` 364 | `0x001693B0` 324 |  |
-| `UpdateAggressiveReaction()` | `0x0014E430` 2200 | `0x00160810` 2404 | `0x0015B950` 2200 | `0x00168E00` 800 |  |
-| `Update()` | `0x0014ECD0` 748 | `0x00161180` 1256 | `0x0015C1F0` 1164 | `0x001688B0` 1136 | `void CRaceCar::Update()` |
-| `Prepare()` | `0x0014EFC0` 1544 | `0x00161670` 1756 | `0x0015C680` 1744 | `0x00167E70` 2512 |  |
-| `Construct()` | `0x0014F5D0` 92 | `0x00161D50` 92 | `0x0015CD50` 92 | `0x00167DE0` 144 |  |
-| `CheckMatrixIsReasonable(const GtMathPs2::CGtMatrix3x4&,float)` |  | `0x0015E5E0` 1764 |  | `0x0016B660` 1324 |  |
-| `CB3RaceCar()` |  |  |  | `0x00190E10` 124 |  |
-| `CanDrive()` |  |  |  | `0x00168D20` 28 |  |
-| `CanResetAfterCrash()` |  |  |  | `0x001BDDA0` 28 |  |
-| `GetCarClass()` |  |  |  | `0x00146C10` 28 |  |
-| `GetCarColour()` |  |  |  | `0x0016F880` 36 |  |
-| `GetCarID()` |  |  |  | `0x00146C30` 28 |  |
-| `GetFishTailMatrix()` |  |  |  | `0x0026C9C0` 48 |  |
-| `GetMatrix()` |  |  |  | `0x0014D610` 24 |  |
-| `GetName()` |  |  |  | `0x0019B540` 28 |  |
-| `GetRaceCarIndex()` |  |  |  | `0x00130420` 36 |  |
-| `GetRaceCarType()` |  |  |  | `0x00142020` 28 |  |
-| `GetSoundRaceCar()` |  |  |  | `0x00318BD0` 28 |  |
-| `IsActive()` |  |  |  | `0x00151390` 28 |  |
-| `IsFishtailing()` |  |  |  | `0x001C9E70` 28 |  |
-| `OtherRaceCarConflictTest(CB3AILane*,unsigned short)` |  |  |  | `0x0016A000` 212 |  |
-| `SetCanDrive(bool)` |  |  |  | `0x0035BB00` 36 |  |
-| `SetCanResetAfterCrash(bool)` |  |  |  | `0x0041DAF0` 36 |  |
-| `SetCarColour(int)` |  |  |  | `0x0013F750` 80 |  |
-| `SetName(const char*)` |  |  |  | `0x0018EDF0` 56 |  |
-| `SetRaceCarIndex(int)` |  |  |  | `0x0018EE30` 84 |  |
-| `SetRaceCarPath()` |  |  |  | `0x0016B0E0` 164 |  |
-| `StartFlashing(float,float)` |  |  |  | `0x0016BBF0` 16 |  |
-| `Unregister()` |  |  |  | `0x0016B4E0` 380 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `UpdateLastPositions()` | `0x0014CF90` 208 | `0x0015E260` 208 | `0x00159B70` 208 | `0x0016BDC0` 336 | `0x00150D50` strong |  |
+| `OnSetActive(bool)` | `0x0014D060` 272 | `0x0015E330` 504 | `0x00159C40` 504 | `0x0016BCA0` 184 |  |  |
+| `SetActive(bool)` | `0x0014D170` 56 | `0x0015E530` 176 | `0x00159E40` 176 | `0x0016BC00` 152 | `0x00150EE0` strong |  |
+| `Register()` | `0x0014D1B0` 472 | `0x0015ECD0` 520 | `0x00159EF0` 520 | `0x0016B210` 720 | `0x00150F20` strong |  |
+| `SetCarID(unsigned long)` | `0x0014D390` 84 | `0x0015EEE0` 84 | `0x0015A100` 84 | `0x0016B190` 120 | `0x00151100` strong |  |
+| `ResetCarInAILanes(bool,int,int)` | `0x0014D3F0` 1268 | `0x0015EF40` 1880 | `0x0015A160` 1880 | `0x0016A920` 1976 |  |  |
+| `RepositionCarInLane()` | `0x0014D8F0` 652 | `0x0015F6A0` 1428 | `0x0015A8C0` 1212 | `0x0016A390` 868 | `0x00151160` likely |  |
+| `FindResetPointInSlice(bool,CB3AILane*,int,CB3AILane**,unsigned short*)` | `0x0014DB80` 392 | `0x0015FC40` 624 | `0x0015AD80` 624 | `0x0016A0E0` 632 | `0x00151450` strong |  |
+| `CalcRaceDistFromRaceCars()` | `0x0014DD10` 380 | `0x0015FEB0` 540 | `0x0015AFF0` 540 | `0x00169D90` 516 | `0x001515E0` strong |  |
+| `PrepareSound()` | `0x0014DE90` 8 | `0x001600D0` 8 | `0x0015B210` 8 | `0x00169D70` 20 | `0x00151770` strong |  |
+| `SetFinished(EB3ScoreFinishState)` | `0x0014DEA0` 460 | `0x001600E0` 596 | `0x0015B220` 604 | `0x001699B0` 252 | `0x00151780` likely | `void CRaceCar::SetFinished()` (same name, different parameters) |
+| `StopCrashing()` | `0x0014E070` 16 | `0x00160340` 88 | `0x0015B480` 88 | `0x00169930` 120 | `0x001519E0` strong |  |
+| `StartCrashing(CB3CrashStartInfo*)` | `0x0014E080` 36 | `0x001603A0` 108 | `0x0015B4E0` 108 | `0x001698B0` 116 | `0x001519F0` strong |  |
+| `Draw()` | `0x0014E0B0` 516 | `0x00160410` 656 | `0x0015B550` 656 | `0x00169500` 704 | `0x00151A40` strong | `int CRaceCar::Draw()` |
+| `Release()` | `0x0014E2C0` 364 | `0x001606A0` 364 | `0x0015B7E0` 364 | `0x001693B0` 324 | `0x00151C40` strong |  |
+| `UpdateAggressiveReaction()` | `0x0014E430` 2200 | `0x00160810` 2404 | `0x0015B950` 2200 | `0x00168E00` 800 | `0x00151DC0` likely |  |
+| `Update()` | `0x0014ECD0` 748 | `0x00161180` 1256 | `0x0015C1F0` 1164 | `0x001688B0` 1136 | `0x00152770` unverified | `void CRaceCar::Update()` |
+| `Prepare()` | `0x0014EFC0` 1544 | `0x00161670` 1756 | `0x0015C680` 1744 | `0x00167E70` 2512 | `0x00152AF0` strong |  |
+| `Construct()` | `0x0014F5D0` 92 | `0x00161D50` 92 | `0x0015CD50` 92 | `0x00167DE0` 144 | `0x00153160` strong |  |
+| `CheckMatrixIsReasonable(const GtMathPs2::CGtMatrix3x4&,float)` |  | `0x0015E5E0` 1764 |  | `0x0016B660` 1324 |  |  |
+| `CB3RaceCar()` |  |  |  | `0x00190E10` 124 |  |  |
+| `CanDrive()` |  |  |  | `0x00168D20` 28 |  |  |
+| `CanResetAfterCrash()` |  |  |  | `0x001BDDA0` 28 |  |  |
+| `GetCarClass()` |  |  |  | `0x00146C10` 28 |  |  |
+| `GetCarColour()` |  |  |  | `0x0016F880` 36 |  |  |
+| `GetCarID()` |  |  |  | `0x00146C30` 28 |  |  |
+| `GetFishTailMatrix()` |  |  |  | `0x0026C9C0` 48 |  |  |
+| `GetMatrix()` |  |  |  | `0x0014D610` 24 |  |  |
+| `GetName()` |  |  |  | `0x0019B540` 28 |  |  |
+| `GetRaceCarIndex()` |  |  |  | `0x00130420` 36 |  |  |
+| `GetRaceCarType()` |  |  |  | `0x00142020` 28 |  |  |
+| `GetSoundRaceCar()` |  |  |  | `0x00318BD0` 28 |  |  |
+| `IsActive()` |  |  |  | `0x00151390` 28 |  |  |
+| `IsFishtailing()` |  |  |  | `0x001C9E70` 28 |  |  |
+| `OtherRaceCarConflictTest(CB3AILane*,unsigned short)` |  |  |  | `0x0016A000` 212 |  |  |
+| `SetCanDrive(bool)` |  |  |  | `0x0035BB00` 36 |  |  |
+| `SetCanResetAfterCrash(bool)` |  |  |  | `0x0041DAF0` 36 |  |  |
+| `SetCarColour(int)` |  |  |  | `0x0013F750` 80 |  |  |
+| `SetName(const char*)` |  |  |  | `0x0018EDF0` 56 |  |  |
+| `SetRaceCarIndex(int)` |  |  |  | `0x0018EE30` 84 |  |  |
+| `SetRaceCarPath()` |  |  |  | `0x0016B0E0` 164 |  |  |
+| `StartFlashing(float,float)` |  |  |  | `0x0016BBF0` 16 |  |  |
+| `Unregister()` |  |  |  | `0x0016B4E0` 380 |  |  |
 
 ## Burnout 2 layout of `CRaceCar` (variant 1)
 

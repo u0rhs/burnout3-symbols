@@ -7,72 +7,73 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dFrameHierarchy.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 5, B3INTERN 5, B3O0PCH 57
+- **Retail (SLUS-21050):** 2 of its 4 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `operator =(const GtMathPs2::CGtV4d&)` | `0x0019B100` 16 | `0x001CFCE0` 16 | `0x001C92C0` 16 | `0x00131650` 44 |  |
-| `operator *(GtMathPs2::CGtV4d) const` | `0x0019B140` 20 |  |  |  |  |
-| `operator *(GtMathPs2::CGtV4d)` |  | `0x001CFD40` 20 | `0x001C9300` 20 | `0x00131680` 68 |  |
-| `CGtV4d()` |  | `0x0025C780` 8 | `0x00297680` 8 | `0x001316D0` 24 |  |
-| `operator *(float)` |  | `0x00266BA0` 24 | `0x0029F510` 24 | `0x001315D0` 68 |  |
-| `CGtV4d(const GtMathPs2::CGtV4d&)` | `0x002AAEB0` 16 | `0x00266B90` 16 | `0x0029F500` 16 | `0x00131290` 44 |  |
-| `operator *(float) const` | `0x002AAEC0` 24 |  |  |  |  |
-| `A()` |  |  |  | `0x0019D9C0` 52 |  |
-| `B()` |  |  |  | `0x001DC200` 52 |  |
-| `CGtV4d(float,float,float,float)` |  |  |  | `0x00131030` 84 |  |
-| `G()` |  |  |  | `0x001DC240` 52 |  |
-| `GetRawData()` |  |  |  | `0x001315B0` 28 |  |
-| `GetSquaredLength()` |  |  |  | `0x00133DE0` 104 |  |
-| `R()` |  |  |  | `0x001DC280` 52 |  |
-| `Set(float,float,float,float)` |  |  |  | `0x00134AB0` 80 |  |
-| `SetA(GtMathPs2::WAxisType)` |  |  |  | `0x0019D930` 56 |  |
-| `SetA(float)` |  |  |  | `0x00131260` 48 |  |
-| `SetB(GtMathPs2::ZAxisType)` |  |  |  | `0x002E76E0` 56 |  |
-| `SetB(float)` |  |  |  | `0x00282310` 48 |  |
-| `SetG(GtMathPs2::YAxisType)` |  |  |  | `0x002E7720` 56 |  |
-| `SetG(float)` |  |  |  | `0x00282340` 48 |  |
-| `SetR(GtMathPs2::XAxisType)` |  |  |  | `0x002E7760` 56 |  |
-| `SetR(float)` |  |  |  | `0x00282370` 48 |  |
-| `SetW(GtMathPs2::WAxisType)` |  |  |  | `0x00233EB0` 56 |  |
-| `SetW(GtMathPs2::XAxisType)` |  |  |  | `0x001BBFD0` 56 |  |
-| `SetW(GtMathPs2::YAxisType)` |  |  |  | `0x001BD070` 56 |  |
-| `SetW(GtMathPs2::ZAxisType)` |  |  |  | `0x001BD150` 56 |  |
-| `SetW(float)` |  |  |  | `0x00164930` 48 |  |
-| `SetX(GtMathPs2::WAxisType)` |  |  |  | `0x0036B5C0` 56 |  |
-| `SetX(GtMathPs2::XAxisType)` |  |  |  | `0x001BC110` 56 |  |
-| `SetX(GtMathPs2::YAxisType)` |  |  |  | `0x00164880` 56 |  |
-| `SetX(GtMathPs2::ZAxisType)` |  |  |  | `0x00180920` 56 |  |
-| `SetX(float)` |  |  |  | `0x0017B5F0` 48 |  |
-| `SetY(GtMathPs2::WAxisType)` |  |  |  | `0x0036B580` 56 |  |
-| `SetY(GtMathPs2::XAxisType)` |  |  |  | `0x001BD270` 56 |  |
-| `SetY(GtMathPs2::YAxisType)` |  |  |  | `0x001BC0D0` 56 |  |
-| `SetY(GtMathPs2::ZAxisType)` |  |  |  | `0x001648C0` 56 |  |
-| `SetY(float)` |  |  |  | `0x001BC1A0` 48 |  |
-| `SetZ(GtMathPs2::WAxisType)` |  |  |  | `0x0036B500` 56 |  |
-| `SetZ(GtMathPs2::XAxisType)` |  |  |  | `0x0036B540` 56 |  |
-| `SetZ(GtMathPs2::YAxisType)` |  |  |  | `0x001BD1E0` 56 |  |
-| `SetZ(GtMathPs2::ZAxisType)` |  |  |  | `0x001BC040` 56 |  |
-| `SetZ(float)` |  |  |  | `0x00164900` 48 |  |
-| `W()` |  |  |  | `0x00133850` 52 |  |
-| `X()` |  |  |  | `0x00133AB0` 52 |  |
-| `Y()` |  |  |  | `0x00133A20` 52 |  |
-| `Z()` |  |  |  | `0x001339E0` 52 |  |
-| `Zero()` |  |  |  | `0x0019EC80` 20 |  |
-| `operator *(GtMathPs2::WAxisType)` |  |  |  | `0x001646F0` 68 |  |
-| `operator *(GtMathPs2::XAxisType)` |  |  |  | `0x00164830` 68 |  |
-| `operator *(GtMathPs2::YAxisType)` |  |  |  | `0x001647E0` 68 |  |
-| `operator *(GtMathPs2::ZAxisType)` |  |  |  | `0x00164740` 68 |  |
-| `operator *=(GtMathPs2::CGtV4d)` |  |  |  | `0x00140180` 76 |  |
-| `operator *=(float)` |  |  |  | `0x001A0290` 76 |  |
-| `operator +(GtMathPs2::CGtV4d)` |  |  |  | `0x00164790` 68 |  |
-| `operator +=(GtMathPs2::CGtV4d)` |  |  |  | `0x0017C2F0` 76 |  |
-| `operator -(GtMathPs2::CGtV4d)` |  |  |  | `0x0028DDA0` 68 |  |
-| `operator /(float)` |  |  |  | `0x001409C0` 84 |  |
-| `operator ==(GtMathPs2::CGtV4d)` |  |  |  | `0x00391320` 464 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `operator =(const GtMathPs2::CGtV4d&)` | `0x0019B100` 16 | `0x001CFCE0` 16 | `0x001C92C0` 16 | `0x00131650` 44 |  |  |
+| `operator *(GtMathPs2::CGtV4d) const` | `0x0019B140` 20 |  |  |  |  |  |
+| `operator *(GtMathPs2::CGtV4d)` |  | `0x001CFD40` 20 | `0x001C9300` 20 | `0x00131680` 68 |  |  |
+| `CGtV4d()` |  | `0x0025C780` 8 | `0x00297680` 8 | `0x001316D0` 24 |  |  |
+| `operator *(float)` |  | `0x00266BA0` 24 | `0x0029F510` 24 | `0x001315D0` 68 |  |  |
+| `CGtV4d(const GtMathPs2::CGtV4d&)` | `0x002AAEB0` 16 | `0x00266B90` 16 | `0x0029F500` 16 | `0x00131290` 44 | `0x002EC8C0` strong |  |
+| `operator *(float) const` | `0x002AAEC0` 24 |  |  |  | `0x002EC8D0` proven |  |
+| `A()` |  |  |  | `0x0019D9C0` 52 |  |  |
+| `B()` |  |  |  | `0x001DC200` 52 |  |  |
+| `CGtV4d(float,float,float,float)` |  |  |  | `0x00131030` 84 |  |  |
+| `G()` |  |  |  | `0x001DC240` 52 |  |  |
+| `GetRawData()` |  |  |  | `0x001315B0` 28 |  |  |
+| `GetSquaredLength()` |  |  |  | `0x00133DE0` 104 |  |  |
+| `R()` |  |  |  | `0x001DC280` 52 |  |  |
+| `Set(float,float,float,float)` |  |  |  | `0x00134AB0` 80 |  |  |
+| `SetA(GtMathPs2::WAxisType)` |  |  |  | `0x0019D930` 56 |  |  |
+| `SetA(float)` |  |  |  | `0x00131260` 48 |  |  |
+| `SetB(GtMathPs2::ZAxisType)` |  |  |  | `0x002E76E0` 56 |  |  |
+| `SetB(float)` |  |  |  | `0x00282310` 48 |  |  |
+| `SetG(GtMathPs2::YAxisType)` |  |  |  | `0x002E7720` 56 |  |  |
+| `SetG(float)` |  |  |  | `0x00282340` 48 |  |  |
+| `SetR(GtMathPs2::XAxisType)` |  |  |  | `0x002E7760` 56 |  |  |
+| `SetR(float)` |  |  |  | `0x00282370` 48 |  |  |
+| `SetW(GtMathPs2::WAxisType)` |  |  |  | `0x00233EB0` 56 |  |  |
+| `SetW(GtMathPs2::XAxisType)` |  |  |  | `0x001BBFD0` 56 |  |  |
+| `SetW(GtMathPs2::YAxisType)` |  |  |  | `0x001BD070` 56 |  |  |
+| `SetW(GtMathPs2::ZAxisType)` |  |  |  | `0x001BD150` 56 |  |  |
+| `SetW(float)` |  |  |  | `0x00164930` 48 |  |  |
+| `SetX(GtMathPs2::WAxisType)` |  |  |  | `0x0036B5C0` 56 |  |  |
+| `SetX(GtMathPs2::XAxisType)` |  |  |  | `0x001BC110` 56 |  |  |
+| `SetX(GtMathPs2::YAxisType)` |  |  |  | `0x00164880` 56 |  |  |
+| `SetX(GtMathPs2::ZAxisType)` |  |  |  | `0x00180920` 56 |  |  |
+| `SetX(float)` |  |  |  | `0x0017B5F0` 48 |  |  |
+| `SetY(GtMathPs2::WAxisType)` |  |  |  | `0x0036B580` 56 |  |  |
+| `SetY(GtMathPs2::XAxisType)` |  |  |  | `0x001BD270` 56 |  |  |
+| `SetY(GtMathPs2::YAxisType)` |  |  |  | `0x001BC0D0` 56 |  |  |
+| `SetY(GtMathPs2::ZAxisType)` |  |  |  | `0x001648C0` 56 |  |  |
+| `SetY(float)` |  |  |  | `0x001BC1A0` 48 |  |  |
+| `SetZ(GtMathPs2::WAxisType)` |  |  |  | `0x0036B500` 56 |  |  |
+| `SetZ(GtMathPs2::XAxisType)` |  |  |  | `0x0036B540` 56 |  |  |
+| `SetZ(GtMathPs2::YAxisType)` |  |  |  | `0x001BD1E0` 56 |  |  |
+| `SetZ(GtMathPs2::ZAxisType)` |  |  |  | `0x001BC040` 56 |  |  |
+| `SetZ(float)` |  |  |  | `0x00164900` 48 |  |  |
+| `W()` |  |  |  | `0x00133850` 52 |  |  |
+| `X()` |  |  |  | `0x00133AB0` 52 |  |  |
+| `Y()` |  |  |  | `0x00133A20` 52 |  |  |
+| `Z()` |  |  |  | `0x001339E0` 52 |  |  |
+| `Zero()` |  |  |  | `0x0019EC80` 20 |  |  |
+| `operator *(GtMathPs2::WAxisType)` |  |  |  | `0x001646F0` 68 |  |  |
+| `operator *(GtMathPs2::XAxisType)` |  |  |  | `0x00164830` 68 |  |  |
+| `operator *(GtMathPs2::YAxisType)` |  |  |  | `0x001647E0` 68 |  |  |
+| `operator *(GtMathPs2::ZAxisType)` |  |  |  | `0x00164740` 68 |  |  |
+| `operator *=(GtMathPs2::CGtV4d)` |  |  |  | `0x00140180` 76 |  |  |
+| `operator *=(float)` |  |  |  | `0x001A0290` 76 |  |  |
+| `operator +(GtMathPs2::CGtV4d)` |  |  |  | `0x00164790` 68 |  |  |
+| `operator +=(GtMathPs2::CGtV4d)` |  |  |  | `0x0017C2F0` 76 |  |  |
+| `operator -(GtMathPs2::CGtV4d)` |  |  |  | `0x0028DDA0` 68 |  |  |
+| `operator /(float)` |  |  |  | `0x001409C0` 84 |  |  |
+| `operator ==(GtMathPs2::CGtV4d)` |  |  |  | `0x00391320` 464 |  |  |
 
 ## Notes
 

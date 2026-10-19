@@ -7,26 +7,27 @@
 - **Area:** [HUD](../systems/hud.md)
 - **Source file:** `B3HUDManager.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 13
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetHUDMode(EHUDMode)` | `0x0016C5A0` 376 | `0x001878A0` 532 | `0x001822C0` 532 | `0x00199290` 524 |  |
-| `GetHandlePosition(const GtMathPs2::CGtV2d&)` | `0x0016C720` 124 | `0x00187AC0` 124 | `0x001824E0` 124 | `0x001991A0` 124 |  |
-| `GetAlignPos(EHUDAlign)` | `0x0016C7A0` 164 | `0x00187B40` 164 | `0x00182560` 164 | `0x001990D0` 196 |  |
-| `IsDoingTransition()` | `0x0016C850` 40 | `0x00187BF0` 40 | `0x00182610` 40 | `0x00198EE0` 56 |  |
-| `Update(float)` | `0x0016C880` 444 | `0x00187C20` 444 | `0x00182640` 428 | `0x00198DA0` 316 |  |
-| `CB3HUD()` |  |  |  | `0x00199D40` 80 |  |
-| `Construct(int)` |  |  |  | `0x00198C00` 184 |  |
-| `GetHUDMode()` |  |  |  | `0x0043D840` 28 |  |
-| `GetScene()` |  |  |  | `0x00196F90` 28 |  |
-| `Prepare()` |  |  |  | `0x00198CC0` 224 |  |
-| `Release()` |  |  |  | `0x001990A0` 40 |  |
-| `RemoveAllComponents()` |  |  |  | `0x00199220` 112 |  |
-| `UpdateHUDSwitch(float)` |  |  |  | `0x00198F20` 344 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetHUDMode(EHUDMode)` | `0x0016C5A0` 376 | `0x001878A0` 532 | `0x001822C0` 532 | `0x00199290` 524 | `0x001A00B0` strong |  |
+| `GetHandlePosition(const GtMathPs2::CGtV2d&)` | `0x0016C720` 124 | `0x00187AC0` 124 | `0x001824E0` 124 | `0x001991A0` 124 | `0x001A0240` strong |  |
+| `GetAlignPos(EHUDAlign)` | `0x0016C7A0` 164 | `0x00187B40` 164 | `0x00182560` 164 | `0x001990D0` 196 | `0x001A02C0` strong |  |
+| `IsDoingTransition()` | `0x0016C850` 40 | `0x00187BF0` 40 | `0x00182610` 40 | `0x00198EE0` 56 | `0x001A0370` proven |  |
+| `Update(float)` | `0x0016C880` 444 | `0x00187C20` 444 | `0x00182640` 428 | `0x00198DA0` 316 | `0x001A03A0` strong |  |
+| `CB3HUD()` |  |  |  | `0x00199D40` 80 |  |  |
+| `Construct(int)` |  |  |  | `0x00198C00` 184 |  |  |
+| `GetHUDMode()` |  |  |  | `0x0043D840` 28 |  |  |
+| `GetScene()` |  |  |  | `0x00196F90` 28 |  |  |
+| `Prepare()` |  |  |  | `0x00198CC0` 224 |  |  |
+| `Release()` |  |  |  | `0x001990A0` 40 |  |  |
+| `RemoveAllComponents()` |  |  |  | `0x00199220` 112 |  |  |
+| `UpdateHUDSwitch(float)` |  |  |  | `0x00198F20` 344 |  |  |
 
 ## Notes
 

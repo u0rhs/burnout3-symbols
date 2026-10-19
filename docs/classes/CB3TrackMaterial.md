@@ -7,15 +7,16 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3TrackMaterialPS2.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 2
+- **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Prepare()` | `0x0022C4F0` 16 | `0x00244630` 16 | `0x00281050` 16 | `0x00282450` 44 |  |
-| `FixUp()` | `0x0022C500` 80 | `0x00244640` 80 | `0x00281060` 80 | `0x002823A0` 164 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Prepare()` | `0x0022C4F0` 16 | `0x00244630` 16 | `0x00281050` 16 | `0x00282450` 44 | `0x0026A160` proven |  |
+| `FixUp()` | `0x0022C500` 80 | `0x00244640` 80 | `0x00281060` 80 | `0x002823A0` 164 | `0x0026A170` proven |  |
 
 ## Notes
 

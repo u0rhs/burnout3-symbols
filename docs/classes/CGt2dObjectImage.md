@@ -7,18 +7,19 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dObjectImage.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 2, B3O0PCH 5
+- **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C180` 152 | `0x001D10D0` 152 | `0x001CA450` 156 | `0x001DB030` 172 |  |
-| `SetTexture(CGtTexture*)` | `0x0019C220` 8 | `0x001D1170` 88 |  | `0x001DAFE0` 80 |  |
-| `SetUVs(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x0019C230` 36 | `0x001D11D0` 36 |  | `0x001DAF80` 92 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CGtTextu` | `0x0019C260` 180 | `0x001D1200` 316 | `0x001CA4F0` 316 | `0x001DAE90` 232 |  |
-| `CGt2dObjectImage()` |  |  |  | `0x00140530` 44 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C180` 152 | `0x001D10D0` 152 | `0x001CA450` 156 | `0x001DB030` 172 | `0x001D5FB0` proven |  |
+| `SetTexture(CGtTexture*)` | `0x0019C220` 8 | `0x001D1170` 88 |  | `0x001DAFE0` 80 | `0x001D6070` proven |  |
+| `SetUVs(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x0019C230` 36 | `0x001D11D0` 36 |  | `0x001DAF80` 92 | `0x001D6080` proven |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CGtTextu` | `0x0019C260` 180 | `0x001D1200` 316 | `0x001CA4F0` 316 | `0x001DAE90` 232 | `0x001D60B0` proven |  |
+| `CGt2dObjectImage()` |  |  |  | `0x00140530` 44 |  |  |
 
 ## Notes
 

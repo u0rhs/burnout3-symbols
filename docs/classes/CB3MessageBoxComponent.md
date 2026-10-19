@@ -7,21 +7,22 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3MessageBoxComponent.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 7
+- **Retail (SLUS-21050):** 2 of its 5 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440480`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x002E5D30` 328 | `0x00330920` 328 | `0x00362C50` 328 | `0x003646C0` 572 |  |
-| `Update(float)` | `0x002E5E80` 20 | `0x00330A70` 20 | `0x00362DA0` 20 | `0x00364690` 44 |  |
-| `Prepare(EB3MessageBoxType,const unsigned short*)` | `0x002E5EA0` 1056 | `0x00330A90` 1056 | `0x00362DC0` 1056 | `0x00363EA0` 1996 |  |
-| `Prepare(EB3MessageBoxType,EGlobalStrings)` | `0x002E62C0` 76 | `0x00330EB0` 76 | `0x003631E0` 76 | `0x00363E50` 76 |  |
-| `Construct()` | `0x002E6310` 48 | `0x00330F00` 48 | `0x00363230` 48 | `0x00363E10` 60 |  |
-| `CB3MessageBoxComponent()` |  |  |  | `0x0033C670` 76 |  |
-| `GetCurrentType()` |  |  |  | `0x0034A4D0` 36 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x002E5D30` 328 | `0x00330920` 328 | `0x00362C50` 328 | `0x003646C0` 572 | `0x0032B530` likely |  |
+| `Update(float)` | `0x002E5E80` 20 | `0x00330A70` 20 | `0x00362DA0` 20 | `0x00364690` 44 |  |  |
+| `Prepare(EB3MessageBoxType,const unsigned short*)` | `0x002E5EA0` 1056 | `0x00330A90` 1056 | `0x00362DC0` 1056 | `0x00363EA0` 1996 |  |  |
+| `Prepare(EB3MessageBoxType,EGlobalStrings)` | `0x002E62C0` 76 | `0x00330EB0` 76 | `0x003631E0` 76 | `0x00363E50` 76 |  |  |
+| `Construct()` | `0x002E6310` 48 | `0x00330F00` 48 | `0x00363230` 48 | `0x00363E10` 60 | `0x0032D1B0` strong |  |
+| `CB3MessageBoxComponent()` |  |  |  | `0x0033C670` 76 |  |  |
+| `GetCurrentType()` |  |  |  | `0x0034A4D0` 36 |  |  |
 
 ## Static data (DNAT_200)
 

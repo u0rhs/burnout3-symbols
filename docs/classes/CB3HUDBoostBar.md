@@ -7,26 +7,27 @@
 - **Area:** [HUD](../systems/hud.md)
 - **Source file:** `B3HUDBoostBar.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 6, B3O0PCH 11
+- **Retail (SLUS-21050):** 3 of its 7 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FDD0`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x0016FFA0` 528 | `0x0018BA70` 1112 |  | `0x001A37E0` 268 |  |
-| `Update(float)` | `0x001701B0` 80 | `0x0018BED0` 80 | `0x00186480` 80 | `0x001A3790` 80 |  |
-| `MessagesUpdate(float)` | `0x00170200` 1056 | `0x0018BF20` 1100 | `0x001864D0` 1108 | `0x001A31C0` 1416 |  |
-| `UpdateBoostMessage(CB3HUDBoostBar::EMessageType,const CB3ScoreCategory*,float,float)` | `0x00170620` 804 | `0x0018C370` 980 | `0x00186930` 964 | `0x001A2D60` 1108 |  |
-| `BarUpdate(float)` | `0x00170950` 1856 | `0x0018C750` 1900 | `0x00186D00` 1624 | `0x001A2530` 2032 |  |
-| `Prepare(int,EHUDAlign,int,bool,const CB3HUDHeading*)` | `0x00171090` 1028 | `0x0018CEC0` 1236 |  | `0x001A1FF0` 1276 |  |
-| `StaticConstruct()` | `0x00173E50` 8 | `0x00190030` 8 | `0x0018A330` 8 | `0x0019D470` 8 |  |
-| `CB3HUDBoostBar()` |  |  |  | `0x00199A80` 124 |  |
-| `Prepare(int,EHUDAlign,int,bool)` |  |  | `0x00187360` 1132 |  |  |
-| `StartTakedownAnimation()` |  |  |  | `0x001A38F0` 160 |  |
-| `StopTakedownAnimation()` |  |  |  | `0x001A3B20` 156 |  |
-| `UpdateTakedownAnimation(float)` |  |  |  | `0x001A3BC0` 256 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `UpdateTransition(float,bool,EHUDMode,EHUDMode)` | `0x0016FFA0` 528 | `0x0018BA70` 1112 |  | `0x001A37E0` 268 |  |  |
+| `Update(float)` | `0x001701B0` 80 | `0x0018BED0` 80 | `0x00186480` 80 | `0x001A3790` 80 |  |  |
+| `MessagesUpdate(float)` | `0x00170200` 1056 | `0x0018BF20` 1100 | `0x001864D0` 1108 | `0x001A31C0` 1416 |  |  |
+| `UpdateBoostMessage(CB3HUDBoostBar::EMessageType,const CB3ScoreCategory*,float,float)` | `0x00170620` 804 | `0x0018C370` 980 | `0x00186930` 964 | `0x001A2D60` 1108 |  |  |
+| `BarUpdate(float)` | `0x00170950` 1856 | `0x0018C750` 1900 | `0x00186D00` 1624 | `0x001A2530` 2032 | `0x001A4900` unverified |  |
+| `Prepare(int,EHUDAlign,int,bool,const CB3HUDHeading*)` | `0x00171090` 1028 | `0x0018CEC0` 1236 |  | `0x001A1FF0` 1276 | `0x001A52D0` likely |  |
+| `StaticConstruct()` | `0x00173E50` 8 | `0x00190030` 8 | `0x0018A330` 8 | `0x0019D470` 8 | `0x001A8490` strong |  |
+| `CB3HUDBoostBar()` |  |  |  | `0x00199A80` 124 |  |  |
+| `Prepare(int,EHUDAlign,int,bool)` |  |  | `0x00187360` 1132 |  |  |  |
+| `StartTakedownAnimation()` |  |  |  | `0x001A38F0` 160 |  |  |
+| `StopTakedownAnimation()` |  |  |  | `0x001A3B20` 156 |  |  |
+| `UpdateTakedownAnimation(float)` |  |  |  | `0x001A3BC0` 256 |  |  |
 
 ## Notes
 

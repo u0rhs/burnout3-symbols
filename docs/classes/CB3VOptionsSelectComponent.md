@@ -11,26 +11,26 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CloseList()` | `0x0036F620` 376 | `0x003DE420` 376 | `0x00406F70` 364 | `0x0041D2C0` 872 |  |
-| `OpenList(int,unsigned int)` | `0x0036F7A0` 536 | `0x003DE5A0` 572 | `0x004070E0` 572 | `0x0041CEA0` 1044 |  |
-| `SelectListItem(int,unsigned int)` | `0x0036F9C0` 128 | `0x003DE7E0` 164 | `0x00407320` 164 | `0x0041CDC0` 216 |  |
-| `SetEnabledState(int,bool)` | `0x0036FA40` 228 | `0x003DE890` 228 | `0x004073D0` 228 | `0x0041CC70` 332 |  |
-| `SetYesNoOption(int,bool)` | `0x0036FB30` 88 | `0x003DE980` 120 | `0x004074C0` 120 | `0x0041CBB0` 184 |  |
-| `SetOptionText(int,unsigned int)` | `0x0036FB90` 76 | `0x003DEA00` 108 | `0x00407540` 108 | `0x0041CAF0` 192 |  |
-| `Release()` | `0x0036FBE0` 432 | `0x003DEA70` 532 | `0x004075B0` 524 | `0x0041C760` 908 |  |
-| `Update(float)` | `0x0036FD90` 2564 | `0x003DEC90` 2680 | `0x004077C0` 2680 | `0x0041B5E0` 4480 |  |
-| `PrepareList(int,unsigned int)` | `0x003707A0` 836 | `0x003DF710` 852 | `0x00408240` 836 | `0x0041AEB0` 1488 |  |
-| `PreparePanel(int,unsigned int,float)` | `0x00370AF0` 1012 | `0x003DFA70` 1012 | `0x00408590` 1012 | `0x0041A7A0` 1796 |  |
-| `PrepareItem(int,float,bool)` | `0x00370EF0` 528 | `0x003DFE70` 528 | `0x00408990` 528 | `0x0041A460` 740 |  |
-| `Prepare(const CB3MenuComponentSelectionData*,CB3VOptionsSelectComponentEntryData*)` | `0x00371100` 832 | `0x003E0080` 1012 | `0x00408BA0` 996 | `0x0041A020` 1080 |  |
-| `Construct()` | `0x00371440` 136 | `0x003E0480` 136 | `0x00408F90` 136 | `0x00419F10` 268 |  |
-| `CB3VOptionsSelectComponent()` |  |  |  | `0x0033C800` 60 |  |
-| `GetItemAlignY(int)` |  |  |  | `0x0041A750` 80 |  |
-| `PrepareBar(float)` |  |  |  | `0x0041B480` 340 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CloseList()` | `0x0036F620` 376 | `0x003DE420` 376 | `0x00406F70` 364 | `0x0041D2C0` 872 |  |  |
+| `OpenList(int,unsigned int)` | `0x0036F7A0` 536 | `0x003DE5A0` 572 | `0x004070E0` 572 | `0x0041CEA0` 1044 |  |  |
+| `SelectListItem(int,unsigned int)` | `0x0036F9C0` 128 | `0x003DE7E0` 164 | `0x00407320` 164 | `0x0041CDC0` 216 |  |  |
+| `SetEnabledState(int,bool)` | `0x0036FA40` 228 | `0x003DE890` 228 | `0x004073D0` 228 | `0x0041CC70` 332 |  |  |
+| `SetYesNoOption(int,bool)` | `0x0036FB30` 88 | `0x003DE980` 120 | `0x004074C0` 120 | `0x0041CBB0` 184 |  |  |
+| `SetOptionText(int,unsigned int)` | `0x0036FB90` 76 | `0x003DEA00` 108 | `0x00407540` 108 | `0x0041CAF0` 192 |  |  |
+| `Release()` | `0x0036FBE0` 432 | `0x003DEA70` 532 | `0x004075B0` 524 | `0x0041C760` 908 |  |  |
+| `Update(float)` | `0x0036FD90` 2564 | `0x003DEC90` 2680 | `0x004077C0` 2680 | `0x0041B5E0` 4480 |  |  |
+| `PrepareList(int,unsigned int)` | `0x003707A0` 836 | `0x003DF710` 852 | `0x00408240` 836 | `0x0041AEB0` 1488 |  |  |
+| `PreparePanel(int,unsigned int,float)` | `0x00370AF0` 1012 | `0x003DFA70` 1012 | `0x00408590` 1012 | `0x0041A7A0` 1796 |  |  |
+| `PrepareItem(int,float,bool)` | `0x00370EF0` 528 | `0x003DFE70` 528 | `0x00408990` 528 | `0x0041A460` 740 |  |  |
+| `Prepare(const CB3MenuComponentSelectionData*,CB3VOptionsSelectComponentEntryData*)` | `0x00371100` 832 | `0x003E0080` 1012 | `0x00408BA0` 996 | `0x0041A020` 1080 |  |  |
+| `Construct()` | `0x00371440` 136 | `0x003E0480` 136 | `0x00408F90` 136 | `0x00419F10` 268 |  |  |
+| `CB3VOptionsSelectComponent()` |  |  |  | `0x0033C800` 60 |  |  |
+| `GetItemAlignY(int)` |  |  |  | `0x0041A750` 80 |  |  |
+| `PrepareBar(float)` |  |  |  | `0x0041B480` 340 |  |  |
 
 ## Notes
 

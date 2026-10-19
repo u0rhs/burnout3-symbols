@@ -11,36 +11,36 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetEntryCount()` | `0x003CD870` 56 | `0x0044B750` 56 | `0x004728D0` 56 | `0x0048C200` 104 |  |
-| `IsUnlocked(int)` | `0x003CD8B0` 68 | `0x0044B790` 68 | `0x00472910` 68 | `0x0048C170` 132 |  |
-| `GetEntryCarID(int)` | `0x003CD900` 160 | `0x0044B7E0` 228 | `0x00472960` 228 | `0x0048C030` 308 |  |
-| `PrepareEntries()` | `0x003CD9A0` 940 | `0x0044B8D0` 940 | `0x00472A50` 940 | `0x0048BAA0` 1412 |  |
-| `GetCurrentEntry()` | `0x003CDD50` 8 | `0x0044BC80` 8 | `0x00472E00` 8 | `0x0048BA80` 28 |  |
-| `ScrollRight()` | `0x003CDD60` 268 | `0x0044BC90` 364 | `0x00472E10` 364 | `0x0048B9A0` 212 |  |
-| `ScrollLeft()` | `0x003CDE70` 264 | `0x0044BE00` 364 | `0x00472F80` 364 | `0x0048B8C0` 212 |  |
-| `ScrollDown()` | `0x003CDF80` 100 | `0x0044BF70` 220 | `0x004730F0` 220 | `0x0048B820` 156 |  |
-| `ScrollUp()` | `0x003CDFF0` 104 | `0x0044C050` 228 | `0x004731D0` 228 | `0x0048B780` 156 |  |
-| `CanScrollRight()` | `0x003CE060` 48 | `0x0044C140` 48 | `0x004732C0` 48 | `0x0048B710` 112 |  |
-| `CanScrollLeft()` | `0x003CE090` 48 | `0x0044C170` 48 | `0x004732F0` 48 | `0x0048B690` 116 |  |
-| `CanScrollDown()` | `0x003CE0C0` 28 | `0x0044C1A0` 28 | `0x00473320` 28 | `0x0048B640` 80 |  |
-| `CanScrollUp()` | `0x003CE0E0` 36 | `0x0044C1C0` 36 | `0x00473340` 36 | `0x0048B5E0` 96 |  |
-| `GetEntryColour(int)` | `0x003CE110` 232 | `0x0044C1F0` 232 | `0x00473370` 232 | `0x0048B430` 432 |  |
-| `GetEntryPosition(int)` | `0x003CE200` 392 | `0x0044C2E0` 600 | `0x00473460` 600 | `0x0048B0A0` 904 |  |
-| `Release()` | `0x003CE390` 256 | `0x0044C540` 256 | `0x004736C0` 256 | `0x0048AF60` 308 |  |
-| `Update(float)` | `0x003CE490` 60 | `0x0044C640` 60 | `0x004737C0` 60 | `0x0048AE60` 80 |  |
-| `UpdateScrolling(float)` | `0x003CE4D0` 664 | `0x0044C680` 664 | `0x00473800` 664 | `0x0048ACA0` 448 |  |
-| `PrepareCarSelect(EB3MenuCarClasses,int,EB3MenuCarClasses,int)` | `0x003CE770` 44 | `0x0044C920` 44 | `0x00473AA0` 44 | `0x0048AC10` 144 |  |
-| `Prepare(EB3CarouselPageType,EB3RewardImageType,int)` | `0x003CE7A0` 744 | `0x0044C950` 864 | `0x00473AD0` 856 | `0x0048A780` 1164 |  |
-| `GetClassString(EB3MenuCarClasses)` | `0x003CEA90` 108 | `0x0044CCB0` 140 | `0x00473E30` 140 | `0x0048A600` 156 |  |
-| `PrepareImages()` | `0x003CEB00` 572 | `0x0044CD40` 572 | `0x00473EC0` 572 | `0x0048A270` 904 |  |
-| `Construct()` | `0x003CED40` 80 | `0x0044CF80` 80 | `0x00474100` 80 | `0x0048A1F0` 116 |  |
-| `CB3CarouselComponent()` |  |  |  | `0x0033BBD0` 60 |  |
-| `PrepareText()` |  |  |  | `0x0048A6A0` 224 |  |
-| `ReleaseImages()` |  |  |  | `0x0048AEB0` 176 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetEntryCount()` | `0x003CD870` 56 | `0x0044B750` 56 | `0x004728D0` 56 | `0x0048C200` 104 |  |  |
+| `IsUnlocked(int)` | `0x003CD8B0` 68 | `0x0044B790` 68 | `0x00472910` 68 | `0x0048C170` 132 |  |  |
+| `GetEntryCarID(int)` | `0x003CD900` 160 | `0x0044B7E0` 228 | `0x00472960` 228 | `0x0048C030` 308 |  |  |
+| `PrepareEntries()` | `0x003CD9A0` 940 | `0x0044B8D0` 940 | `0x00472A50` 940 | `0x0048BAA0` 1412 |  |  |
+| `GetCurrentEntry()` | `0x003CDD50` 8 | `0x0044BC80` 8 | `0x00472E00` 8 | `0x0048BA80` 28 |  |  |
+| `ScrollRight()` | `0x003CDD60` 268 | `0x0044BC90` 364 | `0x00472E10` 364 | `0x0048B9A0` 212 |  |  |
+| `ScrollLeft()` | `0x003CDE70` 264 | `0x0044BE00` 364 | `0x00472F80` 364 | `0x0048B8C0` 212 |  |  |
+| `ScrollDown()` | `0x003CDF80` 100 | `0x0044BF70` 220 | `0x004730F0` 220 | `0x0048B820` 156 |  |  |
+| `ScrollUp()` | `0x003CDFF0` 104 | `0x0044C050` 228 | `0x004731D0` 228 | `0x0048B780` 156 |  |  |
+| `CanScrollRight()` | `0x003CE060` 48 | `0x0044C140` 48 | `0x004732C0` 48 | `0x0048B710` 112 |  |  |
+| `CanScrollLeft()` | `0x003CE090` 48 | `0x0044C170` 48 | `0x004732F0` 48 | `0x0048B690` 116 |  |  |
+| `CanScrollDown()` | `0x003CE0C0` 28 | `0x0044C1A0` 28 | `0x00473320` 28 | `0x0048B640` 80 |  |  |
+| `CanScrollUp()` | `0x003CE0E0` 36 | `0x0044C1C0` 36 | `0x00473340` 36 | `0x0048B5E0` 96 |  |  |
+| `GetEntryColour(int)` | `0x003CE110` 232 | `0x0044C1F0` 232 | `0x00473370` 232 | `0x0048B430` 432 |  |  |
+| `GetEntryPosition(int)` | `0x003CE200` 392 | `0x0044C2E0` 600 | `0x00473460` 600 | `0x0048B0A0` 904 |  |  |
+| `Release()` | `0x003CE390` 256 | `0x0044C540` 256 | `0x004736C0` 256 | `0x0048AF60` 308 |  |  |
+| `Update(float)` | `0x003CE490` 60 | `0x0044C640` 60 | `0x004737C0` 60 | `0x0048AE60` 80 |  |  |
+| `UpdateScrolling(float)` | `0x003CE4D0` 664 | `0x0044C680` 664 | `0x00473800` 664 | `0x0048ACA0` 448 |  |  |
+| `PrepareCarSelect(EB3MenuCarClasses,int,EB3MenuCarClasses,int)` | `0x003CE770` 44 | `0x0044C920` 44 | `0x00473AA0` 44 | `0x0048AC10` 144 |  |  |
+| `Prepare(EB3CarouselPageType,EB3RewardImageType,int)` | `0x003CE7A0` 744 | `0x0044C950` 864 | `0x00473AD0` 856 | `0x0048A780` 1164 |  |  |
+| `GetClassString(EB3MenuCarClasses)` | `0x003CEA90` 108 | `0x0044CCB0` 140 | `0x00473E30` 140 | `0x0048A600` 156 |  |  |
+| `PrepareImages()` | `0x003CEB00` 572 | `0x0044CD40` 572 | `0x00473EC0` 572 | `0x0048A270` 904 |  |  |
+| `Construct()` | `0x003CED40` 80 | `0x0044CF80` 80 | `0x00474100` 80 | `0x0048A1F0` 116 |  |  |
+| `CB3CarouselComponent()` |  |  |  | `0x0033BBD0` 60 |  |  |
+| `PrepareText()` |  |  |  | `0x0048A6A0` 224 |  |  |
+| `ReleaseImages()` |  |  |  | `0x0048AEB0` 176 |  |  |
 
 ## Static data (DNAT_200)
 

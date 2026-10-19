@@ -7,33 +7,34 @@
 - **Area:** [AI drivers](../systems/ai.md)
 - **Source file:** `B3AIDriver.cpp`
 - **Methods per build:** DNAT_200 14, B3DEBUG 14, B3INTERN 14, B3O0PCH 19
+- **Retail (SLUS-21050):** 13 of its 14 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CAIDriver`, size 0x058, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CalcCatchupSpeed(float)` | `0x00140D60` 460 | `0x0014CAF0` 556 | `0x00149650` 556 | `0x00156C50` 664 |  |
-| `CalcSpeedMatchSpeed(float)` | `0x00140F30` 1292 | `0x0014CD20` 1996 | `0x00149880` 1996 | `0x001563F0` 2064 |  |
-| `GetCurrentMaxSpeed()` | `0x00141440` 296 | `0x0014D4F0` 368 | `0x0014A050` 368 | `0x00156110` 408 |  |
-| `GetCurrentMinSpeed()` | `0x00141570` 296 | `0x0014D660` 368 | `0x0014A1C0` 368 | `0x00155F70` 408 |  |
-| `GenerateProfile()` | `0x001416A0` 880 | `0x0014D7D0` 1232 | `0x0014A330` 1052 | `0x00155920` 1604 |  |
-| `CalcDifficultyIndex()` | `0x00141A10` 280 | `0x0014DCA0` 392 | `0x0014A750` 392 | `0x00155780` 412 |  |
-| `_CalcDifficultyIndexQSortCallback(const void*,const void*)` | `0x00141B30` 76 | `0x0014DE30` 76 | `0x0014A8E0` 76 | `0x001556E0` 156 |  |
-| `CalculateDesiredSpeed()` | `0x00141B80` 456 | `0x0014DE80` 468 | `0x0014A930` 456 | `0x001554B0` 556 | `void CAIDriver::CalculateDesiredSpeed()` |
-| `CalculateSteerAngle()` | `0x00141D50` 1588 | `0x0014E060` 2112 | `0x0014AB00` 1792 | `0x00154B50` 2112 | `void CAIDriver::CalculateSteerAngle()` |
-| `CheckForDrift()` | `0x00142390` 728 | `0x0014E8A0` 728 | `0x0014B200` 728 | `0x00154640` 984 | `void CAIDriver::CheckForDrift()` |
-| `Release()` | `0x00142670` 44 | `0x0014EB80` 44 | `0x0014B4E0` 44 | `0x00154600` 52 |  |
-| `Update()` | `0x001426A0` 612 | `0x0014EBB0` 1012 | `0x0014B510` 932 | `0x00154350` 680 | `void CAIDriver::Update()` |
-| `Prepare()` | `0x00142910` 280 | `0x0014EFB0` 280 | `0x0014B8C0` 280 | `0x00154110` 564 |  |
-| `Construct()` | `0x00142A30` 56 | `0x0014F0D0` 92 | `0x0014B9E0` 92 | `0x001540B0` 92 |  |
-| `CB3AIDriver()` |  |  |  | `0x001911C0` 60 |  |
-| `CalculateDefaultRacingSpeed()` |  |  |  | `0x00156EF0` 156 |  |
-| `CatchupHasTailedOff()` |  |  |  | `0x00367060` 28 |  |
-| `CheckForBoost()` |  |  |  | `0x00154A20` 264 |  |
-| `GetCornerSpeed(float)` |  |  |  | `0x001562B0` 308 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CalcCatchupSpeed(float)` | `0x00140D60` 460 | `0x0014CAF0` 556 | `0x00149650` 556 | `0x00156C50` 664 | `0x00143FA0` strong |  |
+| `CalcSpeedMatchSpeed(float)` | `0x00140F30` 1292 | `0x0014CD20` 1996 | `0x00149880` 1996 | `0x001563F0` 2064 | `0x00144180` strong |  |
+| `GetCurrentMaxSpeed()` | `0x00141440` 296 | `0x0014D4F0` 368 | `0x0014A050` 368 | `0x00156110` 408 | `0x001446B0` likely |  |
+| `GetCurrentMinSpeed()` | `0x00141570` 296 | `0x0014D660` 368 | `0x0014A1C0` 368 | `0x00155F70` 408 | `0x00144810` likely |  |
+| `GenerateProfile()` | `0x001416A0` 880 | `0x0014D7D0` 1232 | `0x0014A330` 1052 | `0x00155920` 1604 | `0x00144970` unverified |  |
+| `CalcDifficultyIndex()` | `0x00141A10` 280 | `0x0014DCA0` 392 | `0x0014A750` 392 | `0x00155780` 412 | `0x00144D00` strong |  |
+| `_CalcDifficultyIndexQSortCallback(const void*,const void*)` | `0x00141B30` 76 | `0x0014DE30` 76 | `0x0014A8E0` 76 | `0x001556E0` 156 |  |  |
+| `CalculateDesiredSpeed()` | `0x00141B80` 456 | `0x0014DE80` 468 | `0x0014A930` 456 | `0x001554B0` 556 | `0x00144E70` unverified | `void CAIDriver::CalculateDesiredSpeed()` |
+| `CalculateSteerAngle()` | `0x00141D50` 1588 | `0x0014E060` 2112 | `0x0014AB00` 1792 | `0x00154B50` 2112 | `0x001450C0` strong | `void CAIDriver::CalculateSteerAngle()` |
+| `CheckForDrift()` | `0x00142390` 728 | `0x0014E8A0` 728 | `0x0014B200` 728 | `0x00154640` 984 | `0x00145700` strong | `void CAIDriver::CheckForDrift()` |
+| `Release()` | `0x00142670` 44 | `0x0014EB80` 44 | `0x0014B4E0` 44 | `0x00154600` 52 | `0x001459E0` strong |  |
+| `Update()` | `0x001426A0` 612 | `0x0014EBB0` 1012 | `0x0014B510` 932 | `0x00154350` 680 | `0x00145A10` likely | `void CAIDriver::Update()` |
+| `Prepare()` | `0x00142910` 280 | `0x0014EFB0` 280 | `0x0014B8C0` 280 | `0x00154110` 564 | `0x00145D10` strong |  |
+| `Construct()` | `0x00142A30` 56 | `0x0014F0D0` 92 | `0x0014B9E0` 92 | `0x001540B0` 92 | `0x00145E30` proven |  |
+| `CB3AIDriver()` |  |  |  | `0x001911C0` 60 |  |  |
+| `CalculateDefaultRacingSpeed()` |  |  |  | `0x00156EF0` 156 |  |  |
+| `CatchupHasTailedOff()` |  |  |  | `0x00367060` 28 |  |  |
+| `CheckForBoost()` |  |  |  | `0x00154A20` 264 |  |  |
+| `GetCornerSpeed(float)` |  |  |  | `0x001562B0` 308 |  |  |
 
 ## Burnout 2 layout of `CAIDriver`
 

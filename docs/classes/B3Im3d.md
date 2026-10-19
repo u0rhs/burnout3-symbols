@@ -7,26 +7,27 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3Im3DPS2.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 13, B3INTERN 13, B3O0PCH 13
+- **Retail (SLUS-21050):** 13 of its 13 DNAT_200 methods found, 8 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `RenderLinelist(const CB3Im3dVertex*,int)` | `0x0031A760` 576 | `0x00375420` 736 | `0x003A4000` 736 | `0x003A4960` 804 |  |
-| `RenderTrilist(const CB3Im3dVertex*,int)` | `0x0031A9A0` 660 | `0x00375700` 844 | `0x003A42E0` 844 | `0x003A45F0` 872 |  |
-| `RenderTristrip(const GtMathPs2::CGtMatrix3x4&,const CB3Im3dVertex*,int)` | `0x0031AC40` 548 | `0x00375A50` 688 | `0x003A4630` 688 | `0x003A4320` 720 |  |
-| `RenderTristrip(const CB3Im3dVertex*,int)` | `0x0031AE70` 484 | `0x00375D00` 624 | `0x003A48E0` 624 | `0x003A4070` 688 |  |
-| `SetAlphaTestThreshold(float)` | `0x0031B060` 172 | `0x00375F70` 328 | `0x003A4B50` 328 | `0x003A3F50` 288 |  |
-| `SetBlendMode(B3Im3d::EBlendMode)` | `0x0031B110` 136 | `0x003760C0` 184 | `0x003A4CA0` 184 | `0x003A3E50` 248 |  |
-| `SetLineAntialiasing(bool)` | `0x0031B1A0` 216 | `0x00376180` 252 | `0x003A4D60` 252 | `0x003A3D20` 292 |  |
-| `SetBackfaceCull(bool)` | `0x0031B280` 8 | `0x00376280` 88 | `0x003A4E60` 88 | `0x003A3CE0` 52 |  |
-| `SetZWrite(bool)` | `0x0031B290` 172 | `0x003762E0` 208 | `0x003A4EC0` 208 | `0x003A3BF0` 240 |  |
-| `SetTexture(CGtTexture*)` | `0x0031B340` 144 | `0x003763B0` 188 | `0x003A4F90` 188 | `0x003A3B30` 180 |  |
-| `EndRendering()` | `0x0031B3D0` 148 | `0x00376470` 188 | `0x003A5050` 188 | `0x003A3A50` 212 |  |
-| `BeginRendering()` | `0x0031B470` 564 | `0x00376530` 604 | `0x003A5110` 604 | `0x003A3700` 844 |  |
-| `Construct()` | `0x0031B6B0` 12 | `0x00376790` 12 | `0x003A5370` 12 | `0x003A36E0` 20 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `RenderLinelist(const CB3Im3dVertex*,int)` | `0x0031A760` 576 | `0x00375420` 736 | `0x003A4000` 736 | `0x003A4960` 804 | `0x00364920` strong |  |
+| `RenderTrilist(const CB3Im3dVertex*,int)` | `0x0031A9A0` 660 | `0x00375700` 844 | `0x003A42E0` 844 | `0x003A45F0` 872 | `0x00364B70` strong |  |
+| `RenderTristrip(const GtMathPs2::CGtMatrix3x4&,const CB3Im3dVertex*,int)` | `0x0031AC40` 548 | `0x00375A50` 688 | `0x003A4630` 688 | `0x003A4320` 720 | `0x00364E10` strong |  |
+| `RenderTristrip(const CB3Im3dVertex*,int)` | `0x0031AE70` 484 | `0x00375D00` 624 | `0x003A48E0` 624 | `0x003A4070` 688 | `0x00365040` strong |  |
+| `SetAlphaTestThreshold(float)` | `0x0031B060` 172 | `0x00375F70` 328 | `0x003A4B50` 328 | `0x003A3F50` 288 | `0x00365230` proven |  |
+| `SetBlendMode(B3Im3d::EBlendMode)` | `0x0031B110` 136 | `0x003760C0` 184 | `0x003A4CA0` 184 | `0x003A3E50` 248 | `0x003652E0` proven |  |
+| `SetLineAntialiasing(bool)` | `0x0031B1A0` 216 | `0x00376180` 252 | `0x003A4D60` 252 | `0x003A3D20` 292 | `0x00365370` proven |  |
+| `SetBackfaceCull(bool)` | `0x0031B280` 8 | `0x00376280` 88 | `0x003A4E60` 88 | `0x003A3CE0` 52 | `0x00365450` strong |  |
+| `SetZWrite(bool)` | `0x0031B290` 172 | `0x003762E0` 208 | `0x003A4EC0` 208 | `0x003A3BF0` 240 | `0x00365460` proven |  |
+| `SetTexture(CGtTexture*)` | `0x0031B340` 144 | `0x003763B0` 188 | `0x003A4F90` 188 | `0x003A3B30` 180 | `0x00365510` proven |  |
+| `EndRendering()` | `0x0031B3D0` 148 | `0x00376470` 188 | `0x003A5050` 188 | `0x003A3A50` 212 | `0x003655A0` proven |  |
+| `BeginRendering()` | `0x0031B470` 564 | `0x00376530` 604 | `0x003A5110` 604 | `0x003A3700` 844 | `0x00365640` proven |  |
+| `Construct()` | `0x0031B6B0` 12 | `0x00376790` 12 | `0x003A5370` 12 | `0x003A36E0` 20 | `0x00365880` proven |  |
 
 ## Static data (DNAT_200)
 

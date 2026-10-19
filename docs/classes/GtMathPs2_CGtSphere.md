@@ -9,17 +9,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Position()` |  |  |  | `0x001331B0` 52 |  |
-| `Radius()` |  |  |  | `0x00132FA0` 52 |  |
-| `SetPosition(GtMathPs2::CGtV3d)` |  |  |  | `0x001A4F20` 56 |  |
-| `SetRadius(GtMathPs2::WAxisType)` |  |  |  | `0x001A6F60` 56 |  |
-| `SetRadius(GtMathPs2::XAxisType)` |  |  |  | `0x001BE400` 56 |  |
-| `SetRadius(float)` |  |  |  | `0x001A4EF0` 48 |  |
-| `operator =(const GtMathPs2::CGtSphere&)` |  |  |  | `0x0039A700` 44 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Position()` |  |  |  | `0x001331B0` 52 |  |  |
+| `Radius()` |  |  |  | `0x00132FA0` 52 |  |  |
+| `SetPosition(GtMathPs2::CGtV3d)` |  |  |  | `0x001A4F20` 56 |  |  |
+| `SetRadius(GtMathPs2::WAxisType)` |  |  |  | `0x001A6F60` 56 |  |  |
+| `SetRadius(GtMathPs2::XAxisType)` |  |  |  | `0x001BE400` 56 |  |  |
+| `SetRadius(float)` |  |  |  | `0x001A4EF0` 48 |  |  |
+| `operator =(const GtMathPs2::CGtSphere&)` |  |  |  | `0x0039A700` 44 |  |  |
 
 ## Notes
 

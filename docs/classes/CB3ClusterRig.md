@@ -7,25 +7,26 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `B3BehaviourCluster.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 12
+- **Retail (SLUS-21050):** 4 of its 5 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `UpdateFocus(float)` | `0x0030F5F0` 6696 | `0x00366B90` 9480 | `0x003964E0` 7456 | `0x0039A940` 2368 |  |
-| `PrepareFocus(float)` | `0x00311020` 4832 | `0x003690A0` 6072 | `0x00398200` 5416 | `0x0039A040` 1728 |  |
-| `PrepareRotate(EB3RigType,EB3FocusType,CB3ChildBody*,float,float,GtMathPs2::CGtV3d,float,float,float,const GtMath` | `0x00312300` 892 | `0x0036A860` 1080 | `0x00399730` 1080 | `0x00399DF0` 580 |  |
-| `PrepareOffset(EB3RigType,EB3FocusType,CB3ChildBody*,GtMathPs2::CGtV3d,float,float,int)` | `0x00312680` 268 | `0x0036ACA0` 372 | `0x00399B70` 372 | `0x00399C60` 400 |  |
-| `PrepareStatic(EB3RigType,EB3FocusType,CB3ChildBody*,GtMathPs2::CGtV3d,float,float,int)` | `0x00312790` 124 | `0x0036AE20` 252 | `0x00399CF0` 252 | `0x00399B90` 204 |  |
-| `CB3ClusterRig()` |  |  |  | `0x0013E8E0` 76 |  |
-| `GetDesiredFOV(float,float)` |  |  |  | `0x003999E0` 88 |  |
-| `GetPositionOnCylinder(GtMathPs2::CGtV3d*,GtMathPs2::CGtSphere,const GtMathPs2::CGtMatrix3x4&,float,float)` |  |  |  | `0x00399A40` 336 |  |
-| `ResetRotatePosition()` |  |  |  | `0x0039A730` 156 |  |
-| `Update(CGtCamera*)` |  |  |  | `0x0039B280` 152 |  |
-| `UpdatePosition()` |  |  |  | `0x0039A7D0` 364 |  |
-| `operator =(const CB3ClusterRig&)` |  |  |  | `0x00398680` 332 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `UpdateFocus(float)` | `0x0030F5F0` 6696 | `0x00366B90` 9480 | `0x003964E0` 7456 | `0x0039A940` 2368 | `0x00358850` strong |  |
+| `PrepareFocus(float)` | `0x00311020` 4832 | `0x003690A0` 6072 | `0x00398200` 5416 | `0x0039A040` 1728 | `0x0035A700` unverified |  |
+| `PrepareRotate(EB3RigType,EB3FocusType,CB3ChildBody*,float,float,GtMathPs2::CGtV3d,float,float,float,const GtMath` | `0x00312300` 892 | `0x0036A860` 1080 | `0x00399730` 1080 | `0x00399DF0` 580 | `0x0035B830` strong |  |
+| `PrepareOffset(EB3RigType,EB3FocusType,CB3ChildBody*,GtMathPs2::CGtV3d,float,float,int)` | `0x00312680` 268 | `0x0036ACA0` 372 | `0x00399B70` 372 | `0x00399C60` 400 | `0x0035BC10` likely |  |
+| `PrepareStatic(EB3RigType,EB3FocusType,CB3ChildBody*,GtMathPs2::CGtV3d,float,float,int)` | `0x00312790` 124 | `0x0036AE20` 252 | `0x00399CF0` 252 | `0x00399B90` 204 |  |  |
+| `CB3ClusterRig()` |  |  |  | `0x0013E8E0` 76 |  |  |
+| `GetDesiredFOV(float,float)` |  |  |  | `0x003999E0` 88 |  |  |
+| `GetPositionOnCylinder(GtMathPs2::CGtV3d*,GtMathPs2::CGtSphere,const GtMathPs2::CGtMatrix3x4&,float,float)` |  |  |  | `0x00399A40` 336 |  |  |
+| `ResetRotatePosition()` |  |  |  | `0x0039A730` 156 |  |  |
+| `Update(CGtCamera*)` |  |  |  | `0x0039B280` 152 |  |  |
+| `UpdatePosition()` |  |  |  | `0x0039A7D0` 364 |  |  |
+| `operator =(const CB3ClusterRig&)` |  |  |  | `0x00398680` 332 |  |  |
 
 ## Notes
 

@@ -7,24 +7,25 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `GtSoundStreamManager.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 11
+- **Retail (SLUS-21050):** 7 of its 9 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetStreamsPreparing()` | `0x00343820` 80 | `0x003A7800` 96 | `0x003D1A30` 80 | `0x003DB670` 152 |  |
-| `StopAll()` | `0x00343870` 64 | `0x003A7860` 72 | `0x003D1A80` 64 | `0x003DB5F0` 124 |  |
-| `PauseAll(bool)` | `0x003438B0` 76 | `0x003A78B0` 88 | `0x003D1AC0` 76 | `0x003DB560` 132 |  |
-| `FreeStream(CGtSoundStream*)` | `0x00343900` 200 | `0x003A7910` 364 | `0x003D1B10` 352 | `0x003DB440` 244 |  |
-| `AllocStream(bool)` | `0x003439D0` 280 | `0x003A7A80` 496 | `0x003D1C70` 488 | `0x003DB1A0` 324 |  |
-| `Destruct()` | `0x00343AF0` 64 | `0x003A7C70` 72 | `0x003D1E60` 64 | `0x003DB120` 124 |  |
-| `Update()` | `0x00343B30` 64 | `0x003A7CC0` 72 | `0x003D1EA0` 64 | `0x003DB0A0` 124 |  |
-| `Prepare(void*,int,int)` | `0x00343B70` 84 | `0x003A7D10` 232 | `0x003D1EE0` 232 | `0x003DAFD0` 208 |  |
-| `Construct(RwaSPU2Output*,int,int)` | `0x00343BD0` 280 | `0x003A7E00` 372 | `0x003D1FD0` 364 | `0x003DAE20` 424 |  |
-| `GetDataBuffer()` |  |  |  | `0x003DB2F0` 156 |  |
-| `ReturnDataBuffer(void*)` |  |  |  | `0x003DB390` 164 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetStreamsPreparing()` | `0x00343820` 80 | `0x003A7800` 96 | `0x003D1A30` 80 | `0x003DB670` 152 |  |  |
+| `StopAll()` | `0x00343870` 64 | `0x003A7860` 72 | `0x003D1A80` 64 | `0x003DB5F0` 124 | `0x003869D0` strong |  |
+| `PauseAll(bool)` | `0x003438B0` 76 | `0x003A78B0` 88 | `0x003D1AC0` 76 | `0x003DB560` 132 | `0x00386A10` proven |  |
+| `FreeStream(CGtSoundStream*)` | `0x00343900` 200 | `0x003A7910` 364 | `0x003D1B10` 352 | `0x003DB440` 244 | `0x00386A60` proven |  |
+| `AllocStream(bool)` | `0x003439D0` 280 | `0x003A7A80` 496 | `0x003D1C70` 488 | `0x003DB1A0` 324 | `0x00386B30` strong |  |
+| `Destruct()` | `0x00343AF0` 64 | `0x003A7C70` 72 | `0x003D1E60` 64 | `0x003DB120` 124 | `0x00386C50` strong |  |
+| `Update()` | `0x00343B30` 64 | `0x003A7CC0` 72 | `0x003D1EA0` 64 | `0x003DB0A0` 124 | `0x00386CB0` strong |  |
+| `Prepare(void*,int,int)` | `0x00343B70` 84 | `0x003A7D10` 232 | `0x003D1EE0` 232 | `0x003DAFD0` 208 |  |  |
+| `Construct(RwaSPU2Output*,int,int)` | `0x00343BD0` 280 | `0x003A7E00` 372 | `0x003D1FD0` 364 | `0x003DAE20` 424 | `0x00386D50` strong |  |
+| `GetDataBuffer()` |  |  |  | `0x003DB2F0` 156 |  |  |
+| `ReturnDataBuffer(void*)` |  |  |  | `0x003DB390` 164 |  |  |
 
 ## Notes
 

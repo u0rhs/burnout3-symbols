@@ -7,20 +7,21 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundSkidModel.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
+- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Destruct()` | `0x0024F410` 8 | `0x00281630` 8 | `0x002B84B0` 8 | `0x002B7490` 16 |  |
-| `Release()` | `0x0024F420` 204 | `0x00281640` 204 | `0x002B84C0` 204 | `0x002B7360` 300 |  |
-| `Update(const CB3Wheel**,float,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,CGtSoundVirtualVoice**,GtMathPs2::CGtV3d,b` | `0x0024F4F0` 1596 | `0x00281710` 2040 | `0x002B8590` 1596 | `0x002B6AA0` 2024 |  |
-| `Update(const CB3RaceCar*)` | `0x0024FB30` 460 | `0x00281F10` 1064 | `0x002B8BD0` 772 | `0x002B6670` 1068 |  |
-| `Prepare()` | `0x0024FD00` 320 | `0x00282340` 412 | `0x002B8EE0` 412 | `0x002B6480` 496 |  |
-| `Construct()` | `0x0024FE40` 3480 | `0x002824E0` 3480 | `0x002B9080` 3480 | `0x002B5350` 4388 |  |
-| `CalculateSpinSlip(const CB3Wheel*,float)` |  |  |  | `0x002B74A0` 188 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Destruct()` | `0x0024F410` 8 | `0x00281630` 8 | `0x002B84B0` 8 | `0x002B7490` 16 | `0x0028E200` likely |  |
+| `Release()` | `0x0024F420` 204 | `0x00281640` 204 | `0x002B84C0` 204 | `0x002B7360` 300 | `0x0028E210` strong |  |
+| `Update(const CB3Wheel**,float,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,CGtSoundVirtualVoice**,GtMathPs2::CGtV3d,b` | `0x0024F4F0` 1596 | `0x00281710` 2040 | `0x002B8590` 1596 | `0x002B6AA0` 2024 | `0x0028E2E0` strong |  |
+| `Update(const CB3RaceCar*)` | `0x0024FB30` 460 | `0x00281F10` 1064 | `0x002B8BD0` 772 | `0x002B6670` 1068 | `0x0028EA10` strong |  |
+| `Prepare()` | `0x0024FD00` 320 | `0x00282340` 412 | `0x002B8EE0` 412 | `0x002B6480` 496 | `0x0028EBE0` strong |  |
+| `Construct()` | `0x0024FE40` 3480 | `0x002824E0` 3480 | `0x002B9080` 3480 | `0x002B5350` 4388 | `0x0028ED30` strong |  |
+| `CalculateSpinSlip(const CB3Wheel*,float)` |  |  |  | `0x002B74A0` 188 |  |  |
 
 ## Notes
 

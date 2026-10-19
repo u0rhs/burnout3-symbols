@@ -10,18 +10,18 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `AddScrapeSegment(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,const GtMathPs2::CGtMatrix3x4*)` | `0x00334510` 592 | `0x00396200` 792 | `0x003C0650` 680 | `0x003C5690` 832 |  |
-| `Construct()` |  |  |  | `0x003C5420` 16 |  |
-| `Destruct()` |  |  |  | `0x003C5430` 16 |  |
-| `GetScrapeType()` |  |  |  | `0x003C5400` 28 |  |
-| `PostRender()` |  |  |  | `0x003C5070` 164 |  |
-| `Prepare(CB3ScrapeParams*)` |  |  |  | `0x003C5440` 172 |  |
-| `Release()` |  |  |  | `0x003C5510` 16 |  |
-| `Update()` |  |  |  | `0x003C5520` 280 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `AddScrapeSegment(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,const GtMathPs2::CGtMatrix3x4*)` | `0x00334510` 592 | `0x00396200` 792 | `0x003C0650` 680 | `0x003C5690` 832 |  |  |
+| `Construct()` |  |  |  | `0x003C5420` 16 |  |  |
+| `Destruct()` |  |  |  | `0x003C5430` 16 |  |  |
+| `GetScrapeType()` |  |  |  | `0x003C5400` 28 |  |  |
+| `PostRender()` |  |  |  | `0x003C5070` 164 |  |  |
+| `Prepare(CB3ScrapeParams*)` |  |  |  | `0x003C5440` 172 |  |  |
+| `Release()` |  |  |  | `0x003C5510` 16 |  |  |
+| `Update()` |  |  |  | `0x003C5520` 280 |  |  |
 
 ## Notes
 

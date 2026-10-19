@@ -7,31 +7,32 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `GtSphereTree.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 14, B3INTERN 14, B3O0PCH 17
+- **Retail (SLUS-21050):** 13 of its 13 DNAT_200 methods found, 13 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `RecursiveFrustumTestResult(const CGtSphereTreeSphere*,EGtIntersectionResult)` | `0x00312810` 1608 | `0x0036AF20` 1608 | `0x00399DF0` 1608 | `0x0039CF30` 276 |  |
-| `ForAllSpheresResult(const CGtFrustum&,bool (*)(const CGtSphereTreeSphere*, EGtIntersectionResult, const CGtInter` | `0x00312E70` 1564 |  |  |  |  |
-| `RemoveChild(CGtSphereTreeSphere*)` | `0x00313490` 1984 | `0x0036BBD0` 3000 | `0x0039AAA0` 3000 | `0x0039CCE0` 248 |  |
-| `FreeParentSphere(CGtSphereTreeSphere*)` | `0x00313C50` 80 | `0x0036C790` 196 | `0x0039B660` 196 | `0x0039CB50` 220 |  |
-| `AddToRecomputeList(CGtSphereTreeSphere*)` | `0x00313CA0` 64 | `0x0036C990` 64 | `0x0039B860` 64 | `0x0039C9C0` 116 |  |
-| `AddToIntegrateList(CGtSphereTreeSphere*)` | `0x00313CE0` 1808 | `0x0036C9D0` 2596 | `0x0039B8A0` 2596 | `0x0039C930` 140 |  |
-| `Recompute(CGtSphereTreeSphere*)` | `0x003143F0` 584 | `0x0036D400` 736 | `0x0039C2D0` 736 | `0x0039C580` 740 |  |
-| `Integrate(CGtSphereTreeSphere*,RwLinkList*,CGtSphereTreeSphere*,int)` | `0x00314640` 932 | `0x0036D6E0` 1184 | `0x0039C5B0` 1184 | `0x0039C200` 888 |  |
-| `Update()` | `0x003149F0` 192 | `0x0036DB80` 192 | `0x0039CA50` 192 | `0x0039C0D0` 296 |  |
-| `RemoveSphere(CGtSphereTreeSphere*)` | `0x00314AB0` 1792 | `0x0036DC40` 2720 | `0x0039CB10` 2720 | `0x0039C040` 140 |  |
-| `AddSphere(CGtSphereTreeSphere*,GtMathPs2::CGtV3d,float,void*)` | `0x003151B0` 1612 | `0x0036E6E0` 2360 | `0x0039D5B0` 2360 | `0x0039BFA0` 152 |  |
-| `SetMaxParentSize(int,float)` | `0x00315800` 16 | `0x0036F020` 116 | `0x0039DEF0` 116 | `0x0039BF50` 80 |  |
-| `Init(int,int,CGtSphereTreeSphere*,float)` | `0x00315810` 196 | `0x0036F0A0` 432 | `0x0039DF70` 432 | `0x0039BCF0` 252 |  |
-| `ForAllSpheresResult(const CGtFrustum&,bool (*)` |  | `0x0036B580` 1612 | `0x0039A450` 1612 | `0x0039CDE0` 336 |  |
-| `AllocParentSphere(GtMathPs2::CGtV3d,float)` |  | `0x0036C860` 304 | `0x0039B730` 304 | `0x0039CA40` 264 |  |
-| `GetRootList()` |  |  |  | `0x00396BD0` 24 |  |
-| `Prepare()` |  |  |  | `0x0039BDF0` 352 |  |
-| `SetPosition(CGtSphereTreeSphere*,GtMathPs2::CGtV3d)` |  |  |  | `0x003971E0` 200 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `RecursiveFrustumTestResult(const CGtSphereTreeSphere*,EGtIntersectionResult)` | `0x00312810` 1608 | `0x0036AF20` 1608 | `0x00399DF0` 1608 | `0x0039CF30` 276 | `0x0035BD80` proven |  |
+| `ForAllSpheresResult(const CGtFrustum&,bool (*)(const CGtSphereTreeSphere*, EGtIntersectionResult, const CGtInter` | `0x00312E70` 1564 |  |  |  | `0x0035C3E0` proven |  |
+| `RemoveChild(CGtSphereTreeSphere*)` | `0x00313490` 1984 | `0x0036BBD0` 3000 | `0x0039AAA0` 3000 | `0x0039CCE0` 248 | `0x0035CA00` proven |  |
+| `FreeParentSphere(CGtSphereTreeSphere*)` | `0x00313C50` 80 | `0x0036C790` 196 | `0x0039B660` 196 | `0x0039CB50` 220 | `0x0035D1C0` proven |  |
+| `AddToRecomputeList(CGtSphereTreeSphere*)` | `0x00313CA0` 64 | `0x0036C990` 64 | `0x0039B860` 64 | `0x0039C9C0` 116 | `0x0035D210` proven |  |
+| `AddToIntegrateList(CGtSphereTreeSphere*)` | `0x00313CE0` 1808 | `0x0036C9D0` 2596 | `0x0039B8A0` 2596 | `0x0039C930` 140 | `0x0035D250` proven |  |
+| `Recompute(CGtSphereTreeSphere*)` | `0x003143F0` 584 | `0x0036D400` 736 | `0x0039C2D0` 736 | `0x0039C580` 740 | `0x0035D960` proven |  |
+| `Integrate(CGtSphereTreeSphere*,RwLinkList*,CGtSphereTreeSphere*,int)` | `0x00314640` 932 | `0x0036D6E0` 1184 | `0x0039C5B0` 1184 | `0x0039C200` 888 | `0x0035DBB0` proven |  |
+| `Update()` | `0x003149F0` 192 | `0x0036DB80` 192 | `0x0039CA50` 192 | `0x0039C0D0` 296 | `0x0035DF60` proven |  |
+| `RemoveSphere(CGtSphereTreeSphere*)` | `0x00314AB0` 1792 | `0x0036DC40` 2720 | `0x0039CB10` 2720 | `0x0039C040` 140 | `0x0035E030` proven |  |
+| `AddSphere(CGtSphereTreeSphere*,GtMathPs2::CGtV3d,float,void*)` | `0x003151B0` 1612 | `0x0036E6E0` 2360 | `0x0039D5B0` 2360 | `0x0039BFA0` 152 | `0x0035E750` proven |  |
+| `SetMaxParentSize(int,float)` | `0x00315800` 16 | `0x0036F020` 116 | `0x0039DEF0` 116 | `0x0039BF50` 80 | `0x0035EDA0` proven |  |
+| `Init(int,int,CGtSphereTreeSphere*,float)` | `0x00315810` 196 | `0x0036F0A0` 432 | `0x0039DF70` 432 | `0x0039BCF0` 252 | `0x0035EE50` proven |  |
+| `ForAllSpheresResult(const CGtFrustum&,bool (*)` |  | `0x0036B580` 1612 | `0x0039A450` 1612 | `0x0039CDE0` 336 |  |  |
+| `AllocParentSphere(GtMathPs2::CGtV3d,float)` |  | `0x0036C860` 304 | `0x0039B730` 304 | `0x0039CA40` 264 |  |  |
+| `GetRootList()` |  |  |  | `0x00396BD0` 24 |  |  |
+| `Prepare()` |  |  |  | `0x0039BDF0` 352 |  |  |
+| `SetPosition(CGtSphereTreeSphere*,GtMathPs2::CGtV3d)` |  |  |  | `0x003971E0` 200 |  |  |
 
 ## Notes
 

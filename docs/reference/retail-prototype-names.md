@@ -45,6 +45,10 @@ exclude exactly those: if the code is unique in the prototype, no other prototyp
   prototype doesn't, and the Burnout Revenge prototype has it as `DoCrashBreaker(float, bool)`. Treat the
   parameter list as the June 2004 one.
 - **Functions added after June 2004** have no prototype name and are not in the table.
+- **Rewritten functions.** "Unverified" names can be wrong. Example: the button mapping patch changes the
+  Boost button inside the function at `0x0012F160`, which the prototype map's order calls
+  `CB3ControllerMapping::GetCameraSwitch` and Nahelam calls `GetBoost`; the patch's behaviour fits
+  Nahelam's name. `CB3ControllerMapping` was reworked between June and September 2004.
 - **Cut-off names.** The prototype map shortens long names. 51 were recovered in full from the map's
   mangled symbols; 23 are still cut off and say so in the `note` column.
 
@@ -53,15 +57,24 @@ exclude exactly those: if the code is unique in the prototype, no other prototyp
 | Column | Meaning |
 |---|---|
 | `us_address` | Start of the function in SLUS-21050 |
+| `size` | Its size in bytes in SLUS-21050 (from a Ghidra analysis) |
 | `name` | The prototype map's name (demangled) |
 | `source_file` | The prototype's source file (object) for it |
 | `proof` | See above |
-| `prototype_address` | The same function in the prototype executable `DNAT_200.45` |
+| `prototype_map_address` | The function's address in `DNAT_200.MAP`, as used everywhere else on this site (class pages, `DNAT_200.symbols.csv`) |
+| `prototype_elf_address` | The same function in the prototype executable `DNAT_200.45`: the map address plus its block's drift ([decompilation](../avenues/decompilation.md)) |
 | `nahelam_name` | Nahelam's name at this address, where it differs ([check](retail-function-names.md#checked-against-the-code)) |
 | `note` | `name cut off in the prototype map` where it still is |
+
+All 5,054 map addresses check against [`DNAT_200.symbols.csv`](../../data/burnout3-prototype/maps/DNAT_200.symbols.csv):
+5,003 have exactly that name there, and the 51 recovered names start with the map's cut-off text.
 
 ## Uses
 
 - With the [Nahelam names](retail-function-names.md), this names most of the game: 5,054 of the about 8,400
   functions a Ghidra analysis finds in the retail executable.
+- Every [class page](../classes/README.md) shows each method's retail address and proof level.
+- The [retail memory map](retail-memory-map.md) and [Nahelam's mods](nahelam-mods.md) say which function each
+  code address is in (`in_function`, from proven and strong names only). One correction this gave: the race
+  timer store at `0x001D3D2C` is inside `CGtTimer::NextFrame`, not at the end of `CGtTimer::Construct`.
 - What's next: the functions added after the prototype, and parameter lists checked against the retail code.

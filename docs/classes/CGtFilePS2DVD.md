@@ -7,27 +7,28 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `GtFileSystemPS2DVD.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 12
+- **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FED0`, 40 bytes = 10 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 8 virtual functions)
 - **Burnout 2 ancestor (by shared methods: `Abort`, `Close`, `GetStatus`, `Open`, `Read`, `SetPosition`, `Sync`, `Write`):** `CGTFilePS2DVD`, size 0x038, declared in 1 file(s), e.g. `I:/GameShared/GameClasses/FileSystem/ps2/GTFileSystemPS2DVD.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Abort()` | `0x00199410` 168 | `0x001CD830` 168 | `0x001C7120` 168 | `0x001D95C0` 144 | `int CGTFilePS2DVD::Abort()` |
-| `Sync(int)` | `0x001994C0` 96 | `0x001CD8E0` 96 | `0x001C71D0` 96 | `0x001D9560` 96 | `EFileStatus CGTFilePS2DVD::Sync(int lbBlock)` |
-| `SetPosition(long,EFileMoveMethod)` | `0x00199520` 436 | `0x001CD940` 436 | `0x001C7230` 436 | `0x001D92E0` 628 | `long long CGTFilePS2DVD::SetPosition(long long lnOffset, EFileMoveMethod ePosition)` (same name, different parameters) |
-| `Write(const void*,unsigned int)` | `0x001996E0` 16 | `0x001CDB00` 16 | `0x001C73F0` 16 | `0x001D92B0` 36 | `unsigned int CGTFilePS2DVD::Write()` |
-| `Read(void*,unsigned int)` | `0x001996F0` 980 | `0x001CDB10` 1180 | `0x001C7400` 1180 | `0x001D8D30` 1352 | `unsigned int CGTFilePS2DVD::Read(void *pBuffer, unsigned int lnBytesToRead)` |
-| `Close()` | `0x00199AD0` 100 | `0x001CDFB0` 100 | `0x001C78A0` 100 | `0x001D8BA0` 128 | `void CGTFilePS2DVD::Close()` |
-| `Open(CGTFileSystem*,const char*,unsigned int)` | `0x00199B40` 312 | `0x001CE020` 312 | `0x001C7910` 312 | `0x001D8A00` 408 | `EFileSystemError CGTFilePS2DVD::Open(CGTFileSystem *pFileSystem, char *lpFilename, unsigned int nOpenFlags)` |
-| `GetStatus()` | `0x00199C80` 8 | `0x001CE160` 8 | `0x001C7A50` 8 | `0x001D89E0` 28 | `EFileStatus CGTFilePS2DVD::GetStatus()` |
-| `CGtFilePS2DVD()` |  |  |  | `0x001DA4F0` 60 |  |
-| `ReadAsync(void*,unsigned int)` |  |  |  | `0x001D8C20` 272 |  |
-| `SendCmd(int,int)` |  |  |  | `0x001D9650` 84 |  |
-| `WaitForCmdCompletion()` |  |  |  | `0x001D96B0` 72 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Abort()` | `0x00199410` 168 | `0x001CD830` 168 | `0x001C7120` 168 | `0x001D95C0` 144 | `0x001D2FA0` strong | `int CGTFilePS2DVD::Abort()` |
+| `Sync(int)` | `0x001994C0` 96 | `0x001CD8E0` 96 | `0x001C71D0` 96 | `0x001D9560` 96 | `0x001D3050` proven | `EFileStatus CGTFilePS2DVD::Sync(int lbBlock)` |
+| `SetPosition(long,EFileMoveMethod)` | `0x00199520` 436 | `0x001CD940` 436 | `0x001C7230` 436 | `0x001D92E0` 628 | `0x001D30B0` proven | `long long CGTFilePS2DVD::SetPosition(long long lnOffset, EFileMoveMethod ePosition)` (same name, different parameters) |
+| `Write(const void*,unsigned int)` | `0x001996E0` 16 | `0x001CDB00` 16 | `0x001C73F0` 16 | `0x001D92B0` 36 | `0x001D3270` proven | `unsigned int CGTFilePS2DVD::Write()` |
+| `Read(void*,unsigned int)` | `0x001996F0` 980 | `0x001CDB10` 1180 | `0x001C7400` 1180 | `0x001D8D30` 1352 | `0x001D3280` proven | `unsigned int CGTFilePS2DVD::Read(void *pBuffer, unsigned int lnBytesToRead)` |
+| `Close()` | `0x00199AD0` 100 | `0x001CDFB0` 100 | `0x001C78A0` 100 | `0x001D8BA0` 128 | `0x001D3670` proven | `void CGTFilePS2DVD::Close()` |
+| `Open(CGTFileSystem*,const char*,unsigned int)` | `0x00199B40` 312 | `0x001CE020` 312 | `0x001C7910` 312 | `0x001D8A00` 408 | `0x001D36E0` proven | `EFileSystemError CGTFilePS2DVD::Open(CGTFileSystem *pFileSystem, char *lpFilename, unsigned int nOpenFlags)` |
+| `GetStatus()` | `0x00199C80` 8 | `0x001CE160` 8 | `0x001C7A50` 8 | `0x001D89E0` 28 | `0x001D3820` proven | `EFileStatus CGTFilePS2DVD::GetStatus()` |
+| `CGtFilePS2DVD()` |  |  |  | `0x001DA4F0` 60 |  |  |
+| `ReadAsync(void*,unsigned int)` |  |  |  | `0x001D8C20` 272 |  |  |
+| `SendCmd(int,int)` |  |  |  | `0x001D9650` 84 |  |  |
+| `WaitForCmdCompletion()` |  |  |  | `0x001D96B0` 72 |  |  |
 
 ## Static data (DNAT_200)
 

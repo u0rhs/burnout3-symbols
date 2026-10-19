@@ -11,13 +11,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Update(float)` | `0x0016FC60` 240 | `0x0018B6E0` 240 | `0x001860E0` 240 | `0x0019D330` 316 |  |
-| `Prepare(int,EHUDAlign,int)` | `0x0016FD50` 592 | `0x0018B7D0` 668 | `0x001861D0` 676 | `0x0019CE90` 888 |  |
-| `CB3HUDSpeedo()` |  |  |  | `0x001999F0` 76 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Update(float)` | `0x0016FC60` 240 | `0x0018B6E0` 240 | `0x001860E0` 240 | `0x0019D330` 316 |  |  |
+| `Prepare(int,EHUDAlign,int)` | `0x0016FD50` 592 | `0x0018B7D0` 668 | `0x001861D0` 676 | `0x0019CE90` 888 |  |  |
+| `CB3HUDSpeedo()` |  |  |  | `0x001999F0` 76 |  |  |
 
 ## Notes
 

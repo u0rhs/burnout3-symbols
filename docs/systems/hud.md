@@ -14,29 +14,31 @@ Everything drawn over the race: speedometer, boost bar, position, lap and timers
 
 In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_200.symbols.txt](../../data/burnout3-prototype/maps/DNAT_200.symbols.txt) (search for `==== <file>`).
 
-| File | Functions | Code bytes | First function |
-|---|---:|---:|---|
-| `B3HUDComponent.cpp` | 13 | 3,100 | `0x0016B8D0` |
-| `B3HUDManager.cpp` | 16 | 6,364 | `0x0016C510` |
-| `B3HUDScore.cpp` | 10 | 8,356 | `0x0016DBD0` |
-| `B3HUDSpeedo.cpp` | 2 | 832 | `0x0016FC60` |
-| `B3HUDBoostBar.cpp` | 14 | 18,008 | `0x0016FFA0` |
-| `B3HUDLap.cpp` | 2 | 1,692 | `0x002EDA60` |
-| `B3HUDPos.cpp` | 4 | 1,276 | `0x002EE110` |
-| `B3HUDLapTimer.cpp` | 3 | 2,164 | `0x0034D470` |
-| `B3HUDTakedowns.cpp` | 4 | 1,668 | `0x0035B750` |
-| `B3HUDCrashStyle.cpp` | 2 | 1,844 | `0x0035CBC0` |
-| `B3HUDCrashTimer.cpp` | 3 | 776 | `0x0036AFA0` |
-| `B3HUDTimer.cpp` | 3 | 1,124 | `0x003744E0` |
-| `B3HUDScoreList.cpp` | 5 | 1,940 | `0x0037A630` |
-| `B3HUDBackground2dObject.cpp` | 3 | 1,420 | `0x0037EB30` |
-| `B3HUDHeading.cpp` | 4 | 1,880 | `0x00383250` |
-| `B3HUDPrimaryMessageHandler.cpp` | 15 | 7,712 | `0x00385000` |
-| `B3HUDImpactTime.cpp` | 3 | 1,216 | `0x00386E80` |
-| `B3HUDDPad2dObject.cpp` | 3 | 816 | `0x00387270` |
-| `B3HUDCrashCombo.cpp` | 6 | 2,604 | `0x00387510` |
-| `B3HUDPrimaryMessage.cpp` | 7 | 2,044 | `0x00388710` |
-| `B3HUDEscapeDistance.cpp` | 4 | 904 | `0x00388F40` |
+**Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
+|---|---:|---:|---|---:|---|
+| `B3HUDComponent.cpp` | 13 | 3,100 | `0x0016B8D0` | 11 (11) | `0x0019F3D0`–`0x0019FF30` |
+| `B3HUDManager.cpp` | 16 | 6,364 | `0x0016C510` | 15 (3) | `0x001A0020`–`0x001A1920` |
+| `B3HUDScore.cpp` | 10 | 8,356 | `0x0016DBD0` | 3 (0) | `0x001A1CD0`–`0x001A2100` |
+| `B3HUDSpeedo.cpp` | 2 | 832 | `0x0016FC60` |  |  |
+| `B3HUDBoostBar.cpp` | 14 | 18,008 | `0x0016FFA0` | 9 (0) | `0x001A4900`–`0x001A8490` |
+| `B3HUDLap.cpp` | 2 | 1,692 | `0x002EDA60` |  |  |
+| `B3HUDPos.cpp` | 4 | 1,276 | `0x002EE110` | 1 (0) | `0x00335AB0`–`0x00335AB0` |
+| `B3HUDLapTimer.cpp` | 3 | 2,164 | `0x0034D470` |  |  |
+| `B3HUDTakedowns.cpp` | 4 | 1,668 | `0x0035B750` | 1 (0) | `0x003A21C0`–`0x003A21C0` |
+| `B3HUDCrashStyle.cpp` | 2 | 1,844 | `0x0035CBC0` | 1 (0) | `0x003A3890`–`0x003A3890` |
+| `B3HUDCrashTimer.cpp` | 3 | 776 | `0x0036AFA0` | 1 (0) | `0x003B8170`–`0x003B8170` |
+| `B3HUDTimer.cpp` | 3 | 1,124 | `0x003744E0` | 1 (0) | `0x003C23A0`–`0x003C23A0` |
+| `B3HUDScoreList.cpp` | 5 | 1,940 | `0x0037A630` | 1 (1) | `0x003CB400`–`0x003CB400` |
+| `B3HUDBackground2dObject.cpp` | 3 | 1,420 | `0x0037EB30` | 1 (0) | `0x003CD820`–`0x003CD820` |
+| `B3HUDHeading.cpp` | 4 | 1,880 | `0x00383250` |  |  |
+| `B3HUDPrimaryMessageHandler.cpp` | 15 | 7,712 | `0x00385000` | 3 (1) | `0x003D5510`–`0x003D5D00` |
+| `B3HUDImpactTime.cpp` | 3 | 1,216 | `0x00386E80` | 1 (0) | `0x003D6AB0`–`0x003D6AB0` |
+| `B3HUDDPad2dObject.cpp` | 3 | 816 | `0x00387270` | 1 (0) | `0x003D6BA0`–`0x003D6BA0` |
+| `B3HUDCrashCombo.cpp` | 6 | 2,604 | `0x00387510` | 1 (0) | `0x003D7190`–`0x003D7190` |
+| `B3HUDPrimaryMessage.cpp` | 7 | 2,044 | `0x00388710` | 5 (4) | `0x003D8070`–`0x003D8280` |
+| `B3HUDEscapeDistance.cpp` | 4 | 904 | `0x00388F40` | 1 (0) | `0x003D8D40`–`0x003D8D40` |
 
 ## Classes
 

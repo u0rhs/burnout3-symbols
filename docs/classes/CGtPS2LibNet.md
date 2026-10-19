@@ -7,64 +7,65 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `GtPS2LibNet.cpp`
 - **Methods per build:** DNAT_200 29, B3DEBUG 31, B3INTERN 33, B3O0PCH 46
+- **Retail (SLUS-21050):** 10 of its 29 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FF70`, 64 bytes = 16 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 14 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SocketIsSuspended()` | `0x001EEE90` 12 | `0x001F1680` 12 | `0x00224650` 12 | `0x0023E8B0` 52 |  |
-| `ReleaseInitLibnet()` | `0x001EEEA0` 192 | `0x001F1D50` 1280 | `0x00224CD0` 1280 | `0x0023DB30` 872 |  |
-| `SyncInitLibnet()` | `0x001EEF60` 964 | `0x001F2250` 5320 | `0x002251D0` 4868 | `0x0023C6C0` 5224 |  |
-| `SyncGetConfigs()` | `0x001EF330` 472 | `0x001F3720` 1208 | `0x002264E0` 1008 | `0x0023C100` 1284 |  |
-| `Sync()` | `0x001EF510` 236 | `0x001F3BE0` 372 | `0x002268D0` 180 | `0x0023BF10` 312 |  |
-| `TCPThread(void*)` | `0x001EF600` 220 | `0x001F3D60` 1388 | `0x00226990` 1388 | `0x0023BA20` 976 |  |
-| `RecvThread(void*)` | `0x001EF6E0` 596 | `0x001F42D0` 1120 | `0x00226F00` 996 | `0x0023B660` 948 |  |
-| `SendThread(void*)` | `0x001EF940` 316 | `0x001F4730` 412 | `0x002272F0` 288 | `0x0023B430` 552 |  |
-| `SetNetworkConfigFileLocation(const char*)` | `0x001EFA80` 12 | `0x001F5680` 12 | `0x002276B0` 12 | `0x0023AB30` 56 |  |
-| `GetNetConfigList() const` | `0x001EFA90` 12 |  |  |  |  |
-| `GetModuleData(CModuleData*,int,bool) const` | `0x001EFAA0` 200 |  |  |  |  |
-| `ClearSendBuffer()` | `0x001EFB70` 148 | `0x001F56E0` 300 | `0x002277E0` 300 | `0x0023A9B0` 320 |  |
-| `ChangePort(int)` | `0x001EFC10` 196 | `0x001F5810` 852 | `0x00227910` 852 | `0x0023A780` 548 |  |
-| `Receive(void*,int)` | `0x001EFCE0` 92 | `0x001F5B70` 456 | `0x00227C70` 456 | `0x0023A650` 292 |  |
-| `Send(void*,int)` | `0x001EFD40` 12 | `0x001F5D40` 416 | `0x00227E40` 416 | `0x0023A550` 256 |  |
-| `Disconnect()` | `0x001EFD50` 92 | `0x001F5EE0` 264 | `0x00227FE0` 264 | `0x0023A440` 268 |  |
-| `Connect(int,int)` | `0x001EFDB0` 316 | `0x001F5FF0` 1008 | `0x002280F0` 1008 | `0x0023A0F0` 840 |  |
-| `TCPDestroy()` | `0x001EFEF0` 80 | `0x001F63E0` 236 | `0x002284E0` 236 | `0x00239FF0` 248 |  |
-| `TCPCreate()` | `0x001EFF40` 68 | `0x001F64D0` 328 | `0x002285D0` 328 | `0x00239EF0` 248 |  |
-| `ResumeSocket(int)` | `0x001EFF90` 184 | `0x001F6620` 452 | `0x00228720` 452 | `0x00239DB0` 320 |  |
-| `SuspendSocket()` | `0x001F0050` 96 | `0x001F67F0` 492 | `0x002288F0` 492 | `0x00239C40` 360 |  |
-| `ReceiveFrom(void**,int*,int*)` | `0x001F00B0` 368 | `0x001F69E0` 1080 | `0x00228AE0` 1080 | `0x002399E0` 600 |  |
-| `SendTo(void*,int,int,int)` | `0x001F0220` 548 | `0x001F6E20` 2068 | `0x00228F20` 2068 | `0x002395B0` 912 |  |
-| `UpInterface(int)` | `0x001F0450` 32 | `0x001F7640` 320 | `0x00229740` 240 | `0x00239490` 276 |  |
-| `Update(int)` | `0x001F0470` 476 | `0x001F7780` 1460 | `0x00229830` 584 | `0x00239040` 1096 |  |
-| `Release()` | `0x001F0650` 256 | `0x001F7D40` 604 | `0x00229A80` 488 | `0x00238E20` 532 |  |
-| `Prepare()` | `0x001F0750` 464 | `0x001F7FA0` 2060 | `0x00229C70` 560 | `0x002386D0` 1864 |  |
-| `Destruct()` | `0x001F0920` 280 |  | `0x00229EA0` 1816 |  |  |
-| `Construct()` | `0x001F0A40` 384 | `0x001F87B0` 1548 | `0x0022A5C0` 540 | `0x00238100` 1488 |  |
-| `IncrementRecvBufferFill(int)` |  | `0x001F1690` 376 | `0x00224660` 376 | `0x0023E530` 408 |  |
-| `IncrementRecvBufferEmpty(int)` |  | `0x001F1810` 352 | `0x002247E0` 352 | `0x0023E3A0` 388 |  |
-| `OpenSocket(int)` |  | `0x001F1970` 988 | `0x00224940` 908 | `0x0023DEA0` 708 |  |
-| `PutMessageOnWire(CMessageData*)` |  | `0x001F48D0` 3496 | `0x00227410` 672 | `0x0023AB70` 1612 |  |
-| `GetNetConfigList()` |  | `0x001F5690` 76 | `0x002276C0` 76 | `0x0023AAF0` 52 |  |
-| `CGtPS2LibNet()` |  |  |  | `0x0028A030` 60 |  |
-| `CloseSocket()` |  |  |  | `0x0023E170` 124 |  |
-| `EndThreadTimeCheck(bool)` |  |  |  | `0x0023E200` 16 |  |
-| `GetModuleData(CModuleData*,int,bool)` |  |  | `0x00227710` 200 |  |  |
-| `IncrementSendBufferEmpty()` |  |  |  | `0x0023E210` 120 |  |
-| `IncrementSendBufferFill()` |  |  |  | `0x0023E290` 148 |  |
-| `OpenThread(void*)` |  |  |  | `0x0023BDF0` 276 |  |
-| `RecvBufferIsFull()` |  |  |  | `0x0023E6D0` 292 |  |
-| `ReleaseCheckDNAS()` |  |  |  | `0x0023C0F0` 16 |  |
-| `ReleaseGetConfigs()` |  |  |  | `0x0023C610` 172 |  |
-| `ResetError()` |  |  |  | `0x0023E880` 36 |  |
-| `SendBufferIsFull()` |  |  |  | `0x0023E330` 112 |  |
-| `SetATWINMONBuild(bool)` |  |  |  | `0x001D9F70` 36 |  |
-| `SetError(ENetworkAdaptorError)` |  |  |  | `0x0023E800` 128 |  |
-| `StartThreadTimeCheck(bool)` |  |  |  | `0x0023E1F0` 16 |  |
-| `SyncCheckDNAS()` |  |  |  | `0x0023C050` 148 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SocketIsSuspended()` | `0x001EEE90` 12 | `0x001F1680` 12 | `0x00224650` 12 | `0x0023E8B0` 52 |  |  |
+| `ReleaseInitLibnet()` | `0x001EEEA0` 192 | `0x001F1D50` 1280 | `0x00224CD0` 1280 | `0x0023DB30` 872 |  |  |
+| `SyncInitLibnet()` | `0x001EEF60` 964 | `0x001F2250` 5320 | `0x002251D0` 4868 | `0x0023C6C0` 5224 |  |  |
+| `SyncGetConfigs()` | `0x001EF330` 472 | `0x001F3720` 1208 | `0x002264E0` 1008 | `0x0023C100` 1284 |  |  |
+| `Sync()` | `0x001EF510` 236 | `0x001F3BE0` 372 | `0x002268D0` 180 | `0x0023BF10` 312 |  |  |
+| `TCPThread(void*)` | `0x001EF600` 220 | `0x001F3D60` 1388 | `0x00226990` 1388 | `0x0023BA20` 976 |  |  |
+| `RecvThread(void*)` | `0x001EF6E0` 596 | `0x001F42D0` 1120 | `0x00226F00` 996 | `0x0023B660` 948 |  |  |
+| `SendThread(void*)` | `0x001EF940` 316 | `0x001F4730` 412 | `0x002272F0` 288 | `0x0023B430` 552 |  |  |
+| `SetNetworkConfigFileLocation(const char*)` | `0x001EFA80` 12 | `0x001F5680` 12 | `0x002276B0` 12 | `0x0023AB30` 56 |  |  |
+| `GetNetConfigList() const` | `0x001EFA90` 12 |  |  |  |  |  |
+| `GetModuleData(CModuleData*,int,bool) const` | `0x001EFAA0` 200 |  |  |  |  |  |
+| `ClearSendBuffer()` | `0x001EFB70` 148 | `0x001F56E0` 300 | `0x002277E0` 300 | `0x0023A9B0` 320 |  |  |
+| `ChangePort(int)` | `0x001EFC10` 196 | `0x001F5810` 852 | `0x00227910` 852 | `0x0023A780` 548 | `0x0022E830` strong |  |
+| `Receive(void*,int)` | `0x001EFCE0` 92 | `0x001F5B70` 456 | `0x00227C70` 456 | `0x0023A650` 292 | `0x0022E900` strong |  |
+| `Send(void*,int)` | `0x001EFD40` 12 | `0x001F5D40` 416 | `0x00227E40` 416 | `0x0023A550` 256 | `0x0022E960` strong |  |
+| `Disconnect()` | `0x001EFD50` 92 | `0x001F5EE0` 264 | `0x00227FE0` 264 | `0x0023A440` 268 | `0x0022E970` strong |  |
+| `Connect(int,int)` | `0x001EFDB0` 316 | `0x001F5FF0` 1008 | `0x002280F0` 1008 | `0x0023A0F0` 840 | `0x0022E9D0` strong |  |
+| `TCPDestroy()` | `0x001EFEF0` 80 | `0x001F63E0` 236 | `0x002284E0` 236 | `0x00239FF0` 248 |  |  |
+| `TCPCreate()` | `0x001EFF40` 68 | `0x001F64D0` 328 | `0x002285D0` 328 | `0x00239EF0` 248 |  |  |
+| `ResumeSocket(int)` | `0x001EFF90` 184 | `0x001F6620` 452 | `0x00228720` 452 | `0x00239DB0` 320 | `0x0022EB40` strong |  |
+| `SuspendSocket()` | `0x001F0050` 96 | `0x001F67F0` 492 | `0x002288F0` 492 | `0x00239C40` 360 | `0x0022EC00` strong |  |
+| `ReceiveFrom(void**,int*,int*)` | `0x001F00B0` 368 | `0x001F69E0` 1080 | `0x00228AE0` 1080 | `0x002399E0` 600 | `0x0022EC60` strong |  |
+| `SendTo(void*,int,int,int)` | `0x001F0220` 548 | `0x001F6E20` 2068 | `0x00228F20` 2068 | `0x002395B0` 912 | `0x0022EDE0` strong |  |
+| `UpInterface(int)` | `0x001F0450` 32 | `0x001F7640` 320 | `0x00229740` 240 | `0x00239490` 276 | `0x0022F000` strong |  |
+| `Update(int)` | `0x001F0470` 476 | `0x001F7780` 1460 | `0x00229830` 584 | `0x00239040` 1096 |  |  |
+| `Release()` | `0x001F0650` 256 | `0x001F7D40` 604 | `0x00229A80` 488 | `0x00238E20` 532 |  |  |
+| `Prepare()` | `0x001F0750` 464 | `0x001F7FA0` 2060 | `0x00229C70` 560 | `0x002386D0` 1864 |  |  |
+| `Destruct()` | `0x001F0920` 280 |  | `0x00229EA0` 1816 |  |  |  |
+| `Construct()` | `0x001F0A40` 384 | `0x001F87B0` 1548 | `0x0022A5C0` 540 | `0x00238100` 1488 |  |  |
+| `IncrementRecvBufferFill(int)` |  | `0x001F1690` 376 | `0x00224660` 376 | `0x0023E530` 408 |  |  |
+| `IncrementRecvBufferEmpty(int)` |  | `0x001F1810` 352 | `0x002247E0` 352 | `0x0023E3A0` 388 |  |  |
+| `OpenSocket(int)` |  | `0x001F1970` 988 | `0x00224940` 908 | `0x0023DEA0` 708 |  |  |
+| `PutMessageOnWire(CMessageData*)` |  | `0x001F48D0` 3496 | `0x00227410` 672 | `0x0023AB70` 1612 |  |  |
+| `GetNetConfigList()` |  | `0x001F5690` 76 | `0x002276C0` 76 | `0x0023AAF0` 52 |  |  |
+| `CGtPS2LibNet()` |  |  |  | `0x0028A030` 60 |  |  |
+| `CloseSocket()` |  |  |  | `0x0023E170` 124 |  |  |
+| `EndThreadTimeCheck(bool)` |  |  |  | `0x0023E200` 16 |  |  |
+| `GetModuleData(CModuleData*,int,bool)` |  |  | `0x00227710` 200 |  |  |  |
+| `IncrementSendBufferEmpty()` |  |  |  | `0x0023E210` 120 |  |  |
+| `IncrementSendBufferFill()` |  |  |  | `0x0023E290` 148 |  |  |
+| `OpenThread(void*)` |  |  |  | `0x0023BDF0` 276 |  |  |
+| `RecvBufferIsFull()` |  |  |  | `0x0023E6D0` 292 |  |  |
+| `ReleaseCheckDNAS()` |  |  |  | `0x0023C0F0` 16 |  |  |
+| `ReleaseGetConfigs()` |  |  |  | `0x0023C610` 172 |  |  |
+| `ResetError()` |  |  |  | `0x0023E880` 36 |  |  |
+| `SendBufferIsFull()` |  |  |  | `0x0023E330` 112 |  |  |
+| `SetATWINMONBuild(bool)` |  |  |  | `0x001D9F70` 36 |  |  |
+| `SetError(ENetworkAdaptorError)` |  |  |  | `0x0023E800` 128 |  |  |
+| `StartThreadTimeCheck(bool)` |  |  |  | `0x0023E1F0` 16 |  |  |
+| `SyncCheckDNAS()` |  |  |  | `0x0023C050` 148 |  |  |
 
 ## Notes
 

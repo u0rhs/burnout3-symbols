@@ -9,21 +9,21 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CGtStrStream(char*,int)` |  |  |  | `0x0013AC40` 76 |  |
-| `GetBuffer()` |  |  |  | `0x0013AB30` 28 |  |
-| `Reset()` |  |  |  | `0x0013AC90` 40 |  |
-| `operator <<(EGtPrintMode)` |  |  |  | `0x00237710` 40 |  |
-| `operator <<(char)` |  |  |  | `0x002248C0` 92 |  |
-| `operator <<(const char*)` |  |  |  | `0x0013AC00` 56 |  |
-| `operator <<(float)` |  |  |  | `0x001513B0` 208 |  |
-| `operator <<(int)` |  |  |  | `0x0013CC10` 176 |  |
-| `operator <<(unsigned int)` |  |  |  | `0x0013AB50` 176 |  |
-| `operator <<(unsigned long)` |  |  |  | `0x0033D0C0` 68 |  |
-| `operator <<(void*)` |  |  |  | `0x002376A0` 100 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CGtStrStream(char*,int)` |  |  |  | `0x0013AC40` 76 |  |  |
+| `GetBuffer()` |  |  |  | `0x0013AB30` 28 |  |  |
+| `Reset()` |  |  |  | `0x0013AC90` 40 |  |  |
+| `operator <<(EGtPrintMode)` |  |  |  | `0x00237710` 40 |  |  |
+| `operator <<(char)` |  |  |  | `0x002248C0` 92 |  |  |
+| `operator <<(const char*)` |  |  |  | `0x0013AC00` 56 |  |  |
+| `operator <<(float)` |  |  |  | `0x001513B0` 208 |  |  |
+| `operator <<(int)` |  |  |  | `0x0013CC10` 176 |  |  |
+| `operator <<(unsigned int)` |  |  |  | `0x0013AB50` 176 |  |  |
+| `operator <<(unsigned long)` |  |  |  | `0x0033D0C0` 68 |  |  |
+| `operator <<(void*)` |  |  |  | `0x002376A0` 100 |  |  |
 
 ## Notes
 

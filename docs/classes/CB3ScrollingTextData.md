@@ -7,15 +7,16 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3MenuComponentBase.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 2
+- **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetData(const unsigned short*)` | `0x002D8970` 8 | `0x00321ED0` 8 | `0x003540B0` 8 | `0x00350F70` 36 |  |
-| `SetData(EGlobalStrings)` | `0x002D8980` 48 | `0x00321EE0` 48 | `0x003540C0` 48 | `0x00350F30` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetData(const unsigned short*)` | `0x002D8970` 8 | `0x00321ED0` 8 | `0x003540B0` 8 | `0x00350F70` 36 | `0x003192F0` strong |  |
+| `SetData(EGlobalStrings)` | `0x002D8980` 48 | `0x00321EE0` 48 | `0x003540C0` 48 | `0x00350F30` 60 | `0x00319300` strong |  |
 
 ## Notes
 

@@ -7,69 +7,70 @@
 - **Area:** [Effects](../systems/effects.md)
 - **Source file:** `B3EffectsManager.cpp`
 - **Methods per build:** DNAT_200 47, B3DEBUG 47, B3INTERN 47, B3O0PCH 55
+- **Retail (SLUS-21050):** 36 of its 47 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CEffectsManager`, size 0x4400, declared in 47 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `DoCrazySparksWithWorld(CB3CollidingBody*,const CB3SparkSpawnParams*)` | `0x00216100` 1736 | `0x00225810` 3636 | `0x002649A0` 1900 | `0x00277660` 3224 |  |
-| `RenderLightCoronas(const CB3VehicleEssentialParams&,bool)` | `0x002167D0` 2412 | `0x00226650` 2864 | `0x00265110` 2764 | `0x002772A0` 960 |  |
-| `AddTrafficCorona(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float)` | `0x00217140` 164 | `0x00227180` 164 | `0x00265BE0` 164 | `0x00277190` 268 |  |
-| `RenderCoronaType(const CB3VehicleEssentialParams&,EB3VehicleTags,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathP` | `0x002171F0` 516 | `0x00227230` 516 | `0x00265C90` 516 | `0x00276FC0` 460 |  |
-| `RenderRaceCarBoostEffect(CB3RaceCar*)` | `0x00217400` 940 | `0x00227440` 940 | `0x00265EA0` 976 | `0x00276AC0` 900 |  |
-| `DoPickupEffect(const CB3CrashPickup*)` | `0x002177B0` 1860 | `0x002277F0` 2180 | `0x00266270` 2168 | `0x002766D0` 1008 |  |
-| `UpdateVehicleFireTrail(CB3VehiclePhysics*,const CB3EffectsManager::CLighting&)` | `0x00217F00` 404 | `0x00228080` 404 | `0x00266AF0` 404 | `0x00276490` 576 |  |
-| `UpdateBodyPartDustTrail(CB3BodyPartPhysics*)` | `0x002180A0` 440 | `0x00228220` 548 | `0x00266C90` 548 | `0x00276290` 504 |  |
-| `UpdatePropWorldCollisionEffects(CB3CollidingBody*,EB3PropType)` | `0x00218260` 272 | `0x00228450` 616 | `0x00266EC0` 616 | `0x00276080` 516 |  |
-| `UpdateBodyPartWorldCollisionEffects(CB3TrailEmitterData*,CB3CollidingBody*)` | `0x00218370` 1204 | `0x002286C0` 1260 | `0x00267130` 1260 | `0x00275B70` 1088 |  |
-| `UpdateTrafficWorldCollisionEffects(CB3VehiclePhysics*)` | `0x00218830` 4120 | `0x00228BB0` 4544 | `0x00267620` 4544 | `0x00275080` 2796 |  |
-| `UpdateRaceCarWorldCollisionEffects(CB3RaceCarPhysics*,bool)` | `0x00219850` 5820 | `0x00229D70` 6224 | `0x002687E0` 6224 | `0x00273F10` 4252 |  |
-| `HandleAirRamEffects(CB3VehiclePhysics*,CB3EffectsManager::CLighting)` | `0x0021AF10` 2784 | `0x0022B5C0` 2848 | `0x0026A030` 2848 | `0x002734D0` 2624 |  |
-| `HandleRaceCarTrafficCollisionEffects(CB3RaceCarPhysics*,CB3ActiveBody*,const CB3CollidingPair*)` | `0x0021B9F0` 1440 | `0x0022C0E0` 2544 | `0x0026AB50` 1856 | `0x00272C80` 1128 |  |
-| `HandleRaceCarRaceCarCollisionEffects(CB3RaceCarPhysics*,CB3RaceCarPhysics*,const CB3CollidingPair*)` | `0x0021BF90` 1460 | `0x0022CAD0` 2288 | `0x0026B290` 1608 | `0x002724F0` 1400 |  |
-| `HandleObjectObjectCollisionEffects(const CB3CollidingPair*)` | `0x0021C550` 1600 | `0x0022D3C0` 8524 | `0x0026B8E0` 5756 | `0x00271CA0` 2124 |  |
-| `UpdateCollisionEffects()` | `0x0021CB90` 664 | `0x0022F510` 4080 | `0x0026CF60` 2548 | `0x00271380` 1236 |  |
-| `SpawnDebrisFromPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,con` | `0x0021CE30` 3328 | `0x00230500` 3732 | `0x0026D960` 3640 | `0x00270D50` 1576 |  |
-| `SpawnPopcornFromPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d*,GtMathPs2::CG` | `0x0021DB30` 2260 | `0x002313A0` 2636 | `0x0026E7A0` 2636 | `0x002708A0` 1192 |  |
-| `SpawnSparksAlongLine(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,bool)` | `0x0021E410` 2220 | `0x00231DF0` 2576 | `0x0026F1F0` 2576 | `0x002702A0` 1528 |  |
-| `SpawnSparksFromPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,boo` | `0x0021ECC0` 2284 | `0x00232800` 2644 | `0x0026FC00` 2644 | `0x0026FDD0` 1232 |  |
-| `SpawnParticleShowerFromPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EParticleSpawnType,float,` | `0x0021F5B0` 2700 | `0x00233260` 3024 | `0x00270660` 3024 | `0x0026F740` 1672 |  |
-| `SpawnParticlesFromPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EParticleSpawnType,float,const` | `0x00220040` 2824 | `0x00233E30` 3160 | `0x00271230` 3160 | `0x0026F130` 1552 |  |
-| `SpawnParticlesAlongLine(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EParticleSpawnType,float,float` | `0x00220B50` 4036 | `0x00234A90` 4616 | `0x00271E90` 4616 | `0x0026E710` 2520 |  |
-| `UpdateCrashingVehicleEffectsPoints(CB3VehiclePhysics*,const CB3EffectsManager::CLighting&)` | `0x00221B20` 520 | `0x00235CA0` 828 | `0x002730A0` 828 | `0x0026E420` 744 |  |
-| `DoVehicleFire(CB3VehiclePhysics*,float,const CB3EffectsManager::CLighting&)` | `0x00221D30` 396 | `0x00235FE0` 456 | `0x002733E0` 456 | `0x0026E240` 476 |  |
-| `DoVehicleSteam(CB3VehiclePhysics*,float,const CB3EffectsManager::CLighting&)` | `0x00221EC0` 372 | `0x002361B0` 428 | `0x002735B0` 428 | `0x0026E0B0` 400 |  |
-| `DoVehicleGlass(CB3VehiclePhysics*,const CB3EffectsManager::CLighting&)` | `0x00222040` 912 | `0x00236360` 912 | `0x00273760` 912 | `0x0026DBB0` 1268 |  |
-| `UpdateExhaustSmoke(CB3RaceCar*,const CB3EffectsManager::CLighting&)` | `0x002223D0` 468 | `0x002366F0` 468 | `0x00273AF0` 468 | `0x0026D910` 664 |  |
-| `UpdateWheelEffects(CB3VehiclePhysics*,unsigned int,const GtMathPs2::CGtMatrix3x4*,const CB3EffectsManager::C` | `0x002225B0` 2460 | `0x002368D0` 2900 | `0x00273CD0` 2900 | `0x0026CD30` 2640 |  |
-| `UpdateCrashingTrafficEffects(CB3VehiclePhysics*)` | `0x00222F50` 372 | `0x00237430` 1128 | `0x00274830` 1088 | `0x0026C9F0` 396 |  |
-| `UpdateRaceCarEffects(CB3RaceCarPhysics*)` | `0x002230D0` 728 | `0x002378A0` 1252 | `0x00274C70` 1212 | `0x0026C730` 656 |  |
-| `HandleBattleSparks(CB3RaceCarPhysics*,float)` | `0x002233B0` 1484 | `0x00237D90` 1484 | `0x00275130` 1484 | `0x0026C180` 1376 |  |
-| `HandleBattleSmoke(CB3RaceCarPhysics*,float)` | `0x00223980` 1416 | `0x00238360` 1416 | `0x00275700` 1416 | `0x0026B920` 2136 |  |
-| `RenderPostFogEffects(int)` | `0x00223F10` 472 | `0x002388F0` 1100 | `0x00275C90` 1100 | `0x0026B680` 672 |  |
-| `RenderPreFogEffects(int)` | `0x002240F0` 212 | `0x00238D40` 724 | `0x002760E0` 724 | `0x0026B540` 308 |  |
-| `RenderTrafficImmediateEffects(CB3TrafficVehicle*)` | `0x002241D0` 56 | `0x00239020` 436 | `0x002763C0` 436 | `0x0026B4C0` 120 |  |
-| `ActuallyRenderRaceCarImmediateEffects(CB3RaceCar*)` | `0x00224210` 72 | `0x002391E0` 484 | `0x00276580` 484 | `0x0026B420` 156 |  |
-| `EndCoronaSubmit()` | `0x00224260` 88 | `0x002393D0` 396 | `0x00276770` 396 | `0x0026B390` 132 |  |
-| `BeginCoronaSubmit(int)` | `0x002242C0` 104 | `0x00239560` 412 | `0x00276900` 412 | `0x0026B300` 140 |  |
-| `EndUpdate()` | `0x00224330` 296 | `0x00239700` 648 | `0x00276AA0` 604 | `0x0026B1D0` 292 |  |
-| `BeginUpdate()` | `0x00224460` 312 | `0x00239990` 712 | `0x00276D00` 664 | `0x0026AFF0` 472 |  |
-| `Release()` | `0x002245A0` 260 | `0x00239C60` 260 | `0x00276FA0` 260 | `0x0026AE90` 340 |  |
-| `Prepare()` | `0x002246B0` 952 | `0x00239D70` 1640 | `0x002770B0` 1596 | `0x0026A780` 1656 |  |
-| `Destruct()` | `0x00224A70` 340 | `0x0023A3E0` 340 | `0x002776F0` 340 | `0x0026A5C0` 436 |  |
-| `Construct()` | `0x00224BD0` 1048 | `0x0023A540` 4236 | `0x00277850` 2356 | `0x002699D0` 3048 |  |
-| `Alloc(unsigned int,unsigned int)` | `0x00224FF0` 44 | `0x0023B5D0` 272 | `0x00278190` 272 | `0x002698F0` 216 |  |
-| `CB3EffectsManager()` |  |  |  | `0x00278430` 168 |  |
-| `DoCrazyBodyBodySparks(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,const CB3SparkSpawnParams*,float` |  |  |  | `0x00278300` 304 |  |
-| `HandleBodyBodyCollisionEffects(CB3CollidingBody*,CB3CollidingBody*,const CB3CollidingPair*,EB3PropType,EB3Pr` |  |  |  | `0x002734C0` 16 |  |
-| `HandleRaceCarBodyCollisionEffects(CB3RaceCarPhysics*,CB3CollidingBody*,const CB3CollidingPair*,EB3PropType)` |  |  |  | `0x002731F0` 556 |  |
-| `HandleTrafficBodyCollisionEffects(CB3ActiveBody*,CB3CollidingBody*,const CB3CollidingPair*,EB3PropType)` |  |  |  | `0x002734B0` 16 |  |
-| `HandleTrafficTrafficCollisionEffects(CB3ActiveBody*,CB3ActiveBody*,const CB3CollidingPair*)` |  |  |  | `0x00273470` 52 |  |
-| `RenderCoronaType(const CB3VehicleEssentialParams&,EB3VehicleTags,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float)` |  |  |  | `0x00276E80` 320 |  |
-| `RenderRaceCarImmediateEffects(CB3RaceCar*)` |  |  |  | `0x001697C0` 64 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `DoCrazySparksWithWorld(CB3CollidingBody*,const CB3SparkSpawnParams*)` | `0x00216100` 1736 | `0x00225810` 3636 | `0x002649A0` 1900 | `0x00277660` 3224 | `0x00255EE0` strong |  |
+| `RenderLightCoronas(const CB3VehicleEssentialParams&,bool)` | `0x002167D0` 2412 | `0x00226650` 2864 | `0x00265110` 2764 | `0x002772A0` 960 | `0x00256690` unverified |  |
+| `AddTrafficCorona(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float)` | `0x00217140` 164 | `0x00227180` 164 | `0x00265BE0` 164 | `0x00277190` 268 | `0x00256FD0` unverified |  |
+| `RenderCoronaType(const CB3VehicleEssentialParams&,EB3VehicleTags,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathP` | `0x002171F0` 516 | `0x00227230` 516 | `0x00265C90` 516 | `0x00276FC0` 460 |  |  |
+| `RenderRaceCarBoostEffect(CB3RaceCar*)` | `0x00217400` 940 | `0x00227440` 940 | `0x00265EA0` 976 | `0x00276AC0` 900 |  |  |
+| `DoPickupEffect(const CB3CrashPickup*)` | `0x002177B0` 1860 | `0x002277F0` 2180 | `0x00266270` 2168 | `0x002766D0` 1008 |  |  |
+| `UpdateVehicleFireTrail(CB3VehiclePhysics*,const CB3EffectsManager::CLighting&)` | `0x00217F00` 404 | `0x00228080` 404 | `0x00266AF0` 404 | `0x00276490` 576 | `0x00257C70` strong |  |
+| `UpdateBodyPartDustTrail(CB3BodyPartPhysics*)` | `0x002180A0` 440 | `0x00228220` 548 | `0x00266C90` 548 | `0x00276290` 504 | `0x00257E10` strong |  |
+| `UpdatePropWorldCollisionEffects(CB3CollidingBody*,EB3PropType)` | `0x00218260` 272 | `0x00228450` 616 | `0x00266EC0` 616 | `0x00276080` 516 |  |  |
+| `UpdateBodyPartWorldCollisionEffects(CB3TrailEmitterData*,CB3CollidingBody*)` | `0x00218370` 1204 | `0x002286C0` 1260 | `0x00267130` 1260 | `0x00275B70` 1088 | `0x00257FD0` strong |  |
+| `UpdateTrafficWorldCollisionEffects(CB3VehiclePhysics*)` | `0x00218830` 4120 | `0x00228BB0` 4544 | `0x00267620` 4544 | `0x00275080` 2796 | `0x00258490` strong |  |
+| `UpdateRaceCarWorldCollisionEffects(CB3RaceCarPhysics*,bool)` | `0x00219850` 5820 | `0x00229D70` 6224 | `0x002687E0` 6224 | `0x00273F10` 4252 | `0x002594C0` unverified |  |
+| `HandleAirRamEffects(CB3VehiclePhysics*,CB3EffectsManager::CLighting)` | `0x0021AF10` 2784 | `0x0022B5C0` 2848 | `0x0026A030` 2848 | `0x002734D0` 2624 | `0x0025AC30` unverified |  |
+| `HandleRaceCarTrafficCollisionEffects(CB3RaceCarPhysics*,CB3ActiveBody*,const CB3CollidingPair*)` | `0x0021B9F0` 1440 | `0x0022C0E0` 2544 | `0x0026AB50` 1856 | `0x00272C80` 1128 | `0x0025B450` likely |  |
+| `HandleRaceCarRaceCarCollisionEffects(CB3RaceCarPhysics*,CB3RaceCarPhysics*,const CB3CollidingPair*)` | `0x0021BF90` 1460 | `0x0022CAD0` 2288 | `0x0026B290` 1608 | `0x002724F0` 1400 | `0x0025BBC0` unverified |  |
+| `HandleObjectObjectCollisionEffects(const CB3CollidingPair*)` | `0x0021C550` 1600 | `0x0022D3C0` 8524 | `0x0026B8E0` 5756 | `0x00271CA0` 2124 | `0x0025C3C0` strong |  |
+| `UpdateCollisionEffects()` | `0x0021CB90` 664 | `0x0022F510` 4080 | `0x0026CF60` 2548 | `0x00271380` 1236 | `0x0025CA50` unverified |  |
+| `SpawnDebrisFromPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,con` | `0x0021CE30` 3328 | `0x00230500` 3732 | `0x0026D960` 3640 | `0x00270D50` 1576 |  |  |
+| `SpawnPopcornFromPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d*,GtMathPs2::CG` | `0x0021DB30` 2260 | `0x002313A0` 2636 | `0x0026E7A0` 2636 | `0x002708A0` 1192 |  |  |
+| `SpawnSparksAlongLine(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,bool)` | `0x0021E410` 2220 | `0x00231DF0` 2576 | `0x0026F1F0` 2576 | `0x002702A0` 1528 |  |  |
+| `SpawnSparksFromPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,boo` | `0x0021ECC0` 2284 | `0x00232800` 2644 | `0x0026FC00` 2644 | `0x0026FDD0` 1232 |  |  |
+| `SpawnParticleShowerFromPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EParticleSpawnType,float,` | `0x0021F5B0` 2700 | `0x00233260` 3024 | `0x00270660` 3024 | `0x0026F740` 1672 | `0x0025E410` unverified |  |
+| `SpawnParticlesFromPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EParticleSpawnType,float,const` | `0x00220040` 2824 | `0x00233E30` 3160 | `0x00271230` 3160 | `0x0026F130` 1552 |  |  |
+| `SpawnParticlesAlongLine(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EParticleSpawnType,float,float` | `0x00220B50` 4036 | `0x00234A90` 4616 | `0x00271E90` 4616 | `0x0026E710` 2520 |  |  |
+| `UpdateCrashingVehicleEffectsPoints(CB3VehiclePhysics*,const CB3EffectsManager::CLighting&)` | `0x00221B20` 520 | `0x00235CA0` 828 | `0x002730A0` 828 | `0x0026E420` 744 | `0x0025F950` strong |  |
+| `DoVehicleFire(CB3VehiclePhysics*,float,const CB3EffectsManager::CLighting&)` | `0x00221D30` 396 | `0x00235FE0` 456 | `0x002733E0` 456 | `0x0026E240` 476 | `0x0025FB60` strong |  |
+| `DoVehicleSteam(CB3VehiclePhysics*,float,const CB3EffectsManager::CLighting&)` | `0x00221EC0` 372 | `0x002361B0` 428 | `0x002735B0` 428 | `0x0026E0B0` 400 | `0x0025FCF0` strong |  |
+| `DoVehicleGlass(CB3VehiclePhysics*,const CB3EffectsManager::CLighting&)` | `0x00222040` 912 | `0x00236360` 912 | `0x00273760` 912 | `0x0026DBB0` 1268 | `0x0025FE70` strong |  |
+| `UpdateExhaustSmoke(CB3RaceCar*,const CB3EffectsManager::CLighting&)` | `0x002223D0` 468 | `0x002366F0` 468 | `0x00273AF0` 468 | `0x0026D910` 664 | `0x00260210` strong |  |
+| `UpdateWheelEffects(CB3VehiclePhysics*,unsigned int,const GtMathPs2::CGtMatrix3x4*,const CB3EffectsManager::C` | `0x002225B0` 2460 | `0x002368D0` 2900 | `0x00273CD0` 2900 | `0x0026CD30` 2640 | `0x002603F0` strong |  |
+| `UpdateCrashingTrafficEffects(CB3VehiclePhysics*)` | `0x00222F50` 372 | `0x00237430` 1128 | `0x00274830` 1088 | `0x0026C9F0` 396 | `0x00260DB0` strong |  |
+| `UpdateRaceCarEffects(CB3RaceCarPhysics*)` | `0x002230D0` 728 | `0x002378A0` 1252 | `0x00274C70` 1212 | `0x0026C730` 656 | `0x00260F30` likely |  |
+| `HandleBattleSparks(CB3RaceCarPhysics*,float)` | `0x002233B0` 1484 | `0x00237D90` 1484 | `0x00275130` 1484 | `0x0026C180` 1376 | `0x002612A0` strong |  |
+| `HandleBattleSmoke(CB3RaceCarPhysics*,float)` | `0x00223980` 1416 | `0x00238360` 1416 | `0x00275700` 1416 | `0x0026B920` 2136 | `0x00261870` strong |  |
+| `RenderPostFogEffects(int)` | `0x00223F10` 472 | `0x002388F0` 1100 | `0x00275C90` 1100 | `0x0026B680` 672 | `0x00261E00` unverified |  |
+| `RenderPreFogEffects(int)` | `0x002240F0` 212 | `0x00238D40` 724 | `0x002760E0` 724 | `0x0026B540` 308 | `0x002620C0` strong |  |
+| `RenderTrafficImmediateEffects(CB3TrafficVehicle*)` | `0x002241D0` 56 | `0x00239020` 436 | `0x002763C0` 436 | `0x0026B4C0` 120 | `0x002621A0` likely |  |
+| `ActuallyRenderRaceCarImmediateEffects(CB3RaceCar*)` | `0x00224210` 72 | `0x002391E0` 484 | `0x00276580` 484 | `0x0026B420` 156 | `0x002621D0` unverified |  |
+| `EndCoronaSubmit()` | `0x00224260` 88 | `0x002393D0` 396 | `0x00276770` 396 | `0x0026B390` 132 | `0x00262240` strong |  |
+| `BeginCoronaSubmit(int)` | `0x002242C0` 104 | `0x00239560` 412 | `0x00276900` 412 | `0x0026B300` 140 |  |  |
+| `EndUpdate()` | `0x00224330` 296 | `0x00239700` 648 | `0x00276AA0` 604 | `0x0026B1D0` 292 | `0x002623F0` strong |  |
+| `BeginUpdate()` | `0x00224460` 312 | `0x00239990` 712 | `0x00276D00` 664 | `0x0026AFF0` 472 | `0x00262520` strong |  |
+| `Release()` | `0x002245A0` 260 | `0x00239C60` 260 | `0x00276FA0` 260 | `0x0026AE90` 340 | `0x00262660` strong |  |
+| `Prepare()` | `0x002246B0` 952 | `0x00239D70` 1640 | `0x002770B0` 1596 | `0x0026A780` 1656 | `0x00262770` likely |  |
+| `Destruct()` | `0x00224A70` 340 | `0x0023A3E0` 340 | `0x002776F0` 340 | `0x0026A5C0` 436 | `0x00262B80` strong |  |
+| `Construct()` | `0x00224BD0` 1048 | `0x0023A540` 4236 | `0x00277850` 2356 | `0x002699D0` 3048 | `0x00262CD0` strong |  |
+| `Alloc(unsigned int,unsigned int)` | `0x00224FF0` 44 | `0x0023B5D0` 272 | `0x00278190` 272 | `0x002698F0` 216 | `0x002630F0` proven |  |
+| `CB3EffectsManager()` |  |  |  | `0x00278430` 168 |  |  |
+| `DoCrazyBodyBodySparks(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,const CB3SparkSpawnParams*,float` |  |  |  | `0x00278300` 304 |  |  |
+| `HandleBodyBodyCollisionEffects(CB3CollidingBody*,CB3CollidingBody*,const CB3CollidingPair*,EB3PropType,EB3Pr` |  |  |  | `0x002734C0` 16 |  |  |
+| `HandleRaceCarBodyCollisionEffects(CB3RaceCarPhysics*,CB3CollidingBody*,const CB3CollidingPair*,EB3PropType)` |  |  |  | `0x002731F0` 556 |  |  |
+| `HandleTrafficBodyCollisionEffects(CB3ActiveBody*,CB3CollidingBody*,const CB3CollidingPair*,EB3PropType)` |  |  |  | `0x002734B0` 16 |  |  |
+| `HandleTrafficTrafficCollisionEffects(CB3ActiveBody*,CB3ActiveBody*,const CB3CollidingPair*)` |  |  |  | `0x00273470` 52 |  |  |
+| `RenderCoronaType(const CB3VehicleEssentialParams&,EB3VehicleTags,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float)` |  |  |  | `0x00276E80` 320 |  |  |
+| `RenderRaceCarImmediateEffects(CB3RaceCar*)` |  |  |  | `0x001697C0` 64 |  |  |
 
 ## Burnout 2 layout of `CEffectsManager`
 

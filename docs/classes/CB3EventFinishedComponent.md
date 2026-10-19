@@ -7,20 +7,21 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3EventFinishedComponent.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 6
+- **Retail (SLUS-21050):** 1 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00441660`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x0036C4B0` 124 | `0x003D96E0` 124 | `0x00402230` 124 | `0x004156F0` 212 |  |
-| `UpdateAnimation(float)` | `0x0036C530` 332 | `0x003D9760` 332 | `0x004022B0` 332 | `0x00415470` 640 |  |
-| `Update(float)` | `0x0036C680` 132 | `0x003D98B0` 132 | `0x00402400` 132 | `0x004153A0` 204 |  |
-| `Prepare()` | `0x0036C710` 504 | `0x003D9940` 504 | `0x00402490` 504 | `0x00415080` 788 |  |
-| `Construct()` | `0x0036C910` 52 | `0x003D9B40` 52 | `0x00402690` 52 | `0x00415030` 68 |  |
-| `CB3EventFinishedComponent()` |  |  |  | `0x0033C940` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x0036C4B0` 124 | `0x003D96E0` 124 | `0x00402230` 124 | `0x004156F0` 212 |  |  |
+| `UpdateAnimation(float)` | `0x0036C530` 332 | `0x003D9760` 332 | `0x004022B0` 332 | `0x00415470` 640 |  |  |
+| `Update(float)` | `0x0036C680` 132 | `0x003D98B0` 132 | `0x00402400` 132 | `0x004153A0` 204 |  |  |
+| `Prepare()` | `0x0036C710` 504 | `0x003D9940` 504 | `0x00402490` 504 | `0x00415080` 788 |  |  |
+| `Construct()` | `0x0036C910` 52 | `0x003D9B40` 52 | `0x00402690` 52 | `0x00415030` 68 | `0x003B8E80` proven |  |
+| `CB3EventFinishedComponent()` |  |  |  | `0x0033C940` 60 |  |  |
 
 ## Notes
 

@@ -7,14 +7,15 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `GtSphereTree.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CGtIntersectionResult()` | `0x00312E60` 8 | `0x0036B570` 8 | `0x0039A440` 8 | `0x002ED800` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CGtIntersectionResult()` | `0x00312E60` 8 | `0x0036B570` 8 | `0x0039A440` 8 | `0x002ED800` 60 | `0x0035C3D0` proven |  |
 
 ## Notes
 

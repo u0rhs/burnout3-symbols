@@ -7,26 +7,27 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3PlayerCar.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 11
+- **Retail (SLUS-21050):** 2 of its 8 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FD30`, 48 bytes = 12 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 10 virtual functions)
 - **Burnout 2 ancestor (by name):** `CPlayerCar`, size 0x5F40, declared in 56 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetAIControlled(bool)` | `0x0014CB40` 88 | `0x0015DE30` 88 | `0x00159720` 88 | `0x00167D50` 132 |  |
-| `StopCrashing()` | `0x0014CBA0` 348 | `0x0015DE90` 340 | `0x00159780` 348 | `0x00167BC0` 396 |  |
-| `StartCrashing(CB3CrashStartInfo*)` | `0x0014CD00` 72 | `0x0015DFF0` 64 | `0x001598E0` 72 | `0x00167B60` 88 |  |
-| `PrepareSound()` | `0x0014CD50` 104 | `0x0015E030` 104 | `0x00159930` 104 | `0x00167AA0` 192 |  |
-| `Release()` | `0x0014CDC0` 8 | `0x0015E0A0` 8 | `0x001599A0` 8 | `0x00167A70` 40 |  |
-| `Update()` | `0x0014CDD0` 200 | `0x0015E0B0` 192 | `0x001599B0` 200 | `0x001679C0` 164 | `void CPlayerCar::Update()` |
-| `Prepare()` | `0x0014CEA0` 180 | `0x0015E170` 180 | `0x00159A80` 180 | `0x00167900` 192 |  |
-| `Construct(int)` | `0x0014CF60` 48 | `0x0015E230` 48 | `0x00159B40` 48 | `0x001678B0` 68 |  |
-| `CB3PlayerCar()` |  |  |  | `0x001914E0` 60 |  |
-| `GetPlayerIndex()` |  |  |  | `0x00151B40` 28 |  |
-| `IsAIControlled()` |  |  |  | `0x0014D930` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetAIControlled(bool)` | `0x0014CB40` 88 | `0x0015DE30` 88 | `0x00159720` 88 | `0x00167D50` 132 |  |  |
+| `StopCrashing()` | `0x0014CBA0` 348 | `0x0015DE90` 340 | `0x00159780` 348 | `0x00167BC0` 396 |  |  |
+| `StartCrashing(CB3CrashStartInfo*)` | `0x0014CD00` 72 | `0x0015DFF0` 64 | `0x001598E0` 72 | `0x00167B60` 88 |  |  |
+| `PrepareSound()` | `0x0014CD50` 104 | `0x0015E030` 104 | `0x00159930` 104 | `0x00167AA0` 192 |  |  |
+| `Release()` | `0x0014CDC0` 8 | `0x0015E0A0` 8 | `0x001599A0` 8 | `0x00167A70` 40 |  |  |
+| `Update()` | `0x0014CDD0` 200 | `0x0015E0B0` 192 | `0x001599B0` 200 | `0x001679C0` 164 |  | `void CPlayerCar::Update()` |
+| `Prepare()` | `0x0014CEA0` 180 | `0x0015E170` 180 | `0x00159A80` 180 | `0x00167900` 192 | `0x00150BE0` unverified |  |
+| `Construct(int)` | `0x0014CF60` 48 | `0x0015E230` 48 | `0x00159B40` 48 | `0x001678B0` 68 | `0x00150CB0` unverified |  |
+| `CB3PlayerCar()` |  |  |  | `0x001914E0` 60 |  |  |
+| `GetPlayerIndex()` |  |  |  | `0x00151B40` 28 |  |  |
+| `IsAIControlled()` |  |  |  | `0x0014D930` 28 |  |  |
 
 ## Burnout 2 layout of `CPlayerCar` (variant 1)
 

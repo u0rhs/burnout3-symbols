@@ -7,25 +7,26 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundAICar.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 11
+- **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004400E0`, 32 bytes = 8 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 6 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `UpdateBassVoices(const CB3RaceCar*)` | `0x0024D1D0` 420 | `0x0027EAF0` 804 | `0x002B5970` 804 | `0x002B2760` 564 |  |
-| `StartBassVoices()` | `0x0024D380` 248 | `0x0027EE20` 380 | `0x002B5CA0` 380 | `0x002B25D0` 400 |  |
-| `Unregister()` | `0x0024D480` 68 | `0x0027EFA0` 100 | `0x002B5E20` 100 | `0x002B24C0` 108 |  |
-| `Register(unsigned long)` | `0x0024D4D0` 156 | `0x0027F010` 184 | `0x002B5E90` 184 | `0x002B23D0` 200 |  |
-| `Destruct()` | `0x0024D570` 108 | `0x0027F0D0` 108 | `0x002B5F50` 108 | `0x002B23A0` 40 |  |
-| `Release()` | `0x0024D5E0` 124 | `0x0027F140` 124 | `0x002B5FC0` 124 | `0x002B2340` 96 |  |
-| `Update(const CB3RaceCar*)` | `0x0024D660` 488 | `0x0027F1C0` 736 | `0x002B6040` 736 | `0x002B2140` 504 |  |
-| `Prepare(unsigned long,int)` | `0x0024D850` 348 | `0x0027F4A0` 492 | `0x002B6320` 492 | `0x002B1F20` 500 |  |
-| `Construct()` | `0x0024D9B0` 48 | `0x0027F690` 48 | `0x002B6510` 48 | `0x002B1EE0` 64 |  |
-| `CB3SoundAICar()` |  |  |  | `0x002B1CF0` 60 |  |
-| `ReleaseBassVoices()` |  |  |  | `0x002B2530` 148 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `UpdateBassVoices(const CB3RaceCar*)` | `0x0024D1D0` 420 | `0x0027EAF0` 804 | `0x002B5970` 804 | `0x002B2760` 564 | `0x0028B720` strong |  |
+| `StartBassVoices()` | `0x0024D380` 248 | `0x0027EE20` 380 | `0x002B5CA0` 380 | `0x002B25D0` 400 | `0x0028B8D0` strong |  |
+| `Unregister()` | `0x0024D480` 68 | `0x0027EFA0` 100 | `0x002B5E20` 100 | `0x002B24C0` 108 | `0x0028B9D0` strong |  |
+| `Register(unsigned long)` | `0x0024D4D0` 156 | `0x0027F010` 184 | `0x002B5E90` 184 | `0x002B23D0` 200 | `0x0028BA20` strong |  |
+| `Destruct()` | `0x0024D570` 108 | `0x0027F0D0` 108 | `0x002B5F50` 108 | `0x002B23A0` 40 | `0x0028BAC0` strong |  |
+| `Release()` | `0x0024D5E0` 124 | `0x0027F140` 124 | `0x002B5FC0` 124 | `0x002B2340` 96 | `0x0028BB30` strong |  |
+| `Update(const CB3RaceCar*)` | `0x0024D660` 488 | `0x0027F1C0` 736 | `0x002B6040` 736 | `0x002B2140` 504 | `0x0028BBC0` unverified |  |
+| `Prepare(unsigned long,int)` | `0x0024D850` 348 | `0x0027F4A0` 492 | `0x002B6320` 492 | `0x002B1F20` 500 | `0x0028BDD0` strong |  |
+| `Construct()` | `0x0024D9B0` 48 | `0x0027F690` 48 | `0x002B6510` 48 | `0x002B1EE0` 64 | `0x0028BF40` likely |  |
+| `CB3SoundAICar()` |  |  |  | `0x002B1CF0` 60 |  |  |
+| `ReleaseBassVoices()` |  |  |  | `0x002B2530` 148 |  |  |
 
 ## Notes
 

@@ -11,28 +11,28 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetOfflineGameModeType()` | `0x00346AA0` 8 | `0x003AB570` 8 | `0x003D59B0` 8 | `0x003E0140` 20 |  |
-| `GetOnlineGameModeType()` | `0x00346AB0` 8 | `0x003AB580` 8 | `0x003D59C0` 8 | `0x003E0160` 20 |  |
-| `IsGameOver()` | `0x00346AF0` 8 | `0x003AB5C0` 8 | `0x003D5A00` 8 | `0x003E0120` 28 |  |
-| `BroadcastGameCountDownStopped()` | `0x00346B00` 88 | `0x003AB5D0` 88 | `0x003D5A10` 88 | `0x003E0090` 144 |  |
-| `BroadcastGameIsOver()` | `0x00346B60` 88 | `0x003AB630` 88 | `0x003D5A70` 88 | `0x003E0000` 144 |  |
-| `BroadcastGameCountingdown()` | `0x00346BC0` 88 | `0x003AB690` 88 | `0x003D5AD0` 88 | `0x003DFF50` 144 |  |
-| `SetGameModeStatusMessageArrived(signed char)` | `0x00346C20` 84 | `0x003AB6F0` 84 | `0x003D5B30` 84 | `0x003DFED0` 128 |  |
-| `StartReplay()` | `0x00346C80` 8 | `0x003AB750` 8 | `0x003D5B90` 8 | `0x003DFEB0` 20 |  |
-| `GetRacePositionType()` | `0x00346C90` 8 | `0x003AB760` 8 | `0x003D5BA0` 8 | `0x003DFE90` 20 |  |
-| `GetHUDType()` | `0x00346CA0` 8 | `0x003AB770` 8 | `0x003D5BB0` 8 | `0x003DFE70` 20 |  |
-| `HasStageFinished()` | `0x00346CB0` 8 | `0x003AB780` 8 | `0x003D5BC0` 8 | `0x003DFE50` 28 |  |
-| `Destruct()` | `0x00346CC0` 8 | `0x003AB790` 8 | `0x003D5BD0` 8 | `0x003DFE20` 48 |  |
-| `Release()` | `0x00346CD0` 20 | `0x003AB7A0` 20 | `0x003D5BE0` 20 | `0x003DFDD0` 68 |  |
-| `UpdateCameras()` | `0x00346CF0` 224 | `0x003AB7C0` 280 | `0x003D5C00` 280 | `0x003DFCF0` 224 |  |
-| `Update()` | `0x00346DD0` 580 | `0x003AB8E0` 668 | `0x003D5D20` 668 | `0x003DFA80` 564 |  |
-| `Prepare()` | `0x00347020` 96 | `0x003ABB80` 96 | `0x003D5FC0` 96 | `0x003DFA00` 120 |  |
-| `Construct()` | `0x00347080` 8 | `0x003ABBE0` 8 | `0x003D6020` 8 | `0x003DF9D0` 48 |  |
-| `CB3OnlineSingleRaceLogic()` |  |  |  | `0x0013DEF0` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetOfflineGameModeType()` | `0x00346AA0` 8 | `0x003AB570` 8 | `0x003D59B0` 8 | `0x003E0140` 20 |  |  |
+| `GetOnlineGameModeType()` | `0x00346AB0` 8 | `0x003AB580` 8 | `0x003D59C0` 8 | `0x003E0160` 20 |  |  |
+| `IsGameOver()` | `0x00346AF0` 8 | `0x003AB5C0` 8 | `0x003D5A00` 8 | `0x003E0120` 28 |  |  |
+| `BroadcastGameCountDownStopped()` | `0x00346B00` 88 | `0x003AB5D0` 88 | `0x003D5A10` 88 | `0x003E0090` 144 |  |  |
+| `BroadcastGameIsOver()` | `0x00346B60` 88 | `0x003AB630` 88 | `0x003D5A70` 88 | `0x003E0000` 144 |  |  |
+| `BroadcastGameCountingdown()` | `0x00346BC0` 88 | `0x003AB690` 88 | `0x003D5AD0` 88 | `0x003DFF50` 144 |  |  |
+| `SetGameModeStatusMessageArrived(signed char)` | `0x00346C20` 84 | `0x003AB6F0` 84 | `0x003D5B30` 84 | `0x003DFED0` 128 |  |  |
+| `StartReplay()` | `0x00346C80` 8 | `0x003AB750` 8 | `0x003D5B90` 8 | `0x003DFEB0` 20 |  |  |
+| `GetRacePositionType()` | `0x00346C90` 8 | `0x003AB760` 8 | `0x003D5BA0` 8 | `0x003DFE90` 20 |  |  |
+| `GetHUDType()` | `0x00346CA0` 8 | `0x003AB770` 8 | `0x003D5BB0` 8 | `0x003DFE70` 20 |  |  |
+| `HasStageFinished()` | `0x00346CB0` 8 | `0x003AB780` 8 | `0x003D5BC0` 8 | `0x003DFE50` 28 |  |  |
+| `Destruct()` | `0x00346CC0` 8 | `0x003AB790` 8 | `0x003D5BD0` 8 | `0x003DFE20` 48 |  |  |
+| `Release()` | `0x00346CD0` 20 | `0x003AB7A0` 20 | `0x003D5BE0` 20 | `0x003DFDD0` 68 |  |  |
+| `UpdateCameras()` | `0x00346CF0` 224 | `0x003AB7C0` 280 | `0x003D5C00` 280 | `0x003DFCF0` 224 |  |  |
+| `Update()` | `0x00346DD0` 580 | `0x003AB8E0` 668 | `0x003D5D20` 668 | `0x003DFA80` 564 |  |  |
+| `Prepare()` | `0x00347020` 96 | `0x003ABB80` 96 | `0x003D5FC0` 96 | `0x003DFA00` 120 |  |  |
+| `Construct()` | `0x00347080` 8 | `0x003ABBE0` 8 | `0x003D6020` 8 | `0x003DF9D0` 48 |  |  |
+| `CB3OnlineSingleRaceLogic()` |  |  |  | `0x0013DEF0` 60 |  |  |
 
 ## Notes
 

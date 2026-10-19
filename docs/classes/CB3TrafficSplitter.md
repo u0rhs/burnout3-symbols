@@ -10,12 +10,12 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetLaneChanges(bool*,unsigned char*,ETrafficVehicleCategories,CB3TrafficParam*)` | `0x0022DEF0` 292 | `0x00246900` 400 | `0x00283090` 400 | `0x00284820` 496 |  |
-| `Prepare(CB3TrafficSplitterPositionStruct*)` | `0x0022E020` 12 | `0x00246A90` 12 | `0x00283220` 12 | `0x002847F0` 40 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetLaneChanges(bool*,unsigned char*,ETrafficVehicleCategories,CB3TrafficParam*)` | `0x0022DEF0` 292 | `0x00246900` 400 | `0x00283090` 400 | `0x00284820` 496 |  |  |
+| `Prepare(CB3TrafficSplitterPositionStruct*)` | `0x0022E020` 12 | `0x00246A90` 12 | `0x00283220` 12 | `0x002847F0` 40 |  |  |
 
 ## Notes
 

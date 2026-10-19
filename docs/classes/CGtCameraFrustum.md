@@ -10,13 +10,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `InitialisePerspective(const GtMathPs2::CGtMatrix3x4&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const` | `0x002ED2D0` 1348 | `0x0033B9C0` 1832 | `0x0036D220` 1348 | `0x0036B790` 4100 |  |
-| `Initialise(RwCamera*)` | `0x002ED820` 392 | `0x0033C0F0` 392 | `0x0036D770` 392 | `0x0036B600` 388 |  |
-| `CGtCameraFrustum()` |  |  |  | `0x00195ED0` 108 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `InitialisePerspective(const GtMathPs2::CGtMatrix3x4&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const` | `0x002ED2D0` 1348 | `0x0033B9C0` 1832 | `0x0036D220` 1348 | `0x0036B790` 4100 |  |  |
+| `Initialise(RwCamera*)` | `0x002ED820` 392 | `0x0033C0F0` 392 | `0x0036D770` 392 | `0x0036B600` 388 |  |  |
+| `CGtCameraFrustum()` |  |  |  | `0x00195ED0` 108 |  |  |
 
 ## Notes
 

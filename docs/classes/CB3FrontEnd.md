@@ -7,32 +7,33 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3FrontEnd.cpp`
 - **Methods per build:** DNAT_200 11, B3DEBUG 11, B3INTERN 11, B3O0PCH 17
+- **Retail (SLUS-21050):** 9 of its 11 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FB10`, 40 bytes = 10 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 8 virtual functions)
 - **Burnout 2 ancestor (by name):** `CFrontEnd`, size 0x04C, declared in 2 file(s), e.g. `gamesource/Race/CAICar.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetInitialMenu(unsigned long)` | `0x00130740` 8 | `0x00131990` 8 | `0x00133CA0` 8 | `0x00135DF0` 36 |  |
-| `SetCurrentVideo(EB3Video)` | `0x00130750` 8 | `0x001319A0` 8 | `0x00133CB0` 8 | `0x00135DC0` 36 |  |
-| `Destruct()` | `0x00130760` 44 | `0x001319B0` 44 | `0x00133CC0` 44 | `0x00135D80` 52 |  |
-| `ReleaseVideo()` | `0x00130790` 176 | `0x001319E0` 176 | `0x00133CF0` 176 | `0x00135C90` 232 |  |
-| `PrepareVideo()` | `0x00130840` 192 | `0x00131A90` 192 | `0x00133DA0` 192 | `0x00135B70` 276 |  |
-| `PrepareAudio()` | `0x00130900` 264 | `0x00131B50` 264 | `0x00133E60` 264 | `0x001359E0` 364 |  |
-| `Release()` | `0x00130A10` 412 | `0x00131C60` 460 | `0x00133F70` 460 | `0x001357F0` 428 |  |
-| `Render()` | `0x00130BB0` 200 | `0x00131E30` 956 | `0x00134140` 956 | `0x00135610` 188 |  |
-| `Update()` | `0x00130C80` 128 | `0x001321F0` 128 | `0x00134500` 128 | `0x00135560` 164 |  |
-| `Prepare()` | `0x00130D00` 1452 | `0x00132270` 1488 | `0x00134580` 1476 | `0x00134E80` 1244 |  |
-| `Construct()` | `0x001312B0` 176 | `0x00132840` 180 | `0x00134B50` 176 | `0x00134D20` 272 |  |
-| `CB3FrontEnd()` |  |  |  | `0x0013E410` 76 |  |
-| `GetNextStageIndex()` |  |  |  | `0x0033CE40` 28 |  |
-| `GetPreparedState()` |  |  |  | `0x0035AAD0` 28 |  |
-| `IsReleased()` |  |  |  | `0x00484110` 76 |  |
-| `IsVideoDecoderFullyPrepared()` |  |  |  | `0x003565C0` 56 |  |
-| `~CB3FrontEnd()` |  |  |  | `0x0013D8F0` 116 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetInitialMenu(unsigned long)` | `0x00130740` 8 | `0x00131990` 8 | `0x00133CA0` 8 | `0x00135DF0` 36 | `0x00130C20` strong |  |
+| `SetCurrentVideo(EB3Video)` | `0x00130750` 8 | `0x001319A0` 8 | `0x00133CB0` 8 | `0x00135DC0` 36 | `0x00130C30` strong |  |
+| `Destruct()` | `0x00130760` 44 | `0x001319B0` 44 | `0x00133CC0` 44 | `0x00135D80` 52 | `0x00130C40` strong |  |
+| `ReleaseVideo()` | `0x00130790` 176 | `0x001319E0` 176 | `0x00133CF0` 176 | `0x00135C90` 232 | `0x00130C70` likely |  |
+| `PrepareVideo()` | `0x00130840` 192 | `0x00131A90` 192 | `0x00133DA0` 192 | `0x00135B70` 276 |  |  |
+| `PrepareAudio()` | `0x00130900` 264 | `0x00131B50` 264 | `0x00133E60` 264 | `0x001359E0` 364 |  |  |
+| `Release()` | `0x00130A10` 412 | `0x00131C60` 460 | `0x00133F70` 460 | `0x001357F0` 428 | `0x00131100` unverified |  |
+| `Render()` | `0x00130BB0` 200 | `0x00131E30` 956 | `0x00134140` 956 | `0x00135610` 188 | `0x001312D0` unverified |  |
+| `Update()` | `0x00130C80` 128 | `0x001321F0` 128 | `0x00134500` 128 | `0x00135560` 164 | `0x001313C0` unverified |  |
+| `Prepare()` | `0x00130D00` 1452 | `0x00132270` 1488 | `0x00134580` 1476 | `0x00134E80` 1244 | `0x00131480` unverified |  |
+| `Construct()` | `0x001312B0` 176 | `0x00132840` 180 | `0x00134B50` 176 | `0x00134D20` 272 | `0x00131990` unverified |  |
+| `CB3FrontEnd()` |  |  |  | `0x0013E410` 76 |  |  |
+| `GetNextStageIndex()` |  |  |  | `0x0033CE40` 28 |  |  |
+| `GetPreparedState()` |  |  |  | `0x0035AAD0` 28 |  |  |
+| `IsReleased()` |  |  |  | `0x00484110` 76 |  |  |
+| `IsVideoDecoderFullyPrepared()` |  |  |  | `0x003565C0` 56 |  |  |
+| `~CB3FrontEnd()` |  |  |  | `0x0013D8F0` 116 |  |  |
 
 ## Burnout 2 layout of `CFrontEnd`
 

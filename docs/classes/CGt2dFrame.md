@@ -7,28 +7,29 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dFrameHierarchy.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 14
+- **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `C2dFrame`, size 0x05C, declared in 72 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Clean()` | `0x0019B440` 484 | `0x001D00A0` 604 | `0x001C9600` 484 | `0x001DA8E0` 128 |  |
-| `Sync(const CGt2dFrame::CGt2dFrameSpace&)` | `0x0019B630` 1876 | `0x001D0300` 2008 | `0x001C97F0` 1876 | `0x001DA770` 284 |  |
-| `Destruct()` | `0x0019BD90` 456 | `0x001D0AE0` 648 | `0x001C9F50` 528 | `0x001DA710` 96 |  |
-| `ConstructChild()` | `0x0019BF60` 48 | `0x001D0D70` 156 | `0x001CA160` 148 | `0x001DA650` 128 |  |
-| `Colour()` |  |  |  | `0x003F6E80` 52 |  |
-| `Pos()` |  |  |  | `0x001A24F0` 24 |  |
-| `Scale()` |  |  |  | `0x003CB060` 28 |  |
-| `SetColour(GtMathPs2::CGtV4d)` |  |  |  | `0x00196E90` 68 |  |
-| `SetIdentity()` |  |  |  | `0x0019A200` 40 |  |
-| `SetPos(const GtMathPs2::CGtV2d&)` |  |  |  | `0x00196EE0` 48 |  |
-| `SetScale(const GtMathPs2::CGtV2d&)` |  |  |  | `0x001974E0` 52 |  |
-| `WorldColour()` |  |  |  | `0x001DD120` 52 |  |
-| `WorldPos()` |  |  |  | `0x001DD180` 28 |  |
-| `WorldScale()` |  |  |  | `0x001DD160` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Clean()` | `0x0019B440` 484 | `0x001D00A0` 604 | `0x001C9600` 484 | `0x001DA8E0` 128 | `0x001D51C0` proven |  |
+| `Sync(const CGt2dFrame::CGt2dFrameSpace&)` | `0x0019B630` 1876 | `0x001D0300` 2008 | `0x001C97F0` 1876 | `0x001DA770` 284 | `0x001D53B0` strong |  |
+| `Destruct()` | `0x0019BD90` 456 | `0x001D0AE0` 648 | `0x001C9F50` 528 | `0x001DA710` 96 | `0x001D5B10` strong |  |
+| `ConstructChild()` | `0x0019BF60` 48 | `0x001D0D70` 156 | `0x001CA160` 148 | `0x001DA650` 128 | `0x001D5D60` unverified |  |
+| `Colour()` |  |  |  | `0x003F6E80` 52 |  |  |
+| `Pos()` |  |  |  | `0x001A24F0` 24 |  |  |
+| `Scale()` |  |  |  | `0x003CB060` 28 |  |  |
+| `SetColour(GtMathPs2::CGtV4d)` |  |  |  | `0x00196E90` 68 |  |  |
+| `SetIdentity()` |  |  |  | `0x0019A200` 40 |  |  |
+| `SetPos(const GtMathPs2::CGtV2d&)` |  |  |  | `0x00196EE0` 48 |  |  |
+| `SetScale(const GtMathPs2::CGtV2d&)` |  |  |  | `0x001974E0` 52 |  |  |
+| `WorldColour()` |  |  |  | `0x001DD120` 52 |  |  |
+| `WorldPos()` |  |  |  | `0x001DD180` 28 |  |  |
+| `WorldScale()` |  |  |  | `0x001DD160` 28 |  |  |
 
 ## Burnout 2 layout of `C2dFrame`
 

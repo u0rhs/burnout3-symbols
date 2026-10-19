@@ -7,26 +7,27 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `B3StaticTrack.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 10, B3INTERN 10, B3O0PCH 12
+- **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `RenderStaticObjectToReflectedCamera(const CB3StaticTrackObject&)` |  | `0x001E24D0` 544 | `0x00215170` 544 | `0x00227280` 556 |  |
-| `RenderAllBackdrops(EBackdropRenderRange,bool,bool)` | `0x001E2620` 604 | `0x001E21B0` 604 |  | `0x002275D0` 748 |  |
-| `RenderWater(float,const CB3BackdropObject&,const CB3BackdropObject*)` | `0x001E2880` 532 | `0x001E2410` 188 | `0x002150B0` 188 | `0x002274B0` 240 |  |
-| `RenderStaticObject(const CB3StaticTrackObject&)` | `0x001E2AA0` 348 | `0x001E26F0` 400 | `0x00215390` 400 | `0x002270E0` 360 |  |
-| `Update()` | `0x002EB4E0` 820 | `0x00338980` 1144 | `0x0036A2C0` 1120 | `0x00369220` 1336 |  |
-| `RenderBackdrop(const CB3BackdropObject&)` | `0x002EB820` 108 | `0x00338E00` 108 | `0x0036A720` 108 | `0x003691A0` 120 |  |
-| `Release()` | `0x002EB890` 132 | `0x00338E70` 132 | `0x0036A790` 132 | `0x003690F0` 176 |  |
-| `Prepare()` | `0x002EB920` 760 | `0x00338F00` 760 | `0x0036A820` 760 | `0x00368CC0` 1072 |  |
-| `Destruct()` | `0x002EBC20` 12 | `0x00339200` 12 | `0x0036AB20` 12 | `0x00368CA0` 32 |  |
-| `Construct()` | `0x002EBC30` 24 | `0x00339210` 24 | `0x0036AB30` 24 | `0x00368C60` 56 |  |
-| `GetBloomIntensity()` |  |  |  | `0x0033B630` 28 |  |
-| `GetBloomThreshold()` |  |  |  | `0x0033B650` 28 |  |
-| `RenderAllBackdrops(bool,bool,bool)` |  |  | `0x00214E60` 584 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `RenderStaticObjectToReflectedCamera(const CB3StaticTrackObject&)` |  | `0x001E24D0` 544 | `0x00215170` 544 | `0x00227280` 556 |  |  |
+| `RenderAllBackdrops(EBackdropRenderRange,bool,bool)` | `0x001E2620` 604 | `0x001E21B0` 604 |  | `0x002275D0` 748 | `0x0021D2E0` strong |  |
+| `RenderWater(float,const CB3BackdropObject&,const CB3BackdropObject*)` | `0x001E2880` 532 | `0x001E2410` 188 | `0x002150B0` 188 | `0x002274B0` 240 | `0x0021D550` strong |  |
+| `RenderStaticObject(const CB3StaticTrackObject&)` | `0x001E2AA0` 348 | `0x001E26F0` 400 | `0x00215390` 400 | `0x002270E0` 360 | `0x0021D770` strong |  |
+| `Update()` | `0x002EB4E0` 820 | `0x00338980` 1144 | `0x0036A2C0` 1120 | `0x00369220` 1336 | `0x003329A0` strong |  |
+| `RenderBackdrop(const CB3BackdropObject&)` | `0x002EB820` 108 | `0x00338E00` 108 | `0x0036A720` 108 | `0x003691A0` 120 | `0x00332D00` proven |  |
+| `Release()` | `0x002EB890` 132 | `0x00338E70` 132 | `0x0036A790` 132 | `0x003690F0` 176 | `0x00332D70` proven |  |
+| `Prepare()` | `0x002EB920` 760 | `0x00338F00` 760 | `0x0036A820` 760 | `0x00368CC0` 1072 | `0x00332E00` proven |  |
+| `Destruct()` | `0x002EBC20` 12 | `0x00339200` 12 | `0x0036AB20` 12 | `0x00368CA0` 32 | `0x00333110` proven |  |
+| `Construct()` | `0x002EBC30` 24 | `0x00339210` 24 | `0x0036AB30` 24 | `0x00368C60` 56 | `0x00333120` proven |  |
+| `GetBloomIntensity()` |  |  |  | `0x0033B630` 28 |  |  |
+| `GetBloomThreshold()` |  |  |  | `0x0033B650` 28 |  |  |
+| `RenderAllBackdrops(bool,bool,bool)` |  |  | `0x00214E60` 584 |  |  |  |
 
 ## Notes
 

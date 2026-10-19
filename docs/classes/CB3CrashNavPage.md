@@ -11,17 +11,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x003754F0` 20 | `0x003E5E20` 20 | `0x0040DCA0` 8 | `0x00424680` 80 |  |
-| `Update()` | `0x00375510` 2404 | `0x003E5E40` 2764 | `0x0040DCB0` 2764 | `0x004237F0` 3680 |  |
-| `Prepare(EB3TrackRegion,EB3CrashNavPageState,ESatMapEnterDirection)` | `0x00375E80` 580 | `0x003E6910` 660 | `0x0040E780` 660 | `0x004234F0` 764 |  |
-| `UpdateHeadingAndHelpBar(bool,bool)` | `0x003760D0` 524 | `0x003E6BB0` 608 | `0x0040EA20` 608 | `0x004231B0` 780 |  |
-| `CB3CrashNavPage()` |  |  |  | `0x00342C30` 60 |  |
-| `GetSelectedTrackRegion()` |  |  |  | `0x00407300` 52 |  |
-| `SetState(EB3CrashNavPageState)` |  |  |  | `0x00423170` 64 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x003754F0` 20 | `0x003E5E20` 20 | `0x0040DCA0` 8 | `0x00424680` 80 |  |  |
+| `Update()` | `0x00375510` 2404 | `0x003E5E40` 2764 | `0x0040DCB0` 2764 | `0x004237F0` 3680 |  |  |
+| `Prepare(EB3TrackRegion,EB3CrashNavPageState,ESatMapEnterDirection)` | `0x00375E80` 580 | `0x003E6910` 660 | `0x0040E780` 660 | `0x004234F0` 764 |  |  |
+| `UpdateHeadingAndHelpBar(bool,bool)` | `0x003760D0` 524 | `0x003E6BB0` 608 | `0x0040EA20` 608 | `0x004231B0` 780 |  |  |
+| `CB3CrashNavPage()` |  |  |  | `0x00342C30` 60 |  |  |
+| `GetSelectedTrackRegion()` |  |  |  | `0x00407300` 52 |  |  |
+| `SetState(EB3CrashNavPageState)` |  |  |  | `0x00423170` 64 |  |  |
 
 ## Notes
 

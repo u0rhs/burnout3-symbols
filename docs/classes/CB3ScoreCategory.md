@@ -9,14 +9,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `UpdateValue(float)` |  | `0x0016CB60` 184 | `0x00168390` 184 | `0x00172020` 276 |  |
-| `GetOwner()` |  |  |  | `0x003EE830` 28 |  |
-| `Prepare(EScoreCategoryType,const CB3Score*,const float*,int)` |  |  |  | `0x00171E50` 188 |  |
-| `Stopped()` |  |  |  | `0x00171F10` 260 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `UpdateValue(float)` |  | `0x0016CB60` 184 | `0x00168390` 184 | `0x00172020` 276 |  |  |
+| `GetOwner()` |  |  |  | `0x003EE830` 28 |  |  |
+| `Prepare(EScoreCategoryType,const CB3Score*,const float*,int)` |  |  |  | `0x00171E50` 188 |  |  |
+| `Stopped()` |  |  |  | `0x00171F10` 260 |  |  |
 
 ## Notes
 

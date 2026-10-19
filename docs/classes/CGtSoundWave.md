@@ -7,24 +7,25 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `GtSoundWave.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 9
+- **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetLength() const` | `0x003460A0` 164 |  |  |  |  |
-| `CalcFrequency() const` | `0x00346150` 60 |  |  |  |  |
-| `Destruct()` | `0x00346190` 12 | `0x003AACF0` 12 | `0x003D4DF0` 12 | `0x003DEDA0` 36 |  |
-| `Construct(RwaSPU2Wave*)` | `0x003461A0` 48 | `0x003AAD00` 100 | `0x003D4E00` 100 | `0x003DED40` 84 |  |
-| `GetLength()` |  | `0x003AAC00` 164 | `0x003D4D00` 164 | `0x003DEE30` 188 |  |
-| `CalcFrequency()` |  | `0x003AACB0` 60 | `0x003D4DB0` 60 | `0x003DEDD0` 88 |  |
-| `GetId()` |  |  |  | `0x003D6BB0` 24 |  |
-| `GetMaxDistance()` |  |  |  | `0x003D98B0` 24 |  |
-| `GetMinDistance()` |  |  |  | `0x003D98D0` 24 |  |
-| `GetWave()` |  |  |  | `0x002AD450` 28 |  |
-| `operator =(const CGtSoundWave&)` |  |  |  | `0x003D6B70` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetLength() const` | `0x003460A0` 164 |  |  |  | `0x003894D0` strong |  |
+| `CalcFrequency() const` | `0x00346150` 60 |  |  |  | `0x00389580` strong |  |
+| `Destruct()` | `0x00346190` 12 | `0x003AACF0` 12 | `0x003D4DF0` 12 | `0x003DEDA0` 36 | `0x003895C0` proven |  |
+| `Construct(RwaSPU2Wave*)` | `0x003461A0` 48 | `0x003AAD00` 100 | `0x003D4E00` 100 | `0x003DED40` 84 | `0x003895D0` proven |  |
+| `GetLength()` |  | `0x003AAC00` 164 | `0x003D4D00` 164 | `0x003DEE30` 188 |  |  |
+| `CalcFrequency()` |  | `0x003AACB0` 60 | `0x003D4DB0` 60 | `0x003DEDD0` 88 |  |  |
+| `GetId()` |  |  |  | `0x003D6BB0` 24 |  |  |
+| `GetMaxDistance()` |  |  |  | `0x003D98B0` 24 |  |  |
+| `GetMinDistance()` |  |  |  | `0x003D98D0` 24 |  |  |
+| `GetWave()` |  |  |  | `0x002AD450` 28 |  |  |
+| `operator =(const CGtSoundWave&)` |  |  |  | `0x003D6B70` 60 |  |  |
 
 ## Notes
 

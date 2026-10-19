@@ -7,21 +7,22 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3MenuFlowFSM.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
+- **Retail (SLUS-21050):** 2 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004402B0`, 36 bytes = 9 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 7 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetInitialMenuState()` | `0x002CFF90` 1440 | `0x00318900` 1436 | `0x0034A850` 1272 | `0x00343D00` 760 |  |
-| `SetMenuFlowType(EB3MenuFlowType)` | `0x002D0530` 8 | `0x00318EA0` 8 | `0x0034AD50` 8 | `0x00343CD0` 36 |  |
-| `GetMenuFlowType()` | `0x002D0540` 8 | `0x00318EB0` 8 | `0x0034AD60` 8 | `0x00343CB0` 28 |  |
-| `GetOffsetTable()` | `0x002D0550` 12 | `0x00318EC0` 12 | `0x0034AD70` 12 | `0x00343C90` 24 |  |
-| `ApplyEvent(unsigned int,void*)` | `0x002D0560` 8 | `0x00318ED0` 8 | `0x0034AD80` 8 | `0x00343C50` 56 |  |
-| `Construct(void*,const CGtStateOffset*,CGtTimer*)` | `0x002D0570` 8 | `0x00318EE0` 8 | `0x0034AD90` 8 | `0x00343C00` 72 |  |
-| `CB3MenuFlowFSM()` |  |  |  | `0x00344000` 1180 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetInitialMenuState()` | `0x002CFF90` 1440 | `0x00318900` 1436 | `0x0034A850` 1272 | `0x00343D00` 760 |  |  |
+| `SetMenuFlowType(EB3MenuFlowType)` | `0x002D0530` 8 | `0x00318EA0` 8 | `0x0034AD50` 8 | `0x00343CD0` 36 |  |  |
+| `GetMenuFlowType()` | `0x002D0540` 8 | `0x00318EB0` 8 | `0x0034AD60` 8 | `0x00343CB0` 28 |  |  |
+| `GetOffsetTable()` | `0x002D0550` 12 | `0x00318EC0` 12 | `0x0034AD70` 12 | `0x00343C90` 24 |  |  |
+| `ApplyEvent(unsigned int,void*)` | `0x002D0560` 8 | `0x00318ED0` 8 | `0x0034AD80` 8 | `0x00343C50` 56 | `0x0030ED70` strong |  |
+| `Construct(void*,const CGtStateOffset*,CGtTimer*)` | `0x002D0570` 8 | `0x00318EE0` 8 | `0x0034AD90` 8 | `0x00343C00` 72 | `0x0030ED80` strong |  |
+| `CB3MenuFlowFSM()` |  |  |  | `0x00344000` 1180 |  |  |
 
 ## Static data (DNAT_200)
 

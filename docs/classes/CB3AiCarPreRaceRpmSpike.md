@@ -7,17 +7,18 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3AICarPhysics.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 4
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Update()` | `0x001991F0` 356 | `0x001CD610` 356 | `0x001C6F00` 356 | `0x001D66A0` 448 |  |
-| `IsFinished()` |  |  |  | `0x001D6920` 96 |  |
-| `Prepare()` |  |  |  | `0x001D6600` 40 |  |
-| `Reset(float,float,float,float)` |  |  |  | `0x001D6630` 108 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Update()` | `0x001991F0` 356 | `0x001CD610` 356 | `0x001C6F00` 356 | `0x001D66A0` 448 | `0x001D2D70` proven |  |
+| `IsFinished()` |  |  |  | `0x001D6920` 96 |  |  |
+| `Prepare()` |  |  |  | `0x001D6600` 40 |  |  |
+| `Reset(float,float,float,float)` |  |  |  | `0x001D6630` 108 |  |  |
 
 ## Notes
 

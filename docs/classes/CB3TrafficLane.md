@@ -7,23 +7,24 @@
 - **Area:** [Traffic](../systems/traffic.md)
 - **Source file:** `B3TrafficLane.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 10
+- **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 9 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `FindNextValve(int,int*,int*)` | `0x0015AAB0` 192 | `0x001708A0` 336 | `0x0016BED0` 336 | `0x0017DF40` 376 |  |
-| `FindPreviousValve(int,int*,int*)` | `0x0015AB70` 192 | `0x001709F0` 276 | `0x0016C020` 276 | `0x0017DDC0` 372 |  |
-| `GetNearestParamInSameLane(CB3TrafficParam*)` | `0x0015AC30` 796 | `0x00170B10` 796 | `0x0016C140` 796 | `0x0017DB20` 672 |  |
-| `GetNearestParam(float)` | `0x0015AF50` 836 | `0x00170E30` 836 | `0x0016C460` 836 | `0x0017D890` 648 |  |
-| `GetSignedForwardDistBetweenParams(float,float)` | `0x0015B2A0` 268 | `0x00171180` 268 | `0x0016C7B0` 268 | `0x0017D830` 84 |  |
-| `GetParamFromDist(float)` | `0x0015B3B0` 284 | `0x00171290` 284 | `0x0016C8C0` 284 | `0x0017D600` 548 |  |
-| `DoesNeighbourExist(int,ESegmentNeighbourTypes)` | `0x0015B4D0` 72 | `0x001713B0` 72 | `0x0016C9E0` 72 | `0x0017D450` 164 |  |
-| `Release()` | `0x0015B520` 28 | `0x00171400` 28 | `0x0016CA30` 28 | `0x0017D400` 68 |  |
-| `Prepare(int,unsigned char)` | `0x0015B540` 40 | `0x00171420` 40 | `0x0016CA50` 40 | `0x0017D390` 104 |  |
-| `GetDistFromParam(float)` |  |  |  | `0x0017D500` 256 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `FindNextValve(int,int*,int*)` | `0x0015AAB0` 192 | `0x001708A0` 336 | `0x0016BED0` 336 | `0x0017DF40` 376 | `0x0015FAD0` proven |  |
+| `FindPreviousValve(int,int*,int*)` | `0x0015AB70` 192 | `0x001709F0` 276 | `0x0016C020` 276 | `0x0017DDC0` 372 | `0x0015FBA0` proven |  |
+| `GetNearestParamInSameLane(CB3TrafficParam*)` | `0x0015AC30` 796 | `0x00170B10` 796 | `0x0016C140` 796 | `0x0017DB20` 672 | `0x0015FC70` proven |  |
+| `GetNearestParam(float)` | `0x0015AF50` 836 | `0x00170E30` 836 | `0x0016C460` 836 | `0x0017D890` 648 | `0x0015FFA0` proven |  |
+| `GetSignedForwardDistBetweenParams(float,float)` | `0x0015B2A0` 268 | `0x00171180` 268 | `0x0016C7B0` 268 | `0x0017D830` 84 | `0x001602F0` proven |  |
+| `GetParamFromDist(float)` | `0x0015B3B0` 284 | `0x00171290` 284 | `0x0016C8C0` 284 | `0x0017D600` 548 | `0x00160400` proven |  |
+| `DoesNeighbourExist(int,ESegmentNeighbourTypes)` | `0x0015B4D0` 72 | `0x001713B0` 72 | `0x0016C9E0` 72 | `0x0017D450` 164 | `0x00160520` proven |  |
+| `Release()` | `0x0015B520` 28 | `0x00171400` 28 | `0x0016CA30` 28 | `0x0017D400` 68 | `0x00160570` proven |  |
+| `Prepare(int,unsigned char)` | `0x0015B540` 40 | `0x00171420` 40 | `0x0016CA50` 40 | `0x0017D390` 104 | `0x00160590` proven |  |
+| `GetDistFromParam(float)` |  |  |  | `0x0017D500` 256 |  |  |
 
 ## Notes
 

@@ -7,15 +7,16 @@
 - **Area:** [HUD](../systems/hud.md)
 - **Source file:** `B3HUDDPad2dObject.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 2
+- **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d)` | `0x00387270` 144 | `0x003FA7E0` 144 | `0x00422440` 144 | `0x0043B1B0` 164 |  |
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00387300` 520 | `0x003FA870` 520 | `0x004224D0` 520 | `0x0043B260` 1056 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d)` | `0x00387270` 144 | `0x003FA7E0` 144 | `0x00422440` 144 | `0x0043B1B0` 164 | `0x003D6BA0` strong |  |
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00387300` 520 | `0x003FA870` 520 | `0x004224D0` 520 | `0x0043B260` 1056 |  |  |
 
 ## Notes
 

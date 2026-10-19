@@ -7,18 +7,19 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `GtPolygonSoup.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 5
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `FixUp()` | `0x0027F470` 28 | `0x002B6F40` 28 | `0x002ECEB0` 28 | `0x002EE880` 72 |  |
-| `GetPolygonCount()` |  |  |  | `0x0028CC60` 28 |  |
-| `GetPolygonSize()` |  |  |  | `0x0028CC00` 28 |  |
-| `GetPolygons()` |  |  |  | `0x0028CC40` 28 |  |
-| `GetVertices()` |  |  |  | `0x0028CC20` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `FixUp()` | `0x0027F470` 28 | `0x002B6F40` 28 | `0x002ECEB0` 28 | `0x002EE880` 72 | `0x002BF7D0` proven |  |
+| `GetPolygonCount()` |  |  |  | `0x0028CC60` 28 |  |  |
+| `GetPolygonSize()` |  |  |  | `0x0028CC00` 28 |  |  |
+| `GetPolygons()` |  |  |  | `0x0028CC40` 28 |  |  |
+| `GetVertices()` |  |  |  | `0x0028CC20` 28 |  |  |
 
 ## Notes
 

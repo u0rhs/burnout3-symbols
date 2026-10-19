@@ -7,28 +7,29 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3HardCodedRaceStageList.cpp`
 - **Methods per build:** DNAT_200 15, B3DEBUG 15, B3INTERN 15, B3O0PCH 15
+- **Retail (SLUS-21050):** 4 of its 15 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `AllRacesComplete(int,CB3Profile*)` | `0x0039A700` 304 | `0x00412FC0` 264 | `0x00438CE0` 264 | `0x00451E70` 256 |  |
-| `GetChallengeType(int)` | `0x0039A830` 216 | `0x004130D0` 168 | `0x00438DF0` 168 | `0x00451D50` 280 |  |
-| `GetStageTrackID(unsigned long)` | `0x0039A910` 112 | `0x00413180` 112 | `0x00438EA0` 112 | `0x00451CC0` 140 |  |
-| `FindProgressionChallenge(int)` | `0x0039A980` 184 | `0x004131F0` 156 | `0x00438F10` 156 | `0x00451BC0` 256 |  |
-| `GetStageTypeString(int,int)` | `0x0039AA40` 132 | `0x00413290` 220 | `0x00438FB0` 220 | `0x00451AD0` 240 |  |
-| `IsChallengeOnThisCircuit(EB3TrackRegion,int,int)` | `0x0039AAD0` 308 | `0x00413370` 308 | `0x00439090` 308 | `0x004519B0` 276 |  |
-| `IsCorrectRegion(EB3TrackRegion,int)` | `0x0039AC10` 220 | `0x004134B0` 228 | `0x004391D0` 228 | `0x00451900` 176 |  |
-| `DoesChallengeUnlockTracks(int)` | `0x0039ACF0` 20 | `0x004135A0` 172 | `0x004392C0` 172 | `0x004518A0` 96 |  |
-| `GetStageGtID(int,int)` | `0x0039AD10` 80 | `0x00413650` 332 | `0x00439370` 332 | `0x004517A0` 256 |  |
-| `FindLocalStageIndex(unsigned long,int)` | `0x0039AD60` 184 | `0x004137A0` 184 | `0x004394C0` 184 | `0x00451690` 268 |  |
-| `GetNumStagesInChallenge(int)` | `0x0039AE20` 72 | `0x00413860` 72 | `0x00439580` 72 | `0x00451620` 104 |  |
-| `FindChallengeIndex(unsigned long)` | `0x0039AE70` 216 | `0x004138B0` 216 | `0x004395D0` 216 | `0x004514E0` 308 |  |
-| `GetBezierData(EB3TrackRegion,int,CGtBezierSection**,int*)` | `0x0039AF50` 108 | `0x00413990` 188 | `0x004396B0` 188 | `0x00451410` 200 |  |
-| `GetNumRaceCircuitsInThisRegion(EB3TrackRegion)` | `0x0039AFC0` 64 | `0x00413A50` 104 | `0x00439770` 104 | `0x00451390` 120 |  |
-| `Prepare()` | `0x0039B000` 288 | `0x00413AC0` 652 | `0x004397E0` 652 | `0x004510A0` 740 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `AllRacesComplete(int,CB3Profile*)` | `0x0039A700` 304 | `0x00412FC0` 264 | `0x00438CE0` 264 | `0x00451E70` 256 |  |  |
+| `GetChallengeType(int)` | `0x0039A830` 216 | `0x004130D0` 168 | `0x00438DF0` 168 | `0x00451D50` 280 |  |  |
+| `GetStageTrackID(unsigned long)` | `0x0039A910` 112 | `0x00413180` 112 | `0x00438EA0` 112 | `0x00451CC0` 140 | `0x003E9A60` strong |  |
+| `FindProgressionChallenge(int)` | `0x0039A980` 184 | `0x004131F0` 156 | `0x00438F10` 156 | `0x00451BC0` 256 |  |  |
+| `GetStageTypeString(int,int)` | `0x0039AA40` 132 | `0x00413290` 220 | `0x00438FB0` 220 | `0x00451AD0` 240 |  |  |
+| `IsChallengeOnThisCircuit(EB3TrackRegion,int,int)` | `0x0039AAD0` 308 | `0x00413370` 308 | `0x00439090` 308 | `0x004519B0` 276 |  |  |
+| `IsCorrectRegion(EB3TrackRegion,int)` | `0x0039AC10` 220 | `0x004134B0` 228 | `0x004391D0` 228 | `0x00451900` 176 |  |  |
+| `DoesChallengeUnlockTracks(int)` | `0x0039ACF0` 20 | `0x004135A0` 172 | `0x004392C0` 172 | `0x004518A0` 96 | `0x003EA070` proven |  |
+| `GetStageGtID(int,int)` | `0x0039AD10` 80 | `0x00413650` 332 | `0x00439370` 332 | `0x004517A0` 256 | `0x003EA090` proven |  |
+| `FindLocalStageIndex(unsigned long,int)` | `0x0039AD60` 184 | `0x004137A0` 184 | `0x004394C0` 184 | `0x00451690` 268 |  |  |
+| `GetNumStagesInChallenge(int)` | `0x0039AE20` 72 | `0x00413860` 72 | `0x00439580` 72 | `0x00451620` 104 | `0x003EA390` strong |  |
+| `FindChallengeIndex(unsigned long)` | `0x0039AE70` 216 | `0x004138B0` 216 | `0x004395D0` 216 | `0x004514E0` 308 |  |  |
+| `GetBezierData(EB3TrackRegion,int,CGtBezierSection**,int*)` | `0x0039AF50` 108 | `0x00413990` 188 | `0x004396B0` 188 | `0x00451410` 200 |  |  |
+| `GetNumRaceCircuitsInThisRegion(EB3TrackRegion)` | `0x0039AFC0` 64 | `0x00413A50` 104 | `0x00439770` 104 | `0x00451390` 120 |  |  |
+| `Prepare()` | `0x0039B000` 288 | `0x00413AC0` 652 | `0x004397E0` 652 | `0x004510A0` 740 |  |  |
 
 ## Notes
 

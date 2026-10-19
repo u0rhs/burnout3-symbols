@@ -7,23 +7,24 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3SparkRendererPS2.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 10
+- **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 8 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `RestoreRenderstates()` | `0x00225250` 68 | `0x0023B910` 68 | `0x002784D0` 68 | `0x0027A700` 88 |  |
-| `SetRenderstates()` | `0x002252A0` 120 | `0x0023B960` 120 | `0x00278520` 120 | `0x0027A650` 164 |  |
-| `UploadStaticDataAndCallCode(const CB3SparkArray*,bool)` | `0x00225320` 652 | `0x0023B9E0` 724 | `0x002785A0` 724 | `0x0027A1A0` 1200 |  |
-| `EndRender()` | `0x002255B0` 304 | `0x0023BCC0` 356 | `0x00278880` 304 | `0x0027A040` 268 |  |
-| `RenderSparkArray(CB3SparkArray*)` | `0x002256E0` 196 | `0x0023BE30` 300 | `0x002789B0` 260 | `0x00279EC0` 380 |  |
-| `BeginRender(int,bool)` | `0x002257B0` 704 | `0x0023BF60` 760 | `0x00278AC0` 704 | `0x00279960` 1044 |  |
-| `Prepare()` | `0x00225A70` 120 | `0x0023C260` 120 | `0x00278D80` 120 | `0x002798A0` 184 |  |
-| `Destruct()` | `0x00225AF0` 8 | `0x0023C2E0` 8 | `0x00278E00` 8 | `0x00279890` 8 |  |
-| `Construct()` | `0x00225B00` 40 | `0x0023C2F0` 40 | `0x00278E10` 40 | `0x00279860` 44 |  |
-| `UploadVUCode()` |  |  |  | `0x0027A150` 80 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `RestoreRenderstates()` | `0x00225250` 68 | `0x0023B910` 68 | `0x002784D0` 68 | `0x0027A700` 88 | `0x00263350` proven |  |
+| `SetRenderstates()` | `0x002252A0` 120 | `0x0023B960` 120 | `0x00278520` 120 | `0x0027A650` 164 | `0x002633A0` proven |  |
+| `UploadStaticDataAndCallCode(const CB3SparkArray*,bool)` | `0x00225320` 652 | `0x0023B9E0` 724 | `0x002785A0` 724 | `0x0027A1A0` 1200 | `0x00263420` proven |  |
+| `EndRender()` | `0x002255B0` 304 | `0x0023BCC0` 356 | `0x00278880` 304 | `0x0027A040` 268 | `0x002636B0` proven |  |
+| `RenderSparkArray(CB3SparkArray*)` | `0x002256E0` 196 | `0x0023BE30` 300 | `0x002789B0` 260 | `0x00279EC0` 380 | `0x002637F0` proven |  |
+| `BeginRender(int,bool)` | `0x002257B0` 704 | `0x0023BF60` 760 | `0x00278AC0` 704 | `0x00279960` 1044 | `0x002638C0` proven |  |
+| `Prepare()` | `0x00225A70` 120 | `0x0023C260` 120 | `0x00278D80` 120 | `0x002798A0` 184 | `0x00263B80` proven |  |
+| `Destruct()` | `0x00225AF0` 8 | `0x0023C2E0` 8 | `0x00278E00` 8 | `0x00279890` 8 | `0x00263C00` strong |  |
+| `Construct()` | `0x00225B00` 40 | `0x0023C2F0` 40 | `0x00278E10` 40 | `0x00279860` 44 | `0x00263C10` proven |  |
+| `UploadVUCode()` |  |  |  | `0x0027A150` 80 |  |  |
 
 ## Static data (DNAT_200)
 

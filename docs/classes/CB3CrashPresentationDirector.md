@@ -7,15 +7,16 @@
 - **Area:** [Crashes, takedowns and scoring](../systems/crash-scoring.md)
 - **Source file:** `B3CrashPresentationDirector.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 2
+- **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Prepare()` | `0x0014B200` 8 | `0x0015C290` 8 | `0x00157D10` 8 | `0x001655A0` 20 |  |
-| `Construct()` | `0x0014B210` 8 | `0x0015C2A0` 8 | `0x00157D20` 8 | `0x00165590` 16 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Prepare()` | `0x0014B200` 8 | `0x0015C290` 8 | `0x00157D10` 8 | `0x001655A0` 20 | `0x0014E7C0` strong |  |
+| `Construct()` | `0x0014B210` 8 | `0x0015C2A0` 8 | `0x00157D20` 8 | `0x00165590` 16 | `0x0014E7D0` strong |  |
 
 ## Notes
 

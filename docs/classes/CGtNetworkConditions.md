@@ -10,14 +10,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SendDelayedMessages(int)` | `0x00211620` 8 | `0x0021FBC0` 8 | `0x0025F3B0` 8 | `0x00261E70` 16 |  |
-| `FakeNetworkConditionsWillDealWithThisPacket(unsigned char*,int,int,int,int)` | `0x00211630` 8 | `0x0021FBD0` 8 | `0x0025F3C0` 8 | `0x00261E50` 20 |  |
-| `Construct(CGtNetworkAdapter*,int)` | `0x00211640` 8 |  | `0x0025F3D0` 8 |  |  |
-| `SetMessageSentCallback(void (*)` |  |  |  | `0x00237500` 20 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SendDelayedMessages(int)` | `0x00211620` 8 | `0x0021FBC0` 8 | `0x0025F3B0` 8 | `0x00261E70` 16 |  |  |
+| `FakeNetworkConditionsWillDealWithThisPacket(unsigned char*,int,int,int,int)` | `0x00211630` 8 | `0x0021FBD0` 8 | `0x0025F3C0` 8 | `0x00261E50` 20 |  |  |
+| `Construct(CGtNetworkAdapter*,int)` | `0x00211640` 8 |  | `0x0025F3D0` 8 |  |  |  |
+| `SetMessageSentCallback(void (*)` |  |  |  | `0x00237500` 20 |  |  |
 
 ## Notes
 

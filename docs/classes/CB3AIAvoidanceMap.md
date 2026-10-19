@@ -7,38 +7,39 @@
 - **Area:** [AI drivers](../systems/ai.md)
 - **Source file:** `B3AIAvoidance.cpp`
 - **Methods per build:** DNAT_200 14, B3DEBUG 14, B3INTERN 14, B3O0PCH 23
+- **Retail (SLUS-21050):** 14 of its 14 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CalculateCarPositionInMap(bool)` | `0x0013A2C0` 964 | `0x00142FF0` 1052 | `0x00141500` 964 | `0x0014FD70` 1488 |  |
-| `CalculateCarCoverage()` | `0x0013A690` 284 | `0x00143410` 284 | `0x001418D0` 284 | `0x0014FB40` 548 |  |
-| `GetChannelRisk(int,float*,float*,float*) const` | `0x0013A7B0` 760 |  |  |  |  |
-| `CalcRiskOfPosition(const CB3AILane*,unsigned short,GtMathPs2::CGtV3d,float*,float*,float*) const` | `0x0013AAB0` 548 |  |  |  |  |
-| `CheckNoGoZones()` | `0x0013ACE0` 1440 | `0x00143C40` 1476 | `0x001420A0` 1476 | `0x0014E8C0` 2536 |  |
-| `FillInNoGoData(const CB3AILane*,unsigned short,EAIAvoidanceRisk,float,float)` | `0x0013B280` 608 | `0x00144210` 760 | `0x00142670` 760 | `0x0014E490` 944 |  |
-| `GetSafestChannel()` | `0x0013B4E0` 392 | `0x00144510` 392 | `0x00142970` 392 | `0x0014E210` 640 |  |
-| `CheckCrashingTraffic()` | `0x0013B670` 1040 | `0x001446A0` 1284 | `0x00142B00` 1088 | `0x0014DC00` 1380 |  |
-| `CheckTraffic()` | `0x0013BA80` 380 | `0x00144BB0` 380 | `0x00142F40` 380 | `0x0014D950` 608 |  |
-| `CheckRaceCar()` | `0x0013BC00` 420 | `0x00144D30` 720 | `0x001430C0` 720 | `0x0014D6B0` 632 |  |
-| `CheckVehicle(const GtMathPs2::CGtMatrix3x4&,GtMathPs2::CGtV3d,bool,bool,EAIAvoidanceRisk,const CGtAxisAligne` | `0x0013BDB0` 1200 | `0x00145000` 1520 | `0x00143390` 1200 | `0x0014CDE0` 1812 |  |
-| `AddCarToMap(EAIAvoidanceRisk,float,float,float,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathP` | `0x0013C260` 4872 | `0x001455F0` 6392 | `0x00143840` 5712 | `0x0014AD80` 8036 |  |
-| `Update(bool)` | `0x0013D570` 304 | `0x00146EF0` 304 | `0x00144E90` 304 | `0x0014AC20` 336 |  |
-| `Prepare(CB3AICar*)` | `0x0013D6A0` 176 | `0x00147020` 256 | `0x00144FC0` 256 | `0x0014A9B0` 292 |  |
-| `GetChannelRisk(int,float*,float*,float*)` |  | `0x00143530` 1100 | `0x001419F0` 1100 | `0x0014F5E0` 1368 |  |
-| `CalcRiskOfPosition(const CB3AILane*,unsigned short,GtMathPs2::CGtV3d,float*,float*,float*)` |  | `0x00143980` 700 | `0x00141E40` 596 | `0x0014F2E0` 732 |  |
-| `CB3AIAvoidanceMap()` |  |  |  | `0x001912A0` 92 |  |
-| `Construct()` |  |  |  | `0x0014A9A0` 16 |  |
-| `GetChannelDistance(int)` |  |  |  | `0x0014A910` 72 |  |
-| `GetChannelRiskTime(int)` |  |  |  | `0x0014A960` 64 |  |
-| `Release()` |  |  |  | `0x0014AD70` 16 |  |
-| `ResetRiskScale()` |  |  |  | `0x0014AAE0` 32 |  |
-| `SetChannelDistance(int,float)` |  |  |  | `0x0014AB00` 148 |  |
-| `SetChannelRiskTime(int,float)` |  |  |  | `0x0014ABC0` 92 |  |
-| `SetRiskScale(float)` |  |  |  | `0x00151A70` 112 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CalculateCarPositionInMap(bool)` | `0x0013A2C0` 964 | `0x00142FF0` 1052 | `0x00141500` 964 | `0x0014FD70` 1488 | `0x0013D530` strong |  |
+| `CalculateCarCoverage()` | `0x0013A690` 284 | `0x00143410` 284 | `0x001418D0` 284 | `0x0014FB40` 548 | `0x0013D910` strong |  |
+| `GetChannelRisk(int,float*,float*,float*) const` | `0x0013A7B0` 760 |  |  |  | `0x0013DA30` strong |  |
+| `CalcRiskOfPosition(const CB3AILane*,unsigned short,GtMathPs2::CGtV3d,float*,float*,float*) const` | `0x0013AAB0` 548 |  |  |  | `0x0013DD30` strong |  |
+| `CheckNoGoZones()` | `0x0013ACE0` 1440 | `0x00143C40` 1476 | `0x001420A0` 1476 | `0x0014E8C0` 2536 | `0x0013DF60` strong |  |
+| `FillInNoGoData(const CB3AILane*,unsigned short,EAIAvoidanceRisk,float,float)` | `0x0013B280` 608 | `0x00144210` 760 | `0x00142670` 760 | `0x0014E490` 944 | `0x0013E530` strong |  |
+| `GetSafestChannel()` | `0x0013B4E0` 392 | `0x00144510` 392 | `0x00142970` 392 | `0x0014E210` 640 | `0x0013E790` strong |  |
+| `CheckCrashingTraffic()` | `0x0013B670` 1040 | `0x001446A0` 1284 | `0x00142B00` 1088 | `0x0014DC00` 1380 | `0x0013E920` strong |  |
+| `CheckTraffic()` | `0x0013BA80` 380 | `0x00144BB0` 380 | `0x00142F40` 380 | `0x0014D950` 608 | `0x0013ED50` strong |  |
+| `CheckRaceCar()` | `0x0013BC00` 420 | `0x00144D30` 720 | `0x001430C0` 720 | `0x0014D6B0` 632 | `0x0013EED0` strong |  |
+| `CheckVehicle(const GtMathPs2::CGtMatrix3x4&,GtMathPs2::CGtV3d,bool,bool,EAIAvoidanceRisk,const CGtAxisAligne` | `0x0013BDB0` 1200 | `0x00145000` 1520 | `0x00143390` 1200 | `0x0014CDE0` 1812 | `0x0013F090` strong |  |
+| `AddCarToMap(EAIAvoidanceRisk,float,float,float,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathP` | `0x0013C260` 4872 | `0x001455F0` 6392 | `0x00143840` 5712 | `0x0014AD80` 8036 | `0x0013F550` strong |  |
+| `Update(bool)` | `0x0013D570` 304 | `0x00146EF0` 304 | `0x00144E90` 304 | `0x0014AC20` 336 | `0x00140850` strong |  |
+| `Prepare(CB3AICar*)` | `0x0013D6A0` 176 | `0x00147020` 256 | `0x00144FC0` 256 | `0x0014A9B0` 292 | `0x00140980` proven |  |
+| `GetChannelRisk(int,float*,float*,float*)` |  | `0x00143530` 1100 | `0x001419F0` 1100 | `0x0014F5E0` 1368 |  |  |
+| `CalcRiskOfPosition(const CB3AILane*,unsigned short,GtMathPs2::CGtV3d,float*,float*,float*)` |  | `0x00143980` 700 | `0x00141E40` 596 | `0x0014F2E0` 732 |  |  |
+| `CB3AIAvoidanceMap()` |  |  |  | `0x001912A0` 92 |  |  |
+| `Construct()` |  |  |  | `0x0014A9A0` 16 |  |  |
+| `GetChannelDistance(int)` |  |  |  | `0x0014A910` 72 |  |  |
+| `GetChannelRiskTime(int)` |  |  |  | `0x0014A960` 64 |  |  |
+| `Release()` |  |  |  | `0x0014AD70` 16 |  |  |
+| `ResetRiskScale()` |  |  |  | `0x0014AAE0` 32 |  |  |
+| `SetChannelDistance(int,float)` |  |  |  | `0x0014AB00` 148 |  |  |
+| `SetChannelRiskTime(int,float)` |  |  |  | `0x0014ABC0` 92 |  |  |
+| `SetRiskScale(float)` |  |  |  | `0x00151A70` 112 |  |  |
 
 ## Notes
 

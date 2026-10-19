@@ -7,16 +7,17 @@
 - **Area:** [Progression, profiles and saves](../systems/progression-saves.md)
 - **Source file:** `B3MemoryCardController.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 3
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetFullFilename()` | `0x003C6640` 96 | `0x004436F0` 188 | `0x0046C2D0` 188 | `0x00481E50` 164 |  |
-| `Set(const char*,const void*,unsigned int)` |  |  |  | `0x00464A10` 68 |  |
-| `_SetDirName(const char*)` |  |  |  | `0x00464A60` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetFullFilename()` | `0x003C6640` 96 | `0x004436F0` 188 | `0x0046C2D0` 188 | `0x00481E50` 164 | `0x004216A0` strong |  |
+| `Set(const char*,const void*,unsigned int)` |  |  |  | `0x00464A10` 68 |  |  |
+| `_SetDirName(const char*)` |  |  |  | `0x00464A60` 28 |  |  |
 
 ## Static data (DNAT_200)
 

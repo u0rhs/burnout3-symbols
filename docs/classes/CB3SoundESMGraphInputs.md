@@ -7,17 +7,18 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundESMStruct.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ApplyLag(const CB3SoundESMGraphInputs&,const CB3SoundESMInputLag*)` | `0x002BA1C0` 364 | `0x002FBFB0` 364 | `0x0032FC80` 364 | `0x00328910` 276 |  |
-| `Construct(const CB3RaceCar*,float)` | `0x002BA330` 248 | `0x002FC120` 500 | `0x0032FDF0` 500 | `0x00328790` 372 |  |
-| `Construct()` | `0x002BA430` 32 | `0x002FC320` 32 | `0x0032FFF0` 32 | `0x00328720` 104 |  |
-| `operator =(const CB3SoundESMGraphInputs&)` |  |  |  | `0x002ADDF0` 68 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ApplyLag(const CB3SoundESMGraphInputs&,const CB3SoundESMInputLag*)` | `0x002BA1C0` 364 | `0x002FBFB0` 364 | `0x0032FC80` 364 | `0x00328910` 276 | `0x002FAFB0` proven |  |
+| `Construct(const CB3RaceCar*,float)` | `0x002BA330` 248 | `0x002FC120` 500 | `0x0032FDF0` 500 | `0x00328790` 372 | `0x002FB120` proven |  |
+| `Construct()` | `0x002BA430` 32 | `0x002FC320` 32 | `0x0032FFF0` 32 | `0x00328720` 104 | `0x002FB220` proven |  |
+| `operator =(const CB3SoundESMGraphInputs&)` |  |  |  | `0x002ADDF0` 68 |  |  |
 
 ## Notes
 

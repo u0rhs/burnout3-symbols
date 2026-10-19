@@ -10,20 +10,20 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Update()` | `0x002C46C0` 104 | `0x0030B990` 104 | `0x0033D7A0` 104 | `0x003320C0` 128 |  |
-| `Prepare()` | `0x002C4730` 100 | `0x0030BA00` 100 | `0x0033D810` 100 | `0x00332050` 112 |  |
-| `Construct(int,int)` | `0x002C47A0` 116 | `0x0030BA70` 168 | `0x0033D880` 168 | `0x00331FA0` 176 |  |
-| `GetLEDState(int)` |  |  |  | `0x0038D3F0` 72 |  |
-| `IsControlPressed(int,EGtVirtualKeyCodes)` |  |  |  | `0x0038D330` 80 |  |
-| `IsPaused()` |  |  |  | `0x00332140` 28 |  |
-| `RegisterCharacterCallback(int,void (*)` |  |  |  | `0x00391E80` 108 |  |
-| `RegisterEventCallback(int,void (*)` |  |  |  | `0x00391F90` 108 |  |
-| `UnregisterCharacterCallback(int)` |  |  |  | `0x003920D0` 92 |  |
-| `UnregisterEventCallback(int)` |  |  |  | `0x003921B0` 92 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Update()` | `0x002C46C0` 104 | `0x0030B990` 104 | `0x0033D7A0` 104 | `0x003320C0` 128 |  |  |
+| `Prepare()` | `0x002C4730` 100 | `0x0030BA00` 100 | `0x0033D810` 100 | `0x00332050` 112 |  |  |
+| `Construct(int,int)` | `0x002C47A0` 116 | `0x0030BA70` 168 | `0x0033D880` 168 | `0x00331FA0` 176 |  |  |
+| `GetLEDState(int)` |  |  |  | `0x0038D3F0` 72 |  |  |
+| `IsControlPressed(int,EGtVirtualKeyCodes)` |  |  |  | `0x0038D330` 80 |  |  |
+| `IsPaused()` |  |  |  | `0x00332140` 28 |  |  |
+| `RegisterCharacterCallback(int,void (*)` |  |  |  | `0x00391E80` 108 |  |  |
+| `RegisterEventCallback(int,void (*)` |  |  |  | `0x00391F90` 108 |  |  |
+| `UnregisterCharacterCallback(int)` |  |  |  | `0x003920D0` 92 |  |  |
+| `UnregisterEventCallback(int)` |  |  |  | `0x003921B0` 92 |  |  |
 
 ## Notes
 

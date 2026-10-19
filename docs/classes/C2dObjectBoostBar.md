@@ -7,24 +7,25 @@
 - **Area:** [HUD](../systems/hud.md)
 - **Source file:** `B3HUDBoostBar.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 10
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00171F00` 5968 | `0x0018DF20` 6264 | `0x00188360` 6012 | `0x0019E1B0` 1164 |  |
-| `_RenderParticles(const B3HUDParticleParamsTag*,const CGt2dObject::CGt2dObjectSpace&,const CB3HUDBoostBar::CB` | `0x00173650` 1636 | `0x0018F7A0` 1676 | `0x00189AE0` 1676 | `0x0019DA00` 1832 |  |
-| `_RenderBackground(const CGt2dObject::CGt2dObjectSpace&,float,int,float)` | `0x00173CC0` 392 | `0x0018FE30` 512 |  | `0x0019D570` 952 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CB3HUDBoostBar::CBoostBarObjectD` |  |  |  | `0x0019D480` 196 |  |
-| `_RenderBackground(const CGt2dObject::CGt2dObjectSpace&,float,int)` |  |  | `0x0018A170` 444 |  |  |
-| `_RenderBackgroundGlow(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x0019F960` 1668 |  |
-| `_RenderBlueFlame(const CGt2dObject::CGt2dObjectSpace&,float,unsigned char)` |  |  |  | `0x0019FFF0` 648 |  |
-| `_RenderFireCore(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x0019F3D0` 1340 |  |
-| `_RenderFireEdge(const CGt2dObject::CGt2dObjectSpace&,float,float,float)` |  |  |  | `0x0019ECA0` 1752 |  |
-| `_RenderFireOverlay(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x0019E640` 1516 |  |
-| `_RenderShatter(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x001A02E0` 2544 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x00171F00` 5968 | `0x0018DF20` 6264 | `0x00188360` 6012 | `0x0019E1B0` 1164 | `0x001A6290` likely |  |
+| `_RenderParticles(const B3HUDParticleParamsTag*,const CGt2dObject::CGt2dObjectSpace&,const CB3HUDBoostBar::CB` | `0x00173650` 1636 | `0x0018F7A0` 1676 | `0x00189AE0` 1676 | `0x0019DA00` 1832 | `0x001A7B00` likely |  |
+| `_RenderBackground(const CGt2dObject::CGt2dObjectSpace&,float,int,float)` | `0x00173CC0` 392 | `0x0018FE30` 512 |  | `0x0019D570` 952 | `0x001A8180` unverified |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,CB3HUDBoostBar::CBoostBarObjectD` |  |  |  | `0x0019D480` 196 |  |  |
+| `_RenderBackground(const CGt2dObject::CGt2dObjectSpace&,float,int)` |  |  | `0x0018A170` 444 |  |  |  |
+| `_RenderBackgroundGlow(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x0019F960` 1668 |  |  |
+| `_RenderBlueFlame(const CGt2dObject::CGt2dObjectSpace&,float,unsigned char)` |  |  |  | `0x0019FFF0` 648 |  |  |
+| `_RenderFireCore(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x0019F3D0` 1340 |  |  |
+| `_RenderFireEdge(const CGt2dObject::CGt2dObjectSpace&,float,float,float)` |  |  |  | `0x0019ECA0` 1752 |  |  |
+| `_RenderFireOverlay(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x0019E640` 1516 |  |  |
+| `_RenderShatter(const CGt2dObject::CGt2dObjectSpace&,float,float)` |  |  |  | `0x001A02E0` 2544 |  |  |
 
 ## Notes
 

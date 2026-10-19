@@ -7,17 +7,18 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3Shadows.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `RenderAmbientShadow(CB3VehicleEssentialParams*,GtMathPs2::CGtV3d,float,float)` | `0x002C3A00` 572 | `0x0030A790` 1156 | `0x0033C9A0` 1024 | `0x00331250` 812 |  |
-| `RenderShadows(int)` | `0x002C3C40` 780 | `0x0030AC20` 884 | `0x0033CDA0` 884 | `0x00330E40` 1040 |  |
-| `RenderFrontEndShadow(int)` | `0x002C3F50` 500 | `0x0030AFA0` 1100 | `0x0033D120` 216 | `0x00330BD0` 560 |  |
-| `CB3ShadowMgr()` |  |  |  | `0x00331580` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `RenderAmbientShadow(CB3VehicleEssentialParams*,GtMathPs2::CGtV3d,float,float)` | `0x002C3A00` 572 | `0x0030A790` 1156 | `0x0033C9A0` 1024 | `0x00331250` 812 | `0x00303170` proven |  |
+| `RenderShadows(int)` | `0x002C3C40` 780 | `0x0030AC20` 884 | `0x0033CDA0` 884 | `0x00330E40` 1040 | `0x003033F0` proven |  |
+| `RenderFrontEndShadow(int)` | `0x002C3F50` 500 | `0x0030AFA0` 1100 | `0x0033D120` 216 | `0x00330BD0` 560 | `0x00303750` proven |  |
+| `CB3ShadowMgr()` |  |  |  | `0x00331580` 60 |  |  |
 
 ## Notes
 

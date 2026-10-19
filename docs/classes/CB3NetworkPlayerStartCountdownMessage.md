@@ -7,18 +7,19 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3NetworkPlayerStartCountdownMessage.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 2, B3INTERN 3, B3O0PCH 2
+- **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Retrieve(int*,float*,int*)` | `0x00173F10` 100 | `0x00190190` 1116 |  | `0x001A4060` 468 |  |
-| `Prepare(int,float,int*)` | `0x00173F80` 80 | `0x001905F0` 80 |  | `0x001A3F20` 156 |  |
-| `Construct()` | `0x00173FD0` 8 |  | `0x0018A8F0` 8 |  |  |
-| `Prepare(int,float)` |  |  | `0x0018A8C0` 44 |  |  |
-| `Retrieve(int*,float*)` |  |  | `0x0018A490` 1068 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Retrieve(int*,float*,int*)` | `0x00173F10` 100 | `0x00190190` 1116 |  | `0x001A4060` 468 | `0x001A8550` strong |  |
+| `Prepare(int,float,int*)` | `0x00173F80` 80 | `0x001905F0` 80 |  | `0x001A3F20` 156 |  |  |
+| `Construct()` | `0x00173FD0` 8 |  | `0x0018A8F0` 8 |  |  |  |
+| `Prepare(int,float)` |  |  | `0x0018A8C0` 44 |  |  |  |
+| `Retrieve(int*,float*)` |  |  | `0x0018A490` 1068 |  |  |  |
 
 ## Notes
 

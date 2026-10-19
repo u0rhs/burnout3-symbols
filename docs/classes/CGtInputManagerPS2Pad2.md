@@ -7,23 +7,24 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `GtInputManagerPS2Pad2.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 10, B3INTERN 10, B3O0PCH 10
+- **Retail (SLUS-21050):** 10 of its 10 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `UpdatePort(EGtPS2InputPort)` | `0x001D9C60` 452 | `0x001D6250` 452 | `0x00208F50` 452 | `0x0021A5A0` 604 |  |
-| `UnbindFromPort(CGtInputDevicePS2Pad2*,EGtPS2InputPort)` | `0x001D9E30` 140 | `0x001D6420` 268 | `0x00209120` 268 | `0x0021A480` 280 |  |
-| `BindToPort(CGtInputDevicePS2Pad2*,EGtPS2InputPort)` | `0x001D9EC0` 200 | `0x001D6530` 360 | `0x00209230` 360 | `0x0021A2D0` 388 |  |
-| `SetPause(bool)` | `0x001D9F90` 116 | `0x001D66A0` 116 | `0x002093A0` 116 | `0x0021A220` 176 |  |
-| `GetPadControls(EGtPS2InputPort)` | `0x001DA010` 60 | `0x001D6720` 140 | `0x00209420` 140 | `0x0021A190` 140 |  |
-| `GetSocketNumber(EGtPS2InputPort)` | `0x001DA050` 60 | `0x001D67B0` 140 | `0x002094B0` 140 | `0x0021A100` 140 |  |
-| `GetConnectedDeviceID(EGtPS2InputPort)` | `0x001DA090` 60 | `0x001D6840` 140 | `0x00209540` 140 | `0x0021A070` 140 |  |
-| `Update()` | `0x001DA0D0` 228 | `0x001D68D0` 228 | `0x002095D0` 228 | `0x00219F40` 300 |  |
-| `Prepare()` | `0x001DA1C0` 12 | `0x001D69C0` 12 | `0x002096C0` 12 | `0x00219F20` 32 |  |
-| `Construct(bool)` | `0x001DA1D0` 336 | `0x001D69D0` 336 | `0x002096D0` 336 | `0x00219DB0` 360 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `UpdatePort(EGtPS2InputPort)` | `0x001D9C60` 452 | `0x001D6250` 452 | `0x00208F50` 452 | `0x0021A5A0` 604 | `0x00214610` strong |  |
+| `UnbindFromPort(CGtInputDevicePS2Pad2*,EGtPS2InputPort)` | `0x001D9E30` 140 | `0x001D6420` 268 | `0x00209120` 268 | `0x0021A480` 280 | `0x002147E0` strong |  |
+| `BindToPort(CGtInputDevicePS2Pad2*,EGtPS2InputPort)` | `0x001D9EC0` 200 | `0x001D6530` 360 | `0x00209230` 360 | `0x0021A2D0` 388 | `0x00214870` likely |  |
+| `SetPause(bool)` | `0x001D9F90` 116 | `0x001D66A0` 116 | `0x002093A0` 116 | `0x0021A220` 176 | `0x00214940` strong |  |
+| `GetPadControls(EGtPS2InputPort)` | `0x001DA010` 60 | `0x001D6720` 140 | `0x00209420` 140 | `0x0021A190` 140 | `0x002149C0` likely |  |
+| `GetSocketNumber(EGtPS2InputPort)` | `0x001DA050` 60 | `0x001D67B0` 140 | `0x002094B0` 140 | `0x0021A100` 140 | `0x00214A00` strong |  |
+| `GetConnectedDeviceID(EGtPS2InputPort)` | `0x001DA090` 60 | `0x001D6840` 140 | `0x00209540` 140 | `0x0021A070` 140 | `0x00214A40` strong |  |
+| `Update()` | `0x001DA0D0` 228 | `0x001D68D0` 228 | `0x002095D0` 228 | `0x00219F40` 300 | `0x00214A80` strong |  |
+| `Prepare()` | `0x001DA1C0` 12 | `0x001D69C0` 12 | `0x002096C0` 12 | `0x00219F20` 32 | `0x00214B60` proven |  |
+| `Construct(bool)` | `0x001DA1D0` 336 | `0x001D69D0` 336 | `0x002096D0` 336 | `0x00219DB0` 360 | `0x00214B70` proven |  |
 
 ## Notes
 

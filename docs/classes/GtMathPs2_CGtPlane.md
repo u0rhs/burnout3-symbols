@@ -9,19 +9,19 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Distance()` |  |  |  | `0x00284060` 52 |  |
-| `GetRawData()` |  |  |  | `0x00284010` 28 |  |
-| `Normal()` |  |  |  | `0x0028DD60` 52 |  |
-| `SetDistance(GtMathPs2::XAxisType)` |  |  |  | `0x002E5400` 56 |  |
-| `SetDistance(GtMathPs2::YAxisType)` |  |  |  | `0x002E53C0` 56 |  |
-| `SetDistance(GtMathPs2::ZAxisType)` |  |  |  | `0x002E5440` 56 |  |
-| `SetDistance(float)` |  |  |  | `0x00284030` 48 |  |
-| `SetNormal(GtMathPs2::CGtV3d)` |  |  |  | `0x002E5480` 56 |  |
-| `operator =(const GtMathPs2::CGtPlane&)` |  |  |  | `0x002840A0` 44 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Distance()` |  |  |  | `0x00284060` 52 |  |  |
+| `GetRawData()` |  |  |  | `0x00284010` 28 |  |  |
+| `Normal()` |  |  |  | `0x0028DD60` 52 |  |  |
+| `SetDistance(GtMathPs2::XAxisType)` |  |  |  | `0x002E5400` 56 |  |  |
+| `SetDistance(GtMathPs2::YAxisType)` |  |  |  | `0x002E53C0` 56 |  |  |
+| `SetDistance(GtMathPs2::ZAxisType)` |  |  |  | `0x002E5440` 56 |  |  |
+| `SetDistance(float)` |  |  |  | `0x00284030` 48 |  |  |
+| `SetNormal(GtMathPs2::CGtV3d)` |  |  |  | `0x002E5480` 56 |  |  |
+| `operator =(const GtMathPs2::CGtPlane&)` |  |  |  | `0x002840A0` 44 |  |  |
 
 ## Notes
 

@@ -7,36 +7,37 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `GtSoundStream.cpp`
 - **Methods per build:** DNAT_200 15, B3DEBUG 15, B3INTERN 19, B3O0PCH 19
+- **Retail (SLUS-21050):** 9 of its 15 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Pause(bool)` | `0x00342FA0` 176 | `0x003A6CD0` 176 | `0x003D0C60` 176 | `0x003DAD10` 264 |  |
-| `IsPreparing()` | `0x00343050` 16 | `0x003A6D80` 16 | `0x003D0D10` 16 | `0x003DACD0` 56 |  |
-| `IsStopped()` | `0x00343060` 36 | `0x003A6D90` 36 | `0x003D0D20` 36 | `0x003DAC80` 72 |  |
-| `IsPlaying()` | `0x00343090` 16 | `0x003A6DC0` 16 | `0x003D0D50` 16 | `0x003DAC40` 56 |  |
-| `ApplyVolumesAndPitch()` | `0x003430A0` 284 | `0x003A6DD0` 436 | `0x003D1000` 436 | `0x003DA950` 320 |  |
-| `Stop()` | `0x003431C0` 76 | `0x003A6F90` 120 | `0x003D11C0` 120 | `0x003DA8D0` 128 |  |
-| `Play(bool)` | `0x00343210` 96 | `0x003A7010` 188 | `0x003D1240` 188 | `0x003DA800` 204 |  |
-| `SetVolume(float,int)` | `0x00343270` 76 | `0x003A70D0` 76 | `0x003D1300` 76 | `0x003DA770` 132 |  |
-| `SetMediaBuffer(void*,int)` | `0x003432C0` 12 | `0x003A7120` 12 | `0x003D1350` 12 | `0x003DA730` 52 |  |
-| `Destruct()` | `0x003432D0` 88 | `0x003A7130` 88 | `0x003D1360` 88 | `0x003DA6B0` 124 |  |
-| `Release()` | `0x00343330` 76 | `0x003A7190` 76 | `0x003D13C0` 76 | `0x003DA640` 104 |  |
-| `Update()` | `0x00343380` 396 | `0x003A71E0` 396 | `0x003D1410` 396 | `0x003DA420` 540 |  |
-| `Prepare(const char*,CGtVideoDecoder*,float,int)` | `0x00343510` 312 | `0x003A7370` 544 | `0x003D15A0` 544 | `0x003DA280` 412 |  |
-| `AttachMedia(const char*)` | `0x00343650` 284 | `0x003A7590` 356 | `0x003D17C0` 356 | `0x003DA0C0` 444 |  |
-| `Construct(RwaSPU2Output*,int)` | `0x00343770` 168 | `0x003A7700` 252 | `0x003D1930` 256 | `0x003D9FA0` 288 |  |
-| `GetMediaBuffer()` |  |  |  | `0x003DB540` 28 |  |
-| `GetSamplesPerPacket(int)` |  |  | `0x003D0D60` 196 |  |  |
-| `GetSegmentCount()` |  |  | `0x003D0BF0` 112 |  |  |
-| `GetStreamPosSamples()` |  |  | `0x003D0E30` 104 |  |  |
-| `Seek(float,int)` |  |  |  | `0x003DAA90` 212 |  |
-| `SetGroup(unsigned char)` |  |  |  | `0x002AA820` 36 |  |
-| `SetStreamPosSamples(int,int)` |  |  | `0x003D0EA0` 352 |  |  |
-| `Tell(float*,int*)` |  |  |  | `0x003DAB70` 204 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Pause(bool)` | `0x00342FA0` 176 | `0x003A6CD0` 176 | `0x003D0C60` 176 | `0x003DAD10` 264 | `0x00385F20` strong |  |
+| `IsPreparing()` | `0x00343050` 16 | `0x003A6D80` 16 | `0x003D0D10` 16 | `0x003DACD0` 56 |  |  |
+| `IsStopped()` | `0x00343060` 36 | `0x003A6D90` 36 | `0x003D0D20` 36 | `0x003DAC80` 72 |  |  |
+| `IsPlaying()` | `0x00343090` 16 | `0x003A6DC0` 16 | `0x003D0D50` 16 | `0x003DAC40` 56 |  |  |
+| `ApplyVolumesAndPitch()` | `0x003430A0` 284 | `0x003A6DD0` 436 | `0x003D1000` 436 | `0x003DA950` 320 | `0x00386130` unverified |  |
+| `Stop()` | `0x003431C0` 76 | `0x003A6F90` 120 | `0x003D11C0` 120 | `0x003DA8D0` 128 | `0x00386240` strong |  |
+| `Play(bool)` | `0x00343210` 96 | `0x003A7010` 188 | `0x003D1240` 188 | `0x003DA800` 204 |  |  |
+| `SetVolume(float,int)` | `0x00343270` 76 | `0x003A70D0` 76 | `0x003D1300` 76 | `0x003DA770` 132 |  |  |
+| `SetMediaBuffer(void*,int)` | `0x003432C0` 12 | `0x003A7120` 12 | `0x003D1350` 12 | `0x003DA730` 52 | `0x00386350` proven |  |
+| `Destruct()` | `0x003432D0` 88 | `0x003A7130` 88 | `0x003D1360` 88 | `0x003DA6B0` 124 | `0x00386360` strong |  |
+| `Release()` | `0x00343330` 76 | `0x003A7190` 76 | `0x003D13C0` 76 | `0x003DA640` 104 | `0x003863C0` strong |  |
+| `Update()` | `0x00343380` 396 | `0x003A71E0` 396 | `0x003D1410` 396 | `0x003DA420` 540 | `0x00386410` strong |  |
+| `Prepare(const char*,CGtVideoDecoder*,float,int)` | `0x00343510` 312 | `0x003A7370` 544 | `0x003D15A0` 544 | `0x003DA280` 412 |  |  |
+| `AttachMedia(const char*)` | `0x00343650` 284 | `0x003A7590` 356 | `0x003D17C0` 356 | `0x003DA0C0` 444 | `0x00386790` strong |  |
+| `Construct(RwaSPU2Output*,int)` | `0x00343770` 168 | `0x003A7700` 252 | `0x003D1930` 256 | `0x003D9FA0` 288 | `0x003868C0` strong |  |
+| `GetMediaBuffer()` |  |  |  | `0x003DB540` 28 |  |  |
+| `GetSamplesPerPacket(int)` |  |  | `0x003D0D60` 196 |  |  |  |
+| `GetSegmentCount()` |  |  | `0x003D0BF0` 112 |  |  |  |
+| `GetStreamPosSamples()` |  |  | `0x003D0E30` 104 |  |  |  |
+| `Seek(float,int)` |  |  |  | `0x003DAA90` 212 |  |  |
+| `SetGroup(unsigned char)` |  |  |  | `0x002AA820` 36 |  |  |
+| `SetStreamPosSamples(int,int)` |  |  | `0x003D0EA0` 352 |  |  |  |
+| `Tell(float*,int*)` |  |  |  | `0x003DAB70` 204 |  |  |
 
 ## Notes
 

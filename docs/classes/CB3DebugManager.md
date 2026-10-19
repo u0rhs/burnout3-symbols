@@ -7,34 +7,35 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `B3DebugManager.cpp`
 - **Methods per build:** DNAT_200 12, B3DEBUG 19, B3INTERN 19, B3O0PCH 20
+- **Retail (SLUS-21050):** 10 of its 12 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CDebugManager`, size 0x1694, declared in 3 file(s), e.g. `gamesource/Physics/CVehiclePhysics.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PerfMonResetCallback(void*)` |  | `0x0012FA20` 8 | `0x00131DA0` 8 | `0x00134B00` 32 |  |
-| `RenderPerfMonDataCallback(const char*,float,float,float,bool)` | `0x0012FA40` 864 | `0x0012FA30` 864 | `0x00131DB0` 864 | `0x001345E0` 936 |  |
-| `DrawVectorText(const char*,GtMathPs2::CGtV3d,GtMathPs2::CGtMatrix3x4*,float,GtMathPs2::CGtV4d)` | `0x0012FDA0` 944 | `0x0012FD90` 944 | `0x00132110` 944 | `0x00134040` 1292 |  |
-| `DrawText(const char*,float,float,float,GtMathPs2::CGtV4d)` |  | `0x00130140` 112 | `0x001324C0` 112 | `0x00133FC0` 116 |  |
-| `DrawCross(GtMathPs2::CGtV3d,float,GtMathPs2::CGtV4d)` | `0x00130160` 268 | `0x001301C0` 268 | `0x00132540` 268 | `0x001316F0` 576 |  |
-| `DrawLine(const CGtLine&,GtMathPs2::CGtV4d)` | `0x00130270` 344 | `0x001302D0` 456 | `0x00132650` 456 | `0x001312C0` 408 |  |
-| `StopUpdate(void*)` | `0x001303D0` 12 | `0x001304E0` 12 | `0x00132860` 12 | `0x001311C0` 24 |  |
-| `RenderWorld()` | `0x001303E0` 188 | `0x00130500` 488 | `0x00132880` 488 | `0x00131090` 260 |  |
-| `PlayUpdateAndCameras(void*)` |  | `0x001304A0` 12 | `0x00132820` 12 | `0x00131240` 24 |  |
-| `RenderOverlays()` | `0x001304A0` 8 | `0x001306F0` 1904 | `0x00132A70` 1880 | `0x00130900` 1628 |  |
-| `Destruct()` | `0x001304B0` 64 | `0x00130E60` 92 | `0x001331D0` 72 | `0x00130870` 136 |  |
-| `PlayCameras(void*)` |  | `0x001304B0` 12 | `0x00132830` 12 | `0x00131220` 24 |  |
-| `StepCameraFrame(void*)` |  | `0x001304C0` 12 | `0x00132840` 12 | `0x00131200` 24 |  |
-| `StepUpdateAndCameraFrame(void*)` |  | `0x001304D0` 12 | `0x00132850` 12 | `0x001311E0` 24 |  |
-| `StopUpdateAndCameras(void*)` |  | `0x001304F0` 12 | `0x00132870` 12 | `0x001311A0` 24 |  |
-| `Update()` | `0x001304F0` 64 | `0x00130EC0` 1284 | `0x00133220` 1264 | `0x00130080` 868 |  |
-| `UpdateStartOfFrame()` | `0x00130530` 236 | `0x001313D0` 564 | `0x00133710` 564 | `0x0012FCA0` 380 |  |
-| `Prepare()` | `0x00130620` 124 | `0x00131610` 124 | `0x00133950` 124 | `0x0012FBD0` 196 |  |
-| `Construct()` | `0x001306A0` 104 | `0x00131690` 604 | `0x001339D0` 560 | `0x0012F8B0` 756 |  |
-| `CB3DebugManager()` |  |  |  | `0x00134BD0` 80 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PerfMonResetCallback(void*)` |  | `0x0012FA20` 8 | `0x00131DA0` 8 | `0x00134B00` 32 |  |  |
+| `RenderPerfMonDataCallback(const char*,float,float,float,bool)` | `0x0012FA40` 864 | `0x0012FA30` 864 | `0x00131DB0` 864 | `0x001345E0` 936 | `0x00130030` proven |  |
+| `DrawVectorText(const char*,GtMathPs2::CGtV3d,GtMathPs2::CGtMatrix3x4*,float,GtMathPs2::CGtV4d)` | `0x0012FDA0` 944 | `0x0012FD90` 944 | `0x00132110` 944 | `0x00134040` 1292 | `0x00130390` strong |  |
+| `DrawText(const char*,float,float,float,GtMathPs2::CGtV4d)` |  | `0x00130140` 112 | `0x001324C0` 112 | `0x00133FC0` 116 |  |  |
+| `DrawCross(GtMathPs2::CGtV3d,float,GtMathPs2::CGtV4d)` | `0x00130160` 268 | `0x001301C0` 268 | `0x00132540` 268 | `0x001316F0` 576 |  |  |
+| `DrawLine(const CGtLine&,GtMathPs2::CGtV4d)` | `0x00130270` 344 | `0x001302D0` 456 | `0x00132650` 456 | `0x001312C0` 408 | `0x00130750` proven |  |
+| `StopUpdate(void*)` | `0x001303D0` 12 | `0x001304E0` 12 | `0x00132860` 12 | `0x001311C0` 24 |  |  |
+| `RenderWorld()` | `0x001303E0` 188 | `0x00130500` 488 | `0x00132880` 488 | `0x00131090` 260 | `0x001308B0` strong |  |
+| `PlayUpdateAndCameras(void*)` |  | `0x001304A0` 12 | `0x00132820` 12 | `0x00131240` 24 |  |  |
+| `RenderOverlays()` | `0x001304A0` 8 | `0x001306F0` 1904 | `0x00132A70` 1880 | `0x00130900` 1628 | `0x00130970` likely |  |
+| `Destruct()` | `0x001304B0` 64 | `0x00130E60` 92 | `0x001331D0` 72 | `0x00130870` 136 | `0x00130980` strong |  |
+| `PlayCameras(void*)` |  | `0x001304B0` 12 | `0x00132830` 12 | `0x00131220` 24 |  |  |
+| `StepCameraFrame(void*)` |  | `0x001304C0` 12 | `0x00132840` 12 | `0x00131200` 24 |  |  |
+| `StepUpdateAndCameraFrame(void*)` |  | `0x001304D0` 12 | `0x00132850` 12 | `0x001311E0` 24 |  |  |
+| `StopUpdateAndCameras(void*)` |  | `0x001304F0` 12 | `0x00132870` 12 | `0x001311A0` 24 |  |  |
+| `Update()` | `0x001304F0` 64 | `0x00130EC0` 1284 | `0x00133220` 1264 | `0x00130080` 868 | `0x001309C0` strong |  |
+| `UpdateStartOfFrame()` | `0x00130530` 236 | `0x001313D0` 564 | `0x00133710` 564 | `0x0012FCA0` 380 | `0x00130A00` strong |  |
+| `Prepare()` | `0x00130620` 124 | `0x00131610` 124 | `0x00133950` 124 | `0x0012FBD0` 196 | `0x00130B00` strong |  |
+| `Construct()` | `0x001306A0` 104 | `0x00131690` 604 | `0x001339D0` 560 | `0x0012F8B0` 756 | `0x00130B80` strong |  |
+| `CB3DebugManager()` |  |  |  | `0x00134BD0` 80 |  |  |
 
 ## Static data (DNAT_200)
 

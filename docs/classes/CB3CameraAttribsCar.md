@@ -7,18 +7,19 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `B3CameraAttribs.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 5
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `RegisterVariables()` | `0x002B7C00` 556 | `0x002F8940` 596 | `0x0032CAD0` 596 | `0x00322AB0` 552 |  |
-| `Release(unsigned long)` | `0x002B7E30` 300 | `0x002F8BA0` 332 | `0x0032CD30` 332 | `0x00322970` 156 |  |
-| `Prepare(unsigned long)` | `0x002B7F60` 132 | `0x002F8CF0` 140 | `0x0032CE80` 140 | `0x00322890` 212 |  |
-| `SetRaceCarPath()` |  |  |  | `0x00322A10` 148 |  |
-| `UnregisterVariables()` |  |  |  | `0x00322CE0` 168 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `RegisterVariables()` | `0x002B7C00` 556 | `0x002F8940` 596 | `0x0032CAD0` 596 | `0x00322AB0` 552 | `0x002F8870` proven |  |
+| `Release(unsigned long)` | `0x002B7E30` 300 | `0x002F8BA0` 332 | `0x0032CD30` 332 | `0x00322970` 156 | `0x002F8AA0` strong |  |
+| `Prepare(unsigned long)` | `0x002B7F60` 132 | `0x002F8CF0` 140 | `0x0032CE80` 140 | `0x00322890` 212 | `0x002F8BD0` strong |  |
+| `SetRaceCarPath()` |  |  |  | `0x00322A10` 148 |  |  |
+| `UnregisterVariables()` |  |  |  | `0x00322CE0` 168 |  |  |
 
 ## Notes
 

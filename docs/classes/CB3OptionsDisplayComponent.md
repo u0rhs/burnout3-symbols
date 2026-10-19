@@ -11,26 +11,26 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x003CA090` 160 | `0x00447890` 160 | `0x00470270` 160 | `0x00487440` 224 |  |
-| `Update(float)` | `0x003CA130` 20 | `0x00447930` 20 | `0x00470310` 20 | `0x00487410` 44 |  |
-| `Prepare(CB3OptionsDisplayComponent::EOptionsDisplayType)` | `0x003CA150` 1732 | `0x00447950` 648 | `0x00470330` 648 | `0x00487340` 196 |  |
-| `Construct()` | `0x003CA820` 112 | `0x00447BE0` 112 | `0x004705C0` 112 | `0x00486FC0` 172 |  |
-| `SelectRight()` | `0x003CA890` 8 | `0x00447D70` 8 | `0x00470750` 8 | `0x00486CD0` 20 |  |
-| `SelectLeft()` | `0x003CA8A0` 8 | `0x00447D80` 8 | `0x00470760` 8 | `0x00486CB0` 20 |  |
-| `SelectDown()` | `0x003CA8B0` 8 | `0x00447D90` 8 | `0x00470770` 8 | `0x00486C80` 44 |  |
-| `SelectUp()` | `0x003CA8C0` 8 | `0x00447DA0` 8 | `0x00470780` 8 | `0x00486C50` 44 |  |
-| `PrepareOptionEntryBase(int,EGlobalStrings)` |  | `0x00447C50` 276 | `0x00470630` 276 | `0x00486CF0` 428 |  |
-| `CB3OptionsDisplayComponent()` |  |  |  | `0x0033C900` 60 |  |
-| `PrepareAudioOptions()` |  |  |  | `0x00487070` 240 |  |
-| `PrepareControllersOptions()` |  |  |  | `0x00487270` 200 |  |
-| `PrepareOptionEntryHText(int,EGlobalStrings,signed char,signed char,const EGlobalStrings*)` |  |  |  | `0x00486EA0` 88 |  |
-| `PrepareOptionEntryNumberText(int,EGlobalStrings,signed char,signed char,signed char,EGlobalStrings)` |  |  |  | `0x00486F60` 92 |  |
-| `PrepareOptionEntryVolumeBar(int,EGlobalStrings,signed char)` |  |  |  | `0x00486F00` 92 |  |
-| `PrepareVideoOptions()` |  |  |  | `0x00487160` 264 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x003CA090` 160 | `0x00447890` 160 | `0x00470270` 160 | `0x00487440` 224 |  |  |
+| `Update(float)` | `0x003CA130` 20 | `0x00447930` 20 | `0x00470310` 20 | `0x00487410` 44 |  |  |
+| `Prepare(CB3OptionsDisplayComponent::EOptionsDisplayType)` | `0x003CA150` 1732 | `0x00447950` 648 | `0x00470330` 648 | `0x00487340` 196 |  |  |
+| `Construct()` | `0x003CA820` 112 | `0x00447BE0` 112 | `0x004705C0` 112 | `0x00486FC0` 172 |  |  |
+| `SelectRight()` | `0x003CA890` 8 | `0x00447D70` 8 | `0x00470750` 8 | `0x00486CD0` 20 |  |  |
+| `SelectLeft()` | `0x003CA8A0` 8 | `0x00447D80` 8 | `0x00470760` 8 | `0x00486CB0` 20 |  |  |
+| `SelectDown()` | `0x003CA8B0` 8 | `0x00447D90` 8 | `0x00470770` 8 | `0x00486C80` 44 |  |  |
+| `SelectUp()` | `0x003CA8C0` 8 | `0x00447DA0` 8 | `0x00470780` 8 | `0x00486C50` 44 |  |  |
+| `PrepareOptionEntryBase(int,EGlobalStrings)` |  | `0x00447C50` 276 | `0x00470630` 276 | `0x00486CF0` 428 |  |  |
+| `CB3OptionsDisplayComponent()` |  |  |  | `0x0033C900` 60 |  |  |
+| `PrepareAudioOptions()` |  |  |  | `0x00487070` 240 |  |  |
+| `PrepareControllersOptions()` |  |  |  | `0x00487270` 200 |  |  |
+| `PrepareOptionEntryHText(int,EGlobalStrings,signed char,signed char,const EGlobalStrings*)` |  |  |  | `0x00486EA0` 88 |  |  |
+| `PrepareOptionEntryNumberText(int,EGlobalStrings,signed char,signed char,signed char,EGlobalStrings)` |  |  |  | `0x00486F60` 92 |  |  |
+| `PrepareOptionEntryVolumeBar(int,EGlobalStrings,signed char)` |  |  |  | `0x00486F00` 92 |  |  |
+| `PrepareVideoOptions()` |  |  |  | `0x00487160` 264 |  |  |
 
 ## Notes
 

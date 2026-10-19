@@ -10,18 +10,18 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Abort()` |  | `0x001CE410` 8 |  |  |  |
-| `Sync(int)` |  | `0x001CE420` 140 |  |  |  |
-| `SetPosition(long,EFileMoveMethod)` |  | `0x001CE4B0` 284 |  |  |  |
-| `Write(const void*,unsigned int)` |  | `0x001CE5D0` 140 |  |  |  |
-| `Read(void*,unsigned int)` |  | `0x001CE660` 420 |  |  |  |
-| `Close()` |  | `0x001CE810` 12 |  |  |  |
-| `Open(CGTFileSystem*,const char*,unsigned int)` |  | `0x001CE820` 368 |  |  |  |
-| `GetStatus()` |  | `0x001CE990` 56 |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Abort()` |  | `0x001CE410` 8 |  |  |  |  |
+| `Sync(int)` |  | `0x001CE420` 140 |  |  |  |  |
+| `SetPosition(long,EFileMoveMethod)` |  | `0x001CE4B0` 284 |  |  |  |  |
+| `Write(const void*,unsigned int)` |  | `0x001CE5D0` 140 |  |  |  |  |
+| `Read(void*,unsigned int)` |  | `0x001CE660` 420 |  |  |  |  |
+| `Close()` |  | `0x001CE810` 12 |  |  |  |  |
+| `Open(CGTFileSystem*,const char*,unsigned int)` |  | `0x001CE820` 368 |  |  |  |  |
+| `GetStatus()` |  | `0x001CE990` 56 |  |  |  |  |
 
 ## Burnout 2 layout of `CGTFilePS2DVD`
 

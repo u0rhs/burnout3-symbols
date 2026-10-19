@@ -7,22 +7,23 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3DebrisRendererPS2.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
+- **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `UploadStaticDataAndGeometry(bool) const` | `0x002B3EA0` 152 |  |  |  |  |
-| `SpawnDebris(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,float,float)` | `0x002B3F40` 572 | `0x002F3200` 704 | `0x003284C0` 704 | `0x0031DEB0` 932 |  |
-| `Release()` | `0x002B4180` 8 | `0x002F34C0` 8 | `0x00328780` 8 | `0x0031DEA0` 16 |  |
-| `Prepare()` | `0x002B4190` 68 | `0x002F34D0` 68 | `0x00328790` 68 | `0x0031DE30` 112 |  |
-| `Destruct()` | `0x002B41E0` 8 | `0x002F3520` 8 | `0x003287E0` 8 | `0x0031DE20` 16 |  |
-| `Construct(EDebrisGeometry)` | `0x002B41F0` 124 | `0x002F3530` 216 | `0x003287F0` 216 | `0x0031DDE0` 64 |  |
-| `ConstructGeometryData(EDebrisGeometry)` | `0x002B4270` 328 | `0x002F3610` 472 | `0x003288D0` 472 | `0x0031DB20` 504 |  |
-| `UploadStaticDataAndGeometry(bool)` |  | `0x002F3160` 152 | `0x00328420` 152 | `0x0031E260` 196 |  |
-| `ConstructDebrisArray(EDebrisGeometry)` |  |  |  | `0x0031DD20` 192 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `UploadStaticDataAndGeometry(bool) const` | `0x002B3EA0` 152 |  |  |  | `0x002F4650` proven |  |
+| `SpawnDebris(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,float,float)` | `0x002B3F40` 572 | `0x002F3200` 704 | `0x003284C0` 704 | `0x0031DEB0` 932 | `0x002F46F0` proven |  |
+| `Release()` | `0x002B4180` 8 | `0x002F34C0` 8 | `0x00328780` 8 | `0x0031DEA0` 16 | `0x002F4930` strong |  |
+| `Prepare()` | `0x002B4190` 68 | `0x002F34D0` 68 | `0x00328790` 68 | `0x0031DE30` 112 | `0x002F4940` proven |  |
+| `Destruct()` | `0x002B41E0` 8 | `0x002F3520` 8 | `0x003287E0` 8 | `0x0031DE20` 16 | `0x002F4990` strong |  |
+| `Construct(EDebrisGeometry)` | `0x002B41F0` 124 | `0x002F3530` 216 | `0x003287F0` 216 | `0x0031DDE0` 64 | `0x002F49A0` proven |  |
+| `ConstructGeometryData(EDebrisGeometry)` | `0x002B4270` 328 | `0x002F3610` 472 | `0x003288D0` 472 | `0x0031DB20` 504 | `0x002F4A20` proven |  |
+| `UploadStaticDataAndGeometry(bool)` |  | `0x002F3160` 152 | `0x00328420` 152 | `0x0031E260` 196 |  |  |
+| `ConstructDebrisArray(EDebrisGeometry)` |  |  |  | `0x0031DD20` 192 |  |  |
 
 ## Notes
 

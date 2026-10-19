@@ -7,16 +7,17 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3PopcornRendererPS2.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 3
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `EndRender()` | `0x0031B6C0` 80 | `0x003767A0` 80 | `0x003A5380` 80 | `0x003A5D30` 92 |  |
-| `RenderPopcornArray(CB3PopcornArray*)` | `0x0031B710` 36 | `0x003767F0` 112 | `0x003A53D0` 112 | `0x003A5CA0` 104 |  |
-| `BeginRender()` | `0x0031B740` 8 | `0x00376860` 8 | `0x003A5440` 8 | `0x003A5C90` 12 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `EndRender()` | `0x0031B6C0` 80 | `0x003767A0` 80 | `0x003A5380` 80 | `0x003A5D30` 92 | `0x00365890` proven |  |
+| `RenderPopcornArray(CB3PopcornArray*)` | `0x0031B710` 36 | `0x003767F0` 112 | `0x003A53D0` 112 | `0x003A5CA0` 104 | `0x003658E0` proven |  |
+| `BeginRender()` | `0x0031B740` 8 | `0x00376860` 8 | `0x003A5440` 8 | `0x003A5C90` 12 | `0x00365910` strong |  |
 
 ## Static data (DNAT_200)
 

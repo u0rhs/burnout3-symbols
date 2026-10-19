@@ -7,28 +7,29 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3GameMode.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 14
+- **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CGameMode`, size 0x03C, declared in 72 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetNumLaps()` | `0x00133870` 8 | `0x0013AEA0` 8 | `0x001386E0` 8 | `0x0013F8D0` 20 |  |
-| `StartReplay()` | `0x00133880` 8 | `0x0013AEB0` 8 | `0x001386F0` 8 | `0x0013F8B0` 20 |  |
-| `Destruct()` | `0x00133890` 8 | `0x0013AEC0` 8 | `0x00138700` 8 | `0x0013F8A0` 16 |  |
-| `Release()` | `0x001338A0` 96 | `0x0013AED0` 96 | `0x00138710` 96 | `0x0013F820` 120 |  |
-| `Update()` | `0x00133900` 88 | `0x0013AF30` 88 | `0x00138770` 88 | `0x0013F7A0` 108 |  |
-| `Prepare()` | `0x00133960` 508 | `0x0013AF90` 1496 | `0x001387D0` 1496 | `0x0013F2F0` 904 |  |
-| `Construct()` | `0x00133B60` 20 | `0x0013B570` 20 | `0x00138DB0` 20 | `0x0013F2C0` 48 |  |
-| `CB3GameMode()` |  |  |  | `0x0013E230` 40 |  |
-| `GetChallenge()` |  |  |  | `0x0013D790` 28 |  |
-| `GetStageLogic()` |  |  |  | `0x0013C3F0` 28 |  |
-| `Render()` |  |  |  | `0x0013F810` 16 |  |
-| `RequestResetWithFullPrepare()` |  |  |  | `0x0013C410` 32 |  |
-| `SetChallenge(CB3Challenge*)` |  |  |  | `0x0033DBB0` 36 |  |
-| `SetStageLogic(CB3StageLogic*)` |  |  |  | `0x0033DB50` 36 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetNumLaps()` | `0x00133870` 8 | `0x0013AEA0` 8 | `0x001386E0` 8 | `0x0013F8D0` 20 | `0x001345D0` likely |  |
+| `StartReplay()` | `0x00133880` 8 | `0x0013AEB0` 8 | `0x001386F0` 8 | `0x0013F8B0` 20 | `0x001345E0` likely |  |
+| `Destruct()` | `0x00133890` 8 | `0x0013AEC0` 8 | `0x00138700` 8 | `0x0013F8A0` 16 | `0x001345F0` strong |  |
+| `Release()` | `0x001338A0` 96 | `0x0013AED0` 96 | `0x00138710` 96 | `0x0013F820` 120 | `0x00134600` proven |  |
+| `Update()` | `0x00133900` 88 | `0x0013AF30` 88 | `0x00138770` 88 | `0x0013F7A0` 108 | `0x00134660` proven |  |
+| `Prepare()` | `0x00133960` 508 | `0x0013AF90` 1496 | `0x001387D0` 1496 | `0x0013F2F0` 904 | `0x001346C0` proven |  |
+| `Construct()` | `0x00133B60` 20 | `0x0013B570` 20 | `0x00138DB0` 20 | `0x0013F2C0` 48 | `0x00134910` proven |  |
+| `CB3GameMode()` |  |  |  | `0x0013E230` 40 |  |  |
+| `GetChallenge()` |  |  |  | `0x0013D790` 28 |  |  |
+| `GetStageLogic()` |  |  |  | `0x0013C3F0` 28 |  |  |
+| `Render()` |  |  |  | `0x0013F810` 16 |  |  |
+| `RequestResetWithFullPrepare()` |  |  |  | `0x0013C410` 32 |  |  |
+| `SetChallenge(CB3Challenge*)` |  |  |  | `0x0033DBB0` 36 |  |  |
+| `SetStageLogic(CB3StageLogic*)` |  |  |  | `0x0033DB50` 36 |  |  |
 
 ## Burnout 2 layout of `CGameMode`
 

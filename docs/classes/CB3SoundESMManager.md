@@ -7,20 +7,21 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundESMManager.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
+- **Retail (SLUS-21050):** 5 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `RelinquishESM(CB3SoundESM*)` | `0x002BA090` 20 | `0x002FBE40` 96 | `0x0032FB10` 96 | `0x00327C60` 80 |  |
-| `RequestESM(bool)` | `0x002BA0B0` 144 | `0x002FBEA0` 144 | `0x0032FB70` 144 | `0x00327AD0` 312 |  |
-| `Release()` | `0x002BA140` 8 | `0x002FBF30` 8 | `0x0032FC00` 8 | `0x00327AC0` 16 |  |
-| `Update()` | `0x002BA150` 8 | `0x002FBF40` 8 | `0x0032FC10` 8 | `0x00327AB0` 16 |  |
-| `Prepare()` | `0x002BA160` 8 | `0x002FBF50` 8 | `0x0032FC20` 8 | `0x00327A90` 20 |  |
-| `Construct()` | `0x002BA170` 80 | `0x002FBF60` 80 | `0x0032FC30` 80 | `0x003279F0` 148 |  |
-| `CB3SoundESMManager()` |  |  |  | `0x002B1B40` 124 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `RelinquishESM(CB3SoundESM*)` | `0x002BA090` 20 | `0x002FBE40` 96 | `0x0032FB10` 96 | `0x00327C60` 80 | `0x002FAE70` strong |  |
+| `RequestESM(bool)` | `0x002BA0B0` 144 | `0x002FBEA0` 144 | `0x0032FB70` 144 | `0x00327AD0` 312 | `0x002FAE90` likely |  |
+| `Release()` | `0x002BA140` 8 | `0x002FBF30` 8 | `0x0032FC00` 8 | `0x00327AC0` 16 | `0x002FAF30` strong |  |
+| `Update()` | `0x002BA150` 8 | `0x002FBF40` 8 | `0x0032FC10` 8 | `0x00327AB0` 16 |  |  |
+| `Prepare()` | `0x002BA160` 8 | `0x002FBF50` 8 | `0x0032FC20` 8 | `0x00327A90` 20 | `0x002FAF40` strong |  |
+| `Construct()` | `0x002BA170` 80 | `0x002FBF60` 80 | `0x0032FC30` 80 | `0x003279F0` 148 | `0x002FAF50` likely |  |
+| `CB3SoundESMManager()` |  |  |  | `0x002B1B40` 124 |  |  |
 
 ## Notes
 

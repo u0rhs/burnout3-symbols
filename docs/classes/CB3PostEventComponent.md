@@ -11,19 +11,19 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x0036B410` 308 | `0x003D8560` 308 | `0x00401060` 308 | `0x00414E60` 456 |  |
-| `Update(float)` | `0x0036B550` 92 | `0x003D86A0` 92 | `0x004011A0` 92 | `0x00414DC0` 156 |  |
-| `SetHeading(EGlobalStrings,CB3StylisedText2dObject::EStylisedTextStyle,EB3GlobalImage)` | `0x0036B5B0` 496 | `0x003D8700` 528 | `0x00401200` 528 | `0x00414AF0` 708 |  |
-| `Prepare()` | `0x0036B7A0` 1276 | `0x003D8910` 1272 | `0x00401410` 1360 | `0x00414480` 1636 |  |
-| `PrepareStandings()` | `0x0036BCA0` 620 | `0x003D8E10` 688 | `0x00401960` 688 | `0x00414060` 848 |  |
-| `PrepareStandingsEntry(int,EGlobalStrings,int,const unsigned short*,bool)` | `0x0036BF10` 752 | `0x003D90C0` 880 | `0x00401C10` 880 | `0x00413C10` 1092 |  |
-| `PrepareStatEntry(int,EGlobalStrings,const unsigned short*)` | `0x0036C200` 532 | `0x003D9430` 532 | `0x00401F80` 532 | `0x00413900` 780 |  |
-| `Construct()` | `0x0036C420` 132 | `0x003D9650` 132 | `0x004021A0` 132 | `0x00413840` 192 |  |
-| `CB3PostEventComponent()` |  |  |  | `0x0033C980` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x0036B410` 308 | `0x003D8560` 308 | `0x00401060` 308 | `0x00414E60` 456 |  |  |
+| `Update(float)` | `0x0036B550` 92 | `0x003D86A0` 92 | `0x004011A0` 92 | `0x00414DC0` 156 |  |  |
+| `SetHeading(EGlobalStrings,CB3StylisedText2dObject::EStylisedTextStyle,EB3GlobalImage)` | `0x0036B5B0` 496 | `0x003D8700` 528 | `0x00401200` 528 | `0x00414AF0` 708 |  |  |
+| `Prepare()` | `0x0036B7A0` 1276 | `0x003D8910` 1272 | `0x00401410` 1360 | `0x00414480` 1636 |  |  |
+| `PrepareStandings()` | `0x0036BCA0` 620 | `0x003D8E10` 688 | `0x00401960` 688 | `0x00414060` 848 |  |  |
+| `PrepareStandingsEntry(int,EGlobalStrings,int,const unsigned short*,bool)` | `0x0036BF10` 752 | `0x003D90C0` 880 | `0x00401C10` 880 | `0x00413C10` 1092 |  |  |
+| `PrepareStatEntry(int,EGlobalStrings,const unsigned short*)` | `0x0036C200` 532 | `0x003D9430` 532 | `0x00401F80` 532 | `0x00413900` 780 |  |  |
+| `Construct()` | `0x0036C420` 132 | `0x003D9650` 132 | `0x004021A0` 132 | `0x00413840` 192 |  |  |
+| `CB3PostEventComponent()` |  |  |  | `0x0033C980` 60 |  |  |
 
 ## Notes
 

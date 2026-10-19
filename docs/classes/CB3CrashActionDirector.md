@@ -7,33 +7,34 @@
 - **Area:** [Crashes, takedowns and scoring](../systems/crash-scoring.md)
 - **Source file:** `B3CrashActionDirector.cpp`
 - **Methods per build:** DNAT_200 16, B3DEBUG 16, B3INTERN 16, B3O0PCH 20
+- **Retail (SLUS-21050):** 16 of its 16 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `HandleCrashingVehicleWorldCollision(CB3VehiclePhysics*)` | `0x00178EE0` 364 | `0x001948C0` 648 | `0x00192390` 648 | `0x001AD980` 488 |  |
-| `HandleCrashingVehicleVehicleCollision(CB3CollidingPair*)` | `0x00179050` 1708 | `0x00194B50` 2924 | `0x00192620` 2924 | `0x001AD040` 2068 |  |
-| `ExplodeVehicle(GtMathPs2::CGtV3d,CB3VehiclePhysics*)` | `0x00179700` 136 | `0x001956C0` 308 | `0x00193190` 308 | `0x001ACE80` 284 |  |
-| `GetRaceCarCrashTime(int)` | `0x00179790` 24 | `0x00195800` 24 | `0x001932D0` 24 | `0x001ACE10` 52 |  |
-| `SetSympatheticTraffic(int,CB3VehiclePhysics*)` | `0x001797B0` 84 | `0x00195820` 84 | `0x001932F0` 84 | `0x001ACD50` 188 |  |
-| `StartTrafficCrashing(CB3TrafficPhysics*,int)` | `0x00179810` 288 | `0x00195880` 288 | `0x00193350` 288 | `0x001ACC60` 232 |  |
-| `StopRaceCarCrashing(int)` | `0x00179930` 36 | `0x001959A0` 36 | `0x00193470` 36 | `0x001ACC00` 88 |  |
-| `StartRaceCarCrashing(CB3RaceCarPhysics*,int,CB3CollidingPair*,CB3CrashStartInfo*)` | `0x00179960` 3412 | `0x001959D0` 4280 | `0x001934A0` 4056 | `0x001AB9E0` 4104 |  |
-| `DebugCrashEffect(CB3RaceCarPhysics*,CGtAxisAlignedBox*,GtMathPs2::CGtMatrix3x4*,unsigned int)` | `0x0017A6C0` 512 | `0x00196A90` 512 | `0x00194480` 512 | `0x001AB6B0` 812 |  |
-| `GetCrashZoneAndCorner(GtMathPs2::CGtV3d*,CGtAxisAlignedBox*,EB3CADZone*,EB3CADCorner*)` | `0x0017A8C0` 556 | `0x00196C90` 556 | `0x00194680` 556 | `0x001AB170` 1252 |  |
-| `UpdateTraffic(CB3CADTrafficData*,CB3TrafficPhysics*,float)` | `0x0017AAF0` 2700 | `0x00196EC0` 3688 | `0x001948B0` 3152 | `0x001AA6B0` 2368 |  |
-| `Update(float)` | `0x0017B580` 1024 | `0x00197D30` 1596 | `0x00195500` 1596 | `0x001AA080` 1496 |  |
-| `RenderDebugData()` | `0x0017B980` 664 | `0x00198370` 852 | `0x00195B40` 852 | `0x001A9CC0` 920 |  |
-| `UpdateRaceCar(int,CB3RaceCarPhysics*,float)` | `0x0017BC20` 1680 | `0x001986D0` 2328 | `0x00195EA0` 2132 | `0x001A96F0` 1488 |  |
-| `Prepare()` | `0x0017C2B0` 752 | `0x00198FF0` 752 | `0x00196700` 752 | `0x001A9200` 1252 |  |
-| `Construct()` | `0x0017CCC0` 100 | `0x00199E70` 100 | `0x001974A0` 100 | `0x001A87B0` 232 |  |
-| `ExplodeTanker(CB3VehiclePhysics*)` |  |  |  | `0x001ACFA0` 156 |  |
-| `IgniteVehicle(CB3VehiclePhysics*)` |  |  |  | `0x001ACE50` 40 |  |
-| `IsCornerImpact(CB3CADRaceCarData*)` |  |  |  | `0x001ACAE0` 76 |  |
-| `IsTBoneLargeVehicle(CB3CADRaceCarData*)` |  |  |  | `0x001ACB30` 76 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `HandleCrashingVehicleWorldCollision(CB3VehiclePhysics*)` | `0x00178EE0` 364 | `0x001948C0` 648 | `0x00192390` 648 | `0x001AD980` 488 | `0x001AD890` strong |  |
+| `HandleCrashingVehicleVehicleCollision(CB3CollidingPair*)` | `0x00179050` 1708 | `0x00194B50` 2924 | `0x00192620` 2924 | `0x001AD040` 2068 | `0x001ADC70` unverified |  |
+| `ExplodeVehicle(GtMathPs2::CGtV3d,CB3VehiclePhysics*)` | `0x00179700` 136 | `0x001956C0` 308 | `0x00193190` 308 | `0x001ACE80` 284 | `0x001AE3F0` strong |  |
+| `GetRaceCarCrashTime(int)` | `0x00179790` 24 | `0x00195800` 24 | `0x001932D0` 24 | `0x001ACE10` 52 | `0x001AE480` proven |  |
+| `SetSympatheticTraffic(int,CB3VehiclePhysics*)` | `0x001797B0` 84 | `0x00195820` 84 | `0x001932F0` 84 | `0x001ACD50` 188 | `0x001AE4A0` strong |  |
+| `StartTrafficCrashing(CB3TrafficPhysics*,int)` | `0x00179810` 288 | `0x00195880` 288 | `0x00193350` 288 | `0x001ACC60` 232 | `0x001AE500` strong |  |
+| `StopRaceCarCrashing(int)` | `0x00179930` 36 | `0x001959A0` 36 | `0x00193470` 36 | `0x001ACC00` 88 | `0x001AE660` strong |  |
+| `StartRaceCarCrashing(CB3RaceCarPhysics*,int,CB3CollidingPair*,CB3CrashStartInfo*)` | `0x00179960` 3412 | `0x001959D0` 4280 | `0x001934A0` 4056 | `0x001AB9E0` 4104 | `0x001AF450` unverified |  |
+| `DebugCrashEffect(CB3RaceCarPhysics*,CGtAxisAlignedBox*,GtMathPs2::CGtMatrix3x4*,unsigned int)` | `0x0017A6C0` 512 | `0x00196A90` 512 | `0x00194480` 512 | `0x001AB6B0` 812 | `0x001B0E10` proven |  |
+| `GetCrashZoneAndCorner(GtMathPs2::CGtV3d*,CGtAxisAlignedBox*,EB3CADZone*,EB3CADCorner*)` | `0x0017A8C0` 556 | `0x00196C90` 556 | `0x00194680` 556 | `0x001AB170` 1252 | `0x001B1010` strong |  |
+| `UpdateTraffic(CB3CADTrafficData*,CB3TrafficPhysics*,float)` | `0x0017AAF0` 2700 | `0x00196EC0` 3688 | `0x001948B0` 3152 | `0x001AA6B0` 2368 | `0x001B1240` strong |  |
+| `Update(float)` | `0x0017B580` 1024 | `0x00197D30` 1596 | `0x00195500` 1596 | `0x001AA080` 1496 | `0x001B1CC0` unverified |  |
+| `RenderDebugData()` | `0x0017B980` 664 | `0x00198370` 852 | `0x00195B40` 852 | `0x001A9CC0` 920 | `0x001B20C0` unverified |  |
+| `UpdateRaceCar(int,CB3RaceCarPhysics*,float)` | `0x0017BC20` 1680 | `0x001986D0` 2328 | `0x00195EA0` 2132 | `0x001A96F0` 1488 | `0x001B20D0` strong |  |
+| `Prepare()` | `0x0017C2B0` 752 | `0x00198FF0` 752 | `0x00196700` 752 | `0x001A9200` 1252 | `0x001B2760` strong |  |
+| `Construct()` | `0x0017CCC0` 100 | `0x00199E70` 100 | `0x001974A0` 100 | `0x001A87B0` 232 | `0x001B2A00` unverified |  |
+| `ExplodeTanker(CB3VehiclePhysics*)` |  |  |  | `0x001ACFA0` 156 |  |  |
+| `IgniteVehicle(CB3VehiclePhysics*)` |  |  |  | `0x001ACE50` 40 |  |  |
+| `IsCornerImpact(CB3CADRaceCarData*)` |  |  |  | `0x001ACAE0` 76 |  |  |
+| `IsTBoneLargeVehicle(CB3CADRaceCarData*)` |  |  |  | `0x001ACB30` 76 |  |  |
 
 ## Notes
 

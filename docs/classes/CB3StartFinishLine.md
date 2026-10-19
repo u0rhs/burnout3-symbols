@@ -7,18 +7,19 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3StartFinishLine.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 5
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Draw(int)` | `0x001596A0` 220 | `0x0016F170` 220 | `0x0016A910` 220 | `0x0017B4D0` 288 |  |
-| `Destruct()` | `0x00159780` 8 | `0x0016F250` 8 | `0x0016A9F0` 8 | `0x0017B4A0` 40 |  |
-| `Release()` | `0x00159790` 44 | `0x0016F260` 44 | `0x0016AA00` 44 | `0x0017B460` 56 |  |
-| `Prepare(CB3PlanarTriggerStruct*,bool)` | `0x001597C0` 204 | `0x0016F290` 284 | `0x0016AA30` 284 | `0x0017B3B0` 164 |  |
-| `Construct()` | `0x00159890` 12 | `0x0016F3B0` 12 | `0x0016AB50` 12 | `0x0017B370` 56 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Draw(int)` | `0x001596A0` 220 | `0x0016F170` 220 | `0x0016A910` 220 | `0x0017B4D0` 288 | `0x0015E720` likely |  |
+| `Destruct()` | `0x00159780` 8 | `0x0016F250` 8 | `0x0016A9F0` 8 | `0x0017B4A0` 40 | `0x0015E780` proven |  |
+| `Release()` | `0x00159790` 44 | `0x0016F260` 44 | `0x0016AA00` 44 | `0x0017B460` 56 | `0x0015E790` proven |  |
+| `Prepare(CB3PlanarTriggerStruct*,bool)` | `0x001597C0` 204 | `0x0016F290` 284 | `0x0016AA30` 284 | `0x0017B3B0` 164 | `0x0015E7C0` proven |  |
+| `Construct()` | `0x00159890` 12 | `0x0016F3B0` 12 | `0x0016AB50` 12 | `0x0017B370` 56 | `0x0015E890` proven |  |
 
 ## Notes
 

@@ -11,18 +11,18 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetMenuOptions(CB3MyBurnoutProfileLoadPage::EMenuOptions,int)` | `0x0039D020` 940 | `0x00416130` 1184 | `0x0043BDF0` 1184 | `0x00454AF0` 992 |  |
-| `ShowMessage(ELoadProfilePageMessages)` | `0x0039D3D0` 616 | `0x004165D0` 616 | `0x0043C290` 616 | `0x004546E0` 692 |  |
-| `ProcessMemoryCardEvent(EB3MenuFlowFSMEvents)` | `0x0039D640` 404 | `0x00416840` 404 | `0x0043C500` 404 | `0x00454480` 608 |  |
-| `Release()` | `0x0039D7E0` 12 | `0x004169E0` 12 | `0x0043C6A0` 12 | `0x00454450` 40 |  |
-| `Update()` | `0x0039D7F0` 1700 | `0x004169F0` 1940 | `0x0043C6B0` 1940 | `0x00453EA0` 1452 |  |
-| `Prepare()` | `0x0039DEA0` 248 | `0x00417190` 296 | `0x0043CE50` 296 | `0x00453D60` 320 |  |
-| `CB3MyBurnoutProfileLoadPage()` |  |  |  | `0x003426C0` 60 |  |
-| `ShowProfileSummary(unsigned int)` |  |  |  | `0x004549C0` 296 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetMenuOptions(CB3MyBurnoutProfileLoadPage::EMenuOptions,int)` | `0x0039D020` 940 | `0x00416130` 1184 | `0x0043BDF0` 1184 | `0x00454AF0` 992 |  |  |
+| `ShowMessage(ELoadProfilePageMessages)` | `0x0039D3D0` 616 | `0x004165D0` 616 | `0x0043C290` 616 | `0x004546E0` 692 |  |  |
+| `ProcessMemoryCardEvent(EB3MenuFlowFSMEvents)` | `0x0039D640` 404 | `0x00416840` 404 | `0x0043C500` 404 | `0x00454480` 608 |  |  |
+| `Release()` | `0x0039D7E0` 12 | `0x004169E0` 12 | `0x0043C6A0` 12 | `0x00454450` 40 |  |  |
+| `Update()` | `0x0039D7F0` 1700 | `0x004169F0` 1940 | `0x0043C6B0` 1940 | `0x00453EA0` 1452 |  |  |
+| `Prepare()` | `0x0039DEA0` 248 | `0x00417190` 296 | `0x0043CE50` 296 | `0x00453D60` 320 |  |  |
+| `CB3MyBurnoutProfileLoadPage()` |  |  |  | `0x003426C0` 60 |  |  |
+| `ShowProfileSummary(unsigned int)` |  |  |  | `0x004549C0` 296 |  |  |
 
 ## Notes
 

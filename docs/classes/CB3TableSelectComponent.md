@@ -7,19 +7,20 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3TableSelectComponent.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 5
+- **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004407E0`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x00309C20` 64 | `0x0035EBA0` 64 | `0x0038FE60` 64 | `0x00393A90` 128 |  |
-| `Update(float)` | `0x00309C60` 292 | `0x0035EBE0` 292 | `0x0038FEA0` 292 | `0x003938A0` 496 |  |
-| `Prepare(int,CGt2dObjectTable*,const CB3MenuComponentSelectionData*)` | `0x00309D90` 96 | `0x0035ED10` 140 | `0x0038FFD0` 140 | `0x00393820` 120 |  |
-| `Construct()` | `0x00309DF0` 44 | `0x0035EDA0` 44 | `0x00390060` 44 | `0x003937E0` 52 |  |
-| `CB3TableSelectComponent()` |  |  |  | `0x0033C310` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x00309C20` 64 | `0x0035EBA0` 64 | `0x0038FE60` 64 | `0x00393A90` 128 | `0x003522C0` proven |  |
+| `Update(float)` | `0x00309C60` 292 | `0x0035EBE0` 292 | `0x0038FEA0` 292 | `0x003938A0` 496 | `0x00352300` proven |  |
+| `Prepare(int,CGt2dObjectTable*,const CB3MenuComponentSelectionData*)` | `0x00309D90` 96 | `0x0035ED10` 140 | `0x0038FFD0` 140 | `0x00393820` 120 | `0x00352430` proven |  |
+| `Construct()` | `0x00309DF0` 44 | `0x0035EDA0` 44 | `0x00390060` 44 | `0x003937E0` 52 | `0x00352490` proven |  |
+| `CB3TableSelectComponent()` |  |  |  | `0x0033C310` 60 |  |  |
 
 ## Notes
 

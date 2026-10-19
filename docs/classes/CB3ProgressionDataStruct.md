@@ -7,14 +7,15 @@
 - **Area:** [Progression, profiles and saves](../systems/progression-saves.md)
 - **Source file:** `B3ProgressionDataStruct.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 1
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Fixup(unsigned int)` | `0x0031D940` 208 | `0x00378D20` 208 | `0x003A7900` 208 | `0x003A83A0` 152 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Fixup(unsigned int)` | `0x0031D940` 208 | `0x00378D20` 208 | `0x003A7900` 208 | `0x003A83A0` 152 | `0x00367E70` proven |  |
 
 ## Notes
 

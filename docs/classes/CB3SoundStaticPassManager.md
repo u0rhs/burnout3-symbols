@@ -7,17 +7,18 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundStaticPassManager.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x003C3810` 8 | `0x00440070` 8 | `0x00468180` 8 | `0x0047ECC0` 16 |  |
-| `Update()` | `0x003C3820` 1204 | `0x00440080` 2576 | `0x00468190` 2576 | `0x0047E5B0` 1804 |  |
-| `Prepare()` | `0x003C3CE0` 16 | `0x00440A90` 16 | `0x00468BA0` 16 | `0x0047E580` 48 |  |
-| `TriggerPass(GtMathPs2::CGtV3d,float,float)` |  |  |  | `0x0047ECD0` 248 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x003C3810` 8 | `0x00440070` 8 | `0x00468180` 8 | `0x0047ECC0` 16 | `0x0041D3D0` strong |  |
+| `Update()` | `0x003C3820` 1204 | `0x00440080` 2576 | `0x00468190` 2576 | `0x0047E5B0` 1804 | `0x0041D3E0` likely |  |
+| `Prepare()` | `0x003C3CE0` 16 | `0x00440A90` 16 | `0x00468BA0` 16 | `0x0047E580` 48 | `0x0041D8D0` proven |  |
+| `TriggerPass(GtMathPs2::CGtV3d,float,float)` |  |  |  | `0x0047ECD0` 248 |  |  |
 
 ## Notes
 

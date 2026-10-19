@@ -7,48 +7,49 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dFrameHierarchy.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 33
+- **Retail (SLUS-21050):** 4 of its 6 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `operator =(const GtMathPs2::CGtV2d&)` | `0x0019B110` 24 | `0x001CFCF0` 24 | `0x001C92D0` 24 | `0x00140480` 52 |  |
-| `operator +(const GtMathPs2::CGtV2d&) const` | `0x0019B160` 52 |  |  |  |  |
-| `operator *(const GtMathPs2::CGtV2d&) const` | `0x0019B1A0` 52 |  |  |  |  |
-| `CGtV2d(const GtMathPs2::CGtV2d&)` | `0x0019B1E0` 24 | `0x001CFDE0` 24 | `0x001C93A0` 24 | `0x00134A00` 52 |  |
-| `CGtV2d(float,float)` | `0x0019B200` 16 | `0x001CFE00` 16 | `0x001C93C0` 16 | `0x00134A40` 56 |  |
-| `operator +(const GtMathPs2::CGtV2d&)` |  | `0x001CFD60` 52 | `0x001C9320` 52 | `0x00176C30` 120 |  |
-| `operator *(const GtMathPs2::CGtV2d&)` |  | `0x001CFDA0` 52 | `0x001C9360` 52 | `0x00140100` 120 |  |
-| `CGtV2d()` | `0x0020DC60` 8 | `0x0021A1F0` 8 | `0x00259E70` 8 | `0x00134BB0` 24 |  |
-| `GetLength()` |  |  |  | `0x00176B30` 96 |  |
-| `GetSquaredLength()` |  |  |  | `0x00176A50` 80 |  |
-| `IsZero()` |  |  |  | `0x0028FFF0` 108 |  |
-| `Normalise()` |  |  |  | `0x001B6480` 112 |  |
-| `Set(float,float)` |  |  |  | `0x00130FC0` 52 |  |
-| `SetFromRwV2d(const RwV2d*)` |  |  |  | `0x00399680` 56 |  |
-| `SetU(float)` |  |  |  | `0x00196680` 36 |  |
-| `SetV(float)` |  |  |  | `0x00196650` 36 |  |
-| `SetX(float)` |  |  |  | `0x001404C0` 36 |  |
-| `SetY(float)` |  |  |  | `0x0016EA30` 36 |  |
-| `U()` |  |  |  | `0x00196440` 28 |  |
-| `V()` |  |  |  | `0x00196420` 28 |  |
-| `X()` |  |  |  | `0x00130FA0` 28 |  |
-| `Y()` |  |  |  | `0x00130F80` 28 |  |
-| `Zero()` |  |  |  | `0x0016EBE0` 72 |  |
-| `operator *(float)` |  |  |  | `0x00176CB0` 112 |  |
-| `operator *=(const GtMathPs2::CGtV2d&)` |  |  |  | `0x001401D0` 104 |  |
-| `operator *=(float)` |  |  |  | `0x00176BD0` 96 |  |
-| `operator +=(const GtMathPs2::CGtV2d&)` |  |  |  | `0x00134990` 104 |  |
-| `operator +=(float)` |  |  |  | `0x00485130` 96 |  |
-| `operator -()` |  |  |  | `0x001A1D80` 84 |  |
-| `operator -(const GtMathPs2::CGtV2d&)` |  |  |  | `0x00176D20` 120 |  |
-| `operator -=(const GtMathPs2::CGtV2d&)` |  |  |  | `0x003A8190` 104 |  |
-| `operator /(const GtMathPs2::CGtV2d&)` |  |  |  | `0x001402E0` 120 |  |
-| `operator /(float)` |  |  |  | `0x003945F0` 128 |  |
-| `operator /=(const GtMathPs2::CGtV2d&)` |  |  |  | `0x0043D750` 104 |  |
-| `operator /=(float)` |  |  |  | `0x0025B170` 112 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `operator =(const GtMathPs2::CGtV2d&)` | `0x0019B110` 24 | `0x001CFCF0` 24 | `0x001C92D0` 24 | `0x00140480` 52 |  |  |
+| `operator +(const GtMathPs2::CGtV2d&) const` | `0x0019B160` 52 |  |  |  | `0x001D4EE0` proven |  |
+| `operator *(const GtMathPs2::CGtV2d&) const` | `0x0019B1A0` 52 |  |  |  | `0x001D4F20` proven |  |
+| `CGtV2d(const GtMathPs2::CGtV2d&)` | `0x0019B1E0` 24 | `0x001CFDE0` 24 | `0x001C93A0` 24 | `0x00134A00` 52 | `0x001D4F60` strong |  |
+| `CGtV2d(float,float)` | `0x0019B200` 16 | `0x001CFE00` 16 | `0x001C93C0` 16 | `0x00134A40` 56 | `0x001D4F80` proven |  |
+| `operator +(const GtMathPs2::CGtV2d&)` |  | `0x001CFD60` 52 | `0x001C9320` 52 | `0x00176C30` 120 |  |  |
+| `operator *(const GtMathPs2::CGtV2d&)` |  | `0x001CFDA0` 52 | `0x001C9360` 52 | `0x00140100` 120 |  |  |
+| `CGtV2d()` | `0x0020DC60` 8 | `0x0021A1F0` 8 | `0x00259E70` 8 | `0x00134BB0` 24 |  |  |
+| `GetLength()` |  |  |  | `0x00176B30` 96 |  |  |
+| `GetSquaredLength()` |  |  |  | `0x00176A50` 80 |  |  |
+| `IsZero()` |  |  |  | `0x0028FFF0` 108 |  |  |
+| `Normalise()` |  |  |  | `0x001B6480` 112 |  |  |
+| `Set(float,float)` |  |  |  | `0x00130FC0` 52 |  |  |
+| `SetFromRwV2d(const RwV2d*)` |  |  |  | `0x00399680` 56 |  |  |
+| `SetU(float)` |  |  |  | `0x00196680` 36 |  |  |
+| `SetV(float)` |  |  |  | `0x00196650` 36 |  |  |
+| `SetX(float)` |  |  |  | `0x001404C0` 36 |  |  |
+| `SetY(float)` |  |  |  | `0x0016EA30` 36 |  |  |
+| `U()` |  |  |  | `0x00196440` 28 |  |  |
+| `V()` |  |  |  | `0x00196420` 28 |  |  |
+| `X()` |  |  |  | `0x00130FA0` 28 |  |  |
+| `Y()` |  |  |  | `0x00130F80` 28 |  |  |
+| `Zero()` |  |  |  | `0x0016EBE0` 72 |  |  |
+| `operator *(float)` |  |  |  | `0x00176CB0` 112 |  |  |
+| `operator *=(const GtMathPs2::CGtV2d&)` |  |  |  | `0x001401D0` 104 |  |  |
+| `operator *=(float)` |  |  |  | `0x00176BD0` 96 |  |  |
+| `operator +=(const GtMathPs2::CGtV2d&)` |  |  |  | `0x00134990` 104 |  |  |
+| `operator +=(float)` |  |  |  | `0x00485130` 96 |  |  |
+| `operator -()` |  |  |  | `0x001A1D80` 84 |  |  |
+| `operator -(const GtMathPs2::CGtV2d&)` |  |  |  | `0x00176D20` 120 |  |  |
+| `operator -=(const GtMathPs2::CGtV2d&)` |  |  |  | `0x003A8190` 104 |  |  |
+| `operator /(const GtMathPs2::CGtV2d&)` |  |  |  | `0x001402E0` 120 |  |  |
+| `operator /(float)` |  |  |  | `0x003945F0` 128 |  |  |
+| `operator /=(const GtMathPs2::CGtV2d&)` |  |  |  | `0x0043D750` 104 |  |  |
+| `operator /=(float)` |  |  |  | `0x0025B170` 112 |  |  |
 
 ## Notes
 

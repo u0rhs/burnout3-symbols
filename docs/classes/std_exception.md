@@ -12,13 +12,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `~exception()` | `0x00100400` 76 | `0x00100400` 76 | `0x00100400` 76 | `0x00100440` 76 |  |
-| `what()` |  | `0x00100450` 12 | `0x00100450` 12 | `0x00100490` 12 |  |
-| `what() const` | `0x00100450` 12 |  |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `~exception()` | `0x00100400` 76 | `0x00100400` 76 | `0x00100400` 76 | `0x00100440` 76 |  |  |
+| `what()` |  | `0x00100450` 12 | `0x00100450` 12 | `0x00100490` 12 |  |  |
+| `what() const` | `0x00100450` 12 |  |  |  |  |  |
 
 ## Static data (DNAT_200)
 

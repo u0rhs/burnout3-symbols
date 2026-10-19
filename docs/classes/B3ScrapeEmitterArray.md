@@ -9,16 +9,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `AddEntry(CB3ScrapeEmitter*)` |  |  |  | `0x003C4DC0` 92 |  |
-| `GetSize()` |  |  |  | `0x003C4BC0` 28 |  |
-| `Prepare()` |  |  |  | `0x003C4930` 72 |  |
-| `RemoveEntry(int)` |  |  |  | `0x003C4BE0` 196 |  |
-| `operator CB3ScrapeEmitter**()` |  |  |  | `0x003C5120` 24 |  |
-| `operator [](int)` |  |  |  | `0x003C4CB0` 72 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `AddEntry(CB3ScrapeEmitter*)` |  |  |  | `0x003C4DC0` 92 |  |  |
+| `GetSize()` |  |  |  | `0x003C4BC0` 28 |  |  |
+| `Prepare()` |  |  |  | `0x003C4930` 72 |  |  |
+| `RemoveEntry(int)` |  |  |  | `0x003C4BE0` 196 |  |  |
+| `operator CB3ScrapeEmitter**()` |  |  |  | `0x003C5120` 24 |  |  |
+| `operator [](int)` |  |  |  | `0x003C4CB0` 72 |  |  |
 
 ## Notes
 

@@ -7,17 +7,18 @@
 - **Area:** [HUD](../systems/hud.md)
 - **Source file:** `B3HUDImpactTime.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 3
+- **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00441DD0`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Update(float)` | `0x00386E80` 804 | `0x003FA2E0` 1008 | `0x00421F10` 1044 | `0x0043AD70` 1076 |  |
-| `Prepare(int,EHUDAlign,int)` | `0x003871B0` 184 | `0x003FA6D0` 272 | `0x00422330` 272 | `0x0043AC80` 232 |  |
-| `CB3HUDImpactTime()` |  |  |  | `0x00199700` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Update(float)` | `0x00386E80` 804 | `0x003FA2E0` 1008 | `0x00421F10` 1044 | `0x0043AD70` 1076 |  |  |
+| `Prepare(int,EHUDAlign,int)` | `0x003871B0` 184 | `0x003FA6D0` 272 | `0x00422330` 272 | `0x0043AC80` 232 | `0x003D6AB0` unverified |  |
+| `CB3HUDImpactTime()` |  |  |  | `0x00199700` 60 |  |  |
 
 ## Notes
 

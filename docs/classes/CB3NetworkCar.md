@@ -11,21 +11,21 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PrepareSound()` | `0x0014C950` 104 | `0x0015DC40` 104 | `0x00159530` 104 | `0x001677F0` 192 |  |
-| `Release()` | `0x0014C9C0` 8 | `0x0015DCB0` 8 | `0x001595A0` 8 | `0x001677C0` 40 |  |
-| `Update()` | `0x0014C9D0` 8 | `0x0015DCC0` 8 | `0x001595B0` 8 | `0x00167790` 40 |  |
-| `Prepare()` | `0x0014C9E0` 276 | `0x0015DCD0` 276 | `0x001595C0` 276 | `0x001672D0` 220 |  |
-| `Construct(int)` | `0x0014CB00` 64 | `0x0015DDF0` 64 | `0x001596E0` 64 | `0x00167280` 76 |  |
-| `CB3NetworkCar()` |  |  |  | `0x00190D80` 140 |  |
-| `GetNetworkPlayer()` |  |  |  | `0x0016E9C0` 48 |  |
-| `InRange()` |  |  |  | `0x00142000` 28 |  |
-| `SetInRange()` |  |  |  | `0x00281390` 32 |  |
-| `SetNetworkPlayer(CB3NetworkPlayer*)` |  |  |  | `0x00141B70` 52 |  |
-| `SetOutOfRange()` |  |  |  | `0x002813B0` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PrepareSound()` | `0x0014C950` 104 | `0x0015DC40` 104 | `0x00159530` 104 | `0x001677F0` 192 |  |  |
+| `Release()` | `0x0014C9C0` 8 | `0x0015DCB0` 8 | `0x001595A0` 8 | `0x001677C0` 40 |  |  |
+| `Update()` | `0x0014C9D0` 8 | `0x0015DCC0` 8 | `0x001595B0` 8 | `0x00167790` 40 |  |  |
+| `Prepare()` | `0x0014C9E0` 276 | `0x0015DCD0` 276 | `0x001595C0` 276 | `0x001672D0` 220 |  |  |
+| `Construct(int)` | `0x0014CB00` 64 | `0x0015DDF0` 64 | `0x001596E0` 64 | `0x00167280` 76 |  |  |
+| `CB3NetworkCar()` |  |  |  | `0x00190D80` 140 |  |  |
+| `GetNetworkPlayer()` |  |  |  | `0x0016E9C0` 48 |  |  |
+| `InRange()` |  |  |  | `0x00142000` 28 |  |  |
+| `SetInRange()` |  |  |  | `0x00281390` 32 |  |  |
+| `SetNetworkPlayer(CB3NetworkPlayer*)` |  |  |  | `0x00141B70` 52 |  |  |
+| `SetOutOfRange()` |  |  |  | `0x002813B0` 28 |  |  |
 
 ## Notes
 

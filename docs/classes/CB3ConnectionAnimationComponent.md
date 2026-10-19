@@ -7,18 +7,19 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3ConnectionAnimationComponent.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004407F0`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x00309E20` 212 | `0x0035EDD0` 212 | `0x00390090` 212 | `0x00394480` 360 |  |
-| `Update(float)` | `0x00309F00` 996 | `0x0035EEB0` 996 | `0x00390170` 996 | `0x00393D20` 1884 |  |
-| `Construct()` | `0x0030A2F0` 288 | `0x0035F2A0` 288 | `0x00390560` 288 | `0x00393B10` 528 |  |
-| `CB3ConnectionAnimationComponent()` |  |  |  | `0x0033C190` 108 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x00309E20` 212 | `0x0035EDD0` 212 | `0x00390090` 212 | `0x00394480` 360 | `0x003524C0` proven |  |
+| `Update(float)` | `0x00309F00` 996 | `0x0035EEB0` 996 | `0x00390170` 996 | `0x00393D20` 1884 | `0x003525A0` proven |  |
+| `Construct()` | `0x0030A2F0` 288 | `0x0035F2A0` 288 | `0x00390560` 288 | `0x00393B10` 528 | `0x00352990` proven |  |
+| `CB3ConnectionAnimationComponent()` |  |  |  | `0x0033C190` 108 |  |  |
 
 ## Notes
 

@@ -7,18 +7,19 @@
 - **Area:** [Libraries](../systems/libraries.md)
 - **Source file:** `exceptionhandle` (MSLGCC_PS2.LIB)
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 2
+- **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FB00`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 - **RTTI (DNAT_200):** `0x0041B428`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `~bad_exception()` | `0x001010A0` 96 | `0x001010A0` 96 | `0x001010A0` 96 | `0x001010E0` 96 |  |
-| `what()` |  | `0x00101FC0` 12 | `0x00101FC0` 12 | `0x00102000` 12 |  |
-| `what() const` | `0x00101FC0` 12 |  |  |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `~bad_exception()` | `0x001010A0` 96 | `0x001010A0` 96 | `0x001010A0` 96 | `0x001010E0` 96 | `0x001010A0` proven |  |
+| `what()` |  | `0x00101FC0` 12 | `0x00101FC0` 12 | `0x00102000` 12 |  |  |
+| `what() const` | `0x00101FC0` 12 |  |  |  |  |  |
 
 ## Static data (DNAT_200)
 

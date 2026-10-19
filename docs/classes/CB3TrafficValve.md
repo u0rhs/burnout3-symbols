@@ -7,36 +7,37 @@
 - **Area:** [Traffic](../systems/traffic.md)
 - **Source file:** `B3TrafficValve.cpp`
 - **Methods per build:** DNAT_200 16, B3DEBUG 16, B3INTERN 16, B3O0PCH 23
+- **Retail (SLUS-21050):** 16 of its 16 DNAT_200 methods found, 16 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ResetCrashmodeData()` | `0x00228060` 48 | `0x0023EED0` 48 | `0x0027B860` 48 | `0x00280090` 84 |  |
-| `RolloutCrashTraffic(int)` | `0x00228090` 364 | `0x0023EF00` 492 | `0x0027B890` 492 | `0x0027FEA0` 496 |  |
-| `RolloutCrashTraffic()` | `0x00228200` 80 | `0x0023F0F0` 80 | `0x0027BA80` 80 | `0x0027FE40` 92 |  |
-| `ApplyNewFormation(int)` | `0x00228250` 644 | `0x0023F140` 580 | `0x0027BAD0` 580 | `0x0027FB30` 784 |  |
-| `GetFormationAfterLaneChange(bool,unsigned char,int,unsigned char*)` | `0x002284E0` 152 | `0x0023F390` 348 | `0x0027BD20` 336 | `0x0027F9B0` 380 |  |
-| `GetSpeedAfterLaneChange(bool,int,int)` | `0x00228580` 32 | `0x0023F4F0` 160 | `0x0027BE70` 160 | `0x0027F920` 144 |  |
-| `GetLaneChanges(bool*,ETrafficVehicleCategories,int,float*)` | `0x002285A0` 708 | `0x0023F590` 708 | `0x0027BF10` 708 | `0x0027F5B0` 876 |  |
-| `FillLaneSection(int,int,int,int,CB3StartFinishLine*,int,bool)` | `0x00228870` 2632 | `0x0023F860` 2892 | `0x0027C1E0` 2892 | `0x0027EA30` 2388 |  |
-| `GenerateInitialTraffic(CB3StartFinishLine*,int)` | `0x002292C0` 284 | `0x002403B0` 284 | `0x0027CD30` 284 | `0x0027E8D0` 352 |  |
-| `GetRandomVehicleID(ETrafficVehicleCategories)` | `0x002293E0` 464 | `0x002404D0` 552 | `0x0027CE50` 552 | `0x0027E370` 688 |  |
-| `Release()` | `0x002295B0` 108 | `0x00240700` 108 | `0x0027D080` 108 | `0x0027E1C0` 212 |  |
-| `UpdateGeneration(int,int,unsigned short,float)` | `0x00229620` 1880 | `0x00240770` 2136 | `0x0027D0F0` 2136 | `0x0027D930` 1224 |  |
-| `Update(int,unsigned short,float,bool,bool)` | `0x00229D80` 964 | `0x00240FD0` 1164 | `0x0027D950` 1164 | `0x0027D800` 300 |  |
-| `PrepareGenerationTimes(float,bool)` | `0x0022A150` 532 | `0x00241460` 532 | `0x0027DDE0` 532 | `0x0027D640` 436 |  |
-| `Prepare(CB3TrafficValvePositionStruct*)` | `0x0022A370` 280 | `0x00241680` 280 | `0x0027E000` 280 | `0x0027D490` 380 |  |
-| `Construct()` | `0x0022A490` 104 | `0x002417A0` 104 | `0x0027E120` 104 | `0x0027D3C0` 140 |  |
-| `CalcNextGenerationTime(int,int,float)` |  |  |  | `0x0027E2A0` 200 |  |
-| `GetRandomVehicleCategory(int,float)` |  |  |  | `0x0027F390` 236 |  |
-| `GetRandomVehicleColour(CB3TrafficVehicleWeightStruct*)` |  |  |  | `0x0027E820` 176 |  |
-| `GetSpecialCategory()` |  |  |  | `0x0027E730` 228 |  |
-| `GetSpecialGtID()` |  |  |  | `0x0027E620` 268 |  |
-| `IsGenerationSegmentSafe(int,int,int)` |  |  |  | `0x0027F480` 296 |  |
-| `UpdateCrashModeGeneration(int,float)` |  |  |  | `0x0027DF40` 640 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ResetCrashmodeData()` | `0x00228060` 48 | `0x0023EED0` 48 | `0x0027B860` 48 | `0x00280090` 84 | `0x002662B0` proven |  |
+| `RolloutCrashTraffic(int)` | `0x00228090` 364 | `0x0023EF00` 492 | `0x0027B890` 492 | `0x0027FEA0` 496 | `0x002662E0` proven |  |
+| `RolloutCrashTraffic()` | `0x00228200` 80 | `0x0023F0F0` 80 | `0x0027BA80` 80 | `0x0027FE40` 92 | `0x00266450` proven |  |
+| `ApplyNewFormation(int)` | `0x00228250` 644 | `0x0023F140` 580 | `0x0027BAD0` 580 | `0x0027FB30` 784 | `0x002664B0` proven |  |
+| `GetFormationAfterLaneChange(bool,unsigned char,int,unsigned char*)` | `0x002284E0` 152 | `0x0023F390` 348 | `0x0027BD20` 336 | `0x0027F9B0` 380 | `0x00266740` proven |  |
+| `GetSpeedAfterLaneChange(bool,int,int)` | `0x00228580` 32 | `0x0023F4F0` 160 | `0x0027BE70` 160 | `0x0027F920` 144 | `0x002667E0` proven |  |
+| `GetLaneChanges(bool*,ETrafficVehicleCategories,int,float*)` | `0x002285A0` 708 | `0x0023F590` 708 | `0x0027BF10` 708 | `0x0027F5B0` 876 | `0x00266810` proven |  |
+| `FillLaneSection(int,int,int,int,CB3StartFinishLine*,int,bool)` | `0x00228870` 2632 | `0x0023F860` 2892 | `0x0027C1E0` 2892 | `0x0027EA30` 2388 | `0x00266AE0` proven |  |
+| `GenerateInitialTraffic(CB3StartFinishLine*,int)` | `0x002292C0` 284 | `0x002403B0` 284 | `0x0027CD30` 284 | `0x0027E8D0` 352 | `0x00267520` proven |  |
+| `GetRandomVehicleID(ETrafficVehicleCategories)` | `0x002293E0` 464 | `0x002404D0` 552 | `0x0027CE50` 552 | `0x0027E370` 688 | `0x00267640` proven |  |
+| `Release()` | `0x002295B0` 108 | `0x00240700` 108 | `0x0027D080` 108 | `0x0027E1C0` 212 | `0x00267790` proven |  |
+| `UpdateGeneration(int,int,unsigned short,float)` | `0x00229620` 1880 | `0x00240770` 2136 | `0x0027D0F0` 2136 | `0x0027D930` 1224 | `0x00267800` proven |  |
+| `Update(int,unsigned short,float,bool,bool)` | `0x00229D80` 964 | `0x00240FD0` 1164 | `0x0027D950` 1164 | `0x0027D800` 300 | `0x00267EC0` proven |  |
+| `PrepareGenerationTimes(float,bool)` | `0x0022A150` 532 | `0x00241460` 532 | `0x0027DDE0` 532 | `0x0027D640` 436 | `0x00268270` proven |  |
+| `Prepare(CB3TrafficValvePositionStruct*)` | `0x0022A370` 280 | `0x00241680` 280 | `0x0027E000` 280 | `0x0027D490` 380 | `0x00268490` proven |  |
+| `Construct()` | `0x0022A490` 104 | `0x002417A0` 104 | `0x0027E120` 104 | `0x0027D3C0` 140 | `0x002685B0` proven |  |
+| `CalcNextGenerationTime(int,int,float)` |  |  |  | `0x0027E2A0` 200 |  |  |
+| `GetRandomVehicleCategory(int,float)` |  |  |  | `0x0027F390` 236 |  |  |
+| `GetRandomVehicleColour(CB3TrafficVehicleWeightStruct*)` |  |  |  | `0x0027E820` 176 |  |  |
+| `GetSpecialCategory()` |  |  |  | `0x0027E730` 228 |  |  |
+| `GetSpecialGtID()` |  |  |  | `0x0027E620` 268 |  |  |
+| `IsGenerationSegmentSafe(int,int,int)` |  |  |  | `0x0027F480` 296 |  |  |
+| `UpdateCrashModeGeneration(int,float)` |  |  |  | `0x0027DF40` 640 |  |  |
 
 ## Notes
 

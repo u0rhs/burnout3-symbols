@@ -14,23 +14,25 @@ The World Tour, unlocks and rewards, records, the profile and memory card saving
 
 In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_200.symbols.txt](../../data/burnout3-prototype/maps/DNAT_200.symbols.txt) (search for `==== <file>`).
 
-| File | Functions | Code bytes | First function |
-|---|---:|---:|---|
-| `B3Profile.cpp` | 76 | 18,288 | `0x00134E50` |
-| `B3ProgressionManager.cpp` | 3 | 24 | `0x00139790` |
-| `GTMemoryDevicePS2_MC2.cpp` | 16 | 4,492 | `0x002CA4C0` |
-| `B3ProgressionDataStruct.cpp` | 1 | 208 | `0x0031D940` |
-| `B3HardCodedTrackList.cpp` | 5 | 412 | `0x0039B120` |
-| `B3HardCodedVehicleList.cpp` | 8 | 476 | `0x0039B2E0` |
-| `B3HardCodedTrackRegionList.cpp` | 13 | 1,344 | `0x003A5D80` |
-| `B3HardCodedCheatList.cpp` | 2 | 48 | `0x003A6D90` |
-| `B3HardCodedHeadlineList.cpp` | 3 | 72 | `0x003A6DD0` |
-| `B3HardCodedSpecialEventList.cpp` | 2 | 48 | `0x003A6E30` |
-| `B3HardCodedTrophyList.cpp` | 8 | 208 | `0x003A6ED0` |
-| `B3MemoryCardControllerPS2.cpp` | 2 | 528 | `0x003AA170` |
-| `B3MemoryCardFSMPS2.cpp` | 7 | 6,472 | `0x003AA390` |
-| `B3MemoryCardController.cpp` | 17 | 6,728 | `0x003C5400` |
-| `B3MemoryCardFSMSlavePS2.cpp` | 8 | 4,692 | `0x003C6DF0` |
+**Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
+|---|---:|---:|---|---:|---|
+| `B3Profile.cpp` | 76 | 18,288 | `0x00134E50` | 10 (0) | `0x00136480`–`0x001383B0` |
+| `B3ProgressionManager.cpp` | 3 | 24 | `0x00139790` |  |  |
+| `GTMemoryDevicePS2_MC2.cpp` | 16 | 4,492 | `0x002CA4C0` | 16 (0) | `0x003096E0`–`0x0030A8E0` |
+| `B3ProgressionDataStruct.cpp` | 1 | 208 | `0x0031D940` | 1 (1) | `0x00367E70`–`0x00367E70` |
+| `B3HardCodedTrackList.cpp` | 5 | 412 | `0x0039B120` | 1 (0) | `0x003EAB90`–`0x003EAB90` |
+| `B3HardCodedVehicleList.cpp` | 8 | 476 | `0x0039B2E0` |  |  |
+| `B3HardCodedTrackRegionList.cpp` | 13 | 1,344 | `0x003A5D80` | 3 (1) | `0x003F5AC0`–`0x003F5B00` |
+| `B3HardCodedCheatList.cpp` | 2 | 48 | `0x003A6D90` |  |  |
+| `B3HardCodedHeadlineList.cpp` | 3 | 72 | `0x003A6DD0` |  |  |
+| `B3HardCodedSpecialEventList.cpp` | 2 | 48 | `0x003A6E30` |  |  |
+| `B3HardCodedTrophyList.cpp` | 8 | 208 | `0x003A6ED0` |  |  |
+| `B3MemoryCardControllerPS2.cpp` | 2 | 528 | `0x003AA170` |  |  |
+| `B3MemoryCardFSMPS2.cpp` | 7 | 6,472 | `0x003AA390` |  |  |
+| `B3MemoryCardController.cpp` | 17 | 6,728 | `0x003C5400` | 1 (0) | `0x004216A0`–`0x004216A0` |
+| `B3MemoryCardFSMSlavePS2.cpp` | 8 | 4,692 | `0x003C6DF0` |  |  |
 
 ## Classes
 

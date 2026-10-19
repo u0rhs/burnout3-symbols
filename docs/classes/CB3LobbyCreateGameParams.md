@@ -9,37 +9,37 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ClassLimit()` |  |  |  | `0x003469A0` 36 |  |
-| `GameMode()` |  |  |  | `0x00346480` 28 |  |
-| `GameName()` |  |  |  | `0x00345B00` 28 |  |
-| `InfiniteBoost()` |  |  |  | `0x0034E4B0` 44 |  |
-| `LapsLimit()` |  |  |  | `0x0034E480` 36 |  |
-| `MaxPlayers()` |  |  |  | `0x003F13B0` 28 |  |
-| `Password()` |  |  |  | `0x003F1390` 28 |  |
-| `RagerClassLimit()` |  |  |  | `0x003469D0` 36 |  |
-| `RankLimit()` |  |  |  | `0x003F13D0` 32 |  |
-| `SetClassLimit(int)` |  |  |  | `0x003BDC30` 72 |  |
-| `SetGameMode(EB3MenuChoicesOnline)` |  |  |  | `0x003BDBA0` 36 |  |
-| `SetGameName(char*)` |  |  |  | `0x003BDC00` 36 |  |
-| `SetInfiniteBoost(bool)` |  |  |  | `0x0035CBC0` 80 |  |
-| `SetLapsLimit(int)` |  |  |  | `0x0035CC10` 68 |  |
-| `SetMaxPlayers(int)` |  |  |  | `0x0035CC60` 36 |  |
-| `SetNetworkVersion(int)` |  |  |  | `0x0035F9E0` 64 |  |
-| `SetPassword(char*)` |  |  |  | `0x003BDBD0` 36 |  |
-| `SetPlayerBootedCallback(bool (*)` |  |  |  | `0x0035F960` 52 |  |
-| `SetPlayerListChangedCallback(bool (*)` |  |  |  | `0x0035F9A0` 52 |  |
-| `SetRagerClassLimit(int)` |  |  |  | `0x003F8BF0` 72 |  |
-| `SetRankLimit(int)` |  |  |  | `0x003F1860` 64 |  |
-| `SetSkillLevel(int)` |  |  |  | `0x002867B0` 36 |  |
-| `SetStage(unsigned long)` |  |  |  | `0x0035F900` 48 |  |
-| `SetTrack(unsigned long)` |  |  |  | `0x0035F930` 48 |  |
-| `SkillLevel()` |  |  |  | `0x002867E0` 28 |  |
-| `Stage()` |  |  |  | `0x003465C0` 48 |  |
-| `Track()` |  |  |  | `0x003465F0` 48 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ClassLimit()` |  |  |  | `0x003469A0` 36 |  |  |
+| `GameMode()` |  |  |  | `0x00346480` 28 |  |  |
+| `GameName()` |  |  |  | `0x00345B00` 28 |  |  |
+| `InfiniteBoost()` |  |  |  | `0x0034E4B0` 44 |  |  |
+| `LapsLimit()` |  |  |  | `0x0034E480` 36 |  |  |
+| `MaxPlayers()` |  |  |  | `0x003F13B0` 28 |  |  |
+| `Password()` |  |  |  | `0x003F1390` 28 |  |  |
+| `RagerClassLimit()` |  |  |  | `0x003469D0` 36 |  |  |
+| `RankLimit()` |  |  |  | `0x003F13D0` 32 |  |  |
+| `SetClassLimit(int)` |  |  |  | `0x003BDC30` 72 |  |  |
+| `SetGameMode(EB3MenuChoicesOnline)` |  |  |  | `0x003BDBA0` 36 |  |  |
+| `SetGameName(char*)` |  |  |  | `0x003BDC00` 36 |  |  |
+| `SetInfiniteBoost(bool)` |  |  |  | `0x0035CBC0` 80 |  |  |
+| `SetLapsLimit(int)` |  |  |  | `0x0035CC10` 68 |  |  |
+| `SetMaxPlayers(int)` |  |  |  | `0x0035CC60` 36 |  |  |
+| `SetNetworkVersion(int)` |  |  |  | `0x0035F9E0` 64 |  |  |
+| `SetPassword(char*)` |  |  |  | `0x003BDBD0` 36 |  |  |
+| `SetPlayerBootedCallback(bool (*)` |  |  |  | `0x0035F960` 52 |  |  |
+| `SetPlayerListChangedCallback(bool (*)` |  |  |  | `0x0035F9A0` 52 |  |  |
+| `SetRagerClassLimit(int)` |  |  |  | `0x003F8BF0` 72 |  |  |
+| `SetRankLimit(int)` |  |  |  | `0x003F1860` 64 |  |  |
+| `SetSkillLevel(int)` |  |  |  | `0x002867B0` 36 |  |  |
+| `SetStage(unsigned long)` |  |  |  | `0x0035F900` 48 |  |  |
+| `SetTrack(unsigned long)` |  |  |  | `0x0035F930` 48 |  |  |
+| `SkillLevel()` |  |  |  | `0x002867E0` 28 |  |  |
+| `Stage()` |  |  |  | `0x003465C0` 48 |  |  |
+| `Track()` |  |  |  | `0x003465F0` 48 |  |  |
 
 ## Notes
 

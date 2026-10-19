@@ -35,7 +35,10 @@ Sections in the layout: `.text`, `.rodata`, `.data`, `.vtables`, `.init`, `.ctor
 offset grows in steps: 0 for the first libraries, then −0xB8, −0xD0 … −0x2970 by `B3VehiclePhysics`,
 −0x9990 by the renderers, −0xC670 by the network code, and −0xCE40 at the end. Libraries (RenderWare,
 Sony, MSL) match exactly within each stretch. Don't use DNAT_200.MAP addresses on `DNAT_200.45` without
-correcting for this.
+correcting for this. Corrected block by block, the map fits the executable: for 7,274 of 7,425 names the
+map's size equals the size of the function found at the corrected address (the rest are mostly addresses
+where the analysis found no function start). [`prototype-names.csv`](../../data/burnout3-retail/prototype-names.csv)
+gives both addresses for 5,054 functions.
 
 ## Binary maps (`B3DEBUG.MAP`, `B3INTERN.MAP`, `B3O0PCH.MAP`)
 

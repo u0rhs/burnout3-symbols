@@ -7,20 +7,21 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `GtPolygonSoup.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 7
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `FixUp()` | `0x0027F450` 28 | `0x002B6F20` 28 | `0x002ECE90` 28 | `0x002EE8D0` 72 |  |
-| `GetOffset()` |  |  |  | `0x0028E8B0` 144 |  |
-| `GetPolygonCount()` |  |  |  | `0x0028E9A0` 28 |  |
-| `GetPolygonSize()` |  |  |  | `0x0028E980` 28 |  |
-| `GetPolygons()` |  |  |  | `0x0028E960` 28 |  |
-| `GetVertex(int)` |  |  |  | `0x0028E5C0` 264 |  |
-| `GetVertices()` |  |  |  | `0x0028E940` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `FixUp()` | `0x0027F450` 28 | `0x002B6F20` 28 | `0x002ECE90` 28 | `0x002EE8D0` 72 | `0x002BF7B0` proven |  |
+| `GetOffset()` |  |  |  | `0x0028E8B0` 144 |  |  |
+| `GetPolygonCount()` |  |  |  | `0x0028E9A0` 28 |  |  |
+| `GetPolygonSize()` |  |  |  | `0x0028E980` 28 |  |  |
+| `GetPolygons()` |  |  |  | `0x0028E960` 28 |  |  |
+| `GetVertex(int)` |  |  |  | `0x0028E5C0` 264 |  |  |
+| `GetVertices()` |  |  |  | `0x0028E940` 28 |  |  |
 
 ## Notes
 

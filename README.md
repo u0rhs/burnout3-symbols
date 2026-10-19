@@ -80,7 +80,7 @@ Every part of the documentation, in the same groups as the website's sidebar.
 - **[Classes](docs/classes/README.md)**
 - **[Renderer overview](docs/renderer-overview.md)**
 - **[Retail game](docs/reference/retail-function-names.md)**
-  [Retail function names (SLUS-21050)](docs/reference/retail-function-names.md) · [Retail memory map (from cheat codes and patches)](docs/reference/retail-memory-map.md) · [Nahelam's Burnout 3 mods and research](docs/reference/nahelam-mods.md) · [Disc contents](docs/discs.md)
+  [Retail function names (SLUS-21050)](docs/reference/retail-function-names.md) · [Retail names from the prototype (SLUS-21050)](docs/reference/retail-prototype-names.md) · [Retail memory map (from cheat codes and patches)](docs/reference/retail-memory-map.md) · [Nahelam's Burnout 3 mods and research](docs/reference/nahelam-mods.md) · [Disc contents](docs/discs.md)
 - **[Reference: Burnout 3](docs/reference/README.md)**
   [Assert expressions](docs/reference/asserts.md) · [Burnout 3 global data](docs/reference/b3-globals.md) · [Burnout 3 prototype builds compared](docs/reference/build-comparison.md) · [Debug and development features](docs/reference/debug-features.md) · [File hashes](docs/reference/hashes.md) · [IOP modules with symbols](docs/reference/iop-modules.md) · [Memory layout](docs/reference/memory-layout.md) · [Code that was written but not linked](docs/reference/unlinked-code.md) · [The value database (VDB.XML)](docs/reference/value-database.md) · [VU microcode programs](docs/reference/vu-programs.md)
 - **[Reference: Burnout 2 lineage](docs/reference/class-ancestors.md)**
@@ -100,8 +100,9 @@ Every part of the documentation, in the same groups as the website's sidebar.
 | | |
 |---|---|
 | Burnout 3 prototype | 4 link maps (one text, three binary) · 8,301 functions in the DNAT_200 build, 11,020 in the unoptimised build · 890 classes · 312 vtables · 595 game source files · 3,383 named variables · 22 VU microcode programs · 2,243 assert expressions · 3,056 unlinked symbols |
-| Burnout 3 retail | 1,146 named functions (851 verified) · 1,480 addresses from Nahelam's mods · 775 files listed · 2,255 strings with addresses · 7,525 tuning values (1,949 changed since the prototype) · about 150 named memory addresses, 67 vehicle IDs, 139 event medal bytes |
+| Burnout 3 retail | 5,054 functions with the prototype's names (2,903 proven against the code) · Nahelam's 1,146 names, each checked (627 agree) · 1,480 addresses from Nahelam's mods · 775 files listed · 2,255 strings with addresses · 7,525 tuning values (1,949 changed since the prototype) · about 150 named memory addresses, 67 vehicle IDs, 139 event medal bytes |
 | Burnout 3 review builds (20 July 2004) | US and PAL review discs: stripped like retail; 34 tuning values changed before release |
+| Burnout Revenge prototypes | July 14, 2005 PS2 build: 12,023 functions in its symbol table, GCC debug information for 1,899 types, a link map of 20,023 symbols · February 7, 2006 Xbox 360 build: a PDB ([builds](docs/builds.md#burnout-revenge-prototypes-2005-to-2006)) |
 | Burnout 2 prototype | 12,023 symbols · 2,309 functions with full debug info · 969 types · 168 enums · 288 source files · 76,449 line entries |
 | Burnout 2 → 3 | 62 class ancestors · 704 function counterparts · 25 source-file counterparts |
 | Compiler, all three executables | Metrowerks CodeWarrior for PS2, MW MIPS C Compiler 2.4.1.01 |

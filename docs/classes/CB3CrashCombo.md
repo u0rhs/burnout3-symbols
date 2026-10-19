@@ -7,46 +7,47 @@
 - **Area:** [Crashes, takedowns and scoring](../systems/crash-scoring.md)
 - **Source file:** `B3CrashCombo.cpp`
 - **Methods per build:** DNAT_200 20, B3DEBUG 20, B3INTERN 20, B3O0PCH 33
+- **Retail (SLUS-21050):** 18 of its 20 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CalculateCrashDescription()` | `0x00317910` 1380 | `0x00371B90` 1464 | `0x003A0A80` 1460 | `0x003A2F10` 1988 |  |
-| `DetectSkid()` | `0x00317E80` 264 | `0x00372150` 264 | `0x003A1040` 264 | `0x003A2C80` 368 |  |
-| `DetectAirAndGround()` | `0x00317F90` 320 | `0x00372260` 320 | `0x003A1150` 320 | `0x003A2A80` 508 |  |
-| `UpdateSkids()` | `0x003180D0` 652 | `0x003723A0` 788 | `0x003A1290` 788 | `0x003A2690` 772 |  |
-| `UpdateSpins()` | `0x00318360` 3100 | `0x003726C0` 3400 | `0x003A15B0` 3212 | `0x003A1D90` 2296 |  |
-| `UpdateCurrentCombo()` | `0x00318F80` 1288 | `0x00373410` 1436 | `0x003A2240` 1436 | `0x003A1B90` 272 |  |
-| `GetSideFacingUp(const GtMathPs2::CGtMatrix3x4&)` | `0x00319490` 928 | `0x003739B0` 1856 | `0x003A27E0` 1264 | `0x003A1A30` 352 |  |
-| `GetNextItem()` | `0x00319830` 172 | `0x003740F0` 240 | `0x003A2CD0` 240 | `0x003A1880` 400 |  |
-| `GetFirstItem(bool)` | `0x003198E0` 256 | `0x003741E0` 320 | `0x003A2DC0` 320 | `0x003A17B0` 200 |  |
-| `AddPickupToCombo()` | `0x003199E0` 188 | `0x00374320` 188 | `0x003A2F00` 188 | `0x003A1680` 52 |  |
-| `CalcStylePercentage()` | `0x00319AA0` 520 | `0x003743E0` 652 | `0x003A2FC0` 652 | `0x003A13B0` 368 |  |
-| `OnCrashStop()` | `0x00319CB0` 12 | `0x00374670` 12 | `0x003A3250` 12 | `0x003A1390` 32 |  |
-| `OnCrashFinishing()` | `0x00319CC0` 372 | `0x00374680` 652 | `0x003A3260` 652 | `0x003A1150` 568 |  |
-| `OnCrashStart(const CB3CrashStartInfo*)` | `0x00319E40` 628 | `0x00374910` 856 | `0x003A34F0` 856 | `0x003A0F50` 500 |  |
-| `UpdateCollidingPairs()` | `0x0031A0C0` 408 | `0x00374C70` 688 | `0x003A3850` 688 | `0x003A0D30` 352 |  |
-| `ResetData()` | `0x0031A260` 420 | `0x00374F20` 420 | `0x003A3B00` 420 | `0x003A09D0` 864 |  |
-| `Update()` | `0x0031A410` 112 | `0x003750D0` 112 | `0x003A3CB0` 112 | `0x003A0940` 144 |  |
-| `Release()` | `0x0031A480` 8 | `0x00375140` 8 | `0x003A3D20` 8 | `0x003A0930` 16 |  |
-| `Prepare(CB3RaceCar*)` | `0x0031A490` 52 | `0x00375150` 52 | `0x003A3D30` 52 | `0x003A08E0` 80 |  |
-| `Construct()` | `0x0031A4D0` 8 | `0x00375190` 8 | `0x003A3D70` 8 | `0x003A08D0` 16 |  |
-| `AddItemToCombo(EComboEntryType,float,CB3VehiclePhysics*)` |  |  |  | `0x003A1740` 112 |  |
-| `AddItemToCombo(EComboEntryType,int,CB3VehiclePhysics*)` |  |  |  | `0x003A16C0` 120 |  |
-| `AddLanding()` |  |  |  | `0x003A2E60` 164 |  |
-| `AddUninitialisedItemToCombo()` |  |  |  | `0x003A1520` 256 |  |
-| `AddVehicle(CB3VehiclePhysics*)` |  |  |  | `0x003A0E90` 192 |  |
-| `AddVehicleToCombo(CB3VehiclePhysics*,EComboEntryType,ECrashComboCollisionType)` |  |  |  | `0x003A1620` 88 |  |
-| `CB3CrashCombo()` |  |  |  | `0x00190ED0` 96 |  |
-| `GetComboSize()` |  |  |  | `0x003A08B0` 28 |  |
-| `GetVehicleClass()` |  |  |  | `0x00142E70` 28 |  |
-| `GetVehicleCollisionType(CB3VehiclePhysics*)` |  |  |  | `0x003A1A10` 20 |  |
-| `UpdateAir()` |  |  |  | `0x003A29A0` 224 |  |
-| `UpdateExtras()` |  |  |  | `0x003A2DF0` 112 |  |
-| `UpdateVehicles()` |  |  |  | `0x003A1CA0` 228 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CalculateCrashDescription()` | `0x00317910` 1380 | `0x00371B90` 1464 | `0x003A0A80` 1460 | `0x003A2F10` 1988 | `0x00361900` strong |  |
+| `DetectSkid()` | `0x00317E80` 264 | `0x00372150` 264 | `0x003A1040` 264 | `0x003A2C80` 368 | `0x00361E60` strong |  |
+| `DetectAirAndGround()` | `0x00317F90` 320 | `0x00372260` 320 | `0x003A1150` 320 | `0x003A2A80` 508 | `0x00361F70` strong |  |
+| `UpdateSkids()` | `0x003180D0` 652 | `0x003723A0` 788 | `0x003A1290` 788 | `0x003A2690` 772 | `0x003620B0` strong |  |
+| `UpdateSpins()` | `0x00318360` 3100 | `0x003726C0` 3400 | `0x003A15B0` 3212 | `0x003A1D90` 2296 | `0x00362340` strong |  |
+| `UpdateCurrentCombo()` | `0x00318F80` 1288 | `0x00373410` 1436 | `0x003A2240` 1436 | `0x003A1B90` 272 | `0x00362F60` strong |  |
+| `GetSideFacingUp(const GtMathPs2::CGtMatrix3x4&)` | `0x00319490` 928 | `0x003739B0` 1856 | `0x003A27E0` 1264 | `0x003A1A30` 352 | `0x003634B0` strong |  |
+| `GetNextItem()` | `0x00319830` 172 | `0x003740F0` 240 | `0x003A2CD0` 240 | `0x003A1880` 400 | `0x00363870` likely |  |
+| `GetFirstItem(bool)` | `0x003198E0` 256 | `0x003741E0` 320 | `0x003A2DC0` 320 | `0x003A17B0` 200 | `0x00363930` strong |  |
+| `AddPickupToCombo()` | `0x003199E0` 188 | `0x00374320` 188 | `0x003A2F00` 188 | `0x003A1680` 52 | `0x00363A40` proven |  |
+| `CalcStylePercentage()` | `0x00319AA0` 520 | `0x003743E0` 652 | `0x003A2FC0` 652 | `0x003A13B0` 368 |  |  |
+| `OnCrashStop()` | `0x00319CB0` 12 | `0x00374670` 12 | `0x003A3250` 12 | `0x003A1390` 32 | `0x00363B00` proven |  |
+| `OnCrashFinishing()` | `0x00319CC0` 372 | `0x00374680` 652 | `0x003A3260` 652 | `0x003A1150` 568 | `0x00363B10` strong |  |
+| `OnCrashStart(const CB3CrashStartInfo*)` | `0x00319E40` 628 | `0x00374910` 856 | `0x003A34F0` 856 | `0x003A0F50` 500 | `0x00363C90` strong |  |
+| `UpdateCollidingPairs()` | `0x0031A0C0` 408 | `0x00374C70` 688 | `0x003A3850` 688 | `0x003A0D30` 352 | `0x00363F10` strong |  |
+| `ResetData()` | `0x0031A260` 420 | `0x00374F20` 420 | `0x003A3B00` 420 | `0x003A09D0` 864 | `0x003640C0` strong |  |
+| `Update()` | `0x0031A410` 112 | `0x003750D0` 112 | `0x003A3CB0` 112 | `0x003A0940` 144 |  |  |
+| `Release()` | `0x0031A480` 8 | `0x00375140` 8 | `0x003A3D20` 8 | `0x003A0930` 16 | `0x003642B0` likely |  |
+| `Prepare(CB3RaceCar*)` | `0x0031A490` 52 | `0x00375150` 52 | `0x003A3D30` 52 | `0x003A08E0` 80 | `0x003642C0` strong |  |
+| `Construct()` | `0x0031A4D0` 8 | `0x00375190` 8 | `0x003A3D70` 8 | `0x003A08D0` 16 | `0x003642F0` likely |  |
+| `AddItemToCombo(EComboEntryType,float,CB3VehiclePhysics*)` |  |  |  | `0x003A1740` 112 |  |  |
+| `AddItemToCombo(EComboEntryType,int,CB3VehiclePhysics*)` |  |  |  | `0x003A16C0` 120 |  |  |
+| `AddLanding()` |  |  |  | `0x003A2E60` 164 |  |  |
+| `AddUninitialisedItemToCombo()` |  |  |  | `0x003A1520` 256 |  |  |
+| `AddVehicle(CB3VehiclePhysics*)` |  |  |  | `0x003A0E90` 192 |  |  |
+| `AddVehicleToCombo(CB3VehiclePhysics*,EComboEntryType,ECrashComboCollisionType)` |  |  |  | `0x003A1620` 88 |  |  |
+| `CB3CrashCombo()` |  |  |  | `0x00190ED0` 96 |  |  |
+| `GetComboSize()` |  |  |  | `0x003A08B0` 28 |  |  |
+| `GetVehicleClass()` |  |  |  | `0x00142E70` 28 |  |  |
+| `GetVehicleCollisionType(CB3VehiclePhysics*)` |  |  |  | `0x003A1A10` 20 |  |  |
+| `UpdateAir()` |  |  |  | `0x003A29A0` 224 |  |  |
+| `UpdateExtras()` |  |  |  | `0x003A2DF0` 112 |  |  |
+| `UpdateVehicles()` |  |  |  | `0x003A1CA0` 228 |  |  |
 
 ## Notes
 

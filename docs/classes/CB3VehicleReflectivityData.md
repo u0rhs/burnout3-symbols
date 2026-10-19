@@ -10,14 +10,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Register(unsigned long)` | `0x002CA290` 404 | `0x00311EC0` 448 | `0x00343AD0` 448 | `0x00339200` 436 |  |
-| `Release()` | `0x002CA430` 132 | `0x00312080` 132 | `0x00343C90` 132 | `0x00339140` 40 |  |
-| `SetPath(unsigned long)` |  |  |  | `0x00339170` 144 |  |
-| `Unregister()` |  |  |  | `0x003393C0` 172 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Register(unsigned long)` | `0x002CA290` 404 | `0x00311EC0` 448 | `0x00343AD0` 448 | `0x00339200` 436 |  |  |
+| `Release()` | `0x002CA430` 132 | `0x00312080` 132 | `0x00343C90` 132 | `0x00339140` 40 |  |  |
+| `SetPath(unsigned long)` |  |  |  | `0x00339170` 144 |  |  |
+| `Unregister()` |  |  |  | `0x003393C0` 172 |  |  |
 
 ## Notes
 

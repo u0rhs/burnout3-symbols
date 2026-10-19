@@ -7,26 +7,27 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3ConvexHullCollide.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 11, B3INTERN 9, B3O0PCH 13
+- **Retail (SLUS-21050):** 10 of its 10 DNAT_200 methods found, 9 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ClipEdgesByPlane(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,unsigned int,GtMathPs2::CGtPlane)` | `0x00278790` 348 | `0x002AC110` 464 | `0x002E33B0` 844 | `0x002E4180` 676 |  |
-| `ClipEdgesByHull(GtMathPs2::CGtV3d*,int,GtMathPs2::CGtV3d*,unsigned int,GtMathPs2::CGtPlane*,unsigned int)` | `0x002788F0` 468 | `0x002AC2E0` 608 | `0x002E3700` 608 | `0x002E3E70` 772 |  |
-| `GetHullPenetration(int*,unsigned char,CB3ConvexHullPlane*,GtMathPs2::CGtPlane*,GtMathPs2::CGtV3d,GtMathPs` | `0x00278AD0` 536 | `0x002AC540` 628 | `0x002E3960` 628 | `0x002E39A0` 840 |  |
-| `GetHullPenetration(int*,CB3ConvexHull*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x00278CF0` 528 | `0x002AC7C0` 624 | `0x002E3BE0` 624 | `0x002E3650` 844 |  |
-| `DoCollideHullTriangles(CB3HullWorldTriCollideParams*,CB3ConvexHullCollideInfo*)` | `0x00278F00` 1492 | `0x002ACA30` 2412 | `0x002E3E50` 2368 | `0x002E2C80` 2304 |  |
-| `BuildClippedEdgeList(GtMathPs2::CGtV3d*,unsigned int*,GtMathPs2::CGtV3d,const CB3ConvexHull*,GtMathPs2::C` | `0x002794E0` 296 | `0x002AD490` 296 |  | `0x002E27E0` 468 |  |
-| `DoCollideHullToHull(CB3HullCollideParams*)` | `0x00279610` 2568 | `0x002AD5C0` 3688 | `0x002E4790` 3964 | `0x002E1CE0` 2736 |  |
-| `CollideHulls(CB3HullCollideParams*)` | `0x0027A020` 144 | `0x002AE430` 144 | `0x002E5710` 144 | `0x002E1C30` 168 |  |
-| `CollideBodyHullWithWorld(CB3HullWorldTriCollideParams*,CB3CollidingBody*)` | `0x0027A0B0` 144 | `0x002AE4C0` 532 | `0x002E57A0` 532 | `0x002E1B20` 264 |  |
-| `CollideBodyHulls(CB3HullCollideParams*,CB3CollidingBody*,CB3CollidingBody*,bool)` | `0x0027A140` 312 | `0x002AE6E0` 428 | `0x002E59C0` 428 | `0x002E1A20` 244 |  |
-| `GetAveragePoint(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,const GtMathPs2::CGtV3d*,int)` |  | `0x002AD3A0` 232 |  | `0x002E2B30` 336 |  |
-| `GetAveragePoint(GtMathPs2::CGtV3d*,const GtMathPs2::CGtV3d*,int)` |  |  |  | `0x002E2A00` 296 |  |
-| `GetClosestHullNormal(CB3ConvexHullPlane*,GtMathPs2::CGtPlane*,unsigned char,GtMathPs2::CGtV3d)` |  |  |  | `0x002E3CF0` 380 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ClipEdgesByPlane(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,unsigned int,GtMathPs2::CGtPlane)` | `0x00278790` 348 | `0x002AC110` 464 | `0x002E33B0` 844 | `0x002E4180` 676 | `0x002B78A0` proven |  |
+| `ClipEdgesByHull(GtMathPs2::CGtV3d*,int,GtMathPs2::CGtV3d*,unsigned int,GtMathPs2::CGtPlane*,unsigned int)` | `0x002788F0` 468 | `0x002AC2E0` 608 | `0x002E3700` 608 | `0x002E3E70` 772 | `0x002B7A00` proven |  |
+| `GetHullPenetration(int*,unsigned char,CB3ConvexHullPlane*,GtMathPs2::CGtPlane*,GtMathPs2::CGtV3d,GtMathPs` | `0x00278AD0` 536 | `0x002AC540` 628 | `0x002E3960` 628 | `0x002E39A0` 840 | `0x002B7BF0` proven |  |
+| `GetHullPenetration(int*,CB3ConvexHull*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x00278CF0` 528 | `0x002AC7C0` 624 | `0x002E3BE0` 624 | `0x002E3650` 844 | `0x002B7DB0` proven |  |
+| `DoCollideHullTriangles(CB3HullWorldTriCollideParams*,CB3ConvexHullCollideInfo*)` | `0x00278F00` 1492 | `0x002ACA30` 2412 | `0x002E3E50` 2368 | `0x002E2C80` 2304 | `0x002B7F70` likely |  |
+| `BuildClippedEdgeList(GtMathPs2::CGtV3d*,unsigned int*,GtMathPs2::CGtV3d,const CB3ConvexHull*,GtMathPs2::C` | `0x002794E0` 296 | `0x002AD490` 296 |  | `0x002E27E0` 468 | `0x002B87E0` proven |  |
+| `DoCollideHullToHull(CB3HullCollideParams*)` | `0x00279610` 2568 | `0x002AD5C0` 3688 | `0x002E4790` 3964 | `0x002E1CE0` 2736 | `0x002B8920` proven |  |
+| `CollideHulls(CB3HullCollideParams*)` | `0x0027A020` 144 | `0x002AE430` 144 | `0x002E5710` 144 | `0x002E1C30` 168 | `0x002B9400` proven |  |
+| `CollideBodyHullWithWorld(CB3HullWorldTriCollideParams*,CB3CollidingBody*)` | `0x0027A0B0` 144 | `0x002AE4C0` 532 | `0x002E57A0` 532 | `0x002E1B20` 264 | `0x002B9470` proven |  |
+| `CollideBodyHulls(CB3HullCollideParams*,CB3CollidingBody*,CB3CollidingBody*,bool)` | `0x0027A140` 312 | `0x002AE6E0` 428 | `0x002E59C0` 428 | `0x002E1A20` 244 | `0x002B9520` proven |  |
+| `GetAveragePoint(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,const GtMathPs2::CGtV3d*,int)` |  | `0x002AD3A0` 232 |  | `0x002E2B30` 336 |  |  |
+| `GetAveragePoint(GtMathPs2::CGtV3d*,const GtMathPs2::CGtV3d*,int)` |  |  |  | `0x002E2A00` 296 |  |  |
+| `GetClosestHullNormal(CB3ConvexHullPlane*,GtMathPs2::CGtPlane*,unsigned char,GtMathPs2::CGtV3d)` |  |  |  | `0x002E3CF0` 380 |  |  |
 
 ## Notes
 

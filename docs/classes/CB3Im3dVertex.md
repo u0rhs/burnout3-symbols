@@ -10,14 +10,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CB3Im3dVertex()` | `0x00130710` 36 | `0x00131960` 36 | `0x00133C70` 36 | `0x00134B20` 64 |  |
-| `Construct()` |  |  |  | `0x003319F0` 44 |  |
-| `SetADC()` |  |  |  | `0x00192700` 44 |  |
-| `SetColour(GtMathPs2::CGtV4d)` |  |  |  | `0x002EBF20` 68 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CB3Im3dVertex()` | `0x00130710` 36 | `0x00131960` 36 | `0x00133C70` 36 | `0x00134B20` 64 |  |  |
+| `Construct()` |  |  |  | `0x003319F0` 44 |  |  |
+| `SetADC()` |  |  |  | `0x00192700` 44 |  |  |
+| `SetColour(GtMathPs2::CGtV4d)` |  |  |  | `0x002EBF20` 68 |  |  |
 
 ## Notes
 

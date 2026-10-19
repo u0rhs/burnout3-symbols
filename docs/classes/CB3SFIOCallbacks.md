@@ -7,38 +7,39 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `B3SFIOCallbacksPS2.cpp`
 - **Methods per build:** DNAT_200 25, B3DEBUG 25, B3INTERN 25, B3O0PCH 25
+- **Retail (SLUS-21050):** 15 of its 25 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SFIOGetTerritoryCallback()` | `0x00316DA0` 12 | `0x00371000` 12 | `0x0039FEF0` 12 | `0x003A04E0` 16 |  |
-| `SFIOGetFileCallback(char*)` | `0x00316DB0` 20 | `0x00371010` 20 | `0x0039FF00` 20 | `0x003A04B0` 48 |  |
-| `SFIOProcessCallback(SFIOProcessE*,int*)` | `0x00316DD0` 832 | `0x00371030` 864 | `0x0039FF20` 864 | `0x003A00A0` 1040 |  |
-| `SFIOSetAttrCallback(int,unsigned int)` | `0x00317110` 20 | `0x00371390` 20 | `0x003A0280` 20 | `0x003A0080` 32 |  |
-| `SFIOFlushCallback(int)` | `0x00317130` 20 | `0x003713B0` 20 | `0x003A02A0` 20 | `0x003A0060` 32 |  |
-| `SFIOSeekCallback(int,int,SFIOSeekE)` | `0x00317150` 28 | `0x003713D0` 28 | `0x003A02C0` 28 | `0x003A0020` 56 |  |
-| `SFIOWriteCallback(int,const void*,unsigned int)` | `0x00317170` 252 | `0x003713F0` 252 | `0x003A02E0` 252 | `0x0039FF00` 284 |  |
-| `SFIOReadCallback(int,void*,unsigned int)` | `0x00317270` 84 | `0x003714F0` 84 | `0x003A03E0` 84 | `0x0039FE80` 116 |  |
-| `SFIODestroyCallback(const char*,SFIODeviceE)` | `0x003172D0` 20 | `0x00371550` 20 | `0x003A0440` 20 | `0x0039FE60` 32 |  |
-| `SFIODeleteCallback(const char*,const char*,SFIODeviceE)` | `0x003172F0` 20 | `0x00371570` 20 | `0x003A0460` 20 | `0x0039FE40` 32 |  |
-| `SFIOCreateCallback(const char*,unsigned int,SFIODeviceE)` | `0x00317310` 84 | `0x00371590` 84 | `0x003A0480` 84 | `0x0039FDD0` 104 |  |
-| `SFIOCloseCallback(int)` | `0x00317370` 108 | `0x003715F0` 108 | `0x003A04E0` 108 | `0x0039FD40` 132 |  |
-| `SFIOOpenCallback(const char*,const char*,SFIODeviceE,unsigned int)` | `0x003173E0` 200 | `0x00371660` 200 | `0x003A0550` 200 | `0x0039FC40` 248 |  |
-| `SFIOUnMountCallback(SFIODeviceE)` | `0x003174B0` 20 | `0x00371730` 20 | `0x003A0620` 20 | `0x0039FC20` 32 |  |
-| `SFIOMountCallback(SFIODeviceE)` | `0x003174D0` 80 | `0x00371750` 80 | `0x003A0640` 80 | `0x0039FBB0` 100 |  |
-| `SFIOFreeEntryCallback(SFIODeviceE)` | `0x00317520` 80 | `0x003717A0` 80 | `0x003A0690` 80 | `0x0039FB40` 100 |  |
-| `SFIOFreeSpaceCallback(SFIODeviceE)` | `0x00317570` 80 | `0x003717F0` 80 | `0x003A06E0` 80 | `0x0039FAD0` 100 |  |
-| `SFIOFindCallback(const char*,SFIODeviceE)` | `0x003175C0` 144 | `0x00371840` 144 | `0x003A0730` 144 | `0x0039FA20` 168 |  |
-| `GetSharedNetworkLoginPassword()` | `0x00317650` 12 | `0x003718D0` 12 | `0x003A07C0` 12 | `0x0039FA10` 16 |  |
-| `GetSharedNetworkLoginName()` | `0x00317660` 12 | `0x003718E0` 12 | `0x003A07D0` 12 | `0x0039FA00` 16 |  |
-| `SharedNetworkLoginRelease()` | `0x00317670` 8 | `0x003718F0` 8 | `0x003A07E0` 8 | `0x0039F9E0` 32 |  |
-| `SharedNetworkLoginUpdate(SLoginProcessE*)` | `0x00317680` 8 | `0x00371900` 8 | `0x003A07F0` 8 | `0x0039F9B0` 40 |  |
-| `SharedNetworkLoginCreatePrepare(char*,char*,void*)` | `0x00317690` 236 | `0x00371910` 236 | `0x003A0800` 236 | `0x0039F890` 280 |  |
-| `SharedNetworkLoginSavePrepare(char*,char*)` | `0x00317780` 200 | `0x00371A00` 200 | `0x003A08F0` 200 | `0x0039F790` 244 |  |
-| `SharedNetworkLoginLoadPrepare()` | `0x00317850` 192 | `0x00371AD0` 192 | `0x003A09C0` 192 | `0x0039F690` 244 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SFIOGetTerritoryCallback()` | `0x00316DA0` 12 | `0x00371000` 12 | `0x0039FEF0` 12 | `0x003A04E0` 16 |  |  |
+| `SFIOGetFileCallback(char*)` | `0x00316DB0` 20 | `0x00371010` 20 | `0x0039FF00` 20 | `0x003A04B0` 48 |  |  |
+| `SFIOProcessCallback(SFIOProcessE*,int*)` | `0x00316DD0` 832 | `0x00371030` 864 | `0x0039FF20` 864 | `0x003A00A0` 1040 | `0x00360B30` unverified |  |
+| `SFIOSetAttrCallback(int,unsigned int)` | `0x00317110` 20 | `0x00371390` 20 | `0x003A0280` 20 | `0x003A0080` 32 |  |  |
+| `SFIOFlushCallback(int)` | `0x00317130` 20 | `0x003713B0` 20 | `0x003A02A0` 20 | `0x003A0060` 32 |  |  |
+| `SFIOSeekCallback(int,int,SFIOSeekE)` | `0x00317150` 28 | `0x003713D0` 28 | `0x003A02C0` 28 | `0x003A0020` 56 |  |  |
+| `SFIOWriteCallback(int,const void*,unsigned int)` | `0x00317170` 252 | `0x003713F0` 252 | `0x003A02E0` 252 | `0x0039FF00` 284 | `0x003610B0` strong |  |
+| `SFIOReadCallback(int,void*,unsigned int)` | `0x00317270` 84 | `0x003714F0` 84 | `0x003A03E0` 84 | `0x0039FE80` 116 | `0x003611C0` strong |  |
+| `SFIODestroyCallback(const char*,SFIODeviceE)` | `0x003172D0` 20 | `0x00371550` 20 | `0x003A0440` 20 | `0x0039FE60` 32 |  |  |
+| `SFIODeleteCallback(const char*,const char*,SFIODeviceE)` | `0x003172F0` 20 | `0x00371570` 20 | `0x003A0460` 20 | `0x0039FE40` 32 |  |  |
+| `SFIOCreateCallback(const char*,unsigned int,SFIODeviceE)` | `0x00317310` 84 | `0x00371590` 84 | `0x003A0480` 84 | `0x0039FDD0` 104 | `0x00361260` strong |  |
+| `SFIOCloseCallback(int)` | `0x00317370` 108 | `0x003715F0` 108 | `0x003A04E0` 108 | `0x0039FD40` 132 | `0x003612C0` likely |  |
+| `SFIOOpenCallback(const char*,const char*,SFIODeviceE,unsigned int)` | `0x003173E0` 200 | `0x00371660` 200 | `0x003A0550` 200 | `0x0039FC40` 248 | `0x00361340` strong |  |
+| `SFIOUnMountCallback(SFIODeviceE)` | `0x003174B0` 20 | `0x00371730` 20 | `0x003A0620` 20 | `0x0039FC20` 32 |  |  |
+| `SFIOMountCallback(SFIODeviceE)` | `0x003174D0` 80 | `0x00371750` 80 | `0x003A0640` 80 | `0x0039FBB0` 100 | `0x00361440` strong |  |
+| `SFIOFreeEntryCallback(SFIODeviceE)` | `0x00317520` 80 | `0x003717A0` 80 | `0x003A0690` 80 | `0x0039FB40` 100 |  |  |
+| `SFIOFreeSpaceCallback(SFIODeviceE)` | `0x00317570` 80 | `0x003717F0` 80 | `0x003A06E0` 80 | `0x0039FAD0` 100 | `0x003614C0` strong |  |
+| `SFIOFindCallback(const char*,SFIODeviceE)` | `0x003175C0` 144 | `0x00371840` 144 | `0x003A0730` 144 | `0x0039FA20` 168 | `0x00361510` likely |  |
+| `GetSharedNetworkLoginPassword()` | `0x00317650` 12 | `0x003718D0` 12 | `0x003A07C0` 12 | `0x0039FA10` 16 | `0x00361590` strong |  |
+| `GetSharedNetworkLoginName()` | `0x00317660` 12 | `0x003718E0` 12 | `0x003A07D0` 12 | `0x0039FA00` 16 | `0x003615A0` strong |  |
+| `SharedNetworkLoginRelease()` | `0x00317670` 8 | `0x003718F0` 8 | `0x003A07E0` 8 | `0x0039F9E0` 32 |  |  |
+| `SharedNetworkLoginUpdate(SLoginProcessE*)` | `0x00317680` 8 | `0x00371900` 8 | `0x003A07F0` 8 | `0x0039F9B0` 40 | `0x003615E0` strong |  |
+| `SharedNetworkLoginCreatePrepare(char*,char*,void*)` | `0x00317690` 236 | `0x00371910` 236 | `0x003A0800` 236 | `0x0039F890` 280 | `0x003615F0` likely |  |
+| `SharedNetworkLoginSavePrepare(char*,char*)` | `0x00317780` 200 | `0x00371A00` 200 | `0x003A08F0` 200 | `0x0039F790` 244 | `0x00361710` likely |  |
+| `SharedNetworkLoginLoadPrepare()` | `0x00317850` 192 | `0x00371AD0` 192 | `0x003A09C0` 192 | `0x0039F690` 244 | `0x00361810` likely |  |
 
 ## Static data (DNAT_200)
 

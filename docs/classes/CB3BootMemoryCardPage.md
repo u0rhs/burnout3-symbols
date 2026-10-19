@@ -11,17 +11,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetMenuOptions(CB3BootMemoryCardPage::EMenuOptions)` | `0x003CF050` 328 | `0x0044D2B0` 392 | `0x00474430` 392 | `0x0048C800` 380 |  |
-| `ProcessMemoryCardEvent(EB3MenuFlowFSMEvents)` | `0x003CF1A0` 492 | `0x0044D440` 492 | `0x004745C0` 492 | `0x0048C740` 180 |  |
-| `Release()` | `0x003CF390` 12 | `0x0044D630` 12 | `0x004747B0` 12 | `0x0048C710` 40 |  |
-| `Update()` | `0x003CF3A0` 268 | `0x0044D640` 268 | `0x004747C0` 268 | `0x0048C5B0` 344 |  |
-| `Prepare()` | `0x003CF4B0` 312 | `0x0044D750` 360 | `0x004748D0` 360 | `0x0048C4F0` 180 |  |
-| `CB3BootMemoryCardPage()` |  |  |  | `0x00342340` 60 |  |
-| `ShowMessage()` |  |  |  | `0x0048C980` 240 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetMenuOptions(CB3BootMemoryCardPage::EMenuOptions)` | `0x003CF050` 328 | `0x0044D2B0` 392 | `0x00474430` 392 | `0x0048C800` 380 |  |  |
+| `ProcessMemoryCardEvent(EB3MenuFlowFSMEvents)` | `0x003CF1A0` 492 | `0x0044D440` 492 | `0x004745C0` 492 | `0x0048C740` 180 |  |  |
+| `Release()` | `0x003CF390` 12 | `0x0044D630` 12 | `0x004747B0` 12 | `0x0048C710` 40 |  |  |
+| `Update()` | `0x003CF3A0` 268 | `0x0044D640` 268 | `0x004747C0` 268 | `0x0048C5B0` 344 |  |  |
+| `Prepare()` | `0x003CF4B0` 312 | `0x0044D750` 360 | `0x004748D0` 360 | `0x0048C4F0` 180 |  |  |
+| `CB3BootMemoryCardPage()` |  |  |  | `0x00342340` 60 |  |  |
+| `ShowMessage()` |  |  |  | `0x0048C980` 240 |  |  |
 
 ## Notes
 

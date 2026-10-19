@@ -7,37 +7,38 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundManager.cpp`
 - **Methods per build:** DNAT_200 12, B3DEBUG 12, B3INTERN 12, B3O0PCH 23
+- **Retail (SLUS-21050):** 11 of its 12 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004400C0`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CloseRenderWare()` | `0x00236ED0` 8 | `0x00260970` 8 | `0x00299840` 8 | `0x0029C550` 28 |  |
-| `OpenRenderWare()` | `0x00236EE0` 120 | `0x00260980` 296 | `0x00299850` 296 | `0x0029C440` 272 |  |
-| `SetSpeakerConfig(EB3SpeakerConfig)` | `0x0024CD30` 168 | `0x0027E010` 168 | `0x002B5460` 168 | `0x002B1770` 272 |  |
-| `GetSpeakerConfig()` | `0x0024CDE0` 8 | `0x0027E0C0` 8 | `0x002B5510` 8 | `0x002B1750` 28 |  |
-| `SetMasterVolumeScalar(float)` | `0x0024CDF0` 12 | `0x0027E0D0` 12 | `0x002B5520` 12 | `0x002B16C0` 48 |  |
-| `SetMasterPitchScalar(float)` | `0x0024CE00` 8 | `0x0027E0E0` 8 | `0x002B5530` 8 | `0x002B16A0` 28 |  |
-| `Unpause()` | `0x0024CE10` 48 | `0x0027E0F0` 48 | `0x002B5540` 48 | `0x002B1650` 68 |  |
-| `Pause()` | `0x0024CE40` 44 | `0x0027E120` 44 | `0x002B5570` 44 | `0x002B1600` 68 |  |
-| `Destruct()` | `0x0024CE70` 72 | `0x0027E150` 72 | `0x002B55A0` 72 | `0x002B15A0` 92 |  |
-| `Update()` | `0x0024CEC0` 156 | `0x0027E1A0` 156 | `0x002B55F0` 156 | `0x002B1440` 228 |  |
-| `Prepare()` | `0x0024CF60` 260 | `0x0027E240` 328 | `0x002B5690` 328 | `0x002B12B0` 388 |  |
-| `Construct()` | `0x0024D070` 316 | `0x0027E390` 1844 | `0x002B57E0` 368 | `0x002B0B70` 1496 |  |
-| `CB3SoundManager()` |  |  |  | `0x002B18F0` 76 |  |
-| `GetCrashManager()` |  |  |  | `0x001AA660` 44 |  |
-| `GetDistortionController()` |  |  |  | `0x002AE2E0` 44 |  |
-| `GetGameModeManager()` |  |  |  | `0x001359C0` 28 |  |
-| `GetHUDManager()` |  |  |  | `0x00140590` 44 |  |
-| `GetMasterPitchScalar()` |  |  |  | `0x002B1710` 20 |  |
-| `GetMasterVolumeScalar()` |  |  |  | `0x002B1730` 20 |  |
-| `GetTrafficManager()` |  |  |  | `0x0026CB80` 44 |  |
-| `GetUserSfxVolume()` |  |  |  | `0x002B1530` 108 |  |
-| `SetUserMusicVolume(float)` |  |  |  | `0x002B1150` 164 |  |
-| `SetUserSfxVolume(float)` |  |  |  | `0x002B1200` 164 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CloseRenderWare()` | `0x00236ED0` 8 | `0x00260970` 8 | `0x00299840` 8 | `0x0029C550` 28 | `0x00276980` strong |  |
+| `OpenRenderWare()` | `0x00236EE0` 120 | `0x00260980` 296 | `0x00299850` 296 | `0x0029C440` 272 | `0x00276990` strong |  |
+| `SetSpeakerConfig(EB3SpeakerConfig)` | `0x0024CD30` 168 | `0x0027E010` 168 | `0x002B5460` 168 | `0x002B1770` 272 | `0x0028AD10` strong |  |
+| `GetSpeakerConfig()` | `0x0024CDE0` 8 | `0x0027E0C0` 8 | `0x002B5510` 8 | `0x002B1750` 28 | `0x0028ADC0` strong |  |
+| `SetMasterVolumeScalar(float)` | `0x0024CDF0` 12 | `0x0027E0D0` 12 | `0x002B5520` 12 | `0x002B16C0` 48 | `0x0028ADD0` unverified |  |
+| `SetMasterPitchScalar(float)` | `0x0024CE00` 8 | `0x0027E0E0` 8 | `0x002B5530` 8 | `0x002B16A0` 28 | `0x0028AE30` proven |  |
+| `Unpause()` | `0x0024CE10` 48 | `0x0027E0F0` 48 | `0x002B5540` 48 | `0x002B1650` 68 | `0x0028AE40` unverified |  |
+| `Pause()` | `0x0024CE40` 44 | `0x0027E120` 44 | `0x002B5570` 44 | `0x002B1600` 68 | `0x0028AE80` strong |  |
+| `Destruct()` | `0x0024CE70` 72 | `0x0027E150` 72 | `0x002B55A0` 72 | `0x002B15A0` 92 | `0x0028AEC0` strong |  |
+| `Update()` | `0x0024CEC0` 156 | `0x0027E1A0` 156 | `0x002B55F0` 156 | `0x002B1440` 228 | `0x0028B160` unverified |  |
+| `Prepare()` | `0x0024CF60` 260 | `0x0027E240` 328 | `0x002B5690` 328 | `0x002B12B0` 388 |  |  |
+| `Construct()` | `0x0024D070` 316 | `0x0027E390` 1844 | `0x002B57E0` 368 | `0x002B0B70` 1496 | `0x0028B580` likely |  |
+| `CB3SoundManager()` |  |  |  | `0x002B18F0` 76 |  |  |
+| `GetCrashManager()` |  |  |  | `0x001AA660` 44 |  |  |
+| `GetDistortionController()` |  |  |  | `0x002AE2E0` 44 |  |  |
+| `GetGameModeManager()` |  |  |  | `0x001359C0` 28 |  |  |
+| `GetHUDManager()` |  |  |  | `0x00140590` 44 |  |  |
+| `GetMasterPitchScalar()` |  |  |  | `0x002B1710` 20 |  |  |
+| `GetMasterVolumeScalar()` |  |  |  | `0x002B1730` 20 |  |  |
+| `GetTrafficManager()` |  |  |  | `0x0026CB80` 44 |  |  |
+| `GetUserSfxVolume()` |  |  |  | `0x002B1530` 108 |  |  |
+| `SetUserMusicVolume(float)` |  |  |  | `0x002B1150` 164 |  |  |
+| `SetUserSfxVolume(float)` |  |  |  | `0x002B1200` 164 |  |  |
 
 ## Notes
 

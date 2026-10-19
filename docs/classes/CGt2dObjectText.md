@@ -7,21 +7,22 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dObjectText.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
+- **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `_RenderOutlineDropShadow(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C320` 636 | `0x001D1340` 636 | `0x001CA630` 636 | `0x001DBB40` 872 |  |
-| `_RenderOutline(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C5A0` 420 | `0x001D15C0` 420 | `0x001CA8B0` 420 | `0x001DB970` 452 |  |
-| `_RenderDropShadow(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C750` 244 | `0x001D1770` 244 | `0x001CAA60` 244 | `0x001DB850` 284 |  |
-| `_RenderPlain(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C850` 132 | `0x001D1870` 132 | `0x001CAB60` 132 | `0x001DB7B0` 156 |  |
-| `_BuildBatchData(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C8E0` 572 | `0x001D1900` 816 | `0x001CABF0` 816 | `0x001DB4D0` 732 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dFont*,const unsig` | `0x0019CDF0` 276 | `0x001D2070` 408 | `0x001CB360` 408 | `0x001DB3D0` 248 |  |
-| `PrepareCommonData(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dFont*,c` | `0x0019CF10` 284 | `0x001D2210` 416 | `0x001CB500` 416 | `0x001DB0E0` 296 |  |
-| `CGt2dObjectText()` |  |  |  | `0x00140990` 44 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `_RenderOutlineDropShadow(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C320` 636 | `0x001D1340` 636 | `0x001CA630` 636 | `0x001DBB40` 872 | `0x001D6170` proven |  |
+| `_RenderOutline(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C5A0` 420 | `0x001D15C0` 420 | `0x001CA8B0` 420 | `0x001DB970` 452 | `0x001D63F0` proven |  |
+| `_RenderDropShadow(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C750` 244 | `0x001D1770` 244 | `0x001CAA60` 244 | `0x001DB850` 284 | `0x001D65A0` proven |  |
+| `_RenderPlain(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C850` 132 | `0x001D1870` 132 | `0x001CAB60` 132 | `0x001DB7B0` 156 | `0x001D66A0` proven |  |
+| `_BuildBatchData(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019C8E0` 572 | `0x001D1900` 816 | `0x001CABF0` 816 | `0x001DB4D0` 732 | `0x001D6730` proven |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dFont*,const unsig` | `0x0019CDF0` 276 | `0x001D2070` 408 | `0x001CB360` 408 | `0x001DB3D0` 248 | `0x001D6C40` strong |  |
+| `PrepareCommonData(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dFont*,c` | `0x0019CF10` 284 | `0x001D2210` 416 | `0x001CB500` 416 | `0x001DB0E0` 296 | `0x001D6D60` proven |  |
+| `CGt2dObjectText()` |  |  |  | `0x00140990` 44 |  |  |
 
 ## Static data (DNAT_200)
 

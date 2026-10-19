@@ -7,29 +7,30 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `B3CameraUtils.cpp`
 - **Methods per build:** DNAT_200 14, B3DEBUG 14, B3INTERN 14, B3O0PCH 16
+- **Retail (SLUS-21050):** 9 of its 14 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetOppositeSide(EAISegmentLinkType)` | `0x002B47C0` 12 | `0x002F4AF0` 12 | `0x00328EB0` 12 | `0x00322840` 72 |  |
-| `GetSide(GtMathPs2::CGtV3d*,CB3AILaneStruct*,unsigned short,EAISegmentLinkType)` | `0x002B47D0` 84 | `0x002F4B00` 84 | `0x00328EC0` 84 | `0x00322770` 208 |  |
-| `GetPositionAtParam(CB3AILaneStruct*,unsigned short,float,EAISegmentLinkType,float)` | `0x002B4830` 348 | `0x002F4B60` 484 | `0x00328F20` 348 | `0x003225B0` 440 |  |
-| `GetPositionAtParam(CB3AILaneStruct*,unsigned short,float,EAISegmentLinkType)` | `0x002B4990` 124 | `0x002F4D50` 124 | `0x00329080` 124 | `0x003224E0` 196 |  |
-| `GetPositionOnFloor(GtMathPs2::CGtV3d,int)` | `0x002B4A10` 200 | `0x002F4DD0` 200 | `0x00329100` 200 | `0x00322360` 384 |  |
-| `CallbackLineFloor(const CGtPolygonIntersectionResult&,void*)` | `0x002B4AE0` 72 | `0x002F4EA0` 72 | `0x003291D0` 72 | `0x003222D0` 132 |  |
-| `GetTrackMatrix(GtMathPs2::CGtMatrix3x4*,CB3RaceCarPhysics*)` | `0x002B4B30` 344 | `0x002F4EF0` 436 | `0x00329220` 344 | `0x00322130` 100 |  |
-| `GetRigMatrix(GtMathPs2::CGtMatrix3x4*,CB3CollidingBody*)` | `0x002B4C90` 364 | `0x002F50B0` 456 | `0x00329380` 364 | `0x00322080` 172 |  |
-| `GetRigPosition(GtMathPs2::CGtV3d*,CB3CollidingBody*)` | `0x002B4E00` 472 | `0x002F5280` 580 | `0x003294F0` 472 | `0x00321E20` 604 |  |
-| `CollisionResolveCameraWorld(CB3Viewport*,GtMathPs2::CGtV3d,int)` | `0x002B4FE0` 2096 | `0x002F54D0` 3072 | `0x003296D0` 3072 | `0x00321930` 1188 |  |
-| `CollisionResolveCameraWorld(CB3Viewport*,float,int)` | `0x002B5810` 648 | `0x002F60D0` 772 | `0x0032A2D0` 772 | `0x00321870` 192 |  |
-| `CollisionIsCameraInVehicle(GtMathPs2::CGtV3d,int)` | `0x002B5AA0` 2224 | `0x002F63E0` 2668 | `0x0032A5E0` 2668 | `0x00321020` 1272 |  |
-| `LineOfSight(const CGtLine&,GtMathPs2::CGtV3d,const CGtAxisAlignedBox&,const GtMathPs2::CGtMatrix3x4&,GtMathPs2:` | `0x002B6350` 616 | `0x002F6E50` 836 | `0x0032B050` 836 | `0x00320E60` 440 |  |
-| `LineOfSight(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,int)` | `0x002B65C0` 628 | `0x002F71A0` 932 | `0x0032B3A0` 832 | `0x00320B40` 788 |  |
-| `CollisionIsCameraInVehicle(GtMathPs2::CGtV3d,const CGtAxisAlignedBox&,const GtMathPs2::CGtMatrix3x4&,const GtMa` |  |  |  | `0x00321520` 840 |  |
-| `GetMatrix(GtMathPs2::CGtMatrix3x4*,CB3CollidingBody*,GtMathPs2::CGtV3d)` |  |  |  | `0x003221A0` 304 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetOppositeSide(EAISegmentLinkType)` | `0x002B47C0` 12 | `0x002F4AF0` 12 | `0x00328EB0` 12 | `0x00322840` 72 | `0x002F5D30` proven |  |
+| `GetSide(GtMathPs2::CGtV3d*,CB3AILaneStruct*,unsigned short,EAISegmentLinkType)` | `0x002B47D0` 84 | `0x002F4B00` 84 | `0x00328EC0` 84 | `0x00322770` 208 |  |  |
+| `GetPositionAtParam(CB3AILaneStruct*,unsigned short,float,EAISegmentLinkType,float)` | `0x002B4830` 348 | `0x002F4B60` 484 | `0x00328F20` 348 | `0x003225B0` 440 |  |  |
+| `GetPositionAtParam(CB3AILaneStruct*,unsigned short,float,EAISegmentLinkType)` | `0x002B4990` 124 | `0x002F4D50` 124 | `0x00329080` 124 | `0x003224E0` 196 | `0x002F5D40` proven |  |
+| `GetPositionOnFloor(GtMathPs2::CGtV3d,int)` | `0x002B4A10` 200 | `0x002F4DD0` 200 | `0x00329100` 200 | `0x00322360` 384 | `0x002F5F40` unverified |  |
+| `CallbackLineFloor(const CGtPolygonIntersectionResult&,void*)` | `0x002B4AE0` 72 | `0x002F4EA0` 72 | `0x003291D0` 72 | `0x003222D0` 132 |  |  |
+| `GetTrackMatrix(GtMathPs2::CGtMatrix3x4*,CB3RaceCarPhysics*)` | `0x002B4B30` 344 | `0x002F4EF0` 436 | `0x00329220` 344 | `0x00322130` 100 | `0x002F6210` strong |  |
+| `GetRigMatrix(GtMathPs2::CGtMatrix3x4*,CB3CollidingBody*)` | `0x002B4C90` 364 | `0x002F50B0` 456 | `0x00329380` 364 | `0x00322080` 172 | `0x002F6370` strong |  |
+| `GetRigPosition(GtMathPs2::CGtV3d*,CB3CollidingBody*)` | `0x002B4E00` 472 | `0x002F5280` 580 | `0x003294F0` 472 | `0x00321E20` 604 | `0x002F64E0` strong |  |
+| `CollisionResolveCameraWorld(CB3Viewport*,GtMathPs2::CGtV3d,int)` | `0x002B4FE0` 2096 | `0x002F54D0` 3072 | `0x003296D0` 3072 | `0x00321930` 1188 | `0x002F66C0` unverified |  |
+| `CollisionResolveCameraWorld(CB3Viewport*,float,int)` | `0x002B5810` 648 | `0x002F60D0` 772 | `0x0032A2D0` 772 | `0x00321870` 192 | `0x002F6F60` unverified |  |
+| `CollisionIsCameraInVehicle(GtMathPs2::CGtV3d,int)` | `0x002B5AA0` 2224 | `0x002F63E0` 2668 | `0x0032A5E0` 2668 | `0x00321020` 1272 | `0x002F7390` strong |  |
+| `LineOfSight(const CGtLine&,GtMathPs2::CGtV3d,const CGtAxisAlignedBox&,const GtMathPs2::CGtMatrix3x4&,GtMathPs2:` | `0x002B6350` 616 | `0x002F6E50` 836 | `0x0032B050` 836 | `0x00320E60` 440 |  |  |
+| `LineOfSight(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,int)` | `0x002B65C0` 628 | `0x002F71A0` 932 | `0x0032B3A0` 832 | `0x00320B40` 788 |  |  |
+| `CollisionIsCameraInVehicle(GtMathPs2::CGtV3d,const CGtAxisAlignedBox&,const GtMathPs2::CGtMatrix3x4&,const GtMa` |  |  |  | `0x00321520` 840 |  |  |
+| `GetMatrix(GtMathPs2::CGtMatrix3x4*,CB3CollidingBody*,GtMathPs2::CGtV3d)` |  |  |  | `0x003221A0` 304 |  |  |
 
 ## Notes
 

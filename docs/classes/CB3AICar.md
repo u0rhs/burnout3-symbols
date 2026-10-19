@@ -7,37 +7,38 @@
 - **Area:** [AI drivers](../systems/ai.md)
 - **Source file:** `B3AICar.cpp`
 - **Methods per build:** DNAT_200 17, B3DEBUG 17, B3INTERN 17, B3O0PCH 22
+- **Retail (SLUS-21050):** 13 of its 17 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FCD0`, 48 bytes = 12 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 10 virtual functions)
 - **Burnout 2 ancestor (by name):** `CAICar`, size 0x4C80, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CalcSeparationAlongTrack(CB3RaceCar*)` | `0x0013E650` 224 | `0x00148290` 380 | `0x001461E0` 288 | `0x00153F10` 272 |  |
-| `CalcSeparationAcrossTrack(CB3RaceCar*)` | `0x0013E730` 220 | `0x00148410` 372 | `0x00146300` 280 | `0x00153DF0` 276 |  |
-| `IncreaseAggression(float)` | `0x0013E810` 72 | `0x00148590` 172 | `0x00146420` 172 | `0x00153D40` 164 |  |
-| `OnSetActive(bool)` | `0x0013E860` 328 | `0x00148640` 328 | `0x001464D0` 328 | `0x00153C60` 216 |  |
-| `ResetCarInSlice(int,GtMathPs2::CGtMatrix3x4*)` | `0x0013E9B0` 324 | `0x00148790` 332 | `0x00146620` 324 | `0x00153800` 276 |  |
-| `UpdateAICheckpoint()` | `0x0013EB00` 328 | `0x001488E0` 468 | `0x00146770` 460 | `0x00153500` 628 |  |
-| `PrepareSound()` | `0x0013EC50` 132 | `0x00148AC0` 132 | `0x00146940` 132 | `0x001533F0` 240 |  |
-| `UpdateOutOfRange()` | `0x0013ECE0` 5400 | `0x00148B50` 7672 | `0x001469D0` 5512 | `0x00151FB0` 2348 | `void CAICar::UpdateOutOfRange()` |
-| `SetAIInRange()` | `0x00140200` 140 | `0x0014A950` 148 | `0x00147F60` 140 | `0x00151EF0` 192 | `void CAICar::SetAIInRange()` |
-| `SetAIOutOfRange()` | `0x00140290` 24 | `0x0014A9F0` 32 | `0x00147FF0` 24 | `0x00151E90` 84 | `void CAICar::SetAIOutOfRange()` |
-| `AdjustOutOfRange(CB3PlayerCar*,float,CAIRangeAttribs&)` | `0x001402B0` 544 | `0x0014AA10` 604 | `0x00148010` 604 | `0x00151B60` 808 |  |
-| `UpdateAttributes()` | `0x001404D0` 892 | `0x0014AC70` 1248 | `0x00148270` 1248 | `0x00151570` 1276 | `void CAICar::UpdateAttributes()` |
-| `StopCrashing()` | `0x00140850` 76 | `0x0014B150` 76 | `0x00148750` 76 | `0x001514D0` 112 |  |
-| `Release()` | `0x001408A0` 56 | `0x0014B1A0` 56 | `0x001487A0` 56 | `0x00151480` 68 |  |
-| `Update()` | `0x001408E0` 400 | `0x0014B1E0` 5436 | `0x001487E0` 2720 | `0x001508B0` 2728 | `void CAICar::Update()` |
-| `Prepare()` | `0x00140A70` 436 | `0x0014C720` 520 | `0x00149280` 516 | `0x00150590` 792 |  |
-| `Construct(int)` | `0x00140C30` 216 | `0x0014C930` 316 | `0x00149490` 316 | `0x001503D0` 440 |  |
-| `CB3AICar()` |  |  |  | `0x00191150` 108 |  |
-| `ResetVarsFromProfile()` |  |  |  | `0x001532A0` 100 | `void CAICar::ResetVarsFromProfile()` |
-| `SetAICarPhysics(CB3AICarPhysics*)` |  |  |  | `0x001AF790` 36 |  |
-| `UpdateDead()` |  |  |  | `0x001537A0` 96 |  |
-| `UpdateProfileVars()` |  |  |  | `0x00153310` 224 | `void CAICar::UpdateProfileVars()` |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CalcSeparationAlongTrack(CB3RaceCar*)` | `0x0013E650` 224 | `0x00148290` 380 | `0x001461E0` 288 | `0x00153F10` 272 | `0x001419F0` strong |  |
+| `CalcSeparationAcrossTrack(CB3RaceCar*)` | `0x0013E730` 220 | `0x00148410` 372 | `0x00146300` 280 | `0x00153DF0` 276 | `0x00141AE0` strong |  |
+| `IncreaseAggression(float)` | `0x0013E810` 72 | `0x00148590` 172 | `0x00146420` 172 | `0x00153D40` 164 | `0x00141BC0` strong |  |
+| `OnSetActive(bool)` | `0x0013E860` 328 | `0x00148640` 328 | `0x001464D0` 328 | `0x00153C60` 216 | `0x00141C10` likely |  |
+| `ResetCarInSlice(int,GtMathPs2::CGtMatrix3x4*)` | `0x0013E9B0` 324 | `0x00148790` 332 | `0x00146620` 324 | `0x00153800` 276 | `0x00141D60` unverified |  |
+| `UpdateAICheckpoint()` | `0x0013EB00` 328 | `0x001488E0` 468 | `0x00146770` 460 | `0x00153500` 628 | `0x00142200` strong |  |
+| `PrepareSound()` | `0x0013EC50` 132 | `0x00148AC0` 132 | `0x00146940` 132 | `0x001533F0` 240 | `0x00142350` likely |  |
+| `UpdateOutOfRange()` | `0x0013ECE0` 5400 | `0x00148B50` 7672 | `0x001469D0` 5512 | `0x00151FB0` 2348 | `0x001423E0` strong | `void CAICar::UpdateOutOfRange()` |
+| `SetAIInRange()` | `0x00140200` 140 | `0x0014A950` 148 | `0x00147F60` 140 | `0x00151EF0` 192 |  | `void CAICar::SetAIInRange()` |
+| `SetAIOutOfRange()` | `0x00140290` 24 | `0x0014A9F0` 32 | `0x00147FF0` 24 | `0x00151E90` 84 |  | `void CAICar::SetAIOutOfRange()` |
+| `AdjustOutOfRange(CB3PlayerCar*,float,CAIRangeAttribs&)` | `0x001402B0` 544 | `0x0014AA10` 604 | `0x00148010` 604 | `0x00151B60` 808 |  |  |
+| `UpdateAttributes()` | `0x001404D0` 892 | `0x0014AC70` 1248 | `0x00148270` 1248 | `0x00151570` 1276 |  | `void CAICar::UpdateAttributes()` |
+| `StopCrashing()` | `0x00140850` 76 | `0x0014B150` 76 | `0x00148750` 76 | `0x001514D0` 112 | `0x00143A80` likely |  |
+| `Release()` | `0x001408A0` 56 | `0x0014B1A0` 56 | `0x001487A0` 56 | `0x00151480` 68 | `0x00143AD0` strong |  |
+| `Update()` | `0x001408E0` 400 | `0x0014B1E0` 5436 | `0x001487E0` 2720 | `0x001508B0` 2728 | `0x00143B10` unverified | `void CAICar::Update()` |
+| `Prepare()` | `0x00140A70` 436 | `0x0014C720` 520 | `0x00149280` 516 | `0x00150590` 792 | `0x00143CE0` likely |  |
+| `Construct(int)` | `0x00140C30` 216 | `0x0014C930` 316 | `0x00149490` 316 | `0x001503D0` 440 | `0x00143E80` strong |  |
+| `CB3AICar()` |  |  |  | `0x00191150` 108 |  |  |
+| `ResetVarsFromProfile()` |  |  |  | `0x001532A0` 100 |  | `void CAICar::ResetVarsFromProfile()` |
+| `SetAICarPhysics(CB3AICarPhysics*)` |  |  |  | `0x001AF790` 36 |  |  |
+| `UpdateDead()` |  |  |  | `0x001537A0` 96 |  |  |
+| `UpdateProfileVars()` |  |  |  | `0x00153310` 224 |  | `void CAICar::UpdateProfileVars()` |
 
 ## Burnout 2 layout of `CAICar`
 

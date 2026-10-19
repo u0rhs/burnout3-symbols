@@ -12,12 +12,14 @@ Effect management: boost effects, scrapes and trails (their rendering is in Rend
 
 In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_200.symbols.txt](../../data/burnout3-prototype/maps/DNAT_200.symbols.txt) (search for `==== <file>`).
 
-| File | Functions | Code bytes | First function |
-|---|---:|---:|---|
-| `B3EffectsManager.cpp` | 48 | 61,144 | `0x00216100` |
-| `B3TrailSystem.cpp` | 9 | 2,880 | `0x0027CC70` |
-| `B3BoostEffectParams.cpp` | 9 | 2,544 | `0x002CB6B0` |
-| `B3ScrapeSystem.cpp` | 9 | 2,416 | `0x00334510` |
+**Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
+|---|---:|---:|---|---:|---|
+| `B3EffectsManager.cpp` | 48 | 61,144 | `0x00216100` | 36 (1) | `0x00255EE0`–`0x002630F0` |
+| `B3TrailSystem.cpp` | 9 | 2,880 | `0x0027CC70` | 6 (0) | `0x002BCF60`–`0x002BD9A0` |
+| `B3BoostEffectParams.cpp` | 9 | 2,544 | `0x002CB6B0` | 5 (0) | `0x0030A9D0`–`0x0030B530` |
+| `B3ScrapeSystem.cpp` | 9 | 2,416 | `0x00334510` | 2 (2) | `0x00375AA0`–`0x00375E90` |
 
 ## Classes
 

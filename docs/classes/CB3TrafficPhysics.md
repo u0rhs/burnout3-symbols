@@ -7,30 +7,31 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3TrafficPhysics.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 16
+- **Retail (SLUS-21050):** 3 of its 7 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440020`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `StopCrashing()` | `0x00210890` 40 | `0x0021E240` 40 | `0x0025DA80` 40 | `0x00261CD0` 56 |  |
-| `Destruct()` | `0x002108C0` 8 | `0x0021E270` 8 | `0x0025DAB0` 8 | `0x00261CA0` 40 |  |
-| `Release()` | `0x002108D0` 52 | `0x0021E280` 52 | `0x0025DAC0` 52 | `0x00261C60` 60 |  |
-| `Update(float)` | `0x00210910` 2408 | `0x0021E2C0` 5464 | `0x0025DB00` 5380 | `0x00260EF0` 2172 |  |
-| `Prepare(CB3TrafficVehicle*,int)` | `0x00211280` 760 | `0x0021F820` 760 | `0x0025F010` 760 | `0x002609C0` 1028 |  |
-| `Prepare()` | `0x00211580` 112 | `0x0021FB20` 112 | `0x0025F310` 112 | `0x00260920` 156 |  |
-| `Construct()` | `0x002115F0` 44 | `0x0021FB90` 44 | `0x0025F380` 44 | `0x002608E0` 52 |  |
-| `CB3TrafficPhysics()` |  |  |  | `0x00191D10` 92 |  |
-| `GetLinkedVehicle()` |  |  |  | `0x001A91E0` 28 |  |
-| `GetOwnerIndex()` |  |  |  | `0x0014E1A0` 36 |  |
-| `GetSourceIndex()` |  |  |  | `0x0016CCB0` 28 |  |
-| `InRange()` |  |  |  | `0x001B3760` 28 |  |
-| `IsTrailer()` |  |  |  | `0x001AB150` 28 |  |
-| `OnComeIntoRange()` |  |  |  | `0x00261D10` 192 |  |
-| `OnGoneOutOfRange()` |  |  |  | `0x00261DD0` 40 |  |
-| `SetUpCollisionBools()` |  |  |  | `0x00261E00` 80 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `StopCrashing()` | `0x00210890` 40 | `0x0021E240` 40 | `0x0025DA80` 40 | `0x00261CD0` 56 | `0x002502D0` strong |  |
+| `Destruct()` | `0x002108C0` 8 | `0x0021E270` 8 | `0x0025DAB0` 8 | `0x00261CA0` 40 | `0x00250300` strong |  |
+| `Release()` | `0x002108D0` 52 | `0x0021E280` 52 | `0x0025DAC0` 52 | `0x00261C60` 60 | `0x00250310` proven |  |
+| `Update(float)` | `0x00210910` 2408 | `0x0021E2C0` 5464 | `0x0025DB00` 5380 | `0x00260EF0` 2172 |  |  |
+| `Prepare(CB3TrafficVehicle*,int)` | `0x00211280` 760 | `0x0021F820` 760 | `0x0025F010` 760 | `0x002609C0` 1028 |  |  |
+| `Prepare()` | `0x00211580` 112 | `0x0021FB20` 112 | `0x0025F310` 112 | `0x00260920` 156 |  |  |
+| `Construct()` | `0x002115F0` 44 | `0x0021FB90` 44 | `0x0025F380` 44 | `0x002608E0` 52 |  |  |
+| `CB3TrafficPhysics()` |  |  |  | `0x00191D10` 92 |  |  |
+| `GetLinkedVehicle()` |  |  |  | `0x001A91E0` 28 |  |  |
+| `GetOwnerIndex()` |  |  |  | `0x0014E1A0` 36 |  |  |
+| `GetSourceIndex()` |  |  |  | `0x0016CCB0` 28 |  |  |
+| `InRange()` |  |  |  | `0x001B3760` 28 |  |  |
+| `IsTrailer()` |  |  |  | `0x001AB150` 28 |  |  |
+| `OnComeIntoRange()` |  |  |  | `0x00261D10` 192 |  |  |
+| `OnGoneOutOfRange()` |  |  |  | `0x00261DD0` 40 |  |  |
+| `SetUpCollisionBools()` |  |  |  | `0x00261E00` 80 |  |  |
 
 ## Notes
 

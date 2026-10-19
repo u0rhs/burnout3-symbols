@@ -7,27 +7,28 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3BodyPartPhysics.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 13
+- **Retail (SLUS-21050):** 7 of its 9 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004404E0`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `StopCrashing()` | `0x002EBC50` 12 | `0x00339230` 12 | `0x0036AB50` 12 | `0x0036AE90` 52 |  |
-| `CollideWheelWithWorld()` | `0x002EBC60` 1432 | `0x00339240` 2756 | `0x0036AB60` 2672 | `0x0036A7D0` 1720 |  |
-| `CollideWithWorld()` | `0x002EC200` 348 | `0x00339D10` 348 | `0x0036B5D0` 348 | `0x0036A6B0` 288 |  |
-| `Detach()` | `0x002EC360` 1520 | `0x00339E70` 1816 | `0x0036B730` 1720 | `0x0036A2A0` 1036 |  |
-| `Destruct()` | `0x002EC950` 8 | `0x0033A590` 8 | `0x0036BDF0` 8 | `0x0036A270` 40 |  |
-| `Release()` | `0x002EC960` 56 | `0x0033A5A0` 56 | `0x0036BE00` 56 | `0x0036A220` 80 |  |
-| `Update(float)` | `0x002EC9A0` 700 | `0x0033A5E0` 3392 | `0x0036BE40` 3392 | `0x00369D10` 1116 |  |
-| `Prepare(CB3VehiclePhysics*,int,EBodyPartType)` | `0x002ECC60` 924 | `0x0033B320` 976 | `0x0036CB80` 976 | `0x00369840` 1220 |  |
-| `Construct()` | `0x002ED000` 200 | `0x0033B6F0` 200 | `0x0036CF50` 200 | `0x00369760` 220 |  |
-| `CB3BodyPartPhysics()` |  |  |  | `0x00191850` 140 |  |
-| `GetBodyPartType()` |  |  |  | `0x0022B4F0` 32 |  |
-| `GetHostVehicle()` |  |  |  | `0x0022B510` 28 |  |
-| `GetPartIndex()` |  |  |  | `0x0022B4C0` 36 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `StopCrashing()` | `0x002EBC50` 12 | `0x00339230` 12 | `0x0036AB50` 12 | `0x0036AE90` 52 | `0x00333140` strong |  |
+| `CollideWheelWithWorld()` | `0x002EBC60` 1432 | `0x00339240` 2756 | `0x0036AB60` 2672 | `0x0036A7D0` 1720 | `0x00333150` strong |  |
+| `CollideWithWorld()` | `0x002EC200` 348 | `0x00339D10` 348 | `0x0036B5D0` 348 | `0x0036A6B0` 288 | `0x00333740` unverified |  |
+| `Detach()` | `0x002EC360` 1520 | `0x00339E70` 1816 | `0x0036B730` 1720 | `0x0036A2A0` 1036 | `0x00333990` likely |  |
+| `Destruct()` | `0x002EC950` 8 | `0x0033A590` 8 | `0x0036BDF0` 8 | `0x0036A270` 40 | `0x00333FC0` strong |  |
+| `Release()` | `0x002EC960` 56 | `0x0033A5A0` 56 | `0x0036BE00` 56 | `0x0036A220` 80 | `0x00333FD0` strong |  |
+| `Update(float)` | `0x002EC9A0` 700 | `0x0033A5E0` 3392 | `0x0036BE40` 3392 | `0x00369D10` 1116 | `0x00334010` strong |  |
+| `Prepare(CB3VehiclePhysics*,int,EBodyPartType)` | `0x002ECC60` 924 | `0x0033B320` 976 | `0x0036CB80` 976 | `0x00369840` 1220 |  |  |
+| `Construct()` | `0x002ED000` 200 | `0x0033B6F0` 200 | `0x0036CF50` 200 | `0x00369760` 220 |  |  |
+| `CB3BodyPartPhysics()` |  |  |  | `0x00191850` 140 |  |  |
+| `GetBodyPartType()` |  |  |  | `0x0022B4F0` 32 |  |  |
+| `GetHostVehicle()` |  |  |  | `0x0022B510` 28 |  |  |
+| `GetPartIndex()` |  |  |  | `0x0022B4C0` 36 |  |  |
 
 ## Notes
 

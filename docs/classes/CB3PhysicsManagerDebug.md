@@ -7,34 +7,35 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3PhysicsManagerDebug.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 14, B3INTERN 13, B3O0PCH 21
+- **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `DrawHullToHullCollisionPlanes()` | `0x0027D7D0` 388 | `0x002B3F60` 428 | `0x002E9F30` 428 | `0x002EC730` 484 |  |
-| `DrawCollisionTriangleCache()` | `0x0027D960` 644 | `0x002B4110` 644 | `0x002EA0E0` 644 | `0x002EC410` 788 |  |
-| `DrawCollisionWorld()` | `0x0027DBF0` 260 | `0x002B43A0` 308 | `0x002EA370` 308 | `0x002EC2C0` 328 |  |
-| `DrawIntervals()` | `0x0027E4C0` 644 | `0x002B5280` 692 | `0x002EB250` 692 | `0x002EB220` 992 |  |
-| `RenderWorld()` | `0x0027E750` 420 | `0x002B5540` 652 | `0x002EB510` 652 | `0x002EB090` 184 |  |
-| `Update()` | `0x0027E900` 292 | `0x002B6210` 292 | `0x002EC180` 292 | `0x002EA570` 388 |  |
-| `Prepare()` | `0x0027EA30` 8 | `0x002B6340` 8 | `0x002EC2B0` 8 | `0x002EA560` 16 |  |
-| `Destruct()` | `0x0027EA40` 8 | `0x002B6350` 8 | `0x002EC2C0` 8 | `0x002EA550` 16 |  |
-| `Construct()` | `0x0027EA50` 156 | `0x002B6360` 388 | `0x002EC2D0` 388 | `0x002EA320` 548 |  |
-| `StartDebugCrash()` |  | `0x002B29F0` 4440 |  | `0x002ECF00` 1312 |  |
-| `DrawDamageValues()` |  | `0x002B3B50` 592 | `0x002E9B20` 592 | `0x002ECCE0` 536 |  |
-| `DrawStatistics()` |  | `0x002B5030` 584 | `0x002EB000` 584 | `0x002EB600` 748 |  |
-| `RenderOverlays()` |  | `0x002B57D0` 1892 | `0x002EB7A0` 1892 | `0x002EAA30` 1572 |  |
-| `GetPhysicsString(CB3RaceCarPhysics*,int,char*)` |  | `0x002B5F40` 716 | `0x002EBF10` 616 | `0x002EA700` 812 |  |
-| `AddBodyTriangleCache(CB3CollidingBody*)` |  |  |  | `0x001C1780` 500 |  |
-| `CB3PhysicsManagerDebug()` |  |  |  | `0x00134C20` 80 |  |
-| `DrawBodyHulls()` |  |  |  | `0x002EB150` 204 |  |
-| `DrawSurfaceTags()` |  |  |  | `0x002ECB90` 324 |  |
-| `GetSlamCrashInvulnTime()` |  |  |  | `0x001B7B40` 28 |  |
-| `GetTradePaintThreshold()` |  |  |  | `0x001B4E50` 28 |  |
-| `IsDrawingCollisionWorld()` |  |  |  | `0x00226520` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `DrawHullToHullCollisionPlanes()` | `0x0027D7D0` 388 | `0x002B3F60` 428 | `0x002E9F30` 428 | `0x002EC730` 484 | `0x002BDA00` strong |  |
+| `DrawCollisionTriangleCache()` | `0x0027D960` 644 | `0x002B4110` 644 | `0x002EA0E0` 644 | `0x002EC410` 788 | `0x002BDB90` strong |  |
+| `DrawCollisionWorld()` | `0x0027DBF0` 260 | `0x002B43A0` 308 | `0x002EA370` 308 | `0x002EC2C0` 328 | `0x002BDDF0` strong |  |
+| `DrawIntervals()` | `0x0027E4C0` 644 | `0x002B5280` 692 | `0x002EB250` 692 | `0x002EB220` 992 | `0x002BE770` proven |  |
+| `RenderWorld()` | `0x0027E750` 420 | `0x002B5540` 652 | `0x002EB510` 652 | `0x002EB090` 184 | `0x002BEA00` proven |  |
+| `Update()` | `0x0027E900` 292 | `0x002B6210` 292 | `0x002EC180` 292 | `0x002EA570` 388 | `0x002BEBB0` proven |  |
+| `Prepare()` | `0x0027EA30` 8 | `0x002B6340` 8 | `0x002EC2B0` 8 | `0x002EA560` 16 | `0x002BECE0` strong |  |
+| `Destruct()` | `0x0027EA40` 8 | `0x002B6350` 8 | `0x002EC2C0` 8 | `0x002EA550` 16 | `0x002BECF0` strong |  |
+| `Construct()` | `0x0027EA50` 156 | `0x002B6360` 388 | `0x002EC2D0` 388 | `0x002EA320` 548 | `0x002BED00` strong |  |
+| `StartDebugCrash()` |  | `0x002B29F0` 4440 |  | `0x002ECF00` 1312 |  |  |
+| `DrawDamageValues()` |  | `0x002B3B50` 592 | `0x002E9B20` 592 | `0x002ECCE0` 536 |  |  |
+| `DrawStatistics()` |  | `0x002B5030` 584 | `0x002EB000` 584 | `0x002EB600` 748 |  |  |
+| `RenderOverlays()` |  | `0x002B57D0` 1892 | `0x002EB7A0` 1892 | `0x002EAA30` 1572 |  |  |
+| `GetPhysicsString(CB3RaceCarPhysics*,int,char*)` |  | `0x002B5F40` 716 | `0x002EBF10` 616 | `0x002EA700` 812 |  |  |
+| `AddBodyTriangleCache(CB3CollidingBody*)` |  |  |  | `0x001C1780` 500 |  |  |
+| `CB3PhysicsManagerDebug()` |  |  |  | `0x00134C20` 80 |  |  |
+| `DrawBodyHulls()` |  |  |  | `0x002EB150` 204 |  |  |
+| `DrawSurfaceTags()` |  |  |  | `0x002ECB90` 324 |  |  |
+| `GetSlamCrashInvulnTime()` |  |  |  | `0x001B7B40` 28 |  |  |
+| `GetTradePaintThreshold()` |  |  |  | `0x001B4E50` 28 |  |  |
+| `IsDrawingCollisionWorld()` |  |  |  | `0x00226520` 28 |  |  |
 
 ## Notes
 

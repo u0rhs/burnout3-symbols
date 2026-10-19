@@ -7,26 +7,27 @@
 - **Area:** [Progression, profiles and saves](../systems/progression-saves.md)
 - **Source file:** `B3HardCodedTrackRegionList.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 13, B3INTERN 13, B3O0PCH 13
+- **Retail (SLUS-21050):** 3 of its 13 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `IsRegionUnlocked(EB3TrackRegion,CB3Profile*)` | `0x003A5D80` 204 | `0x0041F8F0` 204 | `0x00445570` 192 | `0x0045E750` 252 |  |
-| `GetZoomHeight(EB3TrackRegion,int)` | `0x003A5E50` 100 | `0x0041F9C0` 160 | `0x00445630` 160 | `0x0045E6A0` 168 |  |
-| `GetZoomBottomRight(EB3TrackRegion,int)` | `0x003A5EC0` 212 | `0x0041FA60` 272 | `0x004456D0` 272 | `0x0045E500` 416 |  |
-| `GetZoomTopLeft(EB3TrackRegion,int)` | `0x003A5FA0` 152 | `0x0041FB70` 212 | `0x004457E0` 212 | `0x0045E400` 256 |  |
-| `GetFakeMipImage(EB3TrackRegion,int)` | `0x003A6040` 32 | `0x0041FC50` 152 | `0x004458C0` 152 | `0x0045E3A0` 96 |  |
-| `GetZoomImage(EB3TrackRegion,int)` | `0x003A6060` 32 | `0x0041FCF0` 152 | `0x00445960` 152 | `0x0045E340` 96 |  |
-| `GetSatMapImage(EB3TrackRegion,int)` | `0x003A6080` 40 | `0x0041FD90` 160 | `0x00445A00` 160 | `0x0045E2D0` 104 |  |
-| `GetTrackIconString(EB3TrackRegion,int)` | `0x003A60B0` 84 | `0x0041FE30` 236 | `0x00445AA0` 236 | `0x0045E200` 196 |  |
-| `GetTrackIconPulseImage(EB3TrackRegion,int)` | `0x003A6110` 100 | `0x0041FF20` 252 | `0x00445B90` 252 | `0x0045E110` 228 |  |
-| `GetTrackIconImage(EB3TrackRegion,int)` | `0x003A6180` 100 | `0x00420020` 252 | `0x00445C90` 252 | `0x0045E020` 228 |  |
-| `GetTrackIconPos(EB3TrackRegion,int,bool)` | `0x003A61F0` 144 | `0x00420120` 300 | `0x00445D90` 300 | `0x0045DEF0` 300 |  |
-| `GetNumTrackIconPos(EB3TrackRegion)` | `0x003A6280` 64 | `0x00420250` 104 | `0x00445EC0` 104 | `0x0045DE80` 108 |  |
-| `GetTrackRegionString(EB3TrackRegion,bool)` | `0x003A62C0` 80 | `0x004202C0` 120 | `0x00445F30` 120 | `0x0045DDC0` 184 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `IsRegionUnlocked(EB3TrackRegion,CB3Profile*)` | `0x003A5D80` 204 | `0x0041F8F0` 204 | `0x00445570` 192 | `0x0045E750` 252 |  |  |
+| `GetZoomHeight(EB3TrackRegion,int)` | `0x003A5E50` 100 | `0x0041F9C0` 160 | `0x00445630` 160 | `0x0045E6A0` 168 |  |  |
+| `GetZoomBottomRight(EB3TrackRegion,int)` | `0x003A5EC0` 212 | `0x0041FA60` 272 | `0x004456D0` 272 | `0x0045E500` 416 |  |  |
+| `GetZoomTopLeft(EB3TrackRegion,int)` | `0x003A5FA0` 152 | `0x0041FB70` 212 | `0x004457E0` 212 | `0x0045E400` 256 |  |  |
+| `GetFakeMipImage(EB3TrackRegion,int)` | `0x003A6040` 32 | `0x0041FC50` 152 | `0x004458C0` 152 | `0x0045E3A0` 96 | `0x003F5AC0` strong |  |
+| `GetZoomImage(EB3TrackRegion,int)` | `0x003A6060` 32 | `0x0041FCF0` 152 | `0x00445960` 152 | `0x0045E340` 96 | `0x003F5AE0` strong |  |
+| `GetSatMapImage(EB3TrackRegion,int)` | `0x003A6080` 40 | `0x0041FD90` 160 | `0x00445A00` 160 | `0x0045E2D0` 104 | `0x003F5B00` proven |  |
+| `GetTrackIconString(EB3TrackRegion,int)` | `0x003A60B0` 84 | `0x0041FE30` 236 | `0x00445AA0` 236 | `0x0045E200` 196 |  |  |
+| `GetTrackIconPulseImage(EB3TrackRegion,int)` | `0x003A6110` 100 | `0x0041FF20` 252 | `0x00445B90` 252 | `0x0045E110` 228 |  |  |
+| `GetTrackIconImage(EB3TrackRegion,int)` | `0x003A6180` 100 | `0x00420020` 252 | `0x00445C90` 252 | `0x0045E020` 228 |  |  |
+| `GetTrackIconPos(EB3TrackRegion,int,bool)` | `0x003A61F0` 144 | `0x00420120` 300 | `0x00445D90` 300 | `0x0045DEF0` 300 |  |  |
+| `GetNumTrackIconPos(EB3TrackRegion)` | `0x003A6280` 64 | `0x00420250` 104 | `0x00445EC0` 104 | `0x0045DE80` 108 |  |  |
+| `GetTrackRegionString(EB3TrackRegion,bool)` | `0x003A62C0` 80 | `0x004202C0` 120 | `0x00445F30` 120 | `0x0045DDC0` 184 |  |  |
 
 ## Notes
 

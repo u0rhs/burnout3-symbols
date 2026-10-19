@@ -7,21 +7,22 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3ScrollBarComponent.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 7
+- **Retail (SLUS-21050):** 1 of its 4 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00442150`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x003C4B90` 124 | `0x00441AE0` 124 | `0x00469C30` 124 | `0x004810F0` 188 |  |
-| `Update(float)` | `0x003C4C10` 472 | `0x00441B60` 472 | `0x00469CB0` 472 | `0x00480DC0` 812 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,const CB3MenuComponentSelectionData*)` | `0x003C4DF0` 848 | `0x00441D40` 1056 | `0x00469E90` 1056 | `0x004807D0` 700 |  |
-| `Construct()` | `0x003C5140` 8 | `0x00442160` 8 | `0x0046A2B0` 8 | `0x004807A0` 44 |  |
-| `CB3ScrollBarComponent()` |  |  |  | `0x0033BCC0` 92 |  |
-| `CalculateBoxSizeAndItemSpacing()` |  |  |  | `0x00480A90` 208 |  |
-| `PrepareArrow(CB3ScrollBarComponent::EScrollBarArrows,const GtMathPs2::CGtV2d&)` |  |  |  | `0x00480B60` 600 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x003C4B90` 124 | `0x00441AE0` 124 | `0x00469C30` 124 | `0x004810F0` 188 | `0x0041EAF0` proven |  |
+| `Update(float)` | `0x003C4C10` 472 | `0x00441B60` 472 | `0x00469CB0` 472 | `0x00480DC0` 812 |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,const CB3MenuComponentSelectionData*)` | `0x003C4DF0` 848 | `0x00441D40` 1056 | `0x00469E90` 1056 | `0x004807D0` 700 |  |  |
+| `Construct()` | `0x003C5140` 8 | `0x00442160` 8 | `0x0046A2B0` 8 | `0x004807A0` 44 |  |  |
+| `CB3ScrollBarComponent()` |  |  |  | `0x0033BCC0` 92 |  |  |
+| `CalculateBoxSizeAndItemSpacing()` |  |  |  | `0x00480A90` 208 |  |  |
+| `PrepareArrow(CB3ScrollBarComponent::EScrollBarArrows,const GtMathPs2::CGtV2d&)` |  |  |  | `0x00480B60` 600 |  |  |
 
 ## Notes
 

@@ -7,27 +7,28 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3OnlineLoginToLobbyState.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 13
+- **Retail (SLUS-21050):** 5 of its 8 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440790`, 12 bytes = 3 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 1 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ShowNetworkError()` | `0x00302970` 416 | `0x003575F0` 416 | `0x00388A20` 416 | `0x0038BA50` 480 |  |
-| `Action(EGtStateAction,void*,void*,void*)` | `0x00302B10` 2396 | `0x00357790` 2396 | `0x00388BC0` 2396 | `0x0038B600` 948 |  |
-| `HandleNetworkErrorEvents(EB3MenuFlowFSMEvents)` | `0x00303470` 912 | `0x003580F0` 912 | `0x00389520` 912 | `0x0038B150` 512 |  |
-| `HandleSelectingPersonaEvents(EB3MenuFlowFSMEvents)` | `0x00303800` 1480 | `0x00358480` 1616 | `0x003898B0` 1616 | `0x0038AC80` 1108 |  |
-| `HandleRecoverAfterErrorEvents(EB3MenuFlowFSMEvents)` | `0x00303DD0` 524 | `0x00358AD0` 764 | `0x00389F00` 764 | `0x0038AA00` 636 |  |
-| `HandleLoggingIntoServerEvents(EB3MenuFlowFSMEvents)` | `0x00303FE0` 460 | `0x00358DD0` 560 | `0x0038A200` 560 | `0x0038A750` 676 |  |
-| `HandleSelectLoginEvents(EB3MenuFlowFSMEvents)` | `0x003041B0` 844 | `0x00359000` 844 | `0x0038A430` 844 | `0x0038A520` 556 |  |
-| `HandleConnectingEvents(EB3MenuFlowFSMEvents)` | `0x00304500` 696 | `0x00359350` 736 | `0x0038A780` 736 | `0x0038A2E0` 564 |  |
-| `CB3OnlineLoginToLobbyState()` |  |  |  | `0x00344A60` 60 |  |
-| `HandleDuplicateNameEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x0038B0E0` 100 |  |
-| `HandleLobbyErrorEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x0038B350` 392 |  |
-| `HandleUploadingResultsEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x0038B4E0` 276 |  |
-| `ShowLobbyError()` |  |  |  | `0x0038B9E0` 112 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ShowNetworkError()` | `0x00302970` 416 | `0x003575F0` 416 | `0x00388A20` 416 | `0x0038BA50` 480 |  |  |
+| `Action(EGtStateAction,void*,void*,void*)` | `0x00302B10` 2396 | `0x00357790` 2396 | `0x00388BC0` 2396 | `0x0038B600` 948 | `0x0034A4E0` unverified |  |
+| `HandleNetworkErrorEvents(EB3MenuFlowFSMEvents)` | `0x00303470` 912 | `0x003580F0` 912 | `0x00389520` 912 | `0x0038B150` 512 | `0x0034AE10` unverified |  |
+| `HandleSelectingPersonaEvents(EB3MenuFlowFSMEvents)` | `0x00303800` 1480 | `0x00358480` 1616 | `0x003898B0` 1616 | `0x0038AC80` 1108 |  |  |
+| `HandleRecoverAfterErrorEvents(EB3MenuFlowFSMEvents)` | `0x00303DD0` 524 | `0x00358AD0` 764 | `0x00389F00` 764 | `0x0038AA00` 636 |  |  |
+| `HandleLoggingIntoServerEvents(EB3MenuFlowFSMEvents)` | `0x00303FE0` 460 | `0x00358DD0` 560 | `0x0038A200` 560 | `0x0038A750` 676 | `0x0034B800` strong |  |
+| `HandleSelectLoginEvents(EB3MenuFlowFSMEvents)` | `0x003041B0` 844 | `0x00359000` 844 | `0x0038A430` 844 | `0x0038A520` 556 | `0x0034B9D0` likely |  |
+| `HandleConnectingEvents(EB3MenuFlowFSMEvents)` | `0x00304500` 696 | `0x00359350` 736 | `0x0038A780` 736 | `0x0038A2E0` 564 | `0x0034BC30` unverified |  |
+| `CB3OnlineLoginToLobbyState()` |  |  |  | `0x00344A60` 60 |  |  |
+| `HandleDuplicateNameEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x0038B0E0` 100 |  |  |
+| `HandleLobbyErrorEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x0038B350` 392 |  |  |
+| `HandleUploadingResultsEvents(EB3MenuFlowFSMEvents)` |  |  |  | `0x0038B4E0` 276 |  |  |
+| `ShowLobbyError()` |  |  |  | `0x0038B9E0` 112 |  |  |
 
 ## Notes
 

@@ -7,30 +7,31 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `GtInputDevicePS2DualShock.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 13, B3INTERN 13, B3O0PCH 17
+- **Retail (SLUS-21050):** 13 of its 13 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `DeadzoneAxis(float,float)` | `0x001DC490` 204 | `0x001D8C90` 204 | `0x0020B990` 204 | `0x0021E270` 384 |  |
-| `DeadzoneTrigger(float)` | `0x001DC560` 104 | `0x001D8D60` 104 | `0x0020BA60` 104 | `0x0021E1C0` 168 |  |
-| `DeadzoneButton(float)` | `0x001DC5D0` 104 | `0x001D8DD0` 104 | `0x0020BAD0` 104 | `0x0021E110` 168 |  |
-| `UnbindFromPort()` | `0x001DC640` 28 | `0x001D8E40` 28 | `0x0020BB40` 28 | `0x0021E0D0` 56 |  |
-| `BindToPort(CGtInputManagerPS2Pad2*,EGtPS2InputPort)` | `0x001DC660` 80 | `0x001D8E60` 216 | `0x0020BB60` 216 | `0x0021E000` 196 |  |
-| `SetPause(bool)` | `0x001DC6B0` 28 | `0x001D8F40` 28 | `0x0020BC40` 28 | `0x0021DFC0` 60 |  |
-| `UpdateVibration()` | `0x001DC6D0` 324 | `0x001D8F60` 324 | `0x0020BC60` 324 | `0x0021DDA0` 536 |  |
-| `GetPort()` | `0x001DC820` 8 | `0x001D90B0` 8 | `0x0020BDB0` 8 | `0x0021D060` 28 |  |
-| `IsControlJustPressed(int)` | `0x001DC830` 76 | `0x001D90C0` 172 | `0x0020BDC0` 172 | `0x0021CF80` 212 |  |
-| `GetControlValue(int)` | `0x001DC880` 64 | `0x001D9170` 144 | `0x0020BE70` 144 | `0x0021CEF0` 140 |  |
-| `Prepare()` | `0x001DC8C0` 144 | `0x001D9200` 240 | `0x0020BF00` 240 | `0x0021CE00` 228 |  |
-| `IsConnected()` | `0x001DC950` 8 | `0x001D92F0` 8 | `0x0020BFF0` 8 | `0x0021CDE0` 28 |  |
-| `Construct()` | `0x001DC960` 176 | `0x001D9300` 176 | `0x0020C000` 176 | `0x0021CC90` 332 |  |
-| `CGtInputDevicePS2DualShock()` |  |  |  | `0x0013EED0` 60 |  |
-| `SetLargeVibration(float)` |  |  |  | `0x0021D080` 264 |  |
-| `SetSmallVibration(bool)` |  |  |  | `0x0021D190` 104 |  |
-| `Update()` |  |  |  | `0x0021D200` 2964 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `DeadzoneAxis(float,float)` | `0x001DC490` 204 | `0x001D8C90` 204 | `0x0020B990` 204 | `0x0021E270` 384 | `0x00216E40` proven |  |
+| `DeadzoneTrigger(float)` | `0x001DC560` 104 | `0x001D8D60` 104 | `0x0020BA60` 104 | `0x0021E1C0` 168 | `0x00216F10` proven |  |
+| `DeadzoneButton(float)` | `0x001DC5D0` 104 | `0x001D8DD0` 104 | `0x0020BAD0` 104 | `0x0021E110` 168 | `0x00216F80` proven |  |
+| `UnbindFromPort()` | `0x001DC640` 28 | `0x001D8E40` 28 | `0x0020BB40` 28 | `0x0021E0D0` 56 | `0x00216FF0` strong |  |
+| `BindToPort(CGtInputManagerPS2Pad2*,EGtPS2InputPort)` | `0x001DC660` 80 | `0x001D8E60` 216 | `0x0020BB60` 216 | `0x0021E000` 196 | `0x00217010` strong |  |
+| `SetPause(bool)` | `0x001DC6B0` 28 | `0x001D8F40` 28 | `0x0020BC40` 28 | `0x0021DFC0` 60 | `0x00217060` unverified |  |
+| `UpdateVibration()` | `0x001DC6D0` 324 | `0x001D8F60` 324 | `0x0020BC60` 324 | `0x0021DDA0` 536 | `0x00217070` strong |  |
+| `GetPort()` | `0x001DC820` 8 | `0x001D90B0` 8 | `0x0020BDB0` 8 | `0x0021D060` 28 | `0x002172B0` proven |  |
+| `IsControlJustPressed(int)` | `0x001DC830` 76 | `0x001D90C0` 172 | `0x0020BDC0` 172 | `0x0021CF80` 212 | `0x002172C0` unverified |  |
+| `GetControlValue(int)` | `0x001DC880` 64 | `0x001D9170` 144 | `0x0020BE70` 144 | `0x0021CEF0` 140 | `0x00217310` proven |  |
+| `Prepare()` | `0x001DC8C0` 144 | `0x001D9200` 240 | `0x0020BF00` 240 | `0x0021CE00` 228 | `0x00217350` likely |  |
+| `IsConnected()` | `0x001DC950` 8 | `0x001D92F0` 8 | `0x0020BFF0` 8 | `0x0021CDE0` 28 | `0x002173E0` proven |  |
+| `Construct()` | `0x001DC960` 176 | `0x001D9300` 176 | `0x0020C000` 176 | `0x0021CC90` 332 | `0x002173F0` strong |  |
+| `CGtInputDevicePS2DualShock()` |  |  |  | `0x0013EED0` 60 |  |  |
+| `SetLargeVibration(float)` |  |  |  | `0x0021D080` 264 |  |  |
+| `SetSmallVibration(bool)` |  |  |  | `0x0021D190` 104 |  |  |
+| `Update()` |  |  |  | `0x0021D200` 2964 |  |  |
 
 ## Notes
 

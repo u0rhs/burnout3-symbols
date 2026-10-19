@@ -7,24 +7,25 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3SkyDomeRendererPS2.cpp`
 - **Methods per build:** DNAT_200 11, B3DEBUG 11, B3INTERN 11, B3O0PCH 11
+- **Retail (SLUS-21050):** 11 of its 11 DNAT_200 methods found, 10 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetGradientTextureAsSource()` | `0x001E2C00` 100 | `0x001E2880` 100 | `0x00215520` 100 | `0x002289E0` 128 |  |
-| `RestoreRenderTarget()` | `0x001E2C70` 12 | `0x001E28F0` 12 | `0x00215590` 12 | `0x002289D0` 16 |  |
-| `SetBackdropAsRenderTarget()` | `0x001E2C80` 128 | `0x001E2900` 128 | `0x002155A0` 128 | `0x00228920` 164 |  |
-| `RenderComponent(CB3SkyDomeRendererBase::ESkyComponent)` | `0x001E2D00` 380 | `0x001E2980` 512 | `0x00215620` 512 | `0x00228680` 640 |  |
-| `EndRender()` | `0x001E2E80` 120 | `0x001E2B80` 120 | `0x00215820` 120 | `0x002285E0` 156 |  |
-| `BeginRender()` | `0x001E2F00` 292 | `0x001E2C00` 292 | `0x002158A0` 292 | `0x002283F0` 460 |  |
-| `SetupCamera(float,float)` | `0x001E3030` 364 | `0x001E2D30` 364 | `0x002159D0` 364 | `0x00228110` 580 |  |
-| `Release()` | `0x001E31A0` 16 | `0x001E2EA0` 16 | `0x00215B40` 16 | `0x002280F0` 20 |  |
-| `Prepare(CGtTexture*,CGtTexture*,CGtTexture*)` | `0x001E31B0` 612 | `0x001E2EB0` 648 | `0x00215B50` 648 | `0x00227D10` 792 |  |
-| `Destruct()` | `0x001E3420` 16 | `0x001E3140` 16 | `0x00215DE0` 16 | `0x00227CF0` 20 |  |
-| `Construct()` | `0x001E3430` 188 | `0x001E3150` 188 | `0x00215DF0` 188 | `0x00227C00` 172 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetGradientTextureAsSource()` | `0x001E2C00` 100 | `0x001E2880` 100 | `0x00215520` 100 | `0x002289E0` 128 | `0x0021DB50` proven |  |
+| `RestoreRenderTarget()` | `0x001E2C70` 12 | `0x001E28F0` 12 | `0x00215590` 12 | `0x002289D0` 16 | `0x0021DBC0` proven |  |
+| `SetBackdropAsRenderTarget()` | `0x001E2C80` 128 | `0x001E2900` 128 | `0x002155A0` 128 | `0x00228920` 164 | `0x0021DBD0` proven |  |
+| `RenderComponent(CB3SkyDomeRendererBase::ESkyComponent)` | `0x001E2D00` 380 | `0x001E2980` 512 | `0x00215620` 512 | `0x00228680` 640 | `0x0021DC50` proven |  |
+| `EndRender()` | `0x001E2E80` 120 | `0x001E2B80` 120 | `0x00215820` 120 | `0x002285E0` 156 | `0x0021DDD0` proven |  |
+| `BeginRender()` | `0x001E2F00` 292 | `0x001E2C00` 292 | `0x002158A0` 292 | `0x002283F0` 460 | `0x0021DE50` proven |  |
+| `SetupCamera(float,float)` | `0x001E3030` 364 | `0x001E2D30` 364 | `0x002159D0` 364 | `0x00228110` 580 | `0x0021DF80` proven |  |
+| `Release()` | `0x001E31A0` 16 | `0x001E2EA0` 16 | `0x00215B40` 16 | `0x002280F0` 20 | `0x0021E0F0` proven |  |
+| `Prepare(CGtTexture*,CGtTexture*,CGtTexture*)` | `0x001E31B0` 612 | `0x001E2EB0` 648 | `0x00215B50` 648 | `0x00227D10` 792 | `0x0021E100` likely |  |
+| `Destruct()` | `0x001E3420` 16 | `0x001E3140` 16 | `0x00215DE0` 16 | `0x00227CF0` 20 | `0x0021E3C0` proven |  |
+| `Construct()` | `0x001E3430` 188 | `0x001E3150` 188 | `0x00215DF0` 188 | `0x00227C00` 172 | `0x0021E3D0` proven |  |
 
 ## Static data (DNAT_200)
 

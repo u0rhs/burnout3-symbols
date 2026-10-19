@@ -11,20 +11,20 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CreateText(unsigned char,signed char)` | `0x0037A0D0` 500 | `0x003EB0B0` 500 | `0x004132B0` 500 | `0x00429050` 944 |  |
-| `ReleaseComponents()` | `0x0037A2D0` 176 | `0x003EB2B0` 176 | `0x004134B0` 176 | `0x00428F70` 216 |  |
-| `Release()` | `0x0037A380` 8 | `0x003EB360` 8 | `0x00413560` 8 | `0x00428F60` 16 |  |
-| `Update(float)` | `0x0037A390` 524 | `0x003EB370` 664 | `0x00413570` 664 | `0x00428E10` 332 |  |
-| `Prepare()` | `0x0037A5A0` 32 |  | `0x00413810` 32 |  |  |
-| `Construct()` | `0x0037A5C0` 104 | `0x003EB610` 104 | `0x00413830` 104 | `0x00428D70` 152 |  |
-| `CB3ControllerRemovedComponent()` |  |  |  | `0x0033BD20` 108 |  |
-| `CreateBox()` |  |  |  | `0x004294C0` 300 |  |
-| `ReleaseBox()` |  |  |  | `0x004295F0` 128 |  |
-| `ReleaseText(unsigned char)` |  |  |  | `0x00429400` 180 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CreateText(unsigned char,signed char)` | `0x0037A0D0` 500 | `0x003EB0B0` 500 | `0x004132B0` 500 | `0x00429050` 944 |  |  |
+| `ReleaseComponents()` | `0x0037A2D0` 176 | `0x003EB2B0` 176 | `0x004134B0` 176 | `0x00428F70` 216 |  |  |
+| `Release()` | `0x0037A380` 8 | `0x003EB360` 8 | `0x00413560` 8 | `0x00428F60` 16 |  |  |
+| `Update(float)` | `0x0037A390` 524 | `0x003EB370` 664 | `0x00413570` 664 | `0x00428E10` 332 |  |  |
+| `Prepare()` | `0x0037A5A0` 32 |  | `0x00413810` 32 |  |  |  |
+| `Construct()` | `0x0037A5C0` 104 | `0x003EB610` 104 | `0x00413830` 104 | `0x00428D70` 152 |  |  |
+| `CB3ControllerRemovedComponent()` |  |  |  | `0x0033BD20` 108 |  |  |
+| `CreateBox()` |  |  |  | `0x004294C0` 300 |  |  |
+| `ReleaseBox()` |  |  |  | `0x004295F0` 128 |  |  |
+| `ReleaseText(unsigned char)` |  |  |  | `0x00429400` 180 |  |  |
 
 ## Notes
 

@@ -7,40 +7,41 @@
 - **Area:** [Crashes, takedowns and scoring](../systems/crash-scoring.md)
 - **Source file:** `B3CrashScore.cpp`
 - **Methods per build:** DNAT_200 22, B3DEBUG 22, B3INTERN 20, B3O0PCH 26
+- **Retail (SLUS-21050):** 2 of its 22 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00441C60`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `BuildAftermathDrawList()` | `0x0037D760` 1176 | `0x003EF850` 1360 | `0x004178B0` 628 | `0x0042F190` 876 |  |
-| `Draw()` | `0x0037DC00` 252 | `0x003EFDA0` 252 | `0x00417B30` 252 | `0x0042F0D0` 148 |  |
-| `AddVehicleScoreToDrawList(CB3VehiclePhysics*)` | `0x0037DD00` 324 | `0x003EFEA0` 484 | `0x00417C30` 484 | `0x0042EE70` 604 |  |
-| `CrashBreakerVehiclesRemaining(int)` | `0x0037DE50` 220 | `0x003F0090` 220 | `0x00417E20` 188 | `0x0042EDA0` 196 |  |
-| `GetScoreForCar(CB3VehiclePhysics*)` | `0x0037DF30` 140 | `0x003F0170` 140 | `0x00417EE0` 140 | `0x0042ECE0` 180 |  |
-| `GetNumCrashedCars(int)` | `0x0037DFC0` 120 | `0x003F0200` 120 | `0x00417F70` 120 | `0x0042EC20` 192 |  |
-| `HandleCrashbreaker(int)` | `0x0037E040` 120 | `0x003F0280` 220 |  | `0x0042EAF0` 172 |  |
-| `HandleCrashBattleDelta(float,float,CB3VehiclePhysics*,CB3VehiclePhysics*)` | `0x0037E0C0` 220 | `0x003F0360` 340 | `0x00417FF0` 340 | `0x0042E910` 480 |  |
-| `AddCrashMultiplier(ECrashModePickupType,int)` | `0x0037E1A0` 32 | `0x003F04C0` 136 | `0x00418150` 252 | `0x0042E890` 128 |  |
-| `AddCrashScore(ECrashModePickupType,int)` | `0x0037E1C0` 68 | `0x003F0550` 168 | `0x00418250` 168 | `0x0042E7C0` 196 |  |
-| `GetFinalPlayerScore(int)` | `0x0037E210` 440 | `0x003F0600` 496 | `0x00418300` 408 | `0x0042E650` 360 |  |
-| `CalcPlayerMultiplier(int)` | `0x0037E3D0` 196 | `0x003F07F0` 292 |  | `0x0042E4F0` 352 |  |
-| `GetTotalPickupScore(int)` | `0x0037E4A0` 176 | `0x003F0920` 176 | `0x004184A0` 176 | `0x0042E3D0` 284 |  |
-| `CalcCrashCarsScore(int)` | `0x0037E550` 272 | `0x003F09D0` 272 | `0x00418550` 272 | `0x0042E150` 628 |  |
-| `HandleVehicleImpact(CB3VehiclePhysics*)` | `0x0037E660` 160 | `0x003F0AE0` 160 | `0x00418660` 160 | `0x0042E070` 212 |  |
-| `HandleCrashTrafficCar(CB3TrafficPhysics*,CB3TrafficVehicle*,bool,int)` | `0x0037E700` 252 | `0x003F0B80` 320 | `0x00418700` 320 | `0x0042DED0` 412 |  |
-| `HandleCrashRaceCar(CB3RaceCarPhysics*,int)` | `0x0037E800` 264 | `0x003F0CC0` 404 | `0x00418840` 404 | `0x0042DD30` 412 |  |
-| `Destruct()` | `0x0037E910` 8 | `0x003F0E60` 8 | `0x004189E0` 8 | `0x0042DD20` 16 |  |
-| `Release()` | `0x0037E920` 8 | `0x003F0E70` 8 | `0x004189F0` 8 | `0x0042DD10` 16 |  |
-| `Update()` | `0x0037E930` 8 | `0x003F0E80` 8 | `0x00418A00` 8 | `0x0042DD00` 16 |  |
-| `Prepare()` | `0x0037E940` 472 | `0x003F0E90` 472 | `0x00418A10` 324 | `0x0042D9F0` 784 |  |
-| `Construct()` | `0x0037EB20` 8 | `0x003F1070` 8 | `0x00418B60` 8 | `0x0042D9E0` 16 |  |
-| `CB3CrashScore()` |  |  |  | `0x00191520` 40 |  |
-| `DrawAftermathLabels()` |  |  |  | `0x0042F500` 236 |  |
-| `GetCrashingVehicleIndex(CB3VehiclePhysics*)` |  |  |  | `0x0042EBA0` 116 |  |
-| `SetScoreSwap()` |  |  |  | `0x003FBB90` 32 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `BuildAftermathDrawList()` | `0x0037D760` 1176 | `0x003EF850` 1360 | `0x004178B0` 628 | `0x0042F190` 876 |  |  |
+| `Draw()` | `0x0037DC00` 252 | `0x003EFDA0` 252 | `0x00417B30` 252 | `0x0042F0D0` 148 |  |  |
+| `AddVehicleScoreToDrawList(CB3VehiclePhysics*)` | `0x0037DD00` 324 | `0x003EFEA0` 484 | `0x00417C30` 484 | `0x0042EE70` 604 |  |  |
+| `CrashBreakerVehiclesRemaining(int)` | `0x0037DE50` 220 | `0x003F0090` 220 | `0x00417E20` 188 | `0x0042EDA0` 196 |  |  |
+| `GetScoreForCar(CB3VehiclePhysics*)` | `0x0037DF30` 140 | `0x003F0170` 140 | `0x00417EE0` 140 | `0x0042ECE0` 180 |  |  |
+| `GetNumCrashedCars(int)` | `0x0037DFC0` 120 | `0x003F0200` 120 | `0x00417F70` 120 | `0x0042EC20` 192 |  |  |
+| `HandleCrashbreaker(int)` | `0x0037E040` 120 | `0x003F0280` 220 |  | `0x0042EAF0` 172 |  |  |
+| `HandleCrashBattleDelta(float,float,CB3VehiclePhysics*,CB3VehiclePhysics*)` | `0x0037E0C0` 220 | `0x003F0360` 340 | `0x00417FF0` 340 | `0x0042E910` 480 |  |  |
+| `AddCrashMultiplier(ECrashModePickupType,int)` | `0x0037E1A0` 32 | `0x003F04C0` 136 | `0x00418150` 252 | `0x0042E890` 128 |  |  |
+| `AddCrashScore(ECrashModePickupType,int)` | `0x0037E1C0` 68 | `0x003F0550` 168 | `0x00418250` 168 | `0x0042E7C0` 196 | `0x003CCE90` strong |  |
+| `GetFinalPlayerScore(int)` | `0x0037E210` 440 | `0x003F0600` 496 | `0x00418300` 408 | `0x0042E650` 360 |  |  |
+| `CalcPlayerMultiplier(int)` | `0x0037E3D0` 196 | `0x003F07F0` 292 |  | `0x0042E4F0` 352 |  |  |
+| `GetTotalPickupScore(int)` | `0x0037E4A0` 176 | `0x003F0920` 176 | `0x004184A0` 176 | `0x0042E3D0` 284 |  |  |
+| `CalcCrashCarsScore(int)` | `0x0037E550` 272 | `0x003F09D0` 272 | `0x00418550` 272 | `0x0042E150` 628 |  |  |
+| `HandleVehicleImpact(CB3VehiclePhysics*)` | `0x0037E660` 160 | `0x003F0AE0` 160 | `0x00418660` 160 | `0x0042E070` 212 |  |  |
+| `HandleCrashTrafficCar(CB3TrafficPhysics*,CB3TrafficVehicle*,bool,int)` | `0x0037E700` 252 | `0x003F0B80` 320 | `0x00418700` 320 | `0x0042DED0` 412 | `0x003CD430` unverified |  |
+| `HandleCrashRaceCar(CB3RaceCarPhysics*,int)` | `0x0037E800` 264 | `0x003F0CC0` 404 | `0x00418840` 404 | `0x0042DD30` 412 |  |  |
+| `Destruct()` | `0x0037E910` 8 | `0x003F0E60` 8 | `0x004189E0` 8 | `0x0042DD20` 16 |  |  |
+| `Release()` | `0x0037E920` 8 | `0x003F0E70` 8 | `0x004189F0` 8 | `0x0042DD10` 16 |  |  |
+| `Update()` | `0x0037E930` 8 | `0x003F0E80` 8 | `0x00418A00` 8 | `0x0042DD00` 16 |  |  |
+| `Prepare()` | `0x0037E940` 472 | `0x003F0E90` 472 | `0x00418A10` 324 | `0x0042D9F0` 784 |  |  |
+| `Construct()` | `0x0037EB20` 8 | `0x003F1070` 8 | `0x00418B60` 8 | `0x0042D9E0` 16 |  |  |
+| `CB3CrashScore()` |  |  |  | `0x00191520` 40 |  |  |
+| `DrawAftermathLabels()` |  |  |  | `0x0042F500` 236 |  |  |
+| `GetCrashingVehicleIndex(CB3VehiclePhysics*)` |  |  |  | `0x0042EBA0` 116 |  |  |
+| `SetScoreSwap()` |  |  |  | `0x003FBB90` 32 |  |  |
 
 ## Notes
 

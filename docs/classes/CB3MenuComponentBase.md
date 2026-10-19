@@ -7,23 +7,24 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3MenuComponentBase.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 10
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x002D8A10` 8 | `0x00321F70` 80 | `0x00354150` 80 | `0x00350E50` 48 |  |
-| `Prepare()` | `0x002D8A20` 16 | `0x00321FC0` 16 | `0x003541A0` 16 | `0x00350E20` 44 |  |
-| `Construct(int)` | `0x002D8A30` 32 | `0x00321FD0` 32 | `0x003541B0` 32 | `0x00350DD0` 72 |  |
-| `CB3MenuComponentBase()` |  |  |  | `0x0033BC10` 40 |  |
-| `GetLeadTimeScale()` |  |  |  | `0x00352F60` 40 |  |
-| `GetMenuPhase()` |  |  |  | `0x00352340` 40 |  |
-| `GetScene()` |  |  |  | `0x003523B0` 24 |  |
-| `GetSceneLayer(int)` |  |  |  | `0x00352370` 60 |  |
-| `GetStringBuffer()` |  |  |  | `0x003F6710` 24 |  |
-| `IsActive()` |  |  |  | `0x0033FDE0` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x002D8A10` 8 | `0x00321F70` 80 | `0x00354150` 80 | `0x00350E50` 48 | `0x00319390` proven |  |
+| `Prepare()` | `0x002D8A20` 16 | `0x00321FC0` 16 | `0x003541A0` 16 | `0x00350E20` 44 | `0x003193A0` proven |  |
+| `Construct(int)` | `0x002D8A30` 32 | `0x00321FD0` 32 | `0x003541B0` 32 | `0x00350DD0` 72 | `0x003193B0` proven |  |
+| `CB3MenuComponentBase()` |  |  |  | `0x0033BC10` 40 |  |  |
+| `GetLeadTimeScale()` |  |  |  | `0x00352F60` 40 |  |  |
+| `GetMenuPhase()` |  |  |  | `0x00352340` 40 |  |  |
+| `GetScene()` |  |  |  | `0x003523B0` 24 |  |  |
+| `GetSceneLayer(int)` |  |  |  | `0x00352370` 60 |  |  |
+| `GetStringBuffer()` |  |  |  | `0x003F6710` 24 |  |  |
+| `IsActive()` |  |  |  | `0x0033FDE0` 28 |  |  |
 
 ## Notes
 

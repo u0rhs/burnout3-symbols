@@ -7,19 +7,20 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3HSelectComponent.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 5
+- **Retail (SLUS-21050):** 3 of its 4 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440390`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x002DAD50` 56 | `0x00324750` 56 | `0x003568F0` 56 | `0x00354A50` 116 |  |
-| `Update(float)` | `0x002DAD90` 188 | `0x00324790` 188 | `0x00356930` 188 | `0x00354900` 324 |  |
-| `Prepare(const CB3MenuComponentSelectionData*,const CB3HSelectComponentEntryData*)` | `0x002DAE50` 216 | `0x00324850` 296 | `0x003569F0` 296 | `0x00354730` 456 |  |
-| `Construct()` | `0x002DAF30` 8 | `0x00324980` 8 | `0x00356B20` 8 | `0x00354700` 44 |  |
-| `CB3HSelectComponent()` |  |  |  | `0x0033C780` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x002DAD50` 56 | `0x00324750` 56 | `0x003568F0` 56 | `0x00354A50` 116 | `0x0031CC90` proven |  |
+| `Update(float)` | `0x002DAD90` 188 | `0x00324790` 188 | `0x00356930` 188 | `0x00354900` 324 | `0x0031CCD0` strong |  |
+| `Prepare(const CB3MenuComponentSelectionData*,const CB3HSelectComponentEntryData*)` | `0x002DAE50` 216 | `0x00324850` 296 | `0x003569F0` 296 | `0x00354730` 456 |  |  |
+| `Construct()` | `0x002DAF30` 8 | `0x00324980` 8 | `0x00356B20` 8 | `0x00354700` 44 | `0x0031CD90` strong |  |
+| `CB3HSelectComponent()` |  |  |  | `0x0033C780` 60 |  |  |
 
 ## Notes
 

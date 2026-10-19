@@ -11,17 +11,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x00376470` 8 | `0x003E6FA0` 8 | `0x0040EDF0` 8 | `0x004252B0` 16 |  |
-| `Update()` | `0x00376480` 492 | `0x003E6FB0` 544 | `0x0040EE00` 492 | `0x00424F20` 760 |  |
-| `Prepare(bool)` | `0x00376670` 212 | `0x003E71D0` 232 | `0x0040EFF0` 212 | `0x00424DE0` 308 |  |
-| `PrepareTurnBasedCrashStandings()` | `0x00376750` 196 | `0x003E72C0` 264 | `0x0040F0D0` 264 | `0x00424CB0` 296 |  |
-| `PrepareGPStandings()` | `0x00376820` 180 | `0x003E73D0` 264 | `0x0040F1E0` 264 | `0x00424B50` 316 |  |
-| `PrepareVSelectComponent(unsigned int)` | `0x003768E0` 524 | `0x003E74E0` 716 | `0x0040F2F0` 716 | `0x004248C0` 644 |  |
-| `CB3PostEventPage()` |  |  |  | `0x00342B70` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x00376470` 8 | `0x003E6FA0` 8 | `0x0040EDF0` 8 | `0x004252B0` 16 |  |  |
+| `Update()` | `0x00376480` 492 | `0x003E6FB0` 544 | `0x0040EE00` 492 | `0x00424F20` 760 |  |  |
+| `Prepare(bool)` | `0x00376670` 212 | `0x003E71D0` 232 | `0x0040EFF0` 212 | `0x00424DE0` 308 |  |  |
+| `PrepareTurnBasedCrashStandings()` | `0x00376750` 196 | `0x003E72C0` 264 | `0x0040F0D0` 264 | `0x00424CB0` 296 |  |  |
+| `PrepareGPStandings()` | `0x00376820` 180 | `0x003E73D0` 264 | `0x0040F1E0` 264 | `0x00424B50` 316 |  |  |
+| `PrepareVSelectComponent(unsigned int)` | `0x003768E0` 524 | `0x003E74E0` 716 | `0x0040F2F0` 716 | `0x004248C0` 644 |  |  |
+| `CB3PostEventPage()` |  |  |  | `0x00342B70` 60 |  |  |
 
 ## Notes
 

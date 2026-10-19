@@ -7,21 +7,22 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundESM.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 7
+- **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440070`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x0024A060` 272 | `0x0027A400` 320 | `0x002B1D40` 320 | `0x002AE9F0` 164 |  |
-| `Update(const CB3RaceCar*,float,float,float)` | `0x0024A170` 416 | `0x0027A540` 732 | `0x002B1E80` 596 | `0x002AE860` 392 |  |
-| `Prepare(unsigned long,int)` | `0x0024A310` 200 | `0x0027A820` 296 | `0x002B20E0` 296 | `0x002AE750` 264 |  |
-| `Construct()` | `0x0024A3E0` 40 | `0x0027A950` 40 | `0x002B2210` 40 | `0x002AE720` 48 |  |
-| `CB3SoundESMLow()` |  |  |  | `0x002B1BC0` 60 |  |
-| `Start()` |  |  |  | `0x002AEAA0` 248 |  |
-| `Stop()` |  |  |  | `0x002AEBA0` 136 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x0024A060` 272 | `0x0027A400` 320 | `0x002B1D40` 320 | `0x002AE9F0` 164 | `0x00287670` unverified |  |
+| `Update(const CB3RaceCar*,float,float,float)` | `0x0024A170` 416 | `0x0027A540` 732 | `0x002B1E80` 596 | `0x002AE860` 392 | `0x00287710` unverified |  |
+| `Prepare(unsigned long,int)` | `0x0024A310` 200 | `0x0027A820` 296 | `0x002B20E0` 296 | `0x002AE750` 264 | `0x00287890` unverified |  |
+| `Construct()` | `0x0024A3E0` 40 | `0x0027A950` 40 | `0x002B2210` 40 | `0x002AE720` 48 | `0x00287940` strong |  |
+| `CB3SoundESMLow()` |  |  |  | `0x002B1BC0` 60 |  |  |
+| `Start()` |  |  |  | `0x002AEAA0` 248 |  |  |
+| `Stop()` |  |  |  | `0x002AEBA0` 136 |  |  |
 
 ## Notes
 

@@ -7,22 +7,23 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `GtLinearMalloc.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 9
+- **Retail (SLUS-21050):** 4 of its 6 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Malloc(unsigned int)` | `0x002B8ED0` 80 | `0x002FA840` 160 | `0x0032E510` 160 | `0x00326160` 176 |  |
-| `SetAlignment(unsigned int)` | `0x002B8F20` 8 | `0x002FA8E0` 140 | `0x0032E5B0` 140 | `0x00326100` 92 |  |
-| `Destroy()` | `0x002B8F30` 160 | `0x002FA970` 188 | `0x0032E640` 188 | `0x00325FB0` 140 |  |
-| `Create(void*,unsigned int)` | `0x002B8FD0` 36 | `0x002FAA30` 200 | `0x0032E700` 200 | `0x00325F10` 152 |  |
-| `~CGtLinearMalloc()` | `0x002B9000` 196 | `0x002FAB00` 224 | `0x0032E7D0` 224 | `0x00325EB0` 92 |  |
-| `CGtLinearMalloc()` | `0x002B90D0` 24 | `0x002FABE0` 24 | `0x0032E8B0` 24 | `0x00325E70` 64 |  |
-| `GetAlignment()` |  |  |  | `0x00261EB0` 28 |  |
-| `IsRWAllocator()` |  |  |  | `0x00261ED0` 36 |  |
-| `StopRWAllocation()` |  |  |  | `0x003260A0` 84 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Malloc(unsigned int)` | `0x002B8ED0` 80 | `0x002FA840` 160 | `0x0032E510` 160 | `0x00326160` 176 |  |  |
+| `SetAlignment(unsigned int)` | `0x002B8F20` 8 | `0x002FA8E0` 140 | `0x0032E5B0` 140 | `0x00326100` 92 |  |  |
+| `Destroy()` | `0x002B8F30` 160 | `0x002FA970` 188 | `0x0032E640` 188 | `0x00325FB0` 140 | `0x002F9D00` proven |  |
+| `Create(void*,unsigned int)` | `0x002B8FD0` 36 | `0x002FAA30` 200 | `0x0032E700` 200 | `0x00325F10` 152 | `0x002F9DA0` proven |  |
+| `~CGtLinearMalloc()` | `0x002B9000` 196 | `0x002FAB00` 224 | `0x0032E7D0` 224 | `0x00325EB0` 92 | `0x002F9DD0` proven |  |
+| `CGtLinearMalloc()` | `0x002B90D0` 24 | `0x002FABE0` 24 | `0x0032E8B0` 24 | `0x00325E70` 64 | `0x002F9EA0` proven |  |
+| `GetAlignment()` |  |  |  | `0x00261EB0` 28 |  |  |
+| `IsRWAllocator()` |  |  |  | `0x00261ED0` 36 |  |  |
+| `StopRWAllocation()` |  |  |  | `0x003260A0` 84 |  |  |
 
 ## Static data (DNAT_200)
 

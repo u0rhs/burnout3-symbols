@@ -9,15 +9,15 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `_GetGroupData(unsigned int)` |  |  |  | `0x003D9280` 60 |  |
-| `_GetMasterPitch()` |  |  |  | `0x003D9270` 12 |  |
-| `_GetMasterVolume()` |  |  |  | `0x003D9260` 12 |  |
-| `_NextUniquePlayId()` |  |  |  | `0x003D98F0` 20 |  |
-| `_SetMasterVolume(float)` |  |  |  | `0x002B16F0` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `_GetGroupData(unsigned int)` |  |  |  | `0x003D9280` 60 |  |  |
+| `_GetMasterPitch()` |  |  |  | `0x003D9270` 12 |  |  |
+| `_GetMasterVolume()` |  |  |  | `0x003D9260` 12 |  |  |
+| `_NextUniquePlayId()` |  |  |  | `0x003D98F0` 20 |  |  |
+| `_SetMasterVolume(float)` |  |  |  | `0x002B16F0` 28 |  |  |
 
 ## Static data (DNAT_200)
 

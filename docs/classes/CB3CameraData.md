@@ -7,22 +7,23 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3GraphicsManagerPS2.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 7
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CCameraData`, size 0x0BC, declared in 92 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SendRegistersToGS() const` | `0x001E9240` 120 |  |  |  |  |
-| `ConstructEnvMap(GtMathPs2::CGtMatrix3x4,EB3RenderableCamera)` | `0x001E92C0` 1488 | `0x001EA810` 1684 | `0x0021CCA0` 1596 | `0x00233EF0` 1932 |  |
-| `Construct(RwCamera*)` | `0x001E9890` 1432 | `0x001EAEB0` 1432 | `0x0021D2E0` 1432 | `0x002335B0` 2076 |  |
-| `SendRegistersToGS()` |  | `0x001EA790` 120 | `0x0021CC20` 120 | `0x002346A0` 148 |  |
-| `CB3CameraData()` |  |  |  | `0x00195E30` 156 |  |
-| `GetNearClipPlane()` |  |  |  | `0x00268FD0` 28 |  |
-| `GetRegisterData()` |  |  |  | `0x00228900` 28 |  |
-| `GetVU1Data()` |  |  |  | `0x00228360` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SendRegistersToGS() const` | `0x001E9240` 120 |  |  |  | `0x002253C0` proven |  |
+| `ConstructEnvMap(GtMathPs2::CGtMatrix3x4,EB3RenderableCamera)` | `0x001E92C0` 1488 | `0x001EA810` 1684 | `0x0021CCA0` 1596 | `0x00233EF0` 1932 | `0x00225440` likely |  |
+| `Construct(RwCamera*)` | `0x001E9890` 1432 | `0x001EAEB0` 1432 | `0x0021D2E0` 1432 | `0x002335B0` 2076 | `0x00225B30` proven |  |
+| `SendRegistersToGS()` |  | `0x001EA790` 120 | `0x0021CC20` 120 | `0x002346A0` 148 |  |  |
+| `CB3CameraData()` |  |  |  | `0x00195E30` 156 |  |  |
+| `GetNearClipPlane()` |  |  |  | `0x00268FD0` 28 |  |  |
+| `GetRegisterData()` |  |  |  | `0x00228900` 28 |  |  |
+| `GetVU1Data()` |  |  |  | `0x00228360` 28 |  |  |
 
 ## Burnout 2 layout of `CCameraData`
 

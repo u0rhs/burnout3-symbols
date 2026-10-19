@@ -7,18 +7,19 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `GtMalloc.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 5
+- **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Free(void*)` | `0x0036E510` 56 | `0x003DBA80` 132 | `0x004045D0` 132 | `0x00419EE0` 40 |  |
-| `Malloc(unsigned int)` | `0x0036E550` 88 | `0x003DBB10` 236 | `0x00404660` 236 | `0x00419E90` 72 |  |
-| `Create(void*,unsigned int)` | `0x0036E5B0` 80 | `0x003DBC00` 120 | `0x00404750` 120 | `0x00419E00` 76 |  |
-| `GetMoreOfMemoryPool(int)` |  |  |  | `0x00419D80` 120 |  |
-| `GetUsage()` |  |  |  | `0x00419E50` 56 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Free(void*)` | `0x0036E510` 56 | `0x003DBA80` 132 | `0x004045D0` 132 | `0x00419EE0` 40 |  |  |
+| `Malloc(unsigned int)` | `0x0036E550` 88 | `0x003DBB10` 236 | `0x00404660` 236 | `0x00419E90` 72 |  |  |
+| `Create(void*,unsigned int)` | `0x0036E5B0` 80 | `0x003DBC00` 120 | `0x00404750` 120 | `0x00419E00` 76 | `0x003BB2A0` proven |  |
+| `GetMoreOfMemoryPool(int)` |  |  |  | `0x00419D80` 120 |  |  |
+| `GetUsage()` |  |  |  | `0x00419E50` 56 |  |  |
 
 ## Static data (DNAT_200)
 

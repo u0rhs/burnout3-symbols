@@ -11,16 +11,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PrepareMap(EMedalEventType)` | `0x0039FCA0` 1640 | `0x00419180` 1684 | `0x0043EE40` 1684 | `0x00457620` 2924 |  |
-| `Release()` | `0x003A0310` 8 | `0x00419820` 8 | `0x0043F4E0` 8 | `0x00457500` 16 |  |
-| `Update()` | `0x003A0320` 244 | `0x00419830` 328 | `0x0043F4F0` 328 | `0x00457400` 256 |  |
-| `Prepare()` | `0x003A0420` 412 | `0x00419980` 488 | `0x0043F640` 488 | `0x00457290` 356 |  |
-| `CB3MyBurnoutProgressPage()` |  |  |  | `0x003428C0` 124 |  |
-| `SetStats()` |  |  |  | `0x00457510` 272 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PrepareMap(EMedalEventType)` | `0x0039FCA0` 1640 | `0x00419180` 1684 | `0x0043EE40` 1684 | `0x00457620` 2924 |  |  |
+| `Release()` | `0x003A0310` 8 | `0x00419820` 8 | `0x0043F4E0` 8 | `0x00457500` 16 |  |  |
+| `Update()` | `0x003A0320` 244 | `0x00419830` 328 | `0x0043F4F0` 328 | `0x00457400` 256 |  |  |
+| `Prepare()` | `0x003A0420` 412 | `0x00419980` 488 | `0x0043F640` 488 | `0x00457290` 356 |  |  |
+| `CB3MyBurnoutProgressPage()` |  |  |  | `0x003428C0` 124 |  |  |
+| `SetStats()` |  |  |  | `0x00457510` 272 |  |  |
 
 ## Notes
 

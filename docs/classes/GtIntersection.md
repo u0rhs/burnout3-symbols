@@ -7,38 +7,39 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `GtIntersectionPS2.cpp`
 - **Methods per build:** DNAT_200 19, B3DEBUG 19, B3INTERN 19, B3O0PCH 21
+- **Retail (SLUS-21050):** 11 of its 19 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `IntersectSphere(GtMathPs2::CGtSphere,const CGtPolygonSoup16&,bool (*)(const CGtPolygonIntersectionResult&, void` | `0x002335E0` 920 |  |  |  |  |
-| `IntersectLine(const CGtLine&,const CGtPolygonSoup16&,bool (*)(const CGtPolygonIntersectionResult&, void*),void*` | `0x00233980` 2016 |  |  |  |  |
-| `IntersectLineNearest(const CGtLine&,const CGtPolygonSoup16&,CGtPolygonIntersectionResult*)` | `0x00234160` 3828 | `0x00251B60` 4348 | `0x0028D900` 4140 | `0x0028DDF0` 1996 |  |
-| `IntersectFrustum(const CGtFrustum&,const CGtExtrudedBox&)` | `0x00235060` 208 | `0x00252C60` 208 | `0x0028E930` 208 | `0x0028DCC0` 160 |  |
-| `IntersectFrustum(const CGtFrustum&,const CGtOrthogonalBox&)` | `0x00235130` 208 | `0x00252D30` 208 | `0x0028EA00` 208 | `0x0028DC20` 160 |  |
-| `IntersectLineTriangle(const CGtLine&,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float*,float*,float*` | `0x00235200` 300 | `0x00252E00` 300 | `0x0028EAD0` 300 | `0x0028DAC0` 352 |  |
-| `IntersectSphere(GtMathPs2::CGtSphere,const CGtAxisAlignedBox&)` | `0x00235330` 268 | `0x00252F30` 268 | `0x0028EC00` 268 | `0x0028D5A0` 1144 |  |
-| `IntersectSphere(GtMathPs2::CGtSphere,const CGtPolygonSoup&,bool (*)(const CGtPolygonIntersectionResult&, void*)` | `0x00235440` 828 |  |  |  |  |
-| `IntersectLine(const CGtLine&,GtMathPs2::CGtV3d,const CGtAxisAlignedBox&)` | `0x00235780` 220 | `0x002533A0` 372 | `0x0028F070` 372 | `0x0028D010` 416 |  |
-| `IntersectLine(const CGtLine&,const CGtPolygonSoup&,bool (*)(const CGtPolygonIntersectionResult&, void*),void*)` | `0x00235860` 948 |  |  |  |  |
-| `IntersectLineNearest(const CGtLine&,const CGtPolygonSoup&,CGtPolygonIntersectionResult*)` | `0x00235C20` 1840 | `0x00253980` 2160 | `0x0028F5D0` 1904 | `0x0028C300` 1952 |  |
-| `IntersectSphereTriangle(GtMathPs2::CGtSphere,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::C` | `0x00236350` 384 | `0x002541F0` 384 | `0x0028FD40` 384 | `0x0028C130` 452 |  |
-| `IntersectSphere(GtMathPs2::CGtSphere,const CGtPolygonSoup16&,bool (*)` |  | `0x00250EB0` 948 | `0x0028CCC0` 948 | `0x0028ED80` 980 |  |
-| `IntersectLine(const CGtLine&,const CGtPolygonSoup16&,bool (*)` |  | `0x00251270` 2280 | `0x0028D080` 2176 | `0x0028E9C0` 956 |  |
-| `IntersectSphere(GtMathPs2::CGtSphere,const CGtPolygonSoup&,bool (*)` |  | `0x00253040` 860 | `0x0028ED10` 860 | `0x0028D1B0` 1000 |  |
-| `IntersectLine(const CGtLine&,const CGtPolygonSoup&,bool (*)` |  | `0x00253520` 1108 | `0x0028F1F0` 980 | `0x0028CC80` 908 |  |
-| `ClipPolyWithConvexHull(const GtMathPs2::CGtV3d*,int,const CGtConvexHull&,GtMathPs2::CGtV3d*)` | `0x0027EAF0` 228 | `0x002B6520` 388 | `0x002EC490` 388 | `0x002EE6D0` 420 |  |
-| `ClipPolyByPlane(const GtMathPs2::CGtV3d*,int,GtMathPs2::CGtPlane,GtMathPs2::CGtV3d*)` | `0x0027EBE0` 484 | `0x002B66B0` 484 | `0x002EC620` 484 | `0x002EE3A0` 808 |  |
-| `IntersectSphere(GtMathPs2::CGtSphere,const CGtFrustum&,CGtIntersectionResult*)` | `0x0027EDD0` 468 | `0x002B68A0` 468 | `0x002EC810` 468 | `0x002EDF80` 1052 |  |
-| `IntersectSphere(GtMathPs2::CGtSphere,const CGtOrientedBox&)` | `0x0027EFB0` 164 | `0x002B6A80` 164 | `0x002EC9F0` 164 | `0x002EDE90` 240 |  |
-| `IntersectSphere(GtMathPs2::CGtSphere,const CGtFrustum&)` | `0x0027F060` 400 | `0x002B6B30` 400 | `0x002ECAA0` 400 | `0x002EDAA0` 840 |  |
-| `IntersectSphere(GtMathPs2::CGtSphere,GtMathPs2::CGtSphere)` | `0x0027F1F0` 160 | `0x002B6CC0` 160 | `0x002ECC30` 160 | `0x002ED8E0` 436 |  |
-| `IntersectLine(const CGtLine&,GtMathPs2::CGtSphere)` | `0x0027F290` 440 | `0x002B6D60` 440 | `0x002ECCD0` 440 | `0x002ED420` 804 |  |
-| `DistanceToPlane(GtMathPs2::CGtV3d,GtMathPs2::CGtPlane)` |  |  |  | `0x002EDDF0` 156 |  |
-| `_CalculateTriangleNormal(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x0028CAA0` 260 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `IntersectSphere(GtMathPs2::CGtSphere,const CGtPolygonSoup16&,bool (*)(const CGtPolygonIntersectionResult&, void` | `0x002335E0` 920 |  |  |  |  |  |
+| `IntersectLine(const CGtLine&,const CGtPolygonSoup16&,bool (*)(const CGtPolygonIntersectionResult&, void*),void*` | `0x00233980` 2016 |  |  |  |  |  |
+| `IntersectLineNearest(const CGtLine&,const CGtPolygonSoup16&,CGtPolygonIntersectionResult*)` | `0x00234160` 3828 | `0x00251B60` 4348 | `0x0028D900` 4140 | `0x0028DDF0` 1996 |  |  |
+| `IntersectFrustum(const CGtFrustum&,const CGtExtrudedBox&)` | `0x00235060` 208 | `0x00252C60` 208 | `0x0028E930` 208 | `0x0028DCC0` 160 |  |  |
+| `IntersectFrustum(const CGtFrustum&,const CGtOrthogonalBox&)` | `0x00235130` 208 | `0x00252D30` 208 | `0x0028EA00` 208 | `0x0028DC20` 160 |  |  |
+| `IntersectLineTriangle(const CGtLine&,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float*,float*,float*` | `0x00235200` 300 | `0x00252E00` 300 | `0x0028EAD0` 300 | `0x0028DAC0` 352 | `0x00274C90` strong |  |
+| `IntersectSphere(GtMathPs2::CGtSphere,const CGtAxisAlignedBox&)` | `0x00235330` 268 | `0x00252F30` 268 | `0x0028EC00` 268 | `0x0028D5A0` 1144 | `0x00274DC0` strong |  |
+| `IntersectSphere(GtMathPs2::CGtSphere,const CGtPolygonSoup&,bool (*)(const CGtPolygonIntersectionResult&, void*)` | `0x00235440` 828 |  |  |  | `0x00274ED0` strong |  |
+| `IntersectLine(const CGtLine&,GtMathPs2::CGtV3d,const CGtAxisAlignedBox&)` | `0x00235780` 220 | `0x002533A0` 372 | `0x0028F070` 372 | `0x0028D010` 416 |  |  |
+| `IntersectLine(const CGtLine&,const CGtPolygonSoup&,bool (*)(const CGtPolygonIntersectionResult&, void*),void*)` | `0x00235860` 948 |  |  |  | `0x00275220` strong |  |
+| `IntersectLineNearest(const CGtLine&,const CGtPolygonSoup&,CGtPolygonIntersectionResult*)` | `0x00235C20` 1840 | `0x00253980` 2160 | `0x0028F5D0` 1904 | `0x0028C300` 1952 | `0x002755E0` strong |  |
+| `IntersectSphereTriangle(GtMathPs2::CGtSphere,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::C` | `0x00236350` 384 | `0x002541F0` 384 | `0x0028FD40` 384 | `0x0028C130` 452 | `0x00275D20` strong |  |
+| `IntersectSphere(GtMathPs2::CGtSphere,const CGtPolygonSoup16&,bool (*)` |  | `0x00250EB0` 948 | `0x0028CCC0` 948 | `0x0028ED80` 980 |  |  |
+| `IntersectLine(const CGtLine&,const CGtPolygonSoup16&,bool (*)` |  | `0x00251270` 2280 | `0x0028D080` 2176 | `0x0028E9C0` 956 |  |  |
+| `IntersectSphere(GtMathPs2::CGtSphere,const CGtPolygonSoup&,bool (*)` |  | `0x00253040` 860 | `0x0028ED10` 860 | `0x0028D1B0` 1000 |  |  |
+| `IntersectLine(const CGtLine&,const CGtPolygonSoup&,bool (*)` |  | `0x00253520` 1108 | `0x0028F1F0` 980 | `0x0028CC80` 908 |  |  |
+| `ClipPolyWithConvexHull(const GtMathPs2::CGtV3d*,int,const CGtConvexHull&,GtMathPs2::CGtV3d*)` | `0x0027EAF0` 228 | `0x002B6520` 388 | `0x002EC490` 388 | `0x002EE6D0` 420 |  |  |
+| `ClipPolyByPlane(const GtMathPs2::CGtV3d*,int,GtMathPs2::CGtPlane,GtMathPs2::CGtV3d*)` | `0x0027EBE0` 484 | `0x002B66B0` 484 | `0x002EC620` 484 | `0x002EE3A0` 808 |  |  |
+| `IntersectSphere(GtMathPs2::CGtSphere,const CGtFrustum&,CGtIntersectionResult*)` | `0x0027EDD0` 468 | `0x002B68A0` 468 | `0x002EC810` 468 | `0x002EDF80` 1052 | `0x002BF0F0` likely |  |
+| `IntersectSphere(GtMathPs2::CGtSphere,const CGtOrientedBox&)` | `0x0027EFB0` 164 | `0x002B6A80` 164 | `0x002EC9F0` 164 | `0x002EDE90` 240 | `0x002BF2E0` strong |  |
+| `IntersectSphere(GtMathPs2::CGtSphere,const CGtFrustum&)` | `0x0027F060` 400 | `0x002B6B30` 400 | `0x002ECAA0` 400 | `0x002EDAA0` 840 | `0x002BF390` likely |  |
+| `IntersectSphere(GtMathPs2::CGtSphere,GtMathPs2::CGtSphere)` | `0x0027F1F0` 160 | `0x002B6CC0` 160 | `0x002ECC30` 160 | `0x002ED8E0` 436 | `0x002BF530` likely |  |
+| `IntersectLine(const CGtLine&,GtMathPs2::CGtSphere)` | `0x0027F290` 440 | `0x002B6D60` 440 | `0x002ECCD0` 440 | `0x002ED420` 804 | `0x002BF5F0` strong |  |
+| `DistanceToPlane(GtMathPs2::CGtV3d,GtMathPs2::CGtPlane)` |  |  |  | `0x002EDDF0` 156 |  |  |
+| `_CalculateTriangleNormal(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x0028CAA0` 260 |  |  |
 
 ## Notes
 

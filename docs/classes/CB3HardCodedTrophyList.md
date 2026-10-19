@@ -10,18 +10,18 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetTrophySpecialCondition(int)` | `0x003A6ED0` 24 | `0x00421610` 176 | `0x00447280` 176 | `0x0045FD30` 100 |  |
-| `GetTrophyTrackIndex(int)` | `0x003A6EF0` 20 | `0x004216C0` 172 | `0x00447330` 172 | `0x0045FCD0` 96 |  |
-| `GetTrophyActionAmount(int)` | `0x003A6F10` 24 | `0x00421770` 176 | `0x004473E0` 176 | `0x0045FC60` 100 |  |
-| `GetTrophyAction(int)` | `0x003A6F30` 24 | `0x00421820` 176 | `0x00447490` 176 | `0x0045FBF0` 100 |  |
-| `GetTrophyString(int)` | `0x003A6F50` 24 | `0x004218D0` 176 | `0x00447540` 176 | `0x0045FB80` 100 |  |
-| `GetTrophyDifficultyString(int)` | `0x003A6F70` 44 | `0x00421980` 312 | `0x004475F0` 312 | `0x0045FB00` 116 |  |
-| `GetTrophyDifficulty(int)` | `0x003A6FA0` 24 | `0x00421AC0` 176 | `0x00447730` 176 | `0x0045FA90` 100 |  |
-| `GetTrophyRaceVehicleSeriesRestriction(int)` | `0x003A6FC0` 24 | `0x00421B70` 176 | `0x004477E0` 176 | `0x0045FA20` 100 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetTrophySpecialCondition(int)` | `0x003A6ED0` 24 | `0x00421610` 176 | `0x00447280` 176 | `0x0045FD30` 100 |  |  |
+| `GetTrophyTrackIndex(int)` | `0x003A6EF0` 20 | `0x004216C0` 172 | `0x00447330` 172 | `0x0045FCD0` 96 |  |  |
+| `GetTrophyActionAmount(int)` | `0x003A6F10` 24 | `0x00421770` 176 | `0x004473E0` 176 | `0x0045FC60` 100 |  |  |
+| `GetTrophyAction(int)` | `0x003A6F30` 24 | `0x00421820` 176 | `0x00447490` 176 | `0x0045FBF0` 100 |  |  |
+| `GetTrophyString(int)` | `0x003A6F50` 24 | `0x004218D0` 176 | `0x00447540` 176 | `0x0045FB80` 100 |  |  |
+| `GetTrophyDifficultyString(int)` | `0x003A6F70` 44 | `0x00421980` 312 | `0x004475F0` 312 | `0x0045FB00` 116 |  |  |
+| `GetTrophyDifficulty(int)` | `0x003A6FA0` 24 | `0x00421AC0` 176 | `0x00447730` 176 | `0x0045FA90` 100 |  |  |
+| `GetTrophyRaceVehicleSeriesRestriction(int)` | `0x003A6FC0` 24 | `0x00421B70` 176 | `0x004477E0` 176 | `0x0045FA20` 100 |  |  |
 
 ## Notes
 

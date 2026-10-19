@@ -7,18 +7,19 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `GtCommsToolBase.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 4, B3INTERN 4, B3O0PCH 5
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `LoadXMLFile(const char*,CGTFileSystem*)` |  | `0x001E0410` 352 | `0x00213110` 352 | `0x00224350` 388 |  |
-| `Update()` | `0x001E0A40` 8 | `0x001E0570` 8 | `0x00213270` 8 | `0x00224340` 16 |  |
-| `Prepare(const char*,CGTFileSystem*,const char*)` | `0x001E0A50` 136 | `0x001E0580` 36 | `0x00213280` 36 | `0x002242F0` 72 |  |
-| `Construct(const char*)` | `0x001E0AE0` 48 | `0x001E05B0` 92 | `0x002132B0` 92 | `0x002242A0` 80 |  |
-| `CGtCommsToolBase()` |  |  |  | `0x0013EDA0` 48 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `LoadXMLFile(const char*,CGTFileSystem*)` |  | `0x001E0410` 352 | `0x00213110` 352 | `0x00224350` 388 |  |  |
+| `Update()` | `0x001E0A40` 8 | `0x001E0570` 8 | `0x00213270` 8 | `0x00224340` 16 | `0x0021B820` strong |  |
+| `Prepare(const char*,CGTFileSystem*,const char*)` | `0x001E0A50` 136 | `0x001E0580` 36 | `0x00213280` 36 | `0x002242F0` 72 | `0x0021B830` proven |  |
+| `Construct(const char*)` | `0x001E0AE0` 48 | `0x001E05B0` 92 | `0x002132B0` 92 | `0x002242A0` 80 | `0x0021B8C0` proven |  |
+| `CGtCommsToolBase()` |  |  |  | `0x0013EDA0` 48 |  |  |
 
 ## Static data (DNAT_200)
 

@@ -7,18 +7,19 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3ShadowRendererPS2.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 5
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `EndShadowPlaneRendering()` | `0x002C4150` 160 | `0x0030B3F0` 160 | `0x0033D200` 160 | `0x00331EC0` 216 |  |
-| `RenderAmbientVehicleShadow(const GtMathPs2::CGtMatrix3x4&,const CGtAxisAlignedBox&,const CGtAxisAlignedBox&,` | `0x002C41F0` 456 | `0x0030B490` 456 | `0x0033D2A0` 456 | `0x00331A20` 1184 |  |
-| `BeginShadowPlaneRendering()` | `0x002C43C0` 664 | `0x0030B660` 708 | `0x0033D470` 708 | `0x00331660` 904 |  |
-| `EndShadowRendering()` | `0x002C4660` 8 | `0x0030B930` 8 | `0x0033D740` 8 | `0x00331650` 12 |  |
-| `BeginShadowRendering()` | `0x002C4670` 80 | `0x0030B940` 80 | `0x0033D750` 80 | `0x003315C0` 132 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `EndShadowPlaneRendering()` | `0x002C4150` 160 | `0x0030B3F0` 160 | `0x0033D200` 160 | `0x00331EC0` 216 | `0x003039A0` proven |  |
+| `RenderAmbientVehicleShadow(const GtMathPs2::CGtMatrix3x4&,const CGtAxisAlignedBox&,const CGtAxisAlignedBox&,` | `0x002C41F0` 456 | `0x0030B490` 456 | `0x0033D2A0` 456 | `0x00331A20` 1184 | `0x00303A40` proven |  |
+| `BeginShadowPlaneRendering()` | `0x002C43C0` 664 | `0x0030B660` 708 | `0x0033D470` 708 | `0x00331660` 904 | `0x00303C10` proven |  |
+| `EndShadowRendering()` | `0x002C4660` 8 | `0x0030B930` 8 | `0x0033D740` 8 | `0x00331650` 12 | `0x00303EB0` strong |  |
+| `BeginShadowRendering()` | `0x002C4670` 80 | `0x0030B940` 80 | `0x0033D750` 80 | `0x003315C0` 132 | `0x00303EC0` proven |  |
 
 ## Notes
 

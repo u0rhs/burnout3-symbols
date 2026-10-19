@@ -11,71 +11,71 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetTimeSinceLastPacketArrived() const` | `0x001FC000` 20 |  |  |  |  |
-| `DealWithShuntsAndSlams(CUpdateMessageParams*)` | `0x001FC020` 532 |  | `0x00240AC0` 3936 |  |  |
-| `IsAllNATDataFinalised()` | `0x001FC240` 368 | `0x00205BC0` 656 | `0x00241A20` 656 | `0x0024FF70` 804 |  |
-| `SendDetailsOfNATFinalisedStatus()` | `0x001FC3B0` 384 | `0x00205E50` 2092 | `0x00241CB0` 2092 | `0x0024FAB0` 1212 |  |
-| `GetName() const` | `0x001FC530` 8 |  |  |  |  |
-| `RecvReplay()` | `0x001FC540` 48 | `0x00206690` 1304 | `0x002424F0` 1304 | `0x0024F5E0` 1156 |  |
-| `SendReplay(CB3ReplayFileHeader*,unsigned char*)` | `0x001FC570` 364 | `0x00206BB0` 1560 | `0x00242A10` 1548 | `0x0024F040` 1432 |  |
-| `Destruct()` | `0x001FC6E0` 56 |  | `0x00243020` 56 |  |  |
-| `Release()` | `0x001FC720` 8 | `0x002071D0` 8 | `0x00243060` 8 | `0x0024F010` 40 |  |
-| `PostUpdate()` | `0x001FC730` 924 |  | `0x00243070` 2424 |  |  |
-| `IsOurTurnToSend(int*)` | `0x001FCAD0` 352 |  | `0x002439F0` 900 |  |  |
-| `BandwidthIsAvailableForCrashingTraffic()` | `0x001FCC30` 600 |  | `0x00243D80` 1940 |  |  |
-| `Update()` | `0x001FCE90` 1176 |  | `0x00244520` 3544 |  |  |
-| `StickValuesIntoCrashingTrafficPhysics()` | `0x001FD330` 3304 |  | `0x00245300` 6424 |  |  |
-| `ApplyTrafficCarData(CB3NetworkRaceUpdateMessage*,int)` | `0x001FE020` 4012 |  | `0x00246C20` 6528 |  |  |
-| `ApplyRaceCarDataReadyForPredictiveApplication(unsigned short,const CB3NetworkRaceUpdateMessage*)` | `0x001FEFF0` 704 |  | `0x002485C0` 2580 |  |  |
-| `ApplyNetworkCarData(CB3NetworkRaceUpdateMessage*,const GtMathPs2::CGtMatrix3x4&,int)` | `0x001FF2B0` 424 |  | `0x00248FE0` 796 |  |  |
-| `RetrieveMessage(unsigned short)` | `0x001FF460` 676 |  | `0x00249300` 2952 |  |  |
-| `RegisterMessages()` | `0x001FF710` 600 | `0x002071E0` 600 | `0x0024A700` 600 | `0x0024EBE0` 764 |  |
-| `CheckForNewMessages(unsigned short)` | `0x001FF970` 972 |  | `0x0024A960` 2084 |  |  |
-| `UpdateLatency(unsigned short,unsigned short)` | `0x001FFD40` 308 |  | `0x0024B190` 1592 |  |  |
-| `UpdatePing()` | `0x001FFE80` 424 |  | `0x0024B7D0` 424 |  |  |
-| `SetSendFrequency()` | `0x00200030` 12 | `0x00207440` 12 | `0x0024B980` 12 | `0x0024EBA0` 32 |  |
-| `Prepare(const char*,int,CGtNetworkAdapter*,int,void*)` | `0x00200040` 196 | `0x00207450` 196 | `0x0024B990` 196 | `0x0024EA90` 268 |  |
-| `PrepareForGameStart()` | `0x00200110` 544 | `0x00207520` 584 | `0x0024BA60` 584 | `0x0024E7C0` 584 |  |
-| `OnGameStart()` | `0x00200330` 104 | `0x00207770` 104 | `0x0024BCB0` 104 | `0x0024E710` 168 |  |
-| `Construct(CGtNetworkPlayerManager*,CGtNetworkHeadset*)` | `0x002003A0` 252 |  | `0x0024BD20` 252 |  |  |
-| `GetTimeSinceLastPacketArrived()` |  | `0x00205BA0` 20 | `0x00240AA0` 20 | `0x00250340` 56 |  |
-| `GetName()` |  | `0x00206680` 8 | `0x002424E0` 8 | `0x0024FA90` 28 |  |
-| `Activate()` |  |  |  | `0x00141B30` 32 |  |
-| `CB3NetworkPlayer()` |  |  |  | `0x00289F20` 108 |  |
-| `Deactivate()` |  |  |  | `0x00142420` 28 |  |
-| `ForceUpdatesToBeSent()` |  |  |  | `0x00288E50` 32 |  |
-| `GetNetworkCar()` |  |  |  | `0x00141FC0` 28 |  |
-| `GetPing()` |  |  |  | `0x00141FE0` 28 |  |
-| `GetReceiveHasHeadsetMessage()` |  |  |  | `0x00348850` 28 |  |
-| `GetSendFinishedRaceMessage()` |  |  |  | `0x003E8A70` 28 |  |
-| `GetSendGameStatusMessage()` |  |  |  | `0x003DFFE0` 28 |  |
-| `GetSendHasHeadsetMessage()` |  |  |  | `0x00348830` 28 |  |
-| `GetSendRaceReadyMessage()` |  |  |  | `0x003E8110` 28 |  |
-| `GetSendStartCountdownMessage()` |  |  |  | `0x002873E0` 28 |  |
-| `IsNetworkPlayerReceivingUpdates()` |  |  |  | `0x00280730` 36 |  |
-| `ReceiveNewHost(int*,int*)` |  |  |  | `0x00286230` 60 |  |
-| `RegisterLocalPlayerUsedCrashBreaker()` |  |  |  | `0x001BE040` 32 |  |
-| `RegisterNetCarGroundPlayer(int)` |  |  |  | `0x00179910` 44 |  |
-| `RegisterNetCarSlammedPlayer(int,bool)` |  |  |  | `0x001791F0` 88 |  |
-| `RegisterNetCarTookDownPlayer(int)` |  |  |  | `0x00178090` 44 |  |
-| `RegisterNetCarTradedPaintWithPlayer(int,bool)` |  |  |  | `0x001795D0` 44 |  |
-| `RegisterPlayerGroundNetCar(int)` |  |  |  | `0x00179850` 44 |  |
-| `RegisterPlayerSlammedNetCar(int,bool)` |  |  |  | `0x00179100` 88 |  |
-| `RegisterPlayerTookDownNetCar(int)` |  |  |  | `0x00177FD0` 44 |  |
-| `RegisterPlayerTradedPaintWithNetCar(int,bool)` |  |  |  | `0x00179510` 44 |  |
-| `ResetInteractionBools()` |  |  |  | `0x002502A0` 156 |  |
-| `RetrieveHostKeepAlive(int*)` |  |  |  | `0x00286270` 52 |  |
-| `SendHostKeepAlive()` |  |  |  | `0x00285790` 48 |  |
-| `SendNewHost(int,int*)` |  |  |  | `0x002861F0` 64 |  |
-| `SetNetworkCar(CB3NetworkCar*)` |  |  |  | `0x00141BB0` 36 |  |
-| `SetNetworkCarPhysics(CB3NetworkCarPhysics*)` |  |  |  | `0x001AF730` 36 |  |
-| `SetPreparing(bool)` |  |  |  | `0x0018EE90` 36 |  |
-| `StoreMessage(const CB3NetworkRaceUpdateMessage*)` |  |  | `0x00249E90` 2152 |  |  |
-| `UpdateHasntArrivedForAWhile()` |  |  |  | `0x00280240` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetTimeSinceLastPacketArrived() const` | `0x001FC000` 20 |  |  |  |  |  |
+| `DealWithShuntsAndSlams(CUpdateMessageParams*)` | `0x001FC020` 532 |  | `0x00240AC0` 3936 |  |  |  |
+| `IsAllNATDataFinalised()` | `0x001FC240` 368 | `0x00205BC0` 656 | `0x00241A20` 656 | `0x0024FF70` 804 |  |  |
+| `SendDetailsOfNATFinalisedStatus()` | `0x001FC3B0` 384 | `0x00205E50` 2092 | `0x00241CB0` 2092 | `0x0024FAB0` 1212 |  |  |
+| `GetName() const` | `0x001FC530` 8 |  |  |  |  |  |
+| `RecvReplay()` | `0x001FC540` 48 | `0x00206690` 1304 | `0x002424F0` 1304 | `0x0024F5E0` 1156 |  |  |
+| `SendReplay(CB3ReplayFileHeader*,unsigned char*)` | `0x001FC570` 364 | `0x00206BB0` 1560 | `0x00242A10` 1548 | `0x0024F040` 1432 |  |  |
+| `Destruct()` | `0x001FC6E0` 56 |  | `0x00243020` 56 |  |  |  |
+| `Release()` | `0x001FC720` 8 | `0x002071D0` 8 | `0x00243060` 8 | `0x0024F010` 40 |  |  |
+| `PostUpdate()` | `0x001FC730` 924 |  | `0x00243070` 2424 |  |  |  |
+| `IsOurTurnToSend(int*)` | `0x001FCAD0` 352 |  | `0x002439F0` 900 |  |  |  |
+| `BandwidthIsAvailableForCrashingTraffic()` | `0x001FCC30` 600 |  | `0x00243D80` 1940 |  |  |  |
+| `Update()` | `0x001FCE90` 1176 |  | `0x00244520` 3544 |  |  |  |
+| `StickValuesIntoCrashingTrafficPhysics()` | `0x001FD330` 3304 |  | `0x00245300` 6424 |  |  |  |
+| `ApplyTrafficCarData(CB3NetworkRaceUpdateMessage*,int)` | `0x001FE020` 4012 |  | `0x00246C20` 6528 |  |  |  |
+| `ApplyRaceCarDataReadyForPredictiveApplication(unsigned short,const CB3NetworkRaceUpdateMessage*)` | `0x001FEFF0` 704 |  | `0x002485C0` 2580 |  |  |  |
+| `ApplyNetworkCarData(CB3NetworkRaceUpdateMessage*,const GtMathPs2::CGtMatrix3x4&,int)` | `0x001FF2B0` 424 |  | `0x00248FE0` 796 |  |  |  |
+| `RetrieveMessage(unsigned short)` | `0x001FF460` 676 |  | `0x00249300` 2952 |  |  |  |
+| `RegisterMessages()` | `0x001FF710` 600 | `0x002071E0` 600 | `0x0024A700` 600 | `0x0024EBE0` 764 |  |  |
+| `CheckForNewMessages(unsigned short)` | `0x001FF970` 972 |  | `0x0024A960` 2084 |  |  |  |
+| `UpdateLatency(unsigned short,unsigned short)` | `0x001FFD40` 308 |  | `0x0024B190` 1592 |  |  |  |
+| `UpdatePing()` | `0x001FFE80` 424 |  | `0x0024B7D0` 424 |  |  |  |
+| `SetSendFrequency()` | `0x00200030` 12 | `0x00207440` 12 | `0x0024B980` 12 | `0x0024EBA0` 32 |  |  |
+| `Prepare(const char*,int,CGtNetworkAdapter*,int,void*)` | `0x00200040` 196 | `0x00207450` 196 | `0x0024B990` 196 | `0x0024EA90` 268 |  |  |
+| `PrepareForGameStart()` | `0x00200110` 544 | `0x00207520` 584 | `0x0024BA60` 584 | `0x0024E7C0` 584 |  |  |
+| `OnGameStart()` | `0x00200330` 104 | `0x00207770` 104 | `0x0024BCB0` 104 | `0x0024E710` 168 |  |  |
+| `Construct(CGtNetworkPlayerManager*,CGtNetworkHeadset*)` | `0x002003A0` 252 |  | `0x0024BD20` 252 |  |  |  |
+| `GetTimeSinceLastPacketArrived()` |  | `0x00205BA0` 20 | `0x00240AA0` 20 | `0x00250340` 56 |  |  |
+| `GetName()` |  | `0x00206680` 8 | `0x002424E0` 8 | `0x0024FA90` 28 |  |  |
+| `Activate()` |  |  |  | `0x00141B30` 32 |  |  |
+| `CB3NetworkPlayer()` |  |  |  | `0x00289F20` 108 |  |  |
+| `Deactivate()` |  |  |  | `0x00142420` 28 |  |  |
+| `ForceUpdatesToBeSent()` |  |  |  | `0x00288E50` 32 |  |  |
+| `GetNetworkCar()` |  |  |  | `0x00141FC0` 28 |  |  |
+| `GetPing()` |  |  |  | `0x00141FE0` 28 |  |  |
+| `GetReceiveHasHeadsetMessage()` |  |  |  | `0x00348850` 28 |  |  |
+| `GetSendFinishedRaceMessage()` |  |  |  | `0x003E8A70` 28 |  |  |
+| `GetSendGameStatusMessage()` |  |  |  | `0x003DFFE0` 28 |  |  |
+| `GetSendHasHeadsetMessage()` |  |  |  | `0x00348830` 28 |  |  |
+| `GetSendRaceReadyMessage()` |  |  |  | `0x003E8110` 28 |  |  |
+| `GetSendStartCountdownMessage()` |  |  |  | `0x002873E0` 28 |  |  |
+| `IsNetworkPlayerReceivingUpdates()` |  |  |  | `0x00280730` 36 |  |  |
+| `ReceiveNewHost(int*,int*)` |  |  |  | `0x00286230` 60 |  |  |
+| `RegisterLocalPlayerUsedCrashBreaker()` |  |  |  | `0x001BE040` 32 |  |  |
+| `RegisterNetCarGroundPlayer(int)` |  |  |  | `0x00179910` 44 |  |  |
+| `RegisterNetCarSlammedPlayer(int,bool)` |  |  |  | `0x001791F0` 88 |  |  |
+| `RegisterNetCarTookDownPlayer(int)` |  |  |  | `0x00178090` 44 |  |  |
+| `RegisterNetCarTradedPaintWithPlayer(int,bool)` |  |  |  | `0x001795D0` 44 |  |  |
+| `RegisterPlayerGroundNetCar(int)` |  |  |  | `0x00179850` 44 |  |  |
+| `RegisterPlayerSlammedNetCar(int,bool)` |  |  |  | `0x00179100` 88 |  |  |
+| `RegisterPlayerTookDownNetCar(int)` |  |  |  | `0x00177FD0` 44 |  |  |
+| `RegisterPlayerTradedPaintWithNetCar(int,bool)` |  |  |  | `0x00179510` 44 |  |  |
+| `ResetInteractionBools()` |  |  |  | `0x002502A0` 156 |  |  |
+| `RetrieveHostKeepAlive(int*)` |  |  |  | `0x00286270` 52 |  |  |
+| `SendHostKeepAlive()` |  |  |  | `0x00285790` 48 |  |  |
+| `SendNewHost(int,int*)` |  |  |  | `0x002861F0` 64 |  |  |
+| `SetNetworkCar(CB3NetworkCar*)` |  |  |  | `0x00141BB0` 36 |  |  |
+| `SetNetworkCarPhysics(CB3NetworkCarPhysics*)` |  |  |  | `0x001AF730` 36 |  |  |
+| `SetPreparing(bool)` |  |  |  | `0x0018EE90` 36 |  |  |
+| `StoreMessage(const CB3NetworkRaceUpdateMessage*)` |  |  | `0x00249E90` 2152 |  |  |  |
+| `UpdateHasntArrivedForAWhile()` |  |  |  | `0x00280240` 28 |  |  |
 
 ## Notes
 

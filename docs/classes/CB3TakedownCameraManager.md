@@ -10,20 +10,20 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Update()` | `0x0034DCF0` 1008 | `0x003B7360` 1944 | `0x003E0BE0` 1952 | `0x003ED3A0` 928 |  |
-| `UseCameras()` | `0x0034E0E0` 32 | `0x003B7B00` 32 | `0x003E1380` 32 | `0x003ED250` 76 |  |
-| `ActivateThisFrame()` |  |  |  | `0x003ED050` 296 |  |
-| `CanActivate()` |  |  |  | `0x003ED2C0` 224 |  |
-| `Construct(int)` |  |  |  | `0x003ECF90` 36 |  |
-| `Deactivate()` |  |  |  | `0x003ED180` 208 |  |
-| `Destruct()` |  |  |  | `0x003ECFC0` 16 |  |
-| `IsActive()` |  |  |  | `0x003ED2A0` 28 |  |
-| `Prepare()` |  |  |  | `0x003ECFD0` 104 |  |
-| `Release()` |  |  |  | `0x003ED040` 16 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Update()` | `0x0034DCF0` 1008 | `0x003B7360` 1944 | `0x003E0BE0` 1952 | `0x003ED3A0` 928 |  |  |
+| `UseCameras()` | `0x0034E0E0` 32 | `0x003B7B00` 32 | `0x003E1380` 32 | `0x003ED250` 76 |  |  |
+| `ActivateThisFrame()` |  |  |  | `0x003ED050` 296 |  |  |
+| `CanActivate()` |  |  |  | `0x003ED2C0` 224 |  |  |
+| `Construct(int)` |  |  |  | `0x003ECF90` 36 |  |  |
+| `Deactivate()` |  |  |  | `0x003ED180` 208 |  |  |
+| `Destruct()` |  |  |  | `0x003ECFC0` 16 |  |  |
+| `IsActive()` |  |  |  | `0x003ED2A0` 28 |  |  |
+| `Prepare()` |  |  |  | `0x003ECFD0` 104 |  |  |
+| `Release()` |  |  |  | `0x003ED040` 16 |  |  |
 
 ## Notes
 

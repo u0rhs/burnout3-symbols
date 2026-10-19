@@ -7,20 +7,21 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3ReplaySymbolComponent.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 6
+- **Retail (SLUS-21050):** 2 of its 4 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00441600`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x0035E650` 184 | `0x003C9C20` 184 | `0x003F2A40` 156 | `0x00402090` 272 |  |
-| `Update(float)` | `0x0035E710` 324 | `0x003C9CE0` 324 | `0x003F2AE0` 308 | `0x00401FB0` 212 |  |
-| `Prepare()` | `0x0035E860` 548 | `0x003C9E30` 548 | `0x003F2C20` 488 | `0x00401BA0` 700 |  |
-| `Construct()` | `0x0035EA90` 56 | `0x003CA060` 56 | `0x003F2E10` 56 | `0x00401B50` 76 |  |
-| `CB3ReplaySymbolComponent()` |  |  |  | `0x0033BE60` 60 |  |
-| `UpdateBorders(float)` |  |  |  | `0x00401E60` 332 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x0035E650` 184 | `0x003C9C20` 184 | `0x003F2A40` 156 | `0x00402090` 272 | `0x003A6840` proven |  |
+| `Update(float)` | `0x0035E710` 324 | `0x003C9CE0` 324 | `0x003F2AE0` 308 | `0x00401FB0` 212 |  |  |
+| `Prepare()` | `0x0035E860` 548 | `0x003C9E30` 548 | `0x003F2C20` 488 | `0x00401BA0` 700 | `0x003A6A50` strong |  |
+| `Construct()` | `0x0035EA90` 56 | `0x003CA060` 56 | `0x003F2E10` 56 | `0x00401B50` 76 |  |  |
+| `CB3ReplaySymbolComponent()` |  |  |  | `0x0033BE60` 60 |  |  |
+| `UpdateBorders(float)` |  |  |  | `0x00401E60` 332 |  |  |
 
 ## Notes
 

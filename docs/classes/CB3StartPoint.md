@@ -7,17 +7,18 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3StartPoint.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 4
+- **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Destruct()` | `0x001598A0` 8 | `0x0016F3C0` 8 | `0x0016AB60` 8 | `0x0017B690` 16 |  |
-| `Release()` | `0x001598B0` 8 | `0x0016F3D0` 8 | `0x0016AB70` 8 | `0x0017B670` 28 |  |
-| `Prepare(CB3StartPositionStruct*)` | `0x001598C0` 12 | `0x0016F3E0` 12 | `0x0016AB80` 12 | `0x0017B640` 40 |  |
-| `Construct()` | `0x001598D0` 8 | `0x0016F3F0` 8 | `0x0016AB90` 8 | `0x0017B620` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Destruct()` | `0x001598A0` 8 | `0x0016F3C0` 8 | `0x0016AB60` 8 | `0x0017B690` 16 | `0x0015E8A0` proven |  |
+| `Release()` | `0x001598B0` 8 | `0x0016F3D0` 8 | `0x0016AB70` 8 | `0x0017B670` 28 | `0x0015E8B0` proven |  |
+| `Prepare(CB3StartPositionStruct*)` | `0x001598C0` 12 | `0x0016F3E0` 12 | `0x0016AB80` 12 | `0x0017B640` 40 | `0x0015E8C0` proven |  |
+| `Construct()` | `0x001598D0` 8 | `0x0016F3F0` 8 | `0x0016AB90` 8 | `0x0017B620` 28 | `0x0015E8D0` proven |  |
 
 ## Notes
 

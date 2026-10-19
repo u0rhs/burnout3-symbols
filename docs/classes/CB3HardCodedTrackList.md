@@ -7,18 +7,19 @@
 - **Area:** [Progression, profiles and saves](../systems/progression-saves.md)
 - **Source file:** `B3HardCodedTrackList.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 5
+- **Retail (SLUS-21050):** 1 of its 5 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetPayloadsForTrack(unsigned long,unsigned char*,unsigned char*,unsigned char*)` | `0x0039B120` 132 | `0x00413D50` 236 | `0x00439A70` 236 | `0x004521C0` 176 |  |
-| `GetTrackRegion(int)` | `0x0039B1B0` 112 | `0x00413E40` 240 | `0x00439B60` 240 | `0x004520F0` 204 |  |
-| `GetTrackString(int,bool)` | `0x0039B220` 84 | `0x00413F30` 164 | `0x00439C50` 164 | `0x00452040` 164 |  |
-| `GetTrackGtID(int)` | `0x0039B280` 24 | `0x00413FE0` 140 | `0x00439D00` 140 | `0x00451FE0` 84 |  |
-| `FindTrack(unsigned long)` | `0x0039B2A0` 60 | `0x00414070` 60 | `0x00439D90` 60 | `0x00451F70` 104 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetPayloadsForTrack(unsigned long,unsigned char*,unsigned char*,unsigned char*)` | `0x0039B120` 132 | `0x00413D50` 236 | `0x00439A70` 236 | `0x004521C0` 176 |  |  |
+| `GetTrackRegion(int)` | `0x0039B1B0` 112 | `0x00413E40` 240 | `0x00439B60` 240 | `0x004520F0` 204 |  |  |
+| `GetTrackString(int,bool)` | `0x0039B220` 84 | `0x00413F30` 164 | `0x00439C50` 164 | `0x00452040` 164 |  |  |
+| `GetTrackGtID(int)` | `0x0039B280` 24 | `0x00413FE0` 140 | `0x00439D00` 140 | `0x00451FE0` 84 |  |  |
+| `FindTrack(unsigned long)` | `0x0039B2A0` 60 | `0x00414070` 60 | `0x00439D90` 60 | `0x00451F70` 104 | `0x003EAB90` strong |  |
 
 ## Notes
 

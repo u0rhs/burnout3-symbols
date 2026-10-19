@@ -7,16 +7,17 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `GtUnicodeUtils.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 3
+- **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Compare(unsigned short*,unsigned short*)` | `0x00315960` 112 | `0x0036F850` 112 | `0x0039E720` 112 | `0x0039D8E0` 268 |  |
-| `FindUTFChar(unsigned short*,unsigned short)` | `0x003159D0` 60 | `0x0036F8C0` 60 | `0x0039E790` 60 | `0x0039D870` 108 |  |
-| `PrintUTFChar(unsigned short*,unsigned short)` | `0x00315A10` 52 | `0x0036F900` 52 | `0x0039E7D0` 52 | `0x0039D800` 100 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Compare(unsigned short*,unsigned short*)` | `0x00315960` 112 | `0x0036F850` 112 | `0x0039E720` 112 | `0x0039D8E0` 268 | `0x0035EFA0` unverified |  |
+| `FindUTFChar(unsigned short*,unsigned short)` | `0x003159D0` 60 | `0x0036F8C0` 60 | `0x0039E790` 60 | `0x0039D870` 108 |  |  |
+| `PrintUTFChar(unsigned short*,unsigned short)` | `0x00315A10` 52 | `0x0036F900` 52 | `0x0039E7D0` 52 | `0x0039D800` 100 |  |  |
 
 ## Notes
 

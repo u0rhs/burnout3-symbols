@@ -7,24 +7,25 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3RadialBlurPS2.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 11
+- **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 9 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `RestoreRenderstates(const CB3CameraData*)` | `0x002B90F0` 136 | `0x002FAC00` 136 | `0x0032E8D0` 136 | `0x00327910` 212 |  |
-| `CopyToScreen(unsigned long,unsigned long,unsigned long,unsigned long,int,int,int,int)` | `0x002B9180` 468 | `0x002FAC90` 468 | `0x0032E960` 468 | `0x00327680` 656 |  |
-| `BlurOut(int,int,int,int,const GtMathPs2::CGtV2d&)` | `0x002B9360` 640 | `0x002FAE70` 876 | `0x0032EB40` 876 | `0x00327190` 1264 |  |
-| `BlurSetRenderstates(unsigned long,unsigned long,int,int)` | `0x002B95E0` 208 | `0x002FB1E0` 208 | `0x0032EEB0` 208 | `0x00327080` 272 |  |
-| `SetAlpha(unsigned long,unsigned long,int,int,int,int,CGtTexture*,bool)` | `0x002B96B0` 736 | `0x002FB2B0` 736 | `0x0032EF80` 736 | `0x00326BE0` 1172 |  |
-| `Downsample(unsigned long,unsigned long,unsigned long,unsigned long,int,int,int,int)` | `0x002B9990` 388 | `0x002FB590` 548 | `0x0032F260` 548 | `0x003269B0` 548 |  |
-| `SetRenderstates()` | `0x002B9B20` 156 | `0x002FB7C0` 156 | `0x0032F490` 156 | `0x003268E0` 208 |  |
-| `Render()` | `0x002B9BC0` 996 | `0x002FB860` 1172 | `0x0032F530` 1172 | `0x00326330` 1444 |  |
-| `Prepare()` | `0x002B9FB0` 224 | `0x002FBD00` 312 | `0x0032F9D0` 312 | `0x00326210` 96 |  |
-| `CB3RadialBlur()` |  |  |  | `0x00196140` 44 |  |
-| `Construct()` |  |  |  | `0x001948B0` 16 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `RestoreRenderstates(const CB3CameraData*)` | `0x002B90F0` 136 | `0x002FAC00` 136 | `0x0032E8D0` 136 | `0x00327910` 212 | `0x002F9EC0` proven |  |
+| `CopyToScreen(unsigned long,unsigned long,unsigned long,unsigned long,int,int,int,int)` | `0x002B9180` 468 | `0x002FAC90` 468 | `0x0032E960` 468 | `0x00327680` 656 | `0x002F9F50` proven |  |
+| `BlurOut(int,int,int,int,const GtMathPs2::CGtV2d&)` | `0x002B9360` 640 | `0x002FAE70` 876 | `0x0032EB40` 876 | `0x00327190` 1264 | `0x002FA130` proven |  |
+| `BlurSetRenderstates(unsigned long,unsigned long,int,int)` | `0x002B95E0` 208 | `0x002FB1E0` 208 | `0x0032EEB0` 208 | `0x00327080` 272 | `0x002FA3C0` proven |  |
+| `SetAlpha(unsigned long,unsigned long,int,int,int,int,CGtTexture*,bool)` | `0x002B96B0` 736 | `0x002FB2B0` 736 | `0x0032EF80` 736 | `0x00326BE0` 1172 | `0x002FA490` proven |  |
+| `Downsample(unsigned long,unsigned long,unsigned long,unsigned long,int,int,int,int)` | `0x002B9990` 388 | `0x002FB590` 548 | `0x0032F260` 548 | `0x003269B0` 548 | `0x002FA770` proven |  |
+| `SetRenderstates()` | `0x002B9B20` 156 | `0x002FB7C0` 156 | `0x0032F490` 156 | `0x003268E0` 208 | `0x002FA900` proven |  |
+| `Render()` | `0x002B9BC0` 996 | `0x002FB860` 1172 | `0x0032F530` 1172 | `0x00326330` 1444 | `0x002FA9A0` proven |  |
+| `Prepare()` | `0x002B9FB0` 224 | `0x002FBD00` 312 | `0x0032F9D0` 312 | `0x00326210` 96 | `0x002FAD90` proven |  |
+| `CB3RadialBlur()` |  |  |  | `0x00196140` 44 |  |  |
+| `Construct()` |  |  |  | `0x001948B0` 16 |  |  |
 
 ## Notes
 

@@ -7,21 +7,22 @@
 - **Area:** [Traffic](../systems/traffic.md)
 - **Source file:** `B3TrafficLight.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 7
+- **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CTrafficLight`, size 0x040, declared in 48 file(s), e.g. `gamesource/Game/CProfile.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `UseNewTimingsData(float)` | `0x00227A30` 28 | `0x0023E880` 28 | `0x0027B210` 28 | `0x0027D370` 68 |  |
-| `StopCars()` | `0x00227A50` 868 | `0x0023E8A0` 868 | `0x0027B230` 868 | `0x0027CE00` 1376 | `void CTrafficLight::StopCars()` |
-| `Update(float)` | `0x00227DC0` 584 | `0x0023EC10` 612 | `0x0027B5A0` 612 | `0x0027C960` 804 | `void CTrafficLight::Update()` (same name, different parameters) |
-| `Prepare(CB3TrafficLightPositionStruct*)` | `0x00228010` 72 | `0x0023EE80` 72 | `0x0027B810` 72 | `0x0027C910` 80 |  |
-| `LockSegments(bool)` |  |  |  | `0x0027D360` 16 |  |
-| `ResetMemberVariables()` |  |  |  | `0x0027CC90` 96 |  |
-| `StartCars()` |  |  |  | `0x0027CCF0` 272 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `UseNewTimingsData(float)` | `0x00227A30` 28 | `0x0023E880` 28 | `0x0027B210` 28 | `0x0027D370` 68 | `0x00265C60` proven |  |
+| `StopCars()` | `0x00227A50` 868 | `0x0023E8A0` 868 | `0x0027B230` 868 | `0x0027CE00` 1376 | `0x00265C80` proven | `void CTrafficLight::StopCars()` |
+| `Update(float)` | `0x00227DC0` 584 | `0x0023EC10` 612 | `0x0027B5A0` 612 | `0x0027C960` 804 | `0x00266010` proven | `void CTrafficLight::Update()` (same name, different parameters) |
+| `Prepare(CB3TrafficLightPositionStruct*)` | `0x00228010` 72 | `0x0023EE80` 72 | `0x0027B810` 72 | `0x0027C910` 80 | `0x00266260` proven |  |
+| `LockSegments(bool)` |  |  |  | `0x0027D360` 16 |  |  |
+| `ResetMemberVariables()` |  |  |  | `0x0027CC90` 96 |  |  |
+| `StartCars()` |  |  |  | `0x0027CCF0` 272 |  |  |
 
 ## Burnout 2 layout of `CTrafficLight`
 

@@ -7,59 +7,60 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3Game.cpp`
 - **Methods per build:** DNAT_200 20, B3DEBUG 20, B3INTERN 20, B3O0PCH 45
+- **Retail (SLUS-21050):** 9 of its 20 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CGame`, size 0x4DD0, declared in 72 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Is2PlayerSplitScreen()` | `0x00131380` 56 | `0x00132980` 56 | `0x00134C80` 56 | `0x0013D820` 92 |  |
-| `IsInChampionship()` | `0x001313C0` 64 | `0x001329C0` 64 | `0x00134CC0` 64 | `0x0013D7B0` 112 |  |
-| `IsTurnBasedCrash()` | `0x00131400` 64 | `0x00132A00` 64 | `0x00134D00` 64 | `0x0013D720` 112 |  |
-| `IsCrashMode()` | `0x00131440` 200 | `0x00132A40` 200 | `0x00134D40` 200 | `0x0013D610` 264 |  |
-| `RequestNewGameMode(CB3GameMode*)` | `0x00131510` 68 | `0x00132B10` 104 | `0x00134E10` 104 | `0x0013D5A0` 104 |  |
-| `IsSimulationPaused()` | `0x00131560` 44 | `0x00132B80` 44 | `0x00134E80` 44 | `0x0013D530` 100 |  |
-| `UpdatePostSimulation()` | `0x00131590` 304 | `0x00132BB0` 1116 | `0x00134EB0` 1120 | `0x0013D0A0` 660 |  |
-| `UpdateSimulation()` | `0x001316C0` 412 | `0x00133010` 1248 | `0x00135310` 1304 | `0x0013CCF0` 620 |  |
-| `UpdatePreSimulation()` | `0x00131860` 536 | `0x001334F0` 1036 | `0x00135830` 1036 | `0x0013C820` 1004 |  |
-| `Destruct()` | `0x00131A80` 288 | `0x00133900` 288 | `0x00135C40` 288 | `0x0013C510` 372 |  |
-| `Release()` | `0x00131BA0` 128 | `0x00133A20` 128 | `0x00135D60` 128 | `0x0013C470` 156 |  |
-| `Update()` | `0x00131C20` 3228 | `0x00133AA0` 5848 | `0x00135DE0` 5784 | `0x0013B6E0` 3268 |  |
-| `Prepare()` | `0x001328C0` 1824 | `0x00135180` 2088 | `0x00137480` 2172 | `0x0013ACC0` 2512 |  |
-| `Construct()` | `0x00132FE0` 1536 | `0x001359B0` 21044 | `0x00137D00` 1844 | `0x00135E80` 19620 |  |
-| `~CB3Game()` | `0x001337E0` 144 | `0x0013AE10` 144 | `0x00138650` 144 | `0x0013D880` 108 |  |
-| `SetFrontendFrameRate(bool)` | `0x0019A1C0` 180 | `0x001CEEA0` 180 | `0x001C8110` 180 | `0x001DA3C0` 264 |  |
-| `PreparePowerOff()` | `0x0019A280` 24 | `0x001CEF60` 8 | `0x001C81D0` 24 | `0x001DA3B0` 16 |  |
-| `CheckPowerOff()` | `0x0019A2B0` 388 | `0x001CEF70` 8 | `0x001C8200` 612 | `0x001DA3A0` 16 |  |
-| `PrepareHardware()` | `0x0019A440` 1012 | `0x001CEF80` 840 | `0x001C8470` 1240 | `0x001D9FA0` 980 |  |
-| `ConstructHardware()` | `0x0019A840` 200 | `0x001CF2D0` 192 | `0x001C8950` 192 | `0x001D9E80` 232 |  |
-| `CB3Game()` |  |  |  | `0x0013D970` 704 |  |
-| `GetCameraTimeStep()` |  |  |  | `0x00279E70` 36 |  |
-| `GetCurrentGameMode()` |  |  |  | `0x00130840` 36 |  |
-| `GetHalfFramerate()` |  |  |  | `0x0013FEE0` 36 |  |
-| `GetNumSimulationUpdatesRequired()` |  |  |  | `0x0013D390` 144 |  |
-| `GetNumSimulationUpdatesThisRenderFrame()` |  |  |  | `0x00313FA0` 36 |  |
-| `GetPausePlayerIndex()` |  |  |  | `0x0036E040` 36 |  |
-| `GetSimulationUpdateCount()` |  |  |  | `0x002AFCA0` 36 |  |
-| `IsPaused()` |  |  |  | `0x00140AA0` 44 |  |
-| `IsResumeRequested()` |  |  |  | `0x0035BB30` 44 |  |
-| `IsWorldPrepared()` |  |  |  | `0x002AF700` 36 |  |
-| `PrepareWorld()` |  |  |  | `0x0013C7E0` 56 |  |
-| `Render()` |  |  |  | `0x0013D420` 76 |  |
-| `RequestFramerateType(EGtFramerateType)` |  |  |  | `0x00135390` 44 |  |
-| `RequestGameUpdateState(EGameUpdateState)` |  |  |  | `0x0013FF10` 204 |  |
-| `RequestHalfFramerate(bool)` |  |  |  | `0x00135360` 44 |  |
-| `RequestPause(int)` |  |  |  | `0x00142650` 140 |  |
-| `RequestResume(int)` |  |  |  | `0x0036E290` 140 |  |
-| `RequestSimulationPause()` |  |  |  | `0x003982F0` 40 |  |
-| `RequestSimulationUnpause()` |  |  |  | `0x003982C0` 40 |  |
-| `RequestWorldPrepare()` |  |  |  | `0x003DF360` 56 |  |
-| `ResetGameMode()` |  |  |  | `0x0013C690` 328 |  |
-| `RestartGameModeUpdateCode()` |  |  |  | `0x0013D470` 184 |  |
-| `SetQuitNow()` |  |  |  | `0x00385D00` 40 |  |
-| `WillQuitNow()` |  |  |  | `0x0012ECC0` 36 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Is2PlayerSplitScreen()` | `0x00131380` 56 | `0x00132980` 56 | `0x00134C80` 56 | `0x0013D820` 92 | `0x00131CA0` likely |  |
+| `IsInChampionship()` | `0x001313C0` 64 | `0x001329C0` 64 | `0x00134CC0` 64 | `0x0013D7B0` 112 | `0x00131CE0` strong |  |
+| `IsTurnBasedCrash()` | `0x00131400` 64 | `0x00132A00` 64 | `0x00134D00` 64 | `0x0013D720` 112 | `0x00131E00` likely |  |
+| `IsCrashMode()` | `0x00131440` 200 | `0x00132A40` 200 | `0x00134D40` 200 | `0x0013D610` 264 | `0x00131E40` strong |  |
+| `RequestNewGameMode(CB3GameMode*)` | `0x00131510` 68 | `0x00132B10` 104 | `0x00134E10` 104 | `0x0013D5A0` 104 | `0x00131F10` strong |  |
+| `IsSimulationPaused()` | `0x00131560` 44 | `0x00132B80` 44 | `0x00134E80` 44 | `0x0013D530` 100 | `0x00131F60` proven |  |
+| `UpdatePostSimulation()` | `0x00131590` 304 | `0x00132BB0` 1116 | `0x00134EB0` 1120 | `0x0013D0A0` 660 | `0x00131F90` likely |  |
+| `UpdateSimulation()` | `0x001316C0` 412 | `0x00133010` 1248 | `0x00135310` 1304 | `0x0013CCF0` 620 |  |  |
+| `UpdatePreSimulation()` | `0x00131860` 536 | `0x001334F0` 1036 | `0x00135830` 1036 | `0x0013C820` 1004 |  |  |
+| `Destruct()` | `0x00131A80` 288 | `0x00133900` 288 | `0x00135C40` 288 | `0x0013C510` 372 |  |  |
+| `Release()` | `0x00131BA0` 128 | `0x00133A20` 128 | `0x00135D60` 128 | `0x0013C470` 156 |  |  |
+| `Update()` | `0x00131C20` 3228 | `0x00133AA0` 5848 | `0x00135DE0` 5784 | `0x0013B6E0` 3268 |  |  |
+| `Prepare()` | `0x001328C0` 1824 | `0x00135180` 2088 | `0x00137480` 2172 | `0x0013ACC0` 2512 |  |  |
+| `Construct()` | `0x00132FE0` 1536 | `0x001359B0` 21044 | `0x00137D00` 1844 | `0x00135E80` 19620 |  |  |
+| `~CB3Game()` | `0x001337E0` 144 | `0x0013AE10` 144 | `0x00138650` 144 | `0x0013D880` 108 | `0x001344D0` likely |  |
+| `SetFrontendFrameRate(bool)` | `0x0019A1C0` 180 | `0x001CEEA0` 180 | `0x001C8110` 180 | `0x001DA3C0` 264 | `0x001D3EE0` strong |  |
+| `PreparePowerOff()` | `0x0019A280` 24 | `0x001CEF60` 8 | `0x001C81D0` 24 | `0x001DA3B0` 16 |  |  |
+| `CheckPowerOff()` | `0x0019A2B0` 388 | `0x001CEF70` 8 | `0x001C8200` 612 | `0x001DA3A0` 16 |  |  |
+| `PrepareHardware()` | `0x0019A440` 1012 | `0x001CEF80` 840 | `0x001C8470` 1240 | `0x001D9FA0` 980 |  |  |
+| `ConstructHardware()` | `0x0019A840` 200 | `0x001CF2D0` 192 | `0x001C8950` 192 | `0x001D9E80` 232 |  |  |
+| `CB3Game()` |  |  |  | `0x0013D970` 704 |  |  |
+| `GetCameraTimeStep()` |  |  |  | `0x00279E70` 36 |  |  |
+| `GetCurrentGameMode()` |  |  |  | `0x00130840` 36 |  |  |
+| `GetHalfFramerate()` |  |  |  | `0x0013FEE0` 36 |  |  |
+| `GetNumSimulationUpdatesRequired()` |  |  |  | `0x0013D390` 144 |  |  |
+| `GetNumSimulationUpdatesThisRenderFrame()` |  |  |  | `0x00313FA0` 36 |  |  |
+| `GetPausePlayerIndex()` |  |  |  | `0x0036E040` 36 |  |  |
+| `GetSimulationUpdateCount()` |  |  |  | `0x002AFCA0` 36 |  |  |
+| `IsPaused()` |  |  |  | `0x00140AA0` 44 |  |  |
+| `IsResumeRequested()` |  |  |  | `0x0035BB30` 44 |  |  |
+| `IsWorldPrepared()` |  |  |  | `0x002AF700` 36 |  |  |
+| `PrepareWorld()` |  |  |  | `0x0013C7E0` 56 |  |  |
+| `Render()` |  |  |  | `0x0013D420` 76 |  |  |
+| `RequestFramerateType(EGtFramerateType)` |  |  |  | `0x00135390` 44 |  |  |
+| `RequestGameUpdateState(EGameUpdateState)` |  |  |  | `0x0013FF10` 204 |  |  |
+| `RequestHalfFramerate(bool)` |  |  |  | `0x00135360` 44 |  |  |
+| `RequestPause(int)` |  |  |  | `0x00142650` 140 |  |  |
+| `RequestResume(int)` |  |  |  | `0x0036E290` 140 |  |  |
+| `RequestSimulationPause()` |  |  |  | `0x003982F0` 40 |  |  |
+| `RequestSimulationUnpause()` |  |  |  | `0x003982C0` 40 |  |  |
+| `RequestWorldPrepare()` |  |  |  | `0x003DF360` 56 |  |  |
+| `ResetGameMode()` |  |  |  | `0x0013C690` 328 |  |  |
+| `RestartGameModeUpdateCode()` |  |  |  | `0x0013D470` 184 |  |  |
+| `SetQuitNow()` |  |  |  | `0x00385D00` 40 |  |  |
+| `WillQuitNow()` |  |  |  | `0x0012ECC0` 36 |  |  |
 
 ## Burnout 2 layout of `CGame`
 

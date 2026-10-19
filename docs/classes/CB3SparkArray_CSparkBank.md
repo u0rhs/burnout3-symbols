@@ -7,17 +7,18 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3SparkRendererPS2.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 4
+- **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Prepare()` | `0x00225EE0` 140 | `0x0023C810` 240 | `0x00279330` 240 | `0x00279030` 300 |  |
-| `Construct(const CB3SparkArrayParams*,bool)` | `0x00225F70` 1940 | `0x0023C900` 2432 | `0x00279420` 2404 | `0x00278580` 2400 |  |
-| `Destruct()` |  |  |  | `0x00279020` 16 |  |
-| `Release()` |  |  |  | `0x00279160` 16 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Prepare()` | `0x00225EE0` 140 | `0x0023C810` 240 | `0x00279330` 240 | `0x00279030` 300 | `0x002640E0` proven |  |
+| `Construct(const CB3SparkArrayParams*,bool)` | `0x00225F70` 1940 | `0x0023C900` 2432 | `0x00279420` 2404 | `0x00278580` 2400 | `0x00264170` strong |  |
+| `Destruct()` |  |  |  | `0x00279020` 16 |  |  |
+| `Release()` |  |  |  | `0x00279160` 16 |  |  |
 
 ## Notes
 

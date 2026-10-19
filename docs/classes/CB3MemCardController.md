@@ -10,12 +10,12 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `StringToShiftJIS(unsigned short*,const char*)` | `0x003AA170` 168 | `0x00425B40` 244 | `0x0044EA90` 244 | `0x00464A80` 372 |  |
-| `Construct()` | `0x003AA220` 360 | `0x00425C40` 360 | `0x0044EB90` 360 | `0x00464760` 680 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `StringToShiftJIS(unsigned short*,const char*)` | `0x003AA170` 168 | `0x00425B40` 244 | `0x0044EA90` 244 | `0x00464A80` 372 |  |  |
+| `Construct()` | `0x003AA220` 360 | `0x00425C40` 360 | `0x0044EB90` 360 | `0x00464760` 680 |  |  |
 
 ## Notes
 

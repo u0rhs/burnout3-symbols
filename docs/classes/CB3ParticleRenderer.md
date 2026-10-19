@@ -7,23 +7,24 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3ParticleRendererPS2.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 10
+- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `DispatchArray(CB3ParticleRenderer::CB3ParticleRendererEntry*)` | `0x00214720` 564 | `0x00223590` 980 | `0x00262AC0` 700 | `0x002693D0` 1112 |  |
-| `EndRender()` | `0x00214960` 996 | `0x00223970` 1048 | `0x00262D80` 996 | `0x00268D80` 584 |  |
-| `RenderParticleArray(CB3ParticleArray*)` | `0x00214D50` 192 | `0x00223D90` 352 | `0x00263170` 192 | `0x00268C00` 348 |  |
-| `BeginRender(bool)` | `0x00214E10` 16 | `0x00223EF0` 96 | `0x00263230` 16 | `0x00268BC0` 60 |  |
-| `Destruct()` | `0x00214E20` 8 | `0x00223F50` 8 | `0x00263240` 8 | `0x00268BB0` 8 |  |
-| `Construct()` | `0x00214E30` 8 | `0x00223F60` 8 | `0x00263250` 8 | `0x00268BA0` 8 |  |
-| `RestoreRenderstates()` |  |  |  | `0x00269830` 192 |  |
-| `SetRenderstates()` |  |  |  | `0x00269330` 148 |  |
-| `UploadCameraData()` |  |  |  | `0x00269060` 708 |  |
-| `UploadVUCode()` |  |  |  | `0x00268FF0` 112 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `DispatchArray(CB3ParticleRenderer::CB3ParticleRendererEntry*)` | `0x00214720` 564 | `0x00223590` 980 | `0x00262AC0` 700 | `0x002693D0` 1112 | `0x00254340` strong |  |
+| `EndRender()` | `0x00214960` 996 | `0x00223970` 1048 | `0x00262D80` 996 | `0x00268D80` 584 | `0x00254580` strong |  |
+| `RenderParticleArray(CB3ParticleArray*)` | `0x00214D50` 192 | `0x00223D90` 352 | `0x00263170` 192 | `0x00268C00` 348 | `0x00254970` strong |  |
+| `BeginRender(bool)` | `0x00214E10` 16 | `0x00223EF0` 96 | `0x00263230` 16 | `0x00268BC0` 60 | `0x00254A50` likely |  |
+| `Destruct()` | `0x00214E20` 8 | `0x00223F50` 8 | `0x00263240` 8 | `0x00268BB0` 8 | `0x00254A70` strong |  |
+| `Construct()` | `0x00214E30` 8 | `0x00223F60` 8 | `0x00263250` 8 | `0x00268BA0` 8 | `0x00254A80` strong |  |
+| `RestoreRenderstates()` |  |  |  | `0x00269830` 192 |  |  |
+| `SetRenderstates()` |  |  |  | `0x00269330` 148 |  |  |
+| `UploadCameraData()` |  |  |  | `0x00269060` 708 |  |  |
+| `UploadVUCode()` |  |  |  | `0x00268FF0` 112 |  |  |
 
 ## Static data (DNAT_200)
 

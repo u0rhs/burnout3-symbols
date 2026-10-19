@@ -7,20 +7,21 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3PopcornRendererPS2.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 7
+- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Render()` | `0x0031B750` 1368 | `0x00376870` 1448 | `0x003A5450` 1448 | `0x003A5460` 2084 |  |
-| `SpawnBouncyPopcorn(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float)` | `0x0031BCB0` 444 | `0x00376E20` 576 | `0x003A5A00` 576 | `0x003A5120` 832 |  |
-| `Release()` | `0x0031BE70` 8 | `0x00377060` 8 | `0x003A5C40` 8 | `0x003A5100` 28 |  |
-| `Prepare()` | `0x0031BE80` 256 | `0x00377070` 344 | `0x003A5C50` 344 | `0x003A5020` 220 |  |
-| `Destruct()` | `0x0031BF80` 8 | `0x003771D0` 8 | `0x003A5DB0` 8 | `0x003A5010` 16 |  |
-| `Construct(EPopcornArrayID)` | `0x0031BF90` 640 | `0x003771E0` 784 | `0x003A5DC0` 776 | `0x003A4C90` 836 |  |
-| `IsRenderable()` |  |  |  | `0x003A5D10` 20 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Render()` | `0x0031B750` 1368 | `0x00376870` 1448 | `0x003A5450` 1448 | `0x003A5460` 2084 | `0x00365920` proven |  |
+| `SpawnBouncyPopcorn(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float)` | `0x0031BCB0` 444 | `0x00376E20` 576 | `0x003A5A00` 576 | `0x003A5120` 832 | `0x00365E80` proven |  |
+| `Release()` | `0x0031BE70` 8 | `0x00377060` 8 | `0x003A5C40` 8 | `0x003A5100` 28 | `0x00366040` proven |  |
+| `Prepare()` | `0x0031BE80` 256 | `0x00377070` 344 | `0x003A5C50` 344 | `0x003A5020` 220 | `0x00366050` proven |  |
+| `Destruct()` | `0x0031BF80` 8 | `0x003771D0` 8 | `0x003A5DB0` 8 | `0x003A5010` 16 | `0x00366150` strong |  |
+| `Construct(EPopcornArrayID)` | `0x0031BF90` 640 | `0x003771E0` 784 | `0x003A5DC0` 776 | `0x003A4C90` 836 | `0x00366160` strong |  |
+| `IsRenderable()` |  |  |  | `0x003A5D10` 20 |  |  |
 
 ## Notes
 

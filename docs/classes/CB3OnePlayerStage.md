@@ -7,23 +7,24 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3OnePlayerStage.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 9
+- **Retail (SLUS-21050):** 7 of its 8 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FC40`, 40 bytes = 10 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 8 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetNumLaps()` | `0x00133B80` 60 | `0x0013B590` 60 | `0x00138DD0` 60 | `0x00141660` 80 |  |
-| `StartReplay()` | `0x00133BC0` 68 | `0x0013B5D0` 68 | `0x00138E10` 68 | `0x00141600` 96 |  |
-| `Destruct()` | `0x00133C10` 8 | `0x0013B620` 8 | `0x00138E60` 8 | `0x001415D0` 40 |  |
-| `Release()` | `0x00133C20` 116 | `0x0013B630` 116 | `0x00138E70` 116 | `0x00141500` 148 |  |
-| `Render()` | `0x00133CA0` 944 | `0x0013B6B0` 524 | `0x00138EF0` 1064 | `0x00141180` 696 |  |
-| `Update()` | `0x00134290` 248 | `0x0013BB30` 728 | `0x00139590` 476 | `0x0013FD20` 444 |  |
-| `Prepare()` | `0x00134390` 452 | `0x0013BE10` 568 | `0x00139770` 568 | `0x0013F9F0` 572 |  |
-| `Construct()` | `0x00134560` 8 | `0x0013C050` 52 | `0x001399B0` 120 | `0x0013F950` 152 |  |
-| `CB3OnePlayerStage()` |  |  |  | `0x0013E2A0` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetNumLaps()` | `0x00133B80` 60 | `0x0013B590` 60 | `0x00138DD0` 60 | `0x00141660` 80 |  |  |
+| `StartReplay()` | `0x00133BC0` 68 | `0x0013B5D0` 68 | `0x00138E10` 68 | `0x00141600` 96 | `0x00134940` likely |  |
+| `Destruct()` | `0x00133C10` 8 | `0x0013B620` 8 | `0x00138E60` 8 | `0x001415D0` 40 | `0x00134990` likely |  |
+| `Release()` | `0x00133C20` 116 | `0x0013B630` 116 | `0x00138E70` 116 | `0x00141500` 148 | `0x001349A0` proven |  |
+| `Render()` | `0x00133CA0` 944 | `0x0013B6B0` 524 | `0x00138EF0` 1064 | `0x00141180` 696 | `0x00134A20` strong |  |
+| `Update()` | `0x00134290` 248 | `0x0013BB30` 728 | `0x00139590` 476 | `0x0013FD20` 444 | `0x00135180` likely |  |
+| `Prepare()` | `0x00134390` 452 | `0x0013BE10` 568 | `0x00139770` 568 | `0x0013F9F0` 572 | `0x00135280` unverified |  |
+| `Construct()` | `0x00134560` 8 | `0x0013C050` 52 | `0x001399B0` 120 | `0x0013F950` 152 | `0x001353A0` likely |  |
+| `CB3OnePlayerStage()` |  |  |  | `0x0013E2A0` 60 |  |  |
 
 ## Notes
 

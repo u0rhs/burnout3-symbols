@@ -7,25 +7,26 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `B3BehaviourCluster.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 11
+- **Retail (SLUS-21050):** 7 of its 8 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440820`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Destruct()` | `0x0030E480` 8 | `0x00365480` 8 | `0x00394DD0` 8 | `0x0039BCE0` 16 |  |
-| `Release(void*)` | `0x0030E490` 8 | `0x00365490` 8 | `0x00394DE0` 8 | `0x0039BCD0` 16 |  |
-| `Update(CGtCamera*,float)` | `0x0030E4A0` 1976 | `0x003654A0` 2684 | `0x00394DF0` 2684 | `0x0039BBE0` 232 |  |
-| `Interpolate(float)` | `0x0030EC60` 1008 | `0x00365F20` 1008 | `0x00395870` 1008 | `0x0039B4F0` 1776 |  |
-| `Prepare(void*)` | `0x0030F050` 1032 | `0x00366310` 1764 | `0x00395C60` 1764 | `0x0039B3D0` 276 |  |
-| `SetInterpRig(CB3ClusterRig*)` | `0x0030F460` 188 | `0x00366A00` 188 | `0x00396350` 188 | `0x0039B390` 64 |  |
-| `SetRig(CB3ClusterRig*)` | `0x0030F520` 180 | `0x00366AC0` 180 | `0x00396410` 180 | `0x0039B350` 52 |  |
-| `Construct()` | `0x0030F5E0` 8 | `0x00366B80` 8 | `0x003964D0` 8 | `0x0039B320` 40 |  |
-| `CB3BehaviourCluster()` |  |  |  | `0x0013E880` 92 |  |
-| `GetRig()` |  |  |  | `0x00398280` 28 |  |
-| `IsIntersecting()` |  |  |  | `0x003987D0` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Destruct()` | `0x0030E480` 8 | `0x00365480` 8 | `0x00394DD0` 8 | `0x0039BCE0` 16 | `0x00357B70` likely |  |
+| `Release(void*)` | `0x0030E490` 8 | `0x00365490` 8 | `0x00394DE0` 8 | `0x0039BCD0` 16 | `0x00357B80` likely |  |
+| `Update(CGtCamera*,float)` | `0x0030E4A0` 1976 | `0x003654A0` 2684 | `0x00394DF0` 2684 | `0x0039BBE0` 232 | `0x00357B90` unverified |  |
+| `Interpolate(float)` | `0x0030EC60` 1008 | `0x00365F20` 1008 | `0x00395870` 1008 | `0x0039B4F0` 1776 |  |  |
+| `Prepare(void*)` | `0x0030F050` 1032 | `0x00366310` 1764 | `0x00395C60` 1764 | `0x0039B3D0` 276 | `0x003582A0` strong |  |
+| `SetInterpRig(CB3ClusterRig*)` | `0x0030F460` 188 | `0x00366A00` 188 | `0x00396350` 188 | `0x0039B390` 64 | `0x003586B0` strong |  |
+| `SetRig(CB3ClusterRig*)` | `0x0030F520` 180 | `0x00366AC0` 180 | `0x00396410` 180 | `0x0039B350` 52 | `0x00358780` strong |  |
+| `Construct()` | `0x0030F5E0` 8 | `0x00366B80` 8 | `0x003964D0` 8 | `0x0039B320` 40 | `0x00358840` likely |  |
+| `CB3BehaviourCluster()` |  |  |  | `0x0013E880` 92 |  |  |
+| `GetRig()` |  |  |  | `0x00398280` 28 |  |  |
+| `IsIntersecting()` |  |  |  | `0x003987D0` 28 |  |  |
 
 ## Notes
 

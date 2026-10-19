@@ -9,16 +9,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CopySegmentFromCollection(int,const CB3TrailSegmentCollection*,int)` |  |  |  | `0x002E99A0` 136 |  |
-| `ReadSegmentPosition(int)` |  |  |  | `0x002EA270` 68 |  |
-| `ReadSegmentTime(int)` |  |  |  | `0x002E9950` 72 |  |
-| `WriteSegmentPosition(GtMathPs2::CGtV3d,int)` |  |  |  | `0x002EA100` 80 |  |
-| `WriteSegmentTangent(GtMathPs2::CGtV3d,int)` |  |  |  | `0x002EA150` 284 |  |
-| `WriteSegmentTime(float,int)` |  |  |  | `0x002EA0C0` 64 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CopySegmentFromCollection(int,const CB3TrailSegmentCollection*,int)` |  |  |  | `0x002E99A0` 136 |  |  |
+| `ReadSegmentPosition(int)` |  |  |  | `0x002EA270` 68 |  |  |
+| `ReadSegmentTime(int)` |  |  |  | `0x002E9950` 72 |  |  |
+| `WriteSegmentPosition(GtMathPs2::CGtV3d,int)` |  |  |  | `0x002EA100` 80 |  |  |
+| `WriteSegmentTangent(GtMathPs2::CGtV3d,int)` |  |  |  | `0x002EA150` 284 |  |  |
+| `WriteSegmentTime(float,int)` |  |  |  | `0x002EA0C0` 64 |  |  |
 
 ## Notes
 

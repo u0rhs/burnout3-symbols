@@ -14,147 +14,149 @@ The menu screens and their flow: each screen is a Page (what is drawn) plus a St
 
 In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_200.symbols.txt](../../data/burnout3-prototype/maps/DNAT_200.symbols.txt) (search for `==== <file>`).
 
-| File | Functions | Code bytes | First function |
-|---|---:|---:|---|
-| `B3FrontEnd.cpp` | 12 | 3,080 | `0x00130740` |
-| `B3MenuInput.cpp` | 4 | 1,208 | `0x001DFB30` |
-| `B3Strings.cpp` | 5 | 80 | `0x00232280` |
-| `B3MenuComponents.cpp` | 2 | 888 | `0x002CC090` |
-| `B3MenuChoices.cpp` | 14 | 7,328 | `0x002CC1D0` |
-| `B3MenuPageManager.cpp` | 12 | 3,492 | `0x002CDEC0` |
-| `B3RegionSelectState.cpp` | 1 | 908 | `0x002CEC80` |
-| `B3ClassSelectState.cpp` | 1 | 2,364 | `0x002CF010` |
-| `B3MainMenuState.cpp` | 2 | 1,596 | `0x002CF950` |
-| `B3MenuFlowFSM.cpp` | 7 | 2,624 | `0x002CFF90` |
-| `B3CarSelectState.cpp` | 1 | 1,836 | `0x002D15E0` |
-| `B3TrackSelectState.cpp` | 1 | 480 | `0x002D1D10` |
-| `B3ClassSelectPage.cpp` | 3 | 844 | `0x002D77C0` |
-| `B3MainMenuPage.cpp` | 3 | 1,056 | `0x002D7B20` |
-| `B3MenuPageBase.cpp` | 1 | 48 | `0x002D7F50` |
-| `B3CarSelectPage.cpp` | 4 | 1,192 | `0x002D7F80` |
-| `B3RegionSelectPage.cpp` | 3 | 496 | `0x002D8400` |
-| `B3TrackSelectPage.cpp` | 3 | 860 | `0x002D8600` |
-| `B3MenuComponentBase.cpp` | 8 | 424 | `0x002D8970` |
-| `B3HeadingComponent.cpp` | 12 | 5,216 | `0x002D8A50` |
-| `B3HelpBarComponent.cpp` | 13 | 3,672 | `0x002D9EC0` |
-| `B3HSelectComponent.cpp` | 4 | 468 | `0x002DAD50` |
-| `B3BackgroundComponent.cpp` | 12 | 7,676 | `0x002DAF40` |
-| `B3PromptsComponent.cpp` | 8 | 3,600 | `0x002DC9A0` |
-| `B3VSelectComponent.cpp` | 10 | 4,456 | `0x002DD770` |
-| `B3LoadingScreenPage.cpp` | 3 | 556 | `0x002DE8D0` |
-| `B3MyBurnoutPage.cpp` | 5 | 1,528 | `0x002DEB10` |
-| `B3MyBurnoutState.cpp` | 1 | 1,320 | `0x002DF120` |
-| `B3GameState.cpp` | 1 | 912 | `0x002DF650` |
-| `B3VListComponent.cpp` | 3 | 176 | `0x002E5C70` |
-| `B3MessageBoxComponent.cpp` | 6 | 1,688 | `0x002E5D30` |
-| `B3SplashScreenState.cpp` | 1 | 2,892 | `0x002F0600` |
-| `B3TableComponent.cpp` | 13 | 3,060 | `0x002F8E10` |
-| `B3PausePage.cpp` | 4 | 1,388 | `0x002FAFE0` |
-| `B3PauseState.cpp` | 1 | 792 | `0x002FB560` |
-| `B3TipComponent.cpp` | 4 | 68 | `0x002FB880` |
-| `B3TitleScreenComponent.cpp` | 4 | 1,576 | `0x002FB8E0` |
-| `B3EndOfRaceState.cpp` | 4 | 2,724 | `0x002FBF20` |
-| `B3RaceFinishedPage.cpp` | 9 | 4,208 | `0x002FC9D0` |
-| `B3OnScreenKeyboardComponent.cpp` | 35 | 17,972 | `0x003050B0` |
-| `B3TextComponent.cpp` | 7 | 1,020 | `0x00309650` |
-| `B3ErrorPage.cpp` | 3 | 400 | `0x00309A80` |
-| `B3TableSelectComponent.cpp` | 4 | 496 | `0x00309C20` |
-| `B3ConnectionAnimationComponent.cpp` | 3 | 1,496 | `0x00309E20` |
-| `B3StageSelectPage.cpp` | 4 | 2,220 | `0x0031DA10` |
-| `B3StageSelectState.cpp` | 1 | 2,228 | `0x0031E2E0` |
-| `B3MenuImages.cpp` | 4 | 1,840 | `0x0032C750` |
-| `B3MyStatsPage.cpp` | 3 | 1,780 | `0x0032EB80` |
-| `B3MyStatsState.cpp` | 1 | 264 | `0x0032F290` |
-| `B3CrashResultsPage.cpp` | 6 | 3,832 | `0x00331730` |
-| `B3PageTextComponent.cpp` | 11 | 1,676 | `0x00338080` |
-| `B3PromptBarComponent.cpp` | 4 | 780 | `0x00347090` |
-| `B3ScrollVSelectComponent.cpp` | 7 | 3,760 | `0x00354CB0` |
-| `B3EventSummaryComponent.cpp` | 7 | 3,408 | `0x00355B10` |
-| `B3LoadingState.cpp` | 1 | 136 | `0x0035B330` |
-| `B3TabbedDisplayComponent.cpp` | 13 | 5,432 | `0x0035D300` |
-| `B3ReplaySymbolComponent.cpp` | 4 | 1,112 | `0x0035E650` |
-| `B3SatNavComponent.cpp` | 36 | 27,952 | `0x0035ECB0` |
-| `B3GlobeComponent.cpp` | 9 | 3,780 | `0x0036A120` |
-| `B3MenuStringBuffer.cpp` | 3 | 316 | `0x0036B2C0` |
-| `B3PostEventComponent.cpp` | 9 | 4,256 | `0x0036B410` |
-| `B3EventFinishedComponent.cpp` | 6 | 1,184 | `0x0036C4B0` |
-| `B3RoadRageResultsPage.cpp` | 11 | 4,964 | `0x0036C950` |
-| `B3VOptionsSelectComponent.cpp` | 14 | 7,888 | `0x0036F620` |
-| `B3CrashStandingsPage.cpp` | 7 | 3,156 | `0x003730B0` |
-| `B3ResultsPage.cpp` | 7 | 2,052 | `0x00373D30` |
-| `B3CrashNavPage.cpp` | 4 | 3,528 | `0x003754F0` |
-| `B3EventFinishedPage.cpp` | 3 | 372 | `0x003762E0` |
-| `B3PostEventPage.cpp` | 6 | 1,612 | `0x00376470` |
-| `B3PostEventRecordsPage.cpp` | 3 | 364 | `0x00376AF0` |
-| `B3PostEventRewardsPage.cpp` | 3 | 344 | `0x00376C70` |
-| `B3ReplayPage.cpp` | 3 | 352 | `0x00376DE0` |
-| `B3AwardPresentationPage.cpp` | 5 | 2,252 | `0x00376F50` |
-| `B3ReplayState.cpp` | 1 | 496 | `0x00377830` |
-| `B3CrashNavState.cpp` | 1 | 2,564 | `0x00377A20` |
-| `B3EventFinishedState.cpp` | 1 | 696 | `0x00378430` |
-| `B3EventState.cpp` | 1 | 240 | `0x003786F0` |
-| `B3PostEventRecordsState.cpp` | 1 | 308 | `0x003787E0` |
-| `B3PostEventRewardsState.cpp` | 1 | 76 | `0x00378920` |
-| `B3PostEventState.cpp` | 2 | 2,124 | `0x00378970` |
-| `B3AwardPresentationState.cpp` | 2 | 792 | `0x003791D0` |
-| `B3OnePlayerModeSelectState.cpp` | 2 | 1,296 | `0x003794F0` |
-| `B3GenericVSelectPage.cpp` | 4 | 604 | `0x00379A00` |
-| `B3TwoPlayerModeSelectState.cpp` | 2 | 1,120 | `0x00379C70` |
-| `B3ControllerRemovedComponent.cpp` | 6 | 1,344 | `0x0037A0D0` |
-| `B3PartyCrashSetupPage.cpp` | 4 | 2,360 | `0x0037B310` |
-| `B3PartyCrashSetupState.cpp` | 2 | 1,372 | `0x0037BC60` |
-| `B3MyBurnoutProfileLoadState.cpp` | 1 | 912 | `0x0039B500` |
-| `B3MyBurnoutProfileRenameState.cpp` | 1 | 260 | `0x0039B890` |
-| `B3MyBurnoutProfileSaveState.cpp` | 1 | 1,052 | `0x0039B9A0` |
-| `B3MyBurnoutProfileState.cpp` | 1 | 1,008 | `0x0039BDC0` |
-| `B3MyBurnoutProgressState.cpp` | 1 | 264 | `0x0039C1B0` |
-| `B3MyBurnoutRecordsState.cpp` | 1 | 404 | `0x0039C2C0` |
-| `B3MyBurnoutRewardsState.cpp` | 1 | 536 | `0x0039C460` |
-| `B3MyBurnoutSettingsAudioState.cpp` | 1 | 296 | `0x0039C680` |
-| `B3MyBurnoutSettingsControllerState.cpp` | 1 | 272 | `0x0039C7B0` |
-| `B3MyBurnoutSettingsState.cpp` | 1 | 368 | `0x0039C8C0` |
-| `B3MyBurnoutSettingsVideoState.cpp` | 1 | 384 | `0x0039CA30` |
-| `B3MyBurnoutProfileCreateNewState.cpp` | 1 | 1,132 | `0x0039CBB0` |
-| `B3MyBurnoutProfileLoadPage.cpp` | 8 | 4,116 | `0x0039D020` |
-| `B3MyBurnoutProfilePage.cpp` | 4 | 632 | `0x0039E030` |
-| `B3MyBurnoutProfileRenamePage.cpp` | 3 | 292 | `0x0039E2C0` |
-| `B3MyBurnoutProfileSavePage.cpp` | 10 | 6,316 | `0x0039E3F0` |
-| `B3MyBurnoutProgressPage.cpp` | 4 | 2,304 | `0x0039FCA0` |
-| `B3MyBurnoutRecordsPage.cpp` | 3 | 360 | `0x003A05C0` |
-| `B3MyBurnoutRewardsCarPage.cpp` | 4 | 860 | `0x003A0740` |
-| `B3MyBurnoutRewardsCheatsPage.cpp` | 3 | 716 | `0x003A0AC0` |
-| `B3MyBurnoutRewardsHeadlinesPage.cpp` | 3 | 1,064 | `0x003A0DA0` |
-| `B3MyBurnoutRewardsPage.cpp` | 4 | 628 | `0x003A11D0` |
-| `B3MyBurnoutRewardsStatsPage.cpp` | 4 | 7,324 | `0x003A1460` |
-| `B3MyBurnoutRewardsTrophiesPage.cpp` | 3 | 724 | `0x003A3120` |
-| `B3MyBurnoutSettingsAudioPage.cpp` | 4 | 532 | `0x003A3410` |
-| `B3MyBurnoutSettingsControllerPage.cpp` | 4 | 328 | `0x003A3640` |
-| `B3MyBurnoutSettingsPage.cpp` | 3 | 1,400 | `0x003A37A0` |
-| `B3MyBurnoutSettingsPlayListEditPage.cpp` | 2 | 136 | `0x003A3D30` |
-| `B3MyBurnoutSettingsScreenPosPage.cpp` | 3 | 292 | `0x003A3DC0` |
-| `B3MyBurnoutSettingsVideoPage.cpp` | 4 | 560 | `0x003A3EF0` |
-| `B3MyBurnoutProfileCreateNewPage.cpp` | 10 | 7,212 | `0x003A4140` |
-| `B3InGameSettingsPage.cpp` | 4 | 1,844 | `0x003A6480` |
-| `B3InGameSettingsState.cpp` | 1 | 448 | `0x003A6BD0` |
-| `B3RewardImageComponent.cpp` | 8 | 1,496 | `0x003A6FE0` |
-| `B3ServerDisconnectState.cpp` | 1 | 696 | `0x003C4720` |
-| `B3ScrollBarComponent.cpp` | 4 | 1,452 | `0x003C4B90` |
-| `B3AutoSaveState.cpp` | 1 | 472 | `0x003C5150` |
-| `B3AutoSavePage.cpp` | 4 | 244 | `0x003C5330` |
-| `B3CrashAftermathPage.cpp` | 3 | 160 | `0x003C8000` |
-| `B3PlayVideoPage.cpp` | 3 | 656 | `0x003C80B0` |
-| `B3MyBurnoutDevelopmentPage.cpp` | 4 | 680 | `0x003C8350` |
-| `B3MyBurnoutDevelopmentState.cpp` | 1 | 640 | `0x003C8610` |
-| `B3OptionsDisplayComponent.cpp` | 8 | 2,056 | `0x003CA090` |
-| `B3CarViewComponent.cpp` | 11 | 9,100 | `0x003CB550` |
-| `B3CarouselComponent.cpp` | 24 | 5,288 | `0x003CD870` |
-| `B3BootMemoryCardState.cpp` | 1 | 700 | `0x003CED90` |
-| `B3BootMemoryCardPage.cpp` | 6 | 1,464 | `0x003CF050` |
-| `B3MenuFinishedEvent.cpp` | 11 | 4,564 | `0x003CF5F0` |
-| `B3MyBurnoutSettingsEATraxPage.cpp` | 4 | 2,160 | `0x003D0800` |
-| `B3SingleEventGameOptionsPage.cpp` | 9 | 5,692 | `0x003D1090` |
-| `B3MultiplayerGameOptionsPage.cpp` | 9 | 5,344 | `0x003D2700` |
-| `B3MenuPages.cpp` | 1 | 1,620 | `0x0043B320` |
+**Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
+|---|---:|---:|---|---:|---|
+| `B3FrontEnd.cpp` | 12 | 3,080 | `0x00130740` | 10 (1) | `0x00130C20`–`0x00131AA0` |
+| `B3MenuInput.cpp` | 4 | 1,208 | `0x001DFB30` | 4 (3) | `0x0021A5F0`–`0x0021A9B0` |
+| `B3Strings.cpp` | 5 | 80 | `0x00232280` | 4 (2) | `0x00271A10`–`0x00271A60` |
+| `B3MenuComponents.cpp` | 2 | 888 | `0x002CC090` | 1 (0) | `0x0030B560`–`0x0030B560` |
+| `B3MenuChoices.cpp` | 14 | 7,328 | `0x002CC1D0` | 10 (1) | `0x0030BB70`–`0x0030D3B0` |
+| `B3MenuPageManager.cpp` | 12 | 3,492 | `0x002CDEC0` | 6 (0) | `0x0030D4B0`–`0x0030D6E0` |
+| `B3RegionSelectState.cpp` | 1 | 908 | `0x002CEC80` |  |  |
+| `B3ClassSelectState.cpp` | 1 | 2,364 | `0x002CF010` |  |  |
+| `B3MainMenuState.cpp` | 2 | 1,596 | `0x002CF950` |  |  |
+| `B3MenuFlowFSM.cpp` | 7 | 2,624 | `0x002CFF90` | 2 (0) | `0x0030ED70`–`0x0030ED80` |
+| `B3CarSelectState.cpp` | 1 | 1,836 | `0x002D15E0` |  |  |
+| `B3TrackSelectState.cpp` | 1 | 480 | `0x002D1D10` |  |  |
+| `B3ClassSelectPage.cpp` | 3 | 844 | `0x002D77C0` | 2 (0) | `0x003180F0`–`0x00318340` |
+| `B3MainMenuPage.cpp` | 3 | 1,056 | `0x002D7B20` | 1 (0) | `0x00318520`–`0x00318520` |
+| `B3MenuPageBase.cpp` | 1 | 48 | `0x002D7F50` | 1 (1) | `0x00318530`–`0x00318530` |
+| `B3CarSelectPage.cpp` | 4 | 1,192 | `0x002D7F80` |  |  |
+| `B3RegionSelectPage.cpp` | 3 | 496 | `0x002D8400` |  |  |
+| `B3TrackSelectPage.cpp` | 3 | 860 | `0x002D8600` |  |  |
+| `B3MenuComponentBase.cpp` | 8 | 424 | `0x002D8970` | 7 (3) | `0x003192F0`–`0x003193B0` |
+| `B3HeadingComponent.cpp` | 12 | 5,216 | `0x002D8A50` | 9 (5) | `0x003193D0`–`0x0031B130` |
+| `B3HelpBarComponent.cpp` | 13 | 3,672 | `0x002D9EC0` | 10 (0) | `0x0031B6A0`–`0x0031CB20` |
+| `B3HSelectComponent.cpp` | 4 | 468 | `0x002DAD50` | 3 (1) | `0x0031CC90`–`0x0031CD90` |
+| `B3BackgroundComponent.cpp` | 12 | 7,676 | `0x002DAF40` | 6 (1) | `0x0031CDA0`–`0x0031E0D0` |
+| `B3PromptsComponent.cpp` | 8 | 3,600 | `0x002DC9A0` | 4 (0) | `0x0031E140`–`0x0031FD30` |
+| `B3VSelectComponent.cpp` | 10 | 4,456 | `0x002DD770` | 8 (0) | `0x0031FDB0`–`0x003214B0` |
+| `B3LoadingScreenPage.cpp` | 3 | 556 | `0x002DE8D0` | 3 (0) | `0x00321680`–`0x00321780` |
+| `B3MyBurnoutPage.cpp` | 5 | 1,528 | `0x002DEB10` | 3 (0) | `0x00322310`–`0x00322610` |
+| `B3MyBurnoutState.cpp` | 1 | 1,320 | `0x002DF120` |  |  |
+| `B3GameState.cpp` | 1 | 912 | `0x002DF650` |  |  |
+| `B3VListComponent.cpp` | 3 | 176 | `0x002E5C70` | 3 (3) | `0x0032B200`–`0x0032B2B0` |
+| `B3MessageBoxComponent.cpp` | 6 | 1,688 | `0x002E5D30` | 2 (0) | `0x0032B530`–`0x0032D1B0` |
+| `B3SplashScreenState.cpp` | 1 | 2,892 | `0x002F0600` |  |  |
+| `B3TableComponent.cpp` | 13 | 3,060 | `0x002F8E10` | 10 (2) | `0x0033F260`–`0x00340420` |
+| `B3PausePage.cpp` | 4 | 1,388 | `0x002FAFE0` | 1 (0) | `0x00342090`–`0x00342090` |
+| `B3PauseState.cpp` | 1 | 792 | `0x002FB560` | 1 (0) | `0x003428D0`–`0x003428D0` |
+| `B3TipComponent.cpp` | 4 | 68 | `0x002FB880` | 1 (0) | `0x00342F60`–`0x00342F60` |
+| `B3TitleScreenComponent.cpp` | 4 | 1,576 | `0x002FB8E0` | 2 (0) | `0x00343720`–`0x00343FB0` |
+| `B3EndOfRaceState.cpp` | 4 | 2,724 | `0x002FBF20` |  |  |
+| `B3RaceFinishedPage.cpp` | 9 | 4,208 | `0x002FC9D0` |  |  |
+| `B3OnScreenKeyboardComponent.cpp` | 35 | 17,972 | `0x003050B0` | 32 (14) | `0x0034CED0`–`0x003517F0` |
+| `B3TextComponent.cpp` | 7 | 1,020 | `0x00309650` | 5 (0) | `0x00351A90`–`0x00351F00` |
+| `B3ErrorPage.cpp` | 3 | 400 | `0x00309A80` | 3 (0) | `0x00352030`–`0x00352210` |
+| `B3TableSelectComponent.cpp` | 4 | 496 | `0x00309C20` | 4 (4) | `0x003522C0`–`0x00352490` |
+| `B3ConnectionAnimationComponent.cpp` | 3 | 1,496 | `0x00309E20` | 3 (3) | `0x003524C0`–`0x00352990` |
+| `B3StageSelectPage.cpp` | 4 | 2,220 | `0x0031DA10` |  |  |
+| `B3StageSelectState.cpp` | 1 | 2,228 | `0x0031E2E0` |  |  |
+| `B3MenuImages.cpp` | 4 | 1,840 | `0x0032C750` | 2 (0) | `0x003717A0`–`0x00371870` |
+| `B3MyStatsPage.cpp` | 3 | 1,780 | `0x0032EB80` |  |  |
+| `B3MyStatsState.cpp` | 1 | 264 | `0x0032F290` |  |  |
+| `B3CrashResultsPage.cpp` | 6 | 3,832 | `0x00331730` |  |  |
+| `B3PageTextComponent.cpp` | 11 | 1,676 | `0x00338080` | 6 (4) | `0x00379230`–`0x00379980` |
+| `B3PromptBarComponent.cpp` | 4 | 780 | `0x00347090` | 1 (0) | `0x0038AD80`–`0x0038AD80` |
+| `B3ScrollVSelectComponent.cpp` | 7 | 3,760 | `0x00354CB0` |  |  |
+| `B3EventSummaryComponent.cpp` | 7 | 3,408 | `0x00355B10` |  |  |
+| `B3LoadingState.cpp` | 1 | 136 | `0x0035B330` |  |  |
+| `B3TabbedDisplayComponent.cpp` | 13 | 5,432 | `0x0035D300` |  |  |
+| `B3ReplaySymbolComponent.cpp` | 4 | 1,112 | `0x0035E650` | 2 (1) | `0x003A6840`–`0x003A6A50` |
+| `B3SatNavComponent.cpp` | 36 | 27,952 | `0x0035ECB0` | 3 (0) | `0x003A9B70`–`0x003AEFC0` |
+| `B3GlobeComponent.cpp` | 9 | 3,780 | `0x0036A120` | 1 (0) | `0x003B63F0`–`0x003B63F0` |
+| `B3MenuStringBuffer.cpp` | 3 | 316 | `0x0036B2C0` | 1 (0) | `0x003B8900`–`0x003B8900` |
+| `B3PostEventComponent.cpp` | 9 | 4,256 | `0x0036B410` |  |  |
+| `B3EventFinishedComponent.cpp` | 6 | 1,184 | `0x0036C4B0` | 1 (1) | `0x003B8E80`–`0x003B8E80` |
+| `B3RoadRageResultsPage.cpp` | 11 | 4,964 | `0x0036C950` |  |  |
+| `B3VOptionsSelectComponent.cpp` | 14 | 7,888 | `0x0036F620` |  |  |
+| `B3CrashStandingsPage.cpp` | 7 | 3,156 | `0x003730B0` | 1 (0) | `0x003C0430`–`0x003C0430` |
+| `B3ResultsPage.cpp` | 7 | 2,052 | `0x00373D30` |  |  |
+| `B3CrashNavPage.cpp` | 4 | 3,528 | `0x003754F0` |  |  |
+| `B3EventFinishedPage.cpp` | 3 | 372 | `0x003762E0` |  |  |
+| `B3PostEventPage.cpp` | 6 | 1,612 | `0x00376470` |  |  |
+| `B3PostEventRecordsPage.cpp` | 3 | 364 | `0x00376AF0` |  |  |
+| `B3PostEventRewardsPage.cpp` | 3 | 344 | `0x00376C70` |  |  |
+| `B3ReplayPage.cpp` | 3 | 352 | `0x00376DE0` | 1 (0) | `0x003C5FB0`–`0x003C5FB0` |
+| `B3AwardPresentationPage.cpp` | 5 | 2,252 | `0x00376F50` |  |  |
+| `B3ReplayState.cpp` | 1 | 496 | `0x00377830` |  |  |
+| `B3CrashNavState.cpp` | 1 | 2,564 | `0x00377A20` |  |  |
+| `B3EventFinishedState.cpp` | 1 | 696 | `0x00378430` |  |  |
+| `B3EventState.cpp` | 1 | 240 | `0x003786F0` |  |  |
+| `B3PostEventRecordsState.cpp` | 1 | 308 | `0x003787E0` |  |  |
+| `B3PostEventRewardsState.cpp` | 1 | 76 | `0x00378920` |  |  |
+| `B3PostEventState.cpp` | 2 | 2,124 | `0x00378970` |  |  |
+| `B3AwardPresentationState.cpp` | 2 | 792 | `0x003791D0` |  |  |
+| `B3OnePlayerModeSelectState.cpp` | 2 | 1,296 | `0x003794F0` |  |  |
+| `B3GenericVSelectPage.cpp` | 4 | 604 | `0x00379A00` |  |  |
+| `B3TwoPlayerModeSelectState.cpp` | 2 | 1,120 | `0x00379C70` |  |  |
+| `B3ControllerRemovedComponent.cpp` | 6 | 1,344 | `0x0037A0D0` |  |  |
+| `B3PartyCrashSetupPage.cpp` | 4 | 2,360 | `0x0037B310` |  |  |
+| `B3PartyCrashSetupState.cpp` | 2 | 1,372 | `0x0037BC60` |  |  |
+| `B3MyBurnoutProfileLoadState.cpp` | 1 | 912 | `0x0039B500` |  |  |
+| `B3MyBurnoutProfileRenameState.cpp` | 1 | 260 | `0x0039B890` |  |  |
+| `B3MyBurnoutProfileSaveState.cpp` | 1 | 1,052 | `0x0039B9A0` |  |  |
+| `B3MyBurnoutProfileState.cpp` | 1 | 1,008 | `0x0039BDC0` |  |  |
+| `B3MyBurnoutProgressState.cpp` | 1 | 264 | `0x0039C1B0` |  |  |
+| `B3MyBurnoutRecordsState.cpp` | 1 | 404 | `0x0039C2C0` |  |  |
+| `B3MyBurnoutRewardsState.cpp` | 1 | 536 | `0x0039C460` | 1 (0) | `0x003EC240`–`0x003EC240` |
+| `B3MyBurnoutSettingsAudioState.cpp` | 1 | 296 | `0x0039C680` |  |  |
+| `B3MyBurnoutSettingsControllerState.cpp` | 1 | 272 | `0x0039C7B0` |  |  |
+| `B3MyBurnoutSettingsState.cpp` | 1 | 368 | `0x0039C8C0` |  |  |
+| `B3MyBurnoutSettingsVideoState.cpp` | 1 | 384 | `0x0039CA30` |  |  |
+| `B3MyBurnoutProfileCreateNewState.cpp` | 1 | 1,132 | `0x0039CBB0` |  |  |
+| `B3MyBurnoutProfileLoadPage.cpp` | 8 | 4,116 | `0x0039D020` |  |  |
+| `B3MyBurnoutProfilePage.cpp` | 4 | 632 | `0x0039E030` |  |  |
+| `B3MyBurnoutProfileRenamePage.cpp` | 3 | 292 | `0x0039E2C0` |  |  |
+| `B3MyBurnoutProfileSavePage.cpp` | 10 | 6,316 | `0x0039E3F0` |  |  |
+| `B3MyBurnoutProgressPage.cpp` | 4 | 2,304 | `0x0039FCA0` |  |  |
+| `B3MyBurnoutRecordsPage.cpp` | 3 | 360 | `0x003A05C0` |  |  |
+| `B3MyBurnoutRewardsCarPage.cpp` | 4 | 860 | `0x003A0740` |  |  |
+| `B3MyBurnoutRewardsCheatsPage.cpp` | 3 | 716 | `0x003A0AC0` |  |  |
+| `B3MyBurnoutRewardsHeadlinesPage.cpp` | 3 | 1,064 | `0x003A0DA0` | 1 (0) | `0x003F0B30`–`0x003F0B30` |
+| `B3MyBurnoutRewardsPage.cpp` | 4 | 628 | `0x003A11D0` |  |  |
+| `B3MyBurnoutRewardsStatsPage.cpp` | 4 | 7,324 | `0x003A1460` |  |  |
+| `B3MyBurnoutRewardsTrophiesPage.cpp` | 3 | 724 | `0x003A3120` |  |  |
+| `B3MyBurnoutSettingsAudioPage.cpp` | 4 | 532 | `0x003A3410` |  |  |
+| `B3MyBurnoutSettingsControllerPage.cpp` | 4 | 328 | `0x003A3640` |  |  |
+| `B3MyBurnoutSettingsPage.cpp` | 3 | 1,400 | `0x003A37A0` |  |  |
+| `B3MyBurnoutSettingsPlayListEditPage.cpp` | 2 | 136 | `0x003A3D30` |  |  |
+| `B3MyBurnoutSettingsScreenPosPage.cpp` | 3 | 292 | `0x003A3DC0` |  |  |
+| `B3MyBurnoutSettingsVideoPage.cpp` | 4 | 560 | `0x003A3EF0` |  |  |
+| `B3MyBurnoutProfileCreateNewPage.cpp` | 10 | 7,212 | `0x003A4140` |  |  |
+| `B3InGameSettingsPage.cpp` | 4 | 1,844 | `0x003A6480` |  |  |
+| `B3InGameSettingsState.cpp` | 1 | 448 | `0x003A6BD0` |  |  |
+| `B3RewardImageComponent.cpp` | 8 | 1,496 | `0x003A6FE0` | 2 (2) | `0x003F6020`–`0x003F6590` |
+| `B3ServerDisconnectState.cpp` | 1 | 696 | `0x003C4720` |  |  |
+| `B3ScrollBarComponent.cpp` | 4 | 1,452 | `0x003C4B90` | 1 (1) | `0x0041EAF0`–`0x0041EAF0` |
+| `B3AutoSaveState.cpp` | 1 | 472 | `0x003C5150` |  |  |
+| `B3AutoSavePage.cpp` | 4 | 244 | `0x003C5330` |  |  |
+| `B3CrashAftermathPage.cpp` | 3 | 160 | `0x003C8000` |  |  |
+| `B3PlayVideoPage.cpp` | 3 | 656 | `0x003C80B0` |  |  |
+| `B3MyBurnoutDevelopmentPage.cpp` | 4 | 680 | `0x003C8350` |  |  |
+| `B3MyBurnoutDevelopmentState.cpp` | 1 | 640 | `0x003C8610` |  |  |
+| `B3OptionsDisplayComponent.cpp` | 8 | 2,056 | `0x003CA090` |  |  |
+| `B3CarViewComponent.cpp` | 11 | 9,100 | `0x003CB550` |  |  |
+| `B3CarouselComponent.cpp` | 24 | 5,288 | `0x003CD870` |  |  |
+| `B3BootMemoryCardState.cpp` | 1 | 700 | `0x003CED90` |  |  |
+| `B3BootMemoryCardPage.cpp` | 6 | 1,464 | `0x003CF050` |  |  |
+| `B3MenuFinishedEvent.cpp` | 11 | 4,564 | `0x003CF5F0` |  |  |
+| `B3MyBurnoutSettingsEATraxPage.cpp` | 4 | 2,160 | `0x003D0800` |  |  |
+| `B3SingleEventGameOptionsPage.cpp` | 9 | 5,692 | `0x003D1090` |  |  |
+| `B3MultiplayerGameOptionsPage.cpp` | 9 | 5,344 | `0x003D2700` |  |  |
+| `B3MenuPages.cpp` | 1 | 1,620 | `0x0043B320` |  |  |
 
 ## Classes
 

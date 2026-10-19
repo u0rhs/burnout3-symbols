@@ -10,16 +10,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Construct(CGt2dScene*)` |  |  |  | `0x001DCCE0` 72 |  |
-| `IsRenderable()` |  |  |  | `0x001DD570` 116 |  |
-| `Prepare()` |  |  |  | `0x001DCDC0` 60 |  |
-| `RenderObjects()` |  |  |  | `0x001DCEF0` 468 |  |
-| `UpdateClipFrame(const CGt2dFrame*)` |  |  |  | `0x001DD1C0` 244 |  |
-| `UpdateProperties(unsigned int)` |  |  |  | `0x001DD420` 332 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Construct(CGt2dScene*)` |  |  |  | `0x001DCCE0` 72 |  |  |
+| `IsRenderable()` |  |  |  | `0x001DD570` 116 |  |  |
+| `Prepare()` |  |  |  | `0x001DCDC0` 60 |  |  |
+| `RenderObjects()` |  |  |  | `0x001DCEF0` 468 |  |  |
+| `UpdateClipFrame(const CGt2dFrame*)` |  |  |  | `0x001DD1C0` 244 |  |  |
+| `UpdateProperties(unsigned int)` |  |  |  | `0x001DD420` 332 |  |  |
 
 ## Burnout 2 layout of `C2dLayer`
 

@@ -11,17 +11,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x00376F50` 8 | `0x003E7CB0` 8 | `0x0040FAC0` 8 | `0x004267C0` 16 |  |
-| `Update()` | `0x00376F60` 76 | `0x003E7CC0` 76 | `0x0040FAD0` 76 | `0x00426750` 100 |  |
-| `Prepare(EB3MenuAwardTypes,int)` | `0x00376FB0` 816 | `0x003E7D10` 924 | `0x0040FB20` 912 | `0x00426340` 1032 |  |
-| `PrepareTrackRecords(int)` | `0x003772E0` 1032 | `0x003E80B0` 1072 | `0x0040FEB0` 1072 | `0x00425B30` 2060 |  |
-| `FormatCell(unsigned short*,int,int)` | `0x003776F0` 320 | `0x003E84E0` 320 | `0x004102E0` 320 | `0x004258A0` 472 |  |
-| `CB3AwardPresentationPage()` |  |  |  | `0x00342AC0` 172 |  |
-| `GetRecordsPtr()` |  |  |  | `0x00425AC0` 112 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x00376F50` 8 | `0x003E7CB0` 8 | `0x0040FAC0` 8 | `0x004267C0` 16 |  |  |
+| `Update()` | `0x00376F60` 76 | `0x003E7CC0` 76 | `0x0040FAD0` 76 | `0x00426750` 100 |  |  |
+| `Prepare(EB3MenuAwardTypes,int)` | `0x00376FB0` 816 | `0x003E7D10` 924 | `0x0040FB20` 912 | `0x00426340` 1032 |  |  |
+| `PrepareTrackRecords(int)` | `0x003772E0` 1032 | `0x003E80B0` 1072 | `0x0040FEB0` 1072 | `0x00425B30` 2060 |  |  |
+| `FormatCell(unsigned short*,int,int)` | `0x003776F0` 320 | `0x003E84E0` 320 | `0x004102E0` 320 | `0x004258A0` 472 |  |  |
+| `CB3AwardPresentationPage()` |  |  |  | `0x00342AC0` 172 |  |  |
+| `GetRecordsPtr()` |  |  |  | `0x00425AC0` 112 |  |  |
 
 ## Notes
 

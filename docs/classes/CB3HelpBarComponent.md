@@ -7,24 +7,25 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3HelpBarComponent.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 10
+- **Retail (SLUS-21050):** 7 of its 9 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440380`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x002D9EC0` 148 | `0x003235D0` 228 | `0x00355790` 220 | `0x003545F0` 268 |  |
-| `SetString(const unsigned short*,bool,bool,float)` | `0x002D9F60` 236 | `0x003236C0` 236 | `0x00355870` 236 | `0x003544A0` 336 |  |
-| `Update(float)` | `0x002DA050` 464 | `0x003237B0` 464 | `0x00355960` 464 | `0x00354120` 896 |  |
-| `CrashScorePrepare(int)` | `0x002DA220` 200 | `0x00323980` 200 | `0x00355B30` 200 | `0x00353FF0` 300 |  |
-| `AwardPrepare(const unsigned short*)` | `0x002DA2F0` 304 | `0x00323A50` 380 | `0x00355C00` 372 | `0x00353DF0` 512 |  |
-| `Prepare(const CB3MenuComponentSelectionData*,const CB3ScrollingTextData*,bool,float)` | `0x002DA420` 288 | `0x00323BD0` 360 | `0x00355D80` 352 | `0x00353C40` 424 |  |
-| `Prepare()` | `0x002DA540` 164 | `0x00323D40` 236 | `0x00355EE0` 228 | `0x00353B20` 280 |  |
-| `Prepare(const unsigned short*,bool,float)` | `0x002DA5F0` 100 | `0x00323E30` 100 | `0x00355FD0` 100 | `0x00353AB0` 104 |  |
-| `Construct()` | `0x002DA660` 56 | `0x00323EA0` 56 | `0x00356040` 56 | `0x00353A60` 76 |  |
-| `CB3HelpBarComponent()` |  |  |  | `0x0033C740` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x002D9EC0` 148 | `0x003235D0` 228 | `0x00355790` 220 | `0x003545F0` 268 | `0x0031B6A0` unverified |  |
+| `SetString(const unsigned short*,bool,bool,float)` | `0x002D9F60` 236 | `0x003236C0` 236 | `0x00355870` 236 | `0x003544A0` 336 | `0x0031B770` strong |  |
+| `Update(float)` | `0x002DA050` 464 | `0x003237B0` 464 | `0x00355960` 464 | `0x00354120` 896 |  |  |
+| `CrashScorePrepare(int)` | `0x002DA220` 200 | `0x00323980` 200 | `0x00355B30` 200 | `0x00353FF0` 300 |  |  |
+| `AwardPrepare(const unsigned short*)` | `0x002DA2F0` 304 | `0x00323A50` 380 | `0x00355C00` 372 | `0x00353DF0` 512 | `0x0031C210` strong |  |
+| `Prepare(const CB3MenuComponentSelectionData*,const CB3ScrollingTextData*,bool,float)` | `0x002DA420` 288 | `0x00323BD0` 360 | `0x00355D80` 352 | `0x00353C40` 424 | `0x0031C350` strong |  |
+| `Prepare()` | `0x002DA540` 164 | `0x00323D40` 236 | `0x00355EE0` 228 | `0x00353B20` 280 | `0x0031C470` strong |  |
+| `Prepare(const unsigned short*,bool,float)` | `0x002DA5F0` 100 | `0x00323E30` 100 | `0x00355FD0` 100 | `0x00353AB0` 104 | `0x0031C520` strong |  |
+| `Construct()` | `0x002DA660` 56 | `0x00323EA0` 56 | `0x00356040` 56 | `0x00353A60` 76 | `0x0031C590` strong |  |
+| `CB3HelpBarComponent()` |  |  |  | `0x0033C740` 60 |  |  |
 
 ## Notes
 

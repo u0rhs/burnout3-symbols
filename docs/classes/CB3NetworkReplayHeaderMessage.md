@@ -7,16 +7,17 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3NetworkReplayMessage.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 3
+- **Retail (SLUS-21050):** 2 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Retrieve(CB3ReplayFileHeader*)` | `0x003343F0` 92 | `0x00395CD0` 1056 | `0x003C0120` 1056 | `0x003C4190` 384 |  |
-| `Prepare(const CB3ReplayFileHeader*)` | `0x00334450` 164 | `0x003960F0` 252 | `0x003C0540` 252 | `0x003C3FF0` 140 |  |
-| `Construct()` | `0x00334500` 8 | `0x003961F0` 8 | `0x003C0640` 8 | `0x003C3FC0` 40 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Retrieve(CB3ReplayFileHeader*)` | `0x003343F0` 92 | `0x00395CD0` 1056 | `0x003C0120` 1056 | `0x003C4190` 384 | `0x003754C0` proven |  |
+| `Prepare(const CB3ReplayFileHeader*)` | `0x00334450` 164 | `0x003960F0` 252 | `0x003C0540` 252 | `0x003C3FF0` 140 | `0x00375520` proven |  |
+| `Construct()` | `0x00334500` 8 | `0x003961F0` 8 | `0x003C0640` 8 | `0x003C3FC0` 40 |  |  |
 
 ## Notes
 

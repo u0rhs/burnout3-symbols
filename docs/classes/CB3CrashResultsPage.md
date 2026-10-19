@@ -11,19 +11,19 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PrepareTable()` | `0x00331730` 312 | `0x0038D920` 356 | `0x003BC4D0` 356 | `0x003C02B0` 488 |  |
-| `_QSortCallback(const void*,const void*)` | `0x00331870` 88 | `0x0038DA90` 88 | `0x003BC640` 88 | `0x003C0200` 164 |  |
-| `AddRaceTime(const CB3ResultsData*)` | `0x003318D0` 2620 | `0x0038DAF0` 2692 | `0x003BC6A0` 2692 | `0x003BF4C0` 3380 |  |
-| `Release()` | `0x00332310` 8 | `0x0038E580` 8 | `0x003BD130` 8 | `0x003BF4B0` 16 |  |
-| `Update()` | `0x00332320` 336 | `0x0038E590` 520 | `0x003BD140` 520 | `0x003BF2C0` 496 |  |
-| `Prepare(bool,bool,unsigned int)` | `0x00332470` 468 | `0x0038E7A0` 468 | `0x003BD350` 468 | `0x003BF020` 284 |  |
-| `CB3CrashResultsPage()` |  |  |  | `0x00342D90` 60 |  |
-| `SetPrompts(unsigned int)` |  |  |  | `0x003BF140` 372 |  |
-| `UpdateProfile(EChallengeMedal,int)` |  |  |  | `0x003C04A0` 204 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PrepareTable()` | `0x00331730` 312 | `0x0038D920` 356 | `0x003BC4D0` 356 | `0x003C02B0` 488 |  |  |
+| `_QSortCallback(const void*,const void*)` | `0x00331870` 88 | `0x0038DA90` 88 | `0x003BC640` 88 | `0x003C0200` 164 |  |  |
+| `AddRaceTime(const CB3ResultsData*)` | `0x003318D0` 2620 | `0x0038DAF0` 2692 | `0x003BC6A0` 2692 | `0x003BF4C0` 3380 |  |  |
+| `Release()` | `0x00332310` 8 | `0x0038E580` 8 | `0x003BD130` 8 | `0x003BF4B0` 16 |  |  |
+| `Update()` | `0x00332320` 336 | `0x0038E590` 520 | `0x003BD140` 520 | `0x003BF2C0` 496 |  |  |
+| `Prepare(bool,bool,unsigned int)` | `0x00332470` 468 | `0x0038E7A0` 468 | `0x003BD350` 468 | `0x003BF020` 284 |  |  |
+| `CB3CrashResultsPage()` |  |  |  | `0x00342D90` 60 |  |  |
+| `SetPrompts(unsigned int)` |  |  |  | `0x003BF140` 372 |  |  |
+| `UpdateProfile(EChallengeMedal,int)` |  |  |  | `0x003C04A0` 204 |  |  |
 
 ## Notes
 

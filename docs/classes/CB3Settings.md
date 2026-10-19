@@ -7,17 +7,18 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3Settings.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 3
+- **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CSettings`, size 0x04C, declared in 72 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Destruct()` | `0x001E09F0` 8 | `0x001E03C0` 8 | `0x002130C0` 8 | `0x00223760` 16 |  |
-| `Construct()` | `0x001E0A00` 56 | `0x001E03D0` 56 | `0x002130D0` 56 | `0x002236D0` 132 |  |
-| `operator =(const CB3Settings&)` |  |  |  | `0x004817A0` 220 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Destruct()` | `0x001E09F0` 8 | `0x001E03C0` 8 | `0x002130C0` 8 | `0x00223760` 16 | `0x0021B760` likely |  |
+| `Construct()` | `0x001E0A00` 56 | `0x001E03D0` 56 | `0x002130D0` 56 | `0x002236D0` 132 |  |  |
+| `operator =(const CB3Settings&)` |  |  |  | `0x004817A0` 220 |  |  |
 
 ## Burnout 2 layout of `CSettings`
 

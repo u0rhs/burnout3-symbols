@@ -7,24 +7,25 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `B3DataLists.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 11, B3INTERN 9, B3O0PCH 11
+- **Retail (SLUS-21050):** 8 of its 10 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Sort()` | `0x00211D00` 264 | `0x002207D0` 264 |  | `0x00263110` 504 |  |
-| `CompareEntries(int,int)` | `0x00211E10` 360 | `0x002208E0` 360 |  | `0x00262ED0` 576 |  |
-| `GetCarCount(EB3MenuCarClasses)` | `0x00211F80` 144 | `0x00220A50` 144 | `0x0025FFD0` 144 | `0x00262E20` 168 |  |
-| `GetCarID(EB3MenuCarClasses,int)` | `0x00212010` 164 | `0x00220AE0` 204 | `0x00260060` 204 | `0x00262D50` 208 |  |
-| `GetClassFromID(unsigned long)` | `0x002120C0` 324 | `0x00220BB0` 348 | `0x00260130` 348 | `0x00262B90` 448 |  |
-| `GetVehicleIndexFromID(unsigned long)` | `0x00212260` 56 | `0x00220D60` 92 | `0x002602E0` 92 | `0x00262AD0` 116 |  |
-| `GetVehicleBoostBarSize(unsigned long)` | `0x002122A0` 68 | `0x00220DC0` 104 | `0x00260340` 104 | `0x00262A50` 128 |  |
-| `IsVehicleDriveable(unsigned long)` | `0x002122F0` 72 | `0x00220E30` 108 | `0x002603B0` 108 | `0x002629C0` 132 |  |
-| `CreateVehiclePathFromIndex(int,char*,int)` | `0x00212340` 180 | `0x00220EA0` 176 | `0x00260420` 176 | `0x00262940` 124 |  |
-| `DoesVehicleExist(unsigned long)` | `0x00212400` 56 | `0x00221050` 56 | `0x002605D0` 56 | `0x002627D0` 112 |  |
-| `CreateVehiclePathFromID(unsigned long,char*,int)` |  | `0x00220F50` 248 | `0x002604D0` 248 | `0x00262840` 244 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Sort()` | `0x00211D00` 264 | `0x002207D0` 264 |  | `0x00263110` 504 |  |  |
+| `CompareEntries(int,int)` | `0x00211E10` 360 | `0x002208E0` 360 |  | `0x00262ED0` 576 |  |  |
+| `GetCarCount(EB3MenuCarClasses)` | `0x00211F80` 144 | `0x00220A50` 144 | `0x0025FFD0` 144 | `0x00262E20` 168 | `0x00251B90` likely |  |
+| `GetCarID(EB3MenuCarClasses,int)` | `0x00212010` 164 | `0x00220AE0` 204 | `0x00260060` 204 | `0x00262D50` 208 | `0x00251C10` likely |  |
+| `GetClassFromID(unsigned long)` | `0x002120C0` 324 | `0x00220BB0` 348 | `0x00260130` 348 | `0x00262B90` 448 | `0x00251CB0` likely |  |
+| `GetVehicleIndexFromID(unsigned long)` | `0x00212260` 56 | `0x00220D60` 92 | `0x002602E0` 92 | `0x00262AD0` 116 | `0x00251E60` strong |  |
+| `GetVehicleBoostBarSize(unsigned long)` | `0x002122A0` 68 | `0x00220DC0` 104 | `0x00260340` 104 | `0x00262A50` 128 | `0x00251EA0` strong |  |
+| `IsVehicleDriveable(unsigned long)` | `0x002122F0` 72 | `0x00220E30` 108 | `0x002603B0` 108 | `0x002629C0` 132 | `0x00251EF0` likely |  |
+| `CreateVehiclePathFromIndex(int,char*,int)` | `0x00212340` 180 | `0x00220EA0` 176 | `0x00260420` 176 | `0x00262940` 124 | `0x00251F40` strong |  |
+| `DoesVehicleExist(unsigned long)` | `0x00212400` 56 | `0x00221050` 56 | `0x002605D0` 56 | `0x002627D0` 112 | `0x00252000` likely |  |
+| `CreateVehiclePathFromID(unsigned long,char*,int)` |  | `0x00220F50` 248 | `0x002604D0` 248 | `0x00262840` 244 |  |  |
 
 ## Notes
 

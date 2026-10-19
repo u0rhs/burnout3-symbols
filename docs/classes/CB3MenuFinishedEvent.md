@@ -10,23 +10,23 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `EvaluateRewards(signed char*,signed char*,bool)` | `0x003CF5F0` 1148 | `0x0044D8C0` 1244 |  | `0x0048DCA0` 2192 |  |
-| `Update()` | `0x003CFA70` 464 | `0x0044DDA0` 580 | `0x00474A40` 1104 | `0x0048DA40` 596 |  |
-| `Prepare()` | `0x003CFC40` 80 | `0x0044DFF0` 80 | `0x00474E90` 88 | `0x0048D9A0` 156 |  |
-| `SetFinishedEliminator()` | `0x003CFC90` 292 | `0x0044E040` 400 | `0x00474EF0` 400 | `0x0048D840` 352 |  |
-| `SetFinishedRoadRage()` | `0x003CFDC0` 376 | `0x0044E1D0` 424 | `0x00475080` 424 | `0x0048D670` 456 |  |
-| `SetFinishedOnlineRoadRage()` | `0x003CFF40` 488 | `0x0044E380` 752 | `0x00475230` 752 | `0x0048D4A0` 452 |  |
-| `SetFinishedRace()` | `0x003D0130` 360 | `0x0044E670` 408 | `0x00475520` 408 | `0x0048D210` 428 |  |
-| `SetFinishedFaceOff()` | `0x003D02A0` 232 | `0x0044E810` 324 | `0x004756C0` 324 | `0x0048D100` 264 |  |
-| `SetFinishedGrandPrix()` | `0x003D0390` 460 | `0x0044E960` 548 | `0x00475810` 548 | `0x0048CE40` 636 |  |
-| `SetFinishedBurningLap()` | `0x003D0560` 348 | `0x0044EB90` 396 | `0x00475A40` 396 | `0x0048CCA0` 412 |  |
-| `SetFinishedCrash()` | `0x003D06C0` 316 | `0x0044ED20` 352 | `0x00475BD0` 352 | `0x0048CB20` 376 |  |
-| `GetFinishedRacerName()` |  |  |  | `0x0048D3C0` 216 |  |
-| `SetEventFinishedStrings(EGlobalStrings,EGlobalStrings,EGlobalStrings)` |  |  |  | `0x0048CA70` 172 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `EvaluateRewards(signed char*,signed char*,bool)` | `0x003CF5F0` 1148 | `0x0044D8C0` 1244 |  | `0x0048DCA0` 2192 |  |  |
+| `Update()` | `0x003CFA70` 464 | `0x0044DDA0` 580 | `0x00474A40` 1104 | `0x0048DA40` 596 |  |  |
+| `Prepare()` | `0x003CFC40` 80 | `0x0044DFF0` 80 | `0x00474E90` 88 | `0x0048D9A0` 156 |  |  |
+| `SetFinishedEliminator()` | `0x003CFC90` 292 | `0x0044E040` 400 | `0x00474EF0` 400 | `0x0048D840` 352 |  |  |
+| `SetFinishedRoadRage()` | `0x003CFDC0` 376 | `0x0044E1D0` 424 | `0x00475080` 424 | `0x0048D670` 456 |  |  |
+| `SetFinishedOnlineRoadRage()` | `0x003CFF40` 488 | `0x0044E380` 752 | `0x00475230` 752 | `0x0048D4A0` 452 |  |  |
+| `SetFinishedRace()` | `0x003D0130` 360 | `0x0044E670` 408 | `0x00475520` 408 | `0x0048D210` 428 |  |  |
+| `SetFinishedFaceOff()` | `0x003D02A0` 232 | `0x0044E810` 324 | `0x004756C0` 324 | `0x0048D100` 264 |  |  |
+| `SetFinishedGrandPrix()` | `0x003D0390` 460 | `0x0044E960` 548 | `0x00475810` 548 | `0x0048CE40` 636 |  |  |
+| `SetFinishedBurningLap()` | `0x003D0560` 348 | `0x0044EB90` 396 | `0x00475A40` 396 | `0x0048CCA0` 412 |  |  |
+| `SetFinishedCrash()` | `0x003D06C0` 316 | `0x0044ED20` 352 | `0x00475BD0` 352 | `0x0048CB20` 376 |  |  |
+| `GetFinishedRacerName()` |  |  |  | `0x0048D3C0` 216 |  |  |
+| `SetEventFinishedStrings(EGlobalStrings,EGlobalStrings,EGlobalStrings)` |  |  |  | `0x0048CA70` 172 |  |  |
 
 ## Static data (DNAT_200)
 

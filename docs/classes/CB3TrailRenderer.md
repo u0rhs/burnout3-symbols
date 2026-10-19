@@ -7,17 +7,18 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3TrailRenderPS2.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 4
+- **Retail (SLUS-21050):** 4 of its 4 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Render(CB3TrailEmitter**,int,CB3TrailParams*,EB3TrailType)` | `0x002B2E40` 632 | `0x002F1E50` 712 | `0x00327180` 712 | `0x0031D870` 680 |  |
-| `EndRender()` | `0x002B30C0` 60 | `0x002F2120` 60 | `0x00327450` 60 | `0x0031D820` 68 |  |
-| `BeginRender()` | `0x002B3100` 420 | `0x002F2160` 524 | `0x00327490` 524 | `0x0031D5A0` 632 |  |
-| `Construct()` | `0x002B32B0` 268 | `0x002F2370` 268 | `0x003276A0` 268 | `0x0031D450` 328 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Render(CB3TrailEmitter**,int,CB3TrailParams*,EB3TrailType)` | `0x002B2E40` 632 | `0x002F1E50` 712 | `0x00327180` 712 | `0x0031D870` 680 | `0x002F3600` unverified |  |
+| `EndRender()` | `0x002B30C0` 60 | `0x002F2120` 60 | `0x00327450` 60 | `0x0031D820` 68 | `0x002F3870` strong |  |
+| `BeginRender()` | `0x002B3100` 420 | `0x002F2160` 524 | `0x00327490` 524 | `0x0031D5A0` 632 | `0x002F38B0` strong |  |
+| `Construct()` | `0x002B32B0` 268 | `0x002F2370` 268 | `0x003276A0` 268 | `0x0031D450` 328 | `0x002F3A60` strong |  |
 
 ## Static data (DNAT_200)
 

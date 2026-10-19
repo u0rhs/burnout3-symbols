@@ -7,72 +7,73 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3CollidingBody.cpp`
 - **Methods per build:** DNAT_200 15, B3DEBUG 15, B3INTERN 15, B3O0PCH 57
+- **Retail (SLUS-21050):** 15 of its 15 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FDF0`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
 - **Burnout 2 ancestor (by name):** `CCollidingBody`, size 0x5A0, declared in 113 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ClearAccumulatedValues()` | `0x00176800` 44 | `0x001908C0` 44 | `0x0018E9D0` 44 | `0x001A86F0` 108 |  |
-| `StopImmediately()` | `0x00176830` 80 | `0x001908F0` 80 | `0x0018EA00` 80 | `0x001A8630` 188 |  |
-| `AddCachedWorldTriangle(const CGtPolygonIntersectionResult&)` | `0x00176880` 212 | `0x00190940` 296 | `0x0018EA50` 296 | `0x001A8480` 420 |  |
-| `CalculateCollisionImpulseWithTraffic(CB3TrafficVehicle*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d` | `0x00176960` 1144 | `0x00190A70` 1144 | `0x0018EB80` 1144 | `0x001A7E10` 1648 |  |
-| `SetInitialMatrix(const GtMathPs2::CGtMatrix3x4&)` | `0x00176DE0` 204 | `0x00190EF0` 204 | `0x0018F000` 204 | `0x001A7D80` 132 |  |
-| `CollideWithWorld()` | `0x00176EB0` 1428 | `0x00190FC0` 2520 | `0x0018F0D0` 2520 | `0x001A70D0` 1588 |  |
-| `StopCrashing()` | `0x00177450` 100 | `0x001919A0` 100 | `0x0018FAB0` 100 | `0x001A7020` 168 |  |
-| `StartCrashing(int,CB3CrashStartInfo*)` | `0x001774C0` 36 | `0x00191A10` 156 | `0x0018FB20` 156 | `0x001A6FA0` 116 |  |
-| `CacheWorldTriangles()` | `0x001774F0` 360 | `0x00191AB0` 360 | `0x0018FBC0` 360 | `0x001A6D50` 520 |  |
-| `SetRealisticMomentsOfInertia()` | `0x00177780` 848 | `0x00191DD0` 848 | `0x0018FEE0` 848 | `0x001A6650` 928 |  |
-| `Destruct()` | `0x00177AD0` 8 | `0x00192120` 8 | `0x00190230` 8 | `0x001A6640` 16 |  |
-| `Release()` | `0x00177AE0` 8 | `0x00192130` 8 | `0x00190240` 8 | `0x001A6630` 16 |  |
-| `Update(float)` | `0x00177AF0` 3868 | `0x00192140` 8824 | `0x00190250` 7228 | `0x001A55E0` 2472 |  |
-| `Prepare()` | `0x00178A10` 1168 | `0x001943C0` 1212 | `0x00191E90` 1212 | `0x001A4B50` 924 |  |
-| `Construct()` | `0x00178EA0` 64 | `0x00194880` 64 | `0x00192350` 64 | `0x001A4AB0` 88 |  |
-| `ApplyCOMForce(GtMathPs2::CGtV3d)` |  |  |  | `0x001A6330` 96 |  |
-| `ApplyCOMImpulse(GtMathPs2::CGtV3d)` |  |  |  | `0x001B4E70` 96 |  |
-| `ApplyPositionedForce(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001A6390` 200 |  |
-| `ApplyPositionedImpulse(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001A77F0` 276 |  |
-| `ApplyTorque(GtMathPs2::CGtV3d)` |  |  |  | `0x001BE710` 96 |  |
-| `CB3CollidingBody()` |  |  |  | `0x00191990` 304 |  |
-| `CalculateCollisionImpulseWithBody(CB3CollidingBody&,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtM` |  |  |  | `0x001B4ED0` 776 |  |
-| `CalculateCollisionImpulseWithInanimateObject(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,GtMa` |  |  |  | `0x001A7910` 512 |  |
-| `CalculateTorqueFromPositionedForce(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001A6460` 172 |  |
-| `GetAngularMomentum()` |  |  |  | `0x002618F0` 28 |  |
-| `GetAngularVelocity()` |  |  |  | `0x00155410` 52 |  |
-| `GetBoundingBox(CGtAxisAlignedBox*)` |  |  |  | `0x001AD880` 52 |  |
-| `GetBoundingSphere()` |  |  |  | `0x001AA060` 28 |  |
-| `GetCollisionWorldIndex()` |  |  |  | `0x00151B10` 36 |  |
-| `GetConvexHull()` |  |  |  | `0x001B6680` 56 |  |
-| `GetCrashIndex()` |  |  |  | `0x00168D40` 36 |  |
-| `GetCurrentWorldUnit()` |  |  |  | `0x002EB060` 36 |  |
-| `GetInverseMatrix()` |  |  |  | `0x001AD860` 28 |  |
-| `GetLinearVelocity()` |  |  |  | `0x0014D630` 56 |  |
-| `GetMass()` |  |  |  | `0x001A8B30` 28 |  |
-| `GetMatrix()` |  |  |  | `0x0014A810` 28 |  |
-| `GetPointVelocity(GtMathPs2::CGtV3d)` |  |  |  | `0x001A7B60` 224 |  |
-| `GetPosition()` |  |  |  | `0x0014A8B0` 56 |  |
-| `GetSpeedMPH()` |  |  |  | `0x00155450` 84 |  |
-| `GetSpeedMPS()` |  |  |  | `0x0014A830` 60 |  |
-| `GetType()` |  |  |  | `0x0016CCD0` 36 |  |
-| `GetVelocityDir()` |  |  |  | `0x0014D500` 52 |  |
-| `GetWorldCollision()` |  |  |  | `0x002A52E0` 28 |  |
-| `GetWorldCollisionInfo()` |  |  |  | `0x001ACAC0` 28 |  |
-| `IsCrashing()` |  |  |  | `0x00173590` 28 |  |
-| `IsStoppedDead()` |  |  |  | `0x003972B0` 28 |  |
-| `LocalPointToWorldPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d*)` |  |  |  | `0x001C1090` 92 |  |
-| `LocalVectorToWorldVector(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d*)` |  |  |  | `0x001C6AA0` 92 |  |
-| `NeutralizeAtComponentOfAngularMomentum()` |  |  |  | `0x0036A170` 164 |  |
-| `SetCollisionWorldIndex(int)` |  |  |  | `0x00151AE0` 44 |  |
-| `SetLinearVelocity(GtMathPs2::CGtV3d)` |  |  |  | `0x001A5F90` 268 |  |
-| `SetMatrix(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x00153950` 92 |  |
-| `SetMomentOfInertia(float,float,float)` |  |  |  | `0x001A69F0` 332 |  |
-| `SetPreviousMatrix(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x0016BD60` 92 |  |
-| `Translate(GtMathPs2::CGtV3d)` |  |  |  | `0x001A7710` 156 |  |
-| `WorldPointToLocalPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d*)` |  |  |  | `0x001D63A0` 92 |  |
-| `WorldVectorToLocalVector(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d*)` |  |  |  | `0x001C4100` 92 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ClearAccumulatedValues()` | `0x00176800` 44 | `0x001908C0` 44 | `0x0018E9D0` 44 | `0x001A86F0` 108 | `0x001AB010` strong |  |
+| `StopImmediately()` | `0x00176830` 80 | `0x001908F0` 80 | `0x0018EA00` 80 | `0x001A8630` 188 | `0x001AB040` strong |  |
+| `AddCachedWorldTriangle(const CGtPolygonIntersectionResult&)` | `0x00176880` 212 | `0x00190940` 296 | `0x0018EA50` 296 | `0x001A8480` 420 | `0x001AB090` unverified |  |
+| `CalculateCollisionImpulseWithTraffic(CB3TrafficVehicle*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d` | `0x00176960` 1144 | `0x00190A70` 1144 | `0x0018EB80` 1144 | `0x001A7E10` 1648 | `0x001AB120` likely |  |
+| `SetInitialMatrix(const GtMathPs2::CGtMatrix3x4&)` | `0x00176DE0` 204 | `0x00190EF0` 204 | `0x0018F000` 204 | `0x001A7D80` 132 | `0x001AB610` likely |  |
+| `CollideWithWorld()` | `0x00176EB0` 1428 | `0x00190FC0` 2520 | `0x0018F0D0` 2520 | `0x001A70D0` 1588 | `0x001AB6B0` unverified |  |
+| `StopCrashing()` | `0x00177450` 100 | `0x001919A0` 100 | `0x0018FAB0` 100 | `0x001A7020` 168 | `0x001ABDD0` strong |  |
+| `StartCrashing(int,CB3CrashStartInfo*)` | `0x001774C0` 36 | `0x00191A10` 156 | `0x0018FB20` 156 | `0x001A6FA0` 116 | `0x001ABE40` strong |  |
+| `CacheWorldTriangles()` | `0x001774F0` 360 | `0x00191AB0` 360 | `0x0018FBC0` 360 | `0x001A6D50` 520 | `0x001ABE70` unverified |  |
+| `SetRealisticMomentsOfInertia()` | `0x00177780` 848 | `0x00191DD0` 848 | `0x0018FEE0` 848 | `0x001A6650` 928 | `0x001AC0A0` likely |  |
+| `Destruct()` | `0x00177AD0` 8 | `0x00192120` 8 | `0x00190230` 8 | `0x001A6640` 16 | `0x001AC450` likely |  |
+| `Release()` | `0x00177AE0` 8 | `0x00192130` 8 | `0x00190240` 8 | `0x001A6630` 16 | `0x001AC460` strong |  |
+| `Update(float)` | `0x00177AF0` 3868 | `0x00192140` 8824 | `0x00190250` 7228 | `0x001A55E0` 2472 | `0x001AC470` likely |  |
+| `Prepare()` | `0x00178A10` 1168 | `0x001943C0` 1212 | `0x00191E90` 1212 | `0x001A4B50` 924 | `0x001AD380` unverified |  |
+| `Construct()` | `0x00178EA0` 64 | `0x00194880` 64 | `0x00192350` 64 | `0x001A4AB0` 88 | `0x001AD850` strong |  |
+| `ApplyCOMForce(GtMathPs2::CGtV3d)` |  |  |  | `0x001A6330` 96 |  |  |
+| `ApplyCOMImpulse(GtMathPs2::CGtV3d)` |  |  |  | `0x001B4E70` 96 |  |  |
+| `ApplyPositionedForce(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001A6390` 200 |  |  |
+| `ApplyPositionedImpulse(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001A77F0` 276 |  |  |
+| `ApplyTorque(GtMathPs2::CGtV3d)` |  |  |  | `0x001BE710` 96 |  |  |
+| `CB3CollidingBody()` |  |  |  | `0x00191990` 304 |  |  |
+| `CalculateCollisionImpulseWithBody(CB3CollidingBody&,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtM` |  |  |  | `0x001B4ED0` 776 |  |  |
+| `CalculateCollisionImpulseWithInanimateObject(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,GtMa` |  |  |  | `0x001A7910` 512 |  |  |
+| `CalculateTorqueFromPositionedForce(GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001A6460` 172 |  |  |
+| `GetAngularMomentum()` |  |  |  | `0x002618F0` 28 |  |  |
+| `GetAngularVelocity()` |  |  |  | `0x00155410` 52 |  |  |
+| `GetBoundingBox(CGtAxisAlignedBox*)` |  |  |  | `0x001AD880` 52 |  |  |
+| `GetBoundingSphere()` |  |  |  | `0x001AA060` 28 |  |  |
+| `GetCollisionWorldIndex()` |  |  |  | `0x00151B10` 36 |  |  |
+| `GetConvexHull()` |  |  |  | `0x001B6680` 56 |  |  |
+| `GetCrashIndex()` |  |  |  | `0x00168D40` 36 |  |  |
+| `GetCurrentWorldUnit()` |  |  |  | `0x002EB060` 36 |  |  |
+| `GetInverseMatrix()` |  |  |  | `0x001AD860` 28 |  |  |
+| `GetLinearVelocity()` |  |  |  | `0x0014D630` 56 |  |  |
+| `GetMass()` |  |  |  | `0x001A8B30` 28 |  |  |
+| `GetMatrix()` |  |  |  | `0x0014A810` 28 |  |  |
+| `GetPointVelocity(GtMathPs2::CGtV3d)` |  |  |  | `0x001A7B60` 224 |  |  |
+| `GetPosition()` |  |  |  | `0x0014A8B0` 56 |  |  |
+| `GetSpeedMPH()` |  |  |  | `0x00155450` 84 |  |  |
+| `GetSpeedMPS()` |  |  |  | `0x0014A830` 60 |  |  |
+| `GetType()` |  |  |  | `0x0016CCD0` 36 |  |  |
+| `GetVelocityDir()` |  |  |  | `0x0014D500` 52 |  |  |
+| `GetWorldCollision()` |  |  |  | `0x002A52E0` 28 |  |  |
+| `GetWorldCollisionInfo()` |  |  |  | `0x001ACAC0` 28 |  |  |
+| `IsCrashing()` |  |  |  | `0x00173590` 28 |  |  |
+| `IsStoppedDead()` |  |  |  | `0x003972B0` 28 |  |  |
+| `LocalPointToWorldPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d*)` |  |  |  | `0x001C1090` 92 |  |  |
+| `LocalVectorToWorldVector(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d*)` |  |  |  | `0x001C6AA0` 92 |  |  |
+| `NeutralizeAtComponentOfAngularMomentum()` |  |  |  | `0x0036A170` 164 |  |  |
+| `SetCollisionWorldIndex(int)` |  |  |  | `0x00151AE0` 44 |  |  |
+| `SetLinearVelocity(GtMathPs2::CGtV3d)` |  |  |  | `0x001A5F90` 268 |  |  |
+| `SetMatrix(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x00153950` 92 |  |  |
+| `SetMomentOfInertia(float,float,float)` |  |  |  | `0x001A69F0` 332 |  |  |
+| `SetPreviousMatrix(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x0016BD60` 92 |  |  |
+| `Translate(GtMathPs2::CGtV3d)` |  |  |  | `0x001A7710` 156 |  |  |
+| `WorldPointToLocalPoint(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d*)` |  |  |  | `0x001D63A0` 92 |  |  |
+| `WorldVectorToLocalVector(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d*)` |  |  |  | `0x001C4100` 92 |  |  |
 
 ## Static data (DNAT_200)
 

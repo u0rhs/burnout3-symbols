@@ -7,20 +7,21 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3TextComponent.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 6
+- **Retail (SLUS-21050):** 4 of its 5 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004407C0`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x00309650` 104 | `0x0035E590` 104 | `0x0038F850` 104 | `0x00393370` 176 |  |
-| `Update(float)` | `0x003096C0` 20 | `0x0035E600` 20 | `0x0038F8C0` 20 | `0x00393340` 44 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const unsigned short*,float,bool,float,unsigned int` | `0x003096E0` 452 | `0x0035E620` 516 | `0x0038F8E0` 516 | `0x003930C0` 636 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,c` | `0x00309970` 248 | `0x0035E8F0` 248 | `0x0038FBB0` 248 | `0x00392FA0` 280 |  |
-| `Construct()` | `0x00309A70` 8 | `0x0035E9F0` 8 | `0x0038FCB0` 8 | `0x00392ED0` 44 |  |
-| `CB3TextComponent()` |  |  |  | `0x0033C2D0` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x00309650` 104 | `0x0035E590` 104 | `0x0038F850` 104 | `0x00393370` 176 | `0x00351A90` strong |  |
+| `Update(float)` | `0x003096C0` 20 | `0x0035E600` 20 | `0x0038F8C0` 20 | `0x00393340` 44 | `0x00351B00` likely |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const unsigned short*,float,bool,float,unsigned int` | `0x003096E0` 452 | `0x0035E620` 516 | `0x0038F8E0` 516 | `0x003930C0` 636 | `0x00351C60` strong |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,c` | `0x00309970` 248 | `0x0035E8F0` 248 | `0x0038FBB0` 248 | `0x00392FA0` 280 | `0x00351F00` strong |  |
+| `Construct()` | `0x00309A70` 8 | `0x0035E9F0` 8 | `0x0038FCB0` 8 | `0x00392ED0` 44 |  |  |
+| `CB3TextComponent()` |  |  |  | `0x0033C2D0` 60 |  |  |
 
 ## Static data (DNAT_200)
 

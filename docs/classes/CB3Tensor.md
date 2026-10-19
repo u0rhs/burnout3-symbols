@@ -9,15 +9,15 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CB3Tensor()` |  |  |  | `0x00191B30` 44 |  |
-| `CB3Tensor(const CB3Tensor&)` |  |  |  | `0x001A5360` 52 |  |
-| `GetTranspose()` |  |  |  | `0x001A5230` 300 |  |
-| `Set(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001A60A0` 144 |  |
-| `Set(float,float,float,float,float,float,float,float,float)` |  |  |  | `0x001A5550` 140 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CB3Tensor()` |  |  |  | `0x00191B30` 44 |  |  |
+| `CB3Tensor(const CB3Tensor&)` |  |  |  | `0x001A5360` 52 |  |  |
+| `GetTranspose()` |  |  |  | `0x001A5230` 300 |  |  |
+| `Set(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` |  |  |  | `0x001A60A0` 144 |  |  |
+| `Set(float,float,float,float,float,float,float,float,float)` |  |  |  | `0x001A5550` 140 |  |  |
 
 ## Notes
 

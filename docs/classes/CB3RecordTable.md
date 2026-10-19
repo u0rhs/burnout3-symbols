@@ -10,14 +10,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Update(int,unsigned int,ERecordTestTypes)` | `0x00382C50` 328 | `0x003F5CA0` 328 | `0x0041D8D0` 328 | `0x00434A80` 396 |  |
-| `Update(float,unsigned int,ERecordTestTypes)` | `0x00382DA0` 380 | `0x003F5DF0` 380 | `0x0041DA20` 380 | `0x004348C0` 288 |  |
-| `CB3RecordTable()` |  |  |  | `0x00435C40` 76 |  |
-| `operator =(const CB3RecordTable&)` |  |  |  | `0x00481A40` 100 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Update(int,unsigned int,ERecordTestTypes)` | `0x00382C50` 328 | `0x003F5CA0` 328 | `0x0041D8D0` 328 | `0x00434A80` 396 |  |  |
+| `Update(float,unsigned int,ERecordTestTypes)` | `0x00382DA0` 380 | `0x003F5DF0` 380 | `0x0041DA20` 380 | `0x004348C0` 288 |  |  |
+| `CB3RecordTable()` |  |  |  | `0x00435C40` 76 |  |  |
+| `operator =(const CB3RecordTable&)` |  |  |  | `0x00481A40` 100 |  |  |
 
 ## Notes
 

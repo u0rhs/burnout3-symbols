@@ -7,18 +7,19 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `B3AsyncDataLoader.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 5
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Abort(unsigned int)` | `0x00139BF0` 336 | `0x001426F0` 336 | `0x00140C00` 336 | `0x00148ED0` 520 |  |
-| `QueueLoadRequest(const char*,bool*,void*,unsigned int)` | `0x00139D40` 672 | `0x00142840` 892 | `0x00140D50` 892 | `0x00148AA0` 928 |  |
-| `Destruct()` | `0x00139FE0` 180 | `0x00142BC0` 180 | `0x001410D0` 180 | `0x001489D0` 196 |  |
-| `Update()` | `0x0013A0A0` 436 | `0x00142C80` 772 | `0x00141190` 772 | `0x001485B0` 1024 |  |
-| `Construct()` | `0x0013A260` 84 | `0x00142F90` 84 | `0x001414A0` 84 | `0x001484C0` 228 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Abort(unsigned int)` | `0x00139BF0` 336 | `0x001426F0` 336 | `0x00140C00` 336 | `0x00148ED0` 520 | `0x0013CE20` likely |  |
+| `QueueLoadRequest(const char*,bool*,void*,unsigned int)` | `0x00139D40` 672 | `0x00142840` 892 | `0x00140D50` 892 | `0x00148AA0` 928 | `0x0013CFA0` strong |  |
+| `Destruct()` | `0x00139FE0` 180 | `0x00142BC0` 180 | `0x001410D0` 180 | `0x001489D0` 196 | `0x0013D410` proven |  |
+| `Update()` | `0x0013A0A0` 436 | `0x00142C80` 772 | `0x00141190` 772 | `0x001485B0` 1024 | `0x0013D250` strong |  |
+| `Construct()` | `0x0013A260` 84 | `0x00142F90` 84 | `0x001414A0` 84 | `0x001484C0` 228 | `0x0013D4D0` strong |  |
 
 ## Notes
 

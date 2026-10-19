@@ -40,11 +40,12 @@ python3 tools/gen_docs.py && python3 tools/gen_reference.py && python3 tools/wik
 | `export_modules.py <disc> <out> "<label>"` | Runs `export_elf.py` on every module with symbols on a disc; skips duplicates | `modules/<path>/` |
 | `export_b3maps.py <disc> <out>` | The B3 prototype's four maps and two assert files | `maps/` |
 | `export_disc.py <disc> <out> "<label>"` | File list, strings and headers of the executable, value database | `disc/` |
+| (outside this repository) | `prototype-names.csv` and `function-names-check.csv` come from a code comparison of the retail and prototype executables, described on [prototype names](reference/retail-prototype-names.md); `rebuild.sh` keeps them as they are | `prototype-names.csv`, `function-names-check.csv` |
 | `map_pal_names.py <SLES_525.85.txt> <SLUS_210.50> <out>` | Carries Nahelam's PAL function names to the US executable with per-range shifts and a function-start check | `function-names.csv` |
-| `annotate_retail.py` | Refreshes everything derived from the retail names: nearest-function columns, the mods table, the counts | `memory-map.csv`, `nahelam-mods.csv`, two pages |
+| `annotate_retail.py` | Refreshes everything derived from the retail names (`prototype-names.csv` and `function-names.csv`): the `in_function` column (the proven or strong function whose code holds the address) and the nearest-function column, the mods table, the counts | `memory-map.csv`, `nahelam-mods.csv`, two pages |
 | `hash_sources.py` | Size, CRC32, MD5, SHA-1 of the source files | `data/hashes.tsv` |
 | `gen_docs.py` | The [game systems](systems/README.md) pages, class lineage, hashes page | `docs/systems/`, `docs/reference/` |
-| `gen_reference.py` | The [class pages](classes/README.md) and the other reference pages | `docs/classes/`, `docs/reference/` |
+| `gen_reference.py` | The [class pages](classes/README.md) (with each method's retail address from `prototype-names.csv`) and the other reference pages | `docs/classes/`, `docs/reference/` |
 | `folder_index.py` | A `README.md` index in each data folder the docs link to, so the links work on the website too | `data/**/README.md` |
 | `gen_files_page.py` | The [symbols and maps](files.md) page: every data file with size and link | `docs/files.md` |
 | `gen_nav.py` | The website's sidebar, the home page's Contents map and `docs/README.md`, from one map (`NAV`); add new pages there | `_includes/components/site_nav.html`, `README.md`, `docs/README.md` |

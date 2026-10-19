@@ -14,36 +14,38 @@ Car handling, suspension, wheels, transmission, deformation and parts coming off
 
 In link order, with addresses in the DNAT_200 build. Full symbol lists: [DNAT_200.symbols.txt](../../data/burnout3-prototype/maps/DNAT_200.symbols.txt) (search for `==== <file>`).
 
-| File | Functions | Code bytes | First function |
-|---|---:|---:|---|
-| `B3PlayerCar.cpp` | 8 | 1,048 | `0x0014CB40` |
-| `B3RaceCar.cpp` | 19 | 9,768 | `0x0014CF90` |
-| `B3CollidingBody.cpp` | 17 | 9,928 | `0x00176800` |
-| `B3PhysicsManager.cpp` | 32 | 28,060 | `0x0017CD30` |
-| `B3PlayerCarPhysics.cpp` | 13 | 11,196 | `0x00183BB0` |
-| `B3PropPhysics.cpp` | 6 | 1,760 | `0x001867D0` |
-| `B3RaceCarPhysics.cpp` | 29 | 33,944 | `0x00186ED0` |
-| `B3Transmission.cpp` | 3 | 2,532 | `0x0018F430` |
-| `B3VehiclePhysics.cpp` | 26 | 32,280 | `0x0018FE30` |
-| `B3AICarPhysics.cpp` | 12 | 5,760 | `0x00197C90` |
-| `B3TrafficPhysics.cpp` | 7 | 3,424 | `0x00210890` |
-| `B3VehiclePhysicsAttribs.cpp` | 5 | 1,232 | `0x00212440` |
-| `B3RaceCarPhysicsAttribs.cpp` | 8 | 7,652 | `0x00212920` |
-| `GtIntersectionPS2.cpp` | 12 | 11,968 | `0x002335E0` |
-| `B3ConvexHullCollide.cpp` | 11 | 6,932 | `0x00278790` |
-| `B3ConvexHull.cpp` | 13 | 6,032 | `0x0027A280` |
-| `B3PhysicsManagerDebug.cpp` | 12 | 4,828 | `0x0027D7D0` |
-| `GtIntersection.cpp` | 7 | 2,344 | `0x0027EAF0` |
-| `GtPolygonSoup.cpp` | 2 | 56 | `0x0027F450` |
-| `B3BoundingBox.cpp` | 5 | 15,872 | `0x002AF010` |
-| `B3BodyPartPhysics.cpp` | 9 | 5,200 | `0x002EBC50` |
-| `B3RumbleAttribs.cpp` | 2 | 16 | `0x002FDA50` |
-| `GtSphereTree.cpp` | 14 | 12,440 | `0x00312810` |
-| `GtCollisionKDTree.cpp` | 5 | 5,916 | `0x003717A0` |
-| `GtSimpleOrientedBox.cpp` | 1 | 256 | `0x00388610` |
-| `B3ConvexHullMaker.cpp` | 4 | 3,444 | `0x003892F0` |
-| `B3VehicleDeform.cpp` | 44 | 60,964 | `0x0038A070` |
-| `B3PhysicsConstants.cpp` | 1 | 92 | `0x0043DFD0` |
+**Retail** is how many of the file's functions were found in SLUS-21050 (how many of them proven) and where they lie there ([prototype names](../reference/retail-prototype-names.md)).
+
+| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |
+|---|---:|---:|---|---:|---|
+| `B3PlayerCar.cpp` | 8 | 1,048 | `0x0014CB40` | 2 (0) | `0x00150BE0`–`0x00150CB0` |
+| `B3RaceCar.cpp` | 19 | 9,768 | `0x0014CF90` | 17 (0) | `0x00150D50`–`0x00153160` |
+| `B3CollidingBody.cpp` | 17 | 9,928 | `0x00176800` | 15 (0) | `0x001AB010`–`0x001AD850` |
+| `B3PhysicsManager.cpp` | 32 | 28,060 | `0x0017CD30` | 27 (1) | `0x001B2A40`–`0x001BAA30` |
+| `B3PlayerCarPhysics.cpp` | 13 | 11,196 | `0x00183BB0` | 9 (0) | `0x001BAAF0`–`0x001BDF10` |
+| `B3PropPhysics.cpp` | 6 | 1,760 | `0x001867D0` | 5 (0) | `0x001BDF60`–`0x001BE8F0` |
+| `B3RaceCarPhysics.cpp` | 29 | 33,944 | `0x00186ED0` | 18 (0) | `0x001BEA60`–`0x001C44E0` |
+| `B3Transmission.cpp` | 3 | 2,532 | `0x0018F430` |  |  |
+| `B3VehiclePhysics.cpp` | 26 | 32,280 | `0x0018FE30` | 23 (2) | `0x001C8870`–`0x001CFD20` |
+| `B3AICarPhysics.cpp` | 12 | 5,760 | `0x00197C90` | 11 (1) | `0x001D1670`–`0x001D2D70` |
+| `B3TrafficPhysics.cpp` | 7 | 3,424 | `0x00210890` | 3 (1) | `0x002502D0`–`0x00250310` |
+| `B3VehiclePhysicsAttribs.cpp` | 5 | 1,232 | `0x00212440` | 5 (4) | `0x00252050`–`0x002524E0` |
+| `B3RaceCarPhysicsAttribs.cpp` | 8 | 7,652 | `0x00212920` | 8 (6) | `0x00252530`–`0x002540E0` |
+| `GtIntersectionPS2.cpp` | 12 | 11,968 | `0x002335E0` | 6 (0) | `0x00274C90`–`0x00275D20` |
+| `B3ConvexHullCollide.cpp` | 11 | 6,932 | `0x00278790` | 10 (9) | `0x002B78A0`–`0x002B9520` |
+| `B3ConvexHull.cpp` | 13 | 6,032 | `0x0027A280` | 13 (11) | `0x002B9640`–`0x002BAEF0` |
+| `B3PhysicsManagerDebug.cpp` | 12 | 4,828 | `0x0027D7D0` | 11 (5) | `0x002BDA00`–`0x002BED00` |
+| `GtIntersection.cpp` | 7 | 2,344 | `0x0027EAF0` | 5 (0) | `0x002BF0F0`–`0x002BF5F0` |
+| `GtPolygonSoup.cpp` | 2 | 56 | `0x0027F450` | 2 (2) | `0x002BF7B0`–`0x002BF7D0` |
+| `B3BoundingBox.cpp` | 5 | 15,872 | `0x002AF010` | 3 (0) | `0x002BEDC0`–`0x002F2E70` |
+| `B3BodyPartPhysics.cpp` | 9 | 5,200 | `0x002EBC50` | 7 (0) | `0x00333140`–`0x00334010` |
+| `B3RumbleAttribs.cpp` | 2 | 16 | `0x002FDA50` |  |  |
+| `GtSphereTree.cpp` | 14 | 12,440 | `0x00312810` | 14 (14) | `0x0035BD80`–`0x0035EE50` |
+| `GtCollisionKDTree.cpp` | 5 | 5,916 | `0x003717A0` | 3 (1) | `0x003BE8D0`–`0x003BF720` |
+| `GtSimpleOrientedBox.cpp` | 1 | 256 | `0x00388610` | 1 (1) | `0x003D7F70`–`0x003D7F70` |
+| `B3ConvexHullMaker.cpp` | 4 | 3,444 | `0x003892F0` | 3 (0) | `0x003D8D60`–`0x003D9740` |
+| `B3VehicleDeform.cpp` | 44 | 60,964 | `0x0038A070` | 33 (0) | `0x003D9C50`–`0x00461440` |
+| `B3PhysicsConstants.cpp` | 1 | 92 | `0x0043DFD0` |  |  |
 
 ## Classes
 

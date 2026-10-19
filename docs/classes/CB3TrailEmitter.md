@@ -7,21 +7,22 @@
 - **Area:** [Effects](../systems/effects.md)
 - **Source file:** `B3TrailSystem.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 2, B3INTERN 2, B3O0PCH 8
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `AddTrailSegment(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,const GtMathPs2::CGtMatrix3x4*)` | `0x0027CC70` 964 | `0x002B1A20` 1144 | `0x002E8BC0` 1040 | `0x002E9CD0` 1008 |  |
-| `Update()` |  | `0x002B1EA0` 296 | `0x002E8FD0` 296 | `0x002E9B50` 384 |  |
-| `Construct()` |  |  |  | `0x002E9AB0` 36 |  |
-| `Destruct()` |  |  |  | `0x002E9AE0` 16 |  |
-| `GetTrailType()` |  |  |  | `0x002E9A80` 36 |  |
-| `PostRender()` |  |  |  | `0x002E9490` 164 |  |
-| `Prepare(CB3TrailParams*)` |  |  |  | `0x002E9AF0` 80 |  |
-| `Release()` |  |  |  | `0x002E9B40` 16 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `AddTrailSegment(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,const GtMathPs2::CGtMatrix3x4*)` | `0x0027CC70` 964 | `0x002B1A20` 1144 | `0x002E8BC0` 1040 | `0x002E9CD0` 1008 | `0x002BCF60` strong |  |
+| `Update()` |  | `0x002B1EA0` 296 | `0x002E8FD0` 296 | `0x002E9B50` 384 |  |  |
+| `Construct()` |  |  |  | `0x002E9AB0` 36 |  |  |
+| `Destruct()` |  |  |  | `0x002E9AE0` 16 |  |  |
+| `GetTrailType()` |  |  |  | `0x002E9A80` 36 |  |  |
+| `PostRender()` |  |  |  | `0x002E9490` 164 |  |  |
+| `Prepare(CB3TrailParams*)` |  |  |  | `0x002E9AF0` 80 |  |  |
+| `Release()` |  |  |  | `0x002E9B40` 16 |  |  |
 
 ## Notes
 

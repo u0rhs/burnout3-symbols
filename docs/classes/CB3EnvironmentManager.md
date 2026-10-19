@@ -7,35 +7,36 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `B3EnvironmentManager.cpp`
 - **Methods per build:** DNAT_200 16, B3DEBUG 16, B3INTERN 16, B3O0PCH 22
+- **Retail (SLUS-21050):** 16 of its 16 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SunPos2BearingAndAltitude(float*,float*,GtMathPs2::CGtV3d)` | `0x0027BA50` 840 | `0x002B0290` 1072 | `0x002E74F0` 1072 | `0x002E82F0` 1896 |  |
-| `RenderBackdropTexture()` | `0x0027BDA0` 932 | `0x002B06C0` 1136 | `0x002E7920` 1136 | `0x002E7CD0` 1492 |  |
-| `RenderSunCorona()` | `0x0027C150` 68 | `0x002B0B30` 128 | `0x002E7D90` 128 | `0x002E7C70` 92 |  |
-| `SunOcclusionTest()` | `0x0027C1A0` 184 | `0x002B0BB0` 276 | `0x002E7E10` 276 | `0x002E7B50` 276 |  |
-| `RenderSunToEnvironmentMap()` | `0x0027C260` 196 | `0x002B0CD0` 300 | `0x002E7F30` 300 | `0x002E79E0` 364 |  |
-| `RenderSkyToEnvironmentMap()` | `0x0027C330` 76 | `0x002B0E00` 144 | `0x002E8060` 144 | `0x002E7960` 128 |  |
-| `BuildEnvmapSunCoronaData()` | `0x0027C380` 212 | `0x002B0E90` 304 | `0x002E80F0` 304 | `0x002E77F0` 356 |  |
-| `RenderClouds()` | `0x0027C460` 56 | `0x002B0FC0` 56 | `0x002E8220` 56 | `0x002E77A0` 72 |  |
-| `RenderSunBlob()` | `0x0027C4A0` 184 | `0x002B1000` 212 | `0x002E8260` 212 | `0x002E75E0` 252 |  |
-| `RenderSky()` | `0x0027C560` 164 | `0x002B10E0` 164 | `0x002E8340` 164 | `0x002E74E0` 252 |  |
-| `BeginRender(int)` | `0x0027C610` 8 | `0x002B1190` 132 | `0x002E83F0` 132 | `0x002E7480` 92 |  |
-| `Update(float)` | `0x0027C620` 360 | `0x002B1220` 516 | `0x002E8480` 516 | `0x002E7170` 252 |  |
-| `Release()` | `0x0027C790` 160 | `0x002B1430` 252 | `0x002E8690` 160 | `0x002E70E0` 144 |  |
-| `Prepare()` | `0x0027C830` 872 | `0x002B1530` 948 | `0x002E8730` 948 | `0x002E6BE0` 944 |  |
-| `Destruct()` | `0x0027CBA0` 40 | `0x002B18F0` 40 | `0x002E8AF0` 40 | `0x002E6BA0` 56 |  |
-| `Construct()` | `0x0027CBD0` 152 | `0x002B1920` 244 | `0x002E8B20` 152 | `0x002E6B10` 132 |  |
-| `CB3EnvironmentManager()` |  |  |  | `0x002E8A60` 92 |  |
-| `EndRender()` |  |  |  | `0x0029BCA0` 56 |  |
-| `GetRenderEnvironment()` |  |  |  | `0x0029BD00` 76 |  |
-| `GetSpecularColour()` |  |  |  | `0x0026AE50` 52 |  |
-| `GetSunDirection()` |  |  |  | `0x0026AE00` 52 |  |
-| `SkyTexVToAlt(float)` |  |  |  | `0x002E82B0` 64 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SunPos2BearingAndAltitude(float*,float*,GtMathPs2::CGtV3d)` | `0x0027BA50` 840 | `0x002B0290` 1072 | `0x002E74F0` 1072 | `0x002E82F0` 1896 | `0x002BB830` strong |  |
+| `RenderBackdropTexture()` | `0x0027BDA0` 932 | `0x002B06C0` 1136 | `0x002E7920` 1136 | `0x002E7CD0` 1492 | `0x002BBB90` strong |  |
+| `RenderSunCorona()` | `0x0027C150` 68 | `0x002B0B30` 128 | `0x002E7D90` 128 | `0x002E7C70` 92 | `0x002BBF50` strong |  |
+| `SunOcclusionTest()` | `0x0027C1A0` 184 | `0x002B0BB0` 276 | `0x002E7E10` 276 | `0x002E7B50` 276 | `0x002BBFA0` strong |  |
+| `RenderSunToEnvironmentMap()` | `0x0027C260` 196 | `0x002B0CD0` 300 | `0x002E7F30` 300 | `0x002E79E0` 364 | `0x002BC070` strong |  |
+| `RenderSkyToEnvironmentMap()` | `0x0027C330` 76 | `0x002B0E00` 144 | `0x002E8060` 144 | `0x002E7960` 128 | `0x002BC140` strong |  |
+| `BuildEnvmapSunCoronaData()` | `0x0027C380` 212 | `0x002B0E90` 304 | `0x002E80F0` 304 | `0x002E77F0` 356 | `0x002BC190` strong |  |
+| `RenderClouds()` | `0x0027C460` 56 | `0x002B0FC0` 56 | `0x002E8220` 56 | `0x002E77A0` 72 | `0x002BC270` strong |  |
+| `RenderSunBlob()` | `0x0027C4A0` 184 | `0x002B1000` 212 | `0x002E8260` 212 | `0x002E75E0` 252 | `0x002BC2B0` strong |  |
+| `RenderSky()` | `0x0027C560` 164 | `0x002B10E0` 164 | `0x002E8340` 164 | `0x002E74E0` 252 | `0x002BC380` likely |  |
+| `BeginRender(int)` | `0x0027C610` 8 | `0x002B1190` 132 | `0x002E83F0` 132 | `0x002E7480` 92 | `0x002BC450` strong |  |
+| `Update(float)` | `0x0027C620` 360 | `0x002B1220` 516 | `0x002E8480` 516 | `0x002E7170` 252 | `0x002BC460` unverified |  |
+| `Release()` | `0x0027C790` 160 | `0x002B1430` 252 | `0x002E8690` 160 | `0x002E70E0` 144 | `0x002BC970` strong |  |
+| `Prepare()` | `0x0027C830` 872 | `0x002B1530` 948 | `0x002E8730` 948 | `0x002E6BE0` 944 | `0x002BCA20` likely |  |
+| `Destruct()` | `0x0027CBA0` 40 | `0x002B18F0` 40 | `0x002E8AF0` 40 | `0x002E6BA0` 56 | `0x002BCE90` strong |  |
+| `Construct()` | `0x0027CBD0` 152 | `0x002B1920` 244 | `0x002E8B20` 152 | `0x002E6B10` 132 | `0x002BCEC0` strong |  |
+| `CB3EnvironmentManager()` |  |  |  | `0x002E8A60` 92 |  |  |
+| `EndRender()` |  |  |  | `0x0029BCA0` 56 |  |  |
+| `GetRenderEnvironment()` |  |  |  | `0x0029BD00` 76 |  |  |
+| `GetSpecularColour()` |  |  |  | `0x0026AE50` 52 |  |  |
+| `GetSunDirection()` |  |  |  | `0x0026AE00` 52 |  |  |
+| `SkyTexVToAlt(float)` |  |  |  | `0x002E82B0` 64 |  |  |
 
 ## Notes
 

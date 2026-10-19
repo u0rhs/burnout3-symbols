@@ -7,22 +7,23 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `B3BehaviourFlyAround.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 9
+- **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CGtQuat(const GtMathPs2::CGtQuat&)` | `0x002AB8D0` 16 | `0x0026C4C0` 16 | `0x002A4920` 16 | `0x00133B80` 52 |  |
-| `CGtQuat(GtMathPs2::CGtV4d)` | `0x002AB8E0` 16 | `0x0026C4D0` 16 | `0x002A4930` 16 | `0x00133BC0` 68 |  |
-| `CGtQuat()` |  |  |  | `0x00133C10` 44 |  |
-| `ConvertToMatrix()` |  |  |  | `0x001332E0` 996 |  |
-| `GetSquaredLength()` |  |  |  | `0x00133DA0` 52 |  |
-| `IsUnit()` |  |  |  | `0x00133C40` 96 |  |
-| `SetFromMatrix(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x001BC6F0` 2432 |  |
-| `operator *(float)` |  |  |  | `0x00133B20` 88 |  |
-| `operator =(const GtMathPs2::CGtQuat&)` |  |  |  | `0x00133AF0` 44 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CGtQuat(const GtMathPs2::CGtQuat&)` | `0x002AB8D0` 16 | `0x0026C4C0` 16 | `0x002A4920` 16 | `0x00133B80` 52 | `0x002ED2F0` strong |  |
+| `CGtQuat(GtMathPs2::CGtV4d)` | `0x002AB8E0` 16 | `0x0026C4D0` 16 | `0x002A4930` 16 | `0x00133BC0` 68 | `0x002ED300` strong |  |
+| `CGtQuat()` |  |  |  | `0x00133C10` 44 |  |  |
+| `ConvertToMatrix()` |  |  |  | `0x001332E0` 996 |  |  |
+| `GetSquaredLength()` |  |  |  | `0x00133DA0` 52 |  |  |
+| `IsUnit()` |  |  |  | `0x00133C40` 96 |  |  |
+| `SetFromMatrix(const GtMathPs2::CGtMatrix3x4&)` |  |  |  | `0x001BC6F0` 2432 |  |  |
+| `operator *(float)` |  |  |  | `0x00133B20` 88 |  |  |
+| `operator =(const GtMathPs2::CGtQuat&)` |  |  |  | `0x00133AF0` 44 |  |  |
 
 ## Notes
 

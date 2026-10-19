@@ -15,6 +15,19 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 B2 = os.path.join(ROOT, 'data', 'burnout2-prototype', 'SLUS_204.97')
 B3 = os.path.join(ROOT, 'data', 'burnout3-prototype', 'maps')
 DOCS = os.path.join(ROOT, 'docs')
+
+
+def retail_by_file():
+    """Per prototype source file: retail functions found, how many proven, and their address range
+    (data/burnout3-retail/prototype-names.csv)."""
+    p = os.path.join(ROOT, 'data', 'burnout3-retail', 'prototype-names.csv')
+    out = {}
+    if os.path.exists(p):
+        for r in csv.DictReader(open(p)):
+            a = int(r['us_address'], 16)
+            n, pr, lo, hi = out.get(r['source_file'], (0, 0, a, a))
+            out[r['source_file']] = (n + 1, pr + r['proof'].startswith('proven'), min(lo, a), max(hi, a))
+    return out
 MAPS = ['DNAT_200', 'B3DEBUG', 'B3INTERN', 'B3O0PCH']
 
 # (slug, title, B3 source-file pattern, B2 outline folders/patterns, what the area covers)
@@ -251,6 +264,7 @@ def main():
     os.makedirs(os.path.join(DOCS, 'systems'), exist_ok=True)
     os.makedirs(os.path.join(DOCS, 'reference'), exist_ok=True)
     sysdir = os.path.join(DOCS, 'systems')
+    RETAIL_FILES = retail_by_file()
     b2_outline = os.path.join(B2, 'source_outline')
     b2_files = []
     for dp, dn, fn in os.walk(b2_outline):
@@ -280,9 +294,15 @@ def main():
               'In link order, with addresses in the DNAT_200 build. Full symbol lists: '
               '[DNAT_200.symbols.txt](%s) (search for `==== <file>`).' %
               link(os.path.join(B3, 'DNAT_200.symbols.txt'), sysdir), '',
-              '| File | Functions | Code bytes | First function |', '|---|---:|---:|---|']
+              '**Retail** is how many of the file\'s functions were found in SLUS-21050 (how many of them proven) and '
+              'where they lie there ([prototype names](../reference/retail-prototype-names.md)).', '',
+              '| File | Functions | Code bytes | First function | Retail (proven) | Retail addresses |',
+              '|---|---:|---:|---|---:|---|']
         for o in files:
-            L.append('| `%s` | %d | %s | `0x%08X` |' % (o, objs[o], format(size[o], ','), first[o]))
+            rf = RETAIL_FILES.get(o)
+            L.append('| `%s` | %d | %s | `0x%08X` | %s | %s |' % (
+                o, objs[o], format(size[o], ','), first[o], '%d (%d)' % rf[:2] if rf else '',
+                '`0x%08X`–`0x%08X`' % rf[2:] if rf else ''))
         L += ['', '## Classes', '',
               'Each class with its method count, its probable Burnout 2 counterpart (same name without `B3`) '
               'and that class\'s size there. Method addresses for all four builds are in '

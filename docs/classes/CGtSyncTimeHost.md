@@ -10,14 +10,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Update(int,float,bool)` | `0x00201580` 252 |  | `0x0024D360` 252 |  |  |
-| `Release()` | `0x00201680` 132 | `0x0020D870` 132 | `0x0024D460` 132 | `0x00250430` 184 |  |
-| `Prepare()` | `0x00201710` 132 |  | `0x0024D4F0` 132 |  |  |
-| `Construct(CGtSyncTime*,int,CGtNetworkPlayerManager*)` | `0x002017A0` 124 |  | `0x0024D580` 124 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Update(int,float,bool)` | `0x00201580` 252 |  | `0x0024D360` 252 |  |  |  |
+| `Release()` | `0x00201680` 132 | `0x0020D870` 132 | `0x0024D460` 132 | `0x00250430` 184 |  |  |
+| `Prepare()` | `0x00201710` 132 |  | `0x0024D4F0` 132 |  |  |  |
+| `Construct(CGtSyncTime*,int,CGtNetworkPlayerManager*)` | `0x002017A0` 124 |  | `0x0024D580` 124 |  |  |  |
 
 ## Notes
 

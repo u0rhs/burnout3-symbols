@@ -11,17 +11,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Destruct()` | `0x003337D0` 8 | `0x003943D0` 8 | `0x003BE820` 8 | `0x003C3D60` 16 |  |
-| `Release(void*)` | `0x003337E0` 8 | `0x003943E0` 8 | `0x003BE830` 8 | `0x003C3D50` 16 |  |
-| `Update(CGtCamera*,float)` | `0x003337F0` 1212 | `0x003943F0` 2248 | `0x003BE840` 2248 | `0x003C3BF0` 344 |  |
-| `Prepare(void*)` | `0x00333CB0` 1236 | `0x00394CC0` 2240 | `0x003BF110` 2240 | `0x003C3A60` 388 |  |
-| `SetParameters(CB3CameraKeyFrame*)` | `0x00334190` 8 | `0x00395580` 8 | `0x003BF9D0` 8 | `0x003C3A30` 36 |  |
-| `Construct()` | `0x003341A0` 8 | `0x00395590` 8 | `0x003BF9E0` 8 | `0x003C3A00` 40 |  |
-| `CB3BehaviourKeyFrame()` |  |  |  | `0x0013E7C0` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Destruct()` | `0x003337D0` 8 | `0x003943D0` 8 | `0x003BE820` 8 | `0x003C3D60` 16 |  |  |
+| `Release(void*)` | `0x003337E0` 8 | `0x003943E0` 8 | `0x003BE830` 8 | `0x003C3D50` 16 |  |  |
+| `Update(CGtCamera*,float)` | `0x003337F0` 1212 | `0x003943F0` 2248 | `0x003BE840` 2248 | `0x003C3BF0` 344 |  |  |
+| `Prepare(void*)` | `0x00333CB0` 1236 | `0x00394CC0` 2240 | `0x003BF110` 2240 | `0x003C3A60` 388 |  |  |
+| `SetParameters(CB3CameraKeyFrame*)` | `0x00334190` 8 | `0x00395580` 8 | `0x003BF9D0` 8 | `0x003C3A30` 36 |  |  |
+| `Construct()` | `0x003341A0` 8 | `0x00395590` 8 | `0x003BF9E0` 8 | `0x003C3A00` 40 |  |  |
+| `CB3BehaviourKeyFrame()` |  |  |  | `0x0013E7C0` 60 |  |  |
 
 ## Notes
 

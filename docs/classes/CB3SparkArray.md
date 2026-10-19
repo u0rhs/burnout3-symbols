@@ -7,18 +7,19 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3SparkRendererPS2.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 5
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SpawnBouncySpark(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,bool)` | `0x00225B30` 572 | `0x0023C320` 744 | `0x00278E40` 744 | `0x00279410` 1044 |  |
-| `Release()` | `0x00225D70` 8 | `0x0023C610` 8 | `0x00279130` 8 | `0x00279380` 64 |  |
-| `Prepare()` | `0x00225D80` 176 | `0x0023C620` 260 | `0x00279140` 260 | `0x00279300` 116 |  |
-| `Destruct()` | `0x00225E30` 8 | `0x0023C730` 8 | `0x00279250` 8 | `0x002792C0` 56 |  |
-| `Construct(ESparkArrayID)` | `0x00225E40` 152 | `0x0023C740` 200 | `0x00279260` 200 | `0x00279170` 244 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SpawnBouncySpark(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,float,float,bool)` | `0x00225B30` 572 | `0x0023C320` 744 | `0x00278E40` 744 | `0x00279410` 1044 | `0x00263C40` strong |  |
+| `Release()` | `0x00225D70` 8 | `0x0023C610` 8 | `0x00279130` 8 | `0x00279380` 64 | `0x00263F70` proven |  |
+| `Prepare()` | `0x00225D80` 176 | `0x0023C620` 260 | `0x00279140` 260 | `0x00279300` 116 | `0x00263F80` proven |  |
+| `Destruct()` | `0x00225E30` 8 | `0x0023C730` 8 | `0x00279250` 8 | `0x002792C0` 56 | `0x00264030` strong |  |
+| `Construct(ESparkArrayID)` | `0x00225E40` 152 | `0x0023C740` 200 | `0x00279260` 200 | `0x00279170` 244 | `0x00264040` proven |  |
 
 ## Notes
 

@@ -7,63 +7,64 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `GtNetworkPlayerManager.cpp`
 - **Methods per build:** DNAT_200 33, B3DEBUG 17, B3INTERN 33, B3O0PCH 24
+- **Retail (SLUS-21050):** 9 of its 33 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `IsPlayerListValid()` | `0x001F6300` 8 | `0x00201020` 8 | `0x00236700` 8 | `0x002469A0` 28 |  |
-| `GetHostPlayerID()` | `0x001F6310` 8 | `0x00201030` 8 |  | `0x00246980` 28 |  |
-| `SetHostPlayerID(int)` | `0x001F6320` 8 | `0x00201040` 8 |  | `0x00246950` 36 |  |
-| `FinalisePlayerList()` | `0x001F6330` 176 | `0x00201050` 176 | `0x002367E0` 176 | `0x00246850` 248 |  |
-| `BeginPlayerList()` | `0x001F63E0` 72 | `0x00201100` 72 | `0x00236890` 72 | `0x002467B0` 152 |  |
-| `GetPlayerIndexByID(int)` | `0x001F6430` 204 | `0x00201150` 228 | `0x002368E0` 228 | `0x002466E0` 204 |  |
-| `CheckForNack(CGtNetworkMessage*)` | `0x001F6500` 432 |  | `0x002369D0` 2260 |  |  |
-| `CheckForAck(CGtNetworkMessage*)` | `0x001F66B0` 468 |  | `0x002372B0` 2936 |  |  |
-| `MessageIsDuplicate(CGtNetworkMessage*)` | `0x001F6890` 396 |  | `0x00237E30` 2052 |  |  |
-| `ThrowAwayMessage(CGtNetworkMessage*,int,int)` | `0x001F6A20` 276 |  | `0x00238640` 580 |  |  |
-| `AcceptMessage(CGtNetworkMessage*,int,int)` | `0x001F6B40` 276 |  | `0x00238890` 1404 |  |  |
-| `ResetFinaliseNATDataVariables()` | `0x001F6C60` 8 | `0x00201240` 8 | `0x00238E10` 8 | `0x002466B0` 44 |  |
-| `FinaliseNATData(float,float,int)` | `0x001F6C70` 472 |  | `0x00238E20` 1492 |  |  |
-| `AddBufferedReliableMessage(int,CGtNetworkMessage*,int)` | `0x001F6E50` 400 |  | `0x00239400` 1456 |  |  |
-| `ReceiveMessages()` | `0x001F6FE0` 884 |  | `0x002399B0` 6872 |  |  |
-| `GetNextNetworkPlayerByID(int) const` | `0x001F7360` 316 |  |  |  |  |
-| `GetPreviousNetworkPlayerByID(int) const` | `0x001F74A0` 308 |  |  |  |  |
-| `PlayerIsANextPlayer(int,int) const` | `0x001F75E0` 288 |  |  |  |  |
-| `GetPlayer(int) const` | `0x001F7700` 16 |  |  |  |  |
-| `GetPlayerByID(int) const` | `0x001F7710` 156 |  |  |  |  |
-| `SetMyPlayerID(int)` | `0x001F77B0` 8 | `0x00201380` 8 | `0x0023BE00` 8 | `0x00246550` 36 |  |
-| `GetMyPlayerID() const` | `0x001F77C0` 8 |  |  |  |  |
-| `SetMyPlayerIndex(int)` | `0x001F77D0` 16 | `0x002013A0` 100 | `0x0023BE20` 100 | `0x002464E0` 72 |  |
-| `GetMyPlayerIndex() const` | `0x001F77E0` 56 |  |  |  |  |
-| `RegisterPlayer(const char*,int,int,void*)` | `0x001F7820` 324 | `0x00201450` 356 | `0x0023BED0` 356 | `0x002462C0` 428 |  |
-| `ClearAllPlayers()` | `0x001F7970` 180 | `0x002015C0` 180 | `0x0023C040` 180 | `0x002461B0` 264 |  |
-| `SetGameID(int)` | `0x001F7A30` 336 | `0x00201680` 440 | `0x0023C100` 440 | `0x00245FB0` 504 |  |
-| `PostUpdate(int)` | `0x001F7B80` 140 |  | `0x0023C2C0` 196 |  |  |
-| `Update(int)` | `0x001F7C10` 60 |  | `0x0023C390` 60 |  |  |
-| `Release()` | `0x001F7C50` 84 |  | `0x0023C3D0` 84 |  |  |
-| `Prepare(CGtNetworkAdapter*,void (*)(int, int, int),float)` | `0x001F7CB0` 440 |  |  |  |  |
-| `Destruct()` | `0x001F7E70` 120 |  | `0x0023C670` 120 |  |  |
-| `Construct(CGtNetworkPlayer**,int,unsigned char*,int,int)` | `0x001F7EF0` 384 |  | `0x0023C6F0` 656 |  |  |
-| `GetPlayer(int)` |  | `0x00201250` 140 | `0x0023BCD0` 140 | `0x00246650` 88 |  |
-| `GetPlayerByID(int)` |  | `0x002012E0` 156 | `0x0023BD60` 156 | `0x00246580` 208 |  |
-| `GetMyPlayerID()` |  | `0x00201390` 8 | `0x0023BE10` 8 | `0x00246530` 28 |  |
-| `GetMyPlayerIndex()` |  | `0x00201410` 56 | `0x0023BE90` 56 | `0x00246470` 104 |  |
-| `Prepare(CGtNetworkAdapter*,void (*)` |  | `0x00201840` 564 | `0x0023C430` 564 | `0x00245CA0` 280 |  |
-| `DisableMessageSending()` |  |  |  | `0x00245DC0` 276 |  |
-| `EnableMessageSending()` |  |  |  | `0x00141BE0` 68 |  |
-| `GetGameID()` |  |  |  | `0x001A4240` 28 |  |
-| `GetHostPlayer()` |  |  | `0x00236710` 8 |  |  |
-| `GetNextNetworkPlayerByID(int)` |  |  | `0x0023B490` 520 |  |  |
-| `GetNumberNetworkPlayers()` |  |  |  | `0x00141F50` 108 |  |
-| `GetPreparedState()` |  |  |  | `0x0038B9C0` 28 |  |
-| `GetPreviousNetworkPlayerByID(int)` |  |  | `0x0023B6A0` 512 |  |  |
-| `GetTotalNumberPlayers()` |  |  |  | `0x00141B50` 28 |  |
-| `PlayerIsANextPlayer(int,int)` |  |  | `0x0023B8A0` 1060 |  |  |
-| `SetHostPlayerByID(int)` |  |  | `0x00236720` 184 |  |  |
-| `SetMyExternalIPAddress(int)` |  |  |  | `0x00286B60` 52 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `IsPlayerListValid()` | `0x001F6300` 8 | `0x00201020` 8 | `0x00236700` 8 | `0x002469A0` 28 |  |  |
+| `GetHostPlayerID()` | `0x001F6310` 8 | `0x00201030` 8 |  | `0x00246980` 28 |  |  |
+| `SetHostPlayerID(int)` | `0x001F6320` 8 | `0x00201040` 8 |  | `0x00246950` 36 |  |  |
+| `FinalisePlayerList()` | `0x001F6330` 176 | `0x00201050` 176 | `0x002367E0` 176 | `0x00246850` 248 |  |  |
+| `BeginPlayerList()` | `0x001F63E0` 72 | `0x00201100` 72 | `0x00236890` 72 | `0x002467B0` 152 |  |  |
+| `GetPlayerIndexByID(int)` | `0x001F6430` 204 | `0x00201150` 228 | `0x002368E0` 228 | `0x002466E0` 204 |  |  |
+| `CheckForNack(CGtNetworkMessage*)` | `0x001F6500` 432 |  | `0x002369D0` 2260 |  |  |  |
+| `CheckForAck(CGtNetworkMessage*)` | `0x001F66B0` 468 |  | `0x002372B0` 2936 |  |  |  |
+| `MessageIsDuplicate(CGtNetworkMessage*)` | `0x001F6890` 396 |  | `0x00237E30` 2052 |  |  |  |
+| `ThrowAwayMessage(CGtNetworkMessage*,int,int)` | `0x001F6A20` 276 |  | `0x00238640` 580 |  |  |  |
+| `AcceptMessage(CGtNetworkMessage*,int,int)` | `0x001F6B40` 276 |  | `0x00238890` 1404 |  |  |  |
+| `ResetFinaliseNATDataVariables()` | `0x001F6C60` 8 | `0x00201240` 8 | `0x00238E10` 8 | `0x002466B0` 44 |  |  |
+| `FinaliseNATData(float,float,int)` | `0x001F6C70` 472 |  | `0x00238E20` 1492 |  |  |  |
+| `AddBufferedReliableMessage(int,CGtNetworkMessage*,int)` | `0x001F6E50` 400 |  | `0x00239400` 1456 |  |  |  |
+| `ReceiveMessages()` | `0x001F6FE0` 884 |  | `0x002399B0` 6872 |  |  |  |
+| `GetNextNetworkPlayerByID(int) const` | `0x001F7360` 316 |  |  |  |  |  |
+| `GetPreviousNetworkPlayerByID(int) const` | `0x001F74A0` 308 |  |  |  |  |  |
+| `PlayerIsANextPlayer(int,int) const` | `0x001F75E0` 288 |  |  |  |  |  |
+| `GetPlayer(int) const` | `0x001F7700` 16 |  |  |  |  |  |
+| `GetPlayerByID(int) const` | `0x001F7710` 156 |  |  |  | `0x002366E0` strong |  |
+| `SetMyPlayerID(int)` | `0x001F77B0` 8 | `0x00201380` 8 | `0x0023BE00` 8 | `0x00246550` 36 | `0x00236780` proven |  |
+| `GetMyPlayerID() const` | `0x001F77C0` 8 |  |  |  | `0x00236790` proven |  |
+| `SetMyPlayerIndex(int)` | `0x001F77D0` 16 | `0x002013A0` 100 | `0x0023BE20` 100 | `0x002464E0` 72 | `0x002367A0` proven |  |
+| `GetMyPlayerIndex() const` | `0x001F77E0` 56 |  |  |  | `0x002367B0` strong |  |
+| `RegisterPlayer(const char*,int,int,void*)` | `0x001F7820` 324 | `0x00201450` 356 | `0x0023BED0` 356 | `0x002462C0` 428 | `0x002367F0` strong |  |
+| `ClearAllPlayers()` | `0x001F7970` 180 | `0x002015C0` 180 | `0x0023C040` 180 | `0x002461B0` 264 | `0x00236940` strong |  |
+| `SetGameID(int)` | `0x001F7A30` 336 | `0x00201680` 440 | `0x0023C100` 440 | `0x00245FB0` 504 | `0x00236A00` strong |  |
+| `PostUpdate(int)` | `0x001F7B80` 140 |  | `0x0023C2C0` 196 |  | `0x00236C50` likely |  |
+| `Update(int)` | `0x001F7C10` 60 |  | `0x0023C390` 60 |  |  |  |
+| `Release()` | `0x001F7C50` 84 |  | `0x0023C3D0` 84 |  |  |  |
+| `Prepare(CGtNetworkAdapter*,void (*)(int, int, int),float)` | `0x001F7CB0` 440 |  |  |  |  |  |
+| `Destruct()` | `0x001F7E70` 120 |  | `0x0023C670` 120 |  |  |  |
+| `Construct(CGtNetworkPlayer**,int,unsigned char*,int,int)` | `0x001F7EF0` 384 |  | `0x0023C6F0` 656 |  |  |  |
+| `GetPlayer(int)` |  | `0x00201250` 140 | `0x0023BCD0` 140 | `0x00246650` 88 |  |  |
+| `GetPlayerByID(int)` |  | `0x002012E0` 156 | `0x0023BD60` 156 | `0x00246580` 208 |  |  |
+| `GetMyPlayerID()` |  | `0x00201390` 8 | `0x0023BE10` 8 | `0x00246530` 28 |  |  |
+| `GetMyPlayerIndex()` |  | `0x00201410` 56 | `0x0023BE90` 56 | `0x00246470` 104 |  |  |
+| `Prepare(CGtNetworkAdapter*,void (*)` |  | `0x00201840` 564 | `0x0023C430` 564 | `0x00245CA0` 280 |  |  |
+| `DisableMessageSending()` |  |  |  | `0x00245DC0` 276 |  |  |
+| `EnableMessageSending()` |  |  |  | `0x00141BE0` 68 |  |  |
+| `GetGameID()` |  |  |  | `0x001A4240` 28 |  |  |
+| `GetHostPlayer()` |  |  | `0x00236710` 8 |  |  |  |
+| `GetNextNetworkPlayerByID(int)` |  |  | `0x0023B490` 520 |  |  |  |
+| `GetNumberNetworkPlayers()` |  |  |  | `0x00141F50` 108 |  |  |
+| `GetPreparedState()` |  |  |  | `0x0038B9C0` 28 |  |  |
+| `GetPreviousNetworkPlayerByID(int)` |  |  | `0x0023B6A0` 512 |  |  |  |
+| `GetTotalNumberPlayers()` |  |  |  | `0x00141B50` 28 |  |  |
+| `PlayerIsANextPlayer(int,int)` |  |  | `0x0023B8A0` 1060 |  |  |  |
+| `SetHostPlayerByID(int)` |  |  | `0x00236720` 184 |  |  |  |
+| `SetMyExternalIPAddress(int)` |  |  |  | `0x00286B60` 52 |  |  |
 
 ## Notes
 

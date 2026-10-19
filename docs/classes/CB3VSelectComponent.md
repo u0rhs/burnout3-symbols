@@ -7,27 +7,28 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3VSelectComponent.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 13
+- **Retail (SLUS-21050):** 8 of its 9 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004403C0`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ForceLead(bool,bool)` | `0x002DD770` 144 | `0x00327560` 144 | `0x003596C0` 144 | `0x0035A730` 196 |  |
-| `SetItemEnabled(int,bool)` | `0x002DD800` 44 | `0x003275F0` 44 | `0x00359750` 44 | `0x0035A6B0` 116 |  |
-| `Release()` | `0x002DD830` 180 | `0x00327620` 180 | `0x00359780` 180 | `0x0035A590` 284 |  |
-| `Update(float)` | `0x002DD8F0` 2976 | `0x003276E0` 3112 | `0x00359840` 3112 | `0x00359760` 3632 |  |
-| `PrepareItem(int,float,bool)` | `0x002DE490` 220 | `0x00328310` 220 | `0x0035A470` 220 | `0x00359410` 368 |  |
-| `Prepare(bool,float,float,float,float,const CB3MenuComponentSelectionData*,CB3VSelectComponentEntryData*)` | `0x002DE570` 668 | `0x003283F0` 796 | `0x0035A550` 796 | `0x003590D0` 796 |  |
-| `Prepare(float,const CB3MenuComponentSelectionData*,CB3VSelectComponentEntryData*)` | `0x002DE810` 48 | `0x00328710` 48 | `0x0035A870` 48 | `0x00359070` 92 |  |
-| `Prepare(const CB3MenuComponentSelectionData*,CB3VSelectComponentEntryData*)` | `0x002DE840` 52 | `0x00328740` 52 | `0x0035A8A0` 52 | `0x00359010` 92 |  |
-| `Construct()` | `0x002DE880` 80 | `0x00328780` 80 | `0x0035A8E0` 80 | `0x00358FA0` 112 |  |
-| `CB3VSelectComponent()` |  |  |  | `0x0033C840` 60 |  |
-| `Disable(bool)` |  |  |  | `0x00425220` 36 |  |
-| `GetItemAlignY(int)` |  |  |  | `0x00359580` 96 |  |
-| `PrepareBar(float)` |  |  |  | `0x003595E0` 380 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ForceLead(bool,bool)` | `0x002DD770` 144 | `0x00327560` 144 | `0x003596C0` 144 | `0x0035A730` 196 | `0x0031FDB0` strong |  |
+| `SetItemEnabled(int,bool)` | `0x002DD800` 44 | `0x003275F0` 44 | `0x00359750` 44 | `0x0035A6B0` 116 | `0x0031FE40` strong |  |
+| `Release()` | `0x002DD830` 180 | `0x00327620` 180 | `0x00359780` 180 | `0x0035A590` 284 | `0x0031FE70` unverified |  |
+| `Update(float)` | `0x002DD8F0` 2976 | `0x003276E0` 3112 | `0x00359840` 3112 | `0x00359760` 3632 | `0x0031FF80` unverified |  |
+| `PrepareItem(int,float,bool)` | `0x002DE490` 220 | `0x00328310` 220 | `0x0035A470` 220 | `0x00359410` 368 |  |  |
+| `Prepare(bool,float,float,float,float,const CB3MenuComponentSelectionData*,CB3VSelectComponentEntryData*)` | `0x002DE570` 668 | `0x003283F0` 796 | `0x0035A550` 796 | `0x003590D0` 796 | `0x003210D0` unverified |  |
+| `Prepare(float,const CB3MenuComponentSelectionData*,CB3VSelectComponentEntryData*)` | `0x002DE810` 48 | `0x00328710` 48 | `0x0035A870` 48 | `0x00359070` 92 | `0x00321430` strong |  |
+| `Prepare(const CB3MenuComponentSelectionData*,CB3VSelectComponentEntryData*)` | `0x002DE840` 52 | `0x00328740` 52 | `0x0035A8A0` 52 | `0x00359010` 92 | `0x00321470` likely |  |
+| `Construct()` | `0x002DE880` 80 | `0x00328780` 80 | `0x0035A8E0` 80 | `0x00358FA0` 112 | `0x003214B0` strong |  |
+| `CB3VSelectComponent()` |  |  |  | `0x0033C840` 60 |  |  |
+| `Disable(bool)` |  |  |  | `0x00425220` 36 |  |  |
+| `GetItemAlignY(int)` |  |  |  | `0x00359580` 96 |  |  |
+| `PrepareBar(float)` |  |  |  | `0x003595E0` 380 |  |  |
 
 ## Notes
 

@@ -7,16 +7,17 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3MenuStringBuffer.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 3
+- **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetMinutesAndSecondsString(float)` | `0x0036B2C0` 256 | `0x003D8380` 304 | `0x00400E80` 304 | `0x004136A0` 412 |  |
-| `AllocUTF16String(int)` | `0x0036B3C0` 20 | `0x003D84B0` 116 | `0x00400FB0` 116 | `0x00413630` 112 |  |
-| `Prepare()` | `0x0036B3E0` 40 | `0x003D8530` 40 | `0x00401030` 40 | `0x004135F0` 64 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetMinutesAndSecondsString(float)` | `0x0036B2C0` 256 | `0x003D8380` 304 | `0x00400E80` 304 | `0x004136A0` 412 |  |  |
+| `AllocUTF16String(int)` | `0x0036B3C0` 20 | `0x003D84B0` 116 | `0x00400FB0` 116 | `0x00413630` 112 |  |  |
+| `Prepare()` | `0x0036B3E0` 40 | `0x003D8530` 40 | `0x00401030` 40 | `0x004135F0` 64 | `0x003B8900` strong |  |
 
 ## Notes
 

@@ -7,18 +7,19 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `B3PlayerCameraStateReplay.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 4
+- **Retail (SLUS-21050):** 1 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440270`, 12 bytes = 3 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 1 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x002C1790` 1196 | `0x00307350` 1676 | `0x003396E0` 1496 | `0x0032E3E0` 1008 |  |
-| `SetNextCut(CB3PlayerCameraManager*,const CB3CrashCut*)` | `0x002C1C40` 460 | `0x003079E0` 760 | `0x00339CC0` 760 | `0x0032E1C0` 544 |  |
-| `CB3PlayerCameraStateReplay()` |  |  |  | `0x0013EBA0` 60 |  |
-| `GetCutTime(CB3PlayerCameraManager*,const CB3CrashCut*)` |  |  |  | `0x0032E170` 72 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x002C1790` 1196 | `0x00307350` 1676 | `0x003396E0` 1496 | `0x0032E3E0` 1008 | `0x00300BF0` unverified |  |
+| `SetNextCut(CB3PlayerCameraManager*,const CB3CrashCut*)` | `0x002C1C40` 460 | `0x003079E0` 760 | `0x00339CC0` 760 | `0x0032E1C0` 544 |  |  |
+| `CB3PlayerCameraStateReplay()` |  |  |  | `0x0013EBA0` 60 |  |  |
+| `GetCutTime(CB3PlayerCameraManager*,const CB3CrashCut*)` |  |  |  | `0x0032E170` 72 |  |  |
 
 ## Notes
 

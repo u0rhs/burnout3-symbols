@@ -7,46 +7,47 @@
 - **Area:** [AI drivers](../systems/ai.md)
 - **Source file:** `B3AITarget.cpp`
 - **Methods per build:** DNAT_200 17, B3DEBUG 18, B3INTERN 18, B3O0PCH 27
+- **Retail (SLUS-21050):** 17 of its 17 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CAITarget`, size 0x0DC, declared in 57 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ResetTarget()` | `0x00145D50` 60 | `0x001545A0` 60 | `0x001507D0` 60 | `0x00164960` 80 |  |
-| `GetDesiredDirection(GtMathPs2::CGtV3d*) const` | `0x00146DC0` 204 |  |  |  |  |
-| `LanesAreSideBySide(const CB3AILane*,const CB3AILane*,unsigned short,unsigned short) const` | `0x00146E90` 464 |  |  |  | `int CAITarget::LanesAreSideBySide(CLane *lpLaneA, CLane *lpLaneB, int lnStartIndexA, int lnNumSegsToCheck) const` (same name, different parameters) |
-| `LaneIsUndesirable(const CB3AILane*,unsigned short) const` | `0x00147060` 224 |  |  |  |  |
-| `LaneIsUndesirable(const CB3AILane*,unsigned short,unsigned short) const` | `0x00147140` 980 |  |  |  |  |
-| `GetCurrentFwdFrac() const` | `0x00147520` 56 |  |  |  | `float CAITarget::GetCurrentFwdFrac() const` |
-| `CalculateEdgePosition(unsigned short,unsigned short,int,GtMathPs2::CGtV3d*,unsigned char*,unsigned short*)` | `0x00147560` 1656 | `0x00156A30` 2672 | `0x00152960` 2440 | `0x00160BD0` 2632 | `void CAITarget::CalculateEdgePosition(int lnSegmentIndex, int lnCurrentSegmentIndex, ELaneDirection leSideWanted, RwV3d *lpResultVector, short *lpnResultLaneIndex16, short *lpnResultSegIndex16)` (same name, different parameters) |
-| `CalculateNearEdgePosition(unsigned short,unsigned short,int,GtMathPs2::CGtV3d*,unsigned char*,unsigned short*)` | `0x00147BE0` 1144 | `0x001574A0` 1568 | `0x001532F0` 1448 | `0x00160680` 1348 | `void CAITarget::CalculateNearEdgePosition(int lnSegmentIndex, int lnCurrentSegmentIndex, ELaneDirection leSideWanted, RwV3d *lpResultVector, short *lpnResultLaneIndex16, short *lpnResultSegIndex16)` (same name, different parameters) |
-| `FindNextCorner(const CB3AILane*,unsigned short,unsigned short*,unsigned short*,unsigned short*,float*,float*,float` | `0x00148060` 1732 | `0x00157AC0` 2252 | `0x001538A0` 1916 | `0x0015FB10` 2916 | `int CAITarget::FindNextCorner(CLane *lpLane, int lnCurrentSegmentIndex, int *lpnTurnStartSegmentIndex, int *lpnTurnApexSegmentIndex, int *lpnTurnEndSegmentIndex, float *lprCornerRacingLineRadius, float *lprCornerRadius, float *lprCornerAngle, EAITargetTurnType *lpeCornerDirection, EAITargetCornerState *lpeCornerState, int *lpbWillWantToDrift, int *lpbSquareCorner)` (same name, different parameters) |
-| `CalculateNextTargetPosition()` | `0x00148730` 2656 | `0x00158390` 4764 | `0x00154020` 4764 | `0x0015E930` 4256 | `void CAITarget::CalculateNextTargetPosition()` |
-| `FillInTargetPosition()` | `0x00149190` 1072 | `0x00159630` 1500 | `0x001552C0` 1068 | `0x0015E5A0` 904 | `void CAITarget::FillInTargetPosition()` |
-| `UpdateCurrentSegment()` | `0x001495C0` 2080 | `0x00159C10` 3100 | `0x001556F0` 3100 | `0x0015D470` 4320 | `int CAITarget::UpdateCurrentSegment()` |
-| `ResetCornerStatus()` | `0x00149DE0` 140 | `0x0015A830` 140 | `0x00156310` 140 | `0x0015D1C0` 324 | `void CAITarget::ResetCornerStatus()` |
-| `Release()` | `0x00149E70` 8 | `0x0015A8C0` 8 | `0x001563A0` 8 | `0x0015D180` 60 |  |
-| `Update()` | `0x00149E80` 2276 | `0x0015A8D0` 3516 | `0x001563B0` 3416 | `0x0015C430` 3396 | `void CAITarget::Update()` |
-| `Prepare()` | `0x0014A770` 204 | `0x0015B690` 236 | `0x00157110` 236 | `0x0015C280` 424 |  |
-| `Construct()` | `0x0014A840` 56 | `0x0015B780` 92 | `0x00157200` 92 | `0x0015C210` 112 |  |
-| `GetDesiredDirection(GtMathPs2::CGtV3d*)` |  | `0x00155D80` 332 | `0x00151DA0` 204 | `0x00162870` 244 |  |
-| `LanesAreSideBySide(const CB3AILane*,const CB3AILane*,unsigned short,unsigned short)` |  | `0x00155ED0` 856 | `0x00151E70` 856 | `0x001623A0` 996 | `int CAITarget::LanesAreSideBySide(CLane *lpLaneA, CLane *lpLaneB, int lnStartIndexA, int lnNumSegsToCheck) const` (same name, different parameters) |
-| `LaneIsUndesirable(const CB3AILane*,unsigned short)` |  | `0x00156230` 324 | `0x001521D0` 324 | `0x00161FF0` 532 |  |
-| `LaneIsUndesirable(const CB3AILane*,unsigned short,unsigned short)` |  | `0x00156380` 1120 | `0x00152320` 1120 | `0x00161A10` 1504 |  |
-| `GetCurrentFwdFrac()` |  | `0x001567E0` 56 | `0x00152780` 56 | `0x001619C0` 80 | `float CAITarget::GetCurrentFwdFrac() const` (same name, different parameters) |
-| `CalculateFractionTargetPosition(unsigned short,float,GtMathPs2::CGtV3d*)` |  | `0x00156820` 520 | `0x001527C0` 404 | `0x001617B0` 420 | `void CAITarget::CalculateFractionTargetPosition(int lnSegmentIndex, float lrOffset, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `CB3AITarget()` |  |  |  | `0x00191300` 160 |  |
-| `CalcDesiredSpeed()` |  |  |  | `0x0015D310` 340 |  |
-| `CalcFrac()` |  |  |  | `0x00161710` 156 |  |
-| `CalculateSameLanePosition(unsigned short,GtMathPs2::CGtV3d*)` |  |  |  | `0x00161620` 232 |  |
-| `FindNextCorner()` |  |  |  | `0x0015F9D0` 316 | `int CAITarget::FindNextCorner(CLane *lpLane, int lnCurrentSegmentIndex, int *lpnTurnStartSegmentIndex, int *lpnTurnApexSegmentIndex, int *lpnTurnEndSegmentIndex, float *lprCornerRacingLineRadius, float *lprCornerRadius, float *lprCornerAngle, EAITargetTurnType *lpeCornerDirection, EAITargetCornerState *lpeCornerState, int *lpbWillWantToDrift, int *lpbSquareCorner)` (same name, different parameters) |
-| `GetCurrentLeftFrac()` |  |  |  | `0x00161960` 84 | `float CAITarget::GetCurrentLeftFrac() const` (same name, different parameters) |
-| `LaneIsUndesirable(unsigned char,unsigned short)` |  |  |  | `0x00162320` 120 |  |
-| `LaneIsUndesirable(unsigned char,unsigned short,unsigned short)` |  |  |  | `0x00162210` 260 |  |
-| `TestForDrift()` |  |  |  | `0x00162790` 212 | `void CAITarget::TestForDrift()` |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ResetTarget()` | `0x00145D50` 60 | `0x001545A0` 60 | `0x001507D0` 60 | `0x00164960` 80 | `0x00149140` proven |  |
+| `GetDesiredDirection(GtMathPs2::CGtV3d*) const` | `0x00146DC0` 204 |  |  |  | `0x0014A1C0` strong |  |
+| `LanesAreSideBySide(const CB3AILane*,const CB3AILane*,unsigned short,unsigned short) const` | `0x00146E90` 464 |  |  |  | `0x0014A290` strong | `int CAITarget::LanesAreSideBySide(CLane *lpLaneA, CLane *lpLaneB, int lnStartIndexA, int lnNumSegsToCheck) const` (same name, different parameters) |
+| `LaneIsUndesirable(const CB3AILane*,unsigned short) const` | `0x00147060` 224 |  |  |  | `0x0014A480` strong |  |
+| `LaneIsUndesirable(const CB3AILane*,unsigned short,unsigned short) const` | `0x00147140` 980 |  |  |  | `0x0014A560` strong |  |
+| `GetCurrentFwdFrac() const` | `0x00147520` 56 |  |  |  | `0x0014A940` unverified | `float CAITarget::GetCurrentFwdFrac() const` |
+| `CalculateEdgePosition(unsigned short,unsigned short,int,GtMathPs2::CGtV3d*,unsigned char*,unsigned short*)` | `0x00147560` 1656 | `0x00156A30` 2672 | `0x00152960` 2440 | `0x00160BD0` 2632 | `0x0014A980` strong | `void CAITarget::CalculateEdgePosition(int lnSegmentIndex, int lnCurrentSegmentIndex, ELaneDirection leSideWanted, RwV3d *lpResultVector, short *lpnResultLaneIndex16, short *lpnResultSegIndex16)` (same name, different parameters) |
+| `CalculateNearEdgePosition(unsigned short,unsigned short,int,GtMathPs2::CGtV3d*,unsigned char*,unsigned short*)` | `0x00147BE0` 1144 | `0x001574A0` 1568 | `0x001532F0` 1448 | `0x00160680` 1348 | `0x0014B010` strong | `void CAITarget::CalculateNearEdgePosition(int lnSegmentIndex, int lnCurrentSegmentIndex, ELaneDirection leSideWanted, RwV3d *lpResultVector, short *lpnResultLaneIndex16, short *lpnResultSegIndex16)` (same name, different parameters) |
+| `FindNextCorner(const CB3AILane*,unsigned short,unsigned short*,unsigned short*,unsigned short*,float*,float*,float` | `0x00148060` 1732 | `0x00157AC0` 2252 | `0x001538A0` 1916 | `0x0015FB10` 2916 | `0x0014B4B0` strong | `int CAITarget::FindNextCorner(CLane *lpLane, int lnCurrentSegmentIndex, int *lpnTurnStartSegmentIndex, int *lpnTurnApexSegmentIndex, int *lpnTurnEndSegmentIndex, float *lprCornerRacingLineRadius, float *lprCornerRadius, float *lprCornerAngle, EAITargetTurnType *lpeCornerDirection, EAITargetCornerState *lpeCornerState, int *lpbWillWantToDrift, int *lpbSquareCorner)` (same name, different parameters) |
+| `CalculateNextTargetPosition()` | `0x00148730` 2656 | `0x00158390` 4764 | `0x00154020` 4764 | `0x0015E930` 4256 | `0x0014BB80` strong | `void CAITarget::CalculateNextTargetPosition()` |
+| `FillInTargetPosition()` | `0x00149190` 1072 | `0x00159630` 1500 | `0x001552C0` 1068 | `0x0015E5A0` 904 | `0x0014C5E0` strong | `void CAITarget::FillInTargetPosition()` |
+| `UpdateCurrentSegment()` | `0x001495C0` 2080 | `0x00159C10` 3100 | `0x001556F0` 3100 | `0x0015D470` 4320 | `0x0014CA20` strong | `int CAITarget::UpdateCurrentSegment()` |
+| `ResetCornerStatus()` | `0x00149DE0` 140 | `0x0015A830` 140 | `0x00156310` 140 | `0x0015D1C0` 324 | `0x0014D380` strong | `void CAITarget::ResetCornerStatus()` |
+| `Release()` | `0x00149E70` 8 | `0x0015A8C0` 8 | `0x001563A0` 8 | `0x0015D180` 60 | `0x0014D410` proven |  |
+| `Update()` | `0x00149E80` 2276 | `0x0015A8D0` 3516 | `0x001563B0` 3416 | `0x0015C430` 3396 | `0x0014D420` proven | `void CAITarget::Update()` |
+| `Prepare()` | `0x0014A770` 204 | `0x0015B690` 236 | `0x00157110` 236 | `0x0015C280` 424 | `0x0014DC70` proven |  |
+| `Construct()` | `0x0014A840` 56 | `0x0015B780` 92 | `0x00157200` 92 | `0x0015C210` 112 | `0x0014DD40` proven |  |
+| `GetDesiredDirection(GtMathPs2::CGtV3d*)` |  | `0x00155D80` 332 | `0x00151DA0` 204 | `0x00162870` 244 |  |  |
+| `LanesAreSideBySide(const CB3AILane*,const CB3AILane*,unsigned short,unsigned short)` |  | `0x00155ED0` 856 | `0x00151E70` 856 | `0x001623A0` 996 |  | `int CAITarget::LanesAreSideBySide(CLane *lpLaneA, CLane *lpLaneB, int lnStartIndexA, int lnNumSegsToCheck) const` (same name, different parameters) |
+| `LaneIsUndesirable(const CB3AILane*,unsigned short)` |  | `0x00156230` 324 | `0x001521D0` 324 | `0x00161FF0` 532 |  |  |
+| `LaneIsUndesirable(const CB3AILane*,unsigned short,unsigned short)` |  | `0x00156380` 1120 | `0x00152320` 1120 | `0x00161A10` 1504 |  |  |
+| `GetCurrentFwdFrac()` |  | `0x001567E0` 56 | `0x00152780` 56 | `0x001619C0` 80 |  | `float CAITarget::GetCurrentFwdFrac() const` (same name, different parameters) |
+| `CalculateFractionTargetPosition(unsigned short,float,GtMathPs2::CGtV3d*)` |  | `0x00156820` 520 | `0x001527C0` 404 | `0x001617B0` 420 |  | `void CAITarget::CalculateFractionTargetPosition(int lnSegmentIndex, float lrOffset, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `CB3AITarget()` |  |  |  | `0x00191300` 160 |  |  |
+| `CalcDesiredSpeed()` |  |  |  | `0x0015D310` 340 |  |  |
+| `CalcFrac()` |  |  |  | `0x00161710` 156 |  |  |
+| `CalculateSameLanePosition(unsigned short,GtMathPs2::CGtV3d*)` |  |  |  | `0x00161620` 232 |  |  |
+| `FindNextCorner()` |  |  |  | `0x0015F9D0` 316 |  | `int CAITarget::FindNextCorner(CLane *lpLane, int lnCurrentSegmentIndex, int *lpnTurnStartSegmentIndex, int *lpnTurnApexSegmentIndex, int *lpnTurnEndSegmentIndex, float *lprCornerRacingLineRadius, float *lprCornerRadius, float *lprCornerAngle, EAITargetTurnType *lpeCornerDirection, EAITargetCornerState *lpeCornerState, int *lpbWillWantToDrift, int *lpbSquareCorner)` (same name, different parameters) |
+| `GetCurrentLeftFrac()` |  |  |  | `0x00161960` 84 |  | `float CAITarget::GetCurrentLeftFrac() const` (same name, different parameters) |
+| `LaneIsUndesirable(unsigned char,unsigned short)` |  |  |  | `0x00162320` 120 |  |  |
+| `LaneIsUndesirable(unsigned char,unsigned short,unsigned short)` |  |  |  | `0x00162210` 260 |  |  |
+| `TestForDrift()` |  |  |  | `0x00162790` 212 |  | `void CAITarget::TestForDrift()` |
 
 ## Burnout 2 layout of `CAITarget`
 

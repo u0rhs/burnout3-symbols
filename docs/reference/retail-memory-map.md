@@ -133,7 +133,7 @@ adjusts every 2D element, which locates them all:
 | HUD render width and X, player 1 / 2 (code) | `0x001A176C`, `0x001A1774` / `0x001A17D0`, `0x001A17D8` | 854, −107.5 |
 | "Get Ready! GO" width and X (code) | `0x00134F2C`, `0x00134F74` | 854, 0.375 |
 | Crash camera border | `0x004CA638`–`0x004CA660` | widths 853.3, X −107.5 |
-| Crash camera list backing and text (code) | `0x003D70BC`, `0x003D7238`, `0x003D72F4` | 854, −107.5 |
+| Crash camera list backing and text (code) | `0x003D70BC` (X, through a jump to a code cave), `0x003D7238` (width: `lui v0,0x4420` = 640.0, in `CB3HUDCrashCombo::Prepare`), `0x003D72F4` (text X) | 854, −107.5 |
 | Menu width and X (code) | `0x0030D7E4`, `0x0030D834` | 480, +80 |
 | Menu top / bottom borders (code) | `0x0031B180`, `0x0031B1F4` / `0x0038AE00`–`0x0038AE4C` | 854 |
 | Menu checkerboard (code) | `0x0031D6E4`–`0x0031D854` (five widths, five X positions) | 854 |
@@ -175,7 +175,7 @@ Button numbers: 0 Triangle, 1 Square, 2 Cross, 3 Circle, 4–7 D-pad up/down/lef
 Places the codes patch in the executable. They are anchor points for naming retail functions: each one
 sits in a function whose behaviour the code describes.
 
-| Address | Patched to | Effect | In or after ([names](retail-function-names.md)) |
+| Address | Patched to | Effect | In or after ([prototype names](retail-prototype-names.md), [Nahelam's](retail-function-names.md)) |
 |---|---|---|---|
 | `0x00134B08`, `0x00134C44` | `nop` | Shows the world time on screen | `CB3OnePlayerStage::Render` |
 | `0x0014E07C` | `li v1,3` | Crashing fills the boost meter ×4 | `CB3Burn::SetNumExtraBoostBarSegments` |
@@ -185,16 +185,20 @@ sits in a function whose behaviour the code describes.
 | `0x001A4940` | `j 0x000C2020` | Hook for a max-boost routine | `CB3HUDBoostBar::BarUpdate` |
 | `0x001B7220` | `jr ra; nop` | Vehicles pass through each other | **Start of `CB3PhysicsManager::CollideAndRespondPair`** (the collision response) |
 | `0x001B7378` | `nop` | the same, another way | `CB3PhysicsManager::CollideAndRespondPair` |
-| `0x001D3D2C` | `nop` (original `sw v1,-0x5F34($gp)`) | Stops the race timer | End of `CGtTimer::Construct`; the timer is a `$gp`-relative global |
+| `0x001D3D2C` | `nop` (original `sw v1,-0x5F34($gp)`) | Stops the race timer | In `CGtTimer::NextFrame` (+0xC, proven name): the per-frame timer update; the timer is a `$gp`-relative global |
+| `0x001D3F2C` | `beq zero,zero` (original `beqz a1`) | 60 fps in the menus (PCSX2's "60 FPS for Menus") | In `CB3Game::SetFrontendFrameRate(bool)` (+0x4C): the branch on its `bool` |
 | `0x0027CF26` | upper half `0x1000` | "Infinite time to play" | A time-limit check |
 | `0x002147A8` | `jal` to a code cave | Hook used by the MadCatz master code | |
 | `0x0030B284` | `j 0x000C2000` | Hook for an infinite-boost routine | Boost update |
 | `0x000C2000`–`0x000C2030` | — | Free low memory the MadCatz codes put their routines in | |
 | `0x00129B50`, `0x0034BEE4` | — | Code Breaker hook points ("enable codes") | |
 
-The function names come from [retail function names](retail-function-names.md) (Nahelam's PAL names,
-shifted to the US executable). Every code address in [`memory-map.csv`](../../data/burnout3-retail/memory-map.csv)
-names the nearest function before it. Nahelam's own patches add many more locations:
+The function names come from the [prototype names](retail-prototype-names.md) and
+[Nahelam's names](retail-function-names.md). Every code address in
+[`memory-map.csv`](../../data/burnout3-retail/memory-map.csv) has two columns: `in_function`, the function
+whose code holds the address (only from proven or strong prototype names, with their sizes), and
+`nearest_named_function_before`, the closest named function start before it (any source; the address can
+be in an unnamed function after it). Nahelam's own patches add many more locations:
 [Nahelam's mods](nahelam-mods.md).
 
 ## Where this connects

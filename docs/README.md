@@ -14,7 +14,7 @@ Every page of the documentation, by section.
 - **[Classes](classes/README.md)**
 - **[Renderer overview](renderer-overview.md)**
 - **[Retail game](reference/retail-function-names.md)**
-  [Retail function names (SLUS-21050)](reference/retail-function-names.md) · [Retail memory map (from cheat codes and patches)](reference/retail-memory-map.md) · [Nahelam's Burnout 3 mods and research](reference/nahelam-mods.md) · [Disc contents](discs.md)
+  [Retail function names (SLUS-21050)](reference/retail-function-names.md) · [Retail names from the prototype (SLUS-21050)](reference/retail-prototype-names.md) · [Retail memory map (from cheat codes and patches)](reference/retail-memory-map.md) · [Nahelam's Burnout 3 mods and research](reference/nahelam-mods.md) · [Disc contents](discs.md)
 - **[Reference: Burnout 3](reference/README.md)**
   [Assert expressions](reference/asserts.md) · [Burnout 3 global data](reference/b3-globals.md) · [Burnout 3 prototype builds compared](reference/build-comparison.md) · [Debug and development features](reference/debug-features.md) · [File hashes](reference/hashes.md) · [IOP modules with symbols](reference/iop-modules.md) · [Memory layout](reference/memory-layout.md) · [Code that was written but not linked](reference/unlinked-code.md) · [The value database (VDB.XML)](reference/value-database.md) · [VU microcode programs](reference/vu-programs.md)
 - **[Reference: Burnout 2 lineage](reference/class-ancestors.md)**

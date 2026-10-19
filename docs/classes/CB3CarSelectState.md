@@ -11,13 +11,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x002D15E0` 1836 | `0x00319FC0` 1888 | `0x0034C3A0` 1384 | `0x00346A00` 988 |  |
-| `CB3CarSelectState()` |  |  |  | `0x00345360` 60 |  |
-| `CarSelectPrepare()` |  |  |  | `0x00346DE0` 204 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x002D15E0` 1836 | `0x00319FC0` 1888 | `0x0034C3A0` 1384 | `0x00346A00` 988 |  |  |
+| `CB3CarSelectState()` |  |  |  | `0x00345360` 60 |  |  |
+| `CarSelectPrepare()` |  |  |  | `0x00346DE0` 204 |  |  |
 
 ## Notes
 

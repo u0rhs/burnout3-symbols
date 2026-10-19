@@ -7,18 +7,19 @@
 - **Area:** [Crashes, takedowns and scoring](../systems/crash-scoring.md)
 - **Source file:** `B3Score.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 5
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Prepare(int)` | `0x00157980` 192 | `0x0016CA50` 192 | `0x00168280` 192 | `0x001721B0` 428 |  |
-| `GetOnlineRoadRageScore()` |  |  |  | `0x003E6F30` 28 |  |
-| `GetRoadRageScore()` |  |  |  | `0x00173AB0` 52 |  |
-| `GetRoadRageScore(int,int)` |  |  |  | `0x00173AF0` 24 |  |
-| `operator =(const CB3FinishedScore&)` |  |  |  | `0x00169AB0` 692 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Prepare(int)` | `0x00157980` 192 | `0x0016CA50` 192 | `0x00168280` 192 | `0x001721B0` 428 | `0x0015C9A0` likely |  |
+| `GetOnlineRoadRageScore()` |  |  |  | `0x003E6F30` 28 |  |  |
+| `GetRoadRageScore()` |  |  |  | `0x00173AB0` 52 |  |  |
+| `GetRoadRageScore(int,int)` |  |  |  | `0x00173AF0` 24 |  |  |
+| `operator =(const CB3FinishedScore&)` |  |  |  | `0x00169AB0` 692 |  |  |
 
 ## Notes
 

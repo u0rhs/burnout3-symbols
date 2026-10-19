@@ -7,19 +7,20 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundTrafficPass.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 6
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Stop()` | `0x00238430` 108 | `0x00262060` 108 | `0x0029AEF0` 108 | `0x0029EDC0` 160 |  |
-| `Release()` | `0x002384A0` 108 | `0x002620D0` 108 | `0x0029AF60` 108 | `0x0029ED90` 40 |  |
-| `Update(float,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,float)` | `0x00238510` 1836 | `0x00262140` 2448 | `0x0029AFD0` 2040 | `0x0029E360` 2544 |  |
-| `Prepare(ETrafficVehicleCategories,int)` | `0x00238C40` 168 | `0x00262AD0` 168 | `0x0029B7D0` 168 | `0x0029E2D0` 140 |  |
-| `Construct()` | `0x00238CF0` 8 | `0x00262B80` 8 | `0x0029B880` 8 | `0x0029E2C0` 16 |  |
-| `CB3SoundTrafficPass()` |  |  |  | `0x002B1A90` 48 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Stop()` | `0x00238430` 108 | `0x00262060` 108 | `0x0029AEF0` 108 | `0x0029EDC0` 160 | `0x00277F40` proven |  |
+| `Release()` | `0x002384A0` 108 | `0x002620D0` 108 | `0x0029AF60` 108 | `0x0029ED90` 40 | `0x00277FB0` proven |  |
+| `Update(float,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,float)` | `0x00238510` 1836 | `0x00262140` 2448 | `0x0029AFD0` 2040 | `0x0029E360` 2544 | `0x00278020` proven |  |
+| `Prepare(ETrafficVehicleCategories,int)` | `0x00238C40` 168 | `0x00262AD0` 168 | `0x0029B7D0` 168 | `0x0029E2D0` 140 | `0x00278750` proven |  |
+| `Construct()` | `0x00238CF0` 8 | `0x00262B80` 8 | `0x0029B880` 8 | `0x0029E2C0` 16 | `0x00278800` proven |  |
+| `CB3SoundTrafficPass()` |  |  |  | `0x002B1A90` 48 |  |  |
 
 ## Notes
 

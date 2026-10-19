@@ -10,16 +10,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetFromSiblingListLink(RwLLLink*)` | `0x0030B210` 8 | `0x00361DA0` 8 | `0x00391770` 8 | `0x00396980` 28 |  |
-| `GetChildList()` | `0x0030B220` 8 | `0x00361DB0` 8 | `0x00391780` 8 | `0x003969A0` 28 |  |
-| `GetNumChildren()` | `0x0030B230` 8 | `0x00361DC0` 8 | `0x00391790` 8 | `0x003969C0` 28 |  |
-| `AddChild(CGtSphereTreeSphere*)` |  |  |  | `0x0039CC30` 168 |  |
-| `ComputeBindingDistance()` |  |  |  | `0x0039C870` 180 |  |
-| `GetSphere()` |  |  |  | `0x00396550` 40 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetFromSiblingListLink(RwLLLink*)` | `0x0030B210` 8 | `0x00361DA0` 8 | `0x00391770` 8 | `0x00396980` 28 |  |  |
+| `GetChildList()` | `0x0030B220` 8 | `0x00361DB0` 8 | `0x00391780` 8 | `0x003969A0` 28 |  |  |
+| `GetNumChildren()` | `0x0030B230` 8 | `0x00361DC0` 8 | `0x00391790` 8 | `0x003969C0` 28 |  |  |
+| `AddChild(CGtSphereTreeSphere*)` |  |  |  | `0x0039CC30` 168 |  |  |
+| `ComputeBindingDistance()` |  |  |  | `0x0039C870` 180 |  |  |
+| `GetSphere()` |  |  |  | `0x00396550` 40 |  |  |
 
 ## Notes
 

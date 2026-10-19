@@ -7,17 +7,18 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3Game.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 3
+- **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FB40`, 244 bytes = 61 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 59 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `IsTurnBased()` | `0x001335E0` 20 | `0x0013ABF0` 20 | `0x00138440` 20 | `0x0013EF40` 32 |  |
-| `IsCrashType()` | `0x00133600` 8 | `0x0013AC10` 8 | `0x00138460` 8 | `0x0013EF60` 20 |  |
-| `CB3OfflineCrashPartyLogic()` |  |  |  | `0x0013DFF0` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `IsTurnBased()` | `0x001335E0` 20 | `0x0013ABF0` 20 | `0x00138440` 20 | `0x0013EF40` 32 | `0x00134270` likely |  |
+| `IsCrashType()` | `0x00133600` 8 | `0x0013AC10` 8 | `0x00138460` 8 | `0x0013EF60` 20 | `0x001342B0` likely |  |
+| `CB3OfflineCrashPartyLogic()` |  |  |  | `0x0013DFF0` 60 |  |  |
 
 ## Notes
 

@@ -10,13 +10,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Retrieve(CB3ResultsData*)` | `0x00233440` 196 | `0x00250950` 1184 | `0x0028C750` 1184 | `0x0028BFB0` 380 |  |
-| `Prepare(const CB3ResultsData*)` | `0x00233510` 180 | `0x00250DF0` 180 | `0x0028CBF0` 180 | `0x0028BE20` 76 |  |
-| `Construct()` | `0x002335D0` 8 |  | `0x0028CCB0` 8 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Retrieve(CB3ResultsData*)` | `0x00233440` 196 | `0x00250950` 1184 | `0x0028C750` 1184 | `0x0028BFB0` 380 |  |  |
+| `Prepare(const CB3ResultsData*)` | `0x00233510` 180 | `0x00250DF0` 180 | `0x0028CBF0` 180 | `0x0028BE20` 76 |  |  |
+| `Construct()` | `0x002335D0` 8 |  | `0x0028CCB0` 8 |  |  |  |
 
 ## Notes
 

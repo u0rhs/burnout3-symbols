@@ -7,24 +7,25 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3OnlineBuddiesSearchMenuPage.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 10
+- **Retail (SLUS-21050):** 6 of its 9 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004408F0`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `_AddUserCallback(bool,void*)` | `0x0032DF60` 120 | `0x00389BF0` 120 | `0x003B87A0` 120 | `0x003BB0A0` 144 |  |
-| `_UsersRoomCallback(bool,char*,char*,int,bool,void*)` | `0x0032DFE0` 412 | `0x00389C70` 412 | `0x003B8820` 412 | `0x003BAEC0` 480 |  |
-| `_BanBuddyCallback(bool,void*)` | `0x0032E180` 120 | `0x00389E10` 120 | `0x003B89C0` 120 | `0x003BAE30` 144 |  |
-| `OnKeyboardShow()` | `0x0032E200` 8 | `0x00389E90` 8 | `0x003B8A40` 8 | `0x003BAE20` 16 |  |
-| `OnKeyboardCancel()` | `0x0032E210` 72 | `0x00389EA0` 72 | `0x003B8A50` 72 | `0x003BADC0` 88 |  |
-| `OnKeyboardDone()` | `0x0032E260` 192 | `0x00389EF0` 192 | `0x003B8AA0` 192 | `0x003BACA0` 280 |  |
-| `Release()` | `0x0032E320` 12 | `0x00389FB0` 12 | `0x003B8B60` 12 | `0x003BAC70` 40 |  |
-| `Update()` | `0x0032E330` 1644 | `0x00389FC0` 1644 | `0x003B8B70` 1644 | `0x003BA460` 2056 |  |
-| `Prepare(char*)` | `0x0032E9A0` 476 | `0x0038A630` 476 | `0x003B91E0` 476 | `0x003BA230` 548 |  |
-| `CB3OnlineBuddiesSearchMenuPage()` |  |  |  | `0x00341800` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `_AddUserCallback(bool,void*)` | `0x0032DF60` 120 | `0x00389BF0` 120 | `0x003B87A0` 120 | `0x003BB0A0` 144 |  |  |
+| `_UsersRoomCallback(bool,char*,char*,int,bool,void*)` | `0x0032DFE0` 412 | `0x00389C70` 412 | `0x003B8820` 412 | `0x003BAEC0` 480 |  |  |
+| `_BanBuddyCallback(bool,void*)` | `0x0032E180` 120 | `0x00389E10` 120 | `0x003B89C0` 120 | `0x003BAE30` 144 | `0x00372FB0` unverified |  |
+| `OnKeyboardShow()` | `0x0032E200` 8 | `0x00389E90` 8 | `0x003B8A40` 8 | `0x003BAE20` 16 | `0x003730A0` strong |  |
+| `OnKeyboardCancel()` | `0x0032E210` 72 | `0x00389EA0` 72 | `0x003B8A50` 72 | `0x003BADC0` 88 | `0x003730B0` strong |  |
+| `OnKeyboardDone()` | `0x0032E260` 192 | `0x00389EF0` 192 | `0x003B8AA0` 192 | `0x003BACA0` 280 | `0x00373100` unverified |  |
+| `Release()` | `0x0032E320` 12 | `0x00389FB0` 12 | `0x003B8B60` 12 | `0x003BAC70` 40 | `0x00373260` likely |  |
+| `Update()` | `0x0032E330` 1644 | `0x00389FC0` 1644 | `0x003B8B70` 1644 | `0x003BA460` 2056 |  |  |
+| `Prepare(char*)` | `0x0032E9A0` 476 | `0x0038A630` 476 | `0x003B91E0` 476 | `0x003BA230` 548 | `0x003734F0` unverified |  |
+| `CB3OnlineBuddiesSearchMenuPage()` |  |  |  | `0x00341800` 60 |  |  |
 
 ## Notes
 

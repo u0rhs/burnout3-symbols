@@ -10,14 +10,14 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetHeadlineCrashDamage(int)` | `0x003A6DD0` 24 | `0x00421090` 176 | `0x00446D00` 176 | `0x0045F790` 100 |  |
-| `GetHeadlineHelpString(int)` | `0x003A6DF0` 24 | `0x00421140` 176 | `0x00446E60` 176 | `0x0045F720` 100 |  |
-| `GetHeadlineString(int)` | `0x003A6E10` 24 | `0x004211F0` 176 |  | `0x0045F6B0` 100 |  |
-| `GetHeadlineTrackIndex(int)` |  |  | `0x00446DB0` 172 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetHeadlineCrashDamage(int)` | `0x003A6DD0` 24 | `0x00421090` 176 | `0x00446D00` 176 | `0x0045F790` 100 |  |  |
+| `GetHeadlineHelpString(int)` | `0x003A6DF0` 24 | `0x00421140` 176 | `0x00446E60` 176 | `0x0045F720` 100 |  |  |
+| `GetHeadlineString(int)` | `0x003A6E10` 24 | `0x004211F0` 176 |  | `0x0045F6B0` 100 |  |  |
+| `GetHeadlineTrackIndex(int)` |  |  | `0x00446DB0` 172 |  |  |  |
 
 ## Notes
 

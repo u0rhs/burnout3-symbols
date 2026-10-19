@@ -10,16 +10,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetNext() const` | `0x0019B0E0` 8 |  |  |  |  |
-| `GetData() const` | `0x0019B130` 8 |  |  |  |  |
-| `GetNext()` |  | `0x001CFCA0` 40 | `0x001C92A0` 8 | `0x001DA890` 48 |  |
-| `GetData()` |  | `0x001CFD10` 40 | `0x001C92F0` 8 | `0x001DA6D0` 60 |  |
-| `Verify()` |  | `0x002AB6E0` 292 |  | `0x002E01A0` 216 |  |
-| `_GetLinkFromData(const void*)` |  |  |  | `0x001A3AA0` 76 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetNext() const` | `0x0019B0E0` 8 |  |  |  |  |  |
+| `GetData() const` | `0x0019B130` 8 |  |  |  |  |  |
+| `GetNext()` |  | `0x001CFCA0` 40 | `0x001C92A0` 8 | `0x001DA890` 48 |  |  |
+| `GetData()` |  | `0x001CFD10` 40 | `0x001C92F0` 8 | `0x001DA6D0` 60 |  |  |
+| `Verify()` |  | `0x002AB6E0` 292 |  | `0x002E01A0` 216 |  |  |
+| `_GetLinkFromData(const void*)` |  |  |  | `0x001A3AA0` 76 |  |  |
 
 ## Notes
 

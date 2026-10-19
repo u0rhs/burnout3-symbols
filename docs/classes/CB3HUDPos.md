@@ -7,18 +7,19 @@
 - **Area:** [HUD](../systems/hud.md)
 - **Source file:** `B3HUDPos.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
+- **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440520`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PreparePosObject()` | `0x002EE110` 368 | `0x0033CEA0` 368 | `0x0036E540` 368 | `0x0036D7B0` 764 |  |
-| `Update(float)` | `0x002EE280` 252 | `0x0033D010` 252 | `0x0036E6B0` 252 | `0x0036D630` 380 |  |
-| `Prepare(int,EHUDAlign,int,bool,bool)` | `0x002EE380` 608 | `0x0033D110` 708 | `0x0036E7B0` 716 | `0x0036D210` 1052 |  |
-| `CB3HUDPos()` |  |  |  | `0x00199C00` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PreparePosObject()` | `0x002EE110` 368 | `0x0033CEA0` 368 | `0x0036E540` 368 | `0x0036D7B0` 764 |  |  |
+| `Update(float)` | `0x002EE280` 252 | `0x0033D010` 252 | `0x0036E6B0` 252 | `0x0036D630` 380 |  |  |
+| `Prepare(int,EHUDAlign,int,bool,bool)` | `0x002EE380` 608 | `0x0033D110` 708 | `0x0036E7B0` 716 | `0x0036D210` 1052 | `0x00335AB0` unverified |  |
+| `CB3HUDPos()` |  |  |  | `0x00199C00` 60 |  |  |
 
 ## Notes
 

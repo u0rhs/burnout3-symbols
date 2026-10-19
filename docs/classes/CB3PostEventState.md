@@ -11,13 +11,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PrepareMultiplayerCrashResults(CB3StageLogic*)` | `0x00378970` 392 | `0x003E9760` 528 | `0x00411600` 528 | `0x00427D90` 344 |  |
-| `Action(EGtStateAction,void*,void*,void*)` | `0x00378B00` 1732 | `0x003E9970` 1948 | `0x00411810` 1976 | `0x00427740` 1544 |  |
-| `CB3PostEventState()` |  |  |  | `0x00345060` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PrepareMultiplayerCrashResults(CB3StageLogic*)` | `0x00378970` 392 | `0x003E9760` 528 | `0x00411600` 528 | `0x00427D90` 344 |  |  |
+| `Action(EGtStateAction,void*,void*,void*)` | `0x00378B00` 1732 | `0x003E9970` 1948 | `0x00411810` 1976 | `0x00427740` 1544 |  |  |
+| `CB3PostEventState()` |  |  |  | `0x00345060` 60 |  |  |
 
 ## Notes
 

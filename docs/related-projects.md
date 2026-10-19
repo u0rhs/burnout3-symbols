@@ -18,7 +18,9 @@ Outside projects and resources that use or complement this data, and how each re
 
 | Resource | What | Relevance |
 |---|---|---|
-| [burnout3-pc](https://github.com/danielgomesvieira2000/burnout3-pc) | A static recompilation of the NTSC-U retail release (SLUS-21050) to C++, with a Vulkan renderer and a PC settings menu. Functions are tracked as lifted, reconstructed or verified (differential-tested) | The same executable this data is meant to name. Its `games/burnout3/config/functions.csv` lists 9,277 functions and `games/burnout3/config/names.csv` takes names as `address,name,source`, with only about 127 named: a natural destination for names carried to retail. Its `games/burnout3/docs/FINDINGS.md` analyses the stripped retail binary |
+| [burnout3-pc](https://github.com/danielgomesvieira2000/burnout3-pc) | A static recompilation of the NTSC-U retail release (SLUS-21050) to C++, with a Vulkan renderer and a PC settings menu. Functions are tracked as lifted, reconstructed or verified (differential-tested) | The same executable this data is meant to name. Its `games/burnout3/config/functions.csv` lists 9,277 functions and `games/burnout3/config/names.csv` takes names as `address,name,source`, with only about 127 named: a natural destination for names carried to retail.
+[`prototype-names.csv`](../data/burnout3-retail/prototype-names.csv) has 5,054 of them, 5,015 on its own
+function starts. Its `games/burnout3/docs/FINDINGS.md` analyses the stripped retail binary |
 | [PS2Recomp](https://github.com/ran-j/PS2Recomp) | A general PS2 static recompiler and runtime (MIPS R5900 → C++), with an IOP emulator (GPL) | Tooling for native PS2 ports; takes per-game configuration and symbol names |
 | [splat](https://github.com/ethteck/splat) | Splits a binary for a matching decompilation | Reads a `symbol_addrs.txt`, which this data could produce |
 | [decomp.me](https://decomp.me) | Online matching-decompilation tool | Check its compiler list for MWCC PS2 2.4.1.01, the compiler of all three executables |

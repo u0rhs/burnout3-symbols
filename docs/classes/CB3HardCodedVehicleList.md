@@ -10,18 +10,18 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetTrafficVehicleString(int,bool)` | `0x0039B2E0` 84 | `0x004140B0` 164 | `0x00439DD0` 164 | `0x00452620` 164 |  |
-| `FindTrafficVehicle(unsigned long)` | `0x0039B340` 60 | `0x00414160` 60 | `0x00439E80` 60 | `0x004525B0` 104 |  |
-| `GetRaceVehicleString(int,bool)` | `0x0039B380` 84 | `0x004141A0` 164 | `0x00439EC0` 164 | `0x00452500` 164 |  |
-| `GetRaceVehicleUnlockValue(int)` | `0x0039B3E0` 52 | `0x00414250` 200 | `0x00439F70` 200 | `0x00452470` 144 |  |
-| `GetRaceVehicleUnlockType(int)` | `0x0039B420` 52 | `0x00414320` 200 | `0x0043A040` 200 | `0x004523E0` 144 |  |
-| `GetRaceVehicleSeries(int)` | `0x0039B460` 24 | `0x004143F0` 176 | `0x0043A110` 176 | `0x00452370` 100 |  |
-| `GetRaceVehicleGtID(int)` | `0x0039B480` 60 | `0x004144A0` 168 | `0x0043A1C0` 168 | `0x004522E0` 132 |  |
-| `FindRaceVehicle(unsigned long)` | `0x0039B4C0` 60 | `0x00414550` 60 | `0x0043A270` 60 | `0x00452270` 104 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetTrafficVehicleString(int,bool)` | `0x0039B2E0` 84 | `0x004140B0` 164 | `0x00439DD0` 164 | `0x00452620` 164 |  |  |
+| `FindTrafficVehicle(unsigned long)` | `0x0039B340` 60 | `0x00414160` 60 | `0x00439E80` 60 | `0x004525B0` 104 |  |  |
+| `GetRaceVehicleString(int,bool)` | `0x0039B380` 84 | `0x004141A0` 164 | `0x00439EC0` 164 | `0x00452500` 164 |  |  |
+| `GetRaceVehicleUnlockValue(int)` | `0x0039B3E0` 52 | `0x00414250` 200 | `0x00439F70` 200 | `0x00452470` 144 |  |  |
+| `GetRaceVehicleUnlockType(int)` | `0x0039B420` 52 | `0x00414320` 200 | `0x0043A040` 200 | `0x004523E0` 144 |  |  |
+| `GetRaceVehicleSeries(int)` | `0x0039B460` 24 | `0x004143F0` 176 | `0x0043A110` 176 | `0x00452370` 100 |  |  |
+| `GetRaceVehicleGtID(int)` | `0x0039B480` 60 | `0x004144A0` 168 | `0x0043A1C0` 168 | `0x004522E0` 132 |  |  |
+| `FindRaceVehicle(unsigned long)` | `0x0039B4C0` 60 | `0x00414550` 60 | `0x0043A270` 60 | `0x00452270` 104 |  |  |
 
 ## Notes
 

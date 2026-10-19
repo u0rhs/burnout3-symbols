@@ -11,19 +11,19 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x003A6480` 8 | `0x004204D0` 8 | `0x00446140` 8 | `0x0045F360` 16 |  |
-| `Update()` | `0x003A6490` 1236 | `0x004204E0` 1364 | `0x00446150` 1364 | `0x0045ED80` 1504 |  |
-| `Prepare()` | `0x003A6970` 576 | `0x00420A40` 776 | `0x004466B0` 776 | `0x0045EA40` 740 |  |
-| `Construct()` | `0x003A6BB0` 24 | `0x00420D50` 24 | `0x004469C0` 24 | `0x0045EA00` 56 |  |
-| `CB3InGameSettingsPage()` |  |  |  | `0x003430D0` 60 |  |
-| `EnableRadio(bool)` |  |  |  | `0x0045F430` 76 |  |
-| `SetEffectsVolume(signed char)` |  |  |  | `0x0045F3E0` 80 |  |
-| `SetRadioVolume(signed char)` |  |  |  | `0x0045F370` 108 |  |
-| `SetSpeakerConfig(signed char)` |  |  |  | `0x0045F480` 56 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x003A6480` 8 | `0x004204D0` 8 | `0x00446140` 8 | `0x0045F360` 16 |  |  |
+| `Update()` | `0x003A6490` 1236 | `0x004204E0` 1364 | `0x00446150` 1364 | `0x0045ED80` 1504 |  |  |
+| `Prepare()` | `0x003A6970` 576 | `0x00420A40` 776 | `0x004466B0` 776 | `0x0045EA40` 740 |  |  |
+| `Construct()` | `0x003A6BB0` 24 | `0x00420D50` 24 | `0x004469C0` 24 | `0x0045EA00` 56 |  |  |
+| `CB3InGameSettingsPage()` |  |  |  | `0x003430D0` 60 |  |  |
+| `EnableRadio(bool)` |  |  |  | `0x0045F430` 76 |  |  |
+| `SetEffectsVolume(signed char)` |  |  |  | `0x0045F3E0` 80 |  |  |
+| `SetRadioVolume(signed char)` |  |  |  | `0x0045F370` 108 |  |  |
+| `SetSpeakerConfig(signed char)` |  |  |  | `0x0045F480` 56 |  |  |
 
 ## Notes
 

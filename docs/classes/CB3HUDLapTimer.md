@@ -11,16 +11,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PrepareMedalObjects()` | `0x0034D470` 820 | `0x003B6880` 988 | `0x003E0100` 988 | `0x003EC3D0` 1204 |  |
-| `Update(float)` | `0x0034D7B0` 448 | `0x003B6C60` 600 | `0x003E04E0` 600 | `0x003EC150` 164 |  |
-| `Prepare(int,EHUDAlign,int,bool,bool)` | `0x0034D970` 896 | `0x003B6EC0` 1172 | `0x003E0740` 1180 | `0x003EBDE0` 868 |  |
-| `CB3HUDLapTimer()` |  |  |  | `0x001999B0` 60 |  |
-| `FormatTimeString(unsigned short*,float)` |  |  |  | `0x003EC890` 280 |  |
-| `PrepareLapTimerObjects()` |  |  |  | `0x003EC200` 452 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PrepareMedalObjects()` | `0x0034D470` 820 | `0x003B6880` 988 | `0x003E0100` 988 | `0x003EC3D0` 1204 |  |  |
+| `Update(float)` | `0x0034D7B0` 448 | `0x003B6C60` 600 | `0x003E04E0` 600 | `0x003EC150` 164 |  |  |
+| `Prepare(int,EHUDAlign,int,bool,bool)` | `0x0034D970` 896 | `0x003B6EC0` 1172 | `0x003E0740` 1180 | `0x003EBDE0` 868 |  |  |
+| `CB3HUDLapTimer()` |  |  |  | `0x001999B0` 60 |  |  |
+| `FormatTimeString(unsigned short*,float)` |  |  |  | `0x003EC890` 280 |  |  |
+| `PrepareLapTimerObjects()` |  |  |  | `0x003EC200` 452 |  |  |
 
 ## Notes
 

@@ -7,18 +7,19 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dObjectParagraph.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 5
+- **Retail (SLUS-21050):** 2 of its 5 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `_RenderOutline(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002B7FF0` 620 | `0x002F8ED0` 620 | `0x0032D5A0` 620 | `0x00325260` 664 |  |
-| `_RenderDropShadow(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002B8260` 512 | `0x002F9140` 512 | `0x0032D810` 512 | `0x00325040` 544 |  |
-| `_RenderPlain(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002B8460` 344 | `0x002F9340` 344 | `0x0032DA10` 344 | `0x00324EA0` 408 |  |
-| `_BuildLineOfText(const CGt2dObject::CGt2dObjectSpace&,const unsigned short**,const CGt2dFont*,float,float` | `0x002B85C0` 876 | `0x002F94A0` 1080 | `0x0032DB70` 1080 | `0x00324AA0` 1016 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,float,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,const unsigned short*,c` | `0x002B8930` 476 | `0x002F98E0` 700 | `0x0032DFB0` 700 | `0x00324840` 600 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `_RenderOutline(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002B7FF0` 620 | `0x002F8ED0` 620 | `0x0032D5A0` 620 | `0x00325260` 664 | `0x002F8C50` strong |  |
+| `_RenderDropShadow(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002B8260` 512 | `0x002F9140` 512 | `0x0032D810` 512 | `0x00325040` 544 | `0x002F8ED0` likely |  |
+| `_RenderPlain(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x002B8460` 344 | `0x002F9340` 344 | `0x0032DA10` 344 | `0x00324EA0` 408 |  |  |
+| `_BuildLineOfText(const CGt2dObject::CGt2dObjectSpace&,const unsigned short**,const CGt2dFont*,float,float` | `0x002B85C0` 876 | `0x002F94A0` 1080 | `0x0032DB70` 1080 | `0x00324AA0` 1016 |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,float,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,const unsigned short*,c` | `0x002B8930` 476 | `0x002F98E0` 700 | `0x0032DFB0` 700 | `0x00324840` 600 |  |  |
 
 ## Static data (DNAT_200)
 

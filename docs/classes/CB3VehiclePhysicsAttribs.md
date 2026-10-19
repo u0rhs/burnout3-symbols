@@ -7,20 +7,21 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3VehiclePhysicsAttribs.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 7
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 4 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CopyToPhysics(CB3VehiclePhysics*)` | `0x00212440` 168 | `0x00221090` 168 | `0x00260610` 168 | `0x00263CC0` 304 |  |
-| `Register(unsigned long)` | `0x002124F0` 800 | `0x00221140` 960 | `0x002606C0` 960 | `0x002637D0` 1008 |  |
-| `Destruct()` | `0x00212810` 8 | `0x00221500` 8 | `0x00260A80` 8 | `0x002637C0` 16 |  |
-| `Release()` | `0x00212820` 176 | `0x00221510` 176 | `0x00260A90` 176 | `0x00263790` 40 |  |
-| `Construct()` | `0x002128D0` 80 | `0x002215C0` 80 | `0x00260B40` 80 | `0x002636D0` 188 |  |
-| `GetAttribs()` |  |  |  | `0x00189B60` 28 |  |
-| `Unregister()` |  |  |  | `0x00263BC0` 244 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CopyToPhysics(CB3VehiclePhysics*)` | `0x00212440` 168 | `0x00221090` 168 | `0x00260610` 168 | `0x00263CC0` 304 | `0x00252050` strong |  |
+| `Register(unsigned long)` | `0x002124F0` 800 | `0x00221140` 960 | `0x002606C0` 960 | `0x002637D0` 1008 | `0x00252100` proven |  |
+| `Destruct()` | `0x00212810` 8 | `0x00221500` 8 | `0x00260A80` 8 | `0x002637C0` 16 | `0x00252420` proven |  |
+| `Release()` | `0x00212820` 176 | `0x00221510` 176 | `0x00260A90` 176 | `0x00263790` 40 | `0x00252430` proven |  |
+| `Construct()` | `0x002128D0` 80 | `0x002215C0` 80 | `0x00260B40` 80 | `0x002636D0` 188 | `0x002524E0` proven |  |
+| `GetAttribs()` |  |  |  | `0x00189B60` 28 |  |  |
+| `Unregister()` |  |  |  | `0x00263BC0` 244 |  |  |
 
 ## Notes
 

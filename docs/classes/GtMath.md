@@ -9,47 +9,47 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `IsEffectivelyZero(float,float)` |  | `0x0026C4E0` 140 | `0x002A4940` 140 | `0x00133D10` 132 |  |
-| `ACosDeg(float)` |  |  |  | `0x00153000` 56 |  |
-| `ACosRad(float)` |  |  |  | `0x00153040` 112 |  |
-| `ASinDeg(float)` |  |  |  | `0x00312210` 56 |  |
-| `ASinRad(float)` |  |  |  | `0x001A43C0` 112 |  |
-| `ATan2Deg(float,float)` |  |  |  | `0x001C40C0` 64 |  |
-| `ATan2Rad(float,float)` |  |  |  | `0x001A4380` 56 |  |
-| `ATanDeg(float)` |  |  |  | `0x0032B6C0` 56 |  |
-| `ATanRad(float)` |  |  |  | `0x0032B700` 48 |  |
-| `Abs(float)` |  |  |  | `0x0012EF10` 12 |  |
-| `Abs(int)` |  |  |  | `0x00153780` 32 |  |
-| `Clamp(float,float,float)` |  |  |  | `0x0014ABA0` 32 |  |
-| `Clamp(int,int,int)` |  |  |  | `0x00134A80` 36 |  |
-| `CosDeg(float)` |  |  |  | `0x00266CA0` 56 |  |
-| `CosRad(float)` |  |  |  | `0x00169120` 48 |  |
-| `Floor(float)` |  |  |  | `0x00182990` 48 |  |
-| `Interpolate(float,float,float)` |  |  |  | `0x0014CCF0` 72 |  |
-| `InvSqrt(float)` |  |  |  | `0x001B64F0` 64 |  |
-| `IsEffectivelyEqual(float,float)` |  |  |  | `0x001405E0` 76 |  |
-| `IsEffectivelyEqual(float,float,float)` |  |  |  | `0x00133CA0` 112 |  |
-| `IsEffectivelyZero(float)` |  |  |  | `0x00140630` 40 |  |
-| `IsNaN(float)` |  |  |  | `0x001A62F0` 64 |  |
-| `Max(float,float)` |  |  |  | `0x0014A8F0` 12 |  |
-| `Max(float,float,float)` |  |  |  | `0x0026AE40` 16 |  |
-| `Max(int,int)` |  |  |  | `0x0014F5D0` 16 |  |
-| `Min(float,float)` |  |  |  | `0x0014A900` 12 |  |
-| `Min(int,int)` |  |  |  | `0x0014F5C0` 16 |  |
-| `Min(unsigned int,unsigned int)` |  |  |  | `0x00267670` 60 |  |
-| `Modulo(float,float)` |  |  |  | `0x001CFE90` 124 |  |
-| `Reciprocal(float)` |  |  |  | `0x001DB210` 80 |  |
-| `RoundToNearest(float)` |  |  |  | `0x00220290` 124 |  |
-| `Sign(float)` |  |  |  | `0x00155390` 72 |  |
-| `SinDeg(float)` |  |  |  | `0x00169370` 56 |  |
-| `SinRad(float)` |  |  |  | `0x00169150` 48 |  |
-| `Sqrt(float)` |  |  |  | `0x00176B90` 56 |  |
-| `TanDeg(float)` |  |  |  | `0x00217CB0` 56 |  |
-| `TanRad(float)` |  |  |  | `0x00217CF0` 48 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `IsEffectivelyZero(float,float)` |  | `0x0026C4E0` 140 | `0x002A4940` 140 | `0x00133D10` 132 |  |  |
+| `ACosDeg(float)` |  |  |  | `0x00153000` 56 |  |  |
+| `ACosRad(float)` |  |  |  | `0x00153040` 112 |  |  |
+| `ASinDeg(float)` |  |  |  | `0x00312210` 56 |  |  |
+| `ASinRad(float)` |  |  |  | `0x001A43C0` 112 |  |  |
+| `ATan2Deg(float,float)` |  |  |  | `0x001C40C0` 64 |  |  |
+| `ATan2Rad(float,float)` |  |  |  | `0x001A4380` 56 |  |  |
+| `ATanDeg(float)` |  |  |  | `0x0032B6C0` 56 |  |  |
+| `ATanRad(float)` |  |  |  | `0x0032B700` 48 |  |  |
+| `Abs(float)` |  |  |  | `0x0012EF10` 12 |  |  |
+| `Abs(int)` |  |  |  | `0x00153780` 32 |  |  |
+| `Clamp(float,float,float)` |  |  |  | `0x0014ABA0` 32 |  |  |
+| `Clamp(int,int,int)` |  |  |  | `0x00134A80` 36 |  |  |
+| `CosDeg(float)` |  |  |  | `0x00266CA0` 56 |  |  |
+| `CosRad(float)` |  |  |  | `0x00169120` 48 |  |  |
+| `Floor(float)` |  |  |  | `0x00182990` 48 |  |  |
+| `Interpolate(float,float,float)` |  |  |  | `0x0014CCF0` 72 |  |  |
+| `InvSqrt(float)` |  |  |  | `0x001B64F0` 64 |  |  |
+| `IsEffectivelyEqual(float,float)` |  |  |  | `0x001405E0` 76 |  |  |
+| `IsEffectivelyEqual(float,float,float)` |  |  |  | `0x00133CA0` 112 |  |  |
+| `IsEffectivelyZero(float)` |  |  |  | `0x00140630` 40 |  |  |
+| `IsNaN(float)` |  |  |  | `0x001A62F0` 64 |  |  |
+| `Max(float,float)` |  |  |  | `0x0014A8F0` 12 |  |  |
+| `Max(float,float,float)` |  |  |  | `0x0026AE40` 16 |  |  |
+| `Max(int,int)` |  |  |  | `0x0014F5D0` 16 |  |  |
+| `Min(float,float)` |  |  |  | `0x0014A900` 12 |  |  |
+| `Min(int,int)` |  |  |  | `0x0014F5C0` 16 |  |  |
+| `Min(unsigned int,unsigned int)` |  |  |  | `0x00267670` 60 |  |  |
+| `Modulo(float,float)` |  |  |  | `0x001CFE90` 124 |  |  |
+| `Reciprocal(float)` |  |  |  | `0x001DB210` 80 |  |  |
+| `RoundToNearest(float)` |  |  |  | `0x00220290` 124 |  |  |
+| `Sign(float)` |  |  |  | `0x00155390` 72 |  |  |
+| `SinDeg(float)` |  |  |  | `0x00169370` 56 |  |  |
+| `SinRad(float)` |  |  |  | `0x00169150` 48 |  |  |
+| `Sqrt(float)` |  |  |  | `0x00176B90` 56 |  |  |
+| `TanDeg(float)` |  |  |  | `0x00217CB0` 56 |  |  |
+| `TanRad(float)` |  |  |  | `0x00217CF0` 48 |  |  |
 
 ## Notes
 

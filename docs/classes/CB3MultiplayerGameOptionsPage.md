@@ -11,22 +11,22 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GenerateRandomJunction()` | `0x003D2700` 272 | `0x0048A9C0` 316 |  | `0x00494180` 336 |  |
-| `GenerateRandomTrackInRegion(EB3TrackRegion)` | `0x003D2810` 444 | `0x0048AB00` 488 |  | `0x00493F50` 552 |  |
-| `GenerateRandomTrack()` | `0x003D29D0` 392 | `0x0048ACF0` 400 |  | `0x00493D80` 464 |  |
-| `PrepareRaceMenu()` | `0x003D2B60` 552 | `0x0048AE80` 552 |  | `0x00493940` 536 |  |
-| `Release()` | `0x003D2D90` 8 | `0x0048B0B0` 8 |  | `0x00493930` 16 |  |
-| `UpdateScroll()` | `0x003D2DA0` 1512 | `0x0048B0C0` 1512 |  | `0x00493340` 1512 |  |
-| `UpdateMenu()` | `0x003D3390` 948 | `0x0048B6B0` 980 |  | `0x00492D90` 1452 |  |
-| `Update()` | `0x003D3750` 96 | `0x0048BA90` 96 |  | `0x00492D10` 120 |  |
-| `Prepare(EB3MenuChoicesTwoPlayer)` | `0x003D37B0` 1120 | `0x0048BAF0` 1120 |  | `0x00492940` 972 |  |
-| `CB3MultiplayerGameOptionsPage()` |  |  |  | `0x003423C0` 60 |  |
-| `PrepareCrashMenu()` |  |  |  | `0x00493CC0` 188 |  |
-| `PrepareRoadRageMenu()` |  |  |  | `0x00493B60` 340 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GenerateRandomJunction()` | `0x003D2700` 272 | `0x0048A9C0` 316 |  | `0x00494180` 336 |  |  |
+| `GenerateRandomTrackInRegion(EB3TrackRegion)` | `0x003D2810` 444 | `0x0048AB00` 488 |  | `0x00493F50` 552 |  |  |
+| `GenerateRandomTrack()` | `0x003D29D0` 392 | `0x0048ACF0` 400 |  | `0x00493D80` 464 |  |  |
+| `PrepareRaceMenu()` | `0x003D2B60` 552 | `0x0048AE80` 552 |  | `0x00493940` 536 |  |  |
+| `Release()` | `0x003D2D90` 8 | `0x0048B0B0` 8 |  | `0x00493930` 16 |  |  |
+| `UpdateScroll()` | `0x003D2DA0` 1512 | `0x0048B0C0` 1512 |  | `0x00493340` 1512 |  |  |
+| `UpdateMenu()` | `0x003D3390` 948 | `0x0048B6B0` 980 |  | `0x00492D90` 1452 |  |  |
+| `Update()` | `0x003D3750` 96 | `0x0048BA90` 96 |  | `0x00492D10` 120 |  |  |
+| `Prepare(EB3MenuChoicesTwoPlayer)` | `0x003D37B0` 1120 | `0x0048BAF0` 1120 |  | `0x00492940` 972 |  |  |
+| `CB3MultiplayerGameOptionsPage()` |  |  |  | `0x003423C0` 60 |  |  |
+| `PrepareCrashMenu()` |  |  |  | `0x00493CC0` 188 |  |  |
+| `PrepareRoadRageMenu()` |  |  |  | `0x00493B60` 340 |  |  |
 
 ## Notes
 

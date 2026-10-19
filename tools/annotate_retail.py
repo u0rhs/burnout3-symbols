@@ -1,6 +1,7 @@
-"""Refresh everything that is derived from the retail function names (data/burnout3-retail/function-names.csv):
+"""Refresh everything that is derived from the retail function names (data/burnout3-retail/function-names.csv and
+prototype-names.csv):
 
-  - the nearest_named_function_before column of memory-map.csv and nahelam-mods.csv
+  - the in_function and nearest_named_function_before columns of memory-map.csv and nahelam-mods.csv
   - the "Every mod" table of docs/reference/nahelam-mods.md (between its table markers)
   - the counts on docs/reference/retail-function-names.md (between its count markers)
 
@@ -38,9 +39,47 @@ GROUPS = [
 
 
 def load_names():
+    """Every named retail function start. Proven and strong prototype names (prototype-names.csv) first, then
+    Nahelam's names (function-names.csv), then the likely and unverified prototype names where neither has one
+    and Nahelam doesn't put the same function name at another address.
+    in_function uses only the proven and strong names (with their sizes): a weaker name could put an address
+    in the wrong function."""
     rows = [r for r in csv.DictReader(open(os.path.join(R, 'function-names.csv'))) if r['us_address']]
-    names = sorted((int(r['us_address'], 16), r['name']) for r in rows)
-    return names, rows
+    by = {}
+    weak = {}
+    sized = []
+    p = os.path.join(R, 'prototype-names.csv')
+    if os.path.exists(p):
+        for r in csv.DictReader(open(p)):
+            a = int(r['us_address'], 16)
+            if r['proof'].startswith(('proven', 'strong')):
+                by[a] = r['name']
+                if r['size']:
+                    sized.append((a, a + int(r['size']), r['name']))
+            else:
+                weak[a] = r['name']
+    nahelam_names = set()
+    for r in rows:
+        by.setdefault(int(r['us_address'], 16), r['name'])
+        nahelam_names.add(plain(r['name']))
+    for a, n in weak.items():
+        if plain(n) not in nahelam_names:
+            by.setdefault(a, n)
+    names = sorted(by.items())
+    return names, rows, sorted(sized)
+
+
+def plain(name):
+    """Class and function name without the parameter list (the two lists spell parameters differently)."""
+    return name.split('(')[0].strip()
+
+
+def containing(sized, starts, a):
+    """The named function whose code holds address a (start <= a < start + size), or ''."""
+    i = bisect.bisect_right(starts, a) - 1
+    if i >= 0 and sized[i][0] <= a < sized[i][1]:
+        return sized[i][2]
+    return ''
 
 
 def nearest(names, addrs, a):
@@ -52,15 +91,20 @@ def nearest(names, addrs, a):
     return names[i][1]
 
 
-def annotate(path, names, addrs, code_only):
+def annotate(path, names, addrs, sized, code_only):
     rows = list(csv.DictReader(open(path)))
     fields = list(rows[0].keys())
+    if 'in_function' not in fields:
+        fields.insert(fields.index('nearest_named_function_before'), 'in_function')
+    starts = [s for s, _, _ in sized]
     for r in rows:
         try:
             a = int(r['address'], 16)
         except ValueError:
             a = 0
-        r['nearest_named_function_before'] = nearest(names, addrs, a) if not code_only(r, a) is False else ''
+        code = code_only(r, a) is not False
+        r['in_function'] = containing(sized, starts, a) if code and 0x100000 <= a < CODE_END else ''
+        r['nearest_named_function_before'] = nearest(names, addrs, a) if code else ''
     with open(path, 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=fields)
         w.writeheader()
@@ -91,8 +135,11 @@ def mods_table(rows):
             cave = len(rs) - len(key)
             parts = []
             for r in key[:4]:
-                f = r['nearest_named_function_before']
-                parts.append('`%s`%s' % (r['address'], ' (after `%s`)' % f.split('(')[0] if f else ''))
+                f, inside = r['in_function'], True
+                if not f:
+                    f, inside = r['nearest_named_function_before'], False
+                parts.append('`%s`%s' % (r['address'], (' (in `%s`)' if inside else ' (after `%s`)') % f.split('(')[0]
+                                         if f else ''))
             if len(key) > 4:
                 parts.append('+%d more' % (len(key) - 4))
             if cave:
@@ -106,11 +153,11 @@ def mods_table(rows):
 
 
 def main():
-    names, rows = load_names()
+    names, rows, sized = load_names()
     addrs = [a for a, _ in names]
-    annotate(os.path.join(R, 'memory-map.csv'), names, addrs,
+    annotate(os.path.join(R, 'memory-map.csv'), names, addrs, sized,
              lambda r, a: r['width'] in ('instruction', 'hook', 'code cave') or a < 0x400000)
-    mods = annotate(os.path.join(R, 'nahelam-mods.csv'), names, addrs, lambda r, a: True)
+    mods = annotate(os.path.join(R, 'nahelam-mods.csv'), names, addrs, sized, lambda r, a: True)
     replace_between(os.path.join(ROOT, 'docs', 'reference', 'nahelam-mods.md'),
                     '<!-- mods-table:start -->', '<!-- mods-table:end -->', mods_table(mods))
     c = collections.Counter(r['check'] for r in csv.DictReader(open(os.path.join(R, 'function-names.csv'))))

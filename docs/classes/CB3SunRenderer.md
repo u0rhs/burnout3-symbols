@@ -7,27 +7,28 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3SunRendererPS2.cpp`
 - **Methods per build:** DNAT_200 12, B3DEBUG 12, B3INTERN 12, B3O0PCH 14
+- **Retail (SLUS-21050):** 12 of its 12 DNAT_200 methods found, 9 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `RenderEnvmap()` | `0x0020BB30` 36 | `0x00217BB0` 36 | `0x00257AB0` 36 | `0x0025DD80` 40 |  |
-| `RenderEnvmapBlob()` | `0x0020BB60` 848 | `0x00217BE0` 1076 | `0x00257AE0` 848 | `0x0025D860` 1304 |  |
-| `RenderEnvmapCorona()` | `0x0020BEB0` 764 | `0x00218020` 764 | `0x00257E30` 764 | `0x0025D4C0` 916 |  |
-| `PrepareEnvmapSunCoronaData()` | `0x0020C1B0` 1392 | `0x00218320` 1648 | `0x00258130` 1392 | `0x0025CFA0` 1300 |  |
-| `RenderCorona()` | `0x0020C720` 2168 | `0x00218990` 2224 | `0x002586A0` 2216 | `0x0025C020` 3112 |  |
-| `OcclusionTest()` | `0x0020CFA0` 1540 | `0x00219240` 1592 | `0x00258F50` 1592 | `0x0025B620` 2548 |  |
-| `RenderBlob()` | `0x0020D5B0` 792 | `0x00219880` 792 | `0x00259590` 792 | `0x0025B220` 1016 |  |
-| `SetupCamera(GtMathPs2::CGtV3d,GtMathPs2::CGtV4d,float,float)` | `0x0020D8D0` 592 | `0x00219BA0` 836 | `0x002598B0` 704 | `0x0025AD30` 1088 |  |
-| `Release()` | `0x0020DB20` 44 | `0x00219EF0` 44 | `0x00259B70` 44 | `0x0025ACF0` 52 |  |
-| `Prepare(CGtTexture*,CGtTexture*,CGtTexture*)` | `0x0020DB50` 240 | `0x00219F20` 680 | `0x00259BA0` 680 | `0x0025AB20` 396 |  |
-| `Destruct()` | `0x0020DC40` 12 | `0x0021A1D0` 12 | `0x00259E50` 12 | `0x0025AB10` 16 |  |
-| `Construct()` | `0x0020DC50` 12 | `0x0021A1E0` 12 | `0x00259E60` 12 | `0x0025AB00` 16 |  |
-| `InterpolateCoronaColumn(int,int,int,GtMathPs2::CGtV3d)` |  |  |  | `0x0025CE40` 352 |  |
-| `InterpolateCoronaRow(int,int,int,GtMathPs2::CGtV3d)` |  |  |  | `0x0025CC50` 360 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `RenderEnvmap()` | `0x0020BB30` 36 | `0x00217BB0` 36 | `0x00257AB0` 36 | `0x0025DD80` 40 | `0x0024B360` proven |  |
+| `RenderEnvmapBlob()` | `0x0020BB60` 848 | `0x00217BE0` 1076 | `0x00257AE0` 848 | `0x0025D860` 1304 | `0x0024B390` proven |  |
+| `RenderEnvmapCorona()` | `0x0020BEB0` 764 | `0x00218020` 764 | `0x00257E30` 764 | `0x0025D4C0` 916 | `0x0024B6E0` proven |  |
+| `PrepareEnvmapSunCoronaData()` | `0x0020C1B0` 1392 | `0x00218320` 1648 | `0x00258130` 1392 | `0x0025CFA0` 1300 | `0x0024B9E0` proven |  |
+| `RenderCorona()` | `0x0020C720` 2168 | `0x00218990` 2224 | `0x002586A0` 2216 | `0x0025C020` 3112 | `0x0024BF60` proven |  |
+| `OcclusionTest()` | `0x0020CFA0` 1540 | `0x00219240` 1592 | `0x00258F50` 1592 | `0x0025B620` 2548 | `0x0024C7E0` proven |  |
+| `RenderBlob()` | `0x0020D5B0` 792 | `0x00219880` 792 | `0x00259590` 792 | `0x0025B220` 1016 | `0x0024CDF0` proven |  |
+| `SetupCamera(GtMathPs2::CGtV3d,GtMathPs2::CGtV4d,float,float)` | `0x0020D8D0` 592 | `0x00219BA0` 836 | `0x002598B0` 704 | `0x0025AD30` 1088 | `0x0024D110` proven |  |
+| `Release()` | `0x0020DB20` 44 | `0x00219EF0` 44 | `0x00259B70` 44 | `0x0025ACF0` 52 | `0x0024D360` proven |  |
+| `Prepare(CGtTexture*,CGtTexture*,CGtTexture*)` | `0x0020DB50` 240 | `0x00219F20` 680 | `0x00259BA0` 680 | `0x0025AB20` 396 | `0x0024D390` unverified |  |
+| `Destruct()` | `0x0020DC40` 12 | `0x0021A1D0` 12 | `0x00259E50` 12 | `0x0025AB10` 16 | `0x0024D4A0` strong |  |
+| `Construct()` | `0x0020DC50` 12 | `0x0021A1E0` 12 | `0x00259E60` 12 | `0x0025AB00` 16 | `0x0024D4B0` strong |  |
+| `InterpolateCoronaColumn(int,int,int,GtMathPs2::CGtV3d)` |  |  |  | `0x0025CE40` 352 |  |  |
+| `InterpolateCoronaRow(int,int,int,GtMathPs2::CGtV3d)` |  |  |  | `0x0025CC50` 360 |  |  |
 
 ## Static data (DNAT_200)
 

@@ -11,17 +11,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x0033B1E0` 8 | `0x0039E2E0` 8 | `0x003C84F0` 8 | `0x003D1090` 16 |  |
-| `Update()` | `0x0033B1F0` 4056 | `0x0039E2F0` 4056 | `0x003C8500` 4056 | `0x003CFEE0` 4528 |  |
-| `Prepare()` | `0x0033C1D0` 996 | `0x0039F2D0` 996 | `0x003C94E0` 996 | `0x003CF810` 1080 |  |
-| `CB3CreateAccount2MenuPage()` |  |  |  | `0x003414E0` 60 |  |
-| `IsLeapYear(int)` |  |  |  | `0x003D10A0` 148 |  |
-| `LimitDays()` |  |  |  | `0x003D1140` 428 |  |
-| `LimitMonths()` |  |  |  | `0x003D12F0` 144 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x0033B1E0` 8 | `0x0039E2E0` 8 | `0x003C84F0` 8 | `0x003D1090` 16 |  |  |
+| `Update()` | `0x0033B1F0` 4056 | `0x0039E2F0` 4056 | `0x003C8500` 4056 | `0x003CFEE0` 4528 |  |  |
+| `Prepare()` | `0x0033C1D0` 996 | `0x0039F2D0` 996 | `0x003C94E0` 996 | `0x003CF810` 1080 |  |  |
+| `CB3CreateAccount2MenuPage()` |  |  |  | `0x003414E0` 60 |  |  |
+| `IsLeapYear(int)` |  |  |  | `0x003D10A0` 148 |  |  |
+| `LimitDays()` |  |  |  | `0x003D1140` 428 |  |  |
+| `LimitMonths()` |  |  |  | `0x003D12F0` 144 |  |  |
 
 ## Notes
 

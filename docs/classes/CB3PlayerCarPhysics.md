@@ -7,28 +7,29 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3PlayerCarPhysics.cpp`
 - **Methods per build:** DNAT_200 12, B3DEBUG 12, B3INTERN 12, B3O0PCH 13
+- **Retail (SLUS-21050):** 8 of its 12 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FE10`, 44 bytes = 11 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 9 virtual functions)
 - **Burnout 2 ancestor (by name):** `CPlayerCarPhysics`, size 0x1280, declared in 56 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `DoCrashBreaker()` | `0x00183BB0` 388 | `0x001A9970` 404 | `0x001A5E60` 380 | `0x001BDE10` 432 |  |
-| `ActiveateCrashBreaker()` | `0x00183D40` 32 | `0x001A9B10` 32 | `0x001A5FE0` 32 | `0x001BDDC0` 76 |  |
-| `StopCrashing()` | `0x00183D60` 1292 | `0x001A9B30` 1292 | `0x001A6000` 1292 | `0x001BDCA0` 256 |  |
-| `StartCrashing(int,CB3CrashStartInfo*)` | `0x00184270` 1124 | `0x001AA040` 1124 | `0x001A6510` 1124 | `0x001BD5F0` 80 |  |
-| `SetUpCollisionBools()` | `0x001846E0` 48 | `0x001AA4B0` 112 | `0x001A6980` 112 | `0x001BD560` 88 |  |
-| `GetCrashingDrivingControls()` | `0x00184710` 6340 | `0x001AA520` 8796 | `0x001A69F0` 8208 | `0x001BAD40` 3200 |  |
-| `GetDrivingControls()` | `0x00185FE0` 1524 | `0x001AC780` 2384 | `0x001A8A00` 2056 | `0x001BA2E0` 2560 |  |
-| `Destruct()` | `0x001865F0` 44 | `0x001AD0E0` 44 | `0x001A9220` 44 | `0x001BA2A0` 56 |  |
-| `Release()` | `0x00186620` 44 | `0x001AD110` 44 | `0x001A9250` 44 | `0x001BA260` 56 |  |
-| `Update(float)` | `0x00186650` 116 | `0x001AD140` 1484 | `0x001A9280` 1484 | `0x001BA180` 212 |  |
-| `Prepare(CB3RaceCar*)` | `0x001866D0` 168 | `0x001AD710` 316 | `0x001A9850` 316 | `0x001BA020` 348 |  |
-| `Construct()` | `0x00186780` 68 | `0x001AD850` 68 | `0x001A9990` 68 | `0x001B9FC0` 96 |  |
-| `CB3PlayerCarPhysics()` |  |  |  | `0x001920F0` 92 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `DoCrashBreaker()` | `0x00183BB0` 388 | `0x001A9970` 404 | `0x001A5E60` 380 | `0x001BDE10` 432 | `0x001BAAF0` unverified |  |
+| `ActiveateCrashBreaker()` | `0x00183D40` 32 | `0x001A9B10` 32 | `0x001A5FE0` 32 | `0x001BDDC0` 76 | `0x001BAD00` unverified |  |
+| `StopCrashing()` | `0x00183D60` 1292 | `0x001A9B30` 1292 | `0x001A6000` 1292 | `0x001BDCA0` 256 | `0x001BAD40` strong |  |
+| `StartCrashing(int,CB3CrashStartInfo*)` | `0x00184270` 1124 | `0x001AA040` 1124 | `0x001A6510` 1124 | `0x001BD5F0` 80 |  |  |
+| `SetUpCollisionBools()` | `0x001846E0` 48 | `0x001AA4B0` 112 | `0x001A6980` 112 | `0x001BD560` 88 |  |  |
+| `GetCrashingDrivingControls()` | `0x00184710` 6340 | `0x001AA520` 8796 | `0x001A69F0` 8208 | `0x001BAD40` 3200 |  |  |
+| `GetDrivingControls()` | `0x00185FE0` 1524 | `0x001AC780` 2384 | `0x001A8A00` 2056 | `0x001BA2E0` 2560 | `0x001BD020` unverified |  |
+| `Destruct()` | `0x001865F0` 44 | `0x001AD0E0` 44 | `0x001A9220` 44 | `0x001BA2A0` 56 | `0x001BD640` strong |  |
+| `Release()` | `0x00186620` 44 | `0x001AD110` 44 | `0x001A9250` 44 | `0x001BA260` 56 | `0x001BD670` strong |  |
+| `Update(float)` | `0x00186650` 116 | `0x001AD140` 1484 | `0x001A9280` 1484 | `0x001BA180` 212 |  |  |
+| `Prepare(CB3RaceCar*)` | `0x001866D0` 168 | `0x001AD710` 316 | `0x001A9850` 316 | `0x001BA020` 348 | `0x001BDE50` strong |  |
+| `Construct()` | `0x00186780` 68 | `0x001AD850` 68 | `0x001A9990` 68 | `0x001B9FC0` 96 | `0x001BDF10` strong |  |
+| `CB3PlayerCarPhysics()` |  |  |  | `0x001920F0` 92 |  |  |
 
 ## Burnout 2 layout of `CPlayerCarPhysics`
 

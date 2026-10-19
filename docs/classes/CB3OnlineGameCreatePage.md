@@ -7,19 +7,20 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3OnlineGameCreatePage.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 5
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440440`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x002E2A00` 8 | `0x0032D350` 8 | `0x0035F690` 8 | `0x0035FD90` 16 |  |
-| `Update()` | `0x002E2A10` 772 | `0x0032D360` 772 | `0x0035F6A0` 772 | `0x0035FA90` 760 |  |
-| `Prepare(CB3LobbyCreateGameParams*)` | `0x002E2D20` 484 | `0x0032D670` 484 | `0x0035F9B0` 480 | `0x0035F6B0` 580 |  |
-| `CB3OnlineGameCreatePage()` |  |  |  | `0x00341B30` 60 |  |
-| `HandleError(int)` |  |  |  | `0x0035FA20` 112 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x002E2A00` 8 | `0x0032D350` 8 | `0x0035F690` 8 | `0x0035FD90` 16 | `0x00326FB0` likely |  |
+| `Update()` | `0x002E2A10` 772 | `0x0032D360` 772 | `0x0035F6A0` 772 | `0x0035FA90` 760 | `0x00326FC0` unverified |  |
+| `Prepare(CB3LobbyCreateGameParams*)` | `0x002E2D20` 484 | `0x0032D670` 484 | `0x0035F9B0` 480 | `0x0035F6B0` 580 | `0x00327310` likely |  |
+| `CB3OnlineGameCreatePage()` |  |  |  | `0x00341B30` 60 |  |  |
+| `HandleError(int)` |  |  |  | `0x0035FA20` 112 |  |  |
 
 ## Notes
 

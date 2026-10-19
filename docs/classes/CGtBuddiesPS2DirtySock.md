@@ -7,66 +7,67 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `GtBuddiesPS2DirtySock.cpp`
 - **Methods per build:** DNAT_200 37, B3DEBUG 37, B3INTERN 38, B3O0PCH 41
+- **Retail (SLUS-21050):** 28 of its 37 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `_InviteBuddyCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x00315B30` 64 | `0x0036FA20` 128 | `0x0039E8F0` 128 | `0x0039F570` 148 |  |
-| `BuddyInviteBlock(char*,void (*)(bool, void*),void*)` | `0x00315B70` 76 |  |  |  |  |
-| `BuddyInviteRevoke(char*,void (*)(bool, void*),void*)` | `0x00315BC0` 76 |  |  |  |  |
-| `BuddyInviteReject(char*,void (*)(bool, void*),void*)` | `0x00315C10` 76 |  |  |  |  |
-| `BuddyInviteAccept(char*,void (*)(bool, void*),void*)` | `0x00315C60` 76 |  |  |  |  |
-| `BuddyInvite(char*,void (*)(bool, void*),void*)` | `0x00315CB0` 72 |  |  |  |  |
-| `IsNewMailAvailable()` | `0x00315D00` 132 | `0x0036FC30` 132 | `0x0039EB00` 132 | `0x0039F240` 180 |  |
-| `ConvertHLBError(int)` | `0x00315D90` 348 | `0x0036FCC0` 348 | `0x0039EB90` 348 | `0x0039F090` 428 |  |
-| `IsWannaBeHisBuddy(char*,bool*)` | `0x00315EF0` 84 | `0x0036FE20` 84 | `0x0039ECF0` 84 | `0x0039F010` 128 |  |
-| `IsWannaBeMyBuddy(char*,bool*)` | `0x00315F50` 84 | `0x0036FE80` 84 | `0x0039ED50` 84 | `0x0039EF90` 128 |  |
-| `IsPermanentBuddy(char*,bool*)` | `0x00315FB0` 84 | `0x0036FEE0` 84 | `0x0039EDB0` 84 | `0x0039EF10` 128 |  |
-| `IsTemporaryBuddy(char*,bool*)` | `0x00316010` 84 | `0x0036FF40` 84 | `0x0039EE10` 84 | `0x0039EE90` 128 |  |
-| `GetAndRemoveMail(char*,int,char*,char*)` | `0x00316070` 288 | `0x0036FFA0` 288 | `0x0039EE70` 288 | `0x0039ED40` 336 |  |
-| `_RemoveBuddyCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x00316190` 76 | `0x003700C0` 108 | `0x0039EF90` 108 | `0x0039ECC0` 124 |  |
-| `RemoveIgnoredBuddy(char*,void (*)(bool, void*),void*)` | `0x003161E0` 148 |  |  |  |  |
-| `RemoveTempBuddy(char*,void (*)(bool, void*),void*)` | `0x00316280` 196 |  |  |  |  |
-| `RemoveBuddy(char*,void (*)(bool, void*),void*)` | `0x00316350` 212 |  |  |  |  |
-| `_BanBuddyCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x00316430` 88 | `0x00370380` 116 | `0x0039F250` 116 | `0x0039E9D0` 140 |  |
-| `BanBuddy(char*,void (*)(bool, void*),void*)` | `0x00316490` 72 |  |  |  |  |
-| `_FindBuddyCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x003164E0` 76 | `0x00370450` 108 | `0x0039F320` 108 | `0x0039E8E0` 124 |  |
-| `FindBuddy(char*,void (*)(bool, void*),void*)` | `0x00316530` 72 |  |  |  |  |
-| `SendMail(char*,char*,void (*)(bool, int, void*),void*)` | `0x00316580` 60 |  |  |  |  |
-| `_RosterCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x003165C0` 12 | `0x00370550` 12 | `0x0039F420` 12 | `0x0039E7E0` 40 |  |
-| `_ConnectCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x003165D0` 180 | `0x00370560` 180 | `0x0039F430` 180 | `0x0039E6C0` 284 |  |
-| `_BuddyApiDebugPrint(void*,const char*)` | `0x00316690` 8 | `0x00370780` 8 | `0x0039F650` 8 | `0x0039E4C0` 40 |  |
-| `_MessageCallback(DirtySock::HLBApiRefT*,DirtySock::BuddyApiMsgT*,void*)` | `0x003166A0` 236 | `0x00370790` 368 | `0x0039F660` 368 | `0x0039E380` 320 |  |
-| `IsBuddyIgnored(char*,bool*)` | `0x00316790` 84 | `0x00370900` 84 | `0x0039F7D0` 84 | `0x0039E300` 128 |  |
-| `GetPresenceText(char*,char*)` | `0x003167F0` 252 | `0x00370960` 252 | `0x0039F830` 252 | `0x0039E1C0` 308 |  |
-| `GetPresence(char*,EGtBuddyPresence*)` | `0x003168F0` 176 | `0x00370A60` 176 | `0x0039F930` 176 | `0x0039E0A0` 284 |  |
-| `GetFoundBuddyName(int,char*)` | `0x003169A0` 72 | `0x00370B10` 72 | `0x0039F9E0` 72 | `0x0039E030` 112 |  |
-| `GetBuddyName(int,char*)` | `0x003169F0` 84 | `0x00370B60` 84 | `0x0039FA30` 84 | `0x0039DFB0` 124 |  |
-| `GetNumBuddies()` | `0x00316A50` 8 | `0x00370BC0` 8 | `0x0039FA90` 8 | `0x0039DF80` 44 |  |
-| `SetPresence(EGtBuddyPresence,bool)` | `0x00316A60` 220 | `0x00370BD0` 416 | `0x0039FAA0` 416 | `0x0039DDE0` 416 |  |
-| `Connect(char*,char*)` | `0x00316B40` 184 | `0x00370D70` 184 | `0x0039FC40` 184 | `0x0039DCF0` 236 |  |
-| `Release()` | `0x00316C00` 52 | `0x00370E30` 52 | `0x0039FD00` 52 | `0x0039DC90` 84 |  |
-| `Update()` | `0x00316C40` 40 |  | `0x0039FD40` 40 |  |  |
-| `Prepare(char*,char*,char*)` | `0x00316C70` 236 | `0x00370E70` 268 | `0x0039FD70` 244 | `0x0039DB60` 300 |  |
-| `BuddyInviteBlock(char*,void (*)` |  | `0x0036FAA0` 76 | `0x0039E970` 76 | `0x0039F4F0` 116 |  |
-| `BuddyInviteRevoke(char*,void (*)` |  | `0x0036FAF0` 76 | `0x0039E9C0` 76 | `0x0039F470` 116 |  |
-| `BuddyInviteReject(char*,void (*)` |  | `0x0036FB40` 76 | `0x0039EA10` 76 | `0x0039F3F0` 116 |  |
-| `BuddyInviteAccept(char*,void (*)` |  | `0x0036FB90` 76 | `0x0039EA60` 76 | `0x0039F370` 116 |  |
-| `BuddyInvite(char*,void (*)` |  | `0x0036FBE0` 72 | `0x0039EAB0` 72 | `0x0039F300` 112 |  |
-| `RemoveIgnoredBuddy(char*,void (*)` |  | `0x00370130` 148 | `0x0039F000` 148 | `0x0039EC20` 156 |  |
-| `RemoveTempBuddy(char*,void (*)` |  | `0x003701D0` 196 | `0x0039F0A0` 196 | `0x0039EB20` 248 |  |
-| `RemoveBuddy(char*,void (*)` |  | `0x003702A0` 212 | `0x0039F170` 212 | `0x0039EA60` 188 |  |
-| `BanBuddy(char*,void (*)` |  | `0x00370400` 72 | `0x0039F2D0` 72 | `0x0039E960` 112 |  |
-| `FindBuddy(char*,void (*)` |  | `0x003704C0` 72 | `0x0039F390` 72 | `0x0039E870` 112 |  |
-| `SendMail(char*,char*,void (*)` |  | `0x00370510` 60 | `0x0039F3E0` 60 | `0x0039E810` 84 |  |
-| `AdminMessage(DirtySock::HLBApiRefT*,DirtySock::BuddyApiMsgT*)` |  | `0x00370620` 340 | `0x0039F4F0` 340 | `0x0039E4F0` 444 |  |
-| `ChatMessage(DirtySock::HLBApiRefT*,DirtySock::BuddyApiMsgT*)` |  |  |  | `0x0039E6B0` 16 |  |
-| `GetNumberMailAvailable(char*)` |  |  |  | `0x003A6CB0` 96 |  |
-| `HasSentMailTo(char*)` |  |  |  | `0x003A7BB0` 20 |  |
-| `IsLoggedIn()` |  |  |  | `0x0034A080` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `_InviteBuddyCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x00315B30` 64 | `0x0036FA20` 128 | `0x0039E8F0` 128 | `0x0039F570` 148 | `0x0035F490` strong |  |
+| `BuddyInviteBlock(char*,void (*)(bool, void*),void*)` | `0x00315B70` 76 |  |  |  |  |  |
+| `BuddyInviteRevoke(char*,void (*)(bool, void*),void*)` | `0x00315BC0` 76 |  |  |  |  |  |
+| `BuddyInviteReject(char*,void (*)(bool, void*),void*)` | `0x00315C10` 76 |  |  |  |  |  |
+| `BuddyInviteAccept(char*,void (*)(bool, void*),void*)` | `0x00315C60` 76 |  |  |  |  |  |
+| `BuddyInvite(char*,void (*)(bool, void*),void*)` | `0x00315CB0` 72 |  |  |  |  |  |
+| `IsNewMailAvailable()` | `0x00315D00` 132 | `0x0036FC30` 132 | `0x0039EB00` 132 | `0x0039F240` 180 | `0x0035F700` strong |  |
+| `ConvertHLBError(int)` | `0x00315D90` 348 | `0x0036FCC0` 348 | `0x0039EB90` 348 | `0x0039F090` 428 | `0x0035F790` unverified |  |
+| `IsWannaBeHisBuddy(char*,bool*)` | `0x00315EF0` 84 | `0x0036FE20` 84 | `0x0039ECF0` 84 | `0x0039F010` 128 | `0x0035FA40` strong |  |
+| `IsWannaBeMyBuddy(char*,bool*)` | `0x00315F50` 84 | `0x0036FE80` 84 | `0x0039ED50` 84 | `0x0039EF90` 128 | `0x0035FAA0` strong |  |
+| `IsPermanentBuddy(char*,bool*)` | `0x00315FB0` 84 | `0x0036FEE0` 84 | `0x0039EDB0` 84 | `0x0039EF10` 128 | `0x0035FB00` strong |  |
+| `IsTemporaryBuddy(char*,bool*)` | `0x00316010` 84 | `0x0036FF40` 84 | `0x0039EE10` 84 | `0x0039EE90` 128 | `0x0035FB60` strong |  |
+| `GetAndRemoveMail(char*,int,char*,char*)` | `0x00316070` 288 | `0x0036FFA0` 288 | `0x0039EE70` 288 | `0x0039ED40` 336 | `0x0035FC00` strong |  |
+| `_RemoveBuddyCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x00316190` 76 | `0x003700C0` 108 | `0x0039EF90` 108 | `0x0039ECC0` 124 | `0x0035FD30` proven |  |
+| `RemoveIgnoredBuddy(char*,void (*)(bool, void*),void*)` | `0x003161E0` 148 |  |  |  | `0x0035FD80` strong |  |
+| `RemoveTempBuddy(char*,void (*)(bool, void*),void*)` | `0x00316280` 196 |  |  |  | `0x0035FE20` strong |  |
+| `RemoveBuddy(char*,void (*)(bool, void*),void*)` | `0x00316350` 212 |  |  |  | `0x0035FEF0` strong |  |
+| `_BanBuddyCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x00316430` 88 | `0x00370380` 116 | `0x0039F250` 116 | `0x0039E9D0` 140 | `0x00360070` proven |  |
+| `BanBuddy(char*,void (*)(bool, void*),void*)` | `0x00316490` 72 |  |  |  | `0x003600D0` proven |  |
+| `_FindBuddyCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x003164E0` 76 | `0x00370450` 108 | `0x0039F320` 108 | `0x0039E8E0` 124 | `0x00360120` proven |  |
+| `FindBuddy(char*,void (*)(bool, void*),void*)` | `0x00316530` 72 |  |  |  | `0x00360170` strong |  |
+| `SendMail(char*,char*,void (*)(bool, int, void*),void*)` | `0x00316580` 60 |  |  |  | `0x00360240` likely |  |
+| `_RosterCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x003165C0` 12 | `0x00370550` 12 | `0x0039F420` 12 | `0x0039E7E0` 40 |  |  |
+| `_ConnectCallback(DirtySock::HLBApiRefT*,int,int,void*)` | `0x003165D0` 180 | `0x00370560` 180 | `0x0039F430` 180 | `0x0039E6C0` 284 | `0x003602A0` strong |  |
+| `_BuddyApiDebugPrint(void*,const char*)` | `0x00316690` 8 | `0x00370780` 8 | `0x0039F650` 8 | `0x0039E4C0` 40 |  |  |
+| `_MessageCallback(DirtySock::HLBApiRefT*,DirtySock::BuddyApiMsgT*,void*)` | `0x003166A0` 236 | `0x00370790` 368 | `0x0039F660` 368 | `0x0039E380` 320 | `0x00360370` proven |  |
+| `IsBuddyIgnored(char*,bool*)` | `0x00316790` 84 | `0x00370900` 84 | `0x0039F7D0` 84 | `0x0039E300` 128 | `0x00360460` strong |  |
+| `GetPresenceText(char*,char*)` | `0x003167F0` 252 | `0x00370960` 252 | `0x0039F830` 252 | `0x0039E1C0` 308 | `0x003604C0` unverified |  |
+| `GetPresence(char*,EGtBuddyPresence*)` | `0x003168F0` 176 | `0x00370A60` 176 | `0x0039F930` 176 | `0x0039E0A0` 284 | `0x00360560` strong |  |
+| `GetFoundBuddyName(int,char*)` | `0x003169A0` 72 | `0x00370B10` 72 | `0x0039F9E0` 72 | `0x0039E030` 112 | `0x00360620` strong |  |
+| `GetBuddyName(int,char*)` | `0x003169F0` 84 | `0x00370B60` 84 | `0x0039FA30` 84 | `0x0039DFB0` 124 | `0x00360670` strong |  |
+| `GetNumBuddies()` | `0x00316A50` 8 | `0x00370BC0` 8 | `0x0039FA90` 8 | `0x0039DF80` 44 | `0x003606D0` strong |  |
+| `SetPresence(EGtBuddyPresence,bool)` | `0x00316A60` 220 | `0x00370BD0` 416 | `0x0039FAA0` 416 | `0x0039DDE0` 416 | `0x003606E0` strong |  |
+| `Connect(char*,char*)` | `0x00316B40` 184 | `0x00370D70` 184 | `0x0039FC40` 184 | `0x0039DCF0` 236 | `0x00360800` unverified |  |
+| `Release()` | `0x00316C00` 52 | `0x00370E30` 52 | `0x0039FD00` 52 | `0x0039DC90` 84 | `0x003608F0` unverified |  |
+| `Update()` | `0x00316C40` 40 |  | `0x0039FD40` 40 |  |  |  |
+| `Prepare(char*,char*,char*)` | `0x00316C70` 236 | `0x00370E70` 268 | `0x0039FD70` 244 | `0x0039DB60` 300 |  |  |
+| `BuddyInviteBlock(char*,void (*)` |  | `0x0036FAA0` 76 | `0x0039E970` 76 | `0x0039F4F0` 116 |  |  |
+| `BuddyInviteRevoke(char*,void (*)` |  | `0x0036FAF0` 76 | `0x0039E9C0` 76 | `0x0039F470` 116 |  |  |
+| `BuddyInviteReject(char*,void (*)` |  | `0x0036FB40` 76 | `0x0039EA10` 76 | `0x0039F3F0` 116 |  |  |
+| `BuddyInviteAccept(char*,void (*)` |  | `0x0036FB90` 76 | `0x0039EA60` 76 | `0x0039F370` 116 |  |  |
+| `BuddyInvite(char*,void (*)` |  | `0x0036FBE0` 72 | `0x0039EAB0` 72 | `0x0039F300` 112 |  |  |
+| `RemoveIgnoredBuddy(char*,void (*)` |  | `0x00370130` 148 | `0x0039F000` 148 | `0x0039EC20` 156 |  |  |
+| `RemoveTempBuddy(char*,void (*)` |  | `0x003701D0` 196 | `0x0039F0A0` 196 | `0x0039EB20` 248 |  |  |
+| `RemoveBuddy(char*,void (*)` |  | `0x003702A0` 212 | `0x0039F170` 212 | `0x0039EA60` 188 |  |  |
+| `BanBuddy(char*,void (*)` |  | `0x00370400` 72 | `0x0039F2D0` 72 | `0x0039E960` 112 |  |  |
+| `FindBuddy(char*,void (*)` |  | `0x003704C0` 72 | `0x0039F390` 72 | `0x0039E870` 112 |  |  |
+| `SendMail(char*,char*,void (*)` |  | `0x00370510` 60 | `0x0039F3E0` 60 | `0x0039E810` 84 |  |  |
+| `AdminMessage(DirtySock::HLBApiRefT*,DirtySock::BuddyApiMsgT*)` |  | `0x00370620` 340 | `0x0039F4F0` 340 | `0x0039E4F0` 444 |  |  |
+| `ChatMessage(DirtySock::HLBApiRefT*,DirtySock::BuddyApiMsgT*)` |  |  |  | `0x0039E6B0` 16 |  |  |
+| `GetNumberMailAvailable(char*)` |  |  |  | `0x003A6CB0` 96 |  |  |
+| `HasSentMailTo(char*)` |  |  |  | `0x003A7BB0` 20 |  |  |
+| `IsLoggedIn()` |  |  |  | `0x0034A080` 28 |  |  |
 
 ## Notes
 

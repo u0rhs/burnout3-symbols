@@ -7,78 +7,79 @@
 - **Area:** [AI drivers](../systems/ai.md)
 - **Source file:** `B3AILane.cpp`
 - **Methods per build:** DNAT_200 36, B3DEBUG 38, B3INTERN 37, B3O0PCH 45
+- **Retail (SLUS-21050):** 35 of its 36 DNAT_200 methods found, 25 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by shared methods: `FindClosestAILaneSegment`, `FindClosestDriveableAILaneSegment`, `GetAvgForwardsVector`, `GetAvgLeftwardsVector`, `GetAvgRightwardsVector`, `GetBackwardsVector`, `GetDistFromParam`, `GetDistFromStartOfSegment` …):** `CLane`, size 0x010, declared in 88 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `IncrementSegmentIndexClamped(unsigned short,short) const` | `0x00142A70` 108 |  |  |  |  |
-| `GetLeftFrac(unsigned short,GtMathPs2::CGtV3d,float) const` | `0x00142AE0` 336 |  |  |  |  |
-| `GetFwdFrac(unsigned short,GtMathPs2::CGtV3d) const` | `0x00142C30` 308 |  |  |  |  |
-| `GetSegmentLengthFast(unsigned short) const` | `0x00142D70` 72 |  |  |  |  |
-| `WalkDrivableLanesToFindPosition(unsigned short*,GtMathPs2::CGtV3d)` | `0x00142DC0` 844 | `0x0014F780` 1092 | `0x0014BE80` 1092 | `0x0015B8B0` 576 |  |
-| `WalkLanesToFindPosition(unsigned short*,GtMathPs2::CGtV3d)` | `0x00143110` 524 | `0x0014FBD0` 572 | `0x0014C2D0` 572 | `0x0015B670` 576 |  |
-| `GetTotalLeftFrac(unsigned short,GtMathPs2::CGtV3d) const` | `0x00143320` 264 |  |  |  |  |
-| `GetSidePosition(unsigned short,int,GtMathPs2::CGtV3d*) const` | `0x00143430` 480 |  |  |  |  |
-| `FindHardNoGo(unsigned short*,EAISegmentLinkType)` | `0x00143610` 72 | `0x00150360` 72 | `0x0014CA00` 72 | `0x0015B270` 112 |  |
-| `FindNoGo(unsigned short*,EAISegmentLinkType)` | `0x00143660` 72 | `0x001503B0` 72 | `0x0014CA50` 72 | `0x0015B1B0` 112 |  |
-| `FindNoGo(unsigned short,EAISegmentLinkType,unsigned char*,unsigned short*,bool)` | `0x001436B0` 308 | `0x00150400` 776 | `0x0014CAA0` 776 | `0x0015AE10` 836 |  |
-| `FindSideLane(unsigned short*,EAISegmentLinkType)` | `0x001437F0` 392 | `0x00150710` 128 | `0x0014CDB0` 128 | `0x0015AD60` 168 |  |
-| `FindConnectedDrivableLane(unsigned short*,EAISegmentLinkType)` | `0x00143980` 360 | `0x00150B20` 520 | `0x0014D1C0` 520 | `0x0015AA80` 176 |  |
-| `UpdateDrivableSegmentIndex(unsigned short*,signed char)` | `0x00143AF0` 608 | `0x00150D30` 896 | `0x0014D3D0` 888 | `0x0015A7A0` 380 |  |
-| `UpdateSegmentIndex(unsigned short*,signed char)` | `0x00143D50` 272 | `0x001510B0` 368 | `0x0014D750` 360 | `0x0015A620` 380 |  |
-| `FindClosestAILaneSegment(CB3AILane**,unsigned short*,signed char*,GtMathPs2::CGtV3d,signed char)` | `0x00143E60` 380 | `0x00151220` 852 | `0x0014D8C0` 852 | `0x0015A160` 876 | `void CLane::FindClosestAILaneSegment(CLane **lppResultLane, int *lpnResultSegmentIndex, int *lpnResultSector, RwV3d *lpPosition, int lnCurrentSector)` (same name, different parameters) |
-| `GetSignedForwardDistBetweenParams(float,float)` | `0x00143FE0` 608 | `0x00151580` 608 | `0x0014DC20` 608 | `0x0015A070` 232 | `float CLane::GetSignedForwardDistBetweenParams(float lrParamAlong1, float lrParamAlong2)` |
-| `GetDistFromStartOfSegment(GtMathPs2::CGtV3d,unsigned short) const` | `0x00144240` 344 |  |  |  | `float CLane::GetDistFromStartOfSegment(RwV3d *lpPosition, int lnSegmentIndex) const` (same name, different parameters) |
-| `GetDistanceBetweenSegments(unsigned short,unsigned short) const` | `0x001443A0` 156 |  |  |  | `float CLane::GetDistanceBetweenSegments(int lnStartSegmentIndex, int lnEndSegmentIndex) const` (same name, different parameters) |
-| `SegmentAIsInfrontOfSegmentB(unsigned short,unsigned short) const` | `0x00144440` 132 |  |  |  | `int CLane::SegmentAIsInfrontOfSegmentB(int lnSegmentAIndex, int lnSegmentBIndex) const` (same name, different parameters) |
-| `UpdateCurrentAILaneSegment(CB3AILane**,unsigned short*,signed char*,float*,GtMathPs2::CGtV3d,bool)` | `0x001444D0` 692 | `0x00151C80` 816 | `0x0014E2C0` 816 | `0x00159A30` 464 | `int CLane::UpdateCurrentAILaneSegment(CLane **lppResultLane, int *lpnResultSegmentIndex, int *lpnResultSector, RwV3d *lpPosition)` (same name, different parameters) |
-| `GetWidth(unsigned short) const` | `0x00144790` 156 |  |  |  | `float CLane::GetWidth(int lnSegmentNodeIndex) const` (same name, different parameters) |
-| `GetAvgRightwardsVector(unsigned short,GtMathPs2::CGtV3d*) const` | `0x00144830` 68 |  |  |  | `void CLane::GetAvgRightwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetAvgForwardsVector(unsigned short,GtMathPs2::CGtV3d*) const` | `0x00144880` 392 |  |  |  | `void CLane::GetAvgForwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetAvgLeftwardsVector(unsigned short,GtMathPs2::CGtV3d*) const` | `0x00144A10` 68 |  |  |  | `void CLane::GetAvgLeftwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetRightwardsVector(unsigned short,GtMathPs2::CGtV3d*) const` | `0x00144A60` 108 |  |  |  | `void CLane::GetRightwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetLeftwardsVector(unsigned short,GtMathPs2::CGtV3d*) const` | `0x00144AD0` 108 |  |  |  | `void CLane::GetLeftwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetForwardsVector(unsigned short,GtMathPs2::CGtV3d*) const` | `0x00144B40` 116 |  |  |  | `void CLane::GetForwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetTotalWidth(unsigned short,unsigned short) const` | `0x00144BC0` 748 |  |  |  | `float CLane::GetTotalWidth(int lnSegmentIndex, int lnSegmentNodeIndex) const` (same name, different parameters) |
-| `IsInSegment(GtMathPs2::CGtV3d,unsigned short) const` | `0x00144EB0` 592 |  |  |  |  |
-| `IsInSegment(GtMathPs2::CGtV3d,unsigned short,float) const` | `0x00145100` 900 |  |  |  |  |
-| `FindClosestDriveableAILaneSegment(CB3AILane**,unsigned short*,signed char*,GtMathPs2::CGtV3d,signed char)` | `0x00145490` 404 | `0x00153670` 876 | `0x0014FB30` 876 | `0x00157D70` 904 | `void CLane::FindClosestDriveableAILaneSegment(CLane **lppResultLane, int *lpnResultSegmentIndex, int *lpnResultSector, RwV3d *lpPosition, int lnCurrentSector)` (same name, different parameters) |
-| `LaneIsDriveable(const CB3AILaneStruct*,unsigned short,unsigned short)` | `0x00145630` 116 | `0x001539E0` 260 | `0x0014FEA0` 260 | `0x00157C70` 248 |  |
-| `LaneIsDriveable(unsigned char,unsigned short,unsigned short)` | `0x001456B0` 184 | `0x00153AF0` 424 | `0x0014FFB0` 424 | `0x00157BA0` 204 |  |
-| `LaneIsDriveable(unsigned short,unsigned short)` | `0x00145770` 144 | `0x00153CA0` 276 | `0x00150160` 276 | `0x00157B60` 60 |  |
-| `CalculateForwardDistanceInSegment(GtMathPs2::CGtV3d,unsigned short)` | `0x00145800` 1348 | `0x00153DC0` 2008 | `0x00150280` 1348 | `0x00156F90` 2480 |  |
-| `IncrementSegmentIndexClamped(unsigned short,short)` |  | `0x0014F130` 192 | `0x0014BA40` 184 | `0x0015C130` 224 |  |
-| `GetLeftFrac(unsigned short,GtMathPs2::CGtV3d,float)` |  | `0x0014F1F0` 612 | `0x0014BB00` 488 | `0x0015BF50` 476 |  |
-| `GetFwdFrac(unsigned short,GtMathPs2::CGtV3d)` |  | `0x0014F460` 396 | `0x0014BCF0` 308 | `0x0015BDB0` 412 |  |
-| `GetSegmentLengthFast(unsigned short)` |  | `0x0014F5F0` 72 | `0x0014BE30` 72 | `0x0015BD00` 168 |  |
-| `CalcMidPoint(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x0014F640` 316 |  | `0x0015BAF0` 520 |  |
-| `GetTotalLeftFrac(unsigned short,GtMathPs2::CGtV3d)` |  | `0x0014FE10` 396 | `0x0014C510` 304 | `0x0015B560` 272 |  |
-| `GetSidePosition(unsigned short,int,GtMathPs2::CGtV3d*)` |  | `0x0014FFA0` 948 | `0x0014C640` 948 | `0x0015B2E0` 636 |  |
-| `FindSideLane(unsigned short,EAISegmentLinkType,unsigned char*,unsigned short*)` |  | `0x00150790` 912 | `0x0014CE30` 912 | `0x0015AB30` 560 |  |
-| `GetDistFromStartOfSegment(GtMathPs2::CGtV3d,unsigned short)` |  | `0x001517E0` 628 | `0x0014DE80` 540 | `0x00159EA0` 464 | `float CLane::GetDistFromStartOfSegment(RwV3d *lpPosition, int lnSegmentIndex) const` (same name, different parameters) |
-| `GetDistanceBetweenSegments(unsigned short,unsigned short)` |  | `0x00151A60` 324 | `0x0014E0A0` 324 | `0x00159D20` 376 | `float CLane::GetDistanceBetweenSegments(int lnStartSegmentIndex, int lnEndSegmentIndex) const` (same name, different parameters) |
-| `SegmentAIsInfrontOfSegmentB(unsigned short,unsigned short)` |  | `0x00151BB0` 196 | `0x0014E1F0` 196 | `0x00159C00` 288 | `int CLane::SegmentAIsInfrontOfSegmentB(int lnSegmentAIndex, int lnSegmentBIndex) const` (same name, different parameters) |
-| `GetWidth(unsigned short)` |  | `0x00151FB0` 244 | `0x0014E5F0` 244 | `0x00159910` 276 | `float CLane::GetWidth(int lnSegmentNodeIndex) const` (same name, different parameters) |
-| `GetAvgRightwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x001520B0` 188 | `0x0014E6F0` 188 | `0x00159860` 164 | `void CLane::GetAvgRightwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetAvgForwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x00152170` 528 | `0x0014E7B0` 528 | `0x001592E0` 1408 | `void CLane::GetAvgForwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetAvgLeftwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x00152380` 188 | `0x0014E9C0` 188 | `0x00159230` 164 | `void CLane::GetAvgLeftwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetRightwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x00152440` 256 | `0x0014EA80` 256 | `0x00159100` 300 | `void CLane::GetRightwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetLeftwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x00152540` 256 | `0x0014EB80` 256 | `0x00158FD0` 300 | `void CLane::GetLeftwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetForwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x00152640` 248 | `0x0014EC80` 248 | `0x00158D50` 316 | `void CLane::GetForwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetTotalWidth(unsigned short,unsigned short)` |  | `0x00152740` 1384 | `0x0014ED80` 1384 | `0x00158990` 956 | `float CLane::GetTotalWidth(int lnSegmentIndex, int lnSegmentNodeIndex) const` (same name, different parameters) |
-| `IsInSegment(GtMathPs2::CGtV3d,unsigned short)` |  | `0x00152CB0` 692 | `0x0014F2F0` 692 | `0x00158470` 1300 |  |
-| `IsInSegment(GtMathPs2::CGtV3d,unsigned short,float)` |  | `0x00152F70` 1784 | `0x0014F5B0` 1396 | `0x00158100` 872 |  |
-| `CalculateForwardDistanceInSegmentFast(GtMathPs2::CGtV3d,unsigned short)` |  |  |  | `0x00157940` 540 |  |
-| `FindHardNoGo(unsigned short,EAISegmentLinkType,unsigned char*,unsigned short*)` |  |  |  | `0x0015B220` 76 |  |
-| `FindNoGo(unsigned short,EAISegmentLinkType,unsigned char*,unsigned short*)` |  |  |  | `0x0015B160` 76 |  |
-| `GetBackwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  |  |  | `0x00158E90` 316 | `void CLane::GetBackwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
-| `GetConnectedDrivableLane(unsigned short*,EAISegmentLinkType)` |  |  |  | `0x0015A9F0` 144 |  |
-| `GetConnectedLane(unsigned short*,EAISegmentLinkType)` |  |  |  | `0x0015A920` 208 |  |
-| `GetDistFromParam(float)` |  |  |  | `0x0015A4D0` 332 | `float CLane::GetDistFromParam(float lrParamAlong)` |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `IncrementSegmentIndexClamped(unsigned short,short) const` | `0x00142A70` 108 |  |  |  | `0x00145E70` proven |  |
+| `GetLeftFrac(unsigned short,GtMathPs2::CGtV3d,float) const` | `0x00142AE0` 336 |  |  |  | `0x00145EF0` proven |  |
+| `GetFwdFrac(unsigned short,GtMathPs2::CGtV3d) const` | `0x00142C30` 308 |  |  |  | `0x00146040` proven |  |
+| `GetSegmentLengthFast(unsigned short) const` | `0x00142D70` 72 |  |  |  | `0x00146180` proven |  |
+| `WalkDrivableLanesToFindPosition(unsigned short*,GtMathPs2::CGtV3d)` | `0x00142DC0` 844 | `0x0014F780` 1092 | `0x0014BE80` 1092 | `0x0015B8B0` 576 | `0x001461D0` proven |  |
+| `WalkLanesToFindPosition(unsigned short*,GtMathPs2::CGtV3d)` | `0x00143110` 524 | `0x0014FBD0` 572 | `0x0014C2D0` 572 | `0x0015B670` 576 | `0x00146540` proven |  |
+| `GetTotalLeftFrac(unsigned short,GtMathPs2::CGtV3d) const` | `0x00143320` 264 |  |  |  | `0x00146770` proven |  |
+| `GetSidePosition(unsigned short,int,GtMathPs2::CGtV3d*) const` | `0x00143430` 480 |  |  |  | `0x00146880` strong |  |
+| `FindHardNoGo(unsigned short*,EAISegmentLinkType)` | `0x00143610` 72 | `0x00150360` 72 | `0x0014CA00` 72 | `0x0015B270` 112 |  |  |
+| `FindNoGo(unsigned short*,EAISegmentLinkType)` | `0x00143660` 72 | `0x001503B0` 72 | `0x0014CA50` 72 | `0x0015B1B0` 112 | `0x00146A70` proven |  |
+| `FindNoGo(unsigned short,EAISegmentLinkType,unsigned char*,unsigned short*,bool)` | `0x001436B0` 308 | `0x00150400` 776 | `0x0014CAA0` 776 | `0x0015AE10` 836 | `0x00146AC0` proven |  |
+| `FindSideLane(unsigned short*,EAISegmentLinkType)` | `0x001437F0` 392 | `0x00150710` 128 | `0x0014CDB0` 128 | `0x0015AD60` 168 | `0x00146C20` proven |  |
+| `FindConnectedDrivableLane(unsigned short*,EAISegmentLinkType)` | `0x00143980` 360 | `0x00150B20` 520 | `0x0014D1C0` 520 | `0x0015AA80` 176 | `0x00146DB0` proven |  |
+| `UpdateDrivableSegmentIndex(unsigned short*,signed char)` | `0x00143AF0` 608 | `0x00150D30` 896 | `0x0014D3D0` 888 | `0x0015A7A0` 380 | `0x00146F20` proven |  |
+| `UpdateSegmentIndex(unsigned short*,signed char)` | `0x00143D50` 272 | `0x001510B0` 368 | `0x0014D750` 360 | `0x0015A620` 380 | `0x00147180` proven |  |
+| `FindClosestAILaneSegment(CB3AILane**,unsigned short*,signed char*,GtMathPs2::CGtV3d,signed char)` | `0x00143E60` 380 | `0x00151220` 852 | `0x0014D8C0` 852 | `0x0015A160` 876 | `0x00147290` proven | `void CLane::FindClosestAILaneSegment(CLane **lppResultLane, int *lpnResultSegmentIndex, int *lpnResultSector, RwV3d *lpPosition, int lnCurrentSector)` (same name, different parameters) |
+| `GetSignedForwardDistBetweenParams(float,float)` | `0x00143FE0` 608 | `0x00151580` 608 | `0x0014DC20` 608 | `0x0015A070` 232 | `0x00147410` proven | `float CLane::GetSignedForwardDistBetweenParams(float lrParamAlong1, float lrParamAlong2)` |
+| `GetDistFromStartOfSegment(GtMathPs2::CGtV3d,unsigned short) const` | `0x00144240` 344 |  |  |  | `0x00147670` proven | `float CLane::GetDistFromStartOfSegment(RwV3d *lpPosition, int lnSegmentIndex) const` (same name, different parameters) |
+| `GetDistanceBetweenSegments(unsigned short,unsigned short) const` | `0x001443A0` 156 |  |  |  | `0x00147810` proven | `float CLane::GetDistanceBetweenSegments(int lnStartSegmentIndex, int lnEndSegmentIndex) const` (same name, different parameters) |
+| `SegmentAIsInfrontOfSegmentB(unsigned short,unsigned short) const` | `0x00144440` 132 |  |  |  | `0x001478C0` proven | `int CLane::SegmentAIsInfrontOfSegmentB(int lnSegmentAIndex, int lnSegmentBIndex) const` (same name, different parameters) |
+| `UpdateCurrentAILaneSegment(CB3AILane**,unsigned short*,signed char*,float*,GtMathPs2::CGtV3d,bool)` | `0x001444D0` 692 | `0x00151C80` 816 | `0x0014E2C0` 816 | `0x00159A30` 464 | `0x00147950` proven | `int CLane::UpdateCurrentAILaneSegment(CLane **lppResultLane, int *lpnResultSegmentIndex, int *lpnResultSector, RwV3d *lpPosition)` (same name, different parameters) |
+| `GetWidth(unsigned short) const` | `0x00144790` 156 |  |  |  | `0x00147C10` proven | `float CLane::GetWidth(int lnSegmentNodeIndex) const` (same name, different parameters) |
+| `GetAvgRightwardsVector(unsigned short,GtMathPs2::CGtV3d*) const` | `0x00144830` 68 |  |  |  | `0x00147CB0` proven | `void CLane::GetAvgRightwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetAvgForwardsVector(unsigned short,GtMathPs2::CGtV3d*) const` | `0x00144880` 392 |  |  |  | `0x00147D00` proven | `void CLane::GetAvgForwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetAvgLeftwardsVector(unsigned short,GtMathPs2::CGtV3d*) const` | `0x00144A10` 68 |  |  |  | `0x00147E90` proven | `void CLane::GetAvgLeftwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetRightwardsVector(unsigned short,GtMathPs2::CGtV3d*) const` | `0x00144A60` 108 |  |  |  | `0x00147EE0` proven | `void CLane::GetRightwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetLeftwardsVector(unsigned short,GtMathPs2::CGtV3d*) const` | `0x00144AD0` 108 |  |  |  | `0x00147F50` proven | `void CLane::GetLeftwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetForwardsVector(unsigned short,GtMathPs2::CGtV3d*) const` | `0x00144B40` 116 |  |  |  | `0x00148080` unverified | `void CLane::GetForwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetTotalWidth(unsigned short,unsigned short) const` | `0x00144BC0` 748 |  |  |  | `0x00148140` strong | `float CLane::GetTotalWidth(int lnSegmentIndex, int lnSegmentNodeIndex) const` (same name, different parameters) |
+| `IsInSegment(GtMathPs2::CGtV3d,unsigned short) const` | `0x00144EB0` 592 |  |  |  | `0x00148440` strong |  |
+| `IsInSegment(GtMathPs2::CGtV3d,unsigned short,float) const` | `0x00145100` 900 |  |  |  | `0x00148690` likely |  |
+| `FindClosestDriveableAILaneSegment(CB3AILane**,unsigned short*,signed char*,GtMathPs2::CGtV3d,signed char)` | `0x00145490` 404 | `0x00153670` 876 | `0x0014FB30` 876 | `0x00157D70` 904 | `0x00148A80` strong | `void CLane::FindClosestDriveableAILaneSegment(CLane **lppResultLane, int *lpnResultSegmentIndex, int *lpnResultSector, RwV3d *lpPosition, int lnCurrentSector)` (same name, different parameters) |
+| `LaneIsDriveable(const CB3AILaneStruct*,unsigned short,unsigned short)` | `0x00145630` 116 | `0x001539E0` 260 | `0x0014FEA0` 260 | `0x00157C70` 248 | `0x00148C20` likely |  |
+| `LaneIsDriveable(unsigned char,unsigned short,unsigned short)` | `0x001456B0` 184 | `0x00153AF0` 424 | `0x0014FFB0` 424 | `0x00157BA0` 204 | `0x00148CA0` likely |  |
+| `LaneIsDriveable(unsigned short,unsigned short)` | `0x00145770` 144 | `0x00153CA0` 276 | `0x00150160` 276 | `0x00157B60` 60 | `0x00148D60` likely |  |
+| `CalculateForwardDistanceInSegment(GtMathPs2::CGtV3d,unsigned short)` | `0x00145800` 1348 | `0x00153DC0` 2008 | `0x00150280` 1348 | `0x00156F90` 2480 | `0x00148DF0` unverified |  |
+| `IncrementSegmentIndexClamped(unsigned short,short)` |  | `0x0014F130` 192 | `0x0014BA40` 184 | `0x0015C130` 224 |  |  |
+| `GetLeftFrac(unsigned short,GtMathPs2::CGtV3d,float)` |  | `0x0014F1F0` 612 | `0x0014BB00` 488 | `0x0015BF50` 476 |  |  |
+| `GetFwdFrac(unsigned short,GtMathPs2::CGtV3d)` |  | `0x0014F460` 396 | `0x0014BCF0` 308 | `0x0015BDB0` 412 |  |  |
+| `GetSegmentLengthFast(unsigned short)` |  | `0x0014F5F0` 72 | `0x0014BE30` 72 | `0x0015BD00` 168 |  |  |
+| `CalcMidPoint(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x0014F640` 316 |  | `0x0015BAF0` 520 |  |  |
+| `GetTotalLeftFrac(unsigned short,GtMathPs2::CGtV3d)` |  | `0x0014FE10` 396 | `0x0014C510` 304 | `0x0015B560` 272 |  |  |
+| `GetSidePosition(unsigned short,int,GtMathPs2::CGtV3d*)` |  | `0x0014FFA0` 948 | `0x0014C640` 948 | `0x0015B2E0` 636 |  |  |
+| `FindSideLane(unsigned short,EAISegmentLinkType,unsigned char*,unsigned short*)` |  | `0x00150790` 912 | `0x0014CE30` 912 | `0x0015AB30` 560 |  |  |
+| `GetDistFromStartOfSegment(GtMathPs2::CGtV3d,unsigned short)` |  | `0x001517E0` 628 | `0x0014DE80` 540 | `0x00159EA0` 464 |  | `float CLane::GetDistFromStartOfSegment(RwV3d *lpPosition, int lnSegmentIndex) const` (same name, different parameters) |
+| `GetDistanceBetweenSegments(unsigned short,unsigned short)` |  | `0x00151A60` 324 | `0x0014E0A0` 324 | `0x00159D20` 376 |  | `float CLane::GetDistanceBetweenSegments(int lnStartSegmentIndex, int lnEndSegmentIndex) const` (same name, different parameters) |
+| `SegmentAIsInfrontOfSegmentB(unsigned short,unsigned short)` |  | `0x00151BB0` 196 | `0x0014E1F0` 196 | `0x00159C00` 288 |  | `int CLane::SegmentAIsInfrontOfSegmentB(int lnSegmentAIndex, int lnSegmentBIndex) const` (same name, different parameters) |
+| `GetWidth(unsigned short)` |  | `0x00151FB0` 244 | `0x0014E5F0` 244 | `0x00159910` 276 |  | `float CLane::GetWidth(int lnSegmentNodeIndex) const` (same name, different parameters) |
+| `GetAvgRightwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x001520B0` 188 | `0x0014E6F0` 188 | `0x00159860` 164 |  | `void CLane::GetAvgRightwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetAvgForwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x00152170` 528 | `0x0014E7B0` 528 | `0x001592E0` 1408 |  | `void CLane::GetAvgForwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetAvgLeftwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x00152380` 188 | `0x0014E9C0` 188 | `0x00159230` 164 |  | `void CLane::GetAvgLeftwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetRightwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x00152440` 256 | `0x0014EA80` 256 | `0x00159100` 300 |  | `void CLane::GetRightwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetLeftwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x00152540` 256 | `0x0014EB80` 256 | `0x00158FD0` 300 |  | `void CLane::GetLeftwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetForwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  | `0x00152640` 248 | `0x0014EC80` 248 | `0x00158D50` 316 |  | `void CLane::GetForwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetTotalWidth(unsigned short,unsigned short)` |  | `0x00152740` 1384 | `0x0014ED80` 1384 | `0x00158990` 956 |  | `float CLane::GetTotalWidth(int lnSegmentIndex, int lnSegmentNodeIndex) const` (same name, different parameters) |
+| `IsInSegment(GtMathPs2::CGtV3d,unsigned short)` |  | `0x00152CB0` 692 | `0x0014F2F0` 692 | `0x00158470` 1300 |  |  |
+| `IsInSegment(GtMathPs2::CGtV3d,unsigned short,float)` |  | `0x00152F70` 1784 | `0x0014F5B0` 1396 | `0x00158100` 872 |  |  |
+| `CalculateForwardDistanceInSegmentFast(GtMathPs2::CGtV3d,unsigned short)` |  |  |  | `0x00157940` 540 |  |  |
+| `FindHardNoGo(unsigned short,EAISegmentLinkType,unsigned char*,unsigned short*)` |  |  |  | `0x0015B220` 76 |  |  |
+| `FindNoGo(unsigned short,EAISegmentLinkType,unsigned char*,unsigned short*)` |  |  |  | `0x0015B160` 76 |  |  |
+| `GetBackwardsVector(unsigned short,GtMathPs2::CGtV3d*)` |  |  |  | `0x00158E90` 316 |  | `void CLane::GetBackwardsVector(int lnSegmentNumber, RwV3d *lpResultVector) const` (same name, different parameters) |
+| `GetConnectedDrivableLane(unsigned short*,EAISegmentLinkType)` |  |  |  | `0x0015A9F0` 144 |  |  |
+| `GetConnectedLane(unsigned short*,EAISegmentLinkType)` |  |  |  | `0x0015A920` 208 |  |  |
+| `GetDistFromParam(float)` |  |  |  | `0x0015A4D0` 332 |  | `float CLane::GetDistFromParam(float lrParamAlong)` |
 
 ## Burnout 2 layout of `CLane`
 

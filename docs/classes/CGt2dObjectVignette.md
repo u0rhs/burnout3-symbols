@@ -7,17 +7,18 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dObjectVignette.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 3 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `_RenderVertical(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019D030` 636 | `0x001D23B0` 636 | `0x001CB6A0` 636 | `0x001DC6B0` 1000 |  |
-| `_RenderHorizontal(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019D2B0` 636 | `0x001D2630` 636 | `0x001CB920` 636 | `0x001DC2C0` 1000 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,GtMat` | `0x0019D530` 472 | `0x001D28B0` 668 | `0x001CBBA0` 668 | `0x001DBFD0` 552 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,RwRGBA,RwRGBA,CGt2dObje` |  |  |  | `0x001DBEB0` 284 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `_RenderVertical(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019D030` 636 | `0x001D23B0` 636 | `0x001CB6A0` 636 | `0x001DC6B0` 1000 | `0x001D6E80` proven |  |
+| `_RenderHorizontal(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0019D2B0` 636 | `0x001D2630` 636 | `0x001CB920` 636 | `0x001DC2C0` 1000 | `0x001D7100` proven |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,GtMathPs2::CGtV4d,GtMat` | `0x0019D530` 472 | `0x001D28B0` 668 | `0x001CBBA0` 668 | `0x001DBFD0` 552 | `0x001D7380` proven |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,RwRGBA,RwRGBA,CGt2dObje` |  |  |  | `0x001DBEB0` 284 |  |  |
 
 ## Static data (DNAT_200)
 

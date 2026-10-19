@@ -7,34 +7,35 @@
 - **Area:** [Crashes, takedowns and scoring](../systems/crash-scoring.md)
 - **Source file:** `B3CrashCameraDirector.cpp`
 - **Methods per build:** DNAT_200 11, B3DEBUG 11, B3INTERN 11, B3O0PCH 21
+- **Retail (SLUS-21050):** 8 of its 11 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Destruct()` | `0x0030C430` 8 | `0x00363290` 8 | `0x00392BE0` 8 | `0x003996D0` 16 |  |
-| `Release()` | `0x0030C440` 8 | `0x003632A0` 8 | `0x00392BF0` 8 | `0x003996C0` 16 |  |
-| `GetMostInterestingRigRotate(CB3ClusterRig*,float*,CB3ChildBody*,float,float,float,bool)` | `0x0030C450` 2140 | `0x003632B0` 2452 | `0x00392C00` 2452 | `0x00398EA0` 1280 |  |
-| `GetMostInterestingRigRotate(CB3ClusterRig*,float*,CB3ChildBody*,bool)` | `0x0030CCB0` 156 | `0x00363C50` 156 | `0x003935A0` 156 | `0x00398D40` 312 |  |
-| `FindInterpRig(CB3BehaviourCluster*)` | `0x0030CD50` 1068 | `0x00363CF0` 1068 | `0x00393640` 1068 | `0x00398A00` 464 |  |
-| `UpdateCrash(float)` | `0x0030D180` 1184 | `0x00364120` 1192 | `0x00393A70` 1192 | `0x00398320` 860 |  |
-| `UpdateCrashMode(float)` | `0x0030D620` 1548 | `0x003645D0` 1548 | `0x00393F20` 1548 | `0x00397CF0` 1420 |  |
-| `Update(float)` | `0x0030DC30` 364 | `0x00364BE0` 364 | `0x00394530` 364 | `0x00397C60` 136 |  |
-| `GetRigImpact(CB3ClusterRig*,CB3ChildBody*)` | `0x0030DDA0` 432 | `0x00364D50` 444 | `0x003946A0` 444 | `0x003976D0` 624 |  |
-| `Prepare(bool)` | `0x0030DF50` 32 | `0x00364F10` 32 | `0x00394860` 32 | `0x00397570` 88 |  |
-| `Construct(CB3PlayerCameraManager*)` | `0x0030DF70` 160 | `0x00364F30` 224 | `0x00394880` 224 | `0x00397480` 240 |  |
-| `GetBestFitRigRotate(CB3ClusterRig*)` |  |  |  | `0x00398BD0` 360 |  |
-| `GetRigAftermath(CB3ClusterRig*,CGtSphereTreeSphere*)` |  |  |  | `0x00397A50` 220 |  |
-| `GetRigAftertouch(CB3ClusterRig*,CB3ChildBody*)` |  |  |  | `0x003975D0` 256 |  |
-| `GetRigCrashBreaker(CB3ClusterRig*,CB3ChildBody*)` |  |  |  | `0x00397B30` 296 |  |
-| `GetRigInterest(CB3ClusterRig*,bool)` |  |  |  | `0x003994B0` 460 |  |
-| `GetRigWide(CB3ClusterRig*,CB3ChildBody*)` |  |  |  | `0x00397940` 272 |  |
-| `IsPointInsideVehicle(GtMathPs2::CGtV3d)` |  |  |  | `0x00399430` 116 |  |
-| `IsPointInsideWorld(GtMathPs2::CGtV3d)` |  |  |  | `0x003993A0` 140 |  |
-| `SetupNewRig(CB3ClusterRig*)` |  |  |  | `0x00398960` 152 |  |
-| `UpdateAftermath(float)` |  |  |  | `0x003987F0` 332 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Destruct()` | `0x0030C430` 8 | `0x00363290` 8 | `0x00392BE0` 8 | `0x003996D0` 16 | `0x00354F60` strong |  |
+| `Release()` | `0x0030C440` 8 | `0x003632A0` 8 | `0x00392BF0` 8 | `0x003996C0` 16 |  |  |
+| `GetMostInterestingRigRotate(CB3ClusterRig*,float*,CB3ChildBody*,float,float,float,bool)` | `0x0030C450` 2140 | `0x003632B0` 2452 | `0x00392C00` 2452 | `0x00398EA0` 1280 | `0x003550F0` unverified |  |
+| `GetMostInterestingRigRotate(CB3ClusterRig*,float*,CB3ChildBody*,bool)` | `0x0030CCB0` 156 | `0x00363C50` 156 | `0x003935A0` 156 | `0x00398D40` 312 |  |  |
+| `FindInterpRig(CB3BehaviourCluster*)` | `0x0030CD50` 1068 | `0x00363CF0` 1068 | `0x00393640` 1068 | `0x00398A00` 464 | `0x00355BD0` unverified |  |
+| `UpdateCrash(float)` | `0x0030D180` 1184 | `0x00364120` 1192 | `0x00393A70` 1192 | `0x00398320` 860 | `0x003560F0` unverified |  |
+| `UpdateCrashMode(float)` | `0x0030D620` 1548 | `0x003645D0` 1548 | `0x00393F20` 1548 | `0x00397CF0` 1420 | `0x00356700` unverified |  |
+| `Update(float)` | `0x0030DC30` 364 | `0x00364BE0` 364 | `0x00394530` 364 | `0x00397C60` 136 |  |  |
+| `GetRigImpact(CB3ClusterRig*,CB3ChildBody*)` | `0x0030DDA0` 432 | `0x00364D50` 444 | `0x003946A0` 444 | `0x003976D0` 624 | `0x00357250` unverified |  |
+| `Prepare(bool)` | `0x0030DF50` 32 | `0x00364F10` 32 | `0x00394860` 32 | `0x00397570` 88 | `0x00357520` strong |  |
+| `Construct(CB3PlayerCameraManager*)` | `0x0030DF70` 160 | `0x00364F30` 224 | `0x00394880` 224 | `0x00397480` 240 | `0x00357550` strong |  |
+| `GetBestFitRigRotate(CB3ClusterRig*)` |  |  |  | `0x00398BD0` 360 |  |  |
+| `GetRigAftermath(CB3ClusterRig*,CGtSphereTreeSphere*)` |  |  |  | `0x00397A50` 220 |  |  |
+| `GetRigAftertouch(CB3ClusterRig*,CB3ChildBody*)` |  |  |  | `0x003975D0` 256 |  |  |
+| `GetRigCrashBreaker(CB3ClusterRig*,CB3ChildBody*)` |  |  |  | `0x00397B30` 296 |  |  |
+| `GetRigInterest(CB3ClusterRig*,bool)` |  |  |  | `0x003994B0` 460 |  |  |
+| `GetRigWide(CB3ClusterRig*,CB3ChildBody*)` |  |  |  | `0x00397940` 272 |  |  |
+| `IsPointInsideVehicle(GtMathPs2::CGtV3d)` |  |  |  | `0x00399430` 116 |  |  |
+| `IsPointInsideWorld(GtMathPs2::CGtV3d)` |  |  |  | `0x003993A0` 140 |  |  |
+| `SetupNewRig(CB3ClusterRig*)` |  |  |  | `0x00398960` 152 |  |  |
+| `UpdateAftermath(float)` |  |  |  | `0x003987F0` 332 |  |  |
 
 ## Notes
 

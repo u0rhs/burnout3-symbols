@@ -10,22 +10,22 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PrepareAggDrivingData(bool (*)[6],bool (*)[6],int)` | `0x00173FE0` 380 |  |  |  |  |
-| `IsCrashing() const` | `0x00174160` 16 |  |  |  |  |
-| `Release()` | `0x00174170` 20 |  | `0x0018AC40` 20 |  |  |
-| `RetrieveCrashingTraffic(unsigned char*,GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV` | `0x00174190` 2552 |  | `0x0018AC60` 2880 |  |  |
-| `Retrieve(GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,CNetworkControls*,CUpdateM` | `0x00174B90` 2760 |  | `0x0018B7A0` 4096 |  |  |
-| `EndPrepare(int)` | `0x00175660` 12 |  | `0x0018C7A0` 80 |  |  |
-| `AddCrashingTraffic(unsigned char,const GtMathPs2::CGtMatrix3x4*,const GtMathPs2::CGtV3d*,const GtM` | `0x00175670` 596 |  | `0x0018C7F0` 744 |  |  |
-| `Prepare(const GtMathPs2::CGtMatrix3x4*,const GtMathPs2::CGtV3d*,const GtMathPs2::CGtV3d*,const CNe` | `0x001758D0` 868 |  | `0x0018CAE0` 1444 |  |  |
-| `Construct()` | `0x00175C40` 556 | `0x00190640` 616 | `0x0018D090` 616 | `0x001A4670` 768 |  |
-| `IsCrashing()` |  |  | `0x0018AC30` 16 |  |  |
-| `PrepareAggDrivingByte(EInteractionType,int,bool)` |  |  | `0x0018A900` 276 |  |  |
-| `PrepareAggDrivingData(bool (*)` |  |  | `0x0018AA20` 528 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PrepareAggDrivingData(bool (*)[6],bool (*)[6],int)` | `0x00173FE0` 380 |  |  |  |  |  |
+| `IsCrashing() const` | `0x00174160` 16 |  |  |  |  |  |
+| `Release()` | `0x00174170` 20 |  | `0x0018AC40` 20 |  |  |  |
+| `RetrieveCrashingTraffic(unsigned char*,GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV` | `0x00174190` 2552 |  | `0x0018AC60` 2880 |  |  |  |
+| `Retrieve(GtMathPs2::CGtMatrix3x4*,GtMathPs2::CGtV3d*,GtMathPs2::CGtV3d*,CNetworkControls*,CUpdateM` | `0x00174B90` 2760 |  | `0x0018B7A0` 4096 |  |  |  |
+| `EndPrepare(int)` | `0x00175660` 12 |  | `0x0018C7A0` 80 |  |  |  |
+| `AddCrashingTraffic(unsigned char,const GtMathPs2::CGtMatrix3x4*,const GtMathPs2::CGtV3d*,const GtM` | `0x00175670` 596 |  | `0x0018C7F0` 744 |  |  |  |
+| `Prepare(const GtMathPs2::CGtMatrix3x4*,const GtMathPs2::CGtV3d*,const GtMathPs2::CGtV3d*,const CNe` | `0x001758D0` 868 |  | `0x0018CAE0` 1444 |  |  |  |
+| `Construct()` | `0x00175C40` 556 | `0x00190640` 616 | `0x0018D090` 616 | `0x001A4670` 768 |  |  |
+| `IsCrashing()` |  |  | `0x0018AC30` 16 |  |  |  |
+| `PrepareAggDrivingByte(EInteractionType,int,bool)` |  |  | `0x0018A900` 276 |  |  |  |
+| `PrepareAggDrivingData(bool (*)` |  |  | `0x0018AA20` 528 |  |  |  |
 
 ## Notes
 

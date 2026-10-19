@@ -7,23 +7,24 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `GtSoundUtils.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 10
+- **Retail (SLUS-21050):** 4 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GenerateVariantPath(const char*,const char*,const char*,char*,CGtSoundUtils::ESoundVariantMode)` | `0x00343CF0` 108 | `0x003A7F80` 108 | `0x003D2140` 108 | `0x003DBAB0` 104 |  |
-| `IntToAsciiVariant(unsigned char,char&)` | `0x00343D60` 84 | `0x003A7FF0` 84 | `0x003D21B0` 84 | `0x003DBA00` 168 |  |
-| `AsciiVariantToInt(char,unsigned char&)` | `0x00343DC0` 124 | `0x003A8050` 124 | `0x003D2210` 124 | `0x003DB8D0` 292 |  |
-| `GenerateVariantFromVariant(const char*,char*,CGtSoundUtils::ESoundVariantMode,unsigned char,unsigned char)` | `0x00343E40` 580 | `0x003A80D0` 636 | `0x003D2290` 620 | `0x003DB750` 384 |  |
-| `Construct()` | `0x00344090` 28 | `0x003A8350` 28 | `0x003D2500` 28 | `0x003DB710` 56 |  |
-| `CGtSoundUtils()` |  |  |  | `0x002B1E00` 24 |  |
-| `Clamp(float,float,float)` |  |  |  | `0x002B7290` 120 |  |
-| `Lerp(float,float,float)` |  |  |  | `0x002AB3D0` 64 |  |
-| `LinearLag(float,float,float,float)` |  |  |  | `0x002B7310` 76 |  |
-| `SmoothStep(float,float,float)` |  |  |  | `0x001D6860` 180 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GenerateVariantPath(const char*,const char*,const char*,char*,CGtSoundUtils::ESoundVariantMode)` | `0x00343CF0` 108 | `0x003A7F80` 108 | `0x003D2140` 108 | `0x003DBAB0` 104 | `0x00386E70` proven |  |
+| `IntToAsciiVariant(unsigned char,char&)` | `0x00343D60` 84 | `0x003A7FF0` 84 | `0x003D21B0` 84 | `0x003DBA00` 168 | `0x00386EE0` likely |  |
+| `AsciiVariantToInt(char,unsigned char&)` | `0x00343DC0` 124 | `0x003A8050` 124 | `0x003D2210` 124 | `0x003DB8D0` 292 | `0x00386F40` likely |  |
+| `GenerateVariantFromVariant(const char*,char*,CGtSoundUtils::ESoundVariantMode,unsigned char,unsigned char)` | `0x00343E40` 580 | `0x003A80D0` 636 | `0x003D2290` 620 | `0x003DB750` 384 | `0x00386FD0` unverified |  |
+| `Construct()` | `0x00344090` 28 | `0x003A8350` 28 | `0x003D2500` 28 | `0x003DB710` 56 |  |  |
+| `CGtSoundUtils()` |  |  |  | `0x002B1E00` 24 |  |  |
+| `Clamp(float,float,float)` |  |  |  | `0x002B7290` 120 |  |  |
+| `Lerp(float,float,float)` |  |  |  | `0x002AB3D0` 64 |  |  |
+| `LinearLag(float,float,float,float)` |  |  |  | `0x002B7310` 76 |  |  |
+| `SmoothStep(float,float,float)` |  |  |  | `0x001D6860` 180 |  |  |
 
 ## Static data (DNAT_200)
 

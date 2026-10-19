@@ -14,6 +14,16 @@ Changes to the data and documentation. Newest first.
   is CodeWarrior PS2 3.0 build 38 to 3.0.1 build 103, retail's 3.0.1 build 119 ([builds](builds.md)).
 - Burnout Revenge prototypes described; the July 14, 2005 PS2 build keeps full symbols and debug
   information ([builds](builds.md#burnout-revenge-prototypes-2005-to-2006)).
+- Class pages: a **Retail** column (address and proof level of each method in SLUS-21050) and a retail count;
+  the 2D classes (`CGt2dObject`, its object space, `CGt2dObjectBox`, `CGt2dObjectImage`, `CGt2dScene`,
+  `CGt2dFont`, `CGt2dFontChar`, `CGt2dFrame`, `CB3HUDComponent`) have their Burnout 3 layouts from the retail code
+  in Notes, with Revenge's member names where they agree.
+- Memory map and mods: `in_function` (which function holds each code address) from the proven and strong
+  names; corrections: the race timer store `0x001D3D2C` is in `CGtTimer::NextFrame`; the crash camera list
+  backing (`0x003D70BC` is a jump to a code cave, the width is the `lui` at `0x003D7238` in
+  `CB3HUDCrashCombo::Prepare`); added the menu frame-rate branch `0x001D3F2C` (`CB3Game::SetFrontendFrameRate`).
+- Decompilation guide: compiler build and flags (`-O4 -Cpp_exceptions off`), the masked-match trap, source files
+  staying whole in retail (356 of 361), Burnout 2 matching works for libraries only, Revenge layouts.
 - Added the two July 20, 2004 review builds (US 11.11, PAL 11.14): disc listings, strings, headers and value
   databases (`tools/export_iso.py` reads disc images directly). Neither executable has symbols. Their
   tuning is identical to each other; 34 values changed before retail.

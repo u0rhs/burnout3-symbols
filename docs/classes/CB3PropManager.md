@@ -7,22 +7,23 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `B3PropManager.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 9
+- **Retail (SLUS-21050):** 3 of its 8 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `KillProp(CB3Prop*,bool)` | `0x002780B0` 132 | `0x002AB900` 252 | `0x002E2BA0` 252 | `0x002E1930` 236 |  |
-| `DynamiseProp(CB3Prop*)` | `0x00278140` 80 | `0x002ABA00` 168 | `0x002E2CA0` 168 | `0x002E1880` 164 |  |
-| `Destruct()` | `0x00278190` 8 | `0x002ABAB0` 8 | `0x002E2D50` 8 | `0x002E1870` 16 |  |
-| `Release()` | `0x002781A0` 84 | `0x002ABAC0` 84 | `0x002E2D60` 84 | `0x002E17F0` 116 |  |
-| `Update()` | `0x00278200` 8 | `0x002ABB20` 8 | `0x002E2DC0` 8 | `0x002E17E0` 16 |  |
-| `Prepare()` | `0x00278210` 1356 | `0x002ABB30` 1448 | `0x002E2DD0` 1448 | `0x002E0F90` 2128 |  |
-| `Construct()` | `0x00278760` 36 | `0x002AC0E0` 36 | `0x002E3380` 36 | `0x002E0F30` 84 |  |
-| `Render(signed char,short,signed char*)` | `0x002B8C50` 632 | `0x002FA490` 932 | `0x0032E290` 632 | `0x00325980` 1260 |  |
-| `GetPropType(const CB3Prop*)` |  |  |  | `0x001BE3C0` 56 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `KillProp(CB3Prop*,bool)` | `0x002780B0` 132 | `0x002AB900` 252 | `0x002E2BA0` 252 | `0x002E1930` 236 |  |  |
+| `DynamiseProp(CB3Prop*)` | `0x00278140` 80 | `0x002ABA00` 168 | `0x002E2CA0` 168 | `0x002E1880` 164 |  |  |
+| `Destruct()` | `0x00278190` 8 | `0x002ABAB0` 8 | `0x002E2D50` 8 | `0x002E1870` 16 |  |  |
+| `Release()` | `0x002781A0` 84 | `0x002ABAC0` 84 | `0x002E2D60` 84 | `0x002E17F0` 116 |  |  |
+| `Update()` | `0x00278200` 8 | `0x002ABB20` 8 | `0x002E2DC0` 8 | `0x002E17E0` 16 | `0x002B72F0` strong |  |
+| `Prepare()` | `0x00278210` 1356 | `0x002ABB30` 1448 | `0x002E2DD0` 1448 | `0x002E0F90` 2128 | `0x002B7300` strong |  |
+| `Construct()` | `0x00278760` 36 | `0x002AC0E0` 36 | `0x002E3380` 36 | `0x002E0F30` 84 | `0x002B7870` proven |  |
+| `Render(signed char,short,signed char*)` | `0x002B8C50` 632 | `0x002FA490` 932 | `0x0032E290` 632 | `0x00325980` 1260 |  |  |
+| `GetPropType(const CB3Prop*)` |  |  |  | `0x001BE3C0` 56 |  |  |
 
 ## Notes
 

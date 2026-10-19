@@ -10,22 +10,22 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `IsDisabled()` |  |  |  | `0x003889B0` 28 |  |
-| `IsOptionDisabled(int)` |  |  |  | `0x003F95B0` 112 |  |
-| `SetNoOptionsData(EGlobalStrings,bool,const bool*)` |  |  |  | `0x003881E0` 84 |  |
-| `SetNoOptionsData(const unsigned short*,bool,const bool*)` |  |  |  | `0x00388240` 92 |  |
-| `SetNumberListData(EGlobalStrings,const CB3VOptionsSelectComponentEntryNumberRange*,bool,co` |  |  |  | `0x003CFD10` 92 |  |
-| `SetNumberListData(const unsigned short*,const CB3VOptionsSelectComponentEntryNumberRange*,` |  |  |  | `0x003CFD70` 136 |  |
-| `SetOptionListData(EGlobalStrings,const EGlobalStrings*,unsigned char,bool,const bool*)` |  |  |  | `0x003CFE00` 100 |  |
-| `SetOptionListData(const unsigned short*,const EGlobalStrings*,unsigned char,bool,const boo` |  |  |  | `0x003CFE70` 112 |  |
-| `SetPlainTextData(EGlobalStrings,const unsigned short*,bool,const bool*)` |  |  |  | `0x003882A0` 92 |  |
-| `SetPlainTextData(const unsigned short*,const unsigned short*,bool,const bool*)` |  |  |  | `0x00388300` 108 |  |
-| `SetYesNoData(EGlobalStrings,bool,const bool*)` |  |  |  | `0x003CFC50` 84 |  |
-| `SetYesNoData(const unsigned short*,bool,const bool*)` |  |  |  | `0x003CFCB0` 96 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `IsDisabled()` |  |  |  | `0x003889B0` 28 |  |  |
+| `IsOptionDisabled(int)` |  |  |  | `0x003F95B0` 112 |  |  |
+| `SetNoOptionsData(EGlobalStrings,bool,const bool*)` |  |  |  | `0x003881E0` 84 |  |  |
+| `SetNoOptionsData(const unsigned short*,bool,const bool*)` |  |  |  | `0x00388240` 92 |  |  |
+| `SetNumberListData(EGlobalStrings,const CB3VOptionsSelectComponentEntryNumberRange*,bool,co` |  |  |  | `0x003CFD10` 92 |  |  |
+| `SetNumberListData(const unsigned short*,const CB3VOptionsSelectComponentEntryNumberRange*,` |  |  |  | `0x003CFD70` 136 |  |  |
+| `SetOptionListData(EGlobalStrings,const EGlobalStrings*,unsigned char,bool,const bool*)` |  |  |  | `0x003CFE00` 100 |  |  |
+| `SetOptionListData(const unsigned short*,const EGlobalStrings*,unsigned char,bool,const boo` |  |  |  | `0x003CFE70` 112 |  |  |
+| `SetPlainTextData(EGlobalStrings,const unsigned short*,bool,const bool*)` |  |  |  | `0x003882A0` 92 |  |  |
+| `SetPlainTextData(const unsigned short*,const unsigned short*,bool,const bool*)` |  |  |  | `0x00388300` 108 |  |  |
+| `SetYesNoData(EGlobalStrings,bool,const bool*)` |  |  |  | `0x003CFC50` 84 |  |  |
+| `SetYesNoData(const unsigned short*,bool,const bool*)` |  |  |  | `0x003CFCB0` 96 |  |  |
 
 ## Notes
 

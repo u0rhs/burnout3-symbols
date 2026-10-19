@@ -11,17 +11,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `OnChallengeRestart()` | `0x0036E490` 8 | `0x003DBA00` 8 | `0x00404550` 8 | `0x00417B70` 40 |  |
-| `OnEndOfChallenge()` | `0x0036E4A0` 8 | `0x003DBA10` 8 | `0x00404560` 8 | `0x00417B40` 40 |  |
-| `Destruct()` | `0x0036E4B0` 8 | `0x003DBA20` 8 | `0x00404570` 8 | `0x00417B10` 40 |  |
-| `Release()` | `0x0036E4C0` 8 | `0x003DBA30` 8 | `0x00404580` 8 | `0x00417AE0` 40 |  |
-| `Prepare()` | `0x0036E4D0` 8 | `0x003DBA40` 8 | `0x00404590` 8 | `0x00417AA0` 64 |  |
-| `Construct()` | `0x0036E4E0` 40 | `0x003DBA50` 40 | `0x004045A0` 40 | `0x00417A70` 48 |  |
-| `CB3SingleChallenge()` |  |  |  | `0x0013DD40` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `OnChallengeRestart()` | `0x0036E490` 8 | `0x003DBA00` 8 | `0x00404550` 8 | `0x00417B70` 40 |  |  |
+| `OnEndOfChallenge()` | `0x0036E4A0` 8 | `0x003DBA10` 8 | `0x00404560` 8 | `0x00417B40` 40 |  |  |
+| `Destruct()` | `0x0036E4B0` 8 | `0x003DBA20` 8 | `0x00404570` 8 | `0x00417B10` 40 |  |  |
+| `Release()` | `0x0036E4C0` 8 | `0x003DBA30` 8 | `0x00404580` 8 | `0x00417AE0` 40 |  |  |
+| `Prepare()` | `0x0036E4D0` 8 | `0x003DBA40` 8 | `0x00404590` 8 | `0x00417AA0` 64 |  |  |
+| `Construct()` | `0x0036E4E0` 40 | `0x003DBA50` 40 | `0x004045A0` 40 | `0x00417A70` 48 |  |  |
+| `CB3SingleChallenge()` |  |  |  | `0x0013DD40` 60 |  |  |
 
 ## Notes
 

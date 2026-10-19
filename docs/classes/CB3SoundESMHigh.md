@@ -7,22 +7,23 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundESM.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
+- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440090`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CalculateDoppler(const CB3RaceCar*,float*,float*)` | `0x0024A410` 516 | `0x0027A980` 776 | `0x002B2240` 552 | `0x002AE460` 700 |  |
-| `Start()` | `0x0024A620` 484 | `0x0027AD90` 628 | `0x002B2570` 628 | `0x002ADFB0` 804 |  |
-| `Release()` | `0x0024A810` 464 | `0x0027B010` 340 | `0x002B27F0` 340 | `0x002ADE40` 360 |  |
-| `Update(const CB3RaceCar*,float,float,float)` | `0x0024A9E0` 504 | `0x0027B170` 944 | `0x002B2950` 676 | `0x002ADB30` 696 |  |
-| `Prepare(unsigned long,int)` | `0x0024ABE0` 504 | `0x0027B520` 500 | `0x002B2C00` 500 | `0x002AD8C0` 624 |  |
-| `Construct()` | `0x0024ADE0` 56 | `0x0027B720` 56 | `0x002B2E00` 56 | `0x002AD870` 76 |  |
-| `Stop()` |  | `0x0027AC90` 244 | `0x002B2470` 244 | `0x002AE330` 292 |  |
-| `CB3SoundESMHigh()` |  |  |  | `0x002B1C30` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CalculateDoppler(const CB3RaceCar*,float*,float*)` | `0x0024A410` 516 | `0x0027A980` 776 | `0x002B2240` 552 | `0x002AE460` 700 | `0x00287970` strong |  |
+| `Start()` | `0x0024A620` 484 | `0x0027AD90` 628 | `0x002B2570` 628 | `0x002ADFB0` 804 | `0x00287C40` likely |  |
+| `Release()` | `0x0024A810` 464 | `0x0027B010` 340 | `0x002B27F0` 340 | `0x002ADE40` 360 | `0x00287E20` unverified |  |
+| `Update(const CB3RaceCar*,float,float,float)` | `0x0024A9E0` 504 | `0x0027B170` 944 | `0x002B2950` 676 | `0x002ADB30` 696 | `0x00287F20` unverified |  |
+| `Prepare(unsigned long,int)` | `0x0024ABE0` 504 | `0x0027B520` 500 | `0x002B2C00` 500 | `0x002AD8C0` 624 | `0x002882D0` likely |  |
+| `Construct()` | `0x0024ADE0` 56 | `0x0027B720` 56 | `0x002B2E00` 56 | `0x002AD870` 76 | `0x00288440` strong |  |
+| `Stop()` |  | `0x0027AC90` 244 | `0x002B2470` 244 | `0x002AE330` 292 |  |  |
+| `CB3SoundESMHigh()` |  |  |  | `0x002B1C30` 60 |  |  |
 
 ## Notes
 

@@ -7,46 +7,47 @@
 - **Area:** [Network and online](../systems/network-online.md)
 - **Source file:** `B3OnlineBuddiesMenuPage.cpp`
 - **Methods per build:** DNAT_200 29, B3DEBUG 29, B3INTERN 29, B3O0PCH 32
+- **Retail (SLUS-21050):** 13 of its 29 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004408B0`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `_UsersRoomCallback(bool,char*,char*,int,bool,void*)` | `0x00321380` 412 | `0x0037CCC0` 412 | `0x003AB870` 412 | `0x003B06D0` 480 |  |
-| `_BuddyBlockCallback(bool,void*)` | `0x00321520` 120 | `0x0037CE60` 120 | `0x003ABA10` 120 | `0x003B0630` 160 |  |
-| `_BuddyRejectCallback(bool,void*)` | `0x003215A0` 120 | `0x0037CEE0` 120 | `0x003ABA90` 120 | `0x003B0590` 160 |  |
-| `_BuddyAcceptCallback(bool,void*)` | `0x00321620` 120 | `0x0037CF60` 120 | `0x003ABB10` 120 | `0x003B04F0` 160 |  |
-| `_BuddyRevokeCallback(bool,void*)` | `0x003216A0` 120 | `0x0037CFE0` 120 | `0x003ABB90` 120 | `0x003B0450` 160 |  |
-| `_BanBuddyCallback(bool,void*)` | `0x00321720` 120 | `0x0037D060` 120 | `0x003ABC10` 120 | `0x003B03B0` 160 |  |
-| `_RemoveBuddyCallback(bool,void*)` | `0x003217A0` 152 | `0x0037D0E0` 152 | `0x003ABC90` 152 | `0x003B02F0` 192 |  |
-| `_FindUserCallback(bool,void*)` | `0x00321840` 16 | `0x0037D180` 16 | `0x003ABD30` 16 | `0x003B02B0` 52 |  |
-| `_SentMailCallback(bool,int,void*)` | `0x00321850` 12 | `0x0037D190` 12 | `0x003ABD40` 12 | `0x003B0280` 48 |  |
-| `UpdateBlock()` | `0x00321860` 652 | `0x0037D1A0` 652 | `0x003ABD50` 652 | `0x003B0040` 568 |  |
-| `UpdateReject()` | `0x00321AF0` 652 | `0x0037D430` 652 | `0x003ABFE0` 652 | `0x003AFE00` 568 |  |
-| `UpdateAccept()` | `0x00321D80` 652 | `0x0037D6C0` 652 | `0x003AC270` 652 | `0x003AFBC0` 568 |  |
-| `UpdateRevoke()` | `0x00322010` 652 | `0x0037D950` 652 | `0x003AC500` 652 | `0x003AF980` 568 |  |
-| `UpdateBan()` | `0x003222A0` 652 | `0x0037DBE0` 652 | `0x003AC790` 652 | `0x003AF740` 568 |  |
-| `UpdateRemove()` | `0x00322530` 1644 | `0x0037DE70` 1672 | `0x003ACA20` 1672 | `0x003AF030` 1808 |  |
-| `UpdateSearch()` | `0x00322BA0` 1388 | `0x0037E500` 1388 | `0x003AD0B0` 1388 | `0x003AEB90` 1172 |  |
-| `UpdateSendMail()` | `0x00323110` 836 | `0x0037EA70` 836 | `0x003AD620` 836 | `0x003AE8A0` 740 |  |
-| `HandleInviteeBuddySelection()` | `0x00323460` 344 | `0x0037EDC0` 344 | `0x003AD970` 344 | `0x003AE680` 428 |  |
-| `HandleInvitedBuddySelection()` | `0x003235C0` 288 | `0x0037EF20` 288 | `0x003ADAD0` 288 | `0x003AE510` 364 |  |
-| `HandleNormalBuddySelection()` | `0x003236E0` 296 | `0x0037F040` 296 | `0x003ADBF0` 296 | `0x003AE390` 380 |  |
-| `UpdateBuddyMenu()` | `0x00323810` 692 | `0x0037F170` 692 | `0x003ADD20` 692 | `0x003AE050` 828 |  |
-| `UpdateBuddyList()` | `0x00323AD0` 944 | `0x0037F430` 944 | `0x003ADFE0` 944 | `0x003ADCD0` 892 |  |
-| `UpdateMainMenu()` | `0x00323E80` 716 | `0x0037F7E0` 716 | `0x003AE390` 716 | `0x003AD950` 884 |  |
-| `OnKeyboardShow()` | `0x00324150` 8 | `0x0037FAB0` 8 | `0x003AE660` 8 | `0x003AD940` 16 |  |
-| `OnKeyboardCancel()` | `0x00324160` 332 | `0x0037FAC0` 332 | `0x003AE670` 332 | `0x003AD890` 168 |  |
-| `OnKeyboardDone()` | `0x003242B0` 1588 | `0x0037FC10` 1588 | `0x003AE7C0` 1588 | `0x003AD560` 816 |  |
-| `Release()` | `0x003248F0` 12 | `0x00380250` 12 | `0x003AEE00` 12 | `0x003AD530` 40 |  |
-| `Update()` | `0x00324900` 2256 | `0x00380260` 2444 | `0x003AEE10` 2444 | `0x003ACD10` 1960 |  |
-| `Prepare()` | `0x003251D0` 468 | `0x00380BF0` 468 | `0x003AF7A0` 468 | `0x003ACA90` 588 |  |
-| `CB3OnlineBuddiesMenuPage()` |  |  |  | `0x003418C0` 60 |  |
-| `SetMainMenuState()` |  |  |  | `0x003B08B0` 272 |  |
-| `UpdateJoin()` |  |  |  | `0x003AE830` 112 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `_UsersRoomCallback(bool,char*,char*,int,bool,void*)` | `0x00321380` 412 | `0x0037CCC0` 412 | `0x003AB870` 412 | `0x003B06D0` 480 |  |  |
+| `_BuddyBlockCallback(bool,void*)` | `0x00321520` 120 | `0x0037CE60` 120 | `0x003ABA10` 120 | `0x003B0630` 160 | `0x0036C250` likely |  |
+| `_BuddyRejectCallback(bool,void*)` | `0x003215A0` 120 | `0x0037CEE0` 120 | `0x003ABA90` 120 | `0x003B0590` 160 | `0x0036C2E0` likely |  |
+| `_BuddyAcceptCallback(bool,void*)` | `0x00321620` 120 | `0x0037CF60` 120 | `0x003ABB10` 120 | `0x003B04F0` 160 | `0x0036C500` likely |  |
+| `_BuddyRevokeCallback(bool,void*)` | `0x003216A0` 120 | `0x0037CFE0` 120 | `0x003ABB90` 120 | `0x003B0450` 160 | `0x0036C590` likely |  |
+| `_BanBuddyCallback(bool,void*)` | `0x00321720` 120 | `0x0037D060` 120 | `0x003ABC10` 120 | `0x003B03B0` 160 | `0x0036C620` likely |  |
+| `_RemoveBuddyCallback(bool,void*)` | `0x003217A0` 152 | `0x0037D0E0` 152 | `0x003ABC90` 152 | `0x003B02F0` 192 | `0x0036C6B0` strong |  |
+| `_FindUserCallback(bool,void*)` | `0x00321840` 16 | `0x0037D180` 16 | `0x003ABD30` 16 | `0x003B02B0` 52 |  |  |
+| `_SentMailCallback(bool,int,void*)` | `0x00321850` 12 | `0x0037D190` 12 | `0x003ABD40` 12 | `0x003B0280` 48 |  |  |
+| `UpdateBlock()` | `0x00321860` 652 | `0x0037D1A0` 652 | `0x003ABD50` 652 | `0x003B0040` 568 | `0x0036C860` unverified |  |
+| `UpdateReject()` | `0x00321AF0` 652 | `0x0037D430` 652 | `0x003ABFE0` 652 | `0x003AFE00` 568 | `0x0036CB20` unverified |  |
+| `UpdateAccept()` | `0x00321D80` 652 | `0x0037D6C0` 652 | `0x003AC270` 652 | `0x003AFBC0` 568 | `0x0036CDE0` unverified |  |
+| `UpdateRevoke()` | `0x00322010` 652 | `0x0037D950` 652 | `0x003AC500` 652 | `0x003AF980` 568 | `0x0036D0A0` unverified |  |
+| `UpdateBan()` | `0x003222A0` 652 | `0x0037DBE0` 652 | `0x003AC790` 652 | `0x003AF740` 568 | `0x0036D360` unverified |  |
+| `UpdateRemove()` | `0x00322530` 1644 | `0x0037DE70` 1672 | `0x003ACA20` 1672 | `0x003AF030` 1808 | `0x0036D8F0` unverified |  |
+| `UpdateSearch()` | `0x00322BA0` 1388 | `0x0037E500` 1388 | `0x003AD0B0` 1388 | `0x003AEB90` 1172 | `0x0036E0A0` unverified |  |
+| `UpdateSendMail()` | `0x00323110` 836 | `0x0037EA70` 836 | `0x003AD620` 836 | `0x003AE8A0` 740 |  |  |
+| `HandleInviteeBuddySelection()` | `0x00323460` 344 | `0x0037EDC0` 344 | `0x003AD970` 344 | `0x003AE680` 428 |  |  |
+| `HandleInvitedBuddySelection()` | `0x003235C0` 288 | `0x0037EF20` 288 | `0x003ADAD0` 288 | `0x003AE510` 364 |  |  |
+| `HandleNormalBuddySelection()` | `0x003236E0` 296 | `0x0037F040` 296 | `0x003ADBF0` 296 | `0x003AE390` 380 |  |  |
+| `UpdateBuddyMenu()` | `0x00323810` 692 | `0x0037F170` 692 | `0x003ADD20` 692 | `0x003AE050` 828 |  |  |
+| `UpdateBuddyList()` | `0x00323AD0` 944 | `0x0037F430` 944 | `0x003ADFE0` 944 | `0x003ADCD0` 892 |  |  |
+| `UpdateMainMenu()` | `0x00323E80` 716 | `0x0037F7E0` 716 | `0x003AE390` 716 | `0x003AD950` 884 |  |  |
+| `OnKeyboardShow()` | `0x00324150` 8 | `0x0037FAB0` 8 | `0x003AE660` 8 | `0x003AD940` 16 |  |  |
+| `OnKeyboardCancel()` | `0x00324160` 332 | `0x0037FAC0` 332 | `0x003AE670` 332 | `0x003AD890` 168 |  |  |
+| `OnKeyboardDone()` | `0x003242B0` 1588 | `0x0037FC10` 1588 | `0x003AE7C0` 1588 | `0x003AD560` 816 |  |  |
+| `Release()` | `0x003248F0` 12 | `0x00380250` 12 | `0x003AEE00` 12 | `0x003AD530` 40 |  |  |
+| `Update()` | `0x00324900` 2256 | `0x00380260` 2444 | `0x003AEE10` 2444 | `0x003ACD10` 1960 |  |  |
+| `Prepare()` | `0x003251D0` 468 | `0x00380BF0` 468 | `0x003AF7A0` 468 | `0x003ACA90` 588 |  |  |
+| `CB3OnlineBuddiesMenuPage()` |  |  |  | `0x003418C0` 60 |  |  |
+| `SetMainMenuState()` |  |  |  | `0x003B08B0` 272 |  |  |
+| `UpdateJoin()` |  |  |  | `0x003AE830` 112 |  |  |
 
 ## Notes
 

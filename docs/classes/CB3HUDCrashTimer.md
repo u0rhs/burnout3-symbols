@@ -7,18 +7,19 @@
 - **Area:** [HUD](../systems/hud.md)
 - **Source file:** `B3HUDCrashTimer.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
+- **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00441630`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PrepareCrashTimerObject()` | `0x0036AFA0` 588 | `0x003D7D70` 1136 | `0x004008C0` 1036 | `0x00413210` 984 |  |
-| `Update(float)` | `0x0036B1F0` 8 | `0x003D81E0` 8 | `0x00400CD0` 8 | `0x004131E0` 40 |  |
-| `Prepare(int,EHUDAlign,int,bool)` | `0x0036B200` 180 | `0x003D81F0` 400 | `0x00400CE0` 408 | `0x00413080` 340 |  |
-| `CB3HUDCrashTimer()` |  |  |  | `0x001998F0` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PrepareCrashTimerObject()` | `0x0036AFA0` 588 | `0x003D7D70` 1136 | `0x004008C0` 1036 | `0x00413210` 984 | `0x003B8170` unverified |  |
+| `Update(float)` | `0x0036B1F0` 8 | `0x003D81E0` 8 | `0x00400CD0` 8 | `0x004131E0` 40 |  |  |
+| `Prepare(int,EHUDAlign,int,bool)` | `0x0036B200` 180 | `0x003D81F0` 400 | `0x00400CE0` 408 | `0x00413080` 340 |  |  |
+| `CB3HUDCrashTimer()` |  |  |  | `0x001998F0` 60 |  |  |
 
 ## Notes
 

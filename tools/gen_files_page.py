@@ -45,7 +45,7 @@ SECTIONS = [
          (R + '/prototype-names.csv', '5,054 retail functions named from the June 2004 prototype map, 2,903 proven against the code'),
          (R + '/function-names.csv', '1,146 named functions in the retail executable (851 verified)'),
          (R + '/function-names-check.csv', 'Each of those 1,146 names tested against the code'),
-         (R + '/nahelam-mods.csv', 'Every address Nahelam\'s mods change, with the nearest named function'),
+         (R + '/nahelam-mods.csv', 'Every address Nahelam\'s mods change, with the function it is in (or the nearest named one before it)'),
          (R + '/memory-map.csv', 'Named retail addresses: save profile, race state, tuning, display, controls, code'),
          (R + '/vehicle-ids.csv', 'The 67 vehicles and their IDs'),
          (R + '/event-medals.csv', 'The medal byte of each World Tour event in the save profile'),

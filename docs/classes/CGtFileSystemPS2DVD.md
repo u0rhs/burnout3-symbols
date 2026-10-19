@@ -7,23 +7,24 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `GtFileSystemPS2DVD.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 8
+- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x0043FEB0`, 20 bytes = 5 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 3 virtual functions)
 - **Burnout 2 ancestor (by shared methods: `CmdErrorHandler`, `CmdReadCompleteHandler`, `FileExists`, `GetFileObject`, `GetStatus`):** `CGTFileSystemPS2DVD`, size 0x018, declared in 1 file(s), e.g. `I:/GameShared/GameClasses/FileSystem/ps2/GTFileSystemPS2DVD.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CmdErrorHandler(void*,void*)` | `0x00199360` 92 | `0x001CD780` 92 | `0x001C7070` 92 | `0x001D97B0` 160 | `void CGTFileSystemPS2DVD::CmdErrorHandler(void *pCmdHeader, void *pData)` |
-| `CmdReadCompleteHandler(void*,void*)` | `0x001993C0` 40 | `0x001CD7E0` 40 | `0x001C70D0` 40 | `0x001D9740` 112 | `void CGTFileSystemPS2DVD::CmdReadCompleteHandler(void *pCmdHeader, void *pData)` |
-| `GetStatus()` | `0x001993F0` 8 | `0x001CD810` 8 | `0x001C7100` 8 | `0x001D9720` 28 | `EFileSystemStatus CGTFileSystemPS2DVD::GetStatus()` |
-| `FileExists(const char*)` | `0x00199400` 8 | `0x001CD820` 8 | `0x001C7110` 8 | `0x001D9700` 20 | `int CGTFileSystemPS2DVD::FileExists()` |
-| `GetFileObject(unsigned int)` | `0x00199C90` 24 | `0x001CE170` 24 | `0x001C7A60` 24 | `0x001D89A0` 52 | `CGTFile *CGTFileSystemPS2DVD::GetFileObject(unsigned int nIndex)` |
-| `Init(unsigned int,CGtFilePS2DVD*,CGtFileBufferPS2DVD*,const char*,int,int,int,char*)` | `0x00199CB0` 496 | `0x001CE190` 584 | `0x001C7A80` 584 | `0x001D86F0` 684 | `int CGTFileSystemPS2DVD::Init(unsigned int nMaxOpenFiles, CGTFilePS2DVD *pFileArray, CGTFileBufferPS2DVD *pBufferArray, char *sRWName, GtsConfigTag *lpConfig)` (same name, different parameters) |
-| `CGtFileSystemPS2DVD()` |  |  |  | `0x001DA560` 60 |  |
-| `GetIOPFunctionPointers()` |  |  |  | `0x001DA380` 20 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CmdErrorHandler(void*,void*)` | `0x00199360` 92 | `0x001CD780` 92 | `0x001C7070` 92 | `0x001D97B0` 160 | `0x001D2EE0` unverified | `void CGTFileSystemPS2DVD::CmdErrorHandler(void *pCmdHeader, void *pData)` |
+| `CmdReadCompleteHandler(void*,void*)` | `0x001993C0` 40 | `0x001CD7E0` 40 | `0x001C70D0` 40 | `0x001D9740` 112 | `0x001D2F50` unverified | `void CGTFileSystemPS2DVD::CmdReadCompleteHandler(void *pCmdHeader, void *pData)` |
+| `GetStatus()` | `0x001993F0` 8 | `0x001CD810` 8 | `0x001C7100` 8 | `0x001D9720` 28 | `0x001D2F80` likely | `EFileSystemStatus CGTFileSystemPS2DVD::GetStatus()` |
+| `FileExists(const char*)` | `0x00199400` 8 | `0x001CD820` 8 | `0x001C7110` 8 | `0x001D9700` 20 | `0x001D2F90` likely | `int CGTFileSystemPS2DVD::FileExists()` |
+| `GetFileObject(unsigned int)` | `0x00199C90` 24 | `0x001CE170` 24 | `0x001C7A60` 24 | `0x001D89A0` 52 | `0x001D3830` proven | `CGTFile *CGTFileSystemPS2DVD::GetFileObject(unsigned int nIndex)` |
+| `Init(unsigned int,CGtFilePS2DVD*,CGtFileBufferPS2DVD*,const char*,int,int,int,char*)` | `0x00199CB0` 496 | `0x001CE190` 584 | `0x001C7A80` 584 | `0x001D86F0` 684 | `0x001D3850` proven | `int CGTFileSystemPS2DVD::Init(unsigned int nMaxOpenFiles, CGTFilePS2DVD *pFileArray, CGTFileBufferPS2DVD *pBufferArray, char *sRWName, GtsConfigTag *lpConfig)` (same name, different parameters) |
+| `CGtFileSystemPS2DVD()` |  |  |  | `0x001DA560` 60 |  |  |
+| `GetIOPFunctionPointers()` |  |  |  | `0x001DA380` 20 |  |  |
 
 ## Static data (DNAT_200)
 

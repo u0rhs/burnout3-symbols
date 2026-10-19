@@ -11,24 +11,24 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `PrepareTable()` | `0x002FC9D0` 1220 | `0x00350E70` 1300 | `0x003824D0` 1300 | `0x003837C0` 1944 |  |
-| `PrepareRoadRageStats()` | `0x002FCEA0` 444 | `0x00351390` 648 | `0x003829F0` 648 | `0x00383590` 440 |  |
-| `PrepareBurningLapStats()` | `0x002FD060` 576 | `0x00351620` 864 | `0x00382C80` 868 | `0x003833F0` 416 |  |
-| `PrepareRaceStats()` | `0x002FD2A0` 764 | `0x00351980` 1120 | `0x00382FF0` 1120 | `0x00383170` 636 |  |
-| `PrepareCrashStats()` | `0x002FD5A0` 656 | `0x00351DE0` 812 | `0x00383450` 812 | `0x00382F10` 600 |  |
-| `Release()` | `0x002FD830` 8 | `0x00352110` 8 | `0x00383780` 8 | `0x00382F00` 16 |  |
-| `Update()` | `0x002FD840` 152 | `0x00352120` 256 | `0x00383790` 256 | `0x00382E60` 156 |  |
-| `Prepare(bool)` | `0x002FD8E0` 364 | `0x00352220` 448 | `0x00383890` 448 | `0x00382C60` 512 |  |
-| `CB3RaceFinishedPage()` |  |  |  | `0x00342C70` 156 |  |
-| `FormatRaceResultMedal(unsigned short*,int,char*,EB3ScoreMedalType)` |  |  |  | `0x00384110` 192 |  |
-| `FormatRaceResultNumber(unsigned short*,int,char*,int)` |  |  |  | `0x003840B0` 92 |  |
-| `FormatRaceResultTime(unsigned short*,int,char*,float)` |  |  |  | `0x00383FC0` 228 |  |
-| `FormatRewards(EChallengeMedal,int)` |  |  |  | `0x003841D0` 212 |  |
-| `PrepareLapEliminatorStats()` |  |  |  | `0x00383750` 100 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `PrepareTable()` | `0x002FC9D0` 1220 | `0x00350E70` 1300 | `0x003824D0` 1300 | `0x003837C0` 1944 |  |  |
+| `PrepareRoadRageStats()` | `0x002FCEA0` 444 | `0x00351390` 648 | `0x003829F0` 648 | `0x00383590` 440 |  |  |
+| `PrepareBurningLapStats()` | `0x002FD060` 576 | `0x00351620` 864 | `0x00382C80` 868 | `0x003833F0` 416 |  |  |
+| `PrepareRaceStats()` | `0x002FD2A0` 764 | `0x00351980` 1120 | `0x00382FF0` 1120 | `0x00383170` 636 |  |  |
+| `PrepareCrashStats()` | `0x002FD5A0` 656 | `0x00351DE0` 812 | `0x00383450` 812 | `0x00382F10` 600 |  |  |
+| `Release()` | `0x002FD830` 8 | `0x00352110` 8 | `0x00383780` 8 | `0x00382F00` 16 |  |  |
+| `Update()` | `0x002FD840` 152 | `0x00352120` 256 | `0x00383790` 256 | `0x00382E60` 156 |  |  |
+| `Prepare(bool)` | `0x002FD8E0` 364 | `0x00352220` 448 | `0x00383890` 448 | `0x00382C60` 512 |  |  |
+| `CB3RaceFinishedPage()` |  |  |  | `0x00342C70` 156 |  |  |
+| `FormatRaceResultMedal(unsigned short*,int,char*,EB3ScoreMedalType)` |  |  |  | `0x00384110` 192 |  |  |
+| `FormatRaceResultNumber(unsigned short*,int,char*,int)` |  |  |  | `0x003840B0` 92 |  |  |
+| `FormatRaceResultTime(unsigned short*,int,char*,float)` |  |  |  | `0x00383FC0` 228 |  |  |
+| `FormatRewards(EChallengeMedal,int)` |  |  |  | `0x003841D0` 212 |  |  |
+| `PrepareLapEliminatorStats()` |  |  |  | `0x00383750` 100 |  |  |
 
 ## Static data (DNAT_200)
 

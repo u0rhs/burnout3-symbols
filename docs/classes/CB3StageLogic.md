@@ -7,57 +7,58 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3Game.cpp`
 - **Methods per build:** DNAT_200 42, B3DEBUG 42, B3INTERN 41, B3O0PCH 44
+- **Retail (SLUS-21050):** 14 of its 42 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetAIMode()` | `0x00133660` 8 | `0x0013AC70` 8 | `0x001384B0` 8 | `0x0013F040` 20 |  |
-| `GetCheckpointMarkerFlags()` | `0x00133670` 8 | `0x0013AC80` 8 | `0x001384C0` 8 | `0x0013F060` 20 |  |
-| `GetScoreModeFlags()` | `0x00133680` 8 | `0x0013AC90` 8 | `0x001384D0` 8 | `0x0013F080` 20 |  |
-| `GetResultsPageString()` | `0x00133690` 8 | `0x0013ACA0` 8 | `0x001384E0` 8 | `0x0013F0A0` 20 |  |
-| `OnRaceCarStartNewLap(CB3RaceCar*)` | `0x001336A0` 8 | `0x0013ACB0` 8 | `0x001384F0` 8 | `0x0013F0C0` 16 |  |
-| `OnPlayerCarDeath(CB3PlayerCar*)` | `0x001336B0` 8 | `0x0013ACC0` 24 | `0x00138500` 24 | `0x0013F0D0` 20 |  |
-| `OnNetworkCarDeath(CB3NetworkCar*)` | `0x001336C0` 8 | `0x0013ACE0` 24 | `0x00138520` 24 | `0x0013F0F0` 20 |  |
-| `OnRaceCarFinished(CB3RaceCar*,EB3ScoreFinishState)` | `0x001336D0` 8 | `0x0013AD00` 8 | `0x00138540` 8 | `0x0013F110` 16 |  |
-| `IsCooperative()` | `0x001336E0` 8 | `0x0013AD10` 8 | `0x00138550` 8 | `0x0013F120` 20 |  |
-| `IsCrashBattle()` | `0x001336F0` 8 | `0x0013AD20` 8 | `0x00138560` 8 | `0x0013F140` 20 |  |
-| `UseCrashBattleScoring()` | `0x00133700` 8 | `0x0013AD30` 8 | `0x00138570` 8 | `0x0013F160` 20 |  |
-| `IsRoadRage()` | `0x00133710` 8 | `0x0013AD40` 8 | `0x00138580` 8 | `0x0013F180` 20 |  |
-| `DisplayDollarValuesAboveTraffic()` | `0x00133720` 8 | `0x0013AD50` 8 | `0x00138590` 8 | `0x0013F1A0` 20 |  |
-| `DoAfterTouchNotSlowMo()` | `0x00133730` 8 | `0x0013AD60` 8 | `0x001385A0` 8 | `0x0013F1C0` 20 |  |
-| `SetGameModeStatusMessageDelivered()` | `0x00133740` 8 | `0x0013AD70` 8 | `0x001385B0` 8 | `0x0013F1E0` 16 |  |
-| `SetGameModeStatusMessageArrived(signed char)` | `0x00133750` 8 | `0x0013AD80` 8 | `0x001385C0` 8 | `0x0013F1F0` 16 |  |
-| `LeaveLobby()` | `0x00133760` 8 | `0x0013AD90` 8 | `0x001385D0` 8 | `0x0013F200` 16 |  |
-| `AllowRestartButton()` | `0x00133770` 8 | `0x0013ADA0` 8 | `0x001385E0` 8 | `0x0013F210` 20 |  |
-| `SetFirstResultsPageContinuePressed()` | `0x00133780` 8 | `0x0013ADB0` 8 | `0x001385F0` 8 | `0x0013F230` 16 |  |
-| `SetSecondResultsPageContinuePressed()` | `0x00133790` 8 | `0x0013ADC0` 8 | `0x00138600` 8 | `0x0013F240` 16 |  |
-| `GetTotalScore()` | `0x001337A0` 12 | `0x0013ADD0` 12 | `0x00138610` 12 | `0x0013F250` 20 |  |
-| `IncrementTotalScore(float)` | `0x001337B0` 8 | `0x0013ADE0` 8 | `0x00138620` 8 | `0x0013F270` 16 |  |
-| `AllResultsAreIn()` | `0x001337C0` 8 | `0x0013ADF0` 8 | `0x00138630` 8 | `0x0013F280` 20 |  |
-| `GetNumRoundsPlayed()` | `0x001337D0` 8 | `0x0013AE00` 8 | `0x00138640` 8 | `0x0013F2A0` 20 |  |
-| `IsCrashType()` | `0x001865E0` 8 | `0x001AD0D0` 8 | `0x001A9210` 8 | `0x001BACE0` 20 |  |
-| `IsCrashIntroPlaying()` | `0x001E1910` 8 | `0x001E1470` 8 |  | `0x002270C0` 20 |  |
-| `GetResultsPageType()` | `0x002DB1A0` 8 | `0x00324C00` 8 | `0x00356D90` 8 | `0x003576A0` 20 |  |
-| `IsTurnBased()` | `0x002FBF20` 8 | `0x0034FF80` 8 | `0x003815E0` 8 | `0x003821F0` 20 |  |
-| `IsUsingTakedownCamera(int)` | `0x00346AE0` 8 | `0x003AB5B0` 8 | `0x003D59F0` 8 | `0x003E01C0` 20 |  |
-| `OnCategoryFinish(CB3ScoreCategory*,EScoreCategoryType)` | `0x0034E7C0` 268 | `0x003B85B0` 320 | `0x003E1E30` 320 | `0x003EE6B0` 376 |  |
-| `OnTakedown(CB3RaceCar*,CB3RaceCar*)` | `0x0034E8D0` 248 | `0x003B86F0` 248 | `0x003E1F70` 248 | `0x003EE580` 300 |  |
-| `AssignStartPositionIndex(int)` | `0x0034E9D0` 8 | `0x003B87F0` 8 | `0x003E2070` 8 | `0x003EE560` 24 |  |
-| `OnPostCrashReset(CB3RaceCarPhysics*)` | `0x0034E9E0` 60 | `0x003B8800` 60 | `0x003E2080` 60 | `0x003EE4D0` 144 |  |
-| `OnWorldPrepared()` | `0x0034EA20` 100 | `0x003B8840` 184 | `0x003E20C0` 184 | `0x003EE3E0` 232 |  |
-| `DoRoadRageTooSlowDetection()` | `0x0034EA90` 612 | `0x003B8900` 672 | `0x003E2180` 672 | `0x003EE0F0` 740 |  |
-| `GetGameModeScore(int,const CB3FinishedScore*,int*,int*)` | `0x0034ED00` 16 | `0x003B8BA0` 180 | `0x003E2420` 180 | `0x003EE080` 100 |  |
-| `ResetCarDamage(CB3RaceCar*)` | `0x0034ED10` 56 | `0x003B8C60` 308 | `0x003E24E0` 308 | `0x003EE000` 124 |  |
-| `UpdateCarDamage()` | `0x0034ED50` 760 | `0x003B8DA0` 920 | `0x003E2620` 920 | `0x003EDCB0` 848 |  |
-| `FlapNewBodyPart(CB3RaceCar*)` | `0x0034F050` 260 | `0x003B9140` 420 | `0x003E29C0` 420 | `0x003EDB00` 308 |  |
-| `DamageRaceCar(CB3RaceCar*,CB3RaceCar*,EB3DamageType)` | `0x0034F160` 248 | `0x003B92F0` 520 | `0x003E2B70` 520 | `0x003ED9F0` 260 |  |
-| `CarsBecomeFragileAfterBeingSlammed()` | `0x0034F260` 8 | `0x003B9500` 8 | `0x003E2D80` 8 | `0x003ED8B0` 20 |  |
-| `RequestGameEndMenu()` | `0x0034F270` 496 | `0x003B9510` 592 | `0x003E2D90` 592 | `0x003ED740` 364 |  |
-| `CB3StageLogic()` |  |  |  | `0x0013DE00` 40 |  |
-| `GetDamage(CB3RaceCar*,EB3DamageType)` |  |  |  | `0x003ED8D0` 284 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetAIMode()` | `0x00133660` 8 | `0x0013AC70` 8 | `0x001384B0` 8 | `0x0013F040` 20 | `0x00134340` likely |  |
+| `GetCheckpointMarkerFlags()` | `0x00133670` 8 | `0x0013AC80` 8 | `0x001384C0` 8 | `0x0013F060` 20 | `0x00134350` likely |  |
+| `GetScoreModeFlags()` | `0x00133680` 8 | `0x0013AC90` 8 | `0x001384D0` 8 | `0x0013F080` 20 | `0x00134360` likely |  |
+| `GetResultsPageString()` | `0x00133690` 8 | `0x0013ACA0` 8 | `0x001384E0` 8 | `0x0013F0A0` 20 |  |  |
+| `OnRaceCarStartNewLap(CB3RaceCar*)` | `0x001336A0` 8 | `0x0013ACB0` 8 | `0x001384F0` 8 | `0x0013F0C0` 16 |  |  |
+| `OnPlayerCarDeath(CB3PlayerCar*)` | `0x001336B0` 8 | `0x0013ACC0` 24 | `0x00138500` 24 | `0x0013F0D0` 20 |  |  |
+| `OnNetworkCarDeath(CB3NetworkCar*)` | `0x001336C0` 8 | `0x0013ACE0` 24 | `0x00138520` 24 | `0x0013F0F0` 20 |  |  |
+| `OnRaceCarFinished(CB3RaceCar*,EB3ScoreFinishState)` | `0x001336D0` 8 | `0x0013AD00` 8 | `0x00138540` 8 | `0x0013F110` 16 |  |  |
+| `IsCooperative()` | `0x001336E0` 8 | `0x0013AD10` 8 | `0x00138550` 8 | `0x0013F120` 20 |  |  |
+| `IsCrashBattle()` | `0x001336F0` 8 | `0x0013AD20` 8 | `0x00138560` 8 | `0x0013F140` 20 |  |  |
+| `UseCrashBattleScoring()` | `0x00133700` 8 | `0x0013AD30` 8 | `0x00138570` 8 | `0x0013F160` 20 |  |  |
+| `IsRoadRage()` | `0x00133710` 8 | `0x0013AD40` 8 | `0x00138580` 8 | `0x0013F180` 20 |  |  |
+| `DisplayDollarValuesAboveTraffic()` | `0x00133720` 8 | `0x0013AD50` 8 | `0x00138590` 8 | `0x0013F1A0` 20 |  |  |
+| `DoAfterTouchNotSlowMo()` | `0x00133730` 8 | `0x0013AD60` 8 | `0x001385A0` 8 | `0x0013F1C0` 20 |  |  |
+| `SetGameModeStatusMessageDelivered()` | `0x00133740` 8 | `0x0013AD70` 8 | `0x001385B0` 8 | `0x0013F1E0` 16 |  |  |
+| `SetGameModeStatusMessageArrived(signed char)` | `0x00133750` 8 | `0x0013AD80` 8 | `0x001385C0` 8 | `0x0013F1F0` 16 |  |  |
+| `LeaveLobby()` | `0x00133760` 8 | `0x0013AD90` 8 | `0x001385D0` 8 | `0x0013F200` 16 |  |  |
+| `AllowRestartButton()` | `0x00133770` 8 | `0x0013ADA0` 8 | `0x001385E0` 8 | `0x0013F210` 20 |  |  |
+| `SetFirstResultsPageContinuePressed()` | `0x00133780` 8 | `0x0013ADB0` 8 | `0x001385F0` 8 | `0x0013F230` 16 | `0x001343B0` likely |  |
+| `SetSecondResultsPageContinuePressed()` | `0x00133790` 8 | `0x0013ADC0` 8 | `0x00138600` 8 | `0x0013F240` 16 | `0x001343C0` likely |  |
+| `GetTotalScore()` | `0x001337A0` 12 | `0x0013ADD0` 12 | `0x00138610` 12 | `0x0013F250` 20 | `0x001343E0` likely |  |
+| `IncrementTotalScore(float)` | `0x001337B0` 8 | `0x0013ADE0` 8 | `0x00138620` 8 | `0x0013F270` 16 | `0x001344A0` likely |  |
+| `AllResultsAreIn()` | `0x001337C0` 8 | `0x0013ADF0` 8 | `0x00138630` 8 | `0x0013F280` 20 | `0x001344B0` likely |  |
+| `GetNumRoundsPlayed()` | `0x001337D0` 8 | `0x0013AE00` 8 | `0x00138640` 8 | `0x0013F2A0` 20 | `0x001344C0` likely |  |
+| `IsCrashType()` | `0x001865E0` 8 | `0x001AD0D0` 8 | `0x001A9210` 8 | `0x001BACE0` 20 | `0x001BD630` likely |  |
+| `IsCrashIntroPlaying()` | `0x001E1910` 8 | `0x001E1470` 8 |  | `0x002270C0` 20 |  |  |
+| `GetResultsPageType()` | `0x002DB1A0` 8 | `0x00324C00` 8 | `0x00356D90` 8 | `0x003576A0` 20 |  |  |
+| `IsTurnBased()` | `0x002FBF20` 8 | `0x0034FF80` 8 | `0x003815E0` 8 | `0x003821F0` 20 |  |  |
+| `IsUsingTakedownCamera(int)` | `0x00346AE0` 8 | `0x003AB5B0` 8 | `0x003D59F0` 8 | `0x003E01C0` 20 |  |  |
+| `OnCategoryFinish(CB3ScoreCategory*,EScoreCategoryType)` | `0x0034E7C0` 268 | `0x003B85B0` 320 | `0x003E1E30` 320 | `0x003EE6B0` 376 |  |  |
+| `OnTakedown(CB3RaceCar*,CB3RaceCar*)` | `0x0034E8D0` 248 | `0x003B86F0` 248 | `0x003E1F70` 248 | `0x003EE580` 300 | `0x00395800` likely |  |
+| `AssignStartPositionIndex(int)` | `0x0034E9D0` 8 | `0x003B87F0` 8 | `0x003E2070` 8 | `0x003EE560` 24 |  |  |
+| `OnPostCrashReset(CB3RaceCarPhysics*)` | `0x0034E9E0` 60 | `0x003B8800` 60 | `0x003E2080` 60 | `0x003EE4D0` 144 | `0x00395930` strong |  |
+| `OnWorldPrepared()` | `0x0034EA20` 100 | `0x003B8840` 184 | `0x003E20C0` 184 | `0x003EE3E0` 232 |  |  |
+| `DoRoadRageTooSlowDetection()` | `0x0034EA90` 612 | `0x003B8900` 672 | `0x003E2180` 672 | `0x003EE0F0` 740 |  |  |
+| `GetGameModeScore(int,const CB3FinishedScore*,int*,int*)` | `0x0034ED00` 16 | `0x003B8BA0` 180 | `0x003E2420` 180 | `0x003EE080` 100 |  |  |
+| `ResetCarDamage(CB3RaceCar*)` | `0x0034ED10` 56 | `0x003B8C60` 308 | `0x003E24E0` 308 | `0x003EE000` 124 |  |  |
+| `UpdateCarDamage()` | `0x0034ED50` 760 | `0x003B8DA0` 920 | `0x003E2620` 920 | `0x003EDCB0` 848 |  |  |
+| `FlapNewBodyPart(CB3RaceCar*)` | `0x0034F050` 260 | `0x003B9140` 420 | `0x003E29C0` 420 | `0x003EDB00` 308 | `0x00395E90` strong |  |
+| `DamageRaceCar(CB3RaceCar*,CB3RaceCar*,EB3DamageType)` | `0x0034F160` 248 | `0x003B92F0` 520 | `0x003E2B70` 520 | `0x003ED9F0` 260 | `0x00395FC0` likely |  |
+| `CarsBecomeFragileAfterBeingSlammed()` | `0x0034F260` 8 | `0x003B9500` 8 | `0x003E2D80` 8 | `0x003ED8B0` 20 |  |  |
+| `RequestGameEndMenu()` | `0x0034F270` 496 | `0x003B9510` 592 | `0x003E2D90` 592 | `0x003ED740` 364 |  |  |
+| `CB3StageLogic()` |  |  |  | `0x0013DE00` 40 |  |  |
+| `GetDamage(CB3RaceCar*,EB3DamageType)` |  |  |  | `0x003ED8D0` 284 |  |  |
 
 ## Notes
 

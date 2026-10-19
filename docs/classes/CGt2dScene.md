@@ -7,25 +7,26 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dScene.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 11
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `C2dScene`, size 0x07C, declared in 71 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `DestructObject(int,CGt2dObject*)` | `0x0019D710` 24 | `0x001D2B50` 220 | `0x001CBE40` 200 | `0x001DD730` 148 |  |
-| `ConstructObject(int,CGt2dFrame*)` | `0x0019D730` 60 | `0x001D2C30` 276 | `0x001CBF10` 256 | `0x001DD630` 212 |  |
-| `Render()` | `0x0019D770` 800 | `0x001D2D50` 856 | `0x001CC010` 840 | `0x001DD5F0` 52 |  |
-| `Prepare()` | `0x0019DA90` 112 | `0x001D30B0` 120 | `0x001CC360` 112 | `0x001DCD30` 132 |  |
-| `Construct(int,int,int,void*,unsigned int)` | `0x0019DB00` 268 | `0x001D3130` 448 | `0x001CC3D0` 432 | `0x001DCB40` 408 |  |
-| `ChangeObjectsLayer(CGt2dObject*,int,int)` |  |  |  | `0x001A39D0` 208 |  |
-| `GetLayerProperties(int)` |  |  |  | `0x00197400` 96 |  |
-| `RenderLayerRange(int,int)` |  |  |  | `0x001DCE00` 236 |  |
-| `SetLayerClipFrame(int,const CGt2dFrame*)` |  |  |  | `0x00352620` 104 |  |
-| `SetLayerProperties(int,int)` |  |  |  | `0x00197360` 160 |  |
-| `_GetRequiredMemory(int,int,int)` |  |  |  | `0x001DCAA0` 160 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `DestructObject(int,CGt2dObject*)` | `0x0019D710` 24 | `0x001D2B50` 220 | `0x001CBE40` 200 | `0x001DD730` 148 | `0x001D7560` proven |  |
+| `ConstructObject(int,CGt2dFrame*)` | `0x0019D730` 60 | `0x001D2C30` 276 | `0x001CBF10` 256 | `0x001DD630` 212 | `0x001D7580` proven |  |
+| `Render()` | `0x0019D770` 800 | `0x001D2D50` 856 | `0x001CC010` 840 | `0x001DD5F0` 52 | `0x001D75C0` proven |  |
+| `Prepare()` | `0x0019DA90` 112 | `0x001D30B0` 120 | `0x001CC360` 112 | `0x001DCD30` 132 | `0x001D78F0` proven |  |
+| `Construct(int,int,int,void*,unsigned int)` | `0x0019DB00` 268 | `0x001D3130` 448 | `0x001CC3D0` 432 | `0x001DCB40` 408 | `0x001D7960` proven |  |
+| `ChangeObjectsLayer(CGt2dObject*,int,int)` |  |  |  | `0x001A39D0` 208 |  |  |
+| `GetLayerProperties(int)` |  |  |  | `0x00197400` 96 |  |  |
+| `RenderLayerRange(int,int)` |  |  |  | `0x001DCE00` 236 |  |  |
+| `SetLayerClipFrame(int,const CGt2dFrame*)` |  |  |  | `0x00352620` 104 |  |  |
+| `SetLayerProperties(int,int)` |  |  |  | `0x00197360` 160 |  |  |
+| `_GetRequiredMemory(int,int,int)` |  |  |  | `0x001DCAA0` 160 |  |  |
 
 ## Burnout 2 layout of `C2dScene` (variant 1)
 

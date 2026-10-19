@@ -7,16 +7,17 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3TextureCollectionPS2.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 3
+- **Retail (SLUS-21050):** 3 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Upload()` | `0x00337D20` 228 | `0x0039A640` 388 | `0x003C4860` 388 | `0x003CA340` 288 |  |
-| `AddTexture(CGtTexture*)` | `0x00337E10` 92 | `0x0039A7D0` 216 | `0x003C49F0` 216 | `0x003CA260` 212 |  |
-| `Initialise()` | `0x00337E70` 12 | `0x0039A8B0` 12 | `0x003C4AD0` 12 | `0x003CA230` 36 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Upload()` | `0x00337D20` 228 | `0x0039A640` 388 | `0x003C4860` 388 | `0x003CA340` 288 | `0x00378EA0` strong |  |
+| `AddTexture(CGtTexture*)` | `0x00337E10` 92 | `0x0039A7D0` 216 | `0x003C49F0` 216 | `0x003CA260` 212 | `0x00378F90` strong |  |
+| `Initialise()` | `0x00337E70` 12 | `0x0039A8B0` 12 | `0x003C4AD0` 12 | `0x003CA230` 36 | `0x00378FF0` proven |  |
 
 ## Notes
 

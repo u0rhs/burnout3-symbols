@@ -11,19 +11,19 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `RenderMultipleImages(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame` | `0x0036C950` 536 | `0x003D9B80` 580 | `0x004026D0` 580 | `0x00416F20` 588 |  |
-| `FillTableWithResults()` | `0x0036CB70` 1840 | `0x003D9DD0` 1932 | `0x00402920` 1932 | `0x00416470` 2724 |  |
-| `PrepareTable()` | `0x0036D2A0` 1480 | `0x003DA560` 1520 | `0x004030B0` 1520 | `0x00415DA0` 1744 |  |
-| `_QSortCallback(const void*,const void*)` | `0x0036D870` 456 | `0x003DAB50` 536 | `0x004036A0` 536 | `0x00415B10` 656 |  |
-| `AddRaceTime(const CB3ResultsData*)` | `0x0036DA40` 124 | `0x003DAD70` 272 | `0x004038C0` 272 | `0x004159E0` 300 |  |
-| `Release()` | `0x0036DAC0` 8 | `0x003DAE80` 8 | `0x004039D0` 8 | `0x004159D0` 16 |  |
-| `Update()` | `0x0036DAD0` 252 | `0x003DAE90` 336 | `0x004039E0` 336 | `0x004158D0` 244 |  |
-| `Prepare()` | `0x0036DBD0` 168 | `0x003DAFE0` 168 | `0x00403B30` 168 | `0x004157D0` 244 |  |
-| `CB3RoadRageResultsPage()` |  |  |  | `0x00342D10` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `RenderMultipleImages(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame` | `0x0036C950` 536 | `0x003D9B80` 580 | `0x004026D0` 580 | `0x00416F20` 588 |  |  |
+| `FillTableWithResults()` | `0x0036CB70` 1840 | `0x003D9DD0` 1932 | `0x00402920` 1932 | `0x00416470` 2724 |  |  |
+| `PrepareTable()` | `0x0036D2A0` 1480 | `0x003DA560` 1520 | `0x004030B0` 1520 | `0x00415DA0` 1744 |  |  |
+| `_QSortCallback(const void*,const void*)` | `0x0036D870` 456 | `0x003DAB50` 536 | `0x004036A0` 536 | `0x00415B10` 656 |  |  |
+| `AddRaceTime(const CB3ResultsData*)` | `0x0036DA40` 124 | `0x003DAD70` 272 | `0x004038C0` 272 | `0x004159E0` 300 |  |  |
+| `Release()` | `0x0036DAC0` 8 | `0x003DAE80` 8 | `0x004039D0` 8 | `0x004159D0` 16 |  |  |
+| `Update()` | `0x0036DAD0` 252 | `0x003DAE90` 336 | `0x004039E0` 336 | `0x004158D0` 244 |  |  |
+| `Prepare()` | `0x0036DBD0` 168 | `0x003DAFE0` 168 | `0x00403B30` 168 | `0x004157D0` 244 |  |  |
+| `CB3RoadRageResultsPage()` |  |  |  | `0x00342D10` 60 |  |  |
 
 ## Static data (DNAT_200)
 

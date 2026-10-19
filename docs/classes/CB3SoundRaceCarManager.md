@@ -7,21 +7,22 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundRaceCarManager.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 8
+- **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Destruct()` | `0x002AC0C0` 8 | `0x002E9CC0` 8 | `0x0031F210` 8 | `0x00318C00` 16 |  |
-| `Release()` | `0x002AC0D0` 8 | `0x002E9CD0` 8 | `0x0031F220` 8 | `0x00318BF0` 16 |  |
-| `Update()` | `0x002AC0E0` 568 | `0x002E9CE0` 1292 | `0x0031F230` 1292 | `0x00318810` 828 |  |
-| `Prepare()` | `0x002AC320` 8 | `0x002EA1F0` 8 | `0x0031F740` 8 | `0x003187F0` 20 |  |
-| `Construct()` | `0x002AC330` 6260 | `0x002EA200` 6260 | `0x0031F750` 6260 | `0x00316600` 8676 |  |
-| `RelinquishRaceCar(CB3SoundRaceCar*)` | `0x002ADBB0` 20 | `0x002EBA80` 352 | `0x00320FD0` 352 | `0x003165A0` 92 |  |
-| `RequestRaceCar(EB3RaceCarType)` | `0x002ADBD0` 264 | `0x002EBBE0` 1104 | `0x00321130` 1104 | `0x003162D0` 636 |  |
-| `CB3SoundRaceCarManager()` |  |  |  | `0x002B1C70` 128 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Destruct()` | `0x002AC0C0` 8 | `0x002E9CC0` 8 | `0x0031F210` 8 | `0x00318C00` 16 | `0x002ED3C0` strong |  |
+| `Release()` | `0x002AC0D0` 8 | `0x002E9CD0` 8 | `0x0031F220` 8 | `0x00318BF0` 16 | `0x002ED3D0` strong |  |
+| `Update()` | `0x002AC0E0` 568 | `0x002E9CE0` 1292 | `0x0031F230` 1292 | `0x00318810` 828 | `0x002ED3E0` likely |  |
+| `Prepare()` | `0x002AC320` 8 | `0x002EA1F0` 8 | `0x0031F740` 8 | `0x003187F0` 20 | `0x002ED680` strong |  |
+| `Construct()` | `0x002AC330` 6260 | `0x002EA200` 6260 | `0x0031F750` 6260 | `0x00316600` 8676 | `0x002ED690` unverified |  |
+| `RelinquishRaceCar(CB3SoundRaceCar*)` | `0x002ADBB0` 20 | `0x002EBA80` 352 | `0x00320FD0` 352 | `0x003165A0` 92 | `0x002EEFC0` strong |  |
+| `RequestRaceCar(EB3RaceCarType)` | `0x002ADBD0` 264 | `0x002EBBE0` 1104 | `0x00321130` 1104 | `0x003162D0` 636 | `0x002EEFE0` likely |  |
+| `CB3SoundRaceCarManager()` |  |  |  | `0x002B1C70` 128 |  |  |
 
 ## Notes
 

@@ -10,12 +10,12 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetCheatUnlockString(int)` | `0x003A6D90` 24 | `0x00420F30` 176 | `0x00446BA0` 176 | `0x0045F640` 100 |  |
-| `GetCheatUnlock(int)` | `0x003A6DB0` 24 | `0x00420FE0` 176 | `0x00446C50` 176 | `0x0045F5D0` 100 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetCheatUnlockString(int)` | `0x003A6D90` 24 | `0x00420F30` 176 | `0x00446BA0` 176 | `0x0045F640` 100 |  |  |
+| `GetCheatUnlock(int)` | `0x003A6DB0` 24 | `0x00420FE0` 176 | `0x00446C50` 176 | `0x0045F5D0` 100 |  |  |
 
 ## Notes
 

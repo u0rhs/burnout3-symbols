@@ -7,39 +7,40 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `B3PlayerCameraManager.cpp`
 - **Methods per build:** DNAT_200 17, B3DEBUG 18, B3INTERN 18, B3O0PCH 25
+- **Retail (SLUS-21050):** 15 of its 17 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x004401C0`, 32 bytes = 8 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 6 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Construct(void*,const CGtStateOffset*,CGtTimer*)` | `0x002A6380` 8 | `0x002E0850` 8 | `0x00317730` 8 | `0x003146F0` 64 |  |
-| `Update()` | `0x002A6390` 8 | `0x002E0860` 8 | `0x00317740` 8 | `0x00314730` 40 |  |
-| `GetTrackTime()` | `0x002A63A0` 84 | `0x002E0870` 280 | `0x00317750` 280 | `0x00314690` 96 |  |
-| `GetCurrentUnit()` | `0x002A6400` 160 | `0x002E0990` 160 | `0x00317870` 160 | `0x003145E0` 176 |  |
-| `HasIntroFinished()` | `0x002A64A0` 40 | `0x002E0A30` 40 | `0x00317910` 40 | `0x00314580` 88 |  |
-| `HasCrashAftermathFinished()` | `0x002A64D0` 8 | `0x002E0A60` 8 | `0x00317940` 8 | `0x00314550` 44 |  |
-| `SetActiveBehaviour(int)` | `0x002A64E0` 248 | `0x002E0A70` 420 | `0x00317950` 420 | `0x003144B0` 148 |  |
-| `DeactivateBehaviour(int)` | `0x002A65E0` 116 | `0x002E0C20` 168 | `0x00317B00` 168 | `0x00314410` 152 |  |
-| `ActivateBehaviour(int)` | `0x002A6660` 112 | `0x002E0CD0` 192 | `0x00317BB0` 192 | `0x00314360` 164 |  |
-| `IsPlayerVisible()` | `0x002A66D0` 236 | `0x002E0D90` 224 | `0x00317C70` 224 | `0x00314180` 376 |  |
-| `Destruct()` | `0x002A67C0` 76 | `0x002E0E80` 76 | `0x00317D60` 76 | `0x003140F0` 88 |  |
-| `Release()` | `0x002A6810` 396 | `0x002E0ED0` 500 | `0x00317DB0` 500 | `0x00313FD0` 276 |  |
-| `Update(float)` | `0x002A69A0` 604 | `0x002E10D0` 792 | `0x00317FB0` 792 | `0x00313C90` 784 |  |
-| `Prepare()` | `0x002A6C00` 1336 | `0x002E13F0` 1516 | `0x003182D0` 1516 | `0x00313710` 1400 |  |
-| `Construct(int)` | `0x002A7140` 292 | `0x002E19E0` 292 | `0x003188C0` 292 | `0x00313620` 232 |  |
-| `ReleaseBuffer()` | `0x002A7270` 68 | `0x002E1B10` 68 | `0x003189F0` 68 | `0x003135C0` 84 |  |
-| `PrepareBuffer()` | `0x002A72C0` 312 | `0x002E1B60` 364 | `0x00318A40` 364 | `0x003133F0` 464 |  |
-| `LockFOV(bool)` |  | `0x002E0E70` 8 | `0x00317D50` 8 | `0x00314150` 36 |  |
-| `CB3PlayerCameraManager()` |  |  |  | `0x0013E460` 508 |  |
-| `CutThisFrame()` |  |  |  | `0x00279EA0` 28 |  |
-| `GetCamera()` |  |  |  | `0x00133E50` 28 |  |
-| `GetCameraTime()` |  |  |  | `0x002B0B50` 28 |  |
-| `GetCameraTimeNoSlowMo()` |  |  |  | `0x003BC0D0` 28 |  |
-| `IsBehaviourActive(int)` |  |  |  | `0x0026D8B0` 84 |  |
-| `ResetCutThisFrame()` |  |  |  | `0x0013C3B0` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Construct(void*,const CGtStateOffset*,CGtTimer*)` | `0x002A6380` 8 | `0x002E0850` 8 | `0x00317730` 8 | `0x003146F0` 64 | `0x002E6F40` likely |  |
+| `Update()` | `0x002A6390` 8 | `0x002E0860` 8 | `0x00317740` 8 | `0x00314730` 40 | `0x002E6F50` likely |  |
+| `GetTrackTime()` | `0x002A63A0` 84 | `0x002E0870` 280 | `0x00317750` 280 | `0x00314690` 96 | `0x002E7050` strong |  |
+| `GetCurrentUnit()` | `0x002A6400` 160 | `0x002E0990` 160 | `0x00317870` 160 | `0x003145E0` 176 |  |  |
+| `HasIntroFinished()` | `0x002A64A0` 40 | `0x002E0A30` 40 | `0x00317910` 40 | `0x00314580` 88 | `0x002E70B0` strong |  |
+| `HasCrashAftermathFinished()` | `0x002A64D0` 8 | `0x002E0A60` 8 | `0x00317940` 8 | `0x00314550` 44 |  |  |
+| `SetActiveBehaviour(int)` | `0x002A64E0` 248 | `0x002E0A70` 420 | `0x00317950` 420 | `0x003144B0` 148 | `0x002E7150` strong |  |
+| `DeactivateBehaviour(int)` | `0x002A65E0` 116 | `0x002E0C20` 168 | `0x00317B00` 168 | `0x00314410` 152 | `0x002E7250` strong |  |
+| `ActivateBehaviour(int)` | `0x002A6660` 112 | `0x002E0CD0` 192 | `0x00317BB0` 192 | `0x00314360` 164 | `0x002E72D0` strong |  |
+| `IsPlayerVisible()` | `0x002A66D0` 236 | `0x002E0D90` 224 | `0x00317C70` 224 | `0x00314180` 376 | `0x002E7340` likely |  |
+| `Destruct()` | `0x002A67C0` 76 | `0x002E0E80` 76 | `0x00317D60` 76 | `0x003140F0` 88 | `0x002E7430` strong |  |
+| `Release()` | `0x002A6810` 396 | `0x002E0ED0` 500 | `0x00317DB0` 500 | `0x00313FD0` 276 | `0x002E7480` strong |  |
+| `Update(float)` | `0x002A69A0` 604 | `0x002E10D0` 792 | `0x00317FB0` 792 | `0x00313C90` 784 | `0x002E7610` strong |  |
+| `Prepare()` | `0x002A6C00` 1336 | `0x002E13F0` 1516 | `0x003182D0` 1516 | `0x00313710` 1400 | `0x002E7810` unverified |  |
+| `Construct(int)` | `0x002A7140` 292 | `0x002E19E0` 292 | `0x003188C0` 292 | `0x00313620` 232 | `0x002E7BA0` strong |  |
+| `ReleaseBuffer()` | `0x002A7270` 68 | `0x002E1B10` 68 | `0x003189F0` 68 | `0x003135C0` 84 | `0x002E7CD0` likely |  |
+| `PrepareBuffer()` | `0x002A72C0` 312 | `0x002E1B60` 364 | `0x00318A40` 364 | `0x003133F0` 464 | `0x002E7D20` unverified |  |
+| `LockFOV(bool)` |  | `0x002E0E70` 8 | `0x00317D50` 8 | `0x00314150` 36 |  |  |
+| `CB3PlayerCameraManager()` |  |  |  | `0x0013E460` 508 |  |  |
+| `CutThisFrame()` |  |  |  | `0x00279EA0` 28 |  |  |
+| `GetCamera()` |  |  |  | `0x00133E50` 28 |  |  |
+| `GetCameraTime()` |  |  |  | `0x002B0B50` 28 |  |  |
+| `GetCameraTimeNoSlowMo()` |  |  |  | `0x003BC0D0` 28 |  |  |
+| `IsBehaviourActive(int)` |  |  |  | `0x0026D8B0` 84 |  |  |
+| `ResetCutThisFrame()` |  |  |  | `0x0013C3B0` 28 |  |  |
 
 ## Static data (DNAT_200)
 

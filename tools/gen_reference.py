@@ -51,6 +51,16 @@ def safe_name(c):
     return re.sub(r'_+', '_', s).strip('_')
 
 
+def load_retail():
+    """Retail addresses of prototype functions (data/burnout3-retail/prototype-names.csv), by DNAT_200 map address."""
+    p = os.path.join(RETAIL, 'prototype-names.csv')
+    out = {}
+    if os.path.exists(p):
+        for r in csv.DictReader(open(p)):
+            out[int(r['prototype_map_address'], 16)] = (int(r['us_address'], 16), r['proof'].split(':')[0])
+    return out
+
+
 def keep_notes(path, default='\n_Findings go here._\n'):
     if os.path.exists(path):
         old = open(path).read()
@@ -262,6 +272,7 @@ def main():
         for w in re.findall(r'[A-Za-z_]\w{3,}', a):
             ast_words[w].add(a)
 
+    retail = load_retail()
     class_list = sorted(methods, key=str.lower)
     index = defaultdict(list)
     for c in class_list:
@@ -285,6 +296,11 @@ def main():
             for m in ms[n]:
                 builds[m] += 1
         facts.append('**Methods per build:** ' + ', '.join('%s %d' % (m, builds[m]) for m in MAPS if builds[m]))
+        rt = [retail[ms[n]['DNAT_200'][0]] for n in ms if 'DNAT_200' in ms[n] and ms[n]['DNAT_200'][0] in retail]
+        if rt:
+            facts.append('**Retail (SLUS-21050):** %d of its %d DNAT_200 methods found, %d of them proven '
+                         '([prototype names](../reference/retail-prototype-names.md))'
+                         % (len(rt), builds['DNAT_200'], sum(1 for _, p in rt if p == 'proven')))
         if c in vtables:
             v = vtables[c]
             facts.append('**vtable (DNAT_200):** `%s`, %d bytes = %d slots (slot size assumed 4 bytes; '
@@ -301,9 +317,10 @@ def main():
         L += ['- ' + f for f in facts] + ['']
 
         L += ['## Methods', '',
-              'Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its '
-              'parameter names (match by signature unless marked).', '',
-              '| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |', '|---|---|---|---|---|---|']
+              'Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that '
+              'is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with '
+              'the same name, with its parameter names (match by signature unless marked).', '',
+              '| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |', '|---|---|---|---|---|---|---|']
         for n in sorted(ms, key=lambda n: (ms[n].get('DNAT_200', ms[n].get('B3DEBUG', (1 << 40, 0)))[0], n)):
             cells = []
             for m in MAPS:
@@ -313,6 +330,9 @@ def main():
             b2cell = ''
             if b2:
                 b2cell = code(b2[0]['signature']) + ('' if b2[1] == 'same signature' else ' (%s)' % b2[1])
+            dv = ms[n].get('DNAT_200')
+            rv = retail.get(dv[0]) if dv else None
+            cells.append('`%s` %s' % (hx(rv[0]), rv[1]) if rv else '')
             short = n[len(c) + 2:] if n.startswith(c + '::') else n
             L.append('| %s | %s | %s |' % (code(short), ' | '.join(cells), b2cell))
         L.append('')

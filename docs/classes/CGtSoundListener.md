@@ -7,31 +7,32 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `GtSoundListener.cpp`
 - **Methods per build:** DNAT_200 12, B3DEBUG 12, B3INTERN 12, B3O0PCH 14
+- **Retail (SLUS-21050):** 12 of its 12 DNAT_200 methods found, 11 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetVelocity(GtMathPs2::CGtV3d*) const` | `0x00341830` 60 |  |  |  |  |
-| `GetRight(GtMathPs2::CGtV3d*) const` | `0x00341870` 60 |  |  |  |  |
-| `GetAt(GtMathPs2::CGtV3d*) const` | `0x003418B0` 60 |  |  |  |  |
-| `GetPos(GtMathPs2::CGtV3d*) const` | `0x003418F0` 60 |  |  |  |  |
-| `SetUp(GtMathPs2::CGtV3d)` | `0x00341930` 172 | `0x003A5260` 244 | `0x003CF180` 244 | `0x003D8040` 368 |  |
-| `SetAt(GtMathPs2::CGtV3d)` | `0x003419E0` 172 | `0x003A5360` 172 | `0x003CF280` 172 | `0x003D7EE0` 348 |  |
-| `SetPos(GtMathPs2::CGtV3d,float)` | `0x00341A90` 368 | `0x003A5410` 368 | `0x003CF330` 368 | `0x003D7D20` 436 |  |
-| `GetRWAListener()` | `0x00341C00` 8 | `0x003A5580` 8 | `0x003CF4A0` 8 | `0x003D7D00` 28 |  |
-| `Destruct()` | `0x00341C10` 56 | `0x003A5590` 56 | `0x003CF4B0` 56 | `0x003D7CB0` 76 |  |
-| `Release()` | `0x00341C50` 8 | `0x003A55D0` 8 | `0x003CF4F0` 8 | `0x003D7CA0` 16 |  |
-| `Prepare(unsigned int)` | `0x00341C60` 104 | `0x003A55E0` 104 | `0x003CF500` 104 | `0x003D7C10` 136 |  |
-| `Construct()` | `0x00341CD0` 60 | `0x003A5650` 104 | `0x003CF570` 104 | `0x003D7BB0` 92 |  |
-| `GetVelocity(GtMathPs2::CGtV3d*)` |  | `0x003A5020` 136 | `0x003CEF40` 136 | `0x003D82E0` 92 |  |
-| `GetRight(GtMathPs2::CGtV3d*)` |  | `0x003A50B0` 136 | `0x003CEFD0` 136 | `0x003D8280` 92 |  |
-| `GetAt(GtMathPs2::CGtV3d*)` |  | `0x003A5140` 136 | `0x003CF060` 136 | `0x003D8220` 92 |  |
-| `GetPos(GtMathPs2::CGtV3d*)` |  | `0x003A51D0` 136 | `0x003CF0F0` 136 | `0x003D81C0` 92 |  |
-| `CGtSoundListener()` |  |  |  | `0x002B18C0` 40 |  |
-| `Update()` |  |  |  | `0x003D81B0` 16 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetVelocity(GtMathPs2::CGtV3d*) const` | `0x00341830` 60 |  |  |  | `0x00384550` proven |  |
+| `GetRight(GtMathPs2::CGtV3d*) const` | `0x00341870` 60 |  |  |  | `0x00384590` proven |  |
+| `GetAt(GtMathPs2::CGtV3d*) const` | `0x003418B0` 60 |  |  |  | `0x003845D0` proven |  |
+| `GetPos(GtMathPs2::CGtV3d*) const` | `0x003418F0` 60 |  |  |  | `0x00384610` proven |  |
+| `SetUp(GtMathPs2::CGtV3d)` | `0x00341930` 172 | `0x003A5260` 244 | `0x003CF180` 244 | `0x003D8040` 368 | `0x00384650` proven |  |
+| `SetAt(GtMathPs2::CGtV3d)` | `0x003419E0` 172 | `0x003A5360` 172 | `0x003CF280` 172 | `0x003D7EE0` 348 | `0x00384700` proven |  |
+| `SetPos(GtMathPs2::CGtV3d,float)` | `0x00341A90` 368 | `0x003A5410` 368 | `0x003CF330` 368 | `0x003D7D20` 436 | `0x003847B0` proven |  |
+| `GetRWAListener()` | `0x00341C00` 8 | `0x003A5580` 8 | `0x003CF4A0` 8 | `0x003D7D00` 28 | `0x00384920` proven |  |
+| `Destruct()` | `0x00341C10` 56 | `0x003A5590` 56 | `0x003CF4B0` 56 | `0x003D7CB0` 76 | `0x00384930` proven |  |
+| `Release()` | `0x00341C50` 8 | `0x003A55D0` 8 | `0x003CF4F0` 8 | `0x003D7CA0` 16 | `0x00384970` strong |  |
+| `Prepare(unsigned int)` | `0x00341C60` 104 | `0x003A55E0` 104 | `0x003CF500` 104 | `0x003D7C10` 136 | `0x00384980` proven |  |
+| `Construct()` | `0x00341CD0` 60 | `0x003A5650` 104 | `0x003CF570` 104 | `0x003D7BB0` 92 | `0x003849F0` proven |  |
+| `GetVelocity(GtMathPs2::CGtV3d*)` |  | `0x003A5020` 136 | `0x003CEF40` 136 | `0x003D82E0` 92 |  |  |
+| `GetRight(GtMathPs2::CGtV3d*)` |  | `0x003A50B0` 136 | `0x003CEFD0` 136 | `0x003D8280` 92 |  |  |
+| `GetAt(GtMathPs2::CGtV3d*)` |  | `0x003A5140` 136 | `0x003CF060` 136 | `0x003D8220` 92 |  |  |
+| `GetPos(GtMathPs2::CGtV3d*)` |  | `0x003A51D0` 136 | `0x003CF0F0` 136 | `0x003D81C0` 92 |  |  |
+| `CGtSoundListener()` |  |  |  | `0x002B18C0` 40 |  |  |
+| `Update()` |  |  |  | `0x003D81B0` 16 |  |  |
 
 ## Notes
 

@@ -7,23 +7,24 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `GtFSM.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 7, B3INTERN 7, B3O0PCH 10
+- **Retail (SLUS-21050):** 7 of its 7 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `StateEnter(CGtState*,void*)` | `0x001DCB80` 60 | `0x001D9520` 60 | `0x0020C220` 60 | `0x0021E880` 96 |  |
-| `StateLeave(CGtState*,void*)` | `0x001DCBC0` 60 | `0x001D9560` 60 | `0x0020C260` 60 | `0x0021E820` 96 |  |
-| `GetStateFromID(unsigned long)` | `0x001DCC00` 64 | `0x001D95A0` 64 | `0x0020C2A0` 64 | `0x0021E7B0` 104 |  |
-| `ApplyEvent(unsigned int,void*)` | `0x001DCC40` 60 | `0x001D95E0` 60 | `0x0020C2E0` 60 | `0x0021E750` 96 |  |
-| `Update()` | `0x001DCC80` 64 | `0x001D9620` 64 | `0x0020C320` 64 | `0x0021E6F0` 88 |  |
-| `Destruct()` | `0x001DCCC0` 100 | `0x001D9660` 100 | `0x0020C360` 100 | `0x0021E670` 128 |  |
-| `Construct(void*,const CGtStateOffset*,CGtTimer*)` | `0x001DCD30` 136 | `0x001D96D0` 196 | `0x0020C3D0` 196 | `0x0021E560` 260 |  |
-| `CGtFSM()` |  |  |  | `0x0013ED70` 40 |  |
-| `GetState()` |  |  |  | `0x0013D340` 80 |  |
-| `StateChange(unsigned long,void*)` |  |  |  | `0x001353C0` 228 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `StateEnter(CGtState*,void*)` | `0x001DCB80` 60 | `0x001D9520` 60 | `0x0020C220` 60 | `0x0021E880` 96 | `0x00217610` proven |  |
+| `StateLeave(CGtState*,void*)` | `0x001DCBC0` 60 | `0x001D9560` 60 | `0x0020C260` 60 | `0x0021E820` 96 | `0x00217650` proven |  |
+| `GetStateFromID(unsigned long)` | `0x001DCC00` 64 | `0x001D95A0` 64 | `0x0020C2A0` 64 | `0x0021E7B0` 104 | `0x00217690` proven |  |
+| `ApplyEvent(unsigned int,void*)` | `0x001DCC40` 60 | `0x001D95E0` 60 | `0x0020C2E0` 60 | `0x0021E750` 96 | `0x002176D0` proven |  |
+| `Update()` | `0x001DCC80` 64 | `0x001D9620` 64 | `0x0020C320` 64 | `0x0021E6F0` 88 | `0x00217710` proven |  |
+| `Destruct()` | `0x001DCCC0` 100 | `0x001D9660` 100 | `0x0020C360` 100 | `0x0021E670` 128 | `0x00217750` proven |  |
+| `Construct(void*,const CGtStateOffset*,CGtTimer*)` | `0x001DCD30` 136 | `0x001D96D0` 196 | `0x0020C3D0` 196 | `0x0021E560` 260 | `0x002177C0` proven |  |
+| `CGtFSM()` |  |  |  | `0x0013ED70` 40 |  |  |
+| `GetState()` |  |  |  | `0x0013D340` 80 |  |  |
+| `StateChange(unsigned long,void*)` |  |  |  | `0x001353C0` 228 |  |  |
 
 ## Notes
 

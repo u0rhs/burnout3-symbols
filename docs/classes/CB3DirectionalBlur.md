@@ -7,22 +7,23 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3DirectionalBlurPS2.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 9
+- **Retail (SLUS-21050):** 8 of its 8 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `RestoreRenderstates(const CB3CameraData*)` | `0x003C90C0` 136 | `0x004464C0` 136 | `0x0046EEA0` 136 | `0x00486B70` 212 |  |
-| `CopyToScreen(unsigned long,unsigned long,unsigned long,unsigned long,int,int,int,int,float)` | `0x003C9150` 372 | `0x00446550` 372 | `0x0046EF30` 372 | `0x00486950` 532 |  |
-| `BlurIn(int,int,int,int,const GtMathPs2::CGtV2d&)` | `0x003C92D0` 808 | `0x004466D0` 1208 | `0x0046F0B0` 1208 | `0x00486290` 1720 |  |
-| `BlurOut(int,int,int,int,const GtMathPs2::CGtV2d&)` | `0x003C9600` 820 | `0x00446B90` 1212 | `0x0046F570` 1212 | `0x00485BC0` 1732 |  |
-| `BlurSetRenderstates(unsigned long,unsigned long,int,int)` | `0x003C9940` 208 | `0x00447050` 208 | `0x0046FA30` 208 | `0x00485AB0` 272 |  |
-| `Downsample(unsigned long,unsigned long,unsigned long,unsigned long,int,int,int,int)` | `0x003C9A10` 384 | `0x00447120` 552 | `0x0046FB00` 552 | `0x00485890` 536 |  |
-| `SetRenderstates()` | `0x003C9B90` 156 | `0x00447350` 156 | `0x0046FD30` 156 | `0x004857C0` 208 |  |
-| `Render()` | `0x003C9C30` 1108 | `0x004473F0` 1184 | `0x0046FDD0` 1184 | `0x00485190` 1580 |  |
-| `CB3DirectionalBlur()` |  |  |  | `0x001960C0` 44 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `RestoreRenderstates(const CB3CameraData*)` | `0x003C90C0` 136 | `0x004464C0` 136 | `0x0046EEA0` 136 | `0x00486B70` 212 | `0x00426080` proven |  |
+| `CopyToScreen(unsigned long,unsigned long,unsigned long,unsigned long,int,int,int,int,float)` | `0x003C9150` 372 | `0x00446550` 372 | `0x0046EF30` 372 | `0x00486950` 532 | `0x00426110` proven |  |
+| `BlurIn(int,int,int,int,const GtMathPs2::CGtV2d&)` | `0x003C92D0` 808 | `0x004466D0` 1208 | `0x0046F0B0` 1208 | `0x00486290` 1720 | `0x00426290` proven |  |
+| `BlurOut(int,int,int,int,const GtMathPs2::CGtV2d&)` | `0x003C9600` 820 | `0x00446B90` 1212 | `0x0046F570` 1212 | `0x00485BC0` 1732 | `0x004265D0` proven |  |
+| `BlurSetRenderstates(unsigned long,unsigned long,int,int)` | `0x003C9940` 208 | `0x00447050` 208 | `0x0046FA30` 208 | `0x00485AB0` 272 | `0x00426920` proven |  |
+| `Downsample(unsigned long,unsigned long,unsigned long,unsigned long,int,int,int,int)` | `0x003C9A10` 384 | `0x00447120` 552 | `0x0046FB00` 552 | `0x00485890` 536 | `0x004269F0` proven |  |
+| `SetRenderstates()` | `0x003C9B90` 156 | `0x00447350` 156 | `0x0046FD30` 156 | `0x004857C0` 208 | `0x00426B70` strong |  |
+| `Render()` | `0x003C9C30` 1108 | `0x004473F0` 1184 | `0x0046FDD0` 1184 | `0x00485190` 1580 | `0x00426C10` strong |  |
+| `CB3DirectionalBlur()` |  |  |  | `0x001960C0` 44 |  |  |
 
 ## Notes
 

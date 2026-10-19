@@ -7,17 +7,18 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `B3Panel2dObject.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 4
+- **Retail (SLUS-21050):** 2 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0033EDA0` 1616 | `0x003A1EA0` 1616 | `0x003CC0B0` 1616 | `0x003D3E00` 2368 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned int,float)` | `0x0033F3F0` 196 | `0x003A24F0` 196 | `0x003CC700` 196 | `0x003D3CF0` 260 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,bool,bool)` | `0x0033F4C0` 216 | `0x003A25C0` 216 | `0x003CC7D0` 216 | `0x003D3C70` 124 |  |
-| `CB3Panel2dObject()` |  |  |  | `0x003916D0` 44 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0033EDA0` 1616 | `0x003A1EA0` 1616 | `0x003CC0B0` 1616 | `0x003D3E00` 2368 |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned int,float)` | `0x0033F3F0` 196 | `0x003A24F0` 196 | `0x003CC700` 196 | `0x003D3CF0` 260 | `0x003808A0` proven |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,bool,bool)` | `0x0033F4C0` 216 | `0x003A25C0` 216 | `0x003CC7D0` 216 | `0x003D3C70` 124 | `0x00380970` proven |  |
+| `CB3Panel2dObject()` |  |  |  | `0x003916D0` 44 |  |  |
 
 ## Notes
 

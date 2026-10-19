@@ -7,19 +7,20 @@
 - **Area:** [Frontend and menus](../systems/frontend.md)
 - **Source file:** `B3TipComponent.cpp`
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 5
+- **Retail (SLUS-21050):** 1 of its 4 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440700`, 16 bytes = 4 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 2 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Release()` | `0x002FB880` 8 | `0x0034F6D0` 8 | `0x00380D30` 8 | `0x00380FA0` 40 |  |
-| `Update(float)` | `0x002FB890` 20 | `0x0034F6E0` 20 | `0x00380D40` 20 | `0x00380F70` 44 |  |
-| `Prepare()` | `0x002FB8B0` 32 | `0x0034F700` 32 | `0x00380D60` 32 | `0x00380F40` 44 |  |
-| `Construct()` | `0x002FB8D0` 8 | `0x0034F720` 8 | `0x00380D80` 8 | `0x00380F10` 44 |  |
-| `CB3TipComponent()` |  |  |  | `0x0033C240` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Release()` | `0x002FB880` 8 | `0x0034F6D0` 8 | `0x00380D30` 8 | `0x00380FA0` 40 |  |  |
+| `Update(float)` | `0x002FB890` 20 | `0x0034F6E0` 20 | `0x00380D40` 20 | `0x00380F70` 44 | `0x00342F60` likely |  |
+| `Prepare()` | `0x002FB8B0` 32 | `0x0034F700` 32 | `0x00380D60` 32 | `0x00380F40` 44 |  |  |
+| `Construct()` | `0x002FB8D0` 8 | `0x0034F720` 8 | `0x00380D80` 8 | `0x00380F10` 44 |  |  |
+| `CB3TipComponent()` |  |  |  | `0x0033C240` 60 |  |  |
 
 ## Notes
 

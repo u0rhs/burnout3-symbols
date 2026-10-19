@@ -7,29 +7,30 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dFont.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 11
+- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 5 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `C2dFont`, size 0x119C, declared in 38 file(s), e.g. `gamesource/Hud/CHud.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `MakeNumberCharactersFixedWidth()` | `0x0019DC10` 276 | `0x001D32F0` 276 | `0x001CC580` 276 | `0x002240E0` 440 |  |
-| `RenderString(const unsigned short*,float,float,float,GtMathPs2::CGtV4d) const` | `0x0019DD30` 628 |  |  |  |  |
-| `GetStringStartAndEnd(const unsigned short*,float,const unsigned short**,const unsigned short**,bool) const` | `0x0019DFB0` 552 |  |  |  |  |
-| `GetStringWidthIncludingLRKern(const unsigned short*) const` | `0x0019E1E0` 164 |  |  |  |  |
-| `GetStringWidth(const unsigned short*) const` | `0x0019E290` 184 |  |  |  |  |
-| `Prepare(CGtTexture*)` | `0x0019E350` 80 | `0x001D3CE0` 212 | `0x001CCF70` 212 | `0x002237F0` 132 |  |
-| `RenderString(const unsigned short*,float,float,float,GtMathPs2::CGtV4d)` |  | `0x001D3410` 724 | `0x001CC6A0` 724 | `0x00223E60` 632 |  |
-| `GetStringStartAndEnd(const unsigned short*,float,const unsigned short**,const unsigned short**,bool)` |  | `0x001D36F0` 884 | `0x001CC980` 884 | `0x00223A20` 1076 |  |
-| `GetStringWidthIncludingLRKern(const unsigned short*)` |  | `0x001D3A70` 296 | `0x001CCD00` 296 | `0x00223970` 172 |  |
-| `GetStringWidth(const unsigned short*)` |  | `0x001D3BA0` 316 | `0x001CCE30` 316 | `0x00223880` 236 |  |
-| `FixupPointers(unsigned int)` |  |  |  | `0x00223770` 124 |  |
-| `GetBaseline()` |  |  |  | `0x0019D210` 28 |  |
-| `GetCharacter(unsigned short)` |  |  |  | `0x001A1420` 136 |  |
-| `GetTexture()` |  |  |  | `0x001A1DE0` 28 |  |
-| `GetUVScale()` |  |  |  | `0x001A13E0` 52 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `MakeNumberCharactersFixedWidth()` | `0x0019DC10` 276 | `0x001D32F0` 276 | `0x001CC580` 276 | `0x002240E0` 440 | `0x001D7A70` proven |  |
+| `RenderString(const unsigned short*,float,float,float,GtMathPs2::CGtV4d) const` | `0x0019DD30` 628 |  |  |  | `0x001D7B90` proven |  |
+| `GetStringStartAndEnd(const unsigned short*,float,const unsigned short**,const unsigned short**,bool) const` | `0x0019DFB0` 552 |  |  |  | `0x001D7E10` proven |  |
+| `GetStringWidthIncludingLRKern(const unsigned short*) const` | `0x0019E1E0` 164 |  |  |  | `0x001D80A0` proven |  |
+| `GetStringWidth(const unsigned short*) const` | `0x0019E290` 184 |  |  |  | `0x001D8150` proven |  |
+| `Prepare(CGtTexture*)` | `0x0019E350` 80 | `0x001D3CE0` 212 | `0x001CCF70` 212 | `0x002237F0` 132 | `0x001D8210` strong |  |
+| `RenderString(const unsigned short*,float,float,float,GtMathPs2::CGtV4d)` |  | `0x001D3410` 724 | `0x001CC6A0` 724 | `0x00223E60` 632 |  |  |
+| `GetStringStartAndEnd(const unsigned short*,float,const unsigned short**,const unsigned short**,bool)` |  | `0x001D36F0` 884 | `0x001CC980` 884 | `0x00223A20` 1076 |  |  |
+| `GetStringWidthIncludingLRKern(const unsigned short*)` |  | `0x001D3A70` 296 | `0x001CCD00` 296 | `0x00223970` 172 |  |  |
+| `GetStringWidth(const unsigned short*)` |  | `0x001D3BA0` 316 | `0x001CCE30` 316 | `0x00223880` 236 |  |  |
+| `FixupPointers(unsigned int)` |  |  |  | `0x00223770` 124 |  |  |
+| `GetBaseline()` |  |  |  | `0x0019D210` 28 |  |  |
+| `GetCharacter(unsigned short)` |  |  |  | `0x001A1420` 136 |  |  |
+| `GetTexture()` |  |  |  | `0x001A1DE0` 28 |  |  |
+| `GetUVScale()` |  |  |  | `0x001A13E0` 52 |  |  |
 
 ## Burnout 2 layout of `C2dFont`
 

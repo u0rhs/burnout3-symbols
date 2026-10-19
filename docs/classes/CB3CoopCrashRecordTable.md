@@ -10,13 +10,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Update(int,unsigned int,ERecordTestTypes)` | `0x00382AE0` 368 | `0x003F5B30` 368 | `0x0041D760` 368 | `0x00434C10` 348 |  |
-| `CB3CoopCrashRecordTable()` |  |  |  | `0x00435B80` 76 |  |
-| `operator =(const CB3CoopCrashRecordTable&)` |  |  |  | `0x004819D0` 100 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Update(int,unsigned int,ERecordTestTypes)` | `0x00382AE0` 368 | `0x003F5B30` 368 | `0x0041D760` 368 | `0x00434C10` 348 |  |  |
+| `CB3CoopCrashRecordTable()` |  |  |  | `0x00435B80` 76 |  |  |
+| `operator =(const CB3CoopCrashRecordTable&)` |  |  |  | `0x004819D0` 100 |  |  |
 
 ## Notes
 

@@ -7,16 +7,17 @@
 - **Area:** [HUD](../systems/hud.md)
 - **Source file:** `B3HUDComponent.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 3
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Construct(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x0016C420` 216 | `0x001874D0` 216 | `0x00181EE0` 216 | `0x00196290` 264 |  |
-| `CB3HUDImageUVs()` |  |  |  | `0x00196460` 92 |  |
-| `CB3HUDImageUVs(const CB3HUDImageUVs&)` |  |  |  | `0x001963A0` 124 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Construct(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&)` | `0x0016C420` 216 | `0x001874D0` 216 | `0x00181EE0` 216 | `0x00196290` 264 | `0x0019FF30` proven |  |
+| `CB3HUDImageUVs()` |  |  |  | `0x00196460` 92 |  |  |
+| `CB3HUDImageUVs(const CB3HUDImageUVs&)` |  |  |  | `0x001963A0` 124 |  |  |
 
 ## Notes
 

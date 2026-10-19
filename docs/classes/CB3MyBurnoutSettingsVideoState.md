@@ -11,12 +11,12 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Action(EGtStateAction,void*,void*,void*)` | `0x0039CA30` 384 | `0x00415B10` 384 | `0x0043B800` 384 | `0x004537E0` 352 |  |
-| `CB3MyBurnoutSettingsVideoState()` |  |  |  | `0x00344CE0` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Action(EGtStateAction,void*,void*,void*)` | `0x0039CA30` 384 | `0x00415B10` 384 | `0x0043B800` 384 | `0x004537E0` 352 |  |  |
+| `CB3MyBurnoutSettingsVideoState()` |  |  |  | `0x00344CE0` 60 |  |  |
 
 ## Notes
 

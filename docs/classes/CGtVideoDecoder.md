@@ -7,29 +7,30 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `GtVideoDecoderPS2.cpp`
 - **Methods per build:** DNAT_200 11, B3DEBUG 12, B3INTERN 12, B3O0PCH 15
+- **Retail (SLUS-21050):** 11 of its 11 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by shared methods: `NodataCallback`, `RestartDMA`, `StopDMA`):** `CGTMpegDecoder`, size 0x309BC0, declared in 57 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Abort()` | `0x002E0C20` 12 | `0x0032B1E0` 92 | `0x0035D570` 92 | `0x0035E0B0` 56 |  |
-| `IsCompleted()` | `0x002E0C30` 8 | `0x0032B240` 84 | `0x0035D5D0` 84 | `0x0035E070` 52 |  |
-| `GetImage()` | `0x002E0C40` 24 | `0x0032B2A0` 100 | `0x0035D630` 100 | `0x0035E020` 72 |  |
-| `SetExternalSync(float)` | `0x002E0C60` 8 | `0x0032B310` 96 | `0x0035D6A0` 96 | `0x0035DFE0` 60 |  |
-| `Release()` | `0x002E0C70` 228 | `0x0032B370` 332 | `0x0035D700` 332 | `0x0035DEB0` 304 |  |
-| `Update()` | `0x002E0D60` 1172 | `0x0032B4C0` 836 | `0x0035D850` 836 | `0x0035DB10` 924 | `int CGTMpegDecoder::Update()` |
-| `Prepare(CGtLinearMalloc*,int,int,const char*,float,unsigned int)` | `0x002E1200` 1168 | `0x0032B810` 1116 | `0x0035DBA0` 1116 | `0x0035D650` 1216 |  |
-| `Construct()` | `0x002E1690` 76 | `0x0032BC70` 76 | `0x0035E000` 76 | `0x0035D5C0` 144 |  |
-| `NodataCallback(sceMpeg*,sceMpegCbData*,void*)` | `0x002E16E0` 420 | `0x0032BCC0` 204 | `0x0035E050` 204 | `0x0035D500` 180 | `int CGTMpegDecoder::NodataCallback(void *lpData)` |
-| `RestartDMA(sceMpeg*,sceMpegCbData*,void*)` | `0x002E1890` 32 | `0x0032BF20` 32 | `0x0035E2B0` 32 | `0x0035D240` 48 | `int CGTMpegDecoder::RestartDMA(void *lpDecoder)` |
-| `StopDMA(sceMpeg*,sceMpegCbData*,void*)` | `0x002E18B0` 32 | `0x0032BF40` 32 | `0x0035E2D0` 32 | `0x0035D210` 48 | `int CGTMpegDecoder::StopDMA(void *lpDecoder)` |
-| `StartBufferFill(int)` |  | `0x0032BD90` 392 | `0x0035E120` 392 | `0x0035D2C0` 396 |  |
-| `EndBufferFill()` |  |  |  | `0x0035D480` 124 |  |
-| `SetGSTexLocation(int)` |  |  |  | `0x00134E30` 36 |  |
-| `ViBufIsEmpty()` |  |  |  | `0x0035D270` 68 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Abort()` | `0x002E0C20` 12 | `0x0032B1E0` 92 | `0x0035D570` 92 | `0x0035E0B0` 56 | `0x00324ED0` strong |  |
+| `IsCompleted()` | `0x002E0C30` 8 | `0x0032B240` 84 | `0x0035D5D0` 84 | `0x0035E070` 52 | `0x00324EE0` strong |  |
+| `GetImage()` | `0x002E0C40` 24 | `0x0032B2A0` 100 | `0x0035D630` 100 | `0x0035E020` 72 | `0x00324F10` proven |  |
+| `SetExternalSync(float)` | `0x002E0C60` 8 | `0x0032B310` 96 | `0x0035D6A0` 96 | `0x0035DFE0` 60 | `0x00324F30` proven |  |
+| `Release()` | `0x002E0C70` 228 | `0x0032B370` 332 | `0x0035D700` 332 | `0x0035DEB0` 304 | `0x00324F40` strong |  |
+| `Update()` | `0x002E0D60` 1172 | `0x0032B4C0` 836 | `0x0035D850` 836 | `0x0035DB10` 924 | `0x00325030` unverified | `int CGTMpegDecoder::Update()` |
+| `Prepare(CGtLinearMalloc*,int,int,const char*,float,unsigned int)` | `0x002E1200` 1168 | `0x0032B810` 1116 | `0x0035DBA0` 1116 | `0x0035D650` 1216 | `0x003254F0` strong |  |
+| `Construct()` | `0x002E1690` 76 | `0x0032BC70` 76 | `0x0035E000` 76 | `0x0035D5C0` 144 | `0x00325990` strong |  |
+| `NodataCallback(sceMpeg*,sceMpegCbData*,void*)` | `0x002E16E0` 420 | `0x0032BCC0` 204 | `0x0035E050` 204 | `0x0035D500` 180 | `0x003259E0` unverified | `int CGTMpegDecoder::NodataCallback(void *lpData)` |
+| `RestartDMA(sceMpeg*,sceMpegCbData*,void*)` | `0x002E1890` 32 | `0x0032BF20` 32 | `0x0035E2B0` 32 | `0x0035D240` 48 | `0x00325B90` strong | `int CGTMpegDecoder::RestartDMA(void *lpDecoder)` |
+| `StopDMA(sceMpeg*,sceMpegCbData*,void*)` | `0x002E18B0` 32 | `0x0032BF40` 32 | `0x0035E2D0` 32 | `0x0035D210` 48 | `0x00325BB0` strong | `int CGTMpegDecoder::StopDMA(void *lpDecoder)` |
+| `StartBufferFill(int)` |  | `0x0032BD90` 392 | `0x0035E120` 392 | `0x0035D2C0` 396 |  |  |
+| `EndBufferFill()` |  |  |  | `0x0035D480` 124 |  |  |
+| `SetGSTexLocation(int)` |  |  |  | `0x00134E30` 36 |  |  |
+| `ViBufIsEmpty()` |  |  |  | `0x0035D270` 68 |  |  |
 
 ## Burnout 2 layout of `CGTMpegDecoder`
 

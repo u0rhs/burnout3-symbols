@@ -7,20 +7,21 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `B3MemoryManager.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 6
+- **Retail (SLUS-21050):** 2 of its 5 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetBlockSize() const` | `0x0039A080` 8 |  |  |  |  |
-| `Update(int)` | `0x0039A090` 28 | `0x00412520` 92 | `0x00438240` 92 | `0x0044EEC0` 116 |  |
-| `ReleaseMemoryBlock(int)` | `0x0039A0B0` 12 | `0x00412580` 68 | `0x004382A0` 68 | `0x0044EE70` 76 |  |
-| `GetMemoryBlock(int)` | `0x0039A0C0` 64 | `0x004125D0` 100 | `0x004382F0` 100 | `0x0044EDF0` 124 |  |
-| `Construct(void*,int,int)` | `0x0039A100` 20 | `0x00412640` 20 | `0x00438360` 20 | `0x0044EDA0` 76 |  |
-| `GetBlockSize()` |  | `0x00412510` 8 | `0x00438230` 8 | `0x0044EFA0` 28 |  |
-| `QueryMemoryBlock(int)` |  |  |  | `0x0044EF40` 84 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetBlockSize() const` | `0x0039A080` 8 |  |  |  |  |  |
+| `Update(int)` | `0x0039A090` 28 | `0x00412520` 92 | `0x00438240` 92 | `0x0044EEC0` 116 | `0x003E8B80` proven |  |
+| `ReleaseMemoryBlock(int)` | `0x0039A0B0` 12 | `0x00412580` 68 | `0x004382A0` 68 | `0x0044EE70` 76 |  |  |
+| `GetMemoryBlock(int)` | `0x0039A0C0` 64 | `0x004125D0` 100 | `0x004382F0` 100 | `0x0044EDF0` 124 |  |  |
+| `Construct(void*,int,int)` | `0x0039A100` 20 | `0x00412640` 20 | `0x00438360` 20 | `0x0044EDA0` 76 | `0x003E8C00` proven |  |
+| `GetBlockSize()` |  | `0x00412510` 8 | `0x00438230` 8 | `0x0044EFA0` 28 |  |  |
+| `QueryMemoryBlock(int)` |  |  |  | `0x0044EF40` 84 |  |  |
 
 ## Notes
 

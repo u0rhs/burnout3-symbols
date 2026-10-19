@@ -7,16 +7,17 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `GtFreeList.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 3
+- **Retail (SLUS-21050):** 2 of its 3 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SortFree()` | `0x00277D40` 152 | `0x002AB260` 252 | `0x002E1D30` 252 | `0x002E0600` 276 |  |
-| `_GetRequiredMemory(unsigned int,unsigned int,unsigned int)` | `0x00277DE0` 40 | `0x002AB360` 184 | `0x002E1E30` 184 | `0x002E0550` 168 |  |
-| `Construct(unsigned int,unsigned int,unsigned int,const void*,void*,unsigned int)` | `0x00277E10` 236 | `0x002AB420` 696 | `0x002E1EF0` 632 | `0x002E0280` 720 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SortFree()` | `0x00277D40` 152 | `0x002AB260` 252 | `0x002E1D30` 252 | `0x002E0600` 276 | `0x002B6E20` proven |  |
+| `_GetRequiredMemory(unsigned int,unsigned int,unsigned int)` | `0x00277DE0` 40 | `0x002AB360` 184 | `0x002E1E30` 184 | `0x002E0550` 168 | `0x002B6EC0` proven |  |
+| `Construct(unsigned int,unsigned int,unsigned int,const void*,void*,unsigned int)` | `0x00277E10` 236 | `0x002AB420` 696 | `0x002E1EF0` 632 | `0x002E0280` 720 |  |  |
 
 ## Notes
 

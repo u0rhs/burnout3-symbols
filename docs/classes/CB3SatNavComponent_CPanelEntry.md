@@ -10,11 +10,11 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Prepare(float,bool)` | `0x00364C70` 2428 | `0x003D0DF0` 2788 | `0x003F9B50` 2776 | `0x00402B60` 3948 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Prepare(float,bool)` | `0x00364C70` 2428 | `0x003D0DF0` 2788 | `0x003F9B50` 2776 | `0x00402B60` 3948 |  |  |
 
 ## Notes
 

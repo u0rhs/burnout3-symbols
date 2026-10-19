@@ -7,19 +7,20 @@
 - **Area:** [2D graphics and UI toolkit](../systems/ui-2d.md)
 - **Source file:** `Gt2dFrameHierarchy.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 4, B3INTERN 4, B3O0PCH 5
+- **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `C2dFrameHierarchy`, size 0x03C, declared in 72 file(s), e.g. `gamesource/Game/CLessonLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ConstructFrameData(int,void*,unsigned int)` | `0x0019A910` 252 | `0x001CF390` 392 | `0x001C8A10` 392 | `0x001DAB00` 312 |  |
-| `Sync()` | `0x0019AA10` 1744 | `0x001CF550` 1864 | `0x001C8BD0` 1744 | `0x001DA9C0` 156 |  |
-| `Prepare()` | `0x0019B210` 552 | `0x001CFE10` 656 | `0x001C93D0` 552 | `0x001DA960` 92 |  |
-| `_GetRequiredMemory(int)` |  | `0x001CF520` 36 | `0x001C8BA0` 36 | `0x001DAAC0` 64 |  |
-| `GetRootFrame()` |  |  |  | `0x00196F10` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ConstructFrameData(int,void*,unsigned int)` | `0x0019A910` 252 | `0x001CF390` 392 | `0x001C8A10` 392 | `0x001DAB00` 312 |  |  |
+| `Sync()` | `0x0019AA10` 1744 | `0x001CF550` 1864 | `0x001C8BD0` 1744 | `0x001DA9C0` 156 |  |  |
+| `Prepare()` | `0x0019B210` 552 | `0x001CFE10` 656 | `0x001C93D0` 552 | `0x001DA960` 92 | `0x001D4F90` proven |  |
+| `_GetRequiredMemory(int)` |  | `0x001CF520` 36 | `0x001C8BA0` 36 | `0x001DAAC0` 64 |  |  |
+| `GetRootFrame()` |  |  |  | `0x00196F10` 28 |  |  |
 
 ## Burnout 2 layout of `C2dFrameHierarchy`
 

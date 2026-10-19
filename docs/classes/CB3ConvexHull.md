@@ -7,27 +7,28 @@
 - **Area:** [Vehicles, physics and collision](../systems/vehicles-physics.md)
 - **Source file:** `B3ConvexHull.cpp`
 - **Methods per build:** DNAT_200 10, B3DEBUG 10, B3INTERN 10, B3O0PCH 12
+- **Retail (SLUS-21050):** 10 of its 10 DNAT_200 methods found, 10 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `DebugRenderPlanes(const GtMathPs2::CGtMatrix3x4&,const GtMathPs2::CGtPlane*,const GtMathPs2::CGtV3d*,bool)` | `0x0027A310` 1184 | `0x002AE920` 1312 | `0x002E5C00` 1312 | `0x002E6680` 820 |  |
-| `DebugRenderEdges(const GtMathPs2::CGtMatrix3x4&,bool) const` | `0x0027A7B0` 1096 |  |  |  |  |
-| `DeformHullVerts(GtMathPs2::CGtV3d*,GtMathPs2::CGtMatrix3x4*) const` | `0x0027AC00` 676 |  |  |  |  |
-| `MakeFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EB3HullShape)` | `0x0027AEB0` 120 | `0x002AF5E0` 120 | `0x002E68C0` 120 | `0x002E5FA0` 192 |  |
-| `MakeBoatFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027AF30` 556 | `0x002AF660` 556 | `0x002E6940` 556 | `0x002E5C80` 788 |  |
-| `MakeConeFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027B160` 328 | `0x002AF890` 328 | `0x002E6B70` 328 | `0x002E5A90` 484 |  |
-| `ScaleAndFillInHullDetails(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027B2B0` 576 | `0x002AF9E0` 848 | `0x002E6CC0` 712 | `0x002E54C0` 1476 |  |
-| `MakeBoxFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027B4F0` 1284 | `0x002AFD30` 1284 | `0x002E6F90` 1284 | `0x002E46C0` 3184 |  |
-| `Construct()` | `0x0027BA00` 16 | `0x002B0240` 16 | `0x002E74A0` 16 | `0x002E4690` 44 |  |
-| `Fixup()` | `0x0027BA10` 64 | `0x002B0250` 64 | `0x002E74B0` 64 | `0x002E4600` 140 |  |
-| `DebugRenderEdges(const GtMathPs2::CGtMatrix3x4&,bool)` |  | `0x002AEE40` 1260 | `0x002E6120` 1260 | `0x002E63A0` 724 |  |
-| `DeformHullVerts(GtMathPs2::CGtV3d*,GtMathPs2::CGtMatrix3x4*)` |  | `0x002AF330` 676 | `0x002E6610` 676 | `0x002E6060` 824 |  |
-| `CanDeform()` |  |  |  | `0x00449550` 36 |  |
-| `operator =(const CB3ConvexHull&)` |  |  |  | `0x001CC880` 172 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `DebugRenderPlanes(const GtMathPs2::CGtMatrix3x4&,const GtMathPs2::CGtPlane*,const GtMathPs2::CGtV3d*,bool)` | `0x0027A310` 1184 | `0x002AE920` 1312 | `0x002E5C00` 1312 | `0x002E6680` 820 | `0x002B96D0` proven |  |
+| `DebugRenderEdges(const GtMathPs2::CGtMatrix3x4&,bool) const` | `0x0027A7B0` 1096 |  |  |  | `0x002B9C10` proven |  |
+| `DeformHullVerts(GtMathPs2::CGtV3d*,GtMathPs2::CGtMatrix3x4*) const` | `0x0027AC00` 676 |  |  |  | `0x002BA0F0` proven |  |
+| `MakeFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d,EB3HullShape)` | `0x0027AEB0` 120 | `0x002AF5E0` 120 | `0x002E68C0` 120 | `0x002E5FA0` 192 | `0x002BA3A0` proven |  |
+| `MakeBoatFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027AF30` 556 | `0x002AF660` 556 | `0x002E6940` 556 | `0x002E5C80` 788 | `0x002BA420` proven |  |
+| `MakeConeFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027B160` 328 | `0x002AF890` 328 | `0x002E6B70` 328 | `0x002E5A90` 484 | `0x002BA650` proven |  |
+| `ScaleAndFillInHullDetails(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027B2B0` 576 | `0x002AF9E0` 848 | `0x002E6CC0` 712 | `0x002E54C0` 1476 | `0x002BA7A0` proven |  |
+| `MakeBoxFromBoundingBox(GtMathPs2::CGtV3d,GtMathPs2::CGtV3d)` | `0x0027B4F0` 1284 | `0x002AFD30` 1284 | `0x002E6F90` 1284 | `0x002E46C0` 3184 | `0x002BA9F0` proven |  |
+| `Construct()` | `0x0027BA00` 16 | `0x002B0240` 16 | `0x002E74A0` 16 | `0x002E4690` 44 | `0x002BAEE0` proven |  |
+| `Fixup()` | `0x0027BA10` 64 | `0x002B0250` 64 | `0x002E74B0` 64 | `0x002E4600` 140 | `0x002BAEF0` proven |  |
+| `DebugRenderEdges(const GtMathPs2::CGtMatrix3x4&,bool)` |  | `0x002AEE40` 1260 | `0x002E6120` 1260 | `0x002E63A0` 724 |  |  |
+| `DeformHullVerts(GtMathPs2::CGtV3d*,GtMathPs2::CGtMatrix3x4*)` |  | `0x002AF330` 676 | `0x002E6610` 676 | `0x002E6060` 824 |  |  |
+| `CanDeform()` |  |  |  | `0x00449550` 36 |  |  |
+| `operator =(const CB3ConvexHull&)` |  |  |  | `0x001CC880` 172 |  |  |
 
 ## Notes
 

@@ -10,15 +10,15 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `TimeIsSynchronised(float,int)` | `0x00201190` 184 |  | `0x0024CD60` 316 |  |  |
-| `Update(unsigned short,float*)` | `0x00201250` 536 |  | `0x0024CEA0` 976 |  |  |
-| `Release()` | `0x00201470` 76 | `0x0020D7C0` 164 | `0x0024D270` 52 | `0x002503A0` 144 |  |
-| `Prepare()` | `0x002014C0` 172 |  | `0x0024D2B0` 148 |  |  |
-| `Construct(CGtNetworkPlayerManager*)` | `0x00201570` 8 |  | `0x0024D350` 8 |  |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `TimeIsSynchronised(float,int)` | `0x00201190` 184 |  | `0x0024CD60` 316 |  |  |  |
+| `Update(unsigned short,float*)` | `0x00201250` 536 |  | `0x0024CEA0` 976 |  |  |  |
+| `Release()` | `0x00201470` 76 | `0x0020D7C0` 164 | `0x0024D270` 52 | `0x002503A0` 144 |  |  |
+| `Prepare()` | `0x002014C0` 172 |  | `0x0024D2B0` 148 |  |  |  |
+| `Construct(CGtNetworkPlayerManager*)` | `0x00201570` 8 |  | `0x0024D350` 8 |  |  |  |
 
 ## Notes
 

@@ -7,18 +7,19 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3World.cpp`
 - **Methods per build:** DNAT_200 1, B3DEBUG 1, B3INTERN 1, B3O0PCH 5
+- **Retail (SLUS-21050):** 1 of its 1 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `CGtMatrix3x3()` | `0x00169280` 8 | `0x00182520` 8 | `0x0017D200` 8 | `0x00191B60` 76 |  |
-| `CGtMatrix3x3(const GtMathPs2::CGtMatrix3x3&)` |  |  |  | `0x001A51C0` 100 |  |
-| `Invert()` |  |  |  | `0x001A6B40` 292 |  |
-| `operator *(const GtMathPs2::CGtMatrix3x3&)` |  |  |  | `0x001A50B0` 268 |  |
-| `operator =(const GtMathPs2::CGtMatrix3x3&)` |  |  |  | `0x001A5010` 92 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `CGtMatrix3x3()` | `0x00169280` 8 | `0x00182520` 8 | `0x0017D200` 8 | `0x00191B60` 76 | `0x0019B6D0` likely |  |
+| `CGtMatrix3x3(const GtMathPs2::CGtMatrix3x3&)` |  |  |  | `0x001A51C0` 100 |  |  |
+| `Invert()` |  |  |  | `0x001A6B40` 292 |  |  |
+| `operator *(const GtMathPs2::CGtMatrix3x3&)` |  |  |  | `0x001A50B0` 268 |  |  |
+| `operator =(const GtMathPs2::CGtMatrix3x3&)` |  |  |  | `0x001A5010` 92 |  |  |
 
 ## Notes
 

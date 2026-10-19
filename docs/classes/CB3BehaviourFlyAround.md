@@ -7,25 +7,26 @@
 - **Area:** [Cameras and replays](../systems/cameras-replay.md)
 - **Source file:** `B3BehaviourFlyAround.cpp`
 - **Methods per build:** DNAT_200 7, B3DEBUG 8, B3INTERN 7, B3O0PCH 11
+- **Retail (SLUS-21050):** 6 of its 7 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **vtable (DNAT_200):** `0x00440220`, 28 bytes = 7 slots (slot size assumed 4 bytes; CodeWarrior vtables start with 8 bytes of RTTI/offset info, so roughly 5 virtual functions)
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Construct()` | `0x002A80D0` 8 | `0x002E2B60` 24 | `0x00319930` 24 | `0x003162B0` 20 |  |
-| `Destruct()` | `0x002A80E0` 8 | `0x002E2B80` 8 | `0x00319950` 8 | `0x003162A0` 16 |  |
-| `Release(void*)` | `0x002A80F0` 8 | `0x002E2B90` 8 | `0x00319960` 8 | `0x00316290` 16 |  |
-| `Update(CGtCamera*,float)` | `0x002A8100` 11696 | `0x002E2BA0` 17564 | `0x00319970` 15080 | `0x00315800` 2692 |  |
-| `Prepare(void*)` | `0x002AAEE0` 2492 | `0x002E7040` 4476 | `0x0031D460` 4144 | `0x003156E0` 288 |  |
-| `Construct(int,EB3FlyAroundType)` | `0x002AB8F0` 164 | `0x002E8210` 224 | `0x0031E4C0` 224 | `0x00315610` 204 |  |
-| `SetRaceCar(int,CGtCamera*)` | `0x002AB9A0` 1816 | `0x002E9050` 3172 | `0x0031E5A0` 3172 | `0x00315400` 300 |  |
-| `SetRaceCarLookAt(int,CGtCamera*)` |  | `0x002E82F0` 3424 |  | `0x00315530` 224 |  |
-| `CB3BehaviourFlyAround()` |  |  |  | `0x0013ED20` 76 |  |
-| `SetMode(EB3FlyAroundMode,CGtCamera*)` |  |  |  | `0x003153A0` 84 |  |
-| `SetRotate(CGtCamera*)` |  |  |  | `0x003151B0` 488 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Construct()` | `0x002A80D0` 8 | `0x002E2B60` 24 | `0x00319930` 24 | `0x003162B0` 20 | `0x002E90B0` likely |  |
+| `Destruct()` | `0x002A80E0` 8 | `0x002E2B80` 8 | `0x00319950` 8 | `0x003162A0` 16 | `0x002E90D0` likely |  |
+| `Release(void*)` | `0x002A80F0` 8 | `0x002E2B90` 8 | `0x00319960` 8 | `0x00316290` 16 | `0x002E90E0` likely |  |
+| `Update(CGtCamera*,float)` | `0x002A8100` 11696 | `0x002E2BA0` 17564 | `0x00319970` 15080 | `0x00315800` 2692 | `0x002E90F0` unverified |  |
+| `Prepare(void*)` | `0x002AAEE0` 2492 | `0x002E7040` 4476 | `0x0031D460` 4144 | `0x003156E0` 288 | `0x002EC8F0` proven |  |
+| `Construct(int,EB3FlyAroundType)` | `0x002AB8F0` 164 | `0x002E8210` 224 | `0x0031E4C0` 224 | `0x00315610` 204 | `0x002ED310` strong |  |
+| `SetRaceCar(int,CGtCamera*)` | `0x002AB9A0` 1816 | `0x002E9050` 3172 | `0x0031E5A0` 3172 | `0x00315400` 300 |  |  |
+| `SetRaceCarLookAt(int,CGtCamera*)` |  | `0x002E82F0` 3424 |  | `0x00315530` 224 |  |  |
+| `CB3BehaviourFlyAround()` |  |  |  | `0x0013ED20` 76 |  |  |
+| `SetMode(EB3FlyAroundMode,CGtCamera*)` |  |  |  | `0x003153A0` 84 |  |  |
+| `SetRotate(CGtCamera*)` |  |  |  | `0x003151B0` 488 |  |  |
 
 ## Notes
 

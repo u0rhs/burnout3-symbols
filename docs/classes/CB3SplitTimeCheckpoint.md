@@ -7,19 +7,20 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3SplitTimeCheckpoint.cpp`
 - **Methods per build:** DNAT_200 6, B3DEBUG 6, B3INTERN 6, B3O0PCH 6
+- **Retail (SLUS-21050):** 6 of its 6 DNAT_200 methods found, 6 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `DrawCheckpoint(CGtTexture*,GtMathPs2::CGtV4d)` | `0x001592C0` 672 | `0x0016EC50` 908 | `0x0016A480` 768 | `0x0017AF30` 1080 |  |
-| `Draw()` | `0x00159560` 68 | `0x0016EFE0` 68 | `0x0016A780` 68 | `0x0017AED0` 96 |  |
-| `Destruct()` | `0x001595B0` 8 | `0x0016F030` 8 | `0x0016A7D0` 8 | `0x0017AEA0` 40 |  |
-| `Release()` | `0x001595C0` 8 | `0x0016F040` 8 | `0x0016A7E0` 8 | `0x0017AE70` 48 |  |
-| `Prepare(CB3PlanarTriggerStruct*)` | `0x001595D0` 188 | `0x0016F050` 268 | `0x0016A7F0` 268 | `0x0017ADE0` 132 |  |
-| `Construct()` | `0x00159690` 8 | `0x0016F160` 8 | `0x0016A900` 8 | `0x0017ADB0` 48 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `DrawCheckpoint(CGtTexture*,GtMathPs2::CGtV4d)` | `0x001592C0` 672 | `0x0016EC50` 908 | `0x0016A480` 768 | `0x0017AF30` 1080 | `0x0015E340` proven |  |
+| `Draw()` | `0x00159560` 68 | `0x0016EFE0` 68 | `0x0016A780` 68 | `0x0017AED0` 96 | `0x0015E5E0` proven |  |
+| `Destruct()` | `0x001595B0` 8 | `0x0016F030` 8 | `0x0016A7D0` 8 | `0x0017AEA0` 40 | `0x0015E630` proven |  |
+| `Release()` | `0x001595C0` 8 | `0x0016F040` 8 | `0x0016A7E0` 8 | `0x0017AE70` 48 | `0x0015E640` proven |  |
+| `Prepare(CB3PlanarTriggerStruct*)` | `0x001595D0` 188 | `0x0016F050` 268 | `0x0016A7F0` 268 | `0x0017ADE0` 132 | `0x0015E650` proven |  |
+| `Construct()` | `0x00159690` 8 | `0x0016F160` 8 | `0x0016A900` 8 | `0x0017ADB0` 48 | `0x0015E710` proven |  |
 
 ## Notes
 

@@ -7,37 +7,38 @@
 - **Area:** [Traffic](../systems/traffic.md)
 - **Source file:** `B3TrafficVehicle.cpp`
 - **Methods per build:** DNAT_200 18, B3DEBUG 18, B3INTERN 18, B3O0PCH 23
+- **Retail (SLUS-21050):** 18 of its 18 DNAT_200 methods found, 7 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CTrafficVehicle`, size 0x1B0, declared in 88 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `StartCrashing()` | `0x00162DC0` 1148 | `0x00179FD0` 1524 | `0x001753D0` 1524 | `0x0018DC20` 72 |  |
-| `ApplyNiceOncomingBehaviour(CB3TrafficRaceCarInfo*,int,float)` | `0x00163240` 932 | `0x0017A5D0` 940 | `0x001759D0` 940 | `0x0018D6E0` 1336 | `int CTrafficVehicle::ApplyNiceOncomingBehaviour(CRaceCar *lpRaceCar, float lrDist)` (same name, different parameters) |
-| `ApplyNiceSameWayBehaviour(CB3TrafficRaceCarInfo*,int,float)` | `0x001635F0` 804 | `0x0017A980` 804 | `0x00175D80` 804 | `0x0018D240` 1172 | `int CTrafficVehicle::ApplyNiceSameWayBehaviour(CRaceCar *lpRaceCar, float lrDist)` (same name, different parameters) |
-| `DoTrafficBehaviour(CB3TrafficRaceCarInfo*,int)` | `0x00163920` 540 | `0x0017ACB0` 600 | `0x001760B0` 600 | `0x0018CF40` 764 | `void CTrafficVehicle::DoTrafficBehaviour()` (same name, different parameters) |
-| `ChangeLane(CB3TrafficLane*,float)` | `0x00163B40` 404 | `0x0017AF10` 404 | `0x00176310` 404 | `0x0018CD40` 512 | `void CTrafficVehicle::ChangeLane(CLane *lpMergeLane, float lrMergeParamAlong)` (same name, different parameters) |
-| `CheckForChangeLane()` | `0x00163CE0` 740 | `0x0017B0B0` 740 | `0x001764B0` 740 | `0x0018C920` 1044 | `void CTrafficVehicle::CheckForChangeLane()` |
-| `ResetMemberVariables()` | `0x00163FD0` 364 | `0x0017B3A0` 364 | `0x001767A0` 364 | `0x0018C5C0` 648 |  |
-| `RemoveFromLanes()` | `0x00164140` 112 | `0x0017B510` 112 | `0x00176910` 112 | `0x0018C520` 148 | `void CTrafficVehicle::RemoveFromLanes()` |
-| `UpdateTrailerPosition()` | `0x001641B0` 2020 | `0x0017B580` 2652 | `0x00176980` 2192 | `0x0018B9A0` 2740 | `void CTrafficVehicle::UpdateTrailerPosition()` |
-| `InitaliseTrailerPosition()` | `0x001649A0` 1496 | `0x0017BFE0` 1992 | `0x00177210` 1624 | `0x0018B1F0` 1968 | `void CTrafficVehicle::InitaliseTrailerPosition()` |
-| `UpdatePosition()` | `0x00164F80` 2796 | `0x0017C7B0` 3700 | `0x00177870` 3180 | `0x0018A170` 4140 | `void CTrafficVehicle::UpdatePosition()` |
-| `InitalisePosition()` | `0x00165A70` 992 | `0x0017D630` 1360 | `0x001784E0` 992 | `0x00189C30` 1344 | `void CTrafficVehicle::InitalisePosition()` |
-| `Remove()` | `0x00165E50` 1264 | `0x0017DB80` 1656 | `0x001788C0` 1656 | `0x00189B80` 168 |  |
-| `Create(ETrafficVehicleCategories,unsigned char)` | `0x00166340` 756 | `0x0017E200` 844 | `0x00178F40` 772 | `0x001895F0` 1380 | `int CTrafficVehicle::Create(EB2VehicleType leNewVehicleType, int lbHotspotGenerated)` (same name, different parameters) |
-| `Release()` | `0x00166640` 52 | `0x0017E550` 52 | `0x00179250` 52 | `0x001895A0` 68 |  |
-| `Update(CB3TrafficRaceCarInfo*,int)` | `0x00166680` 4056 | `0x0017E590` 5052 | `0x00179290` 5052 | `0x001889D0` 3020 | `void CTrafficVehicle::Update(TrafficRaceCarInfo *lpTrafficRaceCarInfo)` (same name, different parameters) |
-| `Prepare()` | `0x00167660` 56 | `0x0017F950` 56 | `0x0017A650` 56 | `0x00188980` 72 |  |
-| `Construct()` | `0x001676A0` 52 | `0x0017F990` 52 | `0x0017A690` 52 | `0x00188930` 68 |  |
-| `CB3TrafficVehicle()` |  |  |  | `0x00192310` 92 |  |
-| `GetTrafficVehicleID()` |  |  |  | `0x0024EF80` 28 |  |
-| `HasCrashed()` |  |  |  | `0x0014DBB0` 76 |  |
-| `IsReflectedTrailer()` |  |  |  | `0x0018DC70` 156 |  |
-| `SetNextLaneChange()` |  |  |  | `0x0018C850` 200 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `StartCrashing()` | `0x00162DC0` 1148 | `0x00179FD0` 1524 | `0x001753D0` 1524 | `0x0018DC20` 72 | `0x00167D10` unverified |  |
+| `ApplyNiceOncomingBehaviour(CB3TrafficRaceCarInfo*,int,float)` | `0x00163240` 932 | `0x0017A5D0` 940 | `0x001759D0` 940 | `0x0018D6E0` 1336 | `0x001710E0` strong | `int CTrafficVehicle::ApplyNiceOncomingBehaviour(CRaceCar *lpRaceCar, float lrDist)` (same name, different parameters) |
+| `ApplyNiceSameWayBehaviour(CB3TrafficRaceCarInfo*,int,float)` | `0x001635F0` 804 | `0x0017A980` 804 | `0x00175D80` 804 | `0x0018D240` 1172 | `0x001714A0` strong | `int CTrafficVehicle::ApplyNiceSameWayBehaviour(CRaceCar *lpRaceCar, float lrDist)` (same name, different parameters) |
+| `DoTrafficBehaviour(CB3TrafficRaceCarInfo*,int)` | `0x00163920` 540 | `0x0017ACB0` 600 | `0x001760B0` 600 | `0x0018CF40` 764 | `0x001717D0` strong | `void CTrafficVehicle::DoTrafficBehaviour()` (same name, different parameters) |
+| `ChangeLane(CB3TrafficLane*,float)` | `0x00163B40` 404 | `0x0017AF10` 404 | `0x00176310` 404 | `0x0018CD40` 512 | `0x00171A00` likely | `void CTrafficVehicle::ChangeLane(CLane *lpMergeLane, float lrMergeParamAlong)` (same name, different parameters) |
+| `CheckForChangeLane()` | `0x00163CE0` 740 | `0x0017B0B0` 740 | `0x001764B0` 740 | `0x0018C920` 1044 | `0x00171BA0` strong | `void CTrafficVehicle::CheckForChangeLane()` |
+| `ResetMemberVariables()` | `0x00163FD0` 364 | `0x0017B3A0` 364 | `0x001767A0` 364 | `0x0018C5C0` 648 | `0x00171E90` strong |  |
+| `RemoveFromLanes()` | `0x00164140` 112 | `0x0017B510` 112 | `0x00176910` 112 | `0x0018C520` 148 | `0x00172000` proven | `void CTrafficVehicle::RemoveFromLanes()` |
+| `UpdateTrailerPosition()` | `0x001641B0` 2020 | `0x0017B580` 2652 | `0x00176980` 2192 | `0x0018B9A0` 2740 | `0x00172070` proven | `void CTrafficVehicle::UpdateTrailerPosition()` |
+| `InitaliseTrailerPosition()` | `0x001649A0` 1496 | `0x0017BFE0` 1992 | `0x00177210` 1624 | `0x0018B1F0` 1968 | `0x00172860` proven | `void CTrafficVehicle::InitaliseTrailerPosition()` |
+| `UpdatePosition()` | `0x00164F80` 2796 | `0x0017C7B0` 3700 | `0x00177870` 3180 | `0x0018A170` 4140 | `0x00172E40` proven | `void CTrafficVehicle::UpdatePosition()` |
+| `InitalisePosition()` | `0x00165A70` 992 | `0x0017D630` 1360 | `0x001784E0` 992 | `0x00189C30` 1344 | `0x00173950` proven | `void CTrafficVehicle::InitalisePosition()` |
+| `Remove()` | `0x00165E50` 1264 | `0x0017DB80` 1656 | `0x001788C0` 1656 | `0x00189B80` 168 | `0x00173D30` likely |  |
+| `Create(ETrafficVehicleCategories,unsigned char)` | `0x00166340` 756 | `0x0017E200` 844 | `0x00178F40` 772 | `0x001895F0` 1380 | `0x001864F0` proven | `int CTrafficVehicle::Create(EB2VehicleType leNewVehicleType, int lbHotspotGenerated)` (same name, different parameters) |
+| `Release()` | `0x00166640` 52 | `0x0017E550` 52 | `0x00179250` 52 | `0x001895A0` 68 | `0x00186810` strong |  |
+| `Update(CB3TrafficRaceCarInfo*,int)` | `0x00166680` 4056 | `0x0017E590` 5052 | `0x00179290` 5052 | `0x001889D0` 3020 | `0x00186850` likely | `void CTrafficVehicle::Update(TrafficRaceCarInfo *lpTrafficRaceCarInfo)` (same name, different parameters) |
+| `Prepare()` | `0x00167660` 56 | `0x0017F950` 56 | `0x0017A650` 56 | `0x00188980` 72 | `0x001996D0` proven |  |
+| `Construct()` | `0x001676A0` 52 | `0x0017F990` 52 | `0x0017A690` 52 | `0x00188930` 68 | `0x00199710` strong |  |
+| `CB3TrafficVehicle()` |  |  |  | `0x00192310` 92 |  |  |
+| `GetTrafficVehicleID()` |  |  |  | `0x0024EF80` 28 |  |  |
+| `HasCrashed()` |  |  |  | `0x0014DBB0` 76 |  |  |
+| `IsReflectedTrailer()` |  |  |  | `0x0018DC70` 156 |  |  |
+| `SetNextLaneChange()` |  |  |  | `0x0018C850` 200 |  |  |
 
 ## Burnout 2 layout of `CTrafficVehicle`
 

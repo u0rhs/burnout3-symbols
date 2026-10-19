@@ -7,22 +7,23 @@
 - **Area:** [Tracks, world and streaming](../systems/tracks-streaming.md)
 - **Source file:** `B3StreamManager.cpp`
 - **Methods per build:** DNAT_200 8, B3DEBUG 8, B3INTERN 8, B3O0PCH 9
+- **Retail (SLUS-21050):** 5 of its 8 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ReleaseLODUnit(CB3StreamedTrackLODAndCollisionData*)` | `0x00374FE0` 76 | `0x003E58D0` 76 | `0x0040D750` 76 | `0x004230D0` 152 |  |
-| `AcquireLODUnit()` | `0x00375030` 76 | `0x003E5920` 76 | `0x0040D7A0` 76 | `0x00423050` 128 |  |
-| `ReleaseHighDetailUnit(CB3StreamedTrackHighData*)` | `0x00375080` 76 | `0x003E5970` 76 | `0x0040D7F0` 76 | `0x00422FB0` 152 |  |
-| `AcquireHighDetailUnit()` | `0x003750D0` 76 | `0x003E59C0` 76 | `0x0040D840` 76 | `0x00422F30` 128 |  |
-| `Release()` | `0x00375120` 236 | `0x003E5A10` 236 | `0x0040D890` 236 | `0x00422DF0` 320 |  |
-| `Prepare(unsigned long)` | `0x00375210` 588 | `0x003E5B00` 652 | `0x0040D980` 652 | `0x00422AB0` 828 |  |
-| `Destruct()` | `0x00375460` 12 | `0x003E5D90` 12 | `0x0040DC10` 12 | `0x00422A90` 32 |  |
-| `Construct()` | `0x00375470` 116 | `0x003E5DA0` 116 | `0x0040DC20` 116 | `0x004229E0` 164 |  |
-| `ResetAll()` |  |  |  | `0x0032F1A0` 32 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ReleaseLODUnit(CB3StreamedTrackLODAndCollisionData*)` | `0x00374FE0` 76 | `0x003E58D0` 76 | `0x0040D750` 76 | `0x004230D0` 152 | `0x003C30E0` unverified |  |
+| `AcquireLODUnit()` | `0x00375030` 76 | `0x003E5920` 76 | `0x0040D7A0` 76 | `0x00423050` 128 |  |  |
+| `ReleaseHighDetailUnit(CB3StreamedTrackHighData*)` | `0x00375080` 76 | `0x003E5970` 76 | `0x0040D7F0` 76 | `0x00422FB0` 152 | `0x003C31E0` unverified |  |
+| `AcquireHighDetailUnit()` | `0x003750D0` 76 | `0x003E59C0` 76 | `0x0040D840` 76 | `0x00422F30` 128 |  |  |
+| `Release()` | `0x00375120` 236 | `0x003E5A10` 236 | `0x0040D890` 236 | `0x00422DF0` 320 |  |  |
+| `Prepare(unsigned long)` | `0x00375210` 588 | `0x003E5B00` 652 | `0x0040D980` 652 | `0x00422AB0` 828 | `0x003C3430` unverified |  |
+| `Destruct()` | `0x00375460` 12 | `0x003E5D90` 12 | `0x0040DC10` 12 | `0x00422A90` 32 | `0x003C3560` strong |  |
+| `Construct()` | `0x00375470` 116 | `0x003E5DA0` 116 | `0x0040DC20` 116 | `0x004229E0` 164 | `0x003C3570` likely |  |
+| `ResetAll()` |  |  |  | `0x0032F1A0` 32 |  |  |
 
 ## Notes
 

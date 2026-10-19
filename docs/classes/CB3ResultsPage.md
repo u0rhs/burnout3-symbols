@@ -10,16 +10,16 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetStylisedTextSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x00373D30` 144 | `0x003E3570` 144 | `0x0040C080` 144 | `0x00421960` 240 |  |
-| `RenderStylisedText(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const vo` | `0x00373DC0` 668 | `0x003E3600` 704 | `0x0040C110` 704 | `0x004215F0` 824 |  |
-| `AddRaceTime(const CB3ResultsData*)` | `0x00374060` 444 | `0x003E38C0` 500 | `0x0040C3D0` 500 | `0x00421530` 192 |  |
-| `PrepareTable()` | `0x00374220` 664 | `0x003E3AC0` 664 | `0x0040C5D0` 664 | `0x004210C0` 1124 |  |
-| `Prepare()` | `0x003744C0` 8 | `0x003E3D60` 8 | `0x0040C870` 8 | `0x00421090` 44 |  |
-| `CB3ResultsPage()` |  |  |  | `0x003412E0` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetStylisedTextSize(GtMathPs2::CGtV2d*,const CGt2dFrame&,const void*)` | `0x00373D30` 144 | `0x003E3570` 144 | `0x0040C080` 144 | `0x00421960` 240 |  |  |
+| `RenderStylisedText(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,unsigned short*,const CGt2dFrame&,const vo` | `0x00373DC0` 668 | `0x003E3600` 704 | `0x0040C110` 704 | `0x004215F0` 824 |  |  |
+| `AddRaceTime(const CB3ResultsData*)` | `0x00374060` 444 | `0x003E38C0` 500 | `0x0040C3D0` 500 | `0x00421530` 192 |  |  |
+| `PrepareTable()` | `0x00374220` 664 | `0x003E3AC0` 664 | `0x0040C5D0` 664 | `0x004210C0` 1124 |  |  |
+| `Prepare()` | `0x003744C0` 8 | `0x003E3D60` 8 | `0x0040C870` 8 | `0x00421090` 44 |  |  |
+| `CB3ResultsPage()` |  |  |  | `0x003412E0` 60 |  |  |
 
 ## Static data (DNAT_200)
 

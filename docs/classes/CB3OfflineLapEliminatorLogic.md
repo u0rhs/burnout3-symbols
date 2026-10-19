@@ -11,20 +11,20 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetResultsPageType()` | `0x003479F0` 8 | `0x003ACF90` 8 | `0x003D6B10` 8 | `0x003E24E0` 20 |  |
-| `GetCheckpointMarkerFlags()` | `0x00347A00` 8 | `0x003ACFA0` 8 | `0x003D6B20` 8 | `0x003E2500` 20 |  |
-| `GetHUDType()` | `0x00347A10` 8 | `0x003ACFB0` 8 | `0x003D6B30` 8 | `0x003E2520` 20 |  |
-| `GetOfflineGameModeType()` | `0x00347A20` 8 | `0x003ACFC0` 8 | `0x003D6B40` 8 | `0x003E2540` 20 |  |
-| `GetOnlineGameModeType()` | `0x00347A30` 8 | `0x003ACFD0` 8 | `0x003D6B50` 8 | `0x003E2560` 20 |  |
-| `ClearUpCrash(int)` | `0x00347A40` 68 | `0x003ACFE0` 140 | `0x003D6B60` 140 | `0x003E2450` 132 |  |
-| `OnRaceCarStartNewLap(CB3RaceCar*)` | `0x00347A90` 372 | `0x003AD070` 644 | `0x003D6BF0` 644 | `0x003E2250` 508 |  |
-| `OnWorldPrepared()` | `0x00347C10` 92 | `0x003AD300` 224 | `0x003D6E80` 224 | `0x003E2190` 192 |  |
-| `Update()` | `0x00347C70` 144 | `0x003AD3E0` 220 | `0x003D6F60` 220 | `0x003E20D0` 192 |  |
-| `CB3OfflineLapEliminatorLogic()` |  |  |  | `0x0013E130` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetResultsPageType()` | `0x003479F0` 8 | `0x003ACF90` 8 | `0x003D6B10` 8 | `0x003E24E0` 20 |  |  |
+| `GetCheckpointMarkerFlags()` | `0x00347A00` 8 | `0x003ACFA0` 8 | `0x003D6B20` 8 | `0x003E2500` 20 |  |  |
+| `GetHUDType()` | `0x00347A10` 8 | `0x003ACFB0` 8 | `0x003D6B30` 8 | `0x003E2520` 20 |  |  |
+| `GetOfflineGameModeType()` | `0x00347A20` 8 | `0x003ACFC0` 8 | `0x003D6B40` 8 | `0x003E2540` 20 |  |  |
+| `GetOnlineGameModeType()` | `0x00347A30` 8 | `0x003ACFD0` 8 | `0x003D6B50` 8 | `0x003E2560` 20 |  |  |
+| `ClearUpCrash(int)` | `0x00347A40` 68 | `0x003ACFE0` 140 | `0x003D6B60` 140 | `0x003E2450` 132 |  |  |
+| `OnRaceCarStartNewLap(CB3RaceCar*)` | `0x00347A90` 372 | `0x003AD070` 644 | `0x003D6BF0` 644 | `0x003E2250` 508 |  |  |
+| `OnWorldPrepared()` | `0x00347C10` 92 | `0x003AD300` 224 | `0x003D6E80` 224 | `0x003E2190` 192 |  |  |
+| `Update()` | `0x00347C70` 144 | `0x003AD3E0` 220 | `0x003D6F60` 220 | `0x003E20D0` 192 |  |  |
+| `CB3OfflineLapEliminatorLogic()` |  |  |  | `0x0013E130` 60 |  |  |
 
 ## Notes
 

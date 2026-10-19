@@ -7,27 +7,28 @@
 - **Area:** [Core, memory, input and platform](../systems/core-platform.md)
 - **Source file:** `GtTimer.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 13
+- **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 8 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CTimer`, size 0x01C, declared in 99 file(s), e.g. `gamesource/Game/CCrashForCashLogic.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `SetSlowMo(int)` | `0x00199EA0` 8 | `0x001CEA40` 128 | `0x001C7CD0` 128 | `0x001D9CD0` 72 |  |
-| `Update()` | `0x00199EB0` 424 | `0x001CEAC0` 536 | `0x001C7D50` 504 | `0x001D9AC0` 528 |  |
-| `Stop()` | `0x0019A060` 60 | `0x001CECE0` 60 | `0x001C7F50` 60 | `0x001D9A80` 64 |  |
-| `Start()` | `0x0019A0A0` 64 | `0x001CED20` 64 | `0x001C7F90` 64 | `0x001D9A30` 68 |  |
-| `Prepare()` | `0x0019A0E0` 76 | `0x001CED60` 76 | `0x001C7FD0` 76 | `0x001D9990` 156 |  |
-| `Construct()` | `0x0019A130` 56 | `0x001CEDB0` 56 | `0x001C8020` 56 | `0x001D9910` 128 |  |
-| `NextFrame()` | `0x0019A170` 16 | `0x001CEDF0` 16 | `0x001C8060` 16 | `0x001D98F0` 20 |  |
-| `PrepareTimerServices(int)` | `0x0019A180` 64 | `0x001CEE00` 152 | `0x001C8070` 148 | `0x001D9850` 148 |  |
-| `GetFrameCount()` | `0x00335120` 8 | `0x003973F0` 8 | `0x003C17D0` 8 | `0x002AD860` 12 |  |
-| `ActualSetSlowMo()` |  |  |  | `0x001D9D20` 236 |  |
-| `GetSlowMo()` |  |  |  | `0x002A4DD0` 28 |  |
-| `GetTime()` |  |  |  | `0x0012ED90` 28 |  |
-| `GetTimeStep()` |  |  |  | `0x0012EE50` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `SetSlowMo(int)` | `0x00199EA0` 8 | `0x001CEA40` 128 | `0x001C7CD0` 128 | `0x001D9CD0` 72 | `0x001D3A50` proven |  |
+| `Update()` | `0x00199EB0` 424 | `0x001CEAC0` 536 | `0x001C7D50` 504 | `0x001D9AC0` 528 | `0x001D3A60` proven |  |
+| `Stop()` | `0x0019A060` 60 | `0x001CECE0` 60 | `0x001C7F50` 60 | `0x001D9A80` 64 | `0x001D3C10` proven |  |
+| `Start()` | `0x0019A0A0` 64 | `0x001CED20` 64 | `0x001C7F90` 64 | `0x001D9A30` 68 | `0x001D3C50` proven |  |
+| `Prepare()` | `0x0019A0E0` 76 | `0x001CED60` 76 | `0x001C7FD0` 76 | `0x001D9990` 156 | `0x001D3C90` proven |  |
+| `Construct()` | `0x0019A130` 56 | `0x001CEDB0` 56 | `0x001C8020` 56 | `0x001D9910` 128 | `0x001D3CE0` proven |  |
+| `NextFrame()` | `0x0019A170` 16 | `0x001CEDF0` 16 | `0x001C8060` 16 | `0x001D98F0` 20 | `0x001D3D20` proven |  |
+| `PrepareTimerServices(int)` | `0x0019A180` 64 | `0x001CEE00` 152 | `0x001C8070` 148 | `0x001D9850` 148 | `0x001D3D30` proven |  |
+| `GetFrameCount()` | `0x00335120` 8 | `0x003973F0` 8 | `0x003C17D0` 8 | `0x002AD860` 12 | `0x00376220` strong |  |
+| `ActualSetSlowMo()` |  |  |  | `0x001D9D20` 236 |  |  |
+| `GetSlowMo()` |  |  |  | `0x002A4DD0` 28 |  |  |
+| `GetTime()` |  |  |  | `0x0012ED90` 28 |  |  |
+| `GetTimeStep()` |  |  |  | `0x0012EE50` 28 |  |  |
 
 ## Static data (DNAT_200)
 

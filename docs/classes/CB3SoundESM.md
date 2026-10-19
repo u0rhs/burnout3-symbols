@@ -7,23 +7,24 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundESM.cpp`
 - **Methods per build:** DNAT_200 3, B3DEBUG 3, B3INTERN 3, B3O0PCH 10
+- **Retail (SLUS-21050):** 1 of its 3 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `ModulateRpm(CB3SoundESMGraphInputs&,const CB3RaceCar*)` | `0x0024AE20` 488 | `0x0027B760` 664 | `0x002B2E40` 664 | `0x002AD650` 516 |  |
-| `Prepare(unsigned long,int)` | `0x0024B010` 528 | `0x0027BA00` 1264 | `0x002B30E0` 712 | `0x002ACE00` 1604 |  |
-| `Construct()` | `0x0024B220` 240 | `0x0027BEF0` 312 | `0x002B33B0` 240 | `0x002ACC80` 384 |  |
-| `CB3SoundESM()` |  |  |  | `0x002B1C00` 40 |  |
-| `GetBank()` |  |  |  | `0x002B2C40` 28 |  |
-| `GetLock()` |  |  |  | `0x00327C40` 28 |  |
-| `Release()` |  |  |  | `0x002AD4D0` 196 |  |
-| `SetLock(bool)` |  |  |  | `0x00327C10` 36 |  |
-| `Update(const CB3RaceCar*,float,float,float)` |  |  |  | `0x002AD470` 84 |  |
-| `_CreateESMPathFromID(unsigned long,bool,char*)` |  |  |  | `0x002AD5A0` 172 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `ModulateRpm(CB3SoundESMGraphInputs&,const CB3RaceCar*)` | `0x0024AE20` 488 | `0x0027B760` 664 | `0x002B2E40` 664 | `0x002AD650` 516 | `0x00288770` strong |  |
+| `Prepare(unsigned long,int)` | `0x0024B010` 528 | `0x0027BA00` 1264 | `0x002B30E0` 712 | `0x002ACE00` 1604 |  |  |
+| `Construct()` | `0x0024B220` 240 | `0x0027BEF0` 312 | `0x002B33B0` 240 | `0x002ACC80` 384 |  |  |
+| `CB3SoundESM()` |  |  |  | `0x002B1C00` 40 |  |  |
+| `GetBank()` |  |  |  | `0x002B2C40` 28 |  |  |
+| `GetLock()` |  |  |  | `0x00327C40` 28 |  |  |
+| `Release()` |  |  |  | `0x002AD4D0` 196 |  |  |
+| `SetLock(bool)` |  |  |  | `0x00327C10` 36 |  |  |
+| `Update(const CB3RaceCar*,float,float,float)` |  |  |  | `0x002AD470` 84 |  |  |
+| `_CreateESMPathFromID(unsigned long,bool,char*)` |  |  |  | `0x002AD5A0` 172 |  |  |
 
 ## Notes
 

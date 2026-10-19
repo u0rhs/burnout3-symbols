@@ -10,13 +10,13 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetTakedownImage(int)` | `0x003A6E70` 24 | `0x00421400` 176 | `0x00447070` 176 | `0x0045F9B0` 100 |  |
-| `GetTakedownString(int)` | `0x003A6E90` 24 | `0x004214B0` 176 | `0x00447120` 176 | `0x0045F940` 100 |  |
-| `GetTakedownTrackIndex(int)` | `0x003A6EB0` 20 | `0x00421560` 172 | `0x004471D0` 172 | `0x0045F8E0` 96 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetTakedownImage(int)` | `0x003A6E70` 24 | `0x00421400` 176 | `0x00447070` 176 | `0x0045F9B0` 100 |  |  |
+| `GetTakedownString(int)` | `0x003A6E90` 24 | `0x004214B0` 176 | `0x00447120` 176 | `0x0045F940` 100 |  |  |
+| `GetTakedownTrackIndex(int)` | `0x003A6EB0` 20 | `0x00421560` 172 | `0x004471D0` 172 | `0x0045F8E0` 96 |  |  |
 
 ## Notes
 

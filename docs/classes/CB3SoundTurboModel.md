@@ -7,21 +7,22 @@
 - **Area:** [Audio and music](../systems/audio.md)
 - **Source file:** `B3SoundTurboModel.cpp`
 - **Methods per build:** DNAT_200 5, B3DEBUG 5, B3INTERN 5, B3O0PCH 8
+- **Retail (SLUS-21050):** 5 of its 5 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Destruct()` | `0x00250BE0` 8 | `0x00283280` 8 | `0x002B9E20` 8 | `0x002B7DB0` 16 |  |
-| `Release()` | `0x00250BF0` 60 | `0x00283290` 60 | `0x002B9E30` 60 | `0x002B7D50` 96 |  |
-| `Update(const CB3RaceCar*,const CB3SoundRaceCarAttribs*)` | `0x00250C30` 824 | `0x002832D0` 1156 | `0x002B9E70` 1156 | `0x002B7AE0` 612 |  |
-| `Prepare(const char*)` | `0x00250F70` 200 | `0x00283760` 304 | `0x002BA300` 304 | `0x002B7950` 388 |  |
-| `Construct()` | `0x00251040` 16 | `0x00283890` 16 | `0x002BA430` 16 | `0x002B7920` 44 |  |
-| `DumpValve(const CB3RaceCar*,const CB3SoundRaceCarAttribs*,float)` |  |  |  | `0x002B7DC0` 400 |  |
-| `GetCurrentTurbineSpeed()` |  |  |  | `0x00318B50` 28 |  |
-| `UpdateDumpValve(const CB3RaceCar*)` |  |  |  | `0x002B7F50` 196 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Destruct()` | `0x00250BE0` 8 | `0x00283280` 8 | `0x002B9E20` 8 | `0x002B7DB0` 16 | `0x0028FAD0` strong |  |
+| `Release()` | `0x00250BF0` 60 | `0x00283290` 60 | `0x002B9E30` 60 | `0x002B7D50` 96 | `0x0028FAE0` strong |  |
+| `Update(const CB3RaceCar*,const CB3SoundRaceCarAttribs*)` | `0x00250C30` 824 | `0x002832D0` 1156 | `0x002B9E70` 1156 | `0x002B7AE0` 612 | `0x0028FB20` strong |  |
+| `Prepare(const char*)` | `0x00250F70` 200 | `0x00283760` 304 | `0x002BA300` 304 | `0x002B7950` 388 | `0x0028FE70` likely |  |
+| `Construct()` | `0x00251040` 16 | `0x00283890` 16 | `0x002BA430` 16 | `0x002B7920` 44 | `0x0028FF20` proven |  |
+| `DumpValve(const CB3RaceCar*,const CB3SoundRaceCarAttribs*,float)` |  |  |  | `0x002B7DC0` 400 |  |  |
+| `GetCurrentTurbineSpeed()` |  |  |  | `0x00318B50` 28 |  |  |
+| `UpdateDumpValve(const CB3RaceCar*)` |  |  |  | `0x002B7F50` 196 |  |  |
 
 ## Notes
 

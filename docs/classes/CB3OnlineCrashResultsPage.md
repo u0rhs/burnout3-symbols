@@ -11,19 +11,19 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `AddPlayerResultToTable(int,int)` | `0x003A8DF0` 1836 | `0x00424640` 1912 | `0x0044D590` 1912 | `0x00463A00` 3416 |  |
-| `PrepareTable()` | `0x003A9520` 1124 | `0x00424DC0` 1192 | `0x0044DD10` 1192 | `0x00463290` 1896 |  |
-| `_QSortCallback(const void*,const void*)` | `0x003A9990` 88 | `0x00425270` 88 | `0x0044E1C0` 88 | `0x004631E0` 164 |  |
-| `AddRaceTime(const CB3ResultsData*)` | `0x003A99F0` 912 | `0x004252D0` 956 | `0x0044E220` 956 | `0x00462DA0` 1076 |  |
-| `Release()` | `0x003A9D80` 8 | `0x00425690` 8 | `0x0044E5E0` 8 | `0x00462D90` 16 |  |
-| `Update()` | `0x003A9D90` 408 | `0x004256A0` 596 | `0x0044E5F0` 596 | `0x00462B20` 616 |  |
-| `SetPrompts(unsigned int)` | `0x003A9F30` 156 | `0x00425900` 156 | `0x0044E850` 156 | `0x00462A60` 192 |  |
-| `Prepare(EGlobalStrings,bool,bool,unsigned int)` | `0x003A9FD0` 404 | `0x004259A0` 404 | `0x0044E8F0` 404 | `0x00462940` 288 |  |
-| `CB3OnlineCrashResultsPage()` |  |  |  | `0x003412A0` 60 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `AddPlayerResultToTable(int,int)` | `0x003A8DF0` 1836 | `0x00424640` 1912 | `0x0044D590` 1912 | `0x00463A00` 3416 |  |  |
+| `PrepareTable()` | `0x003A9520` 1124 | `0x00424DC0` 1192 | `0x0044DD10` 1192 | `0x00463290` 1896 |  |  |
+| `_QSortCallback(const void*,const void*)` | `0x003A9990` 88 | `0x00425270` 88 | `0x0044E1C0` 88 | `0x004631E0` 164 |  |  |
+| `AddRaceTime(const CB3ResultsData*)` | `0x003A99F0` 912 | `0x004252D0` 956 | `0x0044E220` 956 | `0x00462DA0` 1076 |  |  |
+| `Release()` | `0x003A9D80` 8 | `0x00425690` 8 | `0x0044E5E0` 8 | `0x00462D90` 16 |  |  |
+| `Update()` | `0x003A9D90` 408 | `0x004256A0` 596 | `0x0044E5F0` 596 | `0x00462B20` 616 |  |  |
+| `SetPrompts(unsigned int)` | `0x003A9F30` 156 | `0x00425900` 156 | `0x0044E850` 156 | `0x00462A60` 192 |  |  |
+| `Prepare(EGlobalStrings,bool,bool,unsigned int)` | `0x003A9FD0` 404 | `0x004259A0` 404 | `0x0044E8F0` 404 | `0x00462940` 288 |  |  |
+| `CB3OnlineCrashResultsPage()` |  |  |  | `0x003412A0` 60 |  |  |
 
 ## Notes
 

@@ -10,17 +10,17 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Check()` | `0x003C66A0` 240 | `0x004437B0` 240 | `0x0046C390` 228 | `0x00481C90` 344 |  |
-| `BuildDataForSave(unsigned int,unsigned short*,int,int)` | `0x003C6790` 1632 | `0x004438A0` 1676 | `0x0046C480` 1168 | `0x004814B0` 624 |  |
-| `CB3SaveGameData()` |  |  |  | `0x00482670` 44 |  |
-| `GetSavedGameProfile(unsigned int)` |  |  |  | `0x00481450` 88 |  |
-| `Init()` |  |  |  | `0x004813F0` 96 |  |
-| `ResetTimeStamps()` |  |  |  | `0x00481DF0` 96 |  |
-| `SetCurrent(unsigned int)` |  |  |  | `0x00481B20` 356 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Check()` | `0x003C66A0` 240 | `0x004437B0` 240 | `0x0046C390` 228 | `0x00481C90` 344 |  |  |
+| `BuildDataForSave(unsigned int,unsigned short*,int,int)` | `0x003C6790` 1632 | `0x004438A0` 1676 | `0x0046C480` 1168 | `0x004814B0` 624 |  |  |
+| `CB3SaveGameData()` |  |  |  | `0x00482670` 44 |  |  |
+| `GetSavedGameProfile(unsigned int)` |  |  |  | `0x00481450` 88 |  |  |
+| `Init()` |  |  |  | `0x004813F0` 96 |  |  |
+| `ResetTimeStamps()` |  |  |  | `0x00481DF0` 96 |  |  |
+| `SetCurrent(unsigned int)` |  |  |  | `0x00481B20` 356 |  |  |
 
 ## Notes
 

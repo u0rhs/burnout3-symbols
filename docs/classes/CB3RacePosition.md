@@ -7,23 +7,24 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3RacePosition.cpp`
 - **Methods per build:** DNAT_200 9, B3DEBUG 9, B3INTERN 9, B3O0PCH 9
+- **Retail (SLUS-21050):** 9 of its 9 DNAT_200 methods found, 0 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CRacePosition`, size 0x088, declared in 68 file(s), e.g. `gamesource/Game/CGrandPrixTable.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `DrawPositionMarker(GtMathPs2::CGtV3d,const unsigned short*,int,CB3RaceCar*,CB3RaceCar*,float,bool,bool,bool,fl` | `0x0014F630` 3480 | `0x00161DB0` 4240 | `0x0015CDB0` 4240 | `0x0016CD00` 7348 |  |
-| `DrawSingleVehicleValue(CB3VehiclePhysics*,int,int,float,bool)` | `0x001503D0` 392 | `0x00162E40` 432 | `0x0015DE40` 432 | `0x0016C9F0` 612 |  |
-| `DrawTrafficValues()` | `0x00150560` 272 | `0x00162FF0` 312 | `0x0015DFF0` 312 | `0x0016C8B0` 320 |  |
-| `Draw(int)` | `0x00150670` 844 | `0x00163130` 1412 | `0x0015E130` 1412 | `0x0016C440` 1132 | `void CRacePosition::Draw(int camIndex)` |
-| `Destruct()` | `0x001509C0` 8 | `0x001636C0` 8 | `0x0015E6C0` 8 | `0x0016C430` 16 |  |
-| `Release()` | `0x001509D0` 8 | `0x001636D0` 8 | `0x0015E6D0` 8 | `0x0016C420` 16 |  |
-| `Update()` | `0x001509E0` 604 | `0x001636E0` 1272 | `0x0015E6E0` 980 | `0x0016C090` 900 | `void CRacePosition::Update()` |
-| `Prepare()` | `0x00150C80` 120 | `0x00163C20` 252 | `0x0015EB00` 252 | `0x0016BF20` 240 |  |
-| `Construct()` | `0x00150D00` 8 | `0x00163D20` 8 | `0x0015EC00` 8 | `0x0016BF10` 16 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `DrawPositionMarker(GtMathPs2::CGtV3d,const unsigned short*,int,CB3RaceCar*,CB3RaceCar*,float,bool,bool,bool,fl` | `0x0014F630` 3480 | `0x00161DB0` 4240 | `0x0015CDB0` 4240 | `0x0016CD00` 7348 | `0x001531C0` unverified |  |
+| `DrawSingleVehicleValue(CB3VehiclePhysics*,int,int,float,bool)` | `0x001503D0` 392 | `0x00162E40` 432 | `0x0015DE40` 432 | `0x0016C9F0` 612 | `0x001540A0` unverified |  |
+| `DrawTrafficValues()` | `0x00150560` 272 | `0x00162FF0` 312 | `0x0015DFF0` 312 | `0x0016C8B0` 320 | `0x00154230` strong |  |
+| `Draw(int)` | `0x00150670` 844 | `0x00163130` 1412 | `0x0015E130` 1412 | `0x0016C440` 1132 | `0x00154350` unverified | `void CRacePosition::Draw(int camIndex)` |
+| `Destruct()` | `0x001509C0` 8 | `0x001636C0` 8 | `0x0015E6C0` 8 | `0x0016C430` 16 | `0x00154750` strong |  |
+| `Release()` | `0x001509D0` 8 | `0x001636D0` 8 | `0x0015E6D0` 8 | `0x0016C420` 16 | `0x00154760` strong |  |
+| `Update()` | `0x001509E0` 604 | `0x001636E0` 1272 | `0x0015E6E0` 980 | `0x0016C090` 900 | `0x00154770` strong | `void CRacePosition::Update()` |
+| `Prepare()` | `0x00150C80` 120 | `0x00163C20` 252 | `0x0015EB00` 252 | `0x0016BF20` 240 | `0x00154A30` strong |  |
+| `Construct()` | `0x00150D00` 8 | `0x00163D20` 8 | `0x0015EC00` 8 | `0x0016BF10` 16 | `0x00154AB0` strong |  |
 
 ## Burnout 2 layout of `CRacePosition`
 

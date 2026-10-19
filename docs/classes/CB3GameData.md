@@ -7,32 +7,33 @@
 - **Area:** [Game flow, modes and race logic](../systems/game-flow.md)
 - **Source file:** `B3GameData.cpp`
 - **Methods per build:** DNAT_200 13, B3DEBUG 13, B3INTERN 13, B3O0PCH 18
+- **Retail (SLUS-21050):** 4 of its 13 DNAT_200 methods found, 2 of them proven ([prototype names](../reference/retail-prototype-names.md))
 - **Burnout 2 ancestor (by name):** `CGameData`, size 0x008, declared in 68 file(s), e.g. `gamesource/Game/CGrandPrixTable.cpp`
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `GetGameDataThreshold(int*,int*,int*)` | `0x0014B220` 72 | `0x0015C2B0` 72 | `0x00157D30` 72 | `0x00167200` 116 |  |
-| `GetGameDataThreshold(float*,float*,float*)` | `0x0014B270` 40 | `0x0015C300` 40 | `0x00157D80` 40 | `0x001671A0` 92 |  |
-| `GetNumLaps()` | `0x0014B2A0` 28 | `0x0015C330` 28 | `0x00157DB0` 28 | `0x00167160` 64 |  |
-| `GetNumSplitTimeCheckpoints()` | `0x0014B2C0` 28 | `0x0015C350` 28 | `0x00157DD0` 28 | `0x00167120` 64 |  |
-| `GetNumStartLines()` | `0x0014B2E0` 28 | `0x0015C370` 28 | `0x00157DF0` 28 | `0x001670A0` 64 |  |
-| `Draw(int)` | `0x0014B300` 744 | `0x0015C390` 816 | `0x00157E10` 804 | `0x00166D10` 908 |  |
-| `SetStageID(unsigned long)` | `0x0014B5F0` 16 | `0x0015C6C0` 16 | `0x00158140` 16 | `0x00166C50` 48 |  |
-| `SetGameDataFileName(char*)` | `0x0014B600` 52 | `0x0015C6D0` 112 | `0x00158150` 112 | `0x00166BF0` 96 |  |
-| `Destruct()` | `0x0014B640` 268 | `0x0015C740` 268 | `0x001581C0` 268 | `0x00166A80` 368 |  |
-| `Release()` | `0x0014B750` 400 | `0x0015C850` 400 | `0x001582D0` 400 | `0x00166860` 532 |  |
-| `Update()` | `0x0014B8E0` 236 | `0x0015C9E0` 236 | `0x00158460` 232 | `0x00166710` 328 |  |
-| `Prepare()` | `0x0014B9D0` 3668 | `0x0015CAD0` 4176 | `0x00158550` 3768 | `0x00165750` 3800 |  |
-| `Construct()` | `0x0014C830` 280 | `0x0015DB20` 280 | `0x00159410` 280 | `0x001655C0` 388 |  |
-| `CB3GameData()` |  |  |  | `0x00191550` 80 |  |
-| `GetCoopNumCrashBreakerVehicles()` |  |  |  | `0x003F66F0` 32 |  |
-| `GetNormalNumCrashBreakerVehicles()` |  |  |  | `0x003F66D0` 32 |  |
-| `GetNumFinishLines()` |  |  |  | `0x001670E0` 64 |  |
-| `IsFileStreamReady()` |  |  |  | `0x00166C80` 132 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `GetGameDataThreshold(int*,int*,int*)` | `0x0014B220` 72 | `0x0015C2B0` 72 | `0x00157D30` 72 | `0x00167200` 116 | `0x0014E7E0` proven |  |
+| `GetGameDataThreshold(float*,float*,float*)` | `0x0014B270` 40 | `0x0015C300` 40 | `0x00157D80` 40 | `0x001671A0` 92 | `0x0014E830` proven |  |
+| `GetNumLaps()` | `0x0014B2A0` 28 | `0x0015C330` 28 | `0x00157DB0` 28 | `0x00167160` 64 | `0x0014E860` strong |  |
+| `GetNumSplitTimeCheckpoints()` | `0x0014B2C0` 28 | `0x0015C350` 28 | `0x00157DD0` 28 | `0x00167120` 64 | `0x0014E880` strong |  |
+| `GetNumStartLines()` | `0x0014B2E0` 28 | `0x0015C370` 28 | `0x00157DF0` 28 | `0x001670A0` 64 |  |  |
+| `Draw(int)` | `0x0014B300` 744 | `0x0015C390` 816 | `0x00157E10` 804 | `0x00166D10` 908 |  |  |
+| `SetStageID(unsigned long)` | `0x0014B5F0` 16 | `0x0015C6C0` 16 | `0x00158140` 16 | `0x00166C50` 48 |  |  |
+| `SetGameDataFileName(char*)` | `0x0014B600` 52 | `0x0015C6D0` 112 | `0x00158150` 112 | `0x00166BF0` 96 |  |  |
+| `Destruct()` | `0x0014B640` 268 | `0x0015C740` 268 | `0x001581C0` 268 | `0x00166A80` 368 |  |  |
+| `Release()` | `0x0014B750` 400 | `0x0015C850` 400 | `0x001582D0` 400 | `0x00166860` 532 |  |  |
+| `Update()` | `0x0014B8E0` 236 | `0x0015C9E0` 236 | `0x00158460` 232 | `0x00166710` 328 |  |  |
+| `Prepare()` | `0x0014B9D0` 3668 | `0x0015CAD0` 4176 | `0x00158550` 3768 | `0x00165750` 3800 |  |  |
+| `Construct()` | `0x0014C830` 280 | `0x0015DB20` 280 | `0x00159410` 280 | `0x001655C0` 388 |  |  |
+| `CB3GameData()` |  |  |  | `0x00191550` 80 |  |  |
+| `GetCoopNumCrashBreakerVehicles()` |  |  |  | `0x003F66F0` 32 |  |  |
+| `GetNormalNumCrashBreakerVehicles()` |  |  |  | `0x003F66D0` 32 |  |  |
+| `GetNumFinishLines()` |  |  |  | `0x001670E0` 64 |  |  |
+| `IsFileStreamReady()` |  |  |  | `0x00166C80` 132 |  |  |
 
 ## Burnout 2 layout of `CGameData`
 

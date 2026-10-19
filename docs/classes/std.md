@@ -7,17 +7,18 @@
 - **Area:** [Libraries](../systems/libraries.md)
 - **Source file:** `nmwexception.o` (MSLGCC_PS2.LIB)
 - **Methods per build:** DNAT_200 4, B3DEBUG 4, B3INTERN 4, B3O0PCH 4
+- **Retail (SLUS-21050):** 3 of its 4 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `unexpected()` | `0x001006E0` 36 | `0x001006E0` 36 | `0x001006E0` 36 | `0x00100720` 36 |  |
-| `terminate()` | `0x00100710` 36 | `0x00100710` 36 | `0x00100710` 36 | `0x00100750` 36 |  |
-| `duhandler()` | `0x00100740` 36 | `0x00100740` 36 | `0x00100740` 36 | `0x00100780` 36 |  |
-| `dthandler()` | `0x00100770` 28 | `0x00100770` 28 | `0x00100770` 28 | `0x001007B0` 28 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `unexpected()` | `0x001006E0` 36 | `0x001006E0` 36 | `0x001006E0` 36 | `0x00100720` 36 |  |  |
+| `terminate()` | `0x00100710` 36 | `0x00100710` 36 | `0x00100710` 36 | `0x00100750` 36 | `0x00100710` proven |  |
+| `duhandler()` | `0x00100740` 36 | `0x00100740` 36 | `0x00100740` 36 | `0x00100780` 36 | `0x00100740` likely |  |
+| `dthandler()` | `0x00100770` 28 | `0x00100770` 28 | `0x00100770` 28 | `0x001007B0` 28 | `0x00100770` likely |  |
 
 ## Static data (DNAT_200)
 

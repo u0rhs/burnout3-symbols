@@ -10,12 +10,12 @@
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0033FB30` 764 | `0x003A2C30` 764 | `0x003CCE40` 764 | `0x003D4EA0` 1168 |  |
-| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dFont*,con` | `0x0033FE30` 172 | `0x003A2F30` 172 | `0x003CD140` 172 | `0x003D4D90` 272 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `_Render(const CGt2dObject::CGt2dObjectSpace&,const void*)` | `0x0033FB30` 764 | `0x003A2C30` 764 | `0x003CCE40` 764 | `0x003D4EA0` 1168 |  |  |
+| `Prepare(const GtMathPs2::CGtV2d&,const GtMathPs2::CGtV2d&,float,GtMathPs2::CGtV4d,const CGt2dFont*,con` | `0x0033FE30` 172 | `0x003A2F30` 172 | `0x003CD140` 172 | `0x003D4D90` 272 |  |  |
 
 ## Notes
 

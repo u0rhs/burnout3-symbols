@@ -7,19 +7,20 @@
 - **Area:** [Rendering](../systems/rendering.md)
 - **Source file:** `B3ParticleRendererPS2.cpp`
 - **Methods per build:** DNAT_200 2, B3DEBUG 2, B3INTERN 2, B3O0PCH 6
+- **Retail (SLUS-21050):** 2 of its 2 DNAT_200 methods found, 1 of them proven ([prototype names](../reference/retail-prototype-names.md))
 
 ## Methods
 
-Addresses and sizes in each build. **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
+Addresses and sizes in each build. **Retail** is the same function in SLUS-21050 and how sure that is ([prototype names](../reference/retail-prototype-names.md)). **B2** is the Burnout 2 function with the same name, with its parameter names (match by signature unless marked).
 
-| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Burnout 2 |
-|---|---|---|---|---|---|
-| `Update(CB3ParticleArray*,float,float)` | `0x00215BA0` 424 | `0x002251E0` 424 | `0x00264370` 424 | `0x002673C0` 684 |  |
-| `Construct(unsigned int)` | `0x00215D50` 932 | `0x00225390` 1148 | `0x00264520` 1144 | `0x00266CE0` 1444 |  |
-| `Destruct()` |  |  |  | `0x00267290` 16 |  |
-| `IsRenderable()` |  |  |  | `0x00268D60` 32 |  |
-| `Prepare(CB3ParticleArray*)` |  |  |  | `0x002672A0` 264 |  |
-| `Release()` |  |  |  | `0x002673B0` 16 |  |
+| Method | DNAT_200 | B3DEBUG | B3INTERN | B3O0PCH | Retail | Burnout 2 |
+|---|---|---|---|---|---|---|
+| `Update(CB3ParticleArray*,float,float)` | `0x00215BA0` 424 | `0x002251E0` 424 | `0x00264370` 424 | `0x002673C0` 684 | `0x002556F0` proven |  |
+| `Construct(unsigned int)` | `0x00215D50` 932 | `0x00225390` 1148 | `0x00264520` 1144 | `0x00266CE0` 1444 | `0x002558A0` strong |  |
+| `Destruct()` |  |  |  | `0x00267290` 16 |  |  |
+| `IsRenderable()` |  |  |  | `0x00268D60` 32 |  |  |
+| `Prepare(CB3ParticleArray*)` |  |  |  | `0x002672A0` 264 |  |  |
+| `Release()` |  |  |  | `0x002673B0` 16 |  |  |
 
 ## Notes
 
