@@ -1,7 +1,7 @@
 # GitHub Pages site for this repository: the same Markdown, served as a searchable wiki with the
 # B3 icon as the browser-tab icon. https://u0rhs.github.io/burnout3-symbols/
 title: Burnout 3 Symbols
-description: Burnout 3 Takedown symbols, link maps and documentation from the prototype discs (text only)
+description: Burnout 3 Takedown symbols, link maps and documentation from the Burnout 2, 3 and Revenge prototype discs (text only)
 remote_theme: just-the-docs/just-the-docs@v0.10.1
 plugins:
   - jekyll-remote-theme

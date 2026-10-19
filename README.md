@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>The code of Burnout 3: Takedown (PS2), mapped out.</b><br>
-  Link maps, symbols, class layouts and a wiki of the game's systems, from the prototype discs.
+  Link maps, symbols, class layouts and a wiki of the game's systems, from the Burnout 2, 3 and Revenge prototype discs.
 </p>
 
 <p align="center">
@@ -20,11 +20,16 @@
   <a href="https://github.com/u0rhs/burnout3-symbols/archive/refs/heads/main.zip">Download ZIP</a>
 </p>
 
-Everything the Burnout 3 prototype discs ([Burnout 3, 8 June 2004](https://hiddenpalace.org/Burnout_3:_Takedown_(Jun_8,_2004_prototype))
-and [Burnout 2, 29 July 2002](https://hiddenpalace.org/Burnout_2:_Point_of_Impact_(Jul_29,_2002_prototype)), both
-preserved by Hidden Palace) reveal about the game's code, turned into readable data and
-documentation, with Burnout 2's debug information where it helps explain Burnout 3. For anyone working on
-a Burnout 3 remaster, decompilation, remake, mod or patch.
+Everything the prototype discs reveal about Burnout 3's code, turned into readable data and documentation,
+and checked against the retail game (SLUS-21050). The discs, all preserved by
+[Hidden Palace](https://hiddenpalace.org): the [Burnout 3 prototype of 8 June 2004](https://hiddenpalace.org/Burnout_3:_Takedown_(Jun_8,_2004_prototype))
+with its link maps, the two Burnout 3 review builds of 20 July 2004, the
+[Burnout 2 prototype of 29 July 2002](https://hiddenpalace.org/Burnout_2:_Point_of_Impact_(Jul_29,_2002_prototype)),
+and the [four Burnout Revenge prototypes](https://hiddenpalace.org/Category:Burnout_Revenge_prototypes) of 2005 and 2006.
+Burnout 2 (the code Burnout 3 grew from) and Burnout Revenge (built on Burnout 3's code a year later) kept
+their debug information, so they explain Burnout 3 from both sides. Every disc, with dates, credits and
+hashes: [builds](docs/builds.md). For anyone working on a Burnout 3 remaster, decompilation, remake, mod or
+patch.
 
 > Text only: no game code, executables, modules or assets (no `.elf`, `.irx` or `.bin` files, no byte
 > dumps, no audio or textures). The repository holds symbol tables, link maps, debug information rewritten
